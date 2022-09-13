@@ -152,9 +152,6 @@
       "Close composer": [
         "Fechar compositor"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fechar navegação"
       ],
@@ -1077,6 +1074,9 @@
       "Star message": [
         "Adicionar estrela na mensagem"
       ],
+      "Unread email": [
+        "E-mail não lido"
+      ],
       "Unstar conversation": [
         "Remover estrela da conversa"
       ],
@@ -1873,6 +1873,11 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Sua seleção contém apenas você como remetente"
       ]
     },
     "Country name": {
@@ -4147,6 +4152,9 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "O e-mail é encaminhado para sua caixa postal; seu endereço de e-mail permanece oculto."
+      ],
       "Email tracker protection is disabled": [
         "A proteção do rastreador de e-mail está desativada"
       ],
@@ -4240,6 +4248,9 @@
         "Hora",
         "Horas"
       ],
+      "How Hide My Email works": [
+        "Como o Ocultar meu e-mail funciona"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Estou enviando essa mensagem para um não-usuário do Proton Mail."
       ],
@@ -4251,6 +4262,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Se seu, aliás for vendido, vazado ou abusado, basta desativá-lo para parar de receber spam."
       ],
       "Image description": [
         "Descrição da imagem"
@@ -4506,6 +4520,9 @@
       "Recipient: ": [
         "Destinatário: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperação copiada para a área de transferência"
       ],
@@ -4599,6 +4616,12 @@
       "Show original message": [
         "Exibir mensagem original"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "A Entrada Simples é um serviço Proton, e sua Conta Proton inclui os aliases do Ocultar meu e-mail. Para começar a mascarar seu endereço de e-mail, acesse Entrada Simples e crie seu primeiro alias."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "O Login Simples fornece uma maneira simples de criar logins em sites de terceiros não confiáveis, nos quais você não deseja expor seu endereço de e-mail real."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
       ],
@@ -4665,6 +4688,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Houve um erro com a assinatura usada para verificar os detalhes do contato, o que pode ser o resultado de uma redefinição da senha."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Eles não podem enviar spam para você se não souberem seu endereço eletrônico. Proteja sua caixa de entrada com Ocultar meu endereço eletrônico."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
@@ -4851,6 +4877,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Use os atalhos do teclado para gerenciar seu e-mail com mais rapidez."
       ],
+      "Using SimpleLogin is easy": [
+        "Usar o Login Simples é fácil"
+      ],
       "Version ${ appVersion }": [
         "Versão ${ appVersion }"
       ],
@@ -4880,6 +4909,9 @@
       ],
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Ao distribuir seu e-mail, use um, aliás exclusivo e descartável do Ocultar meu e-mail em vez do seu endereço de e-mail real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves confiáveis para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
@@ -5292,6 +5324,12 @@
       "Also archive": [
         "Também arquivar"
       ],
+      "Always label senders emails": [
+        "Sempre marque as mensagens eletrônicas dos remetentes"
+      ],
+      "Always move senders emails": [
+        "Sempre mova as mensagens eletrônicas dos remetentes"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -5360,6 +5398,9 @@
       ],
       "Delete": [
         "Excluir"
+      ],
+      "Delete recovery-related information.": [
+        "Excluir a informação de recuperação."
       ],
       "Do not ask again": [
         "Não perguntar novamente"
@@ -5801,6 +5842,9 @@
       "Upgrade account": [
         "Upgrade de conta"
       ],
+      "What’s this?": [
+        "O que é isso?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Você precisa ativar suas chaves de calendário para adicionar este evento"
       ],
@@ -6204,8 +6248,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } de ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } de ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6572,11 +6616,6 @@
         "Falha na verificação de chaves confiáveis do remetente"
       ]
     },
-    "Sort": {
-      "Sort": [
-        "Ordenar"
-      ]
-    },
     "Sort option": {
       "Largest first": [
         "Maiores primeiro"
@@ -6769,6 +6808,12 @@
       "Conversation removed from ${ labelName }.": [
         "Conversa removida de ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "As conversas de ${ sendersList } serão marcadas como ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "As conversas de ${ sendersList } serão movidas para ${ folder }"
+      ],
       "Draft deleted": [
         "Rascunho excluído"
       ],
@@ -6825,6 +6870,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mensagem removida de ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "As mensagens de ${ sendersList } serão marcadas como ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "As mensagens de ${ sendersList } serão movidas para ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversa",
@@ -7371,6 +7422,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
+      ],
+      "Sign out": [
+        "Encerrar sessão"
       ],
       "Sort conversations": [
         "Ordenar conversas"

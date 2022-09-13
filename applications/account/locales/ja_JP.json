@@ -112,6 +112,9 @@
       "Back": [
         "戻る"
       ],
+      "Block": [
+        "ブロック"
+      ],
       "Bold": [
         "太字"
       ],
@@ -147,9 +150,6 @@
       ],
       "Close": [
         "閉じる"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "ナビゲーションを閉じる"
@@ -811,14 +811,14 @@
       "View plans details": [
         "プランの詳細を表示"
       ],
+      "Void": [
+        "無効"
+      ],
       "Void all recovery files": [
         "すべての回復用ファイルを無効にする"
       ],
       "Void all recovery files?": [
         "すべての回復用ファイルを無効にしますか？"
-      ],
-      "Void anyway": [
-        "無効にする"
       ],
       "What do I get?": [
         "どうやって入手しますか?"
@@ -2526,6 +2526,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } はあなたのユーザー名です。${ Local }@${ Domain } を作成するには、設定 > メッセージと作成 > 短縮ドメイン (pm.me) に移動してください"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -3973,9 +3976,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名前をつけることで何に使用しているか判別しやすくなり、簡単に失効させたり期限を延長したりできます。"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "回復用フレーズはパスワードを忘れた場合にアカウントにアクセスしたり暗号化されたメッセージを復元するのに使われます。"
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "請求書未払いのためにアクセスが制限されています。管理者に問い合わせてください。"
       ],
@@ -4018,9 +4018,6 @@
       "Admin account allocation": [
         "管理者アカウント割り当て"
       ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "パスワードリセット後、安全のためデータは暗号化により保護されます。"
-      ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "ビットコインでのお支払い後は、以下の指示に従ってアップグレードしてください。"
       ],
@@ -4062,6 +4059,12 @@
       ],
       "and": [
         "と"
+      ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "このリンクを持っている誰でも、タイトル、場所、参加者など、このカレンダーのすべてのイベント詳細を見ることができます。"
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などのイベント詳細は表示されません。"
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "今後、このリンクはあなたのカレンダーとの同期や更新の取得に使用できなくなります。再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
@@ -4497,9 +4500,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "ログイン手段を失った場合、メールまたは SMS で回復手段を送信します。"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
@@ -5056,15 +5056,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "サービスを継続的に改善するため、アプリケーションの正常な動作を監視するためのデータを収集することがあります。この情報は、いかなる第三者サービスにも共有されません。"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "メールなどのデータを復号するには、回復用ファイルが必要です。"
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "メールなどのデータを復号するには、回復用フレーズや回復用ファイルが必要です。"
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "メールなどのデータを復号するには、回復用フレーズが必要です。"
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "パスワードをリセットしたあともロックされたデータを復号して表示できるようにするために、回復手段を選択してください。"
       ],
@@ -5352,9 +5343,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "ダウンロードした回復用ファイルを使ってアカウントをリセットしたあとに暗号化されたデータを復元することはできません。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "ブラウザを閉じてもサインインを維持します。"
@@ -5914,6 +5902,9 @@
       "Block malware, ads and trackers": [
         "マルウェア、広告、トラッカーをブロック"
       ],
+      "Blocked": [
+        "ブロック中"
+      ],
       "bonus storage": [
         "ボーナスストレージ"
       ],
@@ -6243,6 +6234,9 @@
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
+      ],
+      "Manage categories": [
+        "カテゴリーを管理"
       ],
       "Manage folders": [
         "フォルダー管理"
@@ -6582,6 +6576,9 @@
       ],
       "Your calendar URL": [
         "カレンダーの URL"
+      ],
+      "Your calendar URL label": [
+        "あなたのカレンダー URL ラベル"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
@@ -7091,6 +7088,9 @@
       ],
       "Back to Mail": [
         "Mail に戻る"
+      ],
+      "Blocked": [
+        "ブロック中"
       ],
       "Spam": [
         "迷惑メール"
@@ -7991,11 +7991,17 @@
       "Confirm password": [
         "パスワードの確認"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "E.g., ": [
         "例: "
       ],
       "Email address": [
         "メールアドレス"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "ご意見"
@@ -8301,6 +8307,17 @@
       ],
       "Username": [
         "ユーザー名"
+      ]
+    },
+    "Spam notification": {
+      "${ name } deletion failed": [
+        "${ name } の削除に失敗しました"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } をブロックリストに移動しました"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } は正常に削除されました"
       ]
     },
     "Spotlight": {
@@ -8819,6 +8836,12 @@
       "Add Sieve filter": [
         "Sieve フィルターの追加"
       ],
+      "Add to block list": [
+        "ブロックリストに追加"
+      ],
+      "Add to spam list": [
+        "迷惑メールリストに追加"
+      ],
       "Add user": [
         "ユーザーを追加"
       ],
@@ -9095,6 +9118,9 @@
       "Export public key": [
         "公開鍵のエクスポート"
       ],
+      "Extension": [
+        "拡張機能"
+      ],
       "External PGP settings": [
         "外部 PGP 設定"
       ],
@@ -9130,6 +9156,9 @@
       ],
       "How does it work?": [
         "どのように動作しますか?"
+      ],
+      "How your free trial works": [
+        "無料トライアルについて"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -9391,6 +9420,9 @@
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"
+      ],
+      "Sign out": [
+        "サインアウト"
       ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"

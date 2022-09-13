@@ -11,20 +11,17 @@
       "Close": [
         "关闭"
       ],
-      "Close modal": [
-        "关闭"
-      ],
       "Didn't receive the code?": [
         "没收到验证码？"
       ],
       "Edit email address": [
-        "修改邮箱地址"
+        "编辑电子邮件地址"
       ],
       "Edit phone number": [
-        "修改电话号码"
+        "编辑手机号码"
       ],
       "Edit sign-in details": [
-        "编辑登录信息"
+        "更改登录信息"
       ],
       "Get verification code": [
         "获取验证码"
@@ -33,7 +30,10 @@
         "刷新页面"
       ],
       "Request new code": [
-        "重新发送验证码"
+        "重发验证码"
+      ],
+      "Search countries": [
+        "搜索国家"
       ],
       "Submit": [
         "提交"
@@ -54,24 +54,833 @@
         "查看账单"
       ]
     },
+    "color": {
+      "carrot": [
+        "胡萝卜橙"
+      ],
+      "cerise": [
+        "水红色"
+      ],
+      "cobalt": [
+        "钴蓝色"
+      ],
+      "copper": [
+        "紫铜色"
+      ],
+      "enzian": [
+        "浅紫蓝色"
+      ],
+      "fern": [
+        "丝袍绿"
+      ],
+      "forest": [
+        "森林绿"
+      ],
+      "ocean": [
+        "海蓝色"
+      ],
+      "olive": [
+        "橄榄绿"
+      ],
+      "pacific": [
+        "太平洋蓝"
+      ],
+      "pickle": [
+        "橄榄黄"
+      ],
+      "pine": [
+        "松林绿"
+      ],
+      "pink": [
+        "粉色"
+      ],
+      "plum": [
+        "绛紫色"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "reef": [
+        "珊瑚绿"
+      ],
+      "sahara": [
+        "撒哈拉棕"
+      ],
+      "slateblue": [
+        "石蓝色"
+      ],
+      "soil": [
+        "土地"
+      ],
+      "strawberry": [
+        "紫红色"
+      ]
+    },
     "Country name": {
+      "Abkhazia": [
+        "阿布哈兹"
+      ],
+      "Afghanistan": [
+        "阿富汗"
+      ],
+      "Albania": [
+        "阿尔巴尼亚"
+      ],
+      "Algeria": [
+        "阿尔及利亚"
+      ],
+      "American Samoa": [
+        "美属萨摩亚"
+      ],
+      "Andorra": [
+        "安道尔"
+      ],
+      "Angola": [
+        "安哥拉"
+      ],
+      "Anguilla": [
+        "安圭拉"
+      ],
+      "Antarctica": [
+        "南极洲"
+      ],
+      "Antigua and Barbuda": [
+        "安提瓜和巴布达"
+      ],
+      "Argentina": [
+        "阿根廷"
+      ],
+      "Armenia": [
+        "亚美尼亚"
+      ],
+      "Aruba": [
+        "阿鲁巴"
+      ],
+      "Ascension Island": [
+        "阿森松岛"
+      ],
+      "Australia": [
+        "澳大利亚"
+      ],
+      "Austria": [
+        "奥地利"
+      ],
+      "Azerbaijan": [
+        "阿塞拜疆"
+      ],
+      "Bahamas": [
+        "巴哈马"
+      ],
+      "Bahrain": [
+        "巴林"
+      ],
+      "Bangladesh": [
+        "孟加拉国"
+      ],
+      "Barbados": [
+        "巴巴多斯"
+      ],
+      "Belarus": [
+        "白俄罗斯"
+      ],
+      "Belgium": [
+        "比利时"
+      ],
+      "Belize": [
+        "伯利兹"
+      ],
+      "Benin": [
+        "贝宁"
+      ],
+      "Bermuda": [
+        "百慕大"
+      ],
+      "Bhutan": [
+        "不丹"
+      ],
+      "Bolivia": [
+        "玻利维亚"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "荷兰加勒比区"
+      ],
+      "Bosnia and Herzegovina": [
+        "波斯尼亚和黑塞哥维那"
+      ],
+      "Botswana": [
+        "博茨瓦纳"
+      ],
+      "Bouvet Island": [
+        "布韦岛"
+      ],
+      "Brazil": [
+        "巴西"
+      ],
+      "British Indian Ocean Territory": [
+        "英属印度洋领地"
+      ],
+      "Brunei Darussalam": [
+        "文莱达鲁萨兰"
+      ],
+      "Bulgaria": [
+        "保加利亚"
+      ],
+      "Burkina Faso": [
+        "布基纳法索"
+      ],
+      "Burundi": [
+        "布隆迪"
+      ],
+      "Cambodia": [
+        "柬埔寨"
+      ],
+      "Cameroon": [
+        "喀麦隆"
+      ],
       "Canada": [
         "加拿大"
+      ],
+      "Cape Verde": [
+        "佛得角"
+      ],
+      "Cayman Islands": [
+        "开曼群岛"
+      ],
+      "Central African Republic": [
+        "中非共和国"
+      ],
+      "Chad": [
+        "乍得"
+      ],
+      "Chile": [
+        "智利"
       ],
       "China": [
         "中国"
       ],
+      "Christmas Island": [
+        "圣诞岛"
+      ],
+      "Cocos (Keeling) Islands": [
+        "科科斯（基林）群岛"
+      ],
+      "Colombia": [
+        "哥伦比亚"
+      ],
+      "Comoros": [
+        "科摩罗"
+      ],
+      "Congo": [
+        "刚果（布）"
+      ],
+      "Congo, Democratic Republic of the": [
+        "刚果（金）"
+      ],
+      "Cook Islands": [
+        "库克群岛"
+      ],
+      "Costa Rica": [
+        "哥斯达黎加"
+      ],
+      "Croatia": [
+        "克罗地亚"
+      ],
+      "Cuba": [
+        "古巴"
+      ],
+      "Curaçao": [
+        "库拉索"
+      ],
+      "Cyprus": [
+        "塞浦路斯"
+      ],
+      "Czech Republic": [
+        "捷克"
+      ],
       "Côte d'Ivoire": [
         "科特迪瓦"
+      ],
+      "Denmark": [
+        "丹麦"
+      ],
+      "Djibouti": [
+        "吉布提"
+      ],
+      "Dominica": [
+        "多米尼克"
+      ],
+      "Dominican Republic": [
+        "多米尼加共和国"
+      ],
+      "Ecuador": [
+        "厄瓜多尔"
+      ],
+      "Egypt": [
+        "埃及"
+      ],
+      "El Salvador": [
+        "萨尔瓦多"
+      ],
+      "Equatorial Guinea": [
+        "赤道几内亚"
+      ],
+      "Eritrea": [
+        "厄立特里亚"
+      ],
+      "Estonia": [
+        "爱沙尼亚"
+      ],
+      "Eswatini": [
+        "斯威士兰"
+      ],
+      "Ethiopia": [
+        "埃塞俄比亚"
+      ],
+      "Falkland Islands": [
+        "奥兰群岛"
+      ],
+      "Faroe Islands": [
+        "法罗群岛"
+      ],
+      "Federated States of Micronesia": [
+        "密克罗尼西亚联邦"
+      ],
+      "Fiji": [
+        "斐济"
+      ],
+      "Finland": [
+        "芬兰"
+      ],
+      "France": [
+        "法国"
+      ],
+      "French Guiana": [
+        "法属圭亚那"
+      ],
+      "French Polynesia": [
+        "法属波利尼西亚"
+      ],
+      "French Southern Territories": [
+        "法属南部领地"
+      ],
+      "Gabon": [
+        "加蓬"
+      ],
+      "Gambia": [
+        "冈比亚"
+      ],
+      "Georgia": [
+        "格鲁吉亚"
       ],
       "Germany": [
         "德国"
       ],
+      "Ghana": [
+        "加纳"
+      ],
+      "Gibraltar": [
+        "直布罗陀"
+      ],
+      "Greece": [
+        "希腊"
+      ],
+      "Greenland": [
+        "格陵兰"
+      ],
+      "Grenada": [
+        "格林纳达"
+      ],
+      "Guadeloupe": [
+        "瓜德罗普"
+      ],
+      "Guam": [
+        "关岛"
+      ],
+      "Guatemala": [
+        "危地马拉"
+      ],
+      "Guernsey": [
+        "根西"
+      ],
+      "Guinea": [
+        "几内亚"
+      ],
+      "Guinea-Bissau": [
+        "几内亚比绍"
+      ],
+      "Guyana": [
+        "圭亚那"
+      ],
+      "Haiti": [
+        "海地"
+      ],
+      "Heard Island and McDonald Islands": [
+        "赫德岛和麦克唐纳群岛"
+      ],
+      "Holy See (Vatican City State)": [
+        "圣座（梵蒂冈城邦）"
+      ],
+      "Honduras": [
+        "洪都拉斯"
+      ],
+      "Hong Kong": [
+        "中国香港特别行政区"
+      ],
+      "Hungary": [
+        "匈牙利"
+      ],
+      "Iceland": [
+        "冰岛"
+      ],
+      "India": [
+        "印度"
+      ],
+      "Indonesia": [
+        "印度尼西亚"
+      ],
+      "International": [
+        "全球"
+      ],
+      "Iran": [
+        "伊朗"
+      ],
+      "Iraq": [
+        "伊拉克"
+      ],
+      "Ireland": [
+        "爱尔兰"
+      ],
+      "Isle of Man": [
+        "马恩岛"
+      ],
+      "Israel": [
+        "以色列"
+      ],
+      "Italy": [
+        "意大利"
+      ],
+      "Jamaica": [
+        "牙买加"
+      ],
+      "Japan": [
+        "日本"
+      ],
+      "Jersey": [
+        "泽西"
+      ],
+      "Jordan": [
+        "约旦"
+      ],
+      "Kazakhstan": [
+        "哈萨克斯坦"
+      ],
+      "Kenya": [
+        "肯尼亚"
+      ],
+      "Kiribati": [
+        "基里巴斯"
+      ],
+      "Kosovo": [
+        "科索沃"
+      ],
+      "Kuwait": [
+        "科威特"
+      ],
+      "Kyrgyzstan": [
+        "吉尔吉斯斯坦"
+      ],
+      "Laos": [
+        "老挝"
+      ],
+      "Latvia": [
+        "拉脱维亚"
+      ],
+      "Lebanon": [
+        "黎巴嫩"
+      ],
+      "Lesotho": [
+        "莱索托"
+      ],
+      "Liberia": [
+        "利比里亚"
+      ],
+      "Libya": [
+        "利比亚"
+      ],
+      "Liechtenstein": [
+        "列支敦士登"
+      ],
+      "Lithuania": [
+        "立陶宛"
+      ],
+      "Luxembourg": [
+        "卢森堡"
+      ],
+      "Macao": [
+        "澳门"
+      ],
+      "Madagascar": [
+        "马达加斯加"
+      ],
+      "Malawi": [
+        "马拉维"
+      ],
+      "Malaysia": [
+        "马来西亚"
+      ],
+      "Maldives": [
+        "马尔代夫"
+      ],
+      "Mali": [
+        "马里"
+      ],
+      "Malta": [
+        "马耳他"
+      ],
+      "Marshall Islands": [
+        "马绍尔群岛"
+      ],
+      "Martinique": [
+        "马提尼克"
+      ],
+      "Mauritania": [
+        "毛里塔尼亚"
+      ],
+      "Mauritius": [
+        "毛里求斯"
+      ],
+      "Mayotte": [
+        "马约特"
+      ],
+      "Mexico": [
+        "墨西哥"
+      ],
+      "Moldova": [
+        "摩尔多瓦"
+      ],
+      "Monaco": [
+        "摩纳哥"
+      ],
+      "Mongolia": [
+        "蒙古"
+      ],
+      "Montenegro": [
+        "黑山"
+      ],
+      "Montserrat": [
+        "蒙特塞拉特"
+      ],
+      "Morocco": [
+        "摩洛哥"
+      ],
+      "Mozambique": [
+        "莫桑比克"
+      ],
+      "Myanmar": [
+        "缅甸"
+      ],
+      "Namibia": [
+        "纳米比亚"
+      ],
+      "Nauru": [
+        "瑙鲁"
+      ],
+      "Nepal": [
+        "尼泊尔"
+      ],
+      "Netherlands": [
+        "荷兰"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亚"
+      ],
+      "New Zealand": [
+        "新西兰"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日尔"
+      ],
+      "Nigeria": [
+        "尼日利亚"
+      ],
+      "Niue": [
+        "纽埃"
+      ],
+      "Norfolk Island": [
+        "诺福克岛"
+      ],
+      "North Korea": [
+        "朝鲜"
+      ],
+      "North Macedonia": [
+        "北马其顿"
+      ],
+      "Northern Mariana Islands": [
+        "北马里亚纳群岛"
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帕劳"
+      ],
+      "Palestine": [
+        "巴勒斯坦"
+      ],
+      "Panama": [
+        "巴拿马"
+      ],
+      "Papua New Guinea": [
+        "巴布亚新几内亚"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘鲁"
+      ],
+      "Philippines": [
+        "菲律宾"
+      ],
+      "Pitcairn": [
+        "皮特凯恩"
+      ],
+      "Poland": [
+        "波兰"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        "波多黎各"
+      ],
+      "Qatar": [
+        "卡塔尔"
+      ],
+      "Reunion": [
+        "留尼汪"
+      ],
+      "Romania": [
+        "罗马尼亚"
+      ],
+      "Russia": [
+        "俄罗斯"
+      ],
+      "Rwanda": [
+        "卢旺达"
+      ],
+      "Saint Barthélemy": [
+        "圣巴泰勒米"
+      ],
+      "Saint Helena": [
+        "圣赫勒拿岛"
+      ],
+      "Saint Kitts and Nevis": [
+        "圣基茨和尼维斯"
+      ],
+      "Saint Lucia": [
+        "圣卢西亚"
+      ],
+      "Saint Martin (French Part)": [
+        "法属圣马丁"
+      ],
+      "Saint Pierre and Miquelon": [
+        "圣皮埃尔和密克隆"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "圣文森特和格林纳丁斯"
+      ],
+      "Samoa": [
+        "萨摩亚"
+      ],
+      "San Marino": [
+        "圣马力诺"
+      ],
+      "Sao Tome and Principe": [
+        "圣多美与普林西比"
+      ],
+      "Saudi Arabia": [
+        "沙特阿拉伯"
+      ],
+      "Senegal": [
+        "塞内加尔"
+      ],
+      "Serbia": [
+        "塞尔维亚"
+      ],
+      "Seychelles": [
+        "塞舌尔"
+      ],
+      "Sierra Leone": [
+        "塞拉利昂"
+      ],
+      "Singapore": [
+        "新加坡"
+      ],
+      "Sint Maarten": [
+        "圣马丁岛"
+      ],
+      "Slovakia": [
+        "斯洛伐克"
+      ],
+      "Slovenia": [
+        "斯洛文尼亚"
+      ],
+      "Solomon Islands": [
+        "所罗门群岛"
+      ],
+      "Somalia": [
+        "索马里"
+      ],
+      "South Africa": [
+        "南非"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "南乔治亚岛和南桑威奇群岛"
+      ],
+      "South Korea": [
+        "韩国"
+      ],
+      "South Ossetia": [
+        "南奥塞梯"
+      ],
+      "South Sudan": [
+        "南苏丹"
+      ],
+      "Spain": [
+        "西班牙"
+      ],
+      "Sri Lanka": [
+        "斯里兰卡"
+      ],
+      "Sudan": [
+        "苏丹"
+      ],
+      "Suriname": [
+        "苏里南"
+      ],
+      "Svalbard and Jan Mayen": [
+        "斯瓦尔巴和扬马延"
+      ],
+      "Sweden": [
+        "瑞典"
+      ],
       "Switzerland": [
         "瑞士"
       ],
+      "Syria": [
+        "叙利亚"
+      ],
+      "Taiwan": [
+        "台湾地区"
+      ],
+      "Tajikistan": [
+        "塔吉克斯坦"
+      ],
+      "Tanzania": [
+        "坦桑尼亚"
+      ],
+      "Thailand": [
+        "泰国"
+      ],
+      "Timor-Leste": [
+        "东帝汶"
+      ],
+      "Togo": [
+        "多哥"
+      ],
+      "Tokelau": [
+        "托克劳"
+      ],
+      "Tonga": [
+        "汤加"
+      ],
+      "Trinidad and Tobago": [
+        "特立尼达和多巴哥"
+      ],
+      "Tristan da Cunha": [
+        "特里斯坦达库尼亚"
+      ],
+      "Tunisia": [
+        "突尼斯"
+      ],
+      "Turkey": [
+        "土耳其"
+      ],
+      "Turkmenistan": [
+        "土库曼斯坦"
+      ],
+      "Turks and Caicos Islands": [
+        "特克斯和凯科斯群岛"
+      ],
+      "Tuvalu": [
+        "图瓦卢"
+      ],
+      "Uganda": [
+        "乌干达"
+      ],
+      "Ukraine": [
+        "乌克兰"
+      ],
       "United Arab Emirates": [
         "阿联酋"
+      ],
+      "United Kingdom": [
+        "英国"
+      ],
+      "United States": [
+        "美国"
+      ],
+      "United States Minor Outlying Islands": [
+        "美国本土外小岛屿"
+      ],
+      "Uruguay": [
+        "乌拉圭"
+      ],
+      "Uzbekistan": [
+        "乌兹别克斯坦"
+      ],
+      "Vanuatu": [
+        "瓦努阿图"
+      ],
+      "Venezuela": [
+        "委内瑞拉"
+      ],
+      "Vietnam": [
+        "越南"
+      ],
+      "Virgin Islands, British": [
+        "英属维尔京群岛"
+      ],
+      "Virgin Islands, U.S.": [
+        "美属维尔京群岛"
+      ],
+      "Wallis and Futuna": [
+        "瓦利斯和富图纳"
+      ],
+      "Western Sahara": [
+        "西撒哈拉"
+      ],
+      "Yemen": [
+        "也门"
+      ],
+      "Zambia": [
+        "赞比亚"
+      ],
+      "Zimbabwe": [
+        "津巴布韦"
+      ],
+      "Åland Islands": [
+        "奥兰群岛"
       ]
     },
     "Delinquent modal title": {
@@ -81,7 +890,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "邮箱地址无效"
+        "无效邮箱"
       ],
       "Enter 6 digits": [
         "请输入 6 位验证码"
@@ -90,10 +899,10 @@
         "验证码无效"
       ],
       "Not a valid number": [
-        "电话号码无效"
+        "无效号码"
       ],
       "Passwords do not match": [
-        "两次输入的密码不一致"
+        "密码不匹配"
       ],
       "Request timed out": [
         "请求超时"
@@ -102,7 +911,7 @@
         "此项必须填写"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "此项至少应填写 ${ minimumLength } 个字符。"
+        "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "Unknown error": [
         "未知错误"
@@ -122,10 +931,10 @@
         "出错了，请刷新页面或稍后重试。"
       ],
       "There was a problem connecting to Proton.": [
-        "连接 Proton 失败。"
+        "连接 Proton 服务器失败。"
       ],
       "You may also ${ refresh } or try again later.": [
-        "您也可以${ refresh }或稍后再试。"
+        "您也可以${ refresh }页面或稍后再试。"
       ]
     },
     "Human verification method": {
@@ -133,7 +942,7 @@
         "验证码"
       ],
       "Email": [
-        "电子邮件"
+        "邮箱"
       ],
       "Manual": [
         "人工验证"
@@ -147,7 +956,7 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "请求新的验证码之前，请先检查下垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
+        "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
@@ -177,7 +986,7 @@
         "会话超时"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "为防止滥发邮件，请验证您是真人操作。"
+        "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
@@ -186,13 +995,13 @@
         "您想重新获取验证码还是更换验证方式？"
       ],
       "Would you like to receive a new verification code?": [
-        "您想要接收新的验证码吗？"
+        "要重新发送验证码吗？"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的邮箱地址仅用于本次验证。"
+        "您的邮箱将只会用于此一次性验证。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的电话号码仅用于本次验证。"
+        "您的电话号码将只会用于此一次性验证。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
@@ -200,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "验证码是无空格的六位数字"
+        "验证码是无空格的六位数"
       ],
       "Email address": [
         "邮箱地址"
@@ -244,16 +1053,16 @@
     },
     "Title": {
       "Human verification": [
-        "人机验证"
+        "身份验证"
       ],
       "Invalid verification code": [
         "验证码无效"
       ],
       "Request new code": [
-        "重新发送验证码"
+        "重发验证码"
       ],
       "Sign in again to continue": [
-        "再次登录方可继续"
+        "此操作需要重新登录"
       ]
     },
     "Validation": {

@@ -11,14 +11,11 @@
       "Close": [
         "Tutup"
       ],
-      "Close modal": [
-        "Tutup jendela"
-      ],
       "Didn't receive the code?": [
-        "Tidak menerima kodenya?"
+        "Tidak menerima kode yang dimaksud?"
       ],
       "Edit email address": [
-        "Edit alamat email"
+        "Ubah alamat email"
       ],
       "Edit phone number": [
         "Ubah nomor telepon"
@@ -30,7 +27,7 @@
         "Dapatkan kode verifikasi"
       ],
       "refresh the page": [
-        "segarkan halaman"
+        "muat ulang halaman"
       ],
       "Request new code": [
         "Minta kode baru"
@@ -256,7 +253,7 @@
         "Chad"
       ],
       "Chile": [
-        "Cile"
+        "Cili"
       ],
       "China": [
         "Tiongkok"
@@ -355,7 +352,7 @@
         "Finlandia"
       ],
       "France": [
-        "Prancis"
+        "Perancis"
       ],
       "French Guiana": [
         "Guyana Perancis"
@@ -896,13 +893,13 @@
         "Email tidak valid"
       ],
       "Enter 6 digits": [
-        "Masukan 6 digit"
+        "Masukkan 6 digit"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
       "Not a valid number": [
-        "Nomor tidak valid"
+        "Nomor telepon tidak valid"
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
@@ -911,30 +908,30 @@
         "Waktu permintaan habis"
       ],
       "This field is required": [
-        "Bagian ini wajib isi"
+        "Kolom ini wajib diisi"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini wajib diisi dengan minimal ${ minimumLength } karakter."
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "Unknown error": [
-        "Kesalahan tidak dikenal"
+        "Kesalahan yang tidak diketahui"
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "Eror: ${ errorMessage }"
+        "Kesalahan: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Mohon ${ refresh } atau periksa sambungan Anda."
+        "Mohon ${ refresh } atau cek koneksi Anda."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "There was a problem connecting to Proton.": [
-        "Ada masalah saat menyambungkan ke Proton."
+        "Ada masalah saat menyambung ke Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
@@ -962,7 +959,7 @@
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -974,7 +971,7 @@
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "Internet connection lost": [
-        "Sambungan internet terputus"
+        "Koneksi internet terputus"
       ],
       "Loading": [
         "Memuat"
@@ -983,7 +980,7 @@
         "Tidak ada hasil"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
@@ -1001,10 +998,10 @@
         "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+        "Email Anda hanya akan dipakai untuk verifikasi sekali saat ini."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
@@ -1012,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "Kode 6 digit tanpa spasi"
+        "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Email address": [
         "Alamat email"
@@ -1027,7 +1024,7 @@
         "Nomor telepon"
       ],
       "Reveal password": [
-        "Tampilkan kata sandi"
+        "Perlihatkan kata sandi"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -1070,7 +1067,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
+        "Kata sandi harus mengandung minimal ${ length } karakter"
       ]
     }
   }

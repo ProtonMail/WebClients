@@ -11,9 +11,6 @@
       "Close": [
         "Kapat"
       ],
-      "Close modal": [
-        "Pencereyi kapat"
-      ],
       "Didn't receive the code?": [
         "Kodu almadınız mı?"
       ],
@@ -27,7 +24,7 @@
         "Oturum açma bilgilerini düzenle"
       ],
       "Get verification code": [
-        "Doğrulama kodu al"
+        "Doğrulama kodu alın"
       ],
       "refresh the page": [
         "sayfayı yenile"
@@ -277,7 +274,7 @@
         "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "Kongo Demokratik Cumhuriyeti"
+        "Kongo, Demokratik Cumhuriyeti"
       ],
       "Cook Islands": [
         "Cook Adaları"
@@ -896,7 +893,7 @@
         "E-posta geçersiz"
       ],
       "Enter 6 digits": [
-        "6 rakamı yazın"
+        "6 rakam yazın"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -911,7 +908,7 @@
         "İstek zaman aşımına uğradı"
       ],
       "This field is required": [
-        "Bu alan zorunludur"
+        "Bu alanın doldurulması zorunludur"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
@@ -928,7 +925,7 @@
         "Bir şeyler ters gitti"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Lütfen ${ refresh } ya da bağlantınızı denetleyin."
+        "Lütfen ${ refresh }yin ya da bağlantınızı denetleyin."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
@@ -937,7 +934,7 @@
         "Proton bağlantısı kurulurken bir sorun çıktı."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Ayrıca ${ refresh } ya da bir süre sonra yeniden deneyebilirsiniz."
+        "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
       ]
     },
     "Human verification method": {
@@ -965,7 +962,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
+        "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -989,7 +986,7 @@
         "Oturum zaman aşımına uğradı"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -1038,7 +1035,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Request an invite": [
-        "Bir davet iste"
+        "Davet iste"
       ]
     },
     "Placeholder": {
@@ -1048,7 +1045,7 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Kod ${ methodTo } ile gönderildi"
+        "Kod ${ methodTo } alıcısına gönderildi"
       ],
       "Verification successful": [
         "Doğrulandı"

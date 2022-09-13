@@ -98,9 +98,6 @@
       "Close": [
         "Zavřít"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Zavřít menu"
       ],
@@ -2454,7 +2451,7 @@
         "Opravdu chcete trvale smazat vybrané položky z koše?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Vzhledem k tomu, že ${ appName } používá end-to-end šifrování, nemáme přístup\nani nemůžeme dešifrovat vaše soubory. Pro odemčení disku po resetu hesla,\nmusíte mít jedno z následujících:"
+        "Vzhledem k tomu, že ${ appName } používá koncové šifrování, nemáme přístup\nani nemůžeme dešifrovat vaše soubory. Pro odemčení disku po resetu hesla,\nmusíte mít jedno z následujících:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
@@ -2894,6 +2891,9 @@
       "recommended browser": [
         "doporučený prohlížeč"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
+      ],
       "Recovery process might take some time.": [
         "Obnovovací proces může trvat nějakou dobu."
       ],
@@ -2991,7 +2991,7 @@
         "Nejsou tady zatím žádné soubory"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Tyto soubory byly sdíleny pomocí end-to-end šifrování. Chcete-li je mít v bezpečí — a všechny vaše dokumenty, fotografie a soubory v soukromí — uložte je na vlastní Proton Drive. Snadno se používá a je zdarma."
+        "Tyto soubory byly sdíleny pomocí koncového šifrování. Chcete-li je mít v bezpečí — a všechny vaše dokumenty, fotografie a soubory v soukromí — uložte je na vlastní Proton Drive. Snadno se používá a je zdarma."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -3339,6 +3339,9 @@
         "Smazat disky?",
         "Smazat disky?"
       ],
+      "Delete recovery-related information.": [
+        "Odstranit informace související s obnovením."
+      ],
       "Deleted": [
         "Odstraněno"
       ],
@@ -3666,6 +3669,9 @@
       ],
       "Upgrade account": [
         "Přejít na vyšší tarif"
+      ],
+      "What’s this?": [
+        "Co je to?"
       ]
     },
     "Loading info": {
@@ -4727,6 +4733,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign out": [
+        "Odhlásit se"
       ],
       "Size": [
         "Velikost"

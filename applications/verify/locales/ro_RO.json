@@ -11,14 +11,11 @@
       "Close": [
         "Închidere"
       ],
-      "Close modal": [
-        "Închidere"
-      ],
       "Didn't receive the code?": [
         "Nu ați primit codul?"
       ],
       "Edit email address": [
-        "Editare adresă de e-mail"
+        "Editare adresa de e-mail"
       ],
       "Edit phone number": [
         "Editare număr de telefon"
@@ -39,13 +36,13 @@
         "Căutare țări"
       ],
       "Submit": [
-        "Trimitere"
+        "Trimite"
       ],
       "Try another method": [
-        "Încercare altă metodă"
+        "Încercaţi o altă metodă"
       ],
       "Verify": [
-        "Verificare"
+        "Verifică"
       ],
       "Verify account": [
         "Verificare cont"
@@ -86,7 +83,7 @@
         "măsliniu"
       ],
       "pacific": [
-        "Pacific"
+        "pacific"
       ],
       "pickle": [
         "murături"
@@ -178,7 +175,7 @@
         "Bahrain"
       ],
       "Bangladesh": [
-        "Bangladesh"
+        "Bangladeș"
       ],
       "Barbados": [
         "Barbados"
@@ -223,7 +220,7 @@
         "Teritoriul Britanic al Oceanului Indian"
       ],
       "Brunei Darussalam": [
-        "Brunei"
+        "Brunei Darussalam"
       ],
       "Bulgaria": [
         "Bulgaria"
@@ -235,7 +232,7 @@
         "Burundi"
       ],
       "Cambodia": [
-        "Cambodgia"
+        "Cambogia"
       ],
       "Cameroon": [
         "Camerun"
@@ -256,7 +253,7 @@
         "Ciad"
       ],
       "Chile": [
-        "Chile"
+        "Cile"
       ],
       "China": [
         "China"
@@ -328,7 +325,7 @@
         "Guineea Ecuatorială"
       ],
       "Eritrea": [
-        "Eritreea"
+        "Eritrea"
       ],
       "Estonia": [
         "Estonia"
@@ -346,7 +343,7 @@
         "Insulele Feroe"
       ],
       "Federated States of Micronesia": [
-        "Statele Federate ale Microneziei"
+        "Statele federative ale Microneziei"
       ],
       "Fiji": [
         "Fiji"
@@ -379,7 +376,7 @@
         "Germania"
       ],
       "Ghana": [
-        "Ghana"
+        "Gana"
       ],
       "Gibraltar": [
         "Gibraltar"
@@ -406,10 +403,10 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guineea"
+        "Guinea"
       ],
       "Guinea-Bissau": [
-        "Guineea-Bissau"
+        "Guinea-Bissau"
       ],
       "Guyana": [
         "Guiana"
@@ -490,7 +487,7 @@
         "Kuweit"
       ],
       "Kyrgyzstan": [
-        "Kârgâzstan"
+        "Kyrgyzstan"
       ],
       "Laos": [
         "Laos"
@@ -580,7 +577,7 @@
         "Mozambic"
       ],
       "Myanmar": [
-        "Burma"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -787,7 +784,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tadjikistan"
+        "Tajikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -841,7 +838,7 @@
         "Regatul Unit"
       ],
       "United States": [
-        "Statele Unite ale Americii"
+        "Statele Unite"
       ],
       "United States Minor Outlying Islands": [
         "Insulele Minore Îndepărtate ale Statelor Unite"
@@ -893,31 +890,31 @@
     },
     "Error": {
       "Email is not valid": [
-        "E-mail nevalid."
+        "E-mailul nu este valid"
       ],
       "Enter 6 digits": [
-        "Introduceți 6 cifre."
+        "Introduceți 6 cifre"
       ],
       "Invalid verification code": [
-        "Cod de verificare nevalid."
+        "Cod de verificare nevalid"
       ],
       "Not a valid number": [
-        "Nu este un număr valid."
+        "Nu este un număr valid"
       ],
       "Passwords do not match": [
-        "Parolele nu coincid."
+        "Parolele nu coincid"
       ],
       "Request timed out": [
-        "Solicitarea a expirat."
+        "Solicitarea a expirat"
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită minim ${ minimumLength } caractere."
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "Unknown error": [
-        "Eroare necunoscută."
+        "Eroare necunoscută"
       ]
     },
     "Error message": {
@@ -937,7 +934,7 @@
         "A apărut o problemă la conectarea la Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți să ${ refresh } sau reîncerca mai târziu."
+        "Puteți ${ refresh } sau reîncerca mai târziu."
       ]
     },
     "Human verification method": {
@@ -959,40 +956,40 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Înainte de a solicita un cod nou de verificare, verificați folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+        "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă acest număr de telefon nu este corect, apăsați pe „Editare” pentru a-l corecta."
+        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Dacă aveți probleme la crearea contului, solicitați o invitație și vă vom răspunde în termen de o zi lucrătoare."
+        "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Dacă nu vedeți mesajul verificați folderul de mesaje nedorite."
+        "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
       "Internet connection lost": [
-        "Conexiunea la internet s-a întrerupt."
+        "Conexiunea la internet s-a întrerupt"
       ],
       "Loading": [
-        "Se încarcă."
+        "Se încarcă"
       ],
       "No results found": [
-        "Nu s-au găsit rezultate."
+        "Nu s-au găsit rezultate"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out": [
-        "Sesiunea a expirat."
+        "Sesiunea a expirat"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pentru a combate mesajele nesolicitate, dovediți că sunteți o persoană."
+        "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Se va trimite un nou cod de verificare la ${ strong }"
+        "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -1001,7 +998,7 @@
         "Doriți să primiți un cod nou de verificare?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Adresa de e-mail va fi folosită doar pentru această verificare unică."
+        "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -1038,7 +1035,7 @@
         "Detalii"
       ],
       "Request an invite": [
-        "Solicitare invitație"
+        "Solicitați o invitație"
       ]
     },
     "Placeholder": {
@@ -1056,7 +1053,7 @@
     },
     "Title": {
       "Human verification": [
-        "Verificare umană"
+        "Verificare persoană"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -1070,7 +1067,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter.",
+        "Parola trebuie să conțină cel puțin un caracter",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
       ]

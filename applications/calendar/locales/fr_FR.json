@@ -83,9 +83,6 @@
       "Close event popover": [
         "Fermer la boite de dialogue de l'événement"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fermer la navigation"
       ],
@@ -569,7 +566,7 @@
         "En quittant maintenant, il est possible que certains contacts ne soient pas importés"
       ],
       "By leaving now, some events may not be imported": [
-        "En quittant maintenant, certains événements pourraient ne pas être importés"
+        "En quittant maintenant, certains événements pourraient ne pas être importés."
       ],
       "By leaving now, you will lose your event.": [
         "En partant maintenant, vous perdrez votre événement."
@@ -3084,6 +3081,9 @@
       "Priority support": [
         "Assistance prioritaire"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
@@ -3434,6 +3434,9 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
+      ],
       "Description": [
         "Description"
       ],
@@ -3702,6 +3705,9 @@
       ],
       "Upgrade account": [
         "Changer d’offre"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est ?"
       ]
     },
     "Loading info": {
@@ -5003,6 +5009,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign out": [
+        "Se déconnecter"
       ],
       "Update event": [
         "Mettre à jour l'événement"

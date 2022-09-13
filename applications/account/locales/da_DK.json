@@ -98,6 +98,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Block": [
+        "Blokér"
+      ],
       "Bold": [
         "Fed"
       ],
@@ -130,9 +133,6 @@
       ],
       "Close": [
         "Luk"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Luk navigation"
@@ -794,14 +794,14 @@
       "View plans details": [
         "Vis abonnementdetaljer"
       ],
+      "Void": [
+        "Ugyldig"
+      ],
       "Void all recovery files": [
         "Ugyldiggør alle gendannelsesfiler"
       ],
       "Void all recovery files?": [
         "Ugyldiggør alle gendannelsesfiler?"
-      ],
-      "Void anyway": [
-        "Ugyldiggør alligevel"
       ],
       "What do I get?": [
         "Hvad får jeg?"
@@ -3789,12 +3789,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Med en gendannelsesfil kan du låse op for og se dine data efter en kontonulstilling."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
@@ -3840,9 +3834,6 @@
       ],
       "Admin account allocation": [
         "Admin-konto tildeling"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Efter en adgangskode-nulstilling er dine data låst i krypteret form for at holde dem sikre."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Når du har foretaget din Bitcoin-betaling, så følg anvisningerne nedenfor for at opgradere."
@@ -4343,9 +4334,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Hvis du mister dine loginoplysninger, sender vi dig en vejledning til gendannelse via e-mail eller sms."
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -4916,15 +4904,6 @@
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsesfil."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsessætning eller en gendannelsesfil."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "For at dekryptere og se dine e-mails og andre data skal du bruge en gendannelsessætning."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
@@ -5221,9 +5200,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Du vil ikke kunne gendanne krypterede data efter en kontonulstilling ved hjælp af dine downloadede gendannelsesfiler."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Du vil forblive logget på selv efter du lukker browseren."
@@ -8802,6 +8778,9 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
+      ],
+      "Sign out": [
+        "Log ud"
       ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"

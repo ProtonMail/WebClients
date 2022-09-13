@@ -11,11 +11,8 @@
       "Close": [
         "Zavřít"
       ],
-      "Close modal": [
-        "Zavřít okno"
-      ],
       "Didn't receive the code?": [
-        "Neobdrželi jste kód?"
+        "Nedostali jste kód?"
       ],
       "Edit email address": [
         "Upravit e-mailovou adresu"
@@ -24,13 +21,13 @@
         "Upravit telefonní číslo"
       ],
       "Edit sign-in details": [
-        "Úprava přihlašovacích údajů"
+        "Upravit přihlašovací údaje"
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
       "refresh the page": [
-        "aktualizovat stránku"
+        "obnovit stránku"
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -39,7 +36,7 @@
         "Vyhledat země"
       ],
       "Submit": [
-        "Předložit"
+        "Odeslat"
       ],
       "Try another method": [
         "Zkuste jinou metodu"
@@ -101,7 +98,7 @@
         "švestka"
       ],
       "purple": [
-        "fialová"
+        "purpurová"
       ],
       "reef": [
         "útes"
@@ -110,7 +107,7 @@
         "sahara"
       ],
       "slateblue": [
-        "břidlice"
+        "břidličná modř"
       ],
       "soil": [
         "půda"
@@ -580,7 +577,7 @@
         "Mosambik"
       ],
       "Myanmar": [
-        "Barma"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibie"
@@ -893,7 +890,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "Emailová adresa není platná"
+        "E-mailová adresa není platná"
       ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
@@ -908,13 +905,13 @@
         "Hesla se neshodují"
       ],
       "Request timed out": [
-        "Vypršel časový limit požadavku"
+        "Vypršel časový limit žádosti"
       ],
       "This field is required": [
         "Toto pole je povinné"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "Unknown error": [
         "Neznámá chyba"
@@ -934,10 +931,10 @@
         "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
       ],
       "There was a problem connecting to Proton.": [
-        "Při připojování ke službě Proton došlo k chybě."
+        "Při připojování k Proton došlo k chybě."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Můžete také ${ refresh } nebo to zkusit později."
+        "Můžete taky stránku ${ refresh } nebo to zkusit později."
       ]
     },
     "Human verification method": {
@@ -974,7 +971,7 @@
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "Internet connection lost": [
-        "Připojení k internetu bylo ztraceno"
+        "Připojení k Internetu bylo ztraceno"
       ],
       "Loading": [
         "Načítání"
@@ -989,7 +986,7 @@
         "Relace vypršela"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
+        "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
@@ -1012,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "Kód je 6 číslic bez mezer"
+        "Kód má 6 číslic bez mezer"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -1035,7 +1032,7 @@
     },
     "Link": {
       "Learn more": [
-        "Více informací"
+        "Zjistěte více"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
@@ -1056,7 +1053,7 @@
     },
     "Title": {
       "Human verification": [
-        "Ověření totožnosti"
+        "Lidské ověření"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"

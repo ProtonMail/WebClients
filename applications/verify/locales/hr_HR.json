@@ -11,14 +11,17 @@
       "Close": [
         "Zatvori"
       ],
-      "Close modal": [
-        "Zatvori skočni prozor"
+      "Didn't receive the code?": [
+        "Niste primili kod?"
       ],
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        "Uredite detalje za prijavu"
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
@@ -36,7 +39,13 @@
         "Isprobajte drugu metodu"
       ],
       "Verify": [
-        "Potvrda"
+        "Potvrdi"
+      ],
+      "Verify account": [
+        "Potvrdi račun"
+      ],
+      "Verify email": [
+        "Potvrdi email"
       ],
       "View invoice": [
         "Prikaži fakturu"
@@ -74,8 +83,17 @@
       ]
     },
     "Error message": {
+      "Error: ${ errorMessage }": [
+        "Pogreška: ${ errorMessage }"
+      ],
       "Oops, something went wrong": [
         "Ups, nešto je pošlo po zlu"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Molimo ${ refresh } ili provjerite vezu."
+      ],
+      "There was a problem connecting to Proton.": [
+        "Došlo je do problema pri povezivanju s Protonom."
       ],
       "You may also ${ refresh } or try again later.": [
         "Možete ${ refresh } ili pokušati ponovo kasnije."
@@ -100,10 +118,10 @@
     },
     "Info": {
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Unesite potvrdni kȏd koji je poslan na ${ destinationText }."
+        "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
@@ -161,6 +179,11 @@
         "Zatraži pozivnicu"
       ]
     },
+    "Placeholder": {
+      "Password": [
+        "Lozinka"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
@@ -175,6 +198,9 @@
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
+      ],
+      "Request new code": [
+        "Zatraži novi kôd"
       ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"

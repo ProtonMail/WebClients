@@ -112,6 +112,9 @@
       "Back": [
         "Retour"
       ],
+      "Block": [
+        "Bloquer"
+      ],
       "Bold": [
         "Gras"
       ],
@@ -147,9 +150,6 @@
       ],
       "Close": [
         "Fermer"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -442,6 +442,12 @@
       "Mark as default": [
         "Définir par défaut"
       ],
+      "Mark as not spam": [
+        "Marquer comme non indésirable"
+      ],
+      "Mark as spam": [
+        "Marquer comme indésirable"
+      ],
       "mark emails as": [
         "marquer les courriels comme"
       ],
@@ -541,6 +547,9 @@
       "Remove": [
         "Retirer"
       ],
+      "Remove Block": [
+        "Supprimer le blocage"
+      ],
       "Remove bonuses": [
         "Retirer les bonus"
       ],
@@ -633,6 +642,9 @@
       ],
       "Search settings": [
         "Paramètres de recherche"
+      ],
+      "See plan features": [
+        "Voir les fonctionnaliés de l'offre"
       ],
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
@@ -811,14 +823,14 @@
       "View plans details": [
         "Afficher les détails de l'abonnement"
       ],
+      "Void": [
+        "Annulée"
+      ],
       "Void all recovery files": [
         "Annuler tous les fichiers de récupération "
       ],
       "Void all recovery files?": [
         "Annuler tous les fichiers de récupération?"
-      ],
-      "Void anyway": [
-        "Annuler quand même"
       ],
       "What do I get?": [
         "Qu'est-ce que j'obtiens?"
@@ -2602,6 +2614,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } est votre nom d'utilisateur. Pour créer ${ Local }@${ Domain }, allez dans Paramètres > Messages et composition > Domaine court (pm.me)."
+      ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
       ],
@@ -2991,6 +3006,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événement.",
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Votre fichier ${ formattedFilename } possède une forme invalide et ne peut être importé."
@@ -3425,6 +3444,12 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Ajoutez un filtre personnalisé pour que certaines actions soient exécutées automatiquement, comme appliquer un label ou archiver des messages. Les filtres peuvent être modifiés et créés directement via le langage de programmation Sieve."
+      ],
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Les courriels provenant d'adresses marquées comme indésirables, par vous ou par Proton, seront placés dans votre dossier Indésirables. Pour autoriser les messages provenant de l'une de ces adresses, marquez-la comme « non indésirable »."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Les courriels provenant d'adresses bloquées ne seront pas délivrés."
       ],
       "Search in Allow List and Block List": [
         "Rechercher dans les listes d'autorisation et de blocage"
@@ -4139,11 +4164,11 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Un fichier de récupération vous permet de déverrouiller et d'afficher vos données après une réinitialisation de compte."
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Un fichier de récupération vous permet de déverrouiller et d'afficher vos données après une réinitialisation de compte"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Une phrase de récupération vous permet d’accéder à votre compte et de récupérer vos messages chiffrés si vous avez oublié votre mot de passe."
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Une phrase de récupération vous permet d’accéder à votre compte et de récupérer vos messages chiffrés si vous avez oublié votre mot de passe"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur·rice est un compte associé à un seul nom d'utilisateur·rice, boîte aux lettres et personne"
@@ -4162,6 +4187,9 @@
       ],
       "Account successfully updated": [
         "Compte correctement mis à jour"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Activez au moins une méthode de récupération de données pour vous assurer que vous pouvez continuer à accéder au contenu de votre compte ${ BRAND_NAME } si vous perdez votre mot de passe."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse électronique @pm.me à votre compte. Ce domaine simple et court signifie «${ MAIL_APP_NAME } me» ou «Private Message me» (envoyez-moi un message privé)."
@@ -4190,9 +4218,6 @@
       ],
       "Admin account allocation": [
         "Attribution de compte administrateur·rice"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Après une réinitialisation de mot de passe, vos données sont verrouillées sous forme chiffrée pour les protéger."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Après avoir effectué votre paiement Bitcoin, veuillez suivre les instructions ci-dessous afin d'effectuer votre changement d'offre."
@@ -4697,9 +4722,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par courriel ou par SMS."
-      ],
       "Inherited from parent folder": [
         "Hérité du dossier parent"
       ],
@@ -5035,11 +5057,17 @@
       "read our two-factor authentication guide first": [
         "lire d'abord notre guide sur l'authentification à deux facteurs"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Recommandé sur les appareils de confiance. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Fichier de récupération téléchargé"
       ],
       "Recovery files have been voided": [
         "Les fichiers de récupération ont été annulés"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "recovery method": [
         "méthode de récupération"
@@ -5221,6 +5249,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
       ],
@@ -5271,15 +5302,6 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour contrôler le bon fonctionnement de nos applications. Ces informations ne sont pas partagées avec des services tiers."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Pour déchiffrer et afficher vos courriels et autres données, vous avez besoin d'un fichier de récupération."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Pour déchiffrer et afficher vos courriers électroniques et autres données, vous avez besoin d'une phrase ou d'un fichier de récupération."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Pour déchiffrer et afficher vos courriels et autres données, vous avez besoin d'une phrase de récupération."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation de mot de passe, sélectionnez une méthode de récupération."
@@ -5410,6 +5432,9 @@
       "We recommend using your recovery phrase instead.": [
         "Nous vous suggérons d'utiliser une phrase de récupération à la place."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Nous stockons en toute sécurité les informations de récupération sur votre appareil de confiance pour vous éviter de perdre vos données"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
@@ -5454,6 +5479,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, tous les crédits disponibles seront d'abord utilisés avant que nous débitions vos modes de paiement ci-dessus."
+      ],
+      "Why?": [
+        "Pourquoi?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d’utilisateurs non privés."
@@ -5578,8 +5606,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Vous ne pourrez pas récupérer les données chiffrées après une réinitialisation du compte en utilisant les fichiers de récupération que vous avez téléchargés."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Vous ne pourrez pas récupérer les données verrouillées à l'aide de vos fichiers de récupération téléchargés. Ceci annulera également les informations de récupération de périphérique de confiance."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Vous resterez connecté même après avoir fermé le navigateur."
@@ -6105,6 +6136,9 @@
       "Address": [
         "Adresse"
       ],
+      "Address type": [
+        "Type d'adresse"
+      ],
       "Addresses": [
         "Adresses"
       ],
@@ -6122,6 +6156,9 @@
       ],
       "Allow recovery by recovery phrase": [
         "Permet la récupération avec une phrase de récupération"
+      ],
+      "Allow recovery using a trusted device": [
+        "Autoriser la récupération en utilisant un appareil de confiance"
       ],
       "Amount": [
         "Montant"
@@ -6179,6 +6216,9 @@
       ],
       "Block malware, ads and trackers": [
         "Bloquez les programmes malveillants, les publicités et les traqueurs"
+      ],
+      "Blocked": [
+        "Bloqué"
       ],
       "bonus storage": [
         "stockage bonus"
@@ -6323,6 +6363,9 @@
       ],
       "Delete": [
         "Supprimer"
+      ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
       ],
       "Density": [
         "Densité"
@@ -6510,6 +6553,9 @@
       "Mailbox password": [
         "Mot de passe de messagerie"
       ],
+      "Manage categories": [
+        "Gérer les catégories"
+      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
@@ -6557,6 +6603,9 @@
       ],
       "No label found": [
         "Aucun label trouvé"
+      ],
+      "Non Spam": [
+        "Non indésirables"
       ],
       "Non-standard ports": [
         "Ports non standards"
@@ -6871,6 +6920,9 @@
       ],
       "Recovery phrase": [
         "Phrase de récupération"
+      ],
+      "Trusted device recovery": [
+        "Récupération d'un appareil de confiance"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7047,6 +7099,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Learn more about data recovery": [
+        "En savoir plus sur la récupération de données"
+      ],
       "Need help?": [
         "Besoin d'aide?"
       ],
@@ -7091,6 +7146,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP?"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est?"
       ],
       "Why set recovery methods?": [
         "Pourquoi définir une méthode de récupération?"
@@ -7374,6 +7432,12 @@
       ],
       "Back to Mail": [
         "Retour à la messagerie"
+      ],
+      "Blocked": [
+        "Bloqué"
+      ],
+      "Non spam": [
+        "Non indésirables"
       ],
       "Spam": [
         "Indésirable"
@@ -8455,11 +8519,17 @@
       "Confirm password": [
         "Confirmer le mot de passe"
       ],
+      "domain.com": [
+        "domaine.com"
+      ],
       "E.g., ": [
         "P. ex., "
       ],
       "Email address": [
         "Adresse courriel"
+      ],
+      "example@domain.com": [
+        "exemple@domaine.com"
       ],
       "Feedback": [
         "Vos commentaires"
@@ -8777,6 +8847,35 @@
       ],
       "Username": [
         "Nom d'utilisateur·rice"
+      ]
+    },
+    "Spam notification": {
+      "${ name } added": [
+        "${ name } a été ajouté"
+      ],
+      "${ name } deletion failed": [
+        "La suppression de ${ name } a échoué"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } n'a pas pu être déplacé vers la liste d'adresses bloquées"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } n'a pas pu être déplacé vers la liste des non indésirables"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } n'a pas pu être déplacé vers la liste des indésirables"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } a été déplacé vers la liste d'adresses bloquées"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } a été déplacé vers la liste des indésirables"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } a été déplacé vers la liste des indésirables"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } a été supprimé"
       ]
     },
     "Spotlight": {
@@ -9199,6 +9298,9 @@
       "Import": [
         "Importation"
       ],
+      "Marked as": [
+        "Marqué comme"
+      ],
       "Name": [
         "Nom"
       ],
@@ -9323,6 +9425,15 @@
       ],
       "Add Sieve filter": [
         "Ajouter un filtre Sieve"
+      ],
+      "Add to block list": [
+        "Ajouter à la liste d'adresses bloquées"
+      ],
+      "Add to not spam list": [
+        "Ajouter à la liste des non indésirables"
+      ],
+      "Add to spam list": [
+        "Ajouter à la liste des indésirables"
       ],
       "Add user": [
         "Ajouter un utilisateur"
@@ -9602,6 +9713,9 @@
       ],
       "Export public key": [
         "Exporter la clé publique"
+      ],
+      "Extension": [
+        "Extension"
       ],
       "External PGP settings": [
         "Paramètres PGP externes"
@@ -9904,11 +10018,17 @@
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
+      "Sign out": [
+        "Se déconnecter"
+      ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
       ],
       "Sort labels alphabetically": [
         "Trier les labels par ordre alphabétique"
+      ],
+      "Spam and block list": [
+        "Indésirables et liste d'adresses bloquées"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
@@ -10014,6 +10134,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Votre historique d'importation"
       ],
       "Your plan": [
         "Votre offre"
@@ -10144,6 +10267,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "L'activation des journaux avancés enregistre l'adresse IP de chaque événement dans le journal de sécurité."
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail catégorise automatiquement certains courriels comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces courriels."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Groupez les courriels dans la même conversation au sein de votre boîte de réception ou affichez-les séparément."
       ],
@@ -10272,6 +10398,16 @@
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Passez à une offre payante Mail pour pouvoir partager votre calendrier personnel avec n’importe qui via un lien."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Invité par courriel"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Inscrit·e via votre lien"
       ]
     },
     "User role": {
