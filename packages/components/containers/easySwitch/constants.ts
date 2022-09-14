@@ -37,7 +37,7 @@ export const MAX_FOLDER_LIMIT = 20000;
 
 export const IMAPS = {
     [OAUTH_PROVIDER.GOOGLE]: 'imap.gmail.com',
-    [NON_OAUTH_PROVIDER.YAHOO]: 'imap.mail.yahoo.com',
+    [NON_OAUTH_PROVIDER.YAHOO]: 'export.imap.mail.yahoo.com',
     [NON_OAUTH_PROVIDER.OUTLOOK]: 'outlook.office365.com',
 };
 
