@@ -84,6 +84,7 @@ export enum FeatureCode {
     EasySwitchGmailNewScope = 'EasySwitchGmailNewScope',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
+    DriveBeta = 'DriveBeta',
 }
 
 export interface FeaturesContextValue {
