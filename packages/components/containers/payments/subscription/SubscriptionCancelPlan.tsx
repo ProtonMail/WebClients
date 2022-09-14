@@ -1,5 +1,5 @@
 import { Icon, Info } from '../../../components';
-import { classnames } from '../../../helpers';
+import { classnames, generateUID } from '../../../helpers';
 import { PlanCardFeatureDefinition } from '../features/interface';
 
 import './SubscriptionCancelPlan.scss';
@@ -21,8 +21,10 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
             {features.length ? (
                 <ul className="unstyled mt1">
                     {features.map((feature) => {
+                        const key =
+                            typeof feature.featureName === 'string' ? feature.featureName : generateUID('featureName');
                         return (
-                            <li key={feature.featureName} className="flex flex-nowrap mb0-5">
+                            <li key={key} className="flex flex-nowrap mb0-5">
                                 <span className={classnames(['flex-item-noshrink mr1', downgrade && 'color-weak'])}>
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>

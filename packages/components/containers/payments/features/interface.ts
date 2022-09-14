@@ -4,7 +4,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import { IconName } from '../../../components';
 
 export interface PlanCardFeatureDefinition {
-    featureName: string;
+    featureName: string | string[];
     tooltip: string;
     included: boolean;
     fire?: boolean;
