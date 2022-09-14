@@ -14,10 +14,25 @@ export const useSimpleLoginTelemetry = () => {
     const primaryPlan = getPrimaryPlan(subscription, APPS.PROTONMAIL);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
+    // However, we need to bin the number of message we send to Telemetry
+    // '1' => User has 0 or 1 message in spam
+    // '10' => User has 2-10 messages in spam
+    // '10+' => User has more than 10 messages in spam
+    const getBinnedMessagesInSpam = (totalMessages: number) => {
+        if (totalMessages < 2) {
+            return '1';
+        } else if (totalMessages < 11) {
+            return '10';
+        } else {
+            return '10+';
+        }
+    };
+
     const handleSendTelemetryData = (
         event: TelemetrySimpleLoginEvents,
         values?: SimpleMap<number>,
-        needsModalType = false
+        needsModalType = false,
+        messagesInSpam?: number
     ) => {
         const dimensions = {
             Uid: user.ID,
@@ -26,6 +41,10 @@ export const useSimpleLoginTelemetry = () => {
 
         if (needsModalType) {
             dimensions.ModalType = isSafari() ? 'website' : 'extension';
+        }
+
+        if (messagesInSpam) {
+            dimensions.MessagesInSpam = getBinnedMessagesInSpam(messagesInSpam);
         }
 
         void sendTelemetryReport(api, TelemetryMeasurementGroups.mailSimpleLogin, event, values, dimensions);
