@@ -6,21 +6,27 @@ import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-export const getStorageFeature = (n: number, fire?: boolean): PlanCardFeatureDefinition => {
-    if (n === -1) {
+export const getStorageFeature = (
+    bytes: number,
+    options: { fire?: boolean; boldStorageSize?: boolean } = {}
+): PlanCardFeatureDefinition => {
+    const { fire = false, boldStorageSize = false } = options;
+    if (bytes === -1) {
         const freeStorageSize = humanSize(500 * 1024 ** 2, undefined, undefined, 0);
         const totalStorageSize = humanSize(1 * 1024 ** 3, undefined, undefined, 0);
         return {
-            featureName: c('new_plans: feature').t`Up to ${totalStorageSize} total storage`,
+            featureName: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
             tooltip: c('new_plans: tooltip')
                 .t`Start with ${freeStorageSize} and unlock more storage along the way. Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
             included: true,
             icon: 'storage',
         };
     }
-    const size = humanSize(n, undefined, undefined, 0);
+
+    const humanReadableSize = humanSize(bytes, undefined, undefined, 0);
+    const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
     return {
-        featureName: c('new_plans: feature').t`${size} total storage`,
+        featureName: c('new_plans: feature').jt`${size} storage` as string,
         tooltip: c('new_plans: tooltip')
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}`,
         included: true,
@@ -29,8 +35,8 @@ export const getStorageFeature = (n: number, fire?: boolean): PlanCardFeatureDef
     };
 };
 
-export const getStorageFeatureB2B = (n: number, fire?: boolean): PlanCardFeatureDefinition => {
-    const size = humanSize(n, undefined, undefined, 0);
+export const getStorageFeatureB2B = (bytes: number, fire?: boolean): PlanCardFeatureDefinition => {
+    const size = humanSize(bytes, undefined, undefined, 0);
     return {
         featureName: c('new_plans: feature').t`${size} storage per user`,
         tooltip: c('new_plans: tooltip')
@@ -95,13 +101,13 @@ export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
     return {
         name: 'storage',
         plans: {
-            [PLANS.FREE]: getStorageFeature(-1, false),
-            [PLANS.BUNDLE]: getStorageFeature(plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000, true),
-            [PLANS.MAIL]: getStorageFeature(plansMap[PLANS.MAIL]?.MaxSpace ?? 16106127360, false),
-            [PLANS.VPN]: getStorageFeature(-1, false),
-            [PLANS.DRIVE]: getStorageFeature(plansMap[PLANS.DRIVE]?.MaxSpace ?? 214748364800, false),
-            [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, false),
-            [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360, false),
+            [PLANS.FREE]: getStorageFeature(-1),
+            [PLANS.BUNDLE]: getStorageFeature(plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000, { fire: true }),
+            [PLANS.MAIL]: getStorageFeature(plansMap[PLANS.MAIL]?.MaxSpace ?? 16106127360),
+            [PLANS.VPN]: getStorageFeature(-1),
+            [PLANS.DRIVE]: getStorageFeature(plansMap[PLANS.DRIVE]?.MaxSpace ?? 214748364800),
+            [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440),
+            [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360),
             [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000, true),
         },
     };
