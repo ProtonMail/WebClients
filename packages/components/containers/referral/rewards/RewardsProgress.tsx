@@ -15,7 +15,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
 
     const planName = PLAN_NAMES[PLANS.MAIL];
     const mailPlusPlan = plans.find(({ Name }) => Name === PLANS.MAIL);
-    const price = Math.round(mailPlusPlan?.Pricing[CYCLE.MONTHLY] || 0); // Price rounded to 5
+    const price = Math.round((mailPlusPlan?.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
     const current = humanPriceWithCurrency(rewards * price, user.Currency);
     const total = humanPriceWithCurrency(rewardsLimit * price, user.Currency);
 
