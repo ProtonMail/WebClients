@@ -116,6 +116,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
+    const drivePlanFeature = useFeature(FeatureCode.DrivePlan);
+    const drivePlanEnabled = drivePlanFeature.feature?.Value === true;
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const [[steps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
@@ -355,7 +357,15 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         }
 
         if (toApp === APPS.PROTONDRIVE) {
-            return PLANS.BUNDLE;
+            const drivePlan = model.plans.find(({ Name }) => Name === PLANS.DRIVE);
+            if (drivePlan && drivePlanEnabled) {
+                return PLANS.DRIVE;
+            } else {
+                /**
+                 * Fallback if drive plan not available
+                 */
+                return PLANS.BUNDLE;
+            }
         }
 
         return PLANS.MAIL;
@@ -530,6 +540,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             )}
             {step === CREATING_ACCOUNT && (
                 <LoadingStep
+                    toApp={toApp}
                     hasPayment={
                         hasPlanIDs(model.subscriptionData.planIDs) && model.subscriptionData.checkResult.AmountDue > 0
                     }

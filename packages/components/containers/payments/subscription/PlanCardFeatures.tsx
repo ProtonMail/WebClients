@@ -6,7 +6,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, VpnLogo } from '../../../components';
-import { classnames } from '../../../helpers';
+import { classnames, generateUID } from '../../../helpers';
 import { AllFeatures, getFeatureDefinitions } from '../features';
 import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
@@ -20,29 +20,36 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
     return (
         <ul className="bg-weak-odd unstyled mt1 mb2 on-mobile-mb0">
             {features.map((feature) => {
+                const iconToDisplay = (() => {
+                    if (feature.fire && fire) {
+                        return <Icon size={20} name="fire" className="color-warning" />;
+                    }
+
+                    if (feature.included) {
+                        return (
+                            <span className="color-success">
+                                {icon && feature.icon ? (
+                                    <Icon size={20} name={feature.icon} />
+                                ) : (
+                                    <Icon size={20} name="checkmark" />
+                                )}
+                            </span>
+                        );
+                    }
+
+                    return <Icon size={20} name="cross" className="mt0-1" />;
+                })();
+
+                const key = typeof feature.featureName === 'string' ? feature.featureName : generateUID('featureName');
                 return (
-                    <li key={feature.featureName} className="px0-75 py0-5 flex rounded">
+                    <li key={key} className="px0-75 py0-5 flex rounded">
                         <div
                             className={classnames([
                                 'flex-no-min-children flex-nowrap',
                                 !feature.included && 'color-hint',
                             ])}
                         >
-                            <span className="flex flex-item-noshrink mr0-75">
-                                {feature.fire && fire ? (
-                                    <Icon size={20} name="fire" className="color-warning" />
-                                ) : feature.included ? (
-                                    <span className="color-success">
-                                        {icon && feature.icon ? (
-                                            <Icon size={20} name={feature.icon} />
-                                        ) : (
-                                            <Icon size={20} name="checkmark" />
-                                        )}
-                                    </span>
-                                ) : (
-                                    <Icon size={20} name="cross" className="mt0-1" />
-                                )}
-                            </span>
+                            <span className="flex flex-item-noshrink mr0-75">{iconToDisplay}</span>
                             <span className="flex-item-fluid">
                                 <span className="mr0-5 align-middle">{feature.featureName}</span>
                                 {feature.tooltip ? (
