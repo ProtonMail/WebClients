@@ -34,7 +34,6 @@ interface Item {
 }
 
 interface Props {
-    drivePlanEnabled: boolean;
     app: APP_NAMES;
     user: UserModel;
     currency: Currency;
@@ -47,7 +46,6 @@ interface Props {
 }
 
 const SubscriptionPanel = ({
-    drivePlanEnabled,
     app,
     currency,
     vpnServers,
@@ -112,10 +110,6 @@ const SubscriptionPanel = ({
             <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
         </StripedItem>
     );
-
-    const getDriveAppFree = () => {
-        return <StripedList>{storageItem}</StripedList>;
-    };
 
     const getVpnAppFree = () => {
         return (
@@ -279,9 +273,6 @@ const SubscriptionPanel = ({
             {(() => {
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
-                }
-                if (user.isFree && app === APPS.PROTONDRIVE && drivePlanEnabled) {
-                    return getDriveAppFree();
                 }
                 if (hasVPN(subscription)) {
                     return getVpnPlus();
