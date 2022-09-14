@@ -63,7 +63,7 @@ const UpsellStep = ({
 
     const shortFreePlan = upsellPlanName === PLANS.VPN ? getFreeVPNPlan(vpnCountries, vpnServers) : getFreePlan();
 
-    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnCountries, vpnServers);
+    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnCountries, vpnServers, { boldStorageSize: true });
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
