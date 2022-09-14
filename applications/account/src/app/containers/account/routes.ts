@@ -166,7 +166,7 @@ export const getAccountAppRoutes = ({
                         id: 'referral-invite-section',
                     },
                     {
-                        text: c('Title').t`Referral tracker`,
+                        text: c('Title').t`Track your referrals`,
                         id: 'referral-reward-section',
                     },
                 ],
