@@ -1,3 +1,14 @@
+# Proton Drive is live!
+
+# Release 5.0.6.0 — September 22, 2022
+
+Proton Drive for web is out of beta! A big shout-out to our beta users: Your feedback made this release possible. Please continue to let us know what you like about Proton Drive and how we can improve it to make it the best and most secure cloud storage service available.
+
+## Fixed
+
+-   Fix localisation issues
+-   Resolve issue for large file downloads
+
 # Release beta 32 - 2022-08-31
 
 ## Improved
