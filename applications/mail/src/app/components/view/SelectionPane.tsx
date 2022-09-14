@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button, FeatureCode, Loader, useFeature, useFolders, useLabels } from '@proton/components';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings, SimpleMap } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
 
@@ -148,10 +148,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     useEffect(() => {
         if (showSimpleLoginPlaceholder && !placeholderSLSeenSent && total > 0) {
             // We need to send to telemetry the total number of messages that the user has in spam
-            const values = {
-                MessagesInSpam: total,
-            } as SimpleMap<number>;
-            handleSendTelemetryData(TelemetrySimpleLoginEvents.spam_view, values);
+            handleSendTelemetryData(TelemetrySimpleLoginEvents.spam_view, {}, false, total);
             setPlaceholderSLSeenSent(true);
         }
     }, [showSimpleLoginPlaceholder]);
