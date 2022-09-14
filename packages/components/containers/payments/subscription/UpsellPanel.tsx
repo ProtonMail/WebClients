@@ -51,10 +51,10 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
             {children}
             {description && <div className="color-weak text-lg">{description}</div>}
             <StripedList alternate="odd">
-                {items.map(({ text }) => {
+                {items.map(({ icon = 'checkmark', text }) => {
                     const key = typeof text === 'string' ? text : generateUID('itemText');
                     return (
-                        <StripedItem key={key} left={<Icon className="color-success" name="checkmark" size={20} />}>
+                        <StripedItem key={key} left={<Icon className="color-success" size={20} name={icon} />}>
                             {text}
                         </StripedItem>
                     );
