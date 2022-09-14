@@ -6,7 +6,8 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { AppLink, Icon, Logo, SettingsLink, SimpleDropdown, VpnLogo } from '../../components';
-import { useApps } from '../../hooks';
+import { useApps, useFeature } from '../../hooks';
+import { FeatureCode } from '../features';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;
@@ -24,6 +25,9 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
 
     const itemClassName =
         'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-25 pl1 pr1-5 color-norm text-no-decoration';
+
+    const driveBetaFeature = useFeature(FeatureCode.DriveBeta);
+    const showDriveBeta = driveBetaFeature.feature?.Value === true;
 
     return (
         <SimpleDropdown
@@ -48,7 +52,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
                                 <AppLink key={index} to="/" toApp={app} className={itemClassName} title={name}>
                                     <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr0-5" />
                                     {name}
-                                    {app === APPS.PROTONDRIVE && (
+                                    {showDriveBeta && app === APPS.PROTONDRIVE && (
                                         <span className="inline-block flex-item-noshrink bg-primary rounded-full text-sm px0-75 ml1">
                                             Beta
                                         </span>

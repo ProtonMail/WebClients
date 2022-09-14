@@ -72,7 +72,7 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getDrivePlan = (plan: Plan): ShortPlan => {
+export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan => {
     return {
         plan: PLANS.DRIVE,
         title: plan.Title,
@@ -81,7 +81,7 @@ export const getDrivePlan = (plan: Plan): ShortPlan => {
             .t`Secure cloud storage that lets you store, sync, and share files easily and securely.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace, { boldStorageSize: true }),
+            getStorageFeature(plan.MaxSpace, { boldStorageSize }),
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
             getNCalendarsFeature(1),
             getVPNConnections(1),
@@ -206,7 +206,14 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getShortPlan = (plan: PLANS, plansMap: PlansMap, vpnCountries: VPNCountries, vpnServers: VPNServers) => {
+export const getShortPlan = (
+    plan: PLANS,
+    plansMap: PlansMap,
+    vpnCountries: VPNCountries,
+    vpnServers: VPNServers,
+    options: { boldStorageSize?: boolean } = {}
+) => {
+    const { boldStorageSize } = options;
     if (plan === PLANS.FREE) {
         return getFreePlan();
     }
@@ -220,7 +227,7 @@ export const getShortPlan = (plan: PLANS, plansMap: PlansMap, vpnCountries: VPNC
         case PLANS.VPN:
             return getVPNPlan(planData, vpnCountries, vpnServers);
         case PLANS.DRIVE:
-            return getDrivePlan(planData);
+            return getDrivePlan(planData, boldStorageSize);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:
