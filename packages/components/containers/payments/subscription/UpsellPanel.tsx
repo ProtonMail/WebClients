@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { generateUID } from '@proton/components/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
@@ -27,6 +28,7 @@ import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/inte
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Button, Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
+import { getDrivePlan } from '../features/plan';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -49,13 +51,11 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
             {children}
             {description && <div className="color-weak text-lg">{description}</div>}
             <StripedList alternate="odd">
-                {items.map((item) => {
+                {items.map(({ icon = 'checkmark', text }) => {
+                    const key = typeof text === 'string' ? text : generateUID('itemText');
                     return (
-                        <StripedItem
-                            key={item.text}
-                            left={<Icon className="color-success" name="checkmark" size={20} />}
-                        >
-                            {item.text}
+                        <StripedItem key={key} left={<Icon className="color-success" size={20} name={icon} />}>
+                            {text}
                         </StripedItem>
                     );
                 })}
@@ -66,8 +66,8 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
 };
 
 interface Item {
-    icon: IconName;
-    text: string;
+    icon?: IconName;
+    text: string | string[];
 }
 
 interface Props {
@@ -109,8 +109,8 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
         return null;
     }
 
-    // Trial upsell
     const mailPlan = plans.find(({ Name }) => Name === PLANS.MAIL);
+    // Trial upsell
     if (isTrial(subscription) && subscription.PeriodEnd && mailPlan) {
         const mailPlanName = mailPlan.Title;
         const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'MMMM d, y');
@@ -192,9 +192,11 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
     const cycle = CYCLE.TWO_YEARS;
 
     const drivePlan = plans.find(({ Name }) => Name === PLANS.DRIVE);
-    const driveStorage = humanSize(drivePlan?.MaxSpace ?? 500, undefined, undefined, 0);
+    // Drive upsell
     if (user.isFree && app === APPS.PROTONDRIVE && drivePlan && drivePlanEnabled) {
         const plan = drivePlan;
+        const features = getDrivePlan(plan).features;
+
         const price = (
             <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
                 {(plan.Pricing[cycle] || 0) / cycle}
@@ -207,12 +209,12 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             });
-        const items: (Item | undefined)[] = [
-            {
-                icon: 'storage',
-                text: c('new_plans: Upsell attribute').t`Boost your storage space to ${driveStorage} total`,
-            },
-        ];
+
+        const items: Item[] = features.map(({ icon = 'checkmark', featureName }) => ({
+            icon,
+            text: featureName,
+        }));
+
         return (
             <UpsellBox
                 title={getUpgradeText(plan.Title)}
