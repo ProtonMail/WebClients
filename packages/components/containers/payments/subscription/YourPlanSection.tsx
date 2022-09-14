@@ -57,7 +57,6 @@ const YourPlanSection = ({ app }: Props) => {
     return (
         <div className="your-plan-section-container flex-gap-2">
             <SubscriptionPanel
-                drivePlanEnabled={drivePlanEnabled}
                 app={app}
                 currency={currency}
                 subscription={subscription}
