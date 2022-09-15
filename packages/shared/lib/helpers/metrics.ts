@@ -42,11 +42,6 @@ export const sendTelemetryReport = async (
     if (!metricsEnabled) {
         return;
     }
-    // We delay sending the metrics report because this helper is used in some privacy-sensitive
-    // use-cases, e.g. encrypted search, in which we don't want the server to be able to use the
-    // metric report as a distinguisher to correlate user actions, e.g. performing an encrypted
-    // search and fetching an email shortly after
-    await randomDelay();
 
     void api(
         sendTelemetryData({
