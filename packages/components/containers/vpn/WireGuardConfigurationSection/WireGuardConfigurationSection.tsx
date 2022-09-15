@@ -27,6 +27,7 @@ import {
     TextArea,
     Toggle,
 } from '../../../components';
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import { getObjectKeys } from '../../../helpers';
 import { getCountryByAbbr } from '../../../helpers/countries';
 import { useApi, useApiResult, useModals, useNotifications, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
@@ -38,6 +39,7 @@ import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNC
 import { getFlagSvg } from '../flag';
 import { CertificateDTO, CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
 import { KeyPair } from './KeyPair';
+import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
 import {
@@ -210,6 +212,10 @@ const WireGuardConfigurationSection = () => {
     const certificateCacheRef = useRef<Record<string, Certificate>>({});
     const certificateCache = certificateCacheRef.current;
     const [logical, setLogical] = useState<Logical | undefined>();
+    const [creationModal, handleShowCreationModal] = useModalTwo<WireGuardCreationModalProps, void>(
+        WireGuardCreationModal,
+        false
+    );
     const [creating, setCreating] = useState<boolean>(false);
     const [removing, setRemoving] = useState<Record<string, boolean>>({});
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
@@ -363,7 +369,20 @@ const WireGuardConfigurationSection = () => {
         [featuresConfig, peer, platform]
     );
 
-    const add = async (addedPeer?: Peer) => {
+    const getDownloadCallback = (certificate: Certificate) => () => {
+        if (creating) {
+            return;
+        }
+
+        const serverName = `${certificate?.features?.peerName || peer.name}`.substring(0, 20);
+
+        downloadFile(
+            new Blob([certificate.config || '']),
+            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
+        );
+    };
+
+    const add = async (addedPeer?: Peer, silent = false) => {
         if (creating) {
             return;
         }
@@ -371,34 +390,75 @@ const WireGuardConfigurationSection = () => {
         setCreating(true);
 
         try {
-            const { privateKey, publicKey } = await getKeyPair();
-            const x25519PrivateKey = await getX25519PrivateKey(privateKey);
-            const deviceName = nameInputRef?.current?.value || '';
-            const certificate = await queryCertificate(publicKey, deviceName, getFeatureValues(addedPeer));
+            const serverName = addedPeer?.name;
 
-            if (!certificate.DeviceName) {
-                certificate.DeviceName = deviceName;
+            if (!silent && serverName) {
+                handleShowCreationModal({
+                    open: true,
+                    serverName: serverName,
+                    text: undefined,
+                    config: undefined,
+                    onClose() {
+                        silent = true;
+                        handleShowCreationModal({ open: false });
+                    },
+                });
             }
 
-            const newCertificate = getCertificateModel(certificate, peer, x25519PrivateKey);
-            const id = newCertificate.id;
-            const name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
+            try {
+                const { privateKey, publicKey } = await getKeyPair();
+                const x25519PrivateKey = await getX25519PrivateKey(privateKey);
+                const deviceName = nameInputRef?.current?.value || '';
+                const certificate = await queryCertificate(publicKey, deviceName, getFeatureValues(addedPeer));
 
-            createNotification({
-                // translator: name a name given by the user to a config file
-                text: c('Success notification')
-                    .t`Config "${name}" created, note that the private key is not stored and won't be shown again, you should copy or download this config.`,
-            });
+                if (!certificate.DeviceName) {
+                    certificate.DeviceName = deviceName;
+                }
 
-            flushSync(() => {
-                setCurrentCertificate(id);
-                setCertificates([...(certificates || []), newCertificate]);
-            });
+                const newCertificate = getCertificateModel(certificate, peer, x25519PrivateKey);
+                const id = newCertificate.id;
+                let name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
 
-            document.querySelector(`[data-certificate-id="${id}"]`)?.scrollIntoView();
+                if (name.length > 46) {
+                    name = name.substring(0, 21) + '…' + name.substring(name.length - 21);
+                }
 
-            if (nameInputRef?.current) {
-                nameInputRef.current.value = '';
+                if (!silent) {
+                    const downloadCallback = getDownloadCallback(newCertificate);
+
+                    handleShowCreationModal({
+                        open: true,
+                        serverName: serverName,
+                        // translator: name a name given by the user to a config file
+                        text: c('Success notification')
+                            .t`Config "${name}" created, note that the private key is not stored and won't be shown again, you should copy or download this config.`,
+                        config: newCertificate?.config || '',
+                        onDownload() {
+                            downloadCallback();
+                            handleShowCreationModal({ open: false });
+                        },
+                        onClose() {
+                            handleShowCreationModal({ open: false });
+                        },
+                    });
+                }
+
+                flushSync(() => {
+                    setCurrentCertificate(id);
+                    setCertificates([...(certificates || []), newCertificate]);
+                });
+
+                document.querySelector(`[data-certificate-id="${id}"]`)?.scrollIntoView();
+
+                if (nameInputRef?.current) {
+                    nameInputRef.current.value = '';
+                }
+            } catch (e) {
+                if (!silent && serverName) {
+                    handleShowCreationModal({ open: false });
+                }
+
+                throw e;
             }
         } finally {
             setCreating(false);
@@ -421,7 +481,7 @@ const WireGuardConfigurationSection = () => {
                 };
 
                 if (doAdd) {
-                    addPromise = add(newPeer);
+                    addPromise = add(newPeer, silent);
                 }
 
                 if (peer.ip !== server.EntryIP) {
@@ -430,13 +490,6 @@ const WireGuardConfigurationSection = () => {
             }
 
             setLogical({ ...logical });
-
-            if (!silent && serverName) {
-                createNotification({
-                    // translator: serverName is code name for a logical server such as NL-FREE#1
-                    text: c('Success notification').t`Creating config file for ${serverName}`,
-                });
-            }
 
             if (addPromise) {
                 await addPromise;
@@ -574,19 +627,6 @@ const WireGuardConfigurationSection = () => {
         }
     };
 
-    const getDownloadCallback = (certificate: Certificate) => async () => {
-        if (creating) {
-            return;
-        }
-
-        const serverName = `${certificate?.features?.peerName || peer.name}`.substring(0, 20);
-
-        downloadFile(
-            new Blob([certificate.config || '']),
-            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
-        );
-    };
-
     useEffect(() => {
         fetchUserVPN(30_000);
         fetchLogicals(30_000);
@@ -597,6 +637,7 @@ const WireGuardConfigurationSection = () => {
             <SettingsParagraph>
                 {c('Info').t`These configurations are provided to work with WireGuard routers and official clients.`}
             </SettingsParagraph>
+            {creationModal}
             {logicalInfoLoading || certificatesLoading ? (
                 <div aria-busy="true" className="text-center mb1">
                     <CircleLoader />
@@ -673,7 +714,7 @@ const WireGuardConfigurationSection = () => {
                                             className="block mt0-5"
                                             value={certificate?.config}
                                             readOnly
-                                            rows={10}
+                                            rows={14}
                                         />
                                     </label>
                                 </div>
