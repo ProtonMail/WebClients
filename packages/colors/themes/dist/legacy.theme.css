@@ -81,7 +81,8 @@
   --optional-border-radius: 2;
   --optional-main-border-color: transparent;
   --optional-mini-calendar-today-color: initial;
-  --optional-logo-icon-text-color: #6d4aff;
+  --optional-logo-text-proton-color: initial;
+  --optional-logo-text-product-color: initial;
 }
 
 .ui-prominent {
@@ -111,4 +112,6 @@
   --optional-scrollbar-thumb-color: #9393ae;
   --optional-scrollbar-thumb-hover-color: #a4a4bc;
   --optional-mini-calendar-today-color: white;
+  --optional-logo-text-proton-color: white;
+  --optional-logo-text-product-color: white;
 }

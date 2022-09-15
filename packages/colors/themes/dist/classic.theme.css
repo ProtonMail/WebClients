@@ -75,7 +75,8 @@
   --optional-font-family: system-ui, sans-serif;
   --optional-border-radius: 3;
   --optional-main-border-color: transparent;
-  --optional-logo-text-product-color: #6d4aff;
+  --optional-logo-text-proton-color: initial;
+  --optional-logo-text-product-color: initial;
 }
 
 .ui-prominent {
@@ -144,5 +145,6 @@
   --backdrop-norm: rgb(0 0 0 / 0.32);
   --optional-scrollbar-thumb-color: #353e60;
   --optional-scrollbar-thumb-hover-color: #444e72;
-  --optional-logo-text-product-color: #8a6eff;
+  --optional-logo-text-proton-color: white;
+  --optional-logo-text-product-color: white;
 }
