@@ -74,6 +74,9 @@
       "All Unstarred": [
         "Berichten zonder ster"
       ],
+      "Allow messages": [
+        "Berichten toestaan"
+      ],
       "Apply": [
         "Toepassen"
       ],
@@ -91,6 +94,12 @@
       ],
       "Beta Access": [
         "Bèta toegang"
+      ],
+      "Block": [
+        "Blokkeer"
+      ],
+      "Block messages from this sender": [
+        "Berichten van deze afzender blokkeren"
       ],
       "Bold": [
         "Vet"
@@ -342,6 +351,9 @@
       ],
       "Generate recovery phrase": [
         "Genereer herstelzin"
+      ],
+      "Get SimpleLogin extension": [
+        "Verkrijg SimpleLogin uitbreiding"
       ],
       "Get started": [
         "Aan de slag"
@@ -1075,6 +1087,16 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Gesprek"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1856,6 +1878,11 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Uw selectie bevat alleen uzelf als afzender"
       ]
     },
     "Country name": {
@@ -2702,6 +2729,15 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Nieuwe e-mails van ${ senderEmailAddress } worden niet afgeleverd en worden permanent verwijderd. ${ manageBlockedAddressesSettingsLink } in instellingen."
+      ],
+      "No folders": [
+        "Geen mappen"
+      ],
+      "No labels": [
+        "Geen labels"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden.",
         "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden."
@@ -2876,7 +2912,7 @@
         "Agendalimiet bereikt"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
@@ -2996,8 +3032,14 @@
       "No address with keys available to compose a message": [
         "Geen adres met sleutels beschikbaar om een bericht aan te maken"
       ],
-      "No data to import": [
-        "Geen gegevens om te importeren"
+      "No calendars found to import": [
+        "Geen agenda's gevonden om te importeren"
+      ],
+      "No contacts found to import": [
+        "Geen contacten gevonden om te importeren"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
       "No keys retrieved for internal user": [
         "Geen keys ontvangen van interne gebruiker"
@@ -3757,9 +3799,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } of ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
@@ -3905,9 +3944,6 @@
       ],
       "Activation in progress": [
         "Activatie in voortgang"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Voeg ${ addressToCreate } gratis toe aan uw account, slechts voor een beperkte tijd beschikbaar."
       ],
       "Add image URL": [
         "Voeg URL van afbeelding toe"
@@ -4293,9 +4329,6 @@
       "Learn more": [
         "Meer informatie"
       ],
-      "learn more": [
-        "meer informatie"
-      ],
       "Left to Right": [
         "Van links naar rechts"
       ],
@@ -4543,14 +4576,17 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
-      "Select what you want to import from Google.": [
-        "Selecteer wat u wil importeren vanaf Google."
+      "Select what you want to import.": [
+        "Selecteer wat u wilt importeren."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Verzend een versleuteld, met wachtwoord beveiligd bericht naar een ${ boldText } e-mailadres."
+      ],
+      "Sender has been blocked.": [
+        "Afzender is geblokkeerd."
       ],
       "Sending": [
         "Bezig met verzenden"
@@ -4581,6 +4617,12 @@
       ],
       "Show original message": [
         "Toon origineel bericht"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin is een Proton dienst, en uw Proton Account bevat Verberg mijn e-mailaliassen. Om te beginnen met het maskeren van uw e-mailadres, ga naar SimpleLogin en maak uw eerste alias aan."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
@@ -4837,6 +4879,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Gebruik sneltoetsen om uw e-mails sneller te beheren."
       ],
+      "Using SimpleLogin is easy": [
+        "Het gebruik van SimpleLogin is eenvoudig"
+      ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
       ],
@@ -5005,6 +5050,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Uw Proton-account bevat SimpleLogin. Installeer de browserextensie met één klik om te beginnen."
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
       ],
@@ -5147,6 +5195,9 @@
       "Load remote content": [
         "Externe inhoud laden"
       ],
+      "Mark as read": [
+        "Markeer als gelezen"
+      ],
       "Mark as unread": [
         "Markeer als ongelezen"
       ],
@@ -5278,6 +5329,12 @@
       "Also archive": [
         "Ook archiveren"
       ],
+      "Always label senders emails": [
+        "Label altijd e-mails van afzenders"
+      ],
+      "Always move senders emails": [
+        "Verplaats altijd mails van afzenders"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -5352,6 +5409,9 @@
       ],
       "Do not ask again": [
         "Niet opnieuw vragen"
+      ],
+      "Don't show this again": [
+        "Toon dit niet opnieuw"
       ],
       "Email": [
         "E-mailadres"
@@ -5655,9 +5715,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Activeren"
-      ],
       "All mail": [
         "Alle e-mail"
       ],
@@ -5714,6 +5771,9 @@
       ],
       "Less": [
         "Minder"
+      ],
+      "Manage blocked email addresses": [
+        "Geblokkeerde e-mailadressen beheren"
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -6094,6 +6154,9 @@
       ]
     },
     "Notification": {
+      "Block removed": [
+        "Blok verwijderd"
+      ],
       "Contact group created": [
         "Contactgroep aangemaakt"
       ],
@@ -6102,6 +6165,9 @@
       ],
       "Password has been set successfully": [
         "Wachtwoord is succesvol ingesteld"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Afzender ${ senderEmail } geblokkeerd"
       ]
     },
     "Oauth instructions": {
@@ -6744,6 +6810,12 @@
       "Conversation removed from ${ labelName }.": [
         "Gesprek verwijderd van ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Gesprekken van ${ sendersList } zullen gelabeld worden als ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Gesprekken van ${ sendersList } zullen verplaatst worden naar ${ folder }"
+      ],
       "Draft deleted": [
         "Concept verwijderd"
       ],
@@ -6800,6 +6872,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Bericht verwijderd van ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Berichten van ${ sendersList } zullen gelabeld worden als ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Berichten van ${ sendersList } zullen verplaatst worden naar ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Verplaats ${ selectionCount } gesprek",
@@ -6988,6 +7066,9 @@
       "Blind Carbon Copy": [
         "BCC"
       ],
+      "Block sender": [
+        "Blokkeer afzender"
+      ],
       "Carbon Copy": [
         "CC"
       ],
@@ -7139,6 +7220,9 @@
       ],
       "Groups": [
         "Groepen"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Verberg uw e-mail met SimpleLogin van Proton"
       ],
       "Human verification": [
         "Persoonsverificatie"

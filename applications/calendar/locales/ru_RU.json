@@ -1991,7 +1991,7 @@
         "Достигнут лимит календаря"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Cancellation failed to be sent": [
         "Не удалось отправить сообщение об отмене события"
@@ -2106,9 +2106,6 @@
       ],
       "Name required": [
         "Требуется имя"
-      ],
-      "No data to import": [
-        "Нет данных для импорта"
       ],
       "No keys retrieved for internal user": [
         "Ключи для внутреннего пользователя не получены"
@@ -3195,6 +3192,9 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
@@ -3204,8 +3204,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
-      "Select what you want to import from Google.": [
-        "Выберите, какие данные вы хотите импортировать из Google."
+      "Select what you want to import.": [
+        "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, до достижения лимита в 20 календарей."
@@ -3545,6 +3545,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
+      ],
       "Description": [
         "Описание"
       ],
@@ -3815,6 +3818,9 @@
       ],
       "Upgrade account": [
         "Улучшить тариф"
+      ],
+      "What’s this?": [
+        "Что это такое?"
       ]
     },
     "Loading info": {

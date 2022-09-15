@@ -31,9 +31,6 @@
       "activate": [
         "aktivovat"
       ],
-      "Activate ${ addressToCreate }": [
-        "Aktivovat ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "Ne"
       ],
-      "No, thanks": [
-        "Ne, děkuji"
-      ],
       "OK": [
         "OK"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
-      ],
-      "Set as default": [
-        "Nastavit jako výchozí"
       ],
       "Set catch-all": [
         "Nastavení doménového koše"
@@ -4095,9 +4086,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } je nyní aktivní"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potřebuje Vaše oprávnění k ${ enableDesktopNotifications }."
       ],
@@ -4890,9 +4878,6 @@
         "Pozvánek bylo úspěšně odesláno",
         "Pozvánek bylo úspěšně odesláno"
       ],
-      "Issues signing in?": [
-        "Problémy s přihlášením?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
       ],
@@ -5075,9 +5060,6 @@
       ],
       "Other options": [
         "Další volby"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Naše nová doména ${ domain } je vhodnou možností pro odesílání a přijímání e-mailů. Stále budete moci používat svou původní adresu ${ protonMailAppName }."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaralý obnovovací soubor; aktualizujte, abyste zajistili přístup k vašim údajům"
@@ -5553,9 +5535,6 @@
       "Version ${ version }": [
         "Verze ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Chcete nastavit ${ addressToCreate } jako výchozí e-mail pro odesílání zpráv?"
-      ],
       "Warning:": [
         "Upozornění:"
       ],
@@ -5750,9 +5729,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Zůstanete přihlášeni i po uzavření prohlížeče."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Stále budete moci odesílat a přijímat poštu pomocí svých stávajících e-mailových adres."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, potřebujete ${ MAIL_APP_NAME } adresu."
@@ -6080,6 +6056,9 @@
       ],
       "Load remote content": [
         "Načíst vzdálený obsah"
+      ],
+      "Mark as read": [
+        "Označit jako přečtené"
       ],
       "Mark as unread": [
         "Označit jako nepřečtené"
@@ -7062,6 +7041,9 @@
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
+      ],
+      "Trusted device recovery": [
+        "Obnova důvěryhodného zařízení"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7849,7 +7831,7 @@
         "Více rolí správce"
       ],
       "NetShield malware and ad-blocker": [
-        "NetShield blokovač malware a reklam"
+        "Blokování reklam a malware NetShield"
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
@@ -7938,6 +7920,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8004,26 +8006,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9216,7 +9198,7 @@
         "Globální přístup ke streamovacím službám"
       ],
       "Built-in ad blocker (NetShield)": [
-        "Vestavěný blokátor reklam (NetShield)"
+        "Vestavěné blokování reklam (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "Vysokorychlostní VPN na ${ maxVpn } zařízení",
@@ -10327,9 +10309,6 @@
       ],
       "You already have a Proton account": [
         "Již máte účet Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Vaše ${ domain } adresa je aktivní"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Vaše ${ MAIL_APP_NAME } adresa"

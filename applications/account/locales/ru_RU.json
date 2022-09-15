@@ -31,9 +31,6 @@
       "activate": [
         "включить"
       ],
-      "Activate ${ addressToCreate }": [
-        "Активировать ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "Нет"
       ],
-      "No, thanks": [
-        "Нет, спасибо"
-      ],
       "OK": [
         "OK"
       ],
@@ -643,6 +637,9 @@
       "Search settings": [
         "Настройки поиска"
       ],
+      "See plan features": [
+        "Посмотреть возможности тарифа"
+      ],
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
@@ -666,9 +663,6 @@
       ],
       "Send my username": [
         "Отправить мое имя пользователя"
-      ],
-      "Set as default": [
-        "Установить по умолчанию"
       ],
       "Set catch-all": [
         "Установить прием всей почты домена"
@@ -4089,9 +4083,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } теперь активен"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
@@ -4875,9 +4866,6 @@
         "Приглашений успешно отправлено",
         "Приглашений успешно отправлено"
       ],
-      "Issues signing in?": [
-        "Проблемы со входом?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
       ],
@@ -5061,9 +5049,6 @@
       "Other options": [
         "Другие возможности"
       ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Наш новый домен ${ domain } - это удобный вариант для отправки и получения электронной почты. Вы по-прежнему сможете использовать свой первоначальный адрес ${ protonMailAppName }."
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
       ],
@@ -5183,6 +5168,9 @@
       ],
       "Recovery files have been voided": [
         "Файлы восстановления были уничтожены"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
       "recovery method": [
         "метод восстановления"
@@ -5532,9 +5520,6 @@
       "Version ${ version }": [
         "Версия ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Хотите установить ${ addressToCreate } в качестве электронной почты по умолчанию для отправки сообщений?"
-      ],
       "Warning:": [
         "Предупреждение:"
       ],
@@ -5591,6 +5576,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
+      ],
+      "Why?": [
+        "Почему?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активации вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к нечастным аккаунтам."
@@ -5717,9 +5705,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Вы по-прежнему сможете отправлять и получать почту, используя существующий адрес (адреса) электронной почты."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Ваш аккаунт ${ BRAND_NAME } связан с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
@@ -6047,6 +6032,9 @@
       ],
       "Load remote content": [
         "Загрузить внешнее содержимое"
+      ],
+      "Mark as read": [
+        "Отметить как прочитанное"
       ],
       "Mark as unread": [
         "Отметить как непрочитанное"
@@ -6469,6 +6457,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
       ],
       "Density": [
         "Плотность"
@@ -7244,6 +7235,9 @@
       "What is the difference between UDP and TCP protocols?": [
         "Какая разница между протоколами UDP и TCP?"
       ],
+      "What’s this?": [
+        "Что это такое?"
+      ],
       "Why set recovery methods?": [
         "Зачем устанавливать методы восстановления?"
       ]
@@ -7893,6 +7887,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -7959,26 +7973,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10303,9 +10297,6 @@
       ],
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Ваш адрес ${ domain } активен"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Ваш адрес ${ MAIL_APP_NAME }"

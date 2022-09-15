@@ -314,7 +314,7 @@
         "ativar notificações na área de trabalho"
       ],
       "Encryption": [
-        "Encriptação"
+        "Criptografia"
       ],
       "exclude message content": [
         "exclua o conteúdo das mensagens"
@@ -738,7 +738,7 @@
         "Redefinir"
       ],
       "Reset search form": [
-        "Redefinir formulário de busca"
+        "Redefinir formulário de pesquisa"
       ],
       "Reset zoom": [
         "Redefinir zoom"
@@ -889,7 +889,7 @@
       ],
       "Trust key": [
         "Confiar na chave",
-        "Chaves confiáveis"
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -958,7 +958,7 @@
         "Use o mouse para redimensionar a visualização. Se estiver usando o teclado, você pode usar as teclas de seta para a esquerda e para a direita para redimensionar."
       ],
       "Use “${ label }” setting": [
-        "Usar “${ label }” configurações"
+        "Usar configuração “${ label }”"
       ],
       "Verify": [
         "Verificar"
@@ -1087,6 +1087,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversa"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
       ]
     },
     "Alternative text for SimpleLogin image": {
@@ -2907,7 +2912,7 @@
         "Limite de calendários atingido"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Não é possível criar novos calendários para todos os calendários importados devido ao limite do calendário pessoal."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Escolha uma data futura."
@@ -3027,8 +3032,14 @@
       "No address with keys available to compose a message": [
         "Sem endereços com chaves disponíveis para compor uma mensagem"
       ],
-      "No data to import": [
-        "Sem dados para importar"
+      "No calendars found to import": [
+        "Nenhum calendário encontrado para importação"
+      ],
+      "No contacts found to import": [
+        "Nenhum contato encontrado para importação"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
       ],
       "No keys retrieved for internal user": [
         "Nenhuma chave recuperada para o usuário interno"
@@ -3788,9 +3799,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } ou ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
@@ -3936,9 +3944,6 @@
       ],
       "Activation in progress": [
         "Ativação em progresso"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Adicione ${ addressToCreate } à sua conta de graça, apenas por tempo limitado."
       ],
       "Add image URL": [
         "Adicionar a URL da imagem"
@@ -4324,9 +4329,6 @@
       "Learn more": [
         "Saiba mais"
       ],
-      "learn more": [
-        "saiba mais"
-      ],
       "Left to Right": [
         "Esquerda para direita"
       ],
@@ -4574,8 +4576,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
-      "Select what you want to import from Google.": [
-        "Selecione o que você deseja importar do Google."
+      "Select what you want to import.": [
+        "Selecione o que você deseja importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
@@ -4878,7 +4880,7 @@
         "Use os atalhos do teclado para gerenciar seu e-mail com mais rapidez."
       ],
       "Using SimpleLogin is easy": [
-        "Usar o Login Simples é fácil"
+        "Usar o SimpleLogin é fácil"
       ],
       "Version ${ appVersion }": [
         "Versão ${ appVersion }"
@@ -5192,6 +5194,9 @@
       ],
       "Load remote content": [
         "Carregar conteúdo remoto"
+      ],
+      "Mark as read": [
+        "Marcar como lida"
       ],
       "Mark as unread": [
         "Marcar como não lido"
@@ -5710,9 +5715,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Ativar"
-      ],
       "All mail": [
         "Todos os e-mails"
       ],

@@ -31,9 +31,6 @@
       "activate": [
         "activar"
       ],
-      "Activate ${ addressToCreate }": [
-        "Activar ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "No"
       ],
-      "No, thanks": [
-        "No, gracias"
-      ],
       "OK": [
         "OK"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "Enviar mi nombre de usuario"
-      ],
-      "Set as default": [
-        "Establecer por defecto"
       ],
       "Set catch-all": [
         "Configurar catch-all"
@@ -4011,9 +4002,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } ahora está activa"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
@@ -4756,9 +4744,6 @@
         "Invitación enviada con éxito",
         "Invitaciones enviadas con éxito"
       ],
-      "Issues signing in?": [
-        "¿Problemas al iniciar sesión?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que algunos de sus datos están cifrados y bloqueados."
       ],
@@ -4941,9 +4926,6 @@
       ],
       "Other options": [
         "Otras opciones"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Nuestro nuevo dominio ${ domain } es una opción conveniente para enviar y recibir correos. Aún podrá usar su dirección original de ${ protonMailAppName }."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Archivo de recuperación desactualizado; actualícelo para garantizar el acceso a sus datos"
@@ -5417,9 +5399,6 @@
       "Version ${ version }": [
         "Versión ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "¿Desea establecer ${ addressToCreate } como su dirección predeterminada para enviar mensajes?"
-      ],
       "Warning:": [
         "Advertencia:"
       ],
@@ -5614,9 +5593,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirá conectado incluso después de cerrar el navegador."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Aún podrá enviar y recibir correos con su dirección(es) de correo existente(s)."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, necesita una dirección de ${ MAIL_APP_NAME }."
@@ -5944,6 +5920,9 @@
       ],
       "Load remote content": [
         "Cargar contenido remoto"
+      ],
+      "Mark as read": [
+        "Marcar como leído"
       ],
       "Mark as unread": [
         "Marcar como no leído"
@@ -7759,6 +7738,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -7825,26 +7824,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10119,9 +10098,6 @@
       ],
       "You already have a Proton account": [
         "Ya tiene una cuenta en Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Su dirección ${ domain } está activa"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Su dirección de ${ MAIL_APP_NAME }"

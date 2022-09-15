@@ -1082,6 +1082,9 @@
       "Star message": [
         "Отметить звездочкой сообщение"
       ],
+      "Unread email": [
+        "Непрочитанная почта"
+      ],
       "Unstar conversation": [
         "Убрать звездочку с цепочки писем"
       ],
@@ -2926,7 +2929,7 @@
         "Достигнут лимит календаря"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Выберите дату в будущем."
@@ -3053,9 +3056,6 @@
       ],
       "No address with keys available to compose a message": [
         "Нет адреса с ключами для создания сообщения"
-      ],
-      "No data to import": [
-        "Нет данных для импорта"
       ],
       "No keys retrieved for internal user": [
         "Нет загруженных ключей для внутреннего пользователя"
@@ -3851,9 +3851,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } или ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } адрес электронной почты",
         "${ addressCount } адреса электронной почты",
@@ -4057,9 +4054,6 @@
       ],
       "Activation in progress": [
         "Выполняется активация"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Добавьте ${ addressToCreate } в свой аккаунт бесплатно только в течение ограниченного времени."
       ],
       "Add image URL": [
         "Добавить ссылку на изображение"
@@ -4475,9 +4469,6 @@
       "Learn more": [
         "Узнать больше"
       ],
-      "learn more": [
-        "узнать больше"
-      ],
       "Left to Right": [
         "Слева направо"
       ],
@@ -4673,6 +4664,9 @@
       "Recipient: ": [
         "Получатель: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления скопирована в буфер обмена"
       ],
@@ -4724,8 +4718,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
       ],
-      "Select what you want to import from Google.": [
-        "Выберите, что вы хотите импортировать из Google."
+      "Select what you want to import.": [
+        "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -5371,6 +5365,9 @@
       "Load remote content": [
         "Загрузить внешнее содержимое"
       ],
+      "Mark as read": [
+        "Отметить как прочитанное"
+      ],
       "Mark as unread": [
         "Отметить как непрочитанное"
       ],
@@ -5576,6 +5573,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
       ],
       "Do not ask again": [
         "Больше не спрашивать"
@@ -5885,9 +5885,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Активировать"
-      ],
       "All mail": [
         "Вся почта"
       ],
@@ -6016,6 +6013,9 @@
       ],
       "Upgrade account": [
         "Повысить учётную запись"
+      ],
+      "What’s this?": [
+        "Что это такое?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
@@ -6427,6 +6427,11 @@
       ],
       "Merge with calendar": [
         "Объединение с календарем"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ totalText }": [
+        "${ page } из ${ totalText }"
       ]
     },
     "Paid user checklist item": {

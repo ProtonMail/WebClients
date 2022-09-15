@@ -1738,7 +1738,7 @@
         "行事曆數量已達上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -3768,6 +3768,21 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "建立資料夾"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "開始使用 Proton Drive，我們會免費將您的帳號升級為 1 GB！"
+      ],
+      "Set a recovery method": [
+        "設定備援方法"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "只要在接下來的 ${ remainingDaysForGift } 天完成以下任務"
+      ],
+      "Upload a file": [
+        "上傳檔案"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "值得您信賴的線上保存庫，讓您安放重要文件和珍貴回憶。"
       ]
@@ -3795,6 +3810,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "歡迎使用 ${ appName }"
+      ],
+      "Your welcome gift": [
+        "您的歡迎禮物"
       ]
     },
     "Option": {

@@ -1914,7 +1914,7 @@
         "Elérte a naptárak maximális számát"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Cancellation failed to be sent": [
         "A lemondó értesítés elküldése nem sikerült"
@@ -2020,9 +2020,6 @@
       ],
       "Name required": [
         "Név megadása kötelező"
-      ],
-      "No data to import": [
-        "Nincs importálandó adat"
       ],
       "No keys retrieved for internal user": [
         "Nem található kulcs a belső felhasználóhoz"

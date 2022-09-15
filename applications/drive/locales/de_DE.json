@@ -1741,7 +1741,7 @@
         "Max. Anzahl von Kalendern erreicht"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Es können keine neuen Kalender für alle zu importierenden Kalender erstellt werden, da die Anzahl der persönlichen Kalender beschränkt ist."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Kontakt konnte nicht gespeichert werden"
@@ -3850,6 +3850,22 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Ordner erstellen"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Beginne mit Proton Drive und wir erweitern dein Konto kostenlos auf 1 GB!"
+      ],
+      "Set a recovery method": [
+        "Wiederherstellungsmethode festlegen"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Führe einfach die folgenden Schritte in ${ remainingDaysForGift } Tag aus",
+        "Führe einfach die folgenden Schritte in den nächsten ${ remainingDaysForGift } Tagen aus"
+      ],
+      "Upload a file": [
+        "Datei hochladen"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Dein zuverlässiger Online-Tresor für wichtige Dokumente und wertvolle Erinnerungen."
       ]
@@ -3877,6 +3893,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Dein Willkommensgeschenk"
       ]
     },
     "Option": {

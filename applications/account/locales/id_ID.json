@@ -31,9 +31,6 @@
       "activate": [
         "aktifkan"
       ],
-      "Activate ${ addressToCreate }": [
-        "Aktifkan ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
       ],
@@ -59,7 +56,7 @@
         "Tambahkan kartu kredit / debit"
       ],
       "Add credits": [
-        "Tambahkan saldo"
+        "Tambah saldo"
       ],
       "Add domain": [
         "Tambah domain"
@@ -475,9 +472,6 @@
       "No": [
         "Tidak"
       ],
-      "No, thanks": [
-        "Tidak, terima kasih"
-      ],
       "OK": [
         "OK"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "Kirim nama pengguna saya"
-      ],
-      "Set as default": [
-        "Atur sebagai default"
       ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
@@ -3969,9 +3960,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } telah aktif"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -4104,6 +4092,12 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
       ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Berkas pemulihan akan memungkinkan Anda untuk dapat mengakses dan melihat data Anda setelah pengaturan ulang akun"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna di sini didefiniskan sebagai akun yang terkait dengan nama pengguna, kotak surat, serta oknum tunggal"
       ],
@@ -4121,6 +4115,9 @@
       ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
@@ -4680,9 +4677,6 @@
       "Invite successfully sent": [
         "Undangan berhasil dikirimkan"
       ],
-      "Issues signing in?": [
-        "Tidak dapat masuk?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
       ],
@@ -4866,9 +4860,6 @@
       "Other options": [
         "Pilihan lainnya"
       ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Domain ${ domain } baru kami merupakan solusi yang nyaman bagi Anda untuk mengirim dan menerima email. Anda akan tetap dapat menggunakan alamat ${ protonMailAppName } asli Anda."
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Berkas pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
       ],
@@ -4980,11 +4971,17 @@
       "read our two-factor authentication guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Direkomendasikan pada perangkat yang Anda percaya. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Berkas pemulihan diunduh"
       ],
       "Recovery files have been voided": [
         "Berkas-berkas pemulihan telah dianulir"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
       "recovery method": [
         "metode pemulihan"
@@ -5334,9 +5331,6 @@
       "Version ${ version }": [
         "Versi ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Apakah Anda ingin menetapkan ${ addressToCreate } sebagai alamat default Anda untuk mengirim email?"
-      ],
       "Warning:": [
         "Peringatan:"
       ],
@@ -5348,6 +5342,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Kami menyimpan informasi pemulihan pada perangkat yang Anda percaya secara aman untuk mencegah Anda kehilangan data"
       ],
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
@@ -5393,6 +5390,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Pada saat paket langganan Anda diperbarui, kami akan terlebih dahulu menerapkan segala saldo yang tersimpan sebelum kami menagih Anda melalui metode pembayaran di atas."
+      ],
+      "Why?": [
+        "Mengapa?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
@@ -5517,11 +5517,14 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Anda tidak akan lagi dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Anda tidak akan lagi dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh. Tindakan ini juga akan menganulir segala informasi pemulihan yang ada pada perangkat yang dipercaya."
+      ],
       "You'll stay signed in even after you close the browser.": [
         "Anda akan tetap masuk bahkan setelah Anda menutup browser."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Anda akan tetap dapat mengirim dan menerima email dengan alamat-alamat email yang telah Anda miliki sebelumnya."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }. Untuk dapat menggunakan ${ toAppName }, Anda butuh alamat email ${ MAIL_APP_NAME }."
@@ -5850,6 +5853,9 @@
       "Load remote content": [
         "Muat remote content"
       ],
+      "Mark as read": [
+        "Tandai sudah dibaca"
+      ],
       "Mark as unread": [
         "Tandai sebagai belum dibaca"
       ],
@@ -6059,6 +6065,9 @@
       "Allow recovery by recovery phrase": [
         "Izinkan pemulihan akun melalui frasa pemulihan"
       ],
+      "Allow recovery using a trusted device": [
+        "Izinkan pemulihan melalui perangkat yang dipercaya"
+      ],
       "Amount": [
         "Jumlah"
       ],
@@ -6078,7 +6087,7 @@
         "SEMBARANG"
       ],
       "App password": [
-        "Kata Sandi Aplikasi"
+        "Kata sandi aplikasi"
       ],
       "Apply filter to existing emails": [
         "Terapkan filter untuk email yang sudah ada"
@@ -6262,6 +6271,9 @@
       ],
       "Delete": [
         "Hapus"
+      ],
+      "Delete recovery-related information.": [
+        "Hapus informasi terkait pemulihan."
       ],
       "Density": [
         "Kerapatan"
@@ -6816,6 +6828,9 @@
       ],
       "Recovery phrase": [
         "Frasa pemulihan"
+      ],
+      "Trusted device recovery": [
+        "Pemulihan melalui perangkat yang terpercaya"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6992,6 +7007,9 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "Learn more about data recovery": [
+        "Pelajari lebih lanjut mengenai pemulihan data"
+      ],
       "Need help?": [
         "Butuh bantuan?"
       ],
@@ -7036,6 +7054,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Apa bedanya protokol UDP dan TCP?"
+      ],
+      "What’s this?": [
+        "Apa ini?"
       ],
       "Why set recovery methods?": [
         "Mengapa saya harus mengatur metode pemulihan?"
@@ -7626,6 +7647,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7692,26 +7733,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9961,9 +9982,6 @@
       ],
       "You already have a Proton account": [
         "Anda telah memiliki akun Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Alamat ${ domain } Anda aktif"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Alamat ${ MAIL_APP_NAME } Anda"

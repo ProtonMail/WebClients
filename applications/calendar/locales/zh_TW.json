@@ -1955,7 +1955,7 @@
         "行事曆數目已達上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "鑒於個人行事曆上限，無法為所有已匯入行事曆創建新的行事曆。"
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Cancellation failed to be sent": [
         "取消傳送失敗"
@@ -2061,9 +2061,6 @@
       ],
       "Name required": [
         "名稱為必填"
-      ],
-      "No data to import": [
-        "無資料可匯入"
       ],
       "No keys retrieved for internal user": [
         "內部使用者沒有擷取到任何金鑰"
@@ -3029,9 +3026,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電郵到此電郵位址時，預設使用選取的電郵格式。"
-      ],
-      "Select what you want to import from Google.": [
-        "選擇您要從 Google 匯入的任何檔案。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆創建一個新的行事曆，上限為 20 個行事曆。"

@@ -278,6 +278,9 @@
       "Search countries": [
         "Cari negara"
       ],
+      "See plan features": [
+        "Lihat seluruh fitur paket"
+      ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
@@ -2066,9 +2069,6 @@
       "Internet connection restored.": [
         "Koneksi internet dipulihkan."
       ],
-      "Issues signing in?": [
-        "Tidak dapat masuk?"
-      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } dengan aplikasi VPN milik pihak ketiga."
       ],
@@ -2179,6 +2179,12 @@
       ],
       "read our two-factor authentication guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Direkomendasikan pada perangkat yang Anda percaya. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
       "recovery method": [
         "metode pemulihan"
@@ -2383,6 +2389,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Saat langganan Anda diperbarui, kami akan menagih kredit yang tersedia sebelum kami menagih metode pembayaran di atas."
+      ],
+      "Why?": [
+        "Mengapa?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -2706,6 +2715,9 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete recovery-related information.": [
+        "Hapus informasi terkait pemulihan."
+      ],
       "Device/certificate name": [
         "Nama perangkat/sertifikat"
       ],
@@ -3010,6 +3022,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Apa bedanya protokol UDP dan TCP?"
+      ],
+      "What’s this?": [
+        "Apa ini?"
       ]
     },
     "Member downgrade modal": {
