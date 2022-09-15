@@ -28,6 +28,7 @@ interface Props {
      */
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: Ref<() => void>;
+    externalCloseRef?: Ref<() => void>;
     [rest: string]: any;
 }
 
@@ -43,6 +44,7 @@ const ToolbarDropdown = ({
     noMaxSize = false,
     additionalDropdowns,
     externalToggleRef,
+    externalCloseRef,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -56,6 +58,7 @@ const ToolbarDropdown = ({
     };
 
     useImperativeHandle(externalToggleRef, () => toggle, []);
+    useImperativeHandle(externalCloseRef, () => close, []);
 
     return (
         <>
