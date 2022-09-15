@@ -19,12 +19,12 @@ const MobileAppsLinks = () => {
                 const isCurrent = toApp === APP_NAME;
                 return (
                     <AppLink key={toApp} to="/" toApp={toApp} target="_self" title={title} aria-current={isCurrent}>
-                        <Logo appName={toApp} variant="standalone" />
+                        <Logo appName={toApp} variant="glyph-only" />
                     </AppLink>
                 );
             })}
             <Href url={`https://${VPN_HOSTNAME}/login`} title={APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name}>
-                <VpnLogo variant="standalone" />
+                <VpnLogo variant="glyph-only" />
             </Href>
         </MobileNavServices>
     );
