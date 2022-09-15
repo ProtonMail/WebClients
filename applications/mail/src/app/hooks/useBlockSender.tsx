@@ -1,53 +1,84 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useApi, useMailSettings, useNotifications } from '@proton/components/hooks';
+import { FeatureCode } from '@proton/components/containers';
+import { useAddresses, useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
-import { isAddressIncluded, isBlockedIncomingDefaultAddress } from '@proton/shared/lib/helpers/incomingDefaults';
+import { isAddressIncluded } from '@proton/shared/lib/helpers/incomingDefaults';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
+import { getSendersToBlock } from '../helpers/addresses';
 import { blockAddress } from '../logic/incomingDefaults/incomingDefaultsActions';
-import { MessageState } from '../logic/messages/messagesTypes';
+import { Element } from '../models/element';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 
 interface Props {
-    message?: MessageState;
+    elements: Element[];
     onCloseDropdown?: () => void;
 }
 
-const useBlockSender = ({ message, onCloseDropdown }: Props) => {
+const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
-    const { createNotification } = useNotifications();
+    const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
+    const { createNotification } = useNotifications();
+    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
 
     const incomingDefaultsAddresses = useIncomingDefaultsAddresses();
     const incomingDefaultsStatus = useIncomingDefaultsStatus();
-    const isBlocked = isBlockedIncomingDefaultAddress(incomingDefaultsAddresses, message?.data?.Sender.Address || '');
 
     const [blockSenderModal, handleShowBlockSenderModal] = useModalTwo(BlockSenderModal);
 
-    const senderEmail = message?.data?.Sender.Address;
+    const senders = useMemo(() => {
+        return getSendersToBlock(elements, incomingDefaultsAddresses, addresses);
+    }, [elements, incomingDefaultsAddresses, addresses]);
+
+    // We can display the block sender option if:
+    // 1 - The feature flag is enabled
+    // 3 - Incoming defaults addresses are loaded
+    // 2 - The sender is not already blocked => Should be filtered from senders
+    // 4 - The message is not sent by the user, we don't want to block self addresses => Should be filtered from senders
+    const canShowBlockSender =
+        blockSenderFeature?.Value === true && incomingDefaultsStatus === 'loaded' && senders.length > 0;
 
     const handleBlockSender = async () => {
-        if (!senderEmail) {
+        if (!senders || senders.length === 0) {
             return;
         }
 
-        const foundItem = isAddressIncluded(incomingDefaultsAddresses, senderEmail);
+        await Promise.all(
+            senders.map((sender) => {
+                const senderEmail = sender?.Address || '';
+                const foundItem = isAddressIncluded(incomingDefaultsAddresses, senderEmail);
 
-        await dispatch(
-            blockAddress({ api, address: senderEmail, ID: foundItem?.ID, type: foundItem ? 'update' : 'create' })
+                return dispatch(
+                    blockAddress({
+                        api,
+                        address: senderEmail,
+                        ID: foundItem?.ID,
+                        type: foundItem ? 'update' : 'create',
+                    })
+                );
+            })
         );
 
-        createNotification({ text: c('Notification').t`Sender ${senderEmail} blocked` });
+        const firstSenderAddress = senders[0]?.Address;
+
+        // translator: The variable contains the address of the sender which will be blocked
+        const notificationMessage =
+            senders.length === 1
+                ? c('Notification').t`Sender ${firstSenderAddress} blocked`
+                : c('Notification').t`Senders blocked`;
+
+        createNotification({ text: notificationMessage });
     };
 
-    // Modal confirmation
+    // Confirm blocking address from the modal
     const handleSubmitBlockSender = async (checked: boolean) => {
         const isSettingChecked = mailSettings?.BlockSenderConfirmation === 1;
         const confirmHasChanged = checked !== isSettingChecked;
@@ -59,22 +90,21 @@ const useBlockSender = ({ message, onCloseDropdown }: Props) => {
         await handleBlockSender();
     };
 
-    // Mail dropdown
+    // The user click on block sender option/action
     const handleClickBlockSender = async (event: MouseEvent) => {
         event.stopPropagation();
 
-        // Close dropdown in order to
-        // avoid modal and dropdown opened at same time
+        // Close dropdown in order to avoid having modal and dropdown opened at same time
         onCloseDropdown?.();
 
         if (mailSettings?.BlockSenderConfirmation !== BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK) {
-            await handleShowBlockSenderModal({ onConfirm: handleSubmitBlockSender, senderEmail, mailSettings });
+            await handleShowBlockSenderModal({ onConfirm: handleSubmitBlockSender, senders, mailSettings });
         } else {
             void handleBlockSender();
         }
     };
 
-    return { incomingDefaultsStatus, isBlocked, handleClickBlockSender, blockSenderModal };
+    return { canShowBlockSender, incomingDefaultsStatus, handleClickBlockSender, blockSenderModal };
 };
 
 export default useBlockSender;

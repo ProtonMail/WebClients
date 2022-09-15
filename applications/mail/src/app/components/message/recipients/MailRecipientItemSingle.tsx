@@ -4,9 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { useFeature, useMailSettings } from '@proton/components/hooks';
+import { useMailSettings } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
@@ -16,13 +15,14 @@ import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/cont
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { getContactEmail, isSelfAddress } from '../../../helpers/addresses';
+import { getContactEmail } from '../../../helpers/addresses';
 import { getHumanLabelID } from '../../../helpers/labels';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import useBlockSender from '../../../hooks/useBlockSender';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import { Element } from '../../../models/element';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
 
@@ -59,7 +59,6 @@ const MailRecipientItemSingle = ({
     onContactDetails,
     onContactEdit,
 }: Props) => {
-    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const history = useHistory();
 
@@ -75,23 +74,15 @@ const MailRecipientItemSingle = ({
 
     const showTrustPublicKey = !!signingPublicKey || !!attachedPublicKey;
 
-    const { isBlocked, incomingDefaultsStatus, handleClickBlockSender, blockSenderModal } = useBlockSender({
-        message,
+    const { canShowBlockSender, handleClickBlockSender, blockSenderModal } = useBlockSender({
+        elements: [message?.data || ({} as Element)],
         onCloseDropdown: close,
     });
 
     // We can display the block sender option in the dropdown if:
-    // 1 - The feature flag is enabled
-    // 2 - The sender is not already blocked
-    // 3 - Incoming defaults addresses are loaded
-    // 4 - We don't want to block self addresses
-    // 5 - The item is a sender and not a recipient
-    const showBlockSenderOption =
-        blockSenderFeature?.Value === true &&
-        !isBlocked &&
-        incomingDefaultsStatus === 'loaded' &&
-        !isSelfAddress(message?.data?.Sender.Address, addresses) &&
-        !isRecipient;
+    // 1 - Block sender option can be displayed (FF and incoming are ready, item is not already blocked or self address)
+    // 2 - The item is a sender and not a recipient
+    const showBlockSenderOption = canShowBlockSender && !isRecipient;
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {
         return {
