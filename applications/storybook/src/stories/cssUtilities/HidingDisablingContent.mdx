@@ -1,0 +1,43 @@
+import { Canvas, Source, Story } from '@storybook/addon-docs';
+
+# Hiding/disabling elements
+
+## Hidden
+
+`hidden` applies `display: none` to an element
+
+<Canvas withSource="open">
+    <Story id="css-utilities-hidingdisablingcontent--hidden" />
+</Canvas>
+
+## Hidden when empty
+
+`hidden-empty` applies `display: none` to an element when `:empty` is triggered
+
+<Canvas withSource="open">
+    <Story id="css-utilities-hidingdisablingcontent--hidden-empty" />
+</Canvas>
+
+## Visibility Hidden
+
+`visibility-hidden` applies `visibility: hidden` to an element (keeps space used but hides it).
+
+<Canvas withSource="open">
+    <Story id="css-utilities-hidingdisablingcontent--visibility-hidden" />
+</Canvas>
+
+## Screen reader only
+
+`sr-only` hides an element for screens without hiding it for screen readers
+
+<Canvas withSource="open">
+    <Story id="css-utilities-hidingdisablingcontent--screenreaders" />
+</Canvas>
+
+## No Pointer Events
+
+`no-pointer-events` applies `pointer-events: none` to an element. If you need to remove pointer events on all children of an element, you may use `no-pointer-events-children`.
+
+<Canvas withSource="open">
+    <Story id="css-utilities-hidingdisablingcontent--pointer-events-none" />
+</Canvas>
