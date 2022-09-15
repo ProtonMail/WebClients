@@ -1747,7 +1747,7 @@
         "Limit kalendarzy został osiągnięty"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
@@ -3996,6 +3996,24 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Utwórz folder"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Skorzystaj z dysku Proton Drive, a otrzymasz 1 GB przestrzeni dyskowej za darmo!"
+      ],
+      "Set a recovery method": [
+        "Ustaw metodę odzyskiwania"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Ukończ następujące kroki w ciągu najbliższego dnia",
+        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni",
+        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni",
+        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni"
+      ],
+      "Upload a file": [
+        "Prześlij plik"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Twój niezawodny sejf dla ważnych dokumentów i cennych wspomnień."
       ]
@@ -4023,6 +4041,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Witaj w ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Twój prezent powitalny"
       ]
     },
     "Option": {

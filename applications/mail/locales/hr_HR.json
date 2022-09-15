@@ -1492,6 +1492,9 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
+      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
+      ],
       "Choose a date in the future.": [
         "Odaberite datum u budućnosti."
       ],
@@ -2869,6 +2872,9 @@
       "Load remote content": [
         "Učitaj udaljeni sadržaj"
       ],
+      "Mark as read": [
+        "Označi kao pročitano"
+      ],
       "Mark as unread": [
         "Označi kao nepročitano"
       ],
@@ -3272,9 +3278,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Aktiviraj"
-      ],
       "All mail": [
         "Sva pošta"
       ],

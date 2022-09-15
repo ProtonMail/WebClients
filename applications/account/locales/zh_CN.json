@@ -31,9 +31,6 @@
       "activate": [
         "激活"
       ],
-      "Activate ${ addressToCreate }": [
-        "激活 ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "否"
       ],
-      "No, thanks": [
-        "不，谢谢"
-      ],
       "OK": [
         "好"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "发送我的用户名"
-      ],
-      "Set as default": [
-        "设为默认"
       ],
       "Set catch-all": [
         "设置通配邮箱"
@@ -3969,9 +3960,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } 已启用"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }."
       ],
@@ -4689,9 +4677,6 @@
       "Invite successfully sent": [
         "已成功发送邀请"
       ],
-      "Issues signing in?": [
-        "登录时遇到问题？"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "您的部分数据被加密并锁定。"
       ],
@@ -4874,9 +4859,6 @@
       ],
       "Other options": [
         "其他选项"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "使用我们新推出的 ${ domain } 域名收发邮件更加方便快捷。激活后您仍可继续使用现有的 ${ protonMailAppName } 地址。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "恢复文件已过时，请更新以确保能访问您的数据"
@@ -5349,9 +5331,6 @@
       "Version ${ version }": [
         "版本 ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "是否要将 ${ addressToCreate } 设为发送邮件时使用的默认地址？"
-      ],
       "Warning:": [
         "警告："
       ],
@@ -5546,9 +5525,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使您关闭浏览器也不会退出账户。"
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "您仍然可以通过现有的邮箱地址收发邮件。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，您需要${ MAIL_APP_NAME } 地址。"
@@ -5876,6 +5852,9 @@
       ],
       "Load remote content": [
         "加载外链内容"
+      ],
+      "Mark as read": [
+        "标记为已读"
       ],
       "Mark as unread": [
         "标为未读"
@@ -7668,6 +7647,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7734,26 +7733,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -10003,9 +9982,6 @@
       ],
       "You already have a Proton account": [
         "您已经注册过 Proton 账户了"
-      ],
-      "Your ${ domain } address is active": [
-        "${ domain } 地址已激活"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "您的 ${ MAIL_APP_NAME } 地址"

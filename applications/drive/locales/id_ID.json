@@ -1738,7 +1738,7 @@
         "Batas kalender tercapai"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
@@ -2738,6 +2738,9 @@
       "recommended browser": [
         "browser yang disarankan"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
+      ],
       "Recovery process might take some time.": [
         "Proses pemulihan mungkin membutuhkan waktu."
       ],
@@ -3177,6 +3180,9 @@
       "Delete drive?": [
         "Hapus drive?"
       ],
+      "Delete recovery-related information.": [
+        "Hapus informasi terkait pemulihan."
+      ],
       "Deleted": [
         "Dihapus"
       ],
@@ -3504,6 +3510,9 @@
       ],
       "Upgrade account": [
         "Tingkatkan akun"
+      ],
+      "What’s this?": [
+        "Apa ini?"
       ]
     },
     "Loading info": {
@@ -3768,6 +3777,21 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Buat folder"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Mulailah menggunakan Proton Drive dan kami akan meningkatkan akun Anda ke 1 GB secara cuma-cuma!"
+      ],
+      "Set a recovery method": [
+        "Tentukan metode pemulihan"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ remainingDaysForGift } hari ke depan"
+      ],
+      "Upload a file": [
+        "Unggah berkas"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Brankas online terpercaya untuk berbagai dokumen penting dan momen berharga Anda."
       ]
@@ -3795,6 +3819,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Hadiah selamat datang Anda"
       ]
     },
     "Option": {

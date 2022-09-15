@@ -1747,7 +1747,7 @@
         "Dosažen limit kalendářů"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Kontakt nebylo možné uložit"
@@ -3996,6 +3996,24 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Vytvořit složku"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Začněte používat Proton Drive a my vám zdarma navýšíme kapacitu účtu na 1 GB!"
+      ],
+      "Set a recovery method": [
+        "Nastavit metodu obnovení"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Stačí, když během následujícího ${ remainingDaysForGift } dne vyplníte následující údaje",
+        "Stačí, když během následujících ${ remainingDaysForGift } dnů vyplníte následující údaje",
+        "Stačí, když během následujících ${ remainingDaysForGift } dnů vyplníte následující údaje",
+        "Stačí, když během následujících ${ remainingDaysForGift } dnů vyplníte následující údaje"
+      ],
+      "Upload a file": [
+        "Nahrát soubor"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Váš spolehlivý online trezor pro důležité dokumenty a drahocenné vzpomínky."
       ]
@@ -4023,6 +4041,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Vítejte na ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Váš uvítací dárek"
       ]
     },
     "Option": {

@@ -2918,7 +2918,7 @@
         "Limita de calendare a fost atinsă."
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Alegeți o dată în viitor."
@@ -3041,9 +3041,6 @@
       ],
       "No address with keys available to compose a message": [
         "Nu exista adrese cu chei disponibile pentru a compune un mesaj."
-      ],
-      "No data to import": [
-        "Nu sunt date de importat."
       ],
       "No keys retrieved for internal user": [
         "Nicio cheie preluată pentru utilizatorul intern"
@@ -3821,9 +3818,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } sau ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "O adresă de e-mail",
         "${ addressCount } adrese de e-mail",
@@ -3998,9 +3992,6 @@
       ],
       "Activation in progress": [
         "Activare în curs"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Adăugați ${ addressToCreate } în cont gratuit, doar pentru o perioadă limitată de timp."
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -4401,9 +4392,6 @@
       "Learn more": [
         "Detalii"
       ],
-      "learn more": [
-        "detalii"
-      ],
       "Left to Right": [
         "De la stânga la dreapta"
       ],
@@ -4651,9 +4639,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
-      ],
-      "Select what you want to import from Google.": [
-        "Selectați ce doriți să importați din Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
@@ -5285,6 +5270,9 @@
       "Load remote content": [
         "Încărcare conținut extern"
       ],
+      "Mark as read": [
+        "Marcare ca citit"
+      ],
       "Mark as unread": [
         "Marcare ca necitit"
       ],
@@ -5802,9 +5790,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Activare"
-      ],
       "All mail": [
         "Toate mesajele"
       ],

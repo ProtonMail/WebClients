@@ -2690,7 +2690,7 @@
         "カレンダーの制限に達しました"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
@@ -2805,9 +2805,6 @@
       ],
       "No address with keys available to compose a message": [
         "メールアドレスに有効な暗号鍵が設定さていないため、メッセージが作成できません"
-      ],
-      "No data to import": [
-        "インポートするデータがありません"
       ],
       "No keys retrieved for internal user": [
         "内部ユーザーの鍵が取得できません"
@@ -3528,9 +3525,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } または ${ learnMoreLink }。"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } 件のメールアドレス"
       ],
@@ -3647,9 +3641,6 @@
       ],
       "Activation in progress": [
         "アクティベーションが進行中です"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "${ addressToCreate } を期間限定でアカウントに無料で追加します。"
       ],
       "Add image URL": [
         "追加する画像のURL"
@@ -4005,9 +3996,6 @@
       "Learn more": [
         "詳細"
       ],
-      "learn more": [
-        "詳細"
-      ],
       "Left to Right": [
         "左から右"
       ],
@@ -4241,9 +4229,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
-      ],
-      "Select what you want to import from Google.": [
-        "Google からインポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -4817,6 +4802,9 @@
       "Load remote content": [
         "外部コンテンツを読み込む"
       ],
+      "Mark as read": [
+        "既読にする"
+      ],
       "Mark as unread": [
         "未読にする"
       ],
@@ -5325,9 +5313,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "有効化"
-      ],
       "All mail": [
         "すべてのメール"
       ],

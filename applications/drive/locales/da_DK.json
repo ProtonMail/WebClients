@@ -1728,6 +1728,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A problem occurred, please try again": [
+        "Der opstod et problem. Prøv venligst igen"
+      ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
       ],
@@ -1738,7 +1741,7 @@
         "Kalendergrænse nået"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -1840,6 +1843,9 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
+      ],
+      "Please activate your content search again": [
+        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -2783,6 +2789,9 @@
       "recommended browser": [
         "anbefalet browser"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
+      ],
       "Recovery process might take some time.": [
         "Gendannelsesprocessen kan tage noget tid."
       ],
@@ -3323,6 +3332,9 @@
       "Malware": [
         "Malware"
       ],
+      "Manage categories": [
+        "Administrer kategorier"
+      ],
       "Manage folders": [
         "Administrer mapper"
       ],
@@ -3542,6 +3554,9 @@
       ],
       "Upgrade account": [
         "Opgradér konto"
+      ],
+      "What’s this?": [
+        "Hvad er dette?"
       ]
     },
     "Loading info": {
