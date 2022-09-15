@@ -172,6 +172,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                             selector,
                             keyPassword: data.payload.keyPassword,
                             persistent: data.payload.persistent,
+                            trusted: data.payload.trusted,
                             state: data.payload.state,
                         },
                     },
