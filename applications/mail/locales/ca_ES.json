@@ -2765,7 +2765,7 @@
         "Límit de calendari assolit"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "No es poden crear calendaris nous per a tots els importats a causa del límit del calendari personal."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Escolliu una data futura."
@@ -2881,9 +2881,6 @@
       ],
       "No address with keys available to compose a message": [
         "Cap adreça amb les claus disponibles per redactar un missatge"
-      ],
-      "No data to import": [
-        "Ni hi ha dades per importar"
       ],
       "No keys retrieved for internal user": [
         "No s’ha recuperat cap clau per a l’usuari intern"
@@ -3618,9 +3615,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } o ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
@@ -3758,9 +3752,6 @@
       ],
       "Activation in progress": [
         "Activació en procés"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Afegiu ${ addressToCreate } gratuïtament i per a un temps limitat al vostre compte."
       ],
       "Add image URL": [
         "Afegir URL de la imatge"
@@ -4136,9 +4127,6 @@
       ],
       "Learn more": [
         "Més informació"
-      ],
-      "learn more": [
-        "més informació"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -4960,6 +4948,9 @@
       "Load remote content": [
         "Carrega el contingut remot"
       ],
+      "Mark as read": [
+        "Marca com a llegit"
+      ],
       "Mark as unread": [
         "Marca com a no llegit"
       ],
@@ -5468,9 +5459,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Activa"
-      ],
       "All mail": [
         "Tot el correu"
       ],

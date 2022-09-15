@@ -2792,7 +2792,7 @@
         "Elérte a naptárak maximális számát"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Egy jövőbeli időpontot válasszon ki."
@@ -2908,9 +2908,6 @@
       ],
       "No address with keys available to compose a message": [
         "Nincs elérhető kulcsokkal rendelkező cím az üzenet íráshoz"
-      ],
-      "No data to import": [
-        "Nincs importálandó adat"
       ],
       "No keys retrieved for internal user": [
         "Nem található kulcs a belső felhasználóhoz"
@@ -3625,9 +3622,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } vagy ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
@@ -3765,9 +3759,6 @@
       ],
       "Activation in progress": [
         "A bekapcsolás folyamatban"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Adja a(z) ${ addressToCreate } címet a fiókjához ingyen, korlátozott ideig."
       ],
       "Add image URL": [
         "Kép URL megadása"
@@ -4134,9 +4125,6 @@
       ],
       "Learn more": [
         "További információk"
-      ],
-      "learn more": [
-        "további információk"
       ],
       "Left to Right": [
         "Balról jobbra"
@@ -4951,6 +4939,9 @@
       "Load remote content": [
         "Távoli tartalom betöltése"
       ],
+      "Mark as read": [
+        "Megjelölés olvasottként"
+      ],
       "Mark as unread": [
         "Megjelölés olvasatlanként"
       ],
@@ -5450,9 +5441,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Aktiválás"
-      ],
       "All mail": [
         "Összes levél"
       ],

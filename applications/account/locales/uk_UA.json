@@ -31,9 +31,6 @@
       "activate": [
         "активувати"
       ],
-      "Activate ${ addressToCreate }": [
-        "Активувати ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "Ні"
       ],
-      "No, thanks": [
-        "Ні, дякую"
-      ],
       "OK": [
         "Гаразд"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "Надіслати моє ім'я користувача"
-      ],
-      "Set as default": [
-        "Встановити типовим"
       ],
       "Set catch-all": [
         "Встановити catch-all"
@@ -4095,9 +4086,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "Адреса ${ addressToCreate } тепер активна"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
@@ -4890,9 +4878,6 @@
         "Запрошення успішно надіслані",
         "Запрошення успішно надіслані"
       ],
-      "Issues signing in?": [
-        "Проблеми з входом?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Здається, деякі з ваших даних зашифровано та заблоковано."
       ],
@@ -5075,9 +5060,6 @@
       ],
       "Other options": [
         "Інші варіанти"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Наш новий домен ${ domain } — це зручний варіант для надсилання та отримання електронних листів. Ви все одно зможете використовувати вашу оригінальну адресу ${ protonMailAppName }."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
@@ -5553,9 +5535,6 @@
       "Version ${ version }": [
         "Версія ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Бажаєте встановити ${ addressToCreate } своєю типовою адресою для надсилання повідомлень?"
-      ],
       "Warning:": [
         "Попередження:"
       ],
@@ -5750,9 +5729,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Сеанс буде активним навіть після закриття браузера."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Ви все одно зможете надсилати та отримувати пошту за допомогою наявних адрес електронної пошти."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
@@ -6080,6 +6056,9 @@
       ],
       "Load remote content": [
         "Завантажити зовнішній вміст"
+      ],
+      "Mark as read": [
+        "Позначити прочитаним"
       ],
       "Mark as unread": [
         "Позначити непрочитаним"
@@ -7941,6 +7920,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8007,26 +8006,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10351,9 +10330,6 @@
       ],
       "You already have a Proton account": [
         "У вас уже є обліковий запис Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Ваша адреса ${ domain } активна"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Ваша адреса ${ MAIL_APP_NAME }"

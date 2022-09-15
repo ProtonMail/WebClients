@@ -1741,7 +1741,7 @@
         "Limite de calendriers atteinte"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite de calendriers personnels."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré."
@@ -3357,10 +3357,10 @@
         "Modifié"
       ],
       "Move to Archive": [
-        "Archiver"
+        "Déplacer dans le dossier Archives"
       ],
       "Move to Inbox": [
-        "Déplacer vers Boîte de réception"
+        "Déplacer dans le dossier Boîte de réception"
       ],
       "Name": [
         "Nom"
@@ -3850,6 +3850,22 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Créer un dossier"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Commencez à utiliser Proton Drive et nous vous offrons 1 Go pour votre compte gratuitement !"
+      ],
+      "Set a recovery method": [
+        "Définir une méthode de récupération"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jour.",
+        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jours."
+      ],
+      "Upload a file": [
+        "Importer un fichier"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Votre coffre-fort en ligne digne de confiance pour les documents vitaux et les précieux souvenirs."
       ]
@@ -3877,6 +3893,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Bienvenue dans ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Votre cadeau de bienvenue"
       ]
     },
     "Option": {

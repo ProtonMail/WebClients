@@ -502,7 +502,7 @@
         "Lesotho"
       ],
       "Liberia": [
-        "Libéria"
+        "Liberia"
       ],
       "Libya": [
         "Libye"
@@ -604,7 +604,7 @@
         "Niger"
       ],
       "Nigeria": [
-        "Nigéria"
+        "Nigeria"
       ],
       "Niue": [
         "Niué"
@@ -893,7 +893,7 @@
         "L'adresse électronique n'est pas valide."
       ],
       "Enter 6 digits": [
-        "Saisissez 6 chiffres"
+        "Saisissez 6 chiffres."
       ],
       "Invalid verification code": [
         "Code de vérification non valide"
@@ -931,7 +931,7 @@
         "Une erreur s'est produite. Rafraîchissez la page ou réessayez plus tard."
       ],
       "There was a problem connecting to Proton.": [
-        "Un problème s'est produit lors de la connexion à Proton."
+        "Il y a eu un problème lors de la connexion à Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
@@ -942,7 +942,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "E-mail"
+        "Adresse électronique"
       ],
       "Manual": [
         "Manuel"
@@ -1009,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "Le code est composé de 6 chiffres sans espaces"
+        "Le code est composé de 6 chiffres sans espaces."
       ],
       "Email address": [
         "Adresse électronique"
@@ -1045,7 +1045,7 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Code envoyé à ${ methodTo }"
+        "Code envoyé à ${ methodTo }."
       ],
       "Verification successful": [
         "Vérification réussie"
@@ -1053,7 +1053,7 @@
     },
     "Title": {
       "Human verification": [
-        "Vérification de l'existence de l'utilisateur"
+        "Vérification humaine"
       ],
       "Invalid verification code": [
         "Code de vérification non valide"
@@ -1062,13 +1062,13 @@
         "Demander un nouveau code"
       ],
       "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer"
+        "Connectez-vous à nouveau pour continuer."
       ]
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère",
-        "Le mot de passe doit comporter au moins ${ length } caractères"
+        "Le mot de passe doit comporter au moins ${ length } caractère.",
+        "Le mot de passe doit comporter au moins ${ length } caractères."
       ]
     }
   }

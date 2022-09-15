@@ -31,9 +31,6 @@
       "activate": [
         "有効にする"
       ],
-      "Activate ${ addressToCreate }": [
-        "${ addressToCreate } を有効化"
-      ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効にする"
       ],
@@ -469,9 +466,6 @@
       "No": [
         "いいえ"
       ],
-      "No, thanks": [
-        "いいえ"
-      ],
       "OK": [
         "OK"
       ],
@@ -657,9 +651,6 @@
       ],
       "Send my username": [
         "ユーザー名を送信"
-      ],
-      "Set as default": [
-        "既定にする"
       ],
       "Set catch-all": [
         "Catch-All の設定"
@@ -3841,9 +3832,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } は現在アクティブです"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -4534,9 +4522,6 @@
       "Invite successfully sent": [
         "招待は正常に送信されました"
       ],
-      "Issues signing in?": [
-        "サインインに問題がありますか？"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "いくつかのデータの暗号化と復号を可能にします。"
       ],
@@ -5167,9 +5152,6 @@
       "Version ${ version }": [
         "バージョン ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "${ addressToCreate } を既定の送信用メールアドレスに設定しますか?"
-      ],
       "Warning:": [
         "警告:"
       ],
@@ -5346,9 +5328,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "ブラウザを閉じてもサインインを維持します。"
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "変更しても、以前のメールアドレスで送受信可能です。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、${ MAIL_APP_NAME } アドレスが必要です。"
@@ -5644,6 +5623,9 @@
       ],
       "Load remote content": [
         "外部コンテンツの読み込み"
+      ],
+      "Mark as read": [
+        "既読にする"
       ],
       "Mark as unread": [
         "未読にする"
@@ -7380,6 +7362,20 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7425,20 +7421,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9519,9 +9501,6 @@
       ],
       "You already have a Proton account": [
         "Proton アカウントをお持ちです"
-      ],
-      "Your ${ domain } address is active": [
-        "${ domain } アドレスはアクティブです"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } アドレス"

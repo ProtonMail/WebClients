@@ -17,9 +17,6 @@
       "activate": [
         "ενεργοποιήστε"
       ],
-      "Activate ${ addressToCreate }": [
-        "Ενεργοποίηση ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
       ],
@@ -97,6 +94,9 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Block": [
+        "Αποκλεισμός"
       ],
       "Bold": [
         "Έντονη γραφή"
@@ -299,6 +299,9 @@
       "Edit subscription": [
         "Επεξεργασία συνδρομής"
       ],
+      "Emoji": [
+        "Εικονίδια"
+      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
@@ -439,9 +442,6 @@
       ],
       "No": [
         "Όχι"
-      ],
-      "No, thanks": [
-        "Όχι, ευχαριστώ"
       ],
       "OK": [
         "ΟΚ"
@@ -596,6 +596,9 @@
       "Save selected": [
         "Αποθήκευση επιλεγμένων"
       ],
+      "Search countries": [
+        "Αναζήτηση χωρών"
+      ],
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
@@ -619,9 +622,6 @@
       ],
       "Send my username": [
         "Αποστολή του ονόματος χρήστη μου"
-      ],
-      "Set as default": [
-        "Ορισμός ως προεπιλογή"
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
@@ -1110,6 +1110,9 @@
       ]
     },
     "color": {
+      "apple": [
+        "μήλο"
+      ],
       "azureish white": [
         "λευκό γαλαζωπό"
       ],
@@ -3578,9 +3581,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "Η διεύθυνση ${ addressToCreate } είναι τώρα ενεργή"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
@@ -4269,9 +4269,6 @@
         "Επιτυχής αποστολή πρόσκλησης",
         "Επιτυχής αποστολή προσκλήσεων"
       ],
-      "Issues signing in?": [
-        "Προβλήματα κατά την είσοδο;"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Φαίνεται πως μερικά από τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα."
       ],
@@ -4443,9 +4440,6 @@
       "Other options": [
         "Άλλες επιλογές"
       ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Ο νέος μας τομέας ${ domain } είναι μια βολική επιλογή για αποστολή και λήψη μηνυμάτων. Θα συνεχίσει να είναι δυνατή η χρήση της αρχικής διεύθυνσής σας ${ protonMailAppName }."
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Παρωχημένο αρχείο ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε το."
       ],
@@ -4482,6 +4476,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
+      "Please fill out this field.": [
+        "Παρακαλώ συμπληρώστε αυτό το πεδίο."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Παρακαλούμε κρατήστε το ασφαλές. Θα το χρειαστείτε για πρόσβαση στον λογαριασμό σας και αποκρυπτογράφηση των δεδομένων σας, σε περίπτωση επαναφοράς κωδικού πρόσβασης."
@@ -4879,9 +4876,6 @@
       "Version ${ version }": [
         "'Εκδοση ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Θέλετε να ορίσετε τη διεύθυνση ${ addressToCreate } ως την προεπιλεγμένη για αποστολή μηνυμάτων;"
-      ],
       "Warning:": [
         "Προειδοποίηση:"
       ],
@@ -5046,9 +5040,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Θα εξακολουθείτε να μπορείτε να στέλνετε και λαμβάνεται μηνύματα με την υπάρχουσα-ες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
@@ -5346,6 +5337,9 @@
       ],
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
+      ],
+      "Mark as read": [
+        "Σήμανση ως διαβασμένο"
       ],
       "Mark as unread": [
         "Σήμανση ως μη διαβασμένο"
@@ -6978,6 +6972,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6996,17 +7001,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8840,9 +8834,6 @@
       ],
       "You already have a Proton account": [
         "Έχετε ήδη λογαριασμό Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Η διεύθυνσή σας τομέα ${ domain } είναι ενεργή"
       ],
       "Your current plan": [
         "Το τρέχον πακέτο σας"

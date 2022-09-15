@@ -17,9 +17,6 @@
       "activate": [
         "aktivér"
       ],
-      "Activate ${ addressToCreate }": [
-        "Aktiver ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
       ],
@@ -130,6 +127,9 @@
       ],
       "Clear all formatting": [
         "Ryd al formatering"
+      ],
+      "Clear two-factor authentication code": [
+        "Ryd to-faktor-godkendelseskode"
       ],
       "Close": [
         "Luk"
@@ -425,6 +425,12 @@
       "Mark as default": [
         "Markér som standard"
       ],
+      "Mark as not spam": [
+        "Markér som ikke spam"
+      ],
+      "Mark as spam": [
+        "Markér som spam"
+      ],
       "mark emails as": [
         "markér e-mails som"
       ],
@@ -451,9 +457,6 @@
       ],
       "No": [
         "Nej"
-      ],
-      "No, thanks": [
-        "Nej tak"
       ],
       "OK": [
         "Ok"
@@ -523,6 +526,9 @@
       ],
       "Remove": [
         "Fjern"
+      ],
+      "Remove Block": [
+        "Fjern blokering"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -617,6 +623,9 @@
       "Search settings": [
         "Søg indstillinger"
       ],
+      "See plan features": [
+        "Se abonnementfunktioner"
+      ],
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
@@ -640,9 +649,6 @@
       ],
       "Send my username": [
         "Send mit brugernavn"
-      ],
-      "Set as default": [
-        "Angiv som standard"
       ],
       "Set catch-all": [
         "Indstil fang-alle"
@@ -1176,6 +1182,14 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fold sammen"
+      ],
+      "Expand": [
+        "Udvid"
       ]
     },
     "color": {
@@ -3089,6 +3103,9 @@
       "Archive": [
         "Arkivér"
       ],
+      "Do not move": [
+        "Flyt ikke"
+      ],
       "Inbox": [
         "Indbakke"
       ],
@@ -3636,9 +3653,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } er nu aktiv"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -4369,9 +4383,6 @@
         "Invitation sendt",
         "Invitationer sendt"
       ],
-      "Issues signing in?": [
-        "Problemer med at logge ind?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ud til, at nogle af dine data er krypteret og låst."
       ],
@@ -4555,9 +4566,6 @@
       "Other options": [
         "Andre muligheder"
       ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Vores nye ${ domain } domæne er en praktisk mulighed for at sende og modtage e-mails. Du vil stadig kunne bruge din oprindelige ${ protonMailAppName }-adresse."
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Forældet gendannelsesfil; opdater for at sikre adgang til dine data"
       ],
@@ -4675,6 +4683,9 @@
       ],
       "Recovery files have been voided": [
         "Gendannelsesfiler er blevet ugyldiggjort"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
       "recovery method": [
         "gendannelsesmetode"
@@ -5018,9 +5029,6 @@
       "Version ${ version }": [
         "Version ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Ønsker du at indstille ${ addressToCreate } som din standard e-mailadresse til afsendelse af beskeder?"
-      ],
       "Warning:": [
         "Advarsel:"
       ],
@@ -5077,6 +5085,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når dit abonnement fornyes, vil alle tilgængelige kreditter blive brugt først, før vi laver en opkrævning på dine betalingsmetoder ovenfor."
+      ],
+      "Why?": [
+        "Hvorfor?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
@@ -5203,9 +5214,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Du vil forblive logget på selv efter du lukker browseren."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Du vil stadig kunne sende og modtage post med din(e) eksisterende e-mailadresse(r)."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME }-konti er forbundne. For at slette dem begge, så log ind på ${ loginLink } og slet din konto dér."
@@ -5506,6 +5514,9 @@
       ],
       "Load remote content": [
         "Indlæs eksternt indhold"
+      ],
+      "Mark as read": [
+        "Markér som Læst"
       ],
       "Mark as unread": [
         "Markér som ulæst"
@@ -6088,6 +6099,9 @@
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
+      "Manage categories": [
+        "Administrer kategorier"
+      ],
       "Manage folders": [
         "Administrer mapper"
       ],
@@ -6643,6 +6657,9 @@
       "What is the difference between UDP and TCP protocols?": [
         "Hvad er forskellen mellem UDP og TCP-protokoller?"
       ],
+      "What’s this?": [
+        "Hvad er dette?"
+      ],
       "Why set recovery methods?": [
         "Hvorfor indstille gendannelsesmetoder?"
       ]
@@ -7003,17 +7020,17 @@
         "Support"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
+      ]
+    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
-      ]
-    },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -8877,9 +8894,6 @@
       ],
       "You already have a Proton account": [
         "Du har allerede en Proton-konto"
-      ],
-      "Your ${ domain } address is active": [
-        "Din ${ domain }-adresse er aktiv"
       ],
       "Your current plan": [
         "Dit nuværende abonnement"
