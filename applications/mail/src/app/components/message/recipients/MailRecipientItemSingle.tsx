@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
+import { useAddresses, useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
@@ -20,7 +20,7 @@ import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { getContactEmail } from '../../../helpers/addresses';
+import { getContactEmail, isSelfAddress } from '../../../helpers/addresses';
 import { getHumanLabelID } from '../../../helpers/labels';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
@@ -69,6 +69,7 @@ const MailRecipientItemSingle = ({
     onContactEdit,
 }: Props) => {
     const api = useApi();
+    const [addresses] = useAddresses();
     const { createNotification } = useNotifications();
     const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -91,6 +92,19 @@ const MailRecipientItemSingle = ({
     const label = getRecipientLabel(recipient, true);
 
     const showTrustPublicKey = !!signingPublicKey || !!attachedPublicKey;
+
+    // We can display the block sender option in the dropdown if:
+    // 1 - The feature flag is enabled
+    // 2 - The sender is not already blocked
+    // 3 - Incoming defaults addresses are loaded
+    // 4 - We don't want to block self addresses
+    // 5 - The item is a sender and not a recipient
+    const showBlockSenderOption =
+        blockSenderFeature?.Value === true &&
+        !isBlocked &&
+        incomingDefaultsStatus === 'loaded' &&
+        !isSelfAddress(message?.data?.Sender.Address, addresses) &&
+        !isRecipient;
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {
         return {
@@ -241,7 +255,7 @@ const MailRecipientItemSingle = ({
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
             </DropdownMenuButton>
-            {blockSenderFeature?.Value === true && !isBlocked && incomingDefaultsStatus === 'loaded' && (
+            {showBlockSenderOption && (
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickBlockSender}
