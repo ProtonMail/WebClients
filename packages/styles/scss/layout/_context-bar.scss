@@ -4,7 +4,7 @@
 	@include respond-to($breakpoint-medium, 'min') {
 		inline-size: $context-bar-width;
 		min-inline-size: rem($context-bar-min-width);
-		max-inline-size: var(--width-context-bar, $context-bar-max-width);
+		max-inline-size: $context-bar-max-width;
 		border-inline-start: 1px solid var(--border-norm);
 	}
 
