@@ -2,24 +2,25 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { AlertModal, AppLink, Button, Checkbox, Label } from '@proton/components';
+import { AlertModal, AppLink, Button, Checkbox, Label, ModalProps } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
-interface Props {
+interface Props extends ModalProps {
     onConfirm: (blockSenderConfirmation: boolean) => void;
     senderEmail: string;
-    onClose: () => void;
     mailSettings: MailSettings;
+    onResolve: () => void;
+    onReject: () => void;
 }
 
-const BlockSenderModal = ({ senderEmail, onClose, onConfirm, mailSettings }: Props) => {
+const BlockSenderModal = ({ senderEmail, onConfirm, mailSettings, onResolve, onReject, ...rest }: Props) => {
     const [blockSenderConfirmation, setBlockSenderConfirmation] = useState(false);
 
     const handleConfirm = () => {
         onConfirm(blockSenderConfirmation);
-        onClose();
+        onResolve();
     };
 
     const manageBlockedAddressesSettingsLink = (
@@ -36,22 +37,16 @@ const BlockSenderModal = ({ senderEmail, onClose, onConfirm, mailSettings }: Pro
     return (
         <div onClick={(e) => e.stopPropagation()}>
             <AlertModal
-                open
                 title={c('Title').t`Block sender`}
                 buttons={[
                     <Button key="submit" type="submit" color="warning" onClick={handleConfirm}>
                         {c('Action').t`Block`}
                     </Button>,
-                    <Button
-                        key="reset"
-                        type="reset"
-                        onClick={() => {
-                            onClose();
-                        }}
-                    >
+                    <Button key="reset" type="reset" onClick={onReject}>
                         {c('Action').t`Cancel`}
                     </Button>,
                 ]}
+                {...rest}
             >
                 <div>
                     <p>
