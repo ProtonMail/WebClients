@@ -419,8 +419,8 @@ const WireGuardConfigurationSection = () => {
                 const id = newCertificate.id;
                 let name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
 
-                if (name.length > 26) {
-                    name = name.substring(0, 12) + '…' + name.substring(name.length - 12);
+                if (name.length > 46) {
+                    name = name.substring(0, 21) + '…' + name.substring(name.length - 21);
                 }
 
                 if (!silent) {
@@ -714,7 +714,7 @@ const WireGuardConfigurationSection = () => {
                                             className="block mt0-5"
                                             value={certificate?.config}
                                             readOnly
-                                            rows={10}
+                                            rows={14}
                                         />
                                     </label>
                                 </div>
