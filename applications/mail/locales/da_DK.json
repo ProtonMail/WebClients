@@ -1069,6 +1069,9 @@
       "Star message": [
         "Stjernemarkér beskeden"
       ],
+      "Unread email": [
+        "Ulæst e-mail"
+      ],
       "Unstar conversation": [
         "Fjern stjerne fra samtale"
       ],
@@ -1079,6 +1082,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Samtale"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1525,6 +1533,14 @@
         "Begivenhed i gang"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fold sammen"
+      ],
+      "Expand": [
+        "Udvid"
+      ]
+    },
     "color": {
       "white": [
         "hvid"
@@ -1687,6 +1703,11 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Dit valg indeholder kun dig selv som afsender"
       ]
     },
     "Country name": {
@@ -2685,6 +2706,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A problem occurred, please try again": [
+        "Der opstod et problem. Prøv venligst igen"
+      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -2701,7 +2725,7 @@
         "Kalendergrænse nået"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Vælg en dato i fremtiden."
@@ -2821,9 +2845,6 @@
       "No address with keys available to compose a message": [
         "Ingen adresse med nøgler er tilgængelig til at komponere en besked"
       ],
-      "No data to import": [
-        "Ingen data at importere"
-      ],
       "No keys retrieved for internal user": [
         "Ingen nøgler hentet for intern bruger"
       ],
@@ -2846,6 +2867,9 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
+      ],
+      "Please activate your content search again": [
+        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -3285,6 +3309,9 @@
       "Archive": [
         "Arkivér"
       ],
+      "Do not move": [
+        "Flyt ikke"
+      ],
       "Inbox": [
         "Indbakke"
       ],
@@ -3573,9 +3600,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } eller ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadresse",
         "${ addressCount } e-mailadresser"
@@ -3721,9 +3745,6 @@
       ],
       "Activation in progress": [
         "Aktivering i gang"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Tilføj ${ addressToCreate } gratis til din konto, kun i en begrænset periode."
       ],
       "Add image URL": [
         "Tilføj billed-URL"
@@ -3937,6 +3958,9 @@
       "Email address": [
         "E-mail"
       ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "E-mail sendes videre til din postkasse; din e-mailadresse forbliver skjult."
+      ],
       "Email tracker protection is disabled": [
         "Beskyttelse mod sporing af e-mail er deaktiveret"
       ],
@@ -4030,6 +4054,9 @@
         "Time",
         "Timer"
       ],
+      "How Hide My Email works": [
+        "Sådan fungerer Skjul min e-mail"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Jeg sender denne besked til en, som ikke bruger Proton Mail."
       ],
@@ -4041,6 +4068,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Hvis dit alias bliver solgt, lækket eller misbrugt, skal du blot deaktivere det for at stoppe med at modtage spam."
       ],
       "Image description": [
         "Billedbeskriveslse"
@@ -4099,9 +4129,6 @@
       ],
       "Learn more": [
         "Få mere at vide"
-      ],
-      "learn more": [
-        "få mere at vide"
       ],
       "Left to Right": [
         "Venstre mod højre"
@@ -4296,6 +4323,9 @@
       "Recipient: ": [
         "Modtager: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
+      ],
       "Recovery phrase copied to clipboard": [
         "Gendannelsessætning kopieret til udklipsholderen"
       ],
@@ -4347,9 +4377,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
-      "Select what you want to import from Google.": [
-        "Vælg, hvad du ønsker at overflytte fra Google."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
@@ -4388,6 +4415,9 @@
       ],
       "Show original message": [
         "Vis oprindelig besked"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin er en Proton-tjeneste, og din Proton-konto omfatter Skjul min e-mail-aliasser. Hvis du vil begynde at sløre din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
@@ -4458,6 +4488,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med Skjul min e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -4641,6 +4674,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
       ],
+      "Using SimpleLogin is easy": [
+        "Det er nemt at bruge SimpleLogin"
+      ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
@@ -4670,6 +4706,9 @@
       ],
       "When do you want your message to be sent?": [
         "Hvornår skal din besked sendes?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Når du udleverer din e-mail, kan du bruge et unikt, Skjul min e-mail-alias i stedet for din rigtige e-mailadresse."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
@@ -4951,6 +4990,9 @@
       "Load remote content": [
         "Indlæs eksternt indhold"
       ],
+      "Mark as read": [
+        "Markér som Læst"
+      ],
       "Mark as unread": [
         "Markér som ulæst"
       ],
@@ -5154,6 +5196,9 @@
       "Do not ask again": [
         "Spørg ikke igen"
       ],
+      "Don't show this again": [
+        "Vis ikke dette igen"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5247,6 +5292,9 @@
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
+      "Manage categories": [
+        "Administrer kategorier"
+      ],
       "Manage folders": [
         "Administrer mapper"
       ],
@@ -5315,6 +5363,9 @@
       ],
       "Region": [
         "Region"
+      ],
+      "Remember my choice": [
+        "Husk mit valg"
       ],
       "Reveal password": [
         "Vis adgangskode"
@@ -5450,9 +5501,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Aktivér"
-      ],
       "All mail": [
         "Alle e-mails"
       ],
@@ -5509,6 +5557,9 @@
       ],
       "Less": [
         "Mindre"
+      ],
+      "Manage blocked email addresses": [
+        "Administrer blokerede e-mailadresser"
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -5578,6 +5629,9 @@
       ],
       "Upgrade account": [
         "Opgradér konto"
+      ],
+      "What’s this?": [
+        "Hvad er dette?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Du skal aktivere dine kalendernøgler for at tilføje denne begivenhed"
@@ -5679,6 +5733,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Leveret via SimpleLogin fra Proton"
       ]
     },
     "Message image": {
@@ -5881,6 +5940,9 @@
       ]
     },
     "Notification": {
+      "Block removed": [
+        "Blokering fjernet"
+      ],
       "Contact group created": [
         "Kontaktgruppe oprettet"
       ],
@@ -6517,6 +6579,12 @@
       "Conversation removed from ${ labelName }.": [
         "Samtale fjernet fra ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Samtaler fra ${ sendersList } vil blive mærket som ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Samtaler fra ${ sendersList } vil blive flyttet til ${ folder }"
+      ],
       "Draft deleted": [
         "Kladde slettet"
       ],
@@ -6573,6 +6641,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Besked fjernet fra ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Beskeder fra ${ sendersList } vil blive mærket som ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Beskeder fra ${ sendersList } vil blive flyttet til ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Flyt ${ selectionCount } samtale",
@@ -6761,6 +6835,9 @@
       "Blind Carbon Copy": [
         "Blind karbonkopi"
       ],
+      "Block sender": [
+        "Blokér afsender"
+      ],
       "Carbon Copy": [
         "Karbonkopi"
       ],
@@ -6859,6 +6936,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Don't give spam a chance": [
+        "Lad ikke spam få en chance"
+      ],
       "Edit contact": [
         "Rediger kontakt"
       ],
@@ -6909,6 +6989,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Skjul din e-mail med SimpleLogin fra Proton"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -7144,6 +7227,9 @@
       ],
       "Unsubscribe": [
         "Afmeld abonnement"
+      ],
+      "Unsubscribe request sent": [
+        "Anmodning om afmelding afsendt"
       ],
       "Upgrade required": [
         "Opgradering påkrævet"

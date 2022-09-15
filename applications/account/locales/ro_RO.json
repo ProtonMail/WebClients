@@ -31,9 +31,6 @@
       "activate": [
         "activare"
       ],
-      "Activate ${ addressToCreate }": [
-        "Activare ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "Nu"
       ],
-      "No, thanks": [
-        "Nu, mulțumesc"
-      ],
       "OK": [
         "OK"
       ],
@@ -643,6 +637,9 @@
       "Search settings": [
         "Setări căutare"
       ],
+      "See plan features": [
+        "Afișare caracteristici plan"
+      ],
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
@@ -666,9 +663,6 @@
       ],
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
-      ],
-      "Set as default": [
-        "Setare ca implicit"
       ],
       "Set catch-all": [
         "Setare adresă colectoare"
@@ -4050,9 +4044,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } este acum activă"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
       ],
@@ -4820,9 +4811,6 @@
         "Invitații trimise cu succes.",
         "Invitații trimise cu succes."
       ],
-      "Issues signing in?": [
-        "Probleme la conectare?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Se pare că unele date sunt criptate și blocate."
       ],
@@ -5005,9 +4993,6 @@
       ],
       "Other options": [
         "Alte opțiuni"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Noul nostru domeniu ${ domain } este o opțiune convenabilă pentru trimiterea și primirea de e-mailuri. Veți putea folosi în continuare adresa originală ${ protonMailAppName }."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
@@ -5482,9 +5467,6 @@
       "Version ${ version }": [
         "Versiunea ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Doriți să setați ${ addressToCreate } ca e-mail implicit pentru trimiterea de mesaje?"
-      ],
       "Warning:": [
         "Avertizare:"
       ],
@@ -5679,9 +5661,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Veți putea în continuare să trimiteți și să primiți mesaje cu adresa(ele) de e-mail existentă(e)."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, aveți nevoie de o adresă ${ MAIL_APP_NAME }."
@@ -6009,6 +5988,9 @@
       ],
       "Load remote content": [
         "Încărcare conținut extern"
+      ],
+      "Mark as read": [
+        "Marcare ca citit"
       ],
       "Mark as unread": [
         "Marcare ca necitit"
@@ -7847,6 +7829,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -7913,26 +7915,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10232,9 +10214,6 @@
       ],
       "You already have a Proton account": [
         "Deja aveți un cont Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Adresa ${ domain } este activă"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Adresa dvs. ${ MAIL_APP_NAME }"

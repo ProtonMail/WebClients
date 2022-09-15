@@ -1747,7 +1747,7 @@
         "Досягнуто ліміту календарів"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
@@ -3996,6 +3996,18 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Створити теку"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Розпочніть роботу з Proton Drive і ми надамо вашому обліковому запису до 1 ГБ безплатно!"
+      ],
+      "Set a recovery method": [
+        "Вказати спосіб відновлення"
+      ],
+      "Upload a file": [
+        "Вивантажити файл"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваше надійне онлайн-сховище для життєво важливих документів і дорогоцінних спогадів."
       ]
@@ -4023,6 +4035,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Вітаємо у ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Ваш вітальний подарунок"
       ]
     },
     "Option": {

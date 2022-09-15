@@ -1747,7 +1747,7 @@
         "Достигнут предел количества календарей"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Невозможно создать новые календари для всех импортированных календарей из-за ограничения на количество личных календарей."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Контакт не может быть сохранён"
@@ -2891,6 +2891,9 @@
       "recommended browser": [
         "рекомендуемый браузер"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
       "Recovery process might take some time.": [
         "Восстановление может занять некоторое время."
       ],
@@ -3336,6 +3339,9 @@
         "Удалить хранилищ?",
         "Удалить хранилищ?"
       ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
+      ],
       "Deleted": [
         "Удаленно"
       ],
@@ -3663,6 +3669,9 @@
       ],
       "Upgrade account": [
         "Повысить учётную запись"
+      ],
+      "What’s this?": [
+        "Что это такое?"
       ]
     },
     "Loading info": {
@@ -3987,6 +3996,24 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Создать папку"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Начните пользоваться Proton Drive, и мы бесплатно увеличим ваш аккаунт до 1 ГБ!"
+      ],
+      "Set a recovery method": [
+        "Установить способ восстановления"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Просто выполните следущее в течение ${ remainingDaysForGift } дня",
+        "Просто выполните следущее в течение ${ remainingDaysForGift } дней",
+        "Просто выполните следущее в течение ${ remainingDaysForGift } дней",
+        "Просто выполните следущее в течение ${ remainingDaysForGift } дней"
+      ],
+      "Upload a file": [
+        "Загрузить файл"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваше надежное онлайновое хранилище для жизненно важных документов и драгоценных воспоминаний."
       ]
@@ -4014,6 +4041,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Ваш приветственный подарок"
       ]
     },
     "Option": {

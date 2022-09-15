@@ -1363,6 +1363,9 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
+      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
+      ],
       "Contact could not be saved": [
         "Impossível gravar o contacto"
       ],
@@ -2728,6 +2731,9 @@
       "Load remote content": [
         "Carregar conteúdo remoto"
       ],
+      "Mark as read": [
+        "Marcar como lido"
+      ],
       "Mark as unread": [
         "Marcar como não lido"
       ],
@@ -3134,9 +3140,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Activar"
-      ],
       "All mail": [
         "Todo o correio"
       ],
