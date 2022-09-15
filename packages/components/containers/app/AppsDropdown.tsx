@@ -23,7 +23,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
     const vpnName = getAppName(APPS.PROTONVPN_SETTINGS);
 
     const itemClassName =
-        'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-25 pl1 pr1-5 color-norm text-no-decoration';
+        'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-5 pl1 pr1-5 color-norm text-no-decoration';
 
     return (
         <SimpleDropdown
@@ -50,7 +50,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
                                     {name}
                                 </AppLink>
                             </li>
-                            <li className="dropdown-item-hr my0-25" aria-hidden="true" />
+                            <li className="dropdown-item-hr" aria-hidden="true" />
                         </Fragment>
                     );
                 })}
