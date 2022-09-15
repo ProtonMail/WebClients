@@ -39,7 +39,7 @@ const appNames: Required<LogoProps>['appName'][] = [
     APPS.PROTONVPN_SETTINGS,
 ];
 
-const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'standalone', 'glyph-only'];
+const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'glyph-only'];
 
 export const Sandbox = () => {
     const [selectedAppName, setSelectedAppName] = useState<Required<LogoProps>['appName']>(APPS.PROTONMAIL);
