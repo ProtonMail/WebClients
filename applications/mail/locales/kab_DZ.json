@@ -2603,6 +2603,9 @@
       "Calendar limit reached": [
         "Talast n uwitay tewweḍ"
       ],
+      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
+      ],
       "Choose a date in the future.": [
         "Fren azemz deg yimal."
       ],
@@ -2702,9 +2705,6 @@
       ],
       "No address with keys available to compose a message": [
         "Ulac tansa s tsura yellan i tira n yuzen"
-      ],
-      "No data to import": [
-        "Ulac isefka ara ittwaketren"
       ],
       "No keys retrieved for internal user": [
         "Ur d-nufi ula d tasarut i useqdac adigan"
@@ -3352,9 +3352,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } neɣ ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } n tansa n yimayl",
         "${ addressCount } n tansiwin n yimayl"
@@ -3820,9 +3817,6 @@
       ],
       "Learn more": [
         "Issin ugar"
-      ],
-      "learn more": [
-        "issin ugar"
       ],
       "Left to Right": [
         "Seg uzelmad s ayeffus"
@@ -4523,6 +4517,9 @@
       "Load remote content": [
         "Sali-d agbur anmeggag"
       ],
+      "Mark as read": [
+        "Creḍ yettɣra"
+      ],
       "Mark as unread": [
         "Creḍ ur yettwaγra ara"
       ],
@@ -5016,9 +5013,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Sermed"
-      ],
       "All mail": [
         "Akk Imaylen"
       ],

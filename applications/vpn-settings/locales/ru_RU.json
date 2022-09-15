@@ -278,6 +278,9 @@
       "Search countries": [
         "Поиск стран"
       ],
+      "See plan features": [
+        "Посмотреть возможности тарифа"
+      ],
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
@@ -2126,9 +2129,6 @@
       "Internet connection restored.": [
         "Соединение с интернет восстановлено."
       ],
-      "Issues signing in?": [
-        "Проблемы с входом?"
-      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как пользоваться ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
@@ -2239,6 +2239,9 @@
       ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
       "recovery method": [
         "способ восстановления"
@@ -2443,6 +2446,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении Вашей подписки, сначала мы используем любые доступные кредиты, а потом списываем недостающую сумму через вышеуказанный метод оплаты."
+      ],
+      "Why?": [
+        "Почему?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
@@ -2769,6 +2775,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
+      ],
       "Device/certificate name": [
         "Имя устройства/сертификата"
       ],
@@ -3073,6 +3082,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Какова разница между протоколами UDP и TCP?"
+      ],
+      "What’s this?": [
+        "Что это такое?"
       ]
     },
     "Member downgrade modal": {

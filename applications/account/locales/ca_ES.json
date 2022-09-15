@@ -31,9 +31,6 @@
       "activate": [
         "activar"
       ],
-      "Activate ${ addressToCreate }": [
-        "Activa ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
@@ -448,9 +445,6 @@
       "No": [
         "No"
       ],
-      "No, thanks": [
-        "No, gràcies"
-      ],
       "OK": [
         "D'acord"
       ],
@@ -624,9 +618,6 @@
       ],
       "Send my username": [
         "Enviar el meu nom d'usuari"
-      ],
-      "Set as default": [
-        "Estableix com a predeterminat"
       ],
       "Set catch-all": [
         "Seleccionar catch-all"
@@ -3416,9 +3407,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } ara està activa"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -4112,9 +4100,6 @@
       "Other options": [
         "Altres opcions"
       ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "El nostre nou domini ${ domain } és una opció pràctica per enviar i rebre correus. Podreu seguir utilitzant la vostra adreça original ${ protonMailAppName }."
-      ],
       "P2P": [
         "P2P"
       ],
@@ -4563,9 +4548,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Podreu seguir enviant i rebent correus amb les vostres adreces actuals."
-      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés ha estat restringit. ${ payInvoiceLink }"
       ],
@@ -4835,6 +4817,9 @@
       ],
       "Load remote content": [
         "Carrega el contingut remot"
+      ],
+      "Mark as read": [
+        "Marca com a llegit"
       ],
       "Mark as unread": [
         "Marca com a no llegit"
@@ -7907,9 +7892,6 @@
       ],
       "You already have a Proton account": [
         "Ja teniu un compte de Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "La seva adreça ${ domain } està activa"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"

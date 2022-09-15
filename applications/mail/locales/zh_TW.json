@@ -2748,7 +2748,7 @@
         "行事曆數量已達上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "選擇一個未來的日期。"
@@ -2863,9 +2863,6 @@
       ],
       "No address with keys available to compose a message": [
         "沒有電郵位址及金鑰可用於撰寫新郵件"
-      ],
-      "No data to import": [
-        "沒有要匯入的資料"
       ],
       "No keys retrieved for internal user": [
         "未為內部使用者檢索到密鑰"
@@ -3604,9 +3601,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } 或 ${ learnMoreLink }。"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
       ],
@@ -3723,9 +3717,6 @@
       ],
       "Activation in progress": [
         "啟動中"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "免費加入 ${ addressToCreate } 至您現有的帳號，優惠限時放送中。"
       ],
       "Add image URL": [
         "附加圖像網址"
@@ -4096,9 +4087,6 @@
       "Learn more": [
         "瞭解詳情"
       ],
-      "learn more": [
-        "了解更多"
-      ],
       "Left to Right": [
         "由左至右"
       ],
@@ -4341,9 +4329,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
-      ],
-      "Select what you want to import from Google.": [
-        "選擇您要從 Google 匯入的檔案。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
@@ -4926,6 +4911,9 @@
       "Load remote content": [
         "載入遠端內容"
       ],
+      "Mark as read": [
+        "標示為已讀"
+      ],
       "Mark as unread": [
         "標記為未讀"
       ],
@@ -5431,9 +5419,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "啟用"
-      ],
       "All mail": [
         "所有郵件"
       ],

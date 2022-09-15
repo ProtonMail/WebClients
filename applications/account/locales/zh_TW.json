@@ -22,9 +22,6 @@
       "activate": [
         "啟用"
       ],
-      "Activate ${ addressToCreate }": [
-        "啟用 ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "啟用 ${ Name }@pm.me"
       ],
@@ -466,9 +463,6 @@
       "No": [
         "否"
       ],
-      "No, thanks": [
-        "不用了，謝謝"
-      ],
       "OK": [
         "確定"
       ],
@@ -660,9 +654,6 @@
       ],
       "Send my username": [
         "發送我的使用者名稱"
-      ],
-      "Set as default": [
-        "設定成預設"
       ],
       "Set catch-all": [
         "設定全部擷取"
@@ -3638,9 +3629,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } 目前使用中"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的權限以 ${ enableDesktopNotifications }。"
       ],
@@ -4316,9 +4304,6 @@
       "Invite successfully sent": [
         "邀請已成功傳送"
       ],
-      "Issues signing in?": [
-        "登入出現問題？"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "您的某些資料似乎已被加密和鎖定。"
       ],
@@ -4495,9 +4480,6 @@
       ],
       "Other options": [
         "其它選項"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "我們的新 ${ domain } 網域是傳送與接收電郵的便利選項。您仍然可以使用您原來的 ${ protonMailAppName } 位址。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "帳號救援檔案已過時，更新以確保您可以存取您的資料"
@@ -4961,9 +4943,6 @@
       "Version ${ version }": [
         "版本 ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "您想要將 ${ addressToCreate } 設定用來傳送郵件的預設電郵嗎？"
-      ],
       "Warning:": [
         "警告："
       ],
@@ -5131,9 +5110,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "您仍然可以使用現有的電郵位址來傳送與接收電郵。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "您的 ${ BRAND_NAME } 帳號目前已設定關聯至 ${ externalEmailAddress }。 若要使用 ${ toAppName }，您需要一組 ${ MAIL_APP_NAME } 電郵位址。"
@@ -5437,6 +5413,9 @@
       ],
       "Load remote content": [
         "載入遠端內容"
+      ],
+      "Mark as read": [
+        "標示為已讀"
       ],
       "Mark as unread": [
         "標示為未讀取"
@@ -8920,9 +8899,6 @@
       ],
       "You already have a Proton account": [
         "您已經擁有一個 Proton 帳號"
-      ],
-      "Your ${ domain } address is active": [
-        "您的 ${ domain } 位址已啟用"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "您新的 ${ MAIL_APP_NAME } 電郵位址"

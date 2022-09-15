@@ -31,9 +31,6 @@
       "activate": [
         "attiva"
       ],
-      "Activate ${ addressToCreate }": [
-        "Attiva ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Attiva ${ Name }@pm.me"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "No"
       ],
-      "No, thanks": [
-        "No, grazie"
-      ],
       "OK": [
         "OK"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "Invia il mio nome utente"
-      ],
-      "Set as default": [
-        "Imposta come predefinito"
       ],
       "Set catch-all": [
         "Imposta catch-all"
@@ -4011,9 +4002,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } è ora attivo"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
       ],
@@ -4163,6 +4151,12 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
+      ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Un file di ripristino ti consente di sbloccare e visualizzare i tuoi dati dopo il ripristino dell'account"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Una frase di recupero ti consente di accedere al tuo account e recuperare i tuoi messaggi crittografati se dimentichi la password"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, cassetta postale e persona"
@@ -4747,9 +4741,6 @@
         "Invito inviato con successo",
         "Inviti inviati con successo"
       ],
-      "Issues signing in?": [
-        "Problemi di accesso?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Sembra che alcuni dei tuoi dati siano criptati e bloccati."
       ],
@@ -4933,9 +4924,6 @@
       "Other options": [
         "Altre opzioni"
       ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Il nostro nuovo dominio ${ domain } è un'opzione conveniente per inviare e ricevere email. Potrai comunque utilizzare il tuo indirizzo originale ${ protonMailAppName }."
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "File di ripristino obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
       ],
@@ -5047,6 +5035,9 @@
       ],
       "read our two-factor authentication guide first": [
         "leggi prima la nostra guida all'autenticazione a due fattori"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Consigliato su dispositivi affidabili. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
         "File di recupero scaricato"
@@ -5402,9 +5393,6 @@
       "Version ${ version }": [
         "Versione ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Vuoi impostare ${ addressToCreate } come email predefinita per l'invio di messaggi?"
-      ],
       "Warning:": [
         "Attenzione:"
       ],
@@ -5461,6 +5449,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento sopra riportato."
+      ],
+      "Why?": [
+        "Perchè?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
@@ -5587,9 +5578,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Rimarrai connesso anche dopo aver chiuso il browser."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Potrai comunque inviare e ricevere posta con i tuoi indirizzi email esistenti."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Il tuo account ${ BRAND_NAME } è associato a ${ externalEmailAddress }. Per usare ${ toAppName }, hai bisogno di un indirizzo ${ MAIL_APP_NAME }."
@@ -5918,6 +5906,9 @@
       "Load remote content": [
         "Carica il contenuto remoto"
       ],
+      "Mark as read": [
+        "Segna come letto"
+      ],
       "Mark as unread": [
         "Segna come da leggere"
       ],
@@ -6129,6 +6120,9 @@
       ],
       "Allow recovery by recovery phrase": [
         "Consenti il ​​ripristino tramite frase di recupero"
+      ],
+      "Allow recovery using a trusted device": [
+        "Consenti il ​​ripristino utilizzando un dispositivo affidabile"
       ],
       "Amount": [
         "Importo"
@@ -6887,6 +6881,9 @@
       ],
       "Recovery phrase": [
         "Frase di recupero"
+      ],
+      "Trusted device recovery": [
+        "Dispositivo di recupero affidabile"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7063,6 +7060,9 @@
       "Learn more": [
         "Per saperne di più"
       ],
+      "Learn more about data recovery": [
+        "Ulteriori informazioni sul recupero dei dati"
+      ],
       "Need help?": [
         "Hai bisogno di aiuto?"
       ],
@@ -7107,6 +7107,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quale è la differenza tra i protocolli UDP e TCP?"
+      ],
+      "What’s this?": [
+        "Cos'è questo?"
       ],
       "Why set recovery methods?": [
         "Perché impostare dei metodi di recupero?"
@@ -7717,6 +7720,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -7783,26 +7806,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10077,9 +10080,6 @@
       ],
       "You already have a Proton account": [
         "Hai già un account Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Il tuo indirizzo ${ domain } è attivo"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Il tuo indirizzo ${ MAIL_APP_NAME }"

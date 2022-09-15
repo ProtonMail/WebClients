@@ -1089,6 +1089,11 @@
         "Conversazione"
       ]
     },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Accesso semplice"
+      ]
+    },
     "Alternative text for SimpleLogin image": {
       "SimpleLogin": [
         "SimpleLogin"
@@ -2907,7 +2912,7 @@
         "Limite calendario raggiunto"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Impossibile creare nuovi calendari per tutti i calendari importati a causa del limite del calendario personale."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Scegli una data nel futuro."
@@ -3027,8 +3032,14 @@
       "No address with keys available to compose a message": [
         "Non c'è un indirizzo con chiavi disponibile per comporre un messaggio"
       ],
-      "No data to import": [
-        "Nessun dato da importare"
+      "No calendars found to import": [
+        "Nessun calendario trovato da importare"
+      ],
+      "No contacts found to import": [
+        "Nessun contatto trovato da importare"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
       "No keys retrieved for internal user": [
         "Nessuna chiave recuperata per l'utente interno"
@@ -3788,9 +3799,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } o ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } indirizzo email",
         "${ addressCount } indirizzi email"
@@ -3936,9 +3944,6 @@
       ],
       "Activation in progress": [
         "Attivazione in corso"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Aggiungi ${ addressToCreate } al tuo profilo gratuitamente, solo per un periodo limitato."
       ],
       "Add image URL": [
         "Aggiungi URL immagine"
@@ -4324,9 +4329,6 @@
       "Learn more": [
         "Per saperne di più"
       ],
-      "learn more": [
-        "per saperne di più"
-      ],
       "Left to Right": [
         "Da sinistra a destra"
       ],
@@ -4571,8 +4573,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
-      "Select what you want to import from Google.": [
-        "Seleziona cosa vuoi importare da Google."
+      "Select what you want to import.": [
+        "Seleziona cosa vuoi importare."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
@@ -5190,6 +5192,9 @@
       "Load remote content": [
         "Carica il contenuto remoto"
       ],
+      "Mark as read": [
+        "Segna come letto"
+      ],
       "Mark as unread": [
         "Segna come da leggere"
       ],
@@ -5704,9 +5709,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Attiva"
-      ],
       "All mail": [
         "Tutte le mail"
       ],
@@ -5835,6 +5837,9 @@
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
+      ],
+      "What’s this?": [
+        "Cos'è questo?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Devi attivare le chiavi del tuo calendario per aggiungere questo evento"

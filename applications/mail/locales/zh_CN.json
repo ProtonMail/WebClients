@@ -2896,7 +2896,7 @@
         "日历数量达到上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "由于个人日历限制，无法为所有导入的日历创建新日历。"
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "选择未来的日期。"
@@ -3011,9 +3011,6 @@
       ],
       "No address with keys available to compose a message": [
         "没有可用于撰写邮件的密钥"
-      ],
-      "No data to import": [
-        "没有要导入的数据"
       ],
       "No keys retrieved for internal user": [
         "没有为内部用户检索到密钥"
@@ -3755,9 +3752,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink }或${ learnMoreLink }。"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } 个邮箱地址"
       ],
@@ -3874,9 +3868,6 @@
       ],
       "Activation in progress": [
         "正在进行激活"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "${ addressToCreate } 邮箱地址限时免费领取。"
       ],
       "Add image URL": [
         "添加图片地址"
@@ -4247,9 +4238,6 @@
       "Learn more": [
         "了解详情"
       ],
-      "learn more": [
-        "了解详情"
-      ],
       "Left to Right": [
         "从左到右"
       ],
@@ -4495,9 +4483,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
-      ],
-      "Select what you want to import from Google.": [
-        "请选择您要从 Google 账户导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -5101,6 +5086,9 @@
       "Load remote content": [
         "加载外链内容"
       ],
+      "Mark as read": [
+        "标记为已读"
+      ],
       "Mark as unread": [
         "标为未读"
       ],
@@ -5618,9 +5606,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "立即领取"
-      ],
       "All mail": [
         "所有邮件"
       ],
