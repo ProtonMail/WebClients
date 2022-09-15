@@ -417,7 +417,11 @@ const WireGuardConfigurationSection = () => {
 
                 const newCertificate = getCertificateModel(certificate, peer, x25519PrivateKey);
                 const id = newCertificate.id;
-                const name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
+                let name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
+
+                if (name.length > 26) {
+                    name = name.substring(0, 12) + '…' + name.substring(name.length - 12);
+                }
 
                 if (!silent) {
                     const downloadCallback = getDownloadCallback(newCertificate);

@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { escape } from '@proton/shared/lib/sanitize/escape';
-
 import {
     Button,
     Form,
@@ -11,6 +9,7 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    TextArea,
 } from '../../../components';
 
 export interface WireGuardCreationModalProps extends ModalProps {
@@ -49,7 +48,7 @@ const WireGuardCreationModal = ({
                 {config ? (
                     <div className="text-center">
                         <p>{text}</p>
-                        <pre className="text-left">{escape(config)}</pre>
+                        <TextArea className="block mt0-5" value={config} readOnly rows={10} />
                     </div>
                 ) : (
                     <div className="text-center">
