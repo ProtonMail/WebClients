@@ -48,7 +48,7 @@ const WireGuardCreationModal = ({
                 {config ? (
                     <div className="text-center">
                         <p>{text}</p>
-                        <TextArea className="block mt0-5" value={config} readOnly rows={10} />
+                        <TextArea className="block mt0-5" value={config} readOnly rows={14} />
                     </div>
                 ) : (
                     <div className="text-center">
