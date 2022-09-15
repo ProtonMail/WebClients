@@ -17,9 +17,6 @@
       "activate": [
         "aktiválás"
       ],
-      "Activate ${ addressToCreate }": [
-        "${ addressToCreate } aktiválása"
-      ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
       ],
@@ -425,9 +422,6 @@
       "No": [
         "Nem"
       ],
-      "No, thanks": [
-        "Köszönöm, nem"
-      ],
       "OK": [
         "OK"
       ],
@@ -595,9 +589,6 @@
       ],
       "Send my username": [
         "Felhasználónevem elküldése"
-      ],
-      "Set as default": [
-        "Beállítás alapértelmezettként"
       ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
@@ -3701,9 +3692,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } aktív"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Az ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
@@ -4392,9 +4380,6 @@
         "Meghívó sikeresen elküldve",
         "Meghívók sikeresen elküldve"
       ],
-      "Issues signing in?": [
-        "Problémák a bejelentkezéssel?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
       ],
@@ -4565,9 +4550,6 @@
       ],
       "Other options": [
         "Egyéb opciók"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Új ${ domain } domainünk kényelmes opció e-mailek küldésére és fogadására. Továbbra is képes lesz az eredeti ${ protonMailAppName } címét használni."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Elavult helyreállítási fájl; frissítse, hogy bizonyosan elérhesse adatait"
@@ -5002,9 +4984,6 @@
       "Version ${ version }": [
         "Verzió: ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "Kívánja a(z) ${ addressToCreate } címet beállítani alap email-címének üzenetküldéshez?"
-      ],
       "Warning:": [
         "Figyelem:"
       ],
@@ -5169,9 +5148,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Továbbra is képes lesz leveleket küldeni és fogadni a létező email-címeivel."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "A ${ VPN_APP_NAME } és ${ MAIL_APP_NAME } fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
@@ -5472,6 +5448,9 @@
       ],
       "Load remote content": [
         "Távoli tartalom betöltése"
+      ],
+      "Mark as read": [
+        "Megjelölés olvasottként"
       ],
       "Mark as unread": [
         "Megjelölés olvasatlanként"
@@ -7180,6 +7159,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7246,26 +7245,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9338,9 +9317,6 @@
       ],
       "You already have a Proton account": [
         "Önnek már van Proton fiókja"
-      ],
-      "Your ${ domain } address is active": [
-        "${ domain } címe aktív"
       ],
       "Your current plan": [
         "Jelenlegi csomag"

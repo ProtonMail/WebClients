@@ -1991,7 +1991,7 @@
         "Dosažen limit kalendářů"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Cancellation failed to be sent": [
         "Zrušení se nepodařilo odeslat"
@@ -2107,8 +2107,14 @@
       "Name required": [
         "Název je povinný"
       ],
-      "No data to import": [
-        "Žádná data k importu"
+      "No calendars found to import": [
+        "Nebyly nalezeny žádné kalendáře k importu"
+      ],
+      "No contacts found to import": [
+        "Nebyly nalezeny žádné kontakty k importu"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
       "No keys retrieved for internal user": [
         "Pro interního uživatele nebyly získány žádné klíče"
@@ -3207,8 +3213,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
-      "Select what you want to import from Google.": [
-        "Vyberte co chcete importovat z Google."
+      "Select what you want to import.": [
+        "Vyberte co chcete importovat."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."

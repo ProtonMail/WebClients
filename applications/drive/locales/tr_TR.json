@@ -1741,7 +1741,7 @@
         "Takvim sayısı sınırına ulaşıldı"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sayısı sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler eklenemiyor."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -3850,6 +3850,22 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Bir klasör oluşturun"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Proton Drive kullanmaya başlarsanız hesabınızı ücretsiz olarak 1 GB olarak yükselteceğiz!"
+      ],
+      "Set a recovery method": [
+        "Bir kurtarma yöntemi ayarlayın"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Yalnızca gelecek ${ remainingDaysForGift } günde şu işlemleri yapın",
+        "Yalnızca gelecek ${ remainingDaysForGift } günde şu işlemleri yapın"
+      ],
+      "Upload a file": [
+        "Bir dosya yükleyin"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Yaşamsal belgelerinizin ve kıymetli anılarınızın güvende olduğu yer."
       ]
@@ -3877,6 +3893,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "${ appName } hoş geldiniz"
+      ],
+      "Your welcome gift": [
+        "Karşılama hediyeniz"
       ]
     },
     "Option": {

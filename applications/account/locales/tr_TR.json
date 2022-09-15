@@ -31,9 +31,6 @@
       "activate": [
         "etkinleştir"
       ],
-      "Activate ${ addressToCreate }": [
-        "${ addressToCreate } adresini etkinleştir"
-      ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
       ],
@@ -475,9 +472,6 @@
       "No": [
         "Hayır"
       ],
-      "No, thanks": [
-        "Hayır, teşekkürler"
-      ],
       "OK": [
         "Tamam"
       ],
@@ -669,9 +663,6 @@
       ],
       "Send my username": [
         "Kullanıcı adımı gönder"
-      ],
-      "Set as default": [
-        "Varsayılan olarak ayarla"
       ],
       "Set catch-all": [
         "Tümünü yakalayan ayarla"
@@ -4011,9 +4002,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } kullanıma hazır"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -4756,9 +4744,6 @@
         "Davet gönderildi",
         "Davet gönderildi"
       ],
-      "Issues signing in?": [
-        "Oturum açmakta sorun mu yaşıyorsunuz?"
-      ],
       "It appears some of your data is encrypted and locked.": [
         "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor."
       ],
@@ -4941,9 +4926,6 @@
       ],
       "Other options": [
         "Diğer seçenekler"
-      ],
-      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Yeni ${ domain } etki alanımız, e-posta göndermek ve almak için kolaylık sağlar. Özgün ${ protonMailAppName } adresinizi kullanmayı sürdürebilirsiniz."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
@@ -5417,9 +5399,6 @@
       "Version ${ version }": [
         "Sürüm ${ version }"
       ],
-      "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "${ addressToCreate } adresini ileti göndermek için varsayılan olarak ayarlamak ister misiniz?"
-      ],
       "Warning:": [
         "Uyarı:"
       ],
@@ -5614,9 +5593,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Web tarayıcıyı kapattıktan sonra bile oturumunuz açık kalır."
-      ],
-      "You'll still be able to send and receive mail with your existing email address(es).": [
-        "Var olan e-posta adreslerinizle e-posta gönderip almayı sürdürebilirsiniz."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresinizin olması gereklidir."
@@ -5944,6 +5920,9 @@
       ],
       "Load remote content": [
         "Uzak içeriği yükle"
+      ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
       ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
@@ -7759,6 +7738,26 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -7825,26 +7824,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -10119,9 +10098,6 @@
       ],
       "You already have a Proton account": [
         "Zaten bir Proton hesabınız var"
-      ],
-      "Your ${ domain } address is active": [
-        "${ domain } adresiniz kullanıma hazır"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresiniz"

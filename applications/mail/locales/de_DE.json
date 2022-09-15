@@ -1089,6 +1089,11 @@
         "Unterhaltung"
       ]
     },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
+      ]
+    },
     "Alternative text for SimpleLogin image": {
       "SimpleLogin": [
         "SimpleLogin"
@@ -2838,7 +2843,7 @@
         "Max. Anzahl von Kalendern erreicht"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Es können keine neuen Kalender für alle zu importierenden Kalender erstellt werden, da die Anzahl der persönlichen Kalender beschränkt ist."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Wähle ein Datum in derZukunft."
@@ -2958,8 +2963,14 @@
       "No address with keys available to compose a message": [
         "Keine E-Mail-Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar"
       ],
-      "No data to import": [
-        "Keine zu importierenden Daten"
+      "No calendars found to import": [
+        "Keine Kalender zum Importieren vorhanden"
+      ],
+      "No contacts found to import": [
+        "Keine Kontakte zum Importieren vorhanden"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
       "No keys retrieved for internal user": [
         "Keine Schlüssel für internen Benutzer abgerufen"
@@ -3719,9 +3730,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } oder ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } E-Mail-Adresse",
         "${ addressCount } E-Mail-Adressen"
@@ -3867,9 +3875,6 @@
       ],
       "Activation in progress": [
         "Aktivierung wird durchgeführt"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Füge ${ addressToCreate } kostenlos zu deinem Konto hinzu, nur für eine begrenzte Zeit."
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
@@ -4255,9 +4260,6 @@
       "Learn more": [
         "Mehr erfahren"
       ],
-      "learn more": [
-        "mehr erfahren"
-      ],
       "Left to Right": [
         "Von links nach rechts"
       ],
@@ -4505,8 +4507,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
       ],
-      "Select what you want to import from Google.": [
-        "Auswählen, was aus Google importiert werden soll."
+      "Select what you want to import.": [
+        "Wähle aus, was du importieren möchtest."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -5124,6 +5126,9 @@
       "Load remote content": [
         "Inhalte aus externen Quellen laden"
       ],
+      "Mark as read": [
+        "Als gelesen markieren"
+      ],
       "Mark as unread": [
         "Als ungelesen kennzeichnen"
       ],
@@ -5641,9 +5646,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Aktivieren"
-      ],
       "All mail": [
         "Alle Nachrichten"
       ],

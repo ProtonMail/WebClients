@@ -17,9 +17,6 @@
       "activate": [
         "rmed"
       ],
-      "Activate ${ addressToCreate }": [
-        "Rmed ${ addressToCreate }"
-      ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
       ],
@@ -449,9 +446,6 @@
       "No": [
         "Uhu"
       ],
-      "No, thanks": [
-        "Uhu, tanemmirt"
-      ],
       "OK": [
         "Γas"
       ],
@@ -640,9 +634,6 @@
       ],
       "Send my username": [
         "Azen isem-im n useqdac"
-      ],
-      "Set as default": [
-        "S amezwer"
       ],
       "Set catch-all": [
         "Sbadu catch-all"
@@ -3417,9 +3408,6 @@
       ]
     },
     "Info": {
-      "${ addressToCreate } is now active": [
-        "${ addressToCreate } d urmid tura"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
       ],
@@ -4909,6 +4897,9 @@
       ],
       "Load remote content": [
         "Sali-d agbur anmeggag"
+      ],
+      "Mark as read": [
+        "Creḍ yettɣra"
       ],
       "Mark as unread": [
         "Creḍ ur yettwaγra ara"
@@ -8185,9 +8176,6 @@
       ],
       "You already have a Proton account": [
         "Tesɛiḍ yakan amiḍan n Proton"
-      ],
-      "Your ${ domain } address is active": [
-        "Tansa-inek•inem ${ domain } d turmidt"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Tansa-inek ${ MAIL_APP_NAME }"

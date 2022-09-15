@@ -38,6 +38,9 @@
       "Add new group": [
         "Προσθήκη νέας ομάδας"
       ],
+      "Add participant": [
+        "Προσθήκη συμμετέχοντα"
+      ],
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
@@ -71,6 +74,9 @@
       "All Unstarred": [
         "Όλα μη επισημασμένα"
       ],
+      "Allow messages": [
+        "Επιτρέψτε τα μηνύματα"
+      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -88,6 +94,12 @@
       ],
       "Beta Access": [
         "Beta Πρόσβαση"
+      ],
+      "Block": [
+        "Αποκλεισμός"
+      ],
+      "Block messages from this sender": [
+        "Αποκλεισμός μηνυμάτων από αυτόν τον αποστολέα"
       ],
       "Bold": [
         "Έντονη γραφή"
@@ -191,6 +203,9 @@
       "Create a new folder": [
         "Δημιουργία νέου φακέλου"
       ],
+      "Create a new label": [
+        "Δημιουργία νέας ετικέτας"
+      ],
       "Create new contact": [
         "Δημιουργία νέας επαφής"
       ],
@@ -285,6 +300,9 @@
       ],
       "Email settings": [
         "Ρυθμίσεις Email"
+      ],
+      "Emoji": [
+        "Εικονίδια"
       ],
       "Enable": [
         "Ενεργοποίηση"
@@ -381,6 +399,12 @@
       ],
       "Hide messages": [
         "Απόκρυψη μηνυμάτων"
+      ],
+      "Hide My Email": [
+        "Κρύψτε το email μου"
+      ],
+      "Hide my email": [
+        "Κρύψτε το email μου"
       ],
       "I have a question": [
         "Έχω μια ερώτηση"
@@ -524,6 +548,9 @@
       "Move all messages from this label": [
         "Μετακίνηση όλων των μηνυμάτων από αυτήν την ετικέτα"
       ],
+      "Move all to trash": [
+        "Μετακινήστε τα όλα στα Διαγραμμένα"
+      ],
       "Move to": [
         "Μετακίνηση σε"
       ],
@@ -538,6 +565,9 @@
       ],
       "Move to spam": [
         "Μετακίνηση στα ενοχλητικά"
+      ],
+      "Move to spam and unsubscribe": [
+        "Μετακινήστε το στα ενοχλητικά και κάντε απεγγραφή"
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
@@ -650,6 +680,9 @@
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
+      "Refer a friend": [
+        "Συστήστε ένα φίλο"
+      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
       ],
@@ -686,6 +719,9 @@
       "Request new code": [
         "Ζητήστε νέο κωδικό"
       ],
+      "Reset": [
+        "Επαναφορά"
+      ],
       "Reset zoom": [
         "Επαναφορά μεγέθυνσης"
       ],
@@ -709,6 +745,9 @@
       ],
       "Search": [
         "Αναζήτηση"
+      ],
+      "Search countries": [
+        "Αναζήτηση χωρών"
       ],
       "Search in ${ option.text }": [
         "Αναζήτηση σε ${ option.text }"
@@ -932,6 +971,9 @@
       ],
       "View message": [
         "Προβολή μηνύματος"
+      ],
+      "View message details": [
+        "Προβολη λεπτομέρειες μηνύματος"
       ],
       "View recipients": [
         "Προβολή παραληπτών"
@@ -1345,6 +1387,9 @@
       ]
     },
     "color": {
+      "apple": [
+        "μήλο"
+      ],
       "azureish white": [
         "λευκό γαλαζωπό"
       ],
@@ -1910,6 +1955,9 @@
       ],
       "Indonesia": [
         "Ινδονησία"
+      ],
+      "International": [
+        "Διεθνές"
       ],
       "Iran": [
         "Ιράν"
@@ -2583,7 +2631,7 @@
         "Εξάντληση ορίου ημερολογίων"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Επιλογή μελλοντικής ημερομηνίας."
@@ -2696,9 +2744,6 @@
       ],
       "No address with keys available to compose a message": [
         "Δεν υπάρχει διεύθυνση με διαθέσιμα κλειδιά για τη σύνταξη ενός μηνύματος"
-      ],
-      "No data to import": [
-        "Δεν υπάρχουν δεδομένα για εισαγωγή"
       ],
       "No keys retrieved for internal user": [
         "Κανένα πλήκτρο δεν ανακτήθηκε για τον εσωτερικό χρήστη"
@@ -3527,9 +3572,6 @@
       "Activation in progress": [
         "Ενεργοποίηση σε εξέλιξη"
       ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Προσθήκη της διεύθυνσης ${ addressToCreate } στον λογαριασμό σας δωρεάν, μόνο για περιορισμένο χρόνο."
-      ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
       ],
@@ -4006,6 +4048,9 @@
       ],
       "Please add at least one recipient.": [
         "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."
+      ],
+      "Please fill out this field.": [
+        "Παρακαλώ συμπληρώστε αυτό το πεδίο."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Παρακαλούμε κρατήστε το ασφαλές. Θα το χρειαστείτε για πρόσβαση στον λογαριασμό σας και αποκρυπτογράφηση των δεδομένων σας, σε περίπτωση επαναφοράς κωδικού πρόσβασης."
@@ -4633,6 +4678,9 @@
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
+      "Mark as read": [
+        "Σήμανση ως διαβασμένο"
+      ],
       "Mark as unread": [
         "Σήμανση ως μη διαβασμένο"
       ],
@@ -5132,9 +5180,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "All mail": [
         "Όλα τα μηνύματα"
       ],
@@ -5188,6 +5233,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Less": [
+        "Λιγότερα"
       ],
       "Manage your folders": [
         "Διαχείριση των φακέλων σας"

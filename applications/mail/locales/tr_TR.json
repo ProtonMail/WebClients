@@ -2907,7 +2907,7 @@
         "Takvim sınırına ulaşıldı"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler eklenemiyor."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
@@ -3026,9 +3026,6 @@
       ],
       "No address with keys available to compose a message": [
         "Bir ileti oluşturmak için kullanılabilecek anahtarları olan bir adres yok"
-      ],
-      "No data to import": [
-        "İçe aktarılacak veri yok"
       ],
       "No keys retrieved for internal user": [
         "İç kullanıcı için bir anahtarı alınamadı"
@@ -3788,9 +3785,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        "${ activateLink } ya da ${ learnMoreLink }."
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
@@ -3936,9 +3930,6 @@
       ],
       "Activation in progress": [
         "Etkinleştirme sürüyor"
-      ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Hesabınıza ücretsiz ${ addressToCreate } ekleyin. Bu kampanya sınırlı bir süre için geçerlidir."
       ],
       "Add image URL": [
         "Adresten görsel ekle"
@@ -4324,9 +4315,6 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "learn more": [
-        "ayrıntılı bilgi alın"
-      ],
       "Left to Right": [
         "Soldan sağa"
       ],
@@ -4573,9 +4561,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
-      ],
-      "Select what you want to import from Google.": [
-        "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
@@ -5193,6 +5178,9 @@
       "Load remote content": [
         "Uzak içeriği yükle"
       ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
+      ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
       ],
@@ -5710,9 +5698,6 @@
       ]
     },
     "Link": {
-      "Activate": [
-        "Etkinleştir"
-      ],
       "All mail": [
         "Tüm e-postalar"
       ],

@@ -1915,7 +1915,7 @@
         "Límit de calendari assolit"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "No es poden crear nous calendaris per a tots els calendaris importats a causa del límit personal de calendaris."
+        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Cancellation failed to be sent": [
         "No s'ha pogut enviar la cancel·lació"
@@ -2024,9 +2024,6 @@
       ],
       "Name required": [
         "Nom requerit"
-      ],
-      "No data to import": [
-        "Ni hi ha dades per importar"
       ],
       "No keys retrieved for internal user": [
         "No s’ha recuperat cap clau per a l’usuari intern"
