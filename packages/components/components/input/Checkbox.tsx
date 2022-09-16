@@ -1,5 +1,7 @@
 import { InputHTMLAttributes, forwardRef, useEffect, useRef } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
 import Icon from '../icon/Icon';
@@ -73,7 +75,10 @@ const Checkbox = forwardRef<HTMLInputElement, Props>(
                     checked={checked}
                     {...rest}
                 />
-                <span className="checkbox-fakecheck" style={{ borderColor, background: backgroundColor, color }}>
+                <span
+                    className={clsx('checkbox-fakecheck', children ? 'mr0-5' : '')}
+                    style={{ borderColor, background: backgroundColor, color }}
+                >
                     {indeterminate === false ? (
                         <Icon className="checkbox-fakecheck-img" size={16} name="checkmark" color={color} />
                     ) : (
