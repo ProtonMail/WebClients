@@ -7,9 +7,9 @@ import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-sea
 import { useSearchControl } from '../../../store';
 
 export const NoSearchResultsView = () => {
-    const { prepareSearchData, hasData, isBuilding } = useSearchControl();
+    const { prepareSearchData, hasData, isEnablingEncryptedSearch } = useSearchControl();
 
-    if (!hasData || isBuilding) {
+    if (!hasData || isEnablingEncryptedSearch) {
         return (
             <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`Enable drive search` }}>
                 <h3 className="text-bold">{c('Title').t`Enable drive search`}</h3>
@@ -20,8 +20,8 @@ export const NoSearchResultsView = () => {
                         size="large"
                         className="text-bold"
                         onClick={() => prepareSearchData()}
-                        loading={isBuilding}
-                        disabled={isBuilding || hasData}
+                        loading={isEnablingEncryptedSearch}
+                        disabled={isEnablingEncryptedSearch || hasData}
                     >
                         {c('Action').t`Enable drive search`}
                     </PrimaryButton>

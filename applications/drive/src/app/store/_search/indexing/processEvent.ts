@@ -1,6 +1,5 @@
 import { PrivateKeyReference } from '@proton/crypto';
-import { ESEvent, ESItemEvent } from '@proton/encrypted-search';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { ESEvent, ESItemEvent, ES_SYNC_ACTIONS, EventsObject } from '@proton/encrypted-search';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 
@@ -19,7 +18,10 @@ export default async function convertDriveEventsToSearchEvents(
     events: DriveEvents,
     getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<PrivateKeyReference>
 ): Promise<SearchEvent> {
+    let eventsToStore: EventsObject = {};
+    eventsToStore[shareId] = events.eventId;
     return {
+        eventsToStore,
         EventID: events.eventId,
         Refresh: events.refresh ? 1 : 0,
         attemptReDecryption: false,
@@ -29,6 +31,13 @@ export default async function convertDriveEventsToSearchEvents(
     };
 }
 
+const convertEventTypesToSearchEventAction = Object.fromEntries([
+    [EVENT_TYPES.CREATE, ES_SYNC_ACTIONS.CREATE],
+    [EVENT_TYPES.UPDATE, ES_SYNC_ACTIONS.UPDATE_CONTENT],
+    [EVENT_TYPES.UPDATE_METADATA, ES_SYNC_ACTIONS.UPDATE_METADATA],
+    [EVENT_TYPES.DELETE, ES_SYNC_ACTIONS.DELETE],
+]);
+
 async function convertDriveEventToSearchEvent(
     shareId: string,
     event: DriveEvent,
@@ -36,8 +45,8 @@ async function convertDriveEventToSearchEvent(
 ): Promise<SearchEventItem> {
     const result: SearchEventItem = {
         ID: createItemId(shareId, event.encryptedLink.linkId),
-        Action: convertEventTypesToSearchEventAction(event.eventType),
-        ItemEvent: undefined,
+        Action: convertEventTypesToSearchEventAction[event.eventType],
+        ItemMetadata: undefined,
     };
     // There's no link meta sent from BE in case of delete event
     if (event.eventType === EVENT_TYPES.DELETE) {
@@ -49,18 +58,9 @@ async function convertDriveEventToSearchEvent(
         shareId,
         event.encryptedLink.parentLinkId
     );
-    result.ItemEvent = await decryptAndGenerateSearchEvent(shareId, event, parentPrivateKey);
+    result.ItemMetadata = await decryptAndGenerateSearchEvent(shareId, event, parentPrivateKey);
 
     return result;
-}
-
-function convertEventTypesToSearchEventAction(eventType: EVENT_TYPES): EVENT_ACTIONS {
-    return Object.fromEntries([
-        [EVENT_TYPES.CREATE, EVENT_ACTIONS.CREATE],
-        [EVENT_TYPES.UPDATE, EVENT_ACTIONS.UPDATE],
-        [EVENT_TYPES.UPDATE_METADATA, EVENT_ACTIONS.UPDATE_FLAGS],
-        [EVENT_TYPES.DELETE, EVENT_ACTIONS.DELETE],
-    ])[eventType];
 }
 
 async function decryptAndGenerateSearchEvent(shareId: string, event: DriveEvent, privateKey: PrivateKeyReference) {
