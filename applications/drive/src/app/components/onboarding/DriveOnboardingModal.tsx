@@ -68,7 +68,7 @@ const DriveOnboardingModal = (props: Props) => {
                             <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Upload a file`}
                         </li>
                         <li className="my0-5">
-                            <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Create a folder`}
+                            <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Create a share link`}
                         </li>
                         <li className="my0-5">
                             <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Set a recovery method`}
