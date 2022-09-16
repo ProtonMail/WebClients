@@ -7,7 +7,7 @@ import {
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
-    useFeature,
+    useFeatures,
     useFolders,
     useLabels,
     useMailSettings,
@@ -47,12 +47,15 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
-    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
-    const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
-    const { isDBLimited, dropdownOpened } = getESDBStatus();
+    const [{ loading: loadingScheduledFeature }, { feature: partialES }] = useFeatures([
+        FeatureCode.ScheduledSend,
+        FeatureCode.PartialEncryptedSearch,
+    ]);
+    const { getESDBStatus, cacheMailContent, closeDropdown } = useEncryptedSearchContext();
+    const { dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
 
-    const showEncryptedSearch = !isMobile() && !!isPaid(user);
+    const showEncryptedSearch = !isMobile() && (!!isPaid(user) || (!!partialES && partialES.Value));
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
@@ -87,7 +90,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
 
         if (!loading) {
             anchorRef.current?.blur();
-            void cacheIndexedDB();
+            void cacheMailContent();
             open();
         }
     };
@@ -123,7 +126,6 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esState={esState}
-                    isDBLimited={isDBLimited}
                     showMore={showMore}
                     toggleShowMore={toggleShowMore}
                     searchInputValue={searchInputValue}

@@ -85,6 +85,7 @@ export enum FeatureCode {
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
     DriveBeta = 'DriveBeta',
+    PartialEncryptedSearch = 'PartialEncryptedSearch',
 }
 
 export interface FeaturesContextValue {
