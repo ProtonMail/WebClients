@@ -4,6 +4,7 @@ import { useLoading } from '@proton/components';
 
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
+import { generateErrorHandler } from '../_utils';
 import { useAbortSignal, useControlledSorting, useLinkName, useMemoArrayNoMatterTheOrder } from './utils';
 
 /**
@@ -27,7 +28,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
 
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadChildren(ac.signal, shareId, linkId).catch(setError));
+        void withLoading(linksListing.loadChildren(ac.signal, shareId, linkId).catch(generateErrorHandler(setError)));
         return () => {
             ac.abort();
         };
