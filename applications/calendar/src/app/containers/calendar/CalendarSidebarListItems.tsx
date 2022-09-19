@@ -56,6 +56,7 @@ import {
     CalendarUrlsResponse,
     GetAllInvitationsApiResponse,
     GetAllMembersApiResponse,
+    MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -281,11 +282,13 @@ const CalendarSidebarListItems = ({
             api<GetAllInvitationsApiResponse>(getCalendarInvitations(calendarID)),
         ]);
 
-        // filter out owner
-        setMembers(Members.filter(({ Permissions }) => Permissions !== MEMBER_PERMISSIONS.OWNS));
-        setInvitations(Invitations);
+        // filter out owner and accepted invitations
+        const filteredMembers = Members.filter(({ Permissions }) => Permissions !== MEMBER_PERMISSIONS.OWNS);
+        const filteredInvitations = Invitations.filter(({ Status }) => Status !== MEMBER_INVITATION_STATUS.ACCEPTED);
+        setMembers(filteredMembers);
+        setInvitations(filteredInvitations);
 
-        return Members.length + Invitations.length >= MAX_CALENDAR_MEMBERS;
+        return filteredMembers.length + filteredInvitations.length >= MAX_CALENDAR_MEMBERS;
     };
 
     const fetchLinks = async (calendarID: string) => {
