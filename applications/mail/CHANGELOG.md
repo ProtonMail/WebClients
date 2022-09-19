@@ -7,9 +7,9 @@
 
 ### Bug fix
 
-- Fix an issue where imported contacts were not properly display
-- Fix an issue where expiration date was not displayed in some cases
-- Fix an issue when selecting a text in the search field would not open the search pop up
+-   Fix an issue where imported contacts were not properly display
+-   Fix an issue where expiration date was not displayed in some cases
+-   Fix an issue when selecting a text in the search field would not open the search pop up
 
 ## Release 5.0.7 - September 7, 2022
 
