@@ -1,3 +1,16 @@
+## Resealse 5.0.8 - September 21, 2022
+
+### Improvements
+
+-   Added the ability to automatically assign a label to a sender
+-   Added the ability to automatically assign a folder to a sender
+
+### Bug fix
+
+-   Fix an issue where imported contacts were not properly display
+-   Fix an issue where expiration date was not displayed in some cases
+-   Fix an issue when selecting a text in the search field would not open the search pop up
+
 ## Release 5.0.7 - September 7, 2022
 
 ### Improvements
