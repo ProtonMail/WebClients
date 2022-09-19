@@ -5,14 +5,16 @@ import {
     PrivateKeyReference,
     PublicKeyReference,
     VERIFICATION_STATUS,
+    SessionKey,
     toPublicKeyReference,
 } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
+import { getEncryptedSessionKey } from '../calendar/encrypt';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
-import { Address, EncryptionConfig } from '../interfaces';
+import { Address, EncryptionConfig, Nullable, SimpleMap } from '../interfaces';
 import { CalendarKeyFlags, CalendarMember, DecryptedCalendarKey, CalendarKey as tsKey } from '../interfaces/calendar';
 import { CalendarSetupData } from '../interfaces/calendar/Api';
 
@@ -49,6 +51,16 @@ export const generateCalendarKey = async ({
     return { privateKey, privateKeyArmored };
 };
 
+export const signPassphrase = ({
+    passphrase,
+    privateKeys,
+}: {
+    passphrase: string;
+    privateKeys: PrivateKeyReference[];
+}) => {
+    return CryptoProxy.signMessage({ textData: passphrase, signingKeys: privateKeys, detached: true });
+};
+
 export const encryptPassphrase = async ({
     passphrase,
     privateKey,
@@ -67,7 +79,12 @@ export const encryptPassphrase = async ({
      * Pass either this or publicKey
      */
     memberPublicKeys?: { [key: string]: PublicKeyReference };
-}) => {
+}): Promise<{
+    keyPackets: Nullable<SimpleMap<string>>;
+    keyPacket: Nullable<string>;
+    dataPacket: string;
+    signature: string;
+}> => {
     const memberPublicKeysList = memberPublicKeys ? Object.entries(memberPublicKeys) : null;
     const maybePublicKeys = memberPublicKeysList?.map(([, publicKey]) => publicKey) || [publicKey];
     const publicKeys = maybePublicKeys.filter(isTruthy);
@@ -107,6 +124,27 @@ export const encryptPassphrase = async ({
     };
 };
 
+export const encryptPassphraseSessionKey = async ({
+    sessionKey,
+    memberPublicKeys,
+}: {
+    sessionKey: SessionKey;
+    memberPublicKeys: SimpleMap<PublicKeyReference>;
+}): Promise<SimpleMap<string>> => {
+    const encryptedSessionKeys = await Promise.all(
+        Object.entries(memberPublicKeys).map(async ([id, publicKey]) => {
+            if (!publicKey) {
+                throw new Error('Missing public key for member');
+            }
+            const keyPacket = uint8ArrayToBase64String(await getEncryptedSessionKey(sessionKey, publicKey));
+
+            return [id, keyPacket];
+        })
+    );
+
+    return Object.fromEntries(encryptedSessionKeys);
+};
+
 /**
  * Decrypts a calendar passphrase with a private key
  */
@@ -117,9 +155,9 @@ export const decryptPassphrase = async ({
     publicKeys,
 }: {
     armoredPassphrase: string;
-    armoredSignature: string;
+    armoredSignature?: string;
     privateKeys: PrivateKeyReference[];
-    publicKeys: PublicKeyReference[];
+    publicKeys?: PublicKeyReference[];
 }) => {
     const { data: decryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
         armoredMessage: armoredPassphrase,
@@ -128,13 +166,31 @@ export const decryptPassphrase = async ({
         verificationKeys: publicKeys,
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (publicKeys?.length && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
     }
 
     return decryptedPassphrase as string;
+};
+
+/**
+ * Retrieves the decrypted session key that encrypts a calendar passphrase with a private key
+ */
+export const decryptPassphraseSessionKey = async ({
+    armoredPassphrase,
+    privateKeys,
+}: {
+    armoredPassphrase: string;
+    privateKeys: PrivateKeyReference[];
+}) => {
+    const sessionKey = await CryptoProxy.decryptSessionKey({
+        armoredMessage: armoredPassphrase,
+        decryptionKeys: privateKeys,
+    });
+
+    return sessionKey;
 };
 
 export const getAddressesMembersMap = (Members: CalendarMember[], Addresses: Address[]) => {
@@ -188,7 +244,7 @@ interface GenerateCalendarPayload {
     Passphrase: {
         DataPacket: string;
         KeyPacket?: string;
-        KeyPackets?: string;
+        KeyPackets?: SimpleMap<string>;
     };
 }
 

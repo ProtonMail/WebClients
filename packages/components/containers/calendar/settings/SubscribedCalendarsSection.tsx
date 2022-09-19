@@ -15,7 +15,7 @@ import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
 import { CalendarModal } from '../calendarModal/CalendarModal';
-import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
+import SubscribedCalendarModal from '../subscribedCalendarModal/SubscribedCalendarModal';
 import CalendarsSection from './CalendarsSection';
 
 type ModalsMap = {
@@ -47,8 +47,7 @@ const SubscribedCalendarsSection = ({
     const activeAddresses = useMemo(() => {
         return getActiveAddresses(addresses);
     }, [addresses]);
-    const [{ open: isCalendarModalOpen, onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] =
-        useModalState();
+    const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
 
     const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
 
@@ -80,6 +79,13 @@ const SubscribedCalendarsSection = ({
 
     const canAddCalendar =
         user.hasNonDelinquentScope && activeAddresses.length > 0 && calendars.length < MAX_SUBSCRIBED_CALENDARS;
+    const calendarsLimitReachedText = !canAddCalendar
+        ? c('Calendar limit warning').ngettext(
+              msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendar.`,
+              `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendars.`,
+              MAX_SUBSCRIBED_CALENDARS
+          )
+        : '';
 
     const { deleteCalendarModal, calendarModal, subscribeCalendarModal } = modalsMap;
 
@@ -108,14 +114,13 @@ const SubscribedCalendarsSection = ({
                 {c('Info').t`The calendar will be removed from your account.`}
             </AlertModal>
 
-            <SubscribeCalendarModal
-                isOpen={subscribeCalendarModal.isOpen}
+            <SubscribedCalendarModal
+                open={subscribeCalendarModal.isOpen}
                 onClose={() => closeModal('subscribeCalendarModal')}
             />
             {calendarModal.props?.editCalendar && (
                 <CalendarModal
                     {...calendarModalProps}
-                    open={isCalendarModalOpen}
                     calendar={calendarModal.props.editCalendar}
                     onExit={() => {
                         onExitCalendarModal?.();
@@ -129,11 +134,7 @@ const SubscribedCalendarsSection = ({
                 canAdd={canAddCalendar}
                 isFeatureUnavailable={unavailable}
                 add={c('Action').t`Add calendar`}
-                calendarLimitReachedText={c('Calendar limit warning').ngettext(
-                    msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendar.`,
-                    `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendars.`,
-                    MAX_SUBSCRIBED_CALENDARS
-                )}
+                calendarsLimitReachedText={calendarsLimitReachedText}
                 description={
                     <SettingsParagraph>
                         {c('Subscribed calendar section description')
@@ -147,7 +148,7 @@ const SubscribedCalendarsSection = ({
                 onAdd={handleCreate}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
-                canUpgradeLimit={false}
+                canUpgradeCalendarsLimit={false}
                 {...rest}
             />
         </>

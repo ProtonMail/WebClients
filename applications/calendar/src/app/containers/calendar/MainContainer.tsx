@@ -7,15 +7,13 @@ import {
     StandardErrorPage,
     useAddresses,
     useCalendars,
-    useFeature,
+    useFeatures,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
 import { useInstance } from '@proton/hooks/index';
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getOwnedPersonalCalendars, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import unary from '@proton/utils/unary';
 
 import Favicon from '../../components/Favicon';
 import { getIsSideApp } from '../../helpers/views';
@@ -39,15 +37,16 @@ const MainContainer = () => {
         return view;
     });
 
-    useFeature(FeatureCode.SubscribedCalendarReminder);
+    useFeatures([FeatureCode.SubscribedCalendarReminder, FeatureCode.CalendarSharingEnabled]);
 
-    const memoedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses || []), [calendars, addresses]);
+    const memoedCalendars = useMemo(() => getVisualCalendars(calendars || []), [calendars]);
+    const ownedPersonalCalendars = useMemo(() => getOwnedPersonalCalendars(memoedCalendars), [memoedCalendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
 
     const [hasCalendarToGenerate, setHasCalendarToGenerate] = useState(() => {
-        return memoedCalendars.filter(unary(getIsPersonalCalendar)).length === 0;
+        return ownedPersonalCalendars.length === 0;
     });
 
     const [calendarsToReset, setCalendarsToReset] = useState(() => {

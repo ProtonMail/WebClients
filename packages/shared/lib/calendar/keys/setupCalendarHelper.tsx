@@ -5,10 +5,10 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { createCalendar, updateCalendarUserSettings } from '../../api/calendars';
 import { ACCENT_COLORS } from '../../constants';
+import { CalendarWithOwnMembers } from '../../interfaces/calendar';
 import { getTimezone } from '../../date/timezone';
 import { getActiveAddresses } from '../../helpers/address';
 import { Address, Api } from '../../interfaces';
-import { CalendarWithMembers } from '../../interfaces/calendar';
 import { getPrimaryKey } from '../../keys';
 import { DEFAULT_CALENDAR } from '../constants';
 import { setupCalendarKey } from './setupCalendarKeys';
@@ -31,7 +31,7 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
         throw new Error(c('Error').t`Primary address key is not decrypted.`);
     }
 
-    const { Calendar } = await api<{ Calendar: CalendarWithMembers }>(
+    const { Calendar } = await api<{ Calendar: CalendarWithOwnMembers }>(
         createCalendar({
             Name: DEFAULT_CALENDAR.name,
             Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],

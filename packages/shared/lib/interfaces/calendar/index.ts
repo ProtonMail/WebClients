@@ -16,3 +16,4 @@ export * from './Passphrase';
 export * from './Link';
 export * from './Subscription';
 export * from './VcalModel';
+export * from './Api';

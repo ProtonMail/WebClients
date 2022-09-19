@@ -25,10 +25,13 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetCalendarEventRaw,
+    useGetEncryptionPreferences,
+    useGetMailSettings,
     useNotifications,
     useRelocalizeText,
 } from '@proton/components';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
@@ -40,7 +43,11 @@ import { serverTime } from '@proton/crypto';
 import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
-import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
+import {
+    getIsCalendarDisabled,
+    getIsCalendarProbablyActive,
+    getIsCalendarWritable,
+} from '@proton/shared/lib/calendar/calendar';
 import {
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
@@ -49,8 +56,8 @@ import {
     RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
+import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/integration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
@@ -78,6 +85,7 @@ import {
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -107,9 +115,9 @@ import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
+import { extractInviteEmails } from '../../helpers/invite';
 import { getIsSideApp } from '../../helpers/views';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
-import useGetMapSendIcsPreferences from '../../hooks/useGetSendIcsPreferencesMap';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
     CleanSendIcsActionData,
@@ -122,7 +130,6 @@ import {
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
 import CalendarView from './CalendarView';
-import { useContactEmailsCache } from './ContactEmailsProvider';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
@@ -280,6 +287,7 @@ const InteractiveCalendarView = ({
     const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
     const getVTimezonesMap = useGetVtimezonesMap();
+    const getMailSettings = useGetMailSettings();
     const relocalizeText = useRelocalizeText();
     const config = useConfig();
     const isSavingEvent = useRef(false);
@@ -336,7 +344,7 @@ const InteractiveCalendarView = ({
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
-    const getSendIcsPreferencesMap = useGetMapSendIcsPreferences();
+    const getEncryptionPreferences = useGetEncryptionPreferences();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
         return Promise.all([
@@ -490,11 +498,11 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = ({
         viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
-        duplicateFromDisabledCalendarData,
+        duplicateFromNonWritableCalendarData,
         partstat,
     }: {
         viewEventData: CalendarViewEventData;
-        duplicateFromDisabledCalendarData?: { calendar: VisualCalendar };
+        duplicateFromNonWritableCalendarData?: { calendar: VisualCalendar };
         partstat?: ICAL_ATTENDEE_STATUS;
     }): EventModel | undefined => {
         if (
@@ -507,7 +515,7 @@ const InteractiveCalendarView = ({
             return;
         }
         const initialDate = getInitialDate();
-        const targetCalendar = duplicateFromDisabledCalendarData?.calendar || calendarData;
+        const targetCalendar = duplicateFromNonWritableCalendarData?.calendar || calendarData;
         const { Members = [], CalendarSettings } = readCalendarBootstrap(targetCalendar.ID);
         const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
@@ -534,7 +542,7 @@ const InteractiveCalendarView = ({
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
             : veventComponent;
         // when duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to retrieve the old member
-        const existingAlarmMember = duplicateFromDisabledCalendarData
+        const existingAlarmMember = duplicateFromNonWritableCalendarData
             ? getMemberAndAddress(addresses, readCalendarBootstrap(calendarData.ID).Members, eventData.Author)[0]
             : Member;
         const eventResult = getExistingEvent({
@@ -545,7 +553,7 @@ const InteractiveCalendarView = ({
             isOrganizer: !!eventData.IsOrganizer,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
             // When duplicating from a disabled calendar, we need to reset the self address data (otherwise we would have disabled address data in there)
-            selfAddressData: duplicateFromDisabledCalendarData ? { selfAddress: Address } : selfAddressData,
+            selfAddressData: duplicateFromNonWritableCalendarData ? { selfAddress: Address } : selfAddressData,
         });
         if (partstat) {
             return {
@@ -576,7 +584,7 @@ const InteractiveCalendarView = ({
             const isAllowedToTouchEvent = true;
             const isInvitation = event.data.eventData ? !event.data.eventData.IsOrganizer : false;
             let isAllowedToMoveEvent =
-                getIsCalendarProbablyActive(targetCalendar) && getIsPersonalCalendar(targetCalendar) && !isInvitation;
+                getIsCalendarProbablyActive(targetCalendar) && getIsCalendarWritable(targetCalendar) && !isInvitation;
 
             if (!isAllowedToTouchEvent) {
                 return;
@@ -794,12 +802,17 @@ const InteractiveCalendarView = ({
         cancelVevent,
         noCheckSendPrefs,
     }: SendIcsActionData) => {
-        const sendPreferencesMap = await getSendIcsPreferencesMap({
-            inviteActions,
-            vevent,
-            cancelVevent,
-            contactEmailsMap,
-        });
+        const { Sign } = await getMailSettings();
+        const sendPreferencesMap: SimpleMap<SendPreferences> = {};
+        const emails = extractInviteEmails({ inviteActions, vevent, cancelVevent });
+        await Promise.all(
+            emails.map(async (email) => {
+                const encryptionPreferences = await getEncryptionPreferences(email, 0, contactEmailsMap);
+                const sendPreferences = getSendPreferences(encryptionPreferences, getIcsMessageWithPreferences(Sign));
+                sendPreferencesMap[email] = sendPreferences;
+            })
+        );
+
         const hasErrors = Object.values(sendPreferencesMap).some((sendPref) => !!sendPref?.error);
         if (!hasErrors || noCheckSendPrefs) {
             return { sendPreferencesMap, inviteActions, vevent, cancelVevent };
@@ -1433,13 +1446,15 @@ const InteractiveCalendarView = ({
 
         const viewEventData = { ...targetEvent.data };
 
-        const duplicateFromDisabledCalendarData =
-            isDuplication && getIsCalendarDisabled(viewEventData.calendarData) && defaultCalendar
+        const duplicateFromNonWritableCalendarData =
+            isDuplication &&
+            (getIsCalendarDisabled(viewEventData.calendarData) || !getIsCalendarWritable(viewEventData.calendarData)) &&
+            defaultCalendar
                 ? { calendar: defaultCalendar }
                 : undefined;
         const newTemporaryModel = getUpdateModel({
             viewEventData,
-            duplicateFromDisabledCalendarData,
+            duplicateFromNonWritableCalendarData,
         });
 
         if (!newTemporaryModel) {
@@ -1472,7 +1487,7 @@ const InteractiveCalendarView = ({
                     onClose={() => {
                         closeModal('importModal');
                     }}
-                    calendars={activeCalendars.filter(getIsPersonalCalendar)}
+                    calendars={calendars}
                 />
             )}
             {!!sendWithErrorsConfirmationModal.props && (

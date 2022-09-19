@@ -1,6 +1,7 @@
 import { useGetAddresses, useGetCalendarBootstrap, useLoading } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -28,8 +29,8 @@ const CreateEventCalendarSelect = ({
 
     const { id: calendarID } = model.calendar;
     const options = model.calendars
-        .filter(({ isSubscribed }) => !isSubscribed)
-        .map(({ value, text, color }) => ({ id: value, name: text, color }));
+        .filter(({ isSubscribed, permissions }) => !isSubscribed && getCanWrite(permissions))
+        .map(({ value, text, color, permissions }) => ({ id: value, name: text, color, permissions }));
     const { name } = options.find(({ id }) => id === calendarID) || options[0];
 
     if (frozen) {
@@ -43,7 +44,7 @@ const CreateEventCalendarSelect = ({
     }
 
     const handleChangeCalendar = async (newId: string) => {
-        const { color: newColor } = options.find(({ id }) => id === newId) || options[0];
+        const { color, permissions } = options.find(({ id }) => id === newId) || options[0];
 
         // grab members and default settings for the new calendar
         const {
@@ -77,7 +78,7 @@ const CreateEventCalendarSelect = ({
 
         setModel({
             ...model,
-            calendar: { id: newId, color: newColor, isSubscribed: false },
+            calendar: { id: newId, color, isSubscribed: false, permissions },
             ...getInitialMemberModel(Addresses, Members, Member, Address),
             defaultEventDuration,
             partDayNotifications,

@@ -29,7 +29,7 @@ export const updateBootstrapKeysAndSettings = (
         CalendarSettings = [],
     }: {
         CalendarKeys: { ID: string; Key: CalendarKey }[];
-        CalendarSettings: { ID: string; CalendarSettings: tsCalendarSettings }[];
+        CalendarSettings: { CalendarSettings: tsCalendarSettings }[];
     },
     calendarBootstrapCache: Map<string, any>,
     calendarKeysCache: Map<string, any>
@@ -39,8 +39,8 @@ export const updateBootstrapKeysAndSettings = (
     }
 
     if (CalendarSettings.length) {
-        for (const { ID: CalendarID, CalendarSettings: newValue } of CalendarSettings) {
-            const oldRecord = calendarBootstrapCache.get(CalendarID);
+        for (const { CalendarSettings: newValue } of CalendarSettings) {
+            const oldRecord = calendarBootstrapCache.get(newValue.CalendarID);
             if (oldRecord && oldRecord.value) {
                 // Mutation on purpose
                 oldRecord.value.CalendarSettings = newValue;

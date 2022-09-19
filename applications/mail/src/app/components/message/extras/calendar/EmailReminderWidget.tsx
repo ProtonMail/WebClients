@@ -190,7 +190,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 };
 
                 const [{ Event }, calendarsWithMembers = []] = await Promise.all([fetchEvent(), getCalendars()]);
-                const calendars = getVisualCalendars(calendarsWithMembers, addresses);
+                const calendars = getVisualCalendars(calendarsWithMembers);
 
                 const calendar = calendars.find(({ ID }) => ID === Event.CalendarID);
 

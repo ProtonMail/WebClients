@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { BasicModal, Button, Form } from '@proton/components';
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
@@ -59,7 +59,7 @@ const CreateEventModal = ({
     });
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
     const { selfAddress, selfAttendeeIndex, attendees } = model;
-    const cannotSave = model.isOrganizer && attendees.length > 100;
+    const cannotSave = model.isOrganizer && attendees.length > MAX_ATTENDEES;
     const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;

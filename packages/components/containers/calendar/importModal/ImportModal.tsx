@@ -3,6 +3,7 @@ import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { updateMember } from '@proton/shared/lib/api/calendars';
+import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
@@ -57,12 +58,14 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
     const [addresses] = useAddresses();
     const api = useApi();
     const { APP_NAME } = useConfig();
-    const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
     const { call: coreCall } = useEventManager();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const { call: calendarCall } = useCalendarModelEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
+
+    const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
+    const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
 
     const handleFiles = (files: File[]) => {
         const [file] = files;
@@ -196,7 +199,7 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
                 content: (
                     <AttachingModalContent
                         model={model}
-                        calendars={calendars}
+                        calendars={activeWritableCalendars}
                         onSelectCalendar={handleSelectCalendar}
                         onAttach={handleAttach}
                         onClear={handleClear}

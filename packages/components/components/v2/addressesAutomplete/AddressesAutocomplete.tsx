@@ -5,6 +5,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useCombinedRefs } from '../../../hooks';
@@ -39,6 +40,8 @@ interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'
     onAddInvalidEmail?: () => void;
     validate?: (email: string) => string | void;
     onChange?: (value: string) => void;
+    compact?: boolean;
+    excludedEmails?: string[];
 }
 
 const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
@@ -59,6 +62,8 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
             onAddInvalidEmail,
             onChange,
             validate = noop,
+            compact,
+            excludedEmails = [],
             ...rest
         }: Props,
         ref
@@ -86,10 +91,15 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
             return groupsWithContactsMap ? (groupsWithContactsMap[groupID]?.contacts.length || 0) <= 0 : false;
         };
 
+        const filteredContactEmails = useMemo(
+            () => contactEmails?.filter(({ Email }) => !excludedEmails.includes(Email)),
+            [contactEmails, excludedEmails]
+        );
+
         const contactsAutocompleteItems = useMemo(() => {
             return [
                 ...getContactsAutocompleteItems(
-                    contactEmails,
+                    filteredContactEmails,
                     ({ Email }) => !recipientsByAddress.has(canonizeEmail(Email)) && !validate(Email)
                 ),
                 ...getContactGroupsAutocompleteItems(
@@ -97,7 +107,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                     ({ Path, ID }) => !recipientsByGroup.has(Path) && !isGroupEmpty(ID)
                 ),
             ];
-        }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup]);
+        }, [filteredContactEmails, contactGroups, recipientsByAddress, recipientsByGroup]);
 
         const options = [...contactsAutocompleteItems];
 
@@ -211,6 +221,8 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                             handleAddRecipientFromInput(input);
                         }
                     }}
+                    className={clsx([rest.className, compact && 'border-none'])}
+                    style={compact ? { height: 'auto', minHeight: 'auto' } : {}}
                     error={emailError}
                 />
                 <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>

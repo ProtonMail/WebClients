@@ -20,12 +20,12 @@ import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 const { CALENDAR_URL } = MAX_LENGTHS_API;
 
 interface Props {
+    open: boolean;
     onClose?: () => void;
     onCreateCalendar?: (id: string) => void;
-    isOpen: boolean;
 }
 
-const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) => {
+const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => {
     const [, setCalendar] = useState<VisualCalendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
     const [model, setModel] = useState(() => getDefaultModel());
@@ -163,7 +163,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
                     <Button type="submit" color="norm" {...submitProps} />
                 </>
             }
-            isOpen={isOpen}
+            isOpen={open}
             className="modal--shorter-labels w100"
             onClose={handleClose}
             as={Form}
@@ -202,4 +202,4 @@ ${kbLink}
     );
 };
 
-export default SubscribeCalendarModal;
+export default SubscribedCalendarModal;
