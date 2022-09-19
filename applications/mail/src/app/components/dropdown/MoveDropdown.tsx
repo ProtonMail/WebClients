@@ -239,7 +239,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                             data-prevent-arrow-navigation
                         />
                         <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                            {c('Label').t`Always move senders emails`}
+                            {c('Label').t`Always move sender's emails`}
                         </label>
                     </div>
                 </Tooltip>

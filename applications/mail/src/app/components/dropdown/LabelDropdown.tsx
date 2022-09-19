@@ -324,7 +324,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             data-prevent-arrow-navigation
                         />
                         <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                            {c('Label').t`Always label senders emails`}
+                            {c('Label').t`Always label sender's emails`}
                         </label>
                     </div>
                 </Tooltip>
