@@ -280,7 +280,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
                         >
                             <Checkbox
-                                className="flex-item-noshrink"
+                                className="flex-item-noshrink mrO-5"
                                 id={labelCheckID(ID)}
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
@@ -316,6 +316,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 <Tooltip title={alwaysTooltip}>
                     <div className={classnames(['p1 border-top', alwaysDisabled && 'color-disabled'])}>
                         <Checkbox
+                            className="mr0-5"
                             id={alwaysCheckID}
                             checked={always}
                             disabled={alwaysDisabled}
@@ -331,6 +332,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             )}
             <div className={classnames([!displayContextFiltering && 'py1 border-top', 'flex ml1 mr1'])}>
                 <Checkbox
+                    className="mr0-5"
                     id={archiveCheckID}
                     checked={alsoArchive}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}

@@ -195,7 +195,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                 className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
                             >
                                 <Radio
-                                    className="flex-item-noshrink"
+                                    className="flex-item-noshrink mr0-5"
                                     id={folderButtonID(folder.ID)}
                                     name={uid}
                                     checked={selectedFolder?.ID === folder.ID}
@@ -231,6 +231,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 <Tooltip title={alwaysTooltip}>
                     <div className={classnames(['p1 pb0 border-top', alwaysDisabled && 'color-disabled'])}>
                         <Checkbox
+                            className="mr0-5"
                             id={alwaysCheckID}
                             checked={always}
                             disabled={alwaysDisabled}
