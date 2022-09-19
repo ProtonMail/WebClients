@@ -110,15 +110,14 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		pointer-events: none;
 	}
 
-	&:focus,
-	&.item-is-focused {
+	&:focus {
 		outline: none;
+	}
 
-		&::after {
-			z-index: 1;
-			border-color: var(--field-focus);
-			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
-		}
+	&:focus-visible::after {
+		z-index: 1;
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
 
 	&.item-is-selected {
@@ -478,7 +477,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		display: none;
 	}
 
-	&:focus + .item-icon {
+	&:focus-visible + .item-icon {
 		border-color: var(--field-focus);
 		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
