@@ -146,7 +146,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     // If the user sees the SL placeholder, we need to send once a telemetry request
     useEffect(() => {
-        if (showSimpleLoginPlaceholder && !placeholderSLSeenSent && total > 0) {
+        if (showSimpleLoginPlaceholder && !placeholderSLSeenSent) {
             // We need to send to telemetry the total number of messages that the user has in spam
             handleSendTelemetryData(TelemetrySimpleLoginEvents.spam_view, {}, false, total);
             setPlaceholderSLSeenSent(true);
