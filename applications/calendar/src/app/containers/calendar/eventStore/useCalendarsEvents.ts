@@ -1,5 +1,6 @@
 import { MutableRefObject, useEffect, useMemo, useState } from 'react';
 
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DAY } from '@proton/shared/lib/constants';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -9,6 +10,7 @@ import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { CalendarViewEvent, CalendarViewEventData } from '../interface';
 import { getExistingFetch } from './cache/fetchCalendarEvents';
 import { getRecurringEvents } from './cache/getRecurringEvents';
+import { getIsCalendarEvent } from './cache/helper';
 import { CalendarsEventsCache } from './interface';
 import useCalendarsEventsFetcher from './useCalendarsEventsFetcher';
 import useCalendarsEventsReader from './useCalendarsEventsReader';
@@ -48,9 +50,9 @@ const useCalendarsEvents = (
 
     const eventsResults = useMemo((): CalendarViewEvent[] => {
         return requestedCalendars
-            .map((Calendar) => {
-                const { ID } = Calendar;
-                const calendarEventsCache = cacheRef.current?.calendars[ID];
+            .map((calendar) => {
+                const isOwnedCalendar = getIsOwnedCalendar(calendar);
+                const calendarEventsCache = cacheRef.current?.calendars[calendar.ID];
                 if (!calendarEventsCache) {
                     return [];
                 }
@@ -78,8 +80,18 @@ const useCalendarsEvents = (
                         const data: CalendarViewEventData = {
                             eventData,
                             eventReadResult,
-                            calendarData: Calendar,
+                            calendarData: calendar,
                         };
+                        const hasAddressKeyPacket = !!(
+                            eventData &&
+                            getIsCalendarEvent(eventData) &&
+                            eventData.AddressKeyPacket
+                        );
+
+                        if (hasAddressKeyPacket && !isOwnedCalendar) {
+                            // ignore auto-added invites in shared calendars (they can't be decrypted)
+                            return;
+                        }
 
                         return {
                             id,
@@ -108,8 +120,18 @@ const useCalendarsEvents = (
                         const data: CalendarViewEventData = {
                             eventData,
                             eventReadResult,
-                            calendarData: Calendar,
+                            calendarData: calendar,
                         };
+                        const hasAddressKeyPacket = !!(
+                            eventData &&
+                            getIsCalendarEvent(eventData) &&
+                            eventData.AddressKeyPacket
+                        );
+
+                        if (hasAddressKeyPacket && !isOwnedCalendar) {
+                            // ignore auto-added invites in shared calendars (they can't be decrypted)
+                            return;
+                        }
 
                         return eventOccurrences.map(
                             ({ utcStart, utcEnd, localStart, localEnd, occurrenceNumber }): CalendarViewEvent => {
@@ -133,6 +155,7 @@ const useCalendarsEvents = (
                             }
                         );
                     })
+                    .filter(isTruthy)
                     .flat(1);
 
                 return results

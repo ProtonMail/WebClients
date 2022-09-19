@@ -47,14 +47,6 @@ export const getIsCalendarSubscriptionEventManagerUpdate = (
     return event.Action === EVENT_ACTIONS.UPDATE;
 };
 
-export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalendar): calendar is VisualCalendar => {
-    return calendar.Type === CALENDAR_TYPE.PERSONAL;
-};
-
-export const getPersonalCalendars = (calendars: VisualCalendar[]): VisualCalendar[] => {
-    return calendars.filter(getIsPersonalCalendar);
-};
-
 export const getIsSubscribedCalendar = (
     calendar: Calendar | VisualCalendar | SubscribedCalendar
 ): calendar is SubscribedCalendar => {
@@ -65,18 +57,6 @@ export const getCalendarHasSubscriptionParameters = (
     calendar: Calendar | SubscribedCalendar
 ): calendar is SubscribedCalendar => {
     return !!(calendar as SubscribedCalendar).SubscriptionParameters;
-};
-
-export const sortCalendars = (calendars: VisualCalendar[]) => {
-    return [...calendars].sort((cal1, cal2) => {
-        // personal calendars go first
-        const bit1 = +getIsPersonalCalendar(cal1);
-        const bit2 = +getIsPersonalCalendar(cal2);
-        if (bit1 ^ bit2) {
-            return bit2 - bit1;
-        }
-        return 0;
-    });
 };
 
 export const getSyncingInfo = (text: string, longText = '') => ({

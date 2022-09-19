@@ -12,7 +12,20 @@ import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
 import CalendarsSection, { CalendarsSectionProps } from './CalendarsSection';
 
-jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
+jest.mock('../../../hooks/useAddresses', () => ({
+    __esModule: true,
+    default: jest.fn(() => [
+        [
+            {
+                Email: 'test@pm.gg',
+                Status: 1,
+                Receive: 1,
+                Send: 1,
+            },
+        ],
+    ]),
+    useGetAddresses: jest.fn(),
+}));
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
@@ -40,7 +53,7 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
         // defaultCalendarID?: string,
         user: { hasPaidMail: false } as UserModel,
         // loading?: boolean,
-        canAdd: false,
+        canAdd: true,
         // isFeatureUnavailable?: boolean,
         add: 'add',
         description: 'description',
@@ -49,8 +62,8 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
         onEdit: jest.fn(),
         onDelete: jest.fn(),
         // onExport?: (calendar: Calendar) => void,
-        canUpgradeLimit: true,
-        calendarLimitReachedText: 'calendarLimitReachedText',
+        canUpgradeCalendarsLimit: true,
+        calendarsLimitReachedText: 'calendarLimitReachedText',
     };
 
     return (

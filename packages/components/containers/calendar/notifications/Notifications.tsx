@@ -24,6 +24,7 @@ interface Props {
     defaultNotification: NotificationModel;
     disabled?: boolean;
     onChange: (value: NotificationModel[]) => void;
+    hasDeleteColor?: boolean;
 }
 
 const Notifications = ({
@@ -37,6 +38,7 @@ const Notifications = ({
     defaultNotification,
     disabled,
     onChange,
+    hasDeleteColor = true,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const addNotificationText = c('Action').t`Add notification`;
@@ -69,7 +71,7 @@ const Notifications = ({
                                 icon
                                 type="button"
                                 shape="ghost"
-                                color="norm"
+                                color={hasDeleteColor ? 'norm' : undefined}
                             >
                                 <Icon name="trash" className="flex-item-noshrink" />
                                 <span className="sr-only">{c('Action').t`Remove this notification`}</span>

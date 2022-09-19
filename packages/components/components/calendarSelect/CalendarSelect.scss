@@ -8,10 +8,15 @@
 	display: inline-flex;
 
 	@media not print {
-		border: rem(2) solid var(--background-norm);
+		outline: rem(2) solid var(--background-norm);
 	}
 
 	&--large {
 		--calendar-select-color-size: #{rem(20)};
+	}
+
+	&--bordered {
+		--calendar-select-color-size: #{rem(10)};
+		border: 1px solid;
 	}
 }

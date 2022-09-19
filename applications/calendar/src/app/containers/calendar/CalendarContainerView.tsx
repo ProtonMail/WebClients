@@ -372,8 +372,9 @@ const CalendarContainerView = ({
     );
     const shouldShowSpotlight = useSpotlightShow(show);
     const goToSettingsLink = (
-        <SettingsLink path="/general#invitations" app={APPS.PROTONCALENDAR}>{c('Spotlight settings link')
-            .t`Go to settings`}</SettingsLink>
+        <SettingsLink path="/general#invitations" app={APPS.PROTONCALENDAR} key="settings-link">{c(
+            'Spotlight settings link'
+        ).t`Go to settings`}</SettingsLink>
     );
 
     const header = isSideApp ? (

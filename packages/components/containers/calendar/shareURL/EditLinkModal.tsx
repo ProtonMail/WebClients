@@ -2,19 +2,20 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 
-import { BasicModal, Button, Form, InputTwo } from '../../../components';
+import { BasicModal, Button, Form, InputFieldTwo } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 
-interface Props {
+interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'> {
     decryptedPurpose: Nullable<string>;
     onClose: () => void;
     onSubmit: (purpose: string) => Promise<void>;
     isOpen: boolean;
 }
 
-const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, isOpen }: Props) => {
+const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: EditLinkModalProps) => {
     const [purpose, setPurpose] = useState(decryptedPurpose || '');
     const [isLoading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -47,6 +48,7 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, isOpen }: Props) =
 
     return (
         <BasicModal
+            {...rest}
             title={decryptedPurpose ? c('Info').t`Edit label` : c('Info').t`Add label`}
             footer={
                 <>
@@ -54,7 +56,6 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, isOpen }: Props) =
                     <Button color="norm" type="submit" loading={isLoading}>{c('Action').t`Save`}</Button>
                 </>
             }
-            isOpen={isOpen}
             size="medium"
             onSubmit={() => {
                 if (!isLoading) {
@@ -64,16 +65,16 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, isOpen }: Props) =
             onClose={onClose}
             as={Form}
         >
-            <p className="mt0">{c('Info').t`Only you can see the labels.`}</p>
-            <label htmlFor="your-calendar-url-label" className="sr-only">
-                {c('Label').t`Your calendar URL label`}
-            </label>
-            <InputTwo
+            <InputFieldTwo
+                label={c('Label').t`Link label`}
+                assistiveText={c('Info').t`Only you can see the labels.`}
+                placeholder={c('Shared calendar label input placeholder').t`Add label`}
                 id="your-calendar-url-label"
                 maxLength={50}
                 autoFocus
                 value={purpose}
-                onChange={({ target: { value } }) => setPurpose(value)}
+                // @ts-ignore
+                onValue={(value) => setPurpose(value)}
             />
         </BasicModal>
     );

@@ -26,6 +26,7 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
@@ -76,8 +77,10 @@ const MainContainer = () => {
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.BulkUserUpload,
+        FeatureCode.CalendarSharingEnabled,
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
+        FeatureCode.ReferralProgram,
         FeatureCode.DrivePlan,
         FeatureCode.EasySwitch,
         FeatureCode.EasySwitchGmailNewScope,
@@ -214,15 +217,17 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${calendarSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <CalendarSettingsRouter
-                            user={user}
-                            loadingFeatures={loadingFeatures}
-                            calendarAppRoutes={routes.calendar}
-                            calendarSubscribeUnavailable={unavailable}
-                            hasInviteLocaleFeature={isInviteLocaleFeatureEnabled}
-                            hasAutoImportInviteFeature={isAutoImportInviteFeatureEnabled}
-                            redirect={redirect}
-                        />
+                        <ContactEmailsProvider>
+                            <CalendarSettingsRouter
+                                user={user}
+                                loadingFeatures={loadingFeatures}
+                                calendarAppRoutes={routes.calendar}
+                                calendarSubscribeUnavailable={unavailable}
+                                hasInviteLocaleFeature={isInviteLocaleFeatureEnabled}
+                                hasAutoImportInviteFeature={isAutoImportInviteFeatureEnabled}
+                                redirect={redirect}
+                            />
+                        </ContactEmailsProvider>
                     </Suspense>
                 </Route>
                 <Route path={`/${vpnSlug}`}>

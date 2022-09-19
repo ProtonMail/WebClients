@@ -10,12 +10,21 @@ import { UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
-import { Button, ButtonLike, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import {
+    Button,
+    ButtonLike,
+    Icon,
+    Info,
+    Table,
+    TableBody,
+    TableCell,
+    TableHeader,
+    TableHeaderCell,
+    TableRow,
+    Tooltip,
+} from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
-import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 import CalendarBadge from './CalendarBadge';
-
-import './CalendarsTable.scss';
 
 interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
@@ -26,7 +35,6 @@ interface Props {
 
 const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault }: Props) => {
     const { hasNonDelinquentScope } = user;
-    const calendarAddressMap = useGetCalendarsEmails(calendars);
     const [addresses, loadingAddresses] = useAddresses();
     const [isLoading, setIsLoading] = useState<string>();
 
@@ -38,31 +46,30 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
 
     return (
         <Table className="simple-table--has-actions">
-            <TableHeader
-                cells={[
-                    c('Header').t`Name`,
-                    <div className="flex flex-align-items-center">
-                        <span className="mr0-5">{c('Header').t`Status`}</span>
-                        <Info url={getKnowledgeBaseUrl('/calendar-status')} />
-                    </div>,
-                    c('Header').t`Actions`,
-                ]}
-            />
+            <TableHeader>
+                <TableRow>
+                    <TableHeaderCell className="text-left w50">{c('Header').t`Name`}</TableHeaderCell>
+                    <TableHeaderCell className="w20">
+                        <div className="flex flex-align-items-center">
+                            <span className="mr0-5">{c('Header').t`Status`}</span>
+                            <Info url={getKnowledgeBaseUrl('/calendar-status')} />
+                        </div>
+                    </TableHeaderCell>
+                    <TableHeaderCell>{c('Header').t`Actions`}</TableHeaderCell>
+                </TableRow>
+            </TableHeader>
             <TableBody>
                 {(calendars || []).map((calendar, index) => {
-                    const { ID, Name, Color } = calendar;
+                    const { ID, Name, Color, Email } = calendar;
 
                     const { isDisabled, isDefault, isSubscribed, badges } = getCalendarStatusBadges(
                         calendar,
                         defaultCalendarID
                     );
 
-                    const calendarAddress = calendarAddressMap[ID] || '';
-
                     return (
-                        <TableRow
-                            key={ID}
-                            cells={[
+                        <TableRow key={ID}>
+                            <TableCell>
                                 <div key="id">
                                     <div className="grid-align-icon-center">
                                         <CalendarSelectIcon
@@ -74,18 +81,17 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                         </div>
                                         {!hasSingleAddress && (
                                             <div
-                                                className={clsx([
-                                                    'text-ellipsis text-sm m0 color-weak',
-                                                    !calendarAddress && 'calendar-email',
-                                                ])}
+                                                className={clsx(['text-ellipsis text-sm m0 color-weak'])}
                                                 style={{ '--index': index }}
-                                                title={calendarAddress}
+                                                title={Email}
                                             >
-                                                {calendarAddress}
+                                                {Email}
                                             </div>
                                         )}
                                     </div>
-                                </div>,
+                                </div>
+                            </TableCell>
+                            <TableCell>
                                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
                                     {badges.map(({ statusType, badgeType, text, tooltipText }) => (
                                         <CalendarBadge
@@ -95,7 +101,9 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                             tooltipText={tooltipText}
                                         />
                                     ))}
-                                </div>,
+                                </div>
+                            </TableCell>
+                            <TableCell>
                                 <div className="flex flex-align-items-center flex-nowrap flex-justify-end">
                                     {!isSubscribed &&
                                         !isDisabled &&
@@ -110,22 +118,26 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                                     await onSetDefault(ID);
                                                     setIsLoading(undefined);
                                                 }}
+                                                size="small"
                                                 shape="outline"
                                                 className="mr0-5"
                                             >{c('Action').t`Make default`}</Button>
                                         )}
-                                    <ButtonLike
-                                        as={Link}
-                                        to={`/calendar/calendars/${ID}`}
-                                        shape="outline"
-                                        icon
-                                        disabled={!!isLoading}
-                                    >
-                                        <Icon name="cog-wheel" className="flex-item-noshrink" />
-                                    </ButtonLike>
-                                </div>,
-                            ]}
-                        />
+                                    <Tooltip title={c('Calendar table settings button tooltip').t`Open settings`}>
+                                        <ButtonLike
+                                            as={Link}
+                                            to={`/calendar/calendars/${ID}`}
+                                            shape="outline"
+                                            size="small"
+                                            icon
+                                            disabled={!!isLoading}
+                                        >
+                                            <Icon name="cog-wheel" className="flex-item-noshrink" />
+                                        </ButtonLike>
+                                    </Tooltip>
+                                </div>
+                            </TableCell>
+                        </TableRow>
                     );
                 })}
             </TableBody>

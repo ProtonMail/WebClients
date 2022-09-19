@@ -1,0 +1,12 @@
+.action-card {
+	transition: 0.15s easing(ease-out-quint);
+
+	> * + * {
+		margin-inline-start: rem(16);
+	}
+
+	&:hover,
+	&:focus {
+		background-color: var(--interaction-default-hover);
+	}
+}

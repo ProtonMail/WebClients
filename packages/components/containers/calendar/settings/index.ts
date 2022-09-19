@@ -9,3 +9,4 @@ export { default as CalendarSettingsSection } from './SingleCalendarSettingsSect
 export { default as CalendarSettingsHeaderSection } from './CalendarSettingsHeaderSection';
 export { default as CalendarDeleteSection } from './CalendarDeleteSection';
 export { default as CalendarEventSettingsSection } from './CalendarEventDefaultsSection';
+export { default as SharedCalendarsSection } from './SharedCalendarsSection';

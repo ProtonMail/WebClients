@@ -14,13 +14,12 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/helpers';
-import { Address } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
     CalendarMember,
     CalendarSubscription,
     CalendarSubscriptionResponse,
-    CalendarWithMembers,
+    CalendarWithOwnMembers,
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -39,7 +38,7 @@ import useApi from './useApi';
 import useEventManager from './useEventManager';
 import useLoading from './useLoading';
 
-const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[], loadingCalendars = false) => {
+const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = false) => {
     const [subscribedCalendars, setSubscribedCalendars] = useState<SubscribedCalendar[]>([]);
     const [loading, withLoading] = useLoading(true);
     const api = useApi();
@@ -49,7 +48,7 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
     const { subscribe: standardSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
-    const handleAddCalendar = async (calendar: CalendarWithMembers) => {
+    const handleAddCalendar = async (calendar: CalendarWithOwnMembers) => {
         if (!getIsSubscribedCalendar(calendar)) {
             return;
         }
@@ -58,16 +57,13 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
         );
 
         setSubscribedCalendars((prevState = []) =>
-            getVisualCalendars(
-                [
-                    ...prevState,
-                    {
-                        ...calendar,
-                        SubscriptionParameters: CalendarSubscription,
-                    },
-                ],
-                addresses
-            )
+            getVisualCalendars([
+                ...prevState,
+                {
+                    ...calendar,
+                    SubscriptionParameters: CalendarSubscription,
+                },
+            ])
         );
     };
 
@@ -135,8 +131,7 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
                 updateItem(subscribedCalendars, calendarIndex, {
                     ...oldCalendar,
                     Members: updateItem(oldCalendar.Members, memberIndex, member),
-                }),
-                addresses
+                })
             );
         });
     };

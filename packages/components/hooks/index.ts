@@ -16,6 +16,8 @@ export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as useCalendars, useGetCalendars } from './useCalendars';
 export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFeature';
 export { default as useSubscribedCalendars } from './useSubscribedCalendars';
+export { default as useCalendarShareInvitations } from './useCalendarShareInvitations';
+export { default as useCalendarShareInvitationActions } from './useCalendarShareInvitationActions';
 export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
@@ -55,7 +57,7 @@ export {
 export { default as useGetCalendarInfo } from './useGetCalendarInfo';
 export { default as useGetCalendarEventRaw } from './useGetCalendarEventRaw';
 export {
-    default as useGetDecryptedPassphraseAndCalendarKeys,
+    useGetDecryptedPassphraseAndCalendarKeys,
     useGetCalendarKeys,
 } from './useGetDecryptedPassphraseAndCalendarKeys';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';

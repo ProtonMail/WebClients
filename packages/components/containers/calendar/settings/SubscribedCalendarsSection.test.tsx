@@ -16,7 +16,6 @@ import SubscribedCalendarsSection, { SubscribedCalendarsSectionProps } from './S
 jest.mock('../../../hooks/useApi', () => () => jest.fn(() => Promise.resolve({})));
 jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
 jest.mock('../../../hooks/useFeatures', () => () => ({}));
-jest.mock('../hooks/useGetCalendarsEmails', () => jest.fn(() => ({})));
 jest.mock('../../../hooks/useSubscribedCalendars', () => jest.fn(() => ({ loading: true })));
 jest.mock('../../../hooks/useEventManager', () => jest.fn(() => ({ subscribe: jest.fn() })));
 jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
@@ -66,11 +65,13 @@ describe('SubscribedCalendarsSection', () => {
         const createCalendarCopy = 'Add calendar';
 
         expect(screen.getByText(maxReachedCopy)).toBeInTheDocument();
+        expect(screen.getByText(createCalendarCopy)).toBeInTheDocument();
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();
 
         rerender(renderComponent());
 
         expect(screen.queryByText(maxReachedCopy)).not.toBeInTheDocument();
+        expect(screen.getByText(createCalendarCopy)).toBeInTheDocument();
         expect(screen.getByText(createCalendarCopy)).not.toBeDisabled();
     });
 });

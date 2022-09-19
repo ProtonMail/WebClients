@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_APP_NAME, IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -15,12 +16,12 @@ import { ImportModal } from '../importModal';
 
 interface Props {
     addresses: Address[];
-    personalActiveCalendars: VisualCalendar[];
+    calendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     user: UserModel;
 }
 
-const CalendarImportSection = ({ addresses, personalActiveCalendars, defaultCalendar, user }: Props) => {
+const CalendarImportSection = ({ addresses, calendars, defaultCalendar, user }: Props) => {
     const { hasNonDelinquentScope } = user;
     const { createModal } = useModals();
 
@@ -28,7 +29,8 @@ const CalendarImportSection = ({ addresses, personalActiveCalendars, defaultCale
     const easySwitchFeatureLoading = easySwitchFeature.loading;
     const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
-    const hasActiveCalendars = !!personalActiveCalendars.length;
+    const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
+    const hasActiveCalendars = !!activeWritableCalendars.length;
 
     const [importModal, setIsImportModalOpen, renderImportModal] = useModalState();
 
@@ -50,7 +52,7 @@ const CalendarImportSection = ({ addresses, personalActiveCalendars, defaultCale
                 <ImportModal
                     isOpen={importModal.open}
                     defaultCalendar={defaultCalendar}
-                    calendars={personalActiveCalendars}
+                    calendars={calendars}
                     {...importModal}
                 />
             )}

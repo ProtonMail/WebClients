@@ -16,7 +16,7 @@ const Radio = ({ id, children, className = 'inline-flex', name, disabled = false
         htmlFor={id}
         className={classnames([
             !className?.includes('increase-click-surface') && 'relative',
-            disabled && 'no-pointer-events',
+            disabled && 'opacity-50 no-pointer-events',
             className,
         ])}
     >
