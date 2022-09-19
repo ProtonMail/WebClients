@@ -7,6 +7,12 @@ export const MAX_CALENDARS_FREE = 1;
 export const MAX_SUBSCRIBED_CALENDARS = 5;
 export const MAX_CALENDARS_PAID = 20; // Only paid mail
 
+export const MAX_DEFAULT_NOTIFICATIONS = 5;
+export const MAX_NOTIFICATIONS = 10;
+export const MAX_ATTENDEES = 100;
+export const MAX_CALENDAR_MEMBERS = 49;
+export const MAX_LINKS_PER_CALENDAR = 5;
+
 export enum CALENDAR_CARD_TYPE {
     CLEAR_TEXT = 0,
     ENCRYPTED = 1,
@@ -15,12 +21,13 @@ export enum CALENDAR_CARD_TYPE {
 }
 
 export enum CALENDAR_PERMISSIONS {
-    OWNER = 32,
-    ADMIN = 16,
-    WRITE = 8,
-    READ_MEMBER_LIST = 4,
-    READ = 2,
-    AVAILABILITY = 1,
+    SUPER_OWNER = 1,
+    OWNER = 2,
+    ADMIN = 4,
+    READ_MEMBER_LIST = 8,
+    WRITE = 16,
+    READ = 32,
+    AVAILABILITY = 64,
 }
 
 export enum ATTENDEE_PERMISSIONS {
@@ -213,9 +220,6 @@ export const COLORS = {
     WHITE: '#FFF',
 };
 
-export const MAX_DEFAULT_NOTIFICATIONS = 5;
-export const MAX_NOTIFICATIONS = 10;
-
 export enum SAVE_CONFIRMATION_TYPES {
     SINGLE = 1,
     RECURRING,
@@ -241,8 +245,6 @@ export const MAX_FILENAME_CHARS_DISPLAY = 100;
 export const IMPORT_CALENDAR_FAQ_URL = '/how-to-import-calendar-to-proton-calendar';
 export const IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL = `${IMPORT_CALENDAR_FAQ_URL}/#items_not_supported`;
 
-export const MAX_LINKS_PER_CALENDAR = 5;
-
 export const TITLE_INPUT_ID = 'event-title-input';
 export const FREQUENCY_INPUT_ID = 'event-frequency-input';
 export const LOCATION_INPUT_ID = 'event-location-input';
@@ -251,6 +253,7 @@ export const CALENDAR_INPUT_ID = 'event-calendar-input';
 export const DESCRIPTION_INPUT_ID = 'event-description-input';
 export const DATE_INPUT_ID = 'event-date-input';
 export const PARTICIPANTS_INPUT_ID = 'event-participants-input';
+export const MEMBERS_INPUT_ID = 'shared-members-input';
 
 export enum IMPORT_ERROR_TYPE {
     NO_FILE_SELECTED,
@@ -332,4 +335,6 @@ export const CALENDAR_SETTINGS_SUBSECTION_ID = {
     IMPORT: 'import',
     EXPORT: 'export',
     SHARE: 'share',
+    SHARE_PRIVATELY: 'share-privately',
+    SHARE_PUBLICLY: 'share-publicly',
 };

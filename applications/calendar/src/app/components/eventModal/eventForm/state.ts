@@ -122,11 +122,13 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
             text: calendar.Name,
             value: calendar.ID,
             color: calendar.Color,
+            permissions: calendar.Permissions,
             isSubscribed: getIsSubscribedCalendar(calendar),
         })),
         calendar: {
             id: Calendar.ID,
             color: Calendar.Color,
+            permissions: Calendar.Permissions,
             isSubscribed: getIsSubscribedCalendar(Calendar),
         },
     };

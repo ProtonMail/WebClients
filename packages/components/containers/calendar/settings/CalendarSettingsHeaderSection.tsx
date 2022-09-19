@@ -33,7 +33,7 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
     };
 
     return (
-        <SettingsSection large>
+        <SettingsSection large className="container-section-sticky-section">
             {renderCalendarModal && (
                 <CalendarModal
                     calendar={calendar}
@@ -48,7 +48,7 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
                     <h1 className="h1 mb0-25 text-bold text-break" title={Name}>
                         {Name}
                     </h1>
-                    <div className="mb0-25 text-break">{Description}</div>
+                    {Description && <div className="mb0-25 text-break">{Description}</div>}
                     <div className="text-ellipsis color-weak" title={Email}>
                         {Email}
                     </div>
@@ -94,7 +94,6 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
                     </Tooltip>
                 </span>
             </div>
-            <hr className="mb2 mt2" />
         </SettingsSection>
     );
 };

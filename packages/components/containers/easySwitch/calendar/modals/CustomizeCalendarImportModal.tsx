@@ -8,7 +8,7 @@ import {
     CalendarImporterPayload,
     ImportedCalendar,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
 import { FormModal, Icon, PrimaryButton } from '../../../../components';
@@ -18,8 +18,8 @@ import CustomizeCalendarImportRow from './CustomizeCalendarImportRow';
 
 interface Props {
     providerCalendars: ImportedCalendar[];
-    calendars: Calendar[];
-    activeCalendars: Calendar[];
+    calendars: VisualCalendar[];
+    activeCalendars: VisualCalendar[];
     importedEmailAddress: string;
     toEmail: string;
     payload: CalendarImporterPayload;

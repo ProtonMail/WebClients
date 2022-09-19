@@ -145,13 +145,14 @@ export const getCreatePublicLinkPayload = async ({
     publicKeys,
     passphrase,
     passphraseID,
+    encryptedPurpose = null,
 }: {
     accessLevel: ACCESS_LEVEL;
     publicKeys: PublicKeyReference[];
     passphrase: string;
     passphraseID: string;
+    encryptedPurpose?: Nullable<string>;
 }) => {
-    const encryptedPurpose = null;
     const passphraseKey = await CryptoProxy.generateSessionKeyForAlgorithm(AES256);
     const encryptedPassphrase =
         accessLevel === ACCESS_LEVEL.FULL ? generateEncryptedPassphrase({ passphraseKey, passphrase }) : null;

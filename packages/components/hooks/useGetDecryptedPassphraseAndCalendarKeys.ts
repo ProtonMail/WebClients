@@ -7,6 +7,7 @@ import { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interf
 import { splitKeys } from '@proton/shared/lib/keys';
 import {
     decryptPassphrase,
+    decryptPassphraseSessionKey,
     getAddressesMembersMap,
     getDecryptedCalendarKeys,
 } from '@proton/shared/lib/keys/calendarKeys';
@@ -32,18 +33,23 @@ const getCalendarKeyPassphrase = async (
             continue;
         }
         const addressKeys = await getAddressKeys(Address.ID);
-        const result = await decryptPassphrase({
-            armoredPassphrase: Passphrase,
-            armoredSignature: Signature,
-            ...splitKeys(addressKeys),
-        }).catch(noop);
+        const [decryptedPassphrase, decryptedPassphraseSessionKey] = await Promise.all([
+            decryptPassphrase({
+                armoredPassphrase: Passphrase,
+                armoredSignature: Signature,
+                ...splitKeys(addressKeys),
+            }).catch(noop),
+            decryptPassphraseSessionKey({ armoredPassphrase: Passphrase, ...splitKeys(addressKeys) }),
+        ]);
 
-        if (!result) {
-            throw new Error('No passphrase');
+        if (!decryptedPassphrase || !decryptedPassphraseSessionKey) {
+            throw new Error('Error decrypting calendar passphrase');
         }
 
-        return result;
+        return { decryptedPassphrase, decryptedPassphraseSessionKey };
     }
+
+    return {};
 };
 
 const useGetDecryptedPassphraseAndCalendarKeysRaw = () => {
@@ -60,19 +66,20 @@ const useGetDecryptedPassphraseAndCalendarKeysRaw = () => {
 
             const { ID: PassphraseID, MemberPassphrases } = Passphrase;
             const addressesMembersMap = getAddressesMembersMap(Members, Addresses);
-            const decryptedPassphrase = await getCalendarKeyPassphrase(
+            const { decryptedPassphrase, decryptedPassphraseSessionKey } = await getCalendarKeyPassphrase(
                 getAddressKeys,
                 MemberPassphrases,
                 addressesMembersMap
             );
 
-            if (!decryptedPassphrase) {
+            if (!decryptedPassphrase || !decryptedPassphraseSessionKey) {
                 throw new Error('No passphrase');
             }
 
             return {
                 decryptedCalendarKeys: await getDecryptedCalendarKeys(Keys, { [PassphraseID]: decryptedPassphrase }),
                 decryptedPassphrase,
+                decryptedPassphraseSessionKey,
                 passphraseID: PassphraseID,
             };
         },
@@ -107,5 +114,3 @@ export const useGetCalendarKeys = () => {
         [getDecryptedPassphraseAndCalendarKeys]
     );
 };
-
-export default useGetDecryptedPassphraseAndCalendarKeys;

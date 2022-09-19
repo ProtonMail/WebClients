@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 
-import { CalendarWithMembers } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarsModel } from '@proton/shared/lib/models/calendarsModel';
 
 import useApi from './useApi';
 import useCache from './useCache';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
-export const useGetCalendars = (): (() => Promise<CalendarWithMembers[] | undefined>) => {
+export const useGetCalendars = (): (() => Promise<CalendarWithOwnMembers[] | undefined>) => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(() => CalendarsModel.get(api), [api]);
@@ -16,7 +16,7 @@ export const useGetCalendars = (): (() => Promise<CalendarWithMembers[] | undefi
     }, [cache, miss]);
 };
 
-export const useCalendars = (): [CalendarWithMembers[] | undefined, boolean, any] => {
+export const useCalendars = (): [CalendarWithOwnMembers[] | undefined, boolean, any] => {
     const cache = useCache();
     const miss = useGetCalendars();
     return useCachedModelResult(cache, CalendarsModel.key, miss);

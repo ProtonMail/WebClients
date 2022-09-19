@@ -6,7 +6,7 @@ import {
     CalendarMember,
     CalendarSubscription,
     CalendarUrl,
-    CalendarWithMembers,
+    CalendarWithOwnMembers,
 } from './index';
 
 export interface CalendarAlarmEventManagerDelete {
@@ -98,7 +98,7 @@ export interface CalendarEventManagerUpdate {
 export interface CalendarEventManagerCreate {
     ID: string;
     Action: EVENT_ACTIONS.CREATE;
-    Calendar: CalendarWithMembers;
+    Calendar: CalendarWithOwnMembers;
 }
 
 export interface CalendarEventsEventManagerDelete {

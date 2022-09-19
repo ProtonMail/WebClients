@@ -1,0 +1,13 @@
+.pill {
+	background-color: var(--background-weak);
+	text-shadow: none;
+
+	&.invalid {
+		border-color: var(--signal-danger);
+		color: var(--signal-danger);
+
+		.composer-addresses-item-label {
+			border-inline-end-color: currentcolor;
+		}
+	}
+}

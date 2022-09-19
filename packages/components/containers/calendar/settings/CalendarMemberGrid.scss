@@ -1,0 +1,72 @@
+@import '~@proton/styles/scss/config';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+.calendar-member-status {
+	padding-inline: rem(6);
+	padding-block: rem(1);
+	text-transform: uppercase;
+}
+
+.calendar-members-grid {
+	display: grid;
+	grid-template-columns: auto minmax(auto, rem(250)) auto 1fr auto;
+
+	> * {
+		border-bottom: 1px solid var(--border-weak);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: rem(8) rem(6);
+
+		&:nth-child(1) {
+			padding-inline-start: rem(8);
+		}
+
+		&:nth-child(4) {
+			padding-inline-end: rem(8);
+		}
+	}
+}
+
+.calendar-member-skeleton {
+	&-container {
+		display: flex;
+		border-bottom: 1px solid var(--border-weak);
+		padding: rem(8);
+	}
+
+	&-user {
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			height: rem(14);
+
+			&:first-child {
+				margin-block-end: rem(4);
+			}
+		}
+	}
+
+	&::before {
+		width: 100%;
+		height: 100%;
+
+		@extend %item-loading-pseudo;
+		@extend %placeholder-loading;
+	}
+
+	&--avatar {
+		width: rem(32);
+		height: rem(32);
+		margin-inline-end: rem(8);
+	}
+
+	&--user-name {
+		width: 174px;
+	}
+
+	&--user-email {
+		width: 109px;
+	}
+}

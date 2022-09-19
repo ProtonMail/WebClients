@@ -1,7 +1,7 @@
 import { SETTINGS_NOTIFICATION_TYPE } from '../../calendar/constants';
 import { Nullable } from '../utils';
 import { CalendarKey } from './CalendarKey';
-import { CalendarMember } from './CalendarMember';
+import { CalendarMember, CalendarOwner } from './CalendarMember';
 import { NotificationModel } from './Notification';
 import { Passphrase } from './Passphrase';
 
@@ -10,27 +10,29 @@ export enum CALENDAR_TYPE {
     SUBSCRIPTION = 1,
 }
 
-export enum CalendarDisplay {
+export enum CALENDAR_DISPLAY {
     HIDDEN = 0,
     VISIBLE = 1,
 }
 
 export interface Calendar {
     ID: string;
-    Name: string;
-    Description: string;
     Type: CALENDAR_TYPE;
 }
 
-export interface CalendarWithMembers extends Calendar {
+export interface CalendarWithOwnMembers extends Calendar {
+    Owner: CalendarOwner;
     Members: CalendarMember[];
 }
 
-export interface VisualCalendar extends CalendarWithMembers {
+export interface VisualCalendar extends CalendarWithOwnMembers {
+    Name: string;
+    Description: string;
+    Color: string;
+    Display: CALENDAR_DISPLAY;
     Email: string;
     Flags: number;
-    Color: string;
-    Display: CalendarDisplay;
+    Permissions: number;
 }
 
 export enum SETTINGS_VIEW {
