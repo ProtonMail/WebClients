@@ -1,4 +1,4 @@
-import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
 import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
@@ -71,8 +71,6 @@ const Item = ({
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
     const elementRef = useRef<HTMLDivElement>(null);
 
-    const [hasFocus, setHasFocus] = useState(false);
-
     const displayRecipients =
         [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
         isSent(element) ||
@@ -117,12 +115,7 @@ const Item = ({
     };
 
     const handleFocus = () => {
-        setHasFocus(true);
         onFocus(index);
-    };
-
-    const handleBlur = () => {
-        setHasFocus(false);
     };
 
     return (
@@ -146,15 +139,13 @@ const Item = ({
                     unread && 'unread',
                     dragged && 'item-dragging',
                     loading && 'item-is-loading',
-                    hasFocus && 'item-is-focused',
                     useContentSearch && columnLayout && 'es-three-rows',
                     useContentSearch && !columnLayout && 'es-row-results',
                 ])}
                 style={{ '--index': index }}
                 ref={elementRef}
                 onFocus={handleFocus}
-                onBlur={handleBlur}
-                tabIndex={-1}
+                tabIndex={0}
                 data-element-id={element.ID}
                 data-shortcut-target="item-container"
                 data-shortcut-target-selected={isSelected}

@@ -44,7 +44,7 @@
 			transition: 0.15s easing(ease-out-quint);
 
 			&:hover,
-			&:focus {
+			&:focus-visible {
 				background-color: var(--label-bg-hover, var(--background-strong));
 			}
 
