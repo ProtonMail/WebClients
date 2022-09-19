@@ -22,6 +22,7 @@ import {
     CalendarMemberInvitation,
     GetAllInvitationsApiResponse,
     GetAllMembersApiResponse,
+    MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -101,9 +102,9 @@ const SingleCalendarSettingsSection = ({ calendars, subscribedCalendars, default
                 ]);
                 // if failing here, leave user with loader in the section
 
-                // filter out owner
+                // filter out owner and accepted invitations
                 setMembers(Members.filter(({ Permissions }) => Permissions !== MEMBER_PERMISSIONS.OWNS));
-                setInvitations(Invitations);
+                setInvitations(Invitations.filter(({ Status }) => Status !== MEMBER_INVITATION_STATUS.ACCEPTED));
                 setLoadingShareData(false);
             };
 
