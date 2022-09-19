@@ -13,6 +13,7 @@ import {
 import { PublicKeyReference } from '@proton/crypto';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
+import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
@@ -209,10 +210,10 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 const [primaryApiKey] = apiKeys;
 
                 if (error) {
-                    if (error.type === ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR) {
-                        return (invalidRecipients[email] = new ShareCalendarValdidationError(INVALID_EMAIL));
-                    }
-                    return (invalidRecipients[email] = error);
+                    return (invalidRecipients[email] = new EncryptionPreferencesError(
+                        error.type,
+                        reformatApiErrorMessage(error.message)
+                    ));
                 }
 
                 if (!isInternal) {
