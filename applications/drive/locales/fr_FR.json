@@ -329,10 +329,10 @@
         "Déplacer"
       ],
       "Move to folder": [
-        "Déplacer vers un dossier"
+        "Déplacer dans un dossier"
       ],
       "Move to trash": [
-        "Déplacer vers la corbeille"
+        "Déplacer dans Corbeille"
       ],
       "New upload": [
         "Importer"
@@ -419,7 +419,7 @@
         "Relancer le chargement"
       ],
       "Restore from trash": [
-        "Restaurer depuis la corbeille"
+        "Restaurer depuis la Corbeille"
       ],
       "Resume all": [
         "Tout redémarrer"
@@ -1740,9 +1740,6 @@
       "Calendar limit reached": [
         "Limite de calendriers atteinte"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré."
       ],
@@ -1824,8 +1821,14 @@
       "Missing signature": [
         "Signature manquante"
       ],
-      "No data to import": [
-        "Aucune donnée à importer"
+      "No calendars found to import": [
+        "Aucun calendrier à importer"
+      ],
+      "No contacts found to import": [
+        "Aucun contact à importer"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Aucun e-mail à importer, le compte n'a pas de Boîte de réception."
       ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
@@ -1950,6 +1953,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
+      ],
       "You must set a name": [
         "Vous devez définir un nom."
       ],
@@ -2028,7 +2034,7 @@
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
       ],
       "You may also refresh the page or try again later.": [
-        "Vous pouvez également rafraîchir la page ou réessayer plus tard."
+        "Vous pouvez aussi rafraîchir la page ou réessayer plus tard."
       ]
     },
     "Error notification": {
@@ -2352,16 +2358,16 @@
         "Toute personne ayant ce lien peut accéder à votre dossier."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Êtes-vous sûr de vouloir vider la corbeille et supprimer définitivement tous les éléments ?"
+        "Êtes-vous sûr de vouloir vider le dossier Corbeille et supprimer définitivement tous les éléments ?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ itemName } de la corbeille ?"
+        "Êtes-vous sûr de vouloir supprimer définitivement ${ itemName } du dossier Corbeille ?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement les éléments sélectionnés de la corbeille ?"
+        "Êtes-vous sûr de vouloir supprimer définitivement les éléments sélectionnés du dossier Corbeille ?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants :"
+        "${ appName } étant chiffré de bout en bout, nous ne pouvons pas accéder à vos fichiers, ni les déchiffrer pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe, vous devez avoir l'un des éléments suivants :"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam et assurez-vous que ${ strong } est la bonne adresse."
@@ -2403,7 +2409,7 @@
         "Conflit"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        "Continuez à utiliser ${ appName } et déverrouillez le disque plus tard"
+        "Continuez à utiliser ${ appName } et déverrouillez le disque plus tard."
       ],
       "Continue with ${ planName }": [
         "Continuer avec ${ planName }"
@@ -2465,7 +2471,7 @@
         "Téléchargement terminé"
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "Le téléchargement de ${ downloadFileName } sera annulé"
+        "Le téléchargement de ${ downloadFileName } sera annulé."
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "Téléchargement interrompu à cause d'un problème de connexion. Il reprendra automatiquement."
@@ -2477,7 +2483,7 @@
         "Téléchargement en cours"
       ],
       "Drag and drop items here or browse for files to upload.": [
-        "Glisser-déposer des éléments ici ou parcourir pour sélectionner les fichiers à charger."
+        "Glissez-déposez des éléments ici ou recherchez des fichiers à charger."
       ],
       "Drop the file here to upload": [
         "Déposez un fichier ici pour l'importer"
@@ -2492,7 +2498,7 @@
         "Chiffré"
       ],
       "Encrypted search is here": [
-        "La recherche chiffrée se trouve ici"
+        "La recherche chiffrée se trouve ici."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -2562,7 +2568,7 @@
         "ici"
       ],
       "How does encrypted search work?": [
-        "Comment la recherche chiffrée fonctionne-t-elle ?"
+        "Comment fonctionne la recherche chiffrée ?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvré."
@@ -2680,7 +2686,7 @@
         "Aucune adresse électronique"
       ],
       "No files or folders in trash": [
-        "Aucun fichier ou dossier dans la corbeille"
+        "Aucun fichier ou dossier dans le dossier Corbeille"
       ],
       "No group found": [
         "Aucun groupe trouvé"
@@ -2732,7 +2738,7 @@
         "En pause"
       ],
       "Permanently delete all files in your drive": [
-        "Supprimez définitivement tous les fichiers de votre disque"
+        "Supprimez définitivement tous les fichiers de votre disque."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
@@ -2781,7 +2787,7 @@
         "Assistance prioritaire"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Recherche privée activée. Vous pouvez fermer cette boîte de dialogue et rechercher des fichiers et dossiers."
+        "Recherche privée activée. Vous pouvez fermer cette fenêtre et rechercher des fichiers et dossiers."
       ],
       "Queued": [
         "En file d'attente"
@@ -2802,7 +2808,7 @@
         "Le rapport a été envoyé"
       ],
       "Search cannot be enabled in this browser": [
-        "La recherche ne peut pas être activée dans ce navigateur"
+        "La recherche ne peut pas être activée dans ce navigateur."
       ],
       "Search Enabled": [
         "Recherche activée"
@@ -2811,7 +2817,7 @@
         "Partage sécurisé"
       ],
       "Secure your documents and data": [
-        "Sécurisez vos documents et vos données"
+        "Sécurisez vos documents et vos données."
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Sélectionnez un fichier ou un dossier chargé et créez un lien vers celui-ci."
@@ -2819,8 +2825,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un e-mails à cette adresse électronique."
       ],
-      "Select what you want to import from Google.": [
-        "Sélectionnez ce que vous souhaitez importer depuis Google."
+      "Select what you want to import.": [
+        "Sélectionnez ce que vous souhaitez importer."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -2835,13 +2841,13 @@
         "La configuration de PGP vous permet d'envoyer des e-mails chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
       "Share files with links": [
-        "Partager des fichiers avec des liens"
+        "Partagez des fichiers avec des liens."
       ],
       "Shareable link for ${ boldNameText }": [
         "Lien partageable pour ${ boldNameText }"
       ],
       "Signature check will be ignored": [
-        "La vérification de signature sera ignorée"
+        "La vérification de signature sera ignorée."
       ],
       "Signature issue": [
         "Problème de signature"
@@ -2886,7 +2892,7 @@
         "Certains fichiers doivent encore être transférés. Fermer le gestionnaire de transfert mettra fin aux actions en cours."
       ],
       "There are no files yet": [
-        "Il n'y a pas encore de fichiers"
+        "Il n'y a pas encore de fichiers."
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
         "Ces fichiers ont été partagés avec un chiffrement de bout en bout. Pour les garder protégés et privés, enregistrez-les (ainsi que tous vos documents, photos et fichiers) dans votre propre Proton Drive. Il est simple à utiliser et il est gratuit."
@@ -2910,7 +2916,7 @@
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Ce lien a été créé dans une version ancienne de Drive et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
+        "Ce lien a été créé dans une ancienne version de Drive et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Ce lien sera définitivement désactivé. Aucune personne possédant ce lien ne pourra accéder à votre fichier. Pour partager à nouveau le fichier, vous aurez besoin d'un nouveau lien."
@@ -2919,8 +2925,8 @@
         "Ce lien sera définitivement désactivé. Aucune personne possédant ce lien ne pourra accéder à votre dossier. Pour partager à nouveau le dossier, vous aurez besoin d'un nouveau lien."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Ceci supprimera le lien et supprimera l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
-        "Ceci supprimera les liens et supprimera l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
+        "Ceci supprimera le lien ainsi que l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
+        "Ceci supprimera les liens ainsi que l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
       "This will overwrite the existing file": [
         "Ceci va écraser le fichier existant."
@@ -2929,7 +2935,7 @@
         "Ceci va écraser le dossier existant."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Pour activer la recherche réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement. Vous pourrez toujours utiliser ${ DRIVE_APP_NAME } normalement, nous vous ferons savoir quand l'indexation sera terminée."
+        "Pour activer la recherche réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement. Vous pourrez toujours utiliser ${ DRIVE_APP_NAME } normalement, nous vous préviendrons quand l'indexation sera terminée."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
@@ -2983,7 +2989,7 @@
         "Chargement en cours"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "Le chargement de centaines de fichiers en même temps peut avoir un impact sur les performances."
+        "Le téléchargement de centaines de fichiers en même temps peut réduire les performances."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
@@ -3010,7 +3016,7 @@
         "Que souhaitez-vous faire ?"
       ],
       "What would you like to do?": [
-        "Qu'aimeriez-vous faire ?"
+        "Que voulez-vous faire ?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -3019,7 +3025,7 @@
         "Souhaiteriez-vous recevoir un nouveau code de vérification ?"
       ],
       "Would you like to restore your files?": [
-        "Voulez-vous restaurer vos fichiers ?"
+        "Voulez-vous restaurer vos fichiers ?"
       ],
       "Yes": [
         "Oui"
@@ -3504,7 +3510,7 @@
         "Merveilleuse"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        "Oui, je veux supprimer définitivement\nmes anciens fichiers"
+        "Oui, je veux supprimer définitivement mes anciens fichiers."
       ]
     },
     "Label for contact group color": {
@@ -3657,13 +3663,13 @@
         "« ${ name } » correctement créé"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "« ${ name } » est définitivement supprimé"
+        "« ${ name } » est définitivement supprimé."
       ],
       "\"${ name }\" failed to be created": [
         "« ${ name } » n'a pas pu être créé"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "« ${ name } » n'a pu être supprimé définitivement de la corbeille"
+        "« ${ name } » n'a pu être supprimé définitivement du dossier Corbeille."
       ],
       "\"${ name }\" failed to be moved": [
         "« ${ name } » n'a pas pu être déplacé"
@@ -3675,7 +3681,7 @@
         "« ${ name } » n'a pas pu être restauré depuis la corbeille"
       ],
       "\"${ name }\" moved to trash": [
-        "« ${ name } » déplacé vers la corbeille"
+        "« ${ name } » déplacé vers la Corbeille"
       ],
       "\"${ name }\" restored from trash": [
         "« ${ name } » restauré depuis la corbeille"
@@ -3690,51 +3696,51 @@
         "« ${ newName } » correctement renommé"
       ],
       "${ count } item failed to be decrypted": [
-        "${ count } élément n'a pas pu être déchiffré",
-        "${ count } éléments n'ont pas pu être déchiffrés"
+        "${ count } élément n'a pas pu être déchiffré.",
+        "${ count } éléments n'ont pas pu être déchiffrés."
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } élément supprimé définitivement de la corbeille",
-        "${ numberOfItems } éléments supprimés définitivement de la corbeille"
+        "${ numberOfItems } élément supprimé définitivement du dossier Corbeille",
+        "${ numberOfItems } éléments supprimés définitivement du dossier Corbeille"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } élément n'a pu être supprimé définitivement de la corbeille",
-        "${ numberOfItems } éléments n'ont pu être supprimés définitivement de la corbeille"
+        "${ numberOfItems } élément n'a pu être supprimé définitivement de la Corbeille.",
+        "${ numberOfItems } éléments n'ont pu être supprimés définitivement du dossier Corbeille."
       ],
       "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } élément n'a pas pu être déplacé",
-        "${ numberOfItems } éléments n'ont pas pu être déplacés"
+        "${ numberOfItems } élément n'a pas pu être déplacé.",
+        "${ numberOfItems } éléments n'ont pas pu être déplacés."
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } élément n'a pas pu être déplacé vers la corbeille",
-        "${ numberOfItems } éléments n'ont pas pu être déplacés vers la corbeille"
+        "${ numberOfItems } élément n'a pas pu être déplacé vers la Corbeille.",
+        "${ numberOfItems } éléments n'ont pas pu être déplacés vers la Corbeille."
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } élément n'a pas pu être restauré depuis la corbeille",
-        "${ numberOfItems } éléments n'ont pas pu être restaurés depuis la corbeille"
+        "${ numberOfItems } élément n'a pas pu être restauré depuis la Corbeille.",
+        "${ numberOfItems } éléments n'ont pas pu être restaurés depuis la Corbeille."
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } élément déplacé vers la corbeille",
-        "${ numberOfItems } éléments déplacés vers la corbeille"
+        "${ numberOfItems } élément déplacé vers la Corbeille",
+        "${ numberOfItems } éléments déplacés vers la Corbeille"
       ],
       "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } élément restauré depuis la corbeille",
-        "${ numberOfItems } éléments restaurés depuis la corbeille"
+        "${ numberOfItems } élément restauré depuis la Corbeille",
+        "${ numberOfItems } éléments restaurés depuis la Corbeille"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } élément correctement déplacé",
         "${ numberOfItems } éléments correctement déplacés"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } lien vers votre élément n’a pas pu être supprimé",
-        "${ numberOfItems } liens vers vos élements n'ont pas pu être supprimés"
+        "${ numberOfItems } lien vers votre élément n’a pas pu être supprimé.",
+        "${ numberOfItems } liens vers vos élements n'ont pas pu être supprimés."
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } lien vers votre élément a été supprimé",
-        "${ numberOfItems } liens vers vos éléments ont été supprimés"
+        "${ numberOfItems } lien vers votre élément a été supprimé.",
+        "${ numberOfItems } liens vers vos éléments ont été supprimés."
       ],
       "All items will soon be permanently deleted from trash": [
-        "Tous les éléments seront bientôt supprimés définitivement de la corbeille"
+        "Tous les éléments seront bientôt supprimés définitivement du dossier Corbeille."
       ],
       "Contact group created": [
         "Groupe de contacts créé"
@@ -3765,7 +3771,7 @@
         "Il manque un nom au fichier ou au dossier."
       ],
       "Item failed to be verified": [
-        "L'élément n'a pas pu être vérifié"
+        "L'élément n'a pas pu être vérifié."
       ],
       "Link failed to be loaded": [
         "Le lien n'a pas pu être chargé"
@@ -3795,16 +3801,16 @@
         "Déplacer ${ movingCount } éléments"
       ],
       "Next page failed to be loaded": [
-        "La page suivante n'a pas pu être chargée"
+        "La page suivante n'a pas pu être chargée."
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Espace insuffisant pour charger ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
-        "Le dossier racine n'a pas pu être chargé"
+        "Le dossier racine n'a pas pu être chargé."
       ],
       "Subfolder failed to be loaded": [
-        "Le sous-dossier n'a pas pu être chargé"
+        "Le sous-dossier n'a pas pu être chargé."
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Le lien vers « ${ name } » n'a pas pu être supprimé"
@@ -3813,22 +3819,22 @@
         "Le lien vers « ${ name } » a été supprimé"
       ],
       "The link to your item failed to be deleted": [
-        "Le lien vers votre élément n'a pas pu être supprimé"
+        "Le lien vers votre élément n'a pas pu être supprimé."
       ],
       "The link to your item was deleted": [
-        "Le lien vers votre élément a été supprimé"
+        "Le lien vers votre élément a été supprimé."
       ],
       "Trash failed to be emptied": [
-        "La corbeille n'a pas pu être vidée"
+        "La Corbeille n'a pas pu être vidée."
       ],
       "Your old files will be deleted in 72 hours": [
-        "Vos anciens fichiers seront supprimés dans 72 heures"
+        "Vos anciens fichiers seront supprimés dans 72 heures."
       ],
       "Your settings failed to be saved": [
-        "Vos paramètres n'ont pas pu être enregistrés"
+        "Vos paramètres n'ont pas pu être enregistrés."
       ],
       "Your settings have been changed successfully": [
-        "Vos réglages ont été correctement modifiés"
+        "Vos réglages ont été correctement modifiés."
       ]
     },
     "Oauth instructions": {
@@ -3949,7 +3955,7 @@
         "P. ex., "
       ],
       "Enter a new folder name": [
-        "Saisissez un nouveau nom de dossier"
+        "Saisissez un nouveau nom de dossier."
       ],
       "Enter your email address": [
         "Saisissez votre adresse électronique"
@@ -4128,10 +4134,10 @@
         "Préférences enregistrées"
       ],
       "Recovery has started": [
-        "La récupération a commencé"
+        "La récupération a commencé."
       ],
       "The link to your file was successfully copied": [
-        "Le lien vers votre fichier a été copié correctement"
+        "Le lien vers votre fichier a été copié correctement."
       ],
       "Verification successful": [
         "Vérification réussie"
@@ -4237,16 +4243,16 @@
         "${ emailsCount } membres"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } téléchargement échoué",
-        "${ numberOfFailedTransfer.total } téléchargements échoués"
+        "${ numberOfFailedTransfer.total } téléchargement a échoué.",
+        "${ numberOfFailedTransfer.total } téléchargements ont échoué."
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } transfert échoué",
         "${ numberOfFailedTransfer.total } transferts échoués"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } chargement échoué",
-        "${ numberOfFailedTransfer.total } chargements échoués"
+        "${ numberOfFailedTransfer.total } chargement a échoué.",
+        "${ numberOfFailedTransfer.total } chargements ont échoué."
       ],
       "Account suspended": [
         "Compte suspendu"
@@ -4280,7 +4286,7 @@
         "Accès à la version bêta"
       ],
       "Browser might run out of memory": [
-        "Le navigateur est peut-être à court de mémoire"
+        "Le navigateur est peut-être à court de mémoire."
       ],
       "Change layout": [
         "Modifier la mise en page"
@@ -4357,10 +4363,10 @@
         "Télécharger le fichier partagé"
       ],
       "Download unverified file?": [
-        "Télécharger le fichier non vérifié ?"
+        "Télécharger le fichier non vérifié ?"
       ],
       "Download unverified folder?": [
-        "Télécharger le dossier non vérifié ?"
+        "Télécharger le dossier non vérifié ?"
       ],
       "Drive": [
         "Drive"
@@ -4393,7 +4399,7 @@
         "Paramètres d'adresse électronique (${ emailAddress })"
       ],
       "Empty trash": [
-        "Vider la corbeille"
+        "Vider la Corbeille"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe"
@@ -4592,19 +4598,19 @@
         "Arrêter le partage"
       ],
       "Stop sharing with everyone?": [
-        "Arrêter le partage avec tout le monde ?"
+        "Arrêter le partage avec tout le monde ?"
       ],
       "Stop transfers?": [
         "Arrêter les transferts ?"
       ],
       "The link either does not exist or has expired": [
-        "Le lien n'existe pas ou a expiré"
+        "Le lien n'existe pas ou a expiré."
       ],
       "The link expired": [
         "Le lien a expiré"
       ],
       "The link failed to be loaded": [
-        "Le lien n'a pas pu être chargé"
+        "Le lien n'a pas pu être chargé."
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Ce fichier a une signature manquante ou non valide. Allez à Menu (⋮) → Détails pour plus d'informations."
@@ -4649,16 +4655,16 @@
         "Nouveautés"
       ],
       "You have inaccessible files": [
-        "Vous avez des fichiers inaccessibles"
+        "Vous avez des fichiers inaccessibles."
       ],
       "You have no files to share": [
-        "Vous n'avez aucun fichier à partager"
+        "Vous n'avez aucun fichier à partager."
       ],
       "You have no folders yet": [
-        "Vous n'avez pas encore de dossiers"
+        "Vous n'avez pas encore de dossiers."
       ],
       "You've got files": [
-        "Vous avez des fichiers"
+        "Vous avez des fichiers."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"

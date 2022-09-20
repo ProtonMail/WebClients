@@ -2276,6 +2276,9 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
+      "Setting up your Drive": [
+        "Налаштування Drive"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
@@ -3166,6 +3169,9 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Покращити до ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3278,11 +3284,11 @@
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } сховища"
+      ],
       "${ size } storage per user": [
         "${ size } сховища на користувача"
-      ],
-      "${ size } total storage": [
-        "Усього ${ size } сховища"
       ],
       "1 free VPN connection in total": [
         "Загалом 1 безплатне VPN-з'єднання"
@@ -3431,8 +3437,8 @@
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Усього до ${ totalStorageSize } сховища"
+      "Up to ${ totalStorageSize } storage": [
+        "До ${ totalStorageSize } сховища"
       ],
       "User credential management": [
         "Керування обліковими даними користувача"
@@ -3553,8 +3559,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Створюючи обліковий запис ${ BRAND_NAME }, ви погоджуєтеся на наші ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Створюючи обліковий запис ${ BRAND_NAME }, Ви погоджуєтеся на наші ${ terms }"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -3788,9 +3794,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Розширте обсяг свого сховища до ${ businessStorage } на користувача"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Розширте загальний обсяг свого сховища до ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"

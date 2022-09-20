@@ -364,6 +364,9 @@
       "Send": [
         "Küldés"
       ],
+      "Send feedback": [
+        "Visszajelzés küldése"
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
@@ -1913,9 +1916,6 @@
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "A lemondó értesítés elküldése nem sikerült"
       ],
@@ -2163,6 +2163,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
@@ -2427,6 +2431,11 @@
     "Event title": {
       "(no title)": [
         "(névtelen)"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Az ön visszajelzése"
       ]
     },
     "file size format": {
@@ -3261,6 +3270,9 @@
       "Automatically save contacts": [
         "Névjegyek automatikus létrehozása"
       ],
+      "Awful": [
+        "Szörnyű"
+      ],
       "Bad": [
         "Rossz"
       ],
@@ -3498,6 +3510,9 @@
       ],
       "What happened?": [
         "Mi történt?"
+      ],
+      "Wonderful": [
+        "Csodás"
       ]
     },
     "Label for contact group color": {
@@ -3783,6 +3798,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "Váltás vagy fiók hozzáadása"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Küldjön visszajelzést a tapasztalatairól. (Opcionális)"
       ]
     },
     "new_plans: placeholder": {

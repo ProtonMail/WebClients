@@ -2911,9 +2911,6 @@
       "Calendar limit reached": [
         "Limite de calendários atingido"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Choose a date in the future.": [
         "Escolha uma data futura."
       ],
@@ -3075,7 +3072,7 @@
         "Por favor, repita a senha"
       ],
       "Please set a password": [
-        "Defina uma senha"
+        "Por favor, insira uma senha"
       ],
       "Primary address key is not decrypted": [
         "A chave do endereço primário não está descriptografada"
@@ -3208,6 +3205,9 @@
       ],
       "You did not provide a file.": [
         "Você não escolheu um arquivo."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -4075,7 +4075,7 @@
         "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new contact group": [
-        "Crie um novo grupo de contatos"
+        "Criar novo grupo de contato"
       ],
       "Create in": [
         "Criar em"
@@ -5196,7 +5196,7 @@
         "Carregar conteúdo remoto"
       ],
       "Mark as read": [
-        "Marcar como lida"
+        "Marcar como lido"
       ],
       "Mark as unread": [
         "Marcar como não lido"
@@ -7073,7 +7073,7 @@
         "Com cópia"
       ],
       "CC": [
-        "Cc"
+        "CC"
       ],
       "Change my answer": [
         "Alterar minha resposta"

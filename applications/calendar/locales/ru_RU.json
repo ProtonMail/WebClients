@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         "Достигнут лимит календаря"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "Не удалось отправить сообщение об отмене события"
       ],
@@ -2106,6 +2103,15 @@
       ],
       "Name required": [
         "Требуется имя"
+      ],
+      "No calendars found to import": [
+        "Не найдено ни одного календаря для импорта"
+      ],
+      "No contacts found to import": [
+        "Не найдено контактов для импорта"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
       ],
       "No keys retrieved for internal user": [
         "Ключи для внутреннего пользователя не получены"
@@ -2235,6 +2241,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Нельзя отправить vCards более чем 10 контактов"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
       ],
       "You must set a name": [
         "Вы должны задать имя"

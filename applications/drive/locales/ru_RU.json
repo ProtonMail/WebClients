@@ -1746,9 +1746,6 @@
       "Calendar limit reached": [
         "Достигнут предел количества календарей"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Контакт не может быть сохранён"
       ],
@@ -1836,8 +1833,14 @@
       "Missing signature": [
         "Подпись отсутствует"
       ],
-      "No data to import": [
-        "Нет данных для импорта"
+      "No calendars found to import": [
+        "Не найдено ни одного календаря для импорта"
+      ],
+      "No contacts found to import": [
+        "Не найдено контактов для импорта"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -1967,6 +1970,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Нельзя отправить визитные карточки более чем 10 контактов"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -2921,8 +2927,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
-      "Select what you want to import from Google.": [
-        "Выберите, что вы хотите импортировать из Google."
+      "Select what you want to import.": [
+        "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышая ограничение в 20 календарей."

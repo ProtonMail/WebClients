@@ -1954,9 +1954,6 @@
       "Calendar limit reached": [
         "日历数量达到上限"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "活动取消发送失败"
       ],
@@ -2061,6 +2058,15 @@
       ],
       "Name required": [
         "姓名 (必填)"
+      ],
+      "No calendars found to import": [
+        "未找到可导入的日历"
+      ],
+      "No contacts found to import": [
+        "未找到可导入的联系人"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "未找到可导入的邮件——账户无收件箱"
       ],
       "No keys retrieved for internal user": [
         "没有为内部用户检索到密钥"
@@ -2181,6 +2187,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "您不能发送超过 10 个联系人的 vCard"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "您已达到您账户等级所能创建的个人日历数上限。无法导入多出的日历。"
       ],
       "You must set a name": [
         "请输入名称 (必填)"
@@ -3032,6 +3041,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式"
+      ],
+      "Select what you want to import.": [
+        "选择需要导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
