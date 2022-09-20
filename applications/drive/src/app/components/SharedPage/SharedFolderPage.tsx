@@ -10,7 +10,7 @@ import SharedPageBreadcrumb from './SharedPageBreadcrumb';
 import SharedPageHeader from './SharedPageHeader';
 import SharedPageLayout from './SharedPageLayout';
 
-const MIN_ITEMS_TO_EXPAND_HEIGHT = 5;
+const MIN_ITEMS_TO_EXPAND_HEIGHT = 15;
 
 interface Props {
     token: string;
