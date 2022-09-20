@@ -57,7 +57,7 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
 
 export const getDriveAppFeature = (): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').t`${DRIVE_APP_NAME} (web beta)`,
+        featureName: DRIVE_APP_NAME,
         tooltip: c('new_plans: tooltip').t`End-to-end encrypted file storage`,
         included: true,
         icon: 'brand-proton-drive',
