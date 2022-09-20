@@ -122,6 +122,9 @@
       "Clear all formatting": [
         "Formázás törlése"
       ],
+      "Clear two-factor authentication code": [
+        "Kétlépcsős hitelesítő kód törlése"
+      ],
       "Close": [
         "Bezárás"
       ],
@@ -152,6 +155,9 @@
       "Continue to ${ name }": [
         "Folytatás itt: ${ name }"
       ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Folytatás mint ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
       ],
@@ -167,8 +173,14 @@
       "Create": [
         "Létrehozás"
       ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Hozzon létre egy biztonságos ${ MAIL_APP_NAME } címet inkább"
+      ],
       "Create account": [
         "Fiók létrehozása"
+      ],
+      "Create accounts": [
+        "Fiókok létrehozása"
       ],
       "Create address": [
         "Cím létrehozása"
@@ -208,6 +220,9 @@
       ],
       "Delete": [
         "Törlés"
+      ],
+      "Delete link": [
+        "Hivatkozás törlése"
       ],
       "Delete permanently": [
         "Végleges törlés"
@@ -256,6 +271,12 @@
       ],
       "Download all configurations": [
         "Összes beállítás letöltése"
+      ],
+      "Download CSV sample": [
+        "CSV minta letöltése"
+      ],
+      "Download ICS": [
+        "ICS letöltése"
       ],
       "Download recovery file": [
         "Helyreállító fájl letöltése"
@@ -311,6 +332,9 @@
       "Extend": [
         "Kiterjesztés"
       ],
+      "Filters are being applied. This might take a few minutes.": [
+        "A szűrők alkalmazása folyamatban. Ez pár percig is eltarthat."
+      ],
       "Font": [
         "Betűtípus"
       ],
@@ -335,6 +359,9 @@
       "Go to sign in": [
         "Ugrás a bejelentkezéshez"
       ],
+      "Got it": [
+        "Rendben!"
+      ],
       "Hide": [
         "Elrejtés"
       ],
@@ -358,6 +385,9 @@
       ],
       "Import emails": [
         "E-mailek importálása"
+      ],
+      "Import from ICS": [
+        "Importálás ICS fájlból"
       ],
       "Import key": [
         "Kulcs importálása"
@@ -394,6 +424,12 @@
       ],
       "Mark as default": [
         "Megjelölés alapértelmezettként"
+      ],
+      "Mark as not spam": [
+        "Megjelölés, mint nem levélszemét"
+      ],
+      "Mark as spam": [
+        "Megjelölés levélszemétként"
       ],
       "mark emails as": [
         "megjelölés mint:"
@@ -491,8 +527,14 @@
       "Remove": [
         "Eltávolítás"
       ],
+      "Remove Block": [
+        "Tiltás megszüntetése"
+      ],
       "Remove bonuses": [
         "Kedvezmények törlése"
+      ],
+      "Remove calendar": [
+        "Naptár eltávolítása"
       ],
       "Remove gift code": [
         "Ajándék kód törlése"
@@ -569,14 +611,32 @@
       "Save address": [
         "Cím mentése"
       ],
+      "Save ICS file": [
+        "ICS fájl mentése"
+      ],
       "Save selected": [
         "Kiválasztott mentése"
+      ],
+      "Search": [
+        "Keresés"
+      ],
+      "Search settings": [
+        "Keresési beállítások"
+      ],
+      "See plan features": [
+        "Csomag részleteinek megtekintése"
       ],
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
+      "Select calendar view": [
+        "Naptár nézet kiválasztása"
+      ],
       "Select files": [
         "Fájlok kiválasztása"
+      ],
+      "Select language for invitation emails": [
+        "A meghívók nyelvének kiválasztása"
       ],
       "Select timezone": [
         "Időzóna kiválasztása"
@@ -625,6 +685,9 @@
       ],
       "Sign out": [
         "Kijelentkezés"
+      ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Kilépés innen: ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Minden fiók kiléptetése"
@@ -746,6 +809,9 @@
       "Void all recovery files?": [
         "Érvénytelenít minden helyreállító fájlt?"
       ],
+      "What do I get?": [
+        "Mit tartalmaz?"
+      ],
       "Wipe": [
         "Törlés"
       ],
@@ -765,8 +831,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Folytatás az ingyenes csomaggal"
+      ],
       "No, thanks": [
         "Köszönöm, nem"
+      ],
+      "Start my 30-day free trial": [
+        "30 napos ingyenes próba megkezdése"
       ],
       "Try free for 30 days": [
         "Próbálja 30 napig ingyen"
@@ -1040,6 +1112,20 @@
         "Tweet"
       ]
     },
+    "Calendar limit warning": {
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát."
+      ],
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS } feliratkozott naptárat.",
+        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS } feliratkozott naptárat."
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "További ${ remainingItems } megjelenítése"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktív"
@@ -1092,6 +1178,11 @@
       ],
       "Week": [
         "Hét"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Mind"
       ]
     },
     "Checkout row": {
@@ -2189,6 +2280,25 @@
         "Felhasználatlan kreditek"
       ]
     },
+    "CSV download button": {
+      "CSV template": [
+        "CSV sablon"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Hiba a sorban: ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "A fájlból hiányzik az 'EmailAddresses' címsor."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "A fájlból hiányzik az 'Password' címsor."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Több sorban is hiba van az importált fájlban. Vizsgálja meg a CSV fájlt."
+      ]
+    },
     "Cycle": {
       "/month": [
         "/hó"
@@ -2427,6 +2537,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve: ${ Local }. ${ Local }@${ Domain } e-mail cím létrehozásához válassza a Beállítások > Üzenetek és szerkesztés > Rövid domain (@pm.me) menüpontot"
+      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -2451,14 +2564,14 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Az automatikus válasz egy fizetős funkció. Kérjük, váltson egy előfizetéses csomagra a lehetőség használatához."
       ],
+      "Calendar cannot be found": [
+        "A naptár nem található"
+      ],
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
       "Can't check username, try again later": [
         "Nem lehet ellenőrizni a felhasználónevet, próbálkozzon újra később"
-      ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
@@ -2573,9 +2686,6 @@
       ],
       "No active sessions": [
         "Nincs aktív munkamenet"
-      ],
-      "No data to import": [
-        "Nincs importálandó adat"
       ],
       "No valid address found": [
         "Nem található érvényes e-mail cím"
@@ -2811,6 +2921,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
       ],
@@ -2947,6 +3061,23 @@
         "Nem támogatott esemény"
       ]
     },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Hiba történt a fájl olvasása közben: \"${ formattedFilename }\". A fájl nem megfelelő formátumú."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Hiba történt a fájl feltöltésekor: \"${ formattedFilename }\". A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Töltsön fel egy CSV fájlt, maximum ${ MAX_NUMBER_OF_USER_ROWS } felhasználói fiókkal."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "A fájl üres: \"${ formattedFilename }\"."
+      ]
+    },
     "Error message": {
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
@@ -2970,6 +3101,28 @@
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
       ]
     },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "Kérjük menjen a ${ _signIn }, hogy újraküldjük a helyreállítási e-mail cím megerősítő levelet."
+      ],
+      "sign in": [
+        "bejelentkezéshez"
+      ],
+      "There was a problem verifying your email address.": [
+        "Probléma merült fel az e-mail címének ellenőrzésekor."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Az e-mail feliratkozások frissítéséhez: ${ signIn }."
+      ],
+      "sign in": [
+        "bejelentkezéshez"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Hiba történt a leiratkozás során."
+      ]
+    },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "A tanúsítvány: ${ name } nem található vagy már vissza lett vonva"
@@ -2981,6 +3134,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
+      ]
+    },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Esemény @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Esemény ekkortól: ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3138,6 +3299,12 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Hozzon létre szűrőket, bizonyos műveletek automatikus végrehajtásához, mint például címke hozzárendelése vagy üzenet archiválása. A szűrők Sieve programnyelven hozhatók létre."
       ],
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Az ön által vagy a Proton által levélszemétként megjelölt címekről érkező levelek a levélszemét mappába kerülnek. Ha egy ide került levél feladójának címét szeretné engedélyezni, jelölje meg a levelet, mint \"Nem levélszemét\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Tiltott címekről érkező üzenetek nem kerülnek kézbesítésre."
+      ],
       "Search in Allow List and Block List": [
         "Keresés az engedélyezett és tiltott címekben"
       ]
@@ -3199,6 +3366,9 @@
       "Key type": [
         "Kulcs típusa"
       ],
+      "Label": [
+        "Címke"
+      ],
       "Name": [
         "Név"
       ],
@@ -3213,6 +3383,9 @@
       ],
       "Time": [
         "Időpont"
+      ],
+      "What others see": [
+        "Ahogy másoknál megjelenik"
       ]
     },
     "Header for addresses table": {
@@ -3698,6 +3871,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } A fiókjában lévő összes titkosított adathoz elveszti a hozzáférést ha folytatja."
       ],
+      "${ calendarName } will be set as default calendar.": [
+        "${ calendarName } lesz az alapértelmezett naptár."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
@@ -3931,6 +4107,9 @@
       ],
       "Are you sure you want to delete this address?": [
         "Biztosan törli ezt a címet?"
+      ],
+      "Are you sure you want to delete this calendar?": [
+        "Biztos, hogy törölni szeretné ezt a naptárat?"
       ],
       "Are you sure you want to delete this domain?": [
         "Biztosan törölni szeretné ezt a domain nevet?"
@@ -4254,6 +4433,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "Amikor a rendszer időzónája eltér az aktuális időzóna beállításától, rákérdez, hogy frissítse-e a beállítást (maximum naponta egyszer)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Ha erre a domain névre jelenleg is érkeznek levelek, a zökkenőmentes átálláshoz, válassza ki a ${ boldAddresses } fület és hozza létre az összes már létező e-mail címet, mielőtt megváltoztatná az MX rekordokat."
@@ -5017,6 +5199,9 @@
       "Week": [
         "Hét"
       ],
+      "Week and month views only apply to desktop.": [
+        "A heti és havi nézet csak számítógépen érhető el."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "A fiók helyreállítási célra megadott e-mail címére fog kapni egy visszaállító kódot."
       ],
@@ -5149,6 +5334,9 @@
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
       ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához, egy ${ MAIL_APP_NAME } címre lesz szüksége."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "A ${ VPN_APP_NAME } és ${ MAIL_APP_NAME } fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
       ],
@@ -5223,11 +5411,17 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
       ],
+      "Day 30: Trial ends": [
+        "30. nap: a próbaidőszak vége"
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "A kulcs ${ fingerprint } már feltöltésre került"
       ],
       "Track your referral link activities here": [
         "Itt figyelemmel követheti az ajánló hivatkozásait"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Az előfizetése ekkor kezdődik: ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -5593,6 +5787,9 @@
       ]
     },
     "Knowledge base link label": {
+      "Here's how": [
+        "További információk"
+      ],
       "Learn more": [
         "További információk"
       ]
@@ -5640,6 +5837,9 @@
       "Address": [
         "Cím"
       ],
+      "Address type": [
+        "Cím típusa"
+      ],
       "Addresses": [
         "Címek"
       ],
@@ -5654,6 +5854,9 @@
       ],
       "Allow recovery by recovery phrase": [
         "Helyreállítás engedélyezése helyreállító jelmondattal"
+      ],
+      "Allow recovery using a trusted device": [
+        "Helyreállítás engedélyezése egy megbízható eszközzel"
       ],
       "Amount": [
         "Összeg"
@@ -5676,6 +5879,9 @@
       "App password": [
         "Jelszó hozzáadása"
       ],
+      "Apply filter to existing emails": [
+        "Szűrő alkalmazása a meglévő e-mailekre"
+      ],
       "Ask before loading remote content": [
         "Megerősítés távoli tartalom betöltése előtt"
       ],
@@ -5685,11 +5891,17 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
+      "Auto-detect primary time zone": [
+        "Az elsődleges időzóna automatikus detektálása"
+      ],
       "Auto-load embedded images": [
         "Beágyazott képek automatikus betöltése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
+      ],
+      "Auto-unsubscribe": [
+        "Automatikus leiratkozás"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -5702,6 +5914,9 @@
       ],
       "Block malware, ads and trackers": [
         "Kártékony kódok, reklámok, követők blokkolása"
+      ],
+      "Blocked": [
+        "Letiltott"
       ],
       "bonus storage": [
         "bónusz tárhely"
@@ -5741,6 +5956,9 @@
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
+      ],
+      "Collect usage diagnostics": [
+        "Használati adatok gyűjtése"
       ],
       "Color": [
         "Szín"
@@ -5832,8 +6050,14 @@
       "Default language": [
         "Alapértelmezett nyelv"
       ],
+      "Default language (${ defaultLanguage })": [
+        "Alapértelmezett nyelv (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "Alapértelmezett PGP séma"
+      ],
+      "Default view": [
+        "Alapértelmezett nézet"
       ],
       "Delete": [
         "Törlés"
@@ -6066,6 +6290,9 @@
       "No label found": [
         "Nem található címke"
       ],
+      "Non Spam": [
+        "Nem levélszemét"
+      ],
       "Non-standard ports": [
         "Nem szabványos portok"
       ],
@@ -6197,6 +6424,18 @@
       ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
+      ],
+      "Send crash reports": [
+        "Hibajelentések küldése"
+      ],
+      "Send in": [
+        "Küldés így:"
+      ],
+      "Show secondary time zone": [
+        "Másodlagos időzóna megjelenítése"
+      ],
+      "Show week numbers": [
+        "Hetek sorszámának megjelenítése"
       ],
       "Sign external messages": [
         "Külső üzenetek aláírása"
@@ -6342,6 +6581,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
       ],
+      "Your calendar URL": [
+        "Az ön naptárának URL-je"
+      ],
+      "Your calendar URL label": [
+        "Az ön naptárának URL neve"
+      ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
       ],
@@ -6366,6 +6611,11 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Adjon hozzá saját domain nevet a ${ MAIL_APP_NAME } fiókjához."
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "Emlékeztetők"
       ]
     },
     "Label for default event settings": {
@@ -6401,6 +6651,9 @@
       ],
       "Proton company announcements": [
         "Proton céges hírek"
+      ],
+      "Proton for Business": [
+        "Üzleti Proton szolgáltatások"
       ],
       "Proton for Business newsletter": [
         "Proton Üzleti hírlevél"
@@ -6562,6 +6815,9 @@
       "Upgrade account": [
         "Csomag váltása"
       ],
+      "Upgrade your plan": [
+        "Váltson nagyobb csomagra"
+      ],
       "View guide": [
         "Útmutató megtekintése"
       ],
@@ -6633,6 +6889,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Minden szűrőművelet alkalmazásra kerül a Proton Mail fiókjában található összes levélre. Automatikus válasz e-mailek nem kerülnek kiküldésre."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Biztosan ki szeretné kapcsolni a kétlépéses hitelesítést?"
       ],
@@ -6842,6 +7101,12 @@
       "Back to Mail": [
         "Vissza a levelekhez"
       ],
+      "Blocked": [
+        "Letiltott"
+      ],
+      "Non spam": [
+        "Nem levélszemét"
+      ],
       "Spam": [
         "Levélszemét"
       ]
@@ -6895,6 +7160,9 @@
       "Continue to review": [
         "Tovább az áttekintéshez"
       ],
+      "Continue with Free": [
+        "Folytatás az ingyenessel"
+      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -6924,6 +7192,9 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Váltás ${ upsellPlanHumanSize } csomagra"
       ]
     },
     "new_plans: attribute": {
@@ -6987,11 +7258,11 @@
       "${ size } attachment size": [
         "${ size } melléklet méret"
       ],
+      "${ size } storage": [
+        "${ size } tárhely"
+      ],
       "${ size } storage per user": [
         "${ size } tárhely felhasználónként"
-      ],
-      "${ size } total storage": [
-        "${ size } teljes tárhely"
       ],
       "1 free VPN connection in total": [
         "Összesen 1 ingyenes VPN kapcsolat"
@@ -7138,8 +7409,8 @@
       "Unlimited volume/bandwidth": [
         "Korlátlan adatmennyiség és forgalom"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Akár ${ totalStorageSize } teljes tárhely"
+      "Up to ${ totalStorageSize } storage": [
+        "Akár ${ totalStorageSize } tárhely"
       ],
       "User credential management": [
         "Felhasználói adatok kezelése"
@@ -7157,26 +7428,6 @@
       ],
       "Team management": [
         "Csoport menedzsment"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7247,6 +7498,26 @@
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } a ${ humanMaxSpace } tárhelyből"
@@ -7264,9 +7535,6 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Azzal, hogy létrehoz egy ${ BRAND_NAME } felhasználói fiókot, beleegyezik a ${ terms }einkbe."
-      ],
       "Payment details": [
         "Fizetés részletei"
       ],
@@ -7376,6 +7644,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Az IMAP támogatás asztali alkalmazásokra korlátozódik (pl. Outlook, Apple Mail, Thunderbird) a ${ MAIL_APP_NAME } Bridge-en keresztül. Felhő alapú IMAP megoldások jelenleg nem támogatottak."
       ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "A hálózati forgalom teljes lekapcsolásával védi önt, abban az esetben, ha váratlanul leszakadna a VPN kapcsolat."
+      ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "A címkék egyszerű jelölők amelyet az e-mailhez rendelhet, hogy könnyebben megtalálhassa vagy leszűrhesse"
       ],
@@ -7390,6 +7661,9 @@
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Ezen kívül hozzáadhat 5 naptárt barátaitól, családjától, kollégáitól vagy szervezeteitől is."
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Egy VPN kapcsolat, egy eszköz bármikori kapcsolódását teszi lehetővé a Proton VPN szolgáltatáshoz. Ahhoz, hogy például a mobiltelefonjával és a laptopjával is ugyanakkor kapcsolódjon, két VPN kapcsolat szükséges."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Lehetőség van a nem-privát felhasználók levelezésének megnyitására, ahogy a felhasználó látja, beleértve az üzenetek és a névjegyek részleteit"
@@ -7502,9 +7776,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Emelje meg tárhelyét felhasználónként ${ businessStorage } méretűre"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Emelje meg tárhelyét ${ driveStorage } méretűre"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
@@ -7744,8 +8015,11 @@
       "Normal": [
         "Normál"
       ],
+      "Off": [
+        "Ki"
+      ],
       "On": [
-        "Ekkor:"
+        "Be"
       ],
       "Permanent": [
         "Állandó"
@@ -7825,6 +8099,35 @@
         "Tartalmak betöltése proxy szerveren keresztül és tárolás mellékletként"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } további felhasználók létrehozásához, vagy töröljön néhány felhasználói fiókot."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } további fiókok használatához, vagy vegyen el VPN fiókokat néhány felhasználótól."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } további címek használatához, vagy töröljön néhány címet."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } további tárhely eléréshez, vagy szabadítson fel tárhelyet."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "A csomagja maximum ${ availableAddresses } cím használatát teszi lehetővé.",
+        "A csomagja maximum ${ availableAddresses } cím használatát teszi lehetővé."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "A csomagja maximum ${ availableNumberOfMembers } szervezeti felhasználót tesz lehetővé.",
+        "A csomagja maximum ${ availableNumberOfMembers } szervezeti felhasználót tesz lehetővé."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "A csomagja maximum ${ availableVPNAccess } VPN fiók használatát teszi lehetővé.",
+        "A csomagja maximum ${ availableVPNAccess } VPN fiók használatát teszi lehetővé."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "A csomagja maximum ${ humanReadableAvailableSpace } tárhely használatát teszi lehetővé."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu)"
@@ -7861,6 +8164,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Hozzon létre egy naptárat, hogy egyszerűen nyilvántarthassa az időbeosztását, mégis biztonságban tarthassa adatait."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség önnel"
@@ -7889,11 +8197,17 @@
       "Confirm password": [
         "Jelszó megerősítése"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "E.g., ": [
         "Pl., "
       ],
       "Email address": [
         "E-mail cím"
+      ],
+      "example@domain.com": [
+        "példa@domain.com"
       ],
       "Feedback": [
         "Visszajelzés"
@@ -7924,6 +8238,9 @@
       ],
       "Postal code": [
         "Irányítószám"
+      ],
+      "Search": [
+        "Keresés"
       ],
       "Search settings": [
         "Keresési beállítások"
@@ -7973,6 +8290,14 @@
     "Price": {
       "Free": [
         "Ingyenes"
+      ]
+    },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Elsődleges időzóna"
+      ],
+      "Secondary time zone": [
+        "Másodlagos időzóna"
       ]
     },
     "Private Member": {
@@ -8025,6 +8350,9 @@
       "Email address not yet verified.": [
         "Az e-mail cím még nincs megerősítve."
       ],
+      "sign in": [
+        "bejelentkezéshez"
+      ],
       "Verification email sent to ${ email.Value }": [
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ email.Value }"
       ],
@@ -8071,6 +8399,17 @@
         "Különösen korszerű"
       ]
     },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Naptár törlése?"
+      ],
+      "Remove calendar": [
+        "Naptár eltávolítása"
+      ],
+      "Unsubscribe?": [
+        "Leiratkozás?"
+      ]
+    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Szervezeti kulcsok megváltoztatása"
@@ -8086,6 +8425,11 @@
       ],
       "Reading emails of non-private users": [
         "Olvashatja a nem-privát felhasználók leveleit"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "CSV fájl feltöltése"
       ]
     },
     "Select files": {
@@ -8163,6 +8507,35 @@
         "Felhasználónév"
       ]
     },
+    "Spam notification": {
+      "${ name } added": [
+        "${ name } hozzáadva"
+      ],
+      "${ name } deletion failed": [
+        "${ name } törlése nem sikerült"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } áthelyezése a tiltott listára nem sikerült"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } áthelyezése a nem levélszemét listára nem sikerült"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } áthelyezése a levélszemét listára nem sikerült"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } áthelyezve a tiltólistára"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } áthelyezve a nem levélszemét listára"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } áthelyezve a levélszemét listára"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } törölve"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
@@ -8226,6 +8599,11 @@
       ],
       "This link might be wrong": [
         "Ez a hivatkozás valószínűleg hibás"
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "Vegyen fel nyilvános, külső vagy megosztott naptárat URL megadásával."
       ]
     },
     "Subscription attribute": {
@@ -8307,6 +8685,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "A magánszférát előtérben tartó E-mail és Naptár megoldás, a mindennapi kommunikációjához."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Ez az ajánlat csak új Proton felhasználóknak érvényes. Nem szükséges bankkártya."
       ]
     },
     "Success": {
@@ -8337,6 +8718,9 @@
       "Calendar created": [
         "Naptár létrehozva"
       ],
+      "Calendar removed": [
+        "Naptár eltávolítva"
+      ],
       "Calendar updated": [
         "Naptár frissítve"
       ],
@@ -8351,6 +8735,9 @@
       ],
       "Credits added": [
         "Kredit hozzáadva"
+      ],
+      "Default calendar updated": [
+        "Alapértelmezett naptár frissítve"
       ],
       "DMARC value copied to clipboard": [
         "A DMARC érték a vágólapra másolva"
@@ -8541,14 +8928,23 @@
       "CSV field": [
         "CSV mező"
       ],
+      "Display name": [
+        "Megjelenített név"
+      ],
       "Edit": [
         "Szerkesztés"
       ],
       "Email address": [
         "E-mail cím"
       ],
+      "Email addresses": [
+        "E-mail cím"
+      ],
       "Import": [
         "Importálás"
+      ],
+      "Marked as": [
+        "Megjelölve mint"
       ],
       "Name": [
         "Név"
@@ -8639,6 +9035,9 @@
       "Action": [
         "Művelet"
       ],
+      "Activate account and generate keys": [
+        "Fiók aktiválása és kulcsok létrehozása"
+      ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
       ],
@@ -8672,14 +9071,20 @@
       "Add Sieve filter": [
         "Új Sieve szűrő"
       ],
+      "Add to block list": [
+        "Hozzáadás a tiltólistához"
+      ],
+      "Add to not spam list": [
+        "Hozzáadás a nem levélszemét listához"
+      ],
+      "Add to spam list": [
+        "Hozzáadás a levélszemét listához"
+      ],
       "Add user": [
         "Felhasználó hozzáadása"
       ],
       "Address verification": [
         "Cím ellenőrzése"
-      ],
-      "Addresses": [
-        "Címek"
       ],
       "Allocate storage": [
         "Tárhely lefoglalása"
@@ -8695,6 +9100,9 @@
       ],
       "Appearance": [
         "Megjelenés"
+      ],
+      "Apply filter to existing messages": [
+        "Szűrő alkalmazása a meglévő üzenetekre"
       ],
       "Apply gift code": [
         "Ajándék kód hozzáadása"
@@ -8722,6 +9130,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform } eszközökre"
+      ],
+      "Cancel Mail subscription": [
+        "Mail előfizetés lemondása"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"
@@ -8789,11 +9200,26 @@
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
       ],
+      "Couldn’t create accounts": [
+        "Fiókok létrehozása nem sikerült"
+      ],
+      "Create a ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } cím létrehozása"
+      ],
       "Create calendar": [
         "Naptár létrehozása"
       ],
+      "Create multiple user accounts": [
+        "Több felhasználói fiók létrehozása"
+      ],
+      "Create user accounts": [
+        "Új felhasználói fiók létrehozása"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók létrehozása"
+      ],
+      "Creating user accounts": [
+        "Új felhasználói fiókok létrehozása"
       ],
       "Credentials": [
         "Hitelesítő adatok"
@@ -8851,6 +9277,9 @@
       ],
       "Delete account": [
         "Fiók törlése"
+      ],
+      "Delete calendar": [
+        "Naptár törlése"
       ],
       "Delete key permanently?": [
         "Kulcs végleges törlése?"
@@ -8927,11 +9356,17 @@
       "Export": [
         "Exportálás"
       ],
+      "Export calendar": [
+        "Naptár exportálása"
+      ],
       "Export private key": [
         "Privát kulcs exportálása"
       ],
       "Export public key": [
         "Nyilvános kulcs exportálása"
+      ],
+      "Extension": [
+        "Bővítmény"
       ],
       "External PGP settings": [
         "Külső PGP beállítások"
@@ -8969,6 +9404,9 @@
       "How does it work?": [
         "Hogyan működik?"
       ],
+      "How your free trial works": [
+        "Hogy működik az ingyenes kipróbálás"
+      ],
       "Human verification": [
         "Robot ellenőrzés"
       ],
@@ -8980,6 +9418,9 @@
       ],
       "Import": [
         "Importálás"
+      ],
+      "Import and export": [
+        "Importálás és exportálás"
       ],
       "Import as simple event?": [
         "Importálás egyszerű eseményként?",
@@ -9108,6 +9549,9 @@
       "Previous": [
         "Előző"
       ],
+      "Privacy and data collection": [
+        "Adatvédelem és adatgyűjtés"
+      ],
       "Processing": [
         "Feldolgozás"
       ],
@@ -9135,6 +9579,9 @@
       "Referral tracker": [
         "Meghívás követő"
       ],
+      "Remove calendar": [
+        "Naptár eltávolítása"
+      ],
       "Report a problem": [
         "Probléma jelentése"
       ],
@@ -9161,6 +9608,9 @@
       ],
       "Secure email based in Switzerland": [
         "Biztonságos e-mail svájci székhellyel"
+      ],
+      "Security and privacy": [
+        "Biztonság és adatvédelem"
       ],
       "Security logs": [
         "Biztonsági napló"
@@ -9228,6 +9678,9 @@
       "Sort labels alphabetically": [
         "Címkék rendezése betűrendbe"
       ],
+      "Spam and block list": [
+        "Levélszemét- és tiltó lista"
+      ],
       "Start a new import": [
         "Új importálás indítása"
       ],
@@ -9245,6 +9698,10 @@
       ],
       "Success": [
         "Sikeres"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
+        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
       ],
       "Switch to one-password mode": [
         "Egyjelszavas módra váltás"
@@ -9318,11 +9775,20 @@
       "You already have a Proton account": [
         "Önnek már van Proton fiókja"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Az ön ${ MAIL_APP_NAME } címe"
+      ],
+      "Your calendar link": [
+        "Az ön naptárának hivatkozása"
+      ],
       "Your current plan": [
         "Jelenlegi csomag"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan lejár: ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Importálási előzmények"
       ],
       "Your plan": [
         "Az ön csomagja"
@@ -9492,6 +9958,9 @@
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
       ],
+      "This feature is unavailable for the moment": [
+        "Ez a lehetőség jelenleg nem érhető el"
+      ],
       "This key cannot be used for encryption": [
         "Ez a kulcs nem használható titkosításhoz"
       ],
@@ -9509,6 +9978,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Egy levél a levélszemétbe helyezésekor, automatikusan leiratkozik a feladó levelezési listáiról."
       ],
       "You have locally decrypted this key": [
         "Ezt a kulcsot helyileg visszafejtette"
@@ -9566,6 +10038,25 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Váltson előfizetéses Mail csomagra, hogy akár ${ MAX_CALENDARS_PAID } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának.",
+        "Váltson előfizetéses Mail csomagra, hogy akár ${ MAX_CALENDARS_PAID } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának."
+      ],
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Váltson előfizetéses Mail csomagra, hogy egy hivatkozás segítségével bárkivel megoszthassa a személyes naptárát."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Meghívva e-mail által"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Regisztrált az ön hivatkozásán keresztül"
       ]
     },
     "User role": {

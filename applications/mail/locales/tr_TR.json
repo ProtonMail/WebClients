@@ -1089,6 +1089,11 @@
         "Yazışma"
       ]
     },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
+      ]
+    },
     "Alternative text for SimpleLogin image": {
       "SimpleLogin": [
         "SimpleLogin"
@@ -2906,9 +2911,6 @@
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
       ],
@@ -3026,6 +3028,15 @@
       ],
       "No address with keys available to compose a message": [
         "Bir ileti oluşturmak için kullanılabilecek anahtarları olan bir adres yok"
+      ],
+      "No calendars found to import": [
+        "İçe aktarılabilecek bir takvim bulunamadı"
+      ],
+      "No contacts found to import": [
+        "İçe aktarılabilecek bir kişi kaydı bulunamadı"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
       "No keys retrieved for internal user": [
         "İç kullanıcı için bir anahtarı alınamadı"
@@ -3195,6 +3206,9 @@
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
+      ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
       ],
@@ -3218,16 +3232,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Taslaklar gelen kutusuna taşınamaz"
+        "Taslaklar Gelen kutusuna taşınamaz"
       ],
       "Drafts cannot be moved to Spam": [
-        "Taslaklar istenmeyen kutusuna taşınamaz"
+        "Taslaklar İstenmeyen kutusuna taşınamaz"
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Gönderilmiş iletiler gelen kutusuna taşınamaz"
+        "Gönderilmiş iletiler Gelen kutusuna taşınamaz"
       ],
       "Sent messages cannot be moved to Spam": [
-        "Gönderilmiş iletiler istenmeyen kutusuna taşınamaz"
+        "Gönderilmiş iletiler İstenmeyen kutusuna taşınamaz"
       ],
       "This action cannot be performed": [
         "Bu işlem yapılamaz"
@@ -4009,7 +4023,7 @@
         "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Body: ": [
         "İçerik: "
@@ -4252,7 +4266,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Takma adınız satılırsa, sızdırılırsa veya kötü amaçla kullanılırsa, istenmeyen e-postalar almayı durdurmak için takma adı devre dışı bırakmanız yeterlidir."
@@ -4562,6 +4576,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
+      "Select what you want to import.": [
+        "İçe aktarmak istediklerinizi seçin."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
@@ -4669,13 +4686,13 @@
         "${ contactNames } doğrulanamadı: Kişi doğru şekilde imzalanmamış.\nBu durum, parola sıfırlama işleminden kaynaklanabilir.\n${ contactAddresses } adresine ileti göndermek veya kişiyi düzenlemek için kişiyi yeniden imzalamanız gerekir."
       ],
       "Themes can give your inbox a new look.": [
-        "Temalar, gelen kutunuza yeni bir görünüm verebilir."
+        "Temalar, e-posta kutunuza yeni bir görünüm verebilir."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. E-postamı gizle özelliği ile gelen kutunuzu koruyun."
+        "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. E-postamı gizle özelliği ile e-posta kutunuzu koruyun."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -4699,8 +4716,8 @@
         "Bu yazışmada, çöpe atılmış iletiler var."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Bu yazışma istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?",
-        "Bu yazışmalar istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?"
+        "Bu yazışma istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?",
+        "Bu yazışmalar istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir!"
@@ -4736,8 +4753,8 @@
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Bu ileti istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?",
-        "Bu iletiler istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?"
+        "Bu ileti istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?",
+        "Bu iletiler istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Bu ileti, Taslaklar kutusuna taşınacak. Böylece onu düzenlebilirsiniz. Ne zaman gönderileceğini yeniden zamanlamanız gerekecek."
@@ -4944,7 +4961,7 @@
         "Burada herhangi bir ileti yok"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Gelen kutunuzda ${ totalLabel } mevcut."
+        "Gelen kutunuzda ${ totalLabel } var."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
         "Gelen kutunuzda ${ unreadsLabel } var."
@@ -5012,13 +5029,13 @@
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "İletiniz alınıcının gelen kutusundan ve sizin gönderilmiş kutunuzdan ${ dateString } günü ${ formattedTime } zamanında silinecek"
+        "İletiniz alıcının Gelen kutusundan ve sizin Gönderilmiş kutunuzdan ${ dateString } günü ${ formattedTime } zamanında silinecek"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "İletiniz alınıcının gelen kutusundan ve sizin gönderilmiş kutunuzdan bugün ${ formattedTime } zamanında silinecek"
+        "İletiniz alıcının Gelen kutusundan ve sizin Gönderilmiş kutunuzdan bugün ${ formattedTime } zamanında silinecek"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "İletiniz alınıcının gelen kutusundan ve sizin gönderilmiş kutunuzdan yarın ${ formattedTime } zamanında silinecek"
+        "İletiniz alıcının Gelen kutusundan ve sizin Gönderilmiş kutunuzdan yarın ${ formattedTime } zamanında silinecek"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "İletiniz ${ numberOfDays } gün sonra geçersiz olacak.",
@@ -5780,7 +5797,7 @@
         "Ya da takvimlerinizden birini silebilir ve etkin bir e-posta adresine bağlı yeni bir takvim ekleyebilirsiniz."
       ],
       "Outbox": [
-        "Giden kutusu"
+        "Gönderilmiş kutusu"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -6733,8 +6750,8 @@
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi.",
-        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
+        "${ elementsCount } ileti İstenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi.",
+        "${ elementsCount } ileti İstenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
@@ -6851,7 +6868,7 @@
         "İleti ${ folderName } klasörüne taşındı."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Ileti istenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
+        "Ileti İstenmeyen kutusuna taşındı ve gönderici engellenenler listesine eklendi."
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."
@@ -7110,7 +7127,7 @@
         "Posta içe aktarma işleminizi özelleştirin"
       ],
       "Decryption error": [
-        "Şifre çözme hatası"
+        "Şifre çözme sorunu"
       ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",

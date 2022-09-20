@@ -2236,6 +2236,9 @@
       "Session timed out": [
         "Sessão expirada"
       ],
+      "Setting up your Drive": [
+        "Configurando seu Drive"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
@@ -3124,6 +3127,9 @@
       ],
       "Switch plan": [
         "Mudar de plano"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Fazer upgrade para o ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3210,11 +3216,11 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } de armazenamento"
+      ],
       "${ size } storage per user": [
         "${ size } de armazenamento por usuário"
-      ],
-      "${ size } total storage": [
-        "Armazenamento total de ${ size }"
       ],
       "1 free VPN connection in total": [
         "1 conexão VPN gratuita no total"
@@ -3361,8 +3367,8 @@
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Armazenamento total de até ${ totalStorageSize }"
+      "Up to ${ totalStorageSize } storage": [
+        "Até ${ totalStorageSize } de armazenamento"
       ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"
@@ -3481,8 +3487,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Ao criar a conta do ${ BRAND_NAME }, você concorda com os nossos ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Ao criar uma conta ${ BRAND_NAME }, você concorda com nossos ${ terms }"
       ],
       "Payment details": [
         "Detalhes de pagamento"
@@ -3714,9 +3720,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Aumente seu espaço de armazenamento para ${ businessStorage } por usuário"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Aumente seu espaço de armazenamento para um total de ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Tenha mais opções de endereços com o suporte para 10 domínios de e-mail personalizados"

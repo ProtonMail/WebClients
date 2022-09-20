@@ -1990,9 +1990,6 @@
       "Calendar limit reached": [
         "Dosažen limit kalendářů"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "Zrušení se nepodařilo odeslat"
       ],
@@ -2244,6 +2241,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Není možné odeslat vCard s více jak 10 kontakty"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
       ],
       "You must set a name": [
         "Musíte zadat jméno"

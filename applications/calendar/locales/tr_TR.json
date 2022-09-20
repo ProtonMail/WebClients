@@ -1966,9 +1966,6 @@
       "Calendar limit reached": [
         "Takvim sınırına ulaşıldı"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "İptal bilgilendirmesi gönderilemedi"
       ],
@@ -2076,6 +2073,15 @@
       ],
       "Name required": [
         "Ad zorunludur"
+      ],
+      "No calendars found to import": [
+        "İçe aktarılabilecek bir takvim bulunamadı"
+      ],
+      "No contacts found to import": [
+        "İçe aktarılabilecek bir kişi kaydı bulunamadı"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
       "No keys retrieved for internal user": [
         "İç kullanıcı için herhangi bir anahtar alınamadı"
@@ -2199,6 +2205,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -2836,7 +2845,7 @@
         "Bir davette en fazla 100 katılımcı olabilir"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -2933,7 +2942,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
@@ -3089,6 +3098,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz bir e-posta adresi seçin."
+      ],
+      "Select what you want to import.": [
+        "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
@@ -4245,7 +4257,7 @@
         "Katılımcı ekleyin"
       ],
       "Add title": [
-        "Başlık ekleyin"
+        "Başlık ekle"
       ],
       "E.g., ": [
         "Örnek: "

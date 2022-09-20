@@ -1966,9 +1966,6 @@
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "Annulering kon niet worden verzonden"
       ],
@@ -2208,6 +2205,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "U kunt geen vCards van meer dan 10 contacten verzenden"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda."
       ],
       "You must set a name": [
         "U moet een naam instellen"

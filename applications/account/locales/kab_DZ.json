@@ -350,6 +350,9 @@
       "Go to sign in": [
         "Ddu ɣer tuqqna"
       ],
+      "Got it": [
+        "Gziɣ"
+      ],
       "Hide": [
         "Ffer"
       ],
@@ -604,6 +607,9 @@
       ],
       "Save selected": [
         "Sekles tafrant"
+      ],
+      "Search": [
+        "Anadi"
       ],
       "Search countries": [
         "Nadi timura"
@@ -1071,7 +1077,7 @@
         "Urmid"
       ],
       "Default": [
-        "Amezwer"
+        "Amezwar"
       ],
       "Disabled": [
         "Yensa"
@@ -1112,6 +1118,11 @@
       ],
       "Week": [
         "Imalas"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Akk"
       ]
     },
     "Checkout row": {
@@ -2420,9 +2431,6 @@
       "No active sessions": [
         "Ulac tiɣimiyin turmidin"
       ],
-      "No data to import": [
-        "Ulac isefka ara ittwaketren"
-      ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
       ],
@@ -2766,6 +2774,11 @@
       ],
       "Unsupported event": [
         "Tadyant ur tettusefrak ara"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Tella-d tuccḍa deg usali n ufaylu-inek·inem. Ulac afaylu i yettwafernen."
       ]
     },
     "Error message": {
@@ -4899,7 +4912,7 @@
         "Sali-d agbur anmeggag"
       ],
       "Mark as read": [
-        "Creḍ yettɣra"
+        "Creḍ-it yettwaɣra"
       ],
       "Mark as unread": [
         "Creḍ ur yettwaγra ara"
@@ -5779,7 +5792,7 @@
     },
     "Label for default event notifications": {
       "Notifications": [
-        "Tilγa"
+        "Ilɣa"
       ]
     },
     "Label for default event settings": {
@@ -6678,7 +6691,7 @@
         "Yensa"
       ],
       "On": [
-        "Irmed"
+        "Yermed"
       ],
       "Permanent": [
         "Ameɣlal"
@@ -6849,6 +6862,9 @@
       ],
       "Postal code": [
         "Tangalt n lpusṭa"
+      ],
+      "Search": [
+        "Anadi"
       ],
       "Search settings": [
         "Nadi iɣewwaṛen"
@@ -7394,11 +7410,17 @@
       "CSV field": [
         "Urti CSV"
       ],
+      "Display name": [
+        "Isem ara d-yettwaskanen"
+      ],
       "Edit": [
         "Ẓreg"
       ],
       "Email address": [
         "Tansa imayl"
+      ],
+      "Email addresses": [
+        "Tansiwin imayl"
       ],
       "Import": [
         "Kter"
@@ -7408,6 +7430,9 @@
       ],
       "Status": [
         "Addad"
+      ],
+      "Total storage": [
+        "Amḍiq n usekles amatu"
       ],
       "Values": [
         "Azalen"
@@ -7533,9 +7558,6 @@
       ],
       "Address verification": [
         "Asenqed n tansa"
-      ],
-      "Addresses": [
-        "Tansiwin"
       ],
       "Allocate storage": [
         "Ḥerr tallunt n usekles"
