@@ -75,7 +75,7 @@ function main {
     cd i18n-js;
     echo "Running ttag extract"
     # Output from ttag extract is full of babel errors, silence it
-    ../../../node_modules/.bin/ttag extract $(getFileList) -o "../${1}" > /dev/null 2>&1;
+    ../../../node_modules/.bin/ttag extract $(getFileList) -o "../${1}" 2>&1;
     echo "done"
   )
 
