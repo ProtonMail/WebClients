@@ -121,6 +121,19 @@ export const getFreeVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServ
         features: [getVPNConnections(1), getCountries(freeServers), getVPNSpeed('medium'), getNoLogs()],
     };
 };
+
+export const getFreeDrivePlan = (): ShortPlan => {
+    return {
+        plan: PLANS.FREE,
+        title: PLAN_NAMES[PLANS.FREE],
+        label: '',
+        description: c('new_plans: info')
+            .t`The no-cost starter account designed to empower everyone with privacy by default.`,
+        cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
+        features: [getStorageFeature(-1), getNAddressesFeature({ n: 1 })],
+    };
+};
+
 export const getVPNPlan = (plan: Plan, vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
     const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
     return {
@@ -143,6 +156,7 @@ export const getVPNPlan = (plan: Plan, vpnCountries: VPNCountries, serversCount:
         ],
     };
 };
+
 export const getMailProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MAIL_PRO,
