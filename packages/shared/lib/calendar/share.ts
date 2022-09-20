@@ -3,6 +3,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { decryptPassphrase, signPassphrase } from '@proton/shared/lib/keys/calendarKeys';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
@@ -44,7 +45,11 @@ export const acceptCalendarShareInvitation = async ({
         armoredPassphrase,
         privateKeys,
     });
-    const Signature = await signPassphrase({ passphrase, privateKeys });
+    const { privateKey } = getPrimaryKey(addressKeys) || {};
+    if (!privateKey) {
+        throw new Error('No primary address key');
+    }
+    const Signature = await signPassphrase({ passphrase, privateKey });
     return api(acceptInvitation(calendarID, addressID, { Signature }));
 };
 

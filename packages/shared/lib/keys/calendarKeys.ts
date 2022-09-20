@@ -4,15 +4,15 @@ import {
     CryptoProxy,
     PrivateKeyReference,
     PublicKeyReference,
-    VERIFICATION_STATUS,
     SessionKey,
+    VERIFICATION_STATUS,
     toPublicKeyReference,
 } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getEncryptedSessionKey } from '../calendar/encrypt';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
-import { getEncryptedSessionKey } from '../calendar/encrypt';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig, Nullable, SimpleMap } from '../interfaces';
 import { CalendarKeyFlags, CalendarMember, DecryptedCalendarKey, CalendarKey as tsKey } from '../interfaces/calendar';
@@ -51,14 +51,8 @@ export const generateCalendarKey = async ({
     return { privateKey, privateKeyArmored };
 };
 
-export const signPassphrase = ({
-    passphrase,
-    privateKeys,
-}: {
-    passphrase: string;
-    privateKeys: PrivateKeyReference[];
-}) => {
-    return CryptoProxy.signMessage({ textData: passphrase, signingKeys: privateKeys, detached: true });
+export const signPassphrase = ({ passphrase, privateKey }: { passphrase: string; privateKey: PrivateKeyReference }) => {
+    return CryptoProxy.signMessage({ textData: passphrase, signingKeys: privateKey, detached: true });
 };
 
 export const encryptPassphrase = async ({
