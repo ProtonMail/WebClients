@@ -805,6 +805,32 @@
         ": "
       ]
     },
+    "color": {
+      "cobalt": [
+        "kobolt"
+      ],
+      "copper": [
+        "kobber"
+      ],
+      "fern": [
+        "bregne"
+      ],
+      "olive": [
+        "oliven"
+      ],
+      "pacific": [
+        "stillehav"
+      ],
+      "reef": [
+        "rev"
+      ],
+      "slateblue": [
+        "skiferblå"
+      ],
+      "soil": [
+        "jord"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Afslut importtilpasning?"
@@ -1904,9 +1930,6 @@
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "Aflysning kunne ikke sendes"
       ],
@@ -2014,6 +2037,15 @@
       ],
       "Name required": [
         "Navn påkrævet"
+      ],
+      "No calendars found to import": [
+        "Ingen kalendere fundet til import"
+      ],
+      "No contacts found to import": [
+        "Ingen kontakter fundet til import"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
       "No keys retrieved for internal user": [
         "Ingen nøgler hentet for intern bruger"
@@ -3024,6 +3056,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
+      "Select what you want to import.": [
+        "Vælg, hvad du ønsker at importere."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
@@ -3358,6 +3393,9 @@
       ],
       "Delete": [
         "Slet"
+      ],
+      "Delete recovery-related information.": [
+        "Slet gendannelsesrelaterede oplysninger."
       ],
       "Description": [
         "Beskrivelse"
@@ -3894,6 +3932,14 @@
         "kl."
       ]
     },
+    "Notification type": {
+      "email": [
+        "e-mail"
+      ],
+      "notification": [
+        "notifikation"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "på tidspunktet for begivenheden"
@@ -4109,6 +4155,11 @@
         "Dig"
       ]
     },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Klap deltagerliste sammen"
+      ]
+    },
     "Participants expand button label": {
       "Expand participants list": [
         "Udvid deltagerliste"
@@ -4289,6 +4340,12 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
       ],
+      "Don't miss any events": [
+        "Gå ikke glip af nogen begivenheder"
+      ],
+      "Easily accept invites": [
+        "Let at acceptere invitationer"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Få op til 18 måneder med ${ planName } gratis"
       ],
@@ -4298,11 +4355,17 @@
       "No more missed appointments": [
         "Ikke flere glemte aftaler"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Nu vises invitationer i din kalender som afventende begivenheder. Du skal blot åbne en begivenhed for at svare. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Du kan nu tilføje notifikationer til kalendere, du har abonneret på."
       ]
     },
     "Spotlight settings link": {
@@ -4387,6 +4450,9 @@
       ],
       "Calendar created": [
         "Kalender oprettet"
+      ],
+      "Calendar information updated": [
+        "Kalenderoplysninger opdateret"
       ],
       "Calendar updated": [
         "Kalender opdateret"
@@ -4966,6 +5032,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Krypterede data med bekræftet digital underskrift"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"

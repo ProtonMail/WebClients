@@ -199,6 +199,9 @@
       "Create account": [
         "创建账户"
       ],
+      "Create accounts": [
+        "创建账户"
+      ],
       "Create address": [
         "创建地址"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "下载所有配置"
       ],
+      "Download CSV sample": [
+        "下载 csv 样例"
+      ],
       "Download ICS": [
         "下载ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "转至登录界面"
+      ],
+      "Got it": [
+        "知道了"
       ],
       "Hide": [
         "隱藏"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "保存选定项"
+      ],
+      "Search": [
+        "搜索"
       ],
       "Search countries": [
         "搜索国家"
@@ -1168,10 +1180,10 @@
         "进行中"
       ],
       "Default": [
-        "首选"
+        "默认"
       ],
       "Disabled": [
-        "已禁用"
+        "已停用"
       ],
       "Not synced": [
         "未同步"
@@ -1229,6 +1241,11 @@
       ],
       "Week": [
         "周"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "不限"
       ]
     },
     "Checkout row": {
@@ -2337,9 +2354,33 @@
         "已使用优惠券： ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "没有搜索结果"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "当前余额"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "csv 模板"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "第 ${ rowsThatErrored } 行出现错误。"
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "您的文件可能缺少“EmailAddresses”的头部内容。"
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "您的文件可能缺少“Password”的头部内容。"
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "导入时检测到多行错误，请检查您的 csv 文件。"
       ]
     },
     "Cycle": {
@@ -2624,9 +2665,6 @@
       "Can't check username, try again later": [
         "无法检查用户名，请稍后再试"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "由于个人日历限制，无法为所有导入的日历创建新日历。"
-      ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
@@ -2738,8 +2776,14 @@
       "No active sessions": [
         "没有已登录的账户"
       ],
-      "No data to import": [
-        "没有要导入的数据"
+      "No calendars found to import": [
+        "未找到可导入的日历"
+      ],
+      "No contacts found to import": [
+        "未找到可导入的联系人"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "未找到可导入的邮件——账户无收件箱"
       ],
       "No valid address found": [
         "未找到有效地址"
@@ -2936,6 +2980,9 @@
       "You have no invoices.": [
         "您目前没有账单。"
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "您已达到您账户等级所能创建的个人日历数上限。无法导入多出的日历。"
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您的地址数已达上限，升级账户后方可再添加地址。"
       ],
@@ -3122,12 +3169,29 @@
         "不支持的日程"
       ]
     },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "读取文件 ${ formattedFilename } 时失败。文件格式不正确。"
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "上传文件 ${ formattedFilename } 时出错。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "文件上传失败，尚未选择文件。"
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "上传最多包含 ${ MAX_NUMBER_OF_USER_ROWS } 个账户的 csv 文件。"
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "文件 ${ formattedFilename } 为空。"
+      ]
+    },
     "Error message": {
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
       ],
       "Invalid URL": [
-        "网址无效"
+        "链接无效"
       ],
       "Oops, something went wrong": [
         "糟糕，出错了"
@@ -4134,6 +4198,9 @@
       "Add label": [
         "添加标签"
       ],
+      "Add multiple users to your organization at once.": [
+        "一次性为您的组添加多个用户。"
+      ],
       "Additional options": [
         "其他选项"
       ],
@@ -4418,6 +4485,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "下载我们的 csv 模板，填写用户信息，之后上传填写完成的 csv 文件即可创建对应账户。"
       ],
       "Download recovery file": [
         "下载恢复文件"
@@ -4893,6 +4963,18 @@
       "Plan upgrade required": [
         "需升级账户"
       ],
+      "Please add a password for the user on row": [
+        "请按行添加用户密码"
+      ],
+      "Please add an email address for the user on row": [
+        "请按行添加用户电子邮件地址"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "请检查您的报错文件，或者联系客服了解详细信息。"
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "请检查您的文件，或尝试${ csvTemplateButton }。"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "请输入与您的账户关联的 12 字恢复密语。"
       ],
@@ -5031,8 +5113,8 @@
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
       ],
-      "Select what you want to import from Google.": [
-        "选择需要从 Google 导入的内容。"
+      "Select what you want to import.": [
+        "选择需要导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -5054,6 +5136,9 @@
       ],
       "Set recovery phrase": [
         "设置恢复密语"
+      ],
+      "Setting up your Drive": [
+        "配置网盘"
       ],
       "Show original message": [
         "显示原始邮件"
@@ -5118,6 +5203,15 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
       ],
+      "The following address is invalid.": [
+        "下列地址无效。"
+      ],
+      "The following address is unavailable.": [
+        "下列地址无效。"
+      ],
+      "The format of your CSV file is incorrect.": [
+        "您的 csv 文件格式错误。"
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export 应用程序能让您对邮件进行本地备份，以及恢复先前的备份到您的账户。"
       ],
@@ -5147,6 +5241,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "这可能需要几秒钟或几分钟, 具体取决于您的设备。"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "这最多会花费 15 分钟。请不要关闭此页面或断开网络连接。"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "这是之前提示您设置的 12 字短语。"
@@ -5854,7 +5951,7 @@
         "加载外链内容"
       ],
       "Mark as read": [
-        "标记为已读"
+        "标为已读"
       ],
       "Mark as unread": [
         "标为未读"
@@ -7049,6 +7146,9 @@
       "Upgrade account": [
         "升级账户"
       ],
+      "Upgrade your plan": [
+        "升级套餐"
+      ],
       "View guide": [
         "查看指南"
       ],
@@ -7426,6 +7526,9 @@
       ],
       "Switch plan": [
         "切换计划"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "开通 ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7476,11 +7579,11 @@
       "${ size } attachment size": [
         "附件可达 ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } 存储空间"
+      ],
       "${ size } storage per user": [
         "每位用户 ${ size } 存储空间"
-      ],
-      "${ size } total storage": [
-        "${ size } 总存储空间"
       ],
       "1 free VPN connection in total": [
         "仅 1 台设备可免费接入 VPN"
@@ -7626,8 +7729,8 @@
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "总存储空间最大可达 ${ totalStorageSize }"
+      "Up to ${ totalStorageSize } storage": [
+        "升级容量至 ${ totalStorageSize }"
       ],
       "User credential management": [
         "用户身份验证管理"
@@ -7645,26 +7748,6 @@
       ],
       "Team management": [
         "团队管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: info": {
@@ -7735,6 +7818,26 @@
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -7751,7 +7854,7 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "创建 ${ BRAND_NAME } 账户即表示您接受我们的${ terms }。"
       ],
       "Payment details": [
@@ -7994,9 +8097,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "每位用户存储空间可升至 ${ businessStorage }"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "总存储空间升至 ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 个自有域名更显游刃有余"
@@ -8331,6 +8431,32 @@
         "通过代理加载外链内容并存储为附件"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "点击 ${ upgradeLink } 升级添加更多用户，或移除一些账户。"
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "点击 ${ upgradeLink } 升级添加更多账户，或取消一些用户的 VPN 接入。"
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "点击 ${ upgradeLink } 升级添加更多邮箱地址，或移除一些邮箱地址。"
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "点击 ${ upgradeLink } 升级添加更多储存空间，或删除一些内容。"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "您的套餐最多包含 ${ availableAddresses } 个邮箱地址。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "您的套餐最多包含 ${ availableNumberOfMembers } 个组用户。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "您的套餐最多包含 ${ availableVPNAccess } 个 VPN 账户。"
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "您的套餐最多包含 ${ humanReadableAvailableSpace } 储存空间。"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb（Debian/Ubuntu）"
@@ -8441,6 +8567,9 @@
       ],
       "Postal code": [
         "邮政编码"
+      ],
+      "Search": [
+        "搜索"
       ],
       "Search settings": [
         "搜索设置"
@@ -8647,6 +8776,11 @@
       ],
       "Reading emails of non-private users": [
         "读取非私密用户的邮件"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "上传 csv 文件"
       ]
     },
     "Select files": {
@@ -9156,10 +9290,16 @@
       "CSV field": [
         "CSV 字段"
       ],
+      "Display name": [
+        "称呼"
+      ],
       "Edit": [
         "更改"
       ],
       "Email address": [
+        "邮箱地址"
+      ],
+      "Email addresses": [
         "邮箱地址"
       ],
       "Import": [
@@ -9173,6 +9313,9 @@
       ],
       "Status": [
         "状态"
+      ],
+      "Total storage": [
+        "存储空间总量"
       ],
       "Values": [
         "值"
@@ -9305,9 +9448,6 @@
       "Address verification": [
         "地址验证"
       ],
-      "Addresses": [
-        "邮箱地址"
-      ],
       "Allocate storage": [
         "分配存储空间"
       ],
@@ -9425,14 +9565,26 @@
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
+      "Couldn’t create accounts": [
+        "无法创建账户"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "创建 ${ MAIL_APP_NAME } 地址"
       ],
       "Create calendar": [
         "创建日历"
       ],
+      "Create multiple user accounts": [
+        "创建多个账户"
+      ],
+      "Create user accounts": [
+        "创建账户"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
+      ],
+      "Creating user accounts": [
+        "正在创建账户"
       ],
       "Credentials": [
         "凭据"
@@ -9910,6 +10062,9 @@
       ],
       "Success": [
         "成功"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "已成功创建 ${ successfullyCreatedUsers.length } 个账户"
       ],
       "Switch to one-password mode": [
         "切换到单密码模式"

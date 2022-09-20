@@ -2216,6 +2216,9 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Setting up your Drive": [
+        "Menyiapkan Drive Anda"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda pengguna setia, akun Anda memiliki fitur tambahan yang diaktifkan."
       ],
@@ -3103,6 +3106,9 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Tingkatkan ke ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3176,11 +3182,11 @@
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
+      "${ size } storage": [
+        "Kuota penyimpanan ${ size }"
+      ],
       "${ size } storage per user": [
         "Kuota penyimpanan ${ size } per pengguna"
-      ],
-      "${ size } total storage": [
-        "Total kuota penyimpanan ${ size }"
       ],
       "1 free VPN connection in total": [
         "1 koneksi VPN gratis"
@@ -3326,8 +3332,8 @@
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Total kuota penyimpanan hingga ${ totalStorageSize }"
+      "Up to ${ totalStorageSize } storage": [
+        "Kuota penyimpanan hingga ${ totalStorageSize }"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -3445,8 +3451,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami"
       ],
       "Payment details": [
         "Rincian pembayaran"
@@ -3455,7 +3461,7 @@
         "Simpan alamat email atau nomor telepon Anda untuk keperluan verifikasi apabila Anda perlu mengatur ulang akun Anda ke depannya."
       ],
       "Subscription": [
-        "Berlangganan"
+        "Langganan"
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -3677,9 +3683,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Tingkatkan kuota penyimpanan Anda ke ${ businessStorage } per pengguna"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Tingkatkan total kuota penyimpanan Anda ke ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"

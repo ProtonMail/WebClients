@@ -199,6 +199,9 @@
       "Create account": [
         "Buat akun"
       ],
+      "Create accounts": [
+        "Buat akun"
+      ],
       "Create address": [
         "Buat alamat"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Unduh seluruh konfigurasi"
       ],
+      "Download CSV sample": [
+        "Unduh sampel CSV"
+      ],
       "Download ICS": [
         "Unduh ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Tuju layar masuk"
+      ],
+      "Got it": [
+        "Dimengerti"
       ],
       "Hide": [
         "Sembunyikan"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Simpan pilihan"
+      ],
+      "Search": [
+        "Pencarian"
       ],
       "Search countries": [
         "Cari negara"
@@ -1229,6 +1241,11 @@
       ],
       "Week": [
         "Pekan"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Semua"
       ]
     },
     "Checkout row": {
@@ -2337,9 +2354,33 @@
         "Kupon diterapkan: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Tidak ada hasil pencarian yang ditemukan"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Saldo yang belum digunakan"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "template CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Terdapat kesalahan pada baris ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Sepertinya berkas Anda tidak memiliki header 'EmailAddresses'."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Sepertinya berkas Anda tidak memiliki header 'Password'."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Kami mendeteksi kesalahan pada beberapa baris dalam proses impor. Silakan periksa kembali berkas CSV Anda."
       ]
     },
     "Cycle": {
@@ -2471,7 +2512,7 @@
         "Saya menggunakan akun Proton lain"
       ],
       "Missing feature(s)": [
-        "Terdapat fitur-fitur yang hilang"
+        "Terdapat fitur yang hilang"
       ],
       "My reason isn't listed, please comment": [
         "Lainnya (harap berikan komentar)"
@@ -2624,9 +2665,6 @@
       "Can't check username, try again later": [
         "Tidak dapat memeriksa nama pengguna, coba lagi nanti"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Tidak dapat membuat kalendar baru dari kalender-kalender yang diimpor karena batas jumlah kalender maksimal telah tercapai."
-      ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
@@ -2738,8 +2776,14 @@
       "No active sessions": [
         "Tidak ada sesi yang aktif"
       ],
-      "No data to import": [
-        "Tidak ada data untuk diimpor"
+      "No calendars found to import": [
+        "Tidak ada kalender yang dapat diimpor"
+      ],
+      "No contacts found to import": [
+        "Tidak ada kontak yang dapat diimpor"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
@@ -2936,6 +2980,9 @@
       "You have no invoices.": [
         "Anda tidak memiliki tagihan apapun."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
       ],
@@ -3120,6 +3167,23 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Terdapat kesalahan dalam membaca \"${ formattedFilename }\". Format berkas tidak sesuai."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Terdapat kesalahan pada saat mengunggah \"${ formattedFilename }\". Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Unggah berkas CSV yang mengandung sebanyak-banyaknya ${ MAX_NUMBER_OF_USER_ROWS } akun pengguna."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Berkas \"${ formattedFilename }\" Anda kosong."
       ]
     },
     "Error message": {
@@ -4134,6 +4198,9 @@
       "Add label": [
         "Tambah label"
       ],
+      "Add multiple users to your organization at once.": [
+        "Tambahkan banyak pengguna ke dalam organisasi Anda secara bersamaan."
+      ],
       "Additional options": [
         "Pengaturan tambahan"
       ],
@@ -4297,7 +4364,7 @@
         "Dengan beralih ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati keutamaan-keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
+        "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati berbagai keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
       ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
@@ -4418,6 +4485,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Unduh template CSV kami, lengkapi rincian pengguna yang terkait, lalu unggah berkas CSV yang telah diisi untuk membuat akun bagi para pengguna ini."
       ],
       "Download recovery file": [
         "Unduh berkas pemulihan"
@@ -4603,7 +4673,7 @@
         "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan metode pemulihan untuk membuka kunci data Anda"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Jika Anda ingin mempertahankan data SPF yang sudah ada, Anda dapat menambahkan ${ spf } setelah ${ spfValue }. Jangan buat banyak data SPF."
+        "Apabila Anda ingin mempertahankan data SPF yang telah ada, Anda hanya perlu untuk menambahkan ${ spf } setelah ${ spfValue }. Anda tidak disarankan untuk membuat lebih dari satu data SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
@@ -4893,6 +4963,18 @@
       "Plan upgrade required": [
         "Diperlukan peningkatan paket"
       ],
+      "Please add a password for the user on row": [
+        "Silakan tambahkan kata sandi pengguna pada baris berikut"
+      ],
+      "Please add an email address for the user on row": [
+        "Silakan tambahkan alamat email pengguna pada baris berikut"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Silakan periksa kembali berkas Anda atau hubungi layanan dukungan untuk informasi lebih lanjut."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Silakan periksa kembali berkas Anda atau gunakan ${ csvTemplateButton } kami."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
@@ -5031,8 +5113,8 @@
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
-      "Select what you want to import from Google.": [
-        "Pilih hal-hal apa saja yang hendak Anda impor dari Google."
+      "Select what you want to import.": [
+        "Pilih hal apa saja yang hendak Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -5054,6 +5136,9 @@
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
+      ],
+      "Setting up your Drive": [
+        "Menyiapkan Drive Anda"
       ],
       "Show original message": [
         "Tampilkan pesan asli"
@@ -5118,6 +5203,15 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
       ],
+      "The following address is invalid.": [
+        "Alamat berikut tidak valid."
+      ],
+      "The following address is unavailable.": [
+        "Alamat berikut tidak tersedia."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Format berkas CSV Anda tidak sesuai."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplikasi Impor-Ekspor memungkinkan Anda untuk menyimpan salinan cadangan data-data Anda secara lokal dan mengembalikan salinan cadangan yang ada ke dalam akun Anda."
       ],
@@ -5147,6 +5241,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Proses ini dapat memakan waktu hingga 10 menit. Mohon untuk tidak menutup halaman ini atau memutuskan sambungan internet Anda."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Berikut ini adalah 12 kata yang telah ditentukan sebagai frasa pemulihan Anda."
@@ -7049,6 +7146,9 @@
       "Upgrade account": [
         "Tingkatkan akun"
       ],
+      "Upgrade your plan": [
+        "Tingkatkan paket Anda"
+      ],
       "View guide": [
         "Lihat panduan"
       ],
@@ -7384,7 +7484,7 @@
         "Dari ${ price }"
       ],
       "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } $ yang saya miliki saat ini"
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
@@ -7426,6 +7526,9 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Tingkatkan ke ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7476,11 +7579,11 @@
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
+      "${ size } storage": [
+        "Kuota penyimpanan ${ size }"
+      ],
       "${ size } storage per user": [
         "Kuota penyimpanan ${ size } per pengguna"
-      ],
-      "${ size } total storage": [
-        "Total kuota penyimpanan ${ size }"
       ],
       "1 free VPN connection in total": [
         "1 koneksi VPN gratis"
@@ -7626,8 +7729,8 @@
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Total kuota penyimpanan hingga ${ totalStorageSize }"
+      "Up to ${ totalStorageSize } storage": [
+        "Kuota penyimpanan hingga ${ totalStorageSize }"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -7645,26 +7748,6 @@
       ],
       "Team management": [
         "Manajemen tim"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7735,6 +7818,26 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -7751,8 +7854,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami"
       ],
       "Payment details": [
         "Rincian pembayaran"
@@ -7994,9 +8097,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Tingkatkan kuota penyimpanan Anda ke ${ businessStorage } per pengguna"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Tingkatkan total kuota penyimpanan Anda ke ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
@@ -8331,6 +8431,32 @@
         "Muat konten melalui proxy dan simpan sebagai lampiran"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } untuk menambahkan lebih banyak pengguna, atau hapus sebagian pengguna untuk mengosongkan ruang penyimpanan Anda."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } untuk mendapatkan lebih banyak akun atau membatasi akses VPN pengguna tertentu."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } untuk menambahkan lebih banyak alamat, atau hapus sebagian alamat untuk mengosongkan ruang penyimpanan Anda."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } untuk menambahkan lebih banyak ruang penyimpanan, atau hapus sebagian data untuk mengosongkannya."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Paket Anda meliputi hingga ${ availableAddresses } alamat."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Paket Anda meliputi hingga ${ availableNumberOfMembers } pengguna organisasi."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Paket Anda meliputi hingga ${ availableVPNAccess } akun VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Paket Anda meliputi kuota penyimpanan hingga ${ humanReadableAvailableSpace }."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (untuk Debian/Ubuntu)"
@@ -8441,6 +8567,9 @@
       ],
       "Postal code": [
         "Kode pos"
+      ],
+      "Search": [
+        "Pencarian"
       ],
       "Search settings": [
         "Cari di pengaturan"
@@ -8647,6 +8776,11 @@
       ],
       "Reading emails of non-private users": [
         "Membaca email pengguna non-privat"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Unggah berkas CSV"
       ]
     },
     "Select files": {
@@ -9156,10 +9290,16 @@
       "CSV field": [
         "Kolom CSV"
       ],
+      "Display name": [
+        "Nama tampilan"
+      ],
       "Edit": [
         "Sunting"
       ],
       "Email address": [
+        "Alamat email"
+      ],
+      "Email addresses": [
         "Alamat email"
       ],
       "Import": [
@@ -9173,6 +9313,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Total kuota penyimpanan"
       ],
       "Values": [
         "Nilai"
@@ -9305,9 +9448,6 @@
       "Address verification": [
         "Verifikasi alamat"
       ],
-      "Addresses": [
-        "Alamat"
-      ],
       "Allocate storage": [
         "Alokasi penyimpanan"
       ],
@@ -9425,14 +9565,26 @@
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
       ],
+      "Couldn’t create accounts": [
+        "Tidak dapat membuat akun"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Buat alamat ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Buat kalender"
       ],
+      "Create multiple user accounts": [
+        "Buat lebih dari satu akun pengguna"
+      ],
+      "Create user accounts": [
+        "Buat akun pengguna"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Buat Akun ${ BRAND_NAME } Anda"
+      ],
+      "Creating user accounts": [
+        "Membuat akun pengguna"
       ],
       "Credentials": [
         "Kredensial"
@@ -9910,6 +10062,9 @@
       ],
       "Success": [
         "Berhasil"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Akun pengguna ${ successfullyCreatedUsers.length } berhasil dibuat"
       ],
       "Switch to one-password mode": [
         "Beralih ke mode satu kata sandi"

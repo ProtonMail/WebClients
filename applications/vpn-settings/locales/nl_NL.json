@@ -2236,6 +2236,9 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Setting up your Drive": [
+        "Uw Drive wordt aangemaakt"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
@@ -3124,6 +3127,9 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Upgraden naar ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3210,11 +3216,11 @@
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
+      "${ size } storage": [
+        "${ size } opslagruimte"
+      ],
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
-      ],
-      "${ size } total storage": [
-        "${ size } opslagruimte"
       ],
       "1 free VPN connection in total": [
         "1 gratis VPN-verbinding"
@@ -3361,8 +3367,8 @@
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Tot ${ totalStorageSize } opslagruimte"
+      "Up to ${ totalStorageSize } storage": [
+        "Tot ${ totalStorageSize } opslag"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -3481,8 +3487,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }"
       ],
       "Payment details": [
         "Betalingsgegevens"
@@ -3714,9 +3720,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Verhoog uw opslagruimte tot ${ driveStorage } totaal"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"

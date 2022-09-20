@@ -2240,6 +2240,9 @@
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Рекомендуется на доверенных устройствах. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
@@ -2272,6 +2275,9 @@
       ],
       "Session timed out": [
         "Время сеанса истекло"
+      ],
+      "Setting up your Drive": [
+        "Настройка вашего Хранлища"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Вы постоянный пользователь, поэтому вам доступны дополнительные функции."
@@ -3163,6 +3169,9 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Улучшить до ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3275,11 +3284,11 @@
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } хранилища"
+      ],
       "${ size } storage per user": [
         "Объем хранилища на пользователя: ${ size }"
-      ],
-      "${ size } total storage": [
-        "Общий объем хранилища: ${ size }"
       ],
       "1 free VPN connection in total": [
         "Всего 1 бесплатное подключение VPN"
@@ -3428,8 +3437,8 @@
       "Unlimited volume/bandwidth": [
         "Неограниченный объем данных и пропускная способность"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Общий объем хранилища: до ${ totalStorageSize }"
+      "Up to ${ totalStorageSize } storage": [
+        "До ${ totalStorageSize } хранилища"
       ],
       "User credential management": [
         "Управление учетными данными пользователей"
@@ -3550,8 +3559,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }"
       ],
       "Payment details": [
         "Платежные реквизиты"
@@ -3785,9 +3794,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Увеличьте объем хранилища до ${ businessStorage } на пользователя"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Увеличьте объем дискового пространства до ${ driveStorage } в целом"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
