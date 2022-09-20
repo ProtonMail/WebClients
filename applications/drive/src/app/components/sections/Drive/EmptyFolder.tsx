@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { EmptyViewContainer, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
-import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
+import { EmptyViewContainer, Icon, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
+import uploadSvg from '@proton/styles/assets/img/illustrations/upload.svg';
 
 import { FolderContextMenu } from './FolderContextMenu';
 import { UploadButton } from './UploadButton';
@@ -39,16 +39,19 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
     return (
         <>
             <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
-                <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`There are no files yet` }}>
-                    <h3 className="text-bold">{c('Info').t`Secure your documents and data`}</h3>
-                    <p>
+                <EmptyViewContainer imageProps={{ src: uploadSvg, title: c('Info').t`There are no files yet` }}>
+                    <h3 className="text-bold">{c('Info').t`Go ahead, upload a file`}</h3>
+                    <p className="color-weak">
                         {isDesktop
-                            ? c('Info').t`Drag and drop items here or browse for files to upload.`
-                            : c('Info').t`Tap the + button to upload a file or folder.`}
+                            ? c('Info').t`It’s as easy as drag and drop or selecting files`
+                            : c('Info').t`Tap the + button to upload a file or folder`}
                     </p>
                     {isDesktop && (
                         <div className="flex flex-justify-center">
-                            <UploadButton className="w13e" />
+                            <UploadButton className="w13e">
+                                <Icon name="arrow-up-line" className="mr0-5" />
+                                {c('Action').t`Upload files`}
+                            </UploadButton>
                         </div>
                     )}
                 </EmptyViewContainer>
