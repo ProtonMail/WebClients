@@ -410,6 +410,9 @@
       "Hide messages": [
         "メッセージを非表示"
       ],
+      "Hide My Email": [
+        "メールを非公開"
+      ],
       "Hide my email": [
         "Hide My Email"
       ],
@@ -1066,6 +1069,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "会話"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "シンプルログイン"
       ]
     },
     "Alternative text for SimpleLogin image": {
@@ -2689,9 +2697,6 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
       ],
@@ -2805,6 +2810,12 @@
       ],
       "No address with keys available to compose a message": [
         "メールアドレスに有効な暗号鍵が設定さていないため、メッセージが作成できません"
+      ],
+      "No calendars found to import": [
+        "インポートするカレンダーが見つかりません"
+      ],
+      "No contacts found to import": [
+        "インポートする連絡先が見つかりません"
       ],
       "No keys retrieved for internal user": [
         "内部ユーザーの鍵が取得できません"
@@ -4230,6 +4241,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
+      "Select what you want to import.": [
+        "インポートしたいものを選択してください。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
       ],
@@ -4334,6 +4348,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "テーマで受信トレイを新しい見た目に変更できます。"
+      ],
+      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
+        "連絡先の詳細の検証に使われる署名にエラーがあります。おそらくパスワードリセットによって引き起こされています。"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
         "あなたのメールアドレスがわからなければ、迷惑メールも送れません。Hide My Email で受信トレイを保護しましょう。"
@@ -5364,6 +5381,9 @@
       "Less": [
         "隠す"
       ],
+      "Manage blocked email addresses": [
+        "ブロック済みのメールアドレスを管理"
+      ],
       "Manage your folders": [
         "フォルダーを管理"
       ],
@@ -5426,6 +5446,9 @@
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
+      ],
+      "What’s this?": [
+        "これは何ですか?"
       ],
       "You need to activate your calendar keys to add this event": [
         "このイベントを追加するにはカレンダーのキーを有効にする必要があります"
@@ -5735,6 +5758,9 @@
       ],
       "Password has been set successfully": [
         "パスワードは正常に設定されました"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "送信者 ${ senderEmail } をブロックしました"
       ]
     },
     "Oauth instructions": {
@@ -5814,6 +5840,11 @@
       ],
       "Merge with calendar": [
         "カレンダーと結合"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ totalText }": [
+        "${ page } / ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -7026,6 +7057,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"

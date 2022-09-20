@@ -434,7 +434,7 @@
         "Seleccionar-ho tot"
       ],
       "Send feedback": [
-        "Enviar opinió"
+        "Enviar comentaris"
       ],
       "Set recovery phrase": [
         "Definineix la frase de recuperació"
@@ -1692,9 +1692,6 @@
       "Calendar limit reached": [
         "Límit de calendaris assolit"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
       ],
@@ -1775,9 +1772,6 @@
       ],
       "Missing signature": [
         "Signatura no trobada"
-      ],
-      "No data to import": [
-        "No hi ha cap dada per importar"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -3101,7 +3095,7 @@
         "Què ha passat?"
       ],
       "Wonderful": [
-        "Maravellós"
+        "Meravellosa"
       ]
     },
     "Label for contact group color": {
@@ -3303,6 +3297,24 @@
         "Comenceu a utilitzar ${ appName }"
       ]
     },
+    "Onboarding Info": {
+      "Create a folder": [
+        "Crea una carpeta"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Comenceu a utilitzar Proton Drive i incrementarem l'emmagatzematge del teu compte a 1 GB de franc!"
+      ],
+      "Set a recovery method": [
+        "Configura un mètode de recuperació"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Completeu els seguents passos abans d'${ remainingDaysForGift } dia",
+        "Completeu els seguents passos abans de ${ remainingDaysForGift } dies"
+      ],
+      "Upload a file": [
+        "Puja un fitxer"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
@@ -3326,6 +3338,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Benvingut/da a ${ appName }"
+      ],
+      "Your welcome gift": [
+        "El vostre regal de benvinguda"
       ]
     },
     "Option": {
@@ -3960,7 +3975,7 @@
         "Selecciona el temps de caducitat de l'enllaç"
       ],
       "Send feedback": [
-        "Enviar opinió"
+        "Enviar comentaris"
       ],
       "Settings": [
         "Preferències"
@@ -4041,7 +4056,7 @@
         "Atenció"
       ],
       "Warning: suspected fake website": [
-        "Avís: sospita de lloc web fals"
+        "Avís: presumpte lloc web fals"
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"

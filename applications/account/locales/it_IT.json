@@ -199,6 +199,9 @@
       "Create account": [
         "Crea account"
       ],
+      "Create accounts": [
+        "Crea account"
+      ],
       "Create address": [
         "Crea indirizzo"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Scarica tutte le configurazioni"
       ],
+      "Download CSV sample": [
+        "Scarica un campione CSV"
+      ],
       "Download ICS": [
         "Scarica ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Vai al login"
+      ],
+      "Got it": [
+        "Capito"
       ],
       "Hide": [
         "Nascondi"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Salva selezionato"
+      ],
+      "Search": [
+        "Cerca"
       ],
       "Search countries": [
         "Cerca paesi"
@@ -1237,6 +1249,11 @@
       ],
       "Week": [
         "Settimana"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Tutti"
       ]
     },
     "Checkout row": {
@@ -2349,9 +2366,24 @@
         "Coupon applicato: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Nessun risultato trovato"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Crediti non utilizzati"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "Modello CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Errore alla riga ${ rowsThatErrored }."
       ]
     },
     "Cycle": {
@@ -2641,9 +2673,6 @@
       "Can't check username, try again later": [
         "Impossibile controllare il nome utente, riprova più tardi"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Impossibile creare nuovi calendari per tutti i calendari importati a causa del limite del calendario personale."
-      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -2758,8 +2787,14 @@
       "No active sessions": [
         "Nessuna sessione attiva"
       ],
-      "No data to import": [
-        "Nessun dato da importare"
+      "No calendars found to import": [
+        "Nessun calendario trovato da importare"
+      ],
+      "No contacts found to import": [
+        "Nessun contatto trovato da importare"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
@@ -2957,6 +2992,9 @@
       "You have no invoices.": [
         "Non hai nessuna fattura."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Hai raggiunto il numero massimo di calendari personali. Alcuni calendari non possono essere importati."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Hai utilizzato tutti gli indirizzi del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo indirizzo."
       ],
@@ -3142,6 +3180,17 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Si è verificato un errore durante il caricamento del file. Nessun file è stato selezionato."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Caricare un file CSV con un massimo di ${ MAX_NUMBER_OF_USER_ROWS } account."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Il tuo file \"${ formattedFilename }\" è vuoto."
       ]
     },
     "Error message": {
@@ -4958,6 +5007,9 @@
       "Plan upgrade required": [
         "Upgrade del piano necessario"
       ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Verifica il tuo file, o provare ad utilizzare il nostro ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
       ],
@@ -5093,8 +5145,8 @@
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
       ],
-      "Select what you want to import from Google.": [
-        "Seleziona cosa vuoi importare da Google."
+      "Select what you want to import.": [
+        "Seleziona cosa vuoi importare."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
@@ -5116,6 +5168,9 @@
       ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
+      ],
+      "Setting up your Drive": [
+        "Impostazione del tuo Drive"
       ],
       "Show original message": [
         "Mostra il messaggio originale"
@@ -5180,6 +5235,17 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "L'indirizzo email posto in cima alla lista è il tuo indirizzo email predefinito. Trascina e rilascia per riordinare i tuoi indirizzi."
       ],
+      "The following address is invalid.": [
+        "L'indirizzo seguente non è valido.",
+        "Gli indirizzi seguenti non sono valido."
+      ],
+      "The following address is unavailable.": [
+        "L'indirizzo seguente non è disponibile.",
+        "Gli indirizzi seguenti non sono disponibili."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Il formato del tuo file CSV non è corretto."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "L'app Import-Export ti consente di esportare i messaggi per i backup locali e di ripristinare i backup precedenti sul tuo account."
       ],
@@ -5209,6 +5275,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Questo può richiedere alcuni secondi o alcuni minuti a seconda del dispositivo"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Possono essere necessari fino a 15 minuti. Si prega di non chiudere questa pagina e di non disconnettersi da internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Questa è una frase di 12 parole che ti è stato chiesto di impostare."
@@ -5451,7 +5520,7 @@
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento sopra riportato."
       ],
       "Why?": [
-        "Perchè?"
+        "Perché?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
@@ -7102,6 +7171,9 @@
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
       ],
+      "Upgrade your plan": [
+        "Aggiorna il tuo piano"
+      ],
       "View guide": [
         "Visualizza guida"
       ],
@@ -7485,6 +7557,9 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Aggiorna a ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7548,11 +7623,11 @@
       "${ size } attachment size": [
         "Dimensioni allegato ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } di archiviazione"
+      ],
       "${ size } storage per user": [
         "${ size } di spazio di archiviazione per utente"
-      ],
-      "${ size } total storage": [
-        "${ size } di spazio di archiviazione totale"
       ],
       "1 free VPN connection in total": [
         "1 connessione VPN gratuita in totale"
@@ -7699,8 +7774,8 @@
       "Unlimited volume/bandwidth": [
         "Larghezza di banda/volume illimitati"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Fino a ${ totalStorageSize } di spazio di archiviazione totale"
+      "Up to ${ totalStorageSize } storage": [
+        "Fino a ${ totalStorageSize } di archiviazione"
       ],
       "User credential management": [
         "Gestione delle credenziali utente"
@@ -7718,26 +7793,6 @@
       ],
       "Team management": [
         "Gestione del team"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7808,6 +7863,26 @@
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } di ${ humanMaxSpace }"
@@ -7825,8 +7900,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Creando un account ${ BRAND_NAME }, accetti i nostri ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Creando un account ${ BRAND_NAME }, accetti i nostri ${ terms }"
       ],
       "Payment details": [
         "Dettagli del pagamento"
@@ -8069,9 +8144,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Incrementa il tuo spazio di archiviazione fino a ${ businessStorage } per utente"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Incrementa il tuo spazio di archiviazione a un totale di ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Ottieni di più con 10 domini email personalizzati inclusi"
@@ -8522,6 +8594,9 @@
       "Postal code": [
         "Codice postale"
       ],
+      "Search": [
+        "Cerca"
+      ],
       "Search settings": [
         "Impostazioni di ricerca"
       ],
@@ -8728,6 +8803,11 @@
       ],
       "Reading emails of non-private users": [
         "Leggendo le email degli utenti non privati"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Carica un file CSV"
       ]
     },
     "Select files": {
@@ -9250,11 +9330,17 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Display name": [
+        "Nome visualizzato"
+      ],
       "Edit": [
         "Modifica"
       ],
       "Email address": [
         "Indirizzo email"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
       ],
       "Import": [
         "Importa"
@@ -9267,6 +9353,9 @@
       ],
       "Status": [
         "Stato"
+      ],
+      "Total storage": [
+        "Spazio totale"
       ],
       "Values": [
         "Valori"
@@ -9402,9 +9491,6 @@
       "Address verification": [
         "Verifica indirizzo"
       ],
-      "Addresses": [
-        "Indirizzi"
-      ],
       "Allocate storage": [
         "Alloca spazio"
       ],
@@ -9522,14 +9608,26 @@
       "Continue with partial import?": [
         "Continuare con l'importazione parziale?"
       ],
+      "Couldn’t create accounts": [
+        "Creazione account impossibile"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Crea un indirizzo ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Crea calendario"
       ],
+      "Create multiple user accounts": [
+        "Crea account utente multipli"
+      ],
+      "Create user accounts": [
+        "Crea gli account utente"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Crea il tuo account ${ BRAND_NAME }"
+      ],
+      "Creating user accounts": [
+        "Creazione degli account utente"
       ],
       "Credentials": [
         "Credenziali"
@@ -10008,6 +10106,10 @@
       ],
       "Success": [
         "Operazione riuscita"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Creazione dell'account utente ${ successfullyCreatedUsers.length } terminata con successo",
+        "Creazione degli account utente ${ successfullyCreatedUsers.length } terminata con successo"
       ],
       "Switch to one-password mode": [
         "Passa alla modalità singola password"

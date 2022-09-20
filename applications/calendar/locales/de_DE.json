@@ -1966,9 +1966,6 @@
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Cancellation failed to be sent": [
         "Absage konnte nicht gesendet werden"
       ],
@@ -2208,6 +2205,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Es ist nicht zulässig, vCards an mehr als 10 Kontakte zu senden"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du hast die maximale Anzahl von privaten Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"

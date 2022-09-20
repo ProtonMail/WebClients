@@ -1737,9 +1737,6 @@
       "Calendar limit reached": [
         "Batas kalender tercapai"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
@@ -1818,8 +1815,14 @@
       "Missing signature": [
         "Tanda tangan hilang"
       ],
-      "No data to import": [
-        "Tidak ada data untuk diimpor"
+      "No calendars found to import": [
+        "Tidak ada kalender yang dapat diimpor"
+      ],
+      "No contacts found to import": [
+        "Tidak ada kontak yang dapat diimpor"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
@@ -1940,6 +1943,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
       ],
       "You must set a name": [
         "Anda harus membuat nama"
@@ -2768,8 +2774,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan Anda gunakan sebagai default setiap kali Anda mengirim surat ke alamat ini."
       ],
-      "Select what you want to import from Google.": [
-        "Pilih hal-hal apa saja yang hendak Anda impor dari Google."
+      "Select what you want to import.": [
+        "Pilih hal apa saja yang hendak Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."

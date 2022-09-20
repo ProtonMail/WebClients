@@ -1048,6 +1048,11 @@
         "Deltager tilføjet"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Bedsked med udløb"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
@@ -1082,6 +1087,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Samtale"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
       ]
     },
     "Alternative text for SimpleLogin image": {
@@ -1452,6 +1462,9 @@
       "This invitation is out of date. The event has been updated.": [
         "Denne invitation er forældet. Begivenheden er blevet opdateret."
       ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Dette nye tidsforslag matcher ikke dine invitationsdetaljer. Bekræft venligst invitationsdetaljerne i din kalender."
+      ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Dette svar matcher ikke dine invitationsdetaljer. Kontrollér invitationsdetaljerne i din kalender."
       ],
@@ -1542,6 +1555,57 @@
       ]
     },
     "color": {
+      "apple": [
+        "æble"
+      ],
+      "cobalt": [
+        "kobolt"
+      ],
+      "copper": [
+        "kobber"
+      ],
+      "dim gray": [
+        "svag grå"
+      ],
+      "fern": [
+        "bregne"
+      ],
+      "gainsboro": [
+        "gainsboro"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "light red": [
+        "lysrød"
+      ],
+      "olive": [
+        "oliven"
+      ],
+      "outer space": [
+        "det ydre rum"
+      ],
+      "pacific": [
+        "stillehav"
+      ],
+      "philippine gray": [
+        "filippinsk grå"
+      ],
+      "philippine silver": [
+        "filippinsk sølv"
+      ],
+      "raisin black": [
+        "rosin sort"
+      ],
+      "reef": [
+        "rev"
+      ],
+      "slateblue": [
+        "skiferblå"
+      ],
+      "soil": [
+        "jord"
+      ],
       "white": [
         "hvid"
       ]
@@ -2539,6 +2603,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -2550,6 +2617,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Nye e-mails fra ${ senderEmailAddress } vil ikke blive leveret og vil blive slettet permanent. ${ manageBlockedAddressesSettingsLink } i indstillinger."
+      ],
+      "No folders": [
+        "Ingen mapper"
+      ],
+      "No labels": [
+        "Ingen etiketter"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
@@ -2724,9 +2800,6 @@
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Choose a date in the future.": [
         "Vælg en dato i fremtiden."
       ],
@@ -2844,6 +2917,15 @@
       ],
       "No address with keys available to compose a message": [
         "Ingen adresse med nøgler er tilgængelig til at komponere en besked"
+      ],
+      "No calendars found to import": [
+        "Ingen kalendere fundet til import"
+      ],
+      "No contacts found to import": [
+        "Ingen kontakter fundet til import"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
       "No keys retrieved for internal user": [
         "Ingen nøgler hentet for intern bruger"
@@ -2984,6 +3066,9 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Denne besked er allerede blevet sendt. En ny kladde er blevet gemt."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -4377,6 +4462,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
+      "Select what you want to import.": [
+        "Vælg, hvad du ønsker at importere."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
@@ -4991,7 +5079,7 @@
         "Indlæs eksternt indhold"
       ],
       "Mark as read": [
-        "Markér som Læst"
+        "Markér som læst"
       ],
       "Mark as unread": [
         "Markér som ulæst"
@@ -5124,6 +5212,12 @@
       "Also archive": [
         "Arkivér også"
       ],
+      "Always label senders emails": [
+        "Giv altid afsenders e-mails en etikette"
+      ],
+      "Always move senders emails": [
+        "Flyt altid afsenders e-mails"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -5192,6 +5286,9 @@
       ],
       "Delete": [
         "Slet"
+      ],
+      "Delete recovery-related information.": [
+        "Slet gendannelsesrelaterede oplysninger."
       ],
       "Do not ask again": [
         "Spørg ikke igen"
@@ -5951,6 +6048,9 @@
       ],
       "Password has been set successfully": [
         "Adgangskode er blevet ændret"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Afsender ${ senderEmail } blokeret"
       ]
     },
     "Oauth instructions": {
@@ -6030,6 +6130,11 @@
       ],
       "Merge with calendar": [
         "Flet med kalender"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ totalText }": [
+        "${ page } af ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6272,6 +6377,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan ikke sende til organisatoradresse: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Genkryptering af invitation mislykkedes. Prøv igen."
       ]
     },
     "Search - no results": {
@@ -6408,6 +6516,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Få op til 18 måneder med ${ planName } gratis"
       ],
@@ -6419,6 +6530,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "For at beskytte dit privatliv har Proton blokeret e-mail-trackere i denne besked"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prøv ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
@@ -7285,6 +7399,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Krypterede data med verificeret digital signatur"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"

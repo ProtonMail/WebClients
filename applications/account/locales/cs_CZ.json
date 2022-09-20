@@ -199,6 +199,9 @@
       "Create account": [
         "Vytvořit účet"
       ],
+      "Create accounts": [
+        "Vytvořit účty"
+      ],
       "Create address": [
         "Vytvořit adresu"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Stáhnout všechny konfigurace"
       ],
+      "Download CSV sample": [
+        "Stáhnout ukázku CSV"
+      ],
       "Download ICS": [
         "Stáhnout ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Přejít na přihlášení"
+      ],
+      "Got it": [
+        "Rozumím"
       ],
       "Hide": [
         "Skrýt"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Uložit vybrané"
+      ],
+      "Search": [
+        "Vyhledat"
       ],
       "Search countries": [
         "Vyhledat země"
@@ -1253,6 +1265,11 @@
       ],
       "Week": [
         "Týden"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Vše"
       ]
     },
     "Checkout row": {
@@ -2373,9 +2390,33 @@
         "Použitý kupón: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Žádné výsledky vyhledávání"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Nepoužité kredity"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV šablona"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Chyba na řádku ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Vypadá to, že ve vašem souboru chybí hlavička 'EmailAddresses'."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Vypadá to, že ve vašem souboru chybí hlavička 'Password'."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Při importu jsme zjistili chyby ve více řádcích, zkontrolujte prosím svůj soubor CSV."
       ]
     },
     "Cycle": {
@@ -2675,9 +2716,6 @@
       "Can't check username, try again later": [
         "Nelze zkontrolovat uživatelské jméno, zkuste to znovu později"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nelze vytvořit nové kalendáře pro všechny importované kalendáře kvůli omezení osobního kalendáře."
-      ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
@@ -2798,8 +2836,14 @@
       "No active sessions": [
         "Žádné aktivní relace"
       ],
-      "No data to import": [
-        "Žádná data k importu"
+      "No calendars found to import": [
+        "Nebyly nalezeny žádné kalendáře k importu"
+      ],
+      "No contacts found to import": [
+        "Nebyly nalezeny žádné kontakty k importu"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -2868,7 +2912,7 @@
         "Chcete-li získat podporu pro více uživatelů, přejděte na firemní tarif"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif"
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
       "Primary address key is not decrypted": [
         "Klíč hlavní adresy není dešifrován"
@@ -2998,6 +3042,9 @@
       ],
       "You have no invoices.": [
         "Nemáte žádné faktury."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
@@ -3186,6 +3233,23 @@
       ],
       "Unsupported event": [
         "Událost není podporována"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Došlo k chybě při čtení souboru \"${ formattedFilename }\". Soubor nemá správný formát."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo k chybě při nahrávání souboru \"${ formattedFilename }\". Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Nahrajte soubor CSV s ${ MAX_NUMBER_OF_USER_ROWS } nebo méně uživatelskými účty."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Váš soubor \"${ formattedFilename }\" je prázdný."
       ]
     },
     "Error message": {
@@ -4314,6 +4378,9 @@
       "Add label": [
         "Přidat štítek"
       ],
+      "Add multiple users to your organization at once.": [
+        "Přidejte do organizace více uživatelů najednou."
+      ],
       "Additional options": [
         "Další možnosti"
       ],
@@ -4613,6 +4680,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Stáhněte si naši šablonu CSV, vyplňte údaje o uživateli a poté nahrajte vyplněný soubor CSV a vytvořte účty pro tyto uživatele."
       ],
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
@@ -5097,6 +5167,24 @@
       "Plan upgrade required": [
         "Požadováno předplatné"
       ],
+      "Please add a password for the user on row": [
+        "Přidejte prosím heslo uživatele v řadě",
+        "Přidejte prosím hesla uživatelů v řadě",
+        "Přidejte prosím hesla uživatelů v řadě",
+        "Přidejte prosím hesla uživatelů v řadě"
+      ],
+      "Please add an email address for the user on row": [
+        "Přidejte prosím e-mailovou adresu uživatele v řadě",
+        "Přidejte prosím e-mailové adresy uživatelů v řadě",
+        "Přidejte prosím e-mailové adresy uživatelů v řadě",
+        "Přidejte prosím e-mailové adresy uživatelů v řadě"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Zkontrolujte, zda ve vašem souboru nejsou chyby, nebo se obraťte na zákaznickou podporu a získejte další informace."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Zkontrolujte prosím svůj soubor nebo zkuste použít náš ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
@@ -5235,8 +5323,8 @@
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
       ],
-      "Select what you want to import from Google.": [
-        "Vyberte co chcete importovat z Google."
+      "Select what you want to import.": [
+        "Vyberte co chcete importovat."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -5258,6 +5346,9 @@
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
+      ],
+      "Setting up your Drive": [
+        "Nastavení vašeho Drive"
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
@@ -5322,6 +5413,21 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "E-mailová adresa, kterou umístíte v horní části seznamu, je vaše výchozí e-mailová adresa. Přetažením změňte pořadí Vašich adres."
       ],
+      "The following address is invalid.": [
+        "Následující adresa je neplatná.",
+        "Následující adresy jsou neplatné.",
+        "Následující adresy jsou neplatné.",
+        "Následující adresy jsou neplatné."
+      ],
+      "The following address is unavailable.": [
+        "Následující adresa je nedostupná.",
+        "Následující adresy jsou nedostupné.",
+        "Následující adresy jsou nedostupné.",
+        "Následující adresy jsou nedostupné."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Formát vašeho souboru CSV je nesprávný."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplikace Import-Export umožňuje exportovat zprávy pro místní zálohy a obnovit předchozí zálohy do účtu."
       ],
@@ -5351,6 +5457,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na Vašem zařízení to může trvat několik sekund nebo minut"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "To může trvat až 15 minut. Nezavírejte prosím tuto stránku ani se neodpojujte od internetu."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráze, kterou jste byli vyzváni nastavit."
@@ -5641,7 +5750,7 @@
         "Importovat můžete vždy jeden typ dat."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Nyní můžete přijímat zprávy na svou adresu @pm.me. Upgradujte na placený tarif, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
+        "Nyní můžete přijímat zprávy na svou adresu @pm.me. Přejděte na placený tarif, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -7262,6 +7371,9 @@
       "Upgrade account": [
         "Rozšířit účet"
       ],
+      "Upgrade your plan": [
+        "Přejít na vyšší tarif"
+      ],
       "View guide": [
         "Zobrazit průvodce"
       ],
@@ -7657,6 +7769,9 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Přejít na ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7746,11 +7861,11 @@
       "${ size } attachment size": [
         "${ size } velikost přílohy"
       ],
+      "${ size } storage": [
+        "${ size } úložiště"
+      ],
       "${ size } storage per user": [
         "${ size } prostoru na uživatele"
-      ],
-      "${ size } total storage": [
-        "${ size } prostoru celkem"
       ],
       "1 free VPN connection in total": [
         "Celkem 1 bezplatné připojení VPN"
@@ -7899,8 +8014,8 @@
       "Unlimited volume/bandwidth": [
         "Neomezená šířka pásma"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Až ${ totalStorageSize } prostoru celkem"
+      "Up to ${ totalStorageSize } storage": [
+        "Až ${ totalStorageSize } úložného prostoru"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -7918,26 +8033,6 @@
       ],
       "Team management": [
         "Řízení týmu"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8008,6 +8103,26 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -8027,8 +8142,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Vytvořením ${ BRAND_NAME } účtu souhlasíte s našimi ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Vytvořením ${ BRAND_NAME } účtu souhlasíte s našimi ${ terms }"
       ],
       "Payment details": [
         "Platební údaje"
@@ -8273,9 +8388,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Zvyšte úložný prostor na ${ businessStorage } pro každého uživatele"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Zvyšte úložný prostor na ${ driveStorage } celkem"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
@@ -8625,6 +8737,41 @@
         "Načíst obsah přes proxy a uložit jako přílohy"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } přidat další uživatele nebo odebrat některé uživatelské účty a uvolnit tak místo."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } získat více účtů nebo odebrat některým uživatelům přístup k VPN."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } a získáte více adres nebo některé adresy odeberete, abyste uvolnili místo."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink }, abyste získali více úložného prostoru, nebo některé úložiště odstraňte, abyste uvolnili místo."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Váš plán zahrnuje maximálně ${ availableAddresses } adresu.",
+        "Váš plán zahrnuje maximálně ${ availableAddresses } adresy.",
+        "Váš plán zahrnuje maximálně ${ availableAddresses } adres.",
+        "Váš plán zahrnuje maximálně ${ availableAddresses } adres."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Váš plán zahrnuje maximálně ${ availableNumberOfMembers } organizačního uživatele.",
+        "Váš plán zahrnuje maximálně ${ availableNumberOfMembers } organizační uživatele.",
+        "Váš plán zahrnuje maximálně ${ availableNumberOfMembers } organizačních uživatelů.",
+        "Váš plán zahrnuje maximálně ${ availableNumberOfMembers } organizačních uživatelů."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Váš plán zahrnuje maximálně ${ availableVPNAccess } účet VPN.",
+        "Váš plán zahrnuje maximálně ${ availableVPNAccess } účty VPN.",
+        "Váš plán zahrnuje maximálně ${ availableVPNAccess } účtů VPN.",
+        "Váš plán zahrnuje maximálně ${ availableVPNAccess } účtů VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Váš plán zahrnuje maximálně ${ humanReadableAvailableSpace } úložného prostoru."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (pro Debian/Ubuntu)"
@@ -8735,6 +8882,9 @@
       ],
       "Postal code": [
         "Poštovní směrovací číslo"
+      ],
+      "Search": [
+        "Vyhledat"
       ],
       "Search settings": [
         "Nastavení vyhledávání"
@@ -8944,6 +9094,11 @@
       ],
       "Reading emails of non-private users": [
         "Čtení e-mailových zpráv nesoukromých uživatelů"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Nahrát CSV soubor"
       ]
     },
     "Select files": {
@@ -9471,11 +9626,17 @@
       "CSV field": [
         "CSV položka"
       ],
+      "Display name": [
+        "Zobrazované jméno"
+      ],
       "Edit": [
         "Upravit"
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
       ],
       "Import": [
         "Import"
@@ -9488,6 +9649,9 @@
       ],
       "Status": [
         "Stav"
+      ],
+      "Total storage": [
+        "Celkem prostoru"
       ],
       "Values": [
         "Hodnoty"
@@ -9629,9 +9793,6 @@
       "Address verification": [
         "Ověření adresy"
       ],
-      "Addresses": [
-        "Adresy"
-      ],
       "Allocate storage": [
         "Přiřadit úložiště"
       ],
@@ -9749,14 +9910,26 @@
       "Continue with partial import?": [
         "Pokračovat s neúplným importem?"
       ],
+      "Couldn’t create accounts": [
+        "Nelze vytvořit účty"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Vytvořit ${ MAIL_APP_NAME } adresu"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
       ],
+      "Create multiple user accounts": [
+        "Vytvořit více uživatelských účtů"
+      ],
+      "Create user accounts": [
+        "Vytvořit uživatelské účty"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Creating user accounts": [
+        "Vytváření uživatelských účtů"
       ],
       "Credentials": [
         "Přihlašovací údaje"
@@ -10237,6 +10410,12 @@
       ],
       "Success": [
         "Dokončeno"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Úspěšně vytvořen ${ successfullyCreatedUsers.length } uživatelský účet",
+        "Úspěšně vytvořeny ${ successfullyCreatedUsers.length } uživatelské účty",
+        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů",
+        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů"
       ],
       "Switch to one-password mode": [
         "Přepnout do režimu s jedním heslem"
