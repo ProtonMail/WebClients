@@ -1740,9 +1740,6 @@
       "Calendar limit reached": [
         "Takvim sayısı sınırına ulaşıldı"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
@@ -1824,8 +1821,14 @@
       "Missing signature": [
         "İmza eksik"
       ],
-      "No data to import": [
-        "İçe aktarılacak bir veri yok"
+      "No calendars found to import": [
+        "İçe aktarılabilecek bir takvim bulunamadı"
+      ],
+      "No contacts found to import": [
+        "İçe aktarılabilecek bir kişi kaydı bulunamadı"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -1949,6 +1952,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -2364,7 +2370,7 @@
         "${ appName } uçtan uca şifrelenmiş olduğundan, dosyalarınıza erişemeyiz ve şifrelerini çözemeyiz. Şifreyi yeniledikten sonra Drive kilidini açmak için şunlardan birine sahip olmanız gerekir:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Toplu yüklemeler bilgisayarınızın başarımını düşürebilir. Yükleme sırasında yayın akışı izlemek gibi yoğun bellek kullanan işlemleri sınırlamayı deneyin. Ya da yüklemeleri gruplar halinde yapın."
@@ -2571,7 +2577,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Bunlardan birine sahipseniz, engellemeyi kaldırmak için Proton hesabı ayarıyla ilerleyin."
@@ -2819,8 +2825,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
-      "Select what you want to import from Google.": [
-        "Google üzerinden içe aktarmak istediklerinizi seçin."
+      "Select what you want to import.": [
+        "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
@@ -3237,7 +3243,7 @@
         "Kurtarma ile ilgili bilgileri sil."
       ],
       "Deleted": [
-        "Silinme"
+        "Silindi"
       ],
       "Do not ask again": [
         "Bir daha sorma"

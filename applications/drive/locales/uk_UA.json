@@ -1746,9 +1746,6 @@
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
@@ -1836,8 +1833,14 @@
       "Missing signature": [
         "Відсутній підпис"
       ],
-      "No data to import": [
-        "Немає даних для імпорту"
+      "No calendars found to import": [
+        "Не знайдено календарів для імпортування"
+      ],
+      "No contacts found to import": [
+        "Не знайдено контактів для імпортування"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -1967,6 +1970,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Ви не можете надіслати vCards для понад 10 контактів"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -2921,8 +2927,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select what you want to import from Google.": [
-        "Виберіть, що ви хочете імпортувати з Google."
+      "Select what you want to import.": [
+        "Виберіть те, що бажаєте імпортувати."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -4004,6 +4010,12 @@
       ],
       "Set a recovery method": [
         "Вказати спосіб відновлення"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Виконайте ці дії впродовж наступного дня",
+        "Виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів",
+        "Виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів",
+        "Виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів"
       ],
       "Upload a file": [
         "Вивантажити файл"

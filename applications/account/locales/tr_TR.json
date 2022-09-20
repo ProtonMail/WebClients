@@ -199,6 +199,9 @@
       "Create account": [
         "Hesap ekle"
       ],
+      "Create accounts": [
+        "Hesaplar ekle"
+      ],
       "Create address": [
         "Adres oluştur"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Tüm yapılandırmaları indir"
       ],
+      "Download CSV sample": [
+        "Örnek CSV dosyasını indir"
+      ],
       "Download ICS": [
         "ICS dosyasını indir"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Oturum açmaya git"
+      ],
+      "Got it": [
+        "Anladım"
       ],
       "Hide": [
         "Gizle"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Seçilmişleri kaydet"
+      ],
+      "Search": [
+        "Arama"
       ],
       "Search countries": [
         "Ülke ara"
@@ -1237,6 +1249,11 @@
       ],
       "Week": [
         "Hafta"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Tümü"
       ]
     },
     "Checkout row": {
@@ -2349,9 +2366,33 @@
         "Kupon uygulandı: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Kalan kredi"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV kalıbı"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "${ rowsThatErrored }. satırda sorun var."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Dosyanızda 'EmailAddresses' başlığı eksik gibi görünüyor."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Dosyanızda 'Password' başlığı eksik gibi görünüyor."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "İçe aktarma sırasında birkaç satırda sorunlar bulundu. Lütfen CSV dosyanızı gözden geçirin."
       ]
     },
     "Cycle": {
@@ -2641,9 +2682,6 @@
       "Can't check username, try again later": [
         "Kullanıcı adı denetlenemedi. Bir süre sonra yeniden deneyin"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sayısı sınırı nedeniyle içe aktarılan takvimlerin tümü eklenemedi."
-      ],
       "Checkout expired, please try again": [
         "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
       ],
@@ -2758,8 +2796,14 @@
       "No active sessions": [
         "Herhangi bir etkin oturum yok"
       ],
-      "No data to import": [
-        "İçe aktarılacak bir veri yok"
+      "No calendars found to import": [
+        "İçe aktarılabilecek bir takvim bulunamadı"
+      ],
+      "No contacts found to import": [
+        "İçe aktarılabilecek bir kişi kaydı bulunamadı"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -2957,6 +3001,9 @@
       "You have no invoices.": [
         "Herhangi bir faturanız yok."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
       ],
@@ -3142,6 +3189,23 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "\"${ formattedFilename }\" dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "\"${ formattedFilename }\" dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Dosyanız yüklenirken bir sorun çıktı. Herhangi bir dosya seçilmemiş."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "İçinde en fazla ${ MAX_NUMBER_OF_USER_ROWS } kullanıcı kaydı olan bir CSV dosyası yükleyin."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "\"${ formattedFilename }\" dosyanız boş."
       ]
     },
     "Error message": {
@@ -3437,7 +3501,7 @@
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapacak bir özel süzgeç ekleyin. Süzgeçler düzeltilebilir ve doğrudan Sieve programlama diliyle oluşturulabilir."
       ],
       "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Siz ya da Proton tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen klasörünüze taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
+        "Siz ya da Proton tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen kutunuza taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Engellenmiş adreslerden gelen e-postalar alınmaz."
@@ -4194,6 +4258,9 @@
       "Add label": [
         "Etiket ekle"
       ],
+      "Add multiple users to your organization at once.": [
+        "Kuruluşunuza bir kerede birkaç kullanıcı ekleyin."
+      ],
       "Additional options": [
         "Ek seçenekler"
       ],
@@ -4330,7 +4397,7 @@
         "Hesabı etkinleştirmeden önce bir parola belirtmeli ve yeni adresin şifreleme anahtarlarını oluşturmalısınız."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF etki alanı adına kimlerin e-posta göndermesine izin verildiğini belirtmek için kullanılır. Bu nedenle SPF kaydınıza ${ MAIL_APP_NAME } eklemenizi önemle öneririz. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
@@ -4484,6 +4551,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "CSV dosyası kalıbımızı indirin, kullanıcı bilgilerini yazın ve bu kullanıcı hesaplarını eklemek için CSV dosyasını yükleyin."
+      ],
       "Download recovery file": [
         "Kurtarma dosyasını indir"
       ],
@@ -4539,7 +4609,7 @@
         "${ phone } numaranıza gönderdiğimiz kodu yazın."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı gelen kutunuzda bulamazsanız, istenmeyen kutusuna bakmayı unutmayın."
+        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
@@ -4632,7 +4702,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "${ MAIL_APP_NAME } üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü yakalayan e-posta adresi ayarlayabilirsiniz."
@@ -4961,6 +5031,20 @@
       "Plan upgrade required": [
         "Tarifenin yükseltilmesi gerekli"
       ],
+      "Please add a password for the user on row": [
+        "Lütfen satırdaki kullanıcı için bir parola yazın",
+        "Lütfen satırlardaki kullanıcılar için parolaları yazın"
+      ],
+      "Please add an email address for the user on row": [
+        "Lütfen satırdaki kullanıcı için bir e-posta adresi yazın",
+        "Lütfen satırlardaki kullanıcılar için e-posta adreslerini yazın"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Lütfen dosyanızdaki sorunları denetleyin ya da ayrıntılı bilgi almak için müşteri desteği ekibimizle görüşün."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Lütfen dosyanızı denetleyin ya da hazır ${ csvTemplateButton }nı kullanmayı deneyin."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
@@ -5099,8 +5183,8 @@
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
       ],
-      "Select what you want to import from Google.": [
-        "Google üzerinden içe aktarmak istediklerinizi seçin."
+      "Select what you want to import.": [
+        "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
@@ -5122,6 +5206,9 @@
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
+      ],
+      "Setting up your Drive": [
+        "Drive kurulumunuz yapılıyor"
       ],
       "Show original message": [
         "Özgün iletiyi görüntüle"
@@ -5186,6 +5273,17 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Listenin en üstüne çıkardığınız e-posta adresi, varsayılan e-posta adresiniz olur. Adreslerinizin sırasını sürükleyip bırakarak değiştirebilirsiniz."
       ],
+      "The following address is invalid.": [
+        "Şu adres geçersiz.",
+        "Şu adresler geçersiz."
+      ],
+      "The following address is unavailable.": [
+        "Şu adres kullanılamıyor.",
+        "Şu adresler kullanılamıyor."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "CSV dosyanız doğru biçimde değil."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export uygulaması, iletilerinizin yerel yedek olarak dışa aktarılmasını ve daha önce alınmış yedeklerin geri yüklenmesi için içe aktarılmasını sağlar."
       ],
@@ -5215,6 +5313,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Bu işlemin tamamlanması 15 dakika kadar sürebilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ayarlanmanız istenen bu ifade 12 sözcükten oluşur."
@@ -7120,6 +7221,9 @@
       "Upgrade account": [
         "Hesabınızı yükseltin"
       ],
+      "Upgrade your plan": [
+        "Tarifenizi yükseltin"
+      ],
       "View guide": [
         "Rehberi görüntüle"
       ],
@@ -7503,6 +7607,9 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "${ upsellPlanHumanSize } tarifesine yükselt"
       ]
     },
     "new_plans: attribute": {
@@ -7566,11 +7673,11 @@
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
       ],
+      "${ size } storage": [
+        "${ size } depolama alanı"
+      ],
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
-      ],
-      "${ size } total storage": [
-        "${ size } toplam depolama alanı"
       ],
       "1 free VPN connection in total": [
         "Toplam 1 ücretsiz VPN bağlantısı"
@@ -7717,8 +7824,8 @@
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "${ totalStorageSize } toplam depolama alanına kadar"
+      "Up to ${ totalStorageSize } storage": [
+        "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -7736,26 +7843,6 @@
       ],
       "Team management": [
         "Ekip yönetimi"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: info": {
@@ -7826,6 +7913,26 @@
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
@@ -7843,8 +7950,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz"
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
@@ -8087,9 +8194,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Her kullanıcı için depolama alanınızı ${ businessStorage } boyutuna kadar artırın"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Toplam depolama alanınızı ${ driveStorage } boyutuna artırın"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
@@ -8429,6 +8533,35 @@
         "İçerik vekil sunucu üzerinden yüklensin veek dosyalar olarak kaydedilsin"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "Daha fazla kullanıcı eklemek için ${ upgradeLink } ya da yer açmak için bazı kullanıcı hesaplarını silin."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "Daha fazla VPN hesabı eklemek için ${ upgradeLink } ya da bazı kullanıcıların VPN hesaplarını silin."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "Daha fazla adres eklemek için ${ upgradeLink } ya da yer açmak için bazı adresleri silin."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "Daha fazla depolama alanı almak için ${ upgradeLink } ya da yer açmak için bazı depolama alanlarını silin."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Tarifenizle en fazla ${ availableAddresses } adres ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableAddresses } adres ekleyebilirsiniz."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı ekleyebilirsiniz."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı ekleyebilirsiniz."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Tarifenizle en fazla ${ humanReadableAvailableSpace } depolama alanı kullanabilirsiniz."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu için)"
@@ -8539,6 +8672,9 @@
       ],
       "Postal code": [
         "Posta kodu"
+      ],
+      "Search": [
+        "Arama"
       ],
       "Search settings": [
         "Arama ayarları"
@@ -8746,6 +8882,11 @@
       ],
       "Reading emails of non-private users": [
         "Kişisel olmayan kullanıcıların e-postalarını okuma"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "CSV dosyası yükle"
       ]
     },
     "Select files": {
@@ -9268,11 +9409,17 @@
       "CSV field": [
         "CSV alanı"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Edit": [
         "Düzenle"
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
       ],
       "Import": [
         "İçe aktar"
@@ -9285,6 +9432,9 @@
       ],
       "Status": [
         "Durum"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
       ],
       "Values": [
         "Değerler"
@@ -9420,9 +9570,6 @@
       "Address verification": [
         "Adres doğrulaması"
       ],
-      "Addresses": [
-        "Adresler"
-      ],
       "Allocate storage": [
         "Depolama alanını dağıt"
       ],
@@ -9540,14 +9687,26 @@
       "Continue with partial import?": [
         "Kısmi içe aktarmayla ilerlensin mi?"
       ],
+      "Couldn’t create accounts": [
+        "Hesaplar eklenemedi"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Bir ${ MAIL_APP_NAME } adresi oluştur"
       ],
       "Create calendar": [
         "Takvim ekle"
       ],
+      "Create multiple user accounts": [
+        "Birkaç kullanıcı hesabı ekle"
+      ],
+      "Create user accounts": [
+        "Kullanıcı hesapları ekle"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızı açın"
+      ],
+      "Creating user accounts": [
+        "Kullanıcı hesapları ekleniyor"
       ],
       "Credentials": [
         "Kimlik doğrulama bilgileri"
@@ -10027,6 +10186,10 @@
       "Success": [
         "Başarılı"
       ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "${ successfullyCreatedUsers.length } kullanıcı hesabı eklendi",
+        "${ successfullyCreatedUsers.length } kullanıcı hesabı eklendi"
+      ],
       "Switch to one-password mode": [
         "Tek parola kipine geç"
       ],
@@ -10247,7 +10410,7 @@
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Aynı yazışmadaki e-postaları gelen kutunuzda gruplayın veya ayrı ayrı görüntüleyin."
+        "Aynı yazışmadaki e-postaları Gelen kutunuzda gruplayın ya da ayrı ayrı görüntüleyin."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
@@ -10262,7 +10425,7 @@
         "Varsayılan oluşturucu açılır pencere boyutunu küçük veya tam ekran olarak ayarlayın."
       ],
       "Set the default layout for your Inbox.": [
-        "Gelen Kutunuzun varsayılan düzenini ayarlayın."
+        "Gelen kutunuzun varsayılan düzenini ayarlayın."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Gönderdiğiniz e-postalara şu alt bilgi eklenir: ${ signature } Bağlantı, öneri bağlantınıza yönlenir. Alt bilgi, imzanızın altında görüntülenir. İmzanızı istediğiniz zaman ayarlar bölümünden kişiselleştirebilirsiniz."
@@ -10307,7 +10470,7 @@
         "Bir bağlantıya tıkladığınızda, bu kimlik avını önleme özelliği web sayfasının adresini onaylamanızı ister."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Bir e-postayı istenmeyen kutusuna taşıdığınızda göndericinin e-posta listesinden otomatik olarak ayrılmanızı sağlar."
+        "Bir e-postayı İstenmeyen kutusuna taşımanız göndericinin e-posta listesinden otomatik olarak ayrılmanızı sağlar."
       ],
       "You have locally decrypted this key": [
         "Bu anahtarın şifresini yerel olarak çözdünüz"

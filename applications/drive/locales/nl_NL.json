@@ -1740,9 +1740,6 @@
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Contact kon niet worden opgeslagen"
       ],
@@ -1824,8 +1821,14 @@
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
-      "No data to import": [
-        "Geen gegevens om te importeren"
+      "No calendars found to import": [
+        "Geen agenda's gevonden om te importeren"
+      ],
+      "No contacts found to import": [
+        "Geen contacten gevonden om te importeren"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -1949,6 +1952,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "U kunt geen vCards van meer dan 10 contacten verzenden"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda."
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -2819,8 +2825,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
       ],
-      "Select what you want to import from Google.": [
-        "Selecteer wat u wil importeren vanaf Google."
+      "Select what you want to import.": [
+        "Selecteer wat u wilt importeren."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."

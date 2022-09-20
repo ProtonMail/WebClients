@@ -1913,7 +1913,7 @@
         "Basic, Plus veya Visionary aboneliği gerekli"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Güncel fatura döneminin sonunda faturalanır (${ renewalDate } tarihinde yenilenir)"
@@ -1988,7 +1988,7 @@
         "${ phone } numaranıza gönderdiğimiz kodu yazın."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı gelen kutunuzda bulamazsanız, istenmeyen kutusuna bakmayı unutmayın."
+        "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
@@ -2042,7 +2042,7 @@
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "E-postayı gelen kutunuzda göremezseniz, istenmeyenler kutusuna bakmayı unutmayın."
+        "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
@@ -2235,6 +2235,9 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
+      ],
+      "Setting up your Drive": [
+        "Drive kurulumunuz yapılıyor"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
@@ -3124,6 +3127,9 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "${ upsellPlanHumanSize } tarifesine yükselt"
       ]
     },
     "new_plans: Action": {
@@ -3210,11 +3216,11 @@
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
       ],
+      "${ size } storage": [
+        "${ size } depolama alanı"
+      ],
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
-      ],
-      "${ size } total storage": [
-        "${ size } toplam depolama alanı"
       ],
       "1 free VPN connection in total": [
         "Toplam 1 ücretsiz VPN bağlantısı"
@@ -3361,8 +3367,8 @@
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "${ totalStorageSize } toplam depolama alanına kadar"
+      "Up to ${ totalStorageSize } storage": [
+        "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -3481,8 +3487,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz"
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
@@ -3714,9 +3720,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Her kullanıcı için depolama alanınızı ${ businessStorage } boyutuna kadar artırın"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Toplam depolama alanınızı ${ driveStorage } boyutuna artırın"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"

@@ -199,6 +199,9 @@
       "Create account": [
         "Создать аккаунт"
       ],
+      "Create accounts": [
+        "Создать аккаунты"
+      ],
       "Create address": [
         "Создать адрес"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Скачать все конфигурации"
       ],
+      "Download CSV sample": [
+        "Скачать пример CSV-файла"
+      ],
       "Download ICS": [
         "Скачать ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Перейти к входу в систему"
+      ],
+      "Got it": [
+        "Понятно"
       ],
       "Hide": [
         "Скрыть"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Сохранить выбранное"
+      ],
+      "Search": [
+        "Поиск"
       ],
       "Search countries": [
         "Поиск стран"
@@ -1253,6 +1265,11 @@
       ],
       "Week": [
         "Неделя"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Все"
       ]
     },
     "Checkout row": {
@@ -2373,9 +2390,33 @@
         "Купон применен: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Результаты поиска не обнаружены"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Неиспользованные кредиты"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "Шаблон CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Ошибка в строке ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Похоже, в вашем файле не хватает заголовка 'EmailAddresses'."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Похоже, что в вашем файле отсутствует заголовок 'Password'."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Мы обнаружили ошибки в нескольких строках во время импорта, просмотрите ваш файл CSV."
       ]
     },
     "Cycle": {
@@ -2639,6 +2680,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } - ваше имя пользователя. Чтобы создать ${ Local }@${ Domain }, перейдите в Настройки > Сообщения и написание > Короткий домен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -2671,9 +2715,6 @@
       ],
       "Can't check username, try again later": [
         "Не удается проверить имя пользователя, повторите попытку позже"
-      ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Невозможно создать новые календари для всех импортированных календарей из-за лимита личных календарей."
       ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
@@ -2795,8 +2836,14 @@
       "No active sessions": [
         "Нет активных сеансов"
       ],
-      "No data to import": [
-        "Нет данных для импорта"
+      "No calendars found to import": [
+        "Не найдено ни одного календаря для импорта"
+      ],
+      "No contacts found to import": [
+        "Не найдено контактов для импорта"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -2996,6 +3043,9 @@
       "You have no invoices.": [
         "У вас нет счетов."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы достигли максимального числа адресов, предусмотренных вашим тарифом. Улучшите ваш тариф прежде, чем добавлять новые адреса."
       ],
@@ -3183,6 +3233,23 @@
       ],
       "Unsupported event": [
         "Неподдерживаемое событие"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Произошла ошибка при чтении файла \"${ formattedFilename }\". Формат файла не поддерживается."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Произошла ошибка при загрузке файла \"${ formattedFilename }\". Максимальный размер файла - ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Произошла ошибка при загрузке вашего файла. Ничего не было выбрано."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Загрузить файл CSV с ${ MAX_NUMBER_OF_USER_ROWS } или менее аккаунтами пользователей."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Ваш файл \"${ formattedFilename }\" пуст."
       ]
     },
     "Error message": {
@@ -4269,6 +4336,12 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Файл восстановления позволяет разблокировать и просмотреть данные после сброса аккаунта"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Фраза восстановления позволяет получить доступ к аккаунту и восстановить зашифрованные сообщения, если вы забыли пароль"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
@@ -4287,6 +4360,9 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"${ MAIL_APP_NAME } мне\" или \"Личное сообщение мне\""
       ],
@@ -4301,6 +4377,9 @@
       ],
       "Add label": [
         "Добавить ярлык"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Добавить в вашу организацию нескольких пользователей разом."
       ],
       "Additional options": [
         "Дополнительные параметры"
@@ -4601,6 +4680,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Скачайте наш шаблон CSV, заполните информацию о пользователях, а затем загрузите заполненный файл CSV, чтобы создать аккаунты для этих пользователей."
       ],
       "Download recovery file": [
         "Скачать файл восстановления"
@@ -5085,6 +5167,24 @@
       "Plan upgrade required": [
         "Требуется улучшение тарифа"
       ],
+      "Please add a password for the user on row": [
+        "Добавьте пароль для пользователя в строке",
+        "Добавьте пароли для пользователей в строке",
+        "Добавьте пароли для пользователей в строке",
+        "Добавьте пароли для пользователей в строке"
+      ],
+      "Please add an email address for the user on row": [
+        "Добавьте адрес электронной почты для пользователя в строке",
+        "Добавьте адреса электронной почты для пользователей в строке",
+        "Добавьте адреса электронной почты для пользователей в строке",
+        "Добавьте адреса электронной почты для пользователей в строке"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Пожалуйста, проверьте свой файл на ошибки, или свяжитесь с технической поддержкой, чтобы получить больше информации."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Пожалуйста, проверьте ваш файл или попробуйте использовать нашу ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
@@ -5163,6 +5263,9 @@
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Рекомендуется на доверенных устройствах. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Файл восстановления скачан"
       ],
@@ -5220,8 +5323,8 @@
       "Select a service provider to start": [
         "Выберите поставщика услуг, чтобы начать"
       ],
-      "Select what you want to import from Google.": [
-        "Выберите, что вы хотите импортировать из Google."
+      "Select what you want to import.": [
+        "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -5243,6 +5346,9 @@
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Setting up your Drive": [
+        "Настройка вашего Хранлища"
       ],
       "Show original message": [
         "Показать исходное сообщение"
@@ -5307,6 +5413,21 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Адрес электронной почты, который вы разместите в верхней части списка, является адресом электронной почты по умолчанию. Перетаскивайте и отпускайте строки списка, чтобы изменять порядок адресов."
       ],
+      "The following address is invalid.": [
+        "Следующий адрес недействителен.",
+        "Следующие адреса недействительны.",
+        "Следующие адреса недействительны.",
+        "Следующие адреса недействительны."
+      ],
+      "The following address is unavailable.": [
+        "Следующий адрес недоступен.",
+        "Следующие адреса недоступны.",
+        "Следующие адреса недоступны.",
+        "Следующие адреса недоступны."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Формат вашего файла CSV неправильный."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Приложение \"Import-Export\" позволяет экспортировать сообщения для локального резервного копирования и восстанавливать предыдущие резервные копии в учетной записи."
       ],
@@ -5336,6 +5457,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Это займет до 15 минут. Пожалуйста, не закрывайте эту страницу и не отключайтесь от интернета."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Это фраза из 12 слов, которую вам было предложено задать."
@@ -5532,6 +5656,9 @@
       "We recommend using your recovery phrase instead.": [
         "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Мы надежно храним информацию о восстановлении на вашем доверенном устройстве, чтобы вы не потеряли свои данные"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
       ],
@@ -5702,6 +5829,12 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. Это также приведет к аннулированию информации о восстановлении доверенного устройства."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
@@ -6253,6 +6386,9 @@
       ],
       "Allow recovery by recovery phrase": [
         "Разрешить восстановление с помощью фразы для восстановления"
+      ],
+      "Allow recovery using a trusted device": [
+        "Разрешить восстановление с использованием доверенного устройства"
       ],
       "Amount": [
         "Сумма"
@@ -7014,6 +7150,9 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления доступа к учетной записи"
+      ],
+      "Trusted device recovery": [
+        "Восстановление доверенного устройства"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7190,6 +7329,9 @@
       "Learn more": [
         "Подробнее"
       ],
+      "Learn more about data recovery": [
+        "Подробнее о восстановлении данных"
+      ],
       "Need help?": [
         "Нужна помощь?"
       ],
@@ -7228,6 +7370,9 @@
       ],
       "Upgrade account": [
         "Улучшить аккаунт"
+      ],
+      "Upgrade your plan": [
+        "Улучшить тариф"
       ],
       "View guide": [
         "Посмотреть руководство"
@@ -7624,6 +7769,9 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Улучшить до ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7713,11 +7861,11 @@
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } хранилища"
+      ],
       "${ size } storage per user": [
         "Объем хранилища на пользователя: ${ size }"
-      ],
-      "${ size } total storage": [
-        "Общий объем хранилища: ${ size }"
       ],
       "1 free VPN connection in total": [
         "Всего 1 бесплатное подключение к VPN"
@@ -7866,8 +8014,8 @@
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Общий объем хранилища: до ${ totalStorageSize }"
+      "Up to ${ totalStorageSize } storage": [
+        "До ${ totalStorageSize } хранилища"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -7885,26 +8033,6 @@
       ],
       "Team management": [
         "Управление командами"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7975,6 +8103,26 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } из ${ humanMaxSpace }"
@@ -7994,8 +8142,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }"
       ],
       "Payment details": [
         "Информация платежа"
@@ -8240,9 +8388,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Увеличьте хранилище до ${ businessStorage } на пользователя"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Увеличьте объем хранилища до ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
@@ -8592,6 +8737,41 @@
         "Скачивание содержимого через прокси-сервер и сохранение в виде вложений"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink }, чтобы добавить больше пользователей, или удалите несколько аккаунтов пользователей, чтобы освободить место."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink }, чтобы получить больше аккаунтов, или удалите доступ к VPN у некоторых пользователей."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink }, чтобы получить больше адресов, или удалить некоторые адреса, чтобы освободить место."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink }, чтобы получить больше хранилища, или удалите часть хранилища, чтобы освободить место."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Ваш тариф включает максимум ${ availableAddresses } адрес.",
+        "Ваш тариф включает максимум ${ availableAddresses } адреса.",
+        "Ваш тариф включает максимум ${ availableAddresses } адресов.",
+        "Ваш тариф включает максимум ${ availableAddresses } адресов."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователя в организации.",
+        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователя в организации.",
+        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователей в организации.",
+        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователя в организации."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунт VPN.",
+        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунта VPN.",
+        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунтов VPN.",
+        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунтов VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Ваш тариф включает максимум ${ humanReadableAvailableSpace } хранилища."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (для Debian/Ubuntu)"
@@ -8702,6 +8882,9 @@
       ],
       "Postal code": [
         "Почтовый индекс"
+      ],
+      "Search": [
+        "Поиск"
       ],
       "Search settings": [
         "Искать настройки"
@@ -8911,6 +9094,11 @@
       ],
       "Reading emails of non-private users": [
         "Чтение писем неконфиденциальных пользователей"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Загрузить файл в формате CSV"
       ]
     },
     "Select files": {
@@ -9459,11 +9647,17 @@
       "CSV field": [
         "Поле CSV файла"
       ],
+      "Display name": [
+        "Отображаемое имя"
+      ],
       "Edit": [
         "Изменить"
       ],
       "Email address": [
         "Адрес эл. почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
       ],
       "Import": [
         "Импорт"
@@ -9476,6 +9670,9 @@
       ],
       "Status": [
         "Статус"
+      ],
+      "Total storage": [
+        "Общий объем хранилища"
       ],
       "Values": [
         "Значения"
@@ -9617,9 +9814,6 @@
       "Address verification": [
         "Проверка адреса"
       ],
-      "Addresses": [
-        "Адреса"
-      ],
       "Allocate storage": [
         "Выделение объёма в хранилище"
       ],
@@ -9737,14 +9931,26 @@
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
       ],
+      "Couldn’t create accounts": [
+        "Не могу создать аккаунты"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Создайте адрес ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Создать календарь"
       ],
+      "Create multiple user accounts": [
+        "Создать несколько пользовательских аккаунтов"
+      ],
+      "Create user accounts": [
+        "Создать пользовательские аккаунты"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
+      ],
+      "Creating user accounts": [
+        "Создание пользовательских аккаунтов"
       ],
       "Credentials": [
         "Учетные данные"
@@ -10225,6 +10431,12 @@
       ],
       "Success": [
         "Успешно"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Успешно создана ${ successfullyCreatedUsers.length } учетная запись",
+        "Успешно созданы ${ successfullyCreatedUsers.length } учетных записи",
+        "Успешно созданы ${ successfullyCreatedUsers.length } учетных записей",
+        "Успешно созданы ${ successfullyCreatedUsers.length } учетных записи"
       ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"

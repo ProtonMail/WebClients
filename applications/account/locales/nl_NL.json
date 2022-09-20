@@ -199,6 +199,9 @@
       "Create account": [
         "Account aanmaken"
       ],
+      "Create accounts": [
+        "Accounts aanmaken"
+      ],
       "Create address": [
         "Adres aanmaken"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Download alle configuraties"
       ],
+      "Download CSV sample": [
+        "CSV-voorbeeld downloaden"
+      ],
       "Download ICS": [
         "Download ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Ga naar inloggen"
+      ],
+      "Got it": [
+        "Begrepen"
       ],
       "Hide": [
         "Verbergen"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Geselecteerde bewaren"
+      ],
+      "Search": [
+        "Zoeken"
       ],
       "Search countries": [
         "Zoek landen"
@@ -1237,6 +1249,11 @@
       ],
       "Week": [
         "Week"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Alles"
       ]
     },
     "Checkout row": {
@@ -2349,9 +2366,33 @@
         "Kortingscode toegepast: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Geen zoekresultaten gevonden"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Ongebruikte credits"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV-template"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Fout op rij ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Het lijkt erop dat in uw bestand de 'EmailAddresses'-header ontbreekt."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Het lijkt erop dat in uw bestand de 'Wachtwoord'-header ontbreekt."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "We hebben fouten ontdekt in meerdere rijen tijdens het importeren, controleer uw CSV-bestand."
       ]
     },
     "Cycle": {
@@ -2641,9 +2682,6 @@
       "Can't check username, try again later": [
         "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
-      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
@@ -2758,8 +2796,14 @@
       "No active sessions": [
         "Geen actieve sessies"
       ],
-      "No data to import": [
-        "Geen gegevens om te importeren"
+      "No calendars found to import": [
+        "Geen agenda's gevonden om te importeren"
+      ],
+      "No contacts found to import": [
+        "Geen contacten gevonden om te importeren"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -2957,6 +3001,9 @@
       "You have no invoices.": [
         "U heeft geen facturen."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
       ],
@@ -3142,6 +3189,23 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand \"${ formattedFilename }\". Bestand heeft niet de juiste indeling."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand \"${ formattedFilename }\". Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Upload een CSV-bestand met ${ MAX_NUMBER_OF_USER_ROWS } gebruikers of minder."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Uw bestand \"${ formattedFilename }\" is leeg."
       ]
     },
     "Error message": {
@@ -4194,6 +4258,9 @@
       "Add label": [
         "Label toevoegen"
       ],
+      "Add multiple users to your organization at once.": [
+        "Voeg meerdere gebruikers tegelijk toe aan uw organisatie."
+      ],
       "Additional options": [
         "Aanvullende opties"
       ],
@@ -4483,6 +4550,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Download ons CSV-sjabloon, vul de gebruikersgegevens in en upload vervolgens uw ingevulde CSV-bestand om accounts voor deze gebruikers aan te maken."
       ],
       "Download recovery file": [
         "Herstelbestand downloaden"
@@ -4961,6 +5031,20 @@
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
       ],
+      "Please add a password for the user on row": [
+        "Voeg een wachtwoord toe voor de gebruiker op de rij",
+        "Voeg wachtwoorden toe voor de gebruikers op rijen"
+      ],
+      "Please add an email address for the user on row": [
+        "Voeg een e-mailadres toe voor de gebruiker op de rij",
+        "Voeg e-mailadressen toe voor de gebruikers op de rijen"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Controleer uw bestand op fouten, of neem contact op met de klantenservice voor meer informatie."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Controleer uw bestand, of probeer onze ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Voer de herstelzin van 12 woorden in die bij uw account hoort."
       ],
@@ -5099,8 +5183,8 @@
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
       ],
-      "Select what you want to import from Google.": [
-        "Selecteer wat u wil importeren vanaf Google."
+      "Select what you want to import.": [
+        "Selecteer wat u wilt importeren."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -5122,6 +5206,9 @@
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Setting up your Drive": [
+        "Uw Drive wordt aangemaakt"
       ],
       "Show original message": [
         "Toon het originele bericht"
@@ -5186,6 +5273,17 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
       ],
+      "The following address is invalid.": [
+        "Het volgende adres is ongeldig.",
+        "De volgende adressen zijn ongeldig."
+      ],
+      "The following address is unavailable.": [
+        "Het volgende adres is niet beschikbaar.",
+        "De volgende adressen zijn onbeschikbaar."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Het formaat van uw CSV-bestand is onjuist."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Met de app Import-Export kunt u berichten exporteren voor lokale back-ups en eerdere back-ups terugzetten naar uw account."
       ],
@@ -5215,6 +5313,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Dit kan tot 15 minuten duren. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dit is een zin van 12 woorden die u moest instellen."
@@ -7120,6 +7221,9 @@
       "Upgrade account": [
         "Account upgraden"
       ],
+      "Upgrade your plan": [
+        "Upgrade uw abonnement"
+      ],
       "View guide": [
         "Bekijk gids"
       ],
@@ -7503,6 +7607,9 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Upgraden naar ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7566,11 +7673,11 @@
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
+      "${ size } storage": [
+        "${ size } opslagruimte"
+      ],
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
-      ],
-      "${ size } total storage": [
-        "${ size } opslagruimte"
       ],
       "1 free VPN connection in total": [
         "1 gratis VPN-verbinding"
@@ -7717,8 +7824,8 @@
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Tot ${ totalStorageSize } opslagruimte"
+      "Up to ${ totalStorageSize } storage": [
+        "Tot ${ totalStorageSize } opslag"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -7736,26 +7843,6 @@
       ],
       "Team management": [
         "Teambeheer"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7826,6 +7913,26 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van ${ humanMaxSpace }"
@@ -7843,8 +7950,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }"
       ],
       "Payment details": [
         "Betalingsgegevens"
@@ -8087,9 +8194,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Verhoog uw opslagruimte tot ${ driveStorage } totaal"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
@@ -8429,6 +8533,35 @@
         "Inhoud laden via proxy en opslaan als bijlagen"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } om meer gebruikers toe te voegen, of enkele gebruikersaccounts te verwijderen om ruimte vrij te maken."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } om meer accounts te krijgen, of de VPN toegang van sommige gebruikers te verwijderen."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } om meer adressen te krijgen, of enkele adressen te verwijderen om ruimte vrij te maken."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } om meer opslagruimte te krijgen, of verwijder wat opslagruimte om ruimte vrij te maken."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Uw abonnement bevat een maximum van ${ availableAddresses } adres.",
+        "Uw abonnement bevat een maximum van ${ availableAddresses } adressen."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } organisatiegebruiker.",
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } organisatiegebruikers."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } VPN-account.",
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } VPN-adressen."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } opslag."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (voor Debian/Ubuntu)"
@@ -8539,6 +8672,9 @@
       ],
       "Postal code": [
         "Postcode"
+      ],
+      "Search": [
+        "Zoeken"
       ],
       "Search settings": [
         "Zoekinstellingen"
@@ -8746,6 +8882,11 @@
       ],
       "Reading emails of non-private users": [
         "Lezen van e-mails van niet-particuliere gebruikers"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Upload CSV-bestand"
       ]
     },
     "Select files": {
@@ -9268,11 +9409,17 @@
       "CSV field": [
         "CSV-veld"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
       "Edit": [
         "Bewerken"
       ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
       ],
       "Import": [
         "Importeren"
@@ -9285,6 +9432,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Totale opslagruimte"
       ],
       "Values": [
         "Waarden"
@@ -9420,9 +9570,6 @@
       "Address verification": [
         "Verificatie van adres"
       ],
-      "Addresses": [
-        "Adressen"
-      ],
       "Allocate storage": [
         "Opslag toewijzen"
       ],
@@ -9540,14 +9687,26 @@
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
+      "Couldn’t create accounts": [
+        "Kan geen accounts aanmaken"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Maak een ${ MAIL_APP_NAME }-adres"
       ],
       "Create calendar": [
         "Agenda aanmaken"
       ],
+      "Create multiple user accounts": [
+        "Meerdere gebruikersaccounts aanmaken"
+      ],
+      "Create user accounts": [
+        "Gebruikersaccounts aanmaken"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Maak uw ${ BRAND_NAME }-account"
+      ],
+      "Creating user accounts": [
+        "Gebruikersaccounts aanmaken"
       ],
       "Credentials": [
         "Inloggegevens"
@@ -10026,6 +10185,10 @@
       ],
       "Success": [
         "Succes"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Succesvol ${ successfullyCreatedUsers.length } gebruikersaccount aangemaakt",
+        "Succesvol ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
       ],
       "Switch to one-password mode": [
         "Overschakelen naar één-wachtwoord modus"

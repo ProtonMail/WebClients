@@ -2911,9 +2911,6 @@
       "Calendar limit reached": [
         "Límite del calendario alcanzado"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Choose a date in the future.": [
         "Elija un día en el futuro."
       ],
@@ -3208,6 +3205,9 @@
       ],
       "You did not provide a file.": [
         "No ha indicado un archivo."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Ha alcanzado el número máximo de calendarios personales. Algunos calendarios podrían no importarse."
       ],
       "You must set a name": [
         "Debe establecer un nombre"

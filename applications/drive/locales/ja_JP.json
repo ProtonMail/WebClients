@@ -1718,9 +1718,6 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
@@ -1799,8 +1796,11 @@
       "Missing signature": [
         "署名がありません"
       ],
-      "No data to import": [
-        "インポートするデータがありません"
+      "No calendars found to import": [
+        "インポートするカレンダーが見つかりません"
+      ],
+      "No contacts found to import": [
+        "インポートする連絡先が見つかりません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -2725,8 +2725,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
-      "Select what you want to import from Google.": [
-        "Google からインポートしたいものを選択してください。"
+      "Select what you want to import.": [
+        "インポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -3452,6 +3452,9 @@
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
+      ],
+      "What’s this?": [
+        "これは何ですか?"
       ]
     },
     "Loading info": {
@@ -3716,6 +3719,15 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "フォルダーをアップロード"
+      ],
+      "Set a recovery method": [
+        "回復手段を設定"
+      ],
+      "Upload a file": [
+        "ファイルをアップロード"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "必要不可欠な書類や大切な思い出を安全な場所に保管しましょう。"
       ]
@@ -4518,6 +4530,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"

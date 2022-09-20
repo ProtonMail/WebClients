@@ -353,6 +353,9 @@
       "Go to sign in": [
         "Μετάβαση στην είσοδο"
       ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
       "Hide": [
         "Απόκρυψη"
       ],
@@ -595,6 +598,9 @@
       ],
       "Save selected": [
         "Αποθήκευση επιλεγμένων"
+      ],
+      "Search": [
+        "Αναζήτηση"
       ],
       "Search countries": [
         "Αναζήτηση χωρών"
@@ -1060,7 +1066,7 @@
         "Ενεργά"
       ],
       "Default": [
-        "Προεπιλογή"
+        "Προεπιλεγμένο"
       ],
       "Disabled": [
         "Απενεργοποιημένο"
@@ -1107,6 +1113,11 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Όλα"
       ]
     },
     "color": {
@@ -2397,9 +2408,6 @@
       "Can't check username, try again later": [
         "Δεν είναι δυνατός ο έλεγχος του ονόματος χρήστη, δοκιμάστε ξανά αργότερα"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
-      ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
@@ -2510,9 +2518,6 @@
       ],
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
-      ],
-      "No data to import": [
-        "Κανένα δεδομένο προς εισαγωγή"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -2879,6 +2884,11 @@
       ],
       "Unsupported event": [
         "Μη υποστηριζόμενο γεγονός"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
       ]
     },
     "Error message": {
@@ -6851,9 +6861,6 @@
       "${ size } storage per user": [
         "${ size } αποθηκευτικός χώρος ανά χρήστη"
       ],
-      "${ size } total storage": [
-        "${ size } συνολικός αποθηκευτικός χώρος"
-      ],
       "1 free VPN connection in total": [
         "συνολικά 1 δωρεάν σύνδεση VPN"
       ],
@@ -6954,9 +6961,6 @@
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Έως και ${ totalStorageSize } συνολικός αποθηκευτικός χώρος"
-      ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
       ],
@@ -6970,17 +6974,6 @@
       ],
       "Team management": [
         "Διαχείριση ομάδας"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7001,6 +6994,17 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7087,9 +7091,6 @@
       ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ driveStorage }"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Δημιουργία ${ numberOfPersonalCalendars } προσωπικού ημερολογίου",
@@ -7500,6 +7501,9 @@
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Search": [
+        "Αναζήτηση"
       ],
       "Search settings": [
         "Ρυθμίσεις αναζήτησης"
@@ -8055,11 +8059,17 @@
       "CSV field": [
         "CSV πεδίο"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
       "Email address": [
         "Διεύθυνση email"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις Email"
       ],
       "Import": [
         "Εισαγωγή"
@@ -8191,9 +8201,6 @@
       ],
       "Address verification": [
         "Επαλήθευση διεύθυνσης"
-      ],
-      "Addresses": [
-        "Διευθύνσεις"
       ],
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"

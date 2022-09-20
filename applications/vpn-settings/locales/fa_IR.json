@@ -3124,6 +3124,9 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "ارتقا به ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -3210,11 +3213,11 @@
       "${ size } attachment size": [
         "${ size } سایز پیوست"
       ],
+      "${ size } storage": [
+        "${ size } ذخیره سازی"
+      ],
       "${ size } storage per user": [
         "${ size } فضای ذخیره‌سازی برای هر کاربر"
-      ],
-      "${ size } total storage": [
-        "${ size } فضای کلی"
       ],
       "1 free VPN connection in total": [
         "درکل 1 اتصال VPN رایگان"
@@ -3361,8 +3364,8 @@
       "Unlimited volume/bandwidth": [
         "حجم/پهنای باند نامحدود"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "تا ${ totalStorageSize } فضای ذخیره‌سازی کلی"
+      "Up to ${ totalStorageSize } storage": [
+        "تا ${ totalStorageSize } ذخیره سازی"
       ],
       "User credential management": [
         "مدیریت اطلاعات کاربر"
@@ -3481,9 +3484,6 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "با ساخت یک حساب ${ BRAND_NAME }، با ${ terms } ما موافقت میکنید."
-      ],
       "Payment details": [
         "جزئیات پرداخت"
       ],
@@ -3714,9 +3714,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "فضای ذخیره‌سازی خود را به ${ businessStorage } برای هر کاربر افزایش دهید"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "فضای ذخیره‌سازی خود را به ${ driveStorage } افزایش دهید"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "با پشتیبانی از 10 دامنه ایمیل سفارشی پیشرفت بیشتری کنید"

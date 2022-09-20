@@ -199,6 +199,9 @@
       "Create account": [
         "Зареєструватися"
       ],
+      "Create accounts": [
+        "Створити облікові записи"
+      ],
       "Create address": [
         "Створити адресу"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Завантажити всі конфігурації"
       ],
+      "Download CSV sample": [
+        "Завантажити приклад CSV"
+      ],
       "Download ICS": [
         "Завантажити ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "Перейти до входу"
+      ],
+      "Got it": [
+        "Зрозуміло"
       ],
       "Hide": [
         "Приховати"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Зберегти вибране"
+      ],
+      "Search": [
+        "Пошук"
       ],
       "Search countries": [
         "Пошук країн"
@@ -1253,6 +1265,11 @@
       ],
       "Week": [
         "Тиждень"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Усі"
       ]
     },
     "Checkout row": {
@@ -2373,9 +2390,33 @@
         "Купон застосовано: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Нічого не знайдено"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Невикористані кредити"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "Шаблон CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Помилка в рядку ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Схоже, у вашому файлі відсутній заголовок 'EmailAddresses'."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Схоже, у вашому файлі відсутній заголовок 'Password'."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Ми виявили помилки в кількох рядках під час імпорту. Перевірте свій CSV-файл."
       ]
     },
     "Cycle": {
@@ -2675,9 +2716,6 @@
       "Can't check username, try again later": [
         "Не вдається перевірити ім'я користувача. Спробуйте ще раз пізніше"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Не вдалося створити нові календарі для всіх імпортованих календарів через обмеження особистого календаря."
-      ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
       ],
@@ -2798,8 +2836,14 @@
       "No active sessions": [
         "Немає активних сеансів"
       ],
-      "No data to import": [
-        "Немає даних для імпорту"
+      "No calendars found to import": [
+        "Не знайдено календарів для імпортування"
+      ],
+      "No contacts found to import": [
+        "Не знайдено контактів для імпортування"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -2999,6 +3043,9 @@
       "You have no invoices.": [
         "У вас немає рахунків."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
       ],
@@ -3186,6 +3233,23 @@
       ],
       "Unsupported event": [
         "Непідтримувана подія"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Сталася помилка прочитання вашого файлу «${ formattedFilename }». Файл має неправильний формат."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Виникла помилка під час вивантаження вашого файлу \"${ formattedFilename }\". Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Помилка при вивантаженні вашого файлу. Файл не вибрано."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Вивантажте файл CSV з ${ MAX_NUMBER_OF_USER_ROWS } облікових записів користувачів або менше."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Ваш файл \"${ formattedFilename }\" порожній."
       ]
     },
     "Error message": {
@@ -4314,6 +4378,9 @@
       "Add label": [
         "Додати мітку"
       ],
+      "Add multiple users to your organization at once.": [
+        "Додати кількох користувачів до своєї організації одночасно."
+      ],
       "Additional options": [
         "Додаткові опції"
       ],
@@ -4613,6 +4680,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Завантажте наш шаблон CSV, заповніть дані про користувача, а потім завантажте заповнений файл CSV, щоб створити облікові записи для цих користувачів."
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
@@ -5097,6 +5167,24 @@
       "Plan upgrade required": [
         "Необхідно передплатити тарифний план"
       ],
+      "Please add a password for the user on row": [
+        "Додайте пароль для користувача в рядок",
+        "Додайте паролі для користувачів у рядки",
+        "Додайте паролі для користувачів у рядки",
+        "Додайте паролі для користувачів у рядки"
+      ],
+      "Please add an email address for the user on row": [
+        "Додайте адресу електронної пошти для користувача в рядок",
+        "Додайте адреси електронної пошти для користувачів у рядки",
+        "Додайте адреси електронної пошти для користувачів у рядки",
+        "Додайте адреси електронної пошти для користувачів у рядки"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Перевірте свій файл на наявність помилок або зверніться до служби підтримки для отримання додаткової інформації."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Перевірте свій файл або спробуйте скористатися нашим ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введіть фразу відновлення з 12 слів, пов'язану з вашим обліковим записом."
       ],
@@ -5235,8 +5323,8 @@
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
       ],
-      "Select what you want to import from Google.": [
-        "Виберіть, що ви хочете імпортувати з Google."
+      "Select what you want to import.": [
+        "Виберіть те, що бажаєте імпортувати."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -5258,6 +5346,9 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
+      ],
+      "Setting up your Drive": [
+        "Налаштування Drive"
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
@@ -5322,6 +5413,21 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Адреса, яку ви розташуєте вгорі списку, є вашою типовою адресою. Пересовуйте для зміни порядку адрес."
       ],
+      "The following address is invalid.": [
+        "Ця адреса недійсна.",
+        "Ці адреси недійсні.",
+        "Ці адреси недійсні.",
+        "Ці адреси недійсні."
+      ],
+      "The following address is unavailable.": [
+        "Ця адреса недоступна.",
+        "Ці адреси недоступні.",
+        "Ці адреси недоступні.",
+        "Ці адреси недоступні."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Формат вашого CSV-файлу неправильний."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Додаток Іmport-Export дає змогу експортувати повідомлення до локальних резервних копій та відновлювати попередні резервні копії в обліковому записі."
       ],
@@ -5351,6 +5457,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Це може тривати до 15 хвилин. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Це фраза з 12 слів, яку ви просили встановити."
@@ -7262,6 +7371,9 @@
       "Upgrade account": [
         "Покращити обліковий запис"
       ],
+      "Upgrade your plan": [
+        "Покращити тарифний план"
+      ],
       "View guide": [
         "Переглянути посібник"
       ],
@@ -7657,6 +7769,9 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Покращити до ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7746,11 +7861,11 @@
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
       ],
+      "${ size } storage": [
+        "${ size } сховища"
+      ],
       "${ size } storage per user": [
         "${ size } сховища на користувача"
-      ],
-      "${ size } total storage": [
-        "Усього ${ size } сховища"
       ],
       "1 free VPN connection in total": [
         "Загалом 1 безплатне VPN-з'єднання"
@@ -7899,8 +8014,8 @@
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Усього до ${ totalStorageSize } сховища"
+      "Up to ${ totalStorageSize } storage": [
+        "До ${ totalStorageSize } сховища"
       ],
       "User credential management": [
         "Керування обліковими даними користувача"
@@ -7918,26 +8033,6 @@
       ],
       "Team management": [
         "Керування командою"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8008,6 +8103,26 @@
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -8027,8 +8142,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Створюючи обліковий запис ${ BRAND_NAME }, ви погоджуєтеся на наші ${ terms }."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Створюючи обліковий запис ${ BRAND_NAME }, Ви погоджуєтеся на наші ${ terms }"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -8273,9 +8388,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Розширте обсяг свого сховища до ${ businessStorage } на користувача"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Розширте простір свого сховища загалом до ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
@@ -8625,6 +8737,41 @@
         "Завантажувати вміст через проксі та зберігати як вкладення"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink }, щоб додати більше користувачів або вилучити деякі облікові записи користувачів, щоб звільнити місце."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink }, щоб отримати більше облікових записів або відкличте доступ VPN для деяких користувачів."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink }, щоб отримати більше адрес або вилучіть якісь адреси, щоб звільнити місце."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink }, щоб отримати більше сховища або очистьте сховище, щоб звільнити місце."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Ваш тарифний план включає 1 адресу.",
+        "Ваш тарифний план включає до ${ availableAddresses } адрес.",
+        "Ваш тарифний план включає до ${ availableAddresses } адрес.",
+        "Ваш тарифний план включає до ${ availableAddresses } адрес."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Ваш тарифний план включає 1 організаційного користувача.",
+        "Ваш тарифний план включає до ${ availableNumberOfMembers } організаційних користувачів.",
+        "Ваш тарифний план включає до ${ availableNumberOfMembers } організаційних користувачів.",
+        "Ваш тарифний план включає до ${ availableNumberOfMembers } організаційних користувачів."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Ваш тарифний план включає 1 обліковий запис VPN.",
+        "Ваш тарифний план включає до ${ availableVPNAccess } облікових записів VPN.",
+        "Ваш тарифний план включає до ${ availableVPNAccess } облікових записів VPN.",
+        "Ваш тарифний план включає до ${ availableVPNAccess } облікових записів VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Ваш тарифний план включає до ${ humanReadableAvailableSpace } сховища."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (для Debian/Ubuntu)"
@@ -8735,6 +8882,9 @@
       ],
       "Postal code": [
         "Поштовий індекс"
+      ],
+      "Search": [
+        "Пошук"
       ],
       "Search settings": [
         "Шукати налаштування"
@@ -8944,6 +9094,11 @@
       ],
       "Reading emails of non-private users": [
         "Читання листів від не приватних користувачів"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Вивантажити файл CSV"
       ]
     },
     "Select files": {
@@ -9492,11 +9647,17 @@
       "CSV field": [
         "Поле CSV"
       ],
+      "Display name": [
+        "Показуване ім'я"
+      ],
       "Edit": [
         "Змінити"
       ],
       "Email address": [
         "Адреса е-пошти"
+      ],
+      "Email addresses": [
+        "Адреси е-пошти"
       ],
       "Import": [
         "Імпорт"
@@ -9509,6 +9670,9 @@
       ],
       "Status": [
         "Стан"
+      ],
+      "Total storage": [
+        "Усього сховища"
       ],
       "Values": [
         "Значення"
@@ -9650,9 +9814,6 @@
       "Address verification": [
         "Перевірка адреси"
       ],
-      "Addresses": [
-        "Адреси"
-      ],
       "Allocate storage": [
         "Призначити обсяг сховища"
       ],
@@ -9770,14 +9931,26 @@
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
       ],
+      "Couldn’t create accounts": [
+        "Не вдалося створити облікові записи"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Створити адресу ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Створити календар"
       ],
+      "Create multiple user accounts": [
+        "Створити кілька облікових записів користувача"
+      ],
+      "Create user accounts": [
+        "Створити облікові записи користувача"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Створіть свій обліковий запис ${ BRAND_NAME }"
+      ],
+      "Creating user accounts": [
+        "Створення облікових записів користувача"
       ],
       "Credentials": [
         "Облікові дані"
@@ -10258,6 +10431,12 @@
       ],
       "Success": [
         "Успішно"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Успішно створено ${ successfullyCreatedUsers.length } обліковий запис користувача",
+        "Успішно створено ${ successfullyCreatedUsers.length } облікові записи користувача",
+        "Успішно створено ${ successfullyCreatedUsers.length } облікових записів користувача",
+        "Успішно створено ${ successfullyCreatedUsers.length } облікових записів користувача"
       ],
       "Switch to one-password mode": [
         "Перемкнутися на однопарольний режим"
