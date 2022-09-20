@@ -188,7 +188,12 @@ const MoreDropdown = ({
                                 data-testid="toolbar:moveAll"
                             >
                                 <Icon name="trash" className="mr0-5" />
-                                {c('Action').t`Move all to trash`}
+                                {
+                                    // translator: This action will move all messages from the location to trash
+                                    // Beware when translating this one because we might also have a button below,
+                                    // which is deleting all messages. This is different
+                                    c('Action').t`Move all to trash`
+                                }
                             </DropdownMenuButton>
                         ) : null}
                         {inMore.delete ? (
@@ -198,7 +203,12 @@ const MoreDropdown = ({
                                 data-testid="toolbar:more-empty"
                             >
                                 <Icon name="cross-circle" className="mr0-5" />
-                                {c('Action').t`Delete all`}
+                                {
+                                    // translator: This action will delete permanently all messages from the location
+                                    // Beware when translating this one because we might also have a button on top,
+                                    // which is moving messages to trash. This is different
+                                    c('Action').t`Delete all`
+                                }
                             </DropdownMenuButton>
                         ) : null}
                     </DropdownMenu>
