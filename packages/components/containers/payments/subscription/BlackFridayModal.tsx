@@ -294,7 +294,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                                     <p className="m0">{c('blackfriday Info').t`Includes`}</p>
                                                     <p className={classnames(['mt0', popular && 'color-success'])}>
                                                         <strong className="blackfriday-protonDrive-productName ml0-25">
-                                                            {driveAppName} {c('blackfriday Info').t`beta`}
+                                                            {driveAppName}
                                                         </strong>
                                                         <Info
                                                             buttonClass="inline-flex color-inherit ml0-25 mb0-1"
