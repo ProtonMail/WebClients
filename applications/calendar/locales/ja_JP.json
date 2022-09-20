@@ -1935,9 +1935,6 @@
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
@@ -2036,6 +2033,12 @@
       ],
       "Name required": [
         "名前が必要です"
+      ],
+      "No calendars found to import": [
+        "インポートするカレンダーが見つかりません"
+      ],
+      "No contacts found to import": [
+        "インポートする連絡先が見つかりません"
       ],
       "No keys retrieved for internal user": [
         "内部ユーザーのために取得された鍵はありません"
@@ -2173,6 +2176,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上のイベントが含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
@@ -2936,6 +2942,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
+      "Select what you want to import.": [
+        "インポートしたいものを選択してください。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
       ],
@@ -3487,6 +3496,9 @@
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
+      ],
+      "What’s this?": [
+        "これは何ですか?"
       ]
     },
     "Loading info": {

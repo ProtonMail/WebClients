@@ -199,6 +199,9 @@
       "Create account": [
         "Creare cont"
       ],
+      "Create accounts": [
+        "Creare conturi"
+      ],
       "Create address": [
         "Creare adresă"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "Descărcare toate configurațiile"
       ],
+      "Download CSV sample": [
+        "Descărcare exemplu de CSV"
+      ],
       "Download ICS": [
         "Descărcare ICS"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "La autentificare"
+      ],
+      "Got it": [
+        "Am înțeles"
       ],
       "Hide": [
         "Ascundere"
@@ -630,6 +639,9 @@
       ],
       "Save selected": [
         "Salvare selectate"
+      ],
+      "Search": [
+        "Căutare"
       ],
       "Search countries": [
         "Căutare țări"
@@ -1245,6 +1257,11 @@
       ],
       "Week": [
         "Săptămână"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "Toate"
       ]
     },
     "Checkout row": {
@@ -2361,9 +2378,33 @@
         "Cupon aplicat: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Nu s-au găsit rezultate"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Credite neutilizate"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "Șablon CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ rowsThatErrored }.": [
+        "Eroare pe rândul ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Se pare că fișierului îi lipsește antetul „EmailAddresses”."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Se pare că fișierului îi lipsește antetul „Password”."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "S-au detectat erori pe rânduri multiple la importare. Reverificați fișierul CSV."
       ]
     },
     "Cycle": {
@@ -2658,9 +2699,6 @@
       "Can't check username, try again later": [
         "Nu se poate verifica numele de utilizator, reîncercați mai târziu."
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
-      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat, mai reîncercați."
       ],
@@ -2778,8 +2816,14 @@
       "No active sessions": [
         "Nu sunt sesiuni active."
       ],
-      "No data to import": [
-        "Nu sunt date de importat."
+      "No calendars found to import": [
+        "Nu s-au găsit calendare de importat."
+      ],
+      "No contacts found to import": [
+        "Nu s-au găsit contacte de importat."
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
@@ -2978,6 +3022,9 @@
       "You have no invoices.": [
         "Nu aveți facturi."
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
       ],
@@ -3164,6 +3211,23 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "A apărut o eroare la citirea fișierului „${ formattedFilename }”. Fișierul nu are formatul corect."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului „${ formattedFilename }”. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Încărcați un fișier CSV cu ${ MAX_NUMBER_OF_USER_ROWS } conturi de utilizator sau mai puține."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Fișierul „${ formattedFilename }” este gol."
       ]
     },
     "Error message": {
@@ -4254,6 +4318,9 @@
       "Add label": [
         "Adăugare etichetă"
       ],
+      "Add multiple users to your organization at once.": [
+        "Adăugați deodată utilizatori multipli la organizație."
+      ],
       "Additional options": [
         "Opțiuni adiționale"
       ],
@@ -4548,6 +4615,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Descărcați șablonul CSV, completați datele utilizatorului și apoi încărcați fișierul CSV completat pentru a crea conturi pentru acești utilizatori."
       ],
       "Download recovery file": [
         "Descărcare fișier de recuperare"
@@ -5029,6 +5099,22 @@
       "Plan upgrade required": [
         "Trebuie trecut la alt plan"
       ],
+      "Please add a password for the user on row": [
+        "Adăugați o parolă pentru utilizator pe rândul",
+        "Adăugați o parolă pentru utilizatorii de pe rândurile",
+        "Adăugați o parolă pentru utilizatorii de pe rândurile"
+      ],
+      "Please add an email address for the user on row": [
+        "Adăugați o adresă de e-mail pentru utilizator pe rândul",
+        "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile",
+        "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Verificați fișierul cu erori sau contactați suportul pentru clienți pentru mai multe informații."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Verificați fișierul sau încercați să folosiți ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
@@ -5167,8 +5253,8 @@
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
-      "Select what you want to import from Google.": [
-        "Selectați ce doriți să importați din Google."
+      "Select what you want to import.": [
+        "Selectați ce doriți să importați."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarul dorit pentru importare. Va fi creat un calendar nou pentru fiecare calendar importat până la limita de 20 de calendare."
@@ -5190,6 +5276,9 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Setting up your Drive": [
+        "Se configurează Drive"
       ],
       "Show original message": [
         "Afișare mesaj original"
@@ -5254,6 +5343,19 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Adresa de e-mail pe care o plasați în partea de sus a listei este adresa de e-mail implicită. Pentru a le reordona, trageți și plasați adresele în poziția dorită."
       ],
+      "The following address is invalid.": [
+        "Următoarea adresă nu este validă.",
+        "Următoarele adrese nu sunt valide.",
+        "Următoarele adrese nu sunt valide."
+      ],
+      "The following address is unavailable.": [
+        "Următoarea adresă nu este disponibilă.",
+        "Următoarele adrese nu sunt disponibile.",
+        "Următoarele adrese nu sunt disponibile."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Formatul fișierului CSV nu este corect."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplicația Import-Export vă permite să exportați mesajele pentru conservare locală și să restaurați datele anterioare în cont."
       ],
@@ -5283,6 +5385,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Asta ar putea dura până la 16 minute. Nu închideți această pagină și nu vă deconectați de la internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
@@ -6247,7 +6352,7 @@
         "Detectare automată fus orar primar"
       ],
       "Auto-load embedded images": [
-        "Autoîncărcare imagini încorporate"
+        "Autoîncărcare imagini incluse"
       ],
       "Auto-reply": [
         "Autorăspuns"
@@ -7191,6 +7296,9 @@
       "Upgrade account": [
         "Migrare cont"
       ],
+      "Upgrade your plan": [
+        "Îmbunătăți-vă planul"
+      ],
       "View guide": [
         "Consultare ghid"
       ],
@@ -7580,6 +7688,9 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Upgrade la ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: attribute": {
@@ -7656,11 +7767,11 @@
       "${ size } attachment size": [
         "${ size } mărime atașament"
       ],
+      "${ size } storage": [
+        "${ size } spațiu"
+      ],
       "${ size } storage per user": [
         "${ size } spațiu per utilizator"
-      ],
-      "${ size } total storage": [
-        "${ size } spațiu total"
       ],
       "1 free VPN connection in total": [
         "O conexiune VPN gratuită"
@@ -7808,8 +7919,8 @@
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "Până la ${ totalStorageSize } spațiu total"
+      "Up to ${ totalStorageSize } storage": [
+        "Până la ${ totalStorageSize } spațiu"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
@@ -7827,26 +7938,6 @@
       ],
       "Team management": [
         "Gestionare echipă"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7917,6 +8008,26 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
@@ -7935,8 +8046,8 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "Creând un cont ${ BRAND_NAME }, sunteți de acord cu ${ terms } noastre."
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Creând contul ${ BRAND_NAME } sunteți de acord cu ${ terms }"
       ],
       "Payment details": [
         "Detalii plată"
@@ -8180,9 +8291,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Măriți spațiul de stocare la ${ businessStorage } per utilizator"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Măriți spațiul de stocare la ${ driveStorage } în total"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
@@ -8527,6 +8635,38 @@
         "Încărcare conținut prin proxy și stocare ca atașamente"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } pentru a adăuga mai mulți utilizatori sau eliminați câteva conturi de utilizator pentru a elibera spațiul."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } pentru a obține mai multe conturi sau eliminați accesul ala VPN pentru unii utilizatori."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } pentru a obține mai multe adrese sau eliminați câteva adrese pentru a elibera spațiu."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } pentru a obține mai mult spațiu sau eliminați câteva pentru a elibera spațiu."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Planul actual include maxim o adresă.",
+        "Planul actual include maxim ${ availableAddresses } adrese.",
+        "Planul actual include maxim ${ availableAddresses } de adrese."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Planul actual include maxim un utilizator organizațional.",
+        "Planul actual include maxim un ${ availableNumberOfMembers } utilizatori în organizație.",
+        "Planul actual include maxim un ${ availableNumberOfMembers } de utilizatori în organizație."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Planul actual include maxim un cont VPN.",
+        "Planul actual include maxim ${ availableVPNAccess } conturi VPN.",
+        "Planul actual include maxim ${ availableVPNAccess } de conturi VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Planul actual include maxim ${ humanReadableAvailableSpace } de spațiu."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (pentru Debian/Ubuntu)"
@@ -8637,6 +8777,9 @@
       ],
       "Postal code": [
         "Cod poştal"
+      ],
+      "Search": [
+        "Căutare"
       ],
       "Search settings": [
         "Setări căutare"
@@ -8845,6 +8988,11 @@
       ],
       "Reading emails of non-private users": [
         "Citirea mesajelor utilizatorilor non-privați"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Încărcați un fișier CSV"
       ]
     },
     "Select files": {
@@ -9380,11 +9528,17 @@
       "CSV field": [
         "Câmp CSV"
       ],
+      "Display name": [
+        "Nume afișat"
+      ],
       "Edit": [
         "Editare"
       ],
       "Email address": [
         "Adresă e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
       ],
       "Import": [
         "Importare"
@@ -9397,6 +9551,9 @@
       ],
       "Status": [
         "Stare"
+      ],
+      "Total storage": [
+        "Spațiu total"
       ],
       "Values": [
         "Valori"
@@ -9535,9 +9692,6 @@
       "Address verification": [
         "Verificare adresă"
       ],
-      "Addresses": [
-        "Adrese"
-      ],
       "Allocate storage": [
         "Alocare spațiu"
       ],
@@ -9655,14 +9809,26 @@
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
+      "Couldn’t create accounts": [
+        "Nu s-au putut crea conturi"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Creare adresă ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Creare calendar"
       ],
+      "Create multiple user accounts": [
+        "Creare conturi multiple de utilizatori"
+      ],
+      "Create user accounts": [
+        "Creare conturi de utilizator"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Creați-vă contul ${ BRAND_NAME }"
+      ],
+      "Creating user accounts": [
+        "Se creează conturile de utilizator"
       ],
       "Credentials": [
         "Acreditări"
@@ -10142,6 +10308,11 @@
       ],
       "Success": [
         "Succes"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "S-a reușit crearea unui cont",
+        "S-a reușit crearea a ${ successfullyCreatedUsers.length } conturi",
+        "S-a reușit crearea a ${ successfullyCreatedUsers.length } de conturi"
       ],
       "Switch to one-password mode": [
         "Comutați în modul o singură parolă"

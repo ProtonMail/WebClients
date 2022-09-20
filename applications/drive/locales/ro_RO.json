@@ -1743,9 +1743,6 @@
       "Calendar limit reached": [
         "Limita de calendare a fost atinsă."
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
@@ -1830,8 +1827,14 @@
       "Missing signature": [
         "Semnătură lipsă"
       ],
-      "No data to import": [
-        "Nu sunt date de importat."
+      "No calendars found to import": [
+        "Nu s-au găsit calendare de importat."
+      ],
+      "No contacts found to import": [
+        "Nu s-au găsit contacte de importat."
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
@@ -1958,6 +1961,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
       "You must set a name": [
         "Trebuie specificat un nume."
@@ -2870,8 +2876,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
-      "Select what you want to import from Google.": [
-        "Selectați ce doriți să importați din Google."
+      "Select what you want to import.": [
+        "Selectați ce doriți să importați."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
@@ -3923,6 +3929,23 @@
       ]
     },
     "Onboarding Info": {
+      "Create a folder": [
+        "Creați un folder"
+      ],
+      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
+        "Începeți să utilizați Proton Drive și vă vom îmbunătăți contul cu 1 GB gratuit!"
+      ],
+      "Set a recovery method": [
+        "Setați metodă de recuperare"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+        "Completați următoarele sarcini în următoarea zi.",
+        "Completați următoarele sarcini în următoarele ${ remainingDaysForGift } zile.",
+        "Completați următoarele sarcini în următoarele ${ remainingDaysForGift } de zile."
+      ],
+      "Upload a file": [
+        "Încărcați un fișier"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Seiful de încredere online pentru documente vitale și amintiri prețioase."
       ]
@@ -3950,6 +3973,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
+      ],
+      "Your welcome gift": [
+        "Cadoul de bun venit"
       ]
     },
     "Option": {

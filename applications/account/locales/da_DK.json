@@ -185,6 +185,9 @@
       "Create account": [
         "Opret konto"
       ],
+      "Create accounts": [
+        "Opret konti"
+      ],
       "Create address": [
         "Opret adresse"
       ],
@@ -275,6 +278,9 @@
       "Download all configurations": [
         "Download alle opsætninger"
       ],
+      "Download CSV sample": [
+        "Hent CSV-eksempel"
+      ],
       "Download ICS": [
         "Download ICS"
       ],
@@ -361,6 +367,9 @@
       ],
       "Go to sign in": [
         "Gå til login"
+      ],
+      "Got it": [
+        "Forstået"
       ],
       "Hide": [
         "Skjul"
@@ -616,6 +625,9 @@
       ],
       "Save selected": [
         "Gem valgte"
+      ],
+      "Search": [
+        "Søg"
       ],
       "Search countries": [
         "Søg lande"
@@ -1114,7 +1126,7 @@
         "Standard"
       ],
       "Disabled": [
-        "Deativeret"
+        "Deaktiveret"
       ],
       "Not synced": [
         "Ikke synkroniseret"
@@ -1174,6 +1186,11 @@
         "Uge"
       ]
     },
+    "Checkbox label": {
+      "All": [
+        "Alle"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } bruger",
@@ -1193,6 +1210,9 @@
       ]
     },
     "color": {
+      "apple": [
+        "æble"
+      ],
       "carrot": [
         "gulerod"
       ],
@@ -1205,6 +1225,9 @@
       "copper": [
         "kobber"
       ],
+      "dim gray": [
+        "svag grå"
+      ],
       "enzian": [
         "ensian"
       ],
@@ -1214,14 +1237,32 @@
       "forest": [
         "skov"
       ],
+      "gainsboro": [
+        "gainsboro"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "light red": [
+        "lysrød"
+      ],
       "ocean": [
         "ocean"
       ],
       "olive": [
         "oliven"
       ],
+      "outer space": [
+        "det ydre rum"
+      ],
       "pacific": [
         "stillehav"
+      ],
+      "philippine gray": [
+        "filippinsk grå"
+      ],
+      "philippine silver": [
+        "filippinsk sølv"
       ],
       "pine": [
         "fyr"
@@ -1234,6 +1275,9 @@
       ],
       "purple": [
         "lilla"
+      ],
+      "raisin black": [
+        "rosin sort"
       ],
       "reef": [
         "rev"
@@ -2422,6 +2466,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } er dit brugernavn. For at oprette ${ Local }@${ Domain }, gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -2446,14 +2493,14 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatiske svar er en betalingsfunktion. Opgradér venligst til en betalt konto for at bruge denne funktion."
       ],
+      "Calendar cannot be found": [
+        "Kalender kunne ikke findes"
+      ],
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
       "Can't check username, try again later": [
         "Kan ikke kontrollere brugernavn, prøv igen senere"
-      ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
       ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
@@ -2569,8 +2616,14 @@
       "No active sessions": [
         "Ingen aktive sessioner"
       ],
-      "No data to import": [
-        "Ingen data at importere"
+      "No calendars found to import": [
+        "Ingen kalendere fundet til import"
+      ],
+      "No contacts found to import": [
+        "Ingen kontakter fundet til import"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -2731,6 +2784,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -2946,6 +3002,11 @@
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
       ]
     },
     "Error message": {
@@ -4735,8 +4796,8 @@
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
       ],
-      "Select what you want to import from Google.": [
-        "Vælg, hvad du ønsker at overflytte fra Google."
+      "Select what you want to import.": [
+        "Vælg, hvad du ønsker at importere."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -5212,6 +5273,12 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette vil også ugyldiggøre gendannelsesoplysninger om betroede enheder."
+      ],
       "You'll stay signed in even after you close the browser.": [
         "Du vil forblive logget på selv efter du lukker browseren."
       ],
@@ -5516,7 +5583,7 @@
         "Indlæs eksternt indhold"
       ],
       "Mark as read": [
-        "Markér som Læst"
+        "Markér som læst"
       ],
       "Mark as unread": [
         "Markér som ulæst"
@@ -5912,6 +5979,9 @@
       ],
       "Delete": [
         "Slet"
+      ],
+      "Delete recovery-related information.": [
+        "Slet gendannelsesrelaterede oplysninger."
       ],
       "Density": [
         "Tæthed"
@@ -7020,17 +7090,17 @@
         "Support"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
-      ]
-    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -7072,9 +7142,6 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Forøg din lagerplads til ${ businessStorage } i alt"
       ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "Forøg din lagerplads til ${ driveStorage } i alt"
-      ],
       "Priority support": [
         "Prioriteret support"
       ],
@@ -7105,6 +7172,14 @@
     "Notification time input": {
       "at": [
         "kl."
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "e-mail"
+      ],
+      "notification": [
+        "notifikation"
       ]
     },
     "Notification when": {
@@ -7487,6 +7562,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Search": [
+        "Søg"
+      ],
       "Search settings": [
         "Søg indstillinger"
       ],
@@ -7518,6 +7596,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Tilføj dit eget (eller firma-) navn og adresse til dine fakturaer"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "kontakt"
       ]
     },
     "Price": {
@@ -7724,6 +7807,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Få op til 18 måneder med ${ planName } gratis"
       ],
@@ -7732,6 +7818,9 @@
       ],
       "No more missed appointments": [
         "Ikke flere glemte aftaler"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prøv ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
@@ -7901,6 +7990,9 @@
       ],
       "Calendar created": [
         "Kalender oprettet"
+      ],
+      "Calendar information updated": [
+        "Kalenderoplysninger opdateret"
       ],
       "Calendar updated": [
         "Kalender opdateret"
@@ -8106,11 +8198,17 @@
       "CSV field": [
         "CSV-felt"
       ],
+      "Display name": [
+        "Visningsnavn"
+      ],
       "Edit": [
         "Redigér"
       ],
       "Email address": [
         "E-mail"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
       ],
       "Import": [
         "Importér"
@@ -8120,6 +8218,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Lagerplads i alt"
       ],
       "Values": [
         "Værdier"
@@ -8240,14 +8341,20 @@
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
+      "Add to block list": [
+        "Føj til blokeringsliste"
+      ],
+      "Add to not spam list": [
+        "Føj til ikke-spam-liste"
+      ],
+      "Add to spam list": [
+        "Føj til spam-liste"
+      ],
       "Add user": [
         "Tilføj bruger"
       ],
       "Address verification": [
         "Adressebekræftelse"
-      ],
-      "Addresses": [
-        "Adresser"
       ],
       "Allocate storage": [
         "Tildel lagerplads"
@@ -8263,6 +8370,9 @@
       ],
       "Appearance": [
         "Udseende"
+      ],
+      "Apply filter to existing messages": [
+        "Anvend filter på eksisterende beskeder"
       ],
       "Apply gift code": [
         "Tilføj gavekode"
@@ -8293,6 +8403,9 @@
       ],
       "Calendar information": [
         "Kalenderoplysninger"
+      ],
+      "Cancel Mail subscription": [
+        "Afmeld Mail-abonnement"
       ],
       "Card verification": [
         "Kortbekræftelse"
@@ -8360,11 +8473,26 @@
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
       ],
+      "Couldn’t create accounts": [
+        "Kunne ikke oprette konti"
+      ],
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Opret en ${ MAIL_APP_NAME }-adresse"
+      ],
       "Create calendar": [
         "Opret kalender"
       ],
+      "Create multiple user accounts": [
+        "Opret flere brugerkonti"
+      ],
+      "Create user accounts": [
+        "Opret brugerkonti"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Opret din ${ BRAND_NAME }-konto"
+      ],
+      "Creating user accounts": [
+        "Opretter brugerkonti"
       ],
       "Credentials": [
         "Legitimationsoplysninger"
@@ -8422,6 +8550,9 @@
       ],
       "Delete account": [
         "Slet konto"
+      ],
+      "Delete calendar": [
+        "Slet kalender"
       ],
       "Delete key permanently?": [
         "Slet nøgle permanent?"
@@ -8498,11 +8629,17 @@
       "Export": [
         "Exportér"
       ],
+      "Export calendar": [
+        "Eksportér kalender"
+      ],
       "Export private key": [
         "Importér privat nøgle"
       ],
       "Export public key": [
         "Eksportér offentlig nøgle"
+      ],
+      "Extension": [
+        "Udvidelse"
       ],
       "External PGP settings": [
         "Eksterne PGP-indstillinger"
@@ -8540,6 +8677,9 @@
       "How does it work?": [
         "Hvordan fungerer det?"
       ],
+      "How your free trial works": [
+        "Sådan fungerer din gratis prøveperiode"
+      ],
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
@@ -8551,6 +8691,9 @@
       ],
       "Import": [
         "Importér"
+      ],
+      "Import and export": [
+        "Import og eksport"
       ],
       "Import as simple event?": [
         "Importer som simpel begivenhed?",
@@ -8679,6 +8822,9 @@
       "Previous": [
         "Forrige"
       ],
+      "Privacy and data collection": [
+        "Privatliv og dataindsamling"
+      ],
       "Processing": [
         "Behandler"
       ],
@@ -8805,6 +8951,9 @@
       "Sort labels alphabetically": [
         "Sortér etiketter alfabetisk"
       ],
+      "Spam and block list": [
+        "Spam og blokeringsliste"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -8822,6 +8971,10 @@
       ],
       "Success": [
         "Lykkedes"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Oprettede ${ successfullyCreatedUsers.length } brugerkonto",
+        "Oprettede ${ successfullyCreatedUsers.length } brugerkonti"
       ],
       "Switch to one-password mode": [
         "Skift til én-adgangskode-tilstand"
@@ -8895,11 +9048,20 @@
       "You already have a Proton account": [
         "Du har allerede en Proton-konto"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Din ${ MAIL_APP_NAME }-adresse"
+      ],
+      "Your calendar link": [
+        "Dit kalenderlink"
+      ],
       "Your current plan": [
         "Dit nuværende abonnement"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Din importhistorik"
       ],
       "Your plan": [
         "Dit abonnement"
@@ -9029,6 +9191,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale sammen i din indbakke, eller vis dem separat."

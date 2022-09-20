@@ -1085,6 +1085,11 @@
         "Percakapan"
       ]
     },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
+      ]
+    },
     "Alternative text for SimpleLogin image": {
       "SimpleLogin": [
         "SimpleLogin"
@@ -2895,9 +2900,6 @@
       "Calendar limit reached": [
         "Batas kalender tercapai"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
       ],
@@ -3011,6 +3013,15 @@
       ],
       "No address with keys available to compose a message": [
         "Tidak ada alamat dengan kunci yang tersedia untuk dapat menulis pesan"
+      ],
+      "No calendars found to import": [
+        "Tidak ada kalender yang dapat diimpor"
+      ],
+      "No contacts found to import": [
+        "Tidak ada kontak yang dapat diimpor"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No keys retrieved for internal user": [
         "Tidak ada kunci untuk pengguna internal yang diambil"
@@ -3173,6 +3184,9 @@
       ],
       "You did not provide a file.": [
         "Anda tidak menyertakan berkas."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
@@ -4483,6 +4497,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
+      ],
+      "Select what you want to import.": [
+        "Pilih hal apa saja yang hendak Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."

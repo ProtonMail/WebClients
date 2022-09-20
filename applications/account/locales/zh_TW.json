@@ -190,6 +190,9 @@
       "Create account": [
         "創建帳號"
       ],
+      "Create accounts": [
+        "建立帳號"
+      ],
       "Create address": [
         "建立電郵位址"
       ],
@@ -280,6 +283,9 @@
       "Download all configurations": [
         "下載所有組態設定"
       ],
+      "Download CSV sample": [
+        "下載 CSV 範本"
+      ],
       "Download ICS": [
         "下載 ICS"
       ],
@@ -366,6 +372,9 @@
       ],
       "Go to sign in": [
         "前往登錄頁"
+      ],
+      "Got it": [
+        "了解"
       ],
       "Hide": [
         "隱藏"
@@ -621,6 +630,9 @@
       ],
       "Save selected": [
         "儲存選定項目"
+      ],
+      "Search": [
+        "搜尋"
       ],
       "Search countries": [
         "搜尋國家與地區"
@@ -1151,6 +1163,11 @@
       ],
       "Week": [
         "週"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "全部"
       ]
     },
     "Checkout row": {
@@ -2414,14 +2431,14 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "自動回覆是一項付費功能。請升級至付款帳號以便使用。"
       ],
+      "Calendar cannot be found": [
+        "找不到行事曆"
+      ],
       "Calendar limit reached": [
         "行事曆數目已達上限"
       ],
       "Can't check username, try again later": [
         "無法檢查使用者名稱，請稍後再試"
-      ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -2533,9 +2550,6 @@
       ],
       "No active sessions": [
         "無使用中工作階段"
-      ],
-      "No data to import": [
-        "沒有匯入任何資料"
       ],
       "No valid address found": [
         "找不到有效的位址"
@@ -2903,12 +2917,17 @@
         "不支援的事件"
       ]
     },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "上載您的檔案時發生錯誤。未選取任何檔案。"
+      ]
+    },
     "Error message": {
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
       "Invalid URL": [
-        "網址無效"
+        "URL 無效"
       ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
@@ -3794,6 +3813,9 @@
       "Add label": [
         "加入標籤"
       ],
+      "Add multiple users to your organization at once.": [
+        "一次新增多個使用者到您的組織中。"
+      ],
       "Additional options": [
         "額外設定"
       ],
@@ -4646,9 +4668,6 @@
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
       ],
-      "Select what you want to import from Google.": [
-        "選擇您要從 Google 匯入的任何檔案。"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
@@ -4732,6 +4751,15 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
+      ],
+      "The following address is invalid.": [
+        "以下的電子郵件地址無效."
+      ],
+      "The following address is unavailable.": [
+        "以下的電子郵件地址不可用."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "您的 CSV 檔案格式不正確。"
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export 應用程式讓您能夠匯出訊息到您本機儲存，也可以讓您匯入先前的備份到您的帳號。"
@@ -5415,7 +5443,7 @@
         "載入遠端內容"
       ],
       "Mark as read": [
-        "標示為已讀"
+        "標示為已讀取"
       ],
       "Mark as unread": [
         "標示為未讀取"
@@ -6921,9 +6949,6 @@
       "${ size } storage per user": [
         "${ size } 可用空間 / 每位使用者"
       ],
-      "${ size } total storage": [
-        "${ size } 總儲存量"
-      ],
       "1 free VPN connection in total": [
         "1 個完全免費 VPN 連線"
       ],
@@ -7012,9 +7037,6 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "建立 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }。"
-      ],
       "Payment details": [
         "付款細節"
       ],
@@ -7022,7 +7044,7 @@
         "保存您的電子郵件或手機號碼，當您需要重設帳戶時可用於驗證。"
       ],
       "Subscription": [
-        "訂閲"
+        "訂閱"
       ],
       "terms and conditions": [
         "條款及細則"
@@ -7455,6 +7477,9 @@
       ],
       "Postal code": [
         "郵遞區號"
+      ],
+      "Search": [
+        "搜尋"
       ],
       "Search settings": [
         "搜尋設定"
@@ -8088,10 +8113,16 @@
       "CSV field": [
         "CSV 欄位"
       ],
+      "Display name": [
+        "顯示名稱"
+      ],
       "Edit": [
         "編輯"
       ],
       "Email address": [
+        "電郵位址"
+      ],
+      "Email addresses": [
         "電郵位址"
       ],
       "Import": [
@@ -8102,6 +8133,9 @@
       ],
       "Status": [
         "狀態"
+      ],
+      "Total storage": [
+        "總儲存量"
       ],
       "Values": [
         "值"
@@ -8219,14 +8253,20 @@
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
       ],
+      "Add to block list": [
+        "新增至封鎖清單"
+      ],
+      "Add to not spam list": [
+        "新增到非垃圾郵件清單"
+      ],
+      "Add to spam list": [
+        "新增到垃圾郵件清單"
+      ],
       "Add user": [
         "加入使用者"
       ],
       "Address verification": [
         "電郵位址驗證"
-      ],
-      "Addresses": [
-        "位址"
       ],
       "Allocate storage": [
         "分配儲存空間"
@@ -8350,6 +8390,12 @@
       ],
       "Create calendar": [
         "創建行事曆"
+      ],
+      "Create multiple user accounts": [
+        "新增多個使用者帳號"
+      ],
+      "Create user accounts": [
+        "建立使用者帳號"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "創建您的 ${ BRAND_NAME } 帳號"
@@ -8809,6 +8855,9 @@
       ],
       "Sort labels alphabetically": [
         "依照字母排序標籤"
+      ],
+      "Spam and block list": [
+        "垃圾郵件與封鎖清單"
       ],
       "Start a new import": [
         "開始新匯入"

@@ -60,13 +60,13 @@
         "Annuler"
       ],
       "Chat with us": [
-        "Dialoguez avec nous"
+        "Discutez avec nous"
       ],
       "Check import progress": [
         "Vérifier la progression de l'importation"
       ],
       "Choose a file or drag it here": [
-        "Choisissez un fichier ou faites-le glisser ici"
+        "Choisissez un fichier ou faites-le glisser ici."
       ],
       "Clear data": [
         "Effacer les données"
@@ -173,7 +173,7 @@
         "Modifier les détails de connexion"
       ],
       "Email settings": [
-        "Paramètres d’e-mail"
+        "Paramètres d'e-mail"
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
@@ -221,7 +221,7 @@
         "Masquer les fuseaux horaires"
       ],
       "I have a question": [
-        "J’ai une question"
+        "J'ai une question"
       ],
       "Import": [
         "Importer"
@@ -245,7 +245,7 @@
         "Rendre ce participant facultatif"
       ],
       "Make this participant required": [
-        "Rendre ce participant requis"
+        "Indiquez ce participant comme participant obligatoire"
       ],
       "Mark for deletion": [
         "Marquer pour suppression"
@@ -392,7 +392,7 @@
         "En afficher moins"
       ],
       "Show more": [
-        "En afficher plus"
+        "Afficher plus"
       ],
       "Show time zones": [
         "Afficher les fuseaux horaires"
@@ -449,7 +449,7 @@
         "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
-        "Changer d’offre"
+        "Changer d'abonnement"
       ],
       "Upload picture": [
         "Charger une image"
@@ -501,64 +501,64 @@
     },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
-        "${ title } a commencé à ${ formattedHour }"
+        "${ title } a commencé à ${ formattedHour }."
       ],
       "${ title } started on ${ _formattedDate }": [
-        "${ title } a commencé le ${ _formattedDate }"
+        "${ title } a commencé le ${ _formattedDate }."
       ],
       "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } a commencé le ${ _formattedDate } à ${ formattedHour }"
+        "${ title } a commencé le ${ _formattedDate } à ${ formattedHour }."
       ],
       "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } a commencé le ${ _formattedDateWithTime }"
+        "${ title } a commencé le ${ _formattedDateWithTime }."
       ],
       "${ title } started on ${ formattedDate }": [
-        "${ title } a commencé le ${ formattedDate }"
+        "${ title } a commencé le ${ formattedDate }."
       ],
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } a commencé le ${ formattedDate } à ${ formattedHour }"
+        "${ title } a commencé le ${ formattedDate } à ${ formattedHour }."
       ],
       "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } a commencé le ${ formattedDateWithoutTime }"
+        "${ title } a commencé le ${ formattedDateWithoutTime }."
       ],
       "${ title } started yesterday": [
-        "${ title } a commencé hier"
+        "${ title } a commencé hier."
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } a commencé hier à ${ formattedHour }"
+        "${ title } a commencé hier à ${ formattedHour }."
       ],
       "${ title } starts at ${ formattedHour }": [
-        "${ title } commencera à ${ formattedHour }"
+        "${ title } commencera à ${ formattedHour }."
       ],
       "${ title } starts now": [
-        "${ title } commence maintenant"
+        "${ title } commence maintenant."
       ],
       "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } commencera à ${ _formattedDate2 }"
+        "${ title } commencera à ${ _formattedDate2 }."
       ],
       "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } commencera le ${ _formattedDate2 } à ${ formattedHour }"
+        "${ title } commencera le ${ _formattedDate2 } à ${ formattedHour }."
       ],
       "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } commencera à ${ _formattedDate3 }"
+        "${ title } commencera à ${ _formattedDate3 }."
       ],
       "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } commencera le ${ _formattedDate3 } à ${ formattedHour }"
+        "${ title } commencera le ${ _formattedDate3 } à ${ formattedHour }."
       ],
       "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } commencera à ${ _formattedDateWithoutTime }"
+        "${ title } commencera à ${ _formattedDateWithoutTime }."
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } commencera à ${ formattedDateWithTime }"
+        "${ title } commencera à ${ formattedDateWithTime }."
       ],
       "${ title } starts today": [
-        "${ title } commence aujourd’hui"
+        "${ title } commence aujourd’hui."
       ],
       "${ title } starts tomorrow": [
-        "${ title } commencera demain"
+        "${ title } commencera demain."
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        "${ title } commencera demain à ${ formattedHour }"
+        "${ title } commencera demain à ${ formattedHour }."
       ]
     },
     "Alert": {
@@ -693,31 +693,31 @@
     },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
-        "${ name } a accepté l'invitation"
+        "${ name } a accepté l'invitation."
       ],
       "${ name } declined the invitation": [
-        "${ name } a refusé l'invitation"
+        "${ name } a refusé l'invitation."
       ],
       "${ name } hasn't answered the invitation yet": [
-        "${ name } n'a pas encore répondu à l'invitation"
+        "${ name } n'a pas encore répondu à l'invitation."
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } a provisoirement accepté l'invitation"
+        "${ name } a provisoirement accepté l'invitation."
       ],
       "This event has been canceled": [
-        "Cet événement a été annulé"
+        "Cet événement a été annulé."
       ],
       "You accepted the invitation": [
-        "Vous avez accepté l'invitation"
+        "Vous avez accepté l'invitation."
       ],
       "You declined the invitation": [
-        "Vous avez refusé l'invitation"
+        "Vous avez refusé l'invitation."
       ],
       "You haven't answered the invitation yet": [
-        "Vous n'avez pas encore répondu à l'invitation"
+        "Vous n'avez pas encore répondu à l'invitation."
       ],
       "You tentatively accepted the invitation": [
-        "Vous avez provisoirement accepté l'invitation"
+        "Vous avez provisoirement accepté l'invitation."
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1805,7 +1805,7 @@
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, veuillez le diviser en plus petits fichiers."
+        "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n’aura lieu qu’après avoir cliqué sur le bouton de fusion"
@@ -1933,20 +1933,20 @@
     },
     "Error": {
       "${ _list } doesn't have an email address": [
-        "${ _list } ne contient pas d’adresse électronique",
-        "Certains contacts ne contiennent pas d’adresse électronique : ${ _list }"
+        "${ _list } ne contient pas d’adresse électronique.",
+        "Certains contacts ne contiennent pas d’adresse électronique : ${ _list }."
       ],
       "${ _list2 } has no contacts": [
-        "${ _list2 } ne contient aucun contact",
-        "Certains groupes ne contiennent aucun contacts : ${ _list2 }"
+        "${ _list2 } ne contient aucun contact.",
+        "Certains groupes ne contiennent aucun contacts : ${ _list2 }."
       ],
       "${ list } doesn't have a valid email address": [
-        "${ list } ne contient pas d’adresse électronique valide",
-        "Certains contacts ne contiennent pas d’adresse électronique valide : ${ list }"
+        "${ list } ne contient pas d’adresse électronique valide.",
+        "Certains contacts ne contiennent pas d’adresse électronique valide : ${ list }."
       ],
       "${ list } has invalid emails": [
-        "${ list } contient des adresses électroniques non valides",
-        "Certains groupes contiennent des adresses électroniques non valides : ${ list }"
+        "${ list } contient des adresses électroniques non valides.",
+        "Certains groupes contiennent des adresses électroniques non valides : ${ list }."
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
@@ -1965,9 +1965,6 @@
       ],
       "Calendar limit reached": [
         "Limite de calendriers atteinte"
-      ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
       ],
       "Cancellation failed to be sent": [
         "Échec d’envoi de l’annulation"
@@ -2005,10 +2002,10 @@
         "L’adresse électronique n’est pas valide"
       ],
       "Ends on date cannot be empty": [
-        "La date de fin ne peut pas être vide"
+        "La date de fin ne peut pas être vide."
       ],
       "Ends on date must be after start time": [
-        "La date de fin doit être postérieure à l'heure de début"
+        "La date de fin doit être après l'heure de début."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres"
@@ -2053,13 +2050,13 @@
         "Code de vérification non valide"
       ],
       "Invitation failed to be sent": [
-        "L'invitation n'a pas pu être envoyée"
+        "L'invitation n'a pas pu être envoyée."
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "Il n’est possible de créer des événements qu’entre ${ minDateString } et ${ maxDateString }"
+        "Il n’est possible de créer des événements qu’entre ${ minDateString } et ${ maxDateString }."
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "Seuls les événements situés entre ${ minDateString } et ${ maxDateString } peuvent être déplacés"
+        "Seuls les événements situés entre ${ minDateString } et ${ maxDateString } peuvent être déplacés."
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -2099,7 +2096,7 @@
         "Numéro non valide"
       ],
       "Number of occurrences cannot be empty": [
-        "Le nombre d’occurrences ne peut pas être vide"
+        "Le nombre d’occurrences ne peut pas être vide."
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "L’un des contacts ne dispose pas d’adresse électronique : ${ noEmailsContactNamesList }",
@@ -2135,7 +2132,7 @@
         "La requête a expiré"
       ],
       "Self invitation not allowed": [
-        "L'auto-invitation n'est pas autorisée"
+        "L'auto-invitation n'est pas autorisée."
       ],
       "Signature not verified": [
         "Signature non vérifiée"
@@ -2159,7 +2156,7 @@
         "Quelque chose s'est mal passé, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ],
       "Start time must be before end time": [
-        "L’heure de début doit être antérieure à l’heure de fin"
+        "L'heure de début doit être avant celle de fin."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Le nom du dossier n'est pas valide. Veuillez en choisir un autre."
@@ -2209,6 +2206,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
+      ],
       "You must set a name": [
         "Vous devez définir un nom"
       ],
@@ -2237,7 +2237,7 @@
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Votre fichier ${ formattedFilename } possède une forme invalide et ne peut être importé."
+        "Votre fichier ${ formattedFilename } a un format non valide et ne peut pas être importé."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Votre fichier ${ formattedFilename } n'a pas d'événements à importer."
@@ -2383,7 +2383,7 @@
         "Erreur : ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL invalide"
+        "URL non valide"
       ],
       "Oops, something went wrong": [
         "Désolé, une erreur s’est produite"
@@ -2401,7 +2401,7 @@
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
       ],
       "You need an active personal calendar to import events": [
-        "Vous devez avoir un calendrier personnel actif pour importer vos événements"
+        "Vous devez avoir un calendrier personnel actif pour importer vos événements."
       ]
     },
     "Error notification": {
@@ -2635,7 +2635,7 @@
         "Chiffrement et ajout des contacts : ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Chiffrement et ajout d'événements à votre calendrier : ${ totalImported }/${ totalToImport }"
+        "Chiffrement et ajout d'événements à votre calendrier : ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "Événement correctement importé. L'événement importé apparaîtra maintenant dans votre calendrier.",
@@ -2807,13 +2807,13 @@
         "Un message d’annulation sera envoyé aux participants supprimés."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Un e-mail d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer tous les événements de cette série ?"
+        "Un e-mail d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer tous les événements de cette série ?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Un e-mail d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer cet événement ?"
+        "Un e-mail d’annulation sera envoyé aux participants de l’événement. Voulez-vous supprimer cet événement ?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accès au compte restreint en raison de factures impayées. Veuillez contacter votre administrateur."
+        "Accès au compte restreint en raison de factures impayées. Nous vous invitons à contacter votre administrateur."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Les participants ajoutés et supprimés seront informés de tous les événements de cette série."
@@ -2836,7 +2836,7 @@
         "Une invitation sera envoyée aux participants ajoutés."
       ],
       "An invitation will be sent to the event participants.": [
-        "Une invitation sera envoyée aux participants à l’événement."
+        "Une invitation sera envoyée aux participants de l'événement."
       ],
       "and": [
         "et"
@@ -2885,22 +2885,22 @@
         "Personnalisée"
       ],
       "Custom daily": [
-        "Quotidiennement (personnalisé)"
+        "Chaque jour (personnalisé)"
       ],
       "Custom monthly": [
-        "Mensuellement (personnalisé)"
+        "Chaque mois (personnalisé)"
       ],
       "Custom weekly": [
-        "Hebdomadairement (personnalisé)"
+        "Chaque semaine (personnalisé)"
       ],
       "Custom yearly": [
-        "Annuellement (personnalisé)"
+        "Chaque année (personnalisé)"
       ],
       "Daily": [
-        "Quotidiennement"
+        "Chaque jour"
       ],
       "Discard changes?": [
-        "Abandonner les modifications ?"
+        "Abandonner les modifications ?"
       ],
       "Drop the file here to upload": [
         "Déposez un fichier ici pour le charger."
@@ -2936,7 +2936,7 @@
         "ici"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d’un jour ouvré."
+        "Si vous rencontrez des difficultés à créer votre compte, demandez une invitation et nous vous répondrons dans un délai d'un jour ouvré."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez que c’est une erreur, veuillez nous contacter ${ contactLink }."
@@ -2964,13 +2964,13 @@
         "Hérité du dossier parent"
       ],
       "Internet connection lost": [
-        "Connexion Internet perdue"
+        "Connexion internet perdue"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Connexion internet perdue. Vérifiez que votre appareil est bien connecté."
       ],
       "Internet connection restored.": [
-        "Connexion Internet rétablie."
+        "Connexion internet rétablie."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -2979,7 +2979,7 @@
         "Empreinte de la clé"
       ],
       "Large imports can take several days.": [
-        "Les importations importantes peuvent prendre plusieurs jours."
+        "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
       "Learn more": [
         "En savoir plus"
@@ -3003,7 +3003,7 @@
         "Fusionné"
       ],
       "Monthly ${ onDayString }": [
-        "Mensuellement, ${ onDayString }"
+        "Chaque mois ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas de dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
@@ -3024,7 +3024,7 @@
         "Aucun résultat trouvé"
       ],
       "None of the participants can be notified about your changes:": [
-        "Aucun des participants ne peut être informé de vos modifications :"
+        "Aucun des participants ne peut être informé de vos modifications :"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Aucune des clés chargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
@@ -3063,7 +3063,7 @@
         "Supprimez les doublons et réessayez."
       ],
       "Please select the folders you would like to import:": [
-        "Veuillez sélectionner les dossiers que vous souhaitez importer :"
+        "Sélectionnez les dossiers que vous souhaitez importer :"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupe.",
@@ -3106,7 +3106,7 @@
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
+        "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
       "Session timed out": [
         "Session expirée"
@@ -3124,37 +3124,37 @@
         "Prise en charge d'un nom de domaine personnalisé"
       ],
       "support team": [
-        "équipe d'assistance"
+        "équipe support"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
       "The following participants cannot be notified about your changes:": [
-        "Les participants suivants ne peuvent pas être informés de vos modifications :"
+        "Les participants suivants ne peuvent pas être informés de vos modifications :"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "L’organisateur ne peut pas être informé que vous refusez l’invitation :"
+        "L’organisateur ne peut pas être informé que vous refusez l’invitation :"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        "L'organisateur ne peut pas être informé que vous souhaitez modifier votre réponse :"
+        "L'organisateur ne peut pas être informé que vous souhaitez modifier votre réponse :"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "L'organisateur n'a pas pu être informé que vous avez modifié votre réponse :"
+        "L'organisateur n'a pas pu être informé que vous avez modifié votre réponse :"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "L’organisateur a mis à jour certains des événements de cette série. La modification du calendrier n’est pas encore prise en charge pour ce type d’événement récurrent."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "L’organisateur de cet événement sera informé que vous refusez l’invitation. Voulez-vous supprimer cet événement ?"
+        "L’organisateur de cet événement sera informé que vous refusez l’invitation. Voulez-vous supprimer cet événement ?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "L’organisateur de cet événement ne sera pas informé que vous refusez l’invitation, car votre adresse est désactivée. Voulez-vous tout de même supprimer cet événement ?"
+        "L’organisateur de cet événement ne sera pas informé que vous refusez l’invitation, car votre adresse est désactivée. Voulez-vous tout de même supprimer cet événement ?"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "L’organisateur de cette série d’événements sera informé que vous refusez l’invitation. Voulez-vous supprimer tous les événements de la série ?"
+        "L’organisateur de cette série d’événements sera informé que vous refusez l’invitation. Voulez-vous supprimer tous les événements de la série ?"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "L’organisateur de cette série d’événements ne sera pas informé que vous refusez l’invitation, car vous ne pouvez pas envoyer de messages à partir de l’adresse invitée. Voulez-vous tout de même supprimer tous les événements de cette série ?"
+        "L’organisateur de cette série d’événements ne sera pas informé que vous refusez l’invitation, car vous ne pouvez pas envoyer de messages à partir de l’adresse invitée. Voulez-vous tout de même supprimer tous les événements de cette série ?"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
@@ -3163,28 +3163,28 @@
         "Cette adresse est désactivée. Pour pouvoir envoyer des e-mails à cette adresse, son propriétaire doit d’abord l’activer."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Cet événement a été mis à jour par l’organisateur. Voulez-vous changer votre réponse uniquement pour cet événement dans la série ?"
+        "Cet événement a été mis à jour par l’organisateur. Voulez-vous changer votre réponse uniquement pour cet événement dans la série ?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Cet événement a été mis à jour par l’organisateur. Voulez-vous supprimer cet événement ?"
+        "Cet événement a été mis à jour par l’organisateur. Voulez-vous supprimer cet événement ?"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Cet événement a été mis à jour. L’organisateur sera informé que vous refusez l’invitation. Voulez-vous supprimer cet événement ?"
+        "Cet événement a été mis à jour. L’organisateur sera informé que vous refusez l’invitation. Voulez-vous supprimer cet événement ?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Cet événement a été mis à jour. L’organisateur ne sera pas informé que vous refusez l’invitation, car vous ne pouvez pas envoyer de messages depuis l’adresse invitée. Voulez-vous tout de même supprimer cet événement ?"
+        "Cet événement a été mis à jour. L’organisateur ne sera pas informé que vous refusez l’invitation, car vous ne pouvez pas envoyer de messages depuis l’adresse invitée. Voulez-vous tout de même supprimer cet événement ?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+        "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
+        "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -3214,7 +3214,7 @@
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
       "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
       ],
       "Week": [
         "Semaine"
@@ -3223,19 +3223,19 @@
         "Quel événement voulez-vous supprimer ?"
       ],
       "Which event would you like to update?": [
-        "Quel événement souhaitez-vous mettre à jour ?"
+        "Quel événement souhaitez-vous mettre à jour ?"
       ],
       "Would you like to change your answer for all the events in this series?": [
-        "Voulez-vous changer votre réponse pour tous les événements de la série ?"
+        "Voulez-vous changer votre réponse pour tous les événements de la série ?"
       ],
       "Would you like to continue anyway?": [
-        "Voulez-vous tout de même continuer ?"
+        "Voulez-vous tout de même continuer ?"
       ],
       "Would you like to delete all the events in this series?": [
-        "Souhaitez-vous supprimer tous les événements de cette série ?"
+        "Souhaitez-vous supprimer tous les événements de cette série ?"
       ],
       "Would you like to delete the event anyway?": [
-        "Voulez-vous tout de même supprimer l’événement ?"
+        "Voulez-vous tout de même supprimer l’événement ?"
       ],
       "Would you like to delete this event?": [
         "Voulez-vous supprimer cet événement ?"
@@ -3244,19 +3244,19 @@
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
       "Would you like to receive a new verification code?": [
-        "Souhaiteriez-vous recevoir un nouveau code de vérification ?"
+        "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Would you like to update all events in this series?": [
-        "Voulez-vous mettre à jour tous les événements de cette série ?"
+        "Voulez-vous mettre à jour tous les événements de cette série ?"
       ],
       "Would you like to update this event?": [
-        "Voulez-vous mettre à jour cet événement ?"
+        "Voulez-vous mettre à jour cet événement ?"
       ],
       "Yearly": [
-        "Annuellement"
+        "Chaque année"
       ],
       "You are about to open another browser tab and visit:": [
-        "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
+        "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
@@ -3307,16 +3307,16 @@
         "Vous allez mettre à jour tous les événements de cette série. Les participants supprimés seront informés."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Votre compte possède au moins une facture impayée. Votre accès a été restreint. ${ payInvoiceLink }"
+        "Votre compte a au moins une facture en retard. Votre accès a été restreint. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Votre compte possède au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
+        "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Votre adresse est désactivée. Un e-mail d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer tous les événements de cette série ?"
+        "Votre adresse est désactivée. Un e-mail d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer tous les événements de cette série ?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Votre adresse est désactivée. Un e-mail d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer cet événement ?"
+        "Votre adresse est désactivée. Un e-mail d’annulation ne peut donc pas être envoyé aux participants à l’événement. Voulez-vous tout de même supprimer cet événement ?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
@@ -3334,7 +3334,7 @@
         "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Le fuseau horaire de votre système semble avoir changé pour ${ timezone }. Voulez-vous mettre à jour votre préférence de fuseau horaire ?"
+        "Le fuseau horaire de votre système semble avoir changé pour ${ timezone }. Voulez-vous mettre à jour votre préférence de fuseau horaire ?"
       ]
     },
     "Info on errors": {
@@ -4100,7 +4100,7 @@
         "Bienvenue dans ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
-        "Où vous pouvez prendre le contrôle de votre temps et de vos données."
+        "Prenez le contrôle de votre temps et de vos données."
       ]
     },
     "Onboarding Action": {
@@ -4208,7 +4208,7 @@
     },
     "Participants expand button label": {
       "Expand participants list": [
-        "Développer la liste des participants"
+        "Voir la liste des participants"
       ]
     },
     "Personal calendar limit reached modal body": {
@@ -4445,15 +4445,15 @@
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "En utilisant ce lien, Google rendra public le calendrier auquel vous être en train de souscrire"
+        "En utilisant ce lien, Google rendra public le calendrier auquel vous vous inscrivez."
       ],
       "This link might be wrong": [
-        "Ce lien est probablement incorrect"
+        "Ce lien est probablement incorrect."
       ]
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        "L'abonnement à un calendrier n'est pas disponible pour le moment"
+        "L'abonnement à un calendrier n'est pas disponible pour le moment."
       ]
     },
     "Subscribed calendar limit reached modal body": {
@@ -4704,7 +4704,7 @@
         "Compte suspendu"
       ],
       "Add another notification to remind you of this event": [
-        "Ajoutez une autre notification pour vous rappeler cet événement"
+        "Ajoutez une autre notification pour vous rappeler cet événement."
       ],
       "Add contact group name": [
         "Ajouter le nom du groupe de contacts"
@@ -4716,7 +4716,7 @@
         "Ajouter un titre d’événement"
       ],
       "Add more information related to this event": [
-        "Ajoutez plus d’informations relatives à cet événement"
+        "Ajoutez plus d’informations relatives à cet événement."
       ],
       "Add participants": [
         "Ajouter des participants"
@@ -4750,10 +4750,10 @@
         "Changer ma réponse"
       ],
       "Choose how many times this event will repeat": [
-        "Choisissez combien de fois cet événement se répétera"
+        "Choisissez combien de fois cet événement se répétera."
       ],
       "Choose how often this event repeats": [
-        "Choisissez la fréquence de répétition de l’événement"
+        "Choisissez la fréquence de répétition de l’événement."
       ],
       "Clearing data": [
         "Suppression des données"
@@ -4771,7 +4771,7 @@
         "Contacts"
       ],
       "Continue with partial import?": [
-        "Poursuivre l'importation partielle ?"
+        "Poursuivre l'importation partielle ?"
       ],
       "Create calendar": [
         "Créer un calendrier"
@@ -4792,7 +4792,7 @@
         "Personnaliser l'importation du calendrier"
       ],
       "Customize your mail import": [
-        "Personnalisez votre importation de courrier"
+        "Personnalisez votre importation de messagerie"
       ],
       "Delete ${ count } contact": [
         "Supprimer ${ count } contact",
@@ -4839,19 +4839,19 @@
         "Paramètres d’adresse électronique (${ emailAddress })"
       ],
       "Enter your password": [
-        "Saisissez votre mot de passe"
+        "Saisissez votre mot de passe."
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Saisissez votre nom d'utilisateur ou votre adresse ${ MAIL_APP_NAME }"
+        "Saisissez votre nom d'utilisateur ou votre adresse ${ MAIL_APP_NAME }."
       ],
       "Error": [
         "Erreur"
       ],
       "Event is happening all day": [
-        "L’événement se déroule toute la journée"
+        "L’événement se déroule toute la journée."
       ],
       "Event is happening on defined time slot": [
-        "L’événement se déroule dans un créneau horaire défini"
+        "L’événement se déroule dans un créneau horaire défini."
       ],
       "Exporting contacts": [
         "Exportation des contacts"
@@ -4869,8 +4869,8 @@
         "Vérification humaine"
       ],
       "Import as simple event?": [
-        "Importer comme simple événement ?",
-        "Importer comme simples événements ?"
+        "Importer comme simple événement ?",
+        "Importer comme simples événements ?"
       ],
       "Import contacts": [
         "Importer les contacts"
@@ -4903,7 +4903,7 @@
         "Ouvrir le menu des paramètres"
       ],
       "Organizer cannot be notified": [
-        "L'organisateur ne peut pas être informé"
+        "L'organisateur ne peut pas être informé."
       ],
       "Other information": [
         "Autre information"
@@ -4912,7 +4912,7 @@
         "Autres noms"
       ],
       "Participants cannot be notified": [
-        "Les participants ne peuvent pas être informés"
+        "Les participants ne peuvent pas être informés."
       ],
       "Phone numbers": [
         "Numéros de téléphone"
@@ -4945,7 +4945,7 @@
         "Enregistrer les modifications"
       ],
       "Select a day in the month": [
-        "Sélectionnez un jour dans le mois"
+        "Sélectionnez un jour dans le mois."
       ],
       "Select a theme": [
         "Choisissez un thème"
@@ -4957,46 +4957,46 @@
         "Sélectionner le groupe de contacts"
       ],
       "Select event end date": [
-        "Sélectionnez la date de fin de l’événement"
+        "Sélectionnez la date de fin de l’événement."
       ],
       "Select event end time": [
-        "Sélectionnez l’heure de fin de l’événement"
+        "Sélectionnez l’heure de fin de l’événement."
       ],
       "Select event frequency": [
         "Sélectionner la fréquence de l’événement"
       ],
       "Select event frequency interval": [
-        "Sélectionnez l’intervalle de fréquence de l’événement"
+        "Sélectionnez l’intervalle de fréquence de l’événement."
       ],
       "Select event start date": [
-        "Sélectionnez la date de début de l’événement"
+        "Sélectionnez la date de début de l’événement."
       ],
       "Select event start time": [
-        "Sélectionnez l’heure de début de l’événement"
+        "Sélectionnez l’heure de début de l’événement."
       ],
       "Select event's last date": [
-        "Sélectionnez la dernière date de l’événement"
+        "Sélectionnez la dernière date de l’événement."
       ],
       "Select the time to send this notification": [
-        "Sélectionnez l’heure d’envoi de cette notification"
+        "Sélectionnez l’heure d’envoi de cette notification."
       ],
       "Select the time zone for the event end time": [
-        "Sélectionnez le fuseau horaire pour l’heure de fin de l’événement"
+        "Sélectionnez le fuseau horaire pour l’heure de fin de l’événement."
       ],
       "Select the time zone for the event start time": [
-        "Sélectionnez le fuseau horaire pour l’heure de début de l’événement"
+        "Sélectionnez le fuseau horaire pour l’heure de début de l’événement."
       ],
       "Select the way to send this notification": [
-        "Sélectionnez le mode d’envoi de cette notification"
+        "Sélectionnez le mode d’envoi de cette notification."
       ],
       "Select when this event will stop happening": [
-        "Sélectionnez quand cet événement cessera de se produire"
+        "Sélectionnez quand cet événement cessera de se produire."
       ],
       "Select when you want this notification to be sent": [
-        "Choisissez quand vous souhaitez que cette notification soit envoyée"
+        "Choisissez quand vous souhaitez que cette notification soit envoyée."
       ],
       "Select which calendar to add this event to": [
-        "Sélectionnez le calendrier auquel ajouter cet événement"
+        "Sélectionnez le calendrier auquel ajouter cet événement."
       ],
       "Send feedback": [
         "Envoyer un avis"
@@ -5044,7 +5044,7 @@
         "Nouveautés"
       ],
       "You have invited participants with equivalent emails": [
-        "Vous avez invité des participants avec des adresses électroniques similaires"
+        "Vous avez invité des participants avec des adresses électroniques similaires."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"

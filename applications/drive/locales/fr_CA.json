@@ -1740,9 +1740,6 @@
       "Calendar limit reached": [
         "Limite de calendriers atteinte"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "You have reached the maximum number of personal calendars. Some calendars couldn't be imported."
-      ],
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
       ],
@@ -1824,8 +1821,14 @@
       "Missing signature": [
         "Signature manquante"
       ],
-      "No data to import": [
-        "Aucune donnée à importer"
+      "No calendars found to import": [
+        "Aucun calendrier à importer"
+      ],
+      "No contacts found to import": [
+        "Aucun contact à importer"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Aucun courriel à importer, le compte n'a pas de Boîte de réception"
       ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
@@ -1949,6 +1952,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
       ],
       "You must set a name": [
         "Vous devez définir un nom"
@@ -2819,8 +2825,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
-      "Select what you want to import from Google.": [
-        "Sélectionnez ce que vous souhaitez importer depuis Google."
+      "Select what you want to import.": [
+        "Sélectionnez ce que vous voulez importer."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."

@@ -199,6 +199,9 @@
       "Create account": [
         "アカウントを作成"
       ],
+      "Create accounts": [
+        "アドレスを作成"
+      ],
       "Create address": [
         "アドレスの作成"
       ],
@@ -289,6 +292,9 @@
       "Download all configurations": [
         "すべての設定ファイルをダウンロード"
       ],
+      "Download CSV sample": [
+        "CSV サンプルをダウンロード"
+      ],
       "Download ICS": [
         "ICS をダウンロード"
       ],
@@ -375,6 +381,9 @@
       ],
       "Go to sign in": [
         "サインインに移動"
+      ],
+      "Got it": [
+        "はい"
       ],
       "Hide": [
         "非表示"
@@ -622,11 +631,17 @@
       "Save selected": [
         "選択済みを保存"
       ],
+      "Search": [
+        "検索"
+      ],
       "Search countries": [
         "国を検索"
       ],
       "Search settings": [
         "設定の検索"
+      ],
+      "See plan features": [
+        "プラン機能を見る"
       ],
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
@@ -1188,6 +1203,11 @@
       ],
       "Week": [
         "週"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "すべて"
       ]
     },
     "Checkout row": {
@@ -2296,9 +2316,19 @@
         "適用済みクーポン: ${ CouponCode }"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "検索結果が見つかりません"
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "未使用のクレジット"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV テンプレート"
       ]
     },
     "Cycle": {
@@ -2553,9 +2583,6 @@
       "Can't check username, try again later": [
         "ユーザー名を確認できません。後ほどお試しください。"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
-      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -2667,8 +2694,11 @@
       "No active sessions": [
         "アクティブなセッションはありません"
       ],
-      "No data to import": [
-        "インポートするデータがありません"
+      "No calendars found to import": [
+        "インポートするカレンダーが見つかりません"
+      ],
+      "No contacts found to import": [
+        "インポートする連絡先が見つかりません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -2906,6 +2936,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上のイベントが含まれています。"
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
       ],
@@ -3040,6 +3073,11 @@
       ],
       "Unsupported event": [
         "サポートされていないイベントです"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
       ]
     },
     "Error message": {
@@ -4867,8 +4905,8 @@
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
       ],
-      "Select what you want to import from Google.": [
-        "Google からインポートしたいものを選択してください。"
+      "Select what you want to import.": [
+        "インポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -6802,6 +6840,9 @@
       "What is the difference between UDP and TCP protocols?": [
         "UDP と TCP という 2 つのプロトコルの違いは何ですか？"
       ],
+      "What’s this?": [
+        "これは何ですか?"
+      ],
       "Why set recovery methods?": [
         "回復手段を設定しませんか？"
       ]
@@ -7164,6 +7205,9 @@
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
         "${ connections } 件の高速 VPN 接続を入手"
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "1 ユーザーあたり ${ connections } 件の高速 VPN 接続を入手"
       ]
     },
     "new_plans: feature": {
@@ -7206,11 +7250,11 @@
       "${ size } attachment size": [
         "${ size } の添付ファイル"
       ],
+      "${ size } storage": [
+        "${ size } のストレージ"
+      ],
       "${ size } storage per user": [
         "1 ユーザーあたり ${ size } のストレージ"
-      ],
-      "${ size } total storage": [
-        "合計 ${ size } のストレージ"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -7347,8 +7391,8 @@
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
       ],
-      "Up to ${ totalStorageSize } total storage": [
-        "最大合計 ${ totalStorageSize } のストレージ"
+      "Up to ${ totalStorageSize } storage": [
+        "最大 ${ totalStorageSize } のストレージ"
       ],
       "Worldwide streaming services": [
         "世界的なストリーミングサービス"
@@ -7360,20 +7404,6 @@
       ],
       "Team management": [
         "チームマネジメント"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: info": {
@@ -7423,6 +7453,20 @@
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } のうち ${ humanUsedSpace }"
@@ -7439,9 +7483,6 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        "${ BRAND_NAME } アカウントを作成すると${ terms }に同意したことになります。"
-      ],
       "Payment details": [
         "支払いの詳細"
       ],
@@ -7583,9 +7624,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "1 人ユーザーあたりストレージ容量を合計 ${ businessStorage } に拡張"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        "ストレージ容量を合計 ${ driveStorage } に拡張"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "最大 ${ numberOfPersonalCalendars } 件のパーソナルカレンダーを作成"
@@ -7826,10 +7864,10 @@
         "標準"
       ],
       "Off": [
-        "オフ"
+        "無効"
       ],
       "On": [
-        "オン"
+        "有効"
       ],
       "Permanent": [
         "無期限"
@@ -8014,6 +8052,9 @@
       ],
       "Postal code": [
         "郵便番号"
+      ],
+      "Search": [
+        "検索"
       ],
       "Search settings": [
         "設定の検索"
@@ -8211,6 +8252,11 @@
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
       ]
     },
+    "Select file": {
+      "Upload CSV file": [
+        "CSV ファイルをアップロード"
+      ]
+    },
     "Select files": {
       "Browse": [
         "ブラウズ"
@@ -8295,8 +8341,23 @@
       "${ name } deletion failed": [
         "${ name } の削除に失敗しました"
       ],
+      "${ name } failed to move to Block List": [
+        "${ name } をブロックリストに移動できませんでした"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } を迷惑ではないリストに移動できませんでした"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } を迷惑リストに移動できませんでした"
+      ],
       "${ name } moved to Block List": [
         "${ name } をブロックリストに移動しました"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } を迷惑ではないリストに移動しました"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } を迷惑リストに移動しました"
       ],
       "${ name } successfully deleted": [
         "${ name } は正常に削除されました"
@@ -8687,10 +8748,16 @@
       "CSV field": [
         "CSV フィールド"
       ],
+      "Display name": [
+        "表示名"
+      ],
       "Edit": [
         "編集"
       ],
       "Email address": [
+        "メールアドレス"
+      ],
+      "Email addresses": [
         "メールアドレス"
       ],
       "Import": [
@@ -8701,6 +8768,9 @@
       ],
       "Status": [
         "状態"
+      ],
+      "Total storage": [
+        "総ストレージ容量"
       ],
       "Values": [
         "値"
@@ -8829,9 +8899,6 @@
       ],
       "Address verification": [
         "アドレスの検証"
-      ],
-      "Addresses": [
-        "メールアドレス"
       ],
       "Allocate storage": [
         "ストレージを割り当てる"
@@ -9666,6 +9733,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "この鍵でされた署名を無効なものとして扱い、暗号化にも使用できなくします"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
