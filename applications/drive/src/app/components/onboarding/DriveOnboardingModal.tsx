@@ -52,15 +52,15 @@ const DriveOnboardingModal = (props: Props) => {
         onboardingSteps.push(({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
                 <OnboardingContent
-                    title={c('Onboarding Title').t`Your welcome gift`}
+                    title={c('Onboarding Title').t`Your welcome bonus`}
                     description={c('Onboarding Info')
-                        .t`Get started using Proton Drive and we'll upgrade your account to 1 GB for free!`}
+                        .t`Get started using Proton Drive and we'll double your free storage to 1GB!`}
                     img={<img src={drive1gbSvg} alt={appName} />}
                 />
                 <div>
                     {c('Onboarding Info').ngettext(
-                        msgid`Simply complete the following in the next ${remainingDaysForGift} day`,
-                        `Simply complete the following in the next ${remainingDaysForGift} days`,
+                        msgid`Simply complete the following in the next ${remainingDaysForGift} day:`,
+                        `Simply complete the following in the next ${remainingDaysForGift} days:`,
                         remainingDaysForGift
                     )}
                     <ul className="unstyled mt1">
