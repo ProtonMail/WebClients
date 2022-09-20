@@ -4,7 +4,12 @@ import { c } from 'ttag';
 
 import { Button, CurrencySelector, Price, useLoading } from '@proton/components';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import { getFreePlan, getFreeVPNPlan, getShortPlan } from '@proton/components/containers/payments/features/plan';
+import {
+    getFreeDrivePlan,
+    getFreePlan,
+    getFreeVPNPlan,
+    getShortPlan,
+} from '@proton/components/containers/payments/features/plan';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -61,7 +66,17 @@ const UpsellStep = ({
 }: Props) => {
     const plansMap = toMap(plans, 'Name');
 
-    const shortFreePlan = upsellPlanName === PLANS.VPN ? getFreeVPNPlan(vpnCountries, vpnServers) : getFreePlan();
+    const shortFreePlan = (() => {
+        if (upsellPlanName === PLANS.VPN) {
+            return getFreeVPNPlan(vpnCountries, vpnServers);
+        }
+
+        if (upsellPlanName === PLANS.DRIVE) {
+            return getFreeDrivePlan();
+        }
+
+        return getFreePlan();
+    })();
 
     const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnCountries, vpnServers, { boldStorageSize: true });
     const upsellPlan = plansMap[upsellPlanName];
