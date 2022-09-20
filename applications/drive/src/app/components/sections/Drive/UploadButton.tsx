@@ -5,7 +5,13 @@ import { FloatingButton, Icon, SidebarPrimaryButton, classnames } from '@proton/
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useDownload, useFileUploadInput, useUpload } from '../../../store';
 
-export const UploadButton = ({ className }: { className?: string }) => {
+export const UploadButton = ({
+    className,
+    children = c('Action').t`New upload`,
+}: {
+    className?: string;
+    children?: React.ReactNode;
+}) => {
     const { activeFolder } = useActiveShare();
     const {
         inputRef: fileInput,
@@ -16,8 +22,9 @@ export const UploadButton = ({ className }: { className?: string }) => {
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <SidebarPrimaryButton className={className} onClick={handleClick}>{c('Action')
-                .t`New upload`}</SidebarPrimaryButton>
+            <SidebarPrimaryButton className={className} onClick={handleClick}>
+                {children}
+            </SidebarPrimaryButton>
         </>
     );
 };
