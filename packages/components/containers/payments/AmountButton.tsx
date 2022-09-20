@@ -14,7 +14,7 @@ const AmountButton = ({ value = 0, amount = 0, currency, onSelect, className = '
     return (
         <Button
             aria-pressed={value === amount}
-            className={classnames([className, value === amount && 'is-active'])}
+            className={classnames(['field', className, value === amount && 'is-active'])}
             onClick={() => onSelect(value)}
             {...rest}
         >
