@@ -1,4 +1,14 @@
+## Release: 5.0.5 — October 5, 2022
+
+### Improvements
+
+-   Minor UI and UX improvements
+
 ## Release: 5.0.4 — August 24, 2022
+
+### New features
+
+-   Add invitations from the inbox to the calendar and mark as pending
 
 ### Improvements
 
@@ -11,8 +21,7 @@
 ### New features
 
 -   Draggable popover on event creation
-
-[comment]: <> (- Reminders for events in subscribed calendars)
+-   Reminders for events in subscribed calendars
 
 ### Improvements
 
@@ -144,7 +153,7 @@ Proton - Privacy by default.
 
 -   Redirect Myanmar time zone to Indian/Cocos
 -   Handle case where an email address is disabled under one user and active under another in the same organisation
--   Extend support to recognize invites formatted with floating times
+-   Extend support to recognize invitations formatted with floating times
 
 ## Release: 4.0.2 — July 28, 2021
 
@@ -173,7 +182,7 @@ Proton - Privacy by default.
 
 ### Fixes
 
--   Fix the display of sent invites with specific security settings that would show as encrypted in the sent folder
+-   Fix the display of sent invitations with specific security settings that would show as encrypted in the sent folder
 
 # Proton Calendar for web is live!
 
