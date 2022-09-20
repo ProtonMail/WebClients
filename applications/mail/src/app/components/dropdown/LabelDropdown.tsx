@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
 
 import { c } from 'ttag';
@@ -198,7 +198,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         return normName.includes(normSearch);
     });
 
-    const actualApplyLabels = async (changes: { [p: string]: boolean }, areSameLabels: boolean) => {
+    const actualApplyLabels = async (changes: { [p: string]: boolean }) => {
         const elements = getElementsFromIDs(selectedIDs);
 
         const promises = [];
@@ -216,9 +216,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     };
 
     const handleApply = async () => {
-        const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
-
-        await actualApplyLabels(changes, areSameLabels);
+        await actualApplyLabels(changes);
     };
 
     const applyCheck = (labelIDs: string[], selected: boolean) => {
@@ -261,16 +259,13 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         await withLoading(handleApply());
     };
 
-    const handleApplyDirectly = async (e: MouseEvent, labelID: string) => {
-        e.preventDefault();
-        e.stopPropagation();
-
+    const handleApplyDirectly = async (labelID: string) => {
         const updatedChanges = {
             ...changes,
             [labelID]: selectedLabelIDs[labelID] !== LabelState.On,
         };
 
-        await actualApplyLabels(updatedChanges, false);
+        await actualApplyLabels(updatedChanges);
     };
 
     return (
@@ -333,7 +328,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                 title={Name}
                                 className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
                                 data-testid={`label-dropdown:label-${Name}`}
-                                onClick={(e) => handleApplyDirectly(e, ID)}
+                                onClick={() => handleApplyDirectly(ID)}
                             >
                                 <Icon
                                     name="circle-filled"
