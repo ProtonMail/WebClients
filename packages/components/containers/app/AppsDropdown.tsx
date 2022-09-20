@@ -41,11 +41,11 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
             {...rest}
         >
             <ul className="unstyled mt0 mb0">
-                {apps.map(({ app, name }, index) => {
+                {apps.map(({ app, name }) => {
                     return (
                         <Fragment key={app}>
                             <li className="dropdown-item">
-                                <AppLink key={index} to="/" toApp={app} className={itemClassName} title={name}>
+                                <AppLink key={app} to="/" toApp={app} className={itemClassName} title={name}>
                                     <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr0-5" />
                                     {name}
                                 </AppLink>
