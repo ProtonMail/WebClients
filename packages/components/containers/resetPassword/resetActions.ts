@@ -11,7 +11,7 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { Api, UserSettings, UserType, User as tsUser } from '@proton/shared/lib/interfaces';
+import { Api, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
@@ -86,7 +86,7 @@ export const handleNewPassword = async ({
     let keyPassword = passphrase;
     // This is intended to deal with setting up an address & generating keys for username-only (VPN) accounts if
     // resetting the password through the account application.
-    if (cache.hasGenerateKeys && !User.Keys.length && User.Type !== UserType.EXTERNAL) {
+    if (cache.hasGenerateKeys && !User.Keys.length) {
         keyPassword = await handleSetupAddressKeys({
             api: authApi,
             username,
