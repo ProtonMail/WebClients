@@ -446,7 +446,7 @@ export class Api extends KeyManagementApi {
     }
 
     /**
-     * Create a signature over the given data using `signinKeys`.
+     * Create a signature over the given data using `signingKeys`.
      * Either `textData` or `binaryData` must be given.
      * @param options.textData - text data to sign
      * @param options.binaryData - binary data to sign
