@@ -1,4 +1,4 @@
-## Resealse 5.0.8 - September 21, 2022
+## Release 5.0.8 - September 21, 2022
 
 ### Improvements
 
