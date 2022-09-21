@@ -2,6 +2,7 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 
 import { c } from 'ttag';
 
+import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -144,15 +145,19 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         });
 
         const run = () => {
-            return Promise.all([eventManagerPromise, setupPromise, onInit?.(), loadCryptoWorker(), appPromise]).catch(
-                (error) => {
-                    if (getIs401Error(error)) {
-                        // Trigger onLogout early, ignoring the unload wrapper
-                        onLogout();
-                    }
-                    throw error;
+            return Promise.all([
+                eventManagerPromise,
+                setupPromise,
+                onInit?.(),
+                loadCryptoWorker(getCryptoWorkerOptions(APP_NAME)),
+                appPromise,
+            ]).catch((error) => {
+                if (getIs401Error(error)) {
+                    // Trigger onLogout early, ignoring the unload wrapper
+                    onLogout();
                 }
-            );
+                throw error;
+            });
         };
 
         wrapUnloadError(run())
