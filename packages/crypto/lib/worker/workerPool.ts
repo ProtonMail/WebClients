@@ -3,7 +3,7 @@ import { Remote, releaseProxy, transferHandlers, wrap } from 'comlink';
 import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
-interface WorkerPoolInterface extends CryptoApiInterface {
+export interface WorkerPoolInterface extends CryptoApiInterface {
     /**
      * Setup worker pool (singleton instance):
      * create and start workers, and initializes internal Crypto API (incl. pmcrypto and OpenPGP.js)
