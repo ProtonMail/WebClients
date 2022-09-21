@@ -25,6 +25,14 @@ export default {
                 glob: 'lib/**/*.{js,jsx,ts,tsx}',
             },
             {
+                name: 'encrypted-search',
+                glob: 'lib/**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'crypto',
+                glob: 'lib/**/*.{js,jsx,ts,tsx}',
+            },
+            {
                 name: 'cross-storage',
                 glob: '{lib,*-impl}/**/*.{js,jsx,ts,tsx}',
             },
@@ -33,7 +41,11 @@ export default {
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
-                name: 'util',
+                name: 'hooks',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'utils',
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
