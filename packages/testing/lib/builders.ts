@@ -1,9 +1,16 @@
 import { build } from '@jackfranklin/test-data-bot';
 
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address, AddressKey } from '@proton/shared/lib/interfaces';
-import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import {
+    CALENDAR_DISPLAY,
+    CALENDAR_TYPE,
+    CalendarEventWithMetadata,
+    VcalVeventComponent,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Message', {
@@ -392,3 +399,66 @@ export const userBuilder = build('User', {
         DisplayName: 'Bad Boy',
     },
 });
+const generateSimpleCalendar = (
+    i: number,
+    {
+        calendarEmail = 'calendarEmail',
+        ownerEmail = 'calendarEmail',
+        permissions = MEMBER_PERMISSIONS.OWNS,
+        type = CALENDAR_TYPE.PERSONAL,
+        flags = CALENDAR_FLAGS.ACTIVE,
+        display = CALENDAR_DISPLAY.VISIBLE,
+        color = '#F00',
+    }: {
+        calendarEmail?: string;
+        ownerEmail?: string;
+        permissions?: number;
+        type?: CALENDAR_TYPE;
+        flags?: CALENDAR_FLAGS;
+        display?: CALENDAR_DISPLAY;
+        color?: string;
+    }
+) => ({
+    ID: `id-${i}`,
+    Name: `name-${i}`,
+    Description: `description-${i}`,
+    Type: type,
+    Flags: flags,
+    Email: calendarEmail,
+    Color: color,
+    Display: display,
+    Permissions: permissions,
+    Owner: { Email: ownerEmail },
+    Members: [
+        {
+            ID: `member-${i}`,
+            Email: calendarEmail,
+            Permissions: permissions,
+            AddressID: `address-id-${i}`,
+            Flags: flags,
+            Color: color,
+            Display: display,
+            CalendarID: `id-${i}`,
+            Name: `name-${i}`,
+            Description: `description-${i}`,
+        },
+    ],
+});
+export const generateOwnedPersonalCalendars = (n: number) => {
+    return Array(n)
+        .fill(1)
+        .map((val, i) => generateSimpleCalendar(i, {}));
+};
+export const generateSharedCalendars = (n: number) => {
+    if (n <= 0) {
+        return [];
+    }
+    return Array(n)
+        .fill(1)
+        .map((val, i) => generateSimpleCalendar(i, { calendarEmail: 'calendarEmail', ownerEmail: 'ownerEmail' }));
+};
+export const generateSubscribedCalendars = (n: number) => {
+    return Array(n)
+        .fill(1)
+        .map((val, i) => generateSimpleCalendar(i, { type: CALENDAR_TYPE.SUBSCRIPTION }));
+};

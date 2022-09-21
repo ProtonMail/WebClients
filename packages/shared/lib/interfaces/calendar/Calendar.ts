@@ -10,6 +10,12 @@ export enum CALENDAR_TYPE {
     SUBSCRIPTION = 1,
 }
 
+export enum CALENDAR_TYPE_EXTENDED {
+    SHARED = 2,
+}
+
+export type EXTENDED_CALENDAR_TYPE = CALENDAR_TYPE | CALENDAR_TYPE_EXTENDED;
+
 export enum CALENDAR_DISPLAY {
     HIDDEN = 0,
     VISIBLE = 1,

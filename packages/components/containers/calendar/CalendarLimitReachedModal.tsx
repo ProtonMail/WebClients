@@ -2,26 +2,31 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_TYPE, CALENDAR_TYPE_EXTENDED, EXTENDED_CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 
 import { AlertModal } from '../../components/alertModal';
 import { Button, ButtonLike } from '../../components/button';
 import { SettingsLink } from '../../components/link';
 
+const getText = (type: EXTENDED_CALENDAR_TYPE) => {
+    if (type === CALENDAR_TYPE_EXTENDED.SHARED) {
+        return c('Modal for limit of calendars reached')
+            .t`Unable to add more calendars. You have reached the maximum of personal calendars within your plan.`;
+    }
+    if (type === CALENDAR_TYPE.SUBSCRIPTION) {
+        return c('Modal for limit of calendars reached')
+            .t`Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.`;
+    }
+    return c('Modal for limit of calendars reached')
+        .t`Unable to create more calendars. You have reached the maximum of personal calendars within your plan.`;
+};
+
 interface Props {
     onClose?: () => void;
     open?: boolean;
-    calendarType: CALENDAR_TYPE;
+    calendarType: EXTENDED_CALENDAR_TYPE;
 }
-
 const CalendarLimitReachedModal = ({ open, onClose, calendarType }: Props) => {
-    const text =
-        calendarType === CALENDAR_TYPE.PERSONAL
-            ? c('Modal for limit of calendars reached')
-                  .t`Unable to create more calendars. You have reached the maximum of personal calendars within your plan.`
-            : c('Modal for limit of calendars reached')
-                  .t`Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.`;
-
     return (
         <AlertModal
             open={open}
@@ -34,7 +39,7 @@ const CalendarLimitReachedModal = ({ open, onClose, calendarType }: Props) => {
             ]}
             onClose={onClose}
         >
-            {text}
+            {getText(calendarType)}
         </AlertModal>
     );
 };
