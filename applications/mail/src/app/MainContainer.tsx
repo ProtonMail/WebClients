@@ -14,6 +14,7 @@ import {
     useSideApp,
 } from '@proton/components';
 import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
+import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import { MAIN_ROUTE_PATH } from './constants';
@@ -26,6 +27,8 @@ import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';
 
 const MainContainer = () => {
+    useTelemetryScreenSize();
+
     const { handleClickSideApp } = useSideApp();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from '@proton/components';
+import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import noop from '@proton/utils/noop';
 
 import SignatureIssueModal from '../components/SignatureIssueModal';
@@ -24,6 +25,8 @@ const DEFAULT_SHARE_VALUE = {
 };
 
 const InitContainer = () => {
+    useTelemetryScreenSize();
+
     const { getDefaultShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
     const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
