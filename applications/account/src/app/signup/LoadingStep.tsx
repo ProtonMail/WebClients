@@ -33,7 +33,7 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
     }, []);
 
     useInterval(() => {
-        const nextIndex = stepIndex + 1;
+        const nextIndex = Math.min(steps.length - 1, stepIndex + 1);
         setStepIndex(nextIndex);
     }, 2500);
 
@@ -45,10 +45,8 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
                     <hr className="mb2 mt2" />
                     <div className="inline-block">
                         {steps.map((step, i) => {
-                            const isPreviousStep = i < stepIndex;
                             const isCurrentStep = i === stepIndex;
-
-                            const isVisibleStep = isPreviousStep || isCurrentStep;
+                            const isVisibleStep = i <= stepIndex;
                             if (!isVisibleStep) {
                                 return null;
                             }
