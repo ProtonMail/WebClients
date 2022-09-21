@@ -96,7 +96,7 @@ const Setup = ({ onLogin, UID }: Props) => {
                 ]);
             });
 
-            await Promise.all([eventManagerPromise, modelsPromise, loadCryptoWorker()]);
+            await Promise.all([eventManagerPromise, modelsPromise, loadCryptoWorker({ poolSize: 1 })]);
 
             flushSync(() => {
                 onLogin(UID);

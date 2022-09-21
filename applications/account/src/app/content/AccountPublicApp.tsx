@@ -5,6 +5,7 @@ import * as H from 'history';
 import { c } from 'ttag';
 
 import { LoaderPage, ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
+import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -14,6 +15,7 @@ import {
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
@@ -44,7 +46,7 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
                 getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
                 getClosestLocaleCode(browserLocale, locales);
             await Promise.all([
-                loadCryptoWorker(),
+                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT)),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);
