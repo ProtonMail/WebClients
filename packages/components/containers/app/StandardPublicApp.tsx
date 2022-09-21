@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
@@ -10,6 +11,7 @@ import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
+import { useConfig } from '../../hooks';
 import ModalsChildren from '../modals/Children';
 import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
@@ -21,6 +23,7 @@ interface Props {
 }
 
 const StandardPublicApp = ({ locales = {}, children }: Props) => {
+    const { APP_NAME } = useConfig();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const history = useHistory();
@@ -35,7 +38,7 @@ const StandardPublicApp = ({ locales = {}, children }: Props) => {
                 getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
                 getClosestLocaleCode(browserLocale, locales);
             return Promise.all([
-                loadCryptoWorker(),
+                loadCryptoWorker(getCryptoWorkerOptions(APP_NAME)),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);
