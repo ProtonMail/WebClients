@@ -39,6 +39,20 @@ export function reportError(error: any) {
     traceError(error);
 }
 
+/**
+ * generateErrorHandler generates error handler calling callback if the error
+ * is not ignored error.
+ */
+export function generateErrorHandler(callback: (error: any) => void) {
+    return (error: any) => {
+        if (isIgnoredErrorForReporting(error)) {
+            return;
+        }
+
+        callback(error);
+    };
+}
+
 export function useErrorHandler() {
     const { createNotification } = useNotifications();
 
