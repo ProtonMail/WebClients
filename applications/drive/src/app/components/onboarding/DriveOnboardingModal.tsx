@@ -3,18 +3,20 @@ import { c, msgid } from 'ttag';
 import {
     Button,
     Icon,
+    InnerModal,
+    Loader,
+    ModalTwo,
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
     OnboardingStepRenderCallback,
-    useUser,
 } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
-import extraSpaceGift from './extraSpaceGift';
+import useChecklist from './useChecklist';
 
 interface Props {
     showGenericSteps?: boolean;
@@ -23,10 +25,21 @@ interface Props {
 }
 
 const DriveOnboardingModal = (props: Props) => {
-    const [user] = useUser();
     const appName = getAppName(APPS.PROTONDRIVE);
 
-    const remainingDaysForGift = extraSpaceGift(user);
+    const { isLoading, expiresInDays } = useChecklist();
+
+    if (isLoading) {
+        return (
+            <ModalTwo open={true} size="small">
+                <InnerModal className="mt2 mb2">
+                    <div className="flex flex-column flex-align-items-center">
+                        <Loader size="medium" className="mt1 mb1" />
+                    </div>
+                </InnerModal>
+            </ModalTwo>
+        );
+    }
 
     const onboardingSteps = [
         ({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
@@ -39,7 +52,7 @@ const DriveOnboardingModal = (props: Props) => {
                 />
                 <footer>
                     <Button size="large" color="norm" fullWidth onClick={onNext}>
-                        {displayGenericSteps || remainingDaysForGift > 0
+                        {displayGenericSteps || expiresInDays > 0
                             ? c('Onboarding Action').t`Next`
                             : c('Onboarding Action').t`Start using ${appName}`}
                     </Button>
@@ -48,7 +61,7 @@ const DriveOnboardingModal = (props: Props) => {
         ),
     ];
 
-    if (remainingDaysForGift > 0) {
+    if (expiresInDays > 0) {
         onboardingSteps.push(({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
                 <OnboardingContent
@@ -59,9 +72,9 @@ const DriveOnboardingModal = (props: Props) => {
                 />
                 <div>
                     {c('Onboarding Info').ngettext(
-                        msgid`Simply complete the following in the next ${remainingDaysForGift} day:`,
-                        `Simply complete the following in the next ${remainingDaysForGift} days:`,
-                        remainingDaysForGift
+                        msgid`Simply complete the following in the next ${expiresInDays} day:`,
+                        `Simply complete the following in the next ${expiresInDays} days:`,
+                        expiresInDays
                     )}
                     <ul className="unstyled mt1">
                         <li className="my0-5">
