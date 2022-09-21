@@ -2,6 +2,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
+    screenSize = 'any.web.screen_size',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -11,7 +12,12 @@ export enum TelemetrySimpleLoginEvents {
     go_to_simplelogin = 'go_to_simplelogin',
 }
 
-export type TelemetryEvents = TelemetrySimpleLoginEvents;
+export enum TelemetryScreenSizeEvents {
+    load = 'load',
+    resize = 'resize',
+}
+
+export type TelemetryEvents = TelemetrySimpleLoginEvents | TelemetryScreenSizeEvents;
 
 export const sendTelemetryData = (data: {
     MeasurementGroup: TelemetryMeasurementGroups;
