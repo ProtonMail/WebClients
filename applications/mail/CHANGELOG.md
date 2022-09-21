@@ -9,7 +9,7 @@
 
 -   Fixed an issue where imported contacts were not properly displayed
 -   Fixed an issue where the expiration date was not displayed in some cases
--   Fixed an issue when selecting a text in the search field would not open the search pop up
+-   Fixed an issue in which selecting text in the search field did not open the search pop-up
 
 ## Release 5.0.7 - September 7, 2022
 
