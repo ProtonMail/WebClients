@@ -1,15 +1,15 @@
-## Resealse 5.0.8 - September 21, 2022
+## Release 5.0.8 - September 21, 2022
 
 ### Improvements
 
 -   Added the ability to automatically assign a label to a sender
 -   Added the ability to automatically assign a folder to a sender
 
-### Bug fix
+### Bug fixes
 
--   Fix an issue where imported contacts were not properly display
--   Fix an issue where expiration date was not displayed in some cases
--   Fix an issue when selecting a text in the search field would not open the search pop up
+-   Fixed an issue where imported contacts were not properly displayed
+-   Fixed an issue where the expiration date was not displayed in some cases
+-   Fixed an issue in which selecting text in the search field did not open the search pop-up
 
 ## Release 5.0.7 - September 7, 2022
 
@@ -19,7 +19,7 @@
 -   Changed the emoji icon
 -   Message list improvements
 
-### Bug fix
+### Bug fixes
 
 -   Fixed an issue on label/folder name causing Safari to show the autofill
 -   Fixed an issue on the composer to avoid triggering shortcuts while a message is being sent
@@ -32,7 +32,7 @@
 -   Improved the inline attachments count verification
 -   Added a modal asking users to unsubscribe from the mailing list when moving a newsletter to SPAM
 
-### Bugfixes
+### Bug fixes
 
 -   Fixed an issue where composer crashed when adding a specific recipient
 -   Fixed an issue where contacts could not be merged
