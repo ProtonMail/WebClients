@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useApi, useAppTitle, useCalendarBootstrap, useModalState, useNotifications } from '@proton/components';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
-import { getIsCalendarWritable, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
     getAutoDetectPrimaryTimezone,
@@ -434,7 +434,7 @@ const CalendarContainer = ({
                 <ShareCalendarInvitationModal
                     {...shareCalendarInvitationModal}
                     addresses={addresses}
-                    personalCalendars={calendars.filter(unary(getIsPersonalCalendar))}
+                    calendars={calendars}
                     user={user}
                     invitation={shareCalendarInvitation}
                 />
