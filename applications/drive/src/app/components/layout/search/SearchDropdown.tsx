@@ -51,7 +51,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                                 ? c('Info')
                                       .t`Private search enabled. You may now close this dialogue and search for files and folders.`
                                 : c('Info')
-                                      .jt`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we’ll let you know when indexing is done.`}
+                                      .t`To enable truly private search, we need to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we’ll let you know when indexing is done.`}
                         </p>
                     </div>
                     {showProgress && <SearchIndexingProgress />}
