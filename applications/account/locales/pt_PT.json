@@ -470,6 +470,9 @@
       "Set catch-all": [
         "Definir captura-tudo"
       ],
+      "Share": [
+        "Partilhar"
+      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -802,6 +805,11 @@
       ],
       "Send": [
         "Enviar"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Endereço de email"
       ]
     },
     "Calendar status": {
@@ -1210,8 +1218,17 @@
       "Condition incomplete": [
         "Condição incompleta"
       ],
+      "Contact signature could not be verified": [
+        "Impossível verificar a assinatura do contacto"
+      ],
+      "Contact signature not verified": [
+        "Assinatura do contacto não verificada"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
+      ],
+      "Email address disabled": [
+        "Endereço de email desactivado"
       ],
       "Email is not valid": [
         "Email inválido"
@@ -1273,6 +1290,9 @@
       "Invalid verification code": [
         "Código de verificação inválido"
       ],
+      "Missing signature": [
+        "Assinatura em falta"
+      ],
       "Name on card required": [
         "É necessário o nome no cartão"
       ],
@@ -1282,8 +1302,14 @@
       "No active sessions": [
         "Sem sessões activas"
       ],
+      "No keys retrieved for internal user": [
+        "Sem chaves recuperadas para o utilizador interno"
+      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
       ],
       "Not a valid number": [
         "Número inválido"
@@ -1342,6 +1368,9 @@
       "Require at least one condition": [
         "Requer pelo menos uma condição"
       ],
+      "Signature not verified": [
+        "Assinatura não verificada"
+      ],
       "Signature verification failed": [
         "Falha ao verificar a assinatura"
       ],
@@ -1356,6 +1385,9 @@
       ],
       "Tab closed": [
         "Separador fechado"
+      ],
+      "The address might be misspelled": [
+        "O endereço pode estar errado"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Por favor, utilize outro navegador ou inicie sessão via computador."
@@ -1384,6 +1416,9 @@
       "The organization key must be activated first.": [
         "Tem de activar a chave da organização primeiro."
       ],
+      "The sending key is not valid": [
+        "A chave de envio não é válida"
+      ],
       "The session has expired. Please sign in again.": [
         "A sessão expirou. Por favor, inicie sessão novamente."
       ],
@@ -1395,6 +1430,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Chaves confiáveis não são válidas para enviar"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -1790,6 +1828,9 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Acção"
+      ],
       "Actions": [
         "Acções"
       ],
@@ -1819,6 +1860,9 @@
       ],
       "Time": [
         "Hora"
+      ],
+      "User": [
+        "Utilizador"
       ]
     },
     "Header for addresses table": {
@@ -3033,6 +3077,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Para evitar qualquer interrupção do serviço devido a facturas por pagar, por favor certifique-se de que tem pelo menos 1 método de pagamento válido gravado em qualquer altura no passado."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Adicionar etiqueta"
       ]
     },
     "Invoice state display as badge": {
@@ -4618,6 +4667,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Endereço de email não encontrado entre as IDs de utilizador definidas na chave de envio (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Como contactar consigo"
@@ -4830,6 +4884,11 @@
       ],
       "Labels": [
         "Etiquetas"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Adicionar etiqueta"
       ]
     },
     "Signup label": {
@@ -5542,9 +5601,6 @@
       ],
       "Settings": [
         "Definições"
-      ],
-      "Share outside Proton": [
-        "Partilhar fora do Proton"
       ],
       "Short domain (@pm.me)": [
         "Domínio curto (@pm.me)"

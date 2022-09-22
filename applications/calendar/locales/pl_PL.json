@@ -4,6 +4,14 @@
     "language": "pl_PL"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Pełny odczyt (zobacz wszystkie szczegóły wydarzeń)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Ograniczony odczyt (informacja o stanie wolny/zajęty)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Samouczek ${ BRAND_NAME }"
@@ -113,6 +121,12 @@
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
       ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Create": [
+        "Utwórz"
+      ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
@@ -124,6 +138,9 @@
       ],
       "Customize": [
         "Dostosuj"
+      ],
+      "Decline invite": [
+        "Odrzuć zaproszenie"
       ],
       "Delete": [
         "Usuń"
@@ -239,6 +256,9 @@
       "Import from .csv or vCard": [
         "Importuj z pliku CSV lub vCard"
       ],
+      "Join calendar": [
+        "Dołącz do kalendarza"
+      ],
       "Load image": [
         "Załaduj obraz"
       ],
@@ -250,6 +270,9 @@
       ],
       "Make this participant required": [
         "Uczestnik wymagany"
+      ],
+      "Manage addresses": [
+        "Zarządzaj adresami"
       ],
       "Mark for deletion": [
         "Oznacz do usunięcia"
@@ -295,6 +318,9 @@
       ],
       "No, I won't attend": [
         "Nie będę uczestniczyć"
+      ],
+      "No, thanks": [
+        "Nie, dziękuję"
       ],
       "OK": [
         "OK"
@@ -486,6 +512,14 @@
         "Tak, będę uczestniczyć"
       ]
     },
+    "Action title": {
+      "Share with anyone": [
+        "Udostępnij komukolwiek"
+      ],
+      "Share with Proton users": [
+        "Udostępnij użytkownikom Proton"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } lub ${ importContact }."
@@ -606,6 +640,11 @@
         "Opcjonalnie"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Wkrótce"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Dostęp beta umożliwia korzystanie z wersji beta aplikacji ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }, przed ich publicznym udostępnieniem. Oznacza to, że możesz jako pierwszy testować nowe usługi, aktualizacje i funkcje."
@@ -690,6 +729,11 @@
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Adres e-mail"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Będziesz uczestniczył?"
@@ -722,6 +766,45 @@
       ],
       "You tentatively accepted the invitation": [
         "Wstępnie zaakceptowano zaproszenie"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Tylko Ty możesz zobaczyć etykietę"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Możesz zmienić lub usunąć uprawnienia w dowolnym momencie."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Uprawnienia"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Posiadasz już dostęp do tego kalendarza"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Zarządzaj linkami"
+      ],
+      "Manage members": [
+        "Zarządzaj użytkownikami"
+      ],
+      "Unable to create more calendar links": [
+        "Nie można utworzyć więcej linków kalendarzy"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Edycja (tworzenie i edytowanie szczegółów wydarzeń)"
+      ],
+      "Full view (see all event details)": [
+        "Pełny odczyt (zobacz wszystkie szczegóły wydarzeń)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1975,6 +2058,9 @@
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
+      "Account does not exist": [
+        "Konto nie istnieje"
+      ],
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
       ],
@@ -2116,6 +2202,9 @@
       "No keys retrieved for internal user": [
         "Nie odzyskano kluczy dla wewnętrznego użytkownika"
       ],
+      "No public key for Proton address": [
+        "Brak klucza publicznego dla adresu Proton"
+      ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
       ],
@@ -2194,6 +2283,9 @@
       "Start time must be before end time": [
         "Czas rozpoczęcia musi być wcześniejszy niż czas zakończenia"
       ],
+      "The address might be misspelled": [
+        "Adres mógł zostać błędnie wpisany"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Nazwa folderu jest nieprawidłowa. Wpisz inną nazwę."
       ],
@@ -2250,6 +2342,11 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Zaproszony adres nie istnieje"
       ]
     },
     "Error importing calendar": {
@@ -2949,11 +3046,20 @@
       "and": [
         "i"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Każdy, kto posiada link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Każdy, kto posiada link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Zaproszenie może posiadać maksymalnie 100 uczestników"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "Udostępniając wszystkie szczegóły wydarzenia w kalendarzu, akceptujesz przyznanie dostępu usłudze Proton do zaszyfrowanych danych kalendarza."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nie pamiętasz hasła? Aby odrzucić powiadomienie, możesz usunąć dane wszystkich kontaktów zaszyfrowanych tym kluczem."
@@ -3095,6 +3201,12 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
+      "Link created": [
+        "Link został utworzony"
       ],
       "Loading": [
         "Ładowanie"
@@ -3461,6 +3573,19 @@
         "Wiele kontaktów wygląda identycznie. ${ mergeAction }"
       ]
     },
+    "Input label": {
+      "Access": [
+        "Dostęp"
+      ],
+      "Label (optional)": [
+        "Etykieta (opcjonalnie)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Dodaj etykietę"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "Zagrożony"
@@ -3766,6 +3891,9 @@
       ],
       "Wonderful": [
         "Wspaniale"
+      ],
+      "Your calendar URL": [
+        "Twój adres URL kalendarza"
       ]
     },
     "Label for contact group color": {
@@ -3898,7 +4026,31 @@
         "Zarządzaj kalendarzami"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Nie można dodać więcej kalendarzy. Osiągnięto maksymalną liczbę subskrybowanych kalendarzy."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Nie można utworzyć więcej kalendarzy. Osiągnięto maksymalną liczbę osobistych kalendarzy."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "Użytkownik ${ calendarOwnerDisplayName } udostępnił Ci kalendarz ${ boldCalendarName }."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Dołącz do kalendarza"
+      ],
+      "Unable to join more calendars": [
+        "Nie można dołączyć do więcej kalendarzy"
+      ]
+    },
     "Modal title": {
+      "Share calendar": [
+        "Udostępnij kalendarz"
+      ],
       "Time zone changed": [
         "Strefa czasowa została zmieniona"
       ],
@@ -4092,6 +4244,22 @@
       ],
       "Contact group updated": [
         "Grupa kontaktów została zaktualizowana"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Użytkownik został dodany",
+        "Użytkownicy zostali dodani",
+        "Użytkownicy zostali dodani",
+        "Użytkownicy zostali dodani"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Zaproszenie zostało odrzucone"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Dołączono do kalendarza ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4385,11 +4553,6 @@
         "Rozwiń listę uczestników"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nie można utworzyć więcej kalendarzy. Osiągnięto maksymalną liczbę osobistych kalendarzy."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klucz nie może zostać użyty do szyfrowania"
@@ -4555,6 +4718,26 @@
         "Nie udało się zaktualizować ustawień"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS })"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Dodaj konta Proton, którym chcesz udostępnić kalendarz ${ calendarName }. Użytkownicy otrzymają zaproszenia."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Dodaj użytkowników lub grupy"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Udostępnij użytkownikom Proton"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Zarządzaj kalendarzem"
@@ -4576,17 +4759,11 @@
       "Invite friends and earn rewards!": [
         "Zaproś znajomych i zarabiaj nagrody!"
       ],
-      "No more missed appointments": [
-        "Koniec z przegapionymi wydarzeniami"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Zaproszenia pojawią się w Twoim kalendarzu jako wydarzenia oczekujące. Otwórz wydarzenie, aby odpowiedzieć. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Wypróbuj ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Zdecyduj, o jakich wydarzeniach i kiedy chcesz być powiadamiany."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Dodaj powiadomienia do subskrybowanych kalendarzy."
@@ -4632,11 +4809,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Funkcja subskrybowania kalendarza jest obecnie niedostępna"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Nie można dodać więcej kalendarzy. Osiągnięto maksymalną liczbę subskrybowanych kalendarzy."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4972,6 +5144,9 @@
       "Create new group": [
         "Utwórz nową grupę"
       ],
+      "Create public link": [
+        "Utwórz link"
+      ],
       "Currency": [
         "Waluta"
       ],
@@ -5241,6 +5416,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Zaproszono tych samych uczestników"
+      ],
+      "Your calendar link": [
+        "Twój link kalendarza"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Darmowa wersja próbna zakończy się ${ formattedEndDate }"

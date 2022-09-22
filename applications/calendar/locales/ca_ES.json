@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
+      "Copy link": [
+        "Copiar enllaç"
+      ],
+      "Create": [
+        "Crear"
+      ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
@@ -247,6 +253,9 @@
       "Make this participant required": [
         "Fer obligatori aquest participant"
       ],
+      "Manage addresses": [
+        "Gestionar adreces"
+      ],
       "Mark for deletion": [
         "Marcar per eliminar"
       ],
@@ -291,6 +300,9 @@
       ],
       "No, I won't attend": [
         "No, no hi assistiré"
+      ],
+      "No, thanks": [
+        "No, gràcies"
       ],
       "OK": [
         "D'acord"
@@ -681,6 +693,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Adreça de correu electrònic"
       ]
     },
     "Calendar invite buttons label": {
@@ -2097,6 +2114,9 @@
       "Start time must be before end time": [
         "L’hora d’inici ha de ser abans de l’hora de finalització"
       ],
+      "The address might be misspelled": [
+        "És possible que l'adreça estigui mal escrita"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "El nom de la carpeta no és vàlid. Escolliu-ne un de diferent."
       ],
@@ -2849,6 +2869,9 @@
       "Learn more": [
         "Saber-ne més"
       ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls"
+      ],
       "Loading": [
         "Carregant"
       ],
@@ -3198,6 +3221,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Diversos contactes semblen idèntics. ${ mergeAction }"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Afegeix etiqueta"
       ]
     },
     "Key badge": {
@@ -4207,9 +4235,6 @@
       "Invite friends and earn rewards!": [
         "Convideu amistats i guanyeu recompenses!"
       ],
-      "No more missed appointments": [
-        "No hi ha més cites perdudes"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
       ]
@@ -4829,6 +4854,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Heu convidat a participants amb correus electrònics equivalents"
+      ],
+      "Your calendar link": [
+        "Enllaç del vostre calendari"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "El vostre període de prova acaba aviat, el ${ formattedEndDate }"

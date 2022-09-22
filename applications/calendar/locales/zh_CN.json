@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
+      "Copy link": [
+        "复制链接"
+      ],
+      "Create": [
+        "创建"
+      ],
       "Create a new contact group": [
         "创建新联系人群组"
       ],
@@ -124,6 +130,9 @@
       ],
       "Customize": [
         "定制"
+      ],
+      "Decline invite": [
+        "拒绝邀请"
       ],
       "Delete": [
         "删除"
@@ -233,6 +242,9 @@
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
       ],
+      "Join calendar": [
+        "加入日历"
+      ],
       "Load image": [
         "加载图片"
       ],
@@ -244,6 +256,9 @@
       ],
       "Make this participant required": [
         "必须包含此参与者"
+      ],
+      "Manage addresses": [
+        "管理邮箱地址"
       ],
       "Mark for deletion": [
         "标记为待删除"
@@ -289,6 +304,9 @@
       ],
       "No, I won't attend": [
         "不，我不会参加"
+      ],
+      "No, thanks": [
+        "不，谢谢"
       ],
       "OK": [
         "确定"
@@ -682,6 +700,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "邮箱地址"
       ]
     },
     "Calendar invite buttons label": {
@@ -1939,6 +1962,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "Account does not exist": [
+        "账户不存在"
+      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -2071,11 +2097,17 @@
       "No keys retrieved for internal user": [
         "没有为内部用户检索到密钥"
       ],
+      "No public key for Proton address": [
+        "未找到 Proton 邮箱的公钥"
+      ],
       "No valid address found": [
         "未找到有效地址"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "没有为内部用户检索到的密钥用于发送"
+      ],
+      "Not a Proton account": [
+        "不是 Proton 账户"
       ],
       "Not a valid number": [
         "无效号码"
@@ -2110,6 +2142,9 @@
       "Primary key retrieved for internal user is not valid for sending": [
         "内部用户的主密钥无效，无法发送邮件"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "已删除重复收件人：${ joinedRecipients }"
+      ],
       "Request timed out": [
         "请求超时"
       ],
@@ -2139,6 +2174,9 @@
       ],
       "Start time must be before end time": [
         "起始时间必须早于结束时间"
+      ],
+      "The address might be misspelled": [
+        "地址可能拼写不正确"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
@@ -2181,6 +2219,9 @@
       ],
       "Unknown error": [
         "未知错误"
+      ],
+      "Validation error": [
+        "验证失败"
       ],
       "You can't send a mail to more than 100 recipients": [
         "您不能给100 位以上收件人发送邮件"
@@ -2787,11 +2828,20 @@
       "and": [
         "和"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "任何有此链接的人都可以查看此日历的所有事件详情。例如标题、地点或参与者。"
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
+      ],
       "At most 100 participants are allowed per invitation": [
         "每次邀请的上限是 100 人"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "分享此日历的全部事件详情，即表示您同意授权 Proton 访问此日历的加密信息。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告"
@@ -2927,6 +2977,12 @@
       ],
       "Learn more": [
         "了解详情"
+      ],
+      "Link copied to clipboard": [
+        "链接已复制到剪贴板"
+      ],
+      "Link created": [
+        "链接已创建"
       ],
       "Loading": [
         "加载中"
@@ -3290,6 +3346,11 @@
         "多名联系人重复。${ mergeAction }"
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "添加标签"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "已泄露"
@@ -3592,6 +3653,9 @@
       ],
       "Wonderful": [
         "非常好"
+      ],
+      "Your calendar URL": [
+        "您的日历链接"
       ]
     },
     "Label for contact group color": {
@@ -3716,6 +3780,11 @@
       ],
       "Manage calendars": [
         "管理日历"
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "加入日历"
       ]
     },
     "Modal title": {
@@ -4124,11 +4193,6 @@
         "展开参与者列表"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "无法创建更多的日历。你已经达到了你的计划中个人日历的上限。"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
@@ -4309,17 +4373,11 @@
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
       ],
-      "No more missed appointments": [
-        "不再错过任何日程"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "现在，邀请将在您的日历中显示为待处理事件。 只需打开事件就可以回复。 ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "您现在可以向订阅的日历添加通知了。"
@@ -4365,11 +4423,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "订阅日历功能目前不可用"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "无法添加更多日历。你已经达到了你的计划内订阅日历的上限。"
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4947,6 +5000,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "您已通过相同的邮件邀请了参与者"
+      ],
+      "Your calendar link": [
+        "您的日历链接"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用期将于 ${ formattedEndDate } 结束"

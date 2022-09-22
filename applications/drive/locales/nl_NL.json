@@ -692,54 +692,6 @@
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
-      "Syncing": [
-        "Synchroniseren"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Agenda kon niet ontsleuteld worden"
-      ],
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle activiteiten verschijnen."
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        "Agendalink is niet toegankelijk"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Agendalink is tijdelijk ontoegankelijk"
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er is meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Unsupported calendar format": [
-        "Niet-ondersteunde agenda-indeling"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Agendalink is niet toegankelijk van buiten de agendaprovider's ecosysteem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Inklappen"
@@ -1728,9 +1680,6 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A problem occurred, please try again": [
-        "Er is een probleem opgetreden, probeer het opnieuw"
-      ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
       ],
@@ -1846,9 +1795,6 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
-      ],
-      "Please activate your content search again": [
-        "Activeer het zoeken naar inhoud opnieuw"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
@@ -2482,9 +2428,6 @@
       "Downloading": [
         "Downloaden"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Sleep bestanden hierheen of blader naar bestanden om te uploaden."
-      ],
       "Drop the file here to upload": [
         "Sleep het bestand om te uploaden"
       ],
@@ -2816,9 +2759,6 @@
       "Secure sharing": [
         "Veilig delen"
       ],
-      "Secure your documents and data": [
-        "Waarborg uw bestanden en gegevens"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecteer een geüpload bestand of map en maak er een link naartoe."
       ],
@@ -2875,9 +2815,6 @@
       ],
       "Swiss privacy": [
         "Zwitserse privacy"
-      ],
-      "Tap the + button to upload a file or folder.": [
-        "Tik de +-knop om een bestand of folder te uploaden."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
@@ -3856,18 +3793,8 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Map aanmaken"
-      ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Begin met het gebruik van Proton Drive en wij upgraden uw account gratis naar 1 GB!"
-      ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Vul het volgende in in de volgende ${ remainingDaysForGift } dag",
-        "Vul het volgende in in de volgende ${ remainingDaysForGift } dagen"
       ],
       "Upload a file": [
         "Upload een bestand"
@@ -3899,9 +3826,6 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Welkom bij ${ appName }"
-      ],
-      "Your welcome gift": [
-        "Uw welkomstgeschenk"
       ]
     },
     "Option": {

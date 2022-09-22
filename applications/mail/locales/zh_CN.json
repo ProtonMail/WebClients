@@ -2882,9 +2882,6 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again": [
-        "出错了，请重试"
-      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -3043,9 +3040,6 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
-      ],
-      "Please activate your content search again": [
-        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -4053,9 +4047,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "正在下载邮件：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
       ],
       "Draft": [
         "草稿"
@@ -5236,12 +5227,6 @@
       ],
       "Also archive": [
         "同时存档"
-      ],
-      "Always label senders emails": [
-        "始终标记发件人电子邮件"
-      ],
-      "Always move senders emails": [
-        "始终移除发件人电子邮件"
       ],
       "Attach screenshot(s)": [
         "截图"
@@ -7386,9 +7371,6 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"

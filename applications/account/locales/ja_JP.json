@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Access level": {
-      "Full": [
-        "フル"
-      ],
       "Full view": [
         "フルビュー"
-      ],
-      "Limited": [
-        "限定"
       ],
       "Limited view": [
         "限定ビュー"
@@ -673,6 +667,9 @@
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
+      "Share": [
+        "共有"
+      ],
       "Share via link": [
         "リンクで共有"
       ],
@@ -1122,9 +1119,19 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "メールアドレス"
+      ]
+    },
     "Calendar edit button tooltip": {
       "Edit calendar information": [
         "カレンダー情報を編集"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "選択したカレンダーの全イベントを含む ICS ファイルをダウンロードします。"
       ]
     },
     "Calendar import section description": {
@@ -2589,6 +2596,12 @@
       "Condition incomplete": [
         "条件が不完全です"
       ],
+      "Contact signature could not be verified": [
+        "連絡先の署名を確認できませんでした"
+      ],
+      "Contact signature not verified": [
+        "連絡先の署名が検証されていません"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除"
       ],
@@ -2597,6 +2610,9 @@
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。後でもう一度お試しください。"
+      ],
+      "Email address disabled": [
+        "メールアドレスが無効です"
       ],
       "Email is not valid": [
         "メールアドレスが無効です"
@@ -2682,6 +2698,9 @@
       "Missing key packet": [
         "キーパケットが利用できません"
       ],
+      "Missing signature": [
+        "署名がありません"
+      ],
       "Name does not match": [
         "名前が一致しません"
       ],
@@ -2700,8 +2719,14 @@
       "No contacts found to import": [
         "インポートする連絡先が見つかりません"
       ],
+      "No keys retrieved for internal user": [
+        "内部ユーザーの鍵が取得できません"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "ユーザーのWKD 鍵が送信に使用できません"
       ],
       "Not a valid number": [
         "無効な番号です"
@@ -2772,6 +2797,9 @@
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
       ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "内部ユーザー用に取得されたプライマリー鍵は送信に使用できません"
+      ],
       "Process aborted": [
         "処理が中断されました"
       ],
@@ -2783,6 +2811,9 @@
       ],
       "Require at least one condition": [
         "少なくとも 1 つの条件が必要です"
+      ],
+      "Signature not verified": [
+        "署名が検証されていません"
       ],
       "Signature verification failed": [
         "署名の検証に失敗しました"
@@ -2804,6 +2835,9 @@
       ],
       "Tab closed": [
         "タブが閉じられました"
+      ],
+      "The address might be misspelled": [
+        "アドレスの綴りが違う可能性があります"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
@@ -2841,6 +2875,9 @@
       "The organization key must be activated first.": [
         "組織の鍵を最初に有効にする必要があります。"
       ],
+      "The sending key is not valid": [
+        "送信用の鍵が有効ではありません"
+      ],
       "The session has expired. Please sign in again.": [
         "セッションがタイムアウトしました。再度サインインしてください。"
       ],
@@ -2861,6 +2898,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
+      ],
+      "Trusted keys are not valid for sending": [
+        "信頼された鍵が送信に使用できません"
       ],
       "Unknown error": [
         "不明なエラー"
@@ -3383,11 +3423,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "アクション"
+      ],
       "Actions": [
         "操作"
-      ],
-      "Calendar": [
-        "カレンダー"
       ],
       "Event": [
         "イベント"
@@ -3418,6 +3458,9 @@
       ],
       "Time": [
         "日時"
+      ],
+      "User": [
+        "ユーザー"
       ]
     },
     "Header for addresses table": {
@@ -4230,9 +4273,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のラベルを設定します。"
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "あなたのカレンダーへのリンクを作成し、非 Proton ユーザーに共有します。予定の追加・削除が行えるのはあなただけです。"
-      ],
       "Create a new account and share the email address and password with the user.": [
         "アカウントを作成してメールアドレスとパスワードをユーザーにシェアします。"
       ],
@@ -4598,9 +4638,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "あなたが宛先の方のプライバシーに配慮していることを伝えましょう。"
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "限定ビュー: 他のユーザーはあなたの予定の有無を確認できます。フルビュー: 名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
       ],
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました"
@@ -5013,9 +5050,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューをサポートしていません。ファイルをダウンロードしてください。"
       ],
-      "This calendar will be removed from your account.": [
-        "このカレンダーはアカウントから削除されます。"
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "この処理には機器により、数秒から数分を要します。"
       ],
@@ -5334,9 +5368,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "サブスクリプションをキャンセルする前に、すべての個人のカレンダーと共有中のカレンダーのリンクを削除する必要があります。"
       ],
-      "You need to have a personal calendar to create a link.": [
-        "リンクを作成するには個人用カレンダーが必要です。"
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "イベントを ICS からインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
@@ -5493,6 +5524,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "未払いによるサービスの中断を避けるため、少なくとも 1 つの有効な支払い方法を設定しておく必要があります。"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "ラベルを追加"
       ]
     },
     "Invoice state display as badge": {
@@ -5806,6 +5842,9 @@
       ]
     },
     "Knowledge base link label": {
+      "Here's how": [
+        "詳細情報"
+      ],
       "Learn more": [
         "詳細"
       ]
@@ -6597,9 +6636,6 @@
       "Your calendar URL": [
         "カレンダーの URL"
       ],
-      "Your calendar URL label": [
-        "あなたのカレンダー URL ラベル"
-      ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ],
@@ -7211,9 +7247,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (Web ベータ)"
-      ],
       "${ n } custom email domain": [
         "${ n } 件の独自メールドメイン"
       ],
@@ -7406,6 +7439,20 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7451,20 +7498,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8326,6 +8359,11 @@
         "ラベル"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "ラベルを追加"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "表示名"
@@ -8373,14 +8411,8 @@
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
       ],
-      "No more missed appointments": [
-        "予定を通知する"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "メール通知で、予定をいつ通知するかを選択できます。"
       ]
     },
     "State": {
@@ -9455,9 +9487,6 @@
       "Settings": [
         "設定"
       ],
-      "Share outside Proton": [
-        "Proton 外に共有"
-      ],
       "Short domain (@pm.me)": [
         "短縮ドメイン (@pm.me)"
       ],
@@ -9809,9 +9838,6 @@
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Mail の有料プランにアップグレードすると、最大 ${ MAX_CALENDARS_PAID } 件のカレンダーを作成できるようになり、仕事用、友人との共有用、個人用などのカレンダーを作成できます。"
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Mail の有料プランにアップグレードすると、パーソナルカレンダーをリンク経由で誰とでも共有できます。"
       ]
     },
     "User role": {

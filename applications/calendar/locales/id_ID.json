@@ -4,6 +4,14 @@
     "language": "id_ID"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Tampilan penuh (lihat seluruh rincian acara)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Tampilan terbatas (hanya tampilkan yang lowong/sibuk)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
@@ -113,6 +121,12 @@
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
+      "Copy link": [
+        "Salin tautan"
+      ],
+      "Create": [
+        "Buat"
+      ],
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
@@ -124,6 +138,9 @@
       ],
       "Customize": [
         "Sesuaikan"
+      ],
+      "Decline invite": [
+        "Tolak undangan"
       ],
       "Delete": [
         "Hapus"
@@ -233,6 +250,9 @@
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
       ],
+      "Join calendar": [
+        "Gabung ke kalender"
+      ],
       "Load image": [
         "Muat gambar"
       ],
@@ -244,6 +264,9 @@
       ],
       "Make this participant required": [
         "Jadikan peserta ini wajib"
+      ],
+      "Manage addresses": [
+        "Kelola alamat"
       ],
       "Mark for deletion": [
         "Tandai untuk dihapus"
@@ -289,6 +312,9 @@
       ],
       "No, I won't attend": [
         "Tidak, saya tidak akan datang"
+      ],
+      "No, thanks": [
+        "Tidak, terima kasih"
       ],
       "OK": [
         "OK"
@@ -480,6 +506,22 @@
         "Ya, saya akan datang"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Siapapun yang memiliki tautan ini akan dapat melihat kalender Anda"
+      ],
+      "They can view or edit your calendar": [
+        "Mereka dapat melihat atau menyunting kalender Anda"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "Bagikan kepada siapa saja"
+      ],
+      "Share with Proton users": [
+        "Bagikan dengan pengguna Proton"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } atau ${ importContact }."
@@ -600,6 +642,11 @@
         "Opsional"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Segera hadir"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Akses Beta memungkinkan Anda untuk menggunakan versi beta dari ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } sebelum mereka dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
@@ -684,6 +731,11 @@
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Alamat email"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Hadiri?"
@@ -716,6 +768,54 @@
       ],
       "You tentatively accepted the invitation": [
         "Anda sementara menerima undangan"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Hanya Anda yang akan dapat melihat label"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Anda dapat mengubah atau mencabut izin yang ada kapan saja."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Izin"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Anda telah memiliki akses ke kalender ini"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Kelola tautan"
+      ],
+      "Manage members": [
+        "Kelola anggota"
+      ],
+      "Unable to create more calendar links": [
+        "Tidak dapat membuat lebih banyak tautan"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Tidak dapat membagikan kalender ini dengan pengguna Proton lainnya"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } pengguna untuk kalender ini.\nUntuk dapat membagikan kalender ini dengan pengguna Proton lainnya, silakan hapus sebagian pengguna terlebih dahulu."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Anda telah mencapai batas maksimum ${ MAX_LINKS_PER_CALENDAR } tautan untuk kalender ini.\nUntuk dapat membuat tautan baru bagi kalender ini, silakan hapus tautan yang telah ada terlebih dahulu."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Sunting (lihat, buat, dan sunting rincian acara)"
+      ],
+      "Full view (see all event details)": [
+        "Tampilan penuh (lihat seluruh rincian acara)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1939,8 +2039,14 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "Account does not exist": [
+        "Akun tidak ada"
+      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
+      ],
+      "Already a member of this calendar": [
+        "Pengguna sudah merupakan anggota kalender"
       ],
       "Answer failed to be sent": [
         "Jawaban gagal dikirim"
@@ -2039,7 +2145,7 @@
         "Undangan gagal dikirim"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "Hanya dapat membuat acara antara ${ minDateString } - ${ maxDateString }"
+        "Acara hanya dapat dibuat di antara ${ minDateString } - ${ maxDateString }"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Hanya dapat memindahkan acara antara ${ minDateString } - ${ maxDateString }"
@@ -2071,11 +2177,17 @@
       "No keys retrieved for internal user": [
         "Tidak ada kunci untuk pengguna internal yang diterima"
       ],
+      "No public key for Proton address": [
+        "Tidak ada kunci publik untuk alamat Proton"
+      ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
+      ],
+      "Not a Proton account": [
+        "Bukan akun Proton"
       ],
       "Not a valid number": [
         "Bukan nomor yang valid"
@@ -2093,7 +2205,7 @@
         "Kata sandi tidak cocok"
       ],
       "Please create an address first.": [
-        "Buat alamat dulu."
+        "Silakan buat alamat terlebih dahulu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -2109,6 +2221,9 @@
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "Kunci utama yang diambil untuk pengguna internal tidak dapat digunakan untuk pengiriman"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Penerima duplikat dihapus: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Waktu permintaan habis"
@@ -2139,6 +2254,9 @@
       ],
       "Start time must be before end time": [
         "Waktu mulai harus sebelum waktu selesai"
+      ],
+      "The address might be misspelled": [
+        "Alamat mungkin salah ketik"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
@@ -2182,6 +2300,9 @@
       "Unknown error": [
         "Galat tak diketahui"
       ],
+      "Validation error": [
+        "Kesalahan validasi"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
       ],
@@ -2196,6 +2317,11 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Alamat yang diundang tidak ada"
       ]
     },
     "Error importing calendar": {
@@ -2787,11 +2913,20 @@
       "and": [
         "dan"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Semua orang yang memiliki tautan ini akan dapat melihat seluruh rincian acara yang terdapat pada kalender ini seperti judul acara, lokasi acara, atau daftar peserta."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Maksimal 100 peserta per undangan"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "Dengan membagikan detail acara milik kalender ini secara menyeluruh, Anda mengizinkan Proton untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak ingat sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
@@ -2927,6 +3062,12 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Link copied to clipboard": [
+        "Tautan disalin ke clipboard"
+      ],
+      "Link created": [
+        "Tautan dibuat"
       ],
       "Loading": [
         "Memuat"
@@ -3198,6 +3339,9 @@
       "Yearly": [
         "Tahunan"
       ],
+      "You already joined this calendar": [
+        "Anda telah bergabung ke kalender ini"
+      ],
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab peramban lain dan mengunjungi:"
       ],
@@ -3221,6 +3365,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Karena Anda telah mengatur ulang kata sandi, seluruh acara yang terhubung dengan kalender berikut tidak dapat didekripsi.\nSeluruh kalender yang telah Anda buat sebelumnya tidak akan lagi dapat digunakan.\nSeluruh kalender aktif yang Anda langgan akan kembali disinkronkan dalam beberapa menit."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Anda sebelumnya telah menolak undangan ini. Silakan minta pemilik kalender untuk kembali mengundang Anda"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
@@ -3288,6 +3435,19 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Beberapa kontak terlihat mirip. ${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Akses"
+      ],
+      "Label (optional)": [
+        "Label (opsional)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Tambah label"
       ]
     },
     "Key badge": {
@@ -3592,6 +3752,9 @@
       ],
       "Wonderful": [
         "Luar Biasa"
+      ],
+      "Your calendar URL": [
+        "URL kalender Anda"
       ]
     },
     "Label for contact group color": {
@@ -3718,7 +3881,31 @@
         "Kelola kalender"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Tidak dapat menambahkan kalender baru. Anda telah mencapat batas jumlah langganan kalender yang diizinkan untuk paket Anda."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Tidak dapat membuat kalender baru. Anda telah mencapat batas jumlah kalender personal yang diizinkan untuk paket Anda."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } telah membagikan kalender ${ boldCalendarName } yang mereka miliki kepada Anda."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Gabung ke kalender"
+      ],
+      "Unable to join more calendars": [
+        "Tidak dapat bergabung ke kalender baru"
+      ]
+    },
     "Modal title": {
+      "Share calendar": [
+        "Bagikan kalender"
+      ],
       "Time zone changed": [
         "Zona waktu diubah"
       ],
@@ -3903,6 +4090,19 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Anggota ditambahkan"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Undangan kalender ditolak"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Bergabung ke ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4124,11 +4324,6 @@
         "Lebarkan daftar peserta"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Tidak dapat membuat lebih banyak kalender. Anda telah mencapat batas jumlah kalender personal yang diizinkan untuk paket Anda."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
@@ -4288,6 +4483,31 @@
         "Gagal memperbarui pengaturan"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Untuk mengundang pengguna non-Proton, bagikan kalender Anda melalui tautan"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Anda telah mencapai batas ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Tentukan kepada akun Proton mana saja kalender ${ calendarName } milik Anda akan dibagikan. Kami akan mengirimkan undangan kepada mereka."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Tambahkan anggota atau grup"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Bagikan dengan pengguna Proton"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Kelola kalender"
@@ -4309,17 +4529,11 @@
       "Invite friends and earn rewards!": [
         "Undang teman Anda dan dapatkan berbagai keuntungan!"
       ],
-      "No more missed appointments": [
-        "Tidak ada lagi janji yang luput"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Sekarang, undangan akan muncul pada kalender Anda sebagai acara yang menunggu balasan. Anda hanya perlu membuka acara untuk membalas. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Dengan notifikasi email, Anda dapat menentukan notifikasi seputar acara mana saja yang akan Anda terima beserta waktunya."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Anda kini dapat menambahkan notifikasi pada kalender yang Anda langgan."
@@ -4365,11 +4579,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Fitur berlangganan ke kalender saat ini belum tersedia"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Tidak dapat menambahkan lebih banyak kalender. Anda telah mencapat batas jumlah langganan kalender yang diizinkan untuk paket Anda."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4687,6 +4896,9 @@
       "Create new group": [
         "Buat grup baru"
       ],
+      "Create public link": [
+        "Buat tautan publik"
+      ],
       "Currency": [
         "Mata uang"
       ],
@@ -4948,6 +5160,9 @@
       "You have invited participants with equivalent emails": [
         "Anda telah mengundang peserta dengan surel yang sama"
       ],
+      "Your calendar link": [
+        "Tautan kalender Anda"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Uji coba gratis Anda segera berakhir pada ${ formattedEndDate }"
       ]
@@ -5078,6 +5293,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Untuk dapat mengakses kalender ini, aktifkan kembali alamat ini atau minta ${ boldCalendarOwnerEmail } untuk mengirimkan undangan baru ke alamat email yang aktif."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Anda tidak dapat bergabung ke kalender ini karena alamat email milik Anda yang diundang (${ boldInvitedAddress }) telah dinonaktifkan."
       ]
     },
     "Weekly recurring event, frequency": {

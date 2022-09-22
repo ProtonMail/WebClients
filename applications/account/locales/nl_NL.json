@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Access level": {
-      "Full": [
-        "Volledig"
-      ],
       "Full view": [
         "Volledige weergave"
-      ],
-      "Limited": [
-        "Beperkt"
       ],
       "Limited view": [
         "Beperkte weergave"
@@ -682,6 +676,9 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
+      "Share": [
+        "Delen"
+      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -1141,6 +1138,11 @@
       ],
       "Tweet": [
         "Tweeten"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "E-mailadres"
       ]
     },
     "Calendar edit button tooltip": {
@@ -2688,6 +2690,12 @@
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
       ],
+      "Contact signature could not be verified": [
+        "Contacthandtekening kan niet geverifieerd worden"
+      ],
+      "Contact signature not verified": [
+        "Handtekening van contact niet geverifieerd"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deselecteer tenminste één agenda",
         "Deselecteer tenminste ${ calendarToFixCount } agenda's"
@@ -2698,6 +2706,9 @@
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
+      ],
+      "Email address disabled": [
+        "E-mailadres uitgeschakeld"
       ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
@@ -2784,6 +2795,9 @@
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
       ],
+      "Missing signature": [
+        "Handtekening ontbreekt"
+      ],
       "Name does not match": [
         "Naam komt niet overeen"
       ],
@@ -2805,8 +2819,14 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
+      "No keys retrieved for internal user": [
+        "Geen keys ontvangen van interne gebruiker"
+      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
       ],
       "Not a valid number": [
         "Ongeldig getal"
@@ -2878,6 +2898,12 @@
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet gedecodeerd."
       ],
+      "Primary key is not valid for sending": [
+        "Primaire sleutel is niet geldig voor verzenden"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -2889,6 +2915,9 @@
       ],
       "Require at least one condition": [
         "Vereist minstens één voorwaarde"
+      ],
+      "Signature not verified": [
+        "Handtekening niet geverifieerd"
       ],
       "Signature verification failed": [
         "Handtekening controle mislukt"
@@ -2910,6 +2939,9 @@
       ],
       "Tab closed": [
         "Tab gesloten"
+      ],
+      "The address might be misspelled": [
+        "Het adres is mogelijk verkeerd gespeld"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
@@ -2947,6 +2979,9 @@
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
       ],
+      "The sending key is not valid": [
+        "De verzend-sleutel is ongeldig"
+      ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
       ],
@@ -2967,6 +3002,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -3549,11 +3587,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Actie"
+      ],
       "Actions": [
         "Acties"
-      ],
-      "Calendar": [
-        "Agenda"
       ],
       "Event": [
         "Gebeurtenis"
@@ -3585,8 +3623,8 @@
       "Time": [
         "Tijd"
       ],
-      "What others see": [
-        "Wat anderen zien"
+      "User": [
+        "Gebruiker"
       ]
     },
     "Header for addresses table": {
@@ -4469,9 +4507,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Maak een koppeling naar uw agenda en deel deze met iedereen buiten uw Proton. Alleen u kunt afspraken toevoegen of verwijderen."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Nieuw account aanmaken en het e-mailadres en wachtwoord delen met de gebruiker."
       ],
@@ -4855,9 +4890,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Laat uw contacten weten dat u om hun privacy geeft."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Beperkte weergave: anderen zien of u bezig bent. Volledige weergave: toont alle afspraakgegevens, inclusief naam, locatie of deelnemers."
       ],
       "Link copied to clipboard": [
         "Koppeling gekopieerd naar klembord"
@@ -5308,9 +5340,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
       ],
-      "This calendar will be removed from your account.": [
-        "Deze agenda zal verwijderd worden van uw account."
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
@@ -5653,9 +5682,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "U moet een persoonlijke agenda hebben om een koppeling aan te maken."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken uit ICS te importeren."
       ],
@@ -5847,6 +5873,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Om een onderbreking van uw account te voorkomen als gevolg van onbetaalde facturen, zorg ervoor dat u minstens één geldige betaalmethode toegevoegd hebt aan uw account."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Label toevoegen"
       ]
     },
     "Invoice state display as badge": {
@@ -6978,9 +7009,6 @@
       "Your calendar URL": [
         "Uw agenda-URL"
       ],
-      "Your calendar URL label": [
-        "Uw agenda-URL label"
-      ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
       ],
@@ -7623,9 +7651,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (web-bèta)"
-      ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
         "${ n } aangepaste e-maildomeinen"
@@ -7845,6 +7870,26 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -7911,26 +7956,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8603,6 +8628,11 @@
         "Maak een agenda om op de hoogte te blijven van uw planning en tegelijkertijd uw gegevens veilig te houden."
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Een manier om contact met u op te nemen"
@@ -8851,11 +8881,6 @@
         "State-of-the-art"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "Door jou op deze agenda niet meer te abonneren, zul je er geen toegang meer tot hebben. Alle gebeurtenissen uit deze agenda zullen van uw account gewist worden, maar blijven beschikbaar via de originele publieke link."
-      ]
-    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Agenda verwijderen?"
@@ -8958,6 +8983,11 @@
         "Labels"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Label toevoegen"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Weergavenaam"
@@ -9008,14 +9038,8 @@
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
       ],
-      "No more missed appointments": [
-        "Geen gemiste afspraken meer"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
       ]
     },
     "State": {
@@ -10141,9 +10165,6 @@
       "Settings": [
         "Instellingen"
       ],
-      "Share outside Proton": [
-        "Deel buiten Proton"
-      ],
       "Short domain (@pm.me)": [
         "Korte domein (@pm.me)"
       ],
@@ -10534,9 +10555,6 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Upgrade naar een betaald Mail-abonnement om tot ${ MAX_CALENDARS_PAID } kalender te maken, waardoor u agenda's kunt aanmaken voor werk, om te delen met vrienden of gewoon voor uzelf.",
         "Upgrade naar een betaald Mail-abonnement om tot ${ MAX_CALENDARS_PAID } kalenders te maken, waardoor u agenda's kunt aanmaken voor werk, om te delen met vrienden of gewoon voor uzelf."
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Upgrade naar een betaald Mail-abonnement om uw persoonlijke agenda via een link met iedereen te delen."
       ]
     },
     "User referee invited via email": {

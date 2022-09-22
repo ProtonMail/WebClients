@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Access level": {
-      "Full": [
-        "Повний"
-      ],
       "Full view": [
         "Повний перегляд"
-      ],
-      "Limited": [
-        "Обмежений"
       ],
       "Limited view": [
         "Обмежений перегляд"
@@ -565,6 +559,9 @@
       "Remove this label": [
         "Вилучити цю мітку"
       ],
+      "Remove this member": [
+        "Вилучити цього учасника"
+      ],
       "Remove this notification": [
         "Вилучити це сповіщення"
       ],
@@ -628,6 +625,9 @@
       "Revoke all other sessions": [
         "Відкликати всі інші сеанси"
       ],
+      "Revoke this invitation": [
+        "Відкликати це запрошення"
+      ],
       "Save": [
         "Зберегти"
       ],
@@ -681,6 +681,9 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
+      ],
+      "Share": [
+        "Поділитися"
       ],
       "Share via link": [
         "Спільний доступ за посиланням"
@@ -870,6 +873,16 @@
         "Спробуйте безплатно протягом 30 днів"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Схвалити"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Відхилити"
+      ]
+    },
     "Addon": {
       "+ ${ _users } user": [
         "+ ${ _users } користувач",
@@ -1004,6 +1017,9 @@
     "Badge": {
       "5 users": [
         "5 користувачів"
+      ],
+      "Coming soon": [
+        "Незабаром з'явиться"
       ]
     },
     "Badge for domain": {
@@ -1157,6 +1173,11 @@
         "Твітнути"
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Адреса е-пошти"
+      ]
+    },
     "Calendar edit button tooltip": {
       "Edit calendar information": [
         "Редагувати інформацію календаря"
@@ -1170,6 +1191,14 @@
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
+      ]
+    },
+    "Calendar invite status label": {
+      "Declined": [
+        "Відхилено"
+      ],
+      "Invite sent": [
+        "Запрошення надіслано"
       ]
     },
     "Calendar limit warning": {
@@ -1194,9 +1223,34 @@
         "Мітку змінено"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Лише ви можете бачити мітку"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Дозволи"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Створіть посилання на ваш календар і поділіться ним з будь-ким за межами Proton. Лише ви можете додавати та вилучати події."
+      ]
+    },
+    "Calendar settings section title": {
+      "Share outside Proton": [
+        "Поділитися за межами Proton"
+      ]
+    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Показати ще ${ remainingItems }"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Переглянути всі подробиці події"
       ]
     },
     "Calendar status": {
@@ -1254,6 +1308,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Відкрити налаштування"
       ]
     },
     "Calendar view": {
@@ -2686,6 +2745,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "Account does not exist": [
+        "Облікового запису не існує"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -2722,6 +2784,12 @@
       "Condition incomplete": [
         "Неповна умова"
       ],
+      "Contact signature could not be verified": [
+        "Не вдається перевірити підпис контакту"
+      ],
+      "Contact signature not verified": [
+        "Підпис для контакту не перевірено"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Приберіть принаймні ${ calendarToFixCount } календар",
         "Приберіть принаймні ${ calendarToFixCount } календарі",
@@ -2736,6 +2804,9 @@
       ],
       "Domain not available, try again later": [
         "Домен недоступний. Спробуйте ще раз пізніше"
+      ],
+      "Email address disabled": [
+        "Адреса е-пошти вимкнена"
       ],
       "Email is not valid": [
         "Е-пошта недійсна"
@@ -2824,6 +2895,9 @@
       "Missing key packet": [
         "Відсутній пакунок ключів"
       ],
+      "Missing signature": [
+        "Відсутній підпис"
+      ],
       "Name does not match": [
         "Імена відрізняються"
       ],
@@ -2845,8 +2919,14 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
+      "No keys retrieved for internal user": [
+        "Для внутрішнього користувача не отримано жодного ключа"
+      ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Для користувача не отримано жодного ключа WKD, дійсного для надсилання"
       ],
       "Not a valid number": [
         "Номер недійсний"
@@ -2920,8 +3000,20 @@
       "Primary address key is not decrypted.": [
         "Основний ключ адреси не розшифрований."
       ],
+      "Primary key is not valid for sending": [
+        "Основний ключ недійсний для надсилання"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Для внутрішнього користувача отримано недійсний основний ключ для надсилання"
+      ],
       "Process aborted": [
         "Процес перервано"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Вилучено дублікат отримувача: ${ joinedRecipients }",
+        "Вилучено дублікати отримувачів: ${ joinedRecipients }",
+        "Вилучено дублікати отримувачів: ${ joinedRecipients }",
+        "Вилучено дублікати отримувачів: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Час очікування запиту завершився"
@@ -2931,6 +3023,9 @@
       ],
       "Require at least one condition": [
         "Необхідна принаймні одна умова"
+      ],
+      "Signature not verified": [
+        "Підпис не перевірено"
       ],
       "Signature verification failed": [
         "Не вдалося перевірити підпис"
@@ -2952,6 +3047,9 @@
       ],
       "Tab closed": [
         "Вкладку закрито"
+      ],
+      "The address might be misspelled": [
+        "Ймовірно, адреса неправильна"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
@@ -2989,6 +3087,9 @@
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
       ],
+      "The sending key is not valid": [
+        "Ключ надсилання недійсний"
+      ],
       "The session has expired. Please sign in again.": [
         "Термін дії сеансу завершився. Виконайте вхід знову."
       ],
@@ -3009,6 +3110,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Довірені ключі недійсні для надсилання"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -3609,11 +3713,14 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Доступ"
+      ],
+      "Action": [
+        "Дія"
+      ],
       "Actions": [
         "Дії"
-      ],
-      "Calendar": [
-        "Календар"
       ],
       "Event": [
         "Подія"
@@ -3639,14 +3746,17 @@
       "Organization key fingerprint": [
         "Відбиток ключа організації"
       ],
+      "Permissions": [
+        "Дозволи"
+      ],
       "Status": [
         "Стан"
       ],
       "Time": [
         "Час"
       ],
-      "What others see": [
-        "Що бачать інші"
+      "User": [
+        "Користувач"
       ]
     },
     "Header for addresses table": {
@@ -4597,9 +4707,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також мітки, які ви бажаєте імпортувати."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Створіть посилання на ваш календар і надайте доступ до нього будь-кому за межами Proton. Лише ви можете додавати та вилучати події."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Створіть новий обліковий запис і поділіться адресою е-пошти й паролем з цим користувачем."
       ],
@@ -4989,9 +5096,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Дозвольте вашим контактам знати, що ви цінуєте приватність."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Обмежений перегляд: інші бачать чи ви зайняті. Повний перегляд: показує всі подробиці події, включно з іменем, розташуванням та учасниками."
       ],
       "Link copied to clipboard": [
         "Посилання скопійовано до буфера обміну"
@@ -5452,9 +5556,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
       ],
-      "This calendar will be removed from your account.": [
-        "Цей календар буде вилучено з вашого облікового запису."
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
@@ -5797,9 +5898,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Для можливості скасування передплати ви повинні вилучити будь-які додаткові особисті календарі та будь-які посилання на спільні календарі."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Щоб створити посилання, вам необхідно мати особистий календар."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Вам необхідно мати активний особистий календар для імпорту ваших подій з ICS."
       ],
@@ -5991,6 +6089,19 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Щоб уникнути будь-яких переривань роботи сервісу через несплачені рахунки, будь ласка, переконайтеся, що у вас є збережений принаймні 1 дійсний спосіб оплати."
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Доступ"
+      ],
+      "Label (optional)": [
+        "Мітка (необов'язково)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Додати мітку"
       ]
     },
     "Invoice state display as badge": {
@@ -6774,6 +6885,9 @@
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
       ],
+      "Link label": [
+        "Мітка посилання"
+      ],
       "Login password": [
         "Пароль входу"
       ],
@@ -7127,9 +7241,6 @@
       ],
       "Your calendar URL": [
         "URL-адреса вашого календаря"
-      ],
-      "Your calendar URL label": [
-        "Ярлик URL-адреси вашого календаря"
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
@@ -7789,9 +7900,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (бета для браузера)"
-      ],
       "${ n } custom email domain": [
         "${ n } власний домен",
         "${ n } власні домени",
@@ -8035,6 +8143,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8101,26 +8229,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8429,6 +8537,23 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Облікові дані OpenVPN / IKEv2 повторно згенеровано"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Запрошення видалено"
+      ],
+      "Invitation revoked": [
+        "Запрошення відкликано"
+      ],
+      "Member added": [
+        "Учасника додано",
+        "Учасників додано",
+        "Учасників додано",
+        "Учасників додано"
+      ],
+      "Member deleted": [
+        "Учасника видалено"
       ]
     },
     "Notification success": {
@@ -8813,6 +8938,11 @@
         "Створіть календар, щоб контролювати свій розклад, зберігаючи при цьому свої дані в безпеці."
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Спосіб зв'язку з вами"
@@ -9064,13 +9194,24 @@
       ]
     },
     "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Скасувавши підписку, ви більше не матимете доступу до цього календаря. Усі події в цьому календарі будуть видалені з вашого облікового запису, але вони залишаться в початковому загальнодоступному посиланні."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Ви більше не матимете доступу до цього календаря."
+      ]
+    },
+    "Remove calendar section text": {
+      "This calendar will be removed from your account.": [
+        "Цей календар буде вилучено з вашого облікового запису."
       ]
     },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Видалити календар?"
+      ],
+      "Leave calendar?": [
+        "Залишити календар?"
       ],
       "Remove calendar": [
         "Вилучити календар"
@@ -9170,6 +9311,11 @@
         "Мітки"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Додати мітку"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Показуване ім'я"
@@ -9220,14 +9366,8 @@
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
       ],
-      "No more missed appointments": [
-        "Більше жодних пропущених зустрічей"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробуйте ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Зі сповіщеннями електронної пошти, ви вирішуєте, про які події буде надіслано сповіщення й коли."
       ]
     },
     "State": {
@@ -10387,9 +10527,6 @@
       "Settings": [
         "Налаштування"
       ],
-      "Share outside Proton": [
-        "Поділитися за межами Proton"
-      ],
       "Short domain (@pm.me)": [
         "Короткий домен (@pm.me)"
       ],
@@ -10786,9 +10923,6 @@
         "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календарі та мати окремі календарі для роботи, для обміну з друзями та для себе.",
         "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календарів та мати окремі календарі для роботи, для обміну з друзями та для себе.",
         "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календарів та мати окремі календарі для роботи, друзів та для себе."
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Перейдіть на платний тарифний план Пошти, щоб надавати доступ до особистого календаря будь-кому за посиланням."
       ]
     },
     "User referee invited via email": {
