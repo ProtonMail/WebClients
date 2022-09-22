@@ -28,27 +28,27 @@ import { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPay
 const ABUSE_CATEGORIES: AbuseCategory[] = [
     {
         type: 'spam',
-        text: c('Label').t`Spam`,
+        getText: () => c('Label').t`Spam`,
     },
     {
         type: 'copyright',
-        text: c('Label').t`Copyright infringement`,
+        getText: () => c('Label').t`Copyright infringement`,
     },
     {
         type: 'child-abuse',
-        text: c('Label').t`Child sexual abuse material`,
+        getText: () => c('Label').t`Child sexual abuse material`,
     },
     {
         type: 'stolen-data',
-        text: c('Label').t`Stolen data`,
+        getText: () => c('Label').t`Stolen data`,
     },
     {
         type: 'malware',
-        text: c('Label').t`Malware`,
+        getText: () => c('Label').t`Malware`,
     },
     {
         type: 'other',
-        text: c('Label').t`Other`,
+        getText: () => c('Label').t`Other`,
     },
 ];
 
@@ -134,7 +134,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
                         value={model.Category}
                     >
                         {ABUSE_CATEGORIES.map((option) => (
-                            <Option title={option.text} value={option.type} key={option.type} />
+                            <Option title={option.getText()} value={option.type} key={option.type} />
                         ))}
                     </InputFieldTwo>
                 </div>

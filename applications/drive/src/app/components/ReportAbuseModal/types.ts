@@ -21,7 +21,7 @@ export type AbuseCateroryType = 'spam' | 'copyright' | 'child-abuse' | 'stolen-d
 
 export interface AbuseCategory {
     type: AbuseCateroryType;
-    text: string;
+    getText: () => string;
 }
 
 export interface LinkInfo {

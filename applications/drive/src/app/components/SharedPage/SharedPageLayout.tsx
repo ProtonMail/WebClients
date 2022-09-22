@@ -53,7 +53,7 @@ function SharedPageGetDriveSidebar() {
                         color="norm"
                         shape="outline"
                         as="a"
-                        href={getStaticURL('/pricing?product=drive')}
+                        href={getStaticURL('/drive/pricing?product=drive')}
                         target="_blank"
                     >
                         {c('Action').t`Get ${DRIVE_APP_NAME}`}
