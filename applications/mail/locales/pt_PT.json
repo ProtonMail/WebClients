@@ -1351,9 +1351,6 @@
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
-      "A problem occurred, please try again": [
-        "Ocorreu um problema. Por favor, tente novamente"
-      ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
@@ -1439,9 +1436,6 @@
       ],
       "Passwords do not match": [
         "As senhas não coincidem"
-      ],
-      "Please activate your content search again": [
-        "Por favor, ative a procura de conteúdo novamente"
       ],
       "Public key could not be trusted": [
         "A chave pública não pôde ser confiada"
@@ -2122,9 +2116,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Deseja assinar novamente os detalhes do contacto?"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "A transferir mensagem ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Rascunho"
@@ -3527,6 +3518,11 @@
         "Mover para..."
       ]
     },
+    "Pagination": {
+      "${ page } of ${ totalText }": [
+        "${ page } de ${ totalText }"
+      ]
+    },
     "Participant name": {
       "You": [
         "Você"
@@ -4508,9 +4504,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acção transfere todas as mensagens para que possam ser procuradas localmente. Limpar os dados do navegador desactiva esta opção."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de emails encriptados ponta-a-ponta para este email"

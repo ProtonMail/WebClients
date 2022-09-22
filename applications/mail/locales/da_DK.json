@@ -2782,9 +2782,6 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
-      "A problem occurred, please try again": [
-        "Der opstod et problem. Prøv venligst igen"
-      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -2949,9 +2946,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "Please activate your content search again": [
-        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -3944,6 +3938,9 @@
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
       ],
+      "Content: ": [
+        "Indhold: "
+      ],
       "Continue with ${ planName }": [
         "Fortsæt med ${ planName }"
       ],
@@ -4010,8 +4007,8 @@
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Downloader besked ${ esProgress } ud af ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Downloader besked ${ currentProgress } ud af ${ totalProgress }"
       ],
       "Draft": [
         "Kladde"
@@ -4555,6 +4552,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data, du har indtastet i kladden, kan ikke gemmes, hvis du forlader siden."
       ],
+      "The local database is being prepared": [
+        "Den lokale database er ved at blive klargjort"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
       ],
@@ -4585,6 +4585,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Denne handling vil downloade de seneste beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne mulighed."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -5211,12 +5214,6 @@
       ],
       "Also archive": [
         "Arkivér også"
-      ],
-      "Always label senders emails": [
-        "Giv altid afsenders e-mails en etikette"
-      ],
-      "Always move senders emails": [
-        "Flyt altid afsenders e-mails"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -7411,9 +7408,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"

@@ -576,54 +576,6 @@
         "Continuar usando ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Não sincronizado"
-      ],
-      "Syncing": [
-        "Sincronizando"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "O calendário não pôde ser descriptografado"
-      ],
-      "Calendar is syncing": [
-        "O calendário está sincronizando"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
-      ],
-      "Calendar is too big": [
-        "O calendário é grande demais"
-      ],
-      "Calendar link is not accessible": [
-        "O link do calendário está inacessível"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "O link do calendário está temporariamente inacessível"
-      ],
-      "Failed to sync calendar": [
-        "Falha ao sincronizar calendário"
-      ],
-      "More than 12 hours passed since last update": [
-        "Mais de 12 horas se passaram desde a última atualização"
-      ],
-      "Unsupported calendar format": [
-        "Formato de calendário não suportado"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Mais de 12 horas se passaram desde a última atualização — O Proton Calendar vai tentar atualizar o calendário em algumas horas."
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } usuário",
@@ -3166,9 +3118,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (beta para web)"
-      ],
       "${ n } custom email domain": [
         "${ n } domínio de e-mail personalizado",
         "${ n } domínios de e-mail personalizados"

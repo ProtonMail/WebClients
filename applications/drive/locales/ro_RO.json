@@ -549,6 +549,9 @@
       "Upload file": [
         "Încărcare fișier"
       ],
+      "Upload files": [
+        "Încărcare fișiere"
+      ],
       "Upload folder": [
         "Încărcare folder"
       ],
@@ -692,54 +695,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Nesincronizat"
-      ],
-      "Syncing": [
-        "Se sincronizează"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Calendarul nu a putut fi decriptat."
-      ],
-      "Calendar is syncing": [
-        "Calendarul se sincronizează."
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Calendarul se sincronizează: ar putea dura câteva minute ca să apară toate evenimentele din el."
-      ],
-      "Calendar is too big": [
-        "Calendarul este prea mare."
-      ],
-      "Calendar link is not accessible": [
-        "Legătura calendarului nu este accesibilă."
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Legătura calendarului nu este disponibilă momentan."
-      ],
-      "Failed to sync calendar": [
-        "Eșuare sincronizare calendar."
-      ],
-      "More than 12 hours passed since last update": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare."
-      ],
-      "Unsupported calendar format": [
-        "Format de calendar neacceptat."
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare - Proton Calendar va încerca să actualizeze calendarul în câteva ore."
       ]
     },
     "Collapsible tooltip": {
@@ -1731,7 +1686,7 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja."
       ],
-      "A problem occurred, please try again": [
+      "A problem occurred, please try again.": [
         "A apărut o eroare. Mai reîncercați."
       ],
       "Authentication canceled.": [
@@ -1855,8 +1810,8 @@
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
-      "Please activate your content search again": [
-        "Reactivați căutarea în conținutul mesajelor."
+      "Please activate your search again": [
+        "Reactivați căutarea."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
@@ -2529,9 +2484,6 @@
       "Downloading": [
         "Se descarcă"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Trageți și plasați aici sau răsfoiți fișierele pentru încărcare."
-      ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
       ],
@@ -2606,6 +2558,9 @@
       "Free up some space or contact your administrator.": [
         "Eliberați ceva spațiu sau contactați administratorul."
       ],
+      "Go ahead, upload a file": [
+        "Continuați, încărcați un fișier."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Accesați „Fișierele mele” și încărcați mai întâi câteva fișiere."
       ],
@@ -2667,6 +2622,9 @@
       ],
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Este simplu, doar atrageți și plasați sau selectați un fișier."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
@@ -2867,9 +2825,6 @@
       "Secure sharing": [
         "Partajare sigură"
       ],
-      "Secure your documents and data": [
-        "Securizați-vă documentele și datele"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selectaţi un fişier sau folder încărcat şi creaţi o legătură la acesta."
       ],
@@ -2927,8 +2882,8 @@
       "Swiss privacy": [
         "Confidențialitate elvețiană"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Atingeți butonul „+” pentru a încărca un fișier sau folder."
+      "Tap the + button to upload a file or folder": [
+        "Atingeți butonul „+” pentru a încărca un fișier sau folder"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
@@ -3929,19 +3884,19 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Creați un folder"
+      "Create a share link": [
+        "Creare legătură de partajare"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Începeți să utilizați Proton Drive și vă vom îmbunătăți contul cu 1 GB gratuit!"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Începeți să folosiți Proton Drive și vă vom dubla spațiul de stocare la 1 GB!"
       ],
       "Set a recovery method": [
         "Setați metodă de recuperare"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
         "Completați următoarele sarcini în următoarea zi.",
-        "Completați următoarele sarcini în următoarele ${ remainingDaysForGift } zile.",
-        "Completați următoarele sarcini în următoarele ${ remainingDaysForGift } de zile."
+        "Completați următoarele sarcini în următoarele ${ remainingDaysForGift } zile:",
+        "Completați următoarele sarcini în următoarele ${ remainingDaysForGift } de zile:"
       ],
       "Upload a file": [
         "Încărcați un fișier"
@@ -3974,8 +3929,8 @@
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
       ],
-      "Your welcome gift": [
-        "Cadoul de bun venit"
+      "Your welcome bonus": [
+        "Bonusul de bun venit"
       ]
     },
     "Option": {

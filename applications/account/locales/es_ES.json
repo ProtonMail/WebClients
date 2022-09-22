@@ -667,6 +667,9 @@
       "Set recovery phrase": [
         "Configura una frase de recuperación"
       ],
+      "Share": [
+        "Compartir"
+      ],
       "Share via link": [
         "Compartir con un enlace"
       ],
@@ -975,6 +978,9 @@
     "Badge": {
       "5 users": [
         "5 usuarios"
+      ],
+      "Coming soon": [
+        "Próximamente"
       ]
     },
     "Badge for domain": {
@@ -1128,6 +1134,11 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Dirección de correo electrónico"
+      ]
+    },
     "Calendar edit button tooltip": {
       "Edit calendar information": [
         "Editar información del calendario"
@@ -1147,6 +1158,32 @@
       ],
       "Label edited": [
         "Etiqueta editada"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Permisos"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Ya tenías acceso a este calendario"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Compartir calendario"
+      ],
+      "Share with anyone": [
+        "Compartir con alguien"
+      ],
+      "Share with Proton users": [
+        "Compartir con usuarios Proton"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Mostrar ${ remainingItems } más"
       ]
     },
     "Calendar status": {
@@ -2532,11 +2569,17 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
+      "Account does not exist": [
+        "La cuenta no existe"
+      ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Todo el espacio de almacenamiento ha sido asignado. Reduce el almacenamiento asignado a otros usuarios."
+      ],
+      "Already a member of this calendar": [
+        "Ya es miembro de este calendario"
       ],
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
@@ -2568,6 +2611,12 @@
       "Condition incomplete": [
         "Condición incompleta"
       ],
+      "Contact signature could not be verified": [
+        "La firma del contacto no ha podido ser verificada"
+      ],
+      "Contact signature not verified": [
+        "Firma del contacto no verificada"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deselecciona al menos ${ calendarToFixCount } calendario",
         "Deselecciona al menos ${ calendarToFixCount } calendarios"
@@ -2578,6 +2627,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtalo de nuevo más tarde"
+      ],
+      "Email address disabled": [
+        "Dirección de correo electrónico deshabilitada"
       ],
       "Email is not valid": [
         "El correo no es válido"
@@ -2664,6 +2716,9 @@
       "Missing key packet": [
         "Paquete de claves perdido"
       ],
+      "Missing signature": [
+        "No se ha encontrado la firma"
+      ],
       "Name does not match": [
         "El nombre no coincide"
       ],
@@ -2685,8 +2740,20 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar - la cuenta no tiene una bandeja de entrada"
       ],
+      "No keys retrieved for internal user": [
+        "No se ha recuperado ninguna clave para el usuario interno"
+      ],
+      "No public key for Proton address": [
+        "No hay clave pública para esta dirección Proton"
+      ],
       "No valid address found": [
         "No se ha encontrado una dirección válida"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Ninguna clave WKD recuperada para el usuario es válida para el envío"
+      ],
+      "Not a Proton account": [
+        "No es una cuenta Proton"
       ],
       "Not a valid number": [
         "No es un número válido"
@@ -2758,8 +2825,18 @@
       "Primary address key is not decrypted.": [
         "La clave principal no está descifrada."
       ],
+      "Primary key is not valid for sending": [
+        "La clave principal no es válida para realizar el envío"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clave principal recuperada para el usuario interno no es válida para el envío"
+      ],
       "Process aborted": [
         "Proceso abortado"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatario duplicado eliminado: ${ joinedRecipients }",
+        "Destinatarios duplicados eliminados: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2769,6 +2846,9 @@
       ],
       "Require at least one condition": [
         "Requiere al menos una condición"
+      ],
+      "Signature not verified": [
+        "Firma no verificada"
       ],
       "Signature verification failed": [
         "La verificación de la firma ha fallado"
@@ -2790,6 +2870,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "The address might be misspelled": [
+        "La dirección podría estar mal escrita"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que estás utilizando no permite que el pago sea autorizado. Por favor, utiliza un navegador diferente o inicia sesión a través de un ordenador."
@@ -2827,6 +2910,9 @@
       "The organization key must be activated first.": [
         "La clave de la organización debe activarse primero."
       ],
+      "The sending key is not valid": [
+        "La clave de envío no es válida"
+      ],
       "The session has expired. Please sign in again.": [
         "Su sesión ha expirado. Por favor, inicie sesión de nuevo."
       ],
@@ -2848,6 +2934,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
       ],
+      "Trusted keys are not valid for sending": [
+        "Las claves de confianza no son válidas para el envío"
+      ],
       "Unknown error": [
         "Error desconocido"
       ],
@@ -2859,6 +2948,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Los archivo cargado no son claves privada válida. Verifique e inténtelo de nuevo."
+      ],
+      "Validation error": [
+        "Error de validación"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La verificación no tuvo éxito, vuelve a intentarlo en una hora."
@@ -3152,6 +3244,9 @@
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
         "Evento @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Evento de ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3423,11 +3518,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Acción"
+      ],
       "Actions": [
         "Acciones"
-      ],
-      "Calendar": [
-        "Calendario"
       ],
       "Event": [
         "Evento"
@@ -3450,11 +3545,17 @@
       "Organization key fingerprint": [
         "Huella digital de la clave de la organización"
       ],
+      "Permissions": [
+        "Permisos"
+      ],
       "Status": [
         "Estado"
       ],
       "Time": [
         "Hora"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "Header for addresses table": {
@@ -4310,9 +4411,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Crea un enlace a tu calendario y compártelo con cualquier persona fuera de Proton. Sólo tú puedes agregar o eliminar eventos."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Crear una nueva cuenta y compartir la dirección de correo electrónico y la contraseña con el usuario."
       ],
@@ -4693,9 +4791,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Indica a tus contactos que te preocupas por su privacidad."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Vista limitada: otros ven si estás ocupado. Vista completa: muestra todos los detalles del evento, incluyendo nombre, ubicación o participantes."
       ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
@@ -5467,9 +5562,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Debes eliminar cualquier calendario personal adicional y cualquier enlace a calendarios compartidos antes de cancelar tu suscripción."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Necesitas tener un calendario personal para crear un enlace."
-      ],
       "You need to have an active personal calendar to import your events.": [
         "Tienes a disposición un calendario personal activo donde apuntar todos tus eventos."
       ],
@@ -5652,6 +5744,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Para evitar cualquier interrupción del servicio debido a facturas vencidas, por favor asegúrate de tener al menos un método de pago válido guardado en todo momento."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Añadir etiqueta"
       ]
     },
     "Invoice state display as badge": {
@@ -7395,9 +7492,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (Beta web)"
-      ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
         "${ n } dominios de correo electrónico personalizados"
@@ -7617,6 +7711,26 @@
         "Administración de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba en ${ last4 }"
@@ -7683,26 +7797,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8005,6 +8099,12 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN / IKEv2 regeneradas"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Miembro añadido",
+        "Miembros añadidos"
       ]
     },
     "Notification time input": {
@@ -8362,6 +8462,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Una forma de contactar contigo"
@@ -8703,6 +8808,26 @@
         "Etiquetas"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Has alcanzado el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Añadir personas o grupos"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Compartir con usuarios Proton"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Añadir etiqueta"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Mostrar nombre"
@@ -8753,14 +8878,8 @@
       "Invite friends and earn rewards!": [
         "¡Invita amigos y gana recompensas!"
       ],
-      "No more missed appointments": [
-        "No más citas perdidas"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prueba ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Con las notificaciones de correo electrónico, tu decides qué eventos son notificados y cuándo."
       ]
     },
     "State": {
@@ -9427,6 +9546,9 @@
       "Create multiple user accounts": [
         "Crear múltiples cuentas de usuario"
       ],
+      "Create public link": [
+        "Crear enlace público"
+      ],
       "Create user accounts": [
         "Crear cuentas de usuario"
       ],
@@ -9860,9 +9982,6 @@
       "Settings": [
         "Ajustes"
       ],
-      "Share outside Proton": [
-        "Compartir fuera de Proton"
-      ],
       "Short domain (@pm.me)": [
         "Dominio corto (@pm.me)"
       ],
@@ -10244,9 +10363,6 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendario, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y sólo para ti.",
         "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendarios, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y sólo para ti."
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Actualiza a un plan de pago para compartir tu calendario personal a través de un enlace con cualquier persona."
       ]
     },
     "User referee invited via email": {

@@ -545,6 +545,9 @@
       "Upload file": [
         "上传文件"
       ],
+      "Upload files": [
+        "上传文件"
+      ],
       "Upload folder": [
         "上传文件夹"
       ],
@@ -688,54 +691,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "同步中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "未能解密日历"
-      ],
-      "Calendar is syncing": [
-        "日历正在同步中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
-      ],
-      "Calendar is too big": [
-        "日历文件太大"
-      ],
-      "Calendar link is not accessible": [
-        "日历链接不能被访问"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "日历链接暂时无法访问"
-      ],
-      "Failed to sync calendar": [
-        "同步日历失败"
-      ],
-      "More than 12 hours passed since last update": [
-        "离上一个更新已经超过了12小时"
-      ],
-      "Unsupported calendar format": [
-        "不受支持的日历格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "日历链接不能从日历提供者的系统之外访问。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
       ]
     },
     "Collapsible tooltip": {
@@ -1725,9 +1680,6 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again": [
-        "出错了，请重试"
-      ],
       "Authentication canceled.": [
         "验证被取消。"
       ],
@@ -1838,9 +1790,6 @@
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
-      ],
-      "Please activate your content search again": [
-        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2435,9 +2384,6 @@
       "Downloading": [
         "正在下载"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "将文件拖拽到这里或浏览文件以上传。"
-      ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
       ],
@@ -2510,6 +2456,9 @@
       "Free up some space or contact your administrator.": [
         "释放一些空间或与您的管理员联系。"
       ],
+      "Go ahead, upload a file": [
+        "来吧，上传文件"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "请先转到“我的文件”并上传一些文件。"
       ],
@@ -2569,6 +2518,9 @@
       ],
       "Internet connection restored.": [
         "网络连接已恢复。"
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "只需拖拽或选择文件"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
@@ -2765,9 +2717,6 @@
       "Secure sharing": [
         "安全分享"
       ],
-      "Secure your documents and data": [
-        "选择您的文档和数据"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "选择一个已上传的文件（夹）并为其创建链接。"
       ],
@@ -2825,8 +2774,8 @@
       "Swiss privacy": [
         "瑞士隐私"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "点击按钮 + 来上传文件或文件夹。"
+      "Tap the + button to upload a file or folder": [
+        "点击 + 按钮来上传文件或文件夹。"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
@@ -3783,17 +3732,17 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "创建文件夹"
+      "Create a share link": [
+        "创建分享链接"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "开始使用 Proton Drive，我们会免费赠送您 1GB 的储存空间！"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "现在开始使用 Proton Drive，我们会将您的免费空间加倍到 1GB！"
       ],
       "Set a recovery method": [
         "设置恢复方法"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "只需在接下来的 ${ remainingDaysForGift } 天内完成以下任务"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "只需在接下来的 ${ remainingDaysForGift } 天内完成以下任务："
       ],
       "Upload a file": [
         "上传文件"
@@ -3826,8 +3775,8 @@
       "Welcome to ${ appName }": [
         "欢迎来到 ${ appName }"
       ],
-      "Your welcome gift": [
-        "您的欢迎礼物"
+      "Your welcome bonus": [
+        "您的欢迎奖励"
       ]
     },
     "Option": {

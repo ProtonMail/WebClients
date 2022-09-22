@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
+      "Copy link": [
+        "Αντιγραφή συνδέσμου"
+      ],
+      "Create": [
+        "Δημιουργία"
+      ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
@@ -247,6 +253,9 @@
       "Make this participant required": [
         "Να απαιτηθεί αυτός ο συμμετέχων"
       ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
       ],
@@ -291,6 +300,9 @@
       ],
       "No, I won't attend": [
         "Οχί, δεν θα παρευρεθώ"
+      ],
+      "No, thanks": [
+        "Όχι, ευχαριστώ"
       ],
       "OK": [
         "ΟΚ"
@@ -676,6 +688,11 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Διεύθυνση email"
       ]
     },
     "Calendar invite buttons label": {
@@ -2065,6 +2082,9 @@
       "Start time must be before end time": [
         "Η ώρα έναρξης πρέπει να είναι πριν από την ώρα λήξης"
       ],
+      "The address might be misspelled": [
+        "Η διεύθυνση μπορεί να είναι κακογραμμένη"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
@@ -2822,6 +2842,9 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Link copied to clipboard": [
+        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
       "Loading": [
         "Φόρτωση"
       ],
@@ -3152,6 +3175,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Πολλαπλές επαφές φαίνονται ίδιες. ${ mergeAction }"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Προσθήκη ετικέτας"
       ]
     },
     "Key badge": {
@@ -3976,11 +4004,6 @@
         "Επέκταση λίστας συμμετεχόντων"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Δεν είναι δυνατή η δημιουργία περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων εντός του σχεδίου σας."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
@@ -4140,9 +4163,6 @@
       "Get up to 18 months of ${ planName } for free": [
         "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
       ],
-      "No more missed appointments": [
-        "Όχι άλλα χαμένα ραντεβού"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"
       ]
@@ -4187,11 +4207,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Η εγγραφή σε ένα ημερολόγιο δεν είναι διαθέσιμη προς το παρόν"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των εγγεγραμμένων ημερολογίων στο πρόγραμμά σας."
       ]
     },
     "Subscribed calendar URL length warning": {

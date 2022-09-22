@@ -107,6 +107,12 @@
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
+      "Copy link": [
+        "Nɣel aseɣwen"
+      ],
+      "Create": [
+        "Asnulfu"
+      ],
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
       ],
@@ -235,6 +241,9 @@
       "Make this participant required": [
         "Err amttekki-a yettusra"
       ],
+      "Manage addresses": [
+        "Sefrek tansiwin"
+      ],
       "Mark for deletion": [
         "Creḍ i tukksa"
       ],
@@ -279,6 +288,9 @@
       ],
       "No, I won't attend": [
         "Ala ur ttikkiɣ ara"
+      ],
+      "No, thanks": [
+        "Uhu, tanemmirt"
       ],
       "OK": [
         "IH"
@@ -633,6 +645,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Tansa imayl"
       ]
     },
     "Calendar invite buttons label": {
@@ -1952,6 +1969,9 @@
       "Start time must be before end time": [
         "Asrag n beddu yessfk ad yili send asrag n tagara"
       ],
+      "The address might be misspelled": [
+        "Yezmer tella tuccḍa deg tira n tansa"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Isem n ukaram d arameɣtu. Ttxil-k·m fren isem-nniḍen."
       ],
@@ -2627,6 +2647,9 @@
       "Learn more": [
         "Issin ugar"
       ],
+      "Link copied to clipboard": [
+        "Aseɣwen yettwanɣel ɣer ɣefwafus"
+      ],
       "Loading": [
         "Azdam"
       ],
@@ -2924,6 +2947,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Aṭas n yinermisen ttaken acbi. ${ mergeAction }"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Rnu tabzimt"
       ]
     },
     "Key badge": {
@@ -4399,6 +4427,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Tnecdeḍ-d imttekkiyen s yimaylen igdazalen"
+      ],
+      "Your calendar link": [
+        "Aseɣwen n uwitayen-ik"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"

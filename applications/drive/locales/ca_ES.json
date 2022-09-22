@@ -671,54 +671,6 @@
         "Continuar utilitzant ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "No sincronitzat"
-      ],
-      "Syncing": [
-        "Sincronitzant"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "El calendari no s'ha pogut desxifrar"
-      ],
-      "Calendar is syncing": [
-        "El calendari s'està sincronitzant"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "El calendari s'està sincronitzant. Pot ser que els vostres esdeveniments tardin uns minuts en aparèixer."
-      ],
-      "Calendar is too big": [
-        "El calendari és massa gran"
-      ],
-      "Calendar link is not accessible": [
-        "L'enllaç del calendari no és accessible"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "L'enllaç del calendari no és accessible temporalment"
-      ],
-      "Failed to sync calendar": [
-        "Error sincronitzant el calendari"
-      ],
-      "More than 12 hours passed since last update": [
-        "Han passat més de 12 hores des de la darrera actualització"
-      ],
-      "Unsupported calendar format": [
-        "Format de calendari no permès"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "El proveïdor d'aquest enllaç no en permet el seu accés."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Fa més de 12 hores de la darrera actualització — Proton Calendar provarà d'actualitzar-lo en les properes hores."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Replega"
@@ -1680,9 +1632,6 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
-      "A problem occurred, please try again": [
-        "S'ha produït un problema. Intenteu-ho de nou"
-      ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
       ],
@@ -1789,9 +1738,6 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
-      ],
-      "Please activate your content search again": [
-        "Siusplau, activeu de nou la vostra cerca de continguts"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte destacat per poder continuar.",
@@ -3298,18 +3244,8 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Crea una carpeta"
-      ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Comenceu a utilitzar Proton Drive i incrementarem l'emmagatzematge del teu compte a 1 GB de franc!"
-      ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Completeu els seguents passos abans d'${ remainingDaysForGift } dia",
-        "Completeu els seguents passos abans de ${ remainingDaysForGift } dies"
       ],
       "Upload a file": [
         "Puja un fitxer"
@@ -3338,9 +3274,6 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Benvingut/da a ${ appName }"
-      ],
-      "Your welcome gift": [
-        "El vostre regal de benvinguda"
       ]
     },
     "Option": {

@@ -576,54 +576,6 @@
         "ادامه با استفاده از ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "همگام‌سازی نشده"
-      ],
-      "Syncing": [
-        "در حال همگام‌سازی"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "رمزگشایی تقویم ممکن نبود"
-      ],
-      "Calendar is syncing": [
-        "تقویم درحال همگام‌سازی است"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "درحال همگام سازی تقویم: نمایش همه رویدادها ممکن است چند دقیقه طول بکشد."
-      ],
-      "Calendar is too big": [
-        "تقویم بسیار بزرگ است"
-      ],
-      "Calendar link is not accessible": [
-        "لینک تقویم دردسترس نیست"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "لینک تقویم موقتا دردرسترس نیست"
-      ],
-      "Failed to sync calendar": [
-        "همگام‌سازی تقویم موفق نبود"
-      ],
-      "More than 12 hours passed since last update": [
-        "بیش از 12 ساعت از آخرین بروزرسانی میگذرد"
-      ],
-      "Unsupported calendar format": [
-        "فورمت تقویم پشتیبانی نشده"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "لینک تقویم خارج از اکوسیستم ارائه دهنده تقویم قابل دسترس نیست."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "لینک تثویم موقتا غبرقابل دسترس است. لطفا مطمئن شوید لینک ارائه دهنده تقویم همچنان معتبر است."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "پیش از 12 ساعت از آخرین بروزرسانی می گذرد – تا ساعاتی دیگر Proton Calendar برای بروزرسانی تلاش خواهد کرد."
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } کاربر",
@@ -3163,9 +3115,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (بتا وب)"
-      ],
       "${ n } custom email domain": [
         "${ n } دامنه ایمیل سفارشی",
         "${ n } دامنه ایمیل سفارشی"

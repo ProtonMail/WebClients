@@ -86,6 +86,12 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Copy link": [
+        "Copiar ligação"
+      ],
+      "Create": [
+        "Criar"
+      ],
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
@@ -189,6 +195,9 @@
       ],
       "Make this participant required": [
         "Tornar este participante necessário"
+      ],
+      "Manage addresses": [
+        "Gerir endereços"
       ],
       "Mark for deletion": [
         "Marcar para eliminação"
@@ -533,6 +542,11 @@
       ],
       "Website access problem": [
         "Problema no acesso à página web"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Endereço de email"
       ]
     },
     "Calendar invite info": {
@@ -1018,6 +1032,9 @@
       ],
       "Start time must be before end time": [
         "A hora inicial tem de ser anterior à hora final"
+      ],
+      "The address might be misspelled": [
+        "O endereço pode estar errado"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta é inválido. Por favor, escolha um nome diferente."
@@ -1806,6 +1823,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Vários contactos parecem idênticos. ${ mergeAction }"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Adicionar etiqueta"
       ]
     },
     "Key badge": {
