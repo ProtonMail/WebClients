@@ -17,9 +17,9 @@ import { useAppDispatch } from '../../logic/store';
 import { MapSendInfo } from '../../models/crypto';
 import { useGetMessage } from '../message/useMessage';
 import { PromiseHandlers } from '../usePromise';
+import { ComposeTypes } from './useCompose';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
-import { ComposeTypes } from './useCompose';
 
 export interface UseSendHandlerParameters {
     // Composer will be unmounted and modelMessage will continue changing after sending start
@@ -107,7 +107,7 @@ export const useSendHandler = ({
             };
         } catch {
             hideNotification(notifManager.ID);
-            onCompose({ type: ComposeTypes.existing, existingDraft: getModelMessage(), fromUndo: true });
+            onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
             return;
         }
 
@@ -195,7 +195,7 @@ export const useSendHandler = ({
                     type: 'error',
                 });
                 console.error('Error while uploading attachments.', error);
-                onCompose({ type: ComposeTypes.existing, existingDraft: getModelMessage(), fromUndo: true });
+                onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
                 throw error;
             }
 

@@ -67,7 +67,7 @@ with a link -> https://protonmail.com/`;
 
         await act(async () => {
             onCompose({
-                type: ComposeTypes.new,
+                type: ComposeTypes.newMessage,
                 action: MESSAGE_ACTIONS.REPLY,
                 referenceMessage: message,
             });
@@ -143,6 +143,7 @@ with a link -> https://protonmail.com/`;
 
         await act(async () => {
             onCompose({
+                type: ComposeTypes.newMessage,
                 action: MESSAGE_ACTIONS.FORWARD,
                 referenceMessage: message,
             });

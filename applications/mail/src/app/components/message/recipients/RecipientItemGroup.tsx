@@ -17,6 +17,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { RecipientGroup } from '../../../models/address';
@@ -24,7 +25,6 @@ import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import GroupModal from '../modals/GroupModal';
 import RecipientDropdownItem from './RecipientDropdownItem';
 import RecipientItemLayout from './RecipientItemLayout';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     group: RecipientGroup;
@@ -70,7 +70,7 @@ const RecipientItemGroup = ({
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
         onCompose({
-            type: ComposeTypes.new,
+            type: ComposeTypes.newMessage,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: group.recipients } },
         });

@@ -19,10 +19,10 @@ import { isScheduled } from '@proton/shared/lib/mail/messages';
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { useAppDispatch } from '../../../logic/store';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     message: MessageStateWithData;
@@ -64,7 +64,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         createNotification({
             text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
         });
-        onCompose({ type: ComposeTypes.existing, existingDraft: message, fromUndo: false });
+        onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
     };
 
     const getScheduleBannerMessage = () => {
