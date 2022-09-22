@@ -345,11 +345,10 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     }
 
     const { summary, organizer, attendee, sequence } = vevent;
-    const { FullDay, IsOrganizer } = calendarEvent;
+    const { FullDay } = calendarEvent;
     const { Color, Name } = calendar;
 
     const selfAddressData = getSelfAddressData({
-        isOrganizer: !!IsOrganizer,
         organizer,
         attendees: attendee,
         addresses,

@@ -4,13 +4,14 @@ import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/li
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/keys/getCalendarEventDecryptionKeys';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 
-const useGetCalendarEventRaw = () => {
+const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
     const getCalendarKeys = useGetCalendarKeys();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
@@ -18,7 +19,7 @@ const useGetCalendarEventRaw = () => {
 
     return useCallback(
         async (Event: CalendarEvent) => {
-            const { IsOrganizer, AddressKeyPacket, AddressID, SharedEvents, CalendarEvents, AttendeesEvents } = Event;
+            const { AddressKeyPacket, AddressID, SharedEvents, CalendarEvents, AttendeesEvents } = Event;
             const encryptingAddressID = AddressKeyPacket && AddressID ? AddressID : undefined;
             const addresses = await getAddresses();
 
@@ -31,7 +32,6 @@ const useGetCalendarEventRaw = () => {
                 privateKeys,
             });
             return readCalendarEvent({
-                isOrganizer: !!IsOrganizer,
                 event: {
                     SharedEvents: withNormalizedAuthors(SharedEvents),
                     CalendarEvents: withNormalizedAuthors(CalendarEvents),

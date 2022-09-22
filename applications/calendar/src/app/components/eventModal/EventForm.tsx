@@ -75,6 +75,7 @@ const EventForm = ({
         start,
         isAllDay,
         isOrganizer,
+        isAttendee,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
@@ -88,9 +89,9 @@ const EventForm = ({
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
     // selfAddress may not need be defined
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
-    const canEditSharedEventData = !isSubscribedCalendar && isOrganizer && isSelfAddressActive;
+    const canEditSharedEventData = !isSubscribedCalendar && !isAttendee && isSelfAddressActive;
     const showParticipants = !isImportedEvent && (!isMinimal || isCreateEvent) && canEditSharedEventData;
-    const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
+    const canChangeCalendar = isAttendee ? !isSingleEdit : !model.organizer;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;

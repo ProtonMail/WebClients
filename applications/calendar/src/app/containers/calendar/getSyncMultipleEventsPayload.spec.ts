@@ -38,6 +38,7 @@ END:VEVENT`;
                         type: SyncOperationTypes.UPDATE,
                         data: {
                             calendarEvent,
+                            isAttendee: false,
                             veventComponent: vcalVeventComponent,
                             removedAttendeesEmails: [],
                         },

@@ -18,7 +18,7 @@ interface Arguments {
     recurrences: CalendarEvent[];
     hasModifiedRrule: boolean;
     hasModifiedCalendar: boolean;
-    isInvitation: boolean;
+    isAttendee: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
 }
@@ -33,7 +33,7 @@ const getRecurringSaveType = async ({
     recurrence,
     hasModifiedRrule,
     hasModifiedCalendar,
-    isInvitation,
+    isAttendee,
     inviteActions,
     selfAttendeeToken,
 }: Arguments) => {
@@ -89,7 +89,7 @@ const getRecurringSaveType = async ({
             hasCalendarModification: hasModifiedCalendar,
         },
         inviteActions: updatedInviteActions,
-        isInvitation,
+        isAttendee,
     });
 };
 

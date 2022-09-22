@@ -19,7 +19,6 @@ export const propertiesToModel = ({
     verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     selfAddressData,
     isAllDay,
-    isOrganizer,
     isProtonProtonInvite,
     tzid,
 }: {
@@ -27,7 +26,6 @@ export const propertiesToModel = ({
     verificationStatus?: EVENT_VERIFICATION_STATUS;
     selfAddressData?: SelfAddressData;
     isAllDay: boolean;
-    isOrganizer: boolean;
     isProtonProtonInvite: boolean;
     tzid: string;
 }): EventModelView => {
@@ -57,10 +55,11 @@ export const propertiesToModel = ({
         description: truncate(descriptionString.trim(), MAX_LENGTHS_API.EVENT_DESCRIPTION),
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
-        isOrganizer,
         isProtonProtonInvite,
         status: getEventStatus(veventComponent),
         verificationStatus,
+        isOrganizer: !!selfAddressData?.isOrganizer,
+        isAttendee: !!selfAddressData?.isAttendee,
         selfAttendeeIndex,
         selfAddress,
         start,
