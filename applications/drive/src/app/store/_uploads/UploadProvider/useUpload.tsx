@@ -11,11 +11,17 @@ import {
     usePreventLeave,
 } from '@proton/components';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { FileThresholdModal, FileThresholdModalType } from '../../../components/uploads/FileThresholdModal';
-import { isTransferCancelError, isTransferPausedByConnection, isTransferProgress } from '../../../utils/transfer';
+import {
+    isTransferCancelError,
+    isTransferOngoing,
+    isTransferPausedByConnection,
+    isTransferProgress,
+} from '../../../utils/transfer';
 import { reportError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadConflictModal, UploadFileItem, UploadFileList } from '../interface';
@@ -229,6 +235,13 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         reportError(error);
+                    }
+
+                    // If the error is 429 (rate limited), we should not continue
+                    // with other uploads in the queue and fail fast, otherwise
+                    // it just triggers more strict jails and leads to nowhere.
+                    if (error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                        control.cancelUploads(isTransferOngoing);
                     }
                 })
                 .finally(() => {
