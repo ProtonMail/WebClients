@@ -6,8 +6,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { AppLink, Icon, Logo, SettingsLink, SimpleDropdown, VpnLogo } from '../../components';
-import { useApps, useFeature } from '../../hooks';
-import { FeatureCode } from '../features';
+import { useApps } from '../../hooks';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;
@@ -26,9 +25,6 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
     const itemClassName =
         'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-25 pl1 pr1-5 color-norm text-no-decoration';
 
-    const driveBetaFeature = useFeature(FeatureCode.DriveBeta);
-    const showDriveBeta = driveBetaFeature.feature?.Value === true;
-
     return (
         <SimpleDropdown
             as="button"
@@ -45,18 +41,13 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
             {...rest}
         >
             <ul className="unstyled mt0 mb0">
-                {apps.map(({ app, name }, index) => {
+                {apps.map(({ app, name }) => {
                     return (
                         <Fragment key={app}>
                             <li className="dropdown-item">
-                                <AppLink key={index} to="/" toApp={app} className={itemClassName} title={name}>
+                                <AppLink key={app} to="/" toApp={app} className={itemClassName} title={name}>
                                     <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr0-5" />
                                     {name}
-                                    {showDriveBeta && app === APPS.PROTONDRIVE && (
-                                        <span className="inline-block flex-item-noshrink bg-primary rounded-full text-sm px0-75 ml1">
-                                            Beta
-                                        </span>
-                                    )}
                                 </AppLink>
                             </li>
                             <li className="dropdown-item-hr my0-25" aria-hidden="true" />
