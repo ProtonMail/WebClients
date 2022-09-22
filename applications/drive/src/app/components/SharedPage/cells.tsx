@@ -12,12 +12,12 @@ export const headerCells = [
     },
     {
         type: 'name',
-        text: c('Label').t`Name`,
+        getText: () => c('Label').t`Name`,
         sorting: true,
     },
     {
         type: 'size',
-        text: c('Label').t`Size`,
+        getText: () => c('Label').t`Size`,
         props: {
             className: 'w20',
         },
