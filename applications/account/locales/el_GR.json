@@ -635,6 +635,9 @@
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
       ],
+      "Share": [
+        "Κοινοποίηση"
+      ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
       ],
@@ -1059,6 +1062,11 @@
       ],
       "Tweet": [
         "Tweet"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Διεύθυνση email"
       ]
     },
     "Calendar status": {
@@ -2414,6 +2422,12 @@
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
       ],
+      "Contact signature could not be verified": [
+        "Δεν ήταν δυνατή η επαλήθευση της υπογραφής επαφής"
+      ],
+      "Contact signature not verified": [
+        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
@@ -2424,6 +2438,9 @@
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, προσπαθήστε ξανά αργότερα"
+      ],
+      "Email address disabled": [
+        "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
@@ -2507,6 +2524,9 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
       ],
+      "Missing signature": [
+        "Λείπει η υπογραφή"
+      ],
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
       ],
@@ -2519,8 +2539,14 @@
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
       ],
+      "No keys retrieved for internal user": [
+        "Κανένα πλήκτρο δεν ανακτήθηκε για τον εσωτερικό χρήστη"
+      ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Κανένα κλειδί WKD που ανακτήθηκε για το χρήστη δεν είναι έγκυρο για την αποστολή"
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
@@ -2589,6 +2615,12 @@
       "Primary address key is not decrypted.": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
       ],
+      "Primary key is not valid for sending": [
+        "Το πρωτεύον κλειδί δεν είναι έγκυρο για αποστολή"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Το πρωτεύον κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για αποστολή"
+      ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
@@ -2600,6 +2632,9 @@
       ],
       "Require at least one condition": [
         "Απαιτείται τουλάχιστον μία συνθήκη"
+      ],
+      "Signature not verified": [
+        "Υπογραφή δεν πιστοποιήθηκε"
       ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
@@ -2621,6 +2656,9 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
+      ],
+      "The address might be misspelled": [
+        "Η διεύθυνση μπορεί να είναι κακογραμμένη"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
@@ -2658,6 +2696,9 @@
       "The organization key must be activated first.": [
         "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
       ],
+      "The sending key is not valid": [
+        "Το κλειδί αποστολής δεν είναι έγκυρο"
+      ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
       ],
@@ -2675,6 +2716,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -3116,11 +3160,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Ενέργεια"
+      ],
       "Actions": [
         "Ενέργειες"
-      ],
-      "Calendar": [
-        "Ημερολόγιο"
       ],
       "Event": [
         "Γεγονός"
@@ -3148,6 +3192,9 @@
       ],
       "Time": [
         "Ώρα"
+      ],
+      "User": [
+        "Χρήστης"
       ]
     },
     "Header for addresses table": {
@@ -5175,6 +5222,11 @@
         "Για την αποφυγή τυχόν διακοπής της υπηρεσίας λόγω απλήρωτων τιμολογίων, παρακαλούμε βεβαιωθείτε ότι ανά πάσα στιγμή έχετε τουλάχιστον 1 έγκυρη μέθοδο πληρωμής αποθηκευμένη."
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "Προσθήκη ετικέτας"
+      ]
+    },
     "Invoice state display as badge": {
       "Billed": [
         "Χρεωμένο"
@@ -6976,6 +7028,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6994,17 +7057,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7438,6 +7490,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
@@ -7739,6 +7796,11 @@
         "Ετικέτες"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Προσθήκη ετικέτας"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -7753,9 +7815,6 @@
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
         "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
-      ],
-      "No more missed appointments": [
-        "Όχι άλλα χαμένα ραντεβού"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"
@@ -8727,9 +8786,6 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
-      ],
-      "Share outside Proton": [
-        "Κοινοποιήστε εξωτερικά από το Proton"
       ],
       "Short domain (@pm.me)": [
         "Σύντομο domain (@pm.me)"

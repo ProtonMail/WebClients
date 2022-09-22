@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
+      "Copy link": [
+        "Копіювати посилання"
+      ],
+      "Create": [
+        "Створити"
+      ],
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
@@ -124,6 +130,9 @@
       ],
       "Customize": [
         "Налаштувати"
+      ],
+      "Decline invite": [
+        "Відхилити запрошення"
       ],
       "Delete": [
         "Видалити"
@@ -239,6 +248,9 @@
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
       ],
+      "Join calendar": [
+        "Приєднатися до календаря"
+      ],
       "Load image": [
         "Завантажити зображення"
       ],
@@ -250,6 +262,9 @@
       ],
       "Make this participant required": [
         "Зробити цього учасника обов'язковим"
+      ],
+      "Manage addresses": [
+        "Керувати адресами"
       ],
       "Mark for deletion": [
         "Позначити для видалення"
@@ -295,6 +310,9 @@
       ],
       "No, I won't attend": [
         "Ні, я не долучатимусь"
+      ],
+      "No, thanks": [
+        "Ні, дякую"
       ],
       "OK": [
         "Гаразд"
@@ -606,6 +624,11 @@
         "Необов'язково"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Незабаром з'явиться"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
@@ -690,6 +713,11 @@
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Адреса е-пошти"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Берете участь?"
@@ -722,6 +750,24 @@
       ],
       "You tentatively accepted the invitation": [
         "Ви попередньо прийняли запрошення"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Лише ви можете бачити мітку"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Дозволи"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Керувати посиланнями"
+      ],
+      "Manage members": [
+        "Керувати учасниками"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1975,6 +2021,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "Account does not exist": [
+        "Облікового запису не існує"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -2164,6 +2213,12 @@
       "Primary key retrieved for internal user is not valid for sending": [
         "Для внутрішнього користувача отримано недійсний основний ключ для надсилання"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Вилучено дублікат отримувача: ${ joinedRecipients }",
+        "Вилучено дублікати отримувачів: ${ joinedRecipients }",
+        "Вилучено дублікати отримувачів: ${ joinedRecipients }",
+        "Вилучено дублікати отримувачів: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
@@ -2193,6 +2248,9 @@
       ],
       "Start time must be before end time": [
         "Час початку повинен бути раніше часу завершення"
+      ],
+      "The address might be misspelled": [
+        "Ймовірно, адреса неправильна"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Назва теки неправильна. Оберіть іншу назву."
@@ -2949,11 +3007,20 @@
       "and": [
         "та"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Будь-хто з цим посиланням може бачити всі подробиці подій цього календаря, наприклад, назву, розташування та учасників."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Будь-хто з цим посиланням може бачити вашу доступність чи зайнятість в календарі. Вони не можуть бачити подробиці подій, наприклад, назву, розташування та учасників."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Для одного запрошення дозволяється не більше 100 учасників"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для Proton до зашифрованої інформації цього календаря."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
@@ -3095,6 +3162,12 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
+      ],
+      "Link created": [
+        "Посилання створено"
       ],
       "Loading": [
         "Завантаження"
@@ -3461,6 +3534,19 @@
         "Деякі контакти виглядають однаково. ${ mergeAction }"
       ]
     },
+    "Input label": {
+      "Access": [
+        "Доступ"
+      ],
+      "Label (optional)": [
+        "Мітка (необов'язково)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Додати мітку"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "Скомпрометований"
@@ -3766,6 +3852,9 @@
       ],
       "Wonderful": [
         "Дивовижно"
+      ],
+      "Your calendar URL": [
+        "URL-адреса вашого календаря"
       ]
     },
     "Label for contact group color": {
@@ -3896,6 +3985,16 @@
       ],
       "Manage calendars": [
         "Керувати календарями"
+      ]
+    },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Не вдалося додати інші календарі. Ви досягли обмеження підписних календарів для свого тарифного плану."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Приєднатися до календаря"
       ]
     },
     "Modal title": {
@@ -4092,6 +4191,14 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Учасника додано",
+        "Учасників додано",
+        "Учасників додано",
+        "Учасників додано"
       ]
     },
     "Notification suffix": {
@@ -4385,11 +4492,6 @@
         "Розгорнути список учасників"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Не вдається створити інші календарі. Ви досягли обмеження особистих календарів для свого тарифного плану."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна застосовувати для шифрування"
@@ -4576,17 +4678,11 @@
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
       ],
-      "No more missed appointments": [
-        "Більше жодних пропущених зустрічей"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Відтепер запрошення показуються у вашому календарі подіями, що очікують на розгляд. Просто відкрийте подію, щоб відповісти. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробувати ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Зі сповіщеннями електронної пошти, ви вирішуєте, про які події буде надіслано сповіщення й коли."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Тепер можна додавати сповіщення до календарів, на які ви підписані."
@@ -4632,11 +4728,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Підписка на календар на разі недоступна"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Не вдається додати інші календарі. Ви досягли обмеження підписних календарів для свого тарифного плану."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -5241,6 +5332,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Ви запросили учасників з еквівалентною електронною поштою"
+      ],
+      "Your calendar link": [
+        "Посилання на ваш календар"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"

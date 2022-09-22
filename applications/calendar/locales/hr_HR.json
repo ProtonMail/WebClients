@@ -107,6 +107,12 @@
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
+      "Copy link": [
+        "Kopiraj poveznicu"
+      ],
+      "Create": [
+        "Stvori"
+      ],
       "Create a new contact group": [
         "Stvori novu grupu kontakata"
       ],
@@ -236,6 +242,9 @@
       ],
       "Make this participant required": [
         "Postavi ovog sudionika kao obaveznim"
+      ],
+      "Manage addresses": [
+        "Upravljanje adresama"
       ],
       "Mark for deletion": [
         "Označi za brisanje"
@@ -616,6 +625,11 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Adresa e-pošte"
       ]
     },
     "Calendar invite info": {
@@ -1097,6 +1111,9 @@
       ],
       "Start time must be before end time": [
         "Početno vrijeme mora biti prije vremena završetka"
+      ],
+      "The address might be misspelled": [
+        "Adresa bi mogla biti pogrešno napisana"
       ],
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
@@ -1876,6 +1893,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Više kontakata izgleda identično. ${ mergeAction }"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Dodaj oznaku"
       ]
     },
     "Key badge": {

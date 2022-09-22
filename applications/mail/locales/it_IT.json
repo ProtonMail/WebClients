@@ -2893,8 +2893,8 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
-      "A problem occurred, please try again": [
-        "Si è verificato un problema, riprova per favore"
+      "A problem occurred, please try again.": [
+        "Si è verificato un problema, riprova per favore."
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -3061,8 +3061,8 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
-      "Please activate your content search again": [
-        "Si prega di attivare di nuovo la ricerca di contenuti"
+      "Please activate your search again": [
+        "Si prega di attivare nuovamente la ricerca"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -3122,6 +3122,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Qualcosa è andato storto. Per favore riprova"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Siamo spiacenti, Proton non può decifrare il messaggio. Si prega di controllare che tutte le chiavi siano attive."
@@ -4058,6 +4061,9 @@
       "Confirm phishing report": [
         "Conferma segnalazione di phishing"
       ],
+      "Content: ": [
+        "Contenuto: "
+      ],
       "Continue with ${ planName }": [
         "Continua con ${ planName }"
       ],
@@ -4124,8 +4130,8 @@
       "Don't forget to share the password with the recipient": [
         "Non dimenticare di condividere la tua password con il destinatario"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Scaricando il messaggio ${ esProgress } di ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Scaricando il messaggio ${ currentProgress } di ${ totalProgress }"
       ],
       "Draft": [
         "Bozza"
@@ -4179,6 +4185,9 @@
       ],
       "Encrypt message": [
         "Cifra messaggio"
+      ],
+      "End of search results from past 30 days": [
+        "Fine del risultato di ricerca degli ultimi 30 giorni"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
@@ -4425,6 +4434,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Nessun risultato trovato negli ultimi 30 giorni. Ricercando nel resto della casella di posta"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nessun tracker trovato, tuttavia alcune immagini non possono essere caricate con la protezione dal tracking attivata"
       ],
@@ -4522,6 +4534,9 @@
       "Recipient: ": [
         "Destinatario: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase di recupero copiata negli appunti"
       ],
@@ -4563,6 +4578,9 @@
       ],
       "Scheduling message...": [
         "Pianificando il messaggio..."
+      ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Ricerca il contenuto completo dei messaggi più vecchi, con ${ paidPlansButton }"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La ricerca sta impiegando troppo tempo? ${ dropdownButton } o ${ toggleOffButton } da questa sessione di ricerca."
@@ -4666,6 +4684,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
       ],
+      "The local database is being prepared": [
+        "Il database locale è in preparazione"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Il messaggio originale che stai cercando di inoltrare / rispondere è in procinto di essere inviato. Se continui, non sarà più possibile annullare l'invio del messaggio originale."
       ],
@@ -4696,6 +4717,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Quest'azione scaricherà i messaggi più recenti, così che possano essere ricercati in locale. La pulizia dei dati del tuo browser impedirà questa opzione."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
@@ -5326,11 +5350,11 @@
       "Also archive": [
         "Archivia anche"
       ],
-      "Always label senders emails": [
-        "Etichetta sempre le email dei mittenti"
+      "Always label sender's emails": [
+        "Etichetta sempre le email del mittente"
       ],
-      "Always move senders emails": [
-        "Sposta sempre le email dei mittenti"
+      "Always move sender's emails": [
+        "Sposta sempre le email del mittente"
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
@@ -5400,6 +5424,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete recovery-related information.": [
+        "Elimina le informazioni di ripristino."
       ],
       "Do not ask again": [
         "Non chiedermelo più"
@@ -5792,6 +5819,9 @@
       ],
       "Outbox": [
         "In Uscita"
+      ],
+      "paid plan": [
+        "piano a pagamento"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -7511,6 +7541,9 @@
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Per i messaggi più vecchi di 30 giorni, verranno cercati solo l'oggetto e l'elenco dei destinatari"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
@@ -7522,9 +7555,6 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"

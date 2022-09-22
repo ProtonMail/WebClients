@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "Copier le courriel dans le presse-papier"
       ],
+      "Copy link": [
+        "Copier le lien"
+      ],
+      "Create": [
+        "Créer"
+      ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
@@ -247,6 +253,9 @@
       "Make this participant required": [
         "Rendre ce·tte participant·e requis·e"
       ],
+      "Manage addresses": [
+        "Gérer les adresses"
+      ],
       "Mark for deletion": [
         "Marquer pour suppression"
       ],
@@ -291,6 +300,9 @@
       ],
       "No, I won't attend": [
         "Non, je ne participerai pas"
+      ],
+      "No, thanks": [
+        "Non, merci"
       ],
       "OK": [
         "OK"
@@ -684,6 +696,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Adresse courriel"
       ]
     },
     "Calendar invite buttons label": {
@@ -2158,6 +2175,9 @@
       "Start time must be before end time": [
         "L’heure de début doit être antérieure à l’heure de fin"
       ],
+      "The address might be misspelled": [
+        "L'adresse est peut-être mal orthographiée"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Le nom du dossier n'est pas valide. Veuillez en choisir un autre."
       ],
@@ -2841,11 +2861,20 @@
       "and": [
         "et"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Toute personne ayant ce lien peut voir tous les détails des événements de ce calendrier, comme le titre, le lieu ou les participants."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les détails de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Un maximum de 100 participant·e·s est autorisé par invitation"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "En partageant la totalité des détails des événements de ce calendrier, vous acceptez d'accorder à Proton l'accès aux informations chiffrées de ce calendrier."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -2983,6 +3012,12 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Link copied to clipboard": [
+        "Lien copié dans le presse-papier"
+      ],
+      "Link created": [
+        "Lien créé"
       ],
       "Loading": [
         "Chargement"
@@ -3347,6 +3382,11 @@
         "Plusieurs contacts semblent identiques. ${ mergeAction }"
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "Ajouter un label"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "Compromise"
@@ -3650,6 +3690,9 @@
       ],
       "Wonderful": [
         "Merveilleuse"
+      ],
+      "Your calendar URL": [
+        "URL de votre calendrier"
       ]
     },
     "Label for contact group color": {
@@ -4211,11 +4254,6 @@
         "Développer la liste des participants"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible de créer d'autres calendriers. Vous avez atteint le maximum de calendriers personnels dans votre abonnement."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clé ne peut pas être utilisée pour le chiffrement"
@@ -4398,17 +4436,11 @@
       "Invite friends and earn rewards!": [
         "Invitez des amis et gagnez des récompenses!"
       ],
-      "No more missed appointments": [
-        "Plus de rendez-vous manqués"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Les invitations sont maintenant affichées dans votre calendrier comme des événements en attente. Pour répondre, il suffit d'ouvrir un événement. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Avec les notifications par courriel, vous décidez pour quels événements vous serez notifié et quand."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Vous pouvez maintenant ajouter des notifications aux calendriers auxquels vous êtes abonné."
@@ -4454,11 +4486,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "L'abonnement à un calendrier n'est pas disponible pour le moment"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers autorisés dans votre abonnement."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -5045,6 +5072,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Vous avez invité des participant·e·s avec des courriels équivalents"
+      ],
+      "Your calendar link": [
+        "Lien de votre calendrier"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"

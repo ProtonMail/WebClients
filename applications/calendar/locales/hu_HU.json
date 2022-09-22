@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
+      "Copy link": [
+        "Hivatkozás másolása"
+      ],
+      "Create": [
+        "Létrehozás"
+      ],
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
@@ -291,6 +297,9 @@
       ],
       "No, I won't attend": [
         "Nem, nem megyek"
+      ],
+      "No, thanks": [
+        "Köszönöm, nem"
       ],
       "OK": [
         "OK"
@@ -678,6 +687,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "E-mail cím"
       ]
     },
     "Calendar invite buttons label": {
@@ -2096,6 +2110,9 @@
       "Start time must be before end time": [
         "A kezdés idejének meg kell előznie a befejezés idejét"
       ],
+      "The address might be misspelled": [
+        "Lehetséges, hogy a cím el van írva"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Ez a mappanév érvénytelen. Adjon meg egy másik nevet."
       ],
@@ -2877,6 +2894,9 @@
       "Learn more": [
         "Tudjon meg többet"
       ],
+      "Link copied to clipboard": [
+        "Hivatkozás a vágólapra másolva"
+      ],
       "Loading": [
         "Betöltés"
       ],
@@ -3225,6 +3245,11 @@
         "Több névjegy is megegyezik. ${ mergeAction }"
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "Új címke"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "Kompromittált"
@@ -3513,6 +3538,9 @@
       ],
       "Wonderful": [
         "Csodás"
+      ],
+      "Your calendar URL": [
+        "Az ön naptárának URL-je"
       ]
     },
     "Label for contact group color": {
@@ -4050,11 +4078,6 @@
         "Résztvevők listájának megnyitása"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nem hozható létre több naptár. Elérte a csomagjában elérhető személyes naptárainak maximumát."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "A kulcs nem használható titkosításhoz"
@@ -4270,11 +4293,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "A naptárra való feliratkozás jelenleg nem érhető el"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Nem hozható létre több naptár. Elérte a csomagjában elérhető feliratkozott naptárainak maximumát."
       ]
     },
     "Success": {
@@ -4850,6 +4868,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "A hasonló e-mail címmel rendelkező résztvevőket meghívta"
+      ],
+      "Your calendar link": [
+        "Az ön naptárának hivatkozása"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan lejár: ${ formattedEndDate }"

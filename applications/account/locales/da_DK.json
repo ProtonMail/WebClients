@@ -668,6 +668,9 @@
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
       ],
+      "Share": [
+        "Del"
+      ],
       "Share via link": [
         "Del via link"
       ],
@@ -1116,6 +1119,11 @@
       ],
       "Tweet": [
         "Tweet"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "E-mail"
       ]
     },
     "Calendar status": {
@@ -2508,6 +2516,12 @@
       "Condition incomplete": [
         "Betingelse mangelfuld"
       ],
+      "Contact signature could not be verified": [
+        "Kontaktsignatur kunne ikke bekræftes"
+      ],
+      "Contact signature not verified": [
+        "Kontaktsignatur ikke bekræftet"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Fravælg mindst ${ calendarToFixCount } kalender",
         "Fravælg mindst ${ calendarToFixCount } kalendere"
@@ -2518,6 +2532,9 @@
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
+      ],
+      "Email address disabled": [
+        "E-mailadresse deaktiveret"
       ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
@@ -2604,6 +2621,9 @@
       "Missing key packet": [
         "Manglende nøglepakke"
       ],
+      "Missing signature": [
+        "Manglende signatur"
+      ],
       "Name does not match": [
         "Navn matcher ikke"
       ],
@@ -2625,8 +2645,14 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
+      "No keys retrieved for internal user": [
+        "Ingen nøgler hentet for intern bruger"
+      ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
@@ -2698,6 +2724,12 @@
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
       ],
+      "Primary key is not valid for sending": [
+        "Primær nøgle er ikke gyldig til afsendelse"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primær nøgle hentet for intern bruger er ikke gyldig til afsendelse"
+      ],
       "Process aborted": [
         "Proces afbrudt"
       ],
@@ -2709,6 +2741,9 @@
       ],
       "Require at least one condition": [
         "Kræver mindst en betingelse"
+      ],
+      "Signature not verified": [
+        "Signatur ikke bekræftet"
       ],
       "Signature verification failed": [
         "Signaturbekræftelse mislykkedes"
@@ -2730,6 +2765,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "The address might be misspelled": [
+        "Adressen kan være stavet forkert"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Denne browser understøtter ikke betalingshåndtering, så benyt venligst en anden eller alternativt en computerbrowser."
@@ -2767,6 +2805,9 @@
       "The organization key must be activated first.": [
         "Organisationsnøglen skal først aktiveres."
       ],
+      "The sending key is not valid": [
+        "Afsendelsesnøgle er ikke gyldig"
+      ],
       "The session has expired. Please sign in again.": [
         "Din session er udløbet. Log venligst ind igen."
       ],
@@ -2787,6 +2828,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Betroede nøgler er ikke gyldige til afsendelse"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -3268,11 +3312,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Handling"
+      ],
       "Actions": [
         "Handlinger"
-      ],
-      "Calendar": [
-        "Kalender"
       ],
       "Event": [
         "Begivenhed"
@@ -3300,6 +3344,9 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "User": [
+        "Bruger"
       ]
     },
     "Header for addresses table": {
@@ -4102,9 +4149,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Opret et link til din kalender og del det med enhver uden for Proton. Kun du kan tilføje eller fjerne begivenheder."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Opret en ny konto, og del e-mailadressen og adgangskoden med brugeren."
       ],
@@ -4485,9 +4529,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Lad dine kontakter vide, at du bekymrer dig om deres privatliv."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Begrænset visning: andre ser om du er optaget. Fuld visning: viser alle begivenhedsdetaljer, herunder navn, placering eller deltagere."
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -4907,9 +4948,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
       ],
-      "This calendar will be removed from your account.": [
-        "Kalenderen vil blive fjernet fra din konto."
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan tage nogle sekunder/minutter afhængigt af din enhed"
       ],
@@ -5240,9 +5278,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Du skal fjerne eventuelle ekstra personlige kalendere og delte kalenderlinks, før du kan annullere dit abonnement."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Du skal have en personlig kalender for at oprette et link."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra ICS."
       ],
@@ -5407,6 +5442,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "For at undgå enhver afbrydelse af tjenesten på grund af ubetalte fakturaer bedes du sørge for, at du har mindst 1 gyldig betalingsmetode gemt på ethvert tidspunkt."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Tilføj etiket"
       ]
     },
     "Invoice state display as badge": {
@@ -7090,17 +7130,17 @@
         "Support"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
+      ]
+    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
-      ]
-    },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -7498,6 +7538,11 @@
         "Paypal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "En måde at kontakte dig på"
@@ -7795,6 +7840,11 @@
         "Etiketter"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Tilføj etiket"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Vist navn"
@@ -7816,14 +7866,8 @@
       "Invite friends and earn rewards!": [
         "Inviter venner, og optjen belønninger!"
       ],
-      "No more missed appointments": [
-        "Ikke flere glemte aftaler"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
       ]
     },
     "State": {
@@ -8926,9 +8970,6 @@
       ],
       "Settings": [
         "Indstillonger"
-      ],
-      "Share outside Proton": [
-        "Del udenfor Proton"
       ],
       "Short domain (@pm.me)": [
         "Kort domæne (@pm.me)"

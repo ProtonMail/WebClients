@@ -576,54 +576,6 @@
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
-      "Syncing": [
-        "Synchroniseren"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Agenda kon niet ontcijferd worden"
-      ],
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        "Agendalink is niet toegankelijk"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Agendalink is tijdelijk ontoegankelijk"
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Unsupported calendar format": [
-        "Niet-ondersteunde agenda-indeling"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } gebruiker",
@@ -3166,9 +3118,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (web-bèta)"
-      ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
         "${ n } aangepaste e-maildomeinen"

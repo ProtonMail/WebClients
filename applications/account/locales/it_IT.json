@@ -4,18 +4,23 @@
     "language": "it_IT"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Senza etichetta"
+      ]
+    },
     "Access level": {
-      "Full": [
-        "Completo"
-      ],
       "Full view": [
         "Vista completa"
       ],
-      "Limited": [
-        "Limitato"
+      "Full view (see all event details)": [
+        "Vista completa (vedi tutti i dettagli dell'evento)"
       ],
       "Limited view": [
         "Visualizzazione limitata"
+      ],
+      "Limited view (see only free/busy)": [
+        "Vista limitata (visibili sono liberi/occupati)"
       ]
     },
     "Action": {
@@ -565,6 +570,9 @@
       "Remove this label": [
         "Rimuovi questa etichetta"
       ],
+      "Remove this member": [
+        "Rimuovi questo membro"
+      ],
       "Remove this notification": [
         "Rimuovi notifica"
       ],
@@ -628,6 +636,9 @@
       "Revoke all other sessions": [
         "Revoca tutte le altre sessioni"
       ],
+      "Revoke this invitation": [
+        "Revoca questo invito"
+      ],
       "Save": [
         "Salva"
       ],
@@ -681,6 +692,9 @@
       ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
+      ],
+      "Share": [
+        "Condividi"
       ],
       "Share via link": [
         "Condividi con link"
@@ -870,6 +884,16 @@
         "Prova gratis per 30 giorni"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Accetta"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Rifiuta"
+      ]
+    },
     "Addon": {
       "+ ${ _users } user": [
         "+ ${ _users } utente",
@@ -990,6 +1014,9 @@
     "Badge": {
       "5 users": [
         "5 utenti"
+      ],
+      "Coming soon": [
+        "In arrivo"
       ]
     },
     "Badge for domain": {
@@ -1143,6 +1170,11 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Indirizzo email"
+      ]
+    },
     "Calendar edit button tooltip": {
       "Edit calendar information": [
         "Modifica le informazioni del calendario"
@@ -1158,9 +1190,23 @@
         "È possibile importare i file ICS da un altro calendario su ${ CALENDAR_APP_NAME }. Questo consente di importare rapidamente un evento o un'intera agenda."
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "Rifiutato"
+      ],
+      "Invite sent": [
+        "Invito inviato"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Hai raggiunto il numero massimo di calendari personali che puoi creare all'interno del tuo piano."
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Hai raggiunto il numero massimo di calendari personali. Per accettare inviti di calendario in attesa devi prima rimuovere qualcuno dei tuoi calendari."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Hai raggiunto il numero massimo di calendari condivisi. Per accettare inviti di calendario in attesa devi prima rimuovere qualcuno dei tuoi calendari."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS } calendario a cui sei iscritto.",
@@ -1178,9 +1224,71 @@
         "Etichetta modificata"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Solo tu puoi vedere l'etichetta"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Puoi modificare o rimuovere i permessi in qualsiasi momento."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Permessi"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Hai già accesso a questo calendario"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Crea un link al tuo calendario e condividilo con chiunque al di fuori di Proton. Soltanto tu puoi aggiungere o rimuovere eventi."
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Condividi il tuo calendario con altri utenti Proton. Abilita la collaborazione permettendo loro di aggiungere e modificare eventi al tuo calendario. Potrai modificare i permessi degli utenti in qualsiasi momento."
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Condividi calendario"
+      ],
+      "Share outside Proton": [
+        "Condividi fuori da Proton"
+      ],
+      "Share with anyone": [
+        "Condividi con chiunque"
+      ],
+      "Share with Proton users": [
+        "Condividi con un utente Proton"
+      ]
+    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Mostra altri ${ remainingItems }"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Vedi tutti i dettagli dell'evento"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Modifica (vedi, crea e modifica i dettagli dell'evento)"
+      ],
+      "Full view (see all event details)": [
+        "Vista completa (vedi tutti i dettagli dell'evento)"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "I permessi per ${ email } sono cambiati"
       ]
     },
     "Calendar status": {
@@ -1238,6 +1346,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento — Proton Calendar proverà ad aggiornare il calendario tra alcune ore."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Apri impostazioni"
       ]
     },
     "Calendar view": {
@@ -2384,6 +2497,15 @@
     "CSV format error": {
       "Error on row ${ rowsThatErrored }.": [
         "Errore alla riga ${ rowsThatErrored }."
+      ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Sembra che il tuo file non abbia il campo 'EmailAddresses'."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Sembra che il tuo file non abbia il campo \"Password'."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Durante l'importazione abbiamo rilevato righe multiple, per favore verifica il tuo file CSV."
       ]
     },
     "Cycle": {
@@ -2643,11 +2765,17 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
+      "Account does not exist": [
+        "L'account non esiste"
+      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tutto lo spazio di archiviazione è stato allocato. Per favore, riduci la memoria assegnata agli altri utenti."
+      ],
+      "Already a member of this calendar": [
+        "L'utente è già membro del calendario"
       ],
       "Amount above the maximum.": [
         "Importo al di sopra del massimo."
@@ -2679,6 +2807,12 @@
       "Condition incomplete": [
         "Condizione incompleta"
       ],
+      "Contact signature could not be verified": [
+        "La firma del contatto non può essere verificata"
+      ],
+      "Contact signature not verified": [
+        "Firma del contatto non verificata"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deseleziona almeno ${ calendarToFixCount } calendario",
         "Deseleziona almeno ${ calendarToFixCount } calendari"
@@ -2689,6 +2823,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprova più tardi"
+      ],
+      "Email address disabled": [
+        "Indirizzo email disabilitato"
       ],
       "Email is not valid": [
         "Email non valida"
@@ -2775,6 +2912,9 @@
       "Missing key packet": [
         "Pacchetto chiavi mancante"
       ],
+      "Missing signature": [
+        "Firma mancante"
+      ],
       "Name does not match": [
         "Il nome non corrisponde"
       ],
@@ -2796,8 +2936,20 @@
       "No emails found to import - the account does not have an inbox": [
         "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
+      "No keys retrieved for internal user": [
+        "Nessuna chiave recuperata per l'utente interno"
+      ],
+      "No public key for Proton address": [
+        "Nessuna chiave pubblica per l'indirizzo Proton"
+      ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nessuna chiave WKD recuperata per l'utente è valida per l'invio"
+      ],
+      "Not a Proton account": [
+        "Non un account Proton"
       ],
       "Not a valid number": [
         "Numero non valido"
@@ -2869,8 +3021,18 @@
       "Primary address key is not decrypted.": [
         "Chiave dell'indirizzo principale non decriptata."
       ],
+      "Primary key is not valid for sending": [
+        "La chiave primaria non è valida per l'invio"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La chiave primaria recuperata per l'utente interno non è valida per l'invio"
+      ],
       "Process aborted": [
         "Processo interrotto"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatario duplicato rimosso: ${ joinedRecipients }",
+        "Destinatari duplicati rimossi: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -2880,6 +3042,9 @@
       ],
       "Require at least one condition": [
         "Richiede almeno una condizione"
+      ],
+      "Signature not verified": [
+        "Firma non verificata"
       ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
@@ -2901,6 +3066,9 @@
       ],
       "Tab closed": [
         "Scheda chiusa"
+      ],
+      "The address might be misspelled": [
+        "L'indirizzo potrebbe esser errato"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure fai il log in da un computer."
@@ -2938,6 +3106,9 @@
       "The organization key must be activated first.": [
         "La chiave dell'organizzazione deve essere prima attivata."
       ],
+      "The sending key is not valid": [
+        "La chiave di invio non è valida"
+      ],
       "The session has expired. Please sign in again.": [
         "La sessione è scaduta. Effettua di nuovo il login."
       ],
@@ -2959,6 +3130,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che potrebbero non essere aperti correttamente dal browser corrente."
       ],
+      "Trusted keys are not valid for sending": [
+        "Le chiavi attendibili non sono valide per l'invio"
+      ],
       "Unknown error": [
         "Errore sconosciuto"
       ],
@@ -2970,6 +3144,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "I file caricati non sono chiavi private valide. Si prega di verificare e riprovare."
+      ],
+      "Validation error": [
+        "Errore nella convalida"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verifica non riuscita, riprova tra un'ora."
@@ -3183,6 +3360,12 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Si è verificato un errore nella lettura del tuo file \"${ formattedFilename }\". Il file non ha il formato corretto."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Si è verificato un errore nel caricamento del tuo file \"${ formattedFilename }\". La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
       "An error occurred uploading your file. No file has been selected.": [
         "Si è verificato un errore durante il caricamento del file. Nessun file è stato selezionato."
       ],
@@ -3534,11 +3717,14 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Accesso"
+      ],
+      "Action": [
+        "Azione"
+      ],
       "Actions": [
         "Azioni"
-      ],
-      "Calendar": [
-        "Calendario"
       ],
       "Event": [
         "Evento"
@@ -3564,14 +3750,17 @@
       "Organization key fingerprint": [
         "Impronta digitale della chiave dell'organizzazione"
       ],
+      "Permissions": [
+        "Permessi"
+      ],
       "Status": [
         "Stato"
       ],
       "Time": [
         "Orario"
       ],
-      "What others see": [
-        "Cosa vedono gli altri"
+      "User": [
+        "Utente"
       ]
     },
     "Header for addresses table": {
@@ -4225,6 +4414,9 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Attiva almeno un metodo di ripristino dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME }, se dovessi perdere la tua password."
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Aggiungi un indirizzo email @pm.me al tuo account. Questo dominio semplice e più breve sta per \"${ MAIL_APP_NAME } me\" o \"Private Message me.\""
       ],
@@ -4239,6 +4431,9 @@
       ],
       "Add label": [
         "Aggiungi etichetta"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Aggiungi più utenti per volta alla tua organizzazione."
       ],
       "Additional options": [
         "Opzioni aggiuntive"
@@ -4314,6 +4509,9 @@
       ],
       "Are you sure you want to delete this calendar?": [
         "Sei sicuro di voler eliminare questo calendario?"
+      ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "Sei sicuro di voler cancellare questo calendario? Tutti gli indirizzi con cui hai condiviso questo calendario ne perderanno l'accesso."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Sei sicuro di voler eliminare questo calendario? Tutti gli eventi in esso contenuti verranno eliminati."
@@ -4448,9 +4646,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Crea un link al tuo calendario e condividilo con chiunque sia fuori da Proton. Solo tu puoi aggiungere o rimuovere eventi."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Crea un nuovo account e condividi l'indirizzo email e la password con l'utente."
       ],
@@ -4530,6 +4725,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Il downgrading terminerà qualsiasi connessione ai server ${ VPN_APP_NAME } a pagamento."
       ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Scarica il nostro modello CSV, compila i dettagli utente e poi carica il file CSV completo per creare più account per questi utenti."
+      ],
       "Download recovery file": [
         "Scarica il file di ripristino"
       ],
@@ -4571,6 +4769,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Le email etichettate con quest'etichetta non saranno eliminate e possono ancora essere trovate nella rispettiva cartella."
+      ],
+      "Enable this address to join this calendar": [
+        "Abilita questo indirizzo per aggiungere questo calendario"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Abilitare nuovamente il ripristino per frase genererà una nuova frase di ripristino."
@@ -4832,9 +5033,6 @@
       "Let your contacts know you care about their privacy.": [
         "Fai sapere ai tuoi contatti che ti interessa la loro privacy."
       ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Vista limitata: altri vedono se sei occupato. Vista completa: mostra tutti i dettagli dell'evento, incluso nome, posizione o partecipanti."
-      ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
@@ -5007,6 +5205,17 @@
       "Plan upgrade required": [
         "Upgrade del piano necessario"
       ],
+      "Please add a password for the user on row": [
+        "Si prega di aggiungere una password per l'utente sulla riga",
+        "Si prega di aggiungere le password per gli utenti nelle righe"
+      ],
+      "Please add an email address for the user on row": [
+        "Si prega di aggiungere un indirizzo email per l'utente sulla riga",
+        "Si prega di aggiungere gli indirizzi email per gli utenti nelle righe"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Per favore controlla se ci sono errori nel tuo file, o contatta l'assistenza clienti per più informazioni."
+      ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifica il tuo file, o provare ad utilizzare il nostro ${ csvTemplateButton }."
       ],
@@ -5097,6 +5306,9 @@
       "Recovery files have been voided": [
         "I file di ripristino sono stati annullati"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
+      ],
       "recovery method": [
         "metodo di recupero"
       ],
@@ -5120,6 +5332,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
+      ],
+      "Remove one of your calendars to join this one": [
+        "Per aggiungere questo calendario devi prima rimuovere uno dei tuoi calendari"
       ],
       "Revoke certificate ${ name }": [
         "Revoca certificato ${ name }"
@@ -5269,9 +5484,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
-      ],
-      "This calendar will be removed from your account.": [
-        "Questo calendario verrà rimosso dal tuo account."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Questo può richiedere alcuni secondi o alcuni minuti a seconda del dispositivo"
@@ -5474,6 +5686,9 @@
       "We recommend using your recovery phrase instead.": [
         "Ti consigliamo di utilizzare invece la frase di recupero."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Le tue informazioni di ripristino sono conservate in modo sicuro sul tuo dispositivo attendibile, per evitare la perdita dei tuoi dati"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti."
       ],
@@ -5612,9 +5827,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Devi avere un calendario personale per creare un collegamento."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Devi avere un calendario personale attivo per importare i tuoi eventi da ICS."
       ],
@@ -5644,6 +5856,12 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Non sarai in grado di recuperare i dati crittografati utilizzando i tuoi file di ripristino scaricati."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Non sarai in grado di recuperare i dati bloccati utilizzando i file di ripristino scaricati. Ciò annullerà anche le informazioni attendibili sul ripristino del dispositivo."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Rimarrai connesso anche dopo aver chiuso il browser."
@@ -5800,6 +6018,19 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Per evitare interruzioni di servizio dovute a fatture non pagate, assicurati di avere almeno 1 metodo di pagamento valido salvato in qualsiasi momento."
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Accesso"
+      ],
+      "Label (optional)": [
+        "Etichetta (opzionale)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Aggiungi etichetta"
       ]
     },
     "Invoice state display as badge": {
@@ -6397,6 +6628,9 @@
       "Delete": [
         "Elimina"
       ],
+      "Delete recovery-related information.": [
+        "Elimina le informazioni di ripristino."
+      ],
       "Density": [
         "Densità"
       ],
@@ -6573,6 +6807,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Livello di filtro per NetShield"
+      ],
+      "Link label": [
+        "Link etichetta"
       ],
       "Login password": [
         "Password d'accesso"
@@ -6928,9 +7165,6 @@
       "Your calendar URL": [
         "URL del tuo calendario"
       ],
-      "Your calendar URL label": [
-        "Etichetta URL del tuo calendario"
-      ],
       "Your password (admin)": [
         "La tua password (admin)"
       ],
@@ -7232,6 +7466,12 @@
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto.",
         "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Hai raggiunto il numero massimo di ${ MAX_CALENDAR_MEMBERS } membro.",
+        "Hai raggiunto il numero massimo di ${ MAX_CALENDAR_MEMBERS } membri."
       ]
     },
     "Member action": {
@@ -7573,9 +7813,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (beta per il web)"
-      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -7795,6 +8032,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -7861,26 +8118,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8185,6 +8422,29 @@
         "Credenziali OpenVPN / IKEv2 rigenerate"
       ]
     },
+    "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Invito eliminato"
+      ],
+      "Invitation revoked": [
+        "Invito annullato"
+      ],
+      "Member added": [
+        "Membro aggiunto",
+        "Membri aggiunti"
+      ],
+      "Member deleted": [
+        "Membro eliminato"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Invito al calendario rifiutato"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Ti sei unito al calendario ${ calendarName } (${ senderEmail })"
+      ]
+    },
     "Notification success": {
       "Event defaults updated": [
         "Aggiornate le impostazioni predefinite degli eventi"
@@ -8483,6 +8743,35 @@
         "Carica i contenuti tramite proxy e archiviali come allegati"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } per aggiungere più utenti, o rimuovi qualche profilo utente per liberare spazio."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } per ottenere più account o rimuovere l'accesso VPN da alcuni utenti."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } per ottenere più indirizzi o rimuovere alcuni indirizzi per liberare spazio."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } per ottenere più spazio, o rimuovi dello spazio di archiviazione per liberare spazio."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } address.": [
+        "Il tuo piano include un numero massimo di ${ availableAddresses } indirizzo.",
+        "Il tuo piano include un numero massimo di ${ availableAddresses } indirizzi."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+        "Il tuo piano include un numero massimo di ${ availableNumberOfMembers } utente organizzativo.",
+        "Il tuo piano include un numero massimo di ${ availableNumberOfMembers } utenti organizzativi."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Il tuo piano include un numero massimo di ${ availableVPNAccess } account VPN.",
+        "Il tuo piano include un numero massimo di ${ availableVPNAccess } account VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+        "Il tuo piano include uno spazio massimo di ${ humanReadableAvailableSpace }."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (per Debian/Ubuntu)"
@@ -8522,6 +8811,11 @@
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
         "Crea un calendario per essere sempre aggiornato sulla tua pianificazione mantenendo i tuoi dati al sicuro."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8773,13 +9067,27 @@
       ]
     },
     "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "Annullando l'abbonamento, non avrai più accesso a questo calendario. Tutti gli eventi in questo calendario verranno eliminati dal tuo account, ma rimarranno nel link publick originale."
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Annullando l'iscrizione non avrai più accesso a questo calendario. Tutti gli eventi di questo calendario saranno eliminati dal tuo account, ma rimarranno visibili nel link pubblico originale."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Non avrai più accesso a questo calendario."
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Se abbandoni questo calendario dovrai richiedere al proprietario di partecipare nuovamente."
+      ],
+      "This calendar will be removed from your account.": [
+        "Questo calendario sarà rimosso dal tuo account."
       ]
     },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Elimina calendario?"
+      ],
+      "Leave calendar?": [
+        "Abbandonare il calendario?"
       ],
       "Remove calendar": [
         "Rimuovi calendario"
@@ -8879,6 +9187,36 @@
         "Etichette"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Per invitare un utente non Proton, condividi il tuo calendario con un collegamento"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Hai superato il numero massimo di ${ MAX_CALENDAR_MEMBERS } membri per calendario"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Aggiungi gli account Proton con i quali vuoi condividere ${ calendarName }. Manderemo loro un invito."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Aggiungi persone o gruppi"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Condividi con un utente Proton"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Aggiungi etichetta"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nome visualizzato"
@@ -8929,14 +9267,8 @@
       "Invite friends and earn rewards!": [
         "Invita gli amici e guadagna ricompense!"
       ],
-      "No more missed appointments": [
-        "Niente più appuntamenti mancati"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Con le notifiche email, sei tu a decidere su quali eventi ricevere notifiche e quando."
       ]
     },
     "State": {
@@ -9317,6 +9649,11 @@
         "Per gli individui"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Condiviso con me"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Azione"
@@ -9619,6 +9956,9 @@
       ],
       "Create multiple user accounts": [
         "Crea account utente multipli"
+      ],
+      "Create public link": [
+        "Crea un collegamento pubblico"
       ],
       "Create user accounts": [
         "Crea gli account utente"
@@ -10062,9 +10402,6 @@
       "Settings": [
         "Impostazioni"
       ],
-      "Share outside Proton": [
-        "Condividi fuori da Proton"
-      ],
       "Short domain (@pm.me)": [
         "Dominio breve (@pm.me)"
       ],
@@ -10456,8 +10793,8 @@
         "Passa ad un piano Mail a pagamento per creare fino a ${ MAX_CALENDARS_PAID } calendario, puoi creare un calendario per il lavoro, da condividere con gli amici, o solo per te.",
         "Passa a un piano Mail a pagamento per creare fino a ${ MAX_CALENDARS_PAID } calendari, consentendoti di crearne per lavoro, condividerli con gli amici e solo per te."
       ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Passa ad un piano Mail a pagamento per condividere il tuo calendario personale tramite link con chiunque."
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Sottoscrivi un piano Mail a pagamento per condividere il tuo calendario."
       ]
     },
     "User referee invited via email": {
