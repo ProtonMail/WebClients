@@ -8,13 +8,13 @@ export const checkbox = {
 
 export const name = {
     type: 'name',
-    text: c('Label').t`Name`,
+    getText: () => c('Label').t`Name`,
     sorting: true,
 };
 
 export const location = {
     type: 'location',
-    text: c('Label').t`Location`,
+    getText: () => c('Label').t`Location`,
     props: {
         className: 'w20',
     },
@@ -22,7 +22,7 @@ export const location = {
 
 export const trashed = {
     type: 'trashed',
-    text: c('Label').t`Deleted`,
+    getText: () => c('Label').t`Deleted`,
     props: {
         className: 'w25',
     },
@@ -31,7 +31,7 @@ export const trashed = {
 
 export const size = {
     type: 'size',
-    text: c('Label').t`Size`,
+    getText: () => c('Label').t`Size`,
     props: {
         className: 'w10',
     },
@@ -40,7 +40,7 @@ export const size = {
 
 export const modificationDate = {
     type: 'fileModifyTime',
-    text: c('Label').t`Modified`,
+    getText: () => c('Label').t`Modified`,
     props: {
         className: 'w15',
     },
@@ -49,7 +49,7 @@ export const modificationDate = {
 
 export const creationDate = {
     type: 'linkCreateTime',
-    text: c('Label').t`Created`,
+    getText: () => c('Label').t`Created`,
     props: {
         className: 'w15',
     },
@@ -58,7 +58,7 @@ export const creationDate = {
 
 export const accessCount = {
     type: 'numAccesses',
-    text: c('Label').t`# of accesses`,
+    getText: () => c('Label').t`# of accesses`,
     props: {
         className: 'w15',
     },
@@ -67,7 +67,7 @@ export const accessCount = {
 
 export const expirationDate = {
     type: 'linkExpireTime',
-    text: c('Label').t`Expires`,
+    getText: () => c('Label').t`Expires`,
     props: {
         className: 'w20',
     },
