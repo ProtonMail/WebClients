@@ -2915,8 +2915,8 @@
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
-      "A problem occurred, please try again": [
-        "Wystąpił problem. Spróbuj ponownie"
+      "A problem occurred, please try again.": [
+        "Wystąpił problem. Spróbuj ponownie."
       ],
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
@@ -3095,8 +3095,8 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
-      "Please activate your content search again": [
-        "Włącz ponownie wyszukiwanie zawartości"
+      "Please activate your search again": [
+        "Włącz ponownie wyszukiwanie"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Popraw zaznaczony konflikt, aby kontynuować.",
@@ -3160,6 +3160,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Coś poszło nie tak. Spróbuj ponownie później"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Proton nie może odszyfrować wiadomości. Sprawdź, czy wszystkie klucze są aktywne."
@@ -4192,6 +4195,9 @@
       "Confirm phishing report": [
         "Potwierdź próbę wyłudzenia informacji"
       ],
+      "Content: ": [
+        "Zawartość: "
+      ],
       "Continue with ${ planName }": [
         "Kontynuuj z planem ${ planName }"
       ],
@@ -4264,8 +4270,8 @@
       "Don't forget to share the password with the recipient": [
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Pobieranie wiadomości (${ esProgress }/${ totalProgressToShow })"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Pobieranie wiadomości (${ currentProgress }/${ totalProgress })"
       ],
       "Draft": [
         "Szkic"
@@ -4323,6 +4329,9 @@
       ],
       "Encrypt message": [
         "Zaszyfruj wiadomość"
+      ],
+      "End of search results from past 30 days": [
+        "Koniec wyników z ostatnich 30 dni"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
@@ -4579,6 +4588,9 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Nie znaleziono żadnych wyników z ostatnich 30 dni. Trwa przeszukiwanie pozostałych wiadomości"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Brak elementów śledzących, ale niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
       ],
@@ -4720,6 +4732,9 @@
       "Scheduling message...": [
         "Planowanie wiadomości..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Wyszukiwanie pełnej zawartości starszych wiadomości dostępne jest w ${ paidPlansButton }"
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Wyszukiwanie trwa zbyt długo? ${ dropdownButton } lub ${ toggleOffButton }."
       ],
@@ -4854,6 +4869,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ta akcja spowoduje pobranie wszystkich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ta akcja spowoduje pobranie ostatnich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
@@ -5510,10 +5528,10 @@
       "Also archive": [
         "Również archiwizuj"
       ],
-      "Always label senders emails": [
+      "Always label sender's emails": [
         "Zawsze oznacz wiadomości nadawców"
       ],
-      "Always move senders emails": [
+      "Always move sender's emails": [
         "Zawsze przenieś wiadomości nadawców"
       ],
       "Attach screenshot(s)": [
@@ -5979,6 +5997,9 @@
       ],
       "Outbox": [
         "Skrzynka nadawcza"
+      ],
+      "paid plan": [
+        "płatnym planie"
       ],
       "Pay invoice": [
         "Zapłać fakturę"
@@ -7798,6 +7819,9 @@
       "Encrypted data with verified digital signature": [
         "Zaszyfrowane dane ze zweryfikowanym podpisem cyfrowym"
       ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "W przypadku wiadomości starszych niż 30 dni przeszukiwany jest tylko temat i lista odbiorców"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automatycznie dodaje kategorie (jak Społeczności lub Oferty) do niektórych wiadomości. Wybierz, gdzie zaimportować te wiadomości."
       ],
@@ -7809,9 +7833,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Proces importowania rozpocznie się od najnowszych wiadomości."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ta akcja spowoduje pobranie wszystkich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"

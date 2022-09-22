@@ -129,7 +129,7 @@
         "Continuer"
       ],
       "Continue transfers": [
-        "Poursuivre les transferts"
+        "Continuer les transferts"
       ],
       "Continue with Google": [
         "Continuer avec Google"
@@ -547,6 +547,9 @@
       "Upload file": [
         "Importer un fichier"
       ],
+      "Upload files": [
+        "Charger des fichiers"
+      ],
       "Upload folder": [
         "Importer un dossier"
       ],
@@ -690,54 +693,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Non synchronisé"
-      ],
-      "Syncing": [
-        "Synchronisation en cours"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Le calendrier n'a pas pu être déchiffré."
-      ],
-      "Calendar is syncing": [
-        "Synchronisation du calendrier"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Le calendrier se synchronise : il peut être nécessaire d'attendre plusieurs minutes avant de voir tous ses événements."
-      ],
-      "Calendar is too big": [
-        "Le calendrier est trop volumineux"
-      ],
-      "Calendar link is not accessible": [
-        "Le lien du calendrier n’est pas accessible."
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Le lien du calendrier est temporairement inaccessible."
-      ],
-      "Failed to sync calendar": [
-        "Échec de la synchronisation du calendrier"
-      ],
-      "More than 12 hours passed since last update": [
-        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour."
-      ],
-      "Unsupported calendar format": [
-        "Format de calendrier non pris en charge"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour — Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
       ]
     },
     "Collapsible tooltip": {
@@ -1358,7 +1313,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Birmanie"
+        "Myanmar/Birmanie"
       ],
       "Namibia": [
         "Namibie"
@@ -1728,8 +1683,8 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
       ],
-      "A problem occurred, please try again": [
-        "Une erreur est survenue, veuillez réessayer."
+      "A problem occurred, please try again.": [
+        "Une erreur s'est produite, veuillez réessayer."
       ],
       "Authentication canceled.": [
         "Authentification annulée."
@@ -1847,7 +1802,7 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
-      "Please activate your content search again": [
+      "Please activate your search again": [
         "Veuillez réactiver la recherche de contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
@@ -2482,9 +2437,6 @@
       "Downloading": [
         "Téléchargement en cours"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Glissez-déposez des éléments ici ou recherchez des fichiers à charger."
-      ],
       "Drop the file here to upload": [
         "Déposez un fichier ici pour l'importer"
       ],
@@ -2558,6 +2510,9 @@
       "Free up some space or contact your administrator.": [
         "Libérez de l'espace ou contactez votre administrateur."
       ],
+      "Go ahead, upload a file": [
+        "Chargez un fichier."
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Allez dans Mes fichiers et commencez à charger des fichiers."
       ],
@@ -2618,6 +2573,9 @@
       ],
       "Internet connection restored.": [
         "Connexion Internet rétablie."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Il suffit de glisser-déposer ou de sélectionner des fichiers."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -2816,9 +2774,6 @@
       "Secure sharing": [
         "Partage sécurisé"
       ],
-      "Secure your documents and data": [
-        "Sécurisez vos documents et vos données."
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Sélectionnez un fichier ou un dossier chargé et créez un lien vers celui-ci."
       ],
@@ -2876,8 +2831,8 @@
       "Swiss privacy": [
         "Confidentialité suisse"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Appuyez sur le bouton + pour charger un fichier ou un dossier."
+      "Tap the + button to upload a file or folder": [
+        "Tapotez sur le bouton + pour charger un fichier ou un dossier."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Le compte peut avoir une nouvelle clé ou les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
@@ -3185,7 +3140,7 @@
         "Enregistrer automatiquement les contacts"
       ],
       "Awful": [
-        "Affreuse"
+        "Affreux"
       ],
       "Bad": [
         "Mauvaise"
@@ -3507,7 +3462,7 @@
         "Que s'est-il passé ?"
       ],
       "Wonderful": [
-        "Merveilleuse"
+        "Merveilleux"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
@@ -3856,18 +3811,18 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Créer un dossier"
+      "Create a share link": [
+        "Créer un lien de partage"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Commencez à utiliser Proton Drive et nous vous offrons 1 Go pour votre compte gratuitement !"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Commencez à utiliser Proton Drive et nous doublerons votre espace de stockage gratuit pour atteindre 1 Go !"
       ],
       "Set a recovery method": [
         "Définir une méthode de récupération"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jour.",
-        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jours."
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jour :",
+        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jours :"
       ],
       "Upload a file": [
         "Importer un fichier"
@@ -3900,8 +3855,8 @@
       "Welcome to ${ appName }": [
         "Bienvenue dans ${ appName }"
       ],
-      "Your welcome gift": [
-        "Votre cadeau de bienvenue"
+      "Your welcome bonus": [
+        "Votre bonus de bienvenue"
       ]
     },
     "Option": {

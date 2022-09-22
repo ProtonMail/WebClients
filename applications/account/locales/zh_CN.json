@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Access level": {
-      "Full": [
-        "完整"
-      ],
       "Full view": [
         "完整视图"
-      ],
-      "Limited": [
-        "有限"
       ],
       "Limited view": [
         "简视图"
@@ -565,6 +559,9 @@
       "Remove this label": [
         "移除此标签"
       ],
+      "Remove this member": [
+        "移除此成员"
+      ],
       "Remove this notification": [
         "移除这个通知？"
       ],
@@ -628,6 +625,9 @@
       "Revoke all other sessions": [
         "其余设备全部下线"
       ],
+      "Revoke this invitation": [
+        "撤销此邀请"
+      ],
       "Save": [
         "保存"
       ],
@@ -681,6 +681,9 @@
       ],
       "Set recovery phrase": [
         "设置恢复密语"
+      ],
+      "Share": [
+        "分享"
       ],
       "Share via link": [
         "通过链接分享"
@@ -1134,6 +1137,11 @@
       ],
       "Tweet": [
         "发推文"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "邮箱地址"
       ]
     },
     "Calendar edit button tooltip": {
@@ -2635,6 +2643,9 @@
       "A group with this name already exists": [
         "此群组名已被使用"
       ],
+      "Account does not exist": [
+        "账户不存在"
+      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -2671,6 +2682,12 @@
       "Condition incomplete": [
         "条件不完整"
       ],
+      "Contact signature could not be verified": [
+        "无法验证联系人签名"
+      ],
+      "Contact signature not verified": [
+        "未验证联系人签名"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "取消选择至少 ${ calendarToFixCount } 个日历"
       ],
@@ -2679,6 +2696,9 @@
       ],
       "Domain not available, try again later": [
         "网站域名不可用，请稍后再试"
+      ],
+      "Email address disabled": [
+        "邮件地址已禁用"
       ],
       "Email is not valid": [
         "电子邮箱地址无效"
@@ -2764,6 +2784,9 @@
       "Missing key packet": [
         "缺少密钥数据包"
       ],
+      "Missing signature": [
+        "缺少签名"
+      ],
       "Name does not match": [
         "名称不正确"
       ],
@@ -2785,8 +2808,20 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
+      "No keys retrieved for internal user": [
+        "没有为内部用户检索到密钥"
+      ],
+      "No public key for Proton address": [
+        "未找到 Proton 邮箱的公钥"
+      ],
       "No valid address found": [
         "未找到有效地址"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "没有为内部用户检索到的密钥用于发送"
+      ],
+      "Not a Proton account": [
+        "不是 Proton 账户"
       ],
       "Not a valid number": [
         "无效号码"
@@ -2857,8 +2892,17 @@
       "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
       ],
+      "Primary key is not valid for sending": [
+        "主密钥无法发送邮件"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "内部用户的主密钥无效，无法发送邮件"
+      ],
       "Process aborted": [
         "操作已中止"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "已删除重复收件人：${ joinedRecipients }"
       ],
       "Request timed out": [
         "请求超时"
@@ -2868,6 +2912,9 @@
       ],
       "Require at least one condition": [
         "至少应有一个条件"
+      ],
+      "Signature not verified": [
+        "签名未验证"
       ],
       "Signature verification failed": [
         "签名验证失败"
@@ -2889,6 +2936,9 @@
       ],
       "Tab closed": [
         "标签页已关闭"
+      ],
+      "The address might be misspelled": [
+        "地址可能拼写不正确"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
@@ -2926,6 +2976,9 @@
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
       ],
+      "The sending key is not valid": [
+        "发送密钥无效"
+      ],
       "The session has expired. Please sign in again.": [
         "登录状态已过期，请重新登录。"
       ],
@@ -2947,6 +3000,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "此邮件可能含有当前浏览器无法正确打开的链接。"
       ],
+      "Trusted keys are not valid for sending": [
+        "已信任的密钥对发送无效"
+      ],
       "Unknown error": [
         "未知错误"
       ],
@@ -2958,6 +3014,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
+      ],
+      "Validation error": [
+        "验证失败"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "验证失败，请等待一小时后重试。"
@@ -3519,11 +3578,11 @@
       ]
     },
     "Header": {
-      "Actions": [
+      "Action": [
         "操作"
       ],
-      "Calendar": [
-        "日历"
+      "Actions": [
+        "操作"
       ],
       "Event": [
         "事件"
@@ -3555,8 +3614,8 @@
       "Time": [
         "时间"
       ],
-      "What others see": [
-        "对外显示"
+      "User": [
+        "用户"
       ]
     },
     "Header for addresses table": {
@@ -4273,6 +4332,9 @@
       "Are you sure you want to delete this calendar?": [
         "确定要删除此日历吗？"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "您确定要删除此日历吗？所有您分享的与此日历相关的地址将会失效。"
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "您确定要删除此日历吗？其中所有的事件也将被删除。"
       ],
@@ -4405,9 +4467,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "创建日历链接并与 Proton 以外的任何人分享。只有您可以添加或删除日程。"
-      ],
       "Create a new account and share the email address and password with the user.": [
         "创建一个新的账户并与此用户共享电子邮件地址和密码。"
       ],
@@ -4530,6 +4589,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
+      ],
+      "Enable this address to join this calendar": [
+        "启用此地址以加入日历"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "再次启用通过密语恢复将生成一个新的恢复密语。"
@@ -4788,9 +4850,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "向他人表明您对隐私的关切。"
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "简视图：其他人看见你是否在忙；全视图：显示事件所有详细信息，包括姓名、地点以及参与者。"
       ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
@@ -5089,6 +5148,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或 ${ link } 来解决。"
       ],
+      "Remove one of your calendars to join this one": [
+        "在加入此日历之前请先移除一个已有日历"
+      ],
       "Revoke certificate ${ name }": [
         "吊销证书 ${ name }"
       ],
@@ -5235,9 +5297,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
-      ],
-      "This calendar will be removed from your account.": [
-        "日历将会从您的账号中移除。"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "这可能需要几秒钟或几分钟, 具体取决于您的设备。"
@@ -5581,9 +5640,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "取消订阅前，请删除任何附加的个人日历和共享日历链接。"
       ],
-      "You need to have a personal calendar to create a link.": [
-        "您需要有个人日历才能创建链接。"
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "从ICS导入日程之前需要有一个在用的个人日历。"
       ],
@@ -5775,6 +5831,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "为避免欠费导致服务中断，请确保账户中随时都有一种有效的支付方式。"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "添加标签"
       ]
     },
     "Invoice state display as badge": {
@@ -6549,6 +6610,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield 过滤级别"
       ],
+      "Link label": [
+        "链接标签"
+      ],
       "Login password": [
         "登录密码"
       ],
@@ -6902,9 +6966,6 @@
       ],
       "Your calendar URL": [
         "您的日历链接"
-      ],
-      "Your calendar URL label": [
-        "您的日历链接标签"
       ],
       "Your password (admin)": [
         "您的密码(管理员)"
@@ -7540,9 +7601,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME }（网页公测版）"
-      ],
       "${ n } custom email domain": [
         "${ n } 个自有域名"
       ],
@@ -7750,6 +7808,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7816,26 +7894,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -8498,6 +8556,11 @@
         "创建日历以保持日程安排，同时确保数据安全。"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "您的联系方式"
@@ -8745,11 +8808,6 @@
         "安全性较强"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "取消订阅后，您将无法再访问此日历。 此日历中的所有事件都将从账户中删除，但它们仍将保留在原始的公开链接中。"
-      ]
-    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "删除日历?"
@@ -8852,6 +8910,11 @@
         "标签"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "添加标签"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "称呼"
@@ -8902,14 +8965,8 @@
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
       ],
-      "No more missed appointments": [
-        "不再错过任何日程"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
       ]
     },
     "State": {
@@ -10018,9 +10075,6 @@
       "Settings": [
         "设置"
       ],
-      "Share outside Proton": [
-        "第三方共享"
-      ],
       "Short domain (@pm.me)": [
         "短域名（@pm.me）"
       ],
@@ -10408,9 +10462,6 @@
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "升级到付费套餐以创建至多 ${ MAX_CALENDARS_PAID } 个日历，让您工作、社交、生活全不误。"
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "升级至付费套餐以使用链接分享您的个人日历。"
       ]
     },
     "User referee invited via email": {

@@ -4,6 +4,14 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Tam görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Sınırlı görünüm (yalnızca serbest/meşgul)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
@@ -113,6 +121,12 @@
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
+      "Create": [
+        "Ekle"
+      ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
@@ -124,6 +138,9 @@
       ],
       "Customize": [
         "Özelleştir"
+      ],
+      "Decline invite": [
+        "Çağrıyı reddet"
       ],
       "Delete": [
         "Sil"
@@ -235,6 +252,9 @@
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
       ],
+      "Join calendar": [
+        "Takvime katıl"
+      ],
       "Load image": [
         "Görsel yükle"
       ],
@@ -246,6 +266,9 @@
       ],
       "Make this participant required": [
         "Bu katılımcı zorunlu olsun"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
       ],
       "Mark for deletion": [
         "Silmek için işaretle"
@@ -291,6 +314,9 @@
       ],
       "No, I won't attend": [
         "Hayır, katılmayacağım"
+      ],
+      "No, thanks": [
+        "Hayır, teşekkürler"
       ],
       "OK": [
         "Tamam"
@@ -482,6 +508,22 @@
         "Evet, katılacağım"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Bağlantıya sahip olan herkes takviminize erişebilir"
+      ],
+      "They can view or edit your calendar": [
+        "Takviminizi görüntüleyip düzenleyebilirler"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "Herkes ile paylaş"
+      ],
+      "Share with Proton users": [
+        "Proton kullanıcıları ile paylaş"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ya da ${ importContact }."
@@ -602,6 +644,11 @@
         "İsteğe bağlı"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Çok yakında"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
@@ -686,6 +733,11 @@
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "E-posta adresi"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Katılıyor mu?"
@@ -718,6 +770,56 @@
       ],
       "You tentatively accepted the invitation": [
         "Daveti belirsiz olarak kabul ettiniz"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Etiketi yalnızca siz görebilirsiniz"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "İzinleri istediğiniz zaman değiştirebilir ya da kaldırabilirsiniz."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "İzinler"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Bu takvime zaten erişiminiz var"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Bağlantı yönetimi"
+      ],
+      "Manage members": [
+        "Üye yönetimi"
+      ],
+      "Unable to create more calendar links": [
+        "Başka takvim bağlantısı eklenemez"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Bu takvim daha fazla Proton kullanıcısı ile paylaşılamıyor"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Bu takvim için eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.\nBu takvimi başka Proton hesapları ile paylaşmak için var olan üyelerden bazılarını silin.",
+        "Bu takvim için eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.\nBu takvimi başka Proton hesapları ile paylaşmak için var olan üyelerden bazılarını silin."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Bu takvim için eklenebilecek en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı sayısına ulaştınız. \nBu takvime yeni bir bağlantı oluşturmak için var olan bağlantılardan birini silin.",
+        "Bu takvim için eklenebilecek en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı sayısına ulaştınız. \nBu takvime yeni bir bağlantı oluşturmak için var olan bağlantılardan birini silin."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
+      ],
+      "Full view (see all event details)": [
+        "Tam görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1951,8 +2053,14 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
+      "Account does not exist": [
+        "Hesap bulunamadı"
+      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
+      ],
+      "Already a member of this calendar": [
+        "Zaten bu takvimin üyesi"
       ],
       "Answer failed to be sent": [
         "Yanıt gönderilemedi"
@@ -2086,11 +2194,17 @@
       "No keys retrieved for internal user": [
         "İç kullanıcı için herhangi bir anahtar alınamadı"
       ],
+      "No public key for Proton address": [
+        "Proton adresinin herkese açık anahtarı yok"
+      ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Kullanıcı için alınan WKD anahtarı gönderim için geçerli değil"
+      ],
+      "Not a Proton account": [
+        "Bir Proton hesabı değil"
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -2128,6 +2242,10 @@
       "Primary key retrieved for internal user is not valid for sending": [
         "İç kullanıcı için alınan birincil anahtar gönderim için geçerli değil"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
+        "Yinelenen alıcılar kaldırıldı: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
@@ -2157,6 +2275,9 @@
       ],
       "Start time must be before end time": [
         "Başlangıç saati bitiş saatinden önce olmalıdır"
+      ],
+      "The address might be misspelled": [
+        "Adres yanlış yazılmış olabilir"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
@@ -2200,6 +2321,9 @@
       "Unknown error": [
         "Bilinmeyen hata"
       ],
+      "Validation error": [
+        "Doğrulama hatası"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
       ],
@@ -2214,6 +2338,11 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Çağrılan adres bulunamadı"
       ]
     },
     "Error importing calendar": {
@@ -2841,11 +2970,20 @@
       "and": [
         "ve"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm ayrıntılarını görebilir."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik ayrıntılarını göremez."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Bir davette en fazla 100 katılımcı olabilir"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine Proton tarafından erişilmesine izin vermiş olursunuz."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -2983,6 +3121,12 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
+      "Link created": [
+        "Bağlantı oluşturuldu"
       ],
       "Loading": [
         "Yükleniyor"
@@ -3255,6 +3399,9 @@
       "Yearly": [
         "Yıllık"
       ],
+      "You already joined this calendar": [
+        "Zaten bu takvimin üyesisiniz"
+      ],
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
       ],
@@ -3278,6 +3425,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Parolanızı sıfırladınız ve şu takvimlere bağlı etkinliklerin şifresi çözülemedi.\nÖnceden oluşturduğunuz paylaşılan takvim bağlantıları artık kullanılamayacak.\nAbone olunmuş etkin takvimler birkaç dakika sonra yeniden eşitlenecek."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Daha önce bu çağrıyı reddetmişsiniz. Yeniden çağırması için sahibi ile görüşün"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -3345,6 +3495,19 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Birden fazla kişi aynı görünüyor. ${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Erişim"
+      ],
+      "Label (optional)": [
+        "Etiket (isteğe bağlı)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Etiket ekle"
       ]
     },
     "Key badge": {
@@ -3650,6 +3813,9 @@
       ],
       "Wonderful": [
         "Harika"
+      ],
+      "Your calendar URL": [
+        "Takvim adresiniz"
       ]
     },
     "Label for contact group color": {
@@ -3778,7 +3944,31 @@
         "Takvim yönetimi"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Daha fazla takvim oluşturulamıyor. Tarifenizdeki en fazla abone olunabilecek takvim sayısına ulaştınız."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Daha fazla takvim eklenemiyor. Tarifenizin en fazla kişisel takvim sayısı sınırına ulaştınız."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName }, ${ boldCalendarName } takvimini sizinle paylaştı."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Takvime katıl"
+      ],
+      "Unable to join more calendars": [
+        "Başka takvime katılınamaz"
+      ]
+    },
     "Modal title": {
+      "Share calendar": [
+        "Takvimi paylaş"
+      ],
       "Time zone changed": [
         "Saat dilimi değişti"
       ],
@@ -3966,6 +4156,20 @@
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Üye eklendi",
+        "Üyeler eklendi"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Takvim çağrısı geri çevrildi"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "${ calendarName } (${ senderEmail }) takvimine katınıldı"
       ]
     },
     "Notification suffix": {
@@ -4211,11 +4415,6 @@
         "Katılımcı listesini genişlet"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Daha fazla takvim eklenemiyor. Tarifenizin en fazla kişisel takvim sayısı sınırına ulaştınız."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
@@ -4377,6 +4576,31 @@
         "Ayarlar güncellenmedi"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Proton kullanmayan kişilerle takviminizi bir bağlantı ile paylaşın"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "${ calendarName } takvimini paylaşmak istediğiniz Proton hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Kişiler ya da gruplar ekle"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Proton kullanıcıları ile paylaş"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Takvim yönetimi"
@@ -4398,17 +4622,11 @@
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı davet edin ve ödül kazanın!"
       ],
-      "No more missed appointments": [
-        "Zamanı geçmiş başka bir etkinlik yok"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Artık davetler takviminizde bekleyen etkinlikler olarak görüntülenecek. Yanıtlamak istediğiniz etkinliği açmanız yeterli. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "E-posta bildirimleri ile hangi etkinliklerin ne zaman bildirileceğini belirleyebilirsiniz."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Artık abone olduğunuz takvimlere bildirim ekleyebilirsiniz."
@@ -4454,11 +4672,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Şu anda bir takvime abone olunamıyor"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Daha fazla takvim oluşturulamıyor. Tarifenizdeki en fazla abone olunabilecek takvim sayısına ulaştınız."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4782,6 +4995,9 @@
       "Create new group": [
         "Yeni grup ekle"
       ],
+      "Create public link": [
+        "Herkese açık bağlantı ekle"
+      ],
       "Currency": [
         "Para birimi"
       ],
@@ -5046,6 +5262,9 @@
       "You have invited participants with equivalent emails": [
         "Katılımcıları eşdeğer e-postalarla davet ettiniz"
       ],
+      "Your calendar link": [
+        "Takvim bağlantınız"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
       ]
@@ -5179,6 +5398,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Bu paylaşılan takvime erişebilmek için bu adresi etkinleştirin ya da ${ boldCalendarOwnerEmail } ile görüşerek bir çağrı ya da etkin bir adres göndermesini isteyin."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Çağrıldığınız e-posta adresi (${ boldInvitedAddress }) devre dışı olduğundan bu takvime katılamazsınız."
       ]
     },
     "Weekly recurring event, frequency": {

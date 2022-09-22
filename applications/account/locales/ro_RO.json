@@ -4,18 +4,23 @@
     "language": "ro_RO"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Neetichetat"
+      ]
+    },
     "Access level": {
-      "Full": [
-        "Completă"
-      ],
       "Full view": [
         "Vedere completă"
       ],
-      "Limited": [
-        "Limitată"
+      "Full view (see all event details)": [
+        "Vedere completă (toate detaliile evenimentului)"
       ],
       "Limited view": [
         "Vedere limitată"
+      ],
+      "Limited view (see only free/busy)": [
+        "Vedere limitată (afișare doar liber/ocupat)"
       ]
     },
     "Action": {
@@ -565,6 +570,9 @@
       "Remove this label": [
         "Eliminare etichetă"
       ],
+      "Remove this member": [
+        "Eliminare acest membru"
+      ],
       "Remove this notification": [
         "Eliminare această notificare"
       ],
@@ -628,6 +636,9 @@
       "Revoke all other sessions": [
         "Deconectare alte sesiuni"
       ],
+      "Revoke this invitation": [
+        "Refuzare această invitație"
+      ],
       "Save": [
         "Salvare"
       ],
@@ -681,6 +692,9 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Share": [
+        "Partajare"
       ],
       "Share via link": [
         "Partajare prin legătură"
@@ -870,6 +884,16 @@
         "Încercați gratuit 30 de zile"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Acceptare"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Refuzare"
+      ]
+    },
     "Addon": {
       "+ ${ _users } user": [
         "+ un utilizator",
@@ -997,6 +1021,9 @@
     "Badge": {
       "5 users": [
         "5 utilizatori"
+      ],
+      "Coming soon": [
+        "În curând"
       ]
     },
     "Badge for domain": {
@@ -1150,6 +1177,11 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Adresă e-mail"
+      ]
+    },
     "Calendar edit button tooltip": {
       "Edit calendar information": [
         "Editare informații calendar"
@@ -1165,9 +1197,23 @@
         "Puteți importa fișiere ICS din alt calendar în ${ CALENDAR_APP_NAME }. Acest lucru vă permite să importați rapid un eveniment sau întreaga agendă."
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "Refuzat"
+      ],
+      "Invite sent": [
+        "Invitație trimisă"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Ați atins numărul maxim de calendare personale pe care le puteți crea în cadrul planului actual."
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Ați atins numărul maxim de calendare personale pe care le puteți avea. Pentru a accepta restul invitațiilor la calendare trebuie să eliminați din calendarele existente."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Ați atins numărul maxim de calendare partajate pe care le puteți avea. Pentru a accepta restul invitațiilor la calendare trebuie să eliminați din calendarele existente."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Ați atins numărul maxim de un calendar abonat.",
@@ -1186,9 +1232,71 @@
         "Eticheta a fost editată."
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Numai dvs. puteți vedea eticheta."
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Puteți oricând modifica sau elimina permisiuni."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Permisiuni"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Deja aveți acces la acest calendar."
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Creați o legătură către calendar și partajați-o cu oricine din afara Proton. Numai dvs. puteți adăuga sau elimina evenimente."
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Partajați-vă calendarul cu alți utilizatori Proton. Activați colaborarea permițându-le să adauge sau să editeze evenimente în calendar. Puteți modifica oricând permisiunile utilizatorilor."
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Partajare calendar"
+      ],
+      "Share outside Proton": [
+        "Partajare în afara Proton"
+      ],
+      "Share with anyone": [
+        "Partajare cu oricine"
+      ],
+      "Share with Proton users": [
+        "Partajare cu utilizatori Proton"
+      ]
+    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Afișare încă ${ remainingItems }"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Afișare detalii eveniment"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Editare (afișare, creare și editare detalii evenimente)"
+      ],
+      "Full view (see all event details)": [
+        "Vedere completă (toate detaliile evenimentului)"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Permisiuni modificate pentru ${ email }"
       ]
     },
     "Calendar status": {
@@ -1246,6 +1354,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Au trecut mai mult de 12 ore de la ultima actualizare - Proton Calendar va încerca să actualizeze calendarul în câteva ore."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Deschidere setări"
       ]
     },
     "Calendar view": {
@@ -2669,11 +2782,17 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
+      "Account does not exist": [
+        "Contul nu există."
+      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
+      ],
+      "Already a member of this calendar": [
+        "Este deja membru al acestui calendar."
       ],
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
@@ -2705,6 +2824,12 @@
       "Condition incomplete": [
         "Condiție incompletă"
       ],
+      "Contact signature could not be verified": [
+        "Semnătura contactului nu a putut fi verificată"
+      ],
+      "Contact signature not verified": [
+        "Semnătura contactului nu a fost verificată"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deselectați cel puțin un calendar.",
         "Deselectați cel puțin ${ calendarToFixCount } calendare.",
@@ -2717,6 +2842,9 @@
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
+      ],
+      "Email address disabled": [
+        "Adresă de e-mail dezactivată"
       ],
       "Email is not valid": [
         "E-mailul nu este valid"
@@ -2804,6 +2932,9 @@
       "Missing key packet": [
         "Lipsește pachetul de chei."
       ],
+      "Missing signature": [
+        "Semnătură lipsă"
+      ],
       "Name does not match": [
         "Numele nu se potrivește."
       ],
@@ -2825,8 +2956,20 @@
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
+      "No keys retrieved for internal user": [
+        "Nicio cheie preluată pentru utilizatorul intern"
+      ],
+      "No public key for Proton address": [
+        "Nu există cheie publică pentru adresa Proton."
+      ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nicio cheie WKD recuperată pentru utilizator nu este validă pentru trimitere"
+      ],
+      "Not a Proton account": [
+        "Nu este un cont Proton."
       ],
       "Not a valid number": [
         "Nu este un număr valid"
@@ -2899,8 +3042,19 @@
       "Primary address key is not decrypted.": [
         "Cheia primară a adresei nu este decriptată."
       ],
+      "Primary key is not valid for sending": [
+        "Cheia primară nu este validă pentru trimiteri."
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Cheia primară preluată pentru utilizatorul intern nu este validă pentru trimiteri."
+      ],
       "Process aborted": [
         "Proces abandonat"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "A fost eliminat un destinatar duplicat: ${ joinedRecipients }",
+        "Destinatari duplicați eliminați: ${ joinedRecipients }",
+        "Destinatari duplicați eliminați: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -2910,6 +3064,9 @@
       ],
       "Require at least one condition": [
         "Necesită cel puțin o condiție"
+      ],
+      "Signature not verified": [
+        "Semnătură neverificată"
       ],
       "Signature verification failed": [
         "Eșuare verificare semnătură"
@@ -2931,6 +3088,9 @@
       ],
       "Tab closed": [
         "Filă închisă."
+      ],
+      "The address might be misspelled": [
+        "Adresa ar putea fi scrisă greșit"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Navigatorul folosit nu permite autorizarea plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
@@ -2968,6 +3128,9 @@
       "The organization key must be activated first.": [
         "Cheia organizației trebuie mai întâi activată."
       ],
+      "The sending key is not valid": [
+        "Cheia de trimitere nu este validă"
+      ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
       ],
@@ -2989,6 +3152,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
       ],
+      "Trusted keys are not valid for sending": [
+        "Cheile de încredere nu sunt valide pentru trimitere"
+      ],
       "Unknown error": [
         "Eroare necunoscută."
       ],
@@ -3000,6 +3166,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Fișierele încărcate nu sunt chei private valide. Verificați și reîncercați."
+      ],
+      "Validation error": [
+        "Eroare validare."
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verificarea nu a reușit. Reîncercaţi într-o oră."
@@ -3579,11 +3748,14 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Accesare"
+      ],
+      "Action": [
+        "Acțiune"
+      ],
       "Actions": [
         "Acțiuni"
-      ],
-      "Calendar": [
-        "Calendar"
       ],
       "Event": [
         "Eveniment"
@@ -3609,14 +3781,17 @@
       "Organization key fingerprint": [
         "Amprentă cheie organizație"
       ],
+      "Permissions": [
+        "Permisiuni"
+      ],
       "Status": [
         "Stare"
       ],
       "Time": [
         "Timp"
       ],
-      "What others see": [
-        "Ce văd alții"
+      "User": [
+        "Utilizator"
       ]
     },
     "Header for addresses table": {
@@ -4399,6 +4574,9 @@
       "Are you sure you want to delete this calendar?": [
         "Sigur doriți să ștergeți acest calendar?"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "Sigur doriți să ștergeți acest calendar? Toate adresele cu care ați partajat acest calendar vor pierde accesul la acesta."
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Sigur doriți să ștergeți acest calendar? Toate evenimentele din el vor fi șterse."
       ],
@@ -4533,9 +4711,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și etichetele care trebuie importate."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Creați o legătură către calendar și partajați-o cu oricine din afara Proton. Numai dvs. puteți adăuga sau elimina evenimente."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Creați un cont nou și partajați adresa de e-mail și parola cu utilizatorul."
       ],
@@ -4660,6 +4835,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Mesajele primite etichetate cu această etichetă nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      ],
+      "Enable this address to join this calendar": [
+        "Activare această adresă pentru alăturarea la acest calendar"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Activând din nou fraza de recuperare se va genera o nouă fraza de recuperare."
@@ -4922,9 +5100,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Anunțați persoanele de contact că vă pasă de confidențialitatea lor."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Vizualizare limitată: alții văd dacă sunteți ocupat(ă). Vizualizare completă: afișează toate detaliile evenimentului, inclusiv numele, locul sau participanții."
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
@@ -5229,6 +5404,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
+      "Remove one of your calendars to join this one": [
+        "Eliminați unul din calendare pentru a vă alătura acestuia"
+      ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
       ],
@@ -5379,9 +5557,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
-      ],
-      "This calendar will be removed from your account.": [
-        "Acest calendar va fi eliminat din cont."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
@@ -5725,9 +5900,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Trebuie să aveți un calendar personal pentru a crea o legătură."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din fișierul ICS."
       ],
@@ -5919,6 +6091,19 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Pentru a evita orice întrerupere a serviciilor din cauza facturilor neplătite, asigurați-vă că aveți cel puțin o metodă de plată validă salvată în orice moment."
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Accesare"
+      ],
+      "Label (optional)": [
+        "Etichetă (opțional)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Adăugare etichetă"
       ]
     },
     "Invoice state display as badge": {
@@ -6699,6 +6884,9 @@
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
       ],
+      "Link label": [
+        "Etichetă legătură"
+      ],
       "Login password": [
         "Parolă conectare"
       ],
@@ -7053,9 +7241,6 @@
       "Your calendar URL": [
         "URL calendar"
       ],
-      "Your calendar URL label": [
-        "Eticheta URL calendar"
-      ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
       ],
@@ -7360,6 +7545,13 @@
         "Puteți crea până la o legătură per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
         "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
         "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } de legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Ați atins numărul maxim de un membru.",
+        "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } membri.",
+        "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } de membri."
       ]
     },
     "Member action": {
@@ -7706,9 +7898,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (web beta)"
-      ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
         "${ n } domenii personale de e-mail",
@@ -7940,6 +8129,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8006,26 +8215,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8331,6 +8520,30 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credențiale OpenVPN/IKE2 regenerate"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Invitație ștearsă"
+      ],
+      "Invitation revoked": [
+        "Invitație refuzată"
+      ],
+      "Member added": [
+        "Membru adăugat",
+        "Membri adăugați",
+        "Membri adăugați"
+      ],
+      "Member deleted": [
+        "Membru șters"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Invitație calendar refuzată."
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Alăturat la ${ calendarName } ${ senderEmail }"
       ]
     },
     "Notification success": {
@@ -8708,6 +8921,11 @@
         "Creați un calendar pentru a rămâne în topul programului dvs. păstrându-vă datele în siguranță."
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Modalitate de contactare"
@@ -8958,13 +9176,27 @@
       ]
     },
     "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "Prin dezabonare, nu veți mai avea acces la acest calendar. Toate evenimentele din acest calendar vor fi șterse din contul dvs., dar vor rămâne în legătura publică originală."
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Prin dezabonare, nu veți mai avea acces la acest calendar. Toate evenimentele din acest calendar vor fi șterse din cont, dar vor rămâne în legătura publică originală."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Nu veți mai avea acces la acest calendar."
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Dacă părăsiți acest calendar, va trebui să solicitați proprietarului să vă alăturați din nou."
+      ],
+      "This calendar will be removed from your account.": [
+        "Acest calendar va fi eliminat din cont."
       ]
     },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Ștergere calendar?"
+      ],
+      "Leave calendar?": [
+        "Părăsire calendar?"
       ],
       "Remove calendar": [
         "Eliminare calendar"
@@ -9064,6 +9296,36 @@
         "Etichete"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Pentru a invita utilizatori non-Proton partajați calendarul cu o legătură."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Ați atins limita de maxim ${ MAX_CALENDAR_MEMBERS } de membri per calendar."
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Adăugați conturile Proton cu care doriți să partajați ${ calendarName }. Vor primi o invitație."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Adăugare persoane sau grupuri"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Partajare cu utilizatori Proton"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Adăugare etichetă"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nume afișat"
@@ -9114,14 +9376,8 @@
       "Invite friends and earn rewards!": [
         "Invitați pe alții și câștigați recompense!"
       ],
-      "No more missed appointments": [
-        "Gata cu programările ratate"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Încercați ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "În cazul notificărilor prin e-mail, puteți decide despre care evenimente să primiți notificare și când."
       ]
     },
     "State": {
@@ -9515,6 +9771,11 @@
         "Pentru persoane"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Partajat cu mine"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Acțiune"
@@ -9820,6 +10081,9 @@
       ],
       "Create multiple user accounts": [
         "Creare conturi multiple de utilizatori"
+      ],
+      "Create public link": [
+        "Creare legătură publică"
       ],
       "Create user accounts": [
         "Creare conturi de utilizator"
@@ -10264,9 +10528,6 @@
       "Settings": [
         "Setări"
       ],
-      "Share outside Proton": [
-        "Partajare în afara Proton"
-      ],
       "Short domain (@pm.me)": [
         "Domeniu scurt (@pm.me)"
       ],
@@ -10661,8 +10922,8 @@
         "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
         "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } de calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale."
       ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Treceți la un plan de e-mail cu plată pentru a vă partaja calendarul personal cu oricine printr-o legătură."
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Treceți la un plan de e-mail cu plată pentru a partaja calendarul."
       ]
     },
     "User referee invited via email": {

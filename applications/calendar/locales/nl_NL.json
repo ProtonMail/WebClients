@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
+      "Copy link": [
+        "Link kopiëren"
+      ],
+      "Create": [
+        "Aanmaken"
+      ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
@@ -247,6 +253,9 @@
       "Make this participant required": [
         "Maak deze deelnemer verplicht"
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
       ],
@@ -291,6 +300,9 @@
       ],
       "No, I won't attend": [
         "Nee, ik zal niet aanwezig zijn"
+      ],
+      "No, thanks": [
+        "Nee, bedankt"
       ],
       "OK": [
         "OK"
@@ -684,6 +696,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "E-mailadres"
       ]
     },
     "Calendar invite buttons label": {
@@ -2158,6 +2175,9 @@
       "Start time must be before end time": [
         "Starttijd dient voor de begintijd te liggen"
       ],
+      "The address might be misspelled": [
+        "Het adres is mogelijk verkeerd gespeld"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -2841,11 +2861,20 @@
       "and": [
         "en"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Iedereen met deze link kan alle details van deze agenda zien, zoals titel, locatie of deelnemers."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "Door de volledige agendadetails van deze kalender te delen, gaat u akkoord om Proton toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -2983,6 +3012,12 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ],
+      "Link created": [
+        "Koppeling aangemaakt"
       ],
       "Loading": [
         "Laden"
@@ -3347,6 +3382,11 @@
         "Meerdere contacten zien er identiek uit. ${ mergeAction }"
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "Label toevoegen"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "Gecompromitteerd"
@@ -3650,6 +3690,9 @@
       ],
       "Wonderful": [
         "Uitstekend"
+      ],
+      "Your calendar URL": [
+        "Uw agenda-URL"
       ]
     },
     "Label for contact group color": {
@@ -4211,11 +4254,6 @@
         "Lijst deelnemers uitbreiden"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw plan bereikt."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
@@ -4398,17 +4436,11 @@
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
       ],
-      "No more missed appointments": [
-        "Geen gemiste afspraken meer"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "U kan nu meldingen toevoegen aan agenda's waarop u geabonneerd bent."
@@ -4454,11 +4486,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Abonneren op een agenda is op dit moment niet beschikbaar"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Kan niet meer agenda's toevoegen. U hebt het maximum aantal geabonneerde agenda's binnen uw plan bereikt."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -5045,6 +5072,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "U heeft deelnemers met gelijkwaardige e-mails uitgenodigd"
+      ],
+      "Your calendar link": [
+        "Uw agendakoppeling"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"

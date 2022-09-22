@@ -2915,8 +2915,8 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A problem occurred, please try again": [
-        "Виникла проблема. Повторіть спробу"
+      "A problem occurred, please try again.": [
+        "Виникла проблема, повторіть спробу."
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -3095,8 +3095,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your content search again": [
-        "Активуйте пошук вмісту знову"
+      "Please activate your search again": [
+        "Активуйте пошук знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -3160,6 +3160,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Сталася помилка, повторіть спробу"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але Proton не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
@@ -4192,6 +4195,9 @@
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
       ],
+      "Content: ": [
+        "Вміст: "
+      ],
       "Continue with ${ planName }": [
         "Продовжити з ${ planName }"
       ],
@@ -4264,8 +4270,8 @@
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Завантаження повідомлення ${ esProgress } з ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Завантаження повідомлення ${ currentProgress } з ${ totalProgress }"
       ],
       "Draft": [
         "Чернетка"
@@ -5513,12 +5519,6 @@
       "Also archive": [
         "Також архівувати"
       ],
-      "Always label senders emails": [
-        "Завжди позначати мітками е-пошту відправників"
-      ],
-      "Always move senders emails": [
-        "Завжди переміщувати е-пошту відправників"
-      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -5982,6 +5982,9 @@
       ],
       "Outbox": [
         "Вихідні"
+      ],
+      "paid plan": [
+        "платний тарифний план"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -7801,6 +7804,9 @@
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Для повідомлень давніших за 30 днів, пошук виконується лише за темою або списком отримувачів"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
@@ -7812,9 +7818,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"

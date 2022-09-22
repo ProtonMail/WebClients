@@ -2904,7 +2904,7 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
-      "A problem occurred, please try again": [
+      "A problem occurred, please try again.": [
         "A apărut o eroare. Mai reîncercați."
       ],
       "Address primary private key not found": [
@@ -3078,8 +3078,8 @@
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
-      "Please activate your content search again": [
-        "Reactivați căutarea în conținutul mesajelor."
+      "Please activate your search again": [
+        "Reactivați căutarea."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
@@ -3141,6 +3141,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Ceva nu a funcționat bine. Mai încercați."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Proton nu poate decripta mesajul. Verificați dacă toate cheile sunt active."
@@ -4125,6 +4128,9 @@
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
       ],
+      "Content: ": [
+        "Conținut: "
+      ],
       "Continue with ${ planName }": [
         "Continuare cu ${ planName }"
       ],
@@ -4194,8 +4200,8 @@
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Se descarcă mesajul ${ esProgress } din ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Se descarcă mesajul ${ currentProgress } din ${ totalProgress }"
       ],
       "Draft": [
         "Ciornă"
@@ -4251,6 +4257,9 @@
       ],
       "Encrypt message": [
         "Criptare mesaj"
+      ],
+      "End of search results from past 30 days": [
+        "Sfârșit rezultate căutare din ultimele 30 de zile"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -4502,6 +4511,9 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Niciun rezultat găsit în ultimele 30 de zile. Căutarea continuă în restul mesajelor primite."
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nu s-au găsit urmăritori, dar unele imagini nu au putut fi încărcare cu protecția la urmărire activă."
       ],
@@ -4645,6 +4657,9 @@
       "Scheduling message...": [
         "Se programează mesajul..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Căutare conținut complet în mesaje vechi cu un ${ paidPlansButton }."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
@@ -4747,6 +4762,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Datele pe care le-ați introdus în ciornă nu pot fi salvate dacă părăsiți pagina."
       ],
+      "The local database is being prepared": [
+        "Se pregătește baza de date locală."
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Mesajul original pe care încercați să-l redirecționați / să-i răspundeți este în curs de a fi trimis. Dacă continuați, nu veți mai putea anula trimiterea mesajului original."
       ],
@@ -4778,6 +4796,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Această acțiune va descărca cele mai recente mesaje pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
@@ -5421,10 +5442,10 @@
       "Also archive": [
         "Și arhivare"
       ],
-      "Always label senders emails": [
+      "Always label sender's emails": [
         "Etichetare întotdeauna mesaje expeditori"
       ],
-      "Always move senders emails": [
+      "Always move sender's emails": [
         "Mutare întotdeauna mesaje expeditori"
       ],
       "Attach screenshot(s)": [
@@ -5890,6 +5911,9 @@
       ],
       "Outbox": [
         "De trimis"
+      ],
+      "paid plan": [
+        "plan cu plată"
       ],
       "Pay invoice": [
         "Plată factură"
@@ -7659,6 +7683,9 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Pentru mesaje mai vechi de 30 de zile, căutarea se va face numai în câmpurile subiect și destinatar."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
@@ -7670,9 +7697,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."

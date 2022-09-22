@@ -551,6 +551,9 @@
       "Upload file": [
         "Вивантажити файл"
       ],
+      "Upload files": [
+        "Вивантажити файли"
+      ],
       "Upload folder": [
         "Вивантажити теку"
       ],
@@ -694,54 +697,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронізовано"
-      ],
-      "Syncing": [
-        "Синхронізація"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не вдалося розшифрувати календар"
-      ],
-      "Calendar is syncing": [
-        "Календар синхронізується"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
-      ],
-      "Calendar is too big": [
-        "Календар завеликий"
-      ],
-      "Calendar link is not accessible": [
-        "Календар за посиланням недоступний"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Посилання календаря тимчасово недоступне"
-      ],
-      "Failed to sync calendar": [
-        "Не вдалося синхронізувати календар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Понад 12 годин минуло після попередньої синхронізації"
-      ],
-      "Unsupported calendar format": [
-        "Непідтримуваний формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
       ]
     },
     "Collapsible tooltip": {
@@ -1734,8 +1689,8 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A problem occurred, please try again": [
-        "Виникла проблема. Повторіть спробу"
+      "A problem occurred, please try again.": [
+        "Виникла проблема, повторіть спробу."
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -1863,8 +1818,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your content search again": [
-        "Активуйте пошук вмісту знову"
+      "Please activate your search again": [
+        "Активуйте пошук знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -2576,9 +2531,6 @@
       "Downloading": [
         "Завантаження"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Перетягніть елементи сюди або виберіть файли для вивантаження."
-      ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
       ],
@@ -2918,9 +2870,6 @@
       "Secure sharing": [
         "Захищене надсилання"
       ],
-      "Secure your documents and data": [
-        "Захистіть свої документи та дані"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
       ],
@@ -2978,8 +2927,8 @@
       "Swiss privacy": [
         "Швейцарська приватність"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Торкніться кнопки +, щоб вивантажити файли або теку."
+      "Tap the + button to upload a file or folder": [
+        "Торкніться кнопки +, щоб вивантажити файл або теку"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
@@ -4002,20 +3951,8 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Створити теку"
-      ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Розпочніть роботу з Proton Drive і ми надамо вашому обліковому запису до 1 ГБ безплатно!"
-      ],
       "Set a recovery method": [
         "Вказати спосіб відновлення"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Виконайте ці дії впродовж наступного дня",
-        "Виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів",
-        "Виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів",
-        "Виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів"
       ],
       "Upload a file": [
         "Вивантажити файл"
@@ -4047,9 +3984,6 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Вітаємо у ${ appName }"
-      ],
-      "Your welcome gift": [
-        "Ваш вітальний подарунок"
       ]
     },
     "Option": {

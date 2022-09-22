@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
+      "Copy link": [
+        "Kopiér link"
+      ],
+      "Create": [
+        "Opret"
+      ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
@@ -247,6 +253,9 @@
       "Make this participant required": [
         "Gør denne deltager påkrævet"
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Mark for deletion": [
         "Markér til sletning"
       ],
@@ -291,6 +300,9 @@
       ],
       "No, I won't attend": [
         "Nej, jeg deltager ikke"
+      ],
+      "No, thanks": [
+        "Nej tak"
       ],
       "OK": [
         "Ok"
@@ -684,6 +696,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "E-mail"
       ]
     },
     "Calendar invite buttons label": {
@@ -2122,6 +2139,9 @@
       "Start time must be before end time": [
         "Starttidspunkt skal være før sluttidspunkt"
       ],
+      "The address might be misspelled": [
+        "Adressen kan være stavet forkert"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -2798,11 +2818,20 @@
       "and": [
         "og"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Enhver med dette link kan se alle begivenhedsdetaljer i denne kalender såsom titel, placering eller deltagere."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
+      ],
       "At most 100 participants are allowed per invitation": [
         "Højst 100 deltagere er tilladt pr. invitation"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give Proton adgang til denne kalenders krypterede oplysninger."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og samtidig afmelde advarslen."
@@ -2940,6 +2969,12 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "Link copied to clipboard": [
+        "Link kopieret til udklipsholder"
+      ],
+      "Link created": [
+        "Link oprettet"
       ],
       "Loading": [
         "Indlæser"
@@ -3299,6 +3334,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Flere kontakter ser identiske ud. ${ mergeAction }"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Tilføj etiket"
       ]
     },
     "Key badge": {
@@ -4165,11 +4205,6 @@
         "Udvid deltagerliste"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Det er ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -4352,17 +4387,11 @@
       "Invite friends and earn rewards!": [
         "Inviter venner, og optjen belønninger!"
       ],
-      "No more missed appointments": [
-        "Ikke flere glemte aftaler"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nu vises invitationer i din kalender som afventende begivenheder. Du skal blot åbne en begivenhed for at svare. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Du kan nu tilføje notifikationer til kalendere, du har abonneret på."
@@ -4408,11 +4437,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "Abonnering på en kalender er ikke tilgængelig i øjeblikket"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Det er ikke muligt at oprette flere kalendere. Du har nået det maksimale antal tilmeldte kalendere for dit abonnement."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4999,6 +5023,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Du har inviteret deltagere med tilsvarende e-mails"
+      ],
+      "Your calendar link": [
+        "Dit kalenderlink"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"

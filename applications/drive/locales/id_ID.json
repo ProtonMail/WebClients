@@ -545,6 +545,9 @@
       "Upload file": [
         "Unggah berkas"
       ],
+      "Upload files": [
+        "Unggah berkas"
+      ],
       "Upload folder": [
         "Unggah folder"
       ],
@@ -688,54 +691,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Tidak disinkronkan"
-      ],
-      "Syncing": [
-        "Menyinkronkan"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender tidak dapat didekripsi"
-      ],
-      "Calendar is syncing": [
-        "Kalender sedang menyinkronkan data"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
-      ],
-      "Calendar is too big": [
-        "Ukuran kalender terlalu besar"
-      ],
-      "Calendar link is not accessible": [
-        "Tautan kalender tidak dapat diakses"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Tautan kalender untuk sementara tidak dapat diakses"
-      ],
-      "Failed to sync calendar": [
-        "Gagal menyinkronkan kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
-      ],
-      "Unsupported calendar format": [
-        "Format kalender tidak didukung"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba untuk memperbarui kalender dalam beberapa jam."
       ]
     },
     "Collapsible tooltip": {
@@ -1725,8 +1680,8 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
-      "A problem occurred, please try again": [
-        "Terdapat suatu masalah, silakan coba lagi"
+      "A problem occurred, please try again.": [
+        "Terjadi suatu kesalahan. Silakan coba lagi."
       ],
       "Authentication canceled.": [
         "Otentikasi dibatalkan."
@@ -1839,8 +1794,8 @@
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
-      "Please activate your content search again": [
-        "Mohon aktifkan kembali pencarian konten Anda"
+      "Please activate your search again": [
+        "Silakan aktifkan kembali pencarian Anda"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -2435,9 +2390,6 @@
       "Downloading": [
         "Sedang mengunduh"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Letakkan item di sini atau pilih berkas yang ingin Anda unggah."
-      ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
       ],
@@ -2510,6 +2462,9 @@
       "Free up some space or contact your administrator.": [
         "Hapus beberapa berkas atau hubungi administrator Anda."
       ],
+      "Go ahead, upload a file": [
+        "Unggah berkas"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Masuk ke \"Berkas-berkas saya\" dan unggah beberapa berkas terlebih dahulu."
       ],
@@ -2569,6 +2524,9 @@
       ],
       "Internet connection restored.": [
         "Koneksi internet telah pulih."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Mengunggah berkas semudah menarik atau memilih berkas"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -2765,9 +2723,6 @@
       "Secure sharing": [
         "File sharing yang aman"
       ],
-      "Secure your documents and data": [
-        "Amankan dokumen dan data Anda"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
       ],
@@ -2825,8 +2780,8 @@
       "Swiss privacy": [
         "Privasi Swiss"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Ketuk tombol + untuk mengunggah berkas atau folder."
+      "Tap the + button to upload a file or folder": [
+        "Ketuk tombol + untuk mengunggah berkas atau folder"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder berikut apabila Anda mempercayai sumbernya."
@@ -3783,17 +3738,17 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Buat folder"
+      "Create a share link": [
+        "Buat tautan untuk dibagi"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Mulailah menggunakan Proton Drive dan kami akan meningkatkan akun Anda ke 1 GB secara cuma-cuma!"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Mulailah menggunakan Proton Drive dan kami akan menggandakan kuota penyimpanan Anda menjadi 1GB!"
       ],
       "Set a recovery method": [
         "Tentukan metode pemulihan"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ remainingDaysForGift } hari ke depan"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ remainingDaysForGift } hari ke depan:"
       ],
       "Upload a file": [
         "Unggah berkas"
@@ -3826,7 +3781,7 @@
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
       ],
-      "Your welcome gift": [
+      "Your welcome bonus": [
         "Hadiah selamat datang Anda"
       ]
     },

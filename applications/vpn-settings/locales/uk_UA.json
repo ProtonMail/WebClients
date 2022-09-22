@@ -590,54 +590,6 @@
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронізовано"
-      ],
-      "Syncing": [
-        "Синхронізація"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не вдалося розшифрувати календар"
-      ],
-      "Calendar is syncing": [
-        "Календар синхронізується"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
-      ],
-      "Calendar is too big": [
-        "Календар завеликий"
-      ],
-      "Calendar link is not accessible": [
-        "Календар за посиланням недоступний"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Посилання календаря тимчасово недоступне"
-      ],
-      "Failed to sync calendar": [
-        "Не вдалося синхронізувати календар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Понад 12 годин минуло після попередньої синхронізації"
-      ],
-      "Unsupported calendar format": [
-        "Непідтримуваний формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } користувач",
@@ -3212,9 +3164,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (бета для браузера)"
-      ],
       "${ n } custom email domain": [
         "${ n } власний домен",
         "${ n } власні домени",

@@ -656,6 +656,9 @@
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
+      "Share": [
+        "Megosztás"
+      ],
       "Share via link": [
         "Megosztás hivatkozással"
       ],
@@ -1110,6 +1113,11 @@
       ],
       "Tweet": [
         "Tweet"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "E-mail cím"
       ]
     },
     "Calendar limit warning": {
@@ -2579,6 +2587,12 @@
       "Condition incomplete": [
         "Hiányos feltétel"
       ],
+      "Contact signature could not be verified": [
+        "Nem sikerült ellenőrizni a névjegy aláírását"
+      ],
+      "Contact signature not verified": [
+        "Névjegy aláírása nincs ellenőrizve"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál",
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál"
@@ -2589,6 +2603,9 @@
       ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
+      ],
+      "Email address disabled": [
+        "Az e-mail cím le van tiltva"
       ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
@@ -2675,6 +2692,9 @@
       "Missing key packet": [
         "Hiányzó kulcs csomag"
       ],
+      "Missing signature": [
+        "Hiányzó aláírás"
+      ],
       "Name does not match": [
         "Név nem egyezik"
       ],
@@ -2687,8 +2707,14 @@
       "No active sessions": [
         "Nincs aktív munkamenet"
       ],
+      "No keys retrieved for internal user": [
+        "Nem található kulcs a belső felhasználóhoz"
+      ],
       "No valid address found": [
         "Nem található érvényes e-mail cím"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nem sikerült a küldéshez érvényes WKD kulcs letöltése"
       ],
       "Not a valid number": [
         "Érvénytelen szám"
@@ -2760,6 +2786,12 @@
       "Primary address key is not decrypted.": [
         "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
+      "Primary key is not valid for sending": [
+        "Az elsődleges kulcs nem érvényes a küldéshez"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "A belső felhasználóhoz letöltött elsődleges kulcs nem érvényes a küldéshez"
+      ],
       "Process aborted": [
         "Folyamat megszakítva"
       ],
@@ -2771,6 +2803,9 @@
       ],
       "Require at least one condition": [
         "Legalább egy feltétel szükséges"
+      ],
+      "Signature not verified": [
+        "Aláírás nincs ellenőrizve"
       ],
       "Signature verification failed": [
         "Aláírás ellenőrzése sikertelen"
@@ -2792,6 +2827,9 @@
       ],
       "Tab closed": [
         "Fül bezárva"
+      ],
+      "The address might be misspelled": [
+        "Lehetséges, hogy a cím el van írva"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
@@ -2829,6 +2867,9 @@
       "The organization key must be activated first.": [
         "Először a szervezeti kulcs aktiválása szükséges."
       ],
+      "The sending key is not valid": [
+        "A küldő kulcs érvénytelen"
+      ],
       "The session has expired. Please sign in again.": [
         "Ez a munkamenet lejárt. Lépjen be újra."
       ],
@@ -2846,6 +2887,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
+      ],
+      "Trusted keys are not valid for sending": [
+        "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -3348,11 +3392,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Művelet"
+      ],
       "Actions": [
         "Műveletek"
-      ],
-      "Calendar": [
-        "Naptár"
       ],
       "Event": [
         "Esemény"
@@ -3384,8 +3428,8 @@
       "Time": [
         "Időpont"
       ],
-      "What others see": [
-        "Ahogy másoknál megjelenik"
+      "User": [
+        "Felhasználó"
       ]
     },
     "Header for addresses table": {
@@ -5470,6 +5514,11 @@
         "A fizetetlen számlák miatti szolgáltatás kimaradások elkerülése érdekében kérjük, hogy mindig legyen elmentve legalább egy valós fizetési mód."
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "Új címke"
+      ]
+    },
     "Invoice state display as badge": {
       "Billed": [
         "Számlázva"
@@ -6584,9 +6633,6 @@
       "Your calendar URL": [
         "Az ön naptárának URL-je"
       ],
-      "Your calendar URL label": [
-        "Az ön naptárának URL neve"
-      ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
       ],
@@ -7208,9 +7254,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (web béta)"
-      ],
       "${ n } custom email domain": [
         "${ n } saját e-mail domain név",
         "${ n } saját e-mail domain név"
@@ -7430,6 +7473,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7496,26 +7559,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8169,6 +8212,11 @@
         "Hozzon létre egy naptárat, hogy egyszerűen nyilvántarthassa az időbeosztását, mégis biztonságban tarthassa adatait."
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség önnel"
@@ -8494,6 +8542,11 @@
       ],
       "Labels": [
         "Címkék"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Új címke"
       ]
     },
     "Signup label": {
@@ -9654,9 +9707,6 @@
       "Settings": [
         "Beállítások"
       ],
-      "Share outside Proton": [
-        "Megosztás Protonon kívül"
-      ],
       "Short domain (@pm.me)": [
         "Rövid domain (@pm.me)"
       ],
@@ -10044,9 +10094,6 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Váltson előfizetéses Mail csomagra, hogy akár ${ MAX_CALENDARS_PAID } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának.",
         "Váltson előfizetéses Mail csomagra, hogy akár ${ MAX_CALENDARS_PAID } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának."
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Váltson előfizetéses Mail csomagra, hogy egy hivatkozás segítségével bárkivel megoszthassa a személyes naptárát."
       ]
     },
     "User referee invited via email": {
