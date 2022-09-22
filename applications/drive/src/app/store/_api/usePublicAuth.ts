@@ -41,10 +41,10 @@ export default function usePublicAuth(token: string, urlPassword: string) {
         // Code 2026 can happen for different reasons.
         // During initHandshake, it can happen when "volume is not available"
         // or "file has reached the download limit".
-        // During initSession, it can mean the custom password is needed. This
-        // case is handled manually in useEffect below and doesn't have to be
-        // taken care of here as here would not be possible to distinguish the
-        // situation anyway.
+        // During initSession, it can mean the generated password is wrong or
+        // custom password is needed. These cases are handled manually in
+        // useEffect below and doesn't have to be taken care of here as here
+        // would not be possible to distinguish the situation anyway.
         if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
             setError(c('Title').t`The link expired`);
             return;
@@ -72,7 +72,14 @@ export default function usePublicAuth(token: string, urlPassword: string) {
                         setIsPasswordNeeded(true);
                         return;
                     }
-                    return initSession(token, urlPassword, handshakeInfo);
+                    return initSession(token, urlPassword, handshakeInfo).catch((error) => {
+                        const apiError = getApiError(error);
+                        if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
+                            setIsPasswordNeeded(true);
+                            return;
+                        }
+                        throw error;
+                    });
                 })
                 .catch((error) => {
                     handleInitialLoadError(error);
