@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Access level": {
-      "Full": [
-        "Complet"
-      ],
       "Full view": [
         "Vista completa"
-      ],
-      "Limited": [
-        "Limitat"
       ],
       "Limited view": [
         "Vista limitada"
@@ -631,6 +625,9 @@
       "Set recovery phrase": [
         "Establir la frase de recuperació"
       ],
+      "Share": [
+        "Compartir"
+      ],
       "Share via link": [
         "Compartir amb enllaç"
       ],
@@ -1039,6 +1036,11 @@
       ],
       "Send": [
         "Enviar"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Adreça de correu electrònic"
       ]
     },
     "Calendar settings sidebar": {
@@ -2359,6 +2361,12 @@
       "Condition incomplete": [
         "Condició incompleta"
       ],
+      "Contact signature could not be verified": [
+        "La signatura del contacte no pot ser verificada"
+      ],
+      "Contact signature not verified": [
+        "Signatura del contacte no verificada"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarToFixCount } calendari",
         "Desmarqueu almenys ${ calendarToFixCount } calendaris"
@@ -2369,6 +2377,9 @@
       ],
       "Domain not available, try again later": [
         "El domini no està disponible; torneu-ho a provar més tard"
+      ],
+      "Email address disabled": [
+        "Correu electrònic deshabilitada"
       ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
@@ -2449,6 +2460,9 @@
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
+      "Missing signature": [
+        "Signatura no trobada"
+      ],
       "Name on card required": [
         "Nom en targeta requerit"
       ],
@@ -2458,8 +2472,14 @@
       "No active sessions": [
         "No hi ha sessions actives"
       ],
+      "No keys retrieved for internal user": [
+        "No s’ha recuperat cap clau per a l’usuari intern"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -2513,6 +2533,12 @@
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
       ],
+      "Primary key is not valid for sending": [
+        "La clau principal no és vàlida per a l'enviament"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clau principal obtinguda per l'usuari intern no és vàlida per a l'enviament"
+      ],
       "Process aborted": [
         "Procés anul·lat"
       ],
@@ -2524,6 +2550,9 @@
       ],
       "Require at least one condition": [
         "Requereix al menys una condició"
+      ],
+      "Signature not verified": [
+        "Signatura no verificada"
       ],
       "Signature verification failed": [
         "Verificació de la signatura fallida"
@@ -2542,6 +2571,9 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
+      ],
+      "The address might be misspelled": [
+        "És possible que l'adreça estigui mal escrita"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que utilitzeu no permet l'autorització total del pagament. Si us plau, utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
@@ -2570,6 +2602,9 @@
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau d'organització."
       ],
+      "The sending key is not valid": [
+        "La clau enviada no es vàlida"
+      ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
       ],
@@ -2590,6 +2625,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Les claus de confiança no són vàlides per enviar-les"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -3053,11 +3091,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Acció"
+      ],
       "Actions": [
         "Accions"
-      ],
-      "Calendar": [
-        "Calendari"
       ],
       "Event": [
         "Esdeveniment"
@@ -3085,6 +3123,9 @@
       ],
       "Time": [
         "Temps"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "Header for addresses table": {
@@ -4671,6 +4712,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Per evitar qualsevol interrupció del servei a causa de factures impagades, assegureu-vos que tingueu guardat com a mínim una forma de pagament vàlida en qualsevol moment."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Afegeix etiqueta"
       ]
     },
     "Invoice state display as badge": {
@@ -6553,6 +6599,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Una manera de contactar amb tu"
@@ -6812,6 +6863,11 @@
         "Etiquetes"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Afegeix etiqueta"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nom a mostrar"
@@ -6829,9 +6885,6 @@
       ],
       "Invite friends and earn rewards!": [
         "Convideu amistats i guanyeu recompenses!"
-      ],
-      "No more missed appointments": [
-        "No hi ha més cites perdudes"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
@@ -7797,9 +7850,6 @@
       ],
       "Settings": [
         "Configuració"
-      ],
-      "Share outside Proton": [
-        "Compartir fora de Proton"
       ],
       "Short domain (@pm.me)": [
         "Domini curt (@pm.me)"

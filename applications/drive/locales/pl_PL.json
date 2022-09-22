@@ -551,6 +551,9 @@
       "Upload file": [
         "Prześlij plik"
       ],
+      "Upload files": [
+        "Prześlij pliki"
+      ],
       "Upload folder": [
         "Prześlij folder"
       ],
@@ -694,54 +697,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Niezsynchronizowany"
-      ],
-      "Syncing": [
-        "Trwa synchronizacja"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalendarz nie może zostać odszyfrowany"
-      ],
-      "Calendar is syncing": [
-        "Kalendarz jest synchronizowany"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalendarz jest synchronizowany: Ładowanie wszystkich wydarzeń może potrwać kilka minut."
-      ],
-      "Calendar is too big": [
-        "Rozmiar kalendarza jest zbyt duży"
-      ],
-      "Calendar link is not accessible": [
-        "Link kalendarza nie jest dostępny"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Link kalendarza jest tymczasowo niedostępny"
-      ],
-      "Failed to sync calendar": [
-        "Nie udało się zsynchronizować kalendarza"
-      ],
-      "More than 12 hours passed since last update": [
-        "Od ostatniej aktualizacji minęło ponad 12 godzin"
-      ],
-      "Unsupported calendar format": [
-        "Format kalendarza jest nieobsługiwany"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Link kalendarza nie jest dostępny poza usługą dostawcy kalendarza."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Minęło ponad 12 godzin od ostatniej synchronizacji. Proton Calendar zaktualizuje kalendarz w ciągu kilku godzin."
       ]
     },
     "Collapsible tooltip": {
@@ -1734,8 +1689,8 @@
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
-      "A problem occurred, please try again": [
-        "Wystąpił problem. Spróbuj ponownie"
+      "A problem occurred, please try again.": [
+        "Wystąpił problem. Spróbuj ponownie."
       ],
       "Authentication canceled.": [
         "Uwierzytelnianie zostało anulowane."
@@ -1863,8 +1818,8 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
-      "Please activate your content search again": [
-        "Włącz ponownie wyszukiwanie zawartości"
+      "Please activate your search again": [
+        "Włącz ponownie wyszukiwanie"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Popraw zaznaczony konflikt, aby kontynuować.",
@@ -2576,9 +2531,6 @@
       "Downloading": [
         "Pobieranie"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Wybierz pliki lub przeciągnij i upuść elementy tutaj, aby je przesłać."
-      ],
       "Drop the file here to upload": [
         "Upuść plik tutaj, aby przesłać"
       ],
@@ -2654,6 +2606,9 @@
       "Free up some space or contact your administrator.": [
         "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
       ],
+      "Go ahead, upload a file": [
+        "Prześlij plik"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Przejdź do sekcji \"Moje pliki\" i zacznij przesyłać pliki."
       ],
@@ -2716,6 +2671,9 @@
       ],
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "To łatwe jak przeciąganie i upuszczanie lub wybieranie plików"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
@@ -2918,9 +2876,6 @@
       "Secure sharing": [
         "Bezpieczne udostępnianie"
       ],
-      "Secure your documents and data": [
-        "Zabezpiecz dokumenty i dane"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wybierz przesłany plik lub folder i utwórz do niego link."
       ],
@@ -2978,8 +2933,8 @@
       "Swiss privacy": [
         "Szwajcarska polityka prywatności"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Kliknij przycisk +, aby przesłać plik lub folder."
+      "Tap the + button to upload a file or folder": [
+        "Kliknij przycisk +, aby przesłać plik lub folder"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
@@ -4002,20 +3957,20 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Utwórz folder"
+      "Create a share link": [
+        "Udostępnij link"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Skorzystaj z dysku Proton Drive, a otrzymasz 1 GB przestrzeni dyskowej za darmo!"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Skorzystaj z dysku Proton Drive, a podwoimy Twoją przestrzeń dyskową do 1 GB!"
       ],
       "Set a recovery method": [
         "Ustaw metodę odzyskiwania"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Ukończ następujące kroki w ciągu najbliższego dnia",
-        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni",
-        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni",
-        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Ukończ następujące kroki w ciągu najbliższego dnia:",
+        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni:",
+        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni:",
+        "Ukończ następujące kroki w ciągu najbliższych ${ remainingDaysForGift } dni:"
       ],
       "Upload a file": [
         "Prześlij plik"
@@ -4048,8 +4003,8 @@
       "Welcome to ${ appName }": [
         "Witaj w ${ appName }"
       ],
-      "Your welcome gift": [
-        "Twój prezent powitalny"
+      "Your welcome bonus": [
+        "Twój bonus powitalny"
       ]
     },
     "Option": {

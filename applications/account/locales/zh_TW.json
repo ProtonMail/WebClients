@@ -4,11 +4,6 @@
     "language": "zh_TW"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        "完整"
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } 是可用的。"
@@ -673,6 +668,9 @@
       "Set recovery phrase": [
         "設定還原短語"
       ],
+      "Share": [
+        "分享"
+      ],
       "Share via link": [
         "透過連結分享"
       ],
@@ -1095,6 +1093,11 @@
       ],
       "Tweet": [
         "Tweet"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "電郵位址"
       ]
     },
     "Calendar status": {
@@ -2446,6 +2449,12 @@
       "Condition incomplete": [
         "條件不完整"
       ],
+      "Contact signature could not be verified": [
+        "無法驗證聯絡人簽章"
+      ],
+      "Contact signature not verified": [
+        "聯絡人簽章尚未驗證"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆"
       ],
@@ -2454,6 +2463,9 @@
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
+      ],
+      "Email address disabled": [
+        "電郵位址已停用"
       ],
       "Email is not valid": [
         "電郵無效"
@@ -2539,6 +2551,9 @@
       "Missing key packet": [
         "缺少金鑰封包"
       ],
+      "Missing signature": [
+        "簽章遺失"
+      ],
       "Name does not match": [
         "名稱不相符"
       ],
@@ -2551,8 +2566,14 @@
       "No active sessions": [
         "無使用中工作階段"
       ],
+      "No keys retrieved for internal user": [
+        "未為內部使用者檢索到密鑰"
+      ],
       "No valid address found": [
         "找不到有效的位址"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "未為內部使用者檢索到有效WKD密鑰"
       ],
       "Not a valid number": [
         "號碼無效"
@@ -2617,6 +2638,12 @@
       "Primary address key is not decrypted.": [
         "主要位址金鑰並未被加密。"
       ],
+      "Primary key is not valid for sending": [
+        "寄件用的主金鑰不正確。"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
+      ],
       "Process aborted": [
         "處理已中止"
       ],
@@ -2628,6 +2655,9 @@
       ],
       "Require at least one condition": [
         "必須有至少一個條件"
+      ],
+      "Signature not verified": [
+        "簽章尚未驗證"
       ],
       "Signature verification failed": [
         "簽章驗證失敗"
@@ -2643,6 +2673,9 @@
       ],
       "Tab closed": [
         "分頁已關閉"
+      ],
+      "The address might be misspelled": [
+        "位址可能拼錯了"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您目前使用的瀏覽器無法完成支付認證，請使用其它瀏覽器或透過電腦登入。"
@@ -2680,6 +2713,9 @@
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
       ],
+      "The sending key is not valid": [
+        "寄送金鑰無效"
+      ],
       "The session has expired. Please sign in again.": [
         "工作階段已逾期。請重新登入。"
       ],
@@ -2700,6 +2736,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的 URL。"
+      ],
+      "Trusted keys are not valid for sending": [
+        "已信任的密鑰用於寄送時無效"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -3196,11 +3235,11 @@
       ]
     },
     "Header": {
-      "Actions": [
+      "Action": [
         "動作"
       ],
-      "Calendar": [
-        "行事曆"
+      "Actions": [
+        "動作"
       ],
       "Event": [
         "事件"
@@ -3231,6 +3270,9 @@
       ],
       "Time": [
         "時間"
+      ],
+      "User": [
+        "使用者"
       ]
     },
     "Header for addresses table": {
@@ -4785,9 +4827,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載檔案。"
       ],
-      "This calendar will be removed from your account.": [
-        "此行事曆將會從您的帳號中移除。"
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "取決於您的裝置，這可能需要幾秒鐘或幾分鐘"
       ],
@@ -5270,6 +5309,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "為免因未付帳單導致服務中斷，請確保您時刻都存有至少一個有效的付款方法。"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "加入標籤"
       ]
     },
     "Invoice state display as badge": {
@@ -6368,9 +6412,6 @@
       "Your calendar URL": [
         "您的行事曆網址"
       ],
-      "Your calendar URL label": [
-        "您的行事曆 URL 標籤"
-      ],
       "Your password (admin)": [
         "您的密碼（管理員）"
       ],
@@ -6907,9 +6948,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (網頁測試版)"
-      ],
       "${ n } custom email domain": [
         "${ n } 個自訂電郵網域"
       ],
@@ -7411,6 +7449,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "有甚麼途徑可以聯絡您"
@@ -7743,6 +7786,11 @@
         "標籤"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "加入標籤"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "顯示名稱"
@@ -7764,14 +7812,8 @@
       "Invite friends and earn rewards!": [
         "邀請朋友並賺取獎勵！"
       ],
-      "No more missed appointments": [
-        "無其他遺漏的預定"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "藉由電郵通知，您可以決定何時提醒任何事件。"
       ]
     },
     "State": {
@@ -8831,9 +8873,6 @@
       ],
       "Settings": [
         "設定"
-      ],
-      "Share outside Proton": [
-        "與 Proton 外共享"
       ],
       "Short domain (@pm.me)": [
         "短網域 (@pm.me)"

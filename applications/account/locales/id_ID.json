@@ -4,18 +4,23 @@
     "language": "id_ID"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Tanpa label"
+      ]
+    },
     "Access level": {
-      "Full": [
-        "Penuh"
-      ],
       "Full view": [
         "Tampilan penuh"
       ],
-      "Limited": [
-        "Terbatas"
+      "Full view (see all event details)": [
+        "Tampilan penuh (lihat seluruh rincian acara)"
       ],
       "Limited view": [
         "Tampilan terbatas"
+      ],
+      "Limited view (see only free/busy)": [
+        "Tampilan terbatas (hanya tampilkan yang lowong/sibuk)"
       ]
     },
     "Action": {
@@ -565,6 +570,9 @@
       "Remove this label": [
         "Hapus label ini"
       ],
+      "Remove this member": [
+        "Hapus pengguna ini"
+      ],
       "Remove this notification": [
         "Hapus notifikasi ini"
       ],
@@ -628,6 +636,9 @@
       "Revoke all other sessions": [
         "Cabut seluruh sesi lainnya"
       ],
+      "Revoke this invitation": [
+        "Anulir undangan ini"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -681,6 +692,9 @@
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
+      ],
+      "Share": [
+        "Bagikan"
       ],
       "Share via link": [
         "Bagikan melalui tautan"
@@ -870,6 +884,16 @@
         "Coba gratis selama 30 hari"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Terima"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Tolak"
+      ]
+    },
     "Addon": {
       "+ ${ _users } user": [
         "+ ${ _users } pengguna"
@@ -983,6 +1007,9 @@
     "Badge": {
       "5 users": [
         "5 pengguna"
+      ],
+      "Coming soon": [
+        "Segera hadir"
       ]
     },
     "Badge for domain": {
@@ -1136,6 +1163,11 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Email address": [
+        "Alamat email"
+      ]
+    },
     "Calendar edit button tooltip": {
       "Edit calendar information": [
         "Sunting informasi kalender"
@@ -1151,9 +1183,23 @@
         "Anda dapat mengimpor berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Hal ini memungkinkan Anda untuk dapat mengimpor acara tertentu atau seluruh agenda Anda secara cepat."
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "Ditolak"
+      ],
+      "Invite sent": [
+        "Undangan dikirim"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Anda telah mencapai batas jumlah kalender personal yang dapat Anda buat untuk jenis akun Anda."
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Anda telah mencapai batas jumlah kalender personal yang dapat Anda miliki. Untuk dapat menerima undangan kalender baru, Anda harus terlebih dahulu menghapus sebagian kalender Anda."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Anda telah mencapai batas jumlah kalender bersama yang dapat Anda miliki. Untuk dapat menerima undangan kalender baru, Anda harus terlebih dahulu menghapus sebagian kalender Anda."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Anda telah mencapai batas ${ MAX_SUBSCRIBED_CALENDARS } langganan kalender yang diperkenankan."
@@ -1170,9 +1216,71 @@
         "Label disunting"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Hanya Anda yang akan dapat melihat label"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Anda dapat mengubah atau mencabut izin yang ada kapan saja."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Izin"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Anda telah memiliki akses ke kalender ini"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Buat tautan yang tertuju pada kalender Anda dan bagikan dengan mereka yang berada di luar Proton. Hanya Anda yang dapat menambah atau menghapus acara."
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Bagikan kalender Anda dengan pengguna Proton lainnya. Berkolaborasilah dengan mengizinkan mereka untuk menambahkan dan menyunting acara pada kalender Anda. Anda dapat mengubah izin pengguna yang aktif kapan saja."
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Bagikan kalender"
+      ],
+      "Share outside Proton": [
+        "Bagikan ke luar Proton"
+      ],
+      "Share with anyone": [
+        "Bagikan kepada siapa saja"
+      ],
+      "Share with Proton users": [
+        "Bagikan dengan pengguna Proton"
+      ]
+    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Tampilkan ${ remainingItems } item tambahan"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Lihat seluruh rincian acara"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Sunting (lihat, buat, dan sunting rincian acara)"
+      ],
+      "Full view (see all event details)": [
+        "Tampilan penuh (lihat seluruh rincian acara)"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Izin diubah untuk ${ email }"
       ]
     },
     "Calendar status": {
@@ -1230,6 +1338,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba untuk memperbarui kalender dalam beberapa jam."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Buka pengaturan"
       ]
     },
     "Calendar view": {
@@ -2635,11 +2748,17 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "Account does not exist": [
+        "Akun tidak ada"
+      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+      ],
+      "Already a member of this calendar": [
+        "Pengguna sudah merupakan anggota kalender"
       ],
       "Amount above the maximum.": [
         "Jumlah di atas maksimum."
@@ -2671,6 +2790,12 @@
       "Condition incomplete": [
         "Kondisi tidak lengkap"
       ],
+      "Contact signature could not be verified": [
+        "Tanda tangan kontak tidak dapat diverifikasi"
+      ],
+      "Contact signature not verified": [
+        "Tanda tangan kontak tidak terverifikasi"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
       ],
@@ -2679,6 +2804,9 @@
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
+      ],
+      "Email address disabled": [
+        "Alamat email dinonaktifkan"
       ],
       "Email is not valid": [
         "Email tidak valid"
@@ -2764,6 +2892,9 @@
       "Missing key packet": [
         "Paket kunci hilang"
       ],
+      "Missing signature": [
+        "Tanda tangan hilang"
+      ],
       "Name does not match": [
         "Nama tidak cocok"
       ],
@@ -2785,8 +2916,20 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
+      "No keys retrieved for internal user": [
+        "Tidak ada kunci untuk pengguna internal yang diambil"
+      ],
+      "No public key for Proton address": [
+        "Tidak ada kunci publik untuk alamat Proton"
+      ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
+      ],
+      "Not a Proton account": [
+        "Bukan akun Proton"
       ],
       "Not a valid number": [
         "Bukan nomor yang valid"
@@ -2857,8 +3000,17 @@
       "Primary address key is not decrypted.": [
         "Kunci alamat utama tidak didekripsi."
       ],
+      "Primary key is not valid for sending": [
+        "Kunci utama tidak valid untuk pengiriman"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Kunci utama yang diambil untuk pengguna internal tidak dapat digunakan untuk pengiriman"
+      ],
       "Process aborted": [
         "Proses dibatalkan"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Penerima duplikat dihapus: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Waktu permintaan habis"
@@ -2868,6 +3020,9 @@
       ],
       "Require at least one condition": [
         "Perlu minimal satu kondisi"
+      ],
+      "Signature not verified": [
+        "Tanda tangan tidak terverifikasi"
       ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
@@ -2889,6 +3044,9 @@
       ],
       "Tab closed": [
         "Tab ditutup"
+      ],
+      "The address might be misspelled": [
+        "Alamat mungkin salah ketik"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Browser Anda tidak mengizinkan pembayaran yang ada untuk dapat diotorisir sepenuhnya. Mohon gunakan browser lain atau masuk via komputer."
@@ -2926,6 +3084,9 @@
       "The organization key must be activated first.": [
         "Kunci organisasi harus diaktifkan terlebih dahulu."
       ],
+      "The sending key is not valid": [
+        "Kunci pengiriman tidak valid"
+      ],
       "The session has expired. Please sign in again.": [
         "Masa berlaku sesi telah habis. Silakan masuk lagi."
       ],
@@ -2947,6 +3108,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda."
       ],
+      "Trusted keys are not valid for sending": [
+        "Kunci terpercaya tidak valid untuk mengirim"
+      ],
       "Unknown error": [
         "Galat tak diketahui"
       ],
@@ -2958,6 +3122,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Berkas-berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
+      ],
+      "Validation error": [
+        "Kesalahan validasi"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verifikasi gagal, silakan coba satu jam lagi."
@@ -3519,11 +3686,14 @@
       ]
     },
     "Header": {
-      "Actions": [
+      "Access": [
+        "Akses"
+      ],
+      "Action": [
         "Tindakan"
       ],
-      "Calendar": [
-        "Kalender"
+      "Actions": [
+        "Tindakan"
       ],
       "Event": [
         "Peristiwa"
@@ -3549,14 +3719,17 @@
       "Organization key fingerprint": [
         "Sidik jari kunci organisasi"
       ],
+      "Permissions": [
+        "Izin"
+      ],
       "Status": [
         "Status"
       ],
       "Time": [
         "Waktu"
       ],
-      "What others see": [
-        "Apa yang akan orang lain lihat"
+      "User": [
+        "Pengguna"
       ]
     },
     "Header for addresses table": {
@@ -4273,6 +4446,9 @@
       "Are you sure you want to delete this calendar?": [
         "Apakah Anda yakin untuk menghapus kalender ini?"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "Apakah Anda yakin untuk menghapus kalender ini? Seluruh alamat yang telah diundang untuk dapat mengakses kalender ini tidak akan lagi dapat mengakses kalender ini ke depannya."
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Apakah Anda yakin untuk menghapus kalender ini? Seluruh acara yang terkandung di dalamnya juga akan ikut terhapus."
       ],
@@ -4405,9 +4581,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label-label yang hendak Anda impor."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Buat tautan yang tertuju pada kalender Anda dan bagikan dengan mereka yang berada di luar layanan Proton. Hanya Anda yang dapat menambah atau menghapus acara."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Buat akun baru dan bagikan alamat email serta kata sandi akun tersebut kepada pengguna yang bersangkutan."
       ],
@@ -4530,6 +4703,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Email berlabel ini tidak akan dihapus dan masih bisa dibuka di folder asalnya."
+      ],
+      "Enable this address to join this calendar": [
+        "Izinkan alamat ini bergabung ke kalender"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Mengaktifkan ulang frasa pemulihan akan membuat frasa pemulihan baru."
@@ -4788,9 +4964,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Beri tahu kontak-kontak Anda bahwa Anda peduli dengan privasi mereka."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Tampilan terbatas: orang lain akan melihat seolah-olah Anda sedang sibuk. Tampilan penuh: menampilkan seluruh rincian acara, termasuk nama, lokasi, atau peserta."
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke clipboard"
@@ -5089,6 +5262,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
+      "Remove one of your calendars to join this one": [
+        "Hapus salah satu kalender Anda untuk dapat bergabung ke kalender ini"
+      ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
       ],
@@ -5235,9 +5411,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Peramban web ini tidak mendukung untuk melakukan pratinjau dokumen PDF. Silahkan unduh berkas tersebut."
-      ],
-      "This calendar will be removed from your account.": [
-        "Kalender ini akan dihapus dari akun Anda."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
@@ -5581,9 +5754,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Anda harus memiliki kalender pribadi untuk dapat membuat tautan."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas ICS."
       ],
@@ -5775,6 +5945,19 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Untuk menghindari gangguan layanan karena tagihan yang belum terbayar, mohon pastikan Anda memiliki paling tidak 1 metode pembayaran yang valid yang telah tersimpan untuk digunakan sewaktu-waktu."
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Akses"
+      ],
+      "Label (optional)": [
+        "Label (opsional)"
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Tambah label"
       ]
     },
     "Invoice state display as badge": {
@@ -6549,6 +6732,9 @@
       "Level for NetShield blocker filtering": [
         "Level pemfilteran pemblokir NetShield"
       ],
+      "Link label": [
+        "Label tautan"
+      ],
       "Login password": [
         "Kata sandi masuk"
       ],
@@ -6903,9 +7089,6 @@
       "Your calendar URL": [
         "URL kalender Anda"
       ],
-      "Your calendar URL label": [
-        "Label URL kalender Anda"
-      ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ],
@@ -7204,6 +7387,11 @@
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan di bawah ini."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } pengguna."
       ]
     },
     "Member action": {
@@ -7540,9 +7728,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (web beta)"
-      ],
       "${ n } custom email domain": [
         "${ n } domain email khusus"
       ],
@@ -7750,6 +7935,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7816,26 +8021,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8135,6 +8320,28 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Undangan dihapus"
+      ],
+      "Invitation revoked": [
+        "Undangan dianulir"
+      ],
+      "Member added": [
+        "Anggota ditambahkan"
+      ],
+      "Member deleted": [
+        "Pengguna dihapus"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Undangan kalender ditolak"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Bergabung ke ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -8498,6 +8705,11 @@
         "Buat kalender untuk menjaga rutinitas dan mengamankan data Anda."
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat email tidak ditemukan di antara id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Cara menghubungi Anda"
@@ -8746,12 +8958,26 @@
       ]
     },
     "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "Dengan berhenti berlangganan, Anda tidak akan lagi dapat mengakses kalender ini. Seluruh acara yang terdapat pada kalender ini akan dihapus dari akun Anda, namun akan tetap ada pada tautan publik asli."
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Dengan berhenti berlangganan, Anda tidak akan lagi dapat mengakses kalender ini. Seluruh acara yang terdapat pada kalender ini akan dihapus dari akun Anda, namun akan tetap ada pada tautan publik aslinya."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Anda tidak akan lagi dapat mengakses kalender ini."
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Apabila Anda keluar dari kalender ini, Anda akan perlu untuk meminta kepada pemilik kalender untuk dapat bergabung kembali ke depannya."
+      ],
+      "This calendar will be removed from your account.": [
+        "Kalender ini akan dihapus dari akun Anda."
       ]
     },
     "Remove calendar section title": {
       "Delete calendar?": [
+        "Hapus kalender?"
+      ],
+      "Leave calendar?": [
         "Hapus kalender?"
       ],
       "Remove calendar": [
@@ -8852,6 +9078,36 @@
         "Label"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Untuk mengundang pengguna non-Proton, bagikan kalender Anda melalui tautan"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Anda telah mencapai batas ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Tentukan kepada akun Proton mana saja kalender ${ calendarName } milik Anda akan dibagikan. Kami akan mengirimkan undangan kepada mereka."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Tambahkan anggota atau grup"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Bagikan dengan pengguna Proton"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Tambah label"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nama tampilan"
@@ -8902,14 +9158,8 @@
       "Invite friends and earn rewards!": [
         "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
       ],
-      "No more missed appointments": [
-        "Tidak ada lagi janji yang luput"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Dengan notifikasi email, Anda dapat menentukan notifikasi seputar acara mana saja yang akan Anda terima beserta waktunya."
       ]
     },
     "State": {
@@ -9277,6 +9527,11 @@
         "Untuk individu"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Dibagikan dengan saya"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Tindakan"
@@ -9576,6 +9831,9 @@
       ],
       "Create multiple user accounts": [
         "Buat lebih dari satu akun pengguna"
+      ],
+      "Create public link": [
+        "Buat tautan publik"
       ],
       "Create user accounts": [
         "Buat akun pengguna"
@@ -10018,9 +10276,6 @@
       "Settings": [
         "Pengaturan"
       ],
-      "Share outside Proton": [
-        "Bagikan ke luar Proton"
-      ],
       "Short domain (@pm.me)": [
         "Domain pendek (@pm.me)"
       ],
@@ -10409,8 +10664,8 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membuat hingga ${ MAX_CALENDARS_PAID } kalender untuk segala jenis keperluan mulai dari kerja, dibagikan kepada teman, hingga diri Anda sendiri."
       ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membagikan kalender personal melalui tautan kepada siapapun."
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Tingkatkan akun Anda ke akun Mail berbayar untuk membagikan kalender Anda."
       ]
     },
     "User referee invited via email": {

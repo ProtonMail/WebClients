@@ -113,6 +113,12 @@
       "Copy email to clipboard": [
         "複製電郵至剪貼簿"
       ],
+      "Copy link": [
+        "複製連結"
+      ],
+      "Create": [
+        "建立"
+      ],
       "Create a new contact group": [
         "創建新的聯絡人群組"
       ],
@@ -245,6 +251,9 @@
       "Make this participant required": [
         "此參與者務必出席"
       ],
+      "Manage addresses": [
+        "管理電郵位址"
+      ],
       "Mark for deletion": [
         "標記作刪除"
       ],
@@ -289,6 +298,9 @@
       ],
       "No, I won't attend": [
         "否，我不會出席"
+      ],
+      "No, thanks": [
+        "不用了，謝謝"
       ],
       "OK": [
         "確定"
@@ -682,6 +694,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "電郵位址"
       ]
     },
     "Calendar invite buttons label": {
@@ -2131,6 +2148,9 @@
       "Start time must be before end time": [
         "起始時間必須在結束時間之前"
       ],
+      "The address might be misspelled": [
+        "位址可能拼錯了"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
       ],
@@ -2913,6 +2933,12 @@
       "Learn more": [
         "瞭解更多"
       ],
+      "Link copied to clipboard": [
+        "連結已複製到剪貼簿"
+      ],
+      "Link created": [
+        "連結已創建"
+      ],
       "Loading": [
         "載入中"
       ],
@@ -3269,6 +3295,11 @@
         "多個聯絡人看似一樣。${ mergeAction }"
       ]
     },
+    "Input placeholder": {
+      "Add label": [
+        "加入標籤"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "已洩漏"
@@ -3568,6 +3599,9 @@
       ],
       "Wonderful": [
         "太棒了"
+      ],
+      "Your calendar URL": [
+        "您的行事曆網址"
       ]
     },
     "Label for contact group color": {
@@ -4097,11 +4131,6 @@
         "展開參與者清單"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "無法創建更多行事曆。您已達到您的方案中的個人行事曆上限。"
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此金鑰不適用於加密"
@@ -4282,17 +4311,11 @@
       "Invite friends and earn rewards!": [
         "邀請朋友並賺取獎勵！"
       ],
-      "No more missed appointments": [
-        "無其他遺漏的預定"
-      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試 ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "藉由電郵通知，您可以決定何時提醒任何事件。"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "你已可以添加提醒到你訂閱的行事曆了。"
@@ -4338,11 +4361,6 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "訂購授權行事曆目前無法使用"
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "無法加入更多行事曆。您已達到您的方案中的已訂購授權行事曆上限。"
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4920,6 +4938,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "您已以同等電郵邀請參與者"
+      ],
+      "Your calendar link": [
+        "您的行事曆連結"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免費試用將要結束，將於 ${ formattedEndDate } 結束"

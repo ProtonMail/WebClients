@@ -692,54 +692,6 @@
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nicht synchronisiert"
-      ],
-      "Syncing": [
-        "Wird synchronisiert"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar is syncing": [
-        "Kalender wird synchronisiert"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Der Kalender wird synchronisiert: Es kann einige Minuten dauern, bis alle Termine angezeigt werden."
-      ],
-      "Calendar is too big": [
-        "Kalender ist zu groß"
-      ],
-      "Calendar link is not accessible": [
-        "Kalender-Link ist nicht erreichbar"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Der Link zum Kalender ist vorübergehend unzugänglich"
-      ],
-      "Failed to sync calendar": [
-        "Kalender konnte nicht synchronisiert werden"
-      ],
-      "More than 12 hours passed since last update": [
-        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
-      ],
-      "Unsupported calendar format": [
-        "Nicht unterstütztes Kalender-Format"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Der Kalender-Link ist von außerhalb des Ökosystems des Kalenderanbieters nicht zugänglich."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Reduzieren"
@@ -1728,8 +1680,8 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
-      "A problem occurred, please try again": [
-        "Es ist ein Problem aufgetreten, bitte erneut versuchen"
+      "A problem occurred, please try again.": [
+        "Es ist ein Problem aufgetreten, bitte versuche es erneut."
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -1847,8 +1799,8 @@
       "Passwords do not match": [
         "Passwörter stimmen nicht überein"
       ],
-      "Please activate your content search again": [
-        "Bitte die Inhaltssuche erneut aktivieren"
+      "Please activate your search again": [
+        "Bitte die Suche erneut aktivieren"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortzufahren.",
@@ -2482,9 +2434,6 @@
       "Downloading": [
         "Wird heruntergeladen"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Elemente hierhin ziehen und ablegen oder nach Dateien zum Hochladen suchen."
-      ],
       "Drop the file here to upload": [
         "Datei zum Hochladen hier ziehen"
       ],
@@ -2816,9 +2765,6 @@
       "Secure sharing": [
         "Sicheres Teilen"
       ],
-      "Secure your documents and data": [
-        "Sichere deine Dokumente und Daten"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wähle eine hochgeladene Datei oder einen Ordner aus und erstelle einen Link dazu."
       ],
@@ -2875,9 +2821,6 @@
       ],
       "Swiss privacy": [
         "Schweizer Privatsphäre"
-      ],
-      "Tap the + button to upload a file or folder.": [
-        "Tippe auf die + Schaltfläche, um eine Datei oder einen Ordner hochzuladen."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
@@ -3856,18 +3799,18 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Ordner erstellen"
+      "Create a share link": [
+        "Erstelle einen Freigabelink"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Beginne mit Proton Drive und wir erweitern dein Konto kostenlos auf 1 GB!"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Nutze Proton Drive und wir verdoppeln deinen kostenlosen Speicherplatz auf 1 GB!"
       ],
       "Set a recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Führe einfach die folgenden Schritte in ${ remainingDaysForGift } Tag aus",
-        "Führe einfach die folgenden Schritte in den nächsten ${ remainingDaysForGift } Tagen aus"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Führe einfach die folgenden Schritte in ${ remainingDaysForGift } Tag aus:",
+        "Führe einfach die folgenden Schritte in den nächsten ${ remainingDaysForGift } Tagen aus:"
       ],
       "Upload a file": [
         "Datei hochladen"
@@ -3900,7 +3843,7 @@
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
       ],
-      "Your welcome gift": [
+      "Your welcome bonus": [
         "Dein Willkommensgeschenk"
       ]
     },

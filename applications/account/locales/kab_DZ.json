@@ -647,6 +647,9 @@
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
       ],
+      "Share": [
+        "Bḍu"
+      ],
       "Share via link": [
         "Bḍu s useɣwen"
       ],
@@ -1070,6 +1073,11 @@
       ],
       "Tweet": [
         "Tweet"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Tansa imayl"
       ]
     },
     "Calendar status": {
@@ -2335,8 +2343,17 @@
       "Condition incomplete": [
         "Tawtilt tarummidt"
       ],
+      "Contact signature could not be verified": [
+        "Azmul n unermis ur yezmir ara de yettwasenqed"
+      ],
+      "Contact signature not verified": [
+        "Azmul n unermis ur yettwasenqed ara"
+      ],
       "Domain not available, try again later": [
         "Ulac taɣult, ɛreḍ tikkelt-nniḍen ticki"
+      ],
+      "Email address disabled": [
+        "Tansa imayl tensa"
       ],
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
@@ -2419,6 +2436,9 @@
       "Missing key packet": [
         "Ixuṣṣ ukemmus n tsura"
       ],
+      "Missing signature": [
+        "Ixuṣ uzmul"
+      ],
       "Name does not match": [
         "Isem ur imṣada ara"
       ],
@@ -2431,8 +2451,14 @@
       "No active sessions": [
         "Ulac tiɣimiyin turmidin"
       ],
+      "No keys retrieved for internal user": [
+        "Ur d-nufi ula d tasarut i useqdac adigan"
+      ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Ulac tasarut WKD yettwaffen i useqdac adigan i yeɣtan i tuzna"
       ],
       "Not a valid number": [
         "Mačči d uṭṭun ameɣtu"
@@ -2506,6 +2532,9 @@
       "Require at least one condition": [
         "Yesra ma ulac yiwet n tewtilt"
       ],
+      "Signature not verified": [
+        "Azmul ur yettwasenqed ara"
+      ],
       "Signature verification failed": [
         "Asenqed n uzmul yecceḍ"
       ],
@@ -2526,6 +2555,9 @@
       ],
       "Tab closed": [
         "Iccer yettwamdel"
+      ],
+      "The address might be misspelled": [
+        "Yezmer tella tuccḍa deg tira n tansa"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
@@ -2560,6 +2592,9 @@
       "The organization key must be activated first.": [
         "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed."
       ],
+      "The sending key is not valid": [
+        "Tasarut n tuzna ur d tameɣtut"
+      ],
       "The session has expired. Please sign in again.": [
         "Tiɣimit tfukk. Ttxil qqen tikkelt-nniḍen."
       ],
@@ -2577,6 +2612,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Isem n tebzimt-a ulac-it. Ttxil-k·m fren isem-nniḍen."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Tisura yettwasentmen ur ɣtint ara i tuzna"
       ],
       "Unknown error": [
         "Tuccḍa tarussint"
@@ -3000,11 +3038,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Tigawt"
+      ],
       "Actions": [
         "Tigawin"
-      ],
-      "Calendar": [
-        "Awitay"
       ],
       "Event": [
         "Amaynut"
@@ -3032,6 +3070,9 @@
       ],
       "Time": [
         "Akud"
+      ],
+      "User": [
+        "Aseqdac"
       ]
     },
     "Header for addresses table": {
@@ -4374,9 +4415,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Iminig-agi ur yedhil ara tamuɣli n yisemliyen PDF. Ttxil-k•m sader afaylu."
       ],
-      "This calendar will be removed from your account.": [
-        "Awitay-a ad yettwakkes seg umiḍan-ik·im."
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Aya yezmer ad yeṭṭef kra n tasinin neɣ tisdatin akken yella yibenk-ik·im"
       ],
@@ -4739,6 +4777,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "I wakken urd-yettili ara uḥbas n umeẓlu ssebba n tfakturin ur nettuxelleṣ ara, muqel ttxil-k·m amek ad tḍemneḍ xerṣum yiwet n tarrayt n uxelleṣ tameɣtut yettuskelsen deg yal tallit."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Rnu tabzimt"
       ]
     },
     "Invoice state display as badge": {
@@ -6799,6 +6842,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
@@ -7081,6 +7129,11 @@
       ],
       "Labels": [
         "Tibzimin"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Rnu tabzimt"
       ]
     },
     "Signup label": {
@@ -8087,9 +8140,6 @@
       ],
       "Settings": [
         "Iγewwaren"
-      ],
-      "Share outside Proton": [
-        "Bḍu beṛṛa n Proton"
       ],
       "Short domain (@pm.me)": [
         "Taɣult tawezzlant (@pm.me)"

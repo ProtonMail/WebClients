@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Access level": {
-      "Full": [
-        "Complet"
-      ],
       "Full view": [
         "Vue complète"
-      ],
-      "Limited": [
-        "Limité"
       ],
       "Limited view": [
         "Vue limitée"
@@ -682,6 +676,9 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "Share": [
+        "Partager"
+      ],
       "Share via link": [
         "Partager avec un lien"
       ],
@@ -1141,6 +1138,11 @@
       ],
       "Tweet": [
         "Tweeter"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Adresse courriel"
       ]
     },
     "Calendar edit button tooltip": {
@@ -2688,6 +2690,12 @@
       "Condition incomplete": [
         "Condition incomplète"
       ],
+      "Contact signature could not be verified": [
+        "La signature du contact n'a pas pu être vérifiée"
+      ],
+      "Contact signature not verified": [
+        "Signature du contact non vérifiée"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers"
@@ -2698,6 +2706,9 @@
       ],
       "Domain not available, try again later": [
         "Domaine non disponible, veuillez réessayer plus tard"
+      ],
+      "Email address disabled": [
+        "Adresse courriel désactivée"
       ],
       "Email is not valid": [
         "Le courriel n'est pas valide"
@@ -2784,6 +2795,9 @@
       "Missing key packet": [
         "Paquet de clé manquant"
       ],
+      "Missing signature": [
+        "Signature manquante"
+      ],
       "Name does not match": [
         "Les noms ne correspondent pas"
       ],
@@ -2805,8 +2819,14 @@
       "No emails found to import - the account does not have an inbox": [
         "Aucun courriel à importer, le compte n'a pas de Boîte de réception"
       ],
+      "No keys retrieved for internal user": [
+        "Aucune clé récupérée pour l'utilisateur interne"
+      ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Aucune clé WKD récupérée pour l'utilisateur n'est valide pour l'envoi"
       ],
       "Not a valid number": [
         "Numéro invalide"
@@ -2878,6 +2898,12 @@
       "Primary address key is not decrypted.": [
         "La clé d'adresse principale n'est pas déchiffrée."
       ],
+      "Primary key is not valid for sending": [
+        "La clé principale n'est pas valide pour l'envoi."
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi."
+      ],
       "Process aborted": [
         "Processus abandonné"
       ],
@@ -2889,6 +2915,9 @@
       ],
       "Require at least one condition": [
         "Nécessite au moins une condition"
+      ],
+      "Signature not verified": [
+        "Signature non vérifiée"
       ],
       "Signature verification failed": [
         "La vérification de la signature a échoué"
@@ -2910,6 +2939,9 @@
       ],
       "Tab closed": [
         "Onglet fermé"
+      ],
+      "The address might be misspelled": [
+        "L'adresse est peut-être mal orthographiée"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Veuillez utiliser un autre navigateur ou connectez-vous depuis un ordinateur."
@@ -2947,6 +2979,9 @@
       "The organization key must be activated first.": [
         "La clé de l'organisation doit d'abord être activée."
       ],
+      "The sending key is not valid": [
+        "La clé d'envoi n'est pas valide"
+      ],
       "The session has expired. Please sign in again.": [
         "La session a expiré. Veuillez vous connecter à nouveau."
       ],
@@ -2967,6 +3002,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Les clés approuvées ne sont pas valides pour l'envoi"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -3549,11 +3587,11 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Action"
+      ],
       "Actions": [
         "Actions"
-      ],
-      "Calendar": [
-        "Calendrier"
       ],
       "Event": [
         "Événement"
@@ -3585,8 +3623,8 @@
       "Time": [
         "Date et heure"
       ],
-      "What others see": [
-        "Ce que voient les autres"
+      "User": [
+        "Utilisateur"
       ]
     },
     "Header for addresses table": {
@@ -4469,9 +4507,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Créez un lien vers votre calendrier et partagez-le avec des personnes qui n'utilisent pas Proton. Il n'y a que vous qui pouvez ajouter ou supprimer des événements."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Créez un nouveau compte et partagez l'adresse courriel et le mot de passe avec l'utilisateur·rice."
       ],
@@ -4855,9 +4890,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Faites savoir à vos contacts que vous vous souciez de leur confidentialité."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Vue limitée: montre vos moments occupés. Vue complète: montre tous les détails des événements, y compris le nom, le lieu ou les participants."
       ],
       "Link copied to clipboard": [
         "Lien copié dans le presse-papier"
@@ -5308,9 +5340,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
-      "This calendar will be removed from your account.": [
-        "Ce calendrier sera retiré de votre compte."
-      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Ceci peut prendre quelques secondes ou quelques minutes selon votre appareil"
       ],
@@ -5653,9 +5682,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Pour créer un lien, vous devez disposer d'un calendrier personnel."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Pour importer vos événements à partir d'un fichier ICS, vous devez avoir un calendrier personnel actif."
       ],
@@ -5847,6 +5873,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Pour éviter toute interruption de service due à des factures impayées, assurez-vous d'avoir au moins un mode de paiement valide enregistré en permanence."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Ajouter un label"
       ]
     },
     "Invoice state display as badge": {
@@ -6978,9 +7009,6 @@
       "Your calendar URL": [
         "URL de votre calendrier"
       ],
-      "Your calendar URL label": [
-        "Label de l'URL de votre calendrier"
-      ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
       ],
@@ -7623,9 +7651,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (Bêta web)"
-      ],
       "${ n } custom email domain": [
         "${ n } domaine de messagerie personnalisé pris en charge",
         "${ n } domaines de messagerie personnalisés pris en charge"
@@ -7845,6 +7870,26 @@
         "Gestion de l'équipe"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -7911,26 +7956,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8603,6 +8628,11 @@
         "Créez un calendrier pour tenir votre planning tout en gardant vos données protégées."
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresse électronique non trouvée parmi les identifiants des utilisateurs définis dans la clé d'envoi (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Un moyen de vous contacter"
@@ -8851,11 +8881,6 @@
         "À la pointe de la technologie:"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "En vous désinscrivant, vous n'aurez plus accès à ce calendrier. Tous les événements de ce calendrier seront supprimés de votre compte, mais ils resteront dans le lien public d'origine."
-      ]
-    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Supprimer le calendrier?"
@@ -8958,6 +8983,11 @@
         "Labels"
       ]
     },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Ajouter un label"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nom d'affichage"
@@ -9008,14 +9038,8 @@
       "Invite friends and earn rewards!": [
         "Invitez des amis et gagnez des récompenses!"
       ],
-      "No more missed appointments": [
-        "Les rendez-vous manqués, c'est du passé"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Avec les notifications par courriel, vous décidez pour quels événements vous serez notifié et quand."
       ]
     },
     "State": {
@@ -10141,9 +10165,6 @@
       "Settings": [
         "Paramètres"
       ],
-      "Share outside Proton": [
-        "Partager en dehors de Proton"
-      ],
       "Short domain (@pm.me)": [
         "Domaine court (@pm.me)"
       ],
@@ -10534,9 +10555,6 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Passez à une offre payante Mail pour créer jusqu'à ${ MAX_CALENDARS_PAID } calendrier, vous permettant de créer un calendrier pour le travail, pour partager avec vos amis et juste pour vous-même.",
         "Passez à une offre payante Mail pour créer jusqu'à ${ MAX_CALENDARS_PAID } calendrier, vous permettant de créer des calendriers pour le travail, pour partager avec vos amis et juste pour vous-même."
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Passez à une offre payante Mail pour pouvoir partager votre calendrier personnel avec n’importe qui via un lien."
       ]
     },
     "User referee invited via email": {

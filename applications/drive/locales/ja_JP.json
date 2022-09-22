@@ -690,43 +690,6 @@
         "${ MAIL_APP_NAME } を使って続行します。"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "同期されていません"
-      ],
-      "Syncing": [
-        "同期中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "カレンダーを復号できませんでした"
-      ],
-      "Calendar is syncing": [
-        "カレンダーの同期中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "カレンダーを同期しています: すべてのイベントが表示されるまでしばらくお待ちください。"
-      ],
-      "Calendar is too big": [
-        "カレンダーが大きすぎます"
-      ],
-      "Calendar link is not accessible": [
-        "カレンダーのリンクにアクセスできません"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "カレンダーのリンクが一時的にアクセスできません"
-      ],
-      "Failed to sync calendar": [
-        "カレンダーの同期に失敗しました"
-      ],
-      "More than 12 hours passed since last update": [
-        "最後のアップデートから12時間以上経過しています"
-      ],
-      "Unsupported calendar format": [
-        "非対応のカレンダー形式です"
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "作成"
@@ -1706,9 +1669,6 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A problem occurred, please try again": [
-        "問題が発生しました。もう一度やり直してください"
-      ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
       ],
@@ -2398,9 +2358,6 @@
       "Downloading": [
         "ダウンロード中"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "ここにアイテムをドラッグアンドドロップするか、ファイルをブラウズしてアップロードします。"
-      ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
       ],
@@ -2716,9 +2673,6 @@
       "Secure sharing": [
         "安全な共有"
       ],
-      "Secure your documents and data": [
-        "書類やデータを保護します"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "アップロードされたファイルまたはフォルダーを選択してリンクを作成します。"
       ],
@@ -2775,9 +2729,6 @@
       ],
       "Swiss privacy": [
         "スイス法準拠のプライバシー"
-      ],
-      "Tap the + button to upload a file or folder.": [
-        "+ ボタンをタップしてファイルやフォルダーをアップロードします。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
@@ -3719,9 +3670,6 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "フォルダーをアップロード"
-      ],
       "Set a recovery method": [
         "回復手段を設定"
       ],

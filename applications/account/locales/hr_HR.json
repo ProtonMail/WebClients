@@ -494,6 +494,9 @@
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
       ],
+      "Share": [
+        "Podijeli"
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -847,6 +850,11 @@
       ],
       "Send": [
         "Pošalji"
+      ]
+    },
+    "Calendar access select label": {
+      "Email address": [
+        "Adresa e-pošte"
       ]
     },
     "Calendar status": {
@@ -1257,8 +1265,17 @@
       "Condition incomplete": [
         "Uvjet je nepotpun"
       ],
+      "Contact signature could not be verified": [
+        "Nije moguće provjeriti potpis kontakta"
+      ],
+      "Contact signature not verified": [
+        "Potpis kontakta nije potvrđen"
+      ],
       "Domain not available, try again later": [
         "Domena nije dostupna, pokušajte ponovo kasnije"
+      ],
+      "Email address disabled": [
+        "Adresa e-pošte je onemogućena"
       ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
@@ -1320,6 +1337,9 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
+      "Missing signature": [
+        "Nedostaje potpis"
+      ],
       "Name on card required": [
         "Ime s kartice je nužno"
       ],
@@ -1329,8 +1349,14 @@
       "No active sessions": [
         "Nema aktivnih sesija"
       ],
+      "No keys retrieved for internal user": [
+        "Nije pronađen nijedan ključ za unutarnjeg korisnika"
+      ],
       "No valid address found": [
         "Nije pronađena važeća adresa"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nijedan WKD ključ dohvaćen za korisnika nije valjan za slanje"
       ],
       "Not a valid number": [
         "Broj telefona nije važeći"
@@ -1389,6 +1415,9 @@
       "Require at least one condition": [
         "Zahtijeva najmanje jedan uvjet"
       ],
+      "Signature not verified": [
+        "Potpis nije ovjeren"
+      ],
       "Signature verification failed": [
         "Potvrda potpisa je neuspješna"
       ],
@@ -1403,6 +1432,9 @@
       ],
       "Tab closed": [
         "Kartica zatvorena"
+      ],
+      "The address might be misspelled": [
+        "Adresa bi mogla biti pogrešno napisana"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
@@ -1425,6 +1457,9 @@
       "The organization key must be activated first.": [
         "Prvo se mora aktivirati organizacijski ključ."
       ],
+      "The sending key is not valid": [
+        "Ključ slanja nije važeći"
+      ],
       "The session has expired. Please sign in again.": [
         "Sesija je istekla. Prijavite se ponovo."
       ],
@@ -1436,6 +1471,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Pouzdani ključevi nisu valjani za slanje"
       ],
       "Unknown error": [
         "Nepoznata pogreška"
@@ -1826,6 +1864,9 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Radnja"
+      ],
       "Actions": [
         "Radnje"
       ],
@@ -1855,6 +1896,9 @@
       ],
       "Time": [
         "Vrijeme"
+      ],
+      "User": [
+        "Korisnik"
       ]
     },
     "Header for addresses table": {
@@ -3034,6 +3078,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Da biste izbjegli bilo kakve prekide u usluzi zbog neplaćenih faktura, molimo vas da u bilo kojem trenutku imate barem 1 valjani način plaćanja."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Dodaj oznaku"
       ]
     },
     "Invoice state display as badge": {
@@ -4599,6 +4648,11 @@
         "PayPal"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Način kako da vas kontaktiramo"
@@ -4817,6 +4871,11 @@
       ],
       "Labels": [
         "Oznake"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Dodaj oznaku"
       ]
     },
     "Signup label": {
@@ -5517,9 +5576,6 @@
       ],
       "Settings": [
         "Postavke"
-      ],
-      "Share outside Proton": [
-        "Podijeli izvan Protona"
       ],
       "Short domain (@pm.me)": [
         "Kratka domena (@pm.me)"
