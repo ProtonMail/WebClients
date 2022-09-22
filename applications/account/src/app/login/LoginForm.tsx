@@ -137,10 +137,9 @@ const LoginForm = ({
                 method="post"
             >
                 <Challenge
-                    className="h0 absolute"
+                    bodyClassName="pl0-5 pr0-5"
+                    iframeClassName="challenge-width-increase"
                     noLoader
-                    empty
-                    tabIndex={-1}
                     challengeRef={challengeRefLogin}
                     type={0}
                     name="login"
@@ -151,18 +150,19 @@ const LoginForm = ({
                         setChallengeLoading(false);
                         setChallengeError(true);
                     }}
-                />
-                <InputFieldTwo
-                    id="username"
-                    bigger
-                    label={c('Label').t`Email or username`}
-                    error={validator([requiredValidator(username)])}
-                    disableChange={submitting}
-                    autoComplete="username"
-                    value={username}
-                    onValue={setUsername}
-                    ref={usernameRef}
-                />
+                >
+                    <InputFieldTwo
+                        id="username"
+                        bigger
+                        label={c('Label').t`Email or username`}
+                        error={validator([requiredValidator(username)])}
+                        disableChange={submitting}
+                        autoComplete="username"
+                        value={username}
+                        onValue={setUsername}
+                        ref={usernameRef}
+                    />
+                </Challenge>
                 <InputFieldTwo
                     id="password"
                     bigger
