@@ -35,6 +35,7 @@ import SpamModal, { SpamMode } from './modals/SpamModal';
 const INSERT_ACTIONS: { type: SpamLocation; getName: () => string }[] = [
     { type: 'BLOCKED', getName: () => c('Action').t`Block` },
     { type: 'SPAM', getName: () => c('Action').t`Spam` },
+    { type: 'NON_SPAM', getName: () => c('Action').t`Non spam` },
 ];
 
 const ELEMENTS_PER_PAGE = 10;
