@@ -16,7 +16,7 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import { getRecipientOrGroupKey, recipientsWithoutGroup } from '../../../helpers/addresses';
+import { getRecipientOrGroupKey, recipientsWithoutGroup } from '../../../helpers/message/messageRecipients';
 import { useContactsMap, useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';

@@ -20,11 +20,11 @@ import giftSvg from '@proton/styles/assets/img/illustrations/gift.svg';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/checklists';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 import SidebarVersion from './SidebarVersion';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -39,7 +39,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
     const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.SpotlightGetStartedChecklist);
     const { dismissed: getStartedChecklistDismissed } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
-        onCompose({ type: ComposeTypes.new, action: MESSAGE_ACTIONS.NEW });
+        onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
 
     const [mailGetStartedChecklistModalOpen, setMailGetStartedChecklistModalOpen] = useState(false);

@@ -29,26 +29,26 @@ import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
 export enum ComposeTypes {
-    existing,
-    new,
-    message,
+    existingDraft,
+    newMessage,
+    fromMessage,
 }
 
 export interface ComposeExisting {
-    type: ComposeTypes.existing;
+    type: ComposeTypes.existingDraft;
     existingDraft: MessageState;
     fromUndo: boolean;
     fromQuickReply?: boolean;
 }
 
 export interface ComposeNew {
-    type: ComposeTypes.new;
+    type: ComposeTypes.newMessage;
     action: MESSAGE_ACTIONS;
     referenceMessage?: PartialMessageState;
 }
 
 export interface ComposeModelMessage {
-    type: ComposeTypes.message;
+    type: ComposeTypes.fromMessage;
     modelMessage: MessageState;
 }
 
@@ -143,7 +143,7 @@ export const useCompose = (
 
         const compose = getComposeArgs(composeArgs);
 
-        if (compose.type === ComposeTypes.existing) {
+        if (compose.type === ComposeTypes.existingDraft) {
             const { existingDraft, fromUndo, returnFocusTo } = compose;
             const localID = getLocalID(existingDraft.localID);
 
@@ -167,7 +167,7 @@ export const useCompose = (
             return;
         }
 
-        if (compose.type === ComposeTypes.new) {
+        if (compose.type === ComposeTypes.newMessage) {
             const { action, referenceMessage, returnFocusTo } = compose;
             const message = referenceMessage?.data;
 
@@ -188,7 +188,7 @@ export const useCompose = (
             focusComposer(newMessageID);
         }
 
-        if (compose.type === ComposeTypes.message) {
+        if (compose.type === ComposeTypes.fromMessage) {
             const { modelMessage, returnFocusTo } = compose;
 
             openComposer(modelMessage.localID, returnFocusTo);

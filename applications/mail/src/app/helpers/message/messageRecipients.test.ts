@@ -4,8 +4,8 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
 import {
     findSender,
     getNumParticipants,
@@ -13,7 +13,7 @@ import {
     getRecipientLabel,
     getSendersToBlock,
     recipientsToRecipientOrGroup,
-} from './addresses';
+} from './messageRecipients';
 
 const recipient1: Recipient = { Name: '', Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
@@ -23,7 +23,7 @@ const recipient5: Recipient = { Name: 'recipient5', Address: 'address5', Group: 
 const group1 = { ID: 'GroupID1', Name: 'GroupName1', Path: 'Group1' } as ContactGroup;
 const groupMap = { [group1.Path]: group1 };
 
-describe('addresses', () => {
+describe('messageRecipients', () => {
     describe('findSender', () => {
         it('should return empty for no message no addresses', () => {
             const result = findSender();

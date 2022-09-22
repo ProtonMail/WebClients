@@ -25,9 +25,9 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { isUnread } from '../../helpers/elements';
 import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
@@ -154,7 +154,7 @@ const MessageView = (
 
     const handleToggle = (value: boolean) => () => {
         if (draft && !outbox) {
-            onCompose({ type: ComposeTypes.existing, existingDraft: message, fromUndo: false });
+            onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
             return;
         }
 
@@ -419,6 +419,7 @@ const MessageView = (
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
                         onFocusIframe={handleFocus('IFRAME')}
+                        hasQuickReply={canShowQuickReply}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                     {canShowQuickReply && (

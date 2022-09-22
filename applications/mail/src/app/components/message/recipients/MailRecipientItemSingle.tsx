@@ -15,8 +15,9 @@ import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/cont
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { getContactEmail } from '../../../helpers/addresses';
 import { getHumanLabelID } from '../../../helpers/labels';
+import { getContactEmail } from '../../../helpers/message/messageRecipients';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import useBlockSender from '../../../hooks/useBlockSender';
@@ -25,7 +26,6 @@ import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { Element } from '../../../models/element';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     message?: MessageState;
@@ -100,7 +100,7 @@ const MailRecipientItemSingle = ({
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
         onCompose({
-            type: ComposeTypes.new,
+            type: ComposeTypes.newMessage,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: [recipient] } },
         });

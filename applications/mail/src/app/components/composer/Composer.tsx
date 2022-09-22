@@ -12,12 +12,7 @@ import {
 
 import { c } from 'ttag';
 
-import {
-    classnames,
-    useHandler,
-    useMailSettings,
-    useSubscribeEventManager,
-} from '@proton/components';
+import { classnames, useHandler, useMailSettings, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -25,7 +20,7 @@ import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
-import { getDate } from '../../helpers/elements';
+import { EditorTypes, useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
@@ -34,7 +29,6 @@ import { Event } from '../../models/event';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions';
-import { EditorTypes, useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 
@@ -108,7 +102,8 @@ const Composer = (
     const {
         modelMessage,
         setModelMessage,
-        syncedMessage,
+        date,
+        timestamp,
         metadata,
         opening,
         handleChange,

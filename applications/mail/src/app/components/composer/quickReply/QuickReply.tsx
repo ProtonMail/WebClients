@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import {
-    Button,
     Editor,
     EditorActions,
     EditorTextDirection,
@@ -16,8 +16,11 @@ import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import ToolbarEmojiDropdown from '@proton/components/components/editor/toolbar/ToolbarEmojiDropdown';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { useTheme } from '@proton/components/containers';
 import { classnames } from '@proton/components/helpers';
 import { useAddresses, useMailSettings, useUserSettings } from '@proton/components/hooks';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getFromAddress } from '../../../helpers/addresses';
@@ -61,6 +64,9 @@ const QuickReply = ({
 
     const getConversation = useGetConversation();
     const getAllMessages = useGetAllMessages();
+
+    const [theme] = useTheme();
+    const isDarkTheme = DARK_THEMES.includes(theme);
 
     const [deleteDraftModalProps, setDeleteDraftModalOpen, renderDeleteDraftModal] = useModalState();
 
@@ -117,6 +123,9 @@ const QuickReply = ({
         editorRef,
         editorReady,
     });
+
+    // Editor (Rooster) needs a white bg on dark themes, but not plaintext
+    const needsDarkStyle = modelMessage.data?.MIMEType === MIME_TYPES.DEFAULT && isDarkTheme;
 
     /**
      * Initialize Rooster (or textarea) content at (and only) startup
@@ -271,8 +280,9 @@ const QuickReply = ({
             </div>
             <div
                 className={classnames([
-                    'border border-weak quick-reply-container relative field textarea rounded-lg flex flex-nowrap flex-column mx1 mb1',
+                    'border border-weak quick-reply-container bg-norm relative field textarea rounded-lg flex flex-nowrap flex-column mx1 mb1',
                     hasFocus && 'is-focused',
+                    needsDarkStyle && 'quick-reply-container-dark-style',
                 ])}
                 onBlur={handleBlurCallback}
                 onFocus={handleFocusCallback}
@@ -302,7 +312,10 @@ const QuickReply = ({
                 <div className="quick-reply-buttons absolute bottom right mb0-5 mr0-5 flex">
                     {toolbarConfig && !metadata.isPlainText && (
                         <ToolbarEmojiDropdown
-                            className="button button-for-icon quick-reply-emoji-button ml0-25"
+                            className={classnames([
+                                'button button-for-icon quick-reply-emoji-button ml0-25',
+                                needsDarkStyle && 'quick-reply-emoji-button-dark-style',
+                            ])}
                             onInsert={toolbarConfig.emoji.insert}
                             openRef={openEmojiPickerRef}
                         />

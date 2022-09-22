@@ -5,7 +5,7 @@ import {
     getRecipientLabel as computeRecipientLabel,
     getRecipientLabelDetailed as computeRecipientLabelDetailed,
     recipientsToRecipientOrGroup,
-} from '../../helpers/addresses';
+} from '../../helpers/message/messageRecipients';
 import { RecipientGroup, RecipientOrGroup } from '../../models/address';
 import {
     useContactGroupsMap,

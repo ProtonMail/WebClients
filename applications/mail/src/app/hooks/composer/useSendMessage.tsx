@@ -129,7 +129,7 @@ export const useSendMessage = () => {
                 }
                 // Re-open draft
                 onCompose({
-                    type: ComposeTypes.existing,
+                    type: ComposeTypes.existingDraft,
                     existingDraft: {
                         localID,
                         data,
@@ -248,7 +248,7 @@ export const useSendMessage = () => {
                 ) {
                     hasClickedUndoSend = false;
                     onCompose({
-                        type: ComposeTypes.existing,
+                        type: ComposeTypes.existingDraft,
                         existingDraft: {
                             localID,
                             data,

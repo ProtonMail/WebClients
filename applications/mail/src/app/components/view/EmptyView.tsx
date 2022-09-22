@@ -10,9 +10,9 @@ import noUnreadSvg from '@proton/styles/assets/img/illustrations/no-unread-messa
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -36,7 +36,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     const scheduleCTAButton = (
         <Button
             title={c('Action').t`Create new message`}
-            onClick={() => onCompose({ type: ComposeTypes.new, action: MESSAGE_ACTIONS.NEW })}
+            onClick={() => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })}
         >
             {c('Action').t`Create new message`}
         </Button>

@@ -28,6 +28,7 @@ import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/c
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
@@ -46,7 +47,6 @@ import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -270,7 +270,7 @@ const List = (
                                                     switch (key) {
                                                         case ChecklistKey.SendMessage: {
                                                             onCompose({
-                                                                type: ComposeTypes.new,
+                                                                type: ComposeTypes.newMessage,
                                                                 action: MESSAGE_ACTIONS.NEW,
                                                             });
                                                             break;
@@ -307,7 +307,7 @@ const List = (
                                                     switch (key) {
                                                         case ChecklistKey.SendMessage: {
                                                             onCompose({
-                                                                type: ComposeTypes.new,
+                                                                type: ComposeTypes.newMessage,
                                                                 action: MESSAGE_ACTIONS.NEW,
                                                             });
                                                             break;
