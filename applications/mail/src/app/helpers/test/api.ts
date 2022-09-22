@@ -1,5 +1,3 @@
-import { matchPath } from 'react-router';
-
 import { FeatureCode } from '@proton/components';
 import noop from '@proton/utils/noop';
 
@@ -17,15 +15,12 @@ type ApiMock = { [url: string]: ApiMockEntry[] | undefined };
 export const apiMocks: ApiMock = {};
 
 export const api = jest.fn<Promise<any>, any>(async (args: any) => {
-    let matchData: ReturnType<typeof matchPath> = {} as any;
     const entryKey = Object.keys(apiMocks).find((path) => {
-        // react-router has nothing to do with this logic but the helper is quite useful here
-        matchData = matchPath(args.url, { path, exact: true });
-        return matchData !== null;
+        return args.url === path;
     });
     const entry = apiMocks[entryKey || '']?.find((entry) => entry.method === undefined || entry.method === args.method);
     if (entry) {
-        return entry.handler({ ...matchData, ...args });
+        return entry.handler({ ...args });
     }
     console.log('api', args, apiMocks);
     return {};

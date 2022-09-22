@@ -66,7 +66,13 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
             <AlertModal
                 title={c('Title').t`Block sender`}
                 buttons={[
-                    <Button key="submit" type="submit" color="warning" onClick={handleConfirm}>
+                    <Button
+                        key="submit"
+                        type="submit"
+                        color="warning"
+                        onClick={handleConfirm}
+                        data-testid="block-sender-modal-block:button"
+                    >
                         {c('Action').t`Block`}
                     </Button>,
                     <Button key="reset" type="reset" onClick={onReject}>
@@ -87,6 +93,7 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
                             onChange={() => {
                                 setBlockSenderConfirmation(!blockSenderConfirmation);
                             }}
+                            data-testid="block-sender-modal-dont-show:checkbox"
                             className="mr0-25"
                         />
                         {c('Label').t`Don't show this again`}
