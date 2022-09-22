@@ -38,6 +38,7 @@ import {
 } from '../../helpers/mailboxUrl';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { usePermanentDelete } from '../../hooks/actions/usePermanentDelete';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
@@ -52,7 +53,6 @@ import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -195,7 +195,7 @@ const MailboxContainer = ({
 
             if (isMessage(element) && isDraft(element) && !preventComposer) {
                 onCompose({
-                    type: ComposeTypes.existing,
+                    type: ComposeTypes.existingDraft,
                     existingDraft: { localID: element.ID as string, data: element as Message },
                     fromUndo: false,
                 });

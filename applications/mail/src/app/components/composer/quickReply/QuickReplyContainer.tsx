@@ -2,11 +2,12 @@ import { Dispatch, KeyboardEvent, SetStateAction, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button';
+import { Icon } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
-import { getReplyRecipientListAsString } from '../../../helpers/addresses';
+import { getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { useMessage } from '../../../hooks/message/useMessage';
 import { useDraft } from '../../../hooks/useDraft';
@@ -73,9 +74,9 @@ const QuickReplyContainer = ({
         : c('Info').t`Quick reply`;
 
     return (
-        <div className="flex-item-noshrink">
+        <div className="quick-reply-wrapper bg-norm color-norm pt0-75 pb1">
             {!newMessageID ? (
-                <div className="flex flex-nowrap flex-align-items-center border border-weak rounded-lg color-weak mx1 px0-5 py0-25 mb1 mt0-75 cursor-pointer quick-reply-collapsed relative">
+                <div className="flex flex-nowrap flex-align-items-center border border-weak rounded-lg color-weak mx1 px0-5 py0-25 cursor-pointer quick-reply-collapsed relative">
                     <Icon className="mr0-5 flex-item-noshrink" name="arrow-up-and-left-big" aria-hidden="true" />
                     <button
                         type="button"

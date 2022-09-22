@@ -1,5 +1,4 @@
 import { Dispatch, MutableRefObject, RefObject, SetStateAction, useEffect, useMemo, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -10,9 +9,11 @@ import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/li
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
+import { getDate } from '../../helpers/elements';
 import { getContent, getContentWithBlockquotes, setContent } from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
@@ -25,6 +26,7 @@ import {
     updateIsSavingFlag,
 } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -77,7 +79,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
     const onCompose = useOnCompose();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const skipNextInputRef = useRef(false);
 
     const { messageID, onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;
@@ -103,6 +105,9 @@ export const useComposerContent = (args: EditorArgs) => {
     const reloadSendInfo = useReloadSendInfo();
 
     const { message: syncedMessage } = useMessage(messageID);
+
+    const date = getDate(syncedMessage.data, '');
+    const timestamp = date ? date.getTime() : 0;
 
     // Handles message already sent error
     const onMessageAlreadySent = useHandleMessageAlreadySent({
@@ -314,7 +319,8 @@ export const useComposerContent = (args: EditorArgs) => {
                         referenceMessage,
                         mailSettings,
                         userSettings,
-                        addresses
+                        addresses,
+                        modelMessage.draftFlags?.action || MESSAGE_ACTIONS.REPLY
                     );
                     setContent(modelMessage, newModelMessageContent);
                     const newModelMessage = { ...modelMessage };
@@ -387,7 +393,8 @@ export const useComposerContent = (args: EditorArgs) => {
                 referenceMessage,
                 mailSettings,
                 userSettings,
-                addresses
+                addresses,
+                modelMessage.draftFlags?.action || MESSAGE_ACTIONS.REPLY
             );
             modelContent = getContent(modelMessage);
 
@@ -500,7 +507,7 @@ export const useComposerContent = (args: EditorArgs) => {
     };
 
     const handleDelete = async (hasChanges = true) => {
-        autoSave.abort?.();
+        autoSave.cancel?.();
         try {
             await handleDiscard(hasChanges);
         } finally {
@@ -574,11 +581,13 @@ export const useComposerContent = (args: EditorArgs) => {
     };
 
     const handleExpandComposer = () => {
-        autoSave.abort?.();
-        onCompose({ type: ComposeTypes.message, modelMessage });
+        autoSave.cancel?.();
+        onCompose({ type: ComposeTypes.fromMessage, modelMessage });
     };
 
     const lock = opening || !hasRecipients;
+
+    const hasHotkeysEnabled = mailSettings?.Shortcuts === 1;
 
     const composerHotkeysArgs = (
         isComposer
@@ -595,6 +604,7 @@ export const useComposerContent = (args: EditorArgs) => {
                   toggleMaximized: args.toggleMaximized,
                   lock,
                   saving,
+                  hasHotkeysEnabled,
                   editorRef: args.editorRef,
               }
             : {
@@ -606,11 +616,12 @@ export const useComposerContent = (args: EditorArgs) => {
                   toggleMaximized: handleExpandComposer,
                   lock,
                   saving,
+                  hasHotkeysEnabled,
                   editorRef: args.editorRef,
               }
     ) as EditorHotkeysHandlers;
 
-    const { attachmentTriggerRef } = useComposerHotkeys(composerHotkeysArgs);
+    const attachmentTriggerRef = useComposerHotkeys(composerHotkeysArgs);
 
     const handleDeleteDraft = () => {
         if (isQuickReply) {
@@ -641,6 +652,8 @@ export const useComposerContent = (args: EditorArgs) => {
         modelMessage,
         setModelMessage,
         syncedMessage,
+        date,
+        timestamp,
         metadata,
         rightToLeft,
         isPlainText,

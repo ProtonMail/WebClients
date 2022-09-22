@@ -132,7 +132,7 @@ export const useMessageHotkeys = (
                 if (draft) {
                     e.stopPropagation();
                     e.preventDefault();
-                    onCompose({ type: ComposeTypes.existing, existingDraft: message, fromUndo: false });
+                    onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
                 }
             },
         ],
@@ -172,7 +172,7 @@ export const useMessageHotkeys = (
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
-                        type: ComposeTypes.new,
+                        type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.REPLY,
                         referenceMessage: message,
                     });
@@ -186,7 +186,7 @@ export const useMessageHotkeys = (
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
-                        type: ComposeTypes.new,
+                        type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.REPLY_ALL,
                         referenceMessage: message,
                     });
@@ -200,7 +200,7 @@ export const useMessageHotkeys = (
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
-                        type: ComposeTypes.new,
+                        type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.FORWARD,
                         referenceMessage: message,
                     });

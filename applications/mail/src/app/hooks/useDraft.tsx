@@ -15,8 +15,8 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 import { MESSAGE_ACTIONS } from '../constants';
-import { findSender } from '../helpers/addresses';
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
+import { findSender } from '../helpers/message/messageRecipients';
 import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
 import { useAppDispatch } from '../logic/store';

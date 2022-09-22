@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownMenuButton, EditorActions, Icon, SimpleDropdown }
 import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
-import { getRecipients, getReplyRecipientListAsString } from '../../../helpers/addresses';
+import { getRecipients, getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MessageChange } from '../Composer';

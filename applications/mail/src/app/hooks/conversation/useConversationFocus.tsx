@@ -11,13 +11,12 @@ export type HandleConversationFocus = (
 
 export const useConversationFocus = (messages: Message[]) => {
     const [focusIndex, setFocusIndex] = useState<number>();
-    const prevFocusIndexRef = useRef<number>();
     const [nextScrollTo, setNextScrollTo] = useState(false);
     // We might want to expand or scroll to a message without focusing it
-    const [preventFocus, setPreventFocus] = useState(false);
+    const preventFocusRef = useRef(false);
     // Controls the scrollIntoView alignment (center, start, end, nearest)
-    const [alignment, setAlignment] = useState<ScrollLogicalPosition>('center');
-    // If last focust actions has been done with keyboard shortcut
+    const alignmentRef = useRef<ScrollLogicalPosition>('center');
+    // If last focus actions has been done with keyboard shortcut
     const withKeyboardRef = useRef(false);
 
     useClickOutsideFocusedMessage(focusIndex ? messages[focusIndex]?.ID : undefined, () => {
@@ -43,17 +42,14 @@ export const useConversationFocus = (messages: Message[]) => {
         [focusIndex]
     );
 
-    const handleScrollToMessage = useCallback(
-        (index?: number, alignment?: ScrollLogicalPosition) => {
-            setFocusIndex(index);
-            setNextScrollTo(true);
-            setPreventFocus(true);
-            if (alignment) {
-                setAlignment(alignment);
-            }
-        },
-        [focusIndex]
-    );
+    const handleScrollToMessage = useCallback((index?: number, alignment?: ScrollLogicalPosition) => {
+        preventFocusRef.current = true;
+        if (alignment) {
+            alignmentRef.current = alignment;
+        }
+        setFocusIndex(index);
+        setNextScrollTo(true);
+    }, []);
 
     const handleBlur = useCallback(
         (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => {
@@ -61,7 +57,6 @@ export const useConversationFocus = (messages: Message[]) => {
             // WARNING : relatedTarget returns null when clicking on iframe
             if (event.relatedTarget && !messageRef.current?.contains(event.relatedTarget)) {
                 setFocusIndex(undefined);
-                prevFocusIndexRef.current = undefined;
             }
         },
         [focusIndex]
@@ -78,25 +73,29 @@ export const useConversationFocus = (messages: Message[]) => {
             `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
         ) as HTMLElement | null;
 
-        if (element && !preventFocus) {
+        if (element && !preventFocusRef.current) {
             // If has been focused by keyboard shortcut
             if (withKeyboardRef.current === true) {
                 focus(element);
             } else {
                 focus(element.querySelector('iframe'));
             }
-            setPreventFocus(false);
         }
 
-        if (nextScrollTo) {
-            element?.scrollIntoView({ block: alignment, behavior: 'smooth' });
-            setAlignment('center');
+        withKeyboardRef.current = false;
+        preventFocusRef.current = false;
+    }, [focusIndex]);
+
+    useEffect(() => {
+        if (focusIndex && nextScrollTo) {
+            let element = document.querySelector(
+                `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
+            ) as HTMLElement | null;
+            element?.scrollIntoView({ block: alignmentRef.current, behavior: 'smooth' });
+            alignmentRef.current = 'center';
             setNextScrollTo(false);
         }
-
-        prevFocusIndexRef.current = focusIndex;
-        withKeyboardRef.current = false;
-    }, [focusIndex, alignment]);
+    }, [nextScrollTo]);
 
     return { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId };
 };

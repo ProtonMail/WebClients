@@ -350,6 +350,11 @@ $container-to-width: 4em !default;
 	border-end-start-radius: var(--border-radius-md);
 	border-end-end-radius: var(--border-radius-md);
 
+	&-has-quick-reply {
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
+	}
+
 	.message-container.has-attachments & {
 		border-radius: 0;
 	}

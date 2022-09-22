@@ -1,5 +1,7 @@
-import { Alert, AlertModal, Button, ModalProps, PrimaryButton } from '@proton/components/components';
 import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
+import { Alert, AlertModal, ModalProps, PrimaryButton } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props extends ModalProps {

@@ -4,9 +4,10 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
+import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { findSender } from '../addresses';
 import { parseInDiv } from '../dom';
+import { findSender } from '../message/messageRecipients';
 import { toText } from '../parserHtml';
 import { textToHtml } from '../textToHtml';
 import { locateBlockquote } from './messageBlockquote';
@@ -148,10 +149,11 @@ export const getContentWithoutBlockquotes = (
     referenceMessage: MessageState,
     mailSettings: MailSettings,
     userSettings: UserSettings,
-    addresses: Address[]
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
 ) => {
     if (testIsPlainText(message.data)) {
-        const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses);
+        const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
         const plainBlockquotes = toText(blockquotes);
 
         return message.messageDocument?.plainText?.replace(plainBlockquotes, '');
@@ -168,9 +170,10 @@ export const getContentWithBlockquotes = (
     referenceMessage: MessageState,
     mailSettings: MailSettings,
     userSettings: UserSettings,
-    addresses: Address[]
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
 ) => {
-    const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses);
+    const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
 
     if (isPlainText) {
         const plainBlockquotes = toText(blockquotes);

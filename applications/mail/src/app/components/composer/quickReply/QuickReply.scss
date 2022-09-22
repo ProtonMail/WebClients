@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/config/index';
+@import '~@proton/styles/scss/config';
 @import '../../composer/composer';
 
 .quick-reply {
@@ -23,14 +23,46 @@
 		}
 	}
 
+	&-wrapper {
+		border-end-start-radius: var(--border-radius-md);
+		border-end-end-radius: var(--border-radius-md);
+	}
+
 	&-container {
 		padding-inline: 0;
 		padding-block: 0 0.5em;
 		overflow: hidden; // to avoid iframe eating the border-radius :-\
+
+		&-dark-style {
+			&,
+			&:hover {
+				&#{&} {
+					// specificity issue ^^
+					background-color: white; // fix crazy hover bug and needed for dark styles
+				}
+			}
+		}
 	}
 
 	&-emoji-button {
 		padding: em(9); // to override toolbar-button padding
+
+		// Specific to dark styles because the emoji button is displayed on top of the Rooster editor (which is white)
+		&-dark-style {
+			&,
+			&:hover,
+			&:focus,
+			&[aria-expanded='true'] {
+				&#{&} {
+					color: var(--text-invert);
+				}
+			}
+
+			&:hover,
+			&:focus {
+				--interaction-default-hover: rgb(186 190 199 / 0.2);
+			}
+		}
 	}
 }
 
