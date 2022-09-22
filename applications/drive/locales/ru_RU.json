@@ -551,6 +551,9 @@
       "Upload file": [
         "Загрузить файл"
       ],
+      "Upload files": [
+        "Загрузить файлы"
+      ],
       "Upload folder": [
         "Загрузить папку"
       ],
@@ -694,54 +697,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронизировано"
-      ],
-      "Syncing": [
-        "Синхронизация"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не удалось расшифровать календарь"
-      ],
-      "Calendar is syncing": [
-        "Календарь синхронизируется"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календарь синхронизируется: чтобы отобразились все его события, может потребоваться несколько минут."
-      ],
-      "Calendar is too big": [
-        "Календарь слишком большой"
-      ],
-      "Calendar link is not accessible": [
-        "Ссылка на календарь недоступна"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Ссылка на календарь временно недоступна"
-      ],
-      "Failed to sync calendar": [
-        "Не удалось синхронизировать календарь"
-      ],
-      "More than 12 hours passed since last update": [
-        "Более 12 часов прошло с момента последнего обновления"
-      ],
-      "Unsupported calendar format": [
-        "Неподдерживаемый формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "С прошлого обновления прошло больше 12 часов — Proton Calendar попробует обновить календарь через несколько часов."
       ]
     },
     "Collapsible tooltip": {
@@ -1734,8 +1689,8 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "A problem occurred, please try again": [
-        "Возникла проблема. Попробуйте еще раз"
+      "A problem occurred, please try again.": [
+        "Возникла проблема, попробуйте снова."
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -1863,8 +1818,8 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Please activate your content search again": [
-        "Активируйте поиск содержимого снова"
+      "Please activate your search again": [
+        "Активируйте поиск снова"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -2576,9 +2531,6 @@
       "Downloading": [
         "Скачивание"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Перетащите элементы сюда или найдите файлы для загрузки."
-      ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
       ],
@@ -2654,6 +2606,9 @@
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
       ],
+      "Go ahead, upload a file": [
+        "Вперед, загрузите файл"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Сначала перейдите в раздел \"Мои файлы\" и загрузите несколько файлов."
       ],
@@ -2716,6 +2671,9 @@
       ],
       "Internet connection restored.": [
         "Подключение к интернету восстановлено."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Это так же просто, как перетаскивание или выбор файлов"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -2918,9 +2876,6 @@
       "Secure sharing": [
         "Безопасный обмен"
       ],
-      "Secure your documents and data": [
-        "Защитите свои документы и данные"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберите загруженный файл или папку и создайте ссылку на них."
       ],
@@ -2978,8 +2933,8 @@
       "Swiss privacy": [
         "Швейцарская конфиденциальность"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Нажмите кнопку +, чтобы загрузить файл или папку."
+      "Tap the + button to upload a file or folder": [
+        "Нажмите кнопку \"+\", чтобы загрузить файл или папку"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
@@ -4002,20 +3957,20 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Создать папку"
+      "Create a share link": [
+        "Создайте ссылку для общего доступа"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Начните пользоваться Proton Drive, и мы бесплатно увеличим ваш аккаунт до 1 ГБ!"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Начните пользоваться Proton Drive, и мы удвоим ваше бесплатное хранилище до 1 Гб!"
       ],
       "Set a recovery method": [
         "Установить способ восстановления"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Просто выполните следущее в течение ${ remainingDaysForGift } дня",
-        "Просто выполните следущее в течение ${ remainingDaysForGift } дней",
-        "Просто выполните следущее в течение ${ remainingDaysForGift } дней",
-        "Просто выполните следущее в течение ${ remainingDaysForGift } дней"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Просто выполните следующие действия в ближайший ${ remainingDaysForGift } день:",
+        "Просто выполните следующие действия в ближайшие ${ remainingDaysForGift } дня:",
+        "Просто выполните следующие действия в ближайшие ${ remainingDaysForGift } дней:",
+        "Просто выполните следующие действия в ближайшие ${ remainingDaysForGift } дня:"
       ],
       "Upload a file": [
         "Загрузить файл"
@@ -4048,7 +4003,7 @@
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
       ],
-      "Your welcome gift": [
+      "Your welcome bonus": [
         "Ваш приветственный подарок"
       ]
     },

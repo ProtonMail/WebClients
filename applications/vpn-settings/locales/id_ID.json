@@ -569,54 +569,6 @@
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Tidak disinkronkan"
-      ],
-      "Syncing": [
-        "Menyinkronkan"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender tidak dapat didekripsi"
-      ],
-      "Calendar is syncing": [
-        "Kalender sedang menyinkronkan data"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
-      ],
-      "Calendar is too big": [
-        "Ukuran kalender terlalu besar"
-      ],
-      "Calendar link is not accessible": [
-        "Tautan kalender tidak dapat diakses"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Tautan kalender untuk sementara tidak dapat diakses"
-      ],
-      "Failed to sync calendar": [
-        "Gagal menyinkronkan kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir"
-      ],
-      "Unsupported calendar format": [
-        "Format kalender tidak didukung"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Tautan kalender sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Lebih dari 12 jam berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba pembaruan beberapa jam lagi."
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
@@ -3143,9 +3095,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (web beta)"
-      ],
       "${ n } custom email domain": [
         "${ n } domain email khusus"
       ],

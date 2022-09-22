@@ -2882,8 +2882,8 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
-      "A problem occurred, please try again": [
-        "Terdapat suatu masalah, silakan coba lagi"
+      "A problem occurred, please try again.": [
+        "Terjadi suatu kesalahan. Silakan coba lagi."
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -3044,8 +3044,8 @@
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
-      "Please activate your content search again": [
-        "Mohon aktifkan kembali pencarian konten Anda"
+      "Please activate your search again": [
+        "Silakan aktifkan kembali pencarian Anda"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -3103,6 +3103,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
+      ],
+      "Something went wrong, please try again": [
+        "Terjadi suatu kesalahan. Silakan coba lagi"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Maaf, Proton tidak dapat mendekripsi pesan Anda. Silakan pastikan semua kunci Anda aktif."
@@ -3991,6 +3994,9 @@
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
       ],
+      "Content: ": [
+        "Konten: "
+      ],
       "Continue with ${ planName }": [
         "Lanjut dengan ${ planName }"
       ],
@@ -4054,8 +4060,8 @@
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Mengunduh pesan ${ esProgress } dari ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Mengunduh pesan ${ currentProgress } dari ${ totalProgress }"
       ],
       "Draft": [
         "Draf"
@@ -4107,6 +4113,9 @@
       ],
       "Encrypt message": [
         "Enkripsi pesan"
+      ],
+      "End of search results from past 30 days": [
+        "Akhir dari seluruh hasil pencarian selama 30 hari terakhir"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -4348,6 +4357,9 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Tidak ada hasil pencarian dalam rentang waktu 30 hari terakhir yang ditemukan. Mencari seisi kotak masuk Anda"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Tidak ditemukan pelacak, tetapi beberapa gambar tidak dapat dimuat menggunakan pelindung pelacak"
       ],
@@ -4489,6 +4501,9 @@
       "Scheduling message...": [
         "Menjadwalkan pesan..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Aktifkan pencarian berbasis konten bagi pesan lama Anda dengan ${ paidPlansButton }"
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dalam pencarian Anda."
       ],
@@ -4591,6 +4606,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Data yang Anda masukkan ke dalam draf dapat tidak tersimpan apabila Anda meninggalkan laman."
       ],
+      "The local database is being prepared": [
+        "Database lokal sedang dipersiapkan"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Pesan asli yang Anda coba teruskan / balas dalam proses dikirim. Jika lanjut, Anda tidak akan dapat mengurungkan pengiriman pesan asli lebih lama lagi."
       ],
@@ -4620,6 +4638,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Tindakan ini akan mengunduh seluruh pesan terbaru untuk dapat dicari secara lokal. Membersihkan data browser Anda akan menonaktifkan opsi ini."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
@@ -5237,10 +5258,10 @@
       "Also archive": [
         "Arsipkan"
       ],
-      "Always label senders emails": [
+      "Always label sender's emails": [
         "Selalu labeli email pengirim"
       ],
-      "Always move senders emails": [
+      "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
       ],
       "Attach screenshot(s)": [
@@ -5706,6 +5727,9 @@
       ],
       "Outbox": [
         "Kotak keluar"
+      ],
+      "paid plan": [
+        "akun berbayar"
       ],
       "Pay invoice": [
         "Bayar tagihan"
@@ -7375,6 +7399,9 @@
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Untuk pesan yang telah berusia lebih dari 30 hari, hanya baris subjek dan penerima yang akan diikutsertakan dalam pencarian"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
@@ -7386,9 +7413,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"

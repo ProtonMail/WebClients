@@ -547,6 +547,9 @@
       "Upload file": [
         "Enviar arquivo"
       ],
+      "Upload files": [
+        "Enviar arquivos"
+      ],
       "Upload folder": [
         "Enviar pasta"
       ],
@@ -690,54 +693,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Não sincronizado"
-      ],
-      "Syncing": [
-        "Sincronizando"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "O calendário não pôde ser descriptografado"
-      ],
-      "Calendar is syncing": [
-        "Calendário está sincronizando"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
-      ],
-      "Calendar is too big": [
-        "Calendário é grande demais"
-      ],
-      "Calendar link is not accessible": [
-        "Link do calendário está inacessível"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Link do calendário está temporariamente inacessível"
-      ],
-      "Failed to sync calendar": [
-        "Falha ao sincronizar calendário"
-      ],
-      "More than 12 hours passed since last update": [
-        "Mais de 12 horas se passaram desde a última atualização"
-      ],
-      "Unsupported calendar format": [
-        "Formato de calendário não suportado"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Mais de 12 horas se passaram desde a última atualização — O Proton Calendar vai tentar atualizar o calendário em algumas horas."
       ]
     },
     "Collapsible tooltip": {
@@ -1728,8 +1683,8 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
-      "A problem occurred, please try again": [
-        "Ocorreu um erro. Tente novamente"
+      "A problem occurred, please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -1847,8 +1802,8 @@
       "Passwords do not match": [
         "As senhas não coincidem"
       ],
-      "Please activate your content search again": [
-        "Ative a busca de conteúdo novamente"
+      "Please activate your search again": [
+        "Ative a busca novamente"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, corrija o conflito em destaque para prosseguir.",
@@ -2474,16 +2429,13 @@
         "Download de ${ downloadFileName } será abortado"
       ],
       "Download paused due to connection issue; it will resume automatically": [
-        "Transferência pausada devido a problemas de conexão; ela será retomado automaticamente"
+        "Download pausado devido a problemas de conexão; será retomado automaticamente"
       ],
       "Downloaded": [
         "Baixado"
       ],
       "Downloading": [
         "Baixando"
-      ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Araste e solte itens ou pesquise por arquivos para enviar."
       ],
       "Drop the file here to upload": [
         "Solte o arquivo aqui para fazer o upload"
@@ -2816,9 +2768,6 @@
       "Secure sharing": [
         "Compartilhamento seguro"
       ],
-      "Secure your documents and data": [
-        "Proteja seus documentos e dados"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecione um arquivo ou pasta enviado e crie um link para ele."
       ],
@@ -2875,9 +2824,6 @@
       ],
       "Swiss privacy": [
         "Privacidade suíça"
-      ],
-      "Tap the + button to upload a file or folder.": [
-        "Tpque no botão + para enviar um arquivo ou pasta."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A conta pode ter uma chave nova, ou os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
@@ -3856,8 +3802,8 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Criar uma pasta"
+      "Create a share link": [
+        "Criar um link compartilhável"
       ],
       "Set a recovery method": [
         "Definir um método de recuperação"

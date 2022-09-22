@@ -686,40 +686,6 @@
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nincs szinkronizálva"
-      ],
-      "Syncing": [
-        "Szinkronizálás"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "A naptár visszafejtése nem sikerült"
-      ],
-      "Calendar is syncing": [
-        "A naptár szinkronizál"
-      ],
-      "Calendar is too big": [
-        "A naptár túl nagy"
-      ],
-      "Calendar link is not accessible": [
-        "A naptár hivatkozás nem érhető el"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "A naptár hivatkozás átmenetileg nem érhető el"
-      ],
-      "Failed to sync calendar": [
-        "A naptár szinkronizálása nem sikerült"
-      ],
-      "More than 12 hours passed since last update": [
-        "Több mint 12 óra telt el a legutóbbi frissítés óta"
-      ],
-      "Unsupported calendar format": [
-        "Nem támogatott naptár formátum"
-      ]
-    },
     "color": {
       "carrot": [
         "sárgarépa"
@@ -2393,9 +2359,6 @@
       "Downloading": [
         "Letöltés"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Húzzon és ejtsen ide elemeket vagy böngésszen a feltöltendő fájlok között."
-      ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
       ],
@@ -2711,9 +2674,6 @@
       "Secure sharing": [
         "Biztonságos megosztás"
       ],
-      "Secure your documents and data": [
-        "Védje dokumentumait és adatait"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Hivatkozás létrehozásához, válasszon ki egy feltöltött fájlt vagy mappát."
       ],
@@ -2761,9 +2721,6 @@
       ],
       "Swiss privacy": [
         "Svájci adatbiztonság"
-      ],
-      "Tap the + button to upload a file or folder.": [
-        "Bökjön a + gombra, hogy feltöltsön egy fájlt vagy mappát."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."

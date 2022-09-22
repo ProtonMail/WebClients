@@ -2893,8 +2893,8 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
-      "A problem occurred, please try again": [
-        "Ocorreu um erro. Tente novamente"
+      "A problem occurred, please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
@@ -3061,8 +3061,8 @@
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
-      "Please activate your content search again": [
-        "Ative a busca de conteúdo novamente"
+      "Please activate your search again": [
+        "Ative a busca novamente"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, corrija o conflito em destaque para prosseguir.",
@@ -3122,6 +3122,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Ocorreu um erro, tente novamente mais tarde"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Desculpe, o Proton não pode descriptografar sua mensagem. Verifique se todas as suas chaves estão ativas."
@@ -4058,6 +4061,9 @@
       "Confirm phishing report": [
         "Confirmar denúncia de phishing"
       ],
+      "Content: ": [
+        "Conteúdo: "
+      ],
       "Continue with ${ planName }": [
         "Continuar com ${ planName }"
       ],
@@ -4124,8 +4130,8 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueça de compartilhar a senha com o destinatário"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Baixando mensagem ${ esProgress } de ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Baixando mensagem ${ currentProgress } de ${ totalProgress }"
       ],
       "Draft": [
         "Rascunho"
@@ -4699,6 +4705,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Esta ação fará o download de todas as mensagens para que possam ser pesquisadas localmente. Limpar os dados do seu navegador desativará esta opção."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta ação irá baixar todas as mensagens para que elas possam ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5329,10 +5338,10 @@
       "Also archive": [
         "Também arquivar"
       ],
-      "Always label senders emails": [
+      "Always label sender's emails": [
         "Sempre marque as mensagens eletrônicas dos remetentes"
       ],
-      "Always move senders emails": [
+      "Always move sender's emails": [
         "Sempre mova as mensagens eletrônicas dos remetentes"
       ],
       "Attach screenshot(s)": [
@@ -5798,6 +5807,9 @@
       ],
       "Outbox": [
         "Caixa de saída"
+      ],
+      "paid plan": [
+        "plano pago"
       ],
       "Pay invoice": [
         "Pagar fatura"
@@ -7528,9 +7540,6 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação fará o download de todas as mensagens para que possam ser pesquisadas localmente. Limpar os dados do seu navegador desativará esta opção."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"

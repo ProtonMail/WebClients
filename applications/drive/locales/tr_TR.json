@@ -547,6 +547,9 @@
       "Upload file": [
         "Dosya yükle"
       ],
+      "Upload files": [
+        "Dosyaları yükle"
+      ],
       "Upload folder": [
         "Klasör yükle"
       ],
@@ -690,54 +693,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Eşitlenmemiş"
-      ],
-      "Syncing": [
-        "Eşitleniyor"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Takvimin şifresi çözülemedi"
-      ],
-      "Calendar is syncing": [
-        "Takvim eşitleniyor"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
-      ],
-      "Calendar is too big": [
-        "Takvim çok büyük"
-      ],
-      "Calendar link is not accessible": [
-        "Takvim bağlantısına erişilemiyor"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Takvim bağlantısına geçici olarak erişilemiyor"
-      ],
-      "Failed to sync calendar": [
-        "Takvim eşitlenemedi"
-      ],
-      "More than 12 hours passed since last update": [
-        "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
-      ],
-      "Unsupported calendar format": [
-        "Takvim biçimi desteklenmiyor"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Takvim bağlantısına, takvim hizmeti sağlayıcısının ekosistemi dışından erişilemez."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. Proton Calendar, takvimi birkaç saat içinde güncellemeye çalışacak."
       ]
     },
     "Collapsible tooltip": {
@@ -1728,8 +1683,8 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
-      "A problem occurred, please try again": [
-        "Bir sorun çıktı. Lütfen yeniden deneyin"
+      "A problem occurred, please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Authentication canceled.": [
         "Kimlik doğrulaması iptal edildi."
@@ -1847,8 +1802,8 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
-      "Please activate your content search again": [
-        "Lütfen içerik aramayı yeniden etkinleştirin"
+      "Please activate your search again": [
+        "Lütfen aramanızı yeniden etkinleştirin"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -2482,9 +2437,6 @@
       "Downloading": [
         "İndiriliyor"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Yüklemek için ögeleri sürükleyip buraya bırakın ya da göz atın."
-      ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı sürükleyip buraya bırakın"
       ],
@@ -2558,6 +2510,9 @@
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
+      "Go ahead, upload a file": [
+        "Kullanmaya başlayın ve bir dosya yükleyin"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Önce \"Dosyalarım\" klasörüne gidip bazı dosyalar yükleyin."
       ],
@@ -2618,6 +2573,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Kolayca dosyaları sürükleyip bırakın ya da seçin"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -2816,9 +2774,6 @@
       "Secure sharing": [
         "Güvenli paylaşım"
       ],
-      "Secure your documents and data": [
-        "Belgelerinizin ve verilerinizin güvenliğini sağlayın"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Yüklenmiş bir dosyayı ya da klasörü seçin ve bir bağlantı oluşturun."
       ],
@@ -2876,8 +2831,8 @@
       "Swiss privacy": [
         "İsviçre kişisel gizliliği"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Bir dosya ya da klasör yüklemek için + düğmesini kullanın."
+      "Tap the + button to upload a file or folder": [
+        "Bir dosya ya da klasör yüklemek için + düğmesine dokunun"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanuz açın."
@@ -3856,18 +3811,18 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Bir klasör oluşturun"
+      "Create a share link": [
+        "Bir paylaşım bağlantısı ekleyin"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Proton Drive kullanmaya başlarsanız hesabınızı ücretsiz olarak 1 GB olarak yükselteceğiz!"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Proton Drive kullanmaya başladığınızda ücretsiz depolama alanınızı 1GB yapacağız!"
       ],
       "Set a recovery method": [
         "Bir kurtarma yöntemi ayarlayın"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Yalnızca gelecek ${ remainingDaysForGift } günde şu işlemleri yapın",
-        "Yalnızca gelecek ${ remainingDaysForGift } günde şu işlemleri yapın"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Yalnızca gelecek ${ remainingDaysForGift } günde şu işlemleri yapın:",
+        "Yalnızca gelecek ${ remainingDaysForGift } günde şu işlemleri yapın:"
       ],
       "Upload a file": [
         "Bir dosya yükleyin"
@@ -3900,7 +3855,7 @@
       "Welcome to ${ appName }": [
         "${ appName } hoş geldiniz"
       ],
-      "Your welcome gift": [
+      "Your welcome bonus": [
         "Karşılama hediyeniz"
       ]
     },

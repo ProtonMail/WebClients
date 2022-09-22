@@ -545,6 +545,9 @@
       "Upload file": [
         "上載檔案"
       ],
+      "Upload files": [
+        "上傳檔案"
+      ],
       "Upload folder": [
         "上載資料夾"
       ],
@@ -688,54 +691,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "正在同步"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "無法解密行事曆"
-      ],
-      "Calendar is syncing": [
-        "行事曆正在同步"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
-      ],
-      "Calendar is too big": [
-        "行事曆太大"
-      ],
-      "Calendar link is not accessible": [
-        "行事曆連結無法存取"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "行事曆連結暫時無法存取"
-      ],
-      "Failed to sync calendar": [
-        "行事曆同步失敗"
-      ],
-      "More than 12 hours passed since last update": [
-        "距離上次更新已經過了12小時以上"
-      ],
-      "Unsupported calendar format": [
-        "不支援的行事曆格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "行事曆連結無法從服務提供商生態系統外進行連線。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Collapsible tooltip": {
@@ -1725,9 +1680,6 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
-      "A problem occurred, please try again": [
-        "發生錯誤，請再試一次"
-      ],
       "Authentication canceled.": [
         "認證已取消。"
       ],
@@ -1829,9 +1781,6 @@
       ],
       "Passwords do not match": [
         "密碼不相符"
-      ],
-      "Please activate your content search again": [
-        "請再次啟用內容搜尋功能"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -2423,9 +2372,6 @@
       "Downloading": [
         "正在下載"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "拖放項目到此處，或瀏覽檔案以便上載。"
-      ],
       "Drop the file here to upload": [
         "拖曳檔案到此處上載"
       ],
@@ -2498,6 +2444,9 @@
       "Free up some space or contact your administrator.": [
         "請釋出部分空間或聯絡您的系統管理員。"
       ],
+      "Go ahead, upload a file": [
+        "來吧，上傳檔案"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "請先前往「我的檔案」，並上載一些檔案。"
       ],
@@ -2557,6 +2506,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "就像拖放或選取檔案一樣簡單"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
@@ -2750,9 +2702,6 @@
       "Secure sharing": [
         "安全地分享"
       ],
-      "Secure your documents and data": [
-        "保護您的文件和資料安全"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "選取已上載的檔案或資料夾並為其建立連結。"
       ],
@@ -2807,8 +2756,8 @@
       "Swiss privacy": [
         "瑞士等級的隱私"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "輕觸 + 按鈕以上載檔案或資料夾。"
+      "Tap the + button to upload a file or folder": [
+        "輕點 + 按鈕以上傳檔案或資料夾"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
@@ -3759,17 +3708,17 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "建立資料夾"
+      "Create a share link": [
+        "建立分享連結"
       ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "開始使用 Proton Drive，我們會免費將您的帳號升級為 1 GB！"
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "開始使用 Proton Drive，我們會將您的免費儲存空間加倍至 1GB！"
       ],
       "Set a recovery method": [
         "設定備援方法"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "只要在接下來的 ${ remainingDaysForGift } 天完成以下任務"
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "只要在接下來的 ${ remainingDaysForGift } 天完成以下任務："
       ],
       "Upload a file": [
         "上傳檔案"
@@ -3802,8 +3751,8 @@
       "Welcome to ${ appName }": [
         "歡迎使用 ${ appName }"
       ],
-      "Your welcome gift": [
-        "您的歡迎禮物"
+      "Your welcome bonus": [
+        "您的歡迎獎勵"
       ]
     },
     "Option": {

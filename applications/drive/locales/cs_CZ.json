@@ -551,6 +551,9 @@
       "Upload file": [
         "Nahrát soubor"
       ],
+      "Upload files": [
+        "Nahrát soubory"
+      ],
       "Upload folder": [
         "Nahrát složku"
       ],
@@ -694,54 +697,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Nesynchronizováno"
-      ],
-      "Syncing": [
-        "Synchronizace"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalendář se nepodařilo dešifrovat"
-      ],
-      "Calendar is syncing": [
-        "Kalendář se synchronizuje"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Synchronizace kalendáře: načtení všech událostí může trvat několik minut."
-      ],
-      "Calendar is too big": [
-        "Kalendář je příliš velký"
-      ],
-      "Calendar link is not accessible": [
-        "Odkaz na kalendář není přístupný"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Odkaz na kalendář je dočasně nedostupný"
-      ],
-      "Failed to sync calendar": [
-        "Synchronizace kalendáře selhala"
-      ],
-      "More than 12 hours passed since last update": [
-        "Od poslední aktualizace uběhlo už více jak 12 hodin"
-      ],
-      "Unsupported calendar format": [
-        "Nepodporovaný formát kalendáře"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Od poslední aktualizace uplynulo více než 12 hodin — Proton Calendar se pokusí kalendář aktualizovat během několika hodin."
       ]
     },
     "Collapsible tooltip": {
@@ -1734,8 +1689,8 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
-      "A problem occurred, please try again": [
-        "Objevil se problém, prosím zkuste to znovu"
+      "A problem occurred, please try again.": [
+        "Objevil se problém, prosím zkuste to znovu."
       ],
       "Authentication canceled.": [
         "Přihlášení zrušeno."
@@ -1863,8 +1818,8 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Please activate your content search again": [
-        "Prosím, aktivujte znovu vyhledávání obsahu"
+      "Please activate your search again": [
+        "Prosím, aktivujte znovu vyhledávání"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
@@ -2576,9 +2531,6 @@
       "Downloading": [
         "Stahování"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Položky k nahrání přetáhněte sem nebo soubory vyhledejte."
-      ],
       "Drop the file here to upload": [
         "Přetažením sem, nahrajte soubor"
       ],
@@ -2654,6 +2606,9 @@
       "Free up some space or contact your administrator.": [
         "Uvolněte úložný prostor a nebo kontaktujte správce vašeho účtu."
       ],
+      "Go ahead, upload a file": [
+        "Nahrajte soubor"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
       ],
@@ -2716,6 +2671,9 @@
       ],
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Je to stejně snadné jako přesouvání nebo výběr souborů"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -2918,9 +2876,6 @@
       "Secure sharing": [
         "Bezpečné sdílení"
       ],
-      "Secure your documents and data": [
-        "Zabezpečte své dokumenty a data"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vyberte nahraný soubor nebo složku a vytvořte na ně odkaz."
       ],
@@ -2978,8 +2933,8 @@
       "Swiss privacy": [
         "Švýcarské soukromí"
       ],
-      "Tap the + button to upload a file or folder.": [
-        "Klepnutím na tlačítko + nahrajete soubor nebo složku."
+      "Tap the + button to upload a file or folder": [
+        "Klepnutím na tlačítko + nahrajete soubor nebo složku"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
@@ -4002,20 +3957,8 @@
       ]
     },
     "Onboarding Info": {
-      "Create a folder": [
-        "Vytvořit složku"
-      ],
-      "Get started using Proton Drive and we'll upgrade your account to 1 GB for free!": [
-        "Začněte používat Proton Drive a my vám zdarma navýšíme kapacitu účtu na 1 GB!"
-      ],
       "Set a recovery method": [
         "Nastavit metodu obnovení"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day": [
-        "Stačí, když během následujícího ${ remainingDaysForGift } dne vyplníte následující údaje",
-        "Stačí, když během následujících ${ remainingDaysForGift } dnů vyplníte následující údaje",
-        "Stačí, když během následujících ${ remainingDaysForGift } dnů vyplníte následující údaje",
-        "Stačí, když během následujících ${ remainingDaysForGift } dnů vyplníte následující údaje"
       ],
       "Upload a file": [
         "Nahrát soubor"
@@ -4047,9 +3990,6 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Vítejte na ${ appName }"
-      ],
-      "Your welcome gift": [
-        "Váš uvítací dárek"
       ]
     },
     "Option": {
@@ -4528,10 +4468,10 @@
         "Mazání kontaktů"
       ],
       "Discard": [
-        "Zrušit"
+        "Zahodit"
       ],
       "Discard changes?": [
-        "Zrušit změny?"
+        "Zahodit změny?"
       ],
       "Download shared file": [
         "Stáhnout sdílený soubor"

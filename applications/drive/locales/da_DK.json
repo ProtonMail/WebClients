@@ -692,54 +692,6 @@
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Ikke synkroniseret"
-      ],
-      "Syncing": [
-        "Synkroniserer"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar is syncing": [
-        "Kalender synkroniserer"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
-      ],
-      "Calendar is too big": [
-        "Kalender er for stor"
-      ],
-      "Calendar link is not accessible": [
-        "Kalenderlink er ikke tilgængeligt"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Kalenderlink er midlertidig ikke tilgængeligt"
-      ],
-      "Failed to sync calendar": [
-        "Kunne ikke synkronisere kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Der er gået mere end 12 timer siden seneste opdatering"
-      ],
-      "Unsupported calendar format": [
-        "Kalenderformat understøttes ikke"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Der er gået mere end 12 timer siden sidste opdatering - Proton Calendar vil forsøge at opdatere kalenderen om et par timer."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Fold sammen"
@@ -1728,9 +1680,6 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
-      "A problem occurred, please try again": [
-        "Der opstod et problem. Prøv venligst igen"
-      ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
       ],
@@ -1846,9 +1795,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "Please activate your content search again": [
-        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -2479,9 +2425,6 @@
       "Downloading": [
         "Downloader"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        "Træk og slip elementer her eller find filer til overførsel."
-      ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
       ],
@@ -2813,9 +2756,6 @@
       "Secure sharing": [
         "Sikker deling"
       ],
-      "Secure your documents and data": [
-        "Beskyt dine dokumenter og data"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
       ],
@@ -2872,9 +2812,6 @@
       ],
       "Swiss privacy": [
         "Schweizisk fortrolighed"
-      ],
-      "Tap the + button to upload a file or folder.": [
-        "Tryk på + knappen for at overføre en fil eller mappe."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
