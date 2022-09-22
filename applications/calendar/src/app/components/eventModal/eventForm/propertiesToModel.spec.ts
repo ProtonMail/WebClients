@@ -14,7 +14,6 @@ END:VEVENT`;
             propertiesToModel({
                 veventComponent: parse(VEVENT) as VcalVeventComponent,
                 isAllDay: false,
-                isOrganizer: true,
                 isProtonProtonInvite: false,
                 tzid: 'Europe/Zurich',
             })
@@ -42,7 +41,6 @@ END:VEVENT`;
             propertiesToModel({
                 veventComponent: parse(VEVENT) as VcalVeventComponent,
                 isAllDay: false,
-                isOrganizer: true,
                 isProtonProtonInvite: false,
                 tzid: 'Europe/Zurich',
             })
@@ -69,7 +67,6 @@ END:VEVENT`;
             propertiesToModel({
                 veventComponent: parse(VEVENT) as VcalVeventComponent,
                 isAllDay: true,
-                isOrganizer: true,
                 isProtonProtonInvite: false,
                 tzid: 'Europe/Zurich',
             })

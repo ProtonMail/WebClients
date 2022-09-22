@@ -729,7 +729,7 @@ describe.skip('MainContainer', () => {
                         initialDate: new Date(Date.UTC(2021, 0, 1, 0, 0, 0)),
                         initialTzid: 'UTC',
                         isAllDay: false,
-                        isOrganizer: true,
+                        isOrganizer: false,
                         isProtonProtonInvite: false,
                         location:
                             '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
@@ -830,7 +830,7 @@ describe.skip('MainContainer', () => {
                         initialDate: new Date(Date.UTC(2021, 0, 1, 0, 0, 0)),
                         initialTzid: 'UTC',
                         isAllDay: false,
-                        isOrganizer: true,
+                        isOrganizer: false,
                         isProtonProtonInvite: false,
                         location: '',
                         member: { addressID: undefined, memberID: 'memberId' },

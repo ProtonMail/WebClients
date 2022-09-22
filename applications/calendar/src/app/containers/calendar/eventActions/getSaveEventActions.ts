@@ -54,6 +54,7 @@ const getSaveSingleEventActionsHelper = async ({
     reencryptSharedEvent,
     onSendPrefsErrors,
     inviteActions,
+    isAttendee,
     onEquivalentAttendees,
     handleSyncActions,
 }: {
@@ -74,6 +75,7 @@ const getSaveSingleEventActionsHelper = async ({
     onSaveConfirmation: OnSaveConfirmationCb;
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     inviteActions: InviteActions;
+    isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
     if (!oldEditEventData.veventComponent) {
@@ -101,6 +103,7 @@ const getSaveSingleEventActionsHelper = async ({
         getCalendarKeys,
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
+        isAttendee,
         sendIcs,
         reencryptSharedEvent,
         onSendPrefsErrors,
@@ -183,8 +186,7 @@ const getSaveEventActions = async ({
             frequencyModel,
         },
     } = temporaryEvent;
-    const { isOrganizer } = tmpData;
-    const isInvitation = !isOrganizer;
+    const isAttendee = !!tmpData.isAttendee;
     const selfAddress = addresses.find(({ ID }) => ID === newAddressID);
     if (!selfAddress) {
         throw new Error('Wrong member data');
@@ -243,6 +245,7 @@ const getSaveEventActions = async ({
                 ...newEditEventData,
                 veventComponent: newVeventWithSequence,
             },
+            isAttendee,
             selfAddress,
             inviteActions: updatedInviteActions,
             getCalendarKeys,
@@ -298,11 +301,12 @@ const getSaveEventActions = async ({
         return getSaveSingleEventActionsHelper({
             newEditEventData,
             oldEditEventData,
+            inviteActions: inviteActionsWithSelfAddress,
+            isAttendee,
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
             reencryptSharedEvent,
-            inviteActions: inviteActionsWithSelfAddress,
             onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
             handleSyncActions,
@@ -317,11 +321,12 @@ const getSaveEventActions = async ({
         return getSaveSingleEventActionsHelper({
             newEditEventData,
             oldEditEventData,
+            inviteActions: inviteActionsWithSelfAddress,
+            isAttendee,
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
             reencryptSharedEvent,
-            inviteActions: inviteActionsWithSelfAddress,
             onEquivalentAttendees: handleEquivalentAttendees,
             onSendPrefsErrors,
             handleSyncActions,
@@ -374,16 +379,16 @@ const getSaveEventActions = async ({
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
-            (isInvitation && !isSingleEdit) ||
-            (!isInvitation && (isSendInviteType || hasAttendees)),
-        canOnlySaveThis: isInvitation && isSingleEdit,
+            (isAttendee && !isSingleEdit) ||
+            (!isAttendee && (isSendInviteType || hasAttendees)),
+        canOnlySaveThis: isAttendee && isSingleEdit,
         hasModifiedRrule,
         hasModifiedCalendar,
         inviteActions: updatedSaveInviteActions,
         onSaveConfirmation,
         recurrence: actualEventRecurrence,
         recurrences,
-        isInvitation,
+        isAttendee,
         selfAttendeeToken,
     });
     const {
@@ -402,7 +407,7 @@ const getSaveEventActions = async ({
         oldEditEventData,
         originalEditEventData,
         inviteActions: updatedInviteActions,
-        isInvitation,
+        isAttendee,
         sendIcs,
         reencryptSharedEvent,
         selfAttendeeToken,

@@ -39,6 +39,7 @@ interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
     newEditEventData: EventNewData;
     selfAddress?: Address;
+    isAttendee: boolean;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
     getCalendarKeys: GetCalendarKeys;
@@ -65,6 +66,7 @@ const getSaveSingleEventActions = async ({
         veventComponent: newVeventComponent,
     },
     selfAddress,
+    isAttendee,
     inviteActions,
     getCalendarKeys,
     onSaveConfirmation,
@@ -135,6 +137,7 @@ const getSaveSingleEventActions = async ({
             veventComponent: updatedVeventComponent,
             calendarEvent: oldEvent,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
+            isAttendee,
         });
         const deleteOperation = getDeleteSyncOperation(oldEvent, isSwitchCalendar);
         const multiSyncActions = [
@@ -197,7 +200,7 @@ const getSaveSingleEventActions = async ({
             await onSaveConfirmation({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
-                isInvitation: false,
+                isAttendee: false,
             });
             const {
                 veventComponent: cleanVeventComponent,
@@ -221,6 +224,7 @@ const getSaveSingleEventActions = async ({
         const updateOperation = getUpdateSyncOperation({
             veventComponent: updatedVeventComponent,
             calendarEvent: oldEvent,
+            isAttendee,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
         });
@@ -250,7 +254,7 @@ const getSaveSingleEventActions = async ({
         await onSaveConfirmation({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
-            isInvitation: false,
+            isAttendee: false,
         });
         const { inviteActions: cleanInviteActions, vevent: cleanVevent } = await onSendPrefsErrors({
             inviteActions,
@@ -326,6 +330,7 @@ const getSaveSingleEventActions = async ({
         ? getUpdateSyncOperation({
               veventComponent: updatedVeventComponent,
               calendarEvent: intermediateEvent,
+              isAttendee,
               addedAttendeesPublicKeysMap,
           })
         : getCreateSyncOperation({ veventComponent: updatedVeventComponent, addedAttendeesPublicKeysMap });

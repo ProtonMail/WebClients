@@ -22,7 +22,7 @@ export const getComponentWithPersonalPart = ({ decryptedEventResult, memberID }:
 
 export const getEventStatusTraits = (model: EventModelReadView) => {
     const { status: eventStatus, selfAttendeeIndex } = model;
-    if (!model.isOrganizer && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {
+    if (model.isAttendee && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {
         const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
         if (selfAttendee) {
             const { partstat } = selfAttendee;

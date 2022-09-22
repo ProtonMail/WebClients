@@ -38,14 +38,14 @@ const getDeleteSingleEventActionsHelper = async ({
     oldEditEventData,
     onDeleteConfirmation,
     inviteActions,
-    isInvitation,
+    isAttendee,
     sendIcs,
 }: {
     oldEventData: CalendarEvent;
     oldEditEventData: EventOldData;
     onDeleteConfirmation: OnDeleteConfirmationCb;
     inviteActions: InviteActions;
-    isInvitation: boolean;
+    isAttendee: boolean;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
@@ -60,7 +60,7 @@ const getDeleteSingleEventActionsHelper = async ({
     await onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.SINGLE,
         inviteActions: updatedInviteActions,
-        isInvitation,
+        isAttendee,
     });
     if (inviteType === CANCEL_INVITATION) {
         const { inviteActions: cleanInviteActions } = await sendIcs({
@@ -163,7 +163,7 @@ const getDeleteEventActions = async ({
         sharedSessionKey,
     };
 
-    const isInvitation = !oldEditEventData.eventData.IsOrganizer;
+    const isAttendee = !!eventReadResult?.result?.[0].selfAddressData.isAttendee;
     const isSingleEdit = !!oldEditEventData.recurrenceID;
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
     if (!eventRecurrence && !isSingleEdit) {
@@ -172,7 +172,7 @@ const getDeleteEventActions = async ({
             oldEditEventData,
             onDeleteConfirmation,
             inviteActions: inviteActionsWithSharedData,
-            isInvitation,
+            isAttendee,
             sendIcs,
         });
     }
@@ -187,7 +187,7 @@ const getDeleteEventActions = async ({
             oldEditEventData,
             onDeleteConfirmation,
             inviteActions: inviteActionsWithSharedData,
-            isInvitation,
+            isAttendee,
             sendIcs,
         });
     }
@@ -232,7 +232,7 @@ const getDeleteEventActions = async ({
         recurrence: actualEventRecurrence,
         inviteActions: updatedDeleteInviteActions,
         isCalendarDisabled,
-        isInvitation,
+        isAttendee,
         selfAttendeeToken,
     });
     const {
@@ -246,7 +246,7 @@ const getDeleteEventActions = async ({
         recurrences,
         originalEditEventData,
         oldEditEventData,
-        isInvitation,
+        isAttendee,
         inviteActions: updatedInviteActions,
         selfAttendeeToken,
         sendIcs,
