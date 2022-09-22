@@ -90,7 +90,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
-                    selfAddressData: {},
+                    selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: veventBuilder(),
                     encryptionData: {
                         encryptingAddressID: undefined,
@@ -171,7 +171,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
-                    selfAddressData: {},
+                    selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: veventBuilder({ overrides: { sequence: { value: 2 } } }),
                     encryptionData: {
                         encryptingAddressID: undefined,
@@ -301,7 +301,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
-                    selfAddressData: {},
+                    selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: {
                         ...veventBuilder(),
                         // override manually as overrides does not work for undefined properties in the builder
@@ -333,7 +333,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
-                    selfAddressData: {},
+                    selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: {
                         ...veventBuilder(),
                         // override manually as overrides does not work for undefined properties in the builder

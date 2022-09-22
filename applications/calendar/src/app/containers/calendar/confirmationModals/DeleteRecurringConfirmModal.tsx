@@ -89,8 +89,8 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
     };
 };
 
-const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteActions) => {
-    if (!isInvitation) {
+const getRecurringWarningText = (isAttendee: boolean, inviteActions: InviteActions) => {
+    if (!isAttendee) {
         return '';
     }
     if (inviteActions.resetSingleEditsPartstat) {
@@ -102,7 +102,7 @@ const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteAct
 
 interface Props {
     types: RECURRING_TYPES[];
-    isInvitation: boolean;
+    isAttendee: boolean;
     hasNonCancelledSingleEdits: boolean;
     inviteActions: InviteActions;
     onConfirm: (data: RecurringActionData) => void;
@@ -112,7 +112,7 @@ interface Props {
 const DeleteRecurringConfirmModal = ({
     types,
     hasNonCancelledSingleEdits,
-    isInvitation,
+    isAttendee,
     inviteActions,
     onConfirm,
     onClose,
@@ -122,7 +122,7 @@ const DeleteRecurringConfirmModal = ({
     const { deleteSingleEdits } = inviteActions;
     const { title, confirm, alertText } = getTexts(types, inviteActions);
     const showWarning = hasNonCancelledSingleEdits && type === RECURRING_TYPES.ALL && !deleteSingleEdits;
-    const warningText = showWarning ? getRecurringWarningText(isInvitation, inviteActions) : '';
+    const warningText = showWarning ? getRecurringWarningText(isAttendee, inviteActions) : '';
     const handleConfirm = async () => {
         onConfirm({ type, inviteActions });
         onClose();

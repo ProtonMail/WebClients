@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { BasicModal, Button, Form } from '@proton/components';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -65,11 +66,11 @@ const CreateEventModal = ({
     const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
         !isCancelled && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
-    const displayTitle = !(model.isOrganizer && model.selfAddress?.Status !== 0);
+    const displayTitle = model.isAttendee || model.selfAddress?.Status === ADDRESS_STATUS.STATUS_DISABLED;
     // new events have no uid yet
     const inviteActions = {
         // the type will be more properly assessed in getSaveEventActions
-        type: model.isOrganizer ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
+        type: model.isAttendee ? INVITE_ACTION_TYPES.NONE : INVITE_ACTION_TYPES.SEND_INVITATION,
         selfAddress,
     };
     const { isSubscribed: isSubscribedCalendar } = model.calendar;
@@ -87,18 +88,18 @@ const CreateEventModal = ({
             {c('Action').t`Save`}
         </Button>
     );
-    const deleteInviteActions = model.isOrganizer
+    const deleteInviteActions = model.isAttendee
         ? {
-              type: isSelfAddressActive ? INVITE_ACTION_TYPES.CANCEL_INVITATION : INVITE_ACTION_TYPES.CANCEL_DISABLED,
-              isProtonProtonInvite: model.isProtonProtonInvite,
-              selfAddress: model.selfAddress,
-              selfAttendeeIndex: model.selfAttendeeIndex,
-          }
-        : {
               type: isSelfAddressActive ? INVITE_ACTION_TYPES.DECLINE_INVITATION : INVITE_ACTION_TYPES.DECLINE_DISABLED,
               isProtonProtonInvite: model.isProtonProtonInvite,
               partstat: ICAL_ATTENDEE_STATUS.DECLINED,
               sendCancellationNotice,
+              selfAddress: model.selfAddress,
+              selfAttendeeIndex: model.selfAttendeeIndex,
+          }
+        : {
+              type: isSelfAddressActive ? INVITE_ACTION_TYPES.CANCEL_INVITATION : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+              isProtonProtonInvite: model.isProtonProtonInvite,
               selfAddress: model.selfAddress,
               selfAttendeeIndex: model.selfAttendeeIndex,
           };

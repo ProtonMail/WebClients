@@ -3,6 +3,7 @@ import { CSSProperties, MouseEventHandler, Ref, useEffect, useRef, useState } fr
 import { c } from 'ttag';
 
 import { Button, PrimaryButton } from '@proton/components';
+import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -49,7 +50,7 @@ const CreateEventPopover = ({
 }: Props) => {
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
-    const cannotSave = model.isOrganizer && model.attendees.length > 100;
+    const cannotSave = model.isOrganizer && model.attendees.length > MAX_ATTENDEES;
     const formRef = useRef<HTMLFormElement>(null);
     const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({
         containerEl: formRef.current,
@@ -64,7 +65,7 @@ const CreateEventPopover = ({
     // new events have no uid yet
     const inviteActions = {
         // the type will be more properly assessed in getSaveEventActions
-        type: model.isOrganizer ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
+        type: model.isAttendee ? INVITE_ACTION_TYPES.NONE : INVITE_ACTION_TYPES.SEND_INVITATION,
         selfAddress: model.selfAddress,
     };
 

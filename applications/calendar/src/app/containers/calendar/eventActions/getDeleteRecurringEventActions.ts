@@ -31,7 +31,7 @@ interface DeleteRecurringArguments {
     recurrences: CalendarEvent[];
     originalEditEventData: EventOldData;
     oldEditEventData: EventOldData;
-    isInvitation: boolean;
+    isAttendee: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
     sendIcs: (
@@ -51,7 +51,7 @@ export const getDeleteRecurringEventActions = async ({
         memberID: originalMemberID,
     },
     oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
-    isInvitation,
+    isAttendee,
     inviteActions,
     selfAttendeeToken,
     sendIcs,
@@ -86,6 +86,7 @@ export const getDeleteRecurringEventActions = async ({
         const originalExdateOperation = getUpdateSyncOperation({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
+            isAttendee,
         });
 
         return {
@@ -122,6 +123,7 @@ export const getDeleteRecurringEventActions = async ({
         const updateOperation = getUpdateSyncOperation({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
+            isAttendee,
         });
 
         return {
@@ -168,7 +170,7 @@ export const getDeleteRecurringEventActions = async ({
         // For invitations we do not delete single edits (unless explicitly told so), but reset partstat if necessary
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         const eventsToDelete =
-            isInvitation && !deleteSingleEdits
+            isAttendee && !deleteSingleEdits
                 ? [originalEvent].concat(singleEditRecurrences.filter((event) => getIsEventCancelled(event)))
                 : recurrences;
         const deleteOperations = eventsToDelete.map(unary(getDeleteSyncOperation));

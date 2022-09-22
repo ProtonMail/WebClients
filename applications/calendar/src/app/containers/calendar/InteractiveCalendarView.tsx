@@ -200,7 +200,7 @@ type ModalsMap = {
             hasCalendarModification: boolean;
         };
         inviteActions: InviteActions;
-        isInvitation: boolean;
+        isAttendee: boolean;
     }>;
     editSingleConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
@@ -211,7 +211,7 @@ type ModalsMap = {
     deleteRecurringConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
         types: RECURRING_TYPES[];
-        isInvitation: boolean;
+        isAttendee: boolean;
         hasNonCancelledSingleEdits: boolean;
     }>;
     importModal: ModalWithProps<{
@@ -350,7 +350,7 @@ const InteractiveCalendarView = ({
         return Promise.all([
             getCalendarEventRaw(eventData),
             getCalendarEventPersonal(eventData),
-            pick(eventData, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
+            pick(eventData, ['Permissions', 'IsProtonProtonInvite']),
         ]);
     };
 
@@ -550,10 +550,15 @@ const InteractiveCalendarView = ({
             veventValarmComponent: personalMap[existingAlarmMember?.ID]?.veventComponent,
             veventComponentParentPartial,
             tzid,
-            isOrganizer: !!eventData.IsOrganizer,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
             // When duplicating from a disabled calendar, we need to reset the self address data (otherwise we would have disabled address data in there)
-            selfAddressData: duplicateFromNonWritableCalendarData ? { selfAddress: Address } : selfAddressData,
+            selfAddressData: duplicateFromNonWritableCalendarData
+                ? {
+                      isOrganizer: !!originalOrOccurrenceEvent.attendee?.length,
+                      isAttendee: false,
+                      selfAddress: Address,
+                  }
+                : selfAddressData,
         });
         if (partstat) {
             return {
@@ -904,7 +909,7 @@ const InteractiveCalendarView = ({
     const handleSaveConfirmation = ({
         type,
         data,
-        isInvitation,
+        isAttendee,
         inviteActions,
     }: OnSaveConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
@@ -915,7 +920,7 @@ const InteractiveCalendarView = ({
                     props: {
                         data,
                         inviteActions,
-                        isInvitation,
+                        isAttendee,
                     },
                 });
             } else if (type === SAVE_CONFIRMATION_TYPES.SINGLE) {
@@ -934,7 +939,7 @@ const InteractiveCalendarView = ({
     const handleDeleteConfirmation = ({
         type,
         data,
-        isInvitation,
+        isAttendee,
         inviteActions,
     }: OnDeleteConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
@@ -952,7 +957,7 @@ const InteractiveCalendarView = ({
                     props: {
                         inviteActions,
                         types: data.types,
-                        isInvitation,
+                        isAttendee,
                         hasNonCancelledSingleEdits: data.hasNonCancelledSingleEdits,
                     },
                 });
@@ -1559,7 +1564,7 @@ const InteractiveCalendarView = ({
                 <EditRecurringConfirmModal
                     isOpen={editRecurringConfirmModal.isOpen}
                     {...editRecurringConfirmModal.props.data}
-                    isInvitation={editRecurringConfirmModal.props.isInvitation}
+                    isAttendee={editRecurringConfirmModal.props.isAttendee}
                     inviteActions={editRecurringConfirmModal.props.inviteActions}
                     onClose={() => {
                         closeModal('editRecurringConfirmModal');
@@ -1729,7 +1734,6 @@ const InteractiveCalendarView = ({
                                                       modelToDateProperty(tmpData.start, tmpData.isAllDay)
                                                   ),
                                                   organizer: undefined,
-                                                  isOrganizer: true,
                                               },
                                               isDuplicating: true,
                                           });

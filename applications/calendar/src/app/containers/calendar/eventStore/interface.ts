@@ -19,7 +19,7 @@ export interface RecurringCache {
 export type DecryptedEventTupleResult = [
     DecryptedVeventResult,
     { [memberID: string]: DecryptedVeventResult | undefined },
-    EventInternalProperties
+    Pick<EventInternalProperties, 'Permissions' | 'IsProtonProtonInvite'>
 ];
 export type EventReadResult = {
     result?: DecryptedEventTupleResult;
@@ -40,7 +40,6 @@ export interface CalendarEventStoreRecord {
 
     isAllDay: boolean;
     isAllPartDay: boolean;
-    isOrganizer: boolean;
 
     eventData?: CalendarEvent | CalendarEventSharedData;
     eventComponent: SharedVcalVeventComponent | MetadataVcalVeventComponent;

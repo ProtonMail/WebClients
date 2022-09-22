@@ -22,7 +22,7 @@ interface Arguments {
     canOnlyDeleteAll: boolean;
     canOnlyDeleteThis: boolean;
     isCalendarDisabled: boolean;
-    isInvitation: boolean;
+    isAttendee: boolean;
     onDeleteConfirmation: OnDeleteConfirmationCb;
     selfAttendeeToken?: string;
 }
@@ -33,7 +33,7 @@ const getRecurringDeleteType = ({
     canOnlyDeleteAll,
     canOnlyDeleteThis,
     isCalendarDisabled,
-    isInvitation,
+    isAttendee,
     onDeleteConfirmation,
     inviteActions,
     selfAttendeeToken,
@@ -71,7 +71,7 @@ const getRecurringDeleteType = ({
         type: DELETE_CONFIRMATION_TYPES.RECURRING,
         data: { types: deleteTypes, hasNonCancelledSingleEdits },
         inviteActions: updatedInviteActions,
-        isInvitation,
+        isAttendee,
     });
 };
 

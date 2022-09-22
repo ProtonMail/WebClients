@@ -32,9 +32,9 @@ interface Arguments {
     originalComponent: VcalVeventComponent;
     mode: UpdateAllPossibilities;
     isSingleEdit: boolean;
-    isInvitation: boolean;
+    isAttendee: boolean;
 }
-const updateAllRecurrence = ({ component, originalComponent, mode, isInvitation }: Arguments): VcalVeventComponent => {
+const updateAllRecurrence = ({ component, originalComponent, mode, isAttendee }: Arguments): VcalVeventComponent => {
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
         ...component,
@@ -44,7 +44,7 @@ const updateAllRecurrence = ({ component, originalComponent, mode, isInvitation 
     // Strip any RECURRENCE-ID when updating all events
     delete veventWithOldUID['recurrence-id'];
 
-    if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS || isInvitation) {
+    if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS || isAttendee) {
         // Copy over the exdates, if any
         if (originalComponent.exdate) {
             veventWithOldUID.exdate = originalComponent.exdate;

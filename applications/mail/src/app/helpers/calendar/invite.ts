@@ -425,7 +425,6 @@ export const processEventInvitation = <T>(
     const originalFrom = message.data.Sender.Address;
     const isOrganizerMode = isImport ? false : getIsOrganizerMode(vevent, originalTo);
     const { selfAddress, selfAttendee } = getSelfAddressData({
-        isOrganizer: isOrganizerMode,
         organizer,
         attendees,
         addresses: ownAddresses,
