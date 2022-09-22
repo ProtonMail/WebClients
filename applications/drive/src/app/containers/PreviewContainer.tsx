@@ -156,7 +156,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             onClose={navigateToParent}
             onSave={saveFile}
             onDetail={openDetails}
-            onShare={openShareOptions}
+            onShare={isLoading || !!link?.trashed ? undefined : openShareOptions}
             ref={rootRef}
             navigationControls={
                 link &&
