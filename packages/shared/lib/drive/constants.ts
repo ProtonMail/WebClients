@@ -40,7 +40,7 @@ export const MAX_NAME_LENGTH = 255;
 export const MIN_SHARED_URL_PASSWORD_LENGTH = 8;
 
 export const SHARE_GENERATED_PASSWORD_LENGTH = 12;
-export const DEFAULT_SHARE_MAX_ACCESSES = 10000;
+export const DEFAULT_SHARE_MAX_ACCESSES = 0; // Zero means unlimited.
 
 export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
 export const MAX_SAFE_UPLOADING_FILE_SIZE = 5 * 1024 * 1024 * 1024; // GB
