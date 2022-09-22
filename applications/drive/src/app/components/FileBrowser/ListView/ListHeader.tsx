@@ -65,7 +65,7 @@ const HeaderCell = <T,>({
             onSort={item.sorting ? () => onSort?.(item.type) : undefined}
             isLoading={isLoading && sortParams?.sortField === item.type}
         >
-            {item.text}
+            {item.getText()}
         </TableHeaderCell>
     );
 };
