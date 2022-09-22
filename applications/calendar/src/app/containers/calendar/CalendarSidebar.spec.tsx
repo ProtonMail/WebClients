@@ -2,14 +2,20 @@ import React from 'react';
 import { Router } from 'react-router-dom';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
 import { CacheProvider } from '@proton/components/containers/cache';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
-import { CALENDAR_FLAGS, SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
-import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
+import {
+    CALENDAR_FLAGS,
+    MAX_CALENDARS_PAID,
+    MAX_SUBSCRIBED_CALENDARS,
+    SETTINGS_VIEW,
+} from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/testing/lib/builders';
 
 import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
 
@@ -53,11 +59,9 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useUser', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ hasPaidMail: false }, false]),
+    default: jest.fn(() => [{ hasPaidMail: true }, false]),
     useGetUser: jest.fn(),
 }));
-
-jest.mock('@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit', () => jest.fn(() => false));
 
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
     __esModule: true,
@@ -87,9 +91,6 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
 }));
 
 const mockedUseSubscribedCalendars = useSubscribedCalendars as jest.Mock<ReturnType<typeof useSubscribedCalendars>>;
-const mockedGetHasUserReachedCalendarsLimit = getHasUserReachedCalendarsLimit as jest.Mock<
-    ReturnType<typeof getHasUserReachedCalendarsLimit>
->;
 
 const mockCalendar: VisualCalendar = {
     ID: 'id3',
@@ -119,6 +120,20 @@ const mockCalendar: VisualCalendar = {
 };
 
 function renderComponent(props?: Partial<CalendarSidebarProps>) {
+    mockedUseSubscribedCalendars.mockImplementation((calendars: VisualCalendar[]) => {
+        const subscribedCalendars = calendars.map((calendar) => ({
+            ...calendar,
+            SubscriptionParameters: {
+                CalendarID: calendar.ID,
+                CreateTime: 0,
+                LastUpdateTime: getUnixTime(Date.now()),
+                Status: CALENDAR_SUBSCRIPTION_STATUS.OK,
+                URL: 'url',
+            },
+        }));
+
+        return { subscribedCalendars, loading: false };
+    });
     const defaultProps: CalendarSidebarProps = {
         // expanded: false,
         onToggleExpand: jest.fn(),
@@ -217,13 +232,7 @@ describe('CalendarSidebar', () => {
 
         expect(getCalendarModal()).toBeInTheDocument();
 
-        mockedGetHasUserReachedCalendarsLimit.mockImplementation(() => ({
-            isPersonalCalendarsLimitReached: true,
-            isSharedCalendarsLimitReached: true,
-            isSubscribedCalendarsLimitReached: true,
-        }));
-
-        rerender(renderComponent());
+        rerender(renderComponent({ calendars: generateOwnedPersonalCalendars(MAX_CALENDARS_PAID) }));
         fireEvent.click(addCalendarElem);
         fireEvent.click(getCreatePersonalCalendarButton());
 
@@ -235,7 +244,7 @@ describe('CalendarSidebar', () => {
             )
         ).toBeInTheDocument();
 
-        rerender(renderComponent());
+        rerender(renderComponent({ calendars: generateSubscribedCalendars(MAX_SUBSCRIBED_CALENDARS) }));
         fireEvent.click(addCalendarElem);
         fireEvent.click(getCreateSubscribedCalendarButton());
 
