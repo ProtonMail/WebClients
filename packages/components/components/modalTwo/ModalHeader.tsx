@@ -81,32 +81,32 @@ const ModalHeader = ({
                         >
                             {title}
                         </h3>
-                        {subline && <div className="color-weak">{subline}</div>}
+                        {subline && <div className="color-weak text-break">{subline}</div>}
                     </div>
                 )}
 
-            <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
-                {actions && (
-                    <>
-                        {firstAction}
-                        {secondAction}
-                        <Vr className="my0-25" />
-                    </>
-                )}
+                <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
+                    {actions && (
+                        <>
+                            {firstAction}
+                            {secondAction}
+                            <Vr className="my0-25" />
+                        </>
+                    )}
 
-                {hasClose && (
-                    <Tooltip title={c('Action').t`Close`}>
-                        <Button
-                            className="flex-item-noshrink"
-                            icon
-                            shape="ghost"
-                            onClick={onClose}
-                            {...closeButtonProps}
-                        >
-                            <Icon className="modal-close-icon" name="cross-big" />
-                        </Button>
-                    </Tooltip>
-                )}
+                    {hasClose && (
+                        <Tooltip title={c('Action').t`Close`}>
+                            <Button
+                                className="flex-item-noshrink"
+                                icon
+                                shape="ghost"
+                                onClick={onClose}
+                                {...closeButtonProps}
+                            >
+                                <Icon className="modal-close-icon" name="cross-big" />
+                            </Button>
+                        </Tooltip>
+                    )}
                 </div>
             </div>
             {additionalContent}

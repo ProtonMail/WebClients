@@ -30,7 +30,7 @@ const AlertModal = ({ title, subline, buttons, className, children, ModalContent
         <ModalTwo size="small" {...rest} className={classnames([className, 'alert-modal'])}>
             <div className="alert-modal-header">
                 <AlertModalTitle>{title}</AlertModalTitle>
-                {subline && <div className="color-weak">{subline}</div>}
+                {subline && <div className="color-weak text-break">{subline}</div>}
             </div>
             <ModalTwoContent {...ModalContentProps}>{children}</ModalTwoContent>
             <ModalTwoFooter className="alert-modal-footer">
