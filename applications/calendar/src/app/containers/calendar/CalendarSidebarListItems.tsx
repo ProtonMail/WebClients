@@ -72,6 +72,7 @@ type ModalsMap = {
     }>;
     shareLinkModal: ModalWithProps<{
         calendarID: string;
+        calendarName: string;
         onSubmit: ({ link, accessLevel }: { link: string; accessLevel: ACCESS_LEVEL }) => Promise<void>;
     }>;
     limitModal: ModalWithProps<{
@@ -424,7 +425,11 @@ To share this calendar with more Proton accounts, remove some members.`,
                                     } else {
                                         updateModal('shareLinkModal', {
                                             isOpen: true,
-                                            props: { calendarID: shareModalCalendar.ID, onSubmit: handleCreateLink },
+                                            props: {
+                                                calendarID: shareModalCalendar.ID,
+                                                calendarName: shareModalCalendar.Name,
+                                                onSubmit: handleCreateLink,
+                                            },
                                         });
                                     }
                                 })
