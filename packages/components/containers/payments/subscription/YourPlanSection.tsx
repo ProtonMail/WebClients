@@ -1,11 +1,9 @@
-import { FeatureCode } from '@proton/components/containers';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { Loader } from '../../../components';
 import {
     useAddresses,
     useCalendars,
-    useFeature,
     useOrganization,
     usePlans,
     useSubscription,
@@ -37,9 +35,6 @@ const YourPlanSection = ({ app }: Props) => {
     const [vpnServers] = useVPNServersCount();
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    const drivePlanFeature = useFeature(FeatureCode.DrivePlan);
-    const drivePlanEnabled = drivePlanFeature.feature?.Value === true;
-
     const loading = loadingSubscription || loadingOrganization || loadingPlans;
 
     if (loading) {
@@ -68,7 +63,6 @@ const YourPlanSection = ({ app }: Props) => {
                 openSubscriptionModal={openSubscriptionModal}
             />
             <UpsellPanel
-                drivePlanEnabled={drivePlanEnabled}
                 app={app}
                 currency={currency}
                 subscription={subscription}
