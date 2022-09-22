@@ -100,7 +100,7 @@ const CalendarSidebar = ({
     const shouldShowSpotlight = useSpotlightShow(show);
 
     const { isPersonalCalendarsLimitReached, isSubscribedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
-        calendars: personalCalendars,
+        calendars,
         isFreeUser: !user.hasPaidMail,
     });
 
