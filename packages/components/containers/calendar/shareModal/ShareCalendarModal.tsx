@@ -422,13 +422,17 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 name="calendar-sharing-access"
                                 options={[
                                     {
-                                        label: c('Calendar sharing access option label')
-                                            .t`Full view (see all event details)`,
+                                        label: (
+                                            <span className="flex-item-fluid">
+                                                {c('Calendar sharing access option label')
+                                                    .t`Full view (see all event details)`}
+                                            </span>
+                                        ),
                                         value: MEMBER_PERMISSIONS.FULL_VIEW,
                                     },
                                     {
                                         label: (
-                                            <span>
+                                            <span className="flex-item-fluid">
                                                 {c('Calendar sharing access option label')
                                                     .t`Edit (view, create and edit event details)`}{' '}
                                                 <Badge type="info">{c('Badge').t`Coming soon`}</Badge>
