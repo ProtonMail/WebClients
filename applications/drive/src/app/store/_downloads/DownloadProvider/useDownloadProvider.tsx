@@ -3,11 +3,17 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useModals, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { bufferToStream } from '../../../utils/stream';
-import { isTransferCancelError, isTransferPausedByConnection, isTransferProgress } from '../../../utils/transfer';
+import {
+    isTransferCancelError,
+    isTransferOngoing,
+    isTransferPausedByConnection,
+    isTransferProgress,
+} from '../../../utils/transfer';
 import { SignatureIssues } from '../../_links';
 import { logError, reportError } from '../../_utils';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
@@ -135,6 +141,13 @@ export default function useDownloadProvider(
                     } else {
                         queue.updateWithData(nextDownload.id, TransferState.Error, { error });
                         reportError(error);
+                    }
+
+                    // If the error is 429 (rate limited), we should not continue
+                    // with other downloads in the queue and fail fast, otherwise
+                    // it just triggers more strict jails and leads to nowhere.
+                    if (error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                        control.cancelDownloads(isTransferOngoing);
                     }
                 })
                 .finally(() => {
