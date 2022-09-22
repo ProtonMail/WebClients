@@ -1,0 +1,6 @@
+// Increase the challenge width on the iframe to show the input outline correctly.
+// These values (0.5 em) go with the bodyClassName on the challenge
+.challenge-width-increase {
+	margin-inline-start: -0.5em;
+	inline-size: calc(100% + 1em);
+}
