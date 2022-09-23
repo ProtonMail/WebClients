@@ -9,7 +9,7 @@ import { FolderContextMenu } from './FolderContextMenu';
 import { UploadButton } from './UploadButton';
 
 const EmptyFolder = ({ shareId }: { shareId: string }) => {
-    const { isDesktop } = useActiveBreakpoint();
+    const { isNarrow } = useActiveBreakpoint();
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
@@ -42,11 +42,11 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
                 <EmptyViewContainer imageProps={{ src: uploadSvg, title: c('Info').t`There are no files yet` }}>
                     <h3 className="text-bold">{c('Info').t`Go ahead, upload a file`}</h3>
                     <p className="color-weak">
-                        {isDesktop
+                        {!isNarrow
                             ? c('Info').t`It’s as easy as drag and drop or selecting files`
                             : c('Info').t`Tap the + button to upload a file or folder`}
                     </p>
-                    {isDesktop && (
+                    {!isNarrow && (
                         <div className="flex flex-justify-center">
                             <UploadButton className="w13e">
                                 <Icon name="arrow-up-line" className="mr0-5" />
