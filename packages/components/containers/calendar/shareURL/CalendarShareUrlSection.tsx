@@ -169,12 +169,12 @@ const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
         <>
             <ShareLinkModal
                 calendarID={calendarID}
+                calendarName={calendar.Name}
                 isOpen={shareLinkModal.isOpen}
                 onSubmit={handleCreateLink}
                 onClose={() => {
                     closeModal('shareLinkModal');
                 }}
-                subline={calendar.Name}
             />
             {!!editLinkModalProps && (
                 <EditLinkModal
