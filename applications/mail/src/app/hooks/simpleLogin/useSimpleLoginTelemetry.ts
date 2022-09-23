@@ -43,7 +43,7 @@ export const useSimpleLoginTelemetry = () => {
             dimensions.ModalType = isSafari() ? 'website' : 'extension';
         }
 
-        if (messagesInSpam) {
+        if (messagesInSpam !== undefined) {
             dimensions.MessagesInSpam = getBinnedMessagesInSpam(messagesInSpam);
         }
 
