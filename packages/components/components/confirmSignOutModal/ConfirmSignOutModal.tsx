@@ -58,7 +58,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
             <div className="flex flex-row flex-align-items-start">
                 <Checkbox
                     id="delete-recovery-storage"
-                    className="mt0-5"
+                    className="mt0-5 mr0-5"
                     checked={clearData}
                     onChange={() => setClearData(!clearData)}
                 />
