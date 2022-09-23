@@ -5,5 +5,10 @@
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
     "ignoreDeps": ["roosterjs", "emoji-mart", "@emoji-mart/data"],
-    "ignorePaths": ["**/node_modules/**"]
+    "ignorePaths": ["**/node_modules/**"],
+    "packageRules": [
+        {
+            "matchPackagePatterns": ["typescript"]
+        }
+    ]
 }
