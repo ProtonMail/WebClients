@@ -15,11 +15,14 @@ export const useSimpleLoginTelemetry = () => {
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
     // However, we need to bin the number of message we send to Telemetry
-    // '1' => User has 0 or 1 message in spam
+    // '0' => User has 0 messages in spam
+    // '1' => User has 1 message in spam
     // '10' => User has 2-10 messages in spam
     // '10+' => User has more than 10 messages in spam
     const getBinnedMessagesInSpam = (totalMessages: number) => {
-        if (totalMessages < 2) {
+        if (totalMessages === 0) {
+            return '0';
+        } else if (totalMessages === 1) {
             return '1';
         } else if (totalMessages < 11) {
             return '10';
