@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { LocationErrorBoundary, useLoading } from '@proton/components';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import SignatureIssueModal from '../components/SignatureIssueModal';
@@ -70,7 +71,8 @@ function PublicSharedLink({ token }: { token: string }) {
                 .then(({ link }) => setLink(link))
                 .catch((error) => {
                     console.error(error);
-                    setError(error.message || error);
+                    const apiError = getApiError(error);
+                    setError(apiError.message || error.message || c('Info').t`Shared link failed to be loaded`);
                 })
         );
         return () => {
