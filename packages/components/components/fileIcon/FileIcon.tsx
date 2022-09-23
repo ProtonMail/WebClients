@@ -1,4 +1,13 @@
-import { isExcel, isFont, isICS, isImage, isPDF, isSupportedText, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import {
+    isAudio,
+    isExcel,
+    isFont,
+    isICS,
+    isImage,
+    isPDF,
+    isSupportedText,
+    isVideo,
+} from '@proton/shared/lib/helpers/mimetype';
 
 import { classnames } from '../../helpers/component';
 import MimeIcon, { MimeIconProps, MimeName } from '../icon/MimeIcon';
@@ -67,6 +76,8 @@ const getIconName = (mimeType: string) => {
         name = 'pdf';
     } else if (isVideo(mimeType)) {
         name = 'video';
+    } else if (isAudio(mimeType)) {
+        name = 'sound';
     } else if (isFont(mimeType)) {
         name = 'font';
     } else if (isExcel(mimeType)) {
