@@ -47,7 +47,9 @@ const CalendarMemberAndInvitationList = ({
     const shouldDisplayStatus = invitations.some(({ Status }) =>
         [MEMBER_INVITATION_STATUS.REJECTED, MEMBER_INVITATION_STATUS.PENDING].includes(Status)
     );
-    const shouldDisplayPermissions = invitations.some(({ Status }) => Status !== MEMBER_INVITATION_STATUS.REJECTED);
+    // do not display permissions if there are only declined invitations
+    const shouldDisplayPermissions =
+        !!members.length || invitations.some(({ Status }) => Status !== MEMBER_INVITATION_STATUS.REJECTED);
 
     return (
         <>
