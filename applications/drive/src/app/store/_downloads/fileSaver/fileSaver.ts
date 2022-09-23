@@ -70,7 +70,7 @@ class FileSaver {
                 if (isValidationError(err)) {
                     throw err;
                 }
-                throw new Error(`Download of ${meta.filename} failed: ${err.message || err}`);
+                throw new Error(`Download failed: ${err.message || err}`);
             }
         }
     }
