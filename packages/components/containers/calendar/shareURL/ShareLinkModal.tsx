@@ -17,6 +17,8 @@ import { splitKeys } from '@proton/shared/lib/keys';
 import { BasicModal, Button, Form, InputFieldTwo, Option, SelectTwo } from '../../../components';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
+    calendarID: string;
+    calendarName: string;
     onSubmit: ({
         link,
         transformedLink,
@@ -28,12 +30,11 @@ interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
     }) => Promise<void>;
     onClose: () => void;
     isOpen: boolean;
-    calendarID: string;
 }
 
 const defaultAccessLevel = ACCESS_LEVEL.LIMITED;
 
-const ShareLinkModal = ({ onSubmit, onClose, isOpen, calendarID, ...rest }: Props) => {
+const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, ...rest }: Props) => {
     const getCalendarInfo = useGetCalendarInfo();
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -100,6 +101,7 @@ const ShareLinkModal = ({ onSubmit, onClose, isOpen, calendarID, ...rest }: Prop
             {...rest}
             isOpen={isOpen}
             title={c('Title').t`Create public link`}
+            subline={calendarName}
             footer={
                 <>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
