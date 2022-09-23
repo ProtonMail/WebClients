@@ -83,9 +83,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
 
             return (
                 <>
-                    <span className="text-ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
-                        {calendarName}
-                    </span>
+                    <span className="text-break flex-item-fluid-auto flex-item-nogrow mr0-5">{calendarName}</span>
                     <span className="text-no-wrap flex-item-noshrink">
                         {disabledText} <Info title={tooltipText} />
                     </span>
@@ -94,7 +92,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
         }
 
         return (
-            <span className="text-ellipsis" title={calendarName}>
+            <span className="text-break" title={calendarName}>
                 {calendarName}
             </span>
         );
@@ -249,15 +247,14 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                     </div>
                 </IconRow>
             )}
-            {calendarString ? (
-                <IconRow
-                    labelClassName={labelClassName}
-                    title={c('Label').t`Calendar`}
-                    icon={<CalendarSelectIcon color={Color} />}
-                >
-                    {calendarString}
-                </IconRow>
-            ) : null}
+            <IconRow
+                className="flex-item-fluid"
+                labelClassName="inline-flex pt0"
+                title={c('Label').t`Calendar`}
+                icon={<CalendarSelectIcon color={Color} />}
+            >
+                {calendarString}
+            </IconRow>
             {model.notifications?.length ? (
                 <IconRow labelClassName={labelClassName} title={c('Label').t`Notifications`} icon="bell">
                     <div className="flex flex-column">
