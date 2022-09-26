@@ -1,0 +1,43 @@
+@import '~@proton/styles/scss/config';
+
+.stepper {
+	&-item {
+		$dot-size: em(12);
+		$weak-opacity: 0.2;
+
+		&-dot {
+			inline-size: $dot-size;
+			block-size: $dot-size;
+			border-radius: $dot-size / 2;
+		}
+
+		&-connector {
+			$connector-height: em(2);
+			$connector-gap: em(2);
+
+			block-size: $connector-height;
+			position: absolute;
+			inset-block-start: ($dot-size - $connector-height) / 2;
+			inset-inline: calc(-50% + $connector-gap) calc(50% + $connector-gap + $dot-size / 2);
+		}
+
+		/**
+		 * dot and connector default color
+		 */
+		&-dot,
+		&-connector {
+			background-color: var(--interaction-norm);
+			opacity: $weak-opacity;
+		}
+
+		/**
+		 * dot and connector active and completed
+		 */
+		&--active &-dot,
+		&--completed &-dot,
+		&--active &-connector,
+		&--completed &-connector {
+			opacity: 1;
+		}
+	}
+}
