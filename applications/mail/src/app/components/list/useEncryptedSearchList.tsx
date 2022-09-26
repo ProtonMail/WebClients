@@ -111,7 +111,12 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
     );
 
     const paidPlansButton = (
-        <AppLink to={`/dashboard?ref=${ES_BANNER_REF}`} toApp={APPS.PROTONACCOUNT} className="text-no-wrap">
+        <AppLink
+            to={`/dashboard?ref=${ES_BANNER_REF}`}
+            toApp={APPS.PROTONACCOUNT}
+            className="text-no-wrap"
+            key="paid-plans-button"
+        >
             {
                 // translator: sentence appears when a free user has content search available only for most recent messages. Complete sentence example: "Content search of the entire inbox is available for paid plans."
                 c('Link').t`paid plan`
