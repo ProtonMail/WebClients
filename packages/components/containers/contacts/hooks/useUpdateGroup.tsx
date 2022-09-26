@@ -7,6 +7,7 @@ import { createContactGroup, updateLabel } from '@proton/shared/lib/api/labels';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
+import { Label } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { useApi, useEventManager, useNotifications, useUserKeys } from '../../../hooks';
@@ -33,7 +34,9 @@ const useUpdateGroup = () => {
             const contactGroupParams = { Name: name, Color: color };
             const {
                 Label: { ID: LabelID },
-            } = await api(groupID ? updateLabel(groupID, contactGroupParams) : createContactGroup(contactGroupParams));
+            } = await api<{ Label: Label }>(
+                groupID ? updateLabel(groupID, contactGroupParams) : createContactGroup(contactGroupParams)
+            );
 
             if (onDelayedSave) {
                 onDelayedSave(LabelID);

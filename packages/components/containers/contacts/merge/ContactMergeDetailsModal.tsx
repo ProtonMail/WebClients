@@ -6,6 +6,7 @@ import { getContact } from '@proton/shared/lib/api/contacts';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
@@ -50,7 +51,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
 
     useEffect(() => {
         const request = async () => {
-            const { Contact } = await api(getContact(contactID));
+            const { Contact } = await api<{ Contact: Contact }>(getContact(contactID));
             const keys = splitKeys(userKeysList);
             const { vCardContact, errors } = await prepareVCardContact(Contact, keys);
             setModel({ vCardContact, errors });
