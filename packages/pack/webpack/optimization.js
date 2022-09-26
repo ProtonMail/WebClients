@@ -32,4 +32,9 @@ module.exports = ({ isProduction }) => ({
         }),
         new CssMinimizerPlugin(),
     ],
+    splitChunks: {
+        chunks(chunk) {
+            return chunk.name !== 'crypto-worker';
+        },
+    },
 });
