@@ -3,9 +3,11 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+import { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
 import { OAUTH_PROVIDER, OAuthProps } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
+import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
+import useApiEnvironmentConfig from './useApiEnvironmentConfig';
 import useNotifications from './useNotifications';
 
 const WINDOW_WIDTH = 500;
@@ -13,56 +15,79 @@ const WINDOW_HEIGHT = 600;
 
 const POLLING_INTERVAL = 100;
 
-const getOAuthRedirectURL = () => {
+const getOAuthRedirectURL = (provider: OAUTH_PROVIDER) => {
     const { protocol, host } = window.location;
-    return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
+
+    if (provider === OAUTH_PROVIDER.GOOGLE) {
+        return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
+    }
+
+    if (provider === OAUTH_PROVIDER.OUTLOOK) {
+        return `${protocol}//${host}${O_OAUTH_REDIRECT_PATH}`;
+    }
+
+    throw new Error('Provider does not exist');
 };
 
-export const getOAuthAuthorizationUrl = ({
+const getOAuthAuthorizationUrl = ({
+    provider,
     scope,
-    clientID,
+    config,
     loginHint,
 }: {
+    provider: OAUTH_PROVIDER;
     scope: string;
-    clientID: string;
+    config: ApiEnvironmentConfig;
     loginHint?: string;
 }) => {
+    let url;
     const params = new URLSearchParams();
 
-    params.append('redirect_uri', getOAuthRedirectURL());
+    params.append('redirect_uri', getOAuthRedirectURL(provider));
     params.append('response_type', 'code');
-    params.append('access_type', 'offline');
-    params.append('client_id', clientID);
     params.append('scope', scope);
     params.append('prompt', 'consent');
 
-    if (loginHint) {
-        params.append('login_hint', loginHint);
+    if (provider === OAUTH_PROVIDER.GOOGLE) {
+        params.append('access_type', 'offline');
+        params.append('client_id', config['importer.google.client_id']);
+        if (loginHint) {
+            params.append('login_hint', loginHint);
+        }
+        url = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
     }
 
-    return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+    if (provider === OAUTH_PROVIDER.OUTLOOK) {
+        params.append('client_id', config['importer.outlook.client_id']);
+        url = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?${params.toString()}`;
+    }
+
+    if (!url) {
+        throw new Error('Provider does not exist');
+    }
+
+    return url;
 };
 
 const useOAuthPopup = () => {
     const { createNotification } = useNotifications();
+    const [config, loadingConfig] = useApiEnvironmentConfig();
     const stateId = useRef<string>();
 
     const triggerOAuthPopup = ({
         provider,
         scope,
-        clientID,
         loginHint,
         callback,
     }: {
         provider: OAUTH_PROVIDER;
         scope: string;
-        clientID: string;
         loginHint?: string;
         callback: (oauthProps: OAuthProps) => void | Promise<void>;
     }) => {
         let interval: number;
-        const authorizationUrl = getOAuthAuthorizationUrl({ scope, clientID, loginHint });
-        const RedirectUri = getOAuthRedirectURL();
+        const authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, loginHint });
+        const RedirectUri = getOAuthRedirectURL(provider);
 
         const uid = generateProtonWebUID();
         stateId.current = uid;
@@ -144,7 +169,7 @@ const useOAuthPopup = () => {
         }
     };
 
-    return { triggerOAuthPopup };
+    return { triggerOAuthPopup, loadingConfig };
 };
 
 export default useOAuthPopup;
