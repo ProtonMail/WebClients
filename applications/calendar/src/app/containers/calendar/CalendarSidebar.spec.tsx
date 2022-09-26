@@ -201,7 +201,7 @@ describe('CalendarSidebar', () => {
 
         const subscribedCalendarsButton = screen.getByText(/Subscribed calendars/);
 
-        expect(screen.getByText(/My calendars/)).toBeInTheDocument();
+        expect(screen.getAllByText(/My calendars/)).toBeInTheDocument();
         expect(subscribedCalendarsButton).toBeInTheDocument();
 
         expect(screen.getByText(/calendar3/)).toBeInTheDocument();
