@@ -9,6 +9,7 @@ import type {
     EncryptSessionKeyOptionsPmcrypto,
     GenerateKeyOptions,
     GenerateSessionKeyOptionsPmcrypto,
+    MIMEAttachment,
     ProcessMIMEOptions,
     ProcessMIMEResult,
     ReformatKeyOptions,
@@ -22,7 +23,7 @@ import type {
 export type { PartialConfig as OpenPGPConfig, enums } from 'pmcrypto-v7/lib/openpgp';
 
 type MaybeArray<T> = T[] | T;
-export type { SessionKey, AlgorithmInfo };
+export type { SessionKey, AlgorithmInfo, MIMEAttachment };
 
 // TODO TS: do not allow mutually exclusive properties
 export interface WorkerDecryptionOptions

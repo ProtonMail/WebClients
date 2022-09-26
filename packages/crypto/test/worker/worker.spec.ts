@@ -11,18 +11,6 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto-v7/lib/openpgp';
 import { SessionKey, generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v7/lib/pmcrypto';
-import {
-    testMessageEncryptedLegacy,
-    testMessageEncryptedStandard,
-    testMessageResult,
-    testPrivateKeyLegacy,
-} from 'pmcrypto-v7/test/message/decryptMessageLegacy.data';
-import {
-    key as mimeKey,
-    multipartMessageWithAttachment,
-    multipartSignedMessage,
-    multipartSignedMessageBody,
-} from 'pmcrypto-v7/test/message/processMIME.data';
 
 import { VERIFICATION_STATUS } from '../../lib';
 import {
@@ -33,7 +21,19 @@ import {
     utf8ArrayToString,
 } from '../../lib/utils';
 import { CryptoWorkerPool as CryptoWorker } from '../../lib/worker/workerPool';
+import {
+    testMessageEncryptedLegacy,
+    testMessageEncryptedStandard,
+    testMessageResult,
+    testPrivateKeyLegacy,
+} from './decryptMessageLegacy.data';
 import { ecc25519Key, eddsaElGamalSubkey, rsa512BitsKey } from './keys.data';
+import {
+    key as mimeKey,
+    multipartMessageWithAttachment,
+    multipartSignedMessage,
+    multipartSignedMessageBody,
+} from './processMIME.data';
 
 chaiUse(chaiAsPromised);
 
@@ -492,9 +492,10 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(attachments.length).to.equal(1);
         const [attachment] = attachments;
         expect(attachment.fileName).to.equal('test.txt');
-        expect(attachment.checksum).to.equal('94ee2b41f2016f2ec79a7b3a2faf920e');
+        expect(attachment.contentId.endsWith('@pmcrypto>')).to.be.true;
         expect(attachment.content.length > 0).to.be.true;
-        expect(utf8ArrayToString(attachment.content)).to.equal('this is the attachment text\r\n');
+        expect(attachment.content.length).to.equal(attachment.size);
+        expect(utf8ArrayToString(attachment.content)).to.equal('this is the attachment text\n');
     });
 
     it('getMessageInfo - it returns correct keyIDs', async () => {
