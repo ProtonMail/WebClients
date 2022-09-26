@@ -163,7 +163,7 @@ const CalendarSidebarListItems = ({
             <SidebarListItem key={ID}>
                 <SidebarListItemLabel
                     htmlFor={`calendar-${i}`}
-                    className="calendar-sidebar-list-item opacity-on-hover-container pt0-5 pb0-5 pr0-5"
+                    className="calendar-sidebar-list-item opacity-on-hover-container py0-25 pr0-5"
                 >
                     <SidebarListItemContent
                         data-test-id="calendar-sidebar:user-calendars"
