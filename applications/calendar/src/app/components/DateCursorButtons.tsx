@@ -55,7 +55,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 <span className="sr-only">{next}</span>
             </ToolbarButton>
             <Vr />
-            <span className="pl1 pr0-5 myauto flex-item-noshrink">{currentRange}</span>
+            <span className="pr0-5 myauto flex-item-noshrink">{currentRange}</span>
         </>
     );
 };
