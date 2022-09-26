@@ -11,7 +11,6 @@ import {
     clearAll,
     createDocument,
     generateKeys,
-    tick,
     waitForNotification,
 } from '../../../helpers/test/helper';
 import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
@@ -98,8 +97,6 @@ describe('Composer hotkeys', () => {
         addApiMock(`mail/v4/messages/delete`, deleteSpy, 'put');
 
         const { ctrlAltBackspace } = await setup();
-
-        await tick();
 
         ctrlAltBackspace();
 
