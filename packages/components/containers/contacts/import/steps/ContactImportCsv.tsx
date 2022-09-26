@@ -71,6 +71,7 @@ const ImportCsvModalContent = ({ model, setModel, onClose }: Props) => {
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
+        event.stopPropagation();
 
         setModel({
             ...model,

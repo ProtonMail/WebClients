@@ -2,6 +2,7 @@ import { Label } from './Label';
 
 export enum OAUTH_PROVIDER {
     GOOGLE = 1,
+    OUTLOOK = 2,
 }
 
 export enum NON_OAUTH_PROVIDER {
@@ -77,8 +78,8 @@ export interface CreateImportPayload {
     Source?: string;
     [ImportType.MAIL]?: {
         Account: string;
-        ImapHost: string;
-        ImapPort: number;
+        ImapHost?: string;
+        ImapPort?: number;
         Sasl: AuthenticationMethod;
         Code?: string;
         AllowSelfSigned?: number;
@@ -345,6 +346,9 @@ export interface EasySwitchFeatureFlag {
     GoogleCalendar: boolean;
     GoogleContacts: boolean;
     GoogleDrive: boolean;
+    OutlookMail: boolean;
+    OutlookCalendar: boolean;
+    OutlookContacts: boolean;
     OtherMail: boolean;
     OtherCalendar: boolean;
     OtherContacts: boolean;
