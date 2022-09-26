@@ -107,6 +107,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
+        event.stopPropagation();
 
         const { fileAttached, extension } = model;
         if (!fileAttached) {

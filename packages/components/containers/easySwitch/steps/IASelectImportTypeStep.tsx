@@ -2,6 +2,7 @@ import { ReactNode, useEffect, useMemo, useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -15,29 +16,36 @@ import {
     CustomFieldsBitmap,
     EasySwitchFeatureFlag,
     IAOauthModalModel,
+    IAOauthModalModelStep,
     ImportType,
     IsCustomCalendarMapping,
     LaunchImportPayload,
     MailImportGmailCategories,
     MailImportPayloadError,
     MailImporterPayload,
+    NON_OAUTH_PROVIDER,
+    OAUTH_PROVIDER,
     TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Checkbox, Label as FormLabel, Icon, LabelStack, UnderlineButton } from '../../../components';
+import { Checkbox, Label as FormLabel, Icon, InlineLinkButton, LabelStack, UnderlineButton } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useModals } from '../../../hooks';
+import { useFeature, useModals } from '../../../hooks';
+import ContactImportModal from '../../contacts/import/ContactImportModal';
+import { FeatureCode } from '../../features';
+import EasySwitchInstructionsModal from '../EasySwitchInstructionsModal';
 import CustomizeCalendarImportModal from '../calendar/modals/CustomizeCalendarImportModal';
 import { CALENDAR_TO_BE_CREATED_PREFIX, GMAIL_CATEGORIES } from '../constants';
-import { getCheckedProducts, hasDataToImport } from '../helpers';
+import { hasDataToImport } from '../helpers';
 import useIAMailPayload from '../hooks/useIAMailPayload';
 import CustomizeMailImportModal from '../mail/modals/CustomizeMailImportModal';
 import IADisabledCheckbox from './IAErroredChecked';
 
 interface Props {
+    provider: OAUTH_PROVIDER;
     addresses: Address[];
     modalModel: IAOauthModalModel;
     updateModalModel: (newModel: IAOauthModalModel) => void;
@@ -75,6 +83,7 @@ const replaceLabelPlaceholder = (text: string, labelMarkup: ReactNode) => {
 };
 
 const IASelectImportTypeStep = ({
+    provider,
     addresses,
     modalModel,
     updateModalModel,
@@ -86,20 +95,57 @@ const IASelectImportTypeStep = ({
     folders,
     featureMap,
 }: Props) => {
-    const isEasySwitchMailEnabled = featureMap?.GoogleMail;
-    const isEasySwitchContactsEnabled = featureMap?.GoogleContacts;
-    const isEasySwitchCalendarEnabled = featureMap?.GoogleCalendar;
+    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
+    const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
+
+    const { current: initialCheckedTypeKeys } = useRef<ImportType[]>(
+        Object.entries(checkedTypes).reduce((acc, [key, value]) => {
+            if (value === true) {
+                acc = [...acc, key as ImportType];
+            }
+            return acc;
+        }, [] as ImportType[])
+    );
+
+    const isEasySwitchMailEnabled = (() => {
+        if (provider === OAUTH_PROVIDER.GOOGLE) {
+            return featureMap?.GoogleMail;
+        }
+        if (provider === OAUTH_PROVIDER.OUTLOOK) {
+            return featureMap?.OutlookMail;
+        }
+    })();
+    const isEasySwitchContactsEnabled = (() => {
+        if (provider === OAUTH_PROVIDER.GOOGLE) {
+            return featureMap?.GoogleContacts;
+        }
+        if (provider === OAUTH_PROVIDER.OUTLOOK) {
+            return featureMap?.OutlookContacts;
+        }
+    })();
+
+    const isEasySwitchCalendarEnabled = (() => {
+        if (provider === OAUTH_PROVIDER.GOOGLE) {
+            return featureMap?.GoogleCalendar;
+        }
+        if (provider === OAUTH_PROVIDER.OUTLOOK) {
+            return featureMap?.OutlookCalendar;
+        }
+    })();
 
     const { oauthProps, payload, tokenScope } = modalModel;
 
     const initialModel = useRef<IAOauthModalModel>();
 
+    const isLabelMapping = provider === OAUTH_PROVIDER.GOOGLE;
+
     const { createModal } = useModals();
+    const [importContactModal, onImportContact] = useModalTwo<void, void>(ContactImportModal, false);
 
     const { getDefaultMapping, getDefaultLabel, getMailMappingErrors } = useIAMailPayload({
         email: modalModel.importedEmail,
         providerFolders: modalModel.data[MAIL].providerFolders,
-        isLabelMapping: true,
+        isLabelMapping,
         labels,
         folders,
     });
@@ -118,7 +164,7 @@ const IASelectImportTypeStep = ({
             return <div>{c('Info').t`Select what you want to import.`}</div>;
         }
 
-        return hasDataToImport(modalModel.data, getCheckedProducts(checkedTypes)) ? (
+        return hasDataToImport(modalModel.data, initialCheckedTypeKeys) ? (
             <>
                 <div className="mb1">
                     {c('Info')
@@ -205,7 +251,7 @@ const IASelectImportTypeStep = ({
         </div>
     );
 
-    const getMailSummary = () => {
+    const getMailSummary = (isLabels: boolean) => {
         const { data, payload } = modalModel;
 
         if (!payload[MAIL]) {
@@ -255,18 +301,30 @@ const IASelectImportTypeStep = ({
         );
 
         // translator: here is an example of a complete sentence: "Import all messages from 12 labels since the last month and label them as ..." followed by the label HTML element
-        const summaryAllLabels = c('Mail import summary').ngettext(
-            msgid`Import all messages from ${totalLabelsCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-            `Import all messages from ${totalLabelsCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-            totalLabelsCount
-        );
+        const summaryAllLabels = isLabels
+            ? c('Mail import summary').ngettext(
+                  msgid`Import all messages from ${totalLabelsCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${totalLabelsCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  totalLabelsCount
+              )
+            : c('Mail import summary').ngettext(
+                  msgid`Import all messages from ${totalLabelsCount} folder since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${totalLabelsCount} folders since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  totalLabelsCount
+              );
 
         // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels since the last 3 months and label them as ..." followed by the label HTML element
-        const summarySelectedLabels = c('Mail import summary').ngettext(
-            msgid`Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-            `Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-            totalLabelsCount
-        );
+        const summarySelectedLabels = isLabels
+            ? c('Mail import summary').ngettext(
+                  msgid`Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  totalLabelsCount
+              )
+            : c('Mail import summary').ngettext(
+                  msgid`Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} folder since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} folders since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  totalLabelsCount
+              );
 
         return replaceLabelPlaceholder(
             totalLabelsCount === selectedLabelsCount ? summaryAllLabels : summarySelectedLabels,
@@ -275,19 +333,22 @@ const IASelectImportTypeStep = ({
     };
 
     const mailRowRenderer = () => {
-        if (disableMail) {
+        const hideIfUncheckedOnSelectStep =
+            modalModel.step === IAOauthModalModelStep.SELECT_IMPORT_TYPE && !initialCheckedTypeKeys.includes(MAIL);
+        if (disableMail || hideIfUncheckedOnSelectStep) {
             return null;
         }
 
         const showSummary = oauthProps && !disableMail && checkedTypes[MAIL];
 
-        const mailErrors = payloadErrors.filter((e) =>
+        const mailErrors = payloadErrors.filter((payloadError) =>
             [
                 MailImportPayloadError.MAX_FOLDERS_LIMIT_REACHED,
                 MailImportPayloadError.FOLDER_NAMES_TOO_LONG,
                 MailImportPayloadError.LABEL_NAMES_TOO_LONG,
                 MailImportPayloadError.UNAVAILABLE_NAMES,
-            ].includes(e as MailImportPayloadError)
+                MailImportPayloadError.RESERVED_NAMES,
+            ].includes(payloadError as MailImportPayloadError)
         );
 
         const error = modalModel.data[MAIL].error;
@@ -343,16 +404,36 @@ const IASelectImportTypeStep = ({
                                             </div>
                                         )}
 
-                                        {mailErrors.includes(MailImportPayloadError.UNAVAILABLE_NAMES) && (
+                                        {mailErrors.includes(MailImportPayloadError.FOLDER_NAMES_TOO_LONG) && (
                                             <div className="mb1">
                                                 {c('Error')
-                                                    .t`Some of your label names are unavailable. Please customize the import to edit these names.`}
+                                                    .t`Some of your folder names exceed ${MAIL_APP_NAME}'s maximum character limit. Please customize the import to edit these names.`}
+                                            </div>
+                                        )}
+
+                                        {mailErrors.includes(MailImportPayloadError.UNAVAILABLE_NAMES) && (
+                                            <div className="mb1">
+                                                {isLabelMapping
+                                                    ? c('Error')
+                                                          .t`Some of your label names are unavailable. Please customize the import to edit these names.`
+                                                    : c('Error')
+                                                          .t`Some of your folder names are unavailable. Please customize the import to edit these names.`}
+                                            </div>
+                                        )}
+
+                                        {mailErrors.includes(MailImportPayloadError.RESERVED_NAMES) && (
+                                            <div className="mb1">
+                                                {isLabelMapping
+                                                    ? c('Error')
+                                                          .t`Some of your label names are reserved. Please customize the import to edit these names.`
+                                                    : c('Error')
+                                                          .t`Some of your folder names are reserved. Please customize the import to edit these names.`}
                                             </div>
                                         )}
                                     </div>
                                 </div>
                             ) : (
-                                <div className="color-weak">{getMailSummary()}</div>
+                                <div className="color-weak">{getMailSummary(isLabelMapping)}</div>
                             )}
                             <UnderlineButton
                                 className="flex-align-self-start pb0"
@@ -363,7 +444,7 @@ const IASelectImportTypeStep = ({
                                             updateModel={handleMailModelUpdate}
                                             providerFolders={modalModel.data[MAIL].providerFolders}
                                             addresses={addresses}
-                                            isLabelMapping
+                                            isLabelMapping={isLabelMapping}
                                             customizeFoldersOpen={hasErrors}
                                             labels={labels}
                                             folders={folders}
@@ -430,7 +511,9 @@ const IASelectImportTypeStep = ({
     };
 
     const calendarRowRenderer = () => {
-        if (disableCalendar) {
+        const hideIfUncheckedOnSelectStep =
+            modalModel.step === IAOauthModalModelStep.SELECT_IMPORT_TYPE && !initialCheckedTypeKeys.includes(CALENDAR);
+        if (disableCalendar || hideIfUncheckedOnSelectStep) {
             return null;
         }
 
@@ -516,8 +599,37 @@ const IASelectImportTypeStep = ({
     };
 
     const contactsRowRenderer = () => {
-        if (disableContacts) {
+        const hideIfUncheckedOnSelectStep =
+            modalModel.step === IAOauthModalModelStep.SELECT_IMPORT_TYPE && !initialCheckedTypeKeys.includes(CONTACTS);
+        if (disableContacts || hideIfUncheckedOnSelectStep) {
             return null;
+        }
+
+        if (provider === OAUTH_PROVIDER.OUTLOOK && easySwitchFeatureValue?.OutlookContacts === false) {
+            return (
+                <div className="pt1-5 pb1-5 border-bottom flex label w100 cursor-default color-weak">
+                    <Checkbox id="mail" className="mr0-5 flex-align-self-start" disabled />
+                    <div className="flex flex-column flex-item-fluid">
+                        {c('Label').t`Contacts`} ({c('Label').t`Coming soon`})
+                        <InlineLinkButton
+                            color="weak"
+                            onClick={() => {
+                                createModal(
+                                    <EasySwitchInstructionsModal
+                                        importType={ImportType.CONTACTS}
+                                        addresses={addresses}
+                                        provider={NON_OAUTH_PROVIDER.OUTLOOK}
+                                        onOpenCalendarModal={() => {}}
+                                        onImportContact={onImportContact}
+                                    />
+                                );
+                            }}
+                        >
+                            {c('Label').t`Upload file`}
+                        </InlineLinkButton>
+                    </div>
+                </div>
+            );
         }
 
         const showSummary = oauthProps && !disableContacts && checkedTypes[CONTACTS];
@@ -692,6 +804,7 @@ const IASelectImportTypeStep = ({
                 {mailRowRenderer()}
                 {contactsRowRenderer()}
                 {calendarRowRenderer()}
+                {importContactModal}
                 {/* driveRowRenderer() */}
             </div>
         </>

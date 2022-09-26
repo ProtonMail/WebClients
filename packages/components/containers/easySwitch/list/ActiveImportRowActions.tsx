@@ -3,22 +3,20 @@ import { c } from 'ttag';
 import { cancelImport, createToken, resumeImport, updateImport } from '@proton/shared/lib/api/easySwitch';
 import {
     AuthenticationMethod,
+    CheckedProductMap,
     EASY_SWITCH_SOURCE,
     ImportError,
     ImportStatus,
     ImportToken,
     ImportType,
     NormalizedImporter,
-    OAUTH_PROVIDER,
     OAuthProps,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { Alert, Button, ConfirmModal, DropdownActions } from '../../../components';
 import {
     useAddresses,
     useApi,
-    useApiEnvironmentConfig,
     useEventManager,
     useFeature,
     useLoading,
@@ -27,13 +25,7 @@ import {
 } from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import { FeatureCode } from '../../features';
-import {
-    G_OAUTH_SCOPE_CALENDAR,
-    G_OAUTH_SCOPE_CONTACTS,
-    G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL,
-    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
-} from '../constants';
+import { getScopeFromProvider } from '../EasySwitchOauthModal.helpers';
 import ImportMailModal from '../mail/modals/ImportMailModal';
 
 interface Props {
@@ -41,10 +33,10 @@ interface Props {
 }
 
 const ActiveImportRowActions = ({ activeImport }: Props) => {
-    const { ID, Active, Product, Account, Sasl, tokenScope } = activeImport;
+    const { ID, Active, Product, Account, Sasl, tokenScope, Provider } = activeImport;
     const { State, ErrorCode } = Active || {};
 
-    const { triggerOAuthPopup } = useOAuthPopup();
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup();
     const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
 
     const api = useApi();
@@ -55,23 +47,16 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
 
-    const [config, loadingConfig] = useApiEnvironmentConfig();
-
     const handleReconnectOAuth = async (ImporterID: string) => {
-        const scopes = [
-            ...G_OAUTH_SCOPE_DEFAULT,
-            tokenScope?.includes(ImportType.MAIL) &&
-                (useNewScopeFeature.feature?.Value === true ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE : G_OAUTH_SCOPE_MAIL),
-            tokenScope?.includes(ImportType.CALENDAR) && G_OAUTH_SCOPE_CALENDAR,
-            tokenScope?.includes(ImportType.CONTACTS) && G_OAUTH_SCOPE_CONTACTS,
-            // tokenScope?.includes(ImportType.DRIVE) && G_OAUTH_SCOPE_DRIVE,
-        ]
-            .filter(isTruthy)
-            .flat(1);
+        const useNewGmailScope = tokenScope?.includes(ImportType.MAIL) && useNewScopeFeature.feature?.Value === true;
+        const checkedItems = (tokenScope || []).reduce((acc, item) => {
+            acc[item] = true;
+            return acc;
+        }, {} as CheckedProductMap);
+        const scopes = getScopeFromProvider(Provider, checkedItems, useNewGmailScope);
 
         triggerOAuthPopup({
-            provider: OAUTH_PROVIDER.GOOGLE,
-            clientID: config['importer.google.client_id'],
+            provider: Provider,
             loginHint: Account,
             scope: scopes.join(' '),
             callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {

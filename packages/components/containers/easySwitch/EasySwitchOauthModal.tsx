@@ -52,7 +52,6 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import { Button, FormModal, PrimaryButton, useSettingsLink } from '../../components';
 import {
     useApi,
-    useApiEnvironmentConfig,
     useCalendars,
     useErrorHandler,
     useEventManager,
@@ -63,16 +62,8 @@ import {
 } from '../../hooks';
 import useOAuthPopup from '../../hooks/useOAuthPopup';
 import { FeatureCode } from '../features';
-import {
-    CALENDAR_TO_BE_CREATED_PREFIX,
-    G_OAUTH_SCOPE_CALENDAR,
-    G_OAUTH_SCOPE_CONTACTS,
-    G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL,
-    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
-    IA_PATHNAME_REGEX,
-    IMAPS,
-} from './constants';
+import { getScopeFromProvider } from './EasySwitchOauthModal.helpers';
+import { CALENDAR_TO_BE_CREATED_PREFIX, IA_PATHNAME_REGEX } from './constants';
 import { getCheckedProducts, hasDataToImport } from './helpers';
 import { dateToTimestamp } from './mail/helpers';
 import ImportStartedStep from './steps/IAImportStartedStep';
@@ -86,6 +77,7 @@ interface Props {
     defaultCheckedTypes?: ImportType[];
     source: EASY_SWITCH_SOURCE;
     featureMap?: EasySwitchFeatureFlag;
+    provider?: OAUTH_PROVIDER;
 }
 
 const {
@@ -97,14 +89,13 @@ const {
 
 const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS, OAUTH_INSTRUCTIONS } = IAOauthModalModelStep;
 
-const DEFAULT_IMAP_PORT = 993;
-
 const EasySwitchOauthModal = ({
     addresses = [],
     onClose = noop,
     defaultCheckedTypes = [],
     source,
     featureMap,
+    provider = OAUTH_PROVIDER.GOOGLE,
     ...rest
 }: Props) => {
     const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
@@ -123,8 +114,7 @@ const EasySwitchOauthModal = ({
     const [folders = [], loadingFolders] = useFolders();
     const [calendars = [], loadingCalendars] = useCalendars();
     const visualCalendars = getVisualCalendars(calendars);
-
-    const [config, loadingConfig] = useApiEnvironmentConfig();
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup();
 
     const isInitLoading = loadingLabels || loadingFolders || loadingCalendars || loadingConfig;
 
@@ -177,8 +167,6 @@ const EasySwitchOauthModal = ({
         [CONTACTS]: defaultCheckedTypes?.includes(CONTACTS),
         // [DRIVE]: defaultCheckedTypes?.includes(ImportType.DRIVE),
     });
-
-    const { triggerOAuthPopup } = useOAuthPopup();
 
     const selectedImportTypes = Object.keys(checkedTypes).reduce<ImportType[]>((acc, k) => {
         const key = k as ImportType;
@@ -247,31 +235,25 @@ const EasySwitchOauthModal = ({
     };
 
     const handleSubmit = async () => {
-        if (modalModel.step === AUTHENTICATION) {
+        if (modalModel.step === AUTHENTICATION && provider === OAUTH_PROVIDER.GOOGLE) {
             setModalModel({
                 ...modalModel,
                 step: OAUTH_INSTRUCTIONS,
             });
         }
 
-        if (modalModel.step === OAUTH_INSTRUCTIONS) {
+        if (
+            (modalModel.step === OAUTH_INSTRUCTIONS && provider === OAUTH_PROVIDER.GOOGLE) ||
+            (modalModel.step === AUTHENTICATION && provider !== OAUTH_PROVIDER.GOOGLE)
+        ) {
             setImportError([]);
 
-            const scopes = [
-                ...G_OAUTH_SCOPE_DEFAULT,
-                checkedTypes[MAIL] &&
-                    (useNewScopeFeature.feature?.Value === true ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE : G_OAUTH_SCOPE_MAIL),
-                checkedTypes[CALENDAR] && G_OAUTH_SCOPE_CALENDAR,
-                checkedTypes[CONTACTS] && G_OAUTH_SCOPE_CONTACTS,
-                // checkedTypes[DRIVE] && G_OAUTH_SCOPE_DRIVE,
-            ]
-                .filter(isTruthy)
-                .flat(1);
+            const useNewGmailScope = useNewScopeFeature.feature?.Value === true;
+            const scopes = getScopeFromProvider(provider, checkedTypes, useNewGmailScope);
 
             triggerOAuthPopup({
-                provider: OAUTH_PROVIDER.GOOGLE,
+                provider,
                 scope: scopes.join(' '),
-                clientID: config['importer.google.client_id'],
                 callback: async (oauthProps: OAuthProps) => {
                     setIsLoadingOAuth(true);
                     const checkedProducts = getCheckedProducts(checkedTypes);
@@ -298,8 +280,6 @@ const EasySwitchOauthModal = ({
                         if (Products.includes(ImportType.MAIL)) {
                             createImportPayload[ImportType.MAIL] = {
                                 Account,
-                                ImapHost: IMAPS[Provider],
-                                ImapPort: DEFAULT_IMAP_PORT,
                                 Sasl: AuthenticationMethod.OAUTH,
                             };
                         }
@@ -699,6 +679,7 @@ const EasySwitchOauthModal = ({
                             addresses={addresses}
                             labels={labels}
                             folders={folders}
+                            provider={provider}
                             updateModalModel={(newModel) => setModalModel(newModel)}
                             featureMap={featureMap}
                         />
