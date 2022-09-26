@@ -1,13 +1,28 @@
 .meter-bar {
 	--size: #{em(10)};
+	--meter-bar-background-color: var(--border-norm);
+	--meter-bar-thumb-color-success: var(--signal-success);
 
 	inline-size: 100%;
 	overflow: hidden;
-	background: var(--background-weak);
+	background-color: var(--meter-bar-background-color);
 
 	&,
 	&-thumb {
 		block-size: var(--size);
+	}
+
+	&-thumb {
+		min-inline-size: 3%;
+		background: var(--meter-bar-thumb-color-success);
+
+		&--warning {
+			background: var(--signal-warning);
+		}
+
+		&--danger {
+			background: var(--signal-danger);
+		}
 	}
 
 	&:not(.is-squared),
@@ -18,4 +33,13 @@
 	&.is-thin {
 		--size: #{em(4)};
 	}
+
+	.sidebar & {
+		--meter-bar-thumb-color-success: var(--text-weak);
+		--meter-bar-background-color: var(--border-weak);
+	}
+}
+
+.sidebar .used-space.color-success {
+	color: var(--text-weak);
 }
