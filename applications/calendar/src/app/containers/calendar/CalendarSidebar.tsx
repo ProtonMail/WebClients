@@ -174,7 +174,7 @@ const CalendarSidebar = ({
                 toggle={displayPersonalCalendars}
                 onToggle={() => setDisplayPersonalCalendars((prevState) => !prevState)}
                 right={
-                    <div className="flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap flex-align-items-center pr1 mr0-15">
                         {enabled ? (
                             <Spotlight
                                 show={shouldShowSubscribedCalendarsSpotlight}
@@ -231,7 +231,7 @@ const CalendarSidebar = ({
                                 </Tooltip>
                             </Spotlight>
                         ) : (
-                            <div className="navigation-link-header-group-control flex cursor-pointer">
+                            <button className="navigation-link-header-group-control flex cursor-pointer">
                                 <Tooltip title={addCalendarText}>
                                     <Icon
                                         onClick={() => handleCreatePersonalCalendar()}
@@ -240,7 +240,7 @@ const CalendarSidebar = ({
                                         alt={addCalendarText}
                                     />
                                 </Tooltip>
-                            </div>
+                            </button>
                         )}
                         {headerButton}
                     </div>
