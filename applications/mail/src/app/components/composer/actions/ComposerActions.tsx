@@ -104,10 +104,12 @@ const ComposerActions = ({
     } else if (date.getTime() !== 0) {
         const dateString = formatSimpleDate(date);
         if (isToday(date)) {
+            // translator: Full sentense would be: "Saved at 12:00 AM"
             dateMessage = c('Info').t`Saved at ${dateString}`;
         } else if (isYesterday(date)) {
-            dateMessage = c('Info').t`Saved ${dateString}`;
+            dateMessage = c('Info').t`Saved yesterday`;
         } else {
+            // translator: Full sentense could be: "Saved on Tuesday" or "Saved on Apr 29, 1453"
             dateMessage = c('Info').t`Saved on ${dateString}`;
         }
     } else {
