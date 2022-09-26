@@ -10,7 +10,7 @@ interface Props extends HTMLAttributes<HTMLUListElement> {
 
 const SidebarList = ({ className, listClassName = 'navigation-list', children, ...rest }: Props) => {
     return (
-        <ul className={classnames(['unstyled mt0', listClassName, className])} {...rest}>
+        <ul className={classnames(['unstyled my0', listClassName, className])} {...rest}>
             {children}
         </ul>
     );

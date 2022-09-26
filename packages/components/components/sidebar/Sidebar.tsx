@@ -88,20 +88,19 @@ const Sidebar = ({
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>
             </div>
-            {primary ? <div className="pl1 pr1 pb1 flex-item-noshrink">{primary}</div> : null}
+            {primary ? <div className="px0-5 pb0-5 flex-item-noshrink">{primary}</div> : null}
             <div className="on-mobile-mt1" aria-hidden="true" />
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed pb1">{children}</div>
             {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
-                <div className="app-infos">
+                <div className="app-infos px1">
                     <Meter
                         thin
-                        squared
                         label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
                             MaxSpace
                         )}`}
                         value={Math.ceil(spacePercentage)}
                     />
-                    <div className="flex flex-nowrap flex-justify-space-between pt0-5 pr1-5 pb0-5 pl1-5">
+                    <div className="flex flex-nowrap flex-justify-space-between py0-5">
                         <span>
                             {canAddStorage ? (
                                 <Tooltip title={c('Storage').t`Upgrade storage`}>
