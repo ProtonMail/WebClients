@@ -16,6 +16,7 @@ interface Props {
     title?: string;
     onFocus?: (id: string) => void;
     id?: string;
+    testId?: string;
     headerRef?: Ref<HTMLDivElement>;
 }
 
@@ -26,6 +27,7 @@ const SimpleSidebarListItemHeader = ({
     right,
     text,
     id,
+    testId,
     headerRef,
     title,
     onFocus = noop,
@@ -67,6 +69,7 @@ const SimpleSidebarListItemHeader = ({
                     aria-expanded={toggle}
                     onFocus={() => onFocus(id || '')}
                     data-shortcut-target={id}
+                    data-test-id={testId}
                 >
                     {hasCaret && (
                         <span>
