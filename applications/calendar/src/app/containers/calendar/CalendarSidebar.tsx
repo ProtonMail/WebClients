@@ -246,6 +246,7 @@ const CalendarSidebar = ({
                     </div>
                 }
                 text={c('Link').t`My calendars`}
+                testId="calendar-sidebar:my-calendars-button"
             />
             {displayPersonalCalendars && (
                 <CalendarSidebarListItems
@@ -280,6 +281,7 @@ const CalendarSidebar = ({
                     toggle={displayOtherCalendars}
                     onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
                     text={c('Link').t`Subscribed calendars`}
+                    testId="calendar-sidebar:subscribed-calendars-button"
                     headerRef={headerRef}
                 />
                 {displayOtherCalendars && (
