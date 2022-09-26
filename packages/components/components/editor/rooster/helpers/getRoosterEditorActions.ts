@@ -31,8 +31,13 @@ const getRoosterEditorActions = (
                 return;
             }
 
-            iframeRef.current?.focus();
-            editorInstance.focus();
+            // Helps passing tests (JSDOM issue)
+            try {
+                iframeRef.current?.focus();
+                editorInstance.focus();
+            } catch (e) {
+                console.error(e);
+            }
         },
         insertImage(url: string, attrs: { [key: string]: string } = {}) {
             const imageNode = document.createElement('img');
