@@ -1,11 +1,46 @@
 $padding-inline-start-link: rem(20) !default;
 
+.navigation > .navigation-list,
+.navigation > div > .navigation-list {
+	&:first-child {
+		padding-block-start: em(2); // make some space on the top for keyboard focus outline
+	}
+
+	&:last-child {
+		padding-block-end: em(20); // make some space between the end of the list and the storage indicator
+	}
+}
+
 .navigation-link,
 .navigation-link-header-group {
 	padding-block: rem(9.5);
 	padding-inline: $padding-inline-start-link 1em;
 	text-decoration: none;
 	display: block;
+}
+
+// specificity...
+.navigation-link-header-group.navigation-link-header-group:not(.navigation-link-header-group--expandable) {
+	padding-inline: calc($padding-inline-start-link + 0.8em) 1em;
+	color: var(--text-weak);
+}
+
+// get spacing right and add line in accounts sidebar
+.navigation-list:not(:first-child)
+	> .navigation-link-header-group:first-child:not(.navigation-link-header-group--expandable) {
+	position: relative;
+	padding-block-start: em(19);
+	margin-block-start: em(9.5);
+
+	&::before {
+		content: '';
+		position: absolute;
+		inline-size: 100%;
+		block-size: 1px;
+		background-color: var(--border-norm);
+		inset-inline: 0;
+		inset-block-start: 0;
+	}
 }
 
 .navigation-link-header-group--expandable {
@@ -28,28 +63,42 @@ $padding-inline-start-link: rem(20) !default;
 	@extend .interactive;
 
 	position: relative;
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		pointer-events: none;
-		transition: 0.15s easing(ease-out-quart);
-		border-inline-start: 4px solid transparent;
-	}
+	border-radius: var(--border-radius-md);
+	border: 1px solid transparent;
 
 	&:hover,
 	&:focus {
 		text-decoration: none;
 	}
 
-	&.active::after {
-		border-inline-start: 4px solid var(--navigation-current-item-marker-color);
+	&:focus {
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	&:focus-visible {
+		background-color: unset;
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
 
 	&--collapsible {
 		padding-block: rem(5.5);
+	}
+}
+
+// special case for calendar, label has checkbox inside
+label.navigation-link {
+	&:focus {
+		background-color: unset;
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	&:focus-within {
+		background-color: unset;
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
 }
 
@@ -78,19 +127,40 @@ $padding-inline-start-link: rem(20) !default;
 
 // labels/folders sections
 .navigation-link-header-group-link {
-	padding-block: 0.45em; // this padding is there to avoid a shift between opened/close menu
-	margin-inline-start: -0.5em; // negative margin to align caret icon with other menu entries
-	outline: none;
+	@extend .interactive;
+
+	border: 1px solid transparent;
+	border-radius: var(--border-radius-md);
+	color: var(--text-weak);
+	padding-block: rem(9.5);
+	padding-inline: $padding-inline-start-link 1em;
+
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
 		outline: unset;
 	}
 
-	color: var(--text-weak);
-
-	&:hover,
-	&:focus {
+	&:hover {
 		color: var(--text-norm);
+	}
+
+	&:focus-visible {
+		background-color: unset;
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+	}
+
+	&[aria-expanded='true'],
+	&:focus-within {
+		background: var(--interaction-default);
+
+		&:hover {
+			background: var(--interaction-default-hover);
+		}
+	}
+
+	&[aria-expanded='false']:focus-within:not(:hover) {
+		color: var(--text-weak);
 	}
 
 	.navigation-icon--expand {
@@ -102,6 +172,7 @@ $padding-inline-start-link: rem(20) !default;
 	@extend .interactive;
 
 	padding: 0.5em;
+	border: 1px solid transparent;
 	border-radius: var(--border-radius-md);
 	color: var(--text-weak);
 
@@ -109,13 +180,18 @@ $padding-inline-start-link: rem(20) !default;
 		color: var(--text-weak);
 	}
 
-	// &:focus, // gimme focus-visible !!!!
 	&:hover {
 		color: var(--text-norm);
 
 		.navigation-icon {
 			color: inherit;
 		}
+	}
+
+	&:focus-visible {
+		background-color: unset;
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
 }
 
@@ -131,16 +207,23 @@ $padding-inline-start-link: rem(20) !default;
 /* items counters */
 .navigation-counter-item {
 	padding-inline: 0.5em;
-	border-radius: var(--border-radius-full);
+	border-radius: var(--border-radius-sm);
 	background: var(--navigation-item-count-background-color);
 	font-size: em(11);
-	line-height: em(16, 11);
 	font-variant: tabular-nums;
+	line-height: em(20, 11);
+	min-inline-size: em(20, 11);
+	text-align: center;
 	color: var(--navigation-item-count-text-color);
 
 	&--transparent {
 		background: transparent;
 		color: inherit;
+	}
+
+	&--weak {
+		background: transparent;
+		color: var(--text-weak); // add optional
 	}
 
 	&:empty {
