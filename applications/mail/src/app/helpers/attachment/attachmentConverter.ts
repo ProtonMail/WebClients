@@ -1,37 +1,32 @@
-import { VERIFICATION_STATUS, WorkerDecryptionResult } from '@proton/crypto';
+import { MIMEAttachment, VERIFICATION_STATUS, WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { ENCRYPTED_STATUS } from '../../constants';
-import { AttachmentMime } from '../../models/attachment';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 const ID_PREFIX = 'PGPAttachment';
 
-const getId = (message: Message, parsedAttachment: any, number: number) =>
-    `${ID_PREFIX}_${message.ID}_${parsedAttachment.checksum}_${number}`;
+const getId = (message: Message, parsedAttachment: MIMEAttachment, number: number) =>
+    `${ID_PREFIX}_${message.ID}_${parsedAttachment.contentId}_${number}`;
 
 /**
  * Unfortunately mailparser doesn't expose header data directly so we will reconstruct the headers
  */
 const getHeaders = ({
-    generatedFileName = '',
+    fileName,
     contentDisposition = '',
-    contentId = '',
-    transferEncoding = '',
     contentType = '',
-}: AttachmentMime) => {
+    headers: originalHeaders,
+}: MIMEAttachment) => {
     const headers: { [key: string]: any } = {};
-    const filenameOption = `; filename=${JSON.stringify(generatedFileName)}`;
+    const filenameOption = `; filename=${JSON.stringify(fileName)}`; // filename could have been generated, hence be missing from original headers
     headers['content-disposition'] = contentDisposition + filenameOption;
     // test if this is an assigned content id
-    if (!/^.*@mailparser$/.test(contentId)) {
-        headers['content-id'] = /^<.*>$/.test(contentId) ? contentId : `<${contentId}>`;
+    if (originalHeaders['content-id'] && originalHeaders['content-id'].length > 0) {
+        headers['content-id'] = originalHeaders['content-id'][0];
     }
     if (contentDisposition.toLowerCase() === 'inline') {
         headers.embedded = 1;
-    }
-    if (transferEncoding) {
-        headers['content-transfer-encoding'] = transferEncoding;
     }
     headers['content-type'] = contentType + filenameOption;
     return headers;
@@ -42,7 +37,7 @@ const getHeaders = ({
  */
 const convertSingle = (
     message: Message,
-    parsedAttachment: AttachmentMime,
+    parsedAttachment: MIMEAttachment,
     number: number,
     verified: number,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
@@ -52,10 +47,10 @@ const convertSingle = (
     const attachment: Attachment = {
         ID,
         Headers: getHeaders(parsedAttachment),
-        Name: parsedAttachment.generatedFileName,
+        Name: parsedAttachment.fileName,
         KeyPackets: null, // already decrypted;
         MIMEType: parsedAttachment.contentType,
-        Size: parsedAttachment.length,
+        Size: parsedAttachment.size,
         Encrypted: ENCRYPTED_STATUS.PGP_MIME,
     };
 
@@ -76,7 +71,7 @@ const convertSingle = (
  */
 export const convert = (
     message: Message,
-    attachments: AttachmentMime[],
+    attachments: MIMEAttachment[],
     verified: number,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
 ): Attachment[] => {

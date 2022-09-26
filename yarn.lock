@@ -4022,7 +4022,7 @@ __metadata:
     karma-webpack: ^5.0.0
     mocha: ^10.1.0
     playwright: ^1.27.1
-    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.2.2"
+    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.3.0"
     prettier: ^2.7.1
     ts-loader: ^9.4.1
     typescript: ^4.8.4
@@ -20019,6 +20019,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"jsmimeparser@npm:@protontech/jsmimeparser@^1.0.4":
+  version: 1.0.4
+  resolution: "@protontech/jsmimeparser@npm:1.0.4"
+  checksum: 18b5b5cdc4fd812971438b8307183030b3b64f3dcda7564aebcaedb444e3459f4d423b4f873ac16258863a948bf901b760f45ce1b9956b397f97cc9cc2a9ad1d
+  languageName: node
+  linkType: hard
+
 "json-buffer@npm:3.0.0":
   version: 3.0.0
   resolution: "json-buffer@npm:3.0.0"
@@ -23466,12 +23473,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~5.4.0":
-  version: 5.4.0
-  resolution: "@protontech/openpgp@npm:5.4.0"
+"openpgp@npm:@protontech/openpgp@~5.5.0":
+  version: 5.5.0
+  resolution: "@protontech/openpgp@npm:5.5.0"
   dependencies:
     asn1.js: ^5.0.0
-  checksum: cbaa6bd937d01b155259249ca154c84dbfe522ef45ea19942f28df6a69053753a3267c7fb995747ca115b2206d6a326a38a76c93ed3fd0e58fc924542d98fed2
+  checksum: 1eed7285a05ef61a1fbf813f9aaed7f8d20d85a99ef7008fbf16bdf5fc1485aede16846b53fba9e27eedfc0c1377d54d615da7527899e5ae185e29ab09c7910b
   languageName: node
   linkType: hard
 
@@ -24548,15 +24555,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto-v7@npm:@protontech/pmcrypto@^7.2.2":
-  version: 7.2.2
-  resolution: "@protontech/pmcrypto@npm:7.2.2"
+"pmcrypto-v7@npm:@protontech/pmcrypto@^7.3.0":
+  version: 7.3.0
+  resolution: "@protontech/pmcrypto@npm:7.3.0"
   dependencies:
     "@openpgp/asmcrypto.js": ^2.3.3-0
     "@openpgp/tweetnacl": ^1.0.3
     "@openpgp/web-stream-tools": ^0.0.12
-    openpgp: "npm:@protontech/openpgp@~5.4.0"
-  checksum: b2c626cc1c031133e76e7fda8a03e1f1c5d81500ee7f5de0426fd0c72bb9d12c4cb5b16a4cc8a1db08396bbbfd784faaf6d7822aa80e10c8ce2cb7830c193847
+    jsmimeparser: "npm:@protontech/jsmimeparser@^1.0.4"
+    openpgp: "npm:@protontech/openpgp@~5.5.0"
+  checksum: b2e0a2c6a800c8ef5190746b986850d0a49c9aa1532c8ed515a30ffa9aa84823536640f457e753ec09903f98ad75976dcfd29490b417207593f0d17bd8175ee8
   languageName: node
   linkType: hard
 
