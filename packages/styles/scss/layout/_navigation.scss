@@ -1,4 +1,5 @@
 $padding-inline-start-link: rem(20) !default;
+$padding-block-link: rem(7) !default;
 
 .navigation > .navigation-list,
 .navigation > div > .navigation-list {
@@ -13,7 +14,7 @@ $padding-inline-start-link: rem(20) !default;
 
 .navigation-link,
 .navigation-link-header-group {
-	padding-block: rem(9.5);
+	padding-block: $padding-block-link;
 	padding-inline: $padding-inline-start-link 1em;
 	text-decoration: none;
 	display: block;
@@ -29,8 +30,8 @@ $padding-inline-start-link: rem(20) !default;
 .navigation-list:not(:first-child)
 	> .navigation-link-header-group:first-child:not(.navigation-link-header-group--expandable) {
 	position: relative;
-	padding-block-start: em(19);
-	margin-block-start: em(9.5);
+	padding-block-start: $padding-block-link * 2;
+	margin-block-start: $padding-block-link;
 
 	&::before {
 		content: '';
@@ -132,7 +133,7 @@ label.navigation-link {
 	border: 1px solid transparent;
 	border-radius: var(--border-radius-md);
 	color: var(--text-weak);
-	padding-block: rem(9.5);
+	padding-block: $padding-block-link;
 	padding-inline: $padding-inline-start-link 1em;
 
 	@supports selector(:focus-visible) {
