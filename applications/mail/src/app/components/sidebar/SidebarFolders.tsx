@@ -41,6 +41,7 @@ const SidebarFolders = ({
                 onToggle={handleToggleFolder}
                 expanded={Boolean(folder.Expanded)}
                 unreadCount={getUnreadCount(counterMap, folder)}
+                unreadWeak={true}
                 id={folder.ID}
                 onFocus={updateFocusItem}
                 treeMode={!onlyOneLevel}
@@ -55,7 +56,7 @@ const SidebarFolders = ({
     };
 
     return emptyFolders ? (
-        <div className="py0-75 pl1-75 ml2 text-sm color-weak">{c('Description').t`No folders`}</div>
+        <div className="py0-75 pl0-75 ml2 text-sm color-weak">{c('Description').t`No folders`}</div>
     ) : (
         <>
             {foldersTreeview.reduce(

@@ -12,6 +12,7 @@ interface Props {
     level: number;
     onToggle: (folder: FolderWithSubFolders, expanded: boolean) => void;
     unreadCount?: number;
+    unreadWeak?: boolean;
     expanded?: boolean;
     onFocus: (id: string) => void;
     id: string;
@@ -24,6 +25,7 @@ const SidebarFolder = ({
     level,
     onToggle,
     unreadCount,
+    unreadWeak,
     expanded,
     onFocus,
     id,
@@ -58,6 +60,7 @@ const SidebarFolder = ({
             isFolder
             text={folder.Name}
             unreadCount={unreadCount}
+            unreadWeak={unreadWeak}
             shortcutHandlers={shortcutHandlers}
             id={id}
             onFocus={onFocus}
