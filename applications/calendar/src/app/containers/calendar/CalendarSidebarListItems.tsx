@@ -12,7 +12,7 @@ import {
     SettingsLink,
     SidebarListItem,
     SidebarListItemContent,
-    SidebarListItemDiv,
+    SidebarListItemLabel,
     SimpleDropdown,
     Tooltip,
     classnames,
@@ -139,7 +139,6 @@ const CalendarSidebarListItems = ({
     const result = calendars.map((calendar, i) => {
         const { ID, Name, Display, Color } = calendar;
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
-        const isOwnedCalendar = getIsOwnedCalendar(calendar);
 
         const left = (
             <Checkbox
@@ -149,6 +148,8 @@ const CalendarSidebarListItems = ({
                 borderColor={Color}
                 checked={!!Display}
                 disabled={loading}
+                id={`calendar-${i}`}
+                name={`calendar-${i}`}
                 aria-describedby={`calendar-${i}`}
                 onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
             />
@@ -160,7 +161,10 @@ const CalendarSidebarListItems = ({
 
         return (
             <SidebarListItem key={ID}>
-                <SidebarListItemDiv className="calendar-sidebar-list-item opacity-on-hover-container pt0-5 pb0-5 pr0-5">
+                <SidebarListItemLabel
+                    htmlFor={`calendar-${i}`}
+                    className="calendar-sidebar-list-item opacity-on-hover-container pt0-5 pb0-5 pr0-5"
+                >
                     <SidebarListItemContent
                         data-test-id="calendar-sidebar:user-calendars"
                         left={left}
@@ -264,7 +268,7 @@ const CalendarSidebarListItems = ({
                             </Tooltip>
                         </div>
                     </SidebarListItemContent>
-                </SidebarListItemDiv>
+                </SidebarListItemLabel>
             </SidebarListItem>
         );
     });
