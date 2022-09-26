@@ -16,7 +16,7 @@ const SidebarListItemContent = ({ left, right, children, ...rest }: Props) => {
         <span className="flex flex-nowrap w100 flex-align-items-center" {...rest}>
             {left}
             <span className="flex-item-fluid max-w100 flex flex-align-items-center flex-nowrap">{children}</span>
-            {right && <span className="flex flex-align-items-center">{right}</span>}
+            {right && <span className="flex-no-min-children flex-align-items-center">{right}</span>}
         </span>
     );
 };
