@@ -18,7 +18,7 @@ const SidebarLabels = ({ currentLabelID, counterMap, labels, updateFocusItem }: 
     const emptyLabels = labels.length === 0;
 
     return emptyLabels ? (
-        <div className="py0-75 pl1-75 ml2 text-sm color-weak">{c('Description').t`No labels`}</div>
+        <div className="py0-75 pl0-75 ml2 text-sm color-weak">{c('Description').t`No labels`}</div>
     ) : (
         <>
             {labels.map((label) => (
@@ -32,6 +32,7 @@ const SidebarLabels = ({ currentLabelID, counterMap, labels, updateFocusItem }: 
                     color={label.Color}
                     isFolder={false}
                     unreadCount={counterMap[label.ID]}
+                    unreadWeak={true}
                     id={label.ID}
                     onFocus={updateFocusItem}
                 />
