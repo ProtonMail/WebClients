@@ -9,7 +9,7 @@ import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import { ACCESS_LEVEL, CalendarLink, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
@@ -129,7 +129,7 @@ const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
             const { privateKeys } = splitKeys(calendarKeys);
 
             try {
-                const { CalendarUrls } = await api(getPublicLinks(calendarID));
+                const { CalendarUrls } = await api<{ CalendarUrls: CalendarUrl[] }>(getPublicLinks(calendarID));
                 const links = await transformLinksFromAPI({
                     calendarUrls: CalendarUrls,
                     privateKeys,

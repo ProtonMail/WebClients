@@ -15,7 +15,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import {
     getShouldSetupMemberKeys,
     missingKeysMemberProcess,
@@ -117,7 +117,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
             return;
         }
 
-        const { Address } = await api(
+        const { Address } = await api<{ Address: Address }>(
             createAddress({
                 MemberID: selectedMember.ID,
                 Local,
