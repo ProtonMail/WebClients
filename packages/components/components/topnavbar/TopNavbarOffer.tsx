@@ -33,6 +33,7 @@ const TopNavbarOffer = ({ offerConfig }: Props) => {
                     icon={<Icon name="bag-percent" />}
                     text={offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special Offer`}
                     onClick={() => setOfferModalOpen(true)}
+                    data-testid="cta:special-offer"
                 />
             </TopNavbarListItem>
             {renderOfferModal && <OfferModal offerConfig={offerConfig} modalProps={offerModalProps} />}
