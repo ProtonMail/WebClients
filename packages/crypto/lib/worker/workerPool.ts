@@ -10,6 +10,7 @@ export interface WorkerPoolInterface extends CryptoApiInterface {
      * @param options.poolSize - number of workers to start; defaults to `Navigator.hardwareConcurrency()` if available, otherwise to 1.
      */
     init(options?: { poolSize?: number }): Promise<void>;
+
     /**
      * Close all workers, after clearing their internal key store.
      * After the pool has been destroyed, it is possible to `init()` it again.
@@ -26,7 +27,9 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
         // see: https://github.com/webpack/webpack.js.org/issues/4898#issuecomment-823073304.
         // Harcoding the path here is the easiet way to get the worker to be bundled properly.
-        const RemoteApi = wrap<typeof CryptoApi>(new Worker(new URL('./worker.ts', import.meta.url)));
+        const RemoteApi = wrap<typeof CryptoApi>(
+            new Worker(new URL(/* webpackChunkName: "crypto-worker" */ './worker.ts', import.meta.url))
+        );
         const worker = await new RemoteApi();
         return worker;
     };
