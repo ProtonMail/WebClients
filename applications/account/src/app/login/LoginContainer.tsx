@@ -22,7 +22,7 @@ import {
 import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
@@ -42,6 +42,7 @@ interface Props {
     onLogin: OnLoginCallback;
     shouldSetupInternalAddress?: boolean;
     toAppName?: string;
+    toApp?: APP_NAMES;
     showContinueTo?: boolean;
     onBack?: () => void;
     hasRemember?: boolean;
@@ -53,6 +54,7 @@ const LoginContainer = ({
     onLogin,
     onBack,
     toAppName,
+    toApp,
     showContinueTo,
     shouldSetupInternalAddress,
     hasRemember = true,
@@ -146,6 +148,7 @@ const LoginContainer = ({
                     />
                     <Content>
                         <LoginForm
+                            toApp={toApp}
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             defaultUsername={previousUsernameRef.current}
                             hasRemember={hasRemember}
