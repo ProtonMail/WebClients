@@ -63,7 +63,7 @@ export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
 
     const {
         body,
-        mimetype,
+        mimeType,
         verified: pgpMimeVerified,
         attachments,
         encryptedSubject,
@@ -73,7 +73,7 @@ export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
     const combinedVerified = verified === VERIFICATION_STATUS.NOT_SIGNED ? pgpMimeVerified : verified;
 
     return {
-        getBody: () => Promise.resolve(body ? { body, mimetype } : undefined),
+        getBody: () => Promise.resolve(body ? { body, mimeType } : undefined),
         getAttachments: () => Promise.resolve(attachments),
         getEncryptedSubject: () => Promise.resolve(encryptedSubject),
         verify: () => Promise.resolve(combinedVerified),
@@ -96,7 +96,7 @@ export const decryptMessageMultipart = async (
     const bodyResult = await decryptResult.getBody();
     const attachments = await decryptResult.getAttachments();
 
-    return { data: bodyResult?.body, mimeType: bodyResult?.mimetype, attachments };
+    return { data: bodyResult?.body, mimeType: bodyResult?.mimeType, attachments };
 };
 
 export const createAttachment = async (inputAttachment: Partial<Attachment>, publicKeys: PublicKeyReference[]) => {

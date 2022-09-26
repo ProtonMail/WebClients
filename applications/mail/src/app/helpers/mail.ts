@@ -1,7 +1,5 @@
 import { parseMail } from 'pmcrypto-v7/lib/message/parseMail';
 
-const toList = (v = []) => (Array.isArray(v) ? v : [v]);
-
 /**
  * Overwrites the headers in baseHeader by the headers defined in extraHeaders.
  */
@@ -10,7 +8,7 @@ export const combineHeaders = async (baseHeader: string, extraHeaders: string) =
     const extraHeaderKeys = Object.keys(parsedExtras);
     return extraHeaderKeys.reduce((inputHeader, key) => {
         const capsKey = key.replace(/(^|-)./g, (letter) => letter.toUpperCase());
-        const values = toList(parsedExtras[key]);
+        const values = parsedExtras[key];
         const headerLine = values.map((val) => `${capsKey}: ${val}`).join('\r\n');
         const outputHeader = inputHeader.replace(new RegExp(`^${key}:.*(?=$[^ ])`, 'im'), headerLine);
         if (outputHeader.indexOf(capsKey) === -1) {

@@ -87,7 +87,7 @@ const decryptMimeMessage = async (
                 : convert(message, processing.attachments, 0, onUpdateAttachment),
             decryptedSubject: processing.encryptedSubject,
             signature: decryption.signatures[0],
-            mimetype: processing.mimetype as MIME_TYPES,
+            mimetype: processing.mimeType as MIME_TYPES,
         };
     } catch (error: any) {
         return {
