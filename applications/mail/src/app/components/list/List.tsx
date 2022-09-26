@@ -1,4 +1,4 @@
-import { ChangeEvent, Ref, RefObject, forwardRef, memo } from 'react';
+import { ChangeEvent, Fragment, Ref, RefObject, forwardRef, memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -225,9 +225,8 @@ const List = (
                             <div>
                                 {showESLimitedContent && limitedContentIndex === -1 && limitedContentElement}
                                 {elements.map((element, index) => (
-                                    <>
+                                    <Fragment key={element.ID}>
                                         <Item
-                                            key={element.ID}
                                             conversationMode={conversationMode}
                                             isCompactView={isCompactView}
                                             labelID={labelID}
@@ -248,7 +247,7 @@ const List = (
                                             onBack={onBack}
                                         />
                                         {showESLimitedContent && limitedContentIndex === index && limitedContentElement}
-                                    </>
+                                    </Fragment>
                                 ))}
                             </div>
 
