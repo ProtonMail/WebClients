@@ -17,12 +17,13 @@ import {
     InputFieldTwo,
     Label,
     PasswordInputTwo,
+    useConfig,
     useFormErrors,
     useLoading,
     useLocalState,
 } from '@proton/components';
 import { Icon } from '@proton/components';
-import { SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -53,6 +54,7 @@ const LoginForm = ({
     hasActiveSessions,
     trustedDeviceRecoveryFeature,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
@@ -154,7 +156,11 @@ const LoginForm = ({
                     <InputFieldTwo
                         id="username"
                         bigger
-                        label={c('Label').t`Email or username`}
+                        label={
+                            APP_NAME === APPS.PROTONVPN_SETTINGS
+                                ? c('Label').t`${BRAND_NAME} email or username`
+                                : c('Label').t`Email or username`
+                        }
                         error={validator([requiredValidator(username)])}
                         disableChange={submitting}
                         autoComplete="username"
