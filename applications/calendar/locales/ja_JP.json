@@ -239,6 +239,9 @@
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
+      "Join calendar": [
+        "カレンダーに参加"
+      ],
       "Load image": [
         "画像を読み込む"
       ],
@@ -733,6 +736,11 @@
       ],
       "You tentatively accepted the invitation": [
         "あなたが招待を仮承諾しました"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "権限"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1937,6 +1945,9 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
+      "Account does not exist": [
+        "アカウントは存在しません"
+      ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
@@ -2092,6 +2103,9 @@
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "内部ユーザー用に取得されたプライマリー鍵は送信に使用できません"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "競合する宛先を削除しました: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
@@ -3604,7 +3618,15 @@
         "カレンダーを管理"
       ]
     },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "カレンダーに参加"
+      ]
+    },
     "Modal title": {
+      "Share calendar": [
+        "カレンダーを共有"
+      ],
       "Time zone changed": [
         "タイムゾーンが変更されました。"
       ],
@@ -3789,6 +3811,11 @@
       ],
       "Contact group updated": [
         "連絡先グループが更新されました。"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "${ calendarName } に参加しました (${ senderEmail })"
       ]
     },
     "Notification time input": {

@@ -150,7 +150,7 @@
         "Fermer"
       ],
       "Close composer": [
-        "Fermer le composeur"
+        "Fermer"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -320,7 +320,7 @@
         "excluez le contenu des messages"
       ],
       "Expand composer": [
-        "Agrandir le composeur"
+        "Agrandir"
       ],
       "Expand URL": [
         "Afficher toute l'URL"
@@ -510,7 +510,7 @@
         "Marquer comme légitime"
       ],
       "Maximize composer": [
-        "Agrandir le composeur"
+        "Agrandir"
       ],
       "Maybe": [
         "Peut-être"
@@ -531,7 +531,7 @@
         "Messages vers ce destinataire"
       ],
       "Minimize composer": [
-        "Réduire le composeur"
+        "Réduire"
       ],
       "More": [
         "Plus"
@@ -642,7 +642,7 @@
         "Ouvrir la boutique"
       ],
       "Ordered list": [
-        "Liste ordonnée"
+        "Liste numérotée"
       ],
       "Page ${ pageNumber }": [
         "Page ${ pageNumber }"
@@ -916,7 +916,7 @@
         "Désélectionner pour suppression"
       ],
       "Unordered list": [
-        "Liste non ordonnée"
+        "Liste à puces"
       ],
       "Unstar": [
         "Retirer des favoris"
@@ -4579,6 +4579,9 @@
       "Scheduling message...": [
         "Programmation du message..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Recherchez dans l'intégralité du contenu de messages plus anciens avec un ${ paidPlansButton }."
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
       ],
@@ -6731,16 +6734,16 @@
         "${ elementsCount } conversations marquées comme non lues."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } conversation déplacée dans ${ folderName } et expéditeur ajouté à la liste des adresses autorisées.",
-        "${ elementsCount } conversations déplacées vers ${ folderName } et expéditeurs ajoutés à la liste des adresses autorisées."
+        "${ elementsCount } conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées.",
+        "${ elementsCount } conversations déplacées dans le dossier ${ folderName } et expéditeurs ajoutés à la liste d'adresses autorisées."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } conversation déplacée dans ${ folderName }.",
-        "${ elementsCount } conversations déplacées dans ${ folderName }."
+        "${ elementsCount } conversation déplacée dans le dossier ${ folderName }.",
+        "${ elementsCount } conversations déplacées dans le dossier ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
         "${ elementsCount } conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées.",
-        "${ elementsCount } conversations déplacées dans Indésirables/spam et expéditeurs ajoutés à la liste d'adresses bloquées."
+        "${ elementsCount } conversations déplacées dans le dossier Indésirables/spam et expéditeurs ajoutés à la liste d'adresses bloquées."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation retirée de ${ labelName }.",
@@ -6763,12 +6766,12 @@
         "${ elementsCount } messages marqués comme non lus."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } message déplacé dans ${ folderName } et expéditeur ajouté à la liste des adresses autorisées.",
-        "${ elementsCount } messages déplacés dans ${ folderName } et expéditeurs ajoutés liste des adresses autorisées."
+        "${ elementsCount } message déplacé dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées.",
+        "${ elementsCount } messages déplacés dans le dossier ${ folderName } et expéditeurs ajoutés à la liste d'adresses autorisées."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } message déplacé dans ${ folderName }.",
-        "${ elementsCount } messages déplacés dans ${ folderName }."
+        "${ elementsCount } message déplacé dans le dossier ${ folderName }.",
+        "${ elementsCount } messages déplacés dans le dossier ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
         "${ elementsCount } message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées.",
@@ -6820,10 +6823,10 @@
         "Conversation marquée comme non lue."
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Conversation déplacée dans ${ folderName } et expéditeur ajouté à la liste des adresses autorisées."
+        "Conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées."
       ],
       "Conversation moved to ${ folderName }.": [
-        "Conversation déplacée dans ${ folderName }."
+        "Conversation déplacée dans le dossier ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
         "Conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées."
@@ -6883,10 +6886,10 @@
         "Message marqué comme non lu."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message déplacé dans ${ folderName } et expéditeur ajouté à la liste des adresses autorisées."
+        "Message déplacé dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées."
       ],
       "Message moved to ${ folderName }.": [
-        "Message déplacé dans ${ folderName }."
+        "Message déplacé dans le dossier ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
         "Message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées."

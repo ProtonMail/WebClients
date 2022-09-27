@@ -512,6 +512,14 @@
         "Tak, będę uczestniczyć"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Każdy, kto posiada link, może zobaczyć kalendarz"
+      ],
+      "They can view or edit your calendar": [
+        "Użytkownicy mogą zobaczyć i edytować kalendarz"
+      ]
+    },
     "Action title": {
       "Share with anyone": [
         "Udostępnij komukolwiek"
@@ -797,6 +805,21 @@
       ],
       "Unable to create more calendar links": [
         "Nie można utworzyć więcej linków kalendarzy"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Nie można udostępnić kalendarza większej liczbie użytkownikom Proton"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
+        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
+        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
+        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link.",
+        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link.",
+        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link.",
+        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link."
       ]
     },
     "Calendar sharing access option label": {
@@ -2064,6 +2087,9 @@
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
       ],
+      "Already a member of this calendar": [
+        "To jest już użytkownik kalendarza"
+      ],
       "Answer failed to be sent": [
         "Wysłanie odpowiedzi nie powiodło się"
       ],
@@ -2211,6 +2237,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "Żaden z odzyskanych kluczy WKD dla użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
+      "Not a Proton account": [
+        "To nie jest użytkownik konta Proton"
+      ],
       "Not a valid number": [
         "Numer telefonu nie jest prawidłowy"
       ],
@@ -2252,6 +2281,12 @@
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "Odzyskany klucz główny dla wewnętrznego użytkownika nie jest przeznaczony do wysyłania wiadomości"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Zduplikowany odbiorca ${ joinedRecipients } został usunięty",
+        "Zduplikowani odbiorcy zostali usunięci: ${ joinedRecipients }",
+        "Zduplikowani odbiorcy zostali usunięci: ${ joinedRecipients }",
+        "Zduplikowani odbiorcy zostali usunięci: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Upłynął limit czasu żądania"
@@ -2327,6 +2362,9 @@
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
+      ],
+      "Validation error": [
+        "Błąd weryfikacji"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
@@ -3481,6 +3519,9 @@
       "Yearly": [
         "Co rok"
       ],
+      "You already joined this calendar": [
+        "Posiadasz już dostęp do tego kalendarza"
+      ],
       "You are about to open another browser tab and visit:": [
         "Masz zamiar otworzyć nową kartę przeglądarki i przejść do:"
       ],
@@ -3504,6 +3545,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Zresetowano hasło, więc wydarzenia z kalendarzy nie mogły zostać odszyfrowane.\nWszystkie udostępnione linki kalendarzy przestaną działać.\nZa kilka minut wszystkie subskrybowane kalendarze zostaną ponownie zsynchronizowane."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Poprzednie zaproszenie zostało odrzucone. Poproś właściciela o ponowne zaproszenie"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
@@ -4027,6 +4071,9 @@
       ]
     },
     "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Nie można dodać więcej kalendarzy. Osiągnięto maksymalną liczbę osobistych kalendarzy."
+      ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Nie można dodać więcej kalendarzy. Osiągnięto maksymalną liczbę subskrybowanych kalendarzy."
       ],
@@ -4716,6 +4763,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Nie udało się zaktualizować ustawień"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Aby zaprosić użytkowników spoza Proton, udostępnij kalendarz za pomocą linku"
       ]
     },
     "Share calendar max shares reached error": {
@@ -5559,6 +5611,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Aby uzyskać dostęp do kalendarza, włącz ten adres lub poproś użytkownika ${ boldCalendarOwnerEmail } o wysłanie zaproszenia na aktywny adres."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Nie możesz dołączyć do tego kalendarza, ponieważ Twój adres e-mail (${ boldInvitedAddress }) jest wyłączony."
       ]
     },
     "Weekly recurring event, frequency": {

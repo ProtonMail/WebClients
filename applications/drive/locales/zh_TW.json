@@ -441,7 +441,7 @@
         "搜尋國家與地區"
       ],
       "Search drive": [
-        "搜尋 Drive"
+        "搜尋硬碟"
       ],
       "Select all": [
         "全選"
@@ -546,7 +546,7 @@
         "上載檔案"
       ],
       "Upload files": [
-        "上傳檔案"
+        "上載檔案"
       ],
       "Upload folder": [
         "上載資料夾"
@@ -2217,7 +2217,7 @@
         "(${ memberCount } 位成員)"
       ],
       "10 email addresses": [
-        "10 組電郵位址"
+        "10 個電郵位址"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中加入數字"
@@ -2379,7 +2379,7 @@
         "重複金鑰已更新"
       ],
       "Enabling drive search": [
-        "正在啟用 Drive 搜尋"
+        "正在啟用硬碟搜尋"
       ],
       "Encrypted": [
         "已加密"
@@ -2445,7 +2445,7 @@
         "請釋出部分空間或聯絡您的系統管理員。"
       ],
       "Go ahead, upload a file": [
-        "來吧，上傳檔案"
+        "來吧，上載檔案"
       ],
       "Go to \"My files\" and upload some files first.": [
         "請先前往「我的檔案」，並上載一些檔案。"
@@ -2604,7 +2604,7 @@
         "，共"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "您的其中一個已加密磁碟機已鎖定。好可能是由於最近一次密碼重設。"
+        "您的其中一個加密硬碟已被鎖定。這很可能是由於最近一次密碼重設。"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您的一或多個信任金鑰已被其擁有者標記為「已洩露」。我們建議您「取消信任」這些金鑰。"
@@ -2708,6 +2708,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇向該電郵位址傳送時的預設格式"
       ],
+      "Select what you want to import.": [
+        "選擇您要匯入的檔案。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
       ],
@@ -2725,6 +2728,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的可供分享連結"
+      ],
+      "Shared link failed to be loaded": [
+        "共享連結載入失敗"
       ],
       "Signature check will be ignored": [
         "簽章檢查將會忽略"
@@ -2757,7 +2763,7 @@
         "瑞士等級的隱私"
       ],
       "Tap the + button to upload a file or folder": [
-        "輕點 + 按鈕以上傳檔案或資料夾"
+        "輕點 + 按鈕以上載檔案或資料夾"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
@@ -3274,7 +3280,7 @@
         "手機號碼"
       ],
       "Please provide full details to help us take appropriate action": [
-        "請提供完整詳情，以助我們採取合適動作"
+        "請提供完整詳情，以助我們採取適當行動"
       ],
       "Post office box": [
         "郵政信箱"
@@ -3444,6 +3450,9 @@
       ],
       "Upgrade account": [
         "升級帳號"
+      ],
+      "What’s this?": [
+        "這是什麼？"
       ]
     },
     "Loading info": {
@@ -3596,7 +3605,7 @@
         "指向您的項目的 ${ numberOfItems } 個連結無法刪除"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "指向您的項目的 ${ numberOfItems } 個連結已刪除"
+        "${ numberOfItems } 個項目個連結已刪除"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
@@ -3709,7 +3718,7 @@
     },
     "Onboarding Info": {
       "Create a share link": [
-        "建立分享連結"
+        "創建共享連結"
       ],
       "Get started using Proton Drive and we'll double your free storage to 1GB!": [
         "開始使用 Proton Drive，我們會將您的免費儲存空間加倍至 1GB！"
@@ -3721,7 +3730,7 @@
         "只要在接下來的 ${ remainingDaysForGift } 天完成以下任務："
       ],
       "Upload a file": [
-        "上傳檔案"
+        "上載檔案"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "值得您信賴的線上保存庫，讓您安放重要文件和珍貴回憶。"
