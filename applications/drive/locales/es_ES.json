@@ -2786,6 +2786,9 @@
       "Shareable link for ${ boldNameText }": [
         "Enlace compartible para ${ boldNameText }"
       ],
+      "Shared link failed to be loaded": [
+        "No se pudo cargar el enlace compartido"
+      ],
       "Signature check will be ignored": [
         "La comprobación de firma será ignorada"
       ],
@@ -3793,8 +3796,18 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Crear un enlace compartido"
+      ],
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "¡Comienza a usar Proton Drive y doblaremos tu almacenamiento gratuito a 1GB!"
+      ],
       "Set a recovery method": [
         "Establecer un método de recuperación"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Completa las siguientes acciones durante el próximo ${ remainingDaysForGift } día:",
+        "Completa las siguientes acciones durante los próximos ${ remainingDaysForGift } días:"
       ],
       "Upload a file": [
         "Subir un archivo"
@@ -3826,6 +3839,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Bienvenido/a a ${ appName }"
+      ],
+      "Your welcome bonus": [
+        "Tu regalo de bienvenida"
       ]
     },
     "Option": {

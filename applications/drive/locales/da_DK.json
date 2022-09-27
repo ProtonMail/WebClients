@@ -547,6 +547,9 @@
       "Upload file": [
         "Upload fil"
       ],
+      "Upload files": [
+        "Upload filer"
+      ],
       "Upload folder": [
         "Upload mappe"
       ],
@@ -2498,6 +2501,9 @@
       "Free up some space or contact your administrator.": [
         "Frigør noget plads eller kontakt din administrator."
       ],
+      "Go ahead, upload a file": [
+        "Værsgo, upload en fil"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"Mine filer\" og upload nogle filer først."
       ],
@@ -2558,6 +2564,9 @@
       ],
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Det er lige så nemt som at trække og slippe eller vælge filer"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
@@ -2813,6 +2822,9 @@
       "Swiss privacy": [
         "Schweizisk fortrolighed"
       ],
+      "Tap the + button to upload a file or folder": [
+        "Tryk på + knappen for at overføre en fil eller mappe"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
@@ -2827,6 +2839,9 @@
       ],
       "There are no files yet": [
         "Der er ingen filer endnu"
+      ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Disse filer blev delt med ende til ende kryptering. Hvis du vil holde dem sikre - og alle dine dokumenter, fotos og filer private - skal du gemme dem i din egen Proton Drive. Det er nemt og gratis at bruge."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -3811,6 +3826,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Velkommen til ${ appName }"
+      ],
+      "Your welcome bonus": [
+        "Din velkomstbonus"
       ]
     },
     "Option": {
@@ -4634,6 +4652,10 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Navn kan ikke indeholde usynlige tegn, / eller \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn",
+        "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn"
       ],
       "Name must not be empty": [
         "Navn må ikke være tomt"

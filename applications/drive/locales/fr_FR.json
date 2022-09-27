@@ -308,7 +308,7 @@
         "Marquer pour suppression"
       ],
       "Maximize transfers": [
-        "Maximiser les transferts"
+        "Agrandir les transferts"
       ],
       "Merge": [
         "Fusionner"
@@ -317,7 +317,7 @@
         "Fusionner les contacts"
       ],
       "Minimize transfers": [
-        "Minimiser les transferts"
+        "Réduire les transferts"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'infos : ${ safeTitle }"
@@ -3630,13 +3630,13 @@
         "« ${ name } » n'a pas pu être déplacé"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "« ${ name } » n'a pas pu être déplacé vers la corbeille"
+        "« ${ name } » n'a pas pu être déplacé dans le dossier Corbeille."
       ],
       "\"${ name }\" failed to be restored from trash": [
         "« ${ name } » n'a pas pu être restauré depuis la corbeille"
       ],
       "\"${ name }\" moved to trash": [
-        "« ${ name } » déplacé vers la Corbeille"
+        "« ${ name } » déplacé dans le dossier Corbeille"
       ],
       "\"${ name }\" restored from trash": [
         "« ${ name } » restauré depuis la corbeille"
@@ -3667,16 +3667,16 @@
         "${ numberOfItems } éléments n'ont pas pu être déplacés."
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } élément n'a pas pu être déplacé vers la Corbeille.",
-        "${ numberOfItems } éléments n'ont pas pu être déplacés vers la Corbeille."
+        "${ numberOfItems } élément n'a pas pu être déplacé dans le dossier Corbeille.",
+        "${ numberOfItems } éléments n'ont pas pu être déplacés dans le dossier Corbeille."
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } élément n'a pas pu être restauré depuis la Corbeille.",
         "${ numberOfItems } éléments n'ont pas pu être restaurés depuis la Corbeille."
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } élément déplacé vers la Corbeille",
-        "${ numberOfItems } éléments déplacés vers la Corbeille"
+        "${ numberOfItems } élément déplacé dans le dossier Corbeille",
+        "${ numberOfItems } éléments déplacés dans le dossier Corbeille"
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } élément restauré depuis la Corbeille",

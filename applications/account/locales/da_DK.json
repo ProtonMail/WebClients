@@ -84,7 +84,7 @@
         "Anvend"
       ],
       "Apply to existing message": [
-        "Anvend på eksisterende besked"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -551,6 +551,9 @@
       "Remove this label": [
         "Fjern denne etiket"
       ],
+      "Remove this member": [
+        "Fjern dette medlem"
+      ],
       "Remove this notification": [
         "Fjern denne notifikation"
       ],
@@ -613,6 +616,9 @@
       ],
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
+      ],
+      "Revoke this invitation": [
+        "Fjern denne invitation"
       ],
       "Save": [
         "Gem"
@@ -3911,6 +3917,12 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
       ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Med en gendannelsesfil kan du låse op for og se dine data efter en kontonulstilling"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
@@ -3928,6 +3940,9 @@
       ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me-adresse til din konto. Dette enkle, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Privat Message me.\""
@@ -5139,6 +5154,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Vi anbefaler, at du i stedet bruger din gendannelsessætning."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Vi gemmer gendannelsesoplysninger sikkert på din betroede enhed for at forhindre, at du mister dine data"
       ],
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
@@ -7130,17 +7148,17 @@
         "Support"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
-      ]
-    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {

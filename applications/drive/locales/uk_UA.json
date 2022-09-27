@@ -1723,7 +1723,7 @@
         "Приберіть принаймні ${ calendarToFixCount } календаря або"
       ],
       "Domain not available, try again later": [
-        "Домен недоступний, повторіть спробу пізніше"
+        "Домен недоступний. Повторіть спробу пізніше"
       ],
       "Email address invalid": [
         "Недійсна адреса електронної пошти"
@@ -1906,7 +1906,7 @@
         "Це поле обов'язкове"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "В цьому полі має бути не менше ${ minimumLength } символів."
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Назва теки недоступна. Оберіть іншу назву."
@@ -2606,6 +2606,9 @@
       "Free up some space or contact your administrator.": [
         "Звільніть місце або зверніться до свого адміністратора."
       ],
+      "Go ahead, upload a file": [
+        "Уперед, вивантажте файл"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Перейдіть у \"Мої файли\" і спочатку завантажте деякі файли."
       ],
@@ -2668,6 +2671,9 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Це так само просто, як перетягування або вибір файлів"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
@@ -2896,6 +2902,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Посилання спільного доступу для ${ boldNameText }"
+      ],
+      "Shared link failed to be loaded": [
+        "Не вдалося завантажити спільне посилання"
       ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
@@ -3951,8 +3960,20 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Створіть спільне посилання"
+      ],
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Почніть користуватися Proton Drive, і ми подвоїмо обсяг вашого безплатного сховища до 1 Гб!"
+      ],
       "Set a recovery method": [
         "Вказати спосіб відновлення"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Просто виконайте ці дії впродовж наступного дня:",
+        "Просто виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів:",
+        "Просто виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів:",
+        "Просто виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів:"
       ],
       "Upload a file": [
         "Вивантажити файл"
@@ -3984,6 +4005,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Вітаємо у ${ appName }"
+      ],
+      "Your welcome bonus": [
+        "Ваш вітальний бонус"
       ]
     },
     "Option": {

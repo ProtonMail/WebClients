@@ -66,7 +66,7 @@ function FilterItemRow({ filter, index, onApplyFilter, canApplyFilters, ...rest 
         onClick: handleEdit('sieve'),
     };
     const applyFilterAction: DropdownActionProps = {
-        text: c('Action').t`Apply to existing message`,
+        text: c('Action').t`Apply to existing messages`,
         onClick: () => setApplyFilterModalOpen(true),
     };
 

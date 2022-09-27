@@ -2882,6 +2882,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again.": [
+        "出错了，请重试。"
+      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -3041,6 +3044,9 @@
       "Passwords do not match": [
         "密码不匹配"
       ],
+      "Please activate your search again": [
+        "请重新进行搜索"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
@@ -3097,6 +3103,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      ],
+      "Something went wrong, please try again": [
+        "出现了一些问题，请重试。"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "对不起，Proton 无法解密您的邮件。请确认您的密钥是否已全部启用。"
@@ -3985,6 +3994,9 @@
       "Confirm phishing report": [
         "确认钓鱼报告"
       ],
+      "Content: ": [
+        "内容："
+      ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
       ],
@@ -4048,6 +4060,9 @@
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "正在下载邮件 ${ currentProgress } / ${ totalProgress }"
+      ],
       "Draft": [
         "草稿"
       ],
@@ -4098,6 +4113,9 @@
       ],
       "Encrypt message": [
         "邮件加密"
+      ],
+      "End of search results from past 30 days": [
+        "过去三十天的搜索结果已结束"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4339,6 +4357,9 @@
       "No results found": [
         "未找到结果"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "在过去 30 天内的邮件中没有找到结果，正在搜索其余邮件"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
@@ -4480,6 +4501,9 @@
       "Scheduling message...": [
         "定时发送邮件中..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "升级 ${ paidPlansButton } 即可搜索更早邮件"
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗时太长？试试${ dropdownButton }或${ toggleOffButton }。"
       ],
@@ -4582,6 +4606,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "如果您离开该页面，您输入的数据可能不会被保存。"
       ],
+      "The local database is being prepared": [
+        "正在准备数据"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在转发或回复的原始邮件还在发送中，如果继续，您将无法再撤回原始邮件。"
       ],
@@ -4611,6 +4638,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此操作将从服务器下载最近所有邮件用于在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
@@ -5228,6 +5258,12 @@
       "Also archive": [
         "同时存档"
       ],
+      "Always label sender's emails": [
+        "始终标记发件人的邮件"
+      ],
+      "Always move sender's emails": [
+        "始终移除发件人的邮件"
+      ],
       "Attach screenshot(s)": [
         "截图"
       ],
@@ -5691,6 +5727,9 @@
       ],
       "Outbox": [
         "发件箱"
+      ],
+      "paid plan": [
+        "付费套餐"
       ],
       "Pay invoice": [
         "前去支付"
@@ -7359,6 +7398,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
+      ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "对于超过30天的邮件，只会搜索主题行和收件人名单。"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"

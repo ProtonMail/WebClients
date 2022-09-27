@@ -4186,6 +4186,9 @@
       "Encrypt message": [
         "Criptografar mensagem"
       ],
+      "End of search results from past 30 days": [
+        "Fim dos resultados de pesquisa dos últimos 30 dias"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
@@ -4431,6 +4434,9 @@
       "No results found": [
         "Nenhum resultado encontrado"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Sem resultados de pesquisa nos últimos 30 dias. Pesquisando no restante da sua caixa de entrada"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nenhum rastreador encontrado, mas algumas imagens não puderam ser carregadas com proteção contra rastreamento"
       ],
@@ -4573,6 +4579,9 @@
       "Scheduling message...": [
         "Agendando mensagem..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Pesquise conteúdo completo de mensagens mais antigas com um ${ paidPlansButton }"
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
       ],
@@ -4674,6 +4683,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Os dados inseridos no rascunho não podem ser salvos se você sair da página."
+      ],
+      "The local database is being prepared": [
+        "O banco de dados local está sendo preparado"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "A mensagem original que você está tentando encaminhar/responder ainda está no processo de envio. Se você continuar, não poderá mais desfazer o envio da mensagem original."
@@ -7528,6 +7540,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Dados criptografados com assinatura digital verificada"
+      ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Para mensagens com mais de 30 dias, apenas a linha de assunto e a lista de destinatários é pesquisada"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
