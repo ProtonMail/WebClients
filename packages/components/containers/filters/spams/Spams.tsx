@@ -117,7 +117,10 @@ const Spams = () => {
         dispatch({ type: 'refetchList' });
 
         createNotification({
-            text: c('Spam notification').t`${name} added`,
+            text:
+                type === 'email'
+                    ? c('Email spam notification').t`${name} added`
+                    : c('Domain spam notification').t`${name} added`,
             type: 'success',
         });
     };
