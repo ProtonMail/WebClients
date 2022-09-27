@@ -183,6 +183,7 @@ export type FetchAllEventsByUID = ({
     recurrenceId,
 }: {
     uid: string;
+    calendars: VisualCalendar[];
     recurrenceId?: VcalDateOrDateTimeProperty;
     api: Api;
 }) => Promise<{
@@ -193,15 +194,20 @@ export type FetchAllEventsByUID = ({
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 
-export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId }) => {
+export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, calendars, api, recurrenceId }) => {
     const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
-    // Do not search for invitations in subscribed calendars
+    const allowedCalendarIDs = calendars.map(({ ID }) => ID);
+    // No need to search for invitations in subscribed calendars
     const promises: Promise<CalendarEventWithMetadata[]>[] = [
-        getPaginatedEventsByUID({ api, uid, calendarType: CALENDAR_TYPE.PERSONAL }),
+        getPaginatedEventsByUID({ api, uid, calendarType: CALENDAR_TYPE.PERSONAL }).then((events) =>
+            events.filter(({ CalendarID }) => allowedCalendarIDs.includes(CalendarID))
+        ),
     ];
     if (recurrenceId) {
         promises.unshift(
-            getPaginatedEventsByUID({ api, uid, recurrenceID: timestamp, calendarType: CALENDAR_TYPE.PERSONAL })
+            getPaginatedEventsByUID({ api, uid, recurrenceID: timestamp, calendarType: CALENDAR_TYPE.PERSONAL }).then(
+                (events) => events.filter(({ CalendarID }) => allowedCalendarIDs.includes(CalendarID))
+            )
         );
     }
     const [[event, ...otherEvents] = [], [parentEvent, ...otherParentEvents] = []] = await Promise.all(promises);
@@ -280,6 +286,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     const allEventsWithUID = await fetchAllEventsByUID({
         uid: veventComponent.uid.value,
         api,
+        calendars,
         recurrenceId: veventComponent['recurrence-id'],
     });
     const { event: calendarEvent, parentEvent: calendarParentEvent, supportedRecurrenceId } = allEventsWithUID;
@@ -418,7 +425,7 @@ const updateEventApi = async ({
         eventComponent: veventWithPmAttendees,
         isCreateEvent: !!createSingleEdit,
         isSwitchCalendar: false,
-        isInvitation: !calendarEvent.IsOrganizer,
+        isAttendee: true,
         ...creationKeys,
     });
     if (createSingleEdit) {

@@ -142,16 +142,8 @@ const EventPopover = ({
         if (eventData && getIsCalendarEvent(eventData)) {
             const sendCancellationNotice =
                 !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
-            const inviteActions = model.isOrganizer
+            const inviteActions = model.isAttendee
                 ? {
-                      type: isSelfAddressActive
-                          ? INVITE_ACTION_TYPES.CANCEL_INVITATION
-                          : INVITE_ACTION_TYPES.CANCEL_DISABLED,
-                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-                      selfAddress: model.selfAddress,
-                      selfAttendeeIndex: model.selfAttendeeIndex,
-                  }
-                : {
                       type: isSelfAddressActive
                           ? INVITE_ACTION_TYPES.DECLINE_INVITATION
                           : INVITE_ACTION_TYPES.DECLINE_DISABLED,
@@ -160,6 +152,14 @@ const EventPopover = ({
                       selfAddress: model.selfAddress,
                       selfAttendeeIndex: model.selfAttendeeIndex,
                       partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+                  }
+                : {
+                      type: isSelfAddressActive
+                          ? INVITE_ACTION_TYPES.CANCEL_INVITATION
+                          : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
+                      selfAddress: model.selfAddress,
+                      selfAttendeeIndex: model.selfAttendeeIndex,
                   };
             withLoadingAction(onDelete(inviteActions)).catch(noop);
         }
@@ -220,7 +220,7 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const duplicateButton = !isSubscribedCalendar && model.isOrganizer && !!onDuplicate && (
+    const duplicateButton = !isSubscribedCalendar && !model.isAttendee && !!onDuplicate && (
         <Tooltip title={c('Event duplicate button tooltip').t`Duplicate event`}>
             <ButtonLike
                 data-test-id="event-popover:duplicate"
@@ -347,7 +347,7 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {isCalendarWritable && !model.isOrganizer && !isCancelled && (
+            {isCalendarWritable && model.isAttendee && !isCancelled && (
                 <PopoverFooter
                     className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
                     key={targetEvent.id}

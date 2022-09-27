@@ -161,6 +161,7 @@ export interface EventModelView {
     attendees: AttendeeModel[];
     organizer?: OrganizerModel;
     isOrganizer: boolean;
+    isAttendee: boolean;
     isProtonProtonInvite: boolean;
     selfAttendeeIndex?: number;
     selfAddress?: Address;
