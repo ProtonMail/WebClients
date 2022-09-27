@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import {
     AlertModal,
     Button,
+    ButtonLike,
     FeatureCode,
     Field,
     Href,
@@ -41,7 +42,11 @@ import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
 import { useSimpleLoginExtension } from '../../../hooks/simpleLogin/useSimpleLoginExtension';
 import { useSimpleLoginTelemetry } from '../../../hooks/simpleLogin/useSimpleLoginTelemetry';
-import { MessageWithOptionalBody, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import {
+    MessageStateWithData,
+    MessageWithOptionalBody,
+    PartialMessageState,
+} from '../../../logic/messages/messagesTypes';
 import SimpleLoginModal from '../../simpleLogin/SimpleLoginModal';
 
 interface Props {
@@ -220,14 +225,20 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         return null;
     }
 
+    /*
+     * translator:
+     * ${maskMyEmailButton} link to open the Hide My Email modal
+     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with Hide My Email."
+     */
     const maskMyEmailButton = (
-        <Button
+        <ButtonLike
+            as="a"
             key="mask-my-email-button"
             className="ml0-25"
             color="norm"
             shape="underline"
             onClick={handleSimpleLoginModalOpen}
-        >{c('Action').t`Hide My Email`}</Button>
+        >{c('Action').t`Hide My Email`}</ButtonLike>
     );
 
     /*
@@ -257,13 +268,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         data-testid="unsubscribe-banner"
                         disabled={loading || isUnsubscribed(message)}
                     >
-                        <span className="ml0-5">
-                            {isUnsubscribed(message)
-                                ? c('Status').t`Unsubscribed`
-                                : loading
-                                ? c('Action').t`Unsubscribing`
-                                : c('Action').t`Unsubscribe`}
-                        </span>
+                        {isUnsubscribed(message)
+                            ? c('Status').t`Unsubscribed`
+                            : loading
+                            ? c('Action').t`Unsubscribing`
+                            : c('Action').t`Unsubscribe`}
                     </Button>
                 </Tooltip>
             </span>
