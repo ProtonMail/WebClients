@@ -10,6 +10,9 @@ interface ModalCloseButtonProps {
     closeTextModal?: string;
 }
 
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const ModalCloseButton = ({ closeTextModal, onClose }: ModalCloseButtonProps) => {
     const closeText = closeTextModal || c('Action').t`Close`;
 

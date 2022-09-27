@@ -7,6 +7,9 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HT
     children: ReactNode;
 }
 
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const Title = ({ children, className, ...rest }: Props) => {
     return (
         <h1

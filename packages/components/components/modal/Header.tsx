@@ -14,6 +14,9 @@ interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTML
     noEllipsis?: boolean;
 }
 
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const Header = ({
     children,
     modalTitleID = 'modalTitle',
