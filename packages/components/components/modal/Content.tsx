@@ -13,6 +13,9 @@ interface Props {
     noValidate?: boolean;
 }
 
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const Content = ({
     children,
     className = '',
