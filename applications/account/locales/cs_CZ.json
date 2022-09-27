@@ -92,7 +92,7 @@
         "Použít"
       ],
       "Apply to existing message": [
-        "Použít na existující zprávu"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "Přiložit snímek(ky) obrazovky"
@@ -1017,6 +1017,9 @@
     "Badge": {
       "5 users": [
         "5 uživatelů"
+      ],
+      "Coming soon": [
+        "Již brzy"
       ]
     },
     "Badge for domain": {
@@ -1190,6 +1193,11 @@
         "Soubory ICS můžete importovat z jiného kalendáře do ${ CALENDAR_APP_NAME }. To vám umožní rychle importovat jednu událost nebo celý váš program."
       ]
     },
+    "Calendar invite status label": {
+      "Invite sent": [
+        "Pozvánka odeslána"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Dosáhli jste maximálního počtu osobních kalendářů, které můžete v rámci svého tarifu vytvořit."
@@ -1210,6 +1218,24 @@
       ],
       "Label edited": [
         "Štítek změněn"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Oprávnění"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Již máte přístup k tomuto kalendáři"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Sdílet kalendář"
+      ],
+      "Share outside Proton": [
+        "Sdílet mimo Proton"
       ]
     },
     "Calendar settings sidebar": {
@@ -2709,11 +2735,17 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
+      "Account does not exist": [
+        "Účet neexistuje"
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nebyl nalezen"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
+      ],
+      "Already a member of this calendar": [
+        "Jste již členem tohoto kalendáře"
       ],
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
@@ -3080,6 +3112,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Nahrané soubory nejsou platnými soukromými klíči. Prosím ověřte a zkuste to znovu."
+      ],
+      "Validation error": [
+        "Chyba ověření"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Ověření se nezdařilo, zkuste to prosím za hodinu znovu."
@@ -3668,6 +3703,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Přístup"
+      ],
       "Action": [
         "Akce"
       ],
@@ -3697,6 +3735,9 @@
       ],
       "Organization key fingerprint": [
         "Otisk klíče organizace"
+      ],
+      "Permissions": [
+        "Oprávnění"
       ],
       "Status": [
         "Stav"
@@ -6043,6 +6084,11 @@
         "Abyste se vyvarovali přerušení služeb z důvodu neuhrazených faktur, prosím zajistěte si, že máte alespoň 1 uloženou platební metodu."
       ]
     },
+    "Input label": {
+      "Access": [
+        "Přístup"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Přidat štítek"
@@ -8087,26 +8133,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8173,6 +8199,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8481,6 +8527,17 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Pozvánka smazána"
+      ],
+      "Invitation revoked": [
+        "Pozvánka zrušena"
+      ],
+      "Member deleted": [
+        "Člen smazán"
       ]
     },
     "Notification success": {
@@ -9126,6 +9183,9 @@
       ]
     },
     "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Pokud opustíte tento kalendáře, budete muset znovu požádat vlastníka pro opětovné připojení."
+      ],
       "This calendar will be removed from your account.": [
         "Tento kalendář bude odstraněn z vašeho účtu."
       ]
@@ -9133,6 +9193,9 @@
     "Remove calendar section title": {
       "Delete calendar?": [
         "Smazat kalendář?"
+      ],
+      "Leave calendar?": [
+        "Opustit kalendář?"
       ],
       "Remove calendar": [
         "Odstranit kalendář"
@@ -9232,6 +9295,11 @@
         "Štítky"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Přidal lidi nebo skupiny"
+      ]
+    },
     "Shared calendar label input placeholder": {
       "Add label": [
         "Přidat štítek"
@@ -9249,11 +9317,32 @@
       ]
     },
     "Spam notification": {
+      "${ name } added": [
+        "${ name } přidáno"
+      ],
+      "${ name } deletion failed": [
+        "Smazání ${ name } selhalo"
+      ],
       "${ name } failed to move to Block List": [
         "${ name } se nepodařilo přesunout na Seznam blokovaných"
       ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } se nepodařilo přesunout na Seznam nespamů"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } se nepodařilo přesunout na Seznam spamů"
+      ],
       "${ name } moved to Block List": [
         "${ name } přesunuta na Seznam blokovaných"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } bylo přesunuto na seznam nespamů"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } bylo přesunuto na seznam spamů"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } úspěšně smazán"
       ]
     },
     "Spotlight": {
@@ -9674,6 +9763,11 @@
         "Pro jednotlivce"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Sdíleno se mnou"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Akce"
@@ -9982,6 +10076,9 @@
       ],
       "Create multiple user accounts": [
         "Vytvořit více uživatelských účtů"
+      ],
+      "Create public link": [
+        "Vytvořit veřejný odkaz"
       ],
       "Create user accounts": [
         "Vytvořit uživatelské účty"

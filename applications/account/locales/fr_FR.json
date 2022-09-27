@@ -103,7 +103,7 @@
         "Appliquer"
       ],
       "Apply to existing message": [
-        "Appliquer au message existant"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
@@ -499,7 +499,7 @@
         "Ouvrir la navigation"
       ],
       "Ordered list": [
-        "Liste ordonnée"
+        "Liste numérotée"
       ],
       "Organization": [
         "Organisation"
@@ -778,7 +778,7 @@
         "Déverrouiller les données"
       ],
       "Unordered list": [
-        "Liste non ordonnée"
+        "Liste à puces"
       ],
       "Unsubscribe": [
         "Se désabonner"
@@ -4770,6 +4770,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Les messages marqués avec ce label ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
       ],
+      "Enable this address to join this calendar": [
+        "Activez cette adresse pour rejoindre ce calendrier."
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Réactiver la récupération par phrase générera une nouvelle phrase de récupération."
       ],
@@ -8029,26 +8032,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Dans le cas contraire, l'accès à votre compte sera limité et il sera par la suite désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -8115,6 +8098,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Dans le cas contraire, l'accès à votre compte sera limité et il sera par la suite désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8913,7 +8916,7 @@
         "votredomaine.fr"
       ],
       "ZIP": [
-        "ZIP"
+        "Code postal"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9233,22 +9236,22 @@
         "La suppression de ${ name } a échoué."
       ],
       "${ name } failed to move to Block List": [
-        "${ name } n'a pas pu être déplacé vers la liste d'adresses bloquées."
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
       ],
       "${ name } failed to move to Non spam List": [
-        "${ name } n'a pas pu être déplacé vers la liste des non indésirables/spam."
+        "${ name } n'a pas pu être placé dans la liste des non indésirables/spam."
       ],
       "${ name } failed to move to Spam List": [
-        "${ name } n'a pas pu être déplacé vers la liste des indésirables/spam."
+        "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
       ],
       "${ name } moved to Block List": [
-        "${ name } a été déplacé vers la liste d'adresses bloquées."
+        "${ name } est maintenant dans la liste d'adresses bloquées."
       ],
       "${ name } moved to Non spam list": [
-        "${ name } a été déplacé vers la liste des indésirables/spam."
+        "${ name } est maintenant dans la liste des non indésirables/spam."
       ],
       "${ name } moved to Spam list": [
-        "${ name } a été déplacé vers la liste des indésirables/spam."
+        "${ name } est maintenant dans la liste des indésirables/spam."
       ],
       "${ name } successfully deleted": [
         "${ name } a été supprimé."

@@ -103,7 +103,7 @@
         "Aplicar"
       ],
       "Apply to existing message": [
-        "Aplicar al mensaje existente"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
@@ -8032,26 +8032,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8118,6 +8098,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
