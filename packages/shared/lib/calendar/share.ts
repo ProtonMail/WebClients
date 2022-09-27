@@ -1,3 +1,4 @@
+import { serverTime } from '@proton/crypto';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/calendars';
 import { SECOND } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -10,7 +11,7 @@ export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitat
     if (!ExpirationTime) {
         return false;
     }
-    return Date.now() >= ExpirationTime * SECOND;
+    return +serverTime() >= ExpirationTime * SECOND;
 };
 
 export const getPendingInvitations = (invitations: CalendarMemberInvitation[]) => {
