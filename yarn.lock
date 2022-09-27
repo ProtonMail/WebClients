@@ -2884,7 +2884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/build@npm:^27.18.5":
+"@netlify/build@npm:^27.18.6":
   version: 27.18.6
   resolution: "@netlify/build@npm:27.18.6"
   dependencies:
@@ -2966,7 +2966,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/config@npm:^18.2.3, @netlify/config@npm:^18.2.4":
+"@netlify/config@npm:^18.2.4":
   version: 18.2.4
   resolution: "@netlify/config@npm:18.2.4"
   dependencies:
@@ -3814,7 +3814,7 @@ __metadata:
     eslint-plugin-storybook: ^0.6.4
     jest: ^28.1.3
     mustache: ^4.2.0
-    netlify-cli: ^11.8.3
+    netlify-cli: ^12.0.0
     prettier: ^2.7.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -22178,16 +22178,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"netlify-cli@npm:^11.8.3":
-  version: 11.8.3
-  resolution: "netlify-cli@npm:11.8.3"
+"netlify-cli@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "netlify-cli@npm:12.0.0"
   dependencies:
-    "@netlify/build": ^27.18.5
-    "@netlify/config": ^18.2.3
+    "@netlify/build": ^27.18.6
+    "@netlify/config": ^18.2.4
     "@netlify/edge-bundler": ^2.2.0
     "@netlify/framework-info": ^9.2.0
     "@netlify/local-functions-proxy": ^1.1.1
-    "@netlify/plugins-list": ^6.46.0
     "@netlify/zip-it-and-ship-it": ^7.1.2
     "@octokit/rest": ^18.0.0
     "@sindresorhus/slugify": ^1.1.0
@@ -22260,7 +22259,6 @@ fsevents@^1.2.7:
     node-version-alias: ^1.0.1
     omit.js: ^2.0.2
     ora: ^5.0.0
-    p-event: ^4.2.0
     p-filter: ^2.1.0
     p-map: ^4.0.0
     p-wait-for: ^3.0.0
@@ -22286,14 +22284,14 @@ fsevents@^1.2.7:
     toml: ^3.0.0
     unixify: ^1.0.0
     update-notifier: ^5.0.0
-    uuid: ^8.0.0
+    uuid: ^9.0.0
     wait-port: ^0.3.0
     winston: ^3.2.1
     write-file-atomic: ^4.0.0
   bin:
     netlify: bin/run
     ntl: bin/run
-  checksum: 6b78067ae093f39a07021c68199752a0fd0c727dfb73e3b9c8e034f9685b2725ef92cb21afcbfea33d3a5da696c3738d3513c1181f7765ae8a9b9cf76ed59c3a
+  checksum: 9fcec7bb1c57912bd13612355076717fe299a12345abfc8484adf26f65b894a9dad5f84e7be0507bffc1c83ebead3977bd44bbcbd1d183ae7d15d79dfdf02ef4
   languageName: node
   linkType: hard
 
@@ -23275,7 +23273,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"p-event@npm:^4.0.0, p-event@npm:^4.1.0, p-event@npm:^4.2.0":
+"p-event@npm:^4.0.0, p-event@npm:^4.1.0":
   version: 4.2.0
   resolution: "p-event@npm:4.2.0"
   dependencies:
@@ -25335,7 +25333,7 @@ fsevents@^1.2.7:
     eslint: ^8.21.0
     eslint-plugin-storybook: ^0.6.4
     lodash.startcase: ^4.4.0
-    netlify-cli: ^11.8.3
+    netlify-cli: ^12.0.0
     prettier: ^2.7.1
     prop-types: 15.8.1
     react: ^17.0.2
