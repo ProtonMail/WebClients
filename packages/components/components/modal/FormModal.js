@@ -10,7 +10,10 @@ import FooterModal from './Footer';
 import HeaderModal from './Header';
 import InnerModal from './Inner';
 
-/** @type any */
+/**
+ * @deprecated Please use ModalTwo instead
+ * @type any
+ */
 const Modal = ({
     onClose,
     onSubmit,
