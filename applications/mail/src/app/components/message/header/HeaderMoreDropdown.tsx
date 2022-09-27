@@ -40,6 +40,7 @@ import { updateAttachment } from '../../../logic/attachments/attachmentsActions'
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { Element } from '../../../models/element';
 import { Breakpoints } from '../../../models/utils';
+import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
@@ -67,6 +68,7 @@ interface Props {
     onContactEdit: (props: ContactEditProps) => void;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
+    filterDropdownToggleRef: React.MutableRefObject<() => void>;
 }
 
 const HeaderMoreDropdown = ({
@@ -85,6 +87,7 @@ const HeaderMoreDropdown = ({
     onContactEdit,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    filterDropdownToggleRef,
 }: Props) => {
     const location = useLocation();
     const api = useApi();
@@ -176,6 +179,9 @@ const HeaderMoreDropdown = ({
                       breakpoints={breakpoints}
                   />
               ),
+              ({ onClose, onLock }) => (
+                  <CustomFilterDropdown message={message.data as Message} onClose={onClose} onLock={onLock} />
+              ),
           ]
         : undefined;
 
@@ -232,6 +238,15 @@ const HeaderMoreDropdown = ({
         </>
     ) : (
         c('Title').t`Label as`
+    );
+    const titleFilterOn = Shortcuts ? (
+        <>
+            {c('Title').t`Filter on...`}
+            <br />
+            <kbd className="border-none">F</kbd>
+        </>
+    ) : (
+        c('Title').t`Filter on...`
     );
 
     return (
@@ -322,6 +337,23 @@ const HeaderMoreDropdown = ({
                             />
                         )}
                     </HeaderDropdown>,
+                    <HeaderDropdown
+                        key="message-header-expanded:filter-dropdown"
+                        icon
+                        autoClose={false}
+                        noMaxSize
+                        content={<Icon name="filter" alt={c('Action').t`Filter on...`} />}
+                        className="messageFilterDropdownButton"
+                        dropDownClassName="filter-dropdown"
+                        title={titleFilterOn}
+                        loading={!messageLoaded}
+                        externalToggleRef={filterDropdownToggleRef}
+                        data-testid="message-header-expanded:filter-dropdown"
+                    >
+                        {({ onClose, onLock }) => (
+                            <CustomFilterDropdown message={message.data as Message} onClose={onClose} onLock={onLock} />
+                        )}
+                    </HeaderDropdown>,
                 ]}
                 <HeaderDropdown
                     icon
@@ -372,6 +404,16 @@ const HeaderMoreDropdown = ({
                                     >
                                         <Icon name="tag" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`Label as...`}</span>
+                                    </DropdownMenuButton>
+                                )}
+                                {isNarrow && (
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        onClick={() => onOpenAdditionnal(2)}
+                                    >
+                                        <Icon name="filter" className="mr0-5" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Filter on...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isSpam ? (
