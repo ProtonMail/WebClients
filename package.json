@@ -9,6 +9,7 @@
         "utilities/*"
     ],
     "scripts": {
+        "app-versions": "bash utilities/app-versions/app-versions.sh",
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "yarn workspace @proton/atoms create-atom",
         "postinstall": "is-ci || (husky install; yarn run config-app)",
