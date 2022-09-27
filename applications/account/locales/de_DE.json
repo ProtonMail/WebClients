@@ -8,8 +8,14 @@
       "Full view": [
         "Vollständige Ansicht"
       ],
+      "Full view (see all event details)": [
+        "Gesamtansicht (siehe alle Ereignisdetails)"
+      ],
       "Limited view": [
         "Eingeschränkte Ansicht"
+      ],
+      "Limited view (see only free/busy)": [
+        "Eingeschränkte Ansicht (nur Verfügbar/Geschäftigt anzeigen)"
       ]
     },
     "Action": {
@@ -92,7 +98,7 @@
         "Übernehmen"
       ],
       "Apply to existing message": [
-        "Auf bestehende Nachricht anwenden"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
@@ -1196,11 +1202,25 @@
     "Calendar settings section title": {
       "Share calendar": [
         "Kalender teilen"
+      ],
+      "Share with anyone": [
+        "Mit anderen teilen"
+      ],
+      "Share with Proton users": [
+        "Mit Proton-Nutzern teilen"
       ]
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "${ remainingItems } weitere anzeigen"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Bearbeiten (Ereignisdetails anzeigen, erstellen und bearbeiten)"
+      ],
+      "Full view (see all event details)": [
+        "Gesamtansicht (siehe alle Ereignisdetails)"
       ]
     },
     "Calendar status": {
@@ -2603,11 +2623,17 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
+      "Account does not exist": [
+        "Konto nicht vorhanden"
+      ],
       "Address primary private key not found": [
         "Adresse von privatem Hauptschlüssel nicht gefunden"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduzieren Sie den anderen Benutzern zugewiesenen Speicherplatz."
+      ],
+      "Already a member of this calendar": [
+        "Bereits Mitglied in diesem Kalender"
       ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
@@ -2771,11 +2797,17 @@
       "No keys retrieved for internal user": [
         "Keine Schlüssel für internen Benutzer abgerufen"
       ],
+      "No public key for Proton address": [
+        "Kein öffentlicher Schlüssel für Proton-Adresse"
+      ],
       "No valid address found": [
         "Keine gültige Adresse gefunden"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Der für den Benutzer abgerufene WKD-Schlüssel ist für den Versand ungültig"
+      ],
+      "Not a Proton account": [
+        "Kein Proton-Konto"
       ],
       "Not a valid number": [
         "Keine gültige Ziffer"
@@ -2855,6 +2887,10 @@
       ],
       "Process aborted": [
         "Prozess abgebrochen"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Doppelten Empfänger entfernt: ${ joinedRecipients }",
+        "Doppelte Empfänger entfernt: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
@@ -2966,6 +3002,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Die hochgeladenen Dateien sind keine gültige privaten Schlüssel. Bitte überprüfen Sie die Dateien und versuchen Sie es erneut."
+      ],
+      "Validation error": [
+        "Überprüfungsfehler"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
@@ -7833,26 +7872,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -7919,6 +7938,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto zurückstufst, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8221,6 +8260,20 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Mitglied hinzugefügt",
+        "Mitglieder hinzugefügt"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Kalendereinladung abgelehnt"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "${ calendarName } (${ senderEmail }) beigetreten"
       ]
     },
     "Notification success": {
@@ -8944,6 +8997,16 @@
       ],
       "Labels": [
         "Kategorien"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Personen oder Gruppen hinzufügen"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Mit Proton-Nutzern teilen"
       ]
     },
     "Shared calendar label input placeholder": {

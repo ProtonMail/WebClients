@@ -2903,6 +2903,9 @@
       "Shareable link for ${ boldNameText }": [
         "Odkaz ke sdílení ${ boldNameText }"
       ],
+      "Shared link failed to be loaded": [
+        "Sdílený odkaz se nepodařilo načíst"
+      ],
       "Signature check will be ignored": [
         "Výsledek kontroly podpisu bude ignorován"
       ],
@@ -3957,8 +3960,20 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Vytvořit odkaz pro sdílení"
+      ],
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Začněte používat Proton Drive a mi vám zadarmo zdvojnásobíme uložiště na 1GB!"
+      ],
       "Set a recovery method": [
         "Nastavit metodu obnovení"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Stačí, když během následujícího ${ remainingDaysForGift } dne dokončíte:",
+        "Stačí, když během následujícího ${ remainingDaysForGift } dnů dokončíte:",
+        "Stačí, když během následujícího ${ remainingDaysForGift } dnů dokončíte:",
+        "Stačí, když během následujícího ${ remainingDaysForGift } dnů dokončíte:"
       ],
       "Upload a file": [
         "Nahrát soubor"
@@ -3990,6 +4005,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Vítejte na ${ appName }"
+      ],
+      "Your welcome bonus": [
+        "Váš uvítací bonus"
       ]
     },
     "Option": {

@@ -92,7 +92,7 @@
         "適用"
       ],
       "Apply to existing message": [
-        "存在するメッセージに適用"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -1153,6 +1153,16 @@
       ],
       "Label edited": [
         "ラベルが編集されました"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "権限"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "カレンダーを共有"
       ]
     },
     "Calendar status": {
@@ -2560,6 +2570,9 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
+      "Account does not exist": [
+        "アカウントは存在しません"
+      ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
@@ -2802,6 +2815,9 @@
       ],
       "Process aborted": [
         "処理が中断されました"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "競合する宛先を削除しました: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
@@ -3453,6 +3469,9 @@
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
       ],
+      "Permissions": [
+        "権限"
+      ],
       "Status": [
         "状態"
       ],
@@ -4059,6 +4078,9 @@
       ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "あなたのアカウントに @pm.me メールアドレスを追加します。このシンプルな短縮ドメインは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
@@ -5339,7 +5361,7 @@
         "${ appName } のユーザーは招待できません"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 認証情報を使用することはできません。${ learnMore }"
+        "OpenVPN / IKEv2 認証情報は、${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードへのログインには使用できません。${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
@@ -7439,20 +7461,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7498,6 +7506,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -7692,6 +7714,11 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "${ calendarName } に参加しました (${ senderEmail })"
       ]
     },
     "Notification time input": {

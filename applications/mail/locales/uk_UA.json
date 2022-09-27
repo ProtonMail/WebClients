@@ -1892,7 +1892,7 @@
     },
     "Context filtering disabled": {
       "Your selection contains only yourself as sender": [
-        "Ваш вибір містить відправником лише вас"
+        "У вашому виборі відправником є лише ви"
       ]
     },
     "Country name": {
@@ -4330,6 +4330,9 @@
       "Encrypt message": [
         "Зашифрувати повідомлення"
       ],
+      "End of search results from past 30 days": [
+        "Кінець результатів пошуку за останні 30 днів"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
@@ -4585,6 +4588,9 @@
       "No results found": [
         "Результатів не знайдено"
       ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Немає результатів пошуку за останні 30 днів. Пошук у решті теки «Вхідні»"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
@@ -4729,6 +4735,9 @@
       "Scheduling message...": [
         "Планування повідомлення..."
       ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Пошук усього вмісту старих повідомлень за допомогою ${ paidPlansButton }"
+      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук триває надто довго? ${ dropdownButton } або ${ toggleOffButton } з цього пошукового сеансу."
       ],
@@ -4831,6 +4840,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Введені в чернетку дані можуть не зберегтися, якщо ви покинете сторінку."
       ],
+      "The local database is being prepared": [
+        "Готується локальна база даних"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Оригінальне повідомлення, яке ви намагаєтеся переслати / відповісти, знаходиться в процесі надсилання. Якщо ви продовжите, ви не зможете скасувати надсилання оригінального повідомлення."
       ],
@@ -4863,6 +4875,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ця дія завантажить найновіші повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -5518,6 +5533,12 @@
       ],
       "Also archive": [
         "Також архівувати"
+      ],
+      "Always label sender's emails": [
+        "Завжди позначати мітками е-пошту відправника"
+      ],
+      "Always move sender's emails": [
+        "Завжди переміщувати е-пошту відправника"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"

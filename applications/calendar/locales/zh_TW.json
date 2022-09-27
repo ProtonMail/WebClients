@@ -131,6 +131,9 @@
       "Customize": [
         "自訂"
       ],
+      "Decline invite": [
+        "拒絕邀請"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -238,6 +241,9 @@
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
+      ],
+      "Join calendar": [
+        "加入日曆"
       ],
       "Load image": [
         "載入圖像"
@@ -612,6 +618,11 @@
         "自由列席"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "敬請期待"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "測試版體驗讓您可以在釋出到公眾前使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的測試版。這代表了您會是第一個嘗試新產品、取得新的更新以及使用新功能的人。"
@@ -733,6 +744,16 @@
       ],
       "You tentatively accepted the invitation": [
         "您暫訂已接受此邀請"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "權限"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "管理連結"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1956,6 +1977,9 @@
       "A group with this name already exists": [
         "以此為名的群組已存在"
       ],
+      "Account does not exist": [
+        "帳號不存在"
+      ],
       "Address primary private key not found": [
         "找不到位址主要金鑰"
       ],
@@ -2085,6 +2109,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "使用者沒有擷取到任何用於寄送的有效 WKD 金鑰"
       ],
+      "Not a Proton account": [
+        "不是 Proton 帳號"
+      ],
       "Not a valid number": [
         "號碼無效"
       ],
@@ -2117,6 +2144,9 @@
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "擷取出的內部使用者專屬主金鑰不適用於傳送郵件"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "已移除重複的收件者：${ joinedRecipients }"
       ],
       "Request timed out": [
         "請求逾時"
@@ -2192,6 +2222,9 @@
       ],
       "Unknown error": [
         "未知的錯誤"
+      ],
+      "Validation error": [
+        "驗證錯誤"
       ],
       "You can't send a mail to more than 100 recipients": [
         "您不得傳送一封電郵給超過 100 個收件人"
@@ -3050,6 +3083,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電郵到此電郵位址時，預設使用選取的電郵格式。"
       ],
+      "Select what you want to import.": [
+        "選擇您要匯入的檔案。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆創建一個新的行事曆，上限為 20 個行事曆。"
       ],
@@ -3725,7 +3761,15 @@
         "管理行事曆"
       ]
     },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "加入日曆"
+      ]
+    },
     "Modal title": {
+      "Share calendar": [
+        "共享行事曆"
+      ],
       "Time zone changed": [
         "時區已變更"
       ],
@@ -4677,6 +4721,9 @@
       ],
       "Create new group": [
         "創建新群組"
+      ],
+      "Create public link": [
+        "創建公共連結"
       ],
       "Currency": [
         "貨幣"
