@@ -64,6 +64,7 @@ interface Props {
     breakpoints: Breakpoints;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
+    filterDropdownToggleRef: React.MutableRefObject<() => void>;
     parentMessageRef: React.RefObject<HTMLElement>;
 }
 
@@ -86,6 +87,7 @@ const HeaderExpanded = ({
     breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    filterDropdownToggleRef,
     parentMessageRef,
 }: Props) => {
     const [addresses = []] = useAddresses();
@@ -324,6 +326,7 @@ const HeaderExpanded = ({
                         onContactEdit={onContactEdit}
                         labelDropdownToggleRef={labelDropdownToggleRef}
                         moveDropdownToggleRef={moveDropdownToggleRef}
+                        filterDropdownToggleRef={filterDropdownToggleRef}
                     />
                 </div>
                 {!isScheduledMessage && (
