@@ -7,6 +7,10 @@ interface Props {
     children: ReactNode;
     className?: string;
 }
+
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const Inner = forwardRef<HTMLDivElement, Props>(({ children, className = '' }: Props, ref: Ref<HTMLDivElement>) => {
     return (
         <div ref={ref} className={classnames(['modal-content-inner', className])}>

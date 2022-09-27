@@ -3,6 +3,9 @@ import { c } from 'ttag';
 
 import FormModal from './FormModal';
 
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const PreviewPDFModal = ({ url, title = c('Title').t`Preview`, filename, ...rest }) => {
     return (
         <FormModal title={title} close={c('Action').t`Close`} hasSubmit={false} {...rest}>

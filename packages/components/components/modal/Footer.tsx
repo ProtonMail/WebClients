@@ -7,6 +7,9 @@ interface Props extends ComponentPropsWithoutRef<'footer'> {
     isColumn?: boolean;
 }
 
+/**
+ * @deprecated Please use ModalTwo instead
+ */
 const Footer = ({
     children,
     isColumn,
