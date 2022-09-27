@@ -17,12 +17,13 @@ import {
     InputFieldTwo,
     Label,
     PasswordInputTwo,
+    useConfig,
     useFormErrors,
     useLoading,
     useLocalState,
 } from '@proton/components';
 import { Icon } from '@proton/components';
-import { SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME, SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -32,13 +33,14 @@ import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
 
 interface Props {
-    signInText?: string;
     onSubmit: (data: {
         username: string;
         password: string;
         persistent: boolean;
         payload: ChallengeResult;
     }) => Promise<void>;
+    toApp?: APP_NAMES;
+    signInText?: string;
     defaultUsername?: string;
     hasRemember?: boolean;
     hasActiveSessions?: boolean;
@@ -47,12 +49,14 @@ interface Props {
 
 const LoginForm = ({
     onSubmit,
+    toApp,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
     hasActiveSessions,
     trustedDeviceRecoveryFeature,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
@@ -64,6 +68,8 @@ const LoginForm = ({
     const challengeRefLogin = useRef<ChallengeRef>();
     const [challengeLoading, setChallengeLoading] = useState(true);
     const [challengeError, setChallengeError] = useState(false);
+
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || toApp === APPS.PROTONVPN_SETTINGS;
 
     useEffect(() => {
         if (hasActiveSessions) {
@@ -154,7 +160,7 @@ const LoginForm = ({
                     <InputFieldTwo
                         id="username"
                         bigger
-                        label={c('Label').t`Email or username`}
+                        label={isVPN ? c('Label').t`${BRAND_NAME} email or username` : c('Label').t`Email or username`}
                         error={validator([requiredValidator(username)])}
                         disableChange={submitting}
                         autoComplete="username"

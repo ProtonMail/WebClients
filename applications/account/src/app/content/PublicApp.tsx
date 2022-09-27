@@ -474,6 +474,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 <LoginContainer
                                                     hasActiveSessions={Boolean(activeSessions?.length)}
                                                     toAppName={toAppName}
+                                                    toApp={maybePreAppIntent}
                                                     showContinueTo={!!toOAuthName}
                                                     shouldSetupInternalAddress={shouldSetupInternalAddress}
                                                     onLogin={handleLogin}
