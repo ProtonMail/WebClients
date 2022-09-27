@@ -59,6 +59,9 @@
       "Cancel all": [
         "Cancel·la-ho tot"
       ],
+      "Cancel all downloads": [
+        "Cancel·la totes les pujades"
+      ],
       "Cancel all uploads": [
         "Cancel·lar totes les pujades"
       ],
@@ -93,13 +96,13 @@
         "Cliqueu aquí."
       ],
       "Close": [
-        "Tancar"
+        "Tanca"
       ],
       "Close navigation": [
         "Tanca la navegació"
       ],
       "Close this banner": [
-        "Tancar aquest bàner"
+        "Tanca aquest bàner"
       ],
       "Close transfers": [
         "Tanca les transferències"
@@ -135,7 +138,7 @@
         "Copiar correu electrònic al porta-retalls"
       ],
       "Copy link": [
-        "Copiar enllaç"
+        "Copia l'enllaç"
       ],
       "Create": [
         "Crear"
@@ -147,7 +150,7 @@
         "Crear enllaç"
       ],
       "Create new folder": [
-        "Crea una carpeta nova"
+        "Crea una carpeta"
       ],
       "Customize": [
         "Personalitza"
@@ -185,10 +188,19 @@
         "Fet"
       ],
       "Download": [
-        "Descarregar"
+        "Baixa"
+      ],
+      "Download (${ count })": [
+        "Baixa'n (${ count })"
       ],
       "Download all": [
         "Desa tot"
+      ],
+      "Download anyway": [
+        "Baixa igualment"
+      ],
+      "Drive Locked": [
+        "Unitat bloquejada"
       ],
       "Edit": [
         "Editar"
@@ -221,19 +233,19 @@
         "Amplia la carpeta"
       ],
       "Export": [
-        "Exportar"
+        "Exporta"
       ],
       "Export contact group": [
         "Exporta el grup de contactes"
       ],
       "Export contacts": [
-        "Exportar contactes"
+        "Exporta els contactes"
       ],
       "Forward as attachment": [
         "Reenviar com a adjunt"
       ],
       "Get link": [
-        "Obtenir l'enllaç"
+        "Obtén l'enllaç"
       ],
       "Get started": [
         "Començar"
@@ -317,10 +329,10 @@
         "Mou a la carpeta"
       ],
       "Move to trash": [
-        "Moure a la paperera"
+        "Mou a la paperera"
       ],
       "New upload": [
-        "Càrrega nova"
+        "Puja fitxers"
       ],
       "Next": [
         "Següent"
@@ -380,7 +392,7 @@
         "Esborra de la llista"
       ],
       "Rename": [
-        "Reanomenar"
+        "Canvia el nom"
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -419,7 +431,7 @@
         "Reintentar"
       ],
       "Save": [
-        "Desar"
+        "Desa"
       ],
       "Search": [
         "Cerca"
@@ -440,10 +452,10 @@
         "Definineix la frase de recuperació"
       ],
       "Share file": [
-        "Compartir arxius"
+        "Comparteix el fitxer"
       ],
       "Share item": [
-        "Compartiu l'element"
+        "Comparteix un element"
       ],
       "Share via link": [
         "Comparteix via enllaç"
@@ -464,7 +476,7 @@
         "Mostra visualització prèvia"
       ],
       "Sign out": [
-        "Tancar la sessió"
+        "Tanca la sessió"
       ],
       "Signing out": [
         "Tancant la sessió"
@@ -521,13 +533,19 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Millora"
+      ],
+      "Upload anyway": [
+        "Puja-ho igualment"
       ],
       "Upload file": [
-        "Puja el fitxer"
+        "Puja un fitxer"
+      ],
+      "Upload files": [
+        "Puja fitxers"
       ],
       "Upload folder": [
-        "Carrega Carpeta"
+        "Puja una carpeta"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -668,7 +686,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar utilitzant ${ MAIL_APP_NAME }."
+        "Continua utilitzant ${ MAIL_APP_NAME }."
       ]
     },
     "Collapsible tooltip": {
@@ -1671,19 +1689,19 @@
         "Introduïu 6 dígits"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "El fitxer \"${ item.name }\" no s'ha pogut pujar a causa d'aquest error: \"${ error }\""
+        "El fitxer «${ item.name }» no s'ha pogut pujar a causa de l'error «${ error }»"
       ],
       "File \"${ name }\" is already downloading": [
-        "El fitxer \"${ name }\" ja s'està descarregant"
+        "El fitxer «${ name }» ja s'està baixant"
       ],
       "File cannot be merged with folder": [
         "Un fitxer no es pot fusionar amb una carpeta"
       ],
       "File selection is already downloading": [
-        "La vostra selecció de fitxers ja s'està descarregant"
+        "La selecció d'arxius ja s'està baixant"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "La carpeta \"${ name }\" ja s'està descarregant"
+        "La carpeta «${ name }»  ja s'està baixant"
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no es pot deixar buit."
@@ -1917,7 +1935,7 @@
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ],
       "You may also refresh the page or try again later.": [
-        "També podeu actualitzar la pàgina o tornar-la a provar més endavant."
+        "També podeu actualitzar la pàgina o tornar-ho a provar més tard."
       ]
     },
     "Error notification": {
@@ -2123,6 +2141,18 @@
         "${ contactsCount } contacte trobat",
         "${ contactsCount } contactes trobats"
       ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } baixat",
+        "${ doneDownloadsCount } baixats"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } pujat",
+        "${ doneUploadsCount } pujats"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } ha fallat",
+        "${ errorCount } han fallat"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
@@ -2168,7 +2198,7 @@
         "10 adreces de correu"
       ],
       "A number will be added to the filename": [
-        "S'afegirà un número al nom de l'arxiu"
+        "S'afegirà un número al nom del fitxer"
       ],
       "A number will be added to the folder name": [
         "S'afegirà un número al nom de la carpeta"
@@ -2191,10 +2221,19 @@
         "i"
       ],
       "Anyone with this link can access your file.": [
-        "Qualsevol que tingui aquest enllaç pot accedir al vostre arxiu."
+        "Qualsevol que tingui aquest enllaç pot accedir al fitxer."
+      ],
+      "Anyone with this link can access your folder.": [
+        "Qualsevol que tingui aquest enllaç pot accedir a la carpeta."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Esteu segur que voleu buidar la paperera i suprimir permanentment tots els elements?"
+        "Segur que voleu buidar la paperera i eliminar completament tots els elements?"
+      ],
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Segur que voleu eliminar completament «${ itemName }» de la paperera?"
+      ],
+      "Are you sure you want to permanently delete selected items from trash?": [
+        "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
@@ -2208,8 +2247,14 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
       ],
+      "Checking signatures": [
+        "S'estan verificant les signatures"
+      ],
       "Clear data": [
         "Neteja les dades"
+      ],
+      "Clear encrypted search data": [
+        "Esborra les dades de la cerca xifrada"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
@@ -2243,7 +2288,10 @@
         "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
       ],
       "Create your first folder and start moving your files.": [
-        "Crea la teva primera carpeta i comença a moure els teus arxius."
+        "Creeu la vostra primera carpeta i comenceu a moure fitxers."
+      ],
+      "Creating": [
+        "S'està creant"
       ],
       "Creating link to file": [
         "Preparant el enllaç al fitxer"
@@ -2254,17 +2302,39 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
+      "Delete drive": [
+        "Elimina la unitat",
+        "Elimina les unitats"
+      ],
+      "Download canceled": [
+        "S'ha cancel·lat la baixada"
+      ],
+      "Download failed": [
+        "La baixada ha fallat"
+      ],
+      "Download finished": [
+        "La baixada ha acabat"
+      ],
       "Downloaded": [
         "Descarregat"
       ],
       "Downloading": [
-        "Descarregant"
+        "S'està baixant"
       ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
+      ],
+      "Enabling drive search": [
+        "S'està activant la cerca de la unitat"
+      ],
+      "Encrypted": [
+        "Xifrat"
+      ],
+      "Encrypted search is here": [
+        "Ha arribat la cerca xifrada"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
@@ -2288,11 +2358,17 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Error obrint un enllaç segur. La raó és: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        "El fitxer «${ name }» s'ha eliminat durant la baixada"
+      ],
       "File will not be uploaded": [
-        "No es carregarà l'arxiu"
+        "El fitxer no es pujarà"
       ],
       "Finalizing": [
         "Finalitzant"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        "La carpeta «${ link.name }» s'ha eliminat durant la baixada"
       ],
       "Folder contents will merge into a single folder": [
         "Els continguts de la carpeta es combinaran en una sola carpeta"
@@ -2306,6 +2382,9 @@
       "Free up some space or contact your administrator.": [
         "Allibereu una mica d’espai o contacteu amb el teu administrador."
       ],
+      "Go ahead, upload a file": [
+        "Endavant, pugeu un fitxer"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Aneu a \"Els meus fitxers\" i pengeu alguns fitxers primer."
       ],
@@ -2314,6 +2393,9 @@
       ],
       "here": [
         "aquí"
+      ],
+      "How does encrypted search work?": [
+        "Com funciona la cerca xifrada?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -2339,6 +2421,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Indexing search results…": [
+        "S'estan indexant els resultats de la cerca…"
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -2369,6 +2454,12 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls"
+      ],
+      "Link failed to be loaded": [
+        "No s'ha pogut carregar l'enllaç"
+      ],
+      "Links failed to be loaded": [
+        "No s'han pogut carregar els enllaços"
       ],
       "Loading": [
         "Carregant"
@@ -2416,7 +2507,7 @@
         "Cap adreça de correu electrònic"
       ],
       "No files or folders in trash": [
-        "Cap arxiu o carpeta a la paperera"
+        "No hi ha cap fitxer ni carpeta a la paperera"
       ],
       "No group found": [
         "No s'ha trobat cap grup"
@@ -2443,7 +2534,10 @@
         "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
-        "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest arxiu."
+        "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
+      ],
+      "Only the people with the link and the password can access this folder.": [
+        "Només les persones amb l'enllaç i la contrasenya poden accedir a aquesta carpeta."
       ],
       "Other options": [
         "Altres opcions"
@@ -2477,7 +2571,7 @@
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
       "Preparing link to file": [
-        "Preparant el enllaç al arxiu"
+        "S'està preparant l'enllaç al fitxer"
       ],
       "Preparing link to folder": [
         "S'està preparant l'enllaç a la carpeta"
@@ -2494,11 +2588,26 @@
       "Queued": [
         "En cua"
       ],
+      "recommended browser": [
+        "navegador recomanat"
+      ],
       "Recovery process might take some time.": [
         "El procés de recuperació pot trigar una estona."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Report has been sent": [
+        "S'ha enviat l'informe"
+      ],
+      "Search cannot be enabled in this browser": [
+        "La cerca no es pot activar en aquest navegador"
+      ],
+      "Search Enabled": [
+        "Cerca activa"
+      ],
+      "Secure sharing": [
+        "Comparteix de manera segura"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
@@ -2516,7 +2625,13 @@
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
       "Share files with links": [
-        "Compartir fitxers amb enllaços"
+        "Compartiu fitxers amb enllaços"
+      ],
+      "Shareable link for ${ boldNameText }": [
+        "Enllaç per a compartir ${ boldNameText }"
+      ],
+      "Signature issue": [
+        "Problema de signatura"
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
@@ -2533,11 +2648,14 @@
       "Swiss privacy": [
         "Privacitat suïssa"
       ],
+      "Tap the + button to upload a file or folder": [
+        "Toqueu el botó + per a pujar un fitxer o carpeta"
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
       "There are no files yet": [
-        "Encara no hi ha arxius"
+        "Encara no hi ha fitxers"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
@@ -2554,11 +2672,14 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac homògraf. Verifiqueu que aquest és l'enllaç que voleu visitar o declineu obrir-lo."
       ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Aquest enllaç es va crear en una versió antiga de Drive i no es pot modificar. Elimineu l'enllaç i creeu-ne un de nou per canviar-ne la configuració."
+      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Aquest enllaç es deshabilitarà permanentment. Ningú podrà accedir al vostre arxiu amb aquest enllaç. Per tornar a compartir l'arxiu necessitareu un nou enllaç."
+        "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir al fitxer amb aquest enllaç. Per a tornar a compartir-lo, necessitareu un enllaç nou."
       ],
       "This will overwrite the existing file": [
-        "Se sobreescriurà l'arxiu existent"
+        "Se sobreescriurà el fitxer actual"
       ],
       "This will overwrite the existing folder": [
         "Se sobreescriurà la carpeta existent"
@@ -2599,6 +2720,9 @@
       "Unsupported file": [
         "Fitxer no compatible"
       ],
+      "Updating drive search...": [
+        "S'està actualitzant la cerca…"
+      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
@@ -2606,7 +2730,7 @@
         "Carregat"
       ],
       "Uploading": [
-        "Carregant"
+        "S'està pujant"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
@@ -2626,6 +2750,9 @@
       "What do you want to do?": [
         "Què voleu fer?"
       ],
+      "What would you like to do?": [
+        "Què voleu fer?"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
       ],
@@ -2633,7 +2760,7 @@
         "Voleu rebre un codi de verificació nou?"
       ],
       "Would you like to restore your files?": [
-        "Voleu restaurar els vostres arxius?"
+        "Voleu restaurar els vostres fitxers?"
       ],
       "Yes": [
         "Sí"
@@ -2663,7 +2790,7 @@
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
-        "Perdràs tots els canvis sense desar."
+        "Perdreu tots els canvis sense desar."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés ha estat restringit. ${ payInvoiceLink }"
@@ -2678,7 +2805,7 @@
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your files will be encrypted and then saved.": [
-        "Els teus arxius serán cifrats i desats."
+        "Es xifraran els fitxers i després es desaran."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -2698,6 +2825,26 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Diversos contactes semblen idèntics. ${ mergeAction }"
+      ]
+    },
+    "Item": {
+      "file attributes": [
+        "atributs del fitxer"
+      ],
+      "file data": [
+        "dades del fitxer"
+      ],
+      "file data key": [
+        "clau de dades del fitxer"
+      ],
+      "keys": [
+        "claus"
+      ],
+      "name": [
+        "nom"
+      ],
+      "thumbnail": [
+        "miniatura"
       ]
     },
     "Key badge": {
@@ -2743,7 +2890,7 @@
         "Afegir a grup"
       ],
       "Apply to all duplicated files": [
-        "Aplicar a tots els arxius duplicats"
+        "Aplica-ho a tots els fitxers duplicats"
       ],
       "Apply to all duplicated folders": [
         "Aplicar a totes les carpetes duplicades"
@@ -2755,7 +2902,7 @@
         "Fitxer d’àudio"
       ],
       "Automatically save contacts": [
-        "Desar contactes automàticament"
+        "Desa contactes automàticament"
       ],
       "Awful": [
         "Horrible"
@@ -2778,6 +2925,9 @@
       "Category": [
         "Categoria"
       ],
+      "Child sexual abuse material": [
+        "Material d'abús sexual infantil"
+      ],
       "City": [
         "Ciutat"
       ],
@@ -2789,6 +2939,9 @@
       ],
       "Copy": [
         "Copia"
+      ],
+      "Copyright infringement": [
+        "Infracció de drets d'autor"
       ],
       "Country": [
         "País"
@@ -2808,6 +2961,9 @@
       ],
       "Do not ask again": [
         "No m'ho torneu a preguntar"
+      ],
+      "Download anyway": [
+        "Baixa igualment"
       ],
       "Email": [
         "Correu electrònic"
@@ -2843,7 +2999,7 @@
         "Fitxer"
       ],
       "File name": [
-        "Nom d’arxiu"
+        "Nom del fitxer"
       ],
       "Folder": [
         "Carpeta"
@@ -2902,6 +3058,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Malware": [
+        "Programari maliciós"
+      ],
       "Manage categories": [
         "Gestiona les categories"
       ],
@@ -2915,13 +3074,13 @@
         "Fusionar una carpeta"
       ],
       "Modified": [
-        "Modificat"
+        "Modificació"
       ],
       "Move to Archive": [
-        "Moure al Arxiu"
+        "Mou a l'arxiu"
       ],
       "Move to Inbox": [
-        "Moure a la Safata d'entrada"
+        "Mou a la safata d'entrada"
       ],
       "Name": [
         "Nom"
@@ -2953,6 +3112,9 @@
       "Phone number": [
         "Número de telèfon"
       ],
+      "Please provide full details to help us take appropriate action": [
+        "Proporcioneu tots els detalls per a ajudar-nos a actuar de manera apropiada"
+      ],
       "Post office box": [
         "Apartat de correus"
       ],
@@ -2977,8 +3139,14 @@
       "Replace folder": [
         "Substituir carpeta"
       ],
+      "Report Abuse": [
+        "Denuncia abús"
+      ],
       "Reveal password": [
         "Mostra la contrasenya"
+      ],
+      "Select type of abuse": [
+        "Seleccioneu el tipus d'abús"
       ],
       "Set expiration date": [
         "Definir data d'expiració"
@@ -2997,6 +3165,9 @@
       ],
       "Spam": [
         "Correu brossa"
+      ],
+      "Stolen data": [
+        "Dades robades"
       ],
       "Street address": [
         "Adreça"
@@ -3022,6 +3193,9 @@
       "Unlock drive": [
         "Desbloquejar unitat"
       ],
+      "Unlock later": [
+        "Desbloqueja més tard"
+      ],
       "Upload anyway": [
         "Carregar de totes maneres"
       ],
@@ -3035,7 +3209,7 @@
         "Codi de verificació"
       ],
       "Video file": [
-        "Arxiu de vídeo"
+        "Fitxer de vídeo"
       ],
       "What happened?": [
         "Què ha passat?"
@@ -3096,10 +3270,13 @@
         "Paperera"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Millora"
       ],
       "Upgrade account": [
         "Millorar el compte"
+      ],
+      "What’s this?": [
+        "Què és això?"
       ]
     },
     "Loading info": {
@@ -3182,6 +3359,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" moved to trash": [
+        "S'ha mogut «${ name }» a la paperera"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
@@ -3192,7 +3372,7 @@
         "Grup de contactes actualitzat"
       ],
       "Failed to move, please try again": [
-        "No s'ha pogut moure, torna-ho a provar"
+        "No s'ha pogut moure, torneu-ho a provar"
       ],
       "Failed to upload files: ${ err }": [
         "Error carregant fitxers: ${ err }"
@@ -3207,9 +3387,12 @@
       "File or folder is missing a name": [
         "Falta un nom pel fitxer o carpeta"
       ],
+      "Link failed to be loaded": [
+        "No s'ha pogut carregar l'enllaç"
+      ],
       "Move ${ itemsToMoveCount } file": [
-        "Moure ${ itemsToMoveCount } arxiu",
-        "Moure ${ itemsToMoveCount } arxius"
+        "Mou ${ itemsToMoveCount } fitxer",
+        "Mou ${ itemsToMoveCount } fitxers"
       ],
       "Move ${ itemsToMoveCount } folder": [
         "Mou ${ itemsToMoveCount } carpeta",
@@ -3220,8 +3403,8 @@
         "Move ${ itemsToMoveCount } elements"
       ],
       "Move ${ movingCount } file": [
-        "Mou ${ movingCount } arxiu",
-        "Mou ${ movingCount } arxius"
+        "Mou ${ movingCount } fitxer",
+        "Mou ${ movingCount } fitxers"
       ],
       "Move ${ movingCount } folder": [
         "Mou ${ movingCount } carpeta",
@@ -3233,6 +3416,21 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
+      ],
+      "The link to \"${ name }\" was deleted": [
+        "S'ha eliminat l'enllaç a «${ name }»"
+      ],
+      "The link to your item failed to be deleted": [
+        "No s'ha pogut eliminar l'enllaç a l'element"
+      ],
+      "The link to your item was deleted": [
+        "S'ha eliminat l'enllaç a l'element"
+      ],
+      "Your settings failed to be saved": [
+        "No s'ha pogut desar la configuració"
+      ],
+      "Your settings have been changed successfully": [
+        "La configuració s'ha modificat correctament"
       ]
     },
     "Onboarding Action": {
@@ -3244,8 +3442,18 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Crear un enllaç per a compartir"
+      ],
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Comenceu a usar Proton Drive i us duplicarem l'emmagatzematge gratuït a 1 GB!"
+      ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Completeu els següents passos abans d'${ remainingDaysForGift } dia:",
+        "Completeu els següents passos abans de: ${ remainingDaysForGift } dies:"
       ],
       "Upload a file": [
         "Puja un fitxer"
@@ -3274,6 +3482,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Benvingut/da a ${ appName }"
+      ],
+      "Your welcome bonus": [
+        "Bonificació de benvinguda"
       ]
     },
     "Option": {
@@ -3317,6 +3528,9 @@
       ],
       "Enter a new folder name": [
         "Introdueix el nom de la nova carpeta"
+      ],
+      "Enter your email address": [
+        "Introduïu el correu electrònic"
       ],
       "Filter groups": [
         "Filtrar grups"
@@ -3422,6 +3636,12 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
+      ],
+      "Encrypted search is here": [
+        "Ha arribat la cerca xifrada"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
@@ -3481,6 +3701,9 @@
       ],
       "Preferences saved": [
         "Preferències desades"
+      ],
+      "Recovery has started": [
+        "Ha començat la recuperació"
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -3674,7 +3897,7 @@
         "Personalitzeu la importació del vostre correu electrònic"
       ],
       "Date": [
-        "Cita"
+        "Data"
       ],
       "Decrypting": [
         "S'està desxifrant"
@@ -3742,7 +3965,7 @@
         "Preferències de correu electrònic (${ emailAddress })"
       ],
       "Empty trash": [
-        "Buidar paperera"
+        "Buida la paperera"
       ],
       "Enter your password": [
         "Introdueix la teva contrasenya"
@@ -3760,13 +3983,13 @@
         "Comentaris"
       ],
       "File details": [
-        "Detalls de l’arxiu"
+        "Detalls del fitxer"
       ],
       "File recovery process": [
-        "Procés de recuperació d'arxius"
+        "Procés de recuperació de fitxers"
       ],
       "Files details": [
-        "Detalls de l’arxiu"
+        "Detalls dels fitxers"
       ],
       "Folder details": [
         "Detalls de la carpeta"
@@ -3818,10 +4041,10 @@
         "Tipus MIME"
       ],
       "Modified": [
-        "Modificat"
+        "Modificació"
       ],
       "My files": [
-        "Els meus arxius"
+        "Els meus fitxers"
       ],
       "My files ${ date }.zip": [
         "Els meus fitxers ${ date }.zip"
@@ -3872,7 +4095,7 @@
         "Recuperar dades"
       ],
       "Rename a file": [
-        "Renomenar arxiu"
+        "Canvia el nom"
       ],
       "Rename a folder": [
         "Renombrar una carpeta"
@@ -3998,10 +4221,10 @@
         "Novetats"
       ],
       "You have inaccessible files": [
-        "Teniu arxius inaccessibles"
+        "Teniu fitxers inaccessibles"
       ],
       "You have no files to share": [
-        "No tens arxius per compartir"
+        "No teniu fitxers per a compartir"
       ],
       "You have no folders yet": [
         "Encara no tens cap carpeta"
@@ -4058,10 +4281,14 @@
     },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
-        "\"${ str }\" no és un nom vàlid"
+        "«${ str }» no és un nom vàlid"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "El nom no pot incloure caràcters invisibles, / o \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcters"
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"

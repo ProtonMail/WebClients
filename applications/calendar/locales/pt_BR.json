@@ -2048,6 +2048,9 @@
       "Address primary private key not found": [
         "Endereço da chave primária privada não encontrada"
       ],
+      "Already a member of this calendar": [
+        "Já é membro desse calendário"
+      ],
       "Answer failed to be sent": [
         "A resposta falhou ao ser enviada"
       ],
@@ -2188,6 +2191,9 @@
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
+      ],
+      "Not a Proton account": [
+        "Não é um conta Proton"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -3409,6 +3415,9 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Você redefiniu sua senha e os eventos vinculados aos seguintes calendários não puderam ser descriptografados.\nTodos os links de caléndários compartilhados que você criou anteriormente não funcionarão mais.\nTodos os calendários inscritos ativos serão sincronizados novamente após alguns minutos."
       ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Você anteriormente rejeitou esse convite. Pergunte ao proprietário para reenviar o convite"
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3925,6 +3934,9 @@
       ]
     },
     "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Impossível adicionar mais calendários. Você atingiu o limite máximo de calendários pessoais do seu plano."
+      ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Impossível adicionar mais calendários. Você atingiu o limite máximo de inscrições em calendários do seu plano."
       ],
@@ -4554,6 +4566,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Falha ao atualizar configurações"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Para convidar usuários fora do Proton, compartilhe seu calendário com um link"
       ]
     },
     "Share calendar modal input placeholder": {

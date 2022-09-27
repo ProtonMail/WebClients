@@ -549,19 +549,19 @@
         "Mou"
       ],
       "Move all conversations from this folder": [
-        "Moure totes les converses d'aquesta carpeta"
+        "Mou totes les converses d'aquesta carpeta"
       ],
       "Move all conversations from this label": [
-        "Moure totes les converses d'aquesta etiqueta"
+        "Mou totes les converses d'aquesta etiqueta"
       ],
       "Move all messages from this folder": [
-        "Moure tots els missatges d'aquesta carpeta"
+        "Mou tots els missatges d'aquesta carpeta"
       ],
       "Move all messages from this label": [
-        "Moure tots els missatges d'aquesta etiqueta"
+        "Mou tots els missatges d'aquesta etiqueta"
       ],
       "Move all to trash": [
-        "Mou tot a la paperera"
+        "Mou-ho tot a la paperera"
       ],
       "Move to": [
         "Moure a"
@@ -570,7 +570,7 @@
         "Moure a l'arxiu"
       ],
       "Move to inbox": [
-        "Moure a la safata d'entrada"
+        "Mou a la safata d'entrada"
       ],
       "Move to inbox (not spam)": [
         "Moure a la safata d'entrada (no és correu brossa)"
@@ -585,7 +585,7 @@
         "Moure a la paperera"
       ],
       "Move to...": [
-        "Moure a..."
+        "Mou a..."
       ],
       "Need help?": [
         "Necessiteu ajuda?"
@@ -907,7 +907,7 @@
         "Subratllat"
       ],
       "Undo": [
-        "Desfer"
+        "Desfés"
       ],
       "Unlock data": [
         "Desbloqueja les dades"
@@ -943,7 +943,7 @@
         "Actualitzar"
       ],
       "Upgrade now": [
-        "Millorar ara"
+        "Millora ara"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -1084,6 +1084,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversa"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
       ]
     },
     "Alternative text for SimpleLogin image": {
@@ -1227,7 +1232,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar utilitzant ${ MAIL_APP_NAME }."
+        "Continua utilitzant ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1527,6 +1532,12 @@
       "apple": [
         "poma"
       ],
+      "azureish white": [
+        "blanc blavós"
+      ],
+      "blanched almond": [
+        "ametlla blanca"
+      ],
       "blue-gray": [
         "gris blavós"
       ],
@@ -1536,11 +1547,26 @@
       "carrot": [
         "pastanaga"
       ],
+      "cerise": [
+        "vermell cirera"
+      ],
+      "cinnabar": [
+        "vermelló"
+      ],
       "cobalt": [
         "cobalt"
       ],
       "copper": [
         "coure"
+      ],
+      "cyan-blue azure": [
+        "blau cel"
+      ],
+      "dandelion": [
+        "dent de lleó"
+      ],
+      "dark cerulean": [
+        "vermelló fosc"
       ],
       "dark midnight blue": [
         "blau fosc mitjanit"
@@ -1548,8 +1574,20 @@
       "dim gray": [
         "gris suau"
       ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "falguera"
+      ],
+      "field drab": [
+        "camp mongol"
+      ],
       "forest": [
         "bosc"
+      ],
+      "gainsboro": [
+        "gris boira"
       ],
       "japanese laurel": [
         "llorer japonès"
@@ -1563,8 +1601,17 @@
       "light carmine pink": [
         "rosa carmí clar"
       ],
+      "light moss green": [
+        "verd molsa clar"
+      ],
       "light red": [
         "vermell clar"
+      ],
+      "maize": [
+        "dacsa"
+      ],
+      "mughal green": [
+        "verd mogol"
       ],
       "ocean": [
         "oceà"
@@ -1578,8 +1625,29 @@
       "pacific": [
         "pacífic"
       ],
+      "palatinate blue": [
+        "blau palatinat"
+      ],
+      "pale cerulean": [
+        "ceruli pàl·lid"
+      ],
+      "pastel gray": [
+        "gris pastís"
+      ],
+      "persian plum": [
+        "pruna persa"
+      ],
       "persian red": [
         "vermell persa"
+      ],
+      "philippine gray": [
+        "gris filipí"
+      ],
+      "philippine silver": [
+        "plata filipina"
+      ],
+      "pickle": [
+        "cogombre"
       ],
       "pine": [
         "pi"
@@ -1587,11 +1655,20 @@
       "pink": [
         "rosa"
       ],
+      "pistachio": [
+        "pistatxo"
+      ],
       "plum": [
         "pruna"
       ],
       "purple": [
         "porpra"
+      ],
+      "raisin black": [
+        "negre pansa"
+      ],
+      "reef": [
+        "corall"
       ],
       "ruddy pink": [
         "rosa vermellós"
@@ -1599,11 +1676,20 @@
       "sahara": [
         "sahara"
       ],
+      "satin sheen gold": [
+        "daurat setinat"
+      ],
+      "slateblue": [
+        "blau pissarra"
+      ],
       "soil": [
         "terra"
       ],
       "strawberry": [
         "maduixa"
+      ],
+      "vivid auburn": [
+        "castany viu"
       ],
       "white": [
         "blanc"
@@ -3857,6 +3943,9 @@
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
       ],
+      "Content: ": [
+        "Contingut: "
+      ],
       "Continue with ${ planName }": [
         "Continuar amb ${ planName }"
       ],
@@ -4955,16 +5044,16 @@
         "Cap a la dreta / expandir"
       ],
       "Move to Archive": [
-        "Moure al Arxiu"
+        "Moure a l'arxiu"
       ],
       "Move to Inbox": [
-        "Moure a la Safata d'entrada"
+        "Moure a la safata d'entrada"
       ],
       "Move to Spam": [
-        "Moure a Correu brossa"
+        "Moure al correu brossa"
       ],
       "Move to Trash": [
-        "Moure a la Paperera"
+        "Moure a la paperera"
       ],
       "Move to...": [
         "Moure a..."
@@ -5254,10 +5343,10 @@
         "Moure a"
       ],
       "Move to Archive": [
-        "Moure al Arxiu"
+        "Moure a l'arxiu"
       ],
       "Move to Inbox": [
-        "Moure a la Safata d'entrada"
+        "Moure a la safata d'entrada"
       ],
       "Name": [
         "Nom"
@@ -5528,6 +5617,9 @@
       "Outbox": [
         "Safata de sortida"
       ],
+      "paid plan": [
+        "pla de pagament"
+      ],
       "Pay invoice": [
         "Pagar la factura"
       ],
@@ -5572,6 +5664,9 @@
       ],
       "Upgrade account": [
         "Millorar el compte"
+      ],
+      "What’s this?": [
+        "Què és això?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
@@ -5940,7 +6035,7 @@
         "Carpetes per defecte"
       ],
       "Move to...": [
-        "Moure a..."
+        "Mou a..."
       ]
     },
     "Option group label": {
@@ -6294,6 +6389,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
@@ -6709,6 +6807,9 @@
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"
       ],
+      "Block sender": [
+        "Bloqueja l'emissor"
+      ],
       "Carbon Copy": [
         "Copia Carbó"
       ],
@@ -6928,7 +7029,7 @@
         "Moure tots els missatges a la Paperera"
       ],
       "Move to": [
-        "Moure a"
+        "Mou a"
       ],
       "Move to inbox": [
         "Moure a la safata d'entrada"
@@ -6940,7 +7041,7 @@
         "Mou al correu brossa"
       ],
       "Move to trash": [
-        "Moure a la paperera"
+        "Mou a la paperera"
       ],
       "Moving a scheduled message": [
         "Moure un missatge programat"
@@ -7092,6 +7193,9 @@
       ],
       "Unsubscribe": [
         "Cancel·lar la subscripció"
+      ],
+      "Unsubscribe request sent": [
+        "Sol·licitud per a cancel·lar la subscripció enviada"
       ],
       "Upgrade required": [
         "Actualització necessària"

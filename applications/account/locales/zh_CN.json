@@ -4,12 +4,23 @@
     "language": "zh_CN"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "未标记的"
+      ]
+    },
     "Access level": {
       "Full view": [
         "完整视图"
       ],
+      "Full view (see all event details)": [
+        "允许查看所有日程详情"
+      ],
       "Limited view": [
         "简视图"
+      ],
+      "Limited view (see only free/busy)": [
+        "只允许查看是否空闲"
       ]
     },
     "Action": {
@@ -92,7 +103,7 @@
         "应用"
       ],
       "Apply to existing message": [
-        "对现有邮件执行筛选规则"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "添加截图"
@@ -873,6 +884,16 @@
         "免费试用 30 天"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "接受"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "拒绝"
+      ]
+    },
     "Addon": {
       "+ ${ _users } user": [
         "+${ _users } 位用户"
@@ -986,6 +1007,9 @@
     "Badge": {
       "5 users": [
         "5 名用户"
+      ],
+      "Coming soon": [
+        "即将推出"
       ]
     },
     "Badge for domain": {
@@ -1159,9 +1183,23 @@
         "您可以将其他日历的 ICS 文件导入到 ${ CALENDAR_APP_NAME }，方便您快速导入一个日程或整个议程。"
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "已拒绝"
+      ],
+      "Invite sent": [
+        "邀请已发送"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "您已达到您账户等级所能创建的个人日历数上限。"
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "您的个人日历数量已达上限，必须移除部分现有日历才能接受其他日历邀请。"
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "您的共享日历数量已达上限，必须移除部分现有日历才能接受其他日历邀请。"
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "您已达到订阅日历的最大值 ${ MAX_SUBSCRIBED_CALENDARS } 个。"
@@ -1178,9 +1216,71 @@
         "标签已编辑"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "标签只对您可见"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "您可以随时更改或移除权限"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "权限"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "您已拥有查看此日历的权限"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "创建日历链接与非 Proton 用户分享。只有您可以添加或删除日程。"
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "与其他 Proton 用户分享您的日历，还可以允许协作添加或更改日程，每位用户的权限都能随时调整。"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "共享日历"
+      ],
+      "Share outside Proton": [
+        "第三方分享"
+      ],
+      "Share with anyone": [
+        "分享至他人"
+      ],
+      "Share with Proton users": [
+        "分享至 Proton 用户"
+      ]
+    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "显示更多 ${ remainingItems }"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "查看所有事件详情"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "编辑（查看、创建、编辑日程详情）"
+      ],
+      "Full view (see all event details)": [
+        "允许查看所有日程详情"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "${ email } 的权限已更改"
       ]
     },
     "Calendar status": {
@@ -1238,6 +1338,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "打开设置"
       ]
     },
     "Calendar view": {
@@ -2652,6 +2757,9 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "已分配所有存储空间。请减少分配给其他用户的存储空间。"
       ],
+      "Already a member of this calendar": [
+        "用户已经在此日历中"
+      ],
       "Amount above the maximum.": [
         "金额太大。"
       ],
@@ -3578,6 +3686,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "权限"
+      ],
       "Action": [
         "操作"
       ],
@@ -3607,6 +3718,9 @@
       ],
       "Organization key fingerprint": [
         "机构密钥指纹"
+      ],
+      "Permissions": [
+        "权限"
       ],
       "Status": [
         "状态"
@@ -4315,7 +4429,7 @@
         "并"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "任何有此链接的人都可以查看此日历的所有事件详情。例如标题、地点或参与者。"
+        "只要持有此链接就能查看所有日程的详细信息，包括标题、地点、参与者等。"
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
@@ -5833,6 +5947,14 @@
         "为避免欠费导致服务中断，请确保账户中随时都有一种有效的支付方式。"
       ]
     },
+    "Input label": {
+      "Access": [
+        "权限"
+      ],
+      "Label (optional)": [
+        "标签（可选）"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "添加标签"
@@ -7267,6 +7389,11 @@
         "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接。要对该日历新建链接，请先从下方列表中删除一个。"
       ]
     },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "成员数量不能超过 ${ MAX_CALENDAR_MEMBERS } 人。"
+      ]
+    },
     "Member action": {
       "Delete": [
         "删除"
@@ -7808,26 +7935,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7894,6 +8001,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -8193,6 +8320,28 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 账号密码已重新生成"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "邀请已删除"
+      ],
+      "Invitation revoked": [
+        "邀请已撤销"
+      ],
+      "Member added": [
+        "成员已添加"
+      ],
+      "Member deleted": [
+        "成员已删除"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "拒绝日历邀请"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "已加入 ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -8808,9 +8957,28 @@
         "安全性较强"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "取消订阅后，您将无法再访问此日历。此日历中的所有事件都将从账户中删除，但它们仍将保留在原始的公开链接中。"
+      ],
+      "You will no longer have access to this calendar.": [
+        "您将无法再访问此日历。"
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "移除日历后，您需要向其所有者申请才能重新加入。"
+      ],
+      "This calendar will be removed from your account.": [
+        "此日历将会从您的账号中移除。"
+      ]
+    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "删除日历?"
+      ],
+      "Leave calendar?": [
+        "移除日历？"
       ],
       "Remove calendar": [
         "移除日历"
@@ -8908,6 +9076,31 @@
       ],
       "Labels": [
         "标签"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "分享日历链接即可邀请非 Proton 用户"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "您已超过每个日历最多 ${ MAX_CALENDAR_MEMBERS } 成员的上限。"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "添加您想分享 ${ calendarName } 的用户账号，我们会为您发送邀请。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "添加用户或群组"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "分享至 Proton 用户"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -9334,6 +9527,11 @@
         "面向个人"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "与我共享"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "操作"
@@ -9633,6 +9831,9 @@
       ],
       "Create multiple user accounts": [
         "创建多个账户"
+      ],
+      "Create public link": [
+        "创建公共链接"
       ],
       "Create user accounts": [
         "创建账户"
@@ -10462,6 +10663,9 @@
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "升级到付费套餐以创建至多 ${ MAX_CALENDARS_PAID } 个日历，让您工作、社交、生活全不误。"
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "升级套餐即可分享您的日历。"
       ]
     },
     "User referee invited via email": {

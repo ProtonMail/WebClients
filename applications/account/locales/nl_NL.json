@@ -92,7 +92,7 @@
         "Toepassen"
       ],
       "Apply to existing message": [
-        "Toepassen op alle bestaande berichten"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
@@ -644,7 +644,7 @@
         "Zoekinstellingen"
       ],
       "See plan features": [
-        "Bekijk abonnementfuncties"
+        "Bekijk de abonnementskenmerken"
       ],
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
@@ -2391,7 +2391,7 @@
         "Het lijkt erop dat in uw bestand de 'EmailAddresses'-header ontbreekt."
       ],
       "It looks like your file is missing the 'Password' header.": [
-        "Het lijkt erop dat in uw bestand de 'Wachtwoord'-header ontbreekt."
+        "Het lijkt erop dat in uw bestand de 'Password'-header ontbreekt."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "We hebben fouten ontdekt in meerdere rijen tijdens het importeren, controleer uw CSV-bestand."
@@ -3040,7 +3040,7 @@
         "U heeft geen facturen."
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda."
+        "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -5240,7 +5240,7 @@
         "Herstelzin instellen"
       ],
       "Setting up your Drive": [
-        "Uw Drive wordt aangemaakt"
+        "Uw Drive aan het instellen"
       ],
       "Show original message": [
         "Toon het originele bericht"
@@ -5311,7 +5311,7 @@
       ],
       "The following address is unavailable.": [
         "Het volgende adres is niet beschikbaar.",
-        "De volgende adressen zijn onbeschikbaar."
+        "De volgende adressen zijn niet beschikbaar."
       ],
       "The format of your CSV file is incorrect.": [
         "Het formaat van uw CSV-bestand is onjuist."
@@ -7870,26 +7870,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -7956,6 +7936,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8563,7 +8563,7 @@
         "${ upgradeLink } om meer gebruikers toe te voegen, of enkele gebruikersaccounts te verwijderen om ruimte vrij te maken."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } om meer accounts te krijgen, of de VPN toegang van sommige gebruikers te verwijderen."
+        "${ upgradeLink } om meer accounts te krijgen, of de VPN toegang van sommige gebruikers verwijderen."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
         "${ upgradeLink } om meer adressen te krijgen, of enkele adressen te verwijderen om ruimte vrij te maken."
@@ -8581,7 +8581,7 @@
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
         "Uw abonnement bevat een maximum van ${ availableVPNAccess } VPN-account.",
-        "Uw abonnement bevat een maximum van ${ availableVPNAccess } VPN-adressen."
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } VPN-accounts."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
         "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } opslag."
@@ -9712,7 +9712,7 @@
         "Doorgaan met gedeeltelijke invoer?"
       ],
       "Couldn’t create accounts": [
-        "Kan geen accounts aanmaken"
+        "Kon geen accounts aanmaken"
       ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Maak een ${ MAIL_APP_NAME }-adres"
@@ -9730,7 +9730,7 @@
         "Maak uw ${ BRAND_NAME }-account"
       ],
       "Creating user accounts": [
-        "Gebruikersaccounts aanmaken"
+        "Gebruikersaccounts aan het maken"
       ],
       "Credentials": [
         "Inloggegevens"
@@ -10208,8 +10208,8 @@
         "Succes"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Succesvol ${ successfullyCreatedUsers.length } gebruikersaccount aangemaakt",
-        "Succesvol ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
+        "Met succes een gebruikersaccount aangemaakt",
+        "Met succes ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
       ],
       "Switch to one-password mode": [
         "Overschakelen naar één-wachtwoord modus"
