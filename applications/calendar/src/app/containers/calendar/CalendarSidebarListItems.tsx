@@ -139,6 +139,7 @@ const CalendarSidebarListItems = ({
     const result = calendars.map((calendar, i) => {
         const { ID, Name, Display, Color } = calendar;
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
+        const isOwnedCalendar = getIsOwnedCalendar(calendar);
 
         const left = (
             <Checkbox
@@ -182,6 +183,13 @@ const CalendarSidebarListItems = ({
                                     <div className="flex-item-noshrink">
                                         &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
                                     </div>
+                                )}
+                                {!isOwnedCalendar && (
+                                    <Tooltip title={c('Calendar sidebar; Calendar info').t`Shared with me`}>
+                                        <div className="flex-item-noshrink ml0-25">
+                                            <Icon name="users" />
+                                        </div>
+                                    </Tooltip>
                                 )}
                             </div>
 
