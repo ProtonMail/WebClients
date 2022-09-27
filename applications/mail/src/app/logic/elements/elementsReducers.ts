@@ -52,12 +52,18 @@ export const retry = (
     state.retry = newRetry(state.retry, action.payload.queryParameters, action.payload.error);
 };
 
+const hasSameMode = (state: Draft<ElementsState>, arg: QueryParams) => {
+    return state.params.conversationMode === arg.params.conversationMode;
+};
+
 export const loadPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<undefined, string, { arg: QueryParams }>
 ) => {
-    state.pendingRequest = true;
-    state.page = action.meta.arg.page;
+    if (hasSameMode(state, action.meta.arg)) {
+        state.pendingRequest = true;
+        state.page = action.meta.arg.page;
+    }
 };
 
 export const loadFulfilled = (
@@ -69,18 +75,19 @@ export const loadFulfilled = (
         result: { Total, Elements },
         taskRunning,
     } = action.payload;
-
-    Object.assign(state, {
-        beforeFirstLoad: false,
-        invalidated: false,
-        pendingRequest: false,
-        page,
-        total: Total,
-        retry: newRetry(state.retry, params, undefined),
-    });
-    state.pages.push(page);
-    Object.assign(state.elements, toMap(Elements, 'ID'));
-    state.taskRunning = taskRunning;
+    if (hasSameMode(state, action.meta.arg)) {
+        Object.assign(state, {
+            beforeFirstLoad: false,
+            invalidated: false,
+            pendingRequest: false,
+            page,
+            total: Total,
+            retry: newRetry(state.retry, params, undefined),
+        });
+        state.pages.push(page);
+        Object.assign(state.elements, toMap(Elements, 'ID'));
+        state.taskRunning = taskRunning;
+    }
 };
 
 export const manualPending = (state: Draft<ElementsState>) => {
