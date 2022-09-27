@@ -9,28 +9,49 @@ export const isSpamEmail = (item: SpamItem) => 'email' in item;
 
 type ApiCallState = 'success' | 'fail';
 export const getNotificationByAction = (action: SpamListActionName, apiCallstate: ApiCallState, item: SpamItem) => {
-    const name = 'domain' in item ? item.domain : item.email;
+    const isDomain = 'domain' in item;
+    const name = isDomain ? item.domain : item.email;
 
     const translationsMap: Record<SpamListActionName, Record<ApiCallState, string>> = {
         block: {
-            fail: c('Spam notification').t`${name} failed to move to Block List`,
-            success: c('Spam notification').t`${name} moved to Block List`,
+            fail: isDomain
+                ? c('Domain spam notification').t`${name} failed to move to Block List`
+                : c('Email spam notification').t`${name} failed to move to Block List`,
+            success: isDomain
+                ? c('Domain spam notification').t`${name} moved to Block List`
+                : c('Email spam notification').t`${name} moved to Block List`,
         },
         delete: {
-            fail: c('Spam notification').t`${name} deletion failed`,
-            success: c('Spam notification').t`${name} successfully deleted`,
+            fail: isDomain
+                ? c('Domain spam notification').t`${name} deletion failed`
+                : c('Email spam notification').t`${name} deletion failed`,
+            success: isDomain
+                ? c('Domain spam notification').t`${name} successfully deleted`
+                : c('Email spam notification').t`${name} successfully deleted`,
         },
         unblock: {
-            fail: c('Spam notification').t`${name} deletion failed`,
-            success: c('Spam notification').t`${name} successfully deleted`,
+            fail: isDomain
+                ? c('Domain spam notification').t`${name} deletion failed`
+                : c('Email spam notification').t`${name} deletion failed`,
+            success: isDomain
+                ? c('Domain spam notification').t`${name} successfully deleted`
+                : c('Email spam notification').t`${name} successfully deleted`,
         },
         spam: {
-            fail: c('Spam notification').t`${name} failed to move to Spam List`,
-            success: c('Spam notification').t`${name} moved to Spam list`,
+            fail: isDomain
+                ? c('Domain spam notification').t`${name} failed to move to Spam List`
+                : c('Email spam notification').t`${name} failed to move to Spam List`,
+            success: isDomain
+                ? c('Domain spam notification').t`${name} moved to Spam list`
+                : c('Email spam notification').t`${name} moved to Spam list`,
         },
         unspam: {
-            fail: c('Spam notification').t`${name} failed to move to Non spam List`,
-            success: c('Spam notification').t`${name} moved to Non spam list`,
+            fail: isDomain
+                ? c('Domain spam notification').t`${name} failed to move to Non spam List`
+                : c('Email spam notification').t`${name} failed to move to Non spam List`,
+            success: isDomain
+                ? c('Domain spam notification').t`${name} moved to Non spam list`
+                : c('Email spam notification').t`${name} moved to Non spam list`,
         },
     };
 
