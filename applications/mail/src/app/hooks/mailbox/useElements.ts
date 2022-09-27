@@ -85,7 +85,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const globalCache = useCache();
 
-    const params = { labelID, conversationMode, page, sort, filter, search, esEnabled };
+    const params = { labelID, conversationMode, sort, filter, search, esEnabled };
     const counts = { counts: countValues, loading: countsLoading };
 
     const stateParams = useSelector(paramsSelector);

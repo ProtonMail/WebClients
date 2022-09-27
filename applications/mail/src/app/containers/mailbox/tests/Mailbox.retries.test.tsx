@@ -58,7 +58,7 @@ describe('Mailbox retries and waitings', () => {
             await wait(10000);
         });
 
-        expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
+        expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
         expectElements(getItems, conversations.length, false);
     });
 
