@@ -75,7 +75,10 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
             return [...trimmedText.matchAll(/url\(\/(assets\/[^)]+)\)/g)]
                 .map((matchArray) => {
                     const [all, match] = matchArray;
-                    const newUrl = new URL(match, window.location.origin).toString();
+                    const newUrl = new URL(match, window.location.origin);
+                    // Chrome uses the cached font response making CORS fail.
+                    // Cache bust it by adding a query parameter.
+                    newUrl.searchParams.set('t', `${Date.now()}`);
                     return {
                         all,
                         newUrl: newUrl.toString(),
