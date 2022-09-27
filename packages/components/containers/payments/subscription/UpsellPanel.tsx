@@ -71,7 +71,6 @@ interface Item {
 }
 
 interface Props {
-    drivePlanEnabled: boolean;
     app: APP_NAMES;
     currency: Currency;
     subscription?: Subscription;
@@ -100,7 +99,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app, drivePlanEnabled }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -193,7 +192,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
 
     const drivePlan = plans.find(({ Name }) => Name === PLANS.DRIVE);
     // Drive upsell
-    if (user.isFree && app === APPS.PROTONDRIVE && drivePlan && drivePlanEnabled) {
+    if (user.isFree && app === APPS.PROTONDRIVE && drivePlan) {
         const plan = drivePlan;
         const features = getDrivePlan(plan).features;
 
