@@ -18,7 +18,7 @@
     "resolutions": {
         "@noble/ed25519@1.6.1": "patch:@noble/ed25519@npm:1.6.1#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0",
         "@types/jest": "^27.5.2",
-        "@types/react": "^17.0.48",
+        "@types/react": "^17.0.50",
         "@types/react-dom": "^17.0.17",
         "safe-buffer": "^5.2.1"
     },
@@ -28,7 +28,7 @@
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
         "is-ci": "^3.0.1",
         "stylelint-use-logical-spec": "^4.1.0",
-        "typescript": "^4.7.4"
+        "typescript": "^4.8.4"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^3.3.0",
@@ -37,8 +37,8 @@
         "prettier": "^2.7.1",
         "sort-package-json": "^1.57.0"
     },
-    "packageManager": "yarn@3.2.2",
+    "packageManager": "yarn@3.2.3",
     "engines": {
-        "node": ">= v16.16.0"
+        "node": ">= v16.17.1"
     }
 }
