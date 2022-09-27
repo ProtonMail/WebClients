@@ -545,6 +545,9 @@
       "Upload file": [
         "ファイルをアップロード"
       ],
+      "Upload files": [
+        "ファイルをアップロード"
+      ],
       "Upload folder": [
         "フォルダーをアップロード"
       ],
@@ -2774,6 +2777,9 @@
       ],
       "This will overwrite the existing folder": [
         "存在するフォルダーを上書きします"
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成することで、本当の意味でのプライベート検索を実現します。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"

@@ -504,6 +504,11 @@
         "Так, я долучуся"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Будь-хто може переглянути ваш календар за посиланням"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } або ${ importContact }."
@@ -757,9 +762,19 @@
         "Лише ви можете бачити мітку"
       ]
     },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Ви можете змінити або вилучити дозволи будь-коли."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Дозволи"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Ви вже маєте доступ до цього календаря"
       ]
     },
     "Calendar share limit modal": {
@@ -2027,6 +2042,9 @@
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
+      "Already a member of this calendar": [
+        "Уже учасник цього календаря"
+      ],
       "Answer failed to be sent": [
         "Не вдалося надіслати відповідь"
       ],
@@ -2293,6 +2311,9 @@
       ],
       "Unknown error": [
         "Невідома помилка"
+      ],
+      "Validation error": [
+        "Помилка перевірки"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ви не можете надіслати лист понад 100 отримувачам"
@@ -3442,6 +3463,9 @@
       "Yearly": [
         "Щороку"
       ],
+      "You already joined this calendar": [
+        "Ви вже приєдналися до цього календаря"
+      ],
       "You are about to open another browser tab and visit:": [
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
@@ -3465,6 +3489,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Ви скинули свій пароль, а події, пов'язані з цими календарями, не можуть бути розшифровані.\nБудь-які посилання на календарі, якими ви поділились, надалі не працюватимуть.\nБудь-які активні календарі, на які ви підписані знову синхронізуються за кілька хвилин."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Ви раніше відхилили це запрошення. Зверніться до власника з проханням про повторне запрошення"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли ${ spaceDisplayed }% свого обсягу сховища. ${ freeUpMessage } ${ upgradeLink }"
@@ -3988,6 +4015,9 @@
       ]
     },
     "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Не можливо додати більше календарів. Ви досягли максимальної кількості особистих календарів для свого плану."
+      ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Не вдалося додати інші календарі. Ви досягли обмеження підписних календарів для свого тарифного плану."
       ]
@@ -3998,6 +4028,9 @@
       ]
     },
     "Modal title": {
+      "Share calendar": [
+        "Поширити календар"
+      ],
       "Time zone changed": [
         "Часовий пояс змінено"
       ],
@@ -4657,6 +4690,11 @@
         "Не вдалося оновити налаштування"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Додати людей чи групи"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Керувати календарем"
@@ -5062,6 +5100,9 @@
       ],
       "Create new group": [
         "Створити нову групу"
+      ],
+      "Create public link": [
+        "Створити загальнодоступне посилання"
       ],
       "Currency": [
         "Валюта"

@@ -91,6 +91,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Apply to existing message": [
+        "Apply to existing messages"
+      ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
       ],
@@ -719,13 +722,13 @@
         "Actualitza"
       ],
       "Update recovery file": [
-        "Actualitzar el fitxer de recuperació"
+        "Actualitza el fitxer de recuperació"
       ],
       "Update recovery phrase": [
-        "Actualitzar la frase de recuperació"
+        "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Millora"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -1029,7 +1032,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar utilitzant ${ MAIL_APP_NAME }."
+        "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Copia"
@@ -1119,6 +1122,12 @@
       "apple": [
         "poma"
       ],
+      "azureish white": [
+        "blanc blavós"
+      ],
+      "blanched almond": [
+        "ametlla blanca"
+      ],
       "blue-gray": [
         "gris blavós"
       ],
@@ -1128,11 +1137,26 @@
       "carrot": [
         "pastanaga"
       ],
+      "cerise": [
+        "vermell cirera"
+      ],
+      "cinnabar": [
+        "vermelló"
+      ],
       "cobalt": [
         "cobalt"
       ],
       "copper": [
         "coure"
+      ],
+      "cyan-blue azure": [
+        "blau cel"
+      ],
+      "dandelion": [
+        "dent de lleó"
+      ],
+      "dark cerulean": [
+        "vermelló fosc"
       ],
       "dark midnight blue": [
         "blau fosc mitjanit"
@@ -1140,8 +1164,20 @@
       "dim gray": [
         "gris suau"
       ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "falguera"
+      ],
+      "field drab": [
+        "camp mongol"
+      ],
       "forest": [
         "bosc"
+      ],
+      "gainsboro": [
+        "gris boira"
       ],
       "japanese laurel": [
         "llorer japonès"
@@ -1155,8 +1191,17 @@
       "light carmine pink": [
         "rosa carmí clar"
       ],
+      "light moss green": [
+        "verd molsa clar"
+      ],
       "light red": [
         "vermell clar"
+      ],
+      "maize": [
+        "dacsa"
+      ],
+      "mughal green": [
+        "verd mogol"
       ],
       "ocean": [
         "oceà"
@@ -1170,8 +1215,29 @@
       "pacific": [
         "pacífic"
       ],
+      "palatinate blue": [
+        "blau palatinat"
+      ],
+      "pale cerulean": [
+        "ceruli pàl·lid"
+      ],
+      "pastel gray": [
+        "gris pastís"
+      ],
+      "persian plum": [
+        "pruna persa"
+      ],
       "persian red": [
         "vermell persa"
+      ],
+      "philippine gray": [
+        "gris filipí"
+      ],
+      "philippine silver": [
+        "plata filipina"
+      ],
+      "pickle": [
+        "cogombre"
       ],
       "pine": [
         "pi"
@@ -1179,11 +1245,20 @@
       "pink": [
         "rosa"
       ],
+      "pistachio": [
+        "pistatxo"
+      ],
       "plum": [
         "pruna"
       ],
       "purple": [
         "porpra"
+      ],
+      "raisin black": [
+        "negre pansa"
+      ],
+      "reef": [
+        "corall"
       ],
       "ruddy pink": [
         "rosa vermellós"
@@ -1191,11 +1266,20 @@
       "sahara": [
         "sahara"
       ],
+      "satin sheen gold": [
+        "daurat setinat"
+      ],
+      "slateblue": [
+        "blau pissarra"
+      ],
       "soil": [
         "terra"
       ],
       "strawberry": [
         "maduixa"
+      ],
+      "vivid auburn": [
+        "castany viu"
       ],
       "white": [
         "blanc"
@@ -3770,6 +3854,9 @@
       "Create in": [
         "Crea a"
       ],
+      "Creating your account": [
+        "S'està creant el compte"
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualment tot l'emmagatzematge disponible està assignat al compte d'administrador. Si us plau reduïu l'assignació a aquest compte per fer espai per altres usuaris. Podeu ampliar l'espai total sempre que vulgueu mitjançant l'actualització del compte."
       ],
@@ -4281,6 +4368,9 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escaneja aquest codi Qr amb el teu disposiu d'autenticació en dos passos per a configurar el vostre compte. ${ switchButton }."
       ],
+      "Securing your account": [
+        "S'està protegint el compte"
+      ],
       "Select a service provider to start": [
         "Seleccioneu un proveïdor de serveis per començar"
       ],
@@ -4304,6 +4394,9 @@
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Setting up your Drive": [
+        "S'està configurant el Drive"
       ],
       "Show original message": [
         "Mostra el missatge original"
@@ -4425,6 +4518,9 @@
       "Total email addresses": [
         "Adreces de correu totals"
       ],
+      "Total storage": [
+        "Emmagatzematge"
+      ],
       "Total supported domains": [
         "Dominis suportats totals"
       ],
@@ -4487,6 +4583,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una nova pestanya, si us plau, desactiveu els bloquejadors emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
+      ],
+      "Verifying your payment": [
+        "S'està verificant el pagament"
       ],
       "Warning:": [
         "Atenció:"
@@ -5425,10 +5524,10 @@
         "Moure a"
       ],
       "Move to Archive": [
-        "Moure al Arxiu"
+        "Moure a l'arxiu"
       ],
       "Move to Inbox": [
-        "Moure a la Safata d'entrada"
+        "Moure a la safata d'entrada"
       ],
       "Name": [
         "Nom"
@@ -5650,7 +5749,7 @@
         "Mode de dues contrasenyes"
       ],
       "Undo send": [
-        "Desfer l'enviament"
+        "Desfés l'enviament"
       ],
       "Upload 1 or more encryption keys": [
         "Pengeu 1 o més claus de xifratge"
@@ -5909,16 +6008,22 @@
         "Termes"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Millora"
       ],
       "Upgrade account": [
         "Millorar el compte"
+      ],
+      "Upgrade your plan": [
+        "Milloreu el vostre pla"
       ],
       "View guide": [
         "Veure la guia"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quina és la diferència entre els protocols UDP i TCP?"
+      ],
+      "What’s this?": [
+        "Què és això?"
       ]
     },
     "Loading info": {
@@ -6171,7 +6276,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Millorar ara"
+        "Millora ara"
       ]
     },
     "new_plans: action": {
@@ -6189,6 +6294,9 @@
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "Millora a ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: feature": {
@@ -6199,6 +6307,12 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "${ size } storage": [
+        "${ size } d'emmagatzematge"
+      ],
+      "${ size } storage per user": [
+        "${ size } emmagatzematge per usuari"
       ],
       "Auto-reply": [
         "Resposta automàtica"
@@ -6253,6 +6367,11 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
+      ]
+    },
+    "new_plans: Title": {
+      "Upgrade to ${ planName }": [
+        "Milloreu a ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -6880,6 +6999,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
@@ -7214,6 +7336,9 @@
       ],
       "Status": [
         "Estat"
+      ],
+      "Total storage": [
+        "Emmagatzematge"
       ],
       "Values": [
         "Valors"

@@ -1680,6 +1680,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again.": [
+        "出错了，请重试。"
+      ],
       "Authentication canceled.": [
         "验证被取消。"
       ],
@@ -1790,6 +1793,9 @@
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
+      ],
+      "Please activate your search again": [
+        "请重新进行搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2673,7 +2679,7 @@
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人"
       ],
       "Preparing link to file": [
-        "文件链接预备中"
+        "正在准备文件链接"
       ],
       "Preparing link to folder": [
         "正在准备文件夹链接"
@@ -2743,6 +2749,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的共享链接"
+      ],
+      "Shared link failed to be loaded": [
+        "分享链接加载失败"
       ],
       "Signature check will be ignored": [
         "将忽略签名校验"
@@ -2814,7 +2823,7 @@
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "此链接是通过旧网盘版本创建的，且无法修改。请删除此链接并创建一个新链接以更改设置。"
+        "此链接是通过旧版本网盘创建的，因此无法更改。如需调整设置，请删除此链接后重新创建。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"

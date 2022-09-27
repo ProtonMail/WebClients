@@ -4,6 +4,14 @@
     "language": "zh_CN"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "允许查看所有日程详情"
+      ],
+      "Limited view (see only free/busy)": [
+        "只允许查看是否空闲"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
@@ -498,6 +506,22 @@
         "是，我将参加"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "任何获得此链接的人都能访问您的日历"
+      ],
+      "They can view or edit your calendar": [
+        "其他日历用户可查看或编辑您的日历"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "分享至他人"
+      ],
+      "Share with Proton users": [
+        "分享至 Proton 用户"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } 或者 ${ importContact }"
@@ -616,6 +640,11 @@
     "Attendee role": {
       "Optional": [
         "选填"
+      ]
+    },
+    "Badge": {
+      "Coming soon": [
+        "即将推出"
       ]
     },
     "Beta access description": {
@@ -739,6 +768,54 @@
       ],
       "You tentatively accepted the invitation": [
         "您暂时接受了邀请"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "标签只对您可见"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "您可以随时更改或移除权限"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "权限"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "您已拥有查看此日历的权限"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "管理链接"
+      ],
+      "Manage members": [
+        "管理成员"
+      ],
+      "Unable to create more calendar links": [
+        "无法创建更多日历链接"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "无法与更多 Proton 用户分享此日历"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "一份日历最多只能有 ${ MAX_CALENDAR_MEMBERS } 人加入，请删除部分现有成员后再与其他 Proton 用户分享此日历。"
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "你已经达到了该日历最大${ MAX_LINKS_PER_CALENDAR } 链接数。\n若要创建此日历的新链接，请删除一个现有的链接。"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "编辑（查看、创建、编辑日程详情）"
+      ],
+      "Full view (see all event details)": [
+        "允许查看所有日程详情"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1968,6 +2045,9 @@
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
+      "Already a member of this calendar": [
+        "用户已经在此日历中"
+      ],
       "Answer failed to be sent": [
         "答复发送失败"
       ],
@@ -2237,6 +2317,11 @@
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行"
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "邀请地址不存在"
       ]
     },
     "Error importing calendar": {
@@ -2829,7 +2914,7 @@
         "和"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "任何有此链接的人都可以查看此日历的所有事件详情。例如标题、地点或参与者。"
+        "只要持有此链接就能查看所有日程的详细信息，包括标题、地点、参与者等。"
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
@@ -3254,6 +3339,9 @@
       "Yearly": [
         "按年付费"
       ],
+      "You already joined this calendar": [
+        "你已经加入了该日历"
+      ],
       "You are about to open another browser tab and visit:": [
         "您即将在新标签页中打开："
       ],
@@ -3277,6 +3365,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "您已重置了密码，无法解密链接到以下日历的事件。\n您之前创建的任何共享日历链接将不再有效。\n任何激活的订阅日历将在几分钟后再次同步。"
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "你之前拒绝了这个邀请。请向所有者要求获得重新邀请"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
@@ -3344,6 +3435,14 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "多名联系人重复。${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "权限"
+      ],
+      "Label (optional)": [
+        "标签（可选）"
       ]
     },
     "Input placeholder": {
@@ -3782,12 +3881,34 @@
         "管理日历"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "无法添加更多的日历，因为您已经达到套餐中个人日历最大值。"
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "无法添加更多日历。你已经达到了计划内订阅日历的上限。"
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "无法创建更多的日历。你已经达到了计划中个人日历的上限。"
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } 与你分享其日历 ${ boldCalendarName } 。"
+      ]
+    },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "加入日历"
+      ],
+      "Unable to join more calendars": [
+        "无法添加更多日历"
       ]
     },
     "Modal title": {
+      "Share calendar": [
+        "共享日历"
+      ],
       "Time zone changed": [
         "时区已更改"
       ],
@@ -3972,6 +4093,19 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "成员已添加"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "拒绝日历邀请"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "已加入 ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4350,6 +4484,31 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "未能更新设置"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "分享日历链接即可邀请非 Proton 用户"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "您已超过每个日历最多 ${ MAX_CALENDAR_MEMBERS } 成员的上限。"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "添加您想分享 ${ calendarName } 的用户账号，我们会为您发送邀请。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "添加用户或群组"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "分享至 Proton 用户"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4739,6 +4898,9 @@
       ],
       "Create new group": [
         "创建新群组"
+      ],
+      "Create public link": [
+        "创建公共链接"
       ],
       "Currency": [
         "货币"
@@ -5134,6 +5296,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "若要访问此共享日历，请启用此地址，或请求 ${ boldCalendarOwnerEmail } 向活动地址发送邀请链接。"
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "因为邀请邮件地址 (${ boldInvitedAddress }) 无效，您无法加入此日历。"
       ]
     },
     "Weekly recurring event, frequency": {

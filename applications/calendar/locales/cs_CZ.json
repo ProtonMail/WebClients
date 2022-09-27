@@ -618,6 +618,11 @@
         "Volitelné"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Již brzy"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Beta přístup vám umožní používat beta verze aplikací ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME } před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
@@ -739,6 +744,24 @@
       ],
       "You tentatively accepted the invitation": [
         "Nezávazně jste přijal(a) pozvání"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Oprávnění"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Již máte přístup k tomuto kalendáři"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Správa odkazů"
+      ],
+      "Manage members": [
+        "Spravovat členy"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1992,8 +2015,14 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
+      "Account does not exist": [
+        "Účet neexistuje"
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nebyl nalezen"
+      ],
+      "Already a member of this calendar": [
+        "Jste již členem tohoto kalendáře"
       ],
       "Answer failed to be sent": [
         "Odpověď se nepodařilo odeslat"
@@ -2255,6 +2284,9 @@
       ],
       "Unknown error": [
         "Neznámá chyba"
+      ],
+      "Validation error": [
+        "Chyba ověření"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
@@ -3404,6 +3436,9 @@
       "Yearly": [
         "Ročně"
       ],
+      "You already joined this calendar": [
+        "Již jste se připojili k tomuto kalendáři"
+      ],
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít další záložku prohlížeče a navštívit odkaz:"
       ],
@@ -3494,6 +3529,11 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Několik kontaktů vypadá stejně. ${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Přístup"
       ]
     },
     "Input placeholder": {
@@ -3942,6 +3982,9 @@
       ]
     },
     "Modal title": {
+      "Share calendar": [
+        "Sdílet kalendář"
+      ],
       "Time zone changed": [
         "Časové pásmo se změnilo"
       ],
@@ -4593,6 +4636,11 @@
         "Aktualizace nastavení se nezdařila"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Přidal lidi nebo skupiny"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Spravovat kalendář"
@@ -4998,6 +5046,9 @@
       ],
       "Create new group": [
         "Vytvořit novou skupinu"
+      ],
+      "Create public link": [
+        "Vytvořit veřejný odkaz"
       ],
       "Currency": [
         "Měna"

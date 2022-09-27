@@ -84,7 +84,7 @@
         "套用"
       ],
       "Apply to existing message": [
-        "套用至現有的訊息"
+        "Apply to existing messages"
       ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
@@ -956,6 +956,9 @@
     "Badge": {
       "5 users": [
         "5 個使用者"
+      ],
+      "Coming soon": [
+        "敬請期待"
       ]
     },
     "Badge for domain": {
@@ -1098,6 +1101,24 @@
     "Calendar access select label": {
       "Email address": [
         "電郵位址"
+      ]
+    },
+    "Calendar invite status label": {
+      "Declined": [
+        "已拒絕"
+      ],
+      "Invite sent": [
+        "邀請傳送"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "權限"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "共享行事曆"
       ]
     },
     "Calendar status": {
@@ -2413,6 +2434,9 @@
       "A group with this name already exists": [
         "以此為名的群組已存在"
       ],
+      "Account does not exist": [
+        "帳號不存在"
+      ],
       "Address primary private key not found": [
         "找不到位址主要金鑰"
       ],
@@ -2575,6 +2599,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "未為內部使用者檢索到有效WKD密鑰"
       ],
+      "Not a Proton account": [
+        "不是 Proton 帳號"
+      ],
       "Not a valid number": [
         "號碼無效"
       ],
@@ -2646,6 +2673,9 @@
       ],
       "Process aborted": [
         "處理已中止"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "已移除重複的收件者：${ joinedRecipients }"
       ],
       "Request timed out": [
         "請求逾時"
@@ -2751,6 +2781,9 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上載的檔案不是有效的私鑰。請驗證並再試一次。"
+      ],
+      "Validation error": [
+        "驗證錯誤"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "驗證失敗，請在一小時後再試。"
@@ -3264,6 +3297,9 @@
       ],
       "Organization key fingerprint": [
         "組織金鑰指紋"
+      ],
+      "Permissions": [
+        "權限"
       ],
       "Status": [
         "狀態"
@@ -3912,6 +3948,9 @@
       "and": [
         "和"
       ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "知道此連結的任何人都無法同步或取得您行事曆的日後更新。 若要再次給予他們存取權限，您需要創建一個新連結。"
+      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL 讀取您的個人資料以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
@@ -4085,6 +4124,9 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
+      ],
+      "Delete link?": [
+        "刪除連結？"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
@@ -4530,6 +4572,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有當您使用 PGP 寄送給非 ${ BRAND_NAME } 收件人時，才需修改這些設定。"
       ],
+      "Only you can see the labels.": [
+        "只有您可以看到標籤。"
+      ],
       "Or select a particular server:": [
         "或挑選特定的伺服器："
       ],
@@ -4710,6 +4755,9 @@
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
       ],
+      "Select what you want to import.": [
+        "選擇您要匯入的檔案。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
@@ -4730,6 +4778,9 @@
       ],
       "Set recovery phrase": [
         "設定還原短語"
+      ],
+      "Setting up your Drive": [
+        "設定您的雲端硬碟"
       ],
       "Show original message": [
         "顯示原始郵件"
@@ -5066,6 +5117,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂閱續期時，我們會先在可用的餘額中扣除，才會以上面的付款方法扣款。"
+      ],
+      "Why?": [
+        "為什麼？"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
@@ -5674,6 +5728,9 @@
       "Address": [
         "電郵位址"
       ],
+      "Address type": [
+        "位址類型"
+      ],
       "Addresses": [
         "電郵位址"
       ],
@@ -5748,6 +5805,9 @@
       ],
       "Block malware, ads and trackers": [
         "封鎖惡意軟體、廣告與追蹤程式"
+      ],
+      "Blocked": [
+        "已封鎖"
       ],
       "bonus storage": [
         "隨贈儲存空間"
@@ -6067,6 +6127,9 @@
       "Level for NetShield blocker filtering": [
         "Bridge 封鎖過濾等級"
       ],
+      "Link label": [
+        "連結標籤"
+      ],
       "Login password": [
         "登入密碼"
       ],
@@ -6262,8 +6325,17 @@
       "Send auto-reply": [
         "發送自動回覆"
       ],
+      "Send crash reports": [
+        "傳送故障報告"
+      ],
+      "Send in": [
+        "傳送"
+      ],
       "Show secondary time zone": [
         "顯示次要時區"
+      ],
+      "Show week numbers": [
+        "顯示週數"
       ],
       "Sign external messages": [
         "簽署外部郵件"
@@ -6635,6 +6707,9 @@
       "Upgrade account": [
         "升級帳號"
       ],
+      "Upgrade your plan": [
+        "升級您的方案"
+      ],
       "View guide": [
         "查看指南"
       ],
@@ -6909,6 +6984,12 @@
       ],
       "Back to Mail": [
         "回到信箱"
+      ],
+      "Blocked": [
+        "已封鎖"
+      ],
+      "Non spam": [
+        "非垃圾郵件"
       ],
       "Spam": [
         "垃圾郵件"
@@ -7693,6 +7774,9 @@
       "Delete calendar?": [
         "刪除行事曆?"
       ],
+      "Leave calendar?": [
+        "離開行事曆？"
+      ],
       "Remove calendar": [
         "移除行事曆"
       ],
@@ -8170,6 +8254,9 @@
       "Import": [
         "匯入"
       ],
+      "Marked as": [
+        "標示為"
+      ],
       "Name": [
         "名稱"
       ],
@@ -8435,6 +8522,9 @@
       ],
       "Create multiple user accounts": [
         "新增多個使用者帳號"
+      ],
+      "Create public link": [
+        "創建公共連結"
       ],
       "Create user accounts": [
         "建立使用者帳號"

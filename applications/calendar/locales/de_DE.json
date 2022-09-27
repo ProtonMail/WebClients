@@ -4,6 +4,14 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Gesamtansicht (siehe alle Ereignisdetails)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Eingeschränkte Ansicht (nur Verfügbar/Geschäftigt anzeigen)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Einführung in ${ BRAND_NAME }"
@@ -131,6 +139,9 @@
       "Customize": [
         "Anpassen"
       ],
+      "Decline invite": [
+        "Einladung ablehnen"
+      ],
       "Delete": [
         "Löschen"
       ],
@@ -240,6 +251,9 @@
       ],
       "Import from .csv or vCard": [
         "Aus CSV-Datei oder vCard importieren"
+      ],
+      "Join calendar": [
+        "Kalender beitreten"
       ],
       "Load image": [
         "Bild laden"
@@ -492,6 +506,19 @@
       ],
       "Yes, I'll attend": [
         "Ja, ich nehme teil"
+      ]
+    },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Jeder, der den Link hat, kann diesen Kalender einsehen"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "Mit anderen teilen"
+      ],
+      "Share with Proton users": [
+        "Mit Proton-Nutzern teilen"
       ]
     },
     "Actions message": {
@@ -750,6 +777,28 @@
     "Calendar permissions label": {
       "Permissions": [
         "Berechtigungen"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Links verwalten"
+      ],
+      "Manage members": [
+        "Mitglieder verwalten"
+      ],
+      "Unable to create more calendar links": [
+        "Es können keine weiteren Kalenderlinks erstellt werden"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Dieser Kalender kann nicht für weitere Proton-Benutzer freigegeben werden"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Bearbeiten (Ereignisdetails anzeigen, erstellen und bearbeiten)"
+      ],
+      "Full view (see all event details)": [
+        "Gesamtansicht (siehe alle Ereignisdetails)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1983,8 +2032,14 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
+      "Account does not exist": [
+        "Konto nicht vorhanden"
+      ],
       "Address primary private key not found": [
         "Adresse privater Hauptschlüssel nicht gefunden"
+      ],
+      "Already a member of this calendar": [
+        "Bereits Mitglied in diesem Kalender"
       ],
       "Answer failed to be sent": [
         "Antwort konnte nicht gesendet werden"
@@ -2118,11 +2173,17 @@
       "No keys retrieved for internal user": [
         "Keine Schlüssel für interne Benutzer abgerufen"
       ],
+      "No public key for Proton address": [
+        "Kein öffentlicher Schlüssel für Proton-Adresse"
+      ],
       "No valid address found": [
         "Keine gültige Adresse gefunden"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Der für den Benutzer abgerufene WKD (Web Key Directory)-Schlüssel ist für das Senden ungültig"
+      ],
+      "Not a Proton account": [
+        "Kein Proton-Konto"
       ],
       "Not a valid number": [
         "Keine gültige Ziffer"
@@ -2159,6 +2220,10 @@
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "Der für den internen Benutzer abgerufene Primärschlüssel ist für das Senden nicht gültig"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Doppelten Empfänger entfernt: ${ joinedRecipients }",
+        "Doppelte Empfänger entfernt: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
@@ -2235,6 +2300,9 @@
       "Unknown error": [
         "Unbekannter Fehler"
       ],
+      "Validation error": [
+        "Überprüfungsfehler"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Es ist unzulässig, eine Nachricht an mehr als 100 Empfänger zu senden"
       ],
@@ -2249,6 +2317,11 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Eingeladene Adresse nicht vorhanden"
       ]
     },
     "Error importing calendar": {
@@ -3844,6 +3917,25 @@
         "Kalender verwalten"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an persönlichen Kalendern in Ihrem Abonnement erreicht wurde."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an abonnierten Kalendern innerhalb Ihres Abonnements erreicht wurde."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Sie können keine weiteren Kalender erstellen, da die maximale Anzahl an persönlichen Kalendern innerhalb Ihres Abonnements erreicht wurde."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Kalender beitreten"
+      ],
+      "Unable to join more calendars": [
+        "Mehreren Kalendern beitreten nicht möglich"
+      ]
+    },
     "Modal title": {
       "Share calendar": [
         "Kalender teilen"
@@ -4035,6 +4127,20 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Mitglied hinzugefügt",
+        "Mitglieder hinzugefügt"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Kalendereinladung abgelehnt"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "${ calendarName } (${ senderEmail }) beigetreten"
       ]
     },
     "Notification suffix": {
@@ -4439,6 +4545,16 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Aktualisieren der Einstellungen fehlgeschlagen"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Personen oder Gruppen hinzufügen"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Mit Proton-Nutzern teilen"
       ]
     },
     "Sidebar calendar edit tooltip": {
