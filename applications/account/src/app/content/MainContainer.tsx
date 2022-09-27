@@ -81,7 +81,6 @@ const MainContainer = () => {
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
         FeatureCode.ReferralProgram,
-        FeatureCode.DrivePlan,
         FeatureCode.EasySwitch,
         FeatureCode.EasySwitchGmailNewScope,
     ]);

@@ -17,8 +17,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
-import { FeatureCode } from '../../../containers/features';
-import { useFeature, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
+import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -95,13 +94,8 @@ const PlanSelection = ({
     const plansMap = toMap(plans, 'Name');
     const [vpnServers] = useVPNServersCount();
     const [vpnCountries] = useVPNCountriesCount();
-    const drivePlanFeature = useFeature(FeatureCode.DrivePlan);
 
-    const enabledProductB2CPlans = [
-        PLANS.MAIL,
-        PLANS.VPN,
-        drivePlanFeature.feature?.Value === true ? PLANS.DRIVE : null,
-    ].filter(isTruthy);
+    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const B2CPlans = [
