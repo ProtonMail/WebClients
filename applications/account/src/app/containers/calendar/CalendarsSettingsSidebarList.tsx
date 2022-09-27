@@ -17,7 +17,8 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getIsOwnedCalendar, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import SettingsListItem from '../../components/SettingsListItem';
@@ -25,21 +26,26 @@ import { getIsSingleCalendarSection } from './routes';
 
 const MAX_CALENDARS = 10;
 
-interface CalendarItemProps {
+interface CalendarSettingsSidebarListItemProps {
     sectionPath: string;
-    color: string;
-    name: string;
-    calendarId: string;
+    calendar: VisualCalendar;
 }
 
-const CalendarItem = ({ sectionPath, color, name, calendarId }: CalendarItemProps) => {
+const CalendarSettingsSidebarListItem = ({ sectionPath, calendar }: CalendarSettingsSidebarListItemProps) => {
+    const { Color, Name, ID } = calendar;
+
     return (
         <SidebarListItem>
-            <SidebarListItemLink to={`${sectionPath}/${calendarId}`} className="navigation-link-child">
-                <SidebarListItemContent left={<CalendarSelectIcon color={color} className="mr0-5" />}>
-                    <span title={name} className="text-ellipsis">
-                        {name}
+            <SidebarListItemLink to={`${sectionPath}/${ID}`} className="navigation-link-child">
+                <SidebarListItemContent left={<CalendarSelectIcon color={Color} className="mr0-5" />}>
+                    <span title={Name} className="text-ellipsis">
+                        {Name}
                     </span>
+                    {!getIsOwnedCalendar(calendar) && (
+                        <div className="flex-item-noshrink ml0-25">
+                            <Icon name="users" />
+                        </div>
+                    )}
                 </SidebarListItemContent>
             </SidebarListItemLink>
         </SidebarListItem>
@@ -51,7 +57,7 @@ interface Props {
     calendarsSection: SectionConfig;
 }
 
-const CalendarsList = ({ prefix, calendarsSection }: Props) => {
+const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
     const [calendars = [], loadingCalendars] = useCalendars();
     const { pathname } = useLocation();
     const [showAll, setShowAll] = useState(false);
@@ -91,8 +97,12 @@ const CalendarsList = ({ prefix, calendarsSection }: Props) => {
         if (remainingItems > 1 && !showAll) {
             return (
                 <>
-                    {sortedVisualCalendars.slice(0, MAX_CALENDARS).map(({ Color, Name, ID }) => (
-                        <CalendarItem sectionPath={sectionPath} color={Color} name={Name} calendarId={ID} key={ID} />
+                    {sortedVisualCalendars.slice(0, MAX_CALENDARS).map((calendar) => (
+                        <CalendarSettingsSidebarListItem
+                            sectionPath={sectionPath}
+                            calendar={calendar}
+                            key={calendar.ID}
+                        />
                     ))}
                     <SidebarListItem>
                         <SidebarListItemButton
@@ -111,8 +121,8 @@ const CalendarsList = ({ prefix, calendarsSection }: Props) => {
             );
         }
 
-        return sortedVisualCalendars.map(({ Color, Name, ID }) => (
-            <CalendarItem sectionPath={sectionPath} color={Color} name={Name} calendarId={ID} key={ID} />
+        return sortedVisualCalendars.map((calendar) => (
+            <CalendarSettingsSidebarListItem sectionPath={sectionPath} key={calendar.ID} calendar={calendar} />
         ));
     })();
 
@@ -174,4 +184,4 @@ const CalendarsList = ({ prefix, calendarsSection }: Props) => {
     );
 };
 
-export default CalendarsList;
+export default CalendarsSettingsSidebarList;
