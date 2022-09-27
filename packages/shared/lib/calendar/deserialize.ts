@@ -60,7 +60,6 @@ export const readSessionKeys = async ({
  * Read the parts of a calendar event into an internal vcal component.
  */
 interface ReadCalendarEventArguments {
-    isOrganizer: boolean;
     event: Pick<CalendarEvent, 'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees'>;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
     sharedSessionKey?: SessionKey;
@@ -70,27 +69,39 @@ interface ReadCalendarEventArguments {
 }
 
 export const getSelfAddressData = ({
-    isOrganizer,
     organizer,
     attendees = [],
     addresses = [],
 }: {
-    isOrganizer: boolean;
     organizer?: VcalOrganizerProperty;
     attendees?: VcalAttendeeProperty[];
     addresses?: Address[];
 }) => {
-    if (isOrganizer) {
-        if (!organizer) {
-            // old events will not have organizer
-            return {};
-        }
-        const organizerEmail = canonizeInternalEmail(getAttendeeEmail(organizer));
+    if (!organizer) {
+        // it is not an invitation
         return {
-            selfAddress: addresses.find(({ Email }) => canonizeInternalEmail(Email) === organizerEmail),
+            isOrganizer: false,
+            isAttendee: false,
         };
     }
+    const ownCanonizedEmailsMap = addresses.reduce<SimpleMap<string>>((acc, { Email }) => {
+        acc[Email] = canonizeInternalEmail(Email);
+        return acc;
+    }, {});
+
+    const organizerEmail = canonizeInternalEmail(getAttendeeEmail(organizer));
+    const organizerAddress = addresses.find(({ Email }) => ownCanonizedEmailsMap[Email] === organizerEmail);
+
+    if (organizerAddress) {
+        return {
+            isOrganizer: true,
+            isAttendee: false,
+            selfAddress: organizerAddress,
+        };
+    }
+
     const canonicalAttendeeEmails = attendees.map((attendee) => canonizeInternalEmail(getAttendeeEmail(attendee)));
+
     // start checking active addresses
     const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
     const { selfActiveAttendee, selfActiveAddress, selfActiveAttendeeIndex } = activeAddresses.reduce<{
@@ -103,7 +114,7 @@ export const getSelfAddressData = ({
             if (acc.answeredAttendeeFound) {
                 return acc;
             }
-            const canonicalSelfEmail = canonizeInternalEmail(address.Email);
+            const canonicalSelfEmail = ownCanonizedEmailsMap[address.Email];
             const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
             if (index === -1) {
                 return acc;
@@ -125,6 +136,8 @@ export const getSelfAddressData = ({
     );
     if (selfActiveAttendee && selfActiveAddress) {
         return {
+            isOrganizer: false,
+            isAttendee: true,
             selfAttendee: selfActiveAttendee,
             selfAddress: selfActiveAddress,
             selfAttendeeIndex: selfActiveAttendeeIndex,
@@ -141,7 +154,7 @@ export const getSelfAddressData = ({
             if (acc.answeredAttendeeFound) {
                 return acc;
             }
-            const canonicalSelfEmail = canonizeInternalEmail(address.Email);
+            const canonicalSelfEmail = ownCanonizedEmailsMap[address.Email];
             const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
             if (index === -1) {
                 return acc;
@@ -162,6 +175,8 @@ export const getSelfAddressData = ({
         { answeredAttendeeFound: false }
     );
     return {
+        isOrganizer: false,
+        isAttendee: !!selfDisabledAttendee,
         selfAttendee: selfDisabledAttendee,
         selfAddress: selfDisabledAddress,
         selfAttendeeIndex: selfDisabledAttendeeIndex,
@@ -169,7 +184,6 @@ export const getSelfAddressData = ({
 };
 
 export const readCalendarEvent = async ({
-    isOrganizer,
     event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [] },
     publicKeysMap = {},
     sharedSessionKey,
@@ -214,7 +228,6 @@ export const readCalendarEvent = async ({
 
     const veventWithAttendees = veventAttendees.length ? { ...vevent, attendee: veventAttendees } : vevent;
     const selfAddressData = getSelfAddressData({
-        isOrganizer,
         organizer: vevent.organizer,
         attendees: veventAttendees,
         addresses,

@@ -27,15 +27,15 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
         const [
             { veventComponent = DEFAULT_VEVENT, verificationStatus, selfAddressData },
             alarmMap = {},
-            { IsOrganizer, IsProtonProtonInvite },
+            { IsProtonProtonInvite },
         ] = value || [
             {
                 veventComponent: DEFAULT_VEVENT,
                 verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
-                selfAddressData: {},
+                selfAddressData: { isOrganizer: false, isAttendee: false },
             },
             {},
-            { IsOrganizer: 1, IsProtonProtonInvite: 0 },
+            { IsProtonProtonInvite: 0 },
         ];
 
         const isAllDay = getIsAllDay(veventComponent);
@@ -44,7 +44,6 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
             verificationStatus,
             selfAddressData,
             isAllDay,
-            isOrganizer: !!IsOrganizer,
             isProtonProtonInvite: !!IsProtonProtonInvite,
             tzid,
         });

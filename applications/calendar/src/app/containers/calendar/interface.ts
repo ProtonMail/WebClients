@@ -109,7 +109,7 @@ export interface OnSaveConfirmationArgs {
         hasCalendarModification: boolean;
     };
     inviteActions: InviteActions;
-    isInvitation: boolean;
+    isAttendee: boolean;
 }
 export interface OnDeleteConfirmationArgs {
     type: DELETE_CONFIRMATION_TYPES;
@@ -118,7 +118,7 @@ export interface OnDeleteConfirmationArgs {
         hasNonCancelledSingleEdits: boolean;
     };
     inviteActions: InviteActions;
-    isInvitation: boolean;
+    isAttendee: boolean;
 }
 export type OnSaveConfirmationCb = (data: OnSaveConfirmationArgs) => Promise<RecurringActionData>;
 export type OnDeleteConfirmationCb = (data: OnDeleteConfirmationArgs) => Promise<RecurringActionData>;

@@ -180,7 +180,8 @@ export const getInitialModel = ({
         initialTzid: tzid,
         isAllDay,
         verificationStatus,
-        isOrganizer: true,
+        isOrganizer: !!attendees?.length,
+        isAttendee: false,
         isProtonProtonInvite: false,
         status: ICAL_EVENT_STATUS.CONFIRMED,
         defaultEventDuration,
@@ -197,7 +198,6 @@ export const getInitialModel = ({
 const getParentMerge = (
     veventComponentParentPartial: SharedVcalVeventComponent,
     recurrenceStart: DateTimeModel,
-    isOrganizer: boolean,
     isProtonProtonInvite: boolean,
     tzid: string
 ) => {
@@ -205,7 +205,6 @@ const getParentMerge = (
     const parentModel = propertiesToModel({
         veventComponent: veventComponentParentPartial,
         isAllDay,
-        isOrganizer,
         isProtonProtonInvite,
         tzid,
     });
@@ -219,17 +218,15 @@ interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
     veventValarmComponent?: VcalVeventComponent;
     veventComponentParentPartial?: SharedVcalVeventComponent;
-    isOrganizer: boolean;
     isProtonProtonInvite: boolean;
     tzid: string;
-    selfAddressData?: SelfAddressData;
+    selfAddressData: SelfAddressData;
 }
 
 export const getExistingEvent = ({
     veventComponent,
     veventValarmComponent,
     veventComponentParentPartial,
-    isOrganizer,
     isProtonProtonInvite,
     tzid,
     selfAddressData,
@@ -241,7 +238,6 @@ export const getExistingEvent = ({
         veventComponent,
         selfAddressData,
         isAllDay,
-        isOrganizer,
         isProtonProtonInvite,
         tzid,
     });
@@ -251,13 +247,7 @@ export const getExistingEvent = ({
 
     const parentMerge =
         veventComponentParentPartial && recurrenceId
-            ? getParentMerge(
-                  veventComponentParentPartial,
-                  newModel.start,
-                  newModel.isOrganizer,
-                  newModel.isProtonProtonInvite,
-                  tzid
-              )
+            ? getParentMerge(veventComponentParentPartial, newModel.start, newModel.isProtonProtonInvite, tzid)
             : {};
 
     return {

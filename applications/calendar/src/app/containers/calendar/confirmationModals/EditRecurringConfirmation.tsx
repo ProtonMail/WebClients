@@ -126,8 +126,8 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
     throw new Error('Unknown confirmation type');
 };
 
-const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteActions) => {
-    if (!isInvitation) {
+const getRecurringWarningText = (isAttendee: boolean, inviteActions: InviteActions) => {
+    if (!isAttendee) {
         return c('Info').t`Previous modifications on this series will be lost.`;
     }
     if (inviteActions.resetSingleEditsPartstat) {
@@ -146,7 +146,7 @@ interface Props {
     hasSingleModificationsAfter: boolean;
     hasRruleModification: boolean;
     hasCalendarModification: boolean;
-    isInvitation: boolean;
+    isAttendee: boolean;
     inviteActions: InviteActions;
     onConfirm: ({ type, inviteActions }: { type: RECURRING_TYPES; inviteActions: InviteActions }) => void;
     onClose: () => void;
@@ -158,7 +158,7 @@ const EditRecurringConfirmModal = ({
     hasSingleModificationsAfter,
     hasRruleModification,
     hasCalendarModification,
-    isInvitation,
+    isAttendee,
     inviteActions,
     onConfirm,
     onClose,
@@ -170,12 +170,12 @@ const EditRecurringConfirmModal = ({
     const hasPreviousModifications =
         (type === RECURRING_TYPES.ALL && hasSingleModifications) ||
         (type === RECURRING_TYPES.FUTURE && hasSingleModificationsAfter);
-    const recurringWarningText = hasPreviousModifications ? getRecurringWarningText(isInvitation, inviteActions) : '';
+    const recurringWarningText = hasPreviousModifications ? getRecurringWarningText(isAttendee, inviteActions) : '';
 
-    const showRruleWarning = !isInvitation && type === RECURRING_TYPES.SINGLE && hasRruleModification;
+    const showRruleWarning = !isAttendee && type === RECURRING_TYPES.SINGLE && hasRruleModification;
     const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
 
-    if (isInvitation && hasCalendarModification && hasPreviousModifications) {
+    if (isAttendee && hasCalendarModification && hasPreviousModifications) {
         const alertText = c('Info')
             .t`The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.`;
         return (
