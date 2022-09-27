@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
 import diff from '@proton/utils/diff';
 import noop from '@proton/utils/noop';
@@ -54,7 +55,11 @@ export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRu
             const ms = 1000 * REFRESHES[count];
             // Wait few seconds before retrying
             setTimeout(() => {
-                void dispatch(load({ api, call, page, params, abortController, conversationMode, count: count + 1 }));
+                if (isDeepEqual((getState() as RootState).elements.params, params)) {
+                    void dispatch(
+                        load({ api, call, page, params, abortController, conversationMode, count: count + 1 })
+                    );
+                }
             }, ms);
         }
         const taskLabels = Object.keys(result.TasksRunning || {});
