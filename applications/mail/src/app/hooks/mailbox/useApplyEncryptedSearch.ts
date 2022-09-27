@@ -54,7 +54,7 @@ export const useApplyEncryptedSearch = ({
     const esDBStatus = getESDBStatus();
     const { esEnabled } = esDBStatus;
 
-    const params = { labelID, page, conversationMode, sort, filter, search, esEnabled };
+    const params = { labelID, conversationMode, sort, filter, search, esEnabled };
 
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
