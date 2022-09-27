@@ -142,7 +142,7 @@ const CalendarSidebarListItems = ({
 
         const left = (
             <Checkbox
-                className="mr0-25 flex-item-noshrink"
+                className="mr0-75 flex-item-noshrink"
                 color={COLORS.WHITE}
                 backgroundColor={Display ? Color : 'transparent'}
                 borderColor={Color}
