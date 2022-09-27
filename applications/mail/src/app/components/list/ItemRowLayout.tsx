@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { classnames } from '@proton/components';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
@@ -61,8 +60,7 @@ const ItemRowLayout = ({
     const { expirationTime, hasExpiration } = useExpiringElement(element, conversationMode);
 
     const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
-    const { Subject, Size } = element;
-    const size = humanSize(Size);
+    const { Subject } = element;
 
     const sendersContent = useMemo(
         () =>
@@ -155,10 +153,6 @@ const ItemRowLayout = ({
                 showDropdown={false}
                 isCollapsed={false}
             />
-
-            <span className="item-weight myauto ml1 text-right" data-testid="message-row:item-size">
-                {!loading && size}
-            </span>
 
             <span className="flex w3e ml0-5 text-center flex-justify-end">
                 {hasExpiration && <ItemExpiration expirationTime={expirationTime} />}
