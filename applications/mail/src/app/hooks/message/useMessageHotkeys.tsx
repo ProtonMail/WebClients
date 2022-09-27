@@ -77,6 +77,7 @@ export const useMessageHotkeys = (
 
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
+    const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const markAs = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
@@ -306,6 +307,15 @@ export const useMessageHotkeys = (
                 }
             },
         ],
+        [
+            'F',
+            (e) => {
+                if (hotkeysEnabledAndMessageReady) {
+                    e.stopPropagation();
+                    filterDropdownToggleRef.current?.();
+                }
+            },
+        ],
     ];
 
     useHotkeys(elementRef, shortcutHandlers, {
@@ -315,6 +325,7 @@ export const useMessageHotkeys = (
     return {
         labelDropdownToggleRef,
         moveDropdownToggleRef,
+        filterDropdownToggleRef,
         moveScheduledModal,
         moveAllModal,
         moveToSpamModal,
