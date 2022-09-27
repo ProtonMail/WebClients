@@ -9,6 +9,7 @@ import {
     getHasSharedEventContent,
     getHasSharedKeyPacket,
 } from '@proton/shared/lib/calendar/serialize';
+import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import {
@@ -45,6 +46,7 @@ export interface UpdateEventActionOperation {
     data: {
         calendarEvent: CalendarEvent;
         veventComponent: VcalVeventComponent;
+        isAttendee: boolean;
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
     };
@@ -87,6 +89,7 @@ export const getCreateSyncOperation = (data: {
 });
 export const getUpdateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
+    isAttendee: boolean;
     calendarEvent: CalendarEvent;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
@@ -195,7 +198,8 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             }
 
             if (getIsUpdateSyncOperation(operation)) {
-                const { calendarEvent, removedAttendeesEmails, addedAttendeesPublicKeysMap } = operation.data;
+                const { calendarEvent, isAttendee, removedAttendeesEmails, addedAttendeesPublicKeysMap } =
+                    operation.data;
                 const {
                     CalendarID: oldCalendarID,
                     AddressID: oldAddressID,
@@ -213,7 +217,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     addedAttendeesPublicKeysMap,
                     isCreateEvent: false,
                     isSwitchCalendar,
-                    isInvitation: !calendarEvent.IsOrganizer,
+                    isAttendee,
                     ...(await getCreationKeys({
                         calendarEvent,
                         newAddressKeys,
@@ -222,7 +226,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                         oldCalendarKeys,
                     })),
                 });
-                const isOrganizerData = { IsOrganizer: operation.data.calendarEvent.IsOrganizer };
+                const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
 
                 const dataComplete = {
                     ...permissionData,

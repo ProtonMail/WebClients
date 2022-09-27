@@ -56,7 +56,6 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
     const [mailSettings] = useMailSettings();
     const { Name: calendarName, Color } = calendar;
 
-    const isInvitation = !model.isOrganizer;
     const isCalendarDisabled = getIsCalendarDisabled(calendar);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
     const { organizer, attendees } = model;
@@ -64,7 +63,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
     const numberOfParticipants = attendees.length;
     const { name: organizerName, title: organizerTitle } = getOrganizerDisplayData(
         organizer,
-        isInvitation || isSubscribedCalendar,
+        model.isOrganizer && !isSubscribedCalendar,
         displayNameEmailMap
     );
     const sanitizedLocation = useMemo(

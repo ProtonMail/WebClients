@@ -4,6 +4,7 @@ import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import {
     Attendee,
     CalendarEventData,
@@ -87,7 +88,7 @@ export const generateApiCalendarEvent = async ({
         CreateTime: nowTimestamp,
         ModifyTime: nowTimestamp,
         Permissions: 1,
-        IsOrganizer: +isOrganizer,
+        IsOrganizer: booleanToNumber(isOrganizer),
         IsProtonProtonInvite: +isProtonProtonInvite,
         Author: author,
         StartTime: getUnixTime(propertyToUTCDate(dtstart)),

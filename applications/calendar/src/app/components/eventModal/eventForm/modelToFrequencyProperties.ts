@@ -6,11 +6,11 @@ import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import unique from '@proton/utils/unique';
 
-const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay, isOrganizer }: EventModel) => {
+const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay, isAttendee }: EventModel) => {
     const { type, frequency, interval, weekly, monthly, ends, vcalRruleValue } = frequencyModel;
     const { date: startDate, tzid } = start;
 
-    if ((!isOrganizer || type === FREQUENCY.OTHER) && vcalRruleValue) {
+    if ((isAttendee || type === FREQUENCY.OTHER) && vcalRruleValue) {
         return {
             rrule: {
                 value: vcalRruleValue,

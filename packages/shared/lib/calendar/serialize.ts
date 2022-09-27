@@ -40,7 +40,7 @@ interface CreateCalendarEventArguments {
     calendarSessionKey?: SessionKey;
     isCreateEvent: boolean;
     isSwitchCalendar: boolean;
-    isInvitation?: boolean;
+    isAttendee?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }
@@ -52,14 +52,14 @@ export const createCalendarEvent = async ({
     calendarSessionKey: oldCalendarSessionKey,
     isCreateEvent,
     isSwitchCalendar,
-    isInvitation,
+    isAttendee,
     removedAttendeesEmails = [],
     addedAttendeesPublicKeysMap,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
 
     const isCreateOrSwitchCalendar = isCreateEvent || isSwitchCalendar;
-    const isSwitchCalendarOfInvitation = isSwitchCalendar && isInvitation;
+    const isAttendeeSwitchingCalendar = isSwitchCalendar && isAttendee;
     // If there is no encrypted calendar part, a calendar session key is not needed.
     const shouldHaveCalendarKey = !!calendarPart[ENCRYPTED_AND_SIGNED];
 
@@ -85,15 +85,15 @@ export const createCalendarEvent = async ({
             : undefined,
         isCreateOrSwitchCalendar ? getEncryptedSessionKey(sharedSessionKey, publicKey) : undefined,
         // attendees are not allowed to change the SharedEventContent, so they shouldn't send it (API will complain otherwise)
-        isSwitchCalendarOfInvitation ? undefined : signPart(sharedPart[SIGNED], privateKey),
-        isSwitchCalendarOfInvitation
+        isAttendeeSwitchingCalendar ? undefined : signPart(sharedPart[SIGNED], privateKey),
+        isAttendeeSwitchingCalendar
             ? undefined
             : encryptPart(sharedPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         signPart(calendarPart[SIGNED], privateKey),
         calendarSessionKey && encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], privateKey, calendarSessionKey),
         signPart(personalPart[SIGNED], privateKey),
         // attendees are not allowed to change the SharedEventContent, so they shouldn't send it (API will complain otherwise)
-        isSwitchCalendarOfInvitation
+        isAttendeeSwitchingCalendar
             ? undefined
             : encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         getEncryptedSessionKeysMap(sharedSessionKey, addedAttendeesPublicKeysMap),
@@ -108,7 +108,7 @@ export const createCalendarEvent = async ({
         calendarSessionKey: encryptedCalendarSessionKey,
         personalSignedPart,
         attendeesEncryptedPart,
-        attendeesClearPart: isSwitchCalendarOfInvitation ? undefined : attendeesPart[CLEAR_TEXT],
+        attendeesClearPart: isAttendeeSwitchingCalendar ? undefined : attendeesPart[CLEAR_TEXT],
         removedAttendeesEmails,
         attendeesEncryptedSessionKeysMap,
     });

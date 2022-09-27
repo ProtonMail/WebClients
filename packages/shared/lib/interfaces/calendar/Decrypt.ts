@@ -5,6 +5,8 @@ import { Address } from '../Address';
 import { VcalAttendeeProperty, VcalVeventComponent } from './VcalModel';
 
 export interface SelfAddressData {
+    isOrganizer: boolean;
+    isAttendee: boolean;
     selfAttendee?: VcalAttendeeProperty;
     selfAddress?: Address;
     selfAttendeeIndex?: number;

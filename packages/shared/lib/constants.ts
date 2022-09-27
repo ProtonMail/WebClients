@@ -334,6 +334,7 @@ export enum DMARC_STATE {
 export enum ADDRESS_STATUS {
     STATUS_DISABLED = 0,
     STATUS_ENABLED = 1,
+    STATUS_DELETING = 2, // not used by clients yet; coming in the future
 }
 
 export enum ADDRESS_TYPE {
