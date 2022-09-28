@@ -34,7 +34,9 @@ module.exports = ({ isProduction }) => ({
     ],
     splitChunks: {
         chunks(chunk) {
-            return chunk.name !== 'crypto-worker';
+            // This is the default "async" filter provided by webpack
+            const async = !chunk.canBeInitial();
+            return chunk.name !== 'crypto-worker' && async;
         },
     },
 });
