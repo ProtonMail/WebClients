@@ -9,9 +9,10 @@ import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
+import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
-import { DecryptedLink, useFileView } from '../store';
+import { DecryptedLink, useActions, useFileView } from '../store';
 // TODO: ideally not use here
 import useSearchResults from '../store/_search/useSearchResults';
 
@@ -32,12 +33,15 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const [, setError] = useState();
     const { createModal, removeModal } = useModals();
     const { query: lastQuery } = useSearchResults();
+    const { saveFile } = useActions();
+
+    const isEditEnabled = useIsEditEnabled();
 
     const referer = new URLSearchParams(useLocation().search).get('r');
     const useNavigation =
         !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash') && !referer?.startsWith('/search');
 
-    const { isLinkLoading, isContentLoading, error, link, contents, saveFile, navigation } = useFileView(
+    const { isLinkLoading, isContentLoading, error, link, contents, downloadFile, navigation } = useFileView(
         shareId,
         linkId,
         useNavigation
@@ -147,6 +151,17 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         );
     }, [link]);
 
+    const handleSaveFile = useCallback(
+        (content: Uint8Array[]) => {
+            if (!link) {
+                return Promise.reject('missing link');
+            }
+
+            return saveFile(shareId, link.parentLinkId, link.name, link.mimeType, content);
+        },
+        [shareId, link?.name, link?.parentLinkId]
+    );
+
     const rootRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -159,7 +174,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             sharedStatus={getSharedStatus(link)}
             fileSize={link?.size}
             onClose={navigateToParent}
-            onSave={saveFile}
+            onDownload={downloadFile}
+            onSave={isEditEnabled ? handleSaveFile : undefined}
             onDetail={openDetails}
             onShare={isLinkLoading || !!link?.trashed ? undefined : openShareOptions}
             imgThumbnailUrl={link?.cachedThumbnailUrl}
