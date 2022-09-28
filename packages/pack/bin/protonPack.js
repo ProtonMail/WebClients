@@ -24,6 +24,8 @@ const addGlobalOptions = (program) => {
     return program
         .option('--appMode <appMode>', '')
         .option('--featureFlags <featureFlags>', '')
+        .option('--api <api>', '', (api) => getApi(api), getApi(''))
+        .option('--no-api-proxy', '')
         .option(
             '--publicPath <publicPath>',
             '',
@@ -97,14 +99,6 @@ addGlobalOptions(program.command('build').description('create an optimized produ
 
 addGlobalOptions(program.command('dev-server').description('run locally'))
     .option('--port <port>', '')
-    .option(
-        '--api <api>',
-        '',
-        (api) => {
-            return getApi(api);
-        },
-        getApi('')
-    )
     .option('--warning-logs', 'emit typescript and eslint warnings')
     .option('--no-error-logs', 'do not emit typescript and eslint errors')
     .option('--overlay-warnings', 'show a full screen overlay when there are compiler warnings')
