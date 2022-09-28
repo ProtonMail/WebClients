@@ -58,6 +58,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     const [date, setDate] = useState(defaultDate);
     const [time, setTime] = useState(defaultDate);
 
+    const [errorTime, setErrorTime] = useState<string>();
+
     const [uid] = useState(generateUID('schedule-send-modal'));
 
     const scheduleDateTime = useMemo(() => {
@@ -130,18 +132,36 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
         return undefined;
     }, [date]);
 
-    const errorTime = useMemo(() => {
-        /* If the user chose a time (Hour + minutes) before the hour of the actual day, the time input returns the date for the next day
-         * Ex : This is Jan, 1 2021 at 9:00AM. The user wants to send the scheduled today at 8:00PM, but in the time input he lets 'AM'
-         * => The Time input is returning the date Jan, 2 2021 at 8:00AM
-         * From our side we are using hour + minutes from the returned date of the time input to build the date when we want to send the scheduled
-         * To check if the user is making an error, we need to compare the Time input value with the current date
-         */
-        const timeInputDate = startOfToday();
-        timeInputDate.setHours(time.getHours(), time.getMinutes());
+    // Refresh error time each second so that the user cannot send a message in the past
+    // If we don't refresh it, a user can create a schedule message, select a date in the future.
+    // If he waits too much, the sending will still be possible, but the date will become from the past
+    // Leading to a not user-friendly error
+    useEffect(() => {
+        const updateErrorTime = () => {
+            /* If the user chose a time (Hour + minutes) before the hour of the actual day, the time input returns the date for the next day
+             * Ex : This is Jan, 1 2021 at 9:00AM. The user wants to send the scheduled today at 8:00PM, but in the time input he lets 'AM'
+             * => The Time input is returning the date Jan, 2 2021 at 8:00AM
+             * From our side we are using hour + minutes from the returned date of the time input to build the date when we want to send the scheduled
+             * To check if the user is making an error, we need to compare the Time input value with the current date
+             */
+            const timeInputDate = startOfToday();
+            timeInputDate.setHours(time.getHours(), time.getMinutes());
 
-        return isToday(date) && timeInputDate <= new Date() ? c('Error').t`Choose a date in the future.` : undefined;
-    }, [time, date]);
+            // It should be impossible to schedule a message within the next 120s
+            const limit = addSeconds(new Date(), 120);
+
+            // If the scheduled date is in the past or within the next 120s, we need to disable the schedule button
+            const isDateToEarly = isToday(date) && timeInputDate <= limit;
+            const error = isDateToEarly ? c('Error').t`Choose a date in the future.` : undefined;
+
+            setErrorTime(error);
+        };
+
+        const handle = setInterval(updateErrorTime, 1000);
+        return () => {
+            clearInterval(handle);
+        };
+    }, [date, time]);
 
     const disabled = useMemo(() => {
         const min = addSeconds(Date.now(), 120);
