@@ -139,6 +139,7 @@ const CalendarSidebarListItems = ({
     const result = calendars.map((calendar, i) => {
         const { ID, Name, Display, Color } = calendar;
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
+        const isOwnedCalendar = getIsOwnedCalendar(calendar);
 
         const left = (
             <Checkbox
