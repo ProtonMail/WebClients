@@ -16,8 +16,10 @@ import {
     ShareLinkButton,
 } from '../ToolbarButtons';
 import { getSelectedItems } from '../helpers';
+import useIsEditEnabled from '../useIsEditEnabled';
 import {
     ActionsDropdown,
+    CreateNewFileButton,
     CreateNewFolderButton,
     MoveToFolderButton,
     MoveToTrashButton,
@@ -35,6 +37,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Prop
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
+    const isEditEnabled = useIsEditEnabled();
 
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
@@ -49,6 +52,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Prop
             return (
                 <>
                     <CreateNewFolderButton />
+                    {isEditEnabled && <CreateNewFileButton />}
                     {isDesktop && (
                         <>
                             <Vr />

@@ -2,6 +2,7 @@ import { useModals } from '@proton/components';
 
 import useNavigate from '../hooks/drive/useNavigate';
 import { DecryptedLink, Device } from '../store';
+import CreateFileModal from './CreateFileModal';
 import CreateFolderModal from './CreateFolderModal';
 import DetailsModal from './DetailsModal';
 import FilesDetailsModal from './FilesDetailsModal';
@@ -25,6 +26,10 @@ export default function useOpenModal() {
 
     const openCreateFolder = async () => {
         createModal(<CreateFolderModal />);
+    };
+
+    const openCreateFile = async () => {
+        createModal(<CreateFileModal />);
     };
 
     const openDetails = (shareId: string, linkId: string) => {
@@ -66,6 +71,7 @@ export default function useOpenModal() {
     return {
         openPreview,
         openCreateFolder,
+        openCreateFile,
         openDetails,
         openFilesDetails,
         openMoveToFolder,

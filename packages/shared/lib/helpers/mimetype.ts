@@ -45,7 +45,8 @@ export const isICS = (mimeType: string) =>
     mimeType.startsWith(MIME_TYPES.ICS) || mimeType.includes(MIME_TYPES.APPLICATION_ICS);
 
 export const isSupportedText = (mimeType: string) =>
-    mimeType.startsWith('text/') || ['application/javascript', 'application/typescript'].includes(mimeType);
+    mimeType.startsWith('text/') ||
+    ['application/json', 'application/javascript', 'application/typescript'].includes(mimeType);
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
 export const isAudio = (mimeType: string) => mimeType.startsWith('audio/');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
