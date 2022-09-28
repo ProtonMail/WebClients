@@ -351,7 +351,9 @@ const EasySwitchOauthModal = ({
 
                                 if (importType === CONTACTS) {
                                     try {
-                                        const { Contacts } = await silentApi(getContactsImportData(ImporterID));
+                                        const { Contacts } = await silentApi<{ Contacts: any }>(
+                                            getContactsImportData(ImporterID)
+                                        );
                                         return {
                                             importType,
                                             Contacts,

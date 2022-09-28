@@ -99,7 +99,7 @@ export const srpGetVerify = async ({ api, credentials }: { api: Api; credentials
 /**
  * Perform an SRP call with the random verifier.
  */
-export const srpVerify = async <T>({
+export const srpVerify = async <T = any>({
     api,
     credentials,
     config: { data, ...restConfig },
