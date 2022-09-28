@@ -27,7 +27,7 @@ const Stepper = ({ activeStep, className, children, ...rest }: StepperProps) => 
 
     return (
         <StepperContext.Provider value={contextValue}>
-            <ul {...rest} className={clsx(['stepper', 'unstyled flex flex-nowrap', className])}>
+            <ul {...rest} className={clsx(['stepper', 'unstyled flex flex-nowrap m0', className])}>
                 {steps}
             </ul>
         </StepperContext.Provider>
