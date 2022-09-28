@@ -83,7 +83,7 @@ const InvoicesPreview = (
             fileSize={previewing.contents?.length}
             mimeType="application/pdf"
             onClose={handleClose}
-            onSave={handleDownload}
+            onDownload={handleDownload}
             ref={rootRef}
             navigationControls={
                 <NavigationControl

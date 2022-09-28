@@ -21,24 +21,23 @@ import { formatLinkName, useActions, validateLinkNameField } from '../store';
 
 interface Props {
     onClose?: () => void;
-    onCreateDone?: (folderId: string) => void;
     folder?: { shareId: string; linkId: string };
     open?: boolean;
 }
 
-const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
+const CreateFileModal = ({ onClose, folder, open }: Props) => {
     const { activeFolder } = useActiveShare();
-    const { createFolder } = useActions();
-    const [folderName, setFolderName] = useState('');
+    const { createFile } = useActions();
+    const [fileName, setFileName] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setFolderName(formatLinkName(target.value));
+        setFileName(formatLinkName(target.value));
     };
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        setFolderName(target.value);
+        setFileName(target.value);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -48,21 +47,17 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
             return;
         }
 
-        const formattedName = formatLinkName(folderName);
-        setFolderName(formattedName);
+        let formattedName = formatLinkName(fileName);
+        if (!formattedName.includes('.')) {
+            formattedName = `${formattedName}.txt`;
+        }
 
         const parentFolder = folder || activeFolder;
         if (!parentFolder) {
             return;
         }
 
-        const folderId = await createFolder(
-            new AbortController().signal,
-            parentFolder.shareId,
-            parentFolder.linkId,
-            formattedName
-        );
-        onCreateDone?.(folderId);
+        await createFile(parentFolder.shareId, parentFolder.linkId, formattedName);
         onClose?.();
     };
 
@@ -75,18 +70,18 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
             open={open}
             size="large"
         >
-            <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new folder`} />
+            <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new file`} />
             <ModalTwoContent>
                 <InputFieldTwo
-                    id="folder-name"
+                    id="file-name"
                     autoFocus
                     maxLength={MAX_NAME_LENGTH}
-                    value={folderName}
-                    label={c('Label').t`Folder name`}
-                    placeholder={c('Placeholder').t`Enter a new folder name`}
+                    value={fileName}
+                    label={c('Label').t`File name`}
+                    placeholder={c('Placeholder').t`Enter a new file name`}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    error={validator([validateLinkNameField(folderName) || ''])}
+                    error={validator([validateLinkNameField(fileName) || ''])}
                     required
                 />
             </ModalTwoContent>
@@ -102,4 +97,4 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
     );
 };
 
-export default CreateFolderModal;
+export default CreateFileModal;

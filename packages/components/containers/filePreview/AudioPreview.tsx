@@ -5,10 +5,10 @@ import UnsupportedPreview from './UnsupportedPreview';
 interface Props {
     mimeType: string;
     contents?: Uint8Array[];
-    onSave?: () => void;
+    onDownload?: () => void;
 }
 
-const AudioPreview = ({ contents, mimeType, onSave }: Props) => {
+const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
     const [url, setUrl] = useState<string>();
     const [error, setError] = useState(false);
 
@@ -29,7 +29,7 @@ const AudioPreview = ({ contents, mimeType, onSave }: Props) => {
     if (error) {
         return (
             <div className="flex flex-item-fluid-auto relative">
-                <UnsupportedPreview onSave={onSave} type="audio" />
+                <UnsupportedPreview onDownload={onDownload} type="audio" />
             </div>
         );
     }

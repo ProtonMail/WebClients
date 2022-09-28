@@ -6,10 +6,10 @@ import UnsupportedPreview from './UnsupportedPreview';
 interface Props {
     mimeType: string;
     contents?: Uint8Array[];
-    onSave?: () => void;
+    onDownload?: () => void;
 }
 
-const VideoPreview = ({ contents, mimeType, onSave }: Props) => {
+const VideoPreview = ({ contents, mimeType, onDownload }: Props) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const containerBounds = useElementRect(containerRef);
@@ -52,7 +52,7 @@ const VideoPreview = ({ contents, mimeType, onSave }: Props) => {
     if (error) {
         return (
             <div className="flex flex-item-fluid-auto relative">
-                <UnsupportedPreview onSave={onSave} type="video" />
+                <UnsupportedPreview onDownload={onDownload} type="video" />
             </div>
         );
     }
