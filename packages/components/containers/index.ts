@@ -42,6 +42,7 @@ export * from './modals';
 export * from './notification';
 export * from './notifications';
 export * from './onboarding';
+export * from './offers';
 export * from './organization';
 export * from './overview';
 export * from './password';
