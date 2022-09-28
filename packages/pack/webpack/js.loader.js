@@ -14,7 +14,7 @@ const UNSUPPORTED_JS_LOADER = [
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.23' },
+                        corejs: { version: '3.25' },
                     },
                 ],
             ],
