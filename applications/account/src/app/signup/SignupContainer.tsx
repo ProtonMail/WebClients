@@ -118,7 +118,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
-    const [[steps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
+    const [[previousSteps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
         [],
         SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
     ]);
@@ -229,16 +229,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     }, []);
 
     const handleBack = () => {
-        if (!steps.length) {
+        if (!previousSteps.length) {
             return;
         }
-        const newSteps = [...steps];
+        const newSteps = [...previousSteps];
         const newStep = newSteps.pop()!;
         setStep([newSteps, newStep]);
     };
 
     const handleStep = (to: SIGNUP_STEPS) => {
-        setStep([[...steps, step], to]);
+        setStep([[...previousSteps, step], to]);
     };
 
     const handleResult = (result: SignupActionResponse) => {
