@@ -1,19 +1,14 @@
 import { ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
-import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
+import { AppLink, Hamburger, Icon } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
-import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
+import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
-import { useConfig, useUser } from '../../hooks';
 import { AppsDropdown } from '../app';
-import TopNavbarListItemBlackFridayButton from './TopNavbarListItemBlackFridayButton';
-import usePromotionOffer from './usePromotionOffer';
 
 interface Props extends HeaderProps {
     logo?: ReactNode;
@@ -48,11 +43,6 @@ const PrivateHeader = ({
     onToggleExpand,
     title,
 }: Props) => {
-    const [user] = useUser();
-    const { APP_NAME } = useConfig();
-    const offer = usePromotionOffer();
-    const location = useLocation();
-
     if (backUrl) {
         return (
             <Header>
@@ -72,12 +62,6 @@ const PrivateHeader = ({
         );
     }
 
-    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const upgradePathname = isVPN ? '/dashboard' : '/upgrade';
-    const appDomain = isVPN ? 'vpn-settings' : APPS_CONFIGURATION[APP_NAME].subdomain;
-    // We want to have metrics from where the user has clicked on the upgrade button
-    const upgradeUrl = `${upgradePathname}?ref=upsell_${appDomain}-button-1`;
-
     return (
         <Header>
             <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
@@ -90,24 +74,7 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
-                    {offer ? (
-                        <TopNavbarListItem noShrink>
-                            <TopNavbarListItemBlackFridayButton offer={offer} />
-                        </TopNavbarListItem>
-                    ) : null}
-                    {user.isFree && !location.pathname.endsWith(upgradePathname) && (
-                        <TopNavbarListItem noShrink collapsedOnDesktop={false}>
-                            <TopNavbarListItemButton
-                                as={SettingsLink}
-                                shape="outline"
-                                color="norm"
-                                text={c('Link').t`Upgrade`}
-                                icon={<Icon name="arrow-up-big-line" />}
-                                path={upgradeUrl}
-                                title={c('Link').t`Go to subscription plans`}
-                            />
-                        </TopNavbarListItem>
-                    )}
+                    <TopNavbarUpsell />
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {contactsButton ? <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem> : null}
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}

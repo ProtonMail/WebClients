@@ -148,3 +148,11 @@ export const getCycleDiscount = (cycle: Cycle, planName: PLANS | ADDON_NAMES, pl
     const percentage = (originalPrice - normalisedPrice) / originalPrice;
     return Math.round(percentage * 100);
 };
+
+export const isExternal = (subscription: Subscription | undefined) => {
+    return !!subscription?.External;
+};
+
+export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.BLACK_FRIDAY_2022;
+};
