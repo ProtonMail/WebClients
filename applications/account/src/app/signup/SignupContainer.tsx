@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Step, Stepper } from '@proton/atoms/Stepper';
 import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import {
     useApi,
@@ -363,8 +364,53 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
     const accountData = cache?.accountData;
 
+    const stepper = useMemo(
+        () =>
+            (() => {
+                const stepLabels = {
+                    accountSetup: c('Signup step').t`Account setup`,
+                    verification: c('Signup step').t`Verification`,
+                    payment: c('Signup step').t`Payment`,
+                };
+
+                if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+                    const secondStep = (() => {
+                        if (!signupParameters.preSelectedPlan || signupParameters.preSelectedPlan === 'free') {
+                            return stepLabels.verification;
+                        }
+
+                        return stepLabels.payment;
+                    })();
+
+                    return { activeStep: 0, steps: [stepLabels.accountSetup, secondStep] };
+                }
+
+                if (step === SIGNUP_STEPS.UPSELL) {
+                    return { activeStep: 0, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                }
+
+                if (step === SIGNUP_STEPS.HUMAN_VERIFICATION) {
+                    return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                }
+
+                if (step === SIGNUP_STEPS.PAYMENT) {
+                    return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.payment] };
+                }
+
+                return;
+            })(),
+        [step, signupParameters.preSelectedPlan]
+    );
+
     const children = (
         <>
+            {stepper && (
+                <Stepper className="mb1" position="center" activeStep={stepper.activeStep}>
+                    {stepper.steps.map((step) => (
+                        <Step key={step}>{step}</Step>
+                    ))}
+                </Stepper>
+            )}
             {step === ACCOUNT_CREATION_USERNAME && (
                 <AccountStep
                     clientType={clientType}
