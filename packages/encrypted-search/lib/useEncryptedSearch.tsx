@@ -592,6 +592,14 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             dbExists: true,
         }));
 
+        // Caching metadata because by the end of metadata indexing we also expect cache
+        // to hold metadata. In case metadata indexing was interrupted, we would only add
+        // metadata for the fetched items and not for those that were indexed before the
+        // interruption
+        if (indexKey) {
+            await cacheMetadata<ESItemMetadata>(userID, indexKey, esHelpers.getItemInfo, esCacheRef);
+        }
+
         // Even though this procedure cannot be paused, this is still useful
         // in case of clearing data and logout
         abortIndexingRef.current = new AbortController();
@@ -793,7 +801,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
         // Caching content because by the end of content indexing we also expect cache
         // to hold content. In case content indexing was interrupted, we would only add
         // content for the fetched items and not for those that were indexed before the
-        // interruption, therefore we will that in here
+        // interruption
         await cacheContent<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esHelpers.getItemInfo);
 
         // We default to having the limited flag to true and
