@@ -140,7 +140,7 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 /**
  * Create the encrypted object to store in IndexedDB
  */
-export const encryptItem = async (itemToStore: Object, indexKey: CryptoKey): Promise<AesGcmCiphertext> => {
+export const encryptItem = async (itemToStore: any, indexKey: CryptoKey): Promise<AesGcmCiphertext> => {
     const itemToEncrypt = JSON.stringify(itemToStore);
     const textEncoder = new TextEncoder();
 
