@@ -4,7 +4,7 @@ import { getContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
-import { ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import { Contact, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
@@ -54,7 +54,7 @@ const ContactMergePreviewModal = ({ beMergedModel, beDeletedModel, updateModel, 
         const mergeContacts = async () => {
             try {
                 const requests = beMergedIDs.map((ID: string) => async () => {
-                    const { Contact } = await api(getContact(ID));
+                    const { Contact } = await api<{ Contact: Contact }>(getContact(ID));
                     const { vCardContact, errors } = await prepareVCardContact(Contact, { privateKeys, publicKeys });
                     if (errors.length) {
                         setModel({ ...model, errorOnLoad: true });

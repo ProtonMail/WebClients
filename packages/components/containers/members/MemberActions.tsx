@@ -75,7 +75,7 @@ const MemberActions = ({
             return createNotification({ type: 'error', text: error });
         }
         const apiConfig = authMember(member.ID);
-        const { UID, LocalID } = await new Promise((resolve, reject) => {
+        const { UID, LocalID } = await new Promise<{ UID: string; LocalID: number }>((resolve, reject) => {
             createModal(
                 <AuthModal<MemberAuthResponse>
                     onClose={reject}

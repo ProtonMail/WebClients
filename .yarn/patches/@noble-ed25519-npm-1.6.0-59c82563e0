@@ -4,7 +4,7 @@ index 70147e8321509c1a27a3dfd6026d1822e1713fc1..c4eff96bbca7e6e79392568627ea7037
 +++ b/lib/esm/index.js
 @@ -1,5 +1,9 @@
  /*! noble-ed25519 - MIT License (c) 2019 Paul Miller (paulmillr.com) */
- import nodeCrypto from 'crypto';
+ import * as nodeCrypto from 'crypto';
 +// Warning:
 +// This is a patch to allow this script to continue executing in Safari <=13 since it causes it to crash on import.
 +// *BigInt support detection must be made from the consumer*.

@@ -20,7 +20,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
+import { Address, CachedOrganizationKey, Domain, Member, Organization } from '@proton/shared/lib/interfaces';
 import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import clamp from '@proton/utils/clamp';
@@ -89,7 +89,7 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
             })
         );
 
-        const { Member } = await srpVerify({
+        const { Member } = await srpVerify<{ Member: Member }>({
             api,
             credentials: { password: model.password },
             config: createMember({
@@ -100,7 +100,7 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
             }),
         });
 
-        const { Address } = await api(
+        const { Address } = await api<{ Address: Address }>(
             createMemberAddress(Member.ID, {
                 Local: model.address,
                 Domain: model.domain,

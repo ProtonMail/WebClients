@@ -34,7 +34,7 @@ type KeyOfUnion<T> = T extends any ? keyof T : never;
  * @param resetField
  * @param onSelect
  */
-function useSearch<T, K = keyof SearchableObject<T>>({
+function useSearch<T extends object, K = keyof SearchableObject<T>>({
     inputValue = '',
     minSymbols = 1,
     mapFn,
