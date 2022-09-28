@@ -4,6 +4,11 @@
 	&-item {
 		$dot-size: em(12);
 		$weak-opacity: 0.2;
+		$connector-height: em(2);
+		$connector-gap: em(2);
+		$connector-max-width: em(120);
+
+		max-inline-size: calc($connector-max-width + $dot-size - $connector-gap);
 
 		&-dot {
 			inline-size: $dot-size;
@@ -12,9 +17,6 @@
 		}
 
 		&-connector {
-			$connector-height: em(2);
-			$connector-gap: em(2);
-
 			block-size: $connector-height;
 			position: absolute;
 			inset-block-start: ($dot-size - $connector-height) / 2;
