@@ -32,7 +32,12 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import {
     Alert,
     Button,
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
     Field,
+    Icon,
     Info,
     Label,
     ModalProps,
@@ -41,7 +46,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
-    UnderlineButton,
 } from '../../../components';
 import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../../hooks';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
@@ -256,7 +260,11 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
 
     return (
         <ModalTwo size="large" className="contacts-modal" {...rest}>
-            <ModalTwoHeader title={c('Title').t`Email settings (${emailAddress})`} titleClassName="text-ellipsis" />
+            <ModalTwoHeader
+                title={c('Title').t`Edit email settings`}
+                titleClassName="text-ellipsis"
+                subline={emailAddress}
+            />
             <ModalTwoContent>
                 {!isMimeTypeFixed ? (
                     <Alert className="mb1">
@@ -301,15 +309,31 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     </Field>
                 </Row>
                 <div className="mb1">
-                    <UnderlineButton onClick={() => setShowPgpSettings(!showPgpSettings)} disabled={loading}>
-                        {showPgpSettings
-                            ? c('Action').t`Hide advanced PGP settings`
-                            : c('Action').t`Show advanced PGP settings`}
-                    </UnderlineButton>
+                    <Collapsible>
+                        <CollapsibleHeader
+                            suffix={
+                                <CollapsibleHeaderIconButton
+                                    disabled={loading}
+                                    onClick={() => setShowPgpSettings(!showPgpSettings)}
+                                >
+                                    <Icon name="chevron-down" />
+                                </CollapsibleHeaderIconButton>
+                            }
+                            disableFullWidth
+                            onClick={() => setShowPgpSettings(!showPgpSettings)}
+                            as="a"
+                        >
+                            {showPgpSettings
+                                ? c('Action').t`Hide advanced PGP settings`
+                                : c('Action').t`Show advanced PGP settings`}
+                        </CollapsibleHeader>
+                        <CollapsibleContent>
+                            {showPgpSettings && model ? (
+                                <ContactPGPSettings model={model} setModel={setModel} mailSettings={mailSettings} />
+                            ) : null}
+                        </CollapsibleContent>
+                    </Collapsible>
                 </div>
-                {showPgpSettings && model ? (
-                    <ContactPGPSettings model={model} setModel={setModel} mailSettings={mailSettings} />
-                ) : null}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="reset" onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
