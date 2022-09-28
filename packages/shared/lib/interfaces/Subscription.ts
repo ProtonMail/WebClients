@@ -35,17 +35,25 @@ export interface Plan {
     State: number;
 }
 
+enum External {
+    Default = 0,
+    iOS = 1,
+    Android = 2,
+}
+
 export interface Subscription {
     ID: string;
     InvoiceID: string;
     Cycle: Cycle;
     PeriodStart: number;
     PeriodEnd: number;
+    CreateTime: number;
     CouponCode: null | string;
     Currency: Currency;
     Amount: number;
     RenewAmount: number;
     Plans: Plan[];
+    External: External;
 }
 
 export interface SubscriptionModel extends Subscription {
