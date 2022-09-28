@@ -26,7 +26,7 @@ import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
+import { cancelScheduled, endUndo, sent, updateExpires } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
@@ -158,6 +158,13 @@ export const useSendMessage = () => {
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
                 const { expiresIn, autoSaveContacts, scheduledAt } = inputMessage.draftFlags || {};
+
+                // Scheduled messages cannot expire, the expiration is not added on the BE side
+                // We need to remove the expiration also on FE side otherwise we will see on the UI that the message
+                // can expire (icon + banner) when it's not possible.
+                if (scheduledAt && expiresIn) {
+                    await dispatch(updateExpires({ ID: message.localID, expiresIn: 0 }));
+                }
 
                 const payload = sendFormatter({
                     ID: message.data?.ID,
