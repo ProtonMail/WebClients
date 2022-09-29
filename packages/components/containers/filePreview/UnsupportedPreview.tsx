@@ -8,7 +8,7 @@ import { classnames } from '../../helpers';
 import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
-    type?: 'file' | 'image' | 'video';
+    type?: 'file' | 'image' | 'video' | 'audio';
     onSave?: () => void;
 }
 
