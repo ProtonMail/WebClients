@@ -1,4 +1,4 @@
-import { formatISO, parseISO } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import ICAL from 'ical.js';
 
 import isTruthy from '@proton/utils/isTruthy';
@@ -200,7 +200,7 @@ export const parseToVCard = (vcard: string): VCardContact => {
     const icalComponent = new ICAL.Component(ICAL.parse(vcard));
     const properties = icalComponent.getAllProperties() as any[];
 
-    const vCardContact: VCardContact = { fn: [] };
+    const vCardContact = {} as VCardContact;
 
     properties.forEach((property) => {
         parseIcalProperty(property, vCardContact);
@@ -209,7 +209,7 @@ export const parseToVCard = (vcard: string): VCardContact => {
     return vCardContact;
 };
 
-export const internalValueToIcalValue = (name: string, type: string | undefined, value: any) => {
+export const internalValueToIcalValue = (name: string, value: any) => {
     if (name === 'adr') {
         const {
             postOfficeBox = '',
@@ -219,13 +219,14 @@ export const internalValueToIcalValue = (name: string, type: string | undefined,
             region = '',
             postalCode = '',
             country = '',
-        } = value as VCardAddress;
+        } = value;
         return [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country];
     }
     if (name === 'bday' || name === 'anniversary') {
         const dateValue = value as VCardDateOrText;
         if (dateValue?.date && isValidDate(dateValue.date)) {
-            return formatISO(dateValue.date, { representation: 'date' });
+            //  As we don't allow to edit times, we assume there's no need of keeping the time part
+            return format(dateValue.date, 'yyyyMMdd');
         } else {
             return dateValue.text || '';
         }
@@ -237,6 +238,7 @@ export const internalValueToIcalValue = (name: string, type: string | undefined,
     return value;
 };
 
+// TODO: Deprecate this function. See VcardProperty interface
 export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
     // make sure version (we enforce 4.0) is the first property; otherwise invalid vcards can be generated
     const versionLessProperties = properties.filter(({ field }) => field !== 'version');
@@ -254,7 +256,7 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
             property.resetType('text');
         }
 
-        const iCalValue = internalValueToIcalValue(field, params?.type, value);
+        const iCalValue = internalValueToIcalValue(field, value);
         property.setValue(iCalValue);
 
         Object.entries(params || {}).forEach(([key, value]) => {
@@ -265,6 +267,63 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
     });
 
     return component;
+};
+
+const getProperty = (name: string, { value, params = {}, group }: any) => {
+    const nameWithGroup = [group, name].filter(isTruthy).join('.');
+    const property = new ICAL.Property(nameWithGroup);
+
+    if (['bday', 'anniversary'].includes(name) && !(value.date && isValidDate(value.date))) {
+        property.resetType('text');
+    }
+
+    if (property.isMultiValue && Array.isArray(value)) {
+        property.setValues(value.map((val) => internalValueToIcalValue(name, val)));
+    } else {
+        property.setValue(internalValueToIcalValue(name, value));
+    }
+
+    Object.keys(params).forEach((key) => {
+        property.setParameter(key, params[key]);
+    });
+
+    return property;
+};
+
+export const serialize = (contact: any) => {
+    const icalComponent = new ICAL.Component('vcard');
+
+    // clear any possible previous version (which could be < 4.0)
+    delete contact.version;
+    const versionProperty = new ICAL.Property('version');
+    versionProperty.setValue('4.0');
+    icalComponent.addProperty(versionProperty);
+
+    // Prefer to put FN at the beginning (not required by RFC)
+    const sortedObjectKeys = Object.keys(contact).sort((property1, property2) => {
+        if (property1 === 'fn') {
+            return -1;
+        } else if (property2 === 'fn') {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    sortedObjectKeys.forEach((name) => {
+        const jsonProperty = contact[name];
+
+        if (Array.isArray(jsonProperty)) {
+            jsonProperty.forEach((property) => {
+                icalComponent.addProperty(getProperty(name, property));
+            });
+            return;
+        }
+
+        icalComponent.addProperty(getProperty(name, jsonProperty));
+    });
+
+    return icalComponent.toString();
 };
 
 /**
