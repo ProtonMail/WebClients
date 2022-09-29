@@ -152,15 +152,16 @@ const AccountStep = ({
         }, 0);
     }, [signupType, isLoadingView]);
 
+    const emailLabel =
+        signupType === SignupType.Username || signupType === SignupType.VPN
+            ? c('Signup label').t`Username`
+            : c('Signup label').t`Email`;
+
     const innerChallenge = (
         <InputFieldTwo
             id="email"
             bigger
-            label={
-                signupType === SignupType.Username || signupType === SignupType.VPN
-                    ? c('Signup label').t`Username`
-                    : c('Signup label').t`Email`
-            }
+            label={emailLabel}
             error={validator(
                 signupType === SignupType.Username || signupType === SignupType.VPN
                     ? [requiredValidator(username)]
@@ -294,6 +295,7 @@ const AccountStep = ({
                             iframeClassName="challenge-width-increase"
                             challengeRef={challengeRefLogin}
                             type={0}
+                            title={emailLabel}
                             name="username"
                             onSuccess={() => {
                                 setChallengeLoading(false);
