@@ -88,7 +88,7 @@ const getApi = (value) => {
     return API_TARGETS[value] || API_TARGETS.prod;
 };
 
-const getConfigData = ({ api, publicPath }) => {
+const getConfigData = ({ api, apiProxy, publicPath }) => {
     const pkg = require(path.join(process.cwd(), 'package.json'));
     const appName = pkg.name;
     if (!appName) {
@@ -102,6 +102,7 @@ const getConfigData = ({ api, publicPath }) => {
         version: getVersionNumberFromTag(process.env.CI_COMMIT_TAG || getGitTagVersion(appName)) || '5.0.999.999',
         locales: LOCALES,
         api,
+        apiProxy,
         sentryDsn: isProduction ? ENV_CONFIG.app.sentry || '' : '',
         publicPath,
     };
@@ -128,7 +129,7 @@ const getConfigFile = ({ buildData, appData }) => {
     export const BRANCH = '${buildData.branch}';
     export const DATE_VERSION = '${buildData.date}';
     export const APP_NAME = '${appData.appName}';
-    export const API_URL = '/api';
+    export const API_URL =  '${(!appData.apiProxy && appData.api) || '/api'}';
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const VERSION_PATH = '${appData.publicPath}assets/version.json';
     export const SENTRY_DSN = '${appData.sentryDsn}';
