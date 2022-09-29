@@ -1,10 +1,17 @@
 import { ReactNode, Ref, forwardRef, useRef, useState } from 'react';
 
-import { isPDF, isSupportedImage, isSupportedText, isSupportedVideo } from '@proton/shared/lib/helpers/mimetype';
+import {
+    isAudio,
+    isPDF,
+    isSupportedImage,
+    isSupportedText,
+    isSupportedVideo,
+} from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFocusTrap } from '../../components';
 import { useCombinedRefs, useHotkeys } from '../../hooks';
+import AudioPreview from './AudioPreview';
 import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
 import PDFPreview from './PDFPreview';
@@ -85,6 +92,9 @@ const FilePreview = (
         }
         if (isSupportedVideo(mimeType, fileSize)) {
             return <VideoPreview contents={contents} mimeType={mimeType} onSave={onSave} />;
+        }
+        if (isAudio(mimeType)) {
+            return <AudioPreview contents={contents} mimeType={mimeType} onSave={onSave} />;
         }
         if (isSupportedText(mimeType)) {
             return <TextPreview contents={contents} />;
