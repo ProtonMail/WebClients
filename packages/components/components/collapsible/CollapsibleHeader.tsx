@@ -60,6 +60,7 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
             className={clsx(
                 className,
                 'flex flex-nowrap flex-align-items-center',
+                disabled && 'no-pointer-events',
                 !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
         >
