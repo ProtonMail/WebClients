@@ -349,15 +349,14 @@ const MessageView = (
         <article
             ref={elementRef}
             className={classnames([
-                'message-container mx0-5 my1 outline-none relative',
+                'message-container mx0-5 my1 relative',
                 expanded && 'is-opened',
-                hasFocus && 'is-focused',
                 showFooter && 'has-attachments',
                 unread && 'is-unread',
             ])}
             style={{ '--index': conversationIndex * 2 }}
             data-testid="message-view"
-            tabIndex={-1}
+            tabIndex={0}
             data-message-id={message.data?.ID}
             data-shortcut-target="message-container"
             onFocus={handleFocus('BUBBLED_EVENT')}
