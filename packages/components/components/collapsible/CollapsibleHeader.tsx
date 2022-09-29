@@ -13,6 +13,10 @@ export interface CollapsibleHeaderOwnProps {
      */
     suffix?: ReactNode;
     /**
+     * Disables the header.
+     */
+    disabled?: boolean;
+    /**
      * Disables the header content from growing to fill available space.
      */
     disableFullWidth?: boolean;
@@ -35,9 +39,12 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
     onClick,
     ...rest
 }: CollapsibleHeaderProps<E>) => {
-    const { toggle, headerId } = useContext(CollapsibleContext);
+    const { toggle, headerId, disabled } = useContext(CollapsibleContext);
 
     const handleContainerClick = () => {
+        if (disabled) {
+            return;
+        }
         if (!disableContainerToggle) {
             toggle();
         }
@@ -47,12 +54,13 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
     return (
         <Box
             as={element}
+            disabled={disabled}
             {...rest}
             onClick={handleContainerClick}
             className={clsx(
                 className,
                 'flex flex-nowrap flex-align-items-center',
-                !disableContainerToggle && 'collapsible-header--clickable'
+                !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
         >
             <div

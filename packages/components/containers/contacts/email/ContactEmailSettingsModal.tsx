@@ -27,6 +27,7 @@ import {
     sortApiKeys,
     sortPinnedKeys,
 } from '@proton/shared/lib/keys/publicKeys';
+import clsx from '@proton/utils/clsx';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
@@ -71,7 +72,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const { call } = useEventManager();
     const [model, setModel] = useState<ContactPublicKeyModel>();
     const [showPgpSettings, setShowPgpSettings] = useState(false);
-    const [loading, withLoading] = useLoading();
+    const [loading, withLoading] = useLoading(true);
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
 
@@ -309,19 +310,17 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     </Field>
                 </Row>
                 <div className="mb1">
-                    <Collapsible>
+                    <Collapsible disabled={loading}>
                         <CollapsibleHeader
                             suffix={
-                                <CollapsibleHeaderIconButton
-                                    disabled={loading}
-                                    onClick={() => setShowPgpSettings(!showPgpSettings)}
-                                >
+                                <CollapsibleHeaderIconButton onClick={() => setShowPgpSettings(!showPgpSettings)}>
                                     <Icon name="chevron-down" />
                                 </CollapsibleHeaderIconButton>
                             }
                             disableFullWidth
                             onClick={() => setShowPgpSettings(!showPgpSettings)}
-                            as="a"
+                            // TODO: Improve disabled style during loading
+                            className={clsx(['text-underline color-primary', loading && 'color-weak'])}
                         >
                             {showPgpSettings
                                 ? c('Action').t`Hide advanced PGP settings`
