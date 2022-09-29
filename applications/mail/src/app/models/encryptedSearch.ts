@@ -37,6 +37,7 @@ export interface ESDBStatusMail {
     temporaryToggleOff: boolean;
     activatingPartialES: boolean;
     lastContentTime: number;
+    isMigrating: boolean;
 }
 
 export interface EncryptedSearchFunctionsMail

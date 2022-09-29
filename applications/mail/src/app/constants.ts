@@ -134,6 +134,7 @@ export const defaultESMailStatus: ESDBStatusMail = {
     temporaryToggleOff: false,
     activatingPartialES: false,
     lastContentTime: 0,
+    isMigrating: false,
 };
 export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     ...defaultESContext,
