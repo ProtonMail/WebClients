@@ -102,8 +102,8 @@
       "Apply": [
         "应用"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "应用于现有邮件"
       ],
       "Attach screenshot(s)": [
         "添加截图"
@@ -486,11 +486,14 @@
       "No": [
         "否"
       ],
-      "OK": [
-        "好"
+      "Non spam": [
+        "非垃圾邮件"
       ],
       "Ok": [
         "确定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
@@ -543,10 +546,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -2705,6 +2708,20 @@
         "${ emailAddress } 暂时接受了参加 ${ eventTitle } 的邀请"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "取消 ${ formattedStart } 的活动"
@@ -3027,17 +3044,23 @@
       "Signature verification failed": [
         "签名验证失败"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "部分文件夹名称与系统内部名称冲突，请在导入内容中予以更改。"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "部分文件夹名称超过了 ${ MAIL_APP_NAME } 的最大字数限制，请自定导入内容并编辑名称。"
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "部分标签名称与系统内部名称冲突，请在导入内容中予以更改。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超过了 ${ MAIL_APP_NAME } 的长度限制，请自定导入内容并予以更改。"
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -3644,7 +3667,7 @@
         "您将不会收到来自屏蔽邮箱地址的邮件"
       ],
       "Search in Allow List and Block List": [
-        "搜索白名单和黑名单"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4090,8 +4113,8 @@
       "contacts": [
         "通讯录"
       ],
-      "CSV file": [
-        "CSV 文件"
+      "CSV or a VCF (vCard) file": [
+        "CSV 或 VCF（vCard）文件"
       ],
       "full calendar view": [
         "全日历视图"
@@ -6291,6 +6314,9 @@
       " and ${ l }": [
         "、${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } 邮箱地址或用户名"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
       ],
@@ -6452,6 +6478,9 @@
       ],
       "Color": [
         "颜色"
+      ],
+      "Coming soon": [
+        "即将推出"
       ],
       "Composer": [
         "编辑窗"
@@ -7029,6 +7058,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "上传一个或多个恢复文件或加密密钥"
       ],
+      "Upload file": [
+        "上传文件"
+      ],
       "URL": [
         "网址"
       ],
@@ -7377,8 +7409,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签中 ${ selectedLabelsCount } 个的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7655,29 +7693,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ _price }": [
-        "低至 ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "每位用户低至 ${ _price2 }"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "继续使用 ${ currentPlanName } 账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "前去结算"
@@ -7717,6 +7732,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ _price }": [
+        "低至 ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "每位用户低至 ${ _price2 }"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "继续使用 ${ currentPlanName } 账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: attribute": {
@@ -8064,17 +8102,6 @@
         "您所选的账户等级：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } $ 试用"
-      ],
-      "Upgrade to ${ planName }": [
-        "开通 ${ planName }"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -8096,6 +8123,17 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } $ 试用"
+      ],
+      "Upgrade to ${ planName }": [
+        "开通 ${ planName }"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -9119,35 +9157,6 @@
         "用户名"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${name}已添加"
-      ],
-      "${ name } deletion failed": [
-        "${name}删除失败"
-      ],
-      "${ name } failed to move to Block List": [
-        "将${name}移入黑名单失败"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "将${name}移入非垃圾邮件名单失败"
-      ],
-      "${ name } failed to move to Spam List": [
-        "将${name}移入垃圾邮件名单失败"
-      ],
-      "${ name } moved to Block List": [
-        "将${name}移入黑名单"
-      ],
-      "${ name } moved to Non spam list": [
-        "已将${name}移入非垃圾邮件名单"
-      ],
-      "${ name } moved to Spam list": [
-        "已将${name}移入垃圾邮件名单"
-      ],
-      "${ name } successfully deleted": [
-        "${name}删除成功"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文件也可以具备与邮件同等的安全性。"
@@ -9689,9 +9698,9 @@
         "创建 Sieve 规则"
       ],
       "Add to block list": [
-        "加入黑名单"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "加入白名单"
       ],
       "Add to spam list": [

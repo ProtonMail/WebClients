@@ -23,6 +23,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add condition": [
+        "Tambahkan syarat"
+      ],
       "Add contact": [
         "Tambah kontak"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "Lanjut"
       ],
+      "Continue import": [
+        "Lanjutkan impor"
+      ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "Buat label baru"
       ],
+      "Create folder": [
+        "Buat folder"
+      ],
+      "Create label": [
+        "Buat label"
+      ],
       "Create new contact": [
         "Buat kontak baru"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "Atur"
+      ],
+      "Customize import": [
+        "Sesuaikan impor"
       ],
       "Default email application": [
         "Aplikasi email default"
@@ -464,6 +479,9 @@
       "Label as...": [
         "Labeli sebagai..."
       ],
+      "label emails as": [
+        "labeli email sebagai"
+      ],
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
@@ -499,6 +517,9 @@
       ],
       "Mark as unread": [
         "Tandai belum dibaca"
+      ],
+      "mark emails as": [
+        "tandai email sebagai"
       ],
       "Mark for deletion": [
         "Tandai untuk dihapus"
@@ -560,6 +581,9 @@
       "Move all to trash": [
         "Pindahkan semua ke sampah"
       ],
+      "move emails to": [
+        "pindahkan email ke"
+      ],
       "Move to": [
         "Pindah ke"
       ],
@@ -568,12 +592,6 @@
       ],
       "Move to inbox": [
         "Pindahkan ke kotak masuk"
-      ],
-      "Move to inbox (not spam)": [
-        "Pindahkan ke kotak masuk (bukan spam)"
-      ],
-      "Move to spam": [
-        "Pindah ke spam"
       ],
       "Move to spam and unsubscribe": [
         "Pindahkan ke spam dan batalkan langganan"
@@ -647,6 +665,9 @@
       "Pause": [
         "Jeda"
       ],
+      "Preview": [
+        "Pratinjau"
+      ],
       "Preview ${ attachmentName }": [
         "Pratinjau ${ attachmentName }"
       ],
@@ -686,6 +707,9 @@
       "Read receipt sent": [
         "Bukti baca telah terkirim"
       ],
+      "Reconnect": [
+        "Sambungkan kembali"
+      ],
       "Recover data": [
         "Pulihkan data"
       ],
@@ -713,6 +737,9 @@
       "Remove expiration time": [
         "Hapus waktu kedaluawarsa"
       ],
+      "Remove this label": [
+        "Hapus label ini"
+      ],
       "Rename": [
         "Ubah nama"
       ],
@@ -736,6 +763,9 @@
       ],
       "Reset search form": [
         "Atur ulang pencarian"
+      ],
+      "Reset to default": [
+        "Atur ulang ke awal"
       ],
       "Reset zoom": [
         "Ukuran semula"
@@ -784,6 +814,9 @@
       ],
       "Send anyway": [
         "Tetap kirim"
+      ],
+      "send auto-reply email": [
+        "kirim pesan balasan otomatis"
       ],
       "Send feedback": [
         "Kirim tanggapan"
@@ -1791,6 +1824,9 @@
       ],
       "Quit import customization?": [
         "Keluar dari menu pengaturan proses impor?"
+      ],
+      "Quit import?": [
+        "Keluar dari impor?"
       ]
     },
     "Contact field label": {
@@ -2647,6 +2683,23 @@
         "Kepulauan Åland"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Lampiran"
+      ],
+      "Next": [
+        "Selanjutnya"
+      ],
+      "Recipient": [
+        "Penerima"
+      ],
+      "Sender": [
+        "Pengirim"
+      ],
+      "Subject": [
+        "Subjek"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } kali"
@@ -2906,6 +2959,9 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Pilih tanggal yang berjarak ${ SCHEDULED_MAX_DATE_DAYS } hari dari sekarang."
       ],
+      "Condition incomplete": [
+        "Kondisi tidak lengkap"
+      ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
@@ -2945,11 +3001,17 @@
       "Email is not valid": [
         "Email tidak valid"
       ],
+      "Empty condition": [
+        "Kondisi kosong"
+      ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
       ],
       "Enter a password": [
         "Masukkan kata sandi"
+      ],
+      "Error in one of the conditions": [
+        "Kesalahan pada salah satu kondisi"
       ],
       "Error while saving draft. Please try again.": [
         "Terjadi kesalahan dalam menyimpan draf. Silakan coba lagi."
@@ -2962,6 +3024,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Gagal mengenkripsi lampiran. Silakan coba lagi."
+      ],
+      "Filter with this name already exists": [
+        "Filter dengan nama ini sudah ada"
       ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
@@ -3056,6 +3121,9 @@
       "Please set a password": [
         "Harap tentukan kata sandi"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Coba autentikasi ulang dan pastikan izin disetel dengan benar."
+      ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
@@ -3080,6 +3148,12 @@
       "Request timed out": [
         "Waktu permintaan habis"
       ],
+      "Require at least one action": [
+        "Perlu minimal satu tindakan"
+      ],
+      "Require at least one condition": [
+        "Perlu minimal satu kondisi"
+      ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
       ],
@@ -3094,6 +3168,12 @@
       ],
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
@@ -3172,6 +3252,9 @@
       ],
       "Unknown error.": [
         "Galat tidak diketahui."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Kami tidak dapat terhubung dengan penyedia layanan email Anda."
       ],
       "Wrong mailbox password": [
         "Kata sandi kotak pesan salah"
@@ -3532,6 +3615,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filter ${ Filter.Name } berhasil diperbarui"
       ]
     },
     "Filter option": {
@@ -3549,6 +3635,14 @@
       ],
       "Unread": [
         "Belum dibaca"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "dibaca"
+      ],
+      "starred": [
+        "dibintangi"
       ]
     },
     "Font Face Default": {
@@ -3752,12 +3846,258 @@
         "ProtonContacts tidak mendukung ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Akses aplikasi yang kurang aman\" telah diaktifkan pada pengaturan keamanan akun Google Anda."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Verifikasi 2 langkah telah diaktifkan pada akun eksternal Anda."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Jika ${ bold2StepsDisabled } di Gmail (pengaturan baku), pastikan:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Akses IMAP telah diaktifkan pada akun eksternal Anda."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Akses IMAP telah diaktifkan pada akun Yahoo Anda."
+      ],
+      "Invalid IMAP port": [
+        "Port IMAP tidak valid"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP Gmail aktif."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP telah aktif di akun Gmail Anda."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port benar."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung dengan akun Gmail. Pastikan alamat server mail dan nomor port Anda benar."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa alamat server email dan nomor port yang ada sudah benar."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
+      ],
+      "Use your app password if:": [
+        "Gunakan kata sandi aplikasi Anda jika:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email account requires one to export your data.": [
+        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Alamat email dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
+      ],
+      "Your email address and password are correct.": [
+        "Alamat email dan kata sandi Anda benar."
+      ],
+      "Your password is correct.": [
+        "Kata sandi Anda benar."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Verifikasi 2 langkah dinonaktifkan"
+      ],
+      "2-step verification is enabled": [
+        "Verifikasi 2 langkah aktif"
+      ],
+      "all your other Google accounts": [
+        "semua akun Google Anda lainnya"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "jangan"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Kalender acara dibuat"
       ],
       "Creating calendar event failed": [
         "Gagal membuat kalender acara"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Tuju ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Tuju ${ securitySettingsLink } Outlook."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Apabila verifikasi 2 langkah belum aktif, aktifkan terlebih dahulu."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Buka kontak ${ yahooMailLink } Anda."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Buka ${ outlookContactsLink } Outlook Anda."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Pilih ${ boldExportContacts } dan tentukan kontak mana saja yang hendak Anda ekspor."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Pilih ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Info akun"
+      ],
+      "Account security": [
+        "Keamanan akun"
+      ],
+      "app password": [
+        "kata sandi aplikasi"
+      ],
+      "Can view all details": [
+        "Dapat melihat seluruh rincian"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
+      ],
+      "Export to CSV file": [
+        "Ekspor ke berkas CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Kelola"
+      ],
+      "Publish a calendar": [
+        "Terbitkan kalender"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "kata sandi aplikasi"
+      ],
+      "app password or enable IMAP": [
+        "kata sandi aplikasi atau mengaktifkan IMAP"
+      ],
+      "contacts": [
+        "kontak"
+      ],
+      "full calendar view": [
+        "tampilan kalender seutuhnya"
+      ],
+      "ICS file": [
+        "Berkas ICS"
+      ],
+      "security settings": [
+        "pengaturan keamanan"
+      ],
+      "shared calendars": [
+        "kalender yang dibagikan"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik tautan ${ boldICS } dan unduh berkas tersebut."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Tuju ${ calendarLink } pada pengaturan Outlook Anda."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Tuju ${ calendarViewLink } di Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Arahkan kursor Anda ke kalender yang hendak Anda impor dan buka menu dropdown."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Pada ${ boldPublish }, pilih kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender tersebut izin ${ boldCanViewAllDetails } dan terbitkan."
       ]
     },
     "Import warning": {
@@ -3826,6 +4166,12 @@
       "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } peristiwa ditemukan di dalam isi surat"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } folder ditemukan"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label ditemukan di Gmail"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } berkas terlampir"
       ],
@@ -3837,6 +4183,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label terpilih"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } folder dipilih"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label dipilih"
       ],
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
@@ -3867,6 +4219,12 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Saring jika SEMUA kondisi terpenuhi)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Saring jika ADA kondisi terpenuhi)"
       ],
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
@@ -3913,6 +4271,9 @@
       "All your calendars are disabled.": [
         "Semua kalender Anda dinonaktifkan."
       ],
+      "All your changes will be lost.": [
+        "Seluruh perubahan yang belum Anda simpan akan hilang."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Kunci publik tidak dikenal terdeteksi untuk penerima ini."
       ],
@@ -3924,6 +4285,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Apakah Anda yakin ingin menghapu semua pesan yang ditandai dengan label ini?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
@@ -4117,6 +4481,9 @@
       "End of search results from past 30 days": [
         "Akhir dari seluruh hasil pencarian selama 30 hari terakhir"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
@@ -4149,6 +4516,9 @@
       ],
       "file attached": [
         "file terlampir"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
       ],
       "Folder": [
         "Folder"
@@ -4210,6 +4580,9 @@
       "Image URL": [
         "URL gambar"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Seluruh gambar telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
       ],
@@ -4221,6 +4594,9 @@
       ],
       "Import in progress": [
         "Proses impor sedang berlangsung"
+      ],
+      "Import mailbox": [
+        "Impor kotak surat"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
@@ -4254,6 +4630,9 @@
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
+      ],
+      "Label all imported messages as": [
+        "Labeli semua pesan terimpor sebagai"
       ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
@@ -4330,6 +4709,9 @@
       "New": [
         "Baru"
       ],
+      "No action selected": [
+        "Tidak ada tindakan yang dipilih"
+      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -4342,11 +4724,17 @@
       "No folder found": [
         "Tidak ada folder yang ditemukan"
       ],
+      "No folder selected": [
+        "Tidak ada folder yang dipilih"
+      ],
       "No group found": [
         "Grup tidak ditemukan"
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
+      ],
+      "No label selected": [
+        "Tidak ada label yang dipilih"
       ],
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
@@ -4482,9 +4870,6 @@
       ],
       "Right-click for options": [
         "Klik-kanan untuk menampilkan pilihan"
-      ],
-      "Saved ${ dateString }": [
-        "Disimpan ${ dateString }"
       ],
       "Saved at ${ dateString }": [
         "Disimpan pada ${ dateString }"
@@ -4960,6 +5345,12 @@
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai untuk verifikasi sekali saat ini."
       ],
+      "Your import will not be processed.": [
+        "Impor Anda tidak akan diproses."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Pesan Anda akan terhapus dari kotak masuk penerima pesan dan dari folder terkirim Anda pada hari ${ dateString }, pukul ${ formattedTime }"
       ],
@@ -5240,8 +5631,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " dan "
+      ],
+      " and ${ l }": [
+        " dan ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
+      ],
+      "Actions": [
+        "Tindakan"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5255,6 +5655,9 @@
       "Address": [
         "Alamat"
       ],
+      "ALL": [
+        "SEMUA"
+      ],
       "Also archive": [
         "Arsipkan"
       ],
@@ -5263,6 +5666,24 @@
       ],
       "Always move sender's emails": [
         "Selalu pindahkan email pengirim"
+      ],
+      "AND": [
+        "DAN"
+      ],
+      "and": [
+        "dan"
+      ],
+      "And": [
+        "Dan"
+      ],
+      "ANY": [
+        "SEMBARANG"
+      ],
+      "App password": [
+        "Kata sandi aplikasi"
+      ],
+      "Apply filter to existing emails": [
+        "Terapkan filter untuk email yang sudah ada"
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -5311,6 +5732,12 @@
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Coming soon": [
+        "Segera hadir"
+      ],
+      "Conditions": [
+        "Syarat"
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
@@ -5366,6 +5793,9 @@
       "Extended address": [
         "Alamat lengkap"
       ],
+      "Filter Name": [
+        "Nama Filter"
+      ],
       "Folder location": [
         "Lokasi folder"
       ],
@@ -5378,8 +5808,14 @@
       "From:": [
         "Dari:"
       ],
+      "From: ${ emailFrom }": [
+        "Dari: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Dari: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Dari: ${ importedEmailAddress }"
       ],
       "Good": [
         "Baik"
@@ -5395,6 +5831,12 @@
       ],
       "I understand the risk": [
         "Saya paham akan resikonya"
+      ],
+      "IF": [
+        "JIKA"
+      ],
+      "If": [
+        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -5432,6 +5874,9 @@
       "Location": [
         "Lokasi"
       ],
+      "Mail Server (IMAP)": [
+        "Server Mail (IMAP)"
+      ],
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
@@ -5447,6 +5892,9 @@
       "Manage my addresses": [
         "Kelola alamat saya"
       ],
+      "Mark as": [
+        "Tandai sebagai"
+      ],
       "Move to": [
         "Pindah ke"
       ],
@@ -5459,6 +5907,9 @@
       "Name": [
         "Nama"
       ],
+      "No label found": [
+        "Tidak ada label yang ditemukan"
+      ],
       "Notification": [
         "Pemberitahuan"
       ],
@@ -5470,6 +5921,15 @@
       ],
       "Operating system version": [
         "Versi sistem operasi"
+      ],
+      "OR": [
+        "ATAU"
+      ],
+      "or": [
+        "atau"
+      ],
+      "Or": [
+        "Atau"
       ],
       "Participants": [
         "Peserta"
@@ -5486,6 +5946,9 @@
       "Phone number": [
         "Nomor telepon"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Kotak pos"
       ],
@@ -5497,6 +5960,9 @@
       ],
       "Public keys": [
         "Kunci publik"
+      ],
+      "Read": [
+        "Telah dibaca"
       ],
       "Recipient": [
         "Penerima"
@@ -5525,6 +5991,9 @@
       "Select how your mailbox looks like by default.": [
         "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
       ],
+      "Send auto-reply": [
+        "Kirim pesan balasan otomatis"
+      ],
       "Sender": [
         "Pengirim"
       ],
@@ -5534,11 +6003,32 @@
       "Size:": [
         "Ukuran:"
       ],
+      "Starred": [
+        "Dibintangi"
+      ],
+      "Statement": [
+        "Pernyataan"
+      ],
       "Street address": [
         "Alamat jalan"
       ],
       "System information": [
         "Informasi sistem"
+      ],
+      "The email was sent ${ attachment }": [
+        "Email terkirim ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "email terkirim ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "Email terkirim ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "email terkirim ${ label }"
+      ],
+      "Then": [
+        "Maka"
       ],
       "Time": [
         "Waktu"
@@ -5552,11 +6042,20 @@
       "To: ${ emailAddress }": [
         "Ke: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Kepada: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Ke: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Kode otentikasi dua faktor"
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
+      ],
+      "Upload file": [
+        "Unggah berkas"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -5569,6 +6068,21 @@
       ],
       "What happened?": [
         "Apa yang terjadi?"
+      ],
+      "With attachment": [
+        "Dengan lampiran"
+      ],
+      "with attachments": [
+        "dengan lampiran"
+      ],
+      "Without attachment": [
+        "Tanpa lampiran"
+      ],
+      "without attachment": [
+        "tanpa lampiran"
+      ],
+      "without attachments": [
+        "tanpa lampiran"
       ],
       "Wonderful": [
         "Luar Biasa"
@@ -5686,9 +6200,6 @@
       "Folders": [
         "Folder"
       ],
-      "Go to subscription plans": [
-        "Tuju menu pengaturan jenis akun"
-      ],
       "Inbox": [
         "Kotak masuk"
       ],
@@ -5770,9 +6281,6 @@
       "Trash": [
         "Sampah"
       ],
-      "Upgrade": [
-        "Tingkatkan Akun"
-      ],
       "Upgrade account": [
         "Tingkatkan akun"
       ],
@@ -5815,6 +6323,9 @@
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Jumlah kalender yang terbuat: ${ createdCalendars } dari ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "Menghubungkan ke penyedia email Anda"
       ],
       "Creating new calendars": [
         "Membuat kalender-kalender baru"
@@ -5912,6 +6423,35 @@
       ],
       "Plain text": [
         "Teks biasa"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
+      ],
+      "How to import calendars from Outlook": [
+        "Cara untuk mengimpor kalender-kalender dari Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cara untuk mengimpor kalender-kalender dari Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+      ],
+      "How to import contacts from Outlook": [
+        "Cara untuk mengimpor kontak-kontak dari Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cara untuk mengimpor email-email dari layanan email lainnya"
+      ],
+      "How to import emails from Outlook": [
+        "Cara untuk mengimpor email-email dari Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cara untuk mengimpor email-email dari Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6081,6 +6621,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } dibuat"
+      ],
       "Block removed": [
         "Blokir dicabut"
       ],
@@ -6161,6 +6704,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Folder kustom"
+      ],
       "Default folders": [
         "Folder default"
       ],
@@ -6302,6 +6848,9 @@
       ],
       "Text": [
         "Teks"
+      ],
+      "Type text or keyword": [
+        "Ketik teks atau kata kunci"
       ],
       "Write your message": [
         "Tulis pesan Anda"
@@ -6585,6 +7134,20 @@
         "Langganan diberhentikan"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Conditions": [
+        "Syarat"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "Preview": [
+        "Pratinjau"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Dapatkan kapasitas penyimpanan tambahan secara gratis"
@@ -6628,7 +7191,8 @@
         "${ elementsCount } percakapan dipindah ke ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } percakapan dipindah ke spam dan pengirim masuk Daftar Blokir."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } percakapan dihapus dari ${ labelName }."
@@ -6652,7 +7216,8 @@
         "${ elementsCount } pesan dipindah ke ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } pesan dipindah ke spam dan pengirim masuk Daftar Blokir."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } pesan dihapus dari ${ labelName }."
@@ -6703,7 +7268,7 @@
         "Percakapan dipindah ke ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Percakapan dipindah ke spam dan pengirim masuk Daftar Blokir."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Percakapan dihapus dari ${ labelName }."
@@ -6760,13 +7325,13 @@
         "Pesan ditandai belum dibaca."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Pesan dipindahkan ke ${ folderName }, dan pengirimnya masuk Daftar Putih."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Pesan dipindah ke ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Pesan dipindah ke spam dan pengirim masuk Daftar Blokir."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Pesan dihapus dari ${ labelName }."
@@ -6811,11 +7376,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Tanggapan telah dikirim"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/bulan"
       ]
     },
     "Table header": {
@@ -6927,6 +7487,9 @@
       "Add contact group name": [
         "Tambah nama grup kontak"
       ],
+      "Add filter": [
+        "Tambah filter"
+      ],
       "Add to ${ groupCount } group": [
         "Tambahkan ke ${ groupCount } grup"
       ],
@@ -6938,6 +7501,9 @@
       ],
       "Archive": [
         "Arsip"
+      ],
+      "Are you sure you want to close?": [
+        "Yakin ingin menutupnya?"
       ],
       "Attachments": [
         "Lampiran"
@@ -7058,6 +7624,9 @@
       ],
       "Edit contact group": [
         "Sunting grup kontak"
+      ],
+      "Edit filter": [
+        "Sunting filter"
       ],
       "Edit image": [
         "Sunting gambar"
@@ -7183,10 +7752,10 @@
         "Pindahkan ke kotak masuk"
       ],
       "Move to inbox (not spam)": [
-        "Pindahkan ke kotak masuk (bukan spam)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Pindahkan ke spam"
+        "Move to spam"
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
@@ -7244,6 +7813,9 @@
       ],
       "Recipients": [
         "Penerima"
+      ],
+      "Reconnect your account": [
+        "Hubungkan kembali akun Anda"
       ],
       "Recover data": [
         "Pulihkan data"
@@ -7317,6 +7889,12 @@
       "Sort messages": [
         "Urutkan pesan"
       ],
+      "Start a new import": [
+        "Mulai impor baru"
+      ],
+      "Start import process": [
+        "Mulai proses impor"
+      ],
       "Storage capacity warning": [
         "Peringatan kapasitas penyimpanan"
       ],
@@ -7384,11 +7962,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
+      "Customize import to reduce the number of folders": [
+        "Sesuaikan impor untuk mengurangi jumlah folder"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Sesuaikan impor untuk mengurangi jumlah label"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Menandatangani email secara digital akan membantu sistem kami dalam mengotentikasi pesan yang Anda kirim"
       ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"
+      ],
+      "Edit folder names": [
+        "Edit nama folder"
+      ],
+      "Edit label names": [
+        "Edit nama label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
@@ -7413,6 +8003,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
+      ],
+      "This feature is only available for paid users": [
+        "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
@@ -7454,6 +8047,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Yakin ingin membuang impor Anda?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
       ],
@@ -7477,6 +8073,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama folder sebelum Anda mengimpor."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
@@ -7507,6 +8106,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Fitur ini hanya tersedia bagi para pemilik akun Proton berbayar"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."

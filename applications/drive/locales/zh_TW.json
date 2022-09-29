@@ -128,6 +128,9 @@
       "Continue": [
         "繼續"
       ],
+      "Continue import": [
+        "繼續匯入"
+      ],
       "Continue transfers": [
         "繼續傳輸"
       ],
@@ -155,6 +158,9 @@
       "Customize": [
         "自訂"
       ],
+      "Customize import": [
+        "自訂匯入"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -181,6 +187,9 @@
       ],
       "Didn't receive the code?": [
         "沒有收到驗證碼嗎？"
+      ],
+      "Discard": [
+        "放棄"
       ],
       "Done": [
         "完成"
@@ -374,6 +383,9 @@
       "Re-sign": [
         "重新簽署"
       ],
+      "Reconnect": [
+        "重新連線"
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -403,6 +415,9 @@
       ],
       "Request new code": [
         "重新傳送驗證碼"
+      ],
+      "Reset to default": [
+        "還原成預設值"
       ],
       "Reset zoom": [
         "重設縮放比例"
@@ -766,6 +781,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "要結束匯入自訂嗎？"
+      ],
+      "Quit import?": [
+        "要結束匯入嗎？"
       ]
     },
     "Contact field label": {
@@ -1785,6 +1803,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "請嘗試重新認證並確保權限設定正確。"
+      ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
       ],
@@ -1811,6 +1832,9 @@
       ],
       "Some groups could not be deleted": [
         "無法刪除部份群組"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
@@ -1877,6 +1901,9 @@
       ],
       "Unknown error": [
         "未知的錯誤"
+      ],
+      "We were unable to connect to your service provider.": [
+        "我們無法連接到您的服務提供者。"
       ],
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
@@ -2120,6 +2147,202 @@
         "ProtonContacts ${ forNow }不支援："
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "您的外部電郵帳號已啟用兩步驟驗證."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "如果 Gmail ${ bold2StepsDisabled }（預設設定），請確保："
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "如果 Gmail ${ bold2StepsEnabled }，請確保您使用您的應用程式密碼，而非您的一般密碼。"
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "您的 Yahoo 帳號已啟用 IMAP 存取。"
+      ],
+      "Invalid IMAP port": [
+        "無效的 IMAP 連接埠"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton 無法連接您的帳號。請確保 Gmail IMAP 存取已啟用。"
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton 無法連線到您的帳號。請確保您的 Gmail 帳號已啟用 IMAP 存取。"
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton 無法連線到您的帳號。請確保："
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton 無法連線到您的外部帳號。請確保電郵伺服器位置和連接埠號碼正確。"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton 無法連線到您的外部帳號。請確保："
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "最近的請求太多。請容後再試。"
+      ],
+      "Use your app password if:": [
+        "使用您的應用程式密碼，如果："
+      ],
+      "Use your app password instead of your regular password if:": [
+        "使用您的應用程式密碼而非一般密碼，如果："
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
+      ],
+      "Your email address and password are correct.": [
+        "您的電郵位址和密碼均為正確."
+      ],
+      "Your password is correct.": [
+        "您的密碼正確無誤。"
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "兩步驟驗證已停用"
+      ],
+      "2-step verification is enabled": [
+        "兩步驟驗證已啟用"
+      ],
+      "all your other Google accounts": [
+        "您所有的其它 Google 帳號"
+      ],
+      "CAPTCHA": [
+        "驗證碼"
+      ],
+      "not": [
+        "不要"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "點擊 ${ boldManage } 以展開選項功能表。"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "點擊三個點 (...) 展開下拉式選單"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "請至 ${ yahooMailLink } 裡您名下個人資料的 ${ boldAccountInfo }。"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "前往 ${ boldAccountSecurity }。"
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "前往 Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "若雙重驗證仍待用中，建議您啟用它。"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "開啟您的 ${ yahooMailLink } 通訊錄。"
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "開啟您的 Outlook 通訊錄 ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "選取 ${ boldExportContacts } 並選擇您要匯出的通訊錄。"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "選取匯出 ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "要匯入電郵到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "帳號資料"
+      ],
+      "Account security": [
+        "帳號安全性"
+      ],
+      "app password": [
+        "應用程式密碼"
+      ],
+      "Can view all details": [
+        "可以檢視所有詳細資訊"
+      ],
+      "Export": [
+        "匯出"
+      ],
+      "Export contacts": [
+        "匯出聯絡人"
+      ],
+      "Export to CSV file": [
+        "匯出為 CSV 檔案"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "管理"
+      ],
+      "Publish a calendar": [
+        "發佈行事曆"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "應用程式密碼"
+      ],
+      "app password or enable IMAP": [
+        "應用程式密碼或啟用 IMAP"
+      ],
+      "contacts": [
+        "聯絡人"
+      ],
+      "full calendar view": [
+        "完整行事曆檢視方式"
+      ],
+      "ICS file": [
+        "ICS 檔案"
+      ],
+      "security settings": [
+        "安全性設定"
+      ],
+      "shared calendars": [
+        "已分享的行事曆"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -2192,6 +2415,12 @@
       "${ pausedCount } paused": [
         "${ pausedCount } 個任務已暫停"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "找到 ${ providerFoldersNumLocalized } 個資料夾"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
@@ -2200,6 +2429,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "已選取 ${ selectedFoldersCount } 個標籤"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
       "${ speed }/s": [
         "${ speed }/秒"
@@ -2387,6 +2622,9 @@
       "Encrypted search is here": [
         "加密搜索功能現已推出"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "請輸入您想匯入的電郵帳號所使用的憑證。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
       ],
@@ -2483,6 +2721,9 @@
       "Import in progress": [
         "匯入進行中"
       ],
+      "Import mailbox": [
+        "匯入郵箱"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "正在把你的資料從 ${ importedEmailAddress } 匯入至 ${ toEmail }。"
       ],
@@ -2515,6 +2756,9 @@
       ],
       "Key fingerprint": [
         "金鑰指紋"
+      ],
+      "Label all imported messages as": [
+        "將所有匯入的郵件標記為"
       ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
@@ -2963,6 +3207,12 @@
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
       ],
+      "Your import will not be processed.": [
+        "將不會處理您的匯入。"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "匯入完成後不會保存您的登入資訊。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
@@ -3051,6 +3301,9 @@
       "Add to group": [
         "加入至群組"
       ],
+      "App password": [
+        "應用程式密碼"
+      ],
       "Apply to all duplicated files": [
         "套用至所有重複的檔案"
       ],
@@ -3098,6 +3351,9 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
+      ],
+      "Coming soon": [
+        "敬請期待"
       ],
       "Comment": [
         "評論"
@@ -3177,8 +3433,14 @@
       "Folder name": [
         "資料夾名稱"
       ],
+      "From: ${ emailFrom }": [
+        "寄件者：${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "寄件者： ${ importedEmailAddress }"
       ],
       "Good": [
         "良好"
@@ -3221,6 +3483,9 @@
       ],
       "Location": [
         "位置"
+      ],
+      "Mail Server (IMAP)": [
+        "郵件伺服器 (IMAP)"
       ],
       "Mailbox password": [
         "郵箱密碼"
@@ -3281,6 +3546,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "請提供完整詳情，以助我們採取適當行動"
+      ],
+      "Port": [
+        "連接埠"
       ],
       "Post office box": [
         "郵政信箱"
@@ -3351,6 +3619,12 @@
       "To: ${ emailAddress }": [
         "收件者：${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "收件者：${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "收件者：${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "兩步驟驗證碼"
       ],
@@ -3371,6 +3645,9 @@
       ],
       "Upload anyway": [
         "仍要上載"
+      ],
+      "Upload file": [
+        "上載檔案"
       ],
       "Upload picture": [
         "上載相片"
@@ -3462,6 +3739,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "連結到您的電郵提供者"
+      ],
       "Creating new calendars": [
         "正在建立新行事曆"
       ],
@@ -3499,6 +3779,35 @@
       ],
       "Plain text": [
         "純文字"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "如何從其它服務匯入行事曆"
+      ],
+      "How to import calendars from Outlook": [
+        "如何從 Outlook 匯入行事曆"
+      ],
+      "How to import calendars from Yahoo": [
+        "如何從 Yahoo 匯入行事曆"
+      ],
+      "How to import contacts from another service": [
+        "如何從其它服務匯入聯絡人"
+      ],
+      "How to import contacts from Outlook": [
+        "如何從 Outlook 匯入聯絡人"
+      ],
+      "How to import contacts from Yahoo": [
+        "如何從 Yahoo 匯入聯絡人"
+      ],
+      "How to import emails from another service": [
+        "如何從其它服務匯入電郵"
+      ],
+      "How to import emails from Outlook": [
+        "如何從 Outlook 匯入電郵"
+      ],
+      "How to import emails from Yahoo": [
+        "如何從 Yahoo 匯入電郵"
       ]
     },
     "New Label form": {
@@ -4371,6 +4680,9 @@
       "Re-signing contacts": [
         "正在重新簽署聯絡人"
       ],
+      "Reconnect your account": [
+        "重新連線到您的帳號"
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -4439,6 +4751,12 @@
       ],
       "Sort files/folders": [
         "排序檔案/資料夾"
+      ],
+      "Start a new import": [
+        "開始新匯入"
+      ],
+      "Start import process": [
+        "開始匯入流程"
       ],
       "Stop sharing": [
         "停止分享"
@@ -4525,11 +4843,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
+      "Customize import to reduce the number of folders": [
+        "自訂匯入以減少資料夾數量"
+      ],
+      "Customize import to reduce the number of labels": [
+        "自訂匯入以減少標籤數目"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "經數碼簽署的電郵有助驗證郵件真確性"
       ],
       "Each imported email will have this label": [
         "每一封匯入的電郵都將加上此標籤"
+      ],
+      "Edit folder names": [
+        "編輯資料夾名稱"
+      ],
+      "Edit label names": [
+        "編輯標籤名稱"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "電郵加密透過強制加入數碼簽章，以助驗證郵件真確性"
@@ -4593,6 +4923,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "您確定要捨棄您的匯入嗎？"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"
       ],
@@ -4616,6 +4949,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton 會從您最近的郵件開始，儘可能轉移最多的資料。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
@@ -4643,6 +4979,9 @@
       ],
       "This feature requires a paid Proton account": [
         "此功能僅限付費Proton 帳號使用"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "此匯入可能超出您的 Proton 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

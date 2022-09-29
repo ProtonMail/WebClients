@@ -122,6 +122,9 @@
       "Customize": [
         "Prilagodi"
       ],
+      "Customize import": [
+        "Prilagodi uvoz"
+      ],
       "Delete": [
         "Izbriši"
       ],
@@ -318,6 +321,9 @@
       "Re-sign": [
         "Ponovna prijava"
       ],
+      "Reconnect": [
+        "Ponovno poveži"
+      ],
       "Recover data": [
         "Oporavi podatke"
       ],
@@ -350,6 +356,9 @@
       ],
       "Request new code": [
         "Zatraži novi kôd"
+      ],
+      "Reset to default": [
+        "Vrati na zadane postavke"
       ],
       "Save": [
         "Spremi"
@@ -672,6 +681,11 @@
       ],
       "Week": [
         "Tjedan"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Zaustavi uvoz?"
       ]
     },
     "Contact field label": {
@@ -1085,6 +1099,9 @@
       "Please create an address first.": [
         "Prvo stvorite adresu."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
+      ],
       "Primary address key is not decrypted": [
         "Primarni ključ adrese e-pošte nije dešifriran"
       ],
@@ -1105,6 +1122,9 @@
       ],
       "Some groups could not be deleted": [
         "Nije moguće brisanje nekih grupa"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
@@ -1132,6 +1152,9 @@
       ],
       "Unknown error": [
         "Nepoznata pogreška"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Neuspješno povezivanje s vašim davateljem usluga."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ne možete poslati e-poštu za više od 100 primatelja"
@@ -1479,6 +1502,84 @@
         "ProtonContacts ne podržava ${ forNow }:"
       ]
     },
+    "Import error": {
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Ako je ${ bold2StepsDisabled } (zadana Gmail postavka), pobrinite se da:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Ako je ${ bold2StepsDisabled } u Gmailu (zadano), pobrinite se da:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Ako je ${ bold2StepsEnabled } u Gmailu, provjerite upotrebljavate li lozinku za aplikaciju umjesto uobičajene lozinke."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Ako je ${ bold2StepsEnabled }, provjerite jesu li adresa e-pošte i lozinka za aplikaciju točni. ${ boldNot } koristite svoju uobičajenu lozinku."
+      ],
+      "Invalid IMAP port": [
+        "Nevažeći IMAP port"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton se ne može povezati s vašim računom. Provjerite je li omogućen pristup IMAP-u za Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton se ne može povezati s vašim računom. Provjerite je li omogućen pristup IMAP-u u vašem Gmail računu."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton se ne može povezati s vašim računom. Molimo osigurajte sljedeće:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton se ne može povezati s vašim vanjskim računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton se ne može povezati s vašim vanjskim računom. Molimo osigurajte sljedeće:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton se ne može povezati s vašim Gmail računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Previše nedavnih zahtjeva. Pokušajte ponovno za nekoliko trenutaka."
+      ],
+      "Use your app password if:": [
+        "Koristite vašu lozinku aplikacije ako:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Upotrijebite lozinku za aplikaciju umjesto vaše uobičajene lozinke ako:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Također se možete pokušati odjaviti iz ${ boldGoogleAccounts } u pregledniku, a zatim otključajte ${ linkCAPTCHA }."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Dvofaktorska autentikacija je onemogućena"
+      ],
+      "2-step verification is enabled": [
+        "Dvofaktorska autentikacija je omogućena"
+      ],
+      "all your other Google accounts": [
+        "svim ostalim Google računima"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "ne"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informacije o računu"
+      ],
+      "Account security": [
+        "Sigurnost računa"
+      ],
+      "Export": [
+        "Izvoz"
+      ],
+      "Export contacts": [
+        "Uvezi kontakte"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -1510,6 +1611,26 @@
         "${ groupCounts } grupa pronađena",
         "${ groupCounts } grupe pronađene",
         "${ groupCounts } grupa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mapa pronađena",
+        "${ providerFoldersNumLocalized } mape pronađene",
+        "${ providerFoldersNumLocalized } mapa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
+        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
+        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mapa odabrana",
+        "${ selectedFoldersCountLocalized } mape odabrane",
+        "${ selectedFoldersCountLocalized } mapa odabrano"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } oznaka odabrana",
+        "${ selectedFoldersCountLocalized } oznake odabrane",
+        "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
@@ -1593,6 +1714,9 @@
       "Duplicate key updated": [
         "Ažuriran je duplicirani ključ"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Unesite podatke za prijavu računa e-pošte s kojeg želite uvesti."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
@@ -1629,6 +1753,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
+      "Import mailbox": [
+        "Uvezi poštanski sandučić"
+      ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
@@ -1640,6 +1767,9 @@
       ],
       "Key fingerprint": [
         "Otisak prsta ključa"
+      ],
+      "Label all imported messages as": [
+        "Označi sve uvezene poruke kao"
       ],
       "Learn more": [
         "Saznajte više"
@@ -1875,6 +2005,12 @@
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
+      "Your import will not be processed.": [
+        "Vaš uvoz nije moguće obraditi."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
       ],
@@ -1930,6 +2066,9 @@
       "All day": [
         "Cijeli dan"
       ],
+      "App password": [
+        "Lozinka aplikacije"
+      ],
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
       ],
@@ -1972,6 +2111,9 @@
       "Do not ask again": [
         "Ne pitaj ponovno"
       ],
+      "Email": [
+        "E-pošta"
+      ],
       "Email address": [
         "Adresa e-pošte"
       ],
@@ -2004,6 +2146,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Mail Server (IMAP)": [
+        "Poslužitelj e-pošte (IMAP)"
       ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
@@ -2047,6 +2192,9 @@
       "Phone number": [
         "Broj telefona"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Poštanski sandučić"
       ],
@@ -2082,6 +2230,9 @@
       ],
       "Two-factor authentication code": [
         "Kôd dvofaktorske autentikacije"
+      ],
+      "Upload file": [
+        "Učitaj datoteku"
       ],
       "Upload picture": [
         "Učitaj sliku"
@@ -2155,6 +2306,11 @@
       ],
       "Upgrade account": [
         "Nadogradi račun"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your email provider": [
+        "Spajanje s vašim pružateljem e-pošte"
       ]
     },
     "Message": {
@@ -3124,6 +3280,9 @@
       "Reactivate calendar keys": [
         "Ponovno aktiviraj ključeve kalendara"
       ],
+      "Reconnect your account": [
+        "Ponovno povežite vaš račun"
+      ],
       "Recover data": [
         "Oporavi podatke"
       ],
@@ -3214,6 +3373,12 @@
       "Sign out": [
         "Odjava"
       ],
+      "Start a new import": [
+        "Započni novi uvoz"
+      ],
+      "Start import process": [
+        "Započni uvoz"
+      ],
       "Update event": [
         "Ažuriraj događaj"
       ],
@@ -3250,8 +3415,20 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
       ],
+      "Customize import to reduce the number of folders": [
+        "Prilagodite uvoz da biste smanjili broj mapa"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Prilagodite uvoz da biste smanjili broj oznaka"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitalno potpisivanje e-poruka pomaže u potvrđivanju da su poslane poruke zapravo vaše"
+      ],
+      "Edit folder names": [
+        "Uredi nazive mapa"
+      ],
+      "Edit label names": [
+        "Uredi nazive oznaka"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifriranje e-pošte automatski primjenjuje potpis e-pošte kako bi pomogao pri autentikaciji vaših poslanih poruka"
@@ -3277,6 +3454,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Jeste li sigurni da želite odbaciti vaš uvoz?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Jeste li sigurni da želite trajno izbrisati ${ count } grupu kontakata?",
         "Jeste li sigurni da želite trajno izbrisati ${ count } grupe kontakata?",
@@ -3299,6 +3479,9 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
       ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton će prenijeti što više podataka, počevši od vaših najnovijih poruka."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
@@ -3319,6 +3502,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Ova značajka zahtijeva plaćeni Proton račun"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem Proton računu. Razmislite o prilagodbi uvoza."
       ]
     },
     "Weekly recurring event, frequency": {

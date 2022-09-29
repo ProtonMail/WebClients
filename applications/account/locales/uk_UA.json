@@ -96,8 +96,8 @@
       "Apply": [
         "Застосувати"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Застосувати до наявних повідомлень"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -480,10 +480,13 @@
       "No": [
         "Ні"
       ],
-      "OK": [
-        "Гаразд"
+      "Non spam": [
+        "Не спам"
       ],
       "Ok": [
+        "Гаразд"
+      ],
+      "OK": [
         "Гаразд"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -537,11 +540,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
       "refresh the page": [
         "оновити сторінку"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -2648,6 +2651,20 @@
         "Піддомени 'www' зазвичай не використовуються для електронної пошти. Ви впевнені, що хочете використати це значення для домену?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } deletion failed": [
+        "Не вдалося видалити ${ name }"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "Не вдалося перемістити ${ name } до списку не спаму"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } переміщено до списку не спаму"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успішно видалено"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
@@ -2734,6 +2751,32 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } deletion failed": [
+        "Не вдалося видалити ${ name }"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "Не вдалося перемістити ${ name } до списку не спаму"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } переміщено до списку не спаму"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успішно видалено"
       ]
     },
     "Email subject": {
@@ -3067,11 +3110,17 @@
       "Signature verification failed": [
         "Не вдалося перевірити підпис"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Назви деяких ваших тек зарезервовані. Налаштуйте імпорт для зміни цих назв."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших тек перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Назви деяких ваших міток зарезервовані. Налаштуйте імпорт для зміни цих назв."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших міток недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
@@ -3711,7 +3760,7 @@
         "Електронні листи із заблокованих адрес не доставлятимуться."
       ],
       "Search in Allow List and Block List": [
-        "Пошук в списку дозволених і списку блокування"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4190,8 +4239,8 @@
       "contacts": [
         "контакти"
       ],
-      "CSV file": [
-        "файл CSV"
+      "CSV or a VCF (vCard) file": [
+        "Файл CSV або VCF (vCard)"
       ],
       "full calendar view": [
         "повний вигляд календаря"
@@ -6484,6 +6533,9 @@
       " and ${ l }": [
         " та ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "Е-пошта або ім'я користувача ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
       ],
@@ -6654,6 +6706,9 @@
       ],
       "Color": [
         "Колір"
+      ],
+      "Coming soon": [
+        "Незабаром з'явиться"
       ],
       "Composer": [
         "Редактор"
@@ -7231,6 +7286,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
       ],
+      "Upload file": [
+        "Вивантажити файл"
+      ],
       "URL": [
         "URL-адреса"
       ],
@@ -7579,11 +7637,23 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } теки з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } теки, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7878,29 +7948,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "Від ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Від ${ _price2 } за користувача"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Залишити мою передплату ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Переглядати далі"
@@ -7940,6 +7987,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "Від ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Від ${ _price2 } за користувача"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Залишити мою передплату ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: attribute": {
@@ -8332,17 +8402,6 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробна версія ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Покращити до ${ planName }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -8364,6 +8423,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Пробна версія ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Покращити до ${ planName }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -9392,35 +9462,6 @@
         "Ім'я користувача"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } додано"
-      ],
-      "${ name } deletion failed": [
-        "Не вдалося видалити ${ name }"
-      ],
-      "${ name } failed to move to Block List": [
-        "Не вдалося перемістити ${ name } до списку блокування"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "Не вдалося перемістити ${ name } до списку не спаму"
-      ],
-      "${ name } failed to move to Spam List": [
-        "Не вдалося перемістити ${ name } до списку спаму"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } переміщено до списку блокування"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } переміщено до списку не спаму"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } переміщено до списку спаму"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } успішно видалено"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Зберігайте свої файли так само безпечно, як і електронні листи."
@@ -10010,9 +10051,9 @@
         "Додати фільтр Sieve"
       ],
       "Add to block list": [
-        "Додати до списку блокування"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "Додати до списку не спаму"
       ],
       "Add to spam list": [

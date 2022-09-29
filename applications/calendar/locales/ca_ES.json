@@ -131,6 +131,9 @@
       "Customize": [
         "Personalitzar"
       ],
+      "Customize import": [
+        "Personalitzar importació"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -334,6 +337,9 @@
       "Re-sign": [
         "Tornar a signar"
       ],
+      "Reconnect": [
+        "Reconnectar"
+      ],
       "Recover data": [
         "Recuperar dades"
       ],
@@ -366,6 +372,9 @@
       ],
       "Request new code": [
         "Demana un nou codi"
+      ],
+      "Reset to default": [
+        "Restableix els valors per defecte"
       ],
       "Save": [
         "Desa"
@@ -865,6 +874,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "Voleu abandonar la personalització d'importació?"
+      ],
+      "Quit import?": [
+        "Vols sortir de la importació?"
       ]
     },
     "Contact field label": {
@@ -2072,6 +2084,9 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
+      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada"
       ],
@@ -2101,6 +2116,9 @@
       ],
       "Some groups could not be deleted": [
         "Alguns grups no poden ser esborrats"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
@@ -2158,6 +2176,9 @@
       ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "We were unable to connect to your service provider.": [
+        "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
@@ -2607,6 +2628,130 @@
         "ProtonContacts ${ forNow } no és compatible amb:"
       ]
     },
+    "Import error": {
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Si ${ bold2StepsDisabled } (paràmetre de Gmail per defecte), assegureu-vos que:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Si ${ bold2StepsDisabled } a Gmail (configuració predeterminada), assegureu-vos que:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Si ${ bold2StepsEnabled } a Gmail, assegureu-vos que utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya habitual."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Si ${ bold2StepsEnabled }, assegureu-vos que la vostra adreça de correu electrònic i contrasenya d'aplicació són correctes. ${ boldNot } utilitzis la contrasenya normal."
+      ],
+      "Invalid IMAP port": [
+        "Port IMAP no vàlid"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton no es pot connectar al vostre compte. Assegureu-vos que l’accés IMAP de Gmail estigui habilitat."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton no es pot connectar al teu compte. Assegureu-vos que l'accés IMAP està habilitat al vostre compte de Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton no es pot connectar al vostre compte. Assegureu-vos que:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton no es pot connectar al vostre compte extern. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton no es pot connectar al vostre compte extern. Assegureu-vos que:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton no es pot connectar al vostre compte de Gmail. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
+      ],
+      "Use your app password if:": [
+        "Utilitzeu la contrasenya de l'aplicació si:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "També podeu provar de tancar la sessió de ${ boldGoogleAccounts } al navegador i desbloquejar ${ linkCAPTCHA }."
+      ],
+      "Your password is correct.": [
+        "La seva contrasenya és correcta."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "La verificació en dos passos està desactivada"
+      ],
+      "2-step verification is enabled": [
+        "La verificació en dos passos està activada"
+      ],
+      "all your other Google accounts": [
+        "tots els altres comptes teus de Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "no"
+      ]
+    },
+    "Import instructions": {
+      "Select ${ boldExportCSV }.": [
+        "Selecciona ${ boldExportCSV }."
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informació de compte"
+      ],
+      "Account security": [
+        "Seguretat del compte"
+      ],
+      "app password": [
+        "contrasenya de l'aplicació"
+      ],
+      "Export": [
+        "Exporta"
+      ],
+      "Export contacts": [
+        "Exportar contactes"
+      ],
+      "Export to CSV file": [
+        "Exporta a fitxer CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Gestionar"
+      ],
+      "Publish a calendar": [
+        "Publica un calendari"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "contrasenya de l'aplicació"
+      ],
+      "contacts": [
+        "contactes"
+      ],
+      "full calendar view": [
+        "vista de calendari completa"
+      ],
+      "ICS file": [
+        "Fitxer ICS"
+      ],
+      "security settings": [
+        "configuració de seguretat"
+      ],
+      "shared calendars": [
+        "calendaris compartits"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
@@ -2662,6 +2807,14 @@
         "${ numContacts } contacte",
         "${ numContacts } contactes"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta trobada",
+        "${ providerFoldersNumLocalized } carpetes trobades"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
+        "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
@@ -2673,6 +2826,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } etiqueta seleccionada",
         "${ selectedFoldersCount } etiquetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
+        "${ selectedFoldersCountLocalized } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
@@ -2793,6 +2954,9 @@
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
@@ -2842,6 +3006,9 @@
       "Import in progress": [
         "Importació en curs"
       ],
+      "Import mailbox": [
+        "Importar bústia de correu"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
@@ -2862,6 +3029,9 @@
       ],
       "Key fingerprint": [
         "Empremta digital de la clau"
+      ],
+      "Label all imported messages as": [
+        "Etiqueta tots els missatges importats com a"
       ],
       "Large imports can take several days.": [
         "Les importacions grans poden trigar diversos dies."
@@ -3203,6 +3373,12 @@
       "Your events will be encrypted and then saved.": [
         "Els vostres esdeveniments seran xifrats i després desats."
       ],
+      "Your import will not be processed.": [
+        "La vostra importació no es processarà."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
@@ -3267,6 +3443,9 @@
       "All day": [
         "Tot el dia"
       ],
+      "App password": [
+        "Contrasenya de l'aplicació"
+      ],
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
       ],
@@ -3327,6 +3506,9 @@
       "Do not ask again": [
         "No m'ho torneu a preguntar"
       ],
+      "Email": [
+        "Correu electrònic"
+      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -3360,8 +3542,14 @@
       "Frequency": [
         "Freqüència"
       ],
+      "From: ${ emailFrom }": [
+        "Des de: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "De: ${ importedEmailAddress }"
       ],
       "Good": [
         "Bona"
@@ -3404,6 +3592,9 @@
       ],
       "Location": [
         "Ubicació"
+      ],
+      "Mail Server (IMAP)": [
+        "Servidor de correu (IMAP)"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
@@ -3463,6 +3654,9 @@
       "Phone number": [
         "Número de telèfon"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Apartat de correus"
       ],
@@ -3499,8 +3693,17 @@
       "To: ${ emailAddress }": [
         "Per a: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Per a: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Per: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Codi d'autenticació de dos factors"
+      ],
+      "Upload file": [
+        "Puja un fitxer"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -3591,6 +3794,9 @@
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Quantitat de calendaris creats: ${ createdCalendars } d'un total de ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "Connectant al vostre prveïdor de correu electrònic"
       ],
       "Creating new calendars": [
         "S'estan creant calendaris nous"
@@ -4738,6 +4944,9 @@
       "Reactivate calendar keys": [
         "Reactivar claus de calendari"
       ],
+      "Reconnect your account": [
+        "Reconnectar el teu compte"
+      ],
       "Recover data": [
         "Recuperar dades"
       ],
@@ -4831,6 +5040,12 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Start a new import": [
+        "Iniciar una nova importació"
+      ],
+      "Start import process": [
+        "Iniciar el procés d'importació"
+      ],
       "Update event": [
         "Actualitza l'esdeveniment"
       ],
@@ -4879,11 +5094,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "\"Automàtic\" indica que s'està utilitzant el format de l'editor per enviar a aquest usuari. \"Text net\" indica que el missatge es convertirà sempre a text net a l'enviar."
       ],
+      "Customize import to reduce the number of folders": [
+        "Personalitza la importació per reduir el nombre de carpetes"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Personalitzeu la importació per reduir el nombre d'etiquetes"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Signar correus electrònics digitalment ajuda a autenticar que vós heu enviat els missatges"
       ],
       "Each imported email will have this label": [
         "Tots els correus electrònics importats tindran aquesta etiqueta"
+      ],
+      "Edit folder names": [
+        "Edita el nom de les carpetes"
+      ],
+      "Edit label names": [
+        "Editar el nom de les etiquetes"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El xifratge de correu electrònic força la signatura del correu a ajudar a autenticar els vostres missatges enviats"
@@ -4927,6 +5154,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Esteu segur que voleu descartar la seva importació?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",
         "N'esteu segur, de voler eliminar permanentment ${ count } grups de contactes?"
@@ -4949,6 +5179,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-les."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
@@ -4976,6 +5209,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Aquesta característica requereix d'un compte de pagament de Proton"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de Proton. Considereu personalitzar la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."

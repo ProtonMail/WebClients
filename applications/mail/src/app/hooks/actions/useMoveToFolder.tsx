@@ -50,7 +50,7 @@ const getNotificationTextMoved = (
     if (folderID === SPAM) {
         if (isMessage) {
             if (elementsCount === 1) {
-                return c('Success').t`Message moved to spam and sender added to Block List.`;
+                return c('Success').t`Message moved to spam and sender added to your block list.`;
             }
             return joinSentences(
                 c('Success').ngettext(
@@ -62,7 +62,7 @@ const getNotificationTextMoved = (
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to spam and sender added to Block List.`;
+            return c('Success').t`Conversation moved to spam and sender added to your block list.`;
         }
         return c('Success').ngettext(
             msgid`${elementsCount} conversation moved to spam and sender added to Block List.`,
@@ -75,7 +75,7 @@ const getNotificationTextMoved = (
         if (isMessage) {
             if (elementsCount === 1) {
                 // translator: Strictly 1 message moved from spam, the variable is the name of the destination folder
-                return c('Success').t`Message moved to ${folderName} and sender added to Allow List.`;
+                return c('Success').t`Message moved to ${ folderName } and sender added to your allow list.`;
             }
             return joinSentences(
                 c('Success').ngettext(
