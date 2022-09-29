@@ -131,6 +131,9 @@
       "Customize": [
         "Tilpas"
       ],
+      "Customize import": [
+        "Tilpas import"
+      ],
       "Delete": [
         "Slet"
       ],
@@ -334,6 +337,9 @@
       "Re-sign": [
         "Gensignér"
       ],
+      "Reconnect": [
+        "Tilslut igen"
+      ],
       "Recover data": [
         "Gendan data"
       ],
@@ -366,6 +372,9 @@
       ],
       "Request new code": [
         "Anmod om ny kode"
+      ],
+      "Reset to default": [
+        "Nulstil til standard"
       ],
       "Save": [
         "Gem"
@@ -851,6 +860,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "Afslut importtilpasning?"
+      ],
+      "Quit import?": [
+        "Afslut import?"
       ]
     },
     "Contact field label": {
@@ -2097,6 +2109,9 @@
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Prøv at verificere igen og sørg for at tilladelserne er angivet korrekt."
+      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
@@ -2126,6 +2141,12 @@
       ],
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -2183,6 +2204,9 @@
       ],
       "Unknown error": [
         "Ukendt fejl"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Vi kunne ikke oprette forbindelse til din tjenesteudbyder."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
@@ -2689,6 +2713,187 @@
         "ProtonKontakter understøtter ikke ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Mindre sikker app-adgang\" er slået til i sikkerhedsindstillingerne for din Google-konto."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Totrinsbekræftelse er aktiveret på din eksterne konto."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Hvis ${ bold2StepsDisabled } i Gmail (standard indstillinger), så sørg venligst for:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Hvis ${ bold2StepsEnabled } i Gmail, skal du sørge for, at du bruger din app-adgangskode i stedet for din almindelige adgangskode."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP-adgang er aktiveret på din eksterne konto."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP-adgang er aktiveret på din Yahoo-konto."
+      ],
+      "Invalid IMAP port": [
+        "Ugyldig IMAP- port"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton kan ikke oprette forbindelse til din konto. Sørg for, at Gmail IMAP adgang er aktiveret."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton kan ikke oprette forbindelse til din konto. Sørg for, at IMAP-adgang er aktiveret på din Gmail-konto."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton kan ikke oprette forbindelse til din konto. Sørg for, at:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan ikke oprette forbindelse til din eksterne konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton kan ikke oprette forbindelse til din eksterne konto. Sørg for, at:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan ikke oprette forbindelse til din Gmail-konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan ikke oprette forbindelse til din Yahoo-konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "For mange nylige anmodninger. Forsøg igen lidt senere."
+      ],
+      "Use your app password if:": [
+        "Brug din app-adgangskode hvis:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Brug din app adgangskode i stedet for din almindelige adgangskode, hvis:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Din e-mail-konto kræver en app-adgangskode for at eksportere dine data."
+      ],
+      "Your email account requires one to export your data.": [
+        "Din e-mail-konto kræver en for at eksportere dine data."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
+      ],
+      "Your email address and password are correct.": [
+        "Din e-mailadresse og adgangskode er korrekte."
+      ],
+      "Your password is correct.": [
+        "Din adgangskode er korrekt."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Totrinsbekræftelse deaktiveret"
+      ],
+      "2-step verification is enabled": [
+        "Totrinsbekræftelse aktiveret"
+      ],
+      "all your other Google accounts": [
+        "alle dine andre Google-konti"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "ikke"
+      ]
+    },
+    "Import instructions": {
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "For at importere til Proton skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Kontooplysninger"
+      ],
+      "Account security": [
+        "Kontosikkerhed"
+      ],
+      "app password": [
+        "app-adgangskode"
+      ],
+      "Can view all details": [
+        "Kan se alle detaljer"
+      ],
+      "Export": [
+        "Exportér"
+      ],
+      "Export contacts": [
+        "Eksportér kontakter"
+      ],
+      "Export to CSV file": [
+        "Eksportér til CSV-fil"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Administrer"
+      ],
+      "Publish a calendar": [
+        "Offentliggør en kalender"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "app-adgangskode"
+      ],
+      "app password or enable IMAP": [
+        "app-adgangskode eller aktivér IMAP"
+      ],
+      "contacts": [
+        "kontakter"
+      ],
+      "full calendar view": [
+        "fuld kalendervisning"
+      ],
+      "ICS file": [
+        "ICS fil"
+      ],
+      "security settings": [
+        "sikkerhedsindstillinger"
+      ],
+      "shared calendars": [
+        "delte kalendere"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -2754,6 +2959,14 @@
         "${ numContacts } kontakt",
         "${ numContacts } kontakter"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mappe fundet",
+        "${ providerFoldersNumLocalized } mapper fundet"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiket fundet i Gmail",
+        "${ providerFoldersNumLocalized } etiketter fundet i Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
@@ -2765,6 +2978,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } etikette valgt",
         "${ selectedFoldersCount } etiketter valgt"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mappe valgt",
+        "${ selectedFoldersCountLocalized } mapper valgt"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiket valgt",
+        "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -2894,6 +3115,9 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
@@ -2943,6 +3167,9 @@
       "Import in progress": [
         "Import i gang"
       ],
+      "Import mailbox": [
+        "Importér postkasse"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
@@ -2963,6 +3190,9 @@
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
+      ],
+      "Label all imported messages as": [
+        "Mærk alle importerede beskeder som"
       ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
@@ -3316,6 +3546,12 @@
       "Your events will be encrypted and then saved.": [
         "Dine begivenheder vil blive krypteret og derefter gemt."
       ],
+      "Your import will not be processed.": [
+        "Din import vil ikke blive behandlet."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
@@ -3383,6 +3619,9 @@
       "All-day event notifications": [
         "Notifikationer for heldagsbegivenheder"
       ],
+      "App password": [
+        "App-adgangskode"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -3446,6 +3685,9 @@
       "Do not ask again": [
         "Spørg ikke igen"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Email address": [
         "E-mailadresse"
       ],
@@ -3485,8 +3727,14 @@
       "Frequency": [
         "Frekvens"
       ],
+      "From: ${ emailFrom }": [
+        "Fra: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Fra: ${ importedEmailAddress }"
       ],
       "Good": [
         "God"
@@ -3529,6 +3777,9 @@
       ],
       "Location": [
         "Placering"
+      ],
+      "Mail Server (IMAP)": [
+        "Mailserver (IMAP)"
       ],
       "Mailbox password": [
         "Postkasseadgangskode"
@@ -3588,6 +3839,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Postboks"
       ],
@@ -3624,8 +3878,17 @@
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Til: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Til: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "To-faktor-godkendelseskode"
+      ],
+      "Upload file": [
+        "Upload fil"
       ],
       "Upload picture": [
         "Upload billede"
@@ -3717,6 +3980,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Antal kalendere oprettet: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Forbinder til din e-mailudbyder"
+      ],
       "Creating new calendars": [
         "Opretter nye kalendere"
       ],
@@ -3773,6 +4039,33 @@
       ]
     },
     "Modal title": {
+      "How to import calendars from another service": [
+        "Sådan importerer du kalendere fra en anden tjeneste"
+      ],
+      "How to import calendars from Outlook": [
+        "Sådan importerer du kalendere fra Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Sådan importerer du kalendere fra Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Sådan importerer du kontakter fra en anden tjeneste"
+      ],
+      "How to import contacts from Outlook": [
+        "Sådan importerer du kontakter fra Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Sådan importerer du kontakter fra Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Sådan importerer du e-mails fra en anden tjeneste"
+      ],
+      "How to import emails from Outlook": [
+        "Sådan importerer du e-mails fra Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Sådan importerer du e-mails fra Yahoo"
+      ],
       "Time zone changed": [
         "Tidszone ændret"
       ],
@@ -4904,6 +5197,9 @@
       "Reactivate calendar keys": [
         "Genaktivér kalendernøgler"
       ],
+      "Reconnect your account": [
+        "Genopret forbindelse til din konto"
+      ],
       "Recover data": [
         "Gendan data"
       ],
@@ -4997,6 +5293,12 @@
       "Sign out": [
         "Log ud"
       ],
+      "Start a new import": [
+        "Start en ny import"
+      ],
+      "Start import process": [
+        "Start importeringsprocessen"
+      ],
       "Update event": [
         "Opdater begivenhed"
       ],
@@ -5045,11 +5347,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivevinduet benyttes ved afsendelse til denne bruger. Simpel tekst betyder, at beskeden altid konverteres til simpel tekst ved afsendelsen."
       ],
+      "Customize import to reduce the number of folders": [
+        "Tilpas import for at reducere antallet af mapper"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Tilpas import for at reducere antallet af etiketter"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"
       ],
       "Each imported email will have this label": [
         "Hver importeret e-mail vil have denne etiket"
+      ],
+      "Edit folder names": [
+        "Rediger mappenavne"
+      ],
+      "Edit label names": [
+        "Rediger etikettenavne"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
@@ -5099,6 +5413,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Er du sikker på, at du vil kassere din import?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Er du sikker på, at du vil slette ${ count } kontaktgruppe permanent?",
         "Er du sikker på, at du vil slette ${ count } kontaktgrupper permanent?"
@@ -5124,6 +5441,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor venligst ikke følsomme oplysninger."
@@ -5151,6 +5471,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Denne funktion kræver en betalt Proton-konto"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din Proton-konto. Overvej venligst at tilpasse din import."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."

@@ -91,9 +91,6 @@
       "Apply": [
         "Appliquer"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -475,10 +472,13 @@
       "No": [
         "Non"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "Non indésirables"
       ],
       "Ok": [
+        "OK"
+      ],
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -532,11 +532,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Rafraîchir la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Rafraîchir la page"
       ],
       "Reload": [
         "Recharger"
@@ -2611,6 +2611,20 @@
         "${ emailAddress } a provisoirement accepté votre invitation à ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annulation d'un événement le ${ formattedStart }"
@@ -3545,7 +3559,7 @@
         "Les courriels provenant d'adresses bloquées ne seront pas délivrés."
       ],
       "Search in Allow List and Block List": [
-        "Rechercher dans les listes d'autorisation et de blocage"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3995,9 +4009,6 @@
       ],
       "contacts": [
         "contacts"
-      ],
-      "CSV file": [
-        "fichier CSV"
       ],
       "full calendar view": [
         "la vue complète du calendrier"
@@ -6949,6 +6960,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Téléversez 1 ou plusieurs fichiers de récupération ou clés de chiffrement"
       ],
+      "Upload file": [
+        "Téléverser le fichier"
+      ],
       "URL": [
         "URL"
       ],
@@ -7576,29 +7590,6 @@
         "Vitesse RPV moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Rétrograder vers ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "À partir de ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "À partir de ${ _price2 } par utilisateur"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Conserver mon compte ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Mettre à niveau maintenant"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continuer et vérifier"
@@ -7638,6 +7629,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Rétrograder vers ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "À partir de ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "À partir de ${ _price2 } par utilisateur"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Conserver mon compte ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Mettre à niveau maintenant"
       ]
     },
     "new_plans: attribute": {
@@ -8000,17 +8014,6 @@
         "L'abonnement que vous avez sélectionné: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Essai de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte?"
@@ -8032,6 +8035,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Essai de ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -8999,35 +9013,6 @@
         "Nom d'utilisateur·rice"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } a été ajouté"
-      ],
-      "${ name } deletion failed": [
-        "La suppression de ${ name } a échoué"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } n'a pas pu être déplacé vers la liste d'adresses bloquées"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } n'a pas pu être déplacé vers la liste des non indésirables"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } n'a pas pu être déplacé vers la liste des indésirables"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } a été déplacé vers la liste d'adresses bloquées"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } a été déplacé vers la liste des indésirables"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } a été déplacé vers la liste des indésirables"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } a été supprimé"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
@@ -9580,10 +9565,7 @@
         "Ajouter un filtre Sieve"
       ],
       "Add to block list": [
-        "Ajouter à la liste d'adresses bloquées"
-      ],
-      "Add to not spam list": [
-        "Ajouter à la liste des non indésirables"
+        "Add to your block list"
       ],
       "Add to spam list": [
         "Ajouter à la liste des indésirables"

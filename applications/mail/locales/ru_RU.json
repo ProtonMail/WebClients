@@ -23,6 +23,9 @@
       "Add address": [
         "Добавить адрес"
       ],
+      "Add condition": [
+        "Добавить условие"
+      ],
       "Add contact": [
         "Добавить контакт"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue import": [
+        "Продолжить импорт"
+      ],
       "Continue with Google": [
         "Продолжить с Google"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "Создать новый ярлык"
       ],
+      "Create folder": [
+        "Создать папку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
       "Create new contact": [
         "Создать новый контакт"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "Настроить"
+      ],
+      "Customize import": [
+        "Настроить импорт"
       ],
       "Default email application": [
         "Приложение электронной почты по умолчанию"
@@ -347,6 +362,9 @@
       "Fewer search options": [
         "Меньше настроек поиска"
       ],
+      "Filter on...": [
+        "Фильтр включен..."
+      ],
       "Font": [
         "Шрифт"
       ],
@@ -417,7 +435,7 @@
         "Скрыть сообщения"
       ],
       "Hide My Email": [
-        "Скрыть мою электронную почту"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Скрыть мою электронную почту"
@@ -473,6 +491,9 @@
       "Label as...": [
         "Отметить как..."
       ],
+      "label emails as": [
+        "отметить ярлыком электронные письма как"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -508,6 +529,9 @@
       ],
       "Mark as unread": [
         "Отметить как непрочитанное"
+      ],
+      "mark emails as": [
+        "отметить письма как"
       ],
       "Mark for deletion": [
         "Отметить для удаления"
@@ -569,6 +593,9 @@
       "Move all to trash": [
         "Переместить все в корзину"
       ],
+      "move emails to": [
+        "переместить письма в"
+      ],
       "Move to": [
         "Переместить в"
       ],
@@ -577,12 +604,6 @@
       ],
       "Move to inbox": [
         "Переместить во Входящие"
-      ],
-      "Move to inbox (not spam)": [
-        "Переместить во входящие (не спам)"
-      ],
-      "Move to spam": [
-        "Переместить в спам"
       ],
       "Move to spam and unsubscribe": [
         "Переместить в Спам и отписаться"
@@ -656,6 +677,9 @@
       "Pause": [
         "Приостановить"
       ],
+      "Preview": [
+        "Предпросмотр"
+      ],
       "Preview ${ attachmentName }": [
         "Предпросмотр ${ attachmentName }"
       ],
@@ -695,6 +719,9 @@
       "Read receipt sent": [
         "Уведомление о прочтении отправлено"
       ],
+      "Reconnect": [
+        "Переподключиться"
+      ],
       "Recover data": [
         "Восстановить данные"
       ],
@@ -722,6 +749,9 @@
       "Remove expiration time": [
         "Удалить время истечения срока действия"
       ],
+      "Remove this label": [
+        "Удалить этот ярлык"
+      ],
       "Rename": [
         "Переименовать"
       ],
@@ -745,6 +775,9 @@
       ],
       "Reset search form": [
         "Сброс формы поиска"
+      ],
+      "Reset to default": [
+        "Сбросить к умолчанию"
       ],
       "Reset zoom": [
         "Сбросить масштаб"
@@ -793,6 +826,9 @@
       ],
       "Send anyway": [
         "Все равно отправить"
+      ],
+      "send auto-reply email": [
+        "отправить автоответ"
       ],
       "Send feedback": [
         "Отправить отзыв"
@@ -1806,6 +1842,9 @@
       ],
       "Quit import customization?": [
         "Прекратить настройку импорта?"
+      ],
+      "Quit import?": [
+        "Выйти из импорта?"
       ]
     },
     "Contact field label": {
@@ -2662,6 +2701,26 @@
         "Аландские острова"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Вложение"
+      ],
+      "Filter on": [
+        "Фильтр включен"
+      ],
+      "Next": [
+        "Далее"
+      ],
+      "Recipient": [
+        "Получатель"
+      ],
+      "Sender": [
+        "Отправитель"
+      ],
+      "Subject": [
+        "Тема"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } раз",
@@ -2942,6 +3001,9 @@
         "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
         "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дня(ей)"
       ],
+      "Condition incomplete": [
+        "Условие неполное"
+      ],
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
       ],
@@ -2987,11 +3049,17 @@
       "Email is not valid": [
         "Эл. почта недействительна"
       ],
+      "Empty condition": [
+        "Пустое условие"
+      ],
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
       "Enter a password": [
         "Введите пароль"
+      ],
+      "Error in one of the conditions": [
+        "Ошибка в одном из условий"
       ],
       "Error while saving draft. Please try again.": [
         "Ошибка при сохранении черновика. Пожалуйста, попробуйте снова."
@@ -3004,6 +3072,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Не удалось зашифровать вложение. Попробуйте еще раз."
+      ],
+      "Filter with this name already exists": [
+        "Фильтр с таким именем уже существует"
       ],
       "Folder name cannot be empty.": [
         "Название папки не может быть пустым."
@@ -3110,6 +3181,9 @@
       "Please set a password": [
         "Пожалуйста, задайте пароль"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Попробуйте повторить аутентификацию и убедитесь, что права доступа установлены правильно."
+      ],
       "Primary address key is not decrypted": [
         "Ключ первичного адреса не расшифрован"
       ],
@@ -3137,6 +3211,12 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
+      "Require at least one action": [
+        "Требуется как минимум одно действие"
+      ],
+      "Require at least one condition": [
+        "Требуется как минимум одно условие"
+      ],
       "Signature not verified": [
         "Подпись подтверждена"
       ],
@@ -3151,6 +3231,18 @@
       ],
       "Some groups could not be deleted": [
         "Некоторые группы не могут быть удалены"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Имена некоторых ваших папок зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Некоторые из ваших имен папок превышают максимальное ограничение на количество символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Имена некоторых ваших ярлыков зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Некоторые имена ваших ярлыков недоступны. Пожалуйста, настройте импорт для редактирования этих имен."
@@ -3224,6 +3316,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
       ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Слишком много активных фильтров. Пожалуйста, улучшите до платного тарифа, чтобы активировать больше фильтров."
+      ],
       "Trusted keys are not valid for sending": [
         "Доверенные ключи не действительны для отправки"
       ],
@@ -3232,6 +3327,9 @@
       ],
       "Unknown error.": [
         "Неизвестная ошибка."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Не удалось подключиться к вашему поставщику услуг."
       ],
       "Wrong mailbox password": [
         "Неправильный пароль почтового ящика"
@@ -3591,6 +3689,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Если вложения"
+      ],
+      "If the recipient": [
+        "Если получатель"
+      ],
+      "If the sender": [
+        "Если отправитель"
+      ],
+      "If the subject": [
+        "Если тема"
+      ],
       "Select…": [
         "Выбрать…"
       ],
@@ -3610,6 +3720,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } обновлён"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Фильтр ${ Filter.Name } обновлён"
       ]
     },
     "Filter option": {
@@ -3627,6 +3740,14 @@
       ],
       "Unread": [
         "Непрочитанные"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "прочитано"
+      ],
+      "starred": [
+        "со звёздами"
       ]
     },
     "Font Face Default": {
@@ -3851,12 +3972,261 @@
         "ProtonContacts ${ forNow } не поддерживает:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Менее безопасный доступ к приложениям\" включен в настройках безопасности аккаунта Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Двухэтапная аутентификация включена в вашем внешнем аккаунте."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Двухэтапная аутентификация включена в вашем внешнем аккаунте электронной почты."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Если ${ bold2StepsDisabled } (настройки Gmail по умолчанию), то убедитесь, что:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Если ${ bold2StepsDisabled } в Gmail (по умолчанию), убедитесь, что:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Если ${ bold2StepsEnabled } в Gmail, пожалуйста, убедитесь, что вы используете свой пароль приложения, а не обычный пароль."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Если ${ bold2StepsEnabled }, то убедитесь, что ваш адрес электронной почты и пароль от приложения правильны. ${ boldNot } используйте ваш обычный пароль."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Доступ IMAP включен в вашем внешнем аккаунте."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Доступ по протоколу IMAP включен в вашей учетной записи Yahoo."
+      ],
+      "Invalid IMAP port": [
+        "Недействительный порт IMAP"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что в Gmail включен IMAP."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что IMAP включен в вашем аккаунте Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton не может подключиться к вашей учетной записи. Пожалуйста, убедитесь, что:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton не может подключиться к Вашему внешнему аккаунту. Пожалуйста, убедитесь, что адрес почтового сервера и порт указаны верно."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton не может подключиться к вашей внешней учетной записи. Пожалуйста, убедитесь, что:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton не может подключиться к вашей учетной записи Gmail. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton не может подключиться к вашей учетной записи Yahoo. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта правильны."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton не может подключиться к вашей учетной записи Yahoo. Пожалуйста, убедитесь, что:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Слишком много запросов за последнее время. Пожалуйста, повторите попытку позднее."
+      ],
+      "Use your app password if:": [
+        "Используйте свой пароль приложения, если:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Используйте ваш пароль приложения вместо обычного пароля, если:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Вы также можете попробовать выйти из ${ boldGoogleAccounts } в браузере, а затем разблокировать ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Ваш пароль приложения правильный. ${ boldNot } используйте свой обычный пароль."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Ваш почтовый аккаунт требует пароль приложения для экспорта данных."
+      ],
+      "Your email account requires one to export your data.": [
+        "Для экспорта данных требуется аккаунт электронной почты."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Ваш адрес электронной почты и пароль приложения верны. ${ boldNot } используйте свой обычный пароль."
+      ],
+      "Your email address and password are correct.": [
+        "Ваш адрес электронной почты и пароль верны."
+      ],
+      "Your password is correct.": [
+        "Ваш пароль правильный."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Двухэтапная авторизация выключена"
+      ],
+      "2-step verification is enabled": [
+        "Двухэтапная авторизация включена"
+      ],
+      "all your other Google accounts": [
+        "все остальные ваши аккаунты Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "не"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Событие календаря создано"
       ],
       "Creating calendar event failed": [
         "Не удалось создать событие календаря"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Нажмите ${ boldManage }, чтобы развернуть меню параметров."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "В зависимости от поставщика услуг электронной почты, вам может потребоваться сначала сгенерировать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать данные в Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Разверните выпадающее меню, нажав на 3 точки (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Перейдите в ${ boldAccountInfo } в своем профиле в ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Перейдите в ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Перейдите в ${ securitySettingsLink } в Outlook."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Если двухэтапная аутентификация выключена, включите ее."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Откройте контакты ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Откройте свои ${ outlookContactsLink } Outlook."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Выберите ${ boldExportContacts } и определите, какие контакты нужно экспортировать."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Выберите ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Чтобы импортировать календарь в Proton, вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Для импорта контактов в Proton вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Для импорта контактов в Proton необходим ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } из Outlook. Получите его, выполнив следующие действия:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } от Yahoo. Получите его, выполнив следующие действия:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Информация об учётной записи"
+      ],
+      "Account security": [
+        "Безопасность учётной записи"
+      ],
+      "app password": [
+        "пароль приложения"
+      ],
+      "Can view all details": [
+        "Можно просмотреть всю информацию"
+      ],
+      "Export": [
+        "Экспорт"
+      ],
+      "Export contacts": [
+        "Экспортировать контакты"
+      ],
+      "Export to CSV file": [
+        "Экспорт в файл CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Управлять"
+      ],
+      "Publish a calendar": [
+        "Опубликовать календарь"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "пароль приложения"
+      ],
+      "app password or enable IMAP": [
+        "пароль приложения или включить IMAP"
+      ],
+      "contacts": [
+        "контакты"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Файл CSV или VCF (vCard)"
+      ],
+      "full calendar view": [
+        "полный вид календаря"
+      ],
+      "ICS file": [
+        "файл ICS"
+      ],
+      "security settings": [
+        "настройки безопасности"
+      ],
+      "shared calendars": [
+        "подписанным календарям"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Нажмите на ссылку ${ boldICS } и скачайте файл."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Перейдите к ${ calendarLink } в настройках Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Перейти в ${ calendarViewLink } в Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Наведите курсор мыши на календарь, который вы хотите импортировать, и откройте выпадающее меню."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение ${ boldCanViewAllDetails } и опубликуйте его."
       ]
     },
     "Import warning": {
@@ -3973,6 +4343,18 @@
         "Найдено ${ numOccurrences } повторений в содержимом письма",
         "Найдено ${ numOccurrences } повторений в содержимом письма"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Найдена ${ providerFoldersNumLocalized } папка",
+        "Найдены ${ providerFoldersNumLocalized } папки",
+        "Найдено ${ providerFoldersNumLocalized } папок",
+        "Найдено ${ providerFoldersNumLocalized } папок"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "В Gmail найден ${ providerFoldersNumLocalized } ярлык",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыка",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } файл прикреплён",
         "${ pureAttachmentsCount } файлы прикреплены",
@@ -3996,6 +4378,18 @@
         "${ selectedFoldersCount } ярлыков выбрано",
         "${ selectedFoldersCount } ярлыков выбрано",
         "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } папка",
+        "Выбрана ${ selectedFoldersCountLocalized } папки",
+        "Выбрано ${ selectedFoldersCountLocalized } папок",
+        "Выбрано ${ selectedFoldersCountLocalized } папок"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Выбран ${ selectedFoldersCountLocalized } ярлык",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыка",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
@@ -4054,6 +4448,12 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Фильтровать, если ВСЕ из следующих условий выполнены)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Фильтровать, если ЛЮБОЕ из следующих условий выполнено)"
+      ],
       "(No Recipient)": [
         "(Нет получателей)"
       ],
@@ -4105,6 +4505,9 @@
       "All your calendars are disabled.": [
         "Все ваши календари отключены."
       ],
+      "All your changes will be lost.": [
+        "Все ваши изменения будут потеряны."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Для этого получателя обнаружен неизвестный публичный ключ."
       ],
@@ -4116,6 +4519,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Вы уверены, что хотите удалить все письма с этим ярлыком?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Вы уверены, что хотите отменить изменения?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Вы уверены, что хотите переместить все сообщения отсюда в корзину?"
@@ -4333,6 +4739,9 @@
       "End of search results from past 30 days": [
         "Конец результатов поиска за последние 30 дней"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
@@ -4371,6 +4780,9 @@
         "файла прикреплено",
         "файлов прикреплено",
         "файлов прикреплено"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
       ],
       "Folder": [
         "Папка"
@@ -4438,6 +4850,9 @@
       "Image URL": [
         "URL изображения"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Изображения были удалены, поскольку они не допускаются в автоответчике"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
@@ -4452,6 +4867,9 @@
       ],
       "Import in progress": [
         "Выполняется импорт"
+      ],
+      "Import mailbox": [
+        "Импорт почтового ящика"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
@@ -4485,6 +4903,9 @@
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
+      ],
+      "Label all imported messages as": [
+        "Назначить всем импортированным сообщениям ярлык"
       ],
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
@@ -4561,6 +4982,9 @@
       "New": [
         "Новый"
       ],
+      "No action selected": [
+        "Действие не выбрано"
+      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -4573,11 +4997,17 @@
       "No folder found": [
         "Папки не найдены"
       ],
+      "No folder selected": [
+        "Папка не выбрана"
+      ],
       "No group found": [
         "Группа не найдена"
       ],
       "No label found": [
         "Ярлыки не найдены"
+      ],
+      "No label selected": [
+        "Ярлык не выбран"
       ],
       "No more results found": [
         "Больше результатов не найдено"
@@ -4717,14 +5147,14 @@
       "Right-click for options": [
         "Щелкните правой кнопкой для настроек"
       ],
-      "Saved ${ dateString }": [
-        "Сохранено ${ dateString }"
-      ],
       "Saved at ${ dateString }": [
         "Сохранено ${ dateString }"
       ],
       "Saved on ${ dateString }": [
         "Сохранено ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Сохранено вчера"
       ],
       "Saving draft…": [
         "Сохранение черновика…"
@@ -5227,6 +5657,12 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
+      "Your import will not be processed.": [
+        "Импорт не будет обработан."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Ваши данные для входа не будут сохранены после завершения импорта."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Ваше сообщение будет удалено из папки \"Входящие\" получателя и из вашей папки \"Отправленные\" ${ dateString } в ${ formattedTime }"
       ],
@@ -5516,8 +5952,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " и "
+      ],
+      " and ${ l }": [
+        " и ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Пожалуйста, проверьте позже.)"
+      ],
+      "Actions": [
+        "Действия"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -5531,6 +5976,9 @@
       "Address": [
         "Адрес"
       ],
+      "ALL": [
+        "ВСЁ"
+      ],
       "Also archive": [
         "Также перенести в архив"
       ],
@@ -5539,6 +5987,24 @@
       ],
       "Always move sender's emails": [
         "Всегда перемещать сообщения отправителя"
+      ],
+      "AND": [
+        "И"
+      ],
+      "and": [
+        "и"
+      ],
+      "And": [
+        "И"
+      ],
+      "ANY": [
+        "ЛЮБОЕ"
+      ],
+      "App password": [
+        "Пароль приложения"
+      ],
+      "Apply filter to existing emails": [
+        "Применить к существующему сообщению"
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
@@ -5587,6 +6053,12 @@
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
+      ],
+      "Coming soon": [
+        "Скоро появится"
+      ],
+      "Conditions": [
+        "Условия"
       ],
       "Confirm password": [
         "Подтвердить пароль"
@@ -5642,6 +6114,9 @@
       "Extended address": [
         "Расширенный адрес"
       ],
+      "Filter Name": [
+        "Название фильтра"
+      ],
       "Folder location": [
         "Размещение папки"
       ],
@@ -5654,8 +6129,14 @@
       "From:": [
         "От:"
       ],
+      "From: ${ emailFrom }": [
+        "От: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "От: ${ importedEmailAddress }"
       ],
       "Good": [
         "Хорошо"
@@ -5671,6 +6152,12 @@
       ],
       "I understand the risk": [
         "Я понимаю риск"
+      ],
+      "IF": [
+        "ЕСЛИ"
+      ],
+      "If": [
+        "Если"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -5708,6 +6195,9 @@
       "Location": [
         "Место"
       ],
+      "Mail Server (IMAP)": [
+        "Почтовый сервер (IMAP)"
+      ],
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
@@ -5723,6 +6213,9 @@
       "Manage my addresses": [
         "Управление моими адресами"
       ],
+      "Mark as": [
+        "Отметить как"
+      ],
       "Move to": [
         "Переместить в"
       ],
@@ -5735,6 +6228,9 @@
       "Name": [
         "Имя"
       ],
+      "No label found": [
+        "Ярлыки не найдены"
+      ],
       "Notification": [
         "Уведомление"
       ],
@@ -5746,6 +6242,15 @@
       ],
       "Operating system version": [
         "Версия операционной системы"
+      ],
+      "OR": [
+        "ИЛИ"
+      ],
+      "or": [
+        "или"
+      ],
+      "Or": [
+        "Или"
       ],
       "Participants": [
         "Участники"
@@ -5762,6 +6267,9 @@
       "Phone number": [
         "Номер телефона"
       ],
+      "Port": [
+        "Порт"
+      ],
       "Post office box": [
         "Почтовый ящик"
       ],
@@ -5773,6 +6281,9 @@
       ],
       "Public keys": [
         "Публичные ключи"
+      ],
+      "Read": [
+        "Прочитанные"
       ],
       "Recipient": [
         "Получатель"
@@ -5801,6 +6312,9 @@
       "Select how your mailbox looks like by default.": [
         "Выберите как будет выглядеть ваш почтовый ящик по умолчанию."
       ],
+      "Send auto-reply": [
+        "Отправить автоответ"
+      ],
       "Sender": [
         "Отправитель"
       ],
@@ -5810,11 +6324,32 @@
       "Size:": [
         "Размер:"
       ],
+      "Starred": [
+        "Со звёздами"
+      ],
+      "Statement": [
+        "Отчет"
+      ],
       "Street address": [
         "Адрес"
       ],
       "System information": [
         "Сведения о системе"
+      ],
+      "The email was sent ${ attachment }": [
+        "Письмо было отправлено ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "письмо было отправлено ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "Письмо было отправлено ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "письмо было отправлено ${ label }"
+      ],
+      "Then": [
+        "Затем"
       ],
       "Time": [
         "Время"
@@ -5828,11 +6363,20 @@
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Кому: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Кому: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Код двухфакторной аутентификации"
       ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
+      ],
+      "Upload file": [
+        "Загрузить файл"
       ],
       "Upload picture": [
         "Загрузить изображение"
@@ -5845,6 +6389,21 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "With attachment": [
+        "С вложением"
+      ],
+      "with attachments": [
+        "с вложениями"
+      ],
+      "Without attachment": [
+        "Без вложения"
+      ],
+      "without attachment": [
+        "без вложения"
+      ],
+      "without attachments": [
+        "без вложений"
       ],
       "Wonderful": [
         "Прекрасно"
@@ -5962,9 +6521,6 @@
       "Folders": [
         "Папки"
       ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
       "Inbox": [
         "Входящие"
       ],
@@ -6046,9 +6602,6 @@
       "Trash": [
         "Корзина"
       ],
-      "Upgrade": [
-        "Улучшить"
-      ],
       "Upgrade account": [
         "Повысить учётную запись"
       ],
@@ -6092,6 +6645,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Подключение к поставщику услуг электронной почты"
+      ],
       "Creating new calendars": [
         "Создание новых календарей"
       ],
@@ -6106,11 +6662,23 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортируйте все сообщения из ${ totalLabelsCount } папки с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6194,6 +6762,35 @@
       ],
       "Plain text": [
         "Простой текст"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Как импортировать календари из другой службы"
+      ],
+      "How to import calendars from Outlook": [
+        "Как импортировать календари из Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Как импортировать календари из Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Как импортировать контакты из другой службы"
+      ],
+      "How to import contacts from Outlook": [
+        "Как импортировать контакты из Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Как импортировать контакты из Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Как импортировать электронную почту из другой службы"
+      ],
+      "How to import emails from Outlook": [
+        "Как импортировать электронную почту из Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Как импортировать электронную почту из Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6372,6 +6969,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } создан"
+      ],
       "Block removed": [
         "Блокировка удалена"
       ],
@@ -6452,6 +7052,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Пользовательские папки"
+      ],
       "Default folders": [
         "Папки по умолчанию"
       ],
@@ -6593,6 +7196,9 @@
       ],
       "Text": [
         "Текст"
+      ],
+      "Type text or keyword": [
+        "Введите текст или ключевое слово"
       ],
       "Write your message": [
         "Напишите сообщение"
@@ -6900,6 +7506,20 @@
         "Подписка отменена"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Действия"
+      ],
+      "Conditions": [
+        "Условия"
+      ],
+      "Name": [
+        "Название"
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Получите дополнительное хранилище бесплатно"
@@ -6970,10 +7590,8 @@
         "${ elementsCount } цепочка(и,ек) писем перемещено в ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } цепочка писем перемещена в спам, а отправитель добавлен в список блокируемых.",
-        "${ elementsCount } цепочек писем перемещены в спам, а отправитель добавлен в список блокируемых.",
-        "${ elementsCount } цепочек писем перемещено в спам, а отправитель добавлен в список блокируемых.",
-        "${ elementsCount } цепочка(и,ек) писем перемещено в спам, а отправитель добавлен в список блокируемых."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "C ${ elementsCount } цепочки писем снят ярлык ${ labelName }.",
@@ -7018,10 +7636,8 @@
         "${ elementsCount } сообщений перемещено в ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } сообщение перемещено в спам, а отправитель добавлен в список блокируемых.",
-        "${ elementsCount } сообщения перемещены в спам, а отправитель добавлен в список блокируемых.",
-        "${ elementsCount } сообщений перемещено в спам, а отправитель добавлен в список блокируемых.",
-        "${ elementsCount } сообщений перемещено в спам, а отправитель добавлен в список блокируемых."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "С ${ elementsCount } сообщения удалён ярлык ${ labelName }.",
@@ -7081,7 +7697,7 @@
         "Цепочка писем перемещена в ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Цепочка писем перемещена в спам, а отправитель добавлен в список блокируемых."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Цепочка писем удалена из ${ labelName }."
@@ -7138,13 +7754,13 @@
         "Сообщение помечено как непрочитанное."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Сообщение перемещено в ${ folderName }, а отправитель добавлен в список разрешенных."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Сообщение перемещено в ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Сообщение перемещено в спам, а отправитель добавлен в список блокируемых."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Сообщение удалено из ${ labelName }."
@@ -7195,11 +7811,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Отзыв отправлен"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/месяц"
       ]
     },
     "Table header": {
@@ -7332,6 +7943,9 @@
       "Add contact group name": [
         "Добавление имени для группы контактов"
       ],
+      "Add filter": [
+        "Добавить фильтр"
+      ],
       "Add to ${ groupCount } group": [
         "Добавление в ${ groupCount } группу",
         "Добавление в ${ groupCount } группы",
@@ -7346,6 +7960,9 @@
       ],
       "Archive": [
         "Архив"
+      ],
+      "Are you sure you want to close?": [
+        "Вы уверены, что хотите закрыть?"
       ],
       "Attachments": [
         "Вложения"
@@ -7482,6 +8099,9 @@
       "Edit contact group": [
         "Изменение группы контактов"
       ],
+      "Edit filter": [
+        "Изменение фильтра"
+      ],
       "Edit image": [
         "Изменение изображения"
       ],
@@ -7520,6 +8140,9 @@
       ],
       "Feedback": [
         "Отзыв"
+      ],
+      "Filter on...": [
+        "Фильтр включен..."
       ],
       "Forward": [
         "Переслать"
@@ -7606,10 +8229,10 @@
         "Переместить во Входящие"
       ],
       "Move to inbox (not spam)": [
-        "Переместить во входящие (не спам)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Переместить в Спам"
+        "Move to spam"
       ],
       "Move to trash": [
         "Переместить в корзину"
@@ -7667,6 +8290,9 @@
       ],
       "Recipients": [
         "Получатели"
+      ],
+      "Reconnect your account": [
+        "Повторно подключить свою учётную запись"
       ],
       "Recover data": [
         "Восстановление данных"
@@ -7740,6 +8366,12 @@
       "Sort messages": [
         "Сортировка сообщений"
       ],
+      "Start a new import": [
+        "Начать новый импорт"
+      ],
+      "Start import process": [
+        "Начать процесс импорта"
+      ],
       "Storage capacity warning": [
         "Предупреждение об объёме хранилища"
       ],
@@ -7810,11 +8442,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
       ],
+      "Customize import to reduce the number of folders": [
+        "Настройте импорт, чтобы уменьшить количество папок"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Настройте импорт, чтобы уменьшить количество ярлыков"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Подписывание электронных писем цифровой подписью помогает убедиться, что сообщения отправляются вами"
       ],
       "Each imported email will have this label": [
         "У каждого импортированного письма будет этот ярлык"
+      ],
+      "Edit folder names": [
+        "Изменить названия папок"
+      ],
+      "Edit label names": [
+        "Изменить названия ярлыков"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрование почты всегда подразумевает применение цифровой подписи, что позволяет подтверждать подлинность отправленных сообщений"
@@ -7839,6 +8483,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
+      ],
+      "This feature is only available for paid users": [
+        "Эта функция доступна только пользователям с платными тарифами"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
@@ -7883,6 +8530,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Вы уверены, что хотите сбросить импорт?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы уверены, что хотите навсегда удалить ${ count } группу контактов?",
         "Вы уверены, что хотите навсегда удалить ${ count } группы контактов?",
@@ -7912,6 +8562,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton перенесёт столько данных, сколько возможно, начиная с самых последних сообщений."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -7945,6 +8598,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Для этой функции требуется платная учётная запись Proton"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Этот импорт может потребовать больше места, чем в настоящее время доступно в вашем аккаунте Proton. Рассмотрите возможность настройки вашего импорта."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."

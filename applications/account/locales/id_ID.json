@@ -102,9 +102,6 @@
       "Apply": [
         "Terapkan"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -486,11 +483,14 @@
       "No": [
         "Tidak"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "Bukan spam"
       ],
       "Ok": [
         "Ya"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
@@ -543,11 +543,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -2705,6 +2705,20 @@
         "${ emailAddress } telah sementara menerima undangan Anda pada ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Pembatalan sebuah acara pada ${ formattedStart }"
@@ -3644,7 +3658,7 @@
         "Email yang berasal dari alamat yang diblokir tidak akan disampaikan."
       ],
       "Search in Allow List and Block List": [
-        "Cari di Daftar Izin dan Daftar Blokir"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4089,9 +4103,6 @@
       ],
       "contacts": [
         "kontak"
-      ],
-      "CSV file": [
-        "Berkas CSV"
       ],
       "full calendar view": [
         "tampilan kalender seutuhnya"
@@ -6453,6 +6464,9 @@
       "Color": [
         "Warna"
       ],
+      "Coming soon": [
+        "Segera hadir"
+      ],
       "Composer": [
         "Komposer"
       ],
@@ -7028,6 +7042,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Unggah setidaknya 1 berkas pemulihan atau kunci enkripsi"
+      ],
+      "Upload file": [
+        "Unggah berkas"
       ],
       "URL": [
         "URL"
@@ -7655,29 +7672,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "Dari ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Dari ${ _price2 } per pengguna"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -7717,6 +7711,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "Dari ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Dari ${ _price2 } per pengguna"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ]
     },
     "new_plans: attribute": {
@@ -8064,17 +8081,6 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Uji Coba ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -8096,6 +8102,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Uji Coba ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -9119,35 +9136,6 @@
         "Nama pengguna"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } ditambahkan"
-      ],
-      "${ name } deletion failed": [
-        "${ name } gagal dihapus"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } gagal dipindahkan ke Daftar Blokir"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } gagal dipindahkan ke daftar Bukan spam"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } gagal dipindahkan ke daftar Spam"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } dipindahkan ke Daftar Blokir"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } dipindahkan ke daftar Bukan spam"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } dipindahkan ke daftar Spam"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } berhasil dihapus"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
@@ -9689,10 +9677,7 @@
         "Tambah filter Sieve"
       ],
       "Add to block list": [
-        "Tambahkan ke daftar blokir"
-      ],
-      "Add to not spam list": [
-        "Tambahkan ke daftar bukan spam"
+        "Add to your block list"
       ],
       "Add to spam list": [
         "Tambahkan ke daftar spam"
