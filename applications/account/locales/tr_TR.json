@@ -102,8 +102,8 @@
       "Apply": [
         "Uygula"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Var olan iletilere uygula"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -486,10 +486,13 @@
       "No": [
         "Hayır"
       ],
-      "OK": [
-        "Tamam"
+      "Non spam": [
+        "İstenmeyen değil"
       ],
       "Ok": [
+        "Tamam"
+      ],
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -543,11 +546,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -2634,6 +2637,23 @@
         "'www' alt etki alanları genellikle e-posta için kullanılmaz. Bu alan adı değerini kullanmak istediğinize emin misiniz?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } eklendi"
+      ],
+      "${ name } deletion failed": [
+        "${ name } silinemedi"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } istenmeyen değil listesine eklenemedi"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } istenmeyen değil listesine eklendi"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } silindi"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
@@ -2720,6 +2740,35 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } eklendi"
+      ],
+      "${ name } deletion failed": [
+        "${ name } silinemedi"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } istenmeyen değil listesine eklenemedi"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } istenmeyen değil listesine eklendi"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } silindi"
       ]
     },
     "Email subject": {
@@ -3049,11 +3098,17 @@
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Bazı klasör adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
@@ -3675,7 +3730,7 @@
         "Engellenmiş adreslerden gelen e-postalar alınmaz."
       ],
       "Search in Allow List and Block List": [
-        "İzin verilenler ve engellenenler listesinde arama"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4132,8 +4187,8 @@
       "contacts": [
         "kişiler"
       ],
-      "CSV file": [
-        "CSV dosyası"
+      "CSV or a VCF (vCard) file": [
+        "CSV ya da VCF (vCard) dosyası"
       ],
       "full calendar view": [
         "tam takvim görünümü"
@@ -6364,6 +6419,9 @@
       " and ${ l }": [
         " ve ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } e-posta adresi ya da kullanıcı adı"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
@@ -6528,6 +6586,9 @@
       ],
       "Color": [
         "Renk"
+      ],
+      "Coming soon": [
+        "Çok yakında"
       ],
       "Composer": [
         "Oluşturucu"
@@ -7105,6 +7166,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "1 ya da birkaç kurtarma dosyası ya da şifreleme anahtarı yükleyin"
       ],
+      "Upload file": [
+        "Dosya yükle"
+      ],
       "URL": [
         "İnternet adresi"
       ],
@@ -7453,9 +7517,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } zamanından sonraki tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ periodFragment } öncesinden başlayarak ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
@@ -7738,29 +7810,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ _price }": [
-        "${ _price } ile başlar"
-      ],
-      "From ${ _price2 } per user": [
-        "Bir kullanıcı için ${ _price2 } ile başlar"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -7800,6 +7849,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ _price }": [
+        "${ _price } ile başlar"
+      ],
+      "From ${ _price2 } per user": [
+        "Bir kullanıcı için ${ _price2 } ile başlar"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: attribute": {
@@ -8162,17 +8234,6 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } deneme"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -8194,6 +8255,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } deneme"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -9228,35 +9300,6 @@
         "Kullanıcı adı"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } eklendi"
-      ],
-      "${ name } deletion failed": [
-        "${ name } silinemedi"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } engellenenler listesine eklenemedi"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } istenmeyen değil listesine eklenemedi"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } istenmeyenler listesine eklenemedi"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } engellenen listesine taşındı"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } istenmeyen değil listesine eklendi"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } istenmeyenler listesine eklendi"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } silindi"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
@@ -9814,9 +9857,9 @@
         "Sieve süzgeci ekle"
       ],
       "Add to block list": [
-        "Engellenenler listesine ekle"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "İstenmeyen değil listesine ekle"
       ],
       "Add to spam list": [

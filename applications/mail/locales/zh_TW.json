@@ -23,6 +23,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add condition": [
+        "加入條件"
+      ],
       "Add contact": [
         "加入聯絡人"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "繼續"
       ],
+      "Continue import": [
+        "繼續匯入"
+      ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "創建新標籤"
       ],
+      "Create folder": [
+        "建立資料夾"
+      ],
+      "Create label": [
+        "建立標籤"
+      ],
       "Create new contact": [
         "建立新聯絡人"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "自訂"
+      ],
+      "Customize import": [
+        "自訂匯入"
       ],
       "Default email application": [
         "預設電郵程式"
@@ -411,7 +426,7 @@
         "隱藏郵件"
       ],
       "Hide My Email": [
-        "隱藏我的電郵"
+        "Hide My Email"
       ],
       "Hide my email": [
         "隱藏我的電郵"
@@ -464,6 +479,9 @@
       "Label as...": [
         "將郵件加上標籤..."
       ],
+      "label emails as": [
+        "將電郵加上標籤"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -499,6 +517,9 @@
       ],
       "Mark as unread": [
         "標示為未讀取"
+      ],
+      "mark emails as": [
+        "將電郵標記為"
       ],
       "Mark for deletion": [
         "標記作刪除"
@@ -560,6 +581,9 @@
       "Move all to trash": [
         "全部丟到垃圾桶"
       ],
+      "move emails to": [
+        "將電郵移動到"
+      ],
       "Move to": [
         "移至"
       ],
@@ -568,12 +592,6 @@
       ],
       "Move to inbox": [
         "移至收件匣"
-      ],
-      "Move to inbox (not spam)": [
-        "移動到收件匣 (非垃圾郵件)"
-      ],
-      "Move to spam": [
-        "移至垃圾郵件"
       ],
       "Move to spam and unsubscribe": [
         "移至垃圾郵件並同時退訂"
@@ -647,6 +665,9 @@
       "Pause": [
         "暫停"
       ],
+      "Preview": [
+        "預覽"
+      ],
       "Preview ${ attachmentName }": [
         "預覽 ${ attachmentName }"
       ],
@@ -686,6 +707,9 @@
       "Read receipt sent": [
         "讀取回條已傳送"
       ],
+      "Reconnect": [
+        "重新連線"
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -713,6 +737,9 @@
       "Remove expiration time": [
         "移除到期時間"
       ],
+      "Remove this label": [
+        "移除此標籤"
+      ],
       "Rename": [
         "重新命名"
       ],
@@ -736,6 +763,9 @@
       ],
       "Reset search form": [
         "重設搜尋表單"
+      ],
+      "Reset to default": [
+        "還原成預設值"
       ],
       "Reset zoom": [
         "重設縮放"
@@ -784,6 +814,9 @@
       ],
       "Send anyway": [
         "仍然傳送"
+      ],
+      "send auto-reply email": [
+        "傳送自動回覆電郵"
       ],
       "Send feedback": [
         "傳送意見反饋"
@@ -1664,6 +1697,9 @@
       ],
       "Quit import customization?": [
         "要結束匯入自訂嗎？"
+      ],
+      "Quit import?": [
+        "要結束匯入嗎？"
       ]
     },
     "Contact field label": {
@@ -2509,6 +2545,23 @@
         "奧蘭群島"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "附件"
+      ],
+      "Next": [
+        "下一個"
+      ],
+      "Recipient": [
+        "收件者"
+      ],
+      "Sender": [
+        "寄件者"
+      ],
+      "Subject": [
+        "主題"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "總共 ${ count } 次"
@@ -2756,6 +2809,9 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "在接下來的${ SCHEDULED_MAX_DATE_DAYS }天內選擇一個日期。"
       ],
+      "Condition incomplete": [
+        "條件不完整"
+      ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
@@ -2795,11 +2851,17 @@
       "Email is not valid": [
         "電郵無效"
       ],
+      "Empty condition": [
+        "條件空白"
+      ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
       ],
       "Enter a password": [
         "請輸入您的密碼"
+      ],
+      "Error in one of the conditions": [
+        "其中一個條件有誤"
       ],
       "Error while saving draft. Please try again.": [
         "儲存草稿時發生錯誤，請再試一次。"
@@ -2812,6 +2874,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
+      ],
+      "Filter with this name already exists": [
+        "以此為名的篩選器已存在"
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
@@ -2894,6 +2959,9 @@
       "Please set a password": [
         "請設置一組密碼"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "請嘗試重新認證並確保權限設定正確。"
+      ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
       ],
@@ -2918,6 +2986,12 @@
       "Request timed out": [
         "請求逾時"
       ],
+      "Require at least one action": [
+        "必須有至少一個動作"
+      ],
+      "Require at least one condition": [
+        "必須有至少一個條件"
+      ],
       "Signature not verified": [
         "簽章尚未驗證"
       ],
@@ -2932,6 +3006,9 @@
       ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
@@ -3004,6 +3081,9 @@
       ],
       "Unknown error.": [
         "未知的錯誤。"
+      ],
+      "We were unable to connect to your service provider.": [
+        "我們無法連接到您的服務提供者。"
       ],
       "Wrong mailbox password": [
         "密碼錯誤"
@@ -3361,6 +3441,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "篩選器 ${ Filter.Name } 已更新"
       ]
     },
     "Filter option": {
@@ -3378,6 +3461,14 @@
       ],
       "Unread": [
         "未讀"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "已讀"
+      ],
+      "starred": [
+        "已加星號"
       ]
     },
     "Font Face Default": {
@@ -3581,12 +3672,208 @@
         "ProtonContacts ${ forNow }不支援："
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "您的外部電郵帳號已啟用兩步驟驗證."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "如果 Gmail ${ bold2StepsDisabled }（預設設定），請確保："
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "如果 Gmail ${ bold2StepsEnabled }，請確保您使用您的應用程式密碼，而非您的一般密碼。"
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "您的 Yahoo 帳號已啟用 IMAP 存取。"
+      ],
+      "Invalid IMAP port": [
+        "無效的 IMAP 連接埠"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton 無法連接您的帳號。請確保 Gmail IMAP 存取已啟用。"
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton 無法連線到您的帳號。請確保您的 Gmail 帳號已啟用 IMAP 存取。"
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton 無法連線到您的帳號。請確保："
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton 無法連線到您的外部帳號。請確保電郵伺服器位置和連接埠號碼正確。"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton 無法連線到您的外部帳號。請確保："
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "最近的請求太多。請容後再試。"
+      ],
+      "Use your app password if:": [
+        "使用您的應用程式密碼，如果："
+      ],
+      "Use your app password instead of your regular password if:": [
+        "使用您的應用程式密碼而非一般密碼，如果："
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
+      ],
+      "Your email address and password are correct.": [
+        "您的電郵位址和密碼均為正確."
+      ],
+      "Your password is correct.": [
+        "您的密碼正確無誤。"
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "兩步驟驗證已停用"
+      ],
+      "2-step verification is enabled": [
+        "兩步驟驗證已啟用"
+      ],
+      "all your other Google accounts": [
+        "您所有的其它 Google 帳號"
+      ],
+      "CAPTCHA": [
+        "驗證碼"
+      ],
+      "not": [
+        "不要"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "行事曆事件已建立"
       ],
       "Creating calendar event failed": [
         "建立行事曆事件失敗"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "點擊 ${ boldManage } 以展開選項功能表。"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "點擊三個點 (...) 展開下拉式選單"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "請至 ${ yahooMailLink } 裡您名下個人資料的 ${ boldAccountInfo }。"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "前往 ${ boldAccountSecurity }。"
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "前往 Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "若雙重驗證仍待用中，建議您啟用它。"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "開啟您的 ${ yahooMailLink } 通訊錄。"
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "開啟您的 Outlook 通訊錄 ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "選取 ${ boldExportContacts } 並選擇您要匯出的通訊錄。"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "選取匯出 ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "要匯入電郵到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "帳號資料"
+      ],
+      "Account security": [
+        "帳號安全性"
+      ],
+      "app password": [
+        "應用程式密碼"
+      ],
+      "Can view all details": [
+        "可以檢視所有詳細資訊"
+      ],
+      "Export": [
+        "匯出"
+      ],
+      "Export contacts": [
+        "匯出聯絡人"
+      ],
+      "Export to CSV file": [
+        "匯出為 CSV 檔案"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "管理"
+      ],
+      "Publish a calendar": [
+        "發佈行事曆"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "應用程式密碼"
+      ],
+      "app password or enable IMAP": [
+        "應用程式密碼或啟用 IMAP"
+      ],
+      "contacts": [
+        "聯絡人"
+      ],
+      "full calendar view": [
+        "完整行事曆檢視方式"
+      ],
+      "ICS file": [
+        "ICS 檔案"
+      ],
+      "security settings": [
+        "安全性設定"
+      ],
+      "shared calendars": [
+        "已分享的行事曆"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import warning": {
@@ -3655,6 +3942,12 @@
       "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } 件事故在郵件內容中找到"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "找到 ${ providerFoldersNumLocalized } 個資料夾"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 個附件"
       ],
@@ -3666,6 +3959,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "已選取 ${ selectedFoldersCount } 個標籤"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存量"
@@ -3696,6 +3995,12 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 個成員)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(篩選須符合下列「全部」條件)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(篩選須符合下列「任一」條件)"
       ],
       "(No Recipient)": [
         "(無收件人)"
@@ -3742,6 +4047,9 @@
       "All your calendars are disabled.": [
         "您所有的行事曆停用中。"
       ],
+      "All your changes will be lost.": [
+        "一切您所作的變更將會消失。"
+      ],
       "An unknown public key has been detected for this recipient.": [
         "已檢測到此收件者的未知公開金鑰。"
       ],
@@ -3753,6 +4061,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "您確定要刪除有此標籤的全部郵件？"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "您確定要捨棄所作的變更嗎？"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "您確定您要把所有郵件移動至此位置進行刪除嗎？"
@@ -3943,6 +4254,9 @@
       "Encrypt message": [
         "加密郵件"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "請輸入您想匯入的電郵帳號所使用的憑證。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
@@ -3975,6 +4289,9 @@
       ],
       "file attached": [
         "檔案已附加"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
       "Folder": [
         "資料夾"
@@ -4036,6 +4353,9 @@
       "Image URL": [
         "圖像 URL"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "圖像已被移除，因為自動回覆不支援。"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
       ],
@@ -4047,6 +4367,9 @@
       ],
       "Import in progress": [
         "匯入進行中"
+      ],
+      "Import mailbox": [
+        "匯入郵箱"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
@@ -4080,6 +4403,9 @@
       ],
       "Key fingerprint": [
         "金鑰指紋"
+      ],
+      "Label all imported messages as": [
+        "將所有匯入的郵件標記為"
       ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
@@ -4156,6 +4482,9 @@
       "New": [
         "加入"
       ],
+      "No action selected": [
+        "未選取任何動作"
+      ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
       ],
@@ -4168,11 +4497,17 @@
       "No folder found": [
         "找不到資料夾"
       ],
+      "No folder selected": [
+        "未選取任何資料夾"
+      ],
       "No group found": [
         "未找到群組"
       ],
       "No label found": [
         "找不到標籤"
+      ],
+      "No label selected": [
+        "未選取任何標籤"
       ],
       "No more results found": [
         "找不到更多結果"
@@ -4305,9 +4640,6 @@
       ],
       "Right-click for options": [
         "右鍵開啟選項"
-      ],
-      "Saved ${ dateString }": [
-        "${ dateString }已儲存"
       ],
       "Saved at ${ dateString }": [
         "已於 ${ dateString } 儲存"
@@ -4768,6 +5100,12 @@
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
       ],
+      "Your import will not be processed.": [
+        "將不會處理您的匯入。"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "匯入完成後不會保存您的登入資訊。"
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂日期時間為 ${ dateString } 的 ${ formattedTime }"
       ],
@@ -5045,8 +5383,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " 且 "
+      ],
+      " and ${ l }": [
+        " 且 ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
+      ],
+      "Actions": [
+        "操作"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -5060,8 +5407,29 @@
       "Address": [
         "電郵位址"
       ],
+      "ALL": [
+        "全部"
+      ],
       "Also archive": [
         "同時封存"
+      ],
+      "AND": [
+        "且"
+      ],
+      "and": [
+        "和"
+      ],
+      "And": [
+        "且"
+      ],
+      "ANY": [
+        "任一"
+      ],
+      "App password": [
+        "應用程式密碼"
+      ],
+      "Apply filter to existing emails": [
+        "將篩選器套用至現有的電郵"
       ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
@@ -5111,6 +5479,12 @@
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],
+      "Coming soon": [
+        "敬請期待"
+      ],
+      "Conditions": [
+        "條件"
+      ],
       "Confirm password": [
         "確認密碼"
       ],
@@ -5159,6 +5533,9 @@
       "Extended address": [
         "詳細位址"
       ],
+      "Filter Name": [
+        "篩選器名稱"
+      ],
       "Folder location": [
         "資料夾位置"
       ],
@@ -5171,8 +5548,14 @@
       "From:": [
         "寄件者："
       ],
+      "From: ${ emailFrom }": [
+        "寄件者：${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "寄件者： ${ importedEmailAddress }"
       ],
       "Good": [
         "很好"
@@ -5188,6 +5571,12 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
+      ],
+      "IF": [
+        "如"
+      ],
+      "If": [
+        "如"
       ],
       "Import all messages": [
         "匯入全部郵件"
@@ -5225,6 +5614,9 @@
       "Location": [
         "位置"
       ],
+      "Mail Server (IMAP)": [
+        "郵件伺服器 (IMAP)"
+      ],
       "Mailbox password": [
         "信箱密碼"
       ],
@@ -5240,6 +5632,9 @@
       "Manage my addresses": [
         "管理我的電郵位址"
       ],
+      "Mark as": [
+        "標記為"
+      ],
       "Move to": [
         "移至"
       ],
@@ -5252,6 +5647,9 @@
       "Name": [
         "名稱"
       ],
+      "No label found": [
+        "找不到標籤"
+      ],
       "Notification": [
         "通知"
       ],
@@ -5263,6 +5661,15 @@
       ],
       "Operating system version": [
         "作業系統版本"
+      ],
+      "OR": [
+        "或"
+      ],
+      "or": [
+        "或"
+      ],
+      "Or": [
+        "或"
       ],
       "Participants": [
         "參與者"
@@ -5279,6 +5686,9 @@
       "Phone number": [
         "手機號碼"
       ],
+      "Port": [
+        "連接埠"
+      ],
       "Post office box": [
         "郵政信箱"
       ],
@@ -5290,6 +5700,9 @@
       ],
       "Public keys": [
         "公開金鑰"
+      ],
+      "Read": [
+        "已讀"
       ],
       "Recipient": [
         "收件者"
@@ -5318,6 +5731,9 @@
       "Select how your mailbox looks like by default.": [
         "選取預設情況下的收件匣外觀。"
       ],
+      "Send auto-reply": [
+        "發送自動回覆"
+      ],
       "Sender": [
         "寄件者"
       ],
@@ -5327,11 +5743,32 @@
       "Size:": [
         "大小："
       ],
+      "Starred": [
+        "已加星號"
+      ],
+      "Statement": [
+        "陳述式"
+      ],
       "Street address": [
         "街道位址"
       ],
       "System information": [
         "系統資訊"
+      ],
+      "The email was sent ${ attachment }": [
+        "電郵${ attachment }送出"
+      ],
+      "the email was sent ${ attachment }": [
+        "電郵${ attachment }送出"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "電郵${ attachmentStrong }送出"
+      ],
+      "the email was sent ${ label }": [
+        "電郵${ label }送出"
+      ],
+      "Then": [
+        "則"
       ],
       "Time": [
         "時間"
@@ -5345,11 +5782,20 @@
       "To: ${ emailAddress }": [
         "收件者：${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "收件者：${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "收件者：${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "雙重驟驗證碼"
       ],
       "Undisclosed Recipients": [
         "非公開收件者"
+      ],
+      "Upload file": [
+        "上載檔案"
       ],
       "Upload picture": [
         "上載圖像"
@@ -5362,6 +5808,21 @@
       ],
       "What happened?": [
         "發生了甚麼問題？"
+      ],
+      "With attachment": [
+        "連同附件"
+      ],
+      "with attachments": [
+        "連同附件"
+      ],
+      "Without attachment": [
+        "不帶附件"
+      ],
+      "without attachment": [
+        "不帶附件"
+      ],
+      "without attachments": [
+        "不帶附件"
       ],
       "Wonderful": [
         "太棒了"
@@ -5479,9 +5940,6 @@
       "Folders": [
         "資料夾"
       ],
-      "Go to subscription plans": [
-        "前往訂閱方案"
-      ],
       "Inbox": [
         "收件匣"
       ],
@@ -5557,9 +6015,6 @@
       "Trash": [
         "垃圾桶"
       ],
-      "Upgrade": [
-        "升級"
-      ],
       "Upgrade account": [
         "升級帳號"
       ],
@@ -5599,6 +6054,9 @@
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "連結到您的電郵提供者"
       ],
       "Creating new calendars": [
         "建立新行事曆"
@@ -5691,6 +6149,35 @@
       ],
       "Plain text": [
         "純文字"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "如何從其它服務匯入行事曆"
+      ],
+      "How to import calendars from Outlook": [
+        "如何從 Outlook 匯入行事曆"
+      ],
+      "How to import calendars from Yahoo": [
+        "如何從 Yahoo 匯入行事曆"
+      ],
+      "How to import contacts from another service": [
+        "如何從其它服務匯入聯絡人"
+      ],
+      "How to import contacts from Outlook": [
+        "如何從 Outlook 匯入聯絡人"
+      ],
+      "How to import contacts from Yahoo": [
+        "如何從 Yahoo 匯入聯絡人"
+      ],
+      "How to import emails from another service": [
+        "如何從其它服務匯入電郵"
+      ],
+      "How to import emails from Outlook": [
+        "如何從 Outlook 匯入電郵"
+      ],
+      "How to import emails from Yahoo": [
+        "如何從 Yahoo 匯入電郵"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -5860,6 +6347,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } 已建立"
+      ],
       "Contact group created": [
         "聯絡人群組已建立"
       ],
@@ -5934,6 +6424,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "自訂資料夾"
+      ],
       "Default folders": [
         "預設資料夾"
       ],
@@ -6072,6 +6565,9 @@
       ],
       "Text": [
         "文字"
+      ],
+      "Type text or keyword": [
+        "鍵入文字或關鍵詞"
       ],
       "Write your message": [
         "撰寫您的訊息"
@@ -6355,6 +6851,20 @@
         "已取消訂閱"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "操作"
+      ],
+      "Conditions": [
+        "條件"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Preview": [
+        "預覽"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "免費獲得額外的空間"
@@ -6398,7 +6908,8 @@
         "${ elementsCount } 個交談已移至 ${ folderName }。"
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } 個交談已移至垃圾郵件，並將寄件人加入到封鎖清單中。"
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 個交談已移除 ${ labelName } 標籤。"
@@ -6422,7 +6933,8 @@
         "${ elementsCount } 封郵件已移動到 ${ folderName }。"
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } 封郵件已移動到垃圾郵件，並將寄件人加入到封鎖清單中。"
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 封郵件已移除 ${ labelName } 標籤。"
@@ -6473,7 +6985,7 @@
         "交談已至 ${ folderName }。"
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "交談已移至垃圾郵件，並將寄件人加入到封鎖清單中。"
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "${ labelName } 標籤已從此交談撕下。"
@@ -6524,13 +7036,13 @@
         "郵件標記為未讀。"
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "郵件已移動到 ${ folderName }，並將寄件人加入至允許清單。"
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "郵件已移動到 ${ folderName }。"
       ],
       "Message moved to spam and sender added to Block List.": [
-        "郵件已移動到垃圾郵件，並將寄件人加入到封鎖清單中。"
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "${ labelName } 標籤已移除。"
@@ -6569,11 +7081,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見反饋已送出"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/ 月"
       ]
     },
     "Table header": {
@@ -6685,6 +7192,9 @@
       "Add contact group name": [
         "加入聯絡人群組名稱"
       ],
+      "Add filter": [
+        "加入篩選器"
+      ],
       "Add to ${ groupCount } group": [
         "加入至 ${ groupCount } 個群組"
       ],
@@ -6696,6 +7206,9 @@
       ],
       "Archive": [
         "封存"
+      ],
+      "Are you sure you want to close?": [
+        "您確定要關閉嗎？"
       ],
       "Attachments": [
         "附件"
@@ -6816,6 +7329,9 @@
       ],
       "Edit contact group": [
         "編輯聯絡人群組"
+      ],
+      "Edit filter": [
+        "編輯篩選器"
       ],
       "Edit image": [
         "編輯圖像"
@@ -6941,10 +7457,10 @@
         "移動至收件匣"
       ],
       "Move to inbox (not spam)": [
-        "移動到收件匣 (非垃圾郵件)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "移至垃圾郵件資料夾"
+        "Move to spam"
       ],
       "Move to trash": [
         "移至垃圾桶"
@@ -7002,6 +7518,9 @@
       ],
       "Recipients": [
         "收件者"
+      ],
+      "Reconnect your account": [
+        "重新連線到您的帳號"
       ],
       "Recover data": [
         "恢復資料"
@@ -7075,6 +7594,12 @@
       "Sort messages": [
         "訊息排序"
       ],
+      "Start a new import": [
+        "開始新匯入"
+      ],
+      "Start import process": [
+        "開始匯入流程"
+      ],
       "Storage capacity warning": [
         "儲存空間容量警告"
       ],
@@ -7142,11 +7667,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
+      "Customize import to reduce the number of folders": [
+        "自訂匯入以減少資料夾數量"
+      ],
+      "Customize import to reduce the number of labels": [
+        "自訂匯入以減少標籤數目"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "經數碼簽署的電郵有助驗證郵件真確性"
       ],
       "Each imported email will have this label": [
         "每一封匯入的電郵將加上此標籤"
+      ],
+      "Edit folder names": [
+        "編輯資料夾名稱"
+      ],
+      "Edit label names": [
+        "編輯標籤名稱"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "電郵加密透過強制加入數碼簽章，以助驗證郵件真確性"
@@ -7165,6 +7702,9 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
+      ],
+      "This feature is only available for paid users": [
+        "此功能僅提供給付費使用者"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
@@ -7206,6 +7746,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "您確定要捨棄您的匯入嗎？"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"
       ],
@@ -7229,6 +7772,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton 會從您最近的郵件開始，儘可能轉移最多的資料。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
@@ -7259,6 +7805,9 @@
       ],
       "This feature requires a paid Proton account": [
         "此功能僅限付費Proton 帳號使用"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "此匯入可能超出您的 Proton 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

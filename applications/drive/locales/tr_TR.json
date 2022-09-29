@@ -128,6 +128,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Continue import": [
+        "İçe aktarmayı sürdür"
+      ],
       "Continue transfers": [
         "Aktarımları sürdür"
       ],
@@ -154,6 +157,9 @@
       ],
       "Customize": [
         "Özelleştir"
+      ],
+      "Customize import": [
+        "İçe aktarmayı özelleştir"
       ],
       "Delete": [
         "Sil"
@@ -183,6 +189,9 @@
       ],
       "Didn't receive the code?": [
         "Kodu almadınız mı?"
+      ],
+      "Discard": [
+        "Sil"
       ],
       "Done": [
         "Tamam"
@@ -376,6 +385,9 @@
       "Re-sign": [
         "Yeniden imzala"
       ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
       "Recover data": [
         "Verileri kurtar"
       ],
@@ -405,6 +417,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Reset to default": [
+        "Varsayılana sıfırla"
       ],
       "Reset zoom": [
         "Yakınlaştırmayı sıfırla"
@@ -768,6 +783,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
+      ],
+      "Quit import?": [
+        "İçe aktarmadan çıkılsın mi?"
       ]
     },
     "Contact field label": {
@@ -1809,6 +1827,9 @@
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlanmış olduğundan emin olun."
+      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -1835,6 +1856,18 @@
       ],
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Bazı klasör adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Bazı etiket adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
@@ -1901,6 +1934,9 @@
       ],
       "Unknown error": [
         "Bilinmeyen hata"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Hizmet sağlayıcınızla bağlantı kuramadık."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
@@ -2157,6 +2193,255 @@
         "ProtonContacts ${ forNow } şunu desteklemiyor:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Dış e-posta hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "${ bold2StepsDisabled } (varsayılan Gmail ayarı) ise, lütfen şundan emin olun:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Gmail üzerinde ${ bold2StepsDisabled } (varsayılan ayar) ise, lütfen şundan emin olun:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Gmail üzerinde ${ bold2StepsEnabled } ise, lütfen normal parolanız yerine uygulama parolanızı kullandığınızdan emin olun."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanız ${ boldNot }."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Yahoo hesabınızda IMAP erişimi etkinleştirildi."
+      ],
+      "Invalid IMAP port": [
+        "IMAP bağlantı noktası geçersiz"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton, Yahoo hesabınıza bağlanamıyor. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "Use your app password if:": [
+        "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Ayrıca web tarayıcıda açık olan ${ boldGoogleAccounts } oturumlarını kapatıp sonrasında ${ linkCAPTCHA } doğrulamasını açmayı deneyebilirsiniz."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
+      ],
+      "Your email account requires one to export your data.": [
+        "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
+      "Your email address and password are correct.": [
+        "E-posta adresiniz ve parolanız doğru."
+      ],
+      "Your password is correct.": [
+        "Parolanız doğru."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "2 aşamalı kimlik doğrulaması devre dışı bırakıldı"
+      ],
+      "2-step verification is enabled": [
+        "2 aşamalı kimlik doğrulaması etkinleştirildi"
+      ],
+      "all your other Google accounts": [
+        "diğer tüm Google hesaplarınız"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "değildir"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 nokta (...) üzerine tıklayarak menüyü açın."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity } bölümüne gidin."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Outlook ${ securitySettingsLink } bölümüne gidin."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "2 aşamalı kimlik doğrulaması kapalı ise açın."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } kişilerinizi açın."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Outlook ${ outlookContactsLink } bölümünü açın."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "${ boldExportContacts } seçin ve dışa aktarmak istediğiniz kişileri seçin."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } seçin."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "E-postaları Proton içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "E-postaları Proton içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Hesap bilgileri"
+      ],
+      "Account security": [
+        "Hesap güvenliği"
+      ],
+      "app password": [
+        "uygulama parolası"
+      ],
+      "Can view all details": [
+        "Tüm ayrıntıları görebilir"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Export contacts": [
+        "Kişileri dışa aktar"
+      ],
+      "Export to CSV file": [
+        "CSV olarak dışa aktar"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Yönet"
+      ],
+      "Publish a calendar": [
+        "Bir takvimi yayınla"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "uygulama parolası"
+      ],
+      "app password or enable IMAP": [
+        "uygulama parolası ya da IMAP etkinleştirin"
+      ],
+      "contacts": [
+        "kişiler"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV ya da VCF (vCard) dosyası"
+      ],
+      "full calendar view": [
+        "tam takvim görünümü"
+      ],
+      "ICS file": [
+        "ICS dosyası"
+      ],
+      "security settings": [
+        "güvenlik ayarları"
+      ],
+      "shared calendars": [
+        "paylaşılmış takvimler"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "${ boldICS } bağlantısına tıklayıp dosyayı indirin."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Outlook ayarlarınızdan ${ calendarLink } bölümüne gidin."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo üzerinde ${ calendarViewLink } bölümüne gidin."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "İmleci içe aktarmak istediğiniz takvim üzerine getirin ve menüyü açın."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "${ boldPublish } altından, içe aktarmak istediğiniz takvimi seçin. İzinleri ${ boldCanViewAllDetails } olarak ayarlayıp yayınlayın."
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
@@ -2248,6 +2533,14 @@
         "${ pausedCount } duraklatıldı",
         "${ pausedCount } duraklatıldı"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } klasör bulundu",
+        "${ providerFoldersNumLocalized } klasör bulundu"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
+        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
@@ -2259,6 +2552,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } etiket seçildi",
         "${ selectedFoldersCount } etiket seçildi"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } klasör seçildi",
+        "${ selectedFoldersCountLocalized } klasör seçildi"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiket seçildi",
+        "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -2452,6 +2753,9 @@
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
@@ -2550,6 +2854,9 @@
       "Import in progress": [
         "İçe aktarılıyor"
       ],
+      "Import mailbox": [
+        "Posta kutusunu içe aktar"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
@@ -2582,6 +2889,9 @@
       ],
       "Key fingerprint": [
         "Anahtar parmak izi"
+      ],
+      "Label all imported messages as": [
+        "İçe aktarılan iletiler şu şekilde etiketlensin"
       ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
@@ -3036,6 +3346,12 @@
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelendikten sonra kaydedilecek."
       ],
+      "Your import will not be processed.": [
+        "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -3124,6 +3440,9 @@
       "Add to group": [
         "Gruba ekle"
       ],
+      "App password": [
+        "Uygulama parolası"
+      ],
       "Apply to all duplicated files": [
         "Tüm çift dosyalara uygula"
       ],
@@ -3171,6 +3490,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Coming soon": [
+        "Çok yakında"
       ],
       "Comment": [
         "Yorum"
@@ -3254,8 +3576,14 @@
       "Folder name": [
         "Klasör adı"
       ],
+      "From: ${ emailFrom }": [
+        "Nereden: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Nereden: ${ importedEmailAddress }"
       ],
       "Good": [
         "İyi"
@@ -3298,6 +3626,9 @@
       ],
       "Location": [
         "Konum"
+      ],
+      "Mail Server (IMAP)": [
+        "E-posta sunucusu (IMAP)"
       ],
       "Mailbox password": [
         "Posta kutusu parolası"
@@ -3358,6 +3689,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "Uygun işlemi yapabilmemiz için lütfen tüm ayrıntıları yazın"
+      ],
+      "Port": [
+        "Bağlantı noktası"
       ],
       "Post office box": [
         "Fiziksel posta kutusu"
@@ -3428,6 +3762,12 @@
       "To: ${ emailAddress }": [
         "Nereye: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Kime: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Nereye: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "İki aşamalı kimlik doğrulama kodu"
       ],
@@ -3448,6 +3788,9 @@
       ],
       "Upload anyway": [
         "Yine de yükle"
+      ],
+      "Upload file": [
+        "Dosya yükle"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -3539,6 +3882,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Oluşturulan takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
+      ],
       "Creating new calendars": [
         "Yeni takvimler oluşturuluyor"
       ],
@@ -3553,9 +3899,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ periodFragment } öncesinden başlayarak ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
@@ -3578,6 +3932,35 @@
       ],
       "Plain text": [
         "Düz metin"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Başka bir e-posta hizmeti sağlayıcısının takvimleri nasıl içe aktarılır"
+      ],
+      "How to import calendars from Outlook": [
+        "Outlook takvimleri nasıl içe aktarılır"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo takvimleri nasıl içe aktarılır"
+      ],
+      "How to import contacts from another service": [
+        "Başka bir e-posta hizmeti sağlayıcısının kişileri nasıl içe aktarılır"
+      ],
+      "How to import contacts from Outlook": [
+        "Outlook kişileri nasıl içe aktarılır"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo kişileri nasıl içe aktarılır"
+      ],
+      "How to import emails from another service": [
+        "Başka bir e-posta hizmeti sağlayıcısının e-postaları nasıl içe aktarılır"
+      ],
+      "How to import emails from Outlook": [
+        "Outlook e-postaları nasıl içe aktarılır"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo e-postaları nasıl içe aktarılır"
       ]
     },
     "New Label form": {
@@ -4483,6 +4866,9 @@
       "Re-signing contacts": [
         "Kişiler yeniden imzalanıyor"
       ],
+      "Reconnect your account": [
+        "Hesabınızı yeniden bağlayın"
+      ],
       "Recover data": [
         "Verileri kurtar"
       ],
@@ -4551,6 +4937,12 @@
       ],
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
+      ],
+      "Start a new import": [
+        "Yeni bir içe aktarma başlatın"
+      ],
+      "Start import process": [
+        "İçe aktarma işlemini başlatın"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
@@ -4637,11 +5029,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
+      "Customize import to reduce the number of folders": [
+        "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasını sağlar"
       ],
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"
+      ],
+      "Edit folder names": [
+        "Klasör adlarını düzenle"
+      ],
+      "Edit label names": [
+        "Etiket adlarını düzenle"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-posta şifrelemesi, gönderilen iletilerinizin kimliğinin doğrulanmasını sağlamak için e-posta imzası kullanılmasını zorunlu kılar"
@@ -4707,6 +5111,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
@@ -4732,6 +5139,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
@@ -4759,6 +5169,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Bu özellik ücretli bir Proton hesabında kullanılabilir"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Bu içe aktarma işlemi, Proton hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."

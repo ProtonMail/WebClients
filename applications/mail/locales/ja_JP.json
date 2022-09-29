@@ -23,6 +23,9 @@
       "Add address": [
         "住所を追加"
       ],
+      "Add condition": [
+        "条件を追加"
+      ],
       "Add contact": [
         "連絡先を追加"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "続行"
       ],
+      "Continue import": [
+        "インポートを続行"
+      ],
       "Continue with Google": [
         "Googleで続行"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "新しいラベルを作成"
       ],
+      "Create folder": [
+        "フォルダーの作成"
+      ],
+      "Create label": [
+        "ラベルの作成"
+      ],
       "Create new contact": [
         "新しい連絡先を作成"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "カスタマイズ"
+      ],
+      "Customize import": [
+        "インポートをカスタマイズ"
       ],
       "Default email application": [
         "既定のメールアプリ"
@@ -411,7 +426,7 @@
         "メッセージを非表示"
       ],
       "Hide My Email": [
-        "メールを非公開"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Hide My Email"
@@ -464,6 +479,9 @@
       "Label as...": [
         "ラベル付け..."
       ],
+      "label emails as": [
+        "メールにラベル付け"
+      ],
       "Learn more": [
         "詳細"
       ],
@@ -499,6 +517,9 @@
       ],
       "Mark as unread": [
         "未読にする"
+      ],
+      "mark emails as": [
+        "メールをマーク"
       ],
       "Mark for deletion": [
         "削除マーク"
@@ -560,6 +581,9 @@
       "Move all to trash": [
         "すべてをごみ箱に移動"
       ],
+      "move emails to": [
+        "メールを移動"
+      ],
       "Move to": [
         "移動先"
       ],
@@ -568,12 +592,6 @@
       ],
       "Move to inbox": [
         "受信トレイに移動"
-      ],
-      "Move to inbox (not spam)": [
-        "受信トレイに移動 (迷惑メールではない)"
-      ],
-      "Move to spam": [
-        "迷惑メールに移動"
       ],
       "Move to spam and unsubscribe": [
         "迷惑メールに移動し購読解除"
@@ -647,6 +665,9 @@
       "Pause": [
         "一時停止"
       ],
+      "Preview": [
+        "プレビュー"
+      ],
       "Preview ${ attachmentName }": [
         "${ attachmentName } をプレビュー"
       ],
@@ -686,6 +707,9 @@
       "Read receipt sent": [
         "開封確認が送信されました"
       ],
+      "Reconnect": [
+        "再接続"
+      ],
       "Recover data": [
         "データを復元する"
       ],
@@ -713,6 +737,9 @@
       "Remove expiration time": [
         "有効期限を削除"
       ],
+      "Remove this label": [
+        "このラベルを削除"
+      ],
       "Rename": [
         "名前を変更"
       ],
@@ -733,6 +760,9 @@
       ],
       "Reset": [
         "リセット"
+      ],
+      "Reset to default": [
+        "初期値に戻す"
       ],
       "Reset zoom": [
         "倍率をリセット"
@@ -781,6 +811,9 @@
       ],
       "Send anyway": [
         "このまま送信"
+      ],
+      "send auto-reply email": [
+        "自動返信メールを送信"
       ],
       "Send feedback": [
         "フィードバックを送信"
@@ -1604,6 +1637,9 @@
       ],
       "Quit import customization?": [
         "インポートのカスタマイズを終了しますか?"
+      ],
+      "Quit import?": [
+        "インポートを終了しますか？"
       ]
     },
     "Contact field label": {
@@ -2455,6 +2491,23 @@
         "オーランド諸島"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "添付ファイル"
+      ],
+      "Next": [
+        "次へ"
+      ],
+      "Recipient": [
+        "宛先"
+      ],
+      "Sender": [
+        "差出人"
+      ],
+      "Subject": [
+        "件名"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } 回"
@@ -2700,6 +2753,9 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "次の ${ SCHEDULED_MAX_DATE_DAYS } 日から日付を選択してください。"
       ],
+      "Condition incomplete": [
+        "条件が不完全です"
+      ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
@@ -2739,11 +2795,17 @@
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
+      "Empty condition": [
+        "条件が空です"
+      ],
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
       ],
       "Enter a password": [
         "パスワードを入力してください"
+      ],
+      "Error in one of the conditions": [
+        "いずれかの条件にエラーがあります"
       ],
       "Error while saving draft. Please try again.": [
         "下書きを保存しているときにエラーが発生しました。再度お試しください。"
@@ -2756,6 +2818,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
+      ],
+      "Filter with this name already exists": [
+        "この名前のフィルターが既に存在します"
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
@@ -2844,6 +2909,9 @@
       "Please set a password": [
         "パスワードを設定してください"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "再認証を行い、権限が正しく設定されていることを確認してください。"
+      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -2865,6 +2933,12 @@
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
+      "Require at least one action": [
+        "少なくとも 1 つのアクションが必要です"
+      ],
+      "Require at least one condition": [
+        "少なくとも 1 つの条件が必要です"
+      ],
       "Signature not verified": [
         "署名が検証されていません"
       ],
@@ -2879,6 +2953,12 @@
       ],
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "フォルダー名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -2954,6 +3034,9 @@
       ],
       "Unknown error.": [
         "不明なエラーが発生しました。"
+      ],
+      "We were unable to connect to your service provider.": [
+        "サービスプロバイダーに接続できませんでした。"
       ],
       "Wrong mailbox password": [
         "メールボックスのパスワードが間違っています"
@@ -3299,6 +3382,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } は更新されました"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "フィルター ${ Filter.Name } が更新されました"
       ]
     },
     "Filter option": {
@@ -3316,6 +3402,14 @@
       ],
       "Unread": [
         "未読"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "既読にする"
+      ],
+      "starred": [
+        "星印付き"
       ]
     },
     "Font Face Default": {
@@ -3516,12 +3610,255 @@
         "ProtonContacts は ${ forNow } をサポートしていません"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "Google アカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています。"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2 段階認証は外部アカウントで有効になっています。"
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "2 段階認証は外部メールアカウントで有効になっています。"
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Gmail で ${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Gmailで ${ bold2StepsEnabled } の場合は、通常のパスワードの代わりにアプリのパスワードを使用していることを確認してください。"
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "${ bold2StepsEnabled } の場合は、メールアドレスとアプリのパスワードが正しいことを確認してください。${ boldNot } は通常のパスワードを使用します。"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP アクセスは外部アカウントで有効になっています。"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP アクセスは Yahoo アカウントで有効になっています。"
+      ],
+      "Invalid IMAP port": [
+        "無効な IMAP ポート番号"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Protonはあなたのアカウントに接続できません。Gmail IMAPアクセスが有効になっていることを確認してください。"
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Protonはあなたのアカウントに接続できません。Gmail アカウントで IMAP アクセスが有効になっていることを確認してください。"
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Protonはあなたのアカウントに接続できません。以下を確認してください。"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton が外部アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Protonは外部アカウントに接続できません。以下を確認してください。"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton が Gmail アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton が Yahoo アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton はあなたの Yahoo アカウントに接続できません。以下をご確認ください:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
+      ],
+      "Use your app password if:": [
+        "次の場合にアプリのパスワードを使用してください。"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
+      ],
+      "Your email account requires an app password to export your data.": [
+        "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
+      ],
+      "Your email account requires one to export your data.": [
+        "データをエクスポートするためにメールアカウントが必要です。"
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
+      ],
+      "Your email address and password are correct.": [
+        "あなたのメールアドレスとパスワードは正しいです。"
+      ],
+      "Your password is correct.": [
+        "パスワードは正しいです。"
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "2 段階認証が無効"
+      ],
+      "2-step verification is enabled": [
+        "2 段階認証が有効"
+      ],
+      "all your other Google accounts": [
+        "ほかのすべての Google アカウント"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "しないで"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "カレンダーの予定が作成されました"
       ],
       "Creating calendar event failed": [
         "カレンダーのイベントの作成に失敗しました"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "${ boldManage } をクリックしてオプション メニューを展開してください。"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "手順がメールサービスプロバイダーによって異なるため、Proton にメールをインポートする前に ${ knowledgeBaseLink } を生成することをおすすめします。"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "${ boldAppPassword } を生成し、Proton からプロンプトが表示に通常のパスワードの代わりに入力してください。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "${ boldAppPassword }を生成し、Proton からプロンプトが表示されたら、通常のパスワードを入力します。"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity }に移動します。"
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Outlook ${ securitySettingsLink } へ移動してください。"
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "2 段階認証がオフの場合、オンにしてください。"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } の連絡先を開きます。"
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Outlook ${ outlookContactsLink } を開きます。"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "${ boldExportContacts } を選択し、どの連絡先をエクスポートするか選びます。"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } を選択します。"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "メールを Proton へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "メールを Proton へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "アカウント情報"
+      ],
+      "Account security": [
+        "アカウントのセキュリティ"
+      ],
+      "app password": [
+        "アプリ パスワード"
+      ],
+      "Can view all details": [
+        "すべての詳細を閲覧可能"
+      ],
+      "Export": [
+        "エクスポート"
+      ],
+      "Export contacts": [
+        "連絡先のエクスポート"
+      ],
+      "Export to CSV file": [
+        "CSV ファイルでエクスポート"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "管理"
+      ],
+      "Publish a calendar": [
+        "予定表を公開する"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "アプリ パスワード"
+      ],
+      "app password or enable IMAP": [
+        "IMAP を有効にするか、アプリ パスワード"
+      ],
+      "contacts": [
+        "連絡先"
+      ],
+      "full calendar view": [
+        "フルカレンダー表示"
+      ],
+      "ICS file": [
+        "ICS ファイル"
+      ],
+      "security settings": [
+        "セキュリティ設定"
+      ],
+      "shared calendars": [
+        "共有されたカレンダー"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "${ boldICS } をクリックしてファイルをダウンロードします。"
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Outlook 設定から ${ calendarLink } へ移動してください。"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo の ${ calendarViewLink } へ移動してください。"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "${ boldPublish } から、インポートしたいカレンダーを選択します。アクセス許可を ${ boldCanViewAllDetails } にし公開します。"
       ]
     },
     "Import warning": {
@@ -3590,6 +3927,12 @@
       "${ numOccurrences } occurrence found in the mail content": [
         "メール内に ${ numOccurrences } 件の出来事が見つかりました"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } 件のフォルダーが存在"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 件の添付ファイル"
       ],
@@ -3601,6 +3944,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -3631,6 +3980,12 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(以下のすべての条件が満たされた場合に動作します)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(以下のいずれかの条件が満たされた場合に動作します)"
       ],
       "(No Recipient)": [
         "(宛先なし)"
@@ -3677,6 +4032,9 @@
       "All your calendars are disabled.": [
         "すべてのカレンダーが無効です。"
       ],
+      "All your changes will be lost.": [
+        "変更内容はすべて失われます。"
+      ],
       "An unknown public key has been detected for this recipient.": [
         "この受信者の不明な公開鍵が検出されました。"
       ],
@@ -3688,6 +4046,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "このフォルダー内のすべてのラベルを削除してよろしいですか?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "変更を破棄してよろしいですか?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "この場所にあるすべてのメッセージを削除してよろしいですか?"
@@ -3866,6 +4227,9 @@
       "Encrypt message": [
         "メッセージを暗号化"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "インポートするメールアカウントの認証情報を入力します。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
@@ -3898,6 +4262,9 @@
       ],
       "file attached": [
         "個のファイル添付"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
       ],
       "Folder": [
         "フォルダー"
@@ -3956,6 +4323,9 @@
       "Image URL": [
         "画像のURL"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "自動返信では許可されていないため画像は削除されました"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
@@ -3967,6 +4337,9 @@
       ],
       "Import in progress": [
         "インポートは進行しています"
+      ],
+      "Import mailbox": [
+        "メールボックスのインポート"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -3997,6 +4370,9 @@
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
+      ],
+      "Label all imported messages as": [
+        "インポートされたすべてのメッセージに次のようにラベル"
       ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
@@ -4070,6 +4446,9 @@
       "New": [
         "新規"
       ],
+      "No action selected": [
+        "アクションが選択されていません"
+      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
       ],
@@ -4082,11 +4461,17 @@
       "No folder found": [
         "フォルダーが見つかりませんでした"
       ],
+      "No folder selected": [
+        "フォルダーが選択されていません"
+      ],
       "No group found": [
         "グループが見つかりませんでした"
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
+      ],
+      "No label selected": [
+        "ラベルが選択されていません"
       ],
       "No more results found": [
         "これ以上の結果が見つかりません"
@@ -4210,9 +4595,6 @@
       ],
       "Right-click for options": [
         "右クリックしてオプションを表示"
-      ],
-      "Saved ${ dateString }": [
-        "保存された${ dateString }"
       ],
       "Saved at ${ dateString }": [
         "${ dateString } に保存しました"
@@ -4655,6 +5037,12 @@
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
+      "Your import will not be processed.": [
+        "インポートできませんでした。"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "インポート完了後、ログイン情報は保存されません。"
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "あなたのメッセージは、${ dateString } の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
       ],
@@ -4932,8 +5320,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " および "
+      ],
+      " and ${ l }": [
+        " と ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
+      ],
+      "Actions": [
+        "操作"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -4947,8 +5344,29 @@
       "Address": [
         "メールアドレス"
       ],
+      "ALL": [
+        "すべて"
+      ],
       "Also archive": [
         "アーカイブも実施する"
+      ],
+      "AND": [
+        "かつ"
+      ],
+      "and": [
+        "と"
+      ],
+      "And": [
+        "と"
+      ],
+      "ANY": [
+        "いずれか"
+      ],
+      "App password": [
+        "アプリのパスワード"
+      ],
+      "Apply filter to existing emails": [
+        "存在するメールにフィルターを適用"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -4997,6 +5415,9 @@
       ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
+      ],
+      "Conditions": [
+        "条件"
       ],
       "Confirm password": [
         "パスワードの確認"
@@ -5049,6 +5470,9 @@
       "Extended address": [
         "拡張アドレス"
       ],
+      "Filter Name": [
+        "フィルター名"
+      ],
       "Folder location": [
         "フォルダーの場所"
       ],
@@ -5061,8 +5485,14 @@
       "From:": [
         "差出人："
       ],
+      "From: ${ emailFrom }": [
+        "差出人: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "移行元: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "移行元: ${ importedEmailAddress }"
       ],
       "Good": [
         "いい"
@@ -5078,6 +5508,12 @@
       ],
       "I understand the risk": [
         "リスクを承知しました"
+      ],
+      "IF": [
+        "条件"
+      ],
+      "If": [
+        "条件"
       ],
       "Import all messages": [
         "すべてのメッセージをインポート"
@@ -5115,6 +5551,9 @@
       "Location": [
         "場所"
       ],
+      "Mail Server (IMAP)": [
+        "メールサーバー (IMAP)"
+      ],
       "Mailbox password": [
         "メールボックスのパスワード"
       ],
@@ -5130,6 +5569,9 @@
       "Manage my addresses": [
         "アドレスの管理"
       ],
+      "Mark as": [
+        "印をつける"
+      ],
       "Move to": [
         "移動先"
       ],
@@ -5142,6 +5584,9 @@
       "Name": [
         "名前"
       ],
+      "No label found": [
+        "ラベルが見つかりませんでした"
+      ],
       "Notification": [
         "通知"
       ],
@@ -5153,6 +5598,15 @@
       ],
       "Operating system version": [
         "OSのバージョン"
+      ],
+      "OR": [
+        "または"
+      ],
+      "or": [
+        "または"
+      ],
+      "Or": [
+        "または"
       ],
       "Participants": [
         "参加者"
@@ -5169,6 +5623,9 @@
       "Phone number": [
         "電話番号"
       ],
+      "Port": [
+        "ポート"
+      ],
       "Post office box": [
         "私書箱"
       ],
@@ -5180,6 +5637,9 @@
       ],
       "Public keys": [
         "公開鍵"
+      ],
+      "Read": [
+        "既読"
       ],
       "Recipient": [
         "宛先"
@@ -5208,6 +5668,9 @@
       "Select how your mailbox looks like by default.": [
         "デフォルトで使用される受信トレイの見た目を選択してください。"
       ],
+      "Send auto-reply": [
+        "自動返信を送信"
+      ],
       "Sender": [
         "差出人"
       ],
@@ -5217,11 +5680,32 @@
       "Size:": [
         "サイズ:"
       ],
+      "Starred": [
+        "星印付き"
+      ],
+      "Statement": [
+        "適用状態"
+      ],
       "Street address": [
         "番地"
       ],
       "System information": [
         "システム情報"
+      ],
+      "The email was sent ${ attachment }": [
+        "${ attachment } でメールを送信"
+      ],
+      "the email was sent ${ attachment }": [
+        "メールを ${ attachment } で送信"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "${ attachmentStrong } でメールを送信"
+      ],
+      "the email was sent ${ label }": [
+        "${ label } でメールを送信"
+      ],
+      "Then": [
+        "その後"
       ],
       "Time": [
         "時刻"
@@ -5235,11 +5719,20 @@
       "To: ${ emailAddress }": [
         "移行先: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "宛先: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "移行先: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "2要素認証コード"
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
+      ],
+      "Upload file": [
+        "ファイルをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -5252,6 +5745,21 @@
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
+      ],
+      "With attachment": [
+        "添付ファイルあり"
+      ],
+      "with attachments": [
+        "添付ファイルあり"
+      ],
+      "Without attachment": [
+        "添付ファイルなし"
+      ],
+      "without attachment": [
+        "添付ファイルなし"
+      ],
+      "without attachments": [
+        "添付ファイルなし"
       ],
       "Wonderful": [
         "すばらしい"
@@ -5363,9 +5871,6 @@
       "Folders": [
         "フォルダー"
       ],
-      "Go to subscription plans": [
-        "サブスクリプション プランへ移動"
-      ],
       "Inbox": [
         "受信トレイ"
       ],
@@ -5438,9 +5943,6 @@
       "Trash": [
         "ごみ箱"
       ],
-      "Upgrade": [
-        "アップグレード"
-      ],
       "Upgrade account": [
         "アカウントをアップグレード"
       ],
@@ -5483,6 +5985,9 @@
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "メールプロバイダーに接続しています"
       ],
       "Creating new calendars": [
         "新しいカレンダーを作成しています"
@@ -5575,6 +6080,35 @@
       ],
       "Plain text": [
         "プレーンテキスト"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "その他のサービスからカレンダーをインポートする方法"
+      ],
+      "How to import calendars from Outlook": [
+        "Outlook からカレンダーをインポートする方法"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo からカレンダーをインポートする方法"
+      ],
+      "How to import contacts from another service": [
+        "その他のサービスから連絡先をインポートする方法"
+      ],
+      "How to import contacts from Outlook": [
+        "Outlook から連絡先をインポートする方法"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo から連絡先をインポートする方法"
+      ],
+      "How to import emails from another service": [
+        "その他のサービスからメールをインポートする方法"
+      ],
+      "How to import emails from Outlook": [
+        "Outlook からメールをインポートする方法"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo からメールをインポートする方法"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -5744,6 +6278,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } が作成されました"
+      ],
       "Block removed": [
         "ブロックが解除されました"
       ],
@@ -5824,6 +6361,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "独自フォルダー"
+      ],
       "Default folders": [
         "既定のフォルダー"
       ],
@@ -5960,6 +6500,9 @@
       ],
       "Text": [
         "テキスト"
+      ],
+      "Type text or keyword": [
+        "テキストまたはキーワードを入力"
       ],
       "Write your message": [
         "メッセージを入力してください"
@@ -6238,6 +6781,20 @@
         "登録解除されました"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "操作"
+      ],
+      "Conditions": [
+        "条件"
+      ],
+      "Name": [
+        "名前"
+      ],
+      "Preview": [
+        "プレビュー"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "無料で追加ストレージを入手"
@@ -6281,7 +6838,8 @@
         "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } の会話を迷惑メールに移動し、差出人をブロックリストに追加しました。"
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 件の会話を ${ labelName } から削除しました。"
@@ -6305,7 +6863,8 @@
         "${ elementsCount } 件のメッセージが ${ folderName } に移動されました。"
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } 件のメッセージが迷惑メールに移動され、送信者がブロックリストに追加されました。"
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 件のメッセージが ${ labelName } から削除されました。"
@@ -6356,7 +6915,7 @@
         "会話を ${ folderName } に移動しました。"
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "会話を迷惑メールに移動し、差出人をブロックリストに追加しました。"
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "会話を ${ labelName } から削除しました。"
@@ -6413,13 +6972,13 @@
         "メッセージを未読にしました。"
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "メッセージが ${ folderName } に移動され、送信者が許可リストに追加されました。"
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "メッセージが ${ folderName } に移動されました。"
       ],
       "Message moved to spam and sender added to Block List.": [
-        "メッセージが迷惑メールに移動され、送信者がブロックリストに追加されました。"
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "メッセージを ${ labelName } から削除しました。"
@@ -6464,11 +7023,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "フィードバックを送信しました"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/月"
       ]
     },
     "Table header": {
@@ -6580,6 +7134,9 @@
       "Add contact group name": [
         "連絡先グループの名前を追加"
       ],
+      "Add filter": [
+        "フィルターを追加"
+      ],
       "Add to ${ groupCount } group": [
         "${ groupCount } グループに追加"
       ],
@@ -6591,6 +7148,9 @@
       ],
       "Archive": [
         "アーカイブ"
+      ],
+      "Are you sure you want to close?": [
+        "本当に画面を閉じてよろしいですか？"
       ],
       "Attachments": [
         "添付ファイル"
@@ -6711,6 +7271,9 @@
       ],
       "Edit contact group": [
         "連絡先グループを編集"
+      ],
+      "Edit filter": [
+        "フィルターの編集"
       ],
       "Edit image": [
         "画像の編集"
@@ -6836,10 +7399,10 @@
         "受信トレイに移動"
       ],
       "Move to inbox (not spam)": [
-        "受信トレイに移動 (迷惑メールではない)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "迷惑メールに移動"
+        "Move to spam"
       ],
       "Move to trash": [
         "ごみ箱に移動"
@@ -6897,6 +7460,9 @@
       ],
       "Recipients": [
         "宛先"
+      ],
+      "Reconnect your account": [
+        "アカウントに再接続"
       ],
       "Recover data": [
         "データを復元する"
@@ -6970,6 +7536,12 @@
       "Sort messages": [
         "メッセージをソート"
       ],
+      "Start a new import": [
+        "新しいインポートを開始"
+      ],
+      "Start import process": [
+        "インポートを開始"
+      ],
       "Storage capacity warning": [
         "ストレージ容量の警告"
       ],
@@ -7037,11 +7609,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
+      "Customize import to reduce the number of folders": [
+        "フォルダー数を減らすためにインポートをカスタマイズします"
+      ],
+      "Customize import to reduce the number of labels": [
+        "ラベルの数を減らすためにインポートをカスタマイズします"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "デジタル署名されたメールはメッセージがあなたから送信されたことの検証に役立ちます"
       ],
       "Each imported email will have this label": [
         "インポートされたメールすべてにこのラベルがついています"
+      ],
+      "Edit folder names": [
+        "フォルダー名を編集"
+      ],
+      "Edit label names": [
+        "ラベル名を編集"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "メール暗号化は送信したメッセージの証明を手助けするためメール署名を強制します"
@@ -7060,6 +7644,9 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
+      ],
+      "This feature is only available for paid users": [
+        "この機能は課金ユーザーのみが利用できます"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
@@ -7101,6 +7688,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "インポートを破棄してよろしいですか?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } 件の連絡先グループを完全に削除してよろしいですか？"
       ],
@@ -7124,6 +7714,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Protonは、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "レポートはエンドツーエンドで暗号化されていません。機密情報を送信しないでください。"
@@ -7151,6 +7744,9 @@
       ],
       "This feature requires a paid Proton account": [
         "この機能は有料の Proton アカウントが必要です"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "このインポートは現在Protonアカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"

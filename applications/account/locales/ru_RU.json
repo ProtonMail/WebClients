@@ -102,8 +102,8 @@
       "Apply": [
         "Применить"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Применить к существующим сообщениям"
       ],
       "Attach screenshot(s)": [
         "Вложить снимок (снимки) экрана"
@@ -486,11 +486,14 @@
       "No": [
         "Нет"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "Не спам"
       ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
@@ -543,11 +546,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -2668,6 +2671,23 @@
         "Поддомены с 'www' для эл. почты обычно не применяются. Вы уверены, что хотите использовать это значение для домена?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } добавлено"
+      ],
+      "${ name } deletion failed": [
+        "${ name } удаление не удалось"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } не удалось переместить в список не спама"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } перемещено в список не спама"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успешно удалено"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Ошибки или проблемы с качеством"
@@ -2754,6 +2774,35 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } добавлено"
+      ],
+      "${ name } deletion failed": [
+        "${ name } удаление не удалось"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } не удалось переместить в список не спама"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } перемещено в список не спама"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успешно удалено"
       ]
     },
     "Email subject": {
@@ -3093,11 +3142,17 @@
       "Signature verification failed": [
         "Проверка подписи не удалась"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Имена некоторых ваших папок зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен папок превышают максимальное ограничение на количество символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Имена некоторых ваших ярлыков зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Некоторые из имен ярлыков недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
@@ -3737,7 +3792,7 @@
         "Эл. почта, поступающая с заблокированных адресов, не будет доставлена."
       ],
       "Search in Allow List and Block List": [
-        "Поиск в списке разрешённых и списке блокируемых"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4216,8 +4271,8 @@
       "contacts": [
         "контакты"
       ],
-      "CSV file": [
-        "файл CSV"
+      "CSV or a VCF (vCard) file": [
+        "Файл CSV или VCF (vCard)"
       ],
       "full calendar view": [
         "полный вид календаря"
@@ -6510,6 +6565,9 @@
       " and ${ l }": [
         " и ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } электронная почта или имя пользователя"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
       ],
@@ -6680,6 +6738,9 @@
       ],
       "Color": [
         "Цвет"
+      ],
+      "Coming soon": [
+        "Скоро появится"
       ],
       "Composer": [
         "Редактор писем"
@@ -7257,6 +7318,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Загрузите 1 или несколько файлов восстановления или ключей шифрования"
       ],
+      "Upload file": [
+        "Загрузить файл"
+      ],
       "URL": [
         "URL"
       ],
@@ -7605,11 +7669,23 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } метки до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } меток до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } меток до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } меток до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортируйте все сообщения из ${ totalLabelsCount } папки с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортируйте все сообщения из ${ totalLabelsCount } метки до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7904,29 +7980,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "От ${_price}"
-      ],
-      "From ${ _price2 } per user": [
-        "От ${ _price2 } за пользователя"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Перейти к обзору"
@@ -7966,6 +8019,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "От ${_price}"
+      ],
+      "From ${ _price2 } per user": [
+        "От ${ _price2 } за пользователя"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Сохранить мой аккаунт ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: attribute": {
@@ -8358,17 +8434,6 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробная версия ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить до ${ planName }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -8390,6 +8455,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Пробная версия ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить до ${ planName }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -9446,35 +9522,6 @@
         "Имя пользователя"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } добавлен"
-      ],
-      "${ name } deletion failed": [
-        "Сбой при удалении ${ name }"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } не перемещён в список блокируемых из-за сбоя"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "Сбой при перемещении ${ name } в список не-спама"
-      ],
-      "${ name } failed to move to Spam List": [
-        "Сбой при перемещении ${ name } в список спама"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } перемещён в список блокируемых"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } перемещён в список не-спама"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } перемещён в список спама"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } успешно удален"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
@@ -10064,10 +10111,10 @@
         "Добавить фильтр Sieve"
       ],
       "Add to block list": [
-        "Добавить в список блокируемых"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
-        "Добавить в список надежных (не спам)"
+      "Add to non spam list": [
+        "Убрать из списка спама"
       ],
       "Add to spam list": [
         "Добавить в список спама"

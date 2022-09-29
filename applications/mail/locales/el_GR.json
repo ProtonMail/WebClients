@@ -23,6 +23,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add condition": [
+        "Προσθήκη συνθήκης"
+      ],
       "Add contact": [
         "Προσθήκη επαφής"
       ],
@@ -179,6 +182,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Continue import": [
+        "Συνεχίστε την εισαγωγή"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -206,6 +212,12 @@
       "Create a new label": [
         "Δημιουργία νέας ετικέτας"
       ],
+      "Create folder": [
+        "Δημιουργία φακέλου"
+      ],
+      "Create label": [
+        "Δημιουργία ετικέτας"
+      ],
       "Create new contact": [
         "Δημιουργία νέας επαφής"
       ],
@@ -214,6 +226,9 @@
       ],
       "Customize": [
         "Προσαρμογή"
+      ],
+      "Customize import": [
+        "Προσαρμοσμένη εισαγωγή"
       ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
@@ -401,7 +416,7 @@
         "Απόκρυψη μηνυμάτων"
       ],
       "Hide My Email": [
-        "Κρύψτε το email μου"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Κρύψτε το email μου"
@@ -455,6 +470,9 @@
       "Label as...": [
         "Ορίστε ετικέτα..."
       ],
+      "label emails as": [
+        "ορίστε ετικέτα στα email ως"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -490,6 +508,9 @@
       ],
       "Mark as unread": [
         "Σήμανση ως μη διαβασμένο"
+      ],
+      "mark emails as": [
+        "σήμανση μηνυμάτων ως"
       ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
@@ -551,6 +572,9 @@
       "Move all to trash": [
         "Μετακινήστε τα όλα στα Διαγραμμένα"
       ],
+      "move emails to": [
+        "μεταφέρετε τα email στο"
+      ],
       "Move to": [
         "Μετακίνηση σε"
       ],
@@ -559,12 +583,6 @@
       ],
       "Move to inbox": [
         "Μετακίνηση στα Εισερχόμενα"
-      ],
-      "Move to inbox (not spam)": [
-        "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
-      ],
-      "Move to spam": [
-        "Μετακίνηση στα ενοχλητικά"
       ],
       "Move to spam and unsubscribe": [
         "Μετακινήστε το στα ενοχλητικά και κάντε απεγγραφή"
@@ -638,6 +656,9 @@
       "Pause": [
         "Παύση"
       ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ],
       "Preview ${ attachmentName }": [
         "Προεπισκόπηση ${ attachmentName }"
       ],
@@ -677,6 +698,9 @@
       "Read receipt sent": [
         "Έγινε αποστολή αποδεικτικού ανάγνωσης"
       ],
+      "Reconnect": [
+        "Επανασύνδεση"
+      ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
@@ -701,6 +725,9 @@
       "Remove expiration time": [
         "Αφαίρεση χρόνου λήξης"
       ],
+      "Remove this label": [
+        "Αφαίρεση αυτής της ετικέτας"
+      ],
       "Rename": [
         "Μετονομασία"
       ],
@@ -721,6 +748,9 @@
       ],
       "Reset": [
         "Επαναφορά"
+      ],
+      "Reset to default": [
+        "Επαναφορά των προεπιλογών"
       ],
       "Reset zoom": [
         "Επαναφορά μεγέθυνσης"
@@ -769,6 +799,9 @@
       ],
       "Send anyway": [
         "Αποστολή οπωσδήποτε"
+      ],
+      "send auto-reply email": [
+        "αποστολή μηνύματος αυτόματης απάντησης"
       ],
       "Send feedback": [
         "Αποστολή σχολίων"
@@ -1577,6 +1610,9 @@
       ],
       "Quit import customization?": [
         "Ακύρωση προσαρμογής εισαγωγής;"
+      ],
+      "Quit import?": [
+        "Ακύρωση εισαγωγής;"
       ]
     },
     "Contact field label": {
@@ -2386,6 +2422,23 @@
         "Νήσοι Άλαντ"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Συνημμένο"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "Recipient": [
+        "Παραλήπτης"
+      ],
+      "Sender": [
+        "Αποστολέας"
+      ],
+      "Subject": [
+        "Θέμα"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } φορά",
@@ -2637,6 +2690,9 @@
         "Επιλέξτε μια ημ/νία εντός της επόμενης ${ SCHEDULED_MAX_DATE_DAYS } ημέρας.",
         "Επιλέξτε μια ημ/νία εντός των επόμενων ${ SCHEDULED_MAX_DATE_DAYS } ημερών."
       ],
+      "Condition incomplete": [
+        "Μη ολοκληρωμένη συνθήκη"
+      ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
       ],
@@ -2675,11 +2731,17 @@
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
+      "Empty condition": [
+        "Κενή συνθήκη"
+      ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
       "Enter a password": [
         "Εισάγετε κωδικό πρόσβασης"
+      ],
+      "Error in one of the conditions": [
+        "Σφάλμα σε μια από τις συνθήκες"
       ],
       "Error while saving draft. Please try again.": [
         "Σφάλμα κατά την αποθήκευση του πρόχειρου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2692,6 +2754,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Filter with this name already exists": [
+        "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
@@ -2775,6 +2840,9 @@
       "Please set a password": [
         "Παρακαλούμε ορίστε έναν κωδικό πρόσβασης"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Παρακαλούμε βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά και δοκιμάστε την ταυτοποίηση ξανά."
+      ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
@@ -2800,6 +2868,12 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
+      "Require at least one action": [
+        "Απαίτηση τουλάχιστον μίας ενέργειας"
+      ],
+      "Require at least one condition": [
+        "Απαιτείται τουλάχιστον μία συνθήκη"
+      ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
       ],
@@ -2814,6 +2888,12 @@
       ],
       "Some groups could not be deleted": [
         "Αδυναμία διαγραφής κάποιων ομάδων"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Ορισμένα από τα ονόματα φακέλων σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Κάποια από τα ονόματα φακέλων σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα ετικετών σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
@@ -2887,6 +2967,9 @@
       ],
       "Unknown error.": [
         "Άγνωστο σφάλμα."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Δεν ήταν δυνατή η σύνδεση με τον πάροχο υπηρεσιών σας."
       ],
       "Wrong mailbox password": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας"
@@ -3197,6 +3280,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } ενημερώθηκε"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Φίλτρο ${ Filter.Name } ενημερώθηκε"
       ]
     },
     "Filter option": {
@@ -3214,6 +3300,14 @@
       ],
       "Unread": [
         "Μη διαβασμένα"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "ανάγνωση"
+      ],
+      "starred": [
+        "με αστέρι"
       ]
     },
     "Font Face Default": {
@@ -3424,12 +3518,222 @@
         "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "Η \"λιγότερο ασφαλής πρόσβαση σε εφαρμογή\" είναι ενεργοποιημένη στις ρυθμίσεις ασφαλείας του λογαριασμού σας Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Εάν ${ bold2StepsDisabled } (προεπιλεγμένες ρυθμίσεις Gmail), βεβαιωθείτε ότι:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Εάν ${ bold2StepsDisabled } στο Gmail (προεπιλεγμένες ρυθμίσεις), βεβαιωθείτε ότι:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Εάν ${ bold2StepsEnabled } στο Gmail, βεβαιωθείτε ότι χρησιμοποιείτε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Εάν ${ bold2StepsEnabled }, βεβαιωθείτε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo."
+      ],
+      "Invalid IMAP port": [
+        "Μη έγκυρη θύρα IMAP"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP στο Gmail είναι ενεργοποιημένη."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Παρακαλούμε βεβαιώστε την ορθότητα της διεύθυνσης του διακομιστή αλληλογραφίας, καθώς και του αριθμού θύρας."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Βεβαιωθείτε ότι:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Gmail. Βεβαιωθείτε ότι η διεύθυνση του διακομιστή αλληλογραφίας και ο αριθμός θύρας είναι σωστές."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "Use your app password if:": [
+        "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Μπορείτε επίσης να προσπαθήσετε να αποσυνδεθείτε από ${ boldGoogleAccounts } στο πρόγραμμα περιήγησης και, στη συνέχεια, να ξεκλειδώσετε το ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
+      ],
+      "Your email address and password are correct.": [
+        "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
+      ],
+      "Your password is correct.": [
+        "Ο κωδικός πρόσβασής σας είναι σωστός."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Η επαλήθευση 2 βημάτων είναι απενεργοποιημένη"
+      ],
+      "2-step verification is enabled": [
+        "Η επαλήθευση 2 βημάτων είναι ενεργοποιημένη"
+      ],
+      "all your other Google accounts": [
+        "όλους τους άλλους λογαριασμούς σας στο Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "δεν"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Η εκδήλωση ημερολογίου δημιουργήθηκε"
       ],
       "Creating calendar event failed": [
         "Αποτυχία δημιουργίας εκδήλωσης ημερολογίου"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Κάντε κλικ στο ${ boldManage } για ανάπτυξη του μενού επιλογών."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Παράξτε ένα ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Παράξτε το ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Πηγαίνετε στο ${ boldAccountInfo }, κάτω από το προφίλ σας στο ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Πηγαίνετε στο ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Πηγαίνετε στο Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Αν η διπαραγοντική επαλήθευση είναι απενεργοποιημένη, ενεργοποιήστε την."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Ανοίξτε τις επαφές σας στο ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Ανοίξτε τις ${ outlookContactsLink } σας στο Outlook."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Επιλέξτε ${ boldExportContacts } και διαλέξτε ποιες επαφές να εξαχθούν."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Επιλέξτε ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Για την εισαγωγή ενός ημερολογίου στο Proton, θα χρειαστείτε ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 απλά βήματα:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Για να εισάγετε email στο Proton, χρειάζεστε ${ appPasswordLink } από το Yahoo. Αποκτήστε το ακολουθώντας τα παρακάτω βήματα:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Πληροφορίες Λογαριασμού"
+      ],
+      "Account security": [
+        "Διασφάλιση λογαριασμού"
+      ],
+      "app password": [
+        "κωδικός πρόσβασης εφαρμογής"
+      ],
+      "Can view all details": [
+        "Μπορεί να δει κάθε λεπτομέρεια"
+      ],
+      "Export": [
+        "Εξαγωγή"
+      ],
+      "Export contacts": [
+        "Εξαγωγή Επαφών"
+      ],
+      "Export to CSV file": [
+        "Εξαγωγή σε αρχείο CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Διαχείριση"
+      ],
+      "Publish a calendar": [
+        "Δημοσίευση ημερολογίου"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "κωδικός πρόσβασης εφαρμογής"
+      ],
+      "app password or enable IMAP": [
+        "κωδικός εφαρμογής ή ενεργοποίηση IMAP"
+      ],
+      "contacts": [
+        "επαφές"
+      ],
+      "full calendar view": [
+        "πλήρης προβολή ημερολογίου"
+      ],
+      "ICS file": [
+        "αρχείο ICS"
+      ],
+      "security settings": [
+        "ρυθμίσεις διασφάλισης"
+      ],
+      "shared calendars": [
+        "κοινόχρηστα ημερολόγια"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Κάντε κλικ στον σύνδεσμο ${ boldICS } και κατεβάστε το αρχείο."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Πηγαίνετε στο ${ calendarLink } στις ρυθμίσεις του Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Πηγαίνετε στο ${ calendarViewLink } στο Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Πηγαίνετε στο ημερολόγιο που θέλετε να εισάγετε και ανοίξτε το αναδιπλούμενο μενού."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
       ]
     },
     "Import warning": {
@@ -3499,6 +3803,14 @@
         "${ numContacts } επαφή",
         "${ numContacts } επαφές"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
+        "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
+        "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } συνημμένο αρχείο",
         "${ pureAttachmentsCount } συνημμένα αρχεία"
@@ -3514,6 +3826,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } επιλεγμένη ετικέτα",
         "${ selectedFoldersCount } επιλεγμένες ετικέτες"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
+        "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
+        "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
       "${ storageSize } storage": [
         "${ storageSize } αποθηκευτικός χώρος"
@@ -3553,6 +3873,12 @@
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Φιλτράρετε εάν πληρούνται ΟΛΕΣ οι ακόλουθες συνθήκες)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
       ],
       "(No Recipient)": [
         "(Κανένας παραλήπτης)"
@@ -3598,6 +3924,9 @@
       "All your calendars are disabled.": [
         "Όλα τα ημερολόγιά σας είναι απενεργοποιημένα."
       ],
+      "All your changes will be lost.": [
+        "Όλες οι αλλαγές σας θα χαθούν."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Έχει εντοπιστεί ένα άγνωστο δημόσιο κλειδί για αυτόν τον παραλήπτη."
       ],
@@ -3609,6 +3938,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα με αυτή την ετικέτα;"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Θέλετε σίγουρα να μετακινήσετε στα Διαγραμμένα όλα τα μηνύματα αυτής της τοποθεσίας;"
@@ -3795,6 +4127,9 @@
       "Encrypt message": [
         "Κρυπτογράφηση μηνύματος"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
       ],
@@ -3820,6 +4155,9 @@
       "file attached": [
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
       ],
       "Folder": [
         "Φάκελος"
@@ -3874,6 +4212,9 @@
       "Image URL": [
         "URL εικόνας"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
       ],
@@ -3886,6 +4227,9 @@
       ],
       "Import in progress": [
         "Εισαγωγή σε εξέλιξη"
+      ],
+      "Import mailbox": [
+        "Εισαγωγή γραμματοκιβωτίου"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
@@ -3919,6 +4263,9 @@
       ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
+      ],
+      "Label all imported messages as": [
+        "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
       ],
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
@@ -3983,6 +4330,9 @@
       "New": [
         "Νέο"
       ],
+      "No action selected": [
+        "Δεν έχει επιλεγεί καμία ενέργεια"
+      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -3995,11 +4345,17 @@
       "No folder found": [
         "Δε βρέθηκε φάκελος"
       ],
+      "No folder selected": [
+        "Δεν επιλέχθηκε φάκελος"
+      ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
+      ],
+      "No label selected": [
+        "Δεν επιλέχθηκε ετικέτα"
       ],
       "No more results found": [
         "Δεν βρέθηκαν άλλα αποτελέσματα"
@@ -4111,9 +4467,6 @@
       ],
       "Right-click for options": [
         "Δεξί κλικ για επιλογές"
-      ],
-      "Saved ${ dateString }": [
-        "Αποθηκεύτηκε ${ dateString }"
       ],
       "Saved at ${ dateString }": [
         "Αποθηκεύτηκε στις ${ dateString }"
@@ -4517,6 +4870,12 @@
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
+      "Your import will not be processed.": [
+        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Το μήνυμά σας θα διαγραφεί από τα Εισερχόμενα του παραλήπτη και τον φάκελο Απεσταλμένων σας σήμερα την ${ dateString } στις ${ formattedTime }"
       ],
@@ -4791,8 +5150,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " και "
+      ],
+      " and ${ l }": [
+        " και ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
+      ],
+      "Actions": [
+        "Ενέργειες"
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -4806,8 +5174,26 @@
       "Address": [
         "Διεύθυνση"
       ],
+      "ALL": [
+        "ΟΛΑ"
+      ],
       "Also archive": [
         "Επίσης αρχειοθετείστε"
+      ],
+      "AND": [
+        "ΚΑΙ"
+      ],
+      "and": [
+        "και"
+      ],
+      "And": [
+        "Και"
+      ],
+      "ANY": [
+        "ΟΠΟΙΑΔΗΠΟΤΕ"
+      ],
+      "App password": [
+        "Κωδικός πρόσβασης εφαρμογής"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -4857,6 +5243,9 @@
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
+      "Conditions": [
+        "Προϋποθέσεις"
+      ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
       ],
@@ -4905,6 +5294,9 @@
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
+      "Filter Name": [
+        "Όνομα φίλτρου"
+      ],
       "Folder location": [
         "Τοποθεσία φακέλου"
       ],
@@ -4917,8 +5309,14 @@
       "From:": [
         "Από:"
       ],
+      "From: ${ emailFrom }": [
+        "Από: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Από: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Από: ${ importedEmailAddress }"
       ],
       "Good": [
         "Καλή"
@@ -4934,6 +5332,12 @@
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
+      ],
+      "IF": [
+        "ΑΝ"
+      ],
+      "If": [
+        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -4971,6 +5375,9 @@
       "Location": [
         "Τοποθεσία"
       ],
+      "Mail Server (IMAP)": [
+        "Διακομιστής Αλληλογραφίας (IMAP)"
+      ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
       ],
@@ -4982,6 +5389,9 @@
       ],
       "Manage my addresses": [
         "Διαχείριση διευθύνσεων"
+      ],
+      "Mark as": [
+        "Σήμανση ως"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -4995,6 +5405,9 @@
       "Name": [
         "Όνομα"
       ],
+      "No label found": [
+        "Δεν βρέθηκε ετικέτα"
+      ],
       "Notification": [
         "Ειδοποίηση"
       ],
@@ -5006,6 +5419,15 @@
       ],
       "Operating system version": [
         "Έκδοση λειτουργικού συστήματος"
+      ],
+      "OR": [
+        "'Η"
+      ],
+      "or": [
+        "ή"
+      ],
+      "Or": [
+        "Ή"
       ],
       "Participants": [
         "Συμμετέχοντες"
@@ -5022,6 +5444,9 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
+      "Port": [
+        "Θύρα"
+      ],
       "Post office box": [
         "Ταχυδρομική θυρίδα"
       ],
@@ -5033,6 +5458,9 @@
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
+      ],
+      "Read": [
+        "Διαβασμένα"
       ],
       "Recipient": [
         "Παραλήπτης"
@@ -5058,6 +5486,9 @@
       "Select how your mailbox looks like by default.": [
         "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
       ],
+      "Send auto-reply": [
+        "Αποστολή αυτόματης απάντησης"
+      ],
       "Sender": [
         "Αποστολέας"
       ],
@@ -5067,11 +5498,32 @@
       "Size:": [
         "Μέγεθος:"
       ],
+      "Starred": [
+        "Με αστέρι"
+      ],
+      "Statement": [
+        "Δήλωση"
+      ],
       "Street address": [
         "Οδός"
       ],
       "System information": [
         "Πληροφορίες Συστήματος"
+      ],
+      "The email was sent ${ attachment }": [
+        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "το email στάλθηκε ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "το email στάλθηκε ${ label }"
+      ],
+      "Then": [
+        "Τότε"
       ],
       "Time": [
         "Ώρα"
@@ -5085,11 +5537,20 @@
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Προς: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Προς: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Κωδικός ταυτοποίησης δύο παραγόντων"
       ],
       "Undisclosed Recipients": [
         "Μη κοινοποιημένοι παραλήπτες"
+      ],
+      "Upload file": [
+        "Ανέβασμα αρχείου"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -5102,6 +5563,21 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
+      ],
+      "With attachment": [
+        "Με συνημμένα"
+      ],
+      "with attachments": [
+        "με συνημμένα"
+      ],
+      "Without attachment": [
+        "Χωρίς συνημμένα"
+      ],
+      "without attachment": [
+        "χωρίς συνημμένα"
+      ],
+      "without attachments": [
+        "χωρίς συνημμένα"
       ],
       "Wonderful": [
         "Θαυμάσια"
@@ -5219,9 +5695,6 @@
       "Folders": [
         "Φάκελοι"
       ],
-      "Go to subscription plans": [
-        "Μετάβαση στα προγράμματα συνδρομής"
-      ],
       "Inbox": [
         "Εισερχόμενα"
       ],
@@ -5297,9 +5770,6 @@
       "Trash": [
         "Διαγραμμένα"
       ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
       ],
@@ -5339,6 +5809,9 @@
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendars } από ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Creating new calendars": [
         "Δημιουργία νέων ημερολόγιων"
@@ -5427,6 +5900,35 @@
       ],
       "Plain text": [
         "Σκέτο κείμενο"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
+      ],
+      "How to import calendars from Outlook": [
+        "Πώς να εισάγετε ημερολόγια από το Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Πώς να εισάγετε ημερολόγια από το Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Πώς να εισάγετε επαφές από μια άλλη υπηρεασία"
+      ],
+      "How to import contacts from Outlook": [
+        "Πώς να εισάγετε επαφές από το Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Πώς να εισάγετε επαφές από το Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Πώς να εισάγετε email από μια άλλη υπηρεσία"
+      ],
+      "How to import emails from Outlook": [
+        "Πώς να εισάγετε email από το Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Πώς να εισάγετε email από το Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -5594,6 +6096,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } δημιουργήθηκε"
+      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -5665,6 +6170,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Προσαρμοσμένοι φάκελοι"
+      ],
       "Default folders": [
         "Προεπιλεγμένοι φάκελοι"
       ],
@@ -5790,6 +6298,9 @@
       ],
       "Text": [
         "Κείμενο"
+      ],
+      "Type text or keyword": [
+        "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
       ],
       "Write your message": [
         "Γράψτε το μήνυμά σας"
@@ -6069,6 +6580,20 @@
         "Αυτό το μήνυμα προέρχεται από λίστα αλληλογραφίας."
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Conditions": [
+        "Προϋποθέσεις"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Αποκτήστε επιπλέον αποθηκευτικό χώρο δωρεάν"
@@ -6121,8 +6646,8 @@
         "${ elementsCount } συνομιλίες μεταφέρθηκαν σε ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } συνομιλία μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού.",
-        "${ elementsCount } συνομιλίες μετακινήθηκαν στα ενοχλητικά και οι αποστολείς προστέθηκαν στη Λίστα Αποκλεισμού."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } συνομιλία αφαιρέθηκε από ${ labelName }.",
@@ -6153,8 +6678,8 @@
         "${ elementsCount } μηνύματα μεταφέρθηκαν σε ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } μήνυμα μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού.",
-        "${ elementsCount } μηνύματα μετακινήθηκαν στα ενοχλητικά και οι αποστολείς προστέθηκαν στη Λίστα Αποκλεισμού."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } μήνυμα αφαιρέθηκε από ${ labelName }.",
@@ -6208,7 +6733,7 @@
         "Η συνομιλία μετακινήθηκε σε ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Η συνομιλία μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Η συνομιλία αφαιρέθηκε από ${ labelName }."
@@ -6259,13 +6784,13 @@
         "Το μήνυμα σημάνθηκε ως μη διαβασμένο."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Το μήνυμα μετακινήθηκε στο ${ folderName } και ο αποστολέας προστέηθκε στη Λίστα Επιθυμητών."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Το μήνυμα μετακινήθηκε στο ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Το μήνυμα μετακινήθηκε στα ενοχλητικά και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Το μήνυμα αφαιρέθηκε από ${ labelName }."
@@ -6306,11 +6831,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Τα σχόλια απεστάλησαν"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/μήνα"
       ]
     },
     "Table header": {
@@ -6429,6 +6949,9 @@
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
       ],
+      "Add filter": [
+        "Προσθήκη φίλτρου"
+      ],
       "Add to ${ groupCount } group": [
         "Προσθέστε στη ${ groupCount } ομάδα επαφών",
         "Προσθέστε στις ${ groupCount } ομάδες επαφών"
@@ -6441,6 +6964,9 @@
       ],
       "Archive": [
         "Αρχειοθετημένα"
+      ],
+      "Are you sure you want to close?": [
+        "Θέλετε σίγουρα να κλείσετε;"
       ],
       "Attachments": [
         "Συνημμένα"
@@ -6561,6 +7087,9 @@
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
       ],
+      "Edit filter": [
+        "Επεξεργασία φίλτρου"
+      ],
       "Edit image": [
         "Επεξεργασία εικόνας"
       ],
@@ -6679,10 +7208,10 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to inbox (not spam)": [
-        "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Μετακίνηση στα ενοχλητικά"
+        "Move to spam"
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
@@ -6740,6 +7269,9 @@
       ],
       "Recipients": [
         "Παραλήπτες"
+      ],
+      "Reconnect your account": [
+        "Επανασύνδεση του λογαριασμού σας"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -6813,6 +7345,12 @@
       "Sort messages": [
         "Ταξινόμηση μηνυμάτων"
       ],
+      "Start a new import": [
+        "Ξεκινήστε μια νέα εισαγωγή"
+      ],
+      "Start import process": [
+        "Έναρξη διαδικασίας εισαγωγής"
+      ],
       "Storage capacity warning": [
         "Προειδοποίηση χωρητικότητας αποθήκευσης"
       ],
@@ -6875,11 +7413,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
       ],
+      "Customize import to reduce the number of folders": [
+        "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Η ψηφιακή υπογραφή μηνυμάτων e-mail βοηθά στην εξακρίβωση ταυτότητας, ότι τα μηνύματα αποστέλλονται από εσάς"
       ],
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
+      ],
+      "Edit folder names": [
+        "Επεξεργασία ονομάτων φακέλων"
+      ],
+      "Edit label names": [
+        "Επεξεργασία ονομάτων ετικετών"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
@@ -6898,6 +7448,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
+      ],
+      "This feature is only available for paid users": [
+        "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
@@ -6937,6 +7490,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδα επαφών;",
         "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδες επαφών;"
@@ -6959,6 +7515,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Η Proton θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
@@ -6990,6 +7549,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Αυτή η λειτουργία απαιτεί έναν λογαριασμό Proton επί πληρωμή"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας Proton. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."

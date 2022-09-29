@@ -171,7 +171,7 @@ const Spams = () => {
                                     dispatch({ type: 'setSearch', payload: nextSearch });
                                 }
                             }}
-                            placeholder={c('FilterSettings').t`Search in Allow List and Block List`}
+                            placeholder={c('FilterSettings').t`Search in your allow and block lists`}
                         />
                     </div>
 

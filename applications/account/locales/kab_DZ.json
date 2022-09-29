@@ -83,9 +83,6 @@
       "Apply": [
         "Snes"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
       ],
@@ -452,11 +449,11 @@
       "No": [
         "Uhu"
       ],
-      "OK": [
-        "Γas"
-      ],
       "Ok": [
         "IH"
+      ],
+      "OK": [
+        "Γas"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -509,11 +506,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
       "refresh the page": [
         "smiren asebter"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -2273,6 +2270,20 @@
         "${ emailAddress } yeqbel tinubga-inek·inem i kra n wakud ɣer ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Asefsex n tedyant deg ${ formattedStart }"
@@ -2999,7 +3010,7 @@
     },
     "FilterSettings": {
       "Search in Allow List and Block List": [
-        "Nadi deg tebdart yettusirgen d tebdart n usewḥel"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3380,9 +3391,6 @@
       ],
       "contacts": [
         "inermisen"
-      ],
-      "CSV file": [
-        "Afaylu CSV"
       ],
       "full calendar view": [
         "tamuɣli taččurant n uwitay"
@@ -5762,6 +5770,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Sali 1 neɣ ugar n yifuyla n tririt neɣ tisura n uwgelhen"
       ],
+      "Upload file": [
+        "Sali afaylu"
+      ],
       "URL": [
         "URL"
       ],
@@ -6299,26 +6310,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "Seg ${ _price }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Eǧǧ amiḍan-iw ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6343,6 +6334,26 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "Seg ${ _price }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Eǧǧ amiḍan-iw ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: attribute": {
@@ -6493,11 +6504,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "Upgrade to ${ planName }": [
-        "Leqqem ɣer ${ planName }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -6507,6 +6513,11 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "Upgrade to ${ planName }": [
+        "Leqqem ɣer ${ planName }"
       ]
     },
     "new_plans: tooltip": {
@@ -7604,7 +7615,7 @@
         "Rnu imsizdeg Sieve"
       ],
       "Add to block list": [
-        "Rnu ɣer tebdart n usewḥel"
+        "Add to your block list"
       ],
       "Add to spam list": [
         "Rnu ɣer tebdart n yispamen"

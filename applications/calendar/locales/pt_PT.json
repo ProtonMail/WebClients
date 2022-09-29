@@ -98,6 +98,9 @@
       "Create event": [
         "Criar evento"
       ],
+      "Customize import": [
+        "Personalizar importação"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -268,6 +271,9 @@
       "Re-sign": [
         "Assinar de novo"
       ],
+      "Reconnect": [
+        "Religar"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -294,6 +300,9 @@
       ],
       "Request new code": [
         "Pedir novo código"
+      ],
+      "Reset to default": [
+        "Repor predefinição"
       ],
       "Save": [
         "Gravar"
@@ -594,6 +603,11 @@
       ],
       "Week": [
         "Semana"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Sair da importação?"
       ]
     },
     "Contact field label": {
@@ -1006,6 +1020,9 @@
       "Please create an address first.": [
         "Por favor, primeiro crie um endereço."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Por favor, tente autenticar novamente e certifique-se de que as permissões estão definidas correctamente."
+      ],
       "Primary address key is not decrypted": [
         "A chave principal do endereço não está encriptada"
       ],
@@ -1026,6 +1043,9 @@
       ],
       "Some groups could not be deleted": [
         "Alguns grupos não puderam ser eliminados"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dos seus nomes de pasta estão indisponíveis. Por favor, personalize esses nomes antes de importar."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
@@ -1059,6 +1079,9 @@
       ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Impossível ligar ao seu fornecedor de serviços."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Não pode enviar correio para mais de 100 destinatários"
@@ -1403,6 +1426,87 @@
         "O ProtonContacts não suporta ${ forNow }:"
       ]
     },
+    "Import error": {
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Se ${ bold2StepsEnabled } no Gmail, certifique-se de que está a utilizar a senha da sua aplicação, em vez da sua senha habitual."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Se ${ bold2StepsEnabled }, certifique-se de que o seu endereço de email e senha da aplicação estão correctos. ${ boldNot } use a sua senha regular."
+      ],
+      "Invalid IMAP port": [
+        "Porta IMAP inválida"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso Gmail IMAP está activado."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso IMAP está activado na sua conta Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que o endereço do servidor e a porta estão correctos."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "O Proton não pode ligar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Demasiados pedidos recentes. Por favor, tente mais tarde."
+      ],
+      "Use your app password if:": [
+        "Use a senha da aplicação se:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Use a senha da aplicação em vez da sua senha normal se:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Também pode tentar terminar a sessão em ${ boldGoogleAccounts } no navegador e desbloquear ${ linkCAPTCHA }."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "a verificação em 2 passos está desactivada"
+      ],
+      "2-step verification is enabled": [
+        "a verificação em 2 passos está activada"
+      ],
+      "all your other Google accounts": [
+        "todas as suas outras contas Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "não"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informação da conta"
+      ],
+      "Account security": [
+        "Segurança da conta"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export contacts": [
+        "Exportar contactos"
+      ],
+      "Manage": [
+        "Gerir"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -1430,6 +1534,22 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } pasta encontrada",
+        "${ providerFoldersNumLocalized } pastas encontradas"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta encontrada no Gmail",
+        "${ providerFoldersNumLocalized } etiquetas encontradas no Gmail"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } pasta seleccionada",
+        "${ selectedFoldersCountLocalized } pastas seleccionadas"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado com sucesso.",
@@ -1514,6 +1634,9 @@
       "Duplicate key updated": [
         "Chave duplicada actualizada"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Insira as credenciais da conta de email da qual deseja importar."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
@@ -1550,6 +1673,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontra a mensagem na sua caixa de entrada, veja na pasta de spam."
       ],
+      "Import mailbox": [
+        "Importar caixa de correio"
+      ],
       "Inherited from parent folder": [
         "Herança da pasta-mãe"
       ],
@@ -1561,6 +1687,9 @@
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
+      ],
+      "Label all imported messages as": [
+        "Etiquetar todas as mensagens importadas como"
       ],
       "Learn more": [
         "Saiba mais"
@@ -1805,6 +1934,12 @@
       "Your email will only be used for this one-time verification.": [
         "O seu endereço só será usado para esta verificação única."
       ],
+      "Your import will not be processed.": [
+        "A sua importação não será processada."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "A informação de início de sessão não será gravada após concluir a importação."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
       ],
@@ -1863,6 +1998,9 @@
       "All-day event notifications": [
         "Notificação de eventos de dia inteiro"
       ],
+      "App password": [
+        "Senha da aplicação"
+      ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
@@ -1902,6 +2040,9 @@
       "Do not ask again": [
         "Não perguntar novamente"
       ],
+      "Email": [
+        "Email"
+      ],
       "Email address": [
         "Endereço electrónico"
       ],
@@ -1940,6 +2081,9 @@
       ],
       "Import contacts": [
         "Importar contactos"
+      ],
+      "Mail Server (IMAP)": [
+        "Servidor de email (IMAP)"
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
@@ -1986,6 +2130,9 @@
       "Phone number": [
         "Número de telefone"
       ],
+      "Port": [
+        "Porta"
+      ],
       "Post office box": [
         "Apartado"
       ],
@@ -2021,6 +2168,9 @@
       ],
       "Two-factor authentication code": [
         "Código de autenticação em dois passos"
+      ],
+      "Upload file": [
+        "Enviar ficheiro"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -2094,6 +2244,11 @@
       ],
       "Upgrade account": [
         "Actualizar conta"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your email provider": [
+        "A ligar ao seu fornecedor de correio electrónico"
       ]
     },
     "Message": {
@@ -3053,6 +3208,9 @@
       "Reactivate calendar keys": [
         "Reactivar chaves da agenda"
       ],
+      "Reconnect your account": [
+        "Religue a sua conta"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -3143,6 +3301,12 @@
       "Sign out": [
         "Terminar sessão"
       ],
+      "Start a new import": [
+        "Iniciar nova importação"
+      ],
+      "Start import process": [
+        "Iniciar o processo de importação"
+      ],
       "Update event": [
         "Actualizar evento"
       ],
@@ -3179,8 +3343,20 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é usado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
       ],
+      "Customize import to reduce the number of folders": [
+        "Personalize a importação para reduzir o número de pastas"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Personalize a importação para reduzir o número de etiquetas"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Assinar digitalmente o correio ajuda a confirmar que as mensagens são enviadas por si"
+      ],
+      "Edit folder names": [
+        "Editar nomes de pastas"
+      ],
+      "Edit label names": [
+        "Editar nomes de etiqueta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A encriptação do correio força a assinatura para ajudar a autenticar as suas mensagens enviadas"
@@ -3205,6 +3381,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Tem certeza de que deseja descartar a importação?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Tem a certeza de que deseja eliminar permanentemente ${ count } grupo de contactos?",
         "Tem a certeza de que deseja eliminar permanentemente ${ count } grupos de contactos?"
@@ -3224,6 +3403,9 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da senha, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo, perderá permanentemente o acesso a todos os dados encriptados com esta chave."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "O Proton transferirá o máximo de dados possível, começando com as mensagens mais recentes."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
@@ -3245,6 +3427,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Esta funcionalidade requer uma conta Proton paga"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Esta importação pode exceder a capacidade de armazenamento actualmente disponível na sua conta Proton. Por favor, considere personalizar a importação."
       ]
     },
     "Weekly recurring event, frequency": {
