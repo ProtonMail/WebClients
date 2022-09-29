@@ -23,6 +23,9 @@
       "Add address": [
         "Adresse hinzufügen"
       ],
+      "Add condition": [
+        "Bedingung hinzufügen"
+      ],
       "Add contact": [
         "Kontakt hinzufügen"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue import": [
+        "Importvorgang fortsetzen"
+      ],
       "Continue with Google": [
         "Mit Google anmelden"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "Neue Kategorie erstellen"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
       "Create new contact": [
         "Neuen Kontakt erstellen"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "Anpassen"
+      ],
+      "Customize import": [
+        "Import anpassen"
       ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
@@ -343,6 +358,9 @@
       "Fewer search options": [
         "Weniger Suchoptionen"
       ],
+      "Filter on...": [
+        "Filtern nach …"
+      ],
       "Font": [
         "Schriftart"
       ],
@@ -467,6 +485,9 @@
       "Label as...": [
         "Hinzufügen zur Kategorie …"
       ],
+      "label emails as": [
+        "Nachrichten folgender Kategorie zuordnen"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -502,6 +523,9 @@
       ],
       "Mark as unread": [
         "Als ungelesen markieren"
+      ],
+      "mark emails as": [
+        "E-Mails kennzeichnen als"
       ],
       "Mark for deletion": [
         "Zum Löschen vormerken"
@@ -563,6 +587,9 @@
       "Move all to trash": [
         "Alle in den Papierkorb verschieben"
       ],
+      "move emails to": [
+        "Nachrichten verschieben nach"
+      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -571,12 +598,6 @@
       ],
       "Move to inbox": [
         "In Posteingang verschieben"
-      ],
-      "Move to inbox (not spam)": [
-        "In Posteingang verschieben (kein Spam)"
-      ],
-      "Move to spam": [
-        "In Spam-Ordner verschieben"
       ],
       "Move to spam and unsubscribe": [
         "In den Spam verschieben und abbestellen"
@@ -650,6 +671,9 @@
       "Pause": [
         "Pausieren"
       ],
+      "Preview": [
+        "Vorschau"
+      ],
       "Preview ${ attachmentName }": [
         "Vorschau von ${ attachmentName } anzeigen"
       ],
@@ -689,6 +713,9 @@
       "Read receipt sent": [
         "Lesebestätigung gesendet"
       ],
+      "Reconnect": [
+        "Erneut verbinden"
+      ],
       "Recover data": [
         "Daten wiederherstellen"
       ],
@@ -716,6 +743,9 @@
       "Remove expiration time": [
         "Ablaufzeitpunkt entfernen"
       ],
+      "Remove this label": [
+        "Kategorie entfernen"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -739,6 +769,9 @@
       ],
       "Reset search form": [
         "Suchformular zurücksetzen"
+      ],
+      "Reset to default": [
+        "Auf Standardwert zurücksetzen"
       ],
       "Reset zoom": [
         "Vergrößerung zurücksetzen"
@@ -787,6 +820,9 @@
       ],
       "Send anyway": [
         "Trotzdem senden"
+      ],
+      "send auto-reply email": [
+        "automatische E-Mail-Antwort senden"
       ],
       "Send feedback": [
         "Feedback senden"
@@ -1727,6 +1763,9 @@
       ],
       "Quit import customization?": [
         "Das Anpassen der Importdaten beenden?"
+      ],
+      "Quit import?": [
+        "Import abbrechen?"
       ]
     },
     "Contact field label": {
@@ -2583,6 +2622,26 @@
         "Åland‐Inseln"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Anhang"
+      ],
+      "Filter on": [
+        "Filtern nach"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Recipient": [
+        "Empfänger"
+      ],
+      "Sender": [
+        "Absender"
+      ],
+      "Subject": [
+        "Betreff"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } Mal",
@@ -2849,6 +2908,9 @@
         "Wähle ein Datum innerhalb des nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tages.",
         "Wähle ein Datum innerhalb der nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tage."
       ],
+      "Condition incomplete": [
+        "Bedingung unvollständig"
+      ],
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
@@ -2890,11 +2952,17 @@
       "Email is not valid": [
         "E-Mail-Adresse ungültig"
       ],
+      "Empty condition": [
+        "Leere Bedingung"
+      ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
       "Enter a password": [
         "Passwort eingeben"
+      ],
+      "Error in one of the conditions": [
+        "Fehler in einer der Bedingungen"
       ],
       "Error while saving draft. Please try again.": [
         "Fehler beim Speichern des Entwurfs. Bitte versuche es erneut."
@@ -2907,6 +2975,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Der Anhang konnte nicht verschlüsselt werden. Bitte versuche es erneut."
+      ],
+      "Filter with this name already exists": [
+        "Filter mit diesem Namen bereits vorhanden"
       ],
       "Folder name cannot be empty.": [
         "Name des Ordners muss angegeben werden."
@@ -3005,6 +3076,9 @@
       "Please set a password": [
         "Bitte ein Passwort festlegen"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
+      ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
       ],
@@ -3030,6 +3104,12 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "Require at least one action": [
+        "Erfordert mindestens eine Aktion"
+      ],
+      "Require at least one condition": [
+        "Erfordert mindestens eine Bedingung"
+      ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
       ],
@@ -3044,6 +3124,18 @@
       ],
       "Some groups could not be deleted": [
         "Einige Gruppen konnten nicht gelöscht werden"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Einige Ihrer Ordnernamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Einige deiner Ordnernamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Einige deiner Kategorienamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -3115,6 +3207,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Zu viele aktive Filter. Bitte zu einem kostenpflichtigen Abonnement wechseln, um weitere Filter aktivieren zu können."
+      ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
       ],
@@ -3123,6 +3218,9 @@
       ],
       "Unknown error.": [
         "Unbekannter Fehler."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Es konnte keine Verbindung zu Ihrem Dienstanbieter aufgebaut werden."
       ],
       "Wrong mailbox password": [
         "Ungültiges Postfach-Passwort"
@@ -3470,6 +3568,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Wenn die Anhänge"
+      ],
+      "If the recipient": [
+        "Wenn der Empfänger"
+      ],
+      "If the sender": [
+        "Wenn der Absender"
+      ],
+      "If the subject": [
+        "Wenn der Betreff"
+      ],
       "Select…": [
         "Auswählen…"
       ],
@@ -3489,6 +3599,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aktualisiert"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filter ${ Filter.Name } aktualisiert"
       ]
     },
     "Filter option": {
@@ -3506,6 +3619,14 @@
       ],
       "Unread": [
         "Ungelesen"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "Lesen"
+      ],
+      "starred": [
+        "Gekennzeichnet"
       ]
     },
     "Font Face Default": {
@@ -3716,12 +3837,261 @@
         "ProtonContacts unterstützt ${ forNow } nicht:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Wenn ${ bold2StepsDisabled } (Google Mail Standardeinstellungen), stellen Sie bitte sicher, dass:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Wenn ${ bold2StepsDisabled } in Google Mail (Standardeinstellungen), stellen Sie bitte sicher, dass:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Wenn ${ bold2StepsEnabled } in Google Mail, stellen Sie bitte sicher, dass Sie Ihr App-Passwort anstelle Ihres regulären Passworts verwenden."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Wenn ${ bold2StepsEnabled }, stellen Sie bitte sicher, dass Ihre E-Mail-Adresse und Ihr App-Passwort korrekt sind. Verwenden Sie ${ boldNot } Ihr reguläres Passwort!"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Der IMAP-Zugang in deinem externen Konto ist aktiviert."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Der IMAP-Zugang in deinem Yahoo-Konto ist aktiviert."
+      ],
+      "Invalid IMAP port": [
+        "Ungültiger IMAP-Port"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass der IMAP-Zugang von Google Mail aktiviert ist."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass in deinem Google Mail-Konto der IMAP-Zugang aktiviert ist."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton konnte keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton konnte keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton konnte keine Verbindung zu deinem Google Mail-Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton konnte keine Verbindung zu deinem Yahoo Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton konnte keine Verbindung zu deinem Yahoo Konto herstellen. Bitte stelle sicher, dass:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Zu viele neue Anfragen. Bitte versuchen Sie es in wenigen Augenblicken noch einmal."
+      ],
+      "Use your app password if:": [
+        "Verwende dein App-Passwort, wenn:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Sie können auch versuchen, sich von „${ boldGoogleAccounts }” im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Dein E-Mail-Konto erfordert ein App-Passwort, um deine Daten zu exportieren."
+      ],
+      "Your email account requires one to export your data.": [
+        "Dein E-Mail-Konto erfordert ein solches, um deine Daten zu exportieren."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
+      ],
+      "Your email address and password are correct.": [
+        "Deine E-Mail-Adresse und dein Passwort sind korrekt."
+      ],
+      "Your password is correct.": [
+        "Dein Passwort ist korrekt."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "2-Schritt-Verifizierung deaktiviert ist"
+      ],
+      "2-step verification is enabled": [
+        "2-Schritt-Verifizierung aktiviert ist"
+      ],
+      "all your other Google accounts": [
+        "all Ihre anderen Google-Konten"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "nicht"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Kalenderereignis erstellt"
       ],
       "Creating calendar event failed": [
         "Erstellen eines Kalendereintrags fehlgeschlagen"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klicke auf ${ boldManage }, um das Optionsmenü zu erweitern."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Abhängig von deinem E-Mail-Anbieter musst du möglicherweise zuerst ${ knowledgeBaseLink } erzeugen, bevor du die E-Mails in Proton importieren kannst."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Erweitere das Dropdown-Menü durch Klicken auf die 3 Punkte (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Erzeuge ein ${ boldAppPassword } und verwende es anstelle des regulären Passworts, wenn du von Proton dazu aufgefordert wirst."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Erzeuge das ${ boldAppPassword } und verwende es anstelle des regulären Passworts, wenn du von Proton dazu aufgefordert wirst."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Gehe in deinem ${ yahooMailLink } Profil zu den ${ boldAccountInfo }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Gehe zu ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Gehe zu den ${ securitySettingsLink } von Outlook."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Falls die 2-Schritt-Verifizierung deaktiviert ist, schalte diese ein."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Öffne deine ${ yahooMailLink } Kontakte."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Öffne deine Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Wähle ${ boldExportContacts } und lege die zu exportierenden Kontakte fest."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Wähle ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Outlook herunter:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Outlook herunter:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Outlook. Gehe dazu folgendermaßen vor:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Geh dazu folgendermaßen vor:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Konteninformationen"
+      ],
+      "Account security": [
+        "Kontensicherheit"
+      ],
+      "app password": [
+        "App-Passwort"
+      ],
+      "Can view all details": [
+        "Kann alle Details sehen"
+      ],
+      "Export": [
+        "Exportieren"
+      ],
+      "Export contacts": [
+        "Kontakte exportieren"
+      ],
+      "Export to CSV file": [
+        "In CSV-Datei exportieren"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Verwalten"
+      ],
+      "Publish a calendar": [
+        "Einen Kalender veröffentlichen"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "App-Passwort"
+      ],
+      "app password or enable IMAP": [
+        "IMAP aktivieren oder ein App-Passwort"
+      ],
+      "contacts": [
+        "Kontakte"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV oder eine VCF (vCard)-Datei"
+      ],
+      "full calendar view": [
+        "vollständigen Kalenderansicht"
+      ],
+      "ICS file": [
+        "ICS-Datei"
+      ],
+      "security settings": [
+        "Sicherheitseinstellungen"
+      ],
+      "shared calendars": [
+        "geteilten Kalendern"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klicke auf den ${ boldICS }-Link und lade die Datei herunter."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Wechsle zu den ${ calendarLink } in den Outlook-Einstellungen."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Wechsle zur ${ calendarViewLink } in Yahoo Mail."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Öffne das Dropdown-Menu indem du den Mauszeiger über den Kalender bewegst, den du importieren möchtest."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Wähle ${ boldExport }, um den Kalender als ICS-Datei zu exportieren."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Wähle unter ${ boldPublish } den Kalender, den du importieren möchtest. Setze die Berechtigung auf ${ boldCanViewAllDetails } und veröffentliche ihn."
       ]
     },
     "Import warning": {
@@ -3806,6 +4176,14 @@
         "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden",
         "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } Ordner gefunden",
+        "${ providerFoldersNumLocalized } Ordner gefunden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } Kategorie in Gmail gefunden",
+        "${ providerFoldersNumLocalized } Kategorien in Gmail gefunden"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } Datei angehängt",
         "${ pureAttachmentsCount } Dateien angehängt"
@@ -3821,6 +4199,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } Kategorie ausgewählt",
         "${ selectedFoldersCount } Kategorien ausgewählt"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } Ordner ausgewählt",
+        "${ selectedFoldersCountLocalized } Ordner ausgewählt"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
+        "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
       ],
       "${ storageSize } storage": [
         "${ storageSize } Speicherplatz"
@@ -3860,6 +4246,12 @@
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtern, wenn IRGENDEINE der folgenden Bedingungen erfüllt ist)"
       ],
       "(No Recipient)": [
         "(Keine Empfänger)"
@@ -3908,6 +4300,9 @@
       "All your calendars are disabled.": [
         "Alle deine Kalender sind deaktiviert."
       ],
+      "All your changes will be lost.": [
+        "Alle Ihre Änderungen gehen dabei verloren."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Für diesen Empfänger wurde ein unbekannter öffentlicher Schlüssel erkannt."
       ],
@@ -3919,6 +4314,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Möchtest du wirklich alle Nachrichten mit dieser Kategorie löschen?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Möchtest du wirklich alle hier vorliegenden Nachrichten in den Papierkorb verschieben?"
@@ -4120,6 +4518,9 @@
       "End of search results from past 30 days": [
         "Ende der Suchergebnisse der letzten 30 Tage"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
@@ -4154,6 +4555,9 @@
       "file attached": [
         "Datei angehängt",
         "Dateien angehängt"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
       ],
       "Folder": [
         "Ordner"
@@ -4217,6 +4621,9 @@
       "Image URL": [
         "Bild-URL"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Grafiken wurden entfernt, da diese in automatischen Antworten nicht zulässig sind"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
       ],
@@ -4229,6 +4636,9 @@
       ],
       "Import in progress": [
         "Datenimport im Gange"
+      ],
+      "Import mailbox": [
+        "Postfach importieren"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
@@ -4262,6 +4672,9 @@
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
+      ],
+      "Label all imported messages as": [
+        "Alle importierten Nachrichten kennzeichnen als"
       ],
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
@@ -4338,6 +4751,9 @@
       "New": [
         "Neu"
       ],
+      "No action selected": [
+        "Keine Aktion ausgewählt"
+      ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
       ],
@@ -4350,11 +4766,17 @@
       "No folder found": [
         "Keine Ordner gefunden"
       ],
+      "No folder selected": [
+        "Kein Ordner ausgewählt"
+      ],
       "No group found": [
         "Keine Gruppe gefunden"
       ],
       "No label found": [
         "Keine Kategorie gefunden"
+      ],
+      "No label selected": [
+        "Keine Kategorie ausgewählt"
       ],
       "No more results found": [
         "Keine weiteren Ergebnisse gefunden"
@@ -4492,14 +4914,14 @@
       "Right-click for options": [
         "Rechtsklick für Optionen"
       ],
-      "Saved ${ dateString }": [
-        "Gespeichert ${ dateString }"
-      ],
       "Saved at ${ dateString }": [
         "Gespeichert um ${ dateString }"
       ],
       "Saved on ${ dateString }": [
         "Gespeichert am ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Gestern gespeichert"
       ],
       "Saving draft…": [
         "Entwurf wird gespeichert …"
@@ -4980,6 +5402,12 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
+      "Your import will not be processed.": [
+        "Dein Import wird nicht verarbeitet."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Deine Nachricht wird am ${ dateString } um ${ formattedTime } aus deinem gesendet Ordner und dem Posteingang des Empfängers gelöscht werden"
       ],
@@ -5263,8 +5691,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " und "
+      ],
+      " and ${ l }": [
+        " und ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
+      ],
+      "Actions": [
+        "Aktionen"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5278,6 +5715,9 @@
       "Address": [
         "Anschrift"
       ],
+      "ALL": [
+        "ALLE"
+      ],
       "Also archive": [
         "Auch archivieren"
       ],
@@ -5286,6 +5726,24 @@
       ],
       "Always move sender's emails": [
         "Nachrichten dieses Absenders immer verschieben"
+      ],
+      "AND": [
+        "UND"
+      ],
+      "and": [
+        "und"
+      ],
+      "And": [
+        "Und"
+      ],
+      "ANY": [
+        "JEDE"
+      ],
+      "App password": [
+        "App-Passwort"
+      ],
+      "Apply filter to existing emails": [
+        "Filter auf vorhandene E-Mails anwenden"
       ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
@@ -5334,6 +5792,12 @@
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
+      "Coming soon": [
+        "Demnächst verfügbar"
+      ],
+      "Conditions": [
+        "Bedingungen"
       ],
       "Confirm password": [
         "Passwort bestätigen"
@@ -5389,6 +5853,9 @@
       "Extended address": [
         "Adresszusatz"
       ],
+      "Filter Name": [
+        "Filtername"
+      ],
       "Folder location": [
         "Pfad des Ordners"
       ],
@@ -5401,8 +5868,14 @@
       "From:": [
         "Von:"
       ],
+      "From: ${ emailFrom }": [
+        "Von: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Von: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Von: ${ importedEmailAddress }"
       ],
       "Good": [
         "Gut"
@@ -5418,6 +5891,12 @@
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
+      ],
+      "IF": [
+        "WENN"
+      ],
+      "If": [
+        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -5455,6 +5934,9 @@
       "Location": [
         "Ort"
       ],
+      "Mail Server (IMAP)": [
+        "Mail-Server (IMAP)"
+      ],
       "Mailbox password": [
         "Postfach-Passwort"
       ],
@@ -5470,6 +5952,9 @@
       "Manage my addresses": [
         "E-Mail-Adressen verwalten"
       ],
+      "Mark as": [
+        "Markieren als"
+      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -5482,6 +5967,9 @@
       "Name": [
         "Name"
       ],
+      "No label found": [
+        "Keine Kategorie gefunden"
+      ],
       "Notification": [
         "Benachrichtigung"
       ],
@@ -5493,6 +5981,15 @@
       ],
       "Operating system version": [
         "Version des Betriebssystems"
+      ],
+      "OR": [
+        "ODER"
+      ],
+      "or": [
+        "oder"
+      ],
+      "Or": [
+        "Oder"
       ],
       "Participants": [
         "Teilnehmer"
@@ -5509,6 +6006,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Postfach"
       ],
@@ -5520,6 +6020,9 @@
       ],
       "Public keys": [
         "Öffentliche Schlüssel"
+      ],
+      "Read": [
+        "Gelesen"
       ],
       "Recipient": [
         "Empfänger"
@@ -5548,6 +6051,9 @@
       "Select how your mailbox looks like by default.": [
         "Wähle aus, wie dein Postfach standardmäßig aussehen soll."
       ],
+      "Send auto-reply": [
+        "Automatische Antwort senden"
+      ],
       "Sender": [
         "Absender"
       ],
@@ -5557,11 +6063,32 @@
       "Size:": [
         "Größe:"
       ],
+      "Starred": [
+        "Gekennzeichnet"
+      ],
+      "Statement": [
+        "Aussage"
+      ],
       "Street address": [
         "Straße und Hausnummer"
       ],
       "System information": [
         "Systeminformationen"
+      ],
+      "The email was sent ${ attachment }": [
+        "Die E-Mail wurde gesendet ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "Die E-Mail wurde gesendet ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "Die E-Mail wurde gesendet ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "Die E-Mail wurde gesendet ${ label }"
+      ],
+      "Then": [
+        "Dann"
       ],
       "Time": [
         "Zeit"
@@ -5575,11 +6102,20 @@
       "To: ${ emailAddress }": [
         "An: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "An: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "An: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Zwei-Faktor-Authentifizierungscode"
       ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
+      ],
+      "Upload file": [
+        "Datei hochladen"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -5592,6 +6128,21 @@
       ],
       "What happened?": [
         "Problembeschreibung"
+      ],
+      "With attachment": [
+        "Mit Anhängen"
+      ],
+      "with attachments": [
+        "mit Anhängen"
+      ],
+      "Without attachment": [
+        "Ohne Anhänge"
+      ],
+      "without attachment": [
+        "ohne Anhänge"
+      ],
+      "without attachments": [
+        "ohne Anhänge"
       ],
       "Wonderful": [
         "Wunderbar"
@@ -5709,9 +6260,6 @@
       "Folders": [
         "Ordner"
       ],
-      "Go to subscription plans": [
-        "Zu den Abonnements"
-      ],
       "Inbox": [
         "Posteingang"
       ],
@@ -5793,9 +6341,6 @@
       "Trash": [
         "Papierkorb"
       ],
-      "Upgrade": [
-        "Upgrade"
-      ],
       "Upgrade account": [
         "Konto-Upgrade durchführen"
       ],
@@ -5839,6 +6384,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Anzahl der erstellten Kalender: ${ createdCalendars } von ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
+      ],
       "Creating new calendars": [
         "Neue Kalender werden angelegt"
       ],
@@ -5853,9 +6401,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
         "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
@@ -5937,6 +6493,35 @@
       ],
       "Plain text": [
         "Klartext"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Wie werden Kalender von einem anderem Dienst importiert"
+      ],
+      "How to import calendars from Outlook": [
+        "Wie werden Kalender von Outlook importiert"
+      ],
+      "How to import calendars from Yahoo": [
+        "Wie werden Kalender von Yahoo importiert"
+      ],
+      "How to import contacts from another service": [
+        "Wie werden Kontakte von einem anderem Dienst importiert"
+      ],
+      "How to import contacts from Outlook": [
+        "Wie werden Kontakte von Outlook importiert"
+      ],
+      "How to import contacts from Yahoo": [
+        "Wie werden Kontakte von Yahoo importiert"
+      ],
+      "How to import emails from another service": [
+        "Wie werden E-Mails von einem anderem Dienst importiert"
+      ],
+      "How to import emails from Outlook": [
+        "Wie werden E-Mails von Outlook importiert"
+      ],
+      "How to import emails from Yahoo": [
+        "Wie werden E-Mails von Yahoo importiert"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6109,6 +6694,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } erstellt"
+      ],
       "Block removed": [
         "Sperre entfernt"
       ],
@@ -6189,6 +6777,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Benutzerdefinierter Ordner"
+      ],
       "Default folders": [
         "Standardordner"
       ],
@@ -6330,6 +6921,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Type text or keyword": [
+        "Text oder Schlüsselwort eingeben"
       ],
       "Write your message": [
         "Nachricht verfassen"
@@ -6621,6 +7215,20 @@
         "Abbestellt"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Conditions": [
+        "Bedingungen"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Preview": [
+        "Vorschau"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Hol dir kostenlos zusätzlichen Speicherplatz"
@@ -6673,8 +7281,8 @@
         "${ elementsCount } Unterhaltungen in „${ folderName }” verschoben."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } Unterhaltung in Spam verschoben und Absender zur Sperrliste hinzugefügt.",
-        "${ elementsCount } Unterhaltungen in Spam verschoben und Absender zur Sperrliste hinzugefügt."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } Unterhaltung aus „${ labelName }” entfernt.",
@@ -6705,8 +7313,8 @@
         "${ elementsCount } Nachrichten nach „${ folderName }” verschoben."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } Nachricht nach Spam verschoben und Absender zur Sperrliste hinzugefügt.",
-        "${ elementsCount } Nachrichten nach Spam verschoben und Absender zur Sperrliste hinzugefügt."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } Nachricht aus „${ labelName }” entfernt.",
@@ -6760,7 +7368,7 @@
         "Unterhaltung in „${ folderName }” verschoben."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Unterhaltung wurde in den Spam-Ordner verschoben und der Absender zur Sperrliste hinzugefügt."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
@@ -6817,13 +7425,13 @@
         "Nachricht als ungelesen gekennzeichnet."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Nachricht in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Nachricht nach „${ folderName }” verschoben."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Nachricht nach Spam verschoben und Absender zur Sperrliste hinzugefügt."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }” entfernt."
@@ -6870,11 +7478,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback gesendet"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/Monat"
       ]
     },
     "Table header": {
@@ -6993,6 +7596,9 @@
       "Add contact group name": [
         "Name der Kontaktgruppe hinzufügen"
       ],
+      "Add filter": [
+        "Filter hinzufügen"
+      ],
       "Add to ${ groupCount } group": [
         "Zu ${ groupCount } Gruppe hinzufügen",
         "Zu ${ groupCount } Gruppen hinzufügen"
@@ -7005,6 +7611,9 @@
       ],
       "Archive": [
         "Archiv"
+      ],
+      "Are you sure you want to close?": [
+        "Wirklich schließen?"
       ],
       "Attachments": [
         "Anhänge"
@@ -7131,6 +7740,9 @@
       "Edit contact group": [
         "Kontaktgruppe bearbeiten"
       ],
+      "Edit filter": [
+        "Filter bearbeiten"
+      ],
       "Edit image": [
         "Bild bearbeiten"
       ],
@@ -7169,6 +7781,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter on...": [
+        "Filtern nach …"
       ],
       "Forward": [
         "Weiterleiten"
@@ -7255,10 +7870,10 @@
         "In Posteingang verschieben"
       ],
       "Move to inbox (not spam)": [
-        "In den Posteingang verschieben (kein Spam)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "In Spam-Ordner verschieben"
+        "Move to spam"
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"
@@ -7316,6 +7931,9 @@
       ],
       "Recipients": [
         "Empfänger"
+      ],
+      "Reconnect your account": [
+        "Erneut mit Ihrem Konto verbinden"
       ],
       "Recover data": [
         "Daten wiederherstellen"
@@ -7389,6 +8007,12 @@
       "Sort messages": [
         "Nachrichten sortieren"
       ],
+      "Start a new import": [
+        "Neuer Importvorgang"
+      ],
+      "Start import process": [
+        "Importvorgang starten"
+      ],
       "Storage capacity warning": [
         "Speicherkapazitäts-Warnung"
       ],
@@ -7457,11 +8081,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
       ],
+      "Customize import to reduce the number of folders": [
+        "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Import anpassen, um die Anzahl der Kategorien zu reduzieren"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Das digitale Signieren von E-Mails hilft dem Empfänger bei der Authentifizierung, dass Nachrichten von dir gesendet wurden"
       ],
       "Each imported email will have this label": [
         "Alle importierten Nachrichten werden dieser Kategorie zugeordnet"
+      ],
+      "Edit folder names": [
+        "Ordnername bearbeiten"
+      ],
+      "Edit label names": [
+        "Namen der Kategorie bearbeiten"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Mit der E-Mail-Verschlüsselung werden E-Mail-Signaturen erzwungen, um die von dir gesendeten Nachrichten zu authentifizieren"
@@ -7471,6 +8107,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
+      ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Bei Nachrichten, die älter als 30 Tage sind, werden nur die Betreffzeile und die Empfängerliste durchsucht"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
@@ -7483,6 +8122,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
+      ],
+      "This feature is only available for paid users": [
+        "Diese Funktion ist nur für zahlende Benutzer verfügbar"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"
@@ -7525,6 +8167,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Möchtest du deinen Import wirklich verwerfen?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Möchtest du wirklich ${ count } Kontaktgruppe dauerhaft löschen?",
         "Möchtest du wirklich ${ count } Kontaktgruppen dauerhaft löschen?"
@@ -7550,6 +8195,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton wird alle Ordner mit dem gleichen Namen zusammenführen. Um dies zu vermeiden, ändere vor dem Import deren Namen."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton wird so viele Daten wie möglich übertragen, beginnend mit Ihren neuesten Nachrichten."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
@@ -7581,6 +8229,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Diese Funktion erfordert ein kostenpflichtiges Proton-Konto"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Dieser Import kann die derzeit in Ihrem Proton-Konto verfügbare Speicherkapazität überschreiten. Bitte prüfen Sie, ob Sie den Import anpassen können."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."

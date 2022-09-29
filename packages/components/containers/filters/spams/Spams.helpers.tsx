@@ -15,11 +15,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
     const translationsMap: Record<SpamListActionName, Record<ApiCallState, string>> = {
         block: {
             fail: isDomain
-                ? c('Domain spam notification').t`${name} failed to move to Block List`
-                : c('Email spam notification').t`${name} failed to move to Block List`,
+                ? c('Domain spam notification').t`${ name } failed to move to your block list`
+                : c('Email spam notification').t`${ name } failed to move to your block list`,
             success: isDomain
-                ? c('Domain spam notification').t`${name} moved to Block List`
-                : c('Email spam notification').t`${name} moved to Block List`,
+                ? c('Domain spam notification').t`${ name } moved to your block list`
+                : c('Email spam notification').t`${ name } moved to your block list`,
         },
         delete: {
             fail: isDomain
@@ -39,11 +39,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
         },
         spam: {
             fail: isDomain
-                ? c('Domain spam notification').t`${name} failed to move to Spam List`
-                : c('Email spam notification').t`${name} failed to move to Spam List`,
+                ? c('Domain spam notification').t`${ name } failed to move to spam list`
+                : c('Email spam notification').t`${ name } failed to move to spam list`,
             success: isDomain
-                ? c('Domain spam notification').t`${name} moved to Spam list`
-                : c('Email spam notification').t`${name} moved to Spam list`,
+                ? c('Domain spam notification').t`${ name } moved to spam list`
+                : c('Email spam notification').t`${ name } moved to spam list`,
         },
         unspam: {
             fail: isDomain

@@ -23,6 +23,9 @@
       "Add address": [
         "Adăugare adresă"
       ],
+      "Add condition": [
+        "Adăugare condiție"
+      ],
       "Add contact": [
         "Adăugare contact"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue import": [
+        "Continuare importare"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "Creare etichetă"
       ],
+      "Create folder": [
+        "Creare folder"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
       "Create new contact": [
         "Creare contact nou"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "Personalizare"
+      ],
+      "Customize import": [
+        "Personalizare importare"
       ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
@@ -415,7 +430,7 @@
         "Ascundere mesaje"
       ],
       "Hide My Email": [
-        "Ascundere e-mail"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Ascundere e-mail"
@@ -470,6 +485,9 @@
       "Label as...": [
         "Etichetare cu..."
       ],
+      "label emails as": [
+        "etichetare mesaje ca"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -505,6 +523,9 @@
       ],
       "Mark as unread": [
         "Marcare ca necitit"
+      ],
+      "mark emails as": [
+        "marcare mesaje ca"
       ],
       "Mark for deletion": [
         "Marcare pentru ștergere"
@@ -566,6 +587,9 @@
       "Move all to trash": [
         "Mutare tot în «Gunoi»"
       ],
+      "move emails to": [
+        "mutare mesaje în"
+      ],
       "Move to": [
         "Mutare în"
       ],
@@ -574,12 +598,6 @@
       ],
       "Move to inbox": [
         "Mutare în «Primite»"
-      ],
-      "Move to inbox (not spam)": [
-        "Mutare în «Primite» (nu e nesolicitat)"
-      ],
-      "Move to spam": [
-        "Mutare în «Nedorite»"
       ],
       "Move to spam and unsubscribe": [
         "Mutare în «Nedorite» și dezabonare"
@@ -653,6 +671,9 @@
       "Pause": [
         "Pauză"
       ],
+      "Preview": [
+        "Examinare"
+      ],
       "Preview ${ attachmentName }": [
         "Examinare ${ attachmentName }"
       ],
@@ -692,6 +713,9 @@
       "Read receipt sent": [
         "Confirmare de citire trimisă"
       ],
+      "Reconnect": [
+        "Reconectare"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -719,6 +743,9 @@
       "Remove expiration time": [
         "Eliminare dată expirare"
       ],
+      "Remove this label": [
+        "Eliminare etichetă"
+      ],
       "Rename": [
         "Redenumire"
       ],
@@ -742,6 +769,9 @@
       ],
       "Reset search form": [
         "Resetare formular de căutare"
+      ],
+      "Reset to default": [
+        "Revenire la setări inițiale"
       ],
       "Reset zoom": [
         "Resetare dimensiune"
@@ -790,6 +820,9 @@
       ],
       "Send anyway": [
         "Trimitere așa"
+      ],
+      "send auto-reply email": [
+        "trimitere răspuns automat"
       ],
       "Send feedback": [
         "Trimitere feedback"
@@ -1801,6 +1834,9 @@
       ],
       "Quit import customization?": [
         "Părăsiți modificarea importării?"
+      ],
+      "Quit import?": [
+        "Anulați importarea?"
       ]
     },
     "Contact field label": {
@@ -2657,6 +2693,23 @@
         "Insulele Åland"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Atașament"
+      ],
+      "Next": [
+        "Înainte"
+      ],
+      "Recipient": [
+        "Destinatar"
+      ],
+      "Sender": [
+        "Expeditor"
+      ],
+      "Subject": [
+        "Subiect"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "O dată",
@@ -2930,6 +2983,9 @@
         "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } zile.",
         "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } de zile."
       ],
+      "Condition incomplete": [
+        "Condiție incompletă"
+      ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
@@ -2973,11 +3029,17 @@
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
+      "Empty condition": [
+        "Condiție goală"
+      ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
       "Enter a password": [
         "Introduceți o parolă."
+      ],
+      "Error in one of the conditions": [
+        "Eroare în una dintre condiții"
       ],
       "Error while saving draft. Please try again.": [
         "Eroare la salvarea ciornei. Mai reîncercaţi."
@@ -2990,6 +3052,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Eșuare criptare atașament. Reîncercați."
+      ],
+      "Filter with this name already exists": [
+        "Filtrul cu acest nume există deja"
       ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
@@ -3092,6 +3157,9 @@
       "Please set a password": [
         "Setați o parolă."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
+      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -3118,6 +3186,12 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Require at least one action": [
+        "Necesită cel puțin o acțiune"
+      ],
+      "Require at least one condition": [
+        "Necesită cel puțin o condiție"
+      ],
       "Signature not verified": [
         "Semnătură neverificată"
       ],
@@ -3132,6 +3206,18 @@
       ],
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Unele nume de foldere depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Unele nume de etichete sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
@@ -3212,6 +3298,9 @@
       ],
       "Unknown error.": [
         "Eroare necunoscută."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Nu am reușit să ne conectăm la furnizorul dvs. de servicii."
       ],
       "Wrong mailbox password": [
         "Parolă mesaje greșită."
@@ -3584,6 +3673,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizată"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filtrul ${ Filter.Name } a fost actualizat"
       ]
     },
     "Filter option": {
@@ -3601,6 +3693,14 @@
       ],
       "Unread": [
         "Necitite"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "citit"
+      ],
+      "starred": [
+        "cu stea"
       ]
     },
     "Font Face Default": {
@@ -3818,12 +3918,261 @@
         "ProtonContacts nu acceptă ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Verificarea în 2 pași este activată în contul extern."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "verificarea în 2 pași este activată în contul extern de e-mail."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Dacă ${ bold2StepsDisabled } (setare implicită în Gmail), asigurați-vă că:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Dacă ${ bold2StepsDisabled } în Gmail (setare implicită), asigurați-vă că:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Dacă ${ bold2StepsEnabled } în Gmail, asigurați-vă că folosiți parola aplicației în loc de parola obișnuită de conectare."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Dacă ${ bold2StepsEnabled }, asigurați-vă că adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Accesul IMAP este activat în contul extern."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Accesul IMAP este activat în contul Yahoo."
+      ],
+      "Invalid IMAP port": [
+        "Port IMAP nevalid"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul Gmail IMAP este activat."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul IMAP este activat în contul Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton nu se poate conecta la cont. Asigurați-vă că:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nu se poate conecta la contul extern. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton nu se poate conecta la contul extern. Asigurați-vă că:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Prea multe solicitări recente. Reîncercați mai târziu."
+      ],
+      "Use your app password if:": [
+        "Folosiți parola aplicației dacă:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Folosiți parola aplicației în locul parolei obișnuite dacă:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Mai puteți înerca să vă deconectați din ${ boldGoogleAccounts } din navigatorul web, apoi să deblocați ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Parola aplicației este corectă. Să ${ boldNot } folosiți parola obișnuită."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
+      ],
+      "Your email account requires one to export your data.": [
+        "Contul de e-mail necesită o parolă pentru a exporta datele."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
+      ],
+      "Your email address and password are correct.": [
+        "Adresa de e-mail și parola sunt corecte."
+      ],
+      "Your password is correct.": [
+        "Parola este corectă."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "verificarea în doi pași este dezactivată"
+      ],
+      "2-step verification is enabled": [
+        "verificarea în doi pași este activată"
+      ],
+      "all your other Google accounts": [
+        "toate celelalte conturi Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "nu"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Eveniment calendar creat"
       ],
       "Creating calendar event failed": [
         "Crearea evenimentului din calendar a eșuat"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Accesați ${ boldAccountInfo } din profilul personal în ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Salt la ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Accesați ${ securitySettingsLink } din Outlook."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Dacă verificarea în doi pași este dezactivată, activați-o."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Deschideți lista de contacte ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Deschideți ${ outlookContactsLink } din Outlook."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Selectați ${ boldExportContacts } și alegeți contactele ce trebuie exportate."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Selectați ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa contacte în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informații cont"
+      ],
+      "Account security": [
+        "Securitate cont"
+      ],
+      "app password": [
+        "parola aplicației"
+      ],
+      "Can view all details": [
+        "Poate vedea toate detaliile"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
+      ],
+      "Export to CSV file": [
+        "Exportare în fișier CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Gestionare"
+      ],
+      "Publish a calendar": [
+        "Publicare calendar"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "parola aplicației"
+      ],
+      "app password or enable IMAP": [
+        "parola aplicației sau să activați IMAP"
+      ],
+      "contacts": [
+        "contacte"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Un fişier CSV sau VCF (vCard)"
+      ],
+      "full calendar view": [
+        "vedere completă calendar"
+      ],
+      "ICS file": [
+        "fișier ICS"
+      ],
+      "security settings": [
+        "setări securitate"
+      ],
+      "shared calendars": [
+        "calendare partajate"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Faceți clic pe ${ boldICS } și descărcați fișierul."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Accesați ${ calendarLink } din setările Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Accesați ${ calendarViewLink } din Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Mutați cursorul peste calendarul de importat și deschideți meniul derulant."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Sub ${ boldPublish }, selectați calendarul pe care doriți să îl importați. Setați permisiunea la ${ boldCanViewAllDetails } și publicați-l."
       ]
     },
     "Import warning": {
@@ -3924,6 +4273,16 @@
         "S-au găsit ${ numOccurrences } apariții în conținutul mesajelor.",
         "S-au găsit ${ numOccurrences } de apariții în conținutul mesajelor."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "S-a găsit un folder",
+        "S-au găsit ${ providerFoldersNumLocalized } foldere",
+        "S-au găsit ${ providerFoldersNumLocalized } de foldere"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "S-a găsit o etichetă în Gmail",
+        "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
+        "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "Un fișier atașat.",
         "${ pureAttachmentsCount } fișiere atașate.",
@@ -3943,6 +4302,16 @@
         "S-a selectat o etichetă",
         "S-au selectat ${ selectedFoldersCount } etichete",
         "S-au selectat ${ selectedFoldersCount } de etichete"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Este selectat un folder",
+        "Sunt selectate ${ selectedFoldersCountLocalized } foldere",
+        "Sunt selectate ${ selectedFoldersCountLocalized } de foldere"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "S-a selectat o etichetă",
+        "S-au selectat ${ selectedFoldersCountLocalized } etichete",
+        "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
       "${ storageSize } storage": [
         "${ storageSize } spațiu"
@@ -3991,6 +4360,12 @@
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtrare dacă TOATE condițiile următoare sunt îndeplinite)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtrare dacă ORICARE din condițiile următoare sunt îndeplinite)"
       ],
       "(No Recipient)": [
         "(Fără destinatar)"
@@ -4041,6 +4416,9 @@
       "All your calendars are disabled.": [
         "Toate calendarele sunt dezactivate."
       ],
+      "All your changes will be lost.": [
+        "Toate modificările vor fi pierdute."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "S-a detectat o cheie publică necunoscută pentru acest destinatar."
       ],
@@ -4052,6 +4430,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Sigur doriți să renunțați la modificări?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Sunteți sigur că doriți să mutați toate mesajele de aici în «Gunoi»?"
@@ -4261,6 +4642,9 @@
       "End of search results from past 30 days": [
         "Sfârșit rezultate căutare din ultimele 30 de zile"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
@@ -4297,6 +4681,9 @@
         "fişier ataşat",
         "fișiere atașate",
         "fișiere atașate"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
       "Folder": [
         "Folder"
@@ -4362,6 +4749,9 @@
       "Image URL": [
         "URL imagine"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
@@ -4375,6 +4765,9 @@
       ],
       "Import in progress": [
         "Importare în derulare"
+      ],
+      "Import mailbox": [
+        "Importare mesaje"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
@@ -4408,6 +4801,9 @@
       ],
       "Key fingerprint": [
         "Amprentă cheie"
+      ],
+      "Label all imported messages as": [
+        "Etichetare toate mesajele importate cu"
       ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
@@ -4484,6 +4880,9 @@
       "New": [
         "Nou"
       ],
+      "No action selected": [
+        "Nicio acțiune selectată"
+      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
@@ -4496,11 +4895,17 @@
       "No folder found": [
         "Nu există folder"
       ],
+      "No folder selected": [
+        "Niciun folder selectat"
+      ],
       "No group found": [
         "Nu există grupuri"
       ],
       "No label found": [
         "Nu există etichete"
+      ],
+      "No label selected": [
+        "Nicio etichetă selectată"
       ],
       "No more results found": [
         "Nu s-au mai găsit rezultate"
@@ -4639,14 +5044,14 @@
       "Right-click for options": [
         "Clic dreapta pentru opțiuni"
       ],
-      "Saved ${ dateString }": [
-        "Salvat ${ dateString }"
-      ],
       "Saved at ${ dateString }": [
         "Salvat ${ dateString }"
       ],
       "Saved on ${ dateString }": [
         "Salvat ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Salvat ieri."
       ],
       "Saving draft…": [
         "Se salvează ciorna…"
@@ -5138,6 +5543,12 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your import will not be processed.": [
+        "Importarea nu va fi procesată."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Informațiile de conectare nu vor fi salvate după terminarea importării."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Mesajul va fi șters ${ dateString } la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
       ],
@@ -5424,8 +5835,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " și "
+      ],
+      " and ${ l }": [
+        " și ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
+      ],
+      "Actions": [
+        "Acțiuni"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -5439,6 +5859,9 @@
       "Address": [
         "Adresa"
       ],
+      "ALL": [
+        "TOATE"
+      ],
       "Also archive": [
         "Și arhivare"
       ],
@@ -5447,6 +5870,24 @@
       ],
       "Always move sender's emails": [
         "Mutare întotdeauna mesaje expeditori"
+      ],
+      "AND": [
+        "ȘI"
+      ],
+      "and": [
+        "și"
+      ],
+      "And": [
+        "Şi"
+      ],
+      "ANY": [
+        "ORICARE"
+      ],
+      "App password": [
+        "Parola aplicației"
+      ],
+      "Apply filter to existing emails": [
+        "Aplicare filtru la mesajele existente"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -5495,6 +5936,12 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Coming soon": [
+        "În curând"
+      ],
+      "Conditions": [
+        "Condiții"
       ],
       "Confirm password": [
         "Confirmare parolă"
@@ -5550,6 +5997,9 @@
       "Extended address": [
         "Adresa extinsă"
       ],
+      "Filter Name": [
+        "Nume filtru"
+      ],
       "Folder location": [
         "Amplasare folder"
       ],
@@ -5562,8 +6012,14 @@
       "From:": [
         "De la:"
       ],
+      "From: ${ emailFrom }": [
+        "De la: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "De la: ${ importedEmailAddress }"
       ],
       "Good": [
         "Bună"
@@ -5579,6 +6035,12 @@
       ],
       "I understand the risk": [
         "Înțeleg riscul"
+      ],
+      "IF": [
+        "DACĂ"
+      ],
+      "If": [
+        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -5616,6 +6078,9 @@
       "Location": [
         "Loc"
       ],
+      "Mail Server (IMAP)": [
+        "Server e-mail (IMAP)"
+      ],
       "Mailbox password": [
         "Parolă mesaje"
       ],
@@ -5631,6 +6096,9 @@
       "Manage my addresses": [
         "Gestionare adrese"
       ],
+      "Mark as": [
+        "Marcare"
+      ],
       "Move to": [
         "Mutare în"
       ],
@@ -5643,6 +6111,9 @@
       "Name": [
         "Nume"
       ],
+      "No label found": [
+        "Nu există etichete"
+      ],
       "Notification": [
         "Notificare"
       ],
@@ -5654,6 +6125,15 @@
       ],
       "Operating system version": [
         "Versiune sistem de operare"
+      ],
+      "OR": [
+        "SAU"
+      ],
+      "or": [
+        "sau"
+      ],
+      "Or": [
+        "Sau"
       ],
       "Participants": [
         "Participanți"
@@ -5670,6 +6150,9 @@
       "Phone number": [
         "Număr de telefon"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Cutie poștală"
       ],
@@ -5681,6 +6164,9 @@
       ],
       "Public keys": [
         "Chei publice"
+      ],
+      "Read": [
+        "Citite"
       ],
       "Recipient": [
         "Destinatar"
@@ -5709,6 +6195,9 @@
       "Select how your mailbox looks like by default.": [
         "Selectați cum să arate căsuța poștală în mod implicit."
       ],
+      "Send auto-reply": [
+        "Trimitere autorăspuns"
+      ],
       "Sender": [
         "Expeditor"
       ],
@@ -5718,11 +6207,32 @@
       "Size:": [
         "Mărime:"
       ],
+      "Starred": [
+        "Cu stea"
+      ],
+      "Statement": [
+        "Declaraţie"
+      ],
       "Street address": [
         "Strada"
       ],
       "System information": [
         "Informații sistem"
+      ],
+      "The email was sent ${ attachment }": [
+        "Mesajul a fost trimis ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "mesajul a fost trimis ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "Mesajul a fost trimis ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "mesajul a fost trimis ${ label }"
+      ],
+      "Then": [
+        "Atunci"
       ],
       "Time": [
         "Ora"
@@ -5736,11 +6246,20 @@
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Către: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Către: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Cod autentificare cu doi factori"
       ],
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
+      ],
+      "Upload file": [
+        "Încărcare fișier"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -5753,6 +6272,21 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
+      ],
+      "With attachment": [
+        "Cu atașamente"
+      ],
+      "with attachments": [
+        "cu atașamente"
+      ],
+      "Without attachment": [
+        "Fără atașamente"
+      ],
+      "without attachment": [
+        "fără atașamente"
+      ],
+      "without attachments": [
+        "fără atașamente"
       ],
       "Wonderful": [
         "Minunată"
@@ -5870,9 +6404,6 @@
       "Folders": [
         "Foldere"
       ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
       "Inbox": [
         "Primite"
       ],
@@ -5954,9 +6485,6 @@
       "Trash": [
         "Gunoi"
       ],
-      "Upgrade": [
-        "Migrare"
-      ],
       "Upgrade account": [
         "Migrare cont"
       ],
@@ -6000,6 +6528,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Se conectează la furnizorul de e-mail"
+      ],
       "Creating new calendars": [
         "Se crează calendare noi"
       ],
@@ -6014,10 +6545,20 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la o etichetă începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
@@ -6100,6 +6641,35 @@
       ],
       "Plain text": [
         "Text simplu"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Cum se importă calendarele din alt serviciu"
+      ],
+      "How to import calendars from Outlook": [
+        "Cum se importă calendarele din Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cum se importă calendarele din Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cum se importă contactele din alt serviciu"
+      ],
+      "How to import contacts from Outlook": [
+        "Cum se importă contactele din Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cum se importă contactele din Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cum se importă e-mailurile din alt serviciu"
+      ],
+      "How to import emails from Outlook": [
+        "Cum se importă e-mailurile din Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cum se importă e-mailurile din Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6275,6 +6845,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "A fost creat ${ _Filter.Name }"
+      ],
       "Block removed": [
         "Blocare eliminată."
       ],
@@ -6355,6 +6928,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Foldere personale"
+      ],
       "Default folders": [
         "Foldere implicite"
       ],
@@ -6496,6 +7072,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Type text or keyword": [
+        "Scrieți un text sau cuvânt cheie"
       ],
       "Write your message": [
         "Scrieți mesajul"
@@ -6795,6 +7374,20 @@
         "Dezabonat"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Conditions": [
+        "Condiții"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Preview": [
+        "Examinare"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Obțineți gratuit spațiu de stocare"
@@ -6856,9 +7449,8 @@
         "S-au mutat ${ elementsCount } de conversații în «${ folderName }»."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "S-a mutat o conversație în «Nedorite» și expeditorul adăugat în lista de adrese blocate.",
-        "S-au mutat ${ elementsCount } conversații în «Nedorite» și expeditorul a fost adăugat în lista de adrese blocate.",
-        "S-au mutat ${ elementsCount } de conversații în «Nedorite» și expeditorul a fost adăugat în lista de adrese blocate."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "S-a șters o conversație din ${ labelName }.",
@@ -6896,9 +7488,8 @@
         "S-au mutat ${ elementsCount } de mesaje în «${ folderName }»."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "Un mesaj a fost mutat în «Nesolicitate» și expeditorul adăugat în lista de adrese blocate.",
-        "S-au mutat ${ elementsCount } mesaje în «Nedorite» și expeditorul adăugat în lista de adrese blocate.",
-        "S-au mutat ${ elementsCount } de mesaje în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "S-a eliminat un mesaj din ${ labelName }.",
@@ -6955,7 +7546,7 @@
         "Conversația s-a mutat în «${ folderName }»."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversația a fost mutată în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversație ștearsă din ${ labelName }."
@@ -7012,13 +7603,13 @@
         "Mesaj marcat ca necitit."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Mesajul a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Mesaj mutat în ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Mesajul a fost mutat în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Mesaj eliminat din ${ labelName }."
@@ -7067,11 +7658,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/lună"
       ]
     },
     "Table header": {
@@ -7197,6 +7783,9 @@
       "Add contact group name": [
         "Adăugare nume grup contacte"
       ],
+      "Add filter": [
+        "Adăugare filtru"
+      ],
       "Add to ${ groupCount } group": [
         "Adăugare la un grup",
         "Adăugare la ${ groupCount } grupuri",
@@ -7210,6 +7799,9 @@
       ],
       "Archive": [
         "Arhivă"
+      ],
+      "Are you sure you want to close?": [
+        "Sigur doriți să închideți?"
       ],
       "Attachments": [
         "Atașamente"
@@ -7341,6 +7933,9 @@
       "Edit contact group": [
         "Editare grup de contacte"
       ],
+      "Edit filter": [
+        "Editare filtru"
+      ],
       "Edit image": [
         "Editare imagine"
       ],
@@ -7465,10 +8060,10 @@
         "Mutare în «Primite»"
       ],
       "Move to inbox (not spam)": [
-        "Mutare în «Primite» (nu e nesolicitat)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Mutare în «Nesolicitate»"
+        "Move to spam"
       ],
       "Move to trash": [
         "Mutare în «Gunoi»"
@@ -7526,6 +8121,9 @@
       ],
       "Recipients": [
         "Destinatari"
+      ],
+      "Reconnect your account": [
+        "Reconectați-vă contul"
       ],
       "Recover data": [
         "Recuperare date"
@@ -7599,6 +8197,12 @@
       "Sort messages": [
         "Sortare mesaje"
       ],
+      "Start a new import": [
+        "Începere importare nouă"
+      ],
+      "Start import process": [
+        "Începere proces de importare"
+      ],
       "Storage capacity warning": [
         "Avertizare spațiu de stocare"
       ],
@@ -7668,11 +8272,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
       ],
+      "Customize import to reduce the number of folders": [
+        "Modificați importarea pentru a reduce numărul folderelor"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Modificare opțiuni de importare pentru a reduce numărul de etichete."
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Semnarea digitală a mesajelor ajută la confirmarea că mesajele sunt trimise de către dvs."
       ],
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."
+      ],
+      "Edit folder names": [
+        "Editare nume foldere"
+      ],
+      "Edit label names": [
+        "Editare nume etichete"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise"
@@ -7697,6 +8313,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
+      ],
+      "This feature is only available for paid users": [
+        "Această opțiune este valabilă doar pentru utilizatorii cu plată."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."
@@ -7740,6 +8359,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Sigur doriți să anulați importarea?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Sigur doriți să ștergeți definitiv un grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
@@ -7767,6 +8389,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -7799,6 +8424,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Această funcționalitate necesită un cont Proton cu plată"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont Proton. Luați în considerare modificarea opțiunilor de importare."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

@@ -77,9 +77,6 @@
       "Apply": [
         "Primijeni"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
       ],
@@ -344,10 +341,10 @@
       "No": [
         "Ne"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -395,11 +392,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -1204,6 +1201,20 @@
         "${ emailAddress } je uvjetno prihvatio vašu pozivnicu za ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Otkazani događaj ${ formattedStart }"
@@ -1825,7 +1836,7 @@
     },
     "FilterSettings": {
       "Search in Allow List and Block List": [
-        "Pretraga popisa dopuštenih i nedopuštenih"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3877,6 +3888,9 @@
       "Undo send": [
         "Poništi slanje"
       ],
+      "Upload file": [
+        "Učitaj datoteku"
+      ],
       "URL": [
         "URL"
       ],
@@ -5198,6 +5212,9 @@
       ],
       "Add Sieve filter": [
         "Dodaj Sieve filtar"
+      ],
+      "Add to block list": [
+        "Add to your block list"
       ],
       "Add user": [
         "Dodaj korisnika"

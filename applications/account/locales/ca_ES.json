@@ -91,9 +91,6 @@
       "Apply": [
         "Aplicar"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
       ],
@@ -445,11 +442,11 @@
       "No": [
         "No"
       ],
-      "OK": [
-        "D'acord"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -499,11 +496,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "recarregar la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -2375,6 +2372,20 @@
         "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -3133,7 +3144,7 @@
     },
     "FilterSettings": {
       "Search in Allow List and Block List": [
-        "Cerca a les llistes de permesos i de bloqueig"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3471,9 +3482,6 @@
       ],
       "contacts": [
         "contactes"
-      ],
-      "CSV file": [
-        "Fitxer CSV"
       ],
       "full calendar view": [
         "vista de calendari completa"
@@ -5757,6 +5765,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Pengeu 1 o més fitxers de recuperació o claus de xifratge"
       ],
+      "Upload file": [
+        "Puja un fitxer"
+      ],
       "URL": [
         "URL"
       ],
@@ -6274,11 +6285,6 @@
         "Nom de etiqueta"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar amb el gratuït"
@@ -6297,6 +6303,11 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -6369,14 +6380,14 @@
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
       ]
     },
-    "new_plans: Title": {
-      "Upgrade to ${ planName }": [
-        "Milloreu a ${ planName }"
-      ]
-    },
     "new_plans: title": {
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "Upgrade to ${ planName }": [
+        "Milloreu a ${ planName }"
       ]
     },
     "new_plans: upgrade": {
@@ -7440,6 +7451,9 @@
       ],
       "Add Sieve filter": [
         "Afegir filtre Sieve"
+      ],
+      "Add to block list": [
+        "Add to your block list"
       ],
       "Add user": [
         "Afegir usuari"

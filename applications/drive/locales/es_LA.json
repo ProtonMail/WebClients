@@ -128,6 +128,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue import": [
+        "Continuar importación"
+      ],
       "Continue transfers": [
         "Continuar transferencias"
       ],
@@ -154,6 +157,9 @@
       ],
       "Customize": [
         "Personalizar"
+      ],
+      "Customize import": [
+        "Personalizar importación"
       ],
       "Delete": [
         "Eliminar"
@@ -183,6 +189,9 @@
       ],
       "Didn't receive the code?": [
         "¿No recibió el código?"
+      ],
+      "Discard": [
+        "Descartar"
       ],
       "Done": [
         "Hecho"
@@ -376,6 +385,9 @@
       "Re-sign": [
         "Volver a firmar"
       ],
+      "Reconnect": [
+        "Reconectar"
+      ],
       "Recover data": [
         "Recuperar datos"
       ],
@@ -405,6 +417,9 @@
       ],
       "Request new code": [
         "Solicitar un código nuevo"
+      ],
+      "Reset to default": [
+        "Restablecer valores por defecto"
       ],
       "Reset zoom": [
         "Restablecer zoom"
@@ -768,6 +783,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "¿Salir de la personalización de importación?"
+      ],
+      "Quit import?": [
+        "¿Salir de la importación?"
       ]
     },
     "Contact field label": {
@@ -1809,6 +1827,9 @@
         "Solucione el conflicto resaltado para continuar.",
         "Solucione los conflictos resaltados para continuar."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Intente volver a autenticarse y asegúrese de que los permisos están configurados correctamente."
+      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada"
       ],
@@ -1835,6 +1856,18 @@
       ],
       "Some groups could not be deleted": [
         "Algunos grupos no pudieron ser eliminados"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Algunos nombres de sus carpetas están reservados. Personalice la importación para editar estos nombres."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Algunos de los nombres de las carpetas no están disponibles. Personalice la importación para editar estos nombres."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Algunos nombres de sus etiquetas están reservados. Personalice la importación para editar estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las etiquetas no están disponibles. Personalice la importación para editar estos nombres."
@@ -1901,6 +1934,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "We were unable to connect to your service provider.": [
+        "No podemos conectar con su proveedor de servicios."
       ],
       "You can't send a mail to more than 100 recipients": [
         "No puede enviar un correo a más de 100 destinatarios"
@@ -2157,6 +2193,255 @@
         "ProtonContacts no soporta ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "El \"acceso de aplicaciones poco seguras\" está habilitado en los ajustes de seguridad de su cuenta de Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "La verificación en dos pasos está habilitada en su cuenta externa."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "La verificación en dos pasos está habilitada en su cuenta de correo externa."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Si ${ bold2StepsDisabled } (configuración de Gmail predeterminada), asegúrese de que:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Si ${ bold2StepsDisabled } en Gmail (ajustes predeterminados), asegúrese de que:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Si ${ bold2StepsEnabled } en Gmail, asegúrese de que está usando la contraseña de su aplicación en lugar de la contraseña regular."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Si ${ bold2StepsEnabled }, asegúrese de que su dirección de correo electrónico y contraseña de la aplicación son correctas. ${ boldNot } utilice su contraseña regular."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "El acceso IMAP está habilitado en su cuenta externa."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "El acceso IMAP está habilitado en su cuenta de Yahoo Mail."
+      ],
+      "Invalid IMAP port": [
+        "Puerto IMAP inválido"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton no puede conectarse a su cuenta. Asegúrese de que el acceso IMAP de Gmail está habilitado."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton no puede conectarse a su cuenta. Asegúrese de que el acceso IMAP está habilitado en su cuenta de Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton no puede conectarse a su cuenta. Asegúrese de que:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton no puede conectarse a su cuenta externa. Asegúrese de que la dirección del servidor de correo y el número de puerto son correctos."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton no puede conectarse a su cuenta externa. Asegúrese de que:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton no puede conectarse a su cuenta de Gmail. Asegúrese de que la dirección del servidor de correo y el número de puerto son correctos."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton no puede conectarse a su cuenta de Yahoo. Asegúrese de que la dirección del servidor de correo y el número de puerto son correctos."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton no puede conectarse a su cuenta de Yahoo. Asegúrese de que:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Demasiadas solicitudes recientes. Inténtelo de nuevo en unos momentos."
+      ],
+      "Use your app password if:": [
+        "Use la contraseña de la aplicación si:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Use su contraseña de la aplicación en lugar de su contraseña normal si:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "También puede intentar cerrar sesión de ${ boldGoogleAccounts } en el navegador y luego desbloquear el ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "La contraseña de la aplicación es correcta. ${ boldNot } use su contraseña regular."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Su cuenta de correo requiere una contraseña de la aplicación para exportar sus datos."
+      ],
+      "Your email account requires one to export your data.": [
+        "Su cuenta de correo requiere una contraseña de la aplicación para exportar sus datos."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Su dirección de correo y contraseña de la aplicación son correctas. ${ boldNot } use su contraseña regular."
+      ],
+      "Your email address and password are correct.": [
+        "Su dirección de correo y contraseña son correctas."
+      ],
+      "Your password is correct.": [
+        "Su contraseña es correcta."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "la verificación en dos pasos está deshabilitada"
+      ],
+      "2-step verification is enabled": [
+        "la verificación en dos pasos está habilitada"
+      ],
+      "all your other Google accounts": [
+        "todas sus otras cuentas de Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "No"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Haga clic en ${ boldManage } para abrir el menú de opciones."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Dependiendo de su proveedor de servicio de correo, necesitaría generar una ${ knowledgeBaseLink } primero antes de importar a Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Abra el menú desplegable haciendo clic en los tres puntos (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genere una ${ boldAppPassword } y úsela en lugar de su contraseña regular cuando Proton la solicite."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genere la ${ boldAppPassword } y úsela en lugar de su contraseña regular cuando Proton la solicite."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Vaya a la ${ boldAccountInfo } en su perfil de ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Vaya a ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Vaya a Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Si la verificación en dos pasos está desactivada, actívela."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Abra sus contactos de ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Abra sus ${ outlookContactsLink } de Outlook."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Seleccione ${ boldExportContacts } y elija cuáles contactos para exportar."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Seleccione ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Para importar un calendario a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo de Outlook en tres sencillos pasos:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Para importar un calendario a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo de Yahoo en tres sencillos pasos:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Para importar un calendario a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo antes de comenzar el proceso de importación."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Para importar contactos a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo de Outlook en tres sencillos pasos:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Para importar contactos a Proton, necesita un ${ knowledgeBaseLink }. Descárguelo de Yahoo en tres sencillos pasos:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Para importar un calendario a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo antes de comenzar el proceso de importación."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Para importar correos a Proton, necesita una ${ appPasswordLink } de Outlook. Obténgala siguiendo estos pasos:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Para importar correos a Proton, necesita una ${ appPasswordLink } de Yahoo. Obténgala siguiendo estos pasos:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "información de la cuenta"
+      ],
+      "Account security": [
+        "seguridad de la cuenta"
+      ],
+      "app password": [
+        "contraseña de la app"
+      ],
+      "Can view all details": [
+        "Puede ver todos los detalles"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export contacts": [
+        "Exportar contactos"
+      ],
+      "Export to CSV file": [
+        "Exportar a un archivo CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Gestionar"
+      ],
+      "Publish a calendar": [
+        "Publicar un calendario"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "contraseña de la app"
+      ],
+      "app password or enable IMAP": [
+        "contraseña de la app o habilitar IMAP"
+      ],
+      "contacts": [
+        "contactos"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV o un archivo VCF (vCard)"
+      ],
+      "full calendar view": [
+        "vista completa de calendario"
+      ],
+      "ICS file": [
+        "archivo ICS"
+      ],
+      "security settings": [
+        "ajustes de seguridad"
+      ],
+      "shared calendars": [
+        "calendarios compartidos"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Clic en el enlace ${ boldICS } y descargue el archivo."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Vaya a los ${ calendarLink } en los ajustes de Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Vaya a ${ calendarViewLink } en Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Pase el cursor sobre el calendario que desea importar y abra el menú desplegable."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "En ${ boldPublish }, seleccione el calendario que desea importar. Establezca el permiso a ${ boldCanViewAllDetails } y publíquelo."
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
@@ -2248,6 +2533,14 @@
         "${ pausedCount } pausada",
         "${ pausedCount } pausadas"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta encontrada",
+        "${ providerFoldersNumLocalized } carpeta encontrada"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail",
+        "${ providerFoldersNumLocalized } etiquetas encontradas en Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
@@ -2259,6 +2552,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } etiqueta seleccionada",
         "${ selectedFoldersCount } etiquetas seleccionadas"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
+        "${ selectedFoldersCountLocalized } carpeta seleccionada"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -2452,6 +2753,9 @@
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Ingrese las credenciales de la cuenta de correo electrónico desde la que desea importar."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
@@ -2550,6 +2854,9 @@
       "Import in progress": [
         "Importación en curso"
       ],
+      "Import mailbox": [
+        "Importar buzón"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
@@ -2582,6 +2889,9 @@
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
+      ],
+      "Label all imported messages as": [
+        "Etiquetar todos los mensajes importados como"
       ],
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
@@ -3036,6 +3346,12 @@
       "Your files will be encrypted and then saved.": [
         "Sus archivos serán cifrados y luego guardados."
       ],
+      "Your import will not be processed.": [
+        "Su importación no será procesada."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "La información de inicio de sesión no se guardará una vez finalizada la importación."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Su número de teléfono sólo se usará para esta verificación única."
       ],
@@ -3124,6 +3440,9 @@
       "Add to group": [
         "Añadir al grupo"
       ],
+      "App password": [
+        "Contraseña de la aplicación"
+      ],
       "Apply to all duplicated files": [
         "Aplicar a todos los archivos duplicados"
       ],
@@ -3171,6 +3490,9 @@
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
+      ],
+      "Coming soon": [
+        "Próximamente"
       ],
       "Comment": [
         "Comentario"
@@ -3254,8 +3576,14 @@
       "Folder name": [
         "Nombre de la carpeta"
       ],
+      "From: ${ emailFrom }": [
+        "De: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Desde: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Desde: ${ importedEmailAddress }"
       ],
       "Good": [
         "Buena"
@@ -3298,6 +3626,9 @@
       ],
       "Location": [
         "Ubicación"
+      ],
+      "Mail Server (IMAP)": [
+        "Servidor de correo (IMAP)"
       ],
       "Mailbox password": [
         "Contraseña del buzón"
@@ -3358,6 +3689,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "Proporcione todos los detalles para ayudarnos a actuar de forma apropiada"
+      ],
+      "Port": [
+        "Puerto"
       ],
       "Post office box": [
         "Apartado postal"
@@ -3428,6 +3762,12 @@
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Para: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "A: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Código de autenticación de dos factores"
       ],
@@ -3448,6 +3788,9 @@
       ],
       "Upload anyway": [
         "Cargar de todos modos"
+      ],
+      "Upload file": [
+        "Cargar archivo"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -3539,6 +3882,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Conectando con su proveedor de correo"
+      ],
       "Creating new calendars": [
         "Creando calendarios nuevos"
       ],
@@ -3553,9 +3899,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todos los mensajes de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -3578,6 +3932,35 @@
       ],
       "Plain text": [
         "Texto plano"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Cómo importar calendarios desde otro servicio"
+      ],
+      "How to import calendars from Outlook": [
+        "Cómo importar calendarios desde Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cómo importar calendarios desde Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cómo importar contactos desde otro servicio"
+      ],
+      "How to import contacts from Outlook": [
+        "Cómo importar contactos desde Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cómo importar contactos desde Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cómo importar correos desde otro servicio"
+      ],
+      "How to import emails from Outlook": [
+        "Cómo importar correos desde Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cómo importar correos desde Yahoo"
       ]
     },
     "New Label form": {
@@ -4483,6 +4866,9 @@
       "Re-signing contacts": [
         "Refirmando contactos"
       ],
+      "Reconnect your account": [
+        "Reconectar su cuenta"
+      ],
       "Recover data": [
         "Recuperar datos"
       ],
@@ -4551,6 +4937,12 @@
       ],
       "Sort files/folders": [
         "Ordenar archivos/carpetas"
+      ],
+      "Start a new import": [
+        "Iniciar una importación nueva"
+      ],
+      "Start import process": [
+        "Iniciar proceso de importación"
       ],
       "Stop sharing": [
         "Dejar de compartir"
@@ -4637,11 +5029,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica qué formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
+      "Customize import to reduce the number of folders": [
+        "Personalizar importación para reducir el número de carpetas"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Personalice la importación para reducir el número de etiquetas"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Firmar correos digitalmente ayuda a autenticar que los mensajes son enviados por usted"
       ],
       "Each imported email will have this label": [
         "Cada correo importado tendrá esta etiqueta"
+      ],
+      "Edit folder names": [
+        "Editar nombres de las carpetas"
+      ],
+      "Edit label names": [
+        "Editar nombres de etiquetas"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado de correo electrónico obliga a la firma de correo electrónico a ayudar a autenticar sus mensajes enviados"
@@ -4707,6 +5111,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "¿En verdad desea descartar su importación?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿Está seguro que desea eliminar permanentemente ${ count } grupo de contactos?",
         "¿Está seguro que desea eliminar permanentemente ${ count } grupos de contactos?"
@@ -4732,6 +5139,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton fusionará todas las carpetas con el mismo nombre. Para evitarlo, cambie los nombres antes de importar."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton transferirá tantos datos como sea posible, empezando con sus mensajes más recientes."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los reportes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
@@ -4759,6 +5169,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Esta función requiere una cuenta de pago de Proton"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Esta importación puede exceder la capacidad de almacenamiento disponible actualmente en su cuenta Proton. Considere personalizar su importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablemente no estamos en línea en este momento. Complete el formulario a continuación para describir su problema, lo investigaremos y nos pondremos en contacto cuando volvamos a estar en línea."
