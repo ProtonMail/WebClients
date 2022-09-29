@@ -23,8 +23,6 @@ const Step = ({
     const active = index === activeStep;
     const complete = index !== undefined && index < activeStep;
 
-    const highlightStep = active || complete;
-
     return (
         <li
             {...rest}
@@ -44,7 +42,7 @@ const Step = ({
                 className={clsx(
                     'stepper-item-label',
                     'mt0-5 text-semibold text-sm text-center block',
-                    !highlightStep && 'color-weak'
+                    !active && 'color-weak'
                 )}
             >
                 {children}
