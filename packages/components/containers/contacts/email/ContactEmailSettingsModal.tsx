@@ -72,7 +72,8 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const { call } = useEventManager();
     const [model, setModel] = useState<ContactPublicKeyModel>();
     const [showPgpSettings, setShowPgpSettings] = useState(false);
-    const [loading, withLoading] = useLoading(true);
+    const [loadingPgpSettings, withLoadingPgpSettings] = useLoading(true);
+    const [loadingSave, withLoadingSave] = useLoading(false);
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
 
@@ -184,7 +185,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
          * On the first render, initialize the model
          */
         if (!model) {
-            void withLoading(prepare());
+            void withLoadingPgpSettings(prepare());
             return;
         }
         /**
@@ -296,7 +297,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     </Label>
                     <Field>
                         <ContactMIMETypeSelect
-                            disabled={loading || isMimeTypeFixed}
+                            disabled={loadingSave || isMimeTypeFixed}
                             value={model?.mimeType || ''}
                             onChange={(mimeType: CONTACT_MIME_TYPES) =>
                                 setModel((model?: ContactPublicKeyModel) => {
@@ -310,7 +311,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     </Field>
                 </Row>
                 <div className="mb1">
-                    <Collapsible disabled={loading}>
+                    <Collapsible disabled={loadingPgpSettings}>
                         <CollapsibleHeader
                             suffix={
                                 <CollapsibleHeaderIconButton onClick={() => setShowPgpSettings(!showPgpSettings)}>
@@ -321,7 +322,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                             onClick={() => setShowPgpSettings(!showPgpSettings)}
                             className={clsx([
                                 'color-primary',
-                                loading ? 'color-weak text-no-decoration' : 'text-underline',
+                                loadingPgpSettings ? 'color-weak text-no-decoration' : 'text-underline',
                             ])}
                         >
                             {showPgpSettings
@@ -338,7 +339,13 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="reset" onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" loading={loading} type="submit" onClick={() => withLoading(handleSubmit(model))}>
+                <Button
+                    color="norm"
+                    loading={loadingSave}
+                    disabled={loadingSave || loadingPgpSettings}
+                    type="submit"
+                    onClick={() => withLoadingSave(handleSubmit(model))}
+                >
                     {c('Action').t`Save`}
                 </Button>
             </ModalTwoFooter>
