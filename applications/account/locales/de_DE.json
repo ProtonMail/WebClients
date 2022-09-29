@@ -4,6 +4,11 @@
     "language": "de_DE"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Nicht kategorisiert"
+      ]
+    },
     "Access level": {
       "Full view": [
         "Vollständige Ansicht"
@@ -97,8 +102,8 @@
       "Apply": [
         "Übernehmen"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Auf bestehende Nachrichten anwenden"
       ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
@@ -481,10 +486,13 @@
       "No": [
         "Nein"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "Kein Spam"
       ],
       "Ok": [
+        "OK"
+      ],
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -538,10 +546,10 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Seite aktualisieren"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Seite aktualisieren"
       ],
       "Reload": [
@@ -564,6 +572,9 @@
       ],
       "Remove this label": [
         "Kategorie entfernen"
+      ],
+      "Remove this member": [
+        "Dieses Mitglied entfernen"
       ],
       "Remove this notification": [
         "Diese Benachrichtigung entfernen"
@@ -627,6 +638,9 @@
       ],
       "Revoke all other sessions": [
         "Alle anderen Sitzungen widerrufen"
+      ],
+      "Revoke this invitation": [
+        "Diese Einladung widerrufen"
       ],
       "Save": [
         "Speichern"
@@ -871,6 +885,16 @@
       ],
       "Try free for 30 days": [
         "30 Tage lang kostenlos testen"
+      ]
+    },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Annehmen"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Ablehnen"
       ]
     },
     "Addon": {
@@ -1169,6 +1193,14 @@
         "Du kannst ICS-Dateien aus anderen Kalendern in ${ CALENDAR_APP_NAME } importieren. So kannst du schnell einzelne oder alle Termine zu deinem Kalender hinzufügen."
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "Abgelehnt"
+      ],
+      "Invite sent": [
+        "Einladung gesendet"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Du hast die maximale Anzahl von privaten Kalendern erreicht, die du in deinem Abonnement erstellen kannst."
@@ -1203,6 +1235,9 @@
       "Share calendar": [
         "Kalender teilen"
       ],
+      "Share outside Proton": [
+        "Außerhalb von Proton freigeben"
+      ],
       "Share with anyone": [
         "Mit anderen teilen"
       ],
@@ -1215,12 +1250,22 @@
         "${ remainingItems } weitere anzeigen"
       ]
     },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Alle Einzelheiten zum Ereignis anzeigen"
+      ]
+    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Bearbeiten (Ereignisdetails anzeigen, erstellen und bearbeiten)"
       ],
       "Full view (see all event details)": [
         "Gesamtansicht (siehe alle Ereignisdetails)"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Berechtigungen für ${ email } geändert"
       ]
     },
     "Calendar status": {
@@ -1278,6 +1323,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Einstellungen öffnen"
       ]
     },
     "Calendar view": {
@@ -2492,6 +2542,23 @@
         "„www”-Subdomains werden üblicherweise nicht für E-Mail verwendet. Möchten Sie diesen Domain-Wert wirklich verwenden?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } hinzugefügt"
+      ],
+      "${ name } deletion failed": [
+        "${ name } konnte nicht gelöscht werden"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } in Liste „Kein Spam“ verschoben"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } erfolgreich gelöscht"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
@@ -2578,6 +2645,35 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } hat Ihre Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } hinzugefügt"
+      ],
+      "${ name } deletion failed": [
+        "${ name } konnte nicht gelöscht werden"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } in Liste „Kein Spam“ verschoben"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } erfolgreich gelöscht"
       ]
     },
     "Email subject": {
@@ -2907,11 +3003,17 @@
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Einige Ihrer Ordnernamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Einige deiner Kategorienamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Einige Ihrer Kategorienamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
@@ -3533,7 +3635,7 @@
         "Nachrichten von gesperrten Adressen werden nicht zugestellt."
       ],
       "Search in Allow List and Block List": [
-        "Freigabe- und Sperrliste durchsuchen"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3990,8 +4092,8 @@
       "contacts": [
         "Kontakte"
       ],
-      "CSV file": [
-        "CSV-Datei"
+      "CSV or a VCF (vCard) file": [
+        "CSV oder eine VCF (vCard)-Datei"
       ],
       "full calendar view": [
         "vollständigen Kalenderansicht"
@@ -4624,6 +4726,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-Mails, die mit dieser Kategorie gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+      ],
+      "Enable this address to join this calendar": [
+        "Diese Adresse aktivieren, um diesem Kalender beizutreten"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Wenn Sie die Wiederherstellung nach Phrase erneut aktivieren, wird eine neue Wiederherstellungsphrase generiert."
@@ -6213,6 +6318,9 @@
       " and ${ l }": [
         " und ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } E-Mail-Adresse oder Benutzername"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
       ],
@@ -6377,6 +6485,9 @@
       ],
       "Color": [
         "Farbe"
+      ],
+      "Coming soon": [
+        "Demnächst verfügbar"
       ],
       "Composer": [
         "Verfassen-Fenster"
@@ -6656,6 +6767,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
+      ],
+      "Link label": [
+        "Link-Bezeichnung"
       ],
       "Login password": [
         "Anmeldepasswort"
@@ -6950,6 +7064,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Laden Sie eine(n) oder mehrere Wiederherstellungsdateien oder Verschlüsselungsschlüssel hoch"
+      ],
+      "Upload file": [
+        "Datei hochladen"
       ],
       "URL": [
         "URL"
@@ -7299,9 +7416,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
         "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
@@ -7578,29 +7703,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zurückstufen auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ _price }": [
-        "Ab ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Ab ${ _price2 } pro Benutzer"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mein ${ currentPlanName }-Konto behalten"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Weiter zur Prüfung"
@@ -7640,6 +7742,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zurückstufen auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ _price }": [
+        "Ab ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Ab ${ _price2 } pro Benutzer"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mein ${ currentPlanName }-Konto behalten"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: attribute": {
@@ -8002,17 +8127,6 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName }-Testversion"
-      ],
-      "Upgrade to ${ planName }": [
-        "Führe ein Upgrade auf ${ planName } durch"
-      ],
-      "Your account's usage": [
-        "Nutzung deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -8034,6 +8148,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch Upgraden frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName }-Testversion"
+      ],
+      "Upgrade to ${ planName }": [
+        "Führe ein Upgrade auf ${ planName } durch"
+      ],
+      "Your account's usage": [
+        "Nutzung deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -8263,9 +8388,18 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Einladung gelöscht"
+      ],
+      "Invitation revoked": [
+        "Einladung widerrufen"
+      ],
       "Member added": [
         "Mitglied hinzugefügt",
         "Mitglieder hinzugefügt"
+      ],
+      "Member deleted": [
+        "Mitglied entfernt"
       ]
     },
     "Notification in shared calendar modal": {
@@ -8901,6 +9035,9 @@
       "Delete calendar?": [
         "Kalender löschen?"
       ],
+      "Leave calendar?": [
+        "Kalender verlassen?"
+      ],
       "Remove calendar": [
         "Kalender entfernen"
       ],
@@ -9023,35 +9160,6 @@
       ],
       "Username": [
         "Benutzername"
-      ]
-    },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } hinzugefügt"
-      ],
-      "${ name } deletion failed": [
-        "${ name } konnte nicht gelöscht werden"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } konnte nicht in die Sperrliste verschoben werden"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } konnte nicht in die Spamliste verschoben werden"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } in Sperrliste verschoben"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } in Liste „Kein Spam“ verschoben"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } in Spamliste verschoben"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } erfolgreich gelöscht"
       ]
     },
     "Spotlight": {
@@ -9446,6 +9554,11 @@
         "Für Einzelpersonen"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Mit mir geteilt"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Aktion"
@@ -9606,9 +9719,9 @@
         "Sieve-Filter hinzufügen"
       ],
       "Add to block list": [
-        "Zur Sperrliste hinzufügen"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "Zur Liste „Kein Spam“ hinzufügen"
       ],
       "Add to spam list": [

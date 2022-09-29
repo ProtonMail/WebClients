@@ -23,6 +23,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add condition": [
+        "Přidat podmínku"
+      ],
       "Add contact": [
         "Přidat kontakt"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Continue import": [
+        "Pokračovat v importu"
+      ],
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "Vytvořit nový štítek"
       ],
+      "Create folder": [
+        "Vytvořit složku"
+      ],
+      "Create label": [
+        "Vytvořit štítek"
+      ],
       "Create new contact": [
         "Vytvořit nový kontakt"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "Přizpůsobit"
+      ],
+      "Customize import": [
+        "Přizpůsobit import"
       ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
@@ -347,6 +362,9 @@
       "Fewer search options": [
         "Méně možností vyhledávání"
       ],
+      "Filter on...": [
+        "Filtrovat..."
+      ],
       "Font": [
         "Písmo"
       ],
@@ -417,7 +435,7 @@
         "Skrýt zprávy"
       ],
       "Hide My Email": [
-        "Skrýt můj e-mail"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Skrýt můj e-mail"
@@ -473,6 +491,9 @@
       "Label as...": [
         "Označit jako..."
       ],
+      "label emails as": [
+        "označit e-maily jako"
+      ],
       "Learn more": [
         "Více informací"
       ],
@@ -508,6 +529,9 @@
       ],
       "Mark as unread": [
         "Označit jako nepřečtené"
+      ],
+      "mark emails as": [
+        "označit e-maily jako"
       ],
       "Mark for deletion": [
         "Označit pro odstranění"
@@ -569,6 +593,9 @@
       "Move all to trash": [
         "Přesunout vše do koše"
       ],
+      "move emails to": [
+        "přesunout e-maily do"
+      ],
       "Move to": [
         "Přesunout do"
       ],
@@ -577,12 +604,6 @@
       ],
       "Move to inbox": [
         "Přesunout do Doručené pošty"
-      ],
-      "Move to inbox (not spam)": [
-        "Přesunout do Doručené pošty (není spam)"
-      ],
-      "Move to spam": [
-        "Přesunout do Nevyžádané pošty"
       ],
       "Move to spam and unsubscribe": [
         "Přesunout do spamu a odhlásit"
@@ -656,6 +677,9 @@
       "Pause": [
         "Pozastavit"
       ],
+      "Preview": [
+        "Náhled"
+      ],
       "Preview ${ attachmentName }": [
         "Náhled ${ attachmentName }"
       ],
@@ -695,6 +719,9 @@
       "Read receipt sent": [
         "Potvrzení o přečtení odesláno"
       ],
+      "Reconnect": [
+        "Obnovit připojení"
+      ],
       "Recover data": [
         "Obnovit data"
       ],
@@ -722,6 +749,9 @@
       "Remove expiration time": [
         "Odebrat dobu platnosti"
       ],
+      "Remove this label": [
+        "Odebrat štítek"
+      ],
       "Rename": [
         "Přejmenovat"
       ],
@@ -745,6 +775,9 @@
       ],
       "Reset search form": [
         "Resetovat vyhledávací formulář"
+      ],
+      "Reset to default": [
+        "Obnovit výchozí nastavení"
       ],
       "Reset zoom": [
         "Resetovat přiblížení"
@@ -793,6 +826,9 @@
       ],
       "Send anyway": [
         "Přesto odeslat"
+      ],
+      "send auto-reply email": [
+        "odeslat automatickou odpověď"
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
@@ -1806,6 +1842,9 @@
       ],
       "Quit import customization?": [
         "Ukončit přizpůsobení importu?"
+      ],
+      "Quit import?": [
+        "Odejít z importu?"
       ]
     },
     "Contact field label": {
@@ -2662,6 +2701,23 @@
         "Ålandské ostrovy"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Příloha"
+      ],
+      "Next": [
+        "Další"
+      ],
+      "Recipient": [
+        "Příjemce"
+      ],
+      "Sender": [
+        "Odesílatel"
+      ],
+      "Subject": [
+        "Předmět"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } krát",
@@ -2942,6 +2998,9 @@
         "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech.",
         "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech."
       ],
+      "Condition incomplete": [
+        "Neúplná podmínka"
+      ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
@@ -2987,11 +3046,17 @@
       "Email is not valid": [
         "E-mailová adresa není platná"
       ],
+      "Empty condition": [
+        "Prázdná podmínka"
+      ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
       "Enter a password": [
         "Zadejte heslo"
+      ],
+      "Error in one of the conditions": [
+        "Chyba v jedné z podmínek"
       ],
       "Error while saving draft. Please try again.": [
         "Chyba při ukládání konceptu. Zkuste to prosím znovu."
@@ -3004,6 +3069,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Selhalo šifrování přílohy. Zkuste to znovu."
+      ],
+      "Filter with this name already exists": [
+        "Filtr s tímto názvem již existuje"
       ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
@@ -3110,6 +3178,9 @@
       "Please set a password": [
         "Nastavte prosím heslo"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Zkuste se znovu ověřit a zkontrolujte, zda jsou oprávnění nastavena správně."
+      ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
       ],
@@ -3137,6 +3208,12 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "Require at least one action": [
+        "Vyžaduje alespoň jednu akci"
+      ],
+      "Require at least one condition": [
+        "Vyžaduje alespoň jednu podmínku"
+      ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
       ],
@@ -3151,6 +3228,18 @@
       ],
       "Some groups could not be deleted": [
         "Některé skupiny není možné odstranit"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Některé z vašich názvů složek jsou rezervovány. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Některé názvy složek nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Některé z vašich názvů složek překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Některé z vašich názvů štítků jsou rezervovány. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
@@ -3224,6 +3313,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
       ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Byl dosažen maximální počet aktivních filtrů. Přejděte prosím na placený tarif, abyste mohli aktivovat více filtrů."
+      ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
       ],
@@ -3232,6 +3324,9 @@
       ],
       "Unknown error.": [
         "Neznámá chyba."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Nebyli jsme schopni se připojit k vašemu poskytovateli služeb."
       ],
       "Wrong mailbox password": [
         "Chybné heslo e-mailové schránky"
@@ -3591,6 +3686,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Pokud přílohy"
+      ],
+      "If the recipient": [
+        "Pokud příjemce"
+      ],
+      "If the sender": [
+        "Pokud odesílatel"
+      ],
+      "If the subject": [
+        "Pokud předmět"
+      ],
       "Select…": [
         "Vyberte…"
       ],
@@ -3610,6 +3717,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } byl aktualizován"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filtr ${ Filter.Name } byl aktualizován"
       ]
     },
     "Filter option": {
@@ -3627,6 +3737,14 @@
       ],
       "Unread": [
         "Nepřečteno"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "přečteno"
+      ],
+      "starred": [
+        "s hvězdičkou"
       ]
     },
     "Font Face Default": {
@@ -3851,12 +3969,261 @@
         "ProtonContacts nepodporuje ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Přístup méně zabezpečených aplikací\" se povoluje v nastavení zabezpečení vašeho účtu Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném účtu."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Pokud ${ bold2StepsDisabled } (výchozí nastavení Gmail), ujistěte se prosím:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Pokud ${ bold2StepsDisabled } v Gmailu (výchozí nastavení), ujistěte se, že:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Pokud ${ bold2StepsEnabled } v Gmailu, ujistěte se, že používáte Vaše heslo pro aplikaci namísto svého běžného hesla."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa e-mailu a heslo aplikace jsou správné. ${ boldNot }používejte běžné heslo."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP přístup je zapnut ve vašem externím účtu."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP přístup je zapnut ve vašem účtu Yahoo."
+      ],
+      "Invalid IMAP port": [
+        "Neplatný IMAP port"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že je povolen IMAP přístup ke Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se, že:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton se nemůže přihlásit k vašemu Gmail účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton se nemůže připojit k vašemu účtu Yahoo. Zkontrolujte prosím, že adresa e-mailového servu a číslo portu jsou správně."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
+      ],
+      "Use your app password if:": [
+        "Použijte heslo aplikace, pokud:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Použijte heslo aplikace místo běžného hesla, pokud:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Můžete se také zkusit odhlásit z ${ boldGoogleAccounts } a následně odemknout ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Vaše heslo pro aplikaci je správné. ${ boldNot }používejte vaše běžné heslo."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
+      ],
+      "Your email account requires one to export your data.": [
+        "Váš e-mailový účet toto vyžaduje pro export vašich dat."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Vaše e-mailová adresa a heslo aplikace jsou správné. ${ boldNot }používejte vaše běžné heslo."
+      ],
+      "Your email address and password are correct.": [
+        "Vaše e-mailová adresa a heslo jsou správné."
+      ],
+      "Your password is correct.": [
+        "Vaše heslo je správné."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Dvoufázové ověřování je vypnuto"
+      ],
+      "2-step verification is enabled": [
+        "Dvoufázové ověřování je povoleno"
+      ],
+      "all your other Google accounts": [
+        "všechny vaše další účty Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "ne"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Událost v kalendáři vytvořena"
       ],
       "Creating calendar event failed": [
         "Vytvoření události v kalendáři selhalo"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Kliknutím na ${ boldManage } rozbalíte nabídku možností."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "V závislosti na vašem poskytovateli e-mailové služby bude možná nutné nejprve vygenerovat ${ knowledgeBaseLink } než budete moci provést import do Protonu."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Rozbalte nabídku kliknutím na 3 tečky (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Jděte do ${ boldAccountInfo } pod svým profilem v ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Jděte do ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Přejít na Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Pokud je dvoufázové ověřování vypnuté, zapněte ho."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Otevřít vaše ${ yahooMailLink } kontakty."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Otevřete vaše Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Vyberte ${ boldExportContacts } a zvolte kontakty, které chcete exportovat."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Vybrat ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ji z Yahoo ve 3 snadných krocích:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z Yahoo ve 3 snadných krocích:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Chcete-li importovat kontakty do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Chcete-li importovat e-maily do aplikace Proton, potřebujete ${ appPasswordLink } z aplikace Outlook. Získáte jej podle následujících kroků:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pro import e-mailů do Protonu potřebujete ${ appPasswordLink } od Yahoo. Získáte jej podle následujících kroků:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informace o účtu"
+      ],
+      "Account security": [
+        "Zabezpečení účtu"
+      ],
+      "app password": [
+        "heslo aplikace"
+      ],
+      "Can view all details": [
+        "Lze zobrazit všechny podrobnosti"
+      ],
+      "Export": [
+        "Exportovat"
+      ],
+      "Export contacts": [
+        "Exportovat kontakty"
+      ],
+      "Export to CSV file": [
+        "Exportovat do CSV souboru"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Spravovat"
+      ],
+      "Publish a calendar": [
+        "Zveřejnit kalendář"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "heslo aplikace"
+      ],
+      "app password or enable IMAP": [
+        "heslo aplikace nebo povolit IMAP"
+      ],
+      "contacts": [
+        "kontakty"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Soubor CSV nebo VCF (vCard)"
+      ],
+      "full calendar view": [
+        "zobrazení celého kalendáře"
+      ],
+      "ICS file": [
+        "Soubor ICS"
+      ],
+      "security settings": [
+        "nastavení zabezpečení"
+      ],
+      "shared calendars": [
+        "sdílené kalendáře"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klikněte na odkaz ${ boldICS } a stáhněte si soubor."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Přejít na ${ calendarLink } v nastavení Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Přejít na ${ calendarViewLink } v Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Najeďte myší na kalendář, který chcete importovat, a otevřete rozevírací nabídku."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "V části ${ boldPublish } vyberte kalendář, který chcete importovat. Nastavte oprávnění na ${ boldCanViewAllDetails } a zveřejněte jej."
       ]
     },
     "Import warning": {
@@ -3973,6 +4340,18 @@
         "${ numOccurrences } výskytů nalezeno v obsahu pošty",
         "${ numOccurrences } výskytů nalezeno v obsahu pošty"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } složka nalezena",
+        "${ providerFoldersNumLocalized } složky nalezeny",
+        "${ providerFoldersNumLocalized } složek nalezeno",
+        "${ providerFoldersNumLocalized } složek nalezeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } štítek nalezen v Gmailu",
+        "${ providerFoldersNumLocalized } štítky nalezeny v Gmailu",
+        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
+        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } soubor připojen",
         "${ pureAttachmentsCount } soubory připojeny",
@@ -3996,6 +4375,18 @@
         "${ selectedFoldersCount } vybrané štítky",
         "${ selectedFoldersCount } vybraných štítků",
         "${ selectedFoldersCount } vybraných štítků"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } složka vybrána",
+        "${ selectedFoldersCountLocalized } vybrané složky",
+        "${ selectedFoldersCountLocalized } složek vybráno",
+        "${ selectedFoldersCountLocalized } složek vybráno"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "vybrán ${ selectedFoldersCountLocalized } štítek",
+        "vybrány ${ selectedFoldersCountLocalized } štítky",
+        "vybráno ${ selectedFoldersCountLocalized } štítků",
+        "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
@@ -4054,6 +4445,12 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtrování pokud jsou splněny všechny následující podmínky)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtrování pokud je splněna jakákoliv z následujících podmínek)"
+      ],
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
@@ -4105,6 +4502,9 @@
       "All your calendars are disabled.": [
         "Všechny vaše kalendáře jsou zakázané."
       ],
+      "All your changes will be lost.": [
+        "Veškeré vaše změny budou ztraceny."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Pro tohoto příjemce byl zjištěn neznámý veřejný klíč."
       ],
@@ -4116,6 +4516,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Opravdu chcete smazat všechny zprávy s tímto štítkem?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Určitě chcete zahodit všechny provedené změny?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Jste si jisti, že chcete přesunout všechny zprávy odtud do Koše?"
@@ -4333,6 +4736,9 @@
       "End of search results from past 30 days": [
         "Konec výsledků vyhledávání za posledních 30 dní"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
@@ -4371,6 +4777,9 @@
         "soubory připojeny",
         "souborů připojeno",
         "souborů připojeno"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
       "Folder": [
         "Složka"
@@ -4438,6 +4847,9 @@
       "Image URL": [
         "URL adresa obrázku"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Obrázky byly odstraněny, protože nejsou povoleny v automatické odpovědi"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
@@ -4452,6 +4864,9 @@
       ],
       "Import in progress": [
         "Import probíhá"
+      ],
+      "Import mailbox": [
+        "Importovat poštovní schránku"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -4485,6 +4900,9 @@
       ],
       "Key fingerprint": [
         "Otisk klíče"
+      ],
+      "Label all imported messages as": [
+        "Označit všechny importované zprávy jako"
       ],
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
@@ -4561,6 +4979,9 @@
       "New": [
         "Nový"
       ],
+      "No action selected": [
+        "Není vybrána žádná akce"
+      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
@@ -4573,11 +4994,17 @@
       "No folder found": [
         "Nenalezena žádná složka"
       ],
+      "No folder selected": [
+        "Není vybrána žádná složka"
+      ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
+      ],
+      "No label selected": [
+        "Není vybrán žádný štítek"
       ],
       "No more results found": [
         "Nebylo nalezeno více výsledků"
@@ -4717,14 +5144,14 @@
       "Right-click for options": [
         "Klikněte pravým tlačítkem myši pro možnosti"
       ],
-      "Saved ${ dateString }": [
-        "Uloženo ${ dateString }"
-      ],
       "Saved at ${ dateString }": [
         "Uloženo v ${ dateString }"
       ],
       "Saved on ${ dateString }": [
         "Uloženo ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Uloženo včera"
       ],
       "Saving draft…": [
         "Ukládám koncept…"
@@ -5227,6 +5654,12 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
+      "Your import will not be processed.": [
+        "Váš import nebude zpracován."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Vaše zpráva bude smazána z doručené pošty příjemce a z vaší složky odeslaných zpráv dne ${ dateString } v ${ formattedTime }"
       ],
@@ -5516,8 +5949,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " a "
+      ],
+      " and ${ l }": [
+        " a ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
+      ],
+      "Actions": [
+        "Akce"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -5531,6 +5973,9 @@
       "Address": [
         "Adresa"
       ],
+      "ALL": [
+        "VŠE"
+      ],
       "Also archive": [
         "Také archivovat"
       ],
@@ -5539,6 +5984,24 @@
       ],
       "Always move sender's emails": [
         "Vždy přesunout e-maily odesílatele"
+      ],
+      "AND": [
+        "A"
+      ],
+      "and": [
+        "a"
+      ],
+      "And": [
+        "A"
+      ],
+      "ANY": [
+        "JAKÝKOLI"
+      ],
+      "App password": [
+        "Heslo aplikace"
+      ],
+      "Apply filter to existing emails": [
+        "Použít filtr na existující e-maily"
       ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
@@ -5587,6 +6050,12 @@
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
+      ],
+      "Coming soon": [
+        "Již brzy"
+      ],
+      "Conditions": [
+        "Podmínky"
       ],
       "Confirm password": [
         "Potvrdit heslo"
@@ -5642,6 +6111,9 @@
       "Extended address": [
         "Rozšířená adresa"
       ],
+      "Filter Name": [
+        "Název filtru"
+      ],
       "Folder location": [
         "Umístění složky"
       ],
@@ -5654,8 +6126,14 @@
       "From:": [
         "Od:"
       ],
+      "From: ${ emailFrom }": [
+        "Od: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Od: ${ importedEmailAddress }"
       ],
       "Good": [
         "Dobré"
@@ -5671,6 +6149,12 @@
       ],
       "I understand the risk": [
         "Rozumím rizikům"
+      ],
+      "IF": [
+        "POKUD"
+      ],
+      "If": [
+        "Pokud"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -5708,6 +6192,9 @@
       "Location": [
         "Poloha"
       ],
+      "Mail Server (IMAP)": [
+        "E-mailový server (IMAP)"
+      ],
       "Mailbox password": [
         "Heslo k poštovní schránce"
       ],
@@ -5723,6 +6210,9 @@
       "Manage my addresses": [
         "Správa mých adres"
       ],
+      "Mark as": [
+        "Označit jako"
+      ],
       "Move to": [
         "Přesunout do"
       ],
@@ -5735,6 +6225,9 @@
       "Name": [
         "Jméno"
       ],
+      "No label found": [
+        "Nebyl nalezen žádný štítek"
+      ],
       "Notification": [
         "Oznámení"
       ],
@@ -5746,6 +6239,15 @@
       ],
       "Operating system version": [
         "Verze operačního systému"
+      ],
+      "OR": [
+        "NEBO"
+      ],
+      "or": [
+        "nebo"
+      ],
+      "Or": [
+        "Nebo"
       ],
       "Participants": [
         "Účastníci"
@@ -5762,6 +6264,9 @@
       "Phone number": [
         "Telefonní číslo"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "P.O. Box"
       ],
@@ -5773,6 +6278,9 @@
       ],
       "Public keys": [
         "Veřejné klíče"
+      ],
+      "Read": [
+        "Přečteno"
       ],
       "Recipient": [
         "Příjemce"
@@ -5801,6 +6309,9 @@
       "Select how your mailbox looks like by default.": [
         "Vyberte vzhled vaší schránky."
       ],
+      "Send auto-reply": [
+        "Poslat automatickou odpověď"
+      ],
       "Sender": [
         "Odesílatel"
       ],
@@ -5810,11 +6321,32 @@
       "Size:": [
         "Velikost:"
       ],
+      "Starred": [
+        "S hvězdičkou"
+      ],
+      "Statement": [
+        "Prohlášení"
+      ],
       "Street address": [
         "Ulice a č. p."
       ],
       "System information": [
         "Informace o systému"
+      ],
+      "The email was sent ${ attachment }": [
+        "E-mail byl odeslán ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "e-mail byl odeslán ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "E-mail byl odeslán ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "e-mail byl odeslán ${ label }"
+      ],
+      "Then": [
+        "Potom"
       ],
       "Time": [
         "Čas"
@@ -5828,11 +6360,20 @@
       "To: ${ emailAddress }": [
         "Pro: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Komu: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Komu: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Kód dvoufázového ověření"
       ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
+      ],
+      "Upload file": [
+        "Nahrát soubor"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -5845,6 +6386,21 @@
       ],
       "What happened?": [
         "Co se stalo?"
+      ],
+      "With attachment": [
+        "S přílohami"
+      ],
+      "with attachments": [
+        "s přílohami"
+      ],
+      "Without attachment": [
+        "Bez příloh"
+      ],
+      "without attachment": [
+        "bez příloh"
+      ],
+      "without attachments": [
+        "bez příloh"
       ],
       "Wonderful": [
         "Úžasné"
@@ -5962,9 +6518,6 @@
       "Folders": [
         "Složky"
       ],
-      "Go to subscription plans": [
-        "Zobrazit tarify předplatného"
-      ],
       "Inbox": [
         "Doručená pošta"
       ],
@@ -6046,9 +6599,6 @@
       "Trash": [
         "Koš"
       ],
-      "Upgrade": [
-        "Navýšit"
-      ],
       "Upgrade account": [
         "Navýšit účet"
       ],
@@ -6092,6 +6642,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Počet vytvořených kalendářů: ${ createdCalendars } z ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Připojování k Vašemu poskytovateli e-mailu"
+      ],
       "Creating new calendars": [
         "Vytváření nových kalendářů"
       ],
@@ -6106,11 +6659,23 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složky za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } ze ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy z ${ totalLabelsCount } složky od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ze ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importovat všechny zprávy ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6194,6 +6759,35 @@
       ],
       "Plain text": [
         "Prostý text"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Jak importovat kalendáře z jiné služby"
+      ],
+      "How to import calendars from Outlook": [
+        "Jak importovat kalendáře z Outlooku"
+      ],
+      "How to import calendars from Yahoo": [
+        "Jak importovat kalendáře z Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Jak importovat kontakty z jiné služby"
+      ],
+      "How to import contacts from Outlook": [
+        "Jak importovat kontakty z Outlooku"
+      ],
+      "How to import contacts from Yahoo": [
+        "Jak importovat kontakty z Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Jak importovat e-maily z jiné služby"
+      ],
+      "How to import emails from Outlook": [
+        "Jak importovat e-maily z Outlooku"
+      ],
+      "How to import emails from Yahoo": [
+        "Jak importovat e-maily z Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6372,6 +6966,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } byl vytvořen"
+      ],
       "Block removed": [
         "Blokovat odstraněné"
       ],
@@ -6452,6 +7049,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Vlastní složky"
+      ],
       "Default folders": [
         "Výchozí složky"
       ],
@@ -6593,6 +7193,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Type text or keyword": [
+        "Zadejte text nebo klíčové slovo"
       ],
       "Write your message": [
         "Napište zprávu"
@@ -6900,6 +7503,20 @@
         "Odběr byl odhlášen"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Akce"
+      ],
+      "Conditions": [
+        "Podmínky"
+      ],
+      "Name": [
+        "Jméno"
+      ],
+      "Preview": [
+        "Náhled"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Získat další úložiště zdarma"
@@ -6970,10 +7587,8 @@
         "${ elementsCount } konverzací přesunuto do ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } konverzace přesunuta do spamu a odesílatel přidán do seznamu blokovaných.",
-        "${ elementsCount } konverzace přesunuty do spamu a odesílatelé přidáni do seznamu blokovaných.",
-        "${ elementsCount } konverzací přesunuto do spamu a odesílatelé přidáni do seznamu blokovaných.",
-        "${ elementsCount } konverzací přesunuto do spamu a odesílatelé přidáni do seznamu blokovaných."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } konverzace odstraněna z ${ labelName }.",
@@ -7018,10 +7633,8 @@
         "${ elementsCount } zpráv přesunuto do ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } zpráva přesunuta do spamu a odesílatel přidán do seznamu blokovaných.",
-        "${ elementsCount } zprávy přesunuty do spamu a odesílatelé přidáni do seznamu blokovaných.",
-        "${ elementsCount } zpráv přesunuto do spamu a odesílatelé přidáni do seznamu blokovaných.",
-        "${ elementsCount } zpráv přesunuto do spamu a odesílatelé přidáni do seznamu blokovaných."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } zpráva odstraněna z ${ labelName }.",
@@ -7081,7 +7694,7 @@
         "Konverzace přesunuta do ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Konverzace byla přesunuta do spamu a odesílatel přidán do seznamu blokovaných kontaktů."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Konverzace odstraněna z ${ labelName }."
@@ -7138,13 +7751,13 @@
         "Zpráva označena jako nepřečtená."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Zpráva přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Zpráva byla přesunuta do složky ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Zpráva byla přesunuta do spamu a odesílatel přidán do seznamu blokovaných kontaktů."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Zpráva odstraněna z ${ labelName }."
@@ -7195,11 +7808,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/měsíčně"
       ]
     },
     "Table header": {
@@ -7332,6 +7940,9 @@
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
       ],
+      "Add filter": [
+        "Přidat filtr"
+      ],
       "Add to ${ groupCount } group": [
         "Přidat do ${ groupCount } skupiny",
         "Přidat do ${ groupCount } skupin",
@@ -7346,6 +7957,9 @@
       ],
       "Archive": [
         "Archiv"
+      ],
+      "Are you sure you want to close?": [
+        "Opravdu chcete zavřít editor filtrů?"
       ],
       "Attachments": [
         "Přílohy"
@@ -7482,6 +8096,9 @@
       "Edit contact group": [
         "Upravit skupinu kontaktů"
       ],
+      "Edit filter": [
+        "Upravit filtr"
+      ],
       "Edit image": [
         "Upravit obrázek"
       ],
@@ -7520,6 +8137,9 @@
       ],
       "Feedback": [
         "Zpětná vazba"
+      ],
+      "Filter on...": [
+        "Filtrovat..."
       ],
       "Forward": [
         "Přeposlat"
@@ -7606,10 +8226,10 @@
         "Přesunout do složky Doručená pošta"
       ],
       "Move to inbox (not spam)": [
-        "Přesunout do Doručené pošty (není spam)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Přesunout do spamu"
+        "Move to spam"
       ],
       "Move to trash": [
         "Přesunout do koše"
@@ -7667,6 +8287,9 @@
       ],
       "Recipients": [
         "Příjemci"
+      ],
+      "Reconnect your account": [
+        "Znovu připojit svůj účet"
       ],
       "Recover data": [
         "Obnovit data"
@@ -7740,6 +8363,12 @@
       "Sort messages": [
         "Třídit zprávy"
       ],
+      "Start a new import": [
+        "Zahájit nový import"
+      ],
+      "Start import process": [
+        "Zahájit proces importu"
+      ],
       "Storage capacity warning": [
         "Upozornění na kapacitu úložiště"
       ],
@@ -7810,11 +8439,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editoru bude použit pro odeslání uživateli. Prostý text znamená, že zpráva bude při odeslání vždy převedena na prostý text."
       ],
+      "Customize import to reduce the number of folders": [
+        "Přizpůsobte proces importu, abyste snížili počet složek"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Přizpůsobit import pro snížení počtu štítků"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitální podpis e-mailů pomáhá ověřit, že jsou zprávy zaslány od Vás"
       ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"
+      ],
+      "Edit folder names": [
+        "Upravit názvy složek"
+      ],
+      "Edit label names": [
+        "Upravit názvy štítků"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifrování vyžaduje, aby byl e-mail podepsán, což umožní ověřit pravost vámi odeslaných zpráv"
@@ -7839,6 +8480,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
+      ],
+      "This feature is only available for paid users": [
+        "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
@@ -7883,6 +8527,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Jste si jistí, že chcete zahodit váš import?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Opravdu chcete nevratně smazat ${ count } skupinu kontaktů?",
         "Opravdu chcete nevratně smazat ${ count } skupiny kontaktů?",
@@ -7912,6 +8559,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proto sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
@@ -7945,6 +8595,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Tato funkce vyžaduje placený Proton účet"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Tento import může překročit kapacitu úložiště, která je momentálně k dispozici ve vašem Proton účtu. Zvažte prosím přizpůsobení importu."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužel nejsme momentálně dostupní. Chcete-li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat vás, až budeme opět dostupní."

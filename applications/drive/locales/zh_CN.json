@@ -128,6 +128,9 @@
       "Continue": [
         "继续"
       ],
+      "Continue import": [
+        "继续导入"
+      ],
       "Continue transfers": [
         "继续传输"
       ],
@@ -155,6 +158,9 @@
       "Customize": [
         "定制"
       ],
+      "Customize import": [
+        "自定义导入"
+      ],
       "Delete": [
         "删除"
       ],
@@ -181,6 +187,9 @@
       ],
       "Didn't receive the code?": [
         "没收到验证码？"
+      ],
+      "Discard": [
+        "放弃"
       ],
       "Done": [
         "完成"
@@ -374,6 +383,9 @@
       "Re-sign": [
         "重新签名"
       ],
+      "Reconnect": [
+        "重新连接"
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -403,6 +415,9 @@
       ],
       "Request new code": [
         "请求新验证码"
+      ],
+      "Reset to default": [
+        "重置所有选项"
       ],
       "Reset zoom": [
         "重置缩放"
@@ -766,6 +781,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "退出导入定制？"
+      ],
+      "Quit import?": [
+        "退出导入？"
       ]
     },
     "Contact field label": {
@@ -1800,6 +1818,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "请尝试重新验证并确保权限正确。"
+      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -1826,6 +1847,18 @@
       ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "部分文件夹名称与系统内部名称冲突，请在导入内容中予以更改。"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "部分文件夹名称不可用，请自定导入内容并予以更改。"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "部分标签名称与系统内部名称冲突，请在导入内容中予以更改。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
@@ -1892,6 +1925,9 @@
       ],
       "Unknown error": [
         "未知错误"
+      ],
+      "We were unable to connect to your service provider.": [
+        "我们无法连接到您的服务提供商。"
       ],
       "You can't send a mail to more than 100 recipients": [
         "收件人不能超过 100 个"
@@ -2138,6 +2174,255 @@
         "ProtonContacts 不支持 ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "Google 账户的安全设置中已开启“允许不够安全的应用访问”选项"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "该邮箱开启了两步验证."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "该邮箱开启了两步验证."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "如果 Gmail 的${ bold2StepsDisabled }（这是 Gmail 的默认设置），请确认："
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "如果 Gmail 的${ bold2StepsDisabled }（这是默认选项），请确认："
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "如果 Gmail 的${ bold2StepsEnabled }，请确认您使用的是应用专用密码，而非平时使用的密码。"
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "如果${ bold2StepsEnabled }，请确认您的邮箱地址和应用专用密码输入无误。${ boldNot }输入您平常用的密码。"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "您的外部账户已开启 IMAP 访问。"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "您的 Yahoo 账户已开启 IMAP 访问。"
+      ],
+      "Invalid IMAP port": [
+        "IMAP 端口号无效"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton 无法连接您的账户，请确认："
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "ProtonMail 无法连接该邮箱账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton 无法连接该邮箱，请确认："
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "ProtonMail 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "ProtonMail 无法连接您的 Yahoo Mail 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton 无法连接您的 Yahoo 账户，请确认："
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "请求过于频繁，请稍后再试。"
+      ],
+      "Use your app password if:": [
+        "在以下情况下使用您的应用密码："
+      ],
+      "Use your app password instead of your regular password if:": [
+        "下列情况需使用应用专用密码，不能用平常输入的密码："
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "您也可以尝试在浏览器中退出${ boldGoogleAccounts }，然后解锁${ linkCAPTCHA }。"
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "应用密码输入无误。${ boldNot } 输入您平常用的密码。"
+      ],
+      "Your email account requires an app password to export your data.": [
+        "该邮箱需要应用专用密码才能导出数据."
+      ],
+      "Your email account requires one to export your data.": [
+        "该邮箱需要应用专用密码才能导出数据."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "您的邮箱地址和应用专用密码输入无误。${ boldNot } 输入您平常用的密码。"
+      ],
+      "Your email address and password are correct.": [
+        "您输入的邮箱地址和密码正确。"
+      ],
+      "Your password is correct.": [
+        "密码输入无误。"
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "两步验证已关闭"
+      ],
+      "2-step verification is enabled": [
+        "两步验证已开启"
+      ],
+      "all your other Google accounts": [
+        "您所有其他的 Google 账户"
+      ],
+      "CAPTCHA": [
+        "验证码"
+      ],
+      "not": [
+        "不要"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "点击 ${ boldManage } 下拉菜单."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "由于各邮箱厂商的规定不同，您可能需要先生成${ knowledgeBaseLink } 才能开始导入."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "点击三点图标（...）展开下拉菜单。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "生成 ${ boldAppPassword } ，并在Proton提示下使用它来代替您的常规密码。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "生成 ${ boldAppPassword } ，并在Proton提示下使用它来代替您的常规密码。"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "前往 ${ yahooMailLink } 中您个人资料下的${ boldAccountInfo }。"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "前往 ${ boldAccountSecurity }。"
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "前往 Outlook. com ${ securitySettingsLink }。"
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "如果双重验证已关闭，请予以开启."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "打开您的 ${ yahooMailLink } 通讯录。"
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "打开您的 Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "点击 ${ boldExportContacts } 并选择需要导出的联系人."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "选择 ${ boldExportCSV }"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "如需将日程导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "如需将日程导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "如需将日程导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "如需将通讯录导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "如需将通讯录导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "如需将通讯录导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "如需将邮件导入 Proton，您需要按下列步骤获取 Outlook ${ appPasswordLink }："
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "要将电子邮件从Yahoo导入到Proton，您需要在Yahoo得到一条 ${ appPasswordLink }，通过下面的步骤来获取："
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "账户信息"
+      ],
+      "Account security": [
+        "账户安全"
+      ],
+      "app password": [
+        "应用专用密码"
+      ],
+      "Can view all details": [
+        "可查看所有详细信息"
+      ],
+      "Export": [
+        "导出"
+      ],
+      "Export contacts": [
+        "导出联系人"
+      ],
+      "Export to CSV file": [
+        "导出至 CSV 文件"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "管理"
+      ],
+      "Publish a calendar": [
+        "发布日历"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "应用专用密码"
+      ],
+      "app password or enable IMAP": [
+        "生成应用专用密码或开启 IMAP 功能"
+      ],
+      "contacts": [
+        "通讯录"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV 或 VCF（vCard）文件"
+      ],
+      "full calendar view": [
+        "全日历视图"
+      ],
+      "ICS file": [
+        "ICS 文件"
+      ],
+      "security settings": [
+        "安全设置"
+      ],
+      "shared calendars": [
+        "共享日历"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "点击 ${ boldICS } 文件链接即可下载文件."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "转至 Outlook. com 设置中的“${ calendarLink }”选项。"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "转至 Yahoo Mail 中的 ${ calendarViewLink }."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "将光标指向您要导入的日历，打开下拉菜单."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "选择 ${ boldExport } 将日历作为 ICS 文件下载."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "在 ${ boldPublish } 选项中，选择您要导入的日历，并将权限设为 ${ boldCanViewAllDetails }，然后选择发布。"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
@@ -2210,6 +2495,12 @@
       "${ pausedCount } paused": [
         "${ pausedCount } 项已暂停"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
@@ -2218,6 +2509,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -2259,7 +2556,7 @@
         "一个激活的恢复文件"
       ],
       "and": [
-        "和"
+        "并"
       ],
       "Anyone with this link can access your file.": [
         "任何知道此链接的人都能访问您的文件。"
@@ -2405,6 +2702,9 @@
       "Encrypted search is here": [
         "已推出加密搜索功能"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "输入您要导入的邮箱账号和密码。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
@@ -2501,6 +2801,9 @@
       "Import in progress": [
         "导入中"
       ],
+      "Import mailbox": [
+        "导入收件箱"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
@@ -2533,6 +2836,9 @@
       ],
       "Key fingerprint": [
         "指纹码"
+      ],
+      "Label all imported messages as": [
+        "给导入的所有邮件加标签"
       ],
       "Large imports can take several days.": [
         "大量的导入可能需要几天时间。"
@@ -2984,6 +3290,12 @@
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
       ],
+      "Your import will not be processed.": [
+        "此次导入将不会进行。"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "导入完成后我们不会留存您的账号和密码。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
       ],
@@ -3072,6 +3384,9 @@
       "Add to group": [
         "添加至群组"
       ],
+      "App password": [
+        "应用密码"
+      ],
       "Apply to all duplicated files": [
         "应用于所有重复的文件"
       ],
@@ -3119,6 +3434,9 @@
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
+      ],
+      "Coming soon": [
+        "即将推出"
       ],
       "Comment": [
         "评论"
@@ -3201,8 +3519,14 @@
       "Folder name": [
         "文件夹名称"
       ],
+      "From: ${ emailFrom }": [
+        "来自: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "来自：${ importedEmailAddress }"
       ],
       "Good": [
         "很好"
@@ -3245,6 +3569,9 @@
       ],
       "Location": [
         "位置"
+      ],
+      "Mail Server (IMAP)": [
+        "邮件服务器 (IMAP)"
       ],
       "Mailbox password": [
         "邮箱密码"
@@ -3305,6 +3632,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "请尽可能提供全部细节来让我们更好地做出决定"
+      ],
+      "Port": [
+        "端口"
       ],
       "Post office box": [
         "邮局信箱"
@@ -3375,6 +3705,12 @@
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "导入到：${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "导入到：${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "双重验证码"
       ],
@@ -3395,6 +3731,9 @@
       ],
       "Upload anyway": [
         "仍然上传"
+      ],
+      "Upload file": [
+        "上传文件"
       ],
       "Upload picture": [
         "上传图片"
@@ -3486,6 +3825,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
       ],
+      "Connecting to your email provider": [
+        "正在连接到您的邮件提供商"
+      ],
       "Creating new calendars": [
         "正在创建新日历"
       ],
@@ -3500,8 +3842,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签中 ${ selectedLabelsCount } 个的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
@@ -3523,6 +3871,35 @@
       ],
       "Plain text": [
         "纯文本"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "如何从其他服务导入日历"
+      ],
+      "How to import calendars from Outlook": [
+        "如何从Outlook导入日历"
+      ],
+      "How to import calendars from Yahoo": [
+        "如何从Yahoo导入日历"
+      ],
+      "How to import contacts from another service": [
+        "如何从其他服务导入联系人"
+      ],
+      "How to import contacts from Outlook": [
+        "如何从Outlook导入联系人"
+      ],
+      "How to import contacts from Yahoo": [
+        "如何从Yahoo导入联系人"
+      ],
+      "How to import emails from another service": [
+        "如何从其他邮件服务导入邮件"
+      ],
+      "How to import emails from Outlook": [
+        "如何从Outlook导入邮件"
+      ],
+      "How to import emails from Yahoo": [
+        "如何从Yahoo导入邮件"
       ]
     },
     "New Label form": {
@@ -4395,6 +4772,9 @@
       "Re-signing contacts": [
         "正在重新签署联系人"
       ],
+      "Reconnect your account": [
+        "重新连接账户"
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -4463,6 +4843,12 @@
       ],
       "Sort files/folders": [
         "文件/文件夹排序"
+      ],
+      "Start a new import": [
+        "开始导入"
+      ],
+      "Start import process": [
+        "开始导入过程"
       ],
       "Stop sharing": [
         "停止分享"
@@ -4549,11 +4935,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
       ],
+      "Customize import to reduce the number of folders": [
+        "自定义导入，减少文件夹数量。"
+      ],
+      "Customize import to reduce the number of labels": [
+        "自定义导入以减少标签数量"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "数字签名有助于证明您的邮件真实性"
       ],
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"
+      ],
+      "Edit folder names": [
+        "更改文件夹名称"
+      ],
+      "Edit label names": [
+        "编辑标签名称"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "加密邮件必须予以数字签名以表明您的邮件真实性"
@@ -4617,6 +5015,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "您确定要放弃导入吗？"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "您确定要永久删除 ${ count } 联系人群组吗？"
       ],
@@ -4640,6 +5041,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton 将从最近的邮件开始导入尽可能多的数据。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
@@ -4667,6 +5071,9 @@
       ],
       "This feature requires a paid Proton account": [
         "此功能仅限付费用户使用"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "此次导入可能会耗尽您的 Proton 账户存储空间，请考虑缩减导入内容。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"

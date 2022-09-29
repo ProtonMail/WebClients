@@ -4,6 +4,44 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Hide My Email": [
+        "Hide My Email"
+      ],
+      "Move to inbox (not spam)": [
+        "Move to inbox (not spam)"
+      ],
+      "Move to spam": [
+        "Move to spam"
+      ]
+    },
+    "Success": {
+      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
+      ],
+      "${ elementsCount } message moved to spam and sender added to Block List.": [
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
+      ],
+      "Conversation moved to spam and sender added to Block List.": [
+        "Conversation moved to spam and sender added to your block list."
+      ],
+      "Message moved to ${ folderName } and sender added to Allow List.": [
+        "Message moved to ${ folderName } and sender added to your allow list."
+      ],
+      "Message moved to spam and sender added to Block List.": [
+        "Message moved to spam and sender added to your block list."
+      ]
+    },
+    "Title": {
+      "Move to inbox (not spam)": [
+        "Move to inbox (not spam)"
+      ],
+      "Move to spam": [
+        "Move to spam"
+      ]
+    },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",

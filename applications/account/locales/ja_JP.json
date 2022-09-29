@@ -91,9 +91,6 @@
       "Apply": [
         "適用"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -469,10 +466,10 @@
       "No": [
         "いいえ"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -526,10 +523,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -2527,6 +2524,20 @@
         "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } のイベントのキャンセル"
@@ -3397,7 +3408,7 @@
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
       ],
       "Search in Allow List and Block List": [
-        "許可リストとブロックリストを検索"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3827,9 +3838,6 @@
       ],
       "contacts": [
         "連絡先"
-      ],
-      "CSV file": [
-        "CSV ファイル"
       ],
       "full calendar view": [
         "フルカレンダー表示"
@@ -6598,6 +6606,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "1 つ以上の回復ファイルまたは暗号鍵をアップロード"
       ],
+      "Upload file": [
+        "ファイルをアップロード"
+      ],
       "URL": [
         "URL"
       ],
@@ -7199,29 +7210,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ _price }": [
-        "${ _price } から"
-      ],
-      "From ${ _price2 } per user": [
-        "1 ユーザーあたり ${ _price2 } から"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } アカウントを継続"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -7258,6 +7246,29 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ _price }": [
+        "${ _price } から"
+      ],
+      "From ${ _price2 } per user": [
+        "1 ユーザーあたり ${ _price2 } から"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } アカウントを継続"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "new_plans: attribute": {
@@ -7560,17 +7571,6 @@
         "選択中のプラン: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } トライアル"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -7589,6 +7589,17 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } トライアル"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -8402,32 +8413,6 @@
         "ユーザー名"
       ]
     },
-    "Spam notification": {
-      "${ name } deletion failed": [
-        "${ name } の削除に失敗しました"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } をブロックリストに移動できませんでした"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } を迷惑ではないリストに移動できませんでした"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } を迷惑リストに移動できませんでした"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } をブロックリストに移動しました"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } を迷惑ではないリストに移動しました"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } を迷惑リストに移動しました"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } は正常に削除されました"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
@@ -8948,7 +8933,7 @@
         "Sieve フィルターの追加"
       ],
       "Add to block list": [
-        "ブロックリストに追加"
+        "Add to your block list"
       ],
       "Add to spam list": [
         "迷惑メールリストに追加"

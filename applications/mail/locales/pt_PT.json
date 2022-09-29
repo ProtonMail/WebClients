@@ -17,6 +17,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add condition": [
+        "Adicionar condição"
+      ],
       "Add contact": [
         "Adicionar contacto"
       ],
@@ -161,8 +164,17 @@
       "Create a new folder": [
         "Criar uma nova pasta"
       ],
+      "Create folder": [
+        "Criar pasta"
+      ],
+      "Create label": [
+        "Criar etiqueta"
+      ],
       "Create new contact": [
         "Criar novo contacto"
+      ],
+      "Customize import": [
+        "Personalizar importação"
       ],
       "Delete": [
         "Eliminar"
@@ -304,6 +316,9 @@
       "Hide messages": [
         "Ocultar mensagens"
       ],
+      "Hide My Email": [
+        "Hide My Email"
+      ],
       "I have a question": [
         "Tenho uma dúvida"
       ],
@@ -347,6 +362,9 @@
       "Label as...": [
         "Etiquetar como..."
       ],
+      "label emails as": [
+        "etiquetar email como"
+      ],
       "Learn more": [
         "Saber mais"
       ],
@@ -380,6 +398,9 @@
       "Mark as unread": [
         "Marcar como não lido"
       ],
+      "mark emails as": [
+        "marcar emails como"
+      ],
       "Mark for deletion": [
         "Marcar para eliminação"
       ],
@@ -410,6 +431,9 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "move emails to": [
+        "mover emails para"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -418,12 +442,6 @@
       ],
       "Move to inbox": [
         "Mover para a caixa de entrada"
-      ],
-      "Move to inbox (not spam)": [
-        "Mover para caixa de entrada (não é spam)"
-      ],
-      "Move to spam": [
-        "Mover para spam"
       ],
       "Move to trash": [
         "Mover para o lixo"
@@ -476,6 +494,9 @@
       "Pause": [
         "Pausar"
       ],
+      "Preview": [
+        "Antever"
+      ],
       "Preview ${ attachmentName }": [
         "Antever ${ attachmentName }"
       ],
@@ -509,6 +530,9 @@
       "Read receipt sent": [
         "Recibo de leitura enviado"
       ],
+      "Reconnect": [
+        "Religar"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -524,6 +548,9 @@
       "Remove ${ attachmentName }": [
         "Remover ${ attachmentName }"
       ],
+      "Remove this label": [
+        "Remover esta etiqueta"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -535,6 +562,9 @@
       ],
       "Request new code": [
         "Pedir novo código"
+      ],
+      "Reset to default": [
+        "Repor predefinição"
       ],
       "Reset zoom": [
         "Repor ampliação"
@@ -568,6 +598,9 @@
       ],
       "Send anyway": [
         "Enviar mesmo assim"
+      ],
+      "send auto-reply email": [
+        "enviar resposta automática"
       ],
       "Set": [
         "Definir"
@@ -1082,6 +1115,11 @@
         "coincide com"
       ]
     },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Sair da importação?"
+      ]
+    },
     "Contact field label": {
       "Address": [
         "Endereço"
@@ -1162,6 +1200,23 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CustomFilter": {
+      "Attachment": [
+        "Anexo"
+      ],
+      "Next": [
+        "Seguinte"
+      ],
+      "Recipient": [
+        "Destinatário"
+      ],
+      "Sender": [
+        "Remetente"
+      ],
+      "Subject": [
+        "Assunto"
       ]
     },
     "Daily recurring event, frequency": {
@@ -1360,6 +1415,9 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
+      "Condition incomplete": [
+        "Condição incompleta"
+      ],
       "Contact could not be saved": [
         "Impossível gravar o contacto"
       ],
@@ -1387,11 +1445,20 @@
       "Email is not valid": [
         "Email inválido"
       ],
+      "Empty condition": [
+        "Condição vazia"
+      ],
       "Enter 6 digits": [
         "Insira 6 algarismos"
       ],
+      "Error in one of the conditions": [
+        "Erro numa das condições"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Falha ao encriptar o anexo. Por favor, tente novamente."
+      ],
+      "Filter with this name already exists": [
+        "Já existe um filtro com este nome"
       ],
       "Image upload failed": [
         "Falha ao enviar a imagem"
@@ -1437,12 +1504,21 @@
       "Passwords do not match": [
         "As senhas não coincidem"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Por favor, tente autenticar novamente e certifique-se de que as permissões estão definidas correctamente."
+      ],
       "Public key could not be trusted": [
         "A chave pública não pôde ser confiada"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Destinatário duplicado removido: ${ recipents }",
         "Destinatários duplicados removidos: ${ recipents }"
+      ],
+      "Require at least one action": [
+        "Requer pelo menos uma acção"
+      ],
+      "Require at least one condition": [
+        "Requer pelo menos uma condição"
       ],
       "Signature not verified": [
         "Assinatura não verificada"
@@ -1458,6 +1534,9 @@
       ],
       "Some groups could not be deleted": [
         "Alguns grupos não puderam ser eliminados"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dos seus nomes de pasta estão indisponíveis. Por favor, personalize esses nomes antes de importar."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
@@ -1498,6 +1577,9 @@
       ],
       "Unknown error.": [
         "Erro desconhecido."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Impossível ligar ao seu fornecedor de serviços."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Não pode enviar um email para mais de 100 destinatários"
@@ -1755,6 +1837,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizada"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filtro ${ Filter.Name } actualizado"
       ]
     },
     "Filter option": {
@@ -1772,6 +1857,14 @@
       ],
       "Unread": [
         "Não lido"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "lido"
+      ],
+      "starred": [
+        "com estrela"
       ]
     },
     "Font Face Default": {
@@ -1908,12 +2001,93 @@
         "O ProtonContacts não suporta ${ forNow }:"
       ]
     },
+    "Import error": {
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Se ${ bold2StepsEnabled } no Gmail, certifique-se de que está a utilizar a senha da sua aplicação, em vez da sua senha habitual."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Se ${ bold2StepsEnabled }, certifique-se de que o seu endereço de email e senha da aplicação estão correctos. ${ boldNot } use a sua senha regular."
+      ],
+      "Invalid IMAP port": [
+        "Porta IMAP inválida"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso Gmail IMAP está activado."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso IMAP está activado na sua conta Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que o endereço do servidor e a porta estão correctos."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "O Proton não pode ligar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Demasiados pedidos recentes. Por favor, tente mais tarde."
+      ],
+      "Use your app password if:": [
+        "Use a senha da aplicação se:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Use a senha da aplicação em vez da sua senha normal se:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Também pode tentar terminar a sessão em ${ boldGoogleAccounts } no navegador e desbloquear ${ linkCAPTCHA }."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "a verificação em 2 passos está desactivada"
+      ],
+      "2-step verification is enabled": [
+        "a verificação em 2 passos está activada"
+      ],
+      "all your other Google accounts": [
+        "todas as suas outras contas Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "não"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Evento de calendário criado"
       ],
       "Creating calendar event failed": [
         "Falha ao criar evento de calendário"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informação da conta"
+      ],
+      "Account security": [
+        "Segurança da conta"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export contacts": [
+        "Exportar contactos"
+      ],
+      "Manage": [
+        "Gerir"
       ]
     },
     "Import warning": {
@@ -1956,9 +2130,25 @@
         "Impossível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Impossível mover ${ messagesNotAuthorizedToMove } mensagens."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } pasta encontrada",
+        "${ providerFoldersNumLocalized } pastas encontradas"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta encontrada no Gmail",
+        "${ providerFoldersNumLocalized } etiquetas encontradas no Gmail"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } ficheiro anexado",
         "${ pureAttachmentsCount } ficheiros anexados"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } pasta seleccionada",
+        "${ selectedFoldersCountLocalized } pastas seleccionadas"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
       "${ total } conversation": [
         "${ total } conversa",
@@ -1992,6 +2182,12 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(filtrar se TODAS as seguintes condições forem cumpridas)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(filtrar se UMA das seguintes condições for cumprida)"
+      ],
       "(No Recipient)": [
         "(sem destinatário)"
       ],
@@ -2022,11 +2218,17 @@
       "All your calendars are disabled.": [
         "Todas as suas agendas estão desactivadas."
       ],
+      "All your changes will be lost.": [
+        "Todas as suas alterações serão perdidas."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Foi detectada uma chave pública desconhecida para este destinatário."
       ],
       "and": [
         "e"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Tem a certeza de que deseja descartar as alterações?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
@@ -2142,6 +2344,9 @@
         "imagem incorporada",
         "imagens incorporadas"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Insira as credenciais da conta de email da qual deseja importar."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
@@ -2161,6 +2366,9 @@
       "file attached": [
         "ficheiro anexado",
         "ficheiros anexados"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Os filtros funcionam em todos os emails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais recentes que ${ oldestDate }"
@@ -2203,6 +2411,9 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Import mailbox": [
+        "Importar caixa de correio"
+      ],
       "Indexing paused": [
         "Indexação em pausa"
       ],
@@ -2223,6 +2434,9 @@
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
+      ],
+      "Label all imported messages as": [
+        "Etiquetar todas as mensagens importadas como"
       ],
       "Learn more": [
         "Saiba mais"
@@ -2266,6 +2480,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e seleccione a pasta-mãe onde deseja colocá-la. Se não seleccionar uma pasta-mãe, esta nova pasta será criada como uma pasta de nível superior."
       ],
+      "No action selected": [
+        "Nenhuma acção seleccionada"
+      ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
       ],
@@ -2275,11 +2492,17 @@
       "No folder found": [
         "Nenhuma pasta encontrada"
       ],
+      "No folder selected": [
+        "Nenhuma pasta seleccionada"
+      ],
       "No group found": [
         "Nenhum grupo encontrado"
       ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
+      ],
+      "No label selected": [
+        "Nenhuma etiqueta seleccionada"
       ],
       "No more results found": [
         "Não há mais resultados"
@@ -2349,9 +2572,6 @@
       ],
       "Right-click for options": [
         "Clique direito para opções"
-      ],
-      "Saved ${ dateString }": [
-        "Gravado a ${ dateString }"
       ],
       "Saved at ${ dateString }": [
         "Gravado a ${ dateString }"
@@ -2584,6 +2804,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
+      ],
+      "Your import will not be processed.": [
+        "A sua importação não será processada."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "A informação de início de sessão não será gravada após concluir a importação."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
@@ -2835,6 +3061,15 @@
       ]
     },
     "Label": {
+      " and ": [
+        " e "
+      ],
+      " and ${ l }": [
+        " e ${ l }"
+      ],
+      "Actions": [
+        "Acções"
+      ],
       "Add email address": [
         "Adicionar endereço de email"
       ],
@@ -2847,8 +3082,26 @@
       "Address": [
         "Endereço"
       ],
+      "ALL": [
+        "TUDO"
+      ],
       "Also archive": [
         "Arquivar também"
+      ],
+      "AND": [
+        "E"
+      ],
+      "and": [
+        "e"
+      ],
+      "And": [
+        "E"
+      ],
+      "ANY": [
+        "QUALQUER"
+      ],
+      "App password": [
+        "Senha da aplicação"
       ],
       "Attachments": [
         "Anexos"
@@ -2879,6 +3132,9 @@
       ],
       "City": [
         "Cidade"
+      ],
+      "Conditions": [
+        "Condições"
       ],
       "Contacts": [
         "Contactos"
@@ -2922,6 +3178,9 @@
       "Extended address": [
         "Endereço completo"
       ],
+      "Filter Name": [
+        "Nome do filtro"
+      ],
       "Folder location": [
         "Localização da pasta"
       ],
@@ -2937,6 +3196,12 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "IF": [
+        "SE"
+      ],
+      "If": [
+        "Se"
+      ],
       "Import contacts": [
         "Importar contactos"
       ],
@@ -2949,11 +3214,17 @@
       "Label as": [
         "Etiquetar como"
       ],
+      "Mail Server (IMAP)": [
+        "Servidor de email (IMAP)"
+      ],
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
       "Manage categories": [
         "Gerir categorias"
+      ],
+      "Mark as": [
+        "Marcar como"
       ],
       "Move to": [
         "Mover para"
@@ -2967,6 +3238,9 @@
       "Name": [
         "Nome"
       ],
+      "No label found": [
+        "Nenhuma etiqueta encontrada"
+      ],
       "Notification": [
         "Notificação"
       ],
@@ -2979,11 +3253,23 @@
       "Operating system version": [
         "Versão do sistema operativo"
       ],
+      "OR": [
+        "OU"
+      ],
+      "or": [
+        "ou"
+      ],
+      "Or": [
+        "Ou"
+      ],
       "Password": [
         "Senha"
       ],
       "Phone number": [
         "Número de telefone"
+      ],
+      "Port": [
+        "Porta"
       ],
       "Post office box": [
         "Apartado"
@@ -2996,6 +3282,9 @@
       ],
       "Public keys": [
         "Chaves públicas"
+      ],
+      "Read": [
+        "Lido"
       ],
       "Recipient": [
         "Destinatário"
@@ -3018,6 +3307,9 @@
       "Select how your mailbox looks like by default.": [
         "Escolha a aparência predefinida da caixa de correio."
       ],
+      "Send auto-reply": [
+        "Enviar resposta automática"
+      ],
       "Sender": [
         "Remetente"
       ],
@@ -3027,11 +3319,32 @@
       "Size:": [
         "Tamanho:"
       ],
+      "Starred": [
+        "Com estrela"
+      ],
+      "Statement": [
+        "Declaração"
+      ],
       "Street address": [
         "Endereço postal"
       ],
       "System information": [
         "Informação do sistema"
+      ],
+      "The email was sent ${ attachment }": [
+        "O email foi enviado ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "o email foi enviado ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "O email foi enviado ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "o email foi enviado ${ label }"
+      ],
+      "Then": [
+        "Então"
       ],
       "Time": [
         "Tempo"
@@ -3048,6 +3361,9 @@
       "Undisclosed Recipients": [
         "Destinatários não divulgados"
       ],
+      "Upload file": [
+        "Enviar ficheiro"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -3056,6 +3372,21 @@
       ],
       "What happened?": [
         "O que é que aconteceu?"
+      ],
+      "With attachment": [
+        "Com anexo"
+      ],
+      "with attachments": [
+        "com anexos"
+      ],
+      "Without attachment": [
+        "Sem anexo"
+      ],
+      "without attachment": [
+        "sem anexo"
+      ],
+      "without attachments": [
+        "sem anexos"
       ]
     },
     "Label for contact group color": {
@@ -3170,9 +3501,6 @@
       "Folders": [
         "Pastas"
       ],
-      "Go to subscription plans": [
-        "Ir para os planos de subscrição"
-      ],
       "Inbox": [
         "Caixa de entrada"
       ],
@@ -3233,9 +3561,6 @@
       "Trash": [
         "Lixo"
       ],
-      "Upgrade": [
-        "Actualizar"
-      ],
       "Upgrade account": [
         "Actualizar conta"
       ],
@@ -3262,6 +3587,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Tem de reactivar as suas chaves para ver o convite actualizado"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your email provider": [
+        "A ligar ao seu fornecedor de correio electrónico"
       ]
     },
     "Mailbox": {
@@ -3461,6 +3791,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } criado"
+      ],
       "Contact group created": [
         "Grupo de contactos criado"
       ],
@@ -3511,6 +3844,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Pastas personalizadas"
+      ],
       "Default folders": [
         "Pastas predefinidas"
       ],
@@ -3610,6 +3946,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "Type text or keyword": [
+        "Insira o texto ou palavra-chave"
       ],
       "Write your message": [
         "Escreva a sua mensagem"
@@ -3846,6 +4185,20 @@
         "Esta mensagem é oriunda de uma lista de discussão."
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Acções"
+      ],
+      "Conditions": [
+        "Condições"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Preview": [
+        "Antever"
+      ]
+    },
     "Storage": {
       "Release notes": [
         "Notas de lançamento"
@@ -3883,8 +4236,8 @@
         "${ elementsCount } conversas movidas para ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversa movida para spam e remetente adicionado à lista de bloqueios.",
-        "${ elementsCount } conversas movidas para spam e remetentes adicionados à lista de bloqueios."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversa removida de ${ labelName }.",
@@ -3903,8 +4256,8 @@
         "${ elementsCount } mensagens movidas para ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } mensagem movida para spam e remetente adicionado à lista de bloqueios.",
-        "${ elementsCount } mensagens movidas para spam e remetentes adicionados à lista de bloqueios."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -3943,7 +4296,7 @@
         "Conversa movida para ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversa movida para spam e remetente adicionado à lista de bloqueios."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Draft deleted": [
         "Rascunho eliminado"
@@ -3979,13 +4332,13 @@
         "Mensagem marcada como legítima"
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "A mensagem foi movida para ${ folderName } e o remetente foi adicionado à lista de permissões."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Mensagem movida para ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Mensagem movida para spam e remetente adicionado à lista de bloqueios."
+        "Message moved to spam and sender added to your block list."
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversa",
@@ -4119,6 +4472,9 @@
       "Add contact group name": [
         "Adicionar nome do grupo de contactos"
       ],
+      "Add filter": [
+        "Adicionar filtro"
+      ],
       "Add to ${ groupCount } group": [
         "Adicionar a ${ groupCount } grupo",
         "Adicionar a ${ groupCount } grupos"
@@ -4131,6 +4487,9 @@
       ],
       "Archive": [
         "Arquivo"
+      ],
+      "Are you sure you want to close?": [
+        "Tem a certeza de que quer fechar?"
       ],
       "Attachments": [
         "Anexos"
@@ -4239,6 +4598,9 @@
       "Edit contact group": [
         "Editar grupo de contactos"
       ],
+      "Edit filter": [
+        "Editar filtro"
+      ],
       "Edit image": [
         "Editar imagem"
       ],
@@ -4333,10 +4695,10 @@
         "Mover para a caixa de entrada"
       ],
       "Move to inbox (not spam)": [
-        "Mover para caixa de entrada (não é spam)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Mover para spam"
+        "Move to spam"
       ],
       "Move to trash": [
         "Mover para o lixo"
@@ -4382,6 +4744,9 @@
       ],
       "Re-signing contacts": [
         "A re-assinar contactos"
+      ],
+      "Reconnect your account": [
+        "Religue a sua conta"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -4440,6 +4805,12 @@
       "Sort messages": [
         "Ordenar mensagens"
       ],
+      "Start a new import": [
+        "Iniciar nova importação"
+      ],
+      "Start import process": [
+        "Iniciar o processo de importação"
+      ],
       "Storage capacity warning": [
         "Aviso de capacidade de armazenamento"
       ],
@@ -4493,8 +4864,20 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é usado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
       ],
+      "Customize import to reduce the number of folders": [
+        "Personalize a importação para reduzir o número de pastas"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Personalize a importação para reduzir o número de etiquetas"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Assinar digitalmente emails ajuda a confirmar que as mensagens são enviadas por si"
+      ],
+      "Edit folder names": [
+        "Editar nomes de pastas"
+      ],
+      "Edit label names": [
+        "Editar nomes de etiqueta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "A encriptação do email força a assinatura para ajudar a autenticar as suas mensagens enviadas"
@@ -4504,6 +4887,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "This feature is only available for paid users": [
+        "Esta funcionalidade só está disponível para utilizadores pagantes"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de emails encriptados ponta-a-ponta para este email"
@@ -4519,6 +4905,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Tem certeza de que deseja descartar a importação?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Tem a certeza de que deseja eliminar permanentemente ${ count } grupo de contactos?",
         "Tem a certeza de que deseja eliminar permanentemente ${ count } grupos de contactos?"
@@ -4538,6 +4927,9 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da senha, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "O Proton transferirá o máximo de dados possível, começando com as mensagens mais recentes."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
@@ -4563,6 +4955,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Esta funcionalidade requer uma conta Proton paga"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Esta importação pode exceder a capacidade de armazenamento actualmente disponível na sua conta Proton. Por favor, considere personalizar a importação."
       ]
     },
     "Weekly recurring event, frequency": {

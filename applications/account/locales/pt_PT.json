@@ -74,9 +74,6 @@
       "Apply": [
         "Aplicar"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -326,10 +323,10 @@
       "No": [
         "Não"
       ],
-      "OK": [
+      "Ok": [
         "Aceitar"
       ],
-      "Ok": [
+      "OK": [
         "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -374,11 +371,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1157,6 +1154,20 @@
         "${ emailAddress } aceitou provisoriamente o seu convite para ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancelamento de um evento em ${ formattedStart }"
@@ -1789,7 +1800,7 @@
     },
     "FilterSettings": {
       "Search in Allow List and Block List": [
-        "Procurar nas listas de permissões e bloqueios"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3895,6 +3906,9 @@
       "Undo send": [
         "Desfazer Enviar"
       ],
+      "Upload file": [
+        "Enviar ficheiro"
+      ],
       "URL": [
         "URL"
       ],
@@ -5223,6 +5237,9 @@
       ],
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
+      ],
+      "Add to block list": [
+        "Add to your block list"
       ],
       "Add user": [
         "Adicionar utilizador"

@@ -23,6 +23,9 @@
       "Add address": [
         "Adres toevoegen"
       ],
+      "Add condition": [
+        "Voorwaarde toevoegen"
+      ],
       "Add contact": [
         "Contactpersoon toevoegen"
       ],
@@ -182,6 +185,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue import": [
+        "Doorgaan met importeren"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -209,6 +215,12 @@
       "Create a new label": [
         "Een nieuw label maken"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
+      "Create label": [
+        "Label maken"
+      ],
       "Create new contact": [
         "Nieuwe contactpersoon aanmaken"
       ],
@@ -217,6 +229,9 @@
       ],
       "Customize": [
         "Personaliseer"
+      ],
+      "Customize import": [
+        "Importeren aanpassen"
       ],
       "Default email application": [
         "Standaard e-mailapplicatie"
@@ -413,7 +428,7 @@
         "Verberg berichten"
       ],
       "Hide My Email": [
-        "Verberg Mijn E-mailadres"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Verberg mijn e-mailadres"
@@ -467,6 +482,9 @@
       "Label as...": [
         "Labelen als..."
       ],
+      "label emails as": [
+        "e-mail labellen als"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -502,6 +520,9 @@
       ],
       "Mark as unread": [
         "Markeren als ongelezen"
+      ],
+      "mark emails as": [
+        "e-mails markeren als"
       ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
@@ -563,6 +584,9 @@
       "Move all to trash": [
         "Alles naar de prullenbak verplaatsen"
       ],
+      "move emails to": [
+        "e-mails verplaatsen naar"
+      ],
       "Move to": [
         "Verplaatsen naar"
       ],
@@ -571,12 +595,6 @@
       ],
       "Move to inbox": [
         "Naar Postvak IN verplaatsen"
-      ],
-      "Move to inbox (not spam)": [
-        "Verplaatsen naar inbox (geen spam)"
-      ],
-      "Move to spam": [
-        "Naar spam verplaatsen"
       ],
       "Move to spam and unsubscribe": [
         "Verplaatsen naar spam en afmelden"
@@ -650,6 +668,9 @@
       "Pause": [
         "Pauzeer"
       ],
+      "Preview": [
+        "Voorbeeld"
+      ],
       "Preview ${ attachmentName }": [
         "Bekijk ${ attachmentName }"
       ],
@@ -689,6 +710,9 @@
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
       ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
       "Recover data": [
         "Gegevens herstellen"
       ],
@@ -716,6 +740,9 @@
       "Remove expiration time": [
         "Vervaltijd verwijderen"
       ],
+      "Remove this label": [
+        "Label verwijderen"
+      ],
       "Rename": [
         "Hernoem"
       ],
@@ -739,6 +766,9 @@
       ],
       "Reset search form": [
         "Zoekformulier resetten"
+      ],
+      "Reset to default": [
+        "Terugzetten naar standaard"
       ],
       "Reset zoom": [
         "Reset zoom"
@@ -787,6 +817,9 @@
       ],
       "Send anyway": [
         "Toch verzenden"
+      ],
+      "send auto-reply email": [
+        "automatisch antwoord versturen"
       ],
       "Send feedback": [
         "Feedback versturen"
@@ -1796,6 +1829,9 @@
       ],
       "Quit import customization?": [
         "Persoonlijke instellingen m.b.t. importeren sluiten?"
+      ],
+      "Quit import?": [
+        "Importeren beëindigen?"
       ]
     },
     "Contact field label": {
@@ -2652,6 +2688,23 @@
         "Aland Eilanden"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "Bijlage"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "Recipient": [
+        "Ontvanger"
+      ],
+      "Sender": [
+        "Afzender"
+      ],
+      "Subject": [
+        "Onderwerp"
+      ]
+    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } keer",
@@ -2893,6 +2946,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A problem occurred, please try again.": [
+        "Er is een probleem opgetreden, probeer het opnieuw."
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -2914,6 +2970,9 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Kies een datum binnen de volgende ${ SCHEDULED_MAX_DATE_DAYS } dag.",
         "Kies een datum binnen de volgende ${ SCHEDULED_MAX_DATE_DAYS } dagen."
+      ],
+      "Condition incomplete": [
+        "Onvolledig ingevulde voorwaarde"
       ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
@@ -2956,11 +3015,17 @@
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
+      "Empty condition": [
+        "Lege voorwaarde"
+      ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
       "Enter a password": [
         "Voer een wachtwoord in"
+      ],
+      "Error in one of the conditions": [
+        "Fout in de volgende voorwaarden"
       ],
       "Error while saving draft. Please try again.": [
         "Fout bij het opslaan van concept. Gelieve opnieuw te proberen."
@@ -2973,6 +3038,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Fout tijdens het versleutelen van de bijlage. Probeer alstublieft opnieuw."
+      ],
+      "Filter with this name already exists": [
+        "Filter met deze naam bestaat reeds"
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
@@ -3058,6 +3126,9 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
+      "Please activate your search again": [
+        "Activeer opnieuw uw zoekopdracht"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
@@ -3067,6 +3138,9 @@
       ],
       "Please set a password": [
         "Stel een wachtwoord in"
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
@@ -3093,6 +3167,12 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Require at least one action": [
+        "Vereist minstens één actie"
+      ],
+      "Require at least one condition": [
+        "Vereist minstens één voorwaarde"
+      ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
       ],
@@ -3108,6 +3188,12 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw mapnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
@@ -3116,6 +3202,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Er ging iets mis, probeer opnieuw"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Sorry, Proton kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
@@ -3183,6 +3272,9 @@
       ],
       "Unknown error.": [
         "Onbekende fout."
+      ],
+      "We were unable to connect to your service provider.": [
+        "We kunnen geen verbinding maken met uw serviceprovider."
       ],
       "Wrong mailbox password": [
         "Verkeerd mailbox-wachtwoord"
@@ -3549,6 +3641,9 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filter ${ Filter.Name } bijgewerkt"
       ]
     },
     "Filter option": {
@@ -3566,6 +3661,14 @@
       ],
       "Unread": [
         "Ongelezen"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "gelezen"
+      ],
+      "starred": [
+        "Met ster"
       ]
     },
     "Font Face Default": {
@@ -3776,12 +3879,258 @@
         "ProtonContacts ondersteunt geen ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2-staps-verificatie is ingeschakeld in uw externe account."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Als ${ bold2StepsDisabled } (standaard Gmail-instellingen), zorg er dan voor dat:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Als ${ bold2StepsDisabled } in Gmail (standaard instellingen), zorg er dan voor:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Als ${ bold2StepsEnabled } in Gmail, zorg er dan voor dat u uw app-wachtwoord gebruikt in plaats van uw reguliere wachtwoord."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Als ${ bold2StepsEnabled }, zorg er dan voor dat uw e-mailadres en app-wachtwoord juist zijn. Gebruik ${ boldNot } uw reguliere wachtwoord."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP-toegang is ingeschakeld in uw externe account."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP toegang is ingeschakeld in uw Yahoo account."
+      ],
+      "Invalid IMAP port": [
+        "Ongeldige IMAP poort"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat Gmail IMAP-toegang is ingeschakeld."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat IMAP toegang is ingeschakeld in uw Gmail account."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw externe account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw Gmail-account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw Yahoo account. Gelieve ervoor te zorgen dat:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
+      ],
+      "Use your app password if:": [
+        "Gebruik uw app-wachtwoord als:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
+      ],
+      "Your email account requires one to export your data.": [
+        "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
+      ],
+      "Your email address and password are correct.": [
+        "Uw e-mailadres en wachtwoord zijn juist."
+      ],
+      "Your password is correct.": [
+        "Uw wachtwoord is juist."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "tweestapsverificatie (2FA) is uitgeschakeld"
+      ],
+      "2-step verification is enabled": [
+        "tweestapsverificatie (2FA) is ingeschakeld"
+      ],
+      "all your other Google accounts": [
+        "al uw andere Google-accounts"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "niet"
+      ]
+    },
     "Import ICS file from Mail": {
       "Calendar event created": [
         "Agenda-afspraak aangemaakt"
       ],
       "Creating calendar event failed": [
         "Aanmaken agenda-afspraak mislukt"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik op ${ boldManage } om het keuzemenu uit te vouwen."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Vouw het dropdown-menu uit door te klikken op de 3 puntjes (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Ga naar ${ boldAccountInfo } onder uw profiel in ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Ga naar ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Ga naar Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Als 2-staps-verificatie uit staat, schakelt u deze in."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Open de contacten van uw ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Open uw Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Selecteer ${ boldExportContacts } en kies welke contactpersonen u wilt exporteren."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Selecteer ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Rekeninginformatie"
+      ],
+      "Account security": [
+        "Accountbeveiliging"
+      ],
+      "app password": [
+        "app-wachtwoord"
+      ],
+      "Can view all details": [
+        "Kan alle details bekijken"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Export contacts": [
+        "Contactpersonen exporteren"
+      ],
+      "Export to CSV file": [
+        "Exporteer naar CSV bestand"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Beheren"
+      ],
+      "Publish a calendar": [
+        "Publiceer een agenda"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "app-wachtwoord"
+      ],
+      "app password or enable IMAP": [
+        "appwachtwoord of IMAP inschakelen"
+      ],
+      "contacts": [
+        "contactpersonen"
+      ],
+      "full calendar view": [
+        "volledige agendaweergave"
+      ],
+      "ICS file": [
+        "ICS-bestand"
+      ],
+      "security settings": [
+        "beveiligingsinstellingen"
+      ],
+      "shared calendars": [
+        "gedeelde agenda's"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik op de ${ boldICS }-link en download het bestand."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Ga naar ${ calendarLink } in uw Outlook-instellingen."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Ga naar ${ calendarViewLink } in Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Beweeg uw muis naar de agenda die u wilt importeren en open het dropdown-menu."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Selecteer de agenda die u wilt importeren onder ${ boldPublish }. Stel de machtiging in op ${ boldCanViewAllDetails } en publiceer het."
       ]
     },
     "Import warning": {
@@ -3866,6 +4215,14 @@
         "${ numOccurrences } voorval gevonden in de inhoud van de mail",
         "${ numOccurrences } voorvallen gevonden in de inhoud van de mail"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } map gevonden",
+        "${ providerFoldersNumLocalized } mappen gevonden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label gevonden in Gmail",
+        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } bestand bijgevoegd",
         "${ pureAttachmentsCount } bestanden bijgevoegd"
@@ -3881,6 +4238,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label geselecteerd",
         "${ selectedFoldersCount } labels geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } map geselecteerd",
+        "${ selectedFoldersCountLocalized } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label geselecteerd",
+        "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
@@ -3920,6 +4285,12 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filter als aan EEN van de volgende voorwaarden is voldaan)"
       ],
       "(No Recipient)": [
         "(Geen ontvanger)"
@@ -3968,6 +4339,9 @@
       "All your calendars are disabled.": [
         "Alle agenda's zijn uitgeschakeld."
       ],
+      "All your changes will be lost.": [
+        "Alle wijzigingen gaan verloren."
+      ],
       "An unknown public key has been detected for this recipient.": [
         "Er is een onbekende openbare sleutel gevonden voor deze ontvanger."
       ],
@@ -3979,6 +4353,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Weet u zeker dat u alle berichten met dit label wilt verwijderen?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Weet u zeker dat u alle berichten in deze locatie wilt verplaatsen naar de prullenbak?"
@@ -4052,6 +4429,9 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
+      "Content: ": [
+        "Inhoud: "
+      ],
       "Continue with ${ planName }": [
         "Ga door met ${ planName }"
       ],
@@ -4118,6 +4498,9 @@
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Bericht ${ currentProgress } van ${ totalProgress } aan het downloaden"
+      ],
       "Draft": [
         "Concept"
       ],
@@ -4171,6 +4554,9 @@
       "Encrypt message": [
         "Bericht versleutelen"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
@@ -4205,6 +4591,9 @@
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
       ],
       "Folder": [
         "Map"
@@ -4268,6 +4657,9 @@
       "Image URL": [
         "Afbeeldings-URL"
       ],
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
@@ -4280,6 +4672,9 @@
       ],
       "Import in progress": [
         "Bezig met importeren"
+      ],
+      "Import mailbox": [
+        "Mailbox importeren"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -4313,6 +4708,9 @@
       ],
       "Key fingerprint": [
         "Digitale vingerafdruk"
+      ],
+      "Label all imported messages as": [
+        "Label alle geïmporteerde berichten als"
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
@@ -4389,6 +4787,9 @@
       "New": [
         "Nieuw"
       ],
+      "No action selected": [
+        "Geen actie geselecteerd"
+      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
@@ -4401,11 +4802,17 @@
       "No folder found": [
         "Geen map gevonden"
       ],
+      "No folder selected": [
+        "Geen map geselecteerd"
+      ],
       "No group found": [
         "Geen groep gevonden"
       ],
       "No label found": [
         "Geen label gevonden"
+      ],
+      "No label selected": [
+        "Geen label geselecteerd"
       ],
       "No more results found": [
         "Geen resultaten meer gevonden"
@@ -4415,6 +4822,9 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "No search results from past 30 days. Searching the rest of your inbox": [
+        "Geen resultaten van de afgelopen 30 dagen gevonden, de rest van uw inbox wordt doorzocht"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
@@ -4540,9 +4950,6 @@
       "Right-click for options": [
         "Rechtsklik voor opties"
       ],
-      "Saved ${ dateString }": [
-        "Opgeslagen ${ dateString }"
-      ],
       "Saved at ${ dateString }": [
         "Opgeslagen op ${ dateString }"
       ],
@@ -4557,6 +4964,9 @@
       ],
       "Scheduling message...": [
         "Bericht plannen..."
+      ],
+      "Search full content of older messages with a ${ paidPlansButton }": [
+        "Doorzoek de volledige inhoud van oudere berichten met een ${ paidPlansButton }"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Duurt de zoekopdracht te lang? ${ dropdownButton } of ${ toggleOffButton } van deze zoeksessie."
@@ -4660,6 +5070,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Het opgestelde concept gaat verloren als u de pagina verlaat."
       ],
+      "The local database is being prepared": [
+        "De lokale database wordt voorbereid"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
       ],
@@ -4690,6 +5103,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Deze actie zal de meest berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -5019,6 +5435,12 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your import will not be processed.": [
+        "Uw import zal niet worden verwerkt."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
+      ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "Uw bericht zal verwijderd worden uit de ontvangers inbox en uw verzonden map op ${ dateString } om ${ formattedTime }"
       ],
@@ -5302,8 +5724,17 @@
       ]
     },
     "Label": {
+      " and ": [
+        " en "
+      ],
+      " and ${ l }": [
+        " en ${ l }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
+      "Actions": [
+        "Acties"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -5317,8 +5748,35 @@
       "Address": [
         "Adres"
       ],
+      "ALL": [
+        "ALLES"
+      ],
       "Also archive": [
         "Ook archiveren"
+      ],
+      "Always label sender's emails": [
+        "Label altijd e-mails van afzenders"
+      ],
+      "Always move sender's emails": [
+        "Verplaats altijd mails van afzenders"
+      ],
+      "AND": [
+        "EN"
+      ],
+      "and": [
+        "en"
+      ],
+      "And": [
+        "En"
+      ],
+      "ANY": [
+        "ELK"
+      ],
+      "App password": [
+        "App-wachtwoord"
+      ],
+      "Apply filter to existing emails": [
+        "Filter toepassen op bestaande e-mails"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -5367,6 +5825,12 @@
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
+      ],
+      "Coming soon": [
+        "Binnenkort beschikbaar"
+      ],
+      "Conditions": [
+        "Voorwaarden"
       ],
       "Confirm password": [
         "Bevestig wachtwoord"
@@ -5422,6 +5886,9 @@
       "Extended address": [
         "Adrestoevoeging"
       ],
+      "Filter Name": [
+        "Filternaam"
+      ],
       "Folder location": [
         "Map locatie"
       ],
@@ -5434,8 +5901,14 @@
       "From:": [
         "Van:"
       ],
+      "From: ${ emailFrom }": [
+        "Van: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Van: ${ importedEmailAddress }"
       ],
       "Good": [
         "Goed"
@@ -5451,6 +5924,12 @@
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
+      ],
+      "IF": [
+        "ALS"
+      ],
+      "If": [
+        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -5488,6 +5967,9 @@
       "Location": [
         "Locatie"
       ],
+      "Mail Server (IMAP)": [
+        "Mailserver (IMAP)"
+      ],
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
@@ -5503,6 +5985,9 @@
       "Manage my addresses": [
         "Mijn adressen beheren"
       ],
+      "Mark as": [
+        "Markeren als"
+      ],
       "Move to": [
         "Verplaatsen naar"
       ],
@@ -5515,6 +6000,9 @@
       "Name": [
         "Naam"
       ],
+      "No label found": [
+        "Geen label gevonden"
+      ],
       "Notification": [
         "Notificatie"
       ],
@@ -5526,6 +6014,15 @@
       ],
       "Operating system version": [
         "Versie van besturingssysteem"
+      ],
+      "OR": [
+        "OF"
+      ],
+      "or": [
+        "of"
+      ],
+      "Or": [
+        "Of"
       ],
       "Participants": [
         "Deelnemers"
@@ -5542,6 +6039,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Port": [
+        "Poort"
+      ],
       "Post office box": [
         "Postbus"
       ],
@@ -5553,6 +6053,9 @@
       ],
       "Public keys": [
         "Openbare sleutels"
+      ],
+      "Read": [
+        "Gelezen"
       ],
       "Recipient": [
         "Ontvanger"
@@ -5581,6 +6084,9 @@
       "Select how your mailbox looks like by default.": [
         "Selecteer hoe uw mailbox er standaard uitziet."
       ],
+      "Send auto-reply": [
+        "Automatisch antwoord versturen"
+      ],
       "Sender": [
         "Afzender"
       ],
@@ -5590,11 +6096,32 @@
       "Size:": [
         "Grootte:"
       ],
+      "Starred": [
+        "Met ster"
+      ],
+      "Statement": [
+        "Voorwaarde"
+      ],
       "Street address": [
         "Adres"
       ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "The email was sent ${ attachment }": [
+        "De e-mail was verzonden ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "de e-mail was verzonden ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "De e-mail was verzonden ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "de e-mail was verzonden ${ label }"
+      ],
+      "Then": [
+        "Dan"
       ],
       "Time": [
         "Tijd"
@@ -5608,11 +6135,20 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Naar: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Aan: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Tweestapsverificatiecode"
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
+      ],
+      "Upload file": [
+        "Bestand uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -5625,6 +6161,21 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
+      ],
+      "With attachment": [
+        "Met bijlage"
+      ],
+      "with attachments": [
+        "met bijlagen"
+      ],
+      "Without attachment": [
+        "Zonder bijlage"
+      ],
+      "without attachment": [
+        "zonder bijlagen"
+      ],
+      "without attachments": [
+        "zonder bijlagen"
       ],
       "Wonderful": [
         "Uitstekend"
@@ -5742,9 +6293,6 @@
       "Folders": [
         "Mappen"
       ],
-      "Go to subscription plans": [
-        "Ga naar abonnementsplannen"
-      ],
       "Inbox": [
         "Inbox"
       ],
@@ -5784,6 +6332,9 @@
       "Outbox": [
         "Postvak UIT"
       ],
+      "paid plan": [
+        "betaald abonnement"
+      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -5822,9 +6373,6 @@
       ],
       "Trash": [
         "Prullenbak"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ],
       "Upgrade account": [
         "Account upgraden"
@@ -5868,6 +6416,9 @@
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
+      ],
+      "Connecting to your email provider": [
+        "Verbinding maken met uw e-mailprovider"
       ],
       "Creating new calendars": [
         "Nieuwe agenda's maken"
@@ -5967,6 +6518,35 @@
       ],
       "Plain text": [
         "Platte tekst"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Hoe u agenda's importeert uit een andere dienst"
+      ],
+      "How to import calendars from Outlook": [
+        "Hoe u agenda's importeert uit Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Hoe u agenda's importeert uit Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Hoe u contacten importeert uit een andere dienst"
+      ],
+      "How to import contacts from Outlook": [
+        "Hoe u contacten importeert uit Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Hoe u contacten importeert uit Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Hoe u e-mails importeert uit een andere dienst"
+      ],
+      "How to import emails from Outlook": [
+        "Hoe u e-mails importeert uit Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Hoe u e-mails importeert uit Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6139,6 +6719,9 @@
       ]
     },
     "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } aangemaakt"
+      ],
       "Block removed": [
         "Blokkade verwijderd"
       ],
@@ -6219,6 +6802,9 @@
       ]
     },
     "Option group": {
+      "Custom folders": [
+        "Aangepaste mappen"
+      ],
       "Default folders": [
         "Standaard mappen"
       ],
@@ -6360,6 +6946,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Type text or keyword": [
+        "Voer tekst of trefwoord in"
       ],
       "Write your message": [
         "Schrijf uw bericht"
@@ -6651,6 +7240,20 @@
         "Opgezegd"
       ]
     },
+    "Step in filter modal": {
+      "Actions": [
+        "Acties"
+      ],
+      "Conditions": [
+        "Voorwaarden"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ]
+    },
     "Storage": {
       "Get extra storage for free": [
         "Krijg gratis extra opslag"
@@ -6703,8 +7306,8 @@
         "${ elementsCount } gesprekken verplaatst naar ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } gesprek is verplaatst naar spam en afzender toegevoegd aan de blokkadelijst.",
-        "${ elementsCount } gesprekken zijn verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
+        "${ elementsCount } conversation moved to spam and sender added to your block list.",
+        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } gesprek verwijderd van ${ labelName }.",
@@ -6735,8 +7338,8 @@
         "${ elementsCount } berichten zijn verplaatst naar ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } bericht is verplaatst naar spam en afzender toegevoegd aan de blokkadelijst.",
-        "${ elementsCount } berichten zijn verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
+        "${ elementsCount } message moved to spam and sender added to your block list.",
+        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } bericht verwijderd van ${ labelName }.",
@@ -6790,7 +7393,7 @@
         "Gesprek verplaatst naar ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversatie verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
+        "Conversation moved to spam and sender added to your block list."
       ],
       "Conversation removed from ${ labelName }.": [
         "Gesprek verwijderd van ${ labelName }."
@@ -6847,13 +7450,13 @@
         "Bericht gemarkeerd als ongelezen."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Bericht verplaatst naar ${ folderName } en afzender toegevoegd aan Toegestane Lijst."
+        "Message moved to ${ folderName } and sender added to your allow list."
       ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Bericht verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
+        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Bericht verwijderd van ${ labelName }."
@@ -6900,11 +7503,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback verzonden"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/maand"
       ]
     },
     "Table header": {
@@ -7023,6 +7621,9 @@
       "Add contact group name": [
         "Naam contactgroep toevoegen"
       ],
+      "Add filter": [
+        "Filter toevoegen"
+      ],
       "Add to ${ groupCount } group": [
         "Toevoegen aan ${ groupCount } groep",
         "Toevoegen aan ${ groupCount } groepen"
@@ -7035,6 +7636,9 @@
       ],
       "Archive": [
         "Archief"
+      ],
+      "Are you sure you want to close?": [
+        "Weet u zeker dat u wil afsluiten?"
       ],
       "Attachments": [
         "Bijlagen"
@@ -7161,6 +7765,9 @@
       "Edit contact group": [
         "Contactgroep bewerken"
       ],
+      "Edit filter": [
+        "Filter bewerken"
+      ],
       "Edit image": [
         "Afbeelding bewerken"
       ],
@@ -7285,10 +7892,10 @@
         "Verplaats naar inbox"
       ],
       "Move to inbox (not spam)": [
-        "Verplaatsen naar inbox (geen spam)"
+        "Move to inbox (not spam)"
       ],
       "Move to spam": [
-        "Naar spam verplaatsen"
+        "Move to spam"
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
@@ -7346,6 +7953,9 @@
       ],
       "Recipients": [
         "Geadresseerden"
+      ],
+      "Reconnect your account": [
+        "Uw account opnieuw verbinden"
       ],
       "Recover data": [
         "Gegevens herstellen"
@@ -7419,6 +8029,12 @@
       "Sort messages": [
         "Berichten sorteren"
       ],
+      "Start a new import": [
+        "Start een nieuwe import"
+      ],
+      "Start import process": [
+        "Importproces starten"
+      ],
       "Storage capacity warning": [
         "Waarschuwing voor opslagruimte"
       ],
@@ -7487,11 +8103,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
       ],
+      "Customize import to reduce the number of folders": [
+        "Import aanpassen om het aantal mappen te verminderen"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Import aanpassen om het aantal labels te verminderen"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u zijn verzonden"
       ],
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"
+      ],
+      "Edit folder names": [
+        "Mapnamen bewerken"
+      ],
+      "Edit label names": [
+        "Labelnamen bewerken"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailberichten versleutelen zorgt dat ze ook ondertekend worden, om anderen te helpen om uw verzonden berichten te verifiëren"
@@ -7501,6 +8129,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
+      ],
+      "For messages older than 30 days, only the subject line and recipient list is searched": [
+        "Voor berichten ouder dan 30 dagen, wordt enkel het onderwerp en ontvangerslijst doorzocht"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
@@ -7513,6 +8144,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
+      ],
+      "This feature is only available for paid users": [
+        "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
@@ -7555,6 +8189,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contactgroepen permanent wilt verwijderen?"
@@ -7580,6 +8217,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -7611,6 +8251,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Deze functie vereist een betaald Proton-account"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw Proton account. Overweeg om uw import aan te passen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."

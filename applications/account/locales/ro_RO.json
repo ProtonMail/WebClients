@@ -102,8 +102,8 @@
       "Apply": [
         "Aplicare"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Aplicare la mesajele existente"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -486,11 +486,14 @@
       "No": [
         "Nu"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "Dorite"
       ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -543,11 +546,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reload": [
         "Reîncărcare"
@@ -2739,6 +2742,20 @@
         "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Anulare eveniment care are loc ${ formattedStart }"
@@ -3071,11 +3088,17 @@
       "Signature verification failed": [
         "Eșuare verificare semnătură"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de foldere depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Unele nume de etichete sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
@@ -3706,7 +3729,7 @@
         "Mesajele de la adresele blocate nu vor fi livrate."
       ],
       "Search in Allow List and Block List": [
-        "Căutare în lista de adrese permise și blocate"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4174,8 +4197,8 @@
       "contacts": [
         "contacte"
       ],
-      "CSV file": [
-        "fișier CSV"
+      "CSV or a VCF (vCard) file": [
+        "Un fişier CSV sau VCF (vCard)"
       ],
       "full calendar view": [
         "vedere completă calendar"
@@ -6437,6 +6460,9 @@
       " and ${ l }": [
         " și ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } e-mail sau utilizator"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
       ],
@@ -6604,6 +6630,9 @@
       ],
       "Color": [
         "Culoare"
+      ],
+      "Coming soon": [
+        "În curând"
       ],
       "Composer": [
         "Compunere mesaje"
@@ -7181,6 +7210,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Încărcare una sau mai multe fișiere de recuperare sau chei de criptare"
       ],
+      "Upload file": [
+        "Încărcare fișier"
+      ],
       "URL": [
         "Adresa URL"
       ],
@@ -7529,10 +7561,20 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la o etichetă începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
@@ -7821,29 +7863,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "De la ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "De la ${ _price2 } per utilizator"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
-      ],
-      "Upgrade now": [
-        "Upgrade acum"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continuare revizuire"
@@ -7883,6 +7902,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgrade la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "De la ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "De la ${ _price2 } per utilizator"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade now": [
+        "Upgrade acum"
       ]
     },
     "new_plans: attribute": {
@@ -8260,17 +8302,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Încercare ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgrade la ${ planName }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -8292,6 +8323,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium făcând upgrade"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Încercare ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgrade la ${ planName }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -9337,35 +9379,6 @@
         "Utilizator"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } s-a adăugat."
-      ],
-      "${ name } deletion failed": [
-        "Ștergerea lui ${ name } a eșuat."
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } nu s-a putut muta în lista de blocare."
-      ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } nu s-a putut muta în lista de dorite."
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } nu s-a putut muta în lista de nedorite."
-      ],
-      "${ name } moved to Block List": [
-        "${ name } s-a mutat în lista de blocare."
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } s-a mutat în lista de dorite."
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } s-a mutat în lista de nedorite."
-      ],
-      "${ name } successfully deleted": [
-        "S-a reușit ștergerea ${ name }."
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
@@ -9939,9 +9952,9 @@
         "Adăugare filtru Sieve"
       ],
       "Add to block list": [
-        "Adăugare la lista de blocare"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "Adăugare la lista de acceptate"
       ],
       "Add to spam list": [

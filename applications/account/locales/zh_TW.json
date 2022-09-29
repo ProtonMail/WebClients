@@ -4,6 +4,14 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "完整檢視（檢視所有事件的詳細資訊）"
+      ],
+      "Limited view (see only free/busy)": [
+        "有限制的檢視（僅檢視有空／忙碌）"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } 是可用的。"
@@ -83,8 +91,8 @@
       "Apply": [
         "套用"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "套用至現有的訊息"
       ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
@@ -467,10 +475,13 @@
       "No": [
         "否"
       ],
-      "OK": [
-        "確定"
+      "Non spam": [
+        "非垃圾郵件"
       ],
       "Ok": [
+        "確定"
+      ],
+      "OK": [
         "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -524,10 +535,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1111,14 +1122,43 @@
         "邀請傳送"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "僅有您可以看見標籤"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "您可以在任何時候變更或移除權限。"
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "權限"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "您已可存取此行事曆"
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "共享行事曆"
+      ],
+      "Share with anyone": [
+        "與任何人分享"
+      ],
+      "Share with Proton users": [
+        "與 Proton 使用者分享"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "編輯（檢視、建立與編輯事件詳細資訊）"
+      ],
+      "Full view (see all event details)": [
+        "完整檢視（檢視所有事件的詳細資訊）"
       ]
     },
     "Calendar status": {
@@ -2391,6 +2431,20 @@
         "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "原訂 ${ formattedStart } 一事取消"
@@ -2442,6 +2496,9 @@
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
+      "Already a member of this calendar": [
+        "已經是行事曆的成員了"
       ],
       "Amount above the maximum.": [
         "金額高於上限。"
@@ -2592,6 +2649,9 @@
       ],
       "No keys retrieved for internal user": [
         "未為內部使用者檢索到密鑰"
+      ],
+      "No public key for Proton address": [
+        "Proton 地址沒有公開金鑰"
       ],
       "No valid address found": [
         "找不到有效的位址"
@@ -3226,7 +3286,7 @@
         "新增一個自訂的篩選器可以自動進行某些操作，例如為郵件添加標籤或歸檔。篩選器可以直接使用 Sieve 語言建立或修改。"
       ],
       "Search in Allow List and Block List": [
-        "在允許清單與封鎖清單中搜尋"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3268,6 +3328,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "存取"
+      ],
       "Action": [
         "動作"
       ],
@@ -3638,9 +3701,6 @@
       ],
       "contacts": [
         "聯絡人"
-      ],
-      "CSV file": [
-        "CSV 檔案"
       ],
       "full calendar view": [
         "完整行事曆檢視方式"
@@ -5365,6 +5425,14 @@
         "為免因未付帳單導致服務中斷，請確保您時刻都存有至少一個有效的付款方法。"
       ]
     },
+    "Input label": {
+      "Access": [
+        "存取"
+      ],
+      "Label (optional)": [
+        "標籤（選擇性）"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "加入標籤"
@@ -5850,6 +5918,9 @@
       ],
       "Color": [
         "顏色"
+      ],
+      "Coming soon": [
+        "敬請期待"
       ],
       "Composer": [
         "撰寫器"
@@ -6423,6 +6494,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "上載一個或更多的帳號救援檔案或是加密金鑰"
+      ],
+      "Upload file": [
+        "上載檔案"
       ],
       "URL": [
         "網址"
@@ -7006,11 +7080,6 @@
         "標籤名稱"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -7026,6 +7095,11 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -7211,6 +7285,19 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認證已重新生成"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "成員已新增"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "行事曆邀請被拒絕"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "已加入 ${ calendarName }（${ senderEmail }）"
       ]
     },
     "Notification time input": {
@@ -7870,6 +7957,31 @@
         "標籤"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "要邀請非 Proton 使用者，請透過連結分享您的行事曆"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "您已超過每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 成員的最大數量"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "新增您要與之分享 ${ calendarName } 的 Proton 帳號。我們會向他們傳送邀請。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "新增夥伴或群組"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "與 Proton 使用者分享"
+      ]
+    },
     "Shared calendar label input placeholder": {
       "Add label": [
         "加入標籤"
@@ -8383,9 +8495,9 @@
         "加入 Sieve 篩選器"
       ],
       "Add to block list": [
-        "新增至封鎖清單"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "新增到非垃圾郵件清單"
       ],
       "Add to spam list": [
