@@ -1,4 +1,5 @@
-$padding-inline-start-link: rem(20) !default;
+$padding-inline-start-link: rem(14) !default;
+$padding-inline-end-link: rem(7) !default;
 $padding-block-link: rem(7) !default;
 
 .navigation > .navigation-list,
@@ -26,14 +27,14 @@ $padding-block-link: rem(7) !default;
 .navigation-link,
 .navigation-link-header-group {
 	padding-block: $padding-block-link;
-	padding-inline: $padding-inline-start-link 1em;
+	padding-inline: $padding-inline-start-link $padding-inline-end-link;
 	text-decoration: none;
 	display: block;
 }
 
 // specificity...
 .navigation-link-header-group.navigation-link-header-group:not(.navigation-link-header-group--expandable) {
-	padding-inline: calc($padding-inline-start-link + 0.8em) 1em;
+	padding-inline: calc($padding-inline-start-link + 0.8em) $padding-inline-end-link;
 	color: var(--text-weak);
 }
 
@@ -145,7 +146,7 @@ label.navigation-link {
 	border-radius: var(--border-radius-md);
 	color: var(--text-weak);
 	padding-block: $padding-block-link;
-	padding-inline: $padding-inline-start-link 1em;
+	padding-inline: $padding-inline-start-link $padding-inline-end-link;
 
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
@@ -227,6 +228,7 @@ label.navigation-link {
 	min-inline-size: em(20, 11);
 	text-align: center;
 	color: var(--navigation-item-count-text-color);
+	transition: 0.15s easing(ease-out-quint);
 
 	&--transparent {
 		background: transparent;
@@ -235,7 +237,11 @@ label.navigation-link {
 
 	&--weak {
 		background: transparent;
-		color: var(--text-weak); // add optional
+		color: var(--text-weak);
+
+		.active & {
+			color: currentcolor;
+		}
 	}
 
 	&:empty {
