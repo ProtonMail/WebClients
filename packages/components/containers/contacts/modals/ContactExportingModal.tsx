@@ -103,7 +103,7 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" loading={loading} onClick={() => handleSave(contactsExported)}>
+                <Button color="norm" disabled={loading} onClick={() => handleSave(contactsExported)}>
                     {c('Action').t`Save`}
                 </Button>
             </ModalTwoFooter>

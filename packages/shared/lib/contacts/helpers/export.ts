@@ -7,29 +7,24 @@ import downloadFile from '../../helpers/downloadFile';
 import { wait } from '../../helpers/promise';
 import { Api, DecryptedKey } from '../../interfaces';
 import { Contact, ContactCard } from '../../interfaces/contacts/Contact';
-import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
+import { VCardContact } from '../../interfaces/contacts/VCard';
 import { splitKeys } from '../../keys';
 import { API_SAFE_INTERVAL, QUERY_EXPORT_MAX_PAGESIZE } from '../constants';
 import { prepareVCardContact } from '../decrypt';
-import { getVCardProperties } from '../properties';
-import { vCardPropertiesToICAL } from '../vcard';
+import { serialize } from '../vcard';
 
-export const getFileName = (properties: VCardProperty[]) => {
-    const name = properties
-        .filter(({ field }) => ['fn', 'email'].includes(field))
-        .map(({ value }) => (Array.isArray(value) ? value[0] : value))[0];
+export const getFileName = (contact: VCardContact) => {
+    // cover up for the case no FN is present in the contact (we can find such vcards in the DB)
+    const contactName = contact.fn[0]?.value || '';
+    const contactEmail = contact.email?.[0]?.value || '';
+    const name = contactName || contactEmail;
 
     return `${name}-${format(Date.now(), 'yyyy-MM-dd')}.vcf`;
 };
 
-/**
- * Export a single contact, given as an array of properties
- * @param {Array} properties
- */
-export const singleExport = (vCardContact: VCardContact) => {
-    const properties = getVCardProperties(vCardContact);
-    const fileName = getFileName(properties);
-    const vcard = vCardPropertiesToICAL(properties).toString();
+export const singleExport = (contact: VCardContact) => {
+    const fileName = getFileName(contact);
+    const vcard = serialize(contact);
     const blob = new Blob([vcard], { type: 'data:text/plain;charset=utf-8;' });
 
     downloadFile(blob, fileName);
@@ -47,10 +42,9 @@ export const exportContact = async (cards: ContactCard[], userKeys: DecryptedKey
         throw new Error('Error decrypting contact');
     }
 
-    const properties = getVCardProperties(vCardContact);
-    const name = getFileName(properties);
+    const name = getFileName(vCardContact);
 
-    return { name, vcard: vCardPropertiesToICAL(properties).toString() };
+    return { name, vcard: serialize(vCardContact) };
 };
 
 /**
@@ -62,7 +56,7 @@ export const exportContacts = (contactIDs: string[], userKeys: DecryptedKey[], a
         contactIDs.map(async (contactID) => {
             const {
                 Contact: { Cards },
-            } = (await api(getContact(contactID))) as { Contact: Contact };
+            } = await api<{ Contact: Contact }>(getContact(contactID));
             return exportContact(Cards, userKeys);
         })
     );
