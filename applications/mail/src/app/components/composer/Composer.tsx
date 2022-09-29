@@ -559,7 +559,7 @@ const Composer = (
         onFocus(); // Events on the main div will not fire because the editor is in an iframe
     }, []);
 
-    const { attachmentTriggerRef } = useComposerHotkeys({
+    const attachmentTriggerRef = useComposerHotkeys({
         composerRef: composerFrameRef,
         handleClose,
         handleDelete,
@@ -572,6 +572,7 @@ const Composer = (
         lock: lock || !hasRecipients,
         saving,
         editorActionsRef,
+        hasHotkeysEnabled: mailSettings?.Shortcuts === 1,
     });
 
     const handleDeleteDraft = () => {
