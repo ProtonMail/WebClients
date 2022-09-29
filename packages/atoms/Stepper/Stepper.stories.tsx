@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/components/components';
+import { Button, RadioGroup } from '@proton/components/components';
 
 import Step from './Step';
-import Stepper from './Stepper';
+import Stepper, { StepperProps } from './Stepper';
 import mdx from './Stepper.mdx';
 
 export default {
@@ -20,7 +20,54 @@ export const Basic = () => {
 
     return (
         <>
-            <Stepper activeStep={activeStep}>
+            <Stepper position="center" activeStep={activeStep}>
+                {steps.map((step) => (
+                    <Step key={step}>{step}</Step>
+                ))}
+            </Stepper>
+
+            <div className="mt3 flex flex-justify-end">
+                <Button
+                    className="mr0-5"
+                    color="norm"
+                    disabled={activeStep === 0}
+                    onClick={() => setActiveStep((step) => step - 1)}
+                >
+                    Previous
+                </Button>
+                <Button
+                    color="norm"
+                    disabled={activeStep === steps.length - 1}
+                    onClick={() => setActiveStep((step) => step + 1)}
+                >
+                    Next
+                </Button>
+            </div>
+        </>
+    );
+};
+
+const positionVariants: Required<StepperProps>['position'][] = ['start', 'center', 'end'];
+
+export const Centered = () => {
+    const [activeStep, setActiveStep] = useState(0);
+    const [position, setPosition] = useState<Required<StepperProps>['position']>('start');
+
+    const steps = ['Item 1', 'Item 2.', 'Item 3', 'Item 4'];
+
+    return (
+        <>
+            <div className="mb2">
+                <strong className="block mb1">Position</strong>
+                <RadioGroup
+                    name="selected-variant"
+                    onChange={setPosition}
+                    value={position}
+                    options={positionVariants.map((variant) => ({ value: variant, label: variant }))}
+                />
+            </div>
+
+            <Stepper position={position} activeStep={activeStep}>
                 {steps.map((step) => (
                     <Step key={step}>{step}</Step>
                 ))}
