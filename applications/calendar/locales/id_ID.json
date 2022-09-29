@@ -139,6 +139,9 @@
       "Customize": [
         "Sesuaikan"
       ],
+      "Customize import": [
+        "Sesuaikan impor"
+      ],
       "Decline invite": [
         "Tolak undangan"
       ],
@@ -346,6 +349,9 @@
       "Re-sign": [
         "Tanda tangani ulang"
       ],
+      "Reconnect": [
+        "Sambungkan kembali"
+      ],
       "Recover data": [
         "Pulihkan data"
       ],
@@ -378,6 +384,9 @@
       ],
       "Request new code": [
         "Minta kode baru"
+      ],
+      "Reset to default": [
+        "Atur ulang ke awal"
       ],
       "Save": [
         "Simpan"
@@ -826,6 +835,11 @@
         "Opsi lainya"
       ]
     },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Dibagikan dengan saya"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Tidak disinkronkan"
@@ -968,6 +982,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "Keluar dari menu pengaturan impor?"
+      ],
+      "Quit import?": [
+        "Keluar dari impor?"
       ]
     },
     "Contact field label": {
@@ -2210,6 +2227,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Coba autentikasi ulang dan pastikan izin disetel dengan benar."
+      ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
@@ -2242,6 +2262,12 @@
       ],
       "Some groups could not be deleted": [
         "Beberapa grup tidak dapat dihapus"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama ini dengan menyesuaikan parameter impor Anda."
@@ -2302,6 +2328,9 @@
       ],
       "Validation error": [
         "Kesalahan validasi"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Kami tidak dapat terhubung dengan penyedia layanan email Anda."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim surat ke lebih dari 100 penerima"
@@ -2802,6 +2831,252 @@
         "ProtonContacts tidak mendukung ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Akses aplikasi yang kurang aman\" telah diaktifkan pada pengaturan keamanan akun Google Anda."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Verifikasi 2 langkah telah diaktifkan pada akun eksternal Anda."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Jika ${ bold2StepsDisabled } di Gmail (pengaturan baku), pastikan:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Akses IMAP telah diaktifkan pada akun eksternal Anda."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Akses IMAP telah diaktifkan pada akun Yahoo Anda."
+      ],
+      "Invalid IMAP port": [
+        "Port IMAP tidak valid"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP Gmail aktif."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP telah aktif di akun Gmail Anda."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port benar."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung dengan akun Gmail. Pastikan alamat server mail dan nomor port Anda benar."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa alamat server email dan nomor port yang ada sudah benar."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
+      ],
+      "Use your app password if:": [
+        "Gunakan kata sandi aplikasi Anda jika:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email account requires one to export your data.": [
+        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Alamat email dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
+      ],
+      "Your email address and password are correct.": [
+        "Alamat email dan kata sandi Anda benar."
+      ],
+      "Your password is correct.": [
+        "Kata sandi Anda benar."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Verifikasi 2 langkah dinonaktifkan"
+      ],
+      "2-step verification is enabled": [
+        "Verifikasi 2 langkah aktif"
+      ],
+      "all your other Google accounts": [
+        "semua akun Google Anda lainnya"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "jangan"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Tuju ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Tuju ${ securitySettingsLink } Outlook."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Apabila verifikasi 2 langkah belum aktif, aktifkan terlebih dahulu."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Buka kontak ${ yahooMailLink } Anda."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Buka ${ outlookContactsLink } Outlook Anda."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Pilih ${ boldExportContacts } dan tentukan kontak mana saja yang hendak Anda ekspor."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Pilih ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Info akun"
+      ],
+      "Account security": [
+        "Keamanan akun"
+      ],
+      "app password": [
+        "kata sandi aplikasi"
+      ],
+      "Can view all details": [
+        "Dapat melihat seluruh rincian"
+      ],
+      "Export": [
+        "Ekspor"
+      ],
+      "Export contacts": [
+        "Ekspor kontak"
+      ],
+      "Export to CSV file": [
+        "Ekspor ke berkas CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Kelola"
+      ],
+      "Publish a calendar": [
+        "Terbitkan kalender"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "kata sandi aplikasi"
+      ],
+      "app password or enable IMAP": [
+        "kata sandi aplikasi atau mengaktifkan IMAP"
+      ],
+      "contacts": [
+        "kontak"
+      ],
+      "full calendar view": [
+        "tampilan kalender seutuhnya"
+      ],
+      "ICS file": [
+        "Berkas ICS"
+      ],
+      "security settings": [
+        "pengaturan keamanan"
+      ],
+      "shared calendars": [
+        "kalender yang dibagikan"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik tautan ${ boldICS } dan unduh berkas tersebut."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Tuju ${ calendarLink } pada pengaturan Outlook Anda."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Tuju ${ calendarViewLink } di Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Arahkan kursor Anda ke kalender yang hendak Anda impor dan buka menu dropdown."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Pada ${ boldPublish }, pilih kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender tersebut izin ${ boldCanViewAllDetails } dan terbitkan."
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -2856,6 +3131,12 @@
       "${ numContacts } contact": [
         "${ numContacts } kontak"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } folder ditemukan"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label ditemukan di Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
@@ -2864,6 +3145,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label dipilih"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } folder dipilih"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label dipilih"
       ],
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
@@ -2988,6 +3275,9 @@
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
@@ -3036,6 +3326,9 @@
       "Import in progress": [
         "Proses impor sedang berlangsung"
       ],
+      "Import mailbox": [
+        "Impor kotak surat"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
@@ -3056,6 +3349,9 @@
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
+      ],
+      "Label all imported messages as": [
+        "Labeli semua pesan terimpor sebagai"
       ],
       "Large imports can take several days.": [
         "Proses impor dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
@@ -3417,6 +3713,12 @@
       "Your events will be encrypted and then saved.": [
         "Acara Anda akan dienkripsi dan disimpan."
       ],
+      "Your import will not be processed.": [
+        "Impor Anda tidak akan diproses."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
       ],
@@ -3492,6 +3794,9 @@
       "All-day event notifications": [
         "Notifikasi acara sepanjang hari"
       ],
+      "App password": [
+        "Kata sandi aplikasi"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -3528,6 +3833,9 @@
       "Color": [
         "Warna"
       ],
+      "Coming soon": [
+        "Segera hadir"
+      ],
       "Contacts": [
         "Kontak"
       ],
@@ -3554,6 +3862,9 @@
       ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
+      ],
+      "Email": [
+        "Email"
       ],
       "Email address": [
         "Alamat surel"
@@ -3594,8 +3905,14 @@
       "Frequency": [
         "Frekuensi"
       ],
+      "From: ${ emailFrom }": [
+        "Dari: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Dari: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Dari: ${ importedEmailAddress }"
       ],
       "Good": [
         "Baik"
@@ -3638,6 +3955,9 @@
       ],
       "Location": [
         "Lokasi"
+      ],
+      "Mail Server (IMAP)": [
+        "Server Mail (IMAP)"
       ],
       "Mailbox password": [
         "Sandi kotak pesan"
@@ -3696,6 +4016,9 @@
       "Phone number": [
         "Nomor telepon"
       ],
+      "Port": [
+        "Port"
+      ],
       "Post office box": [
         "Kotak pos"
       ],
@@ -3732,8 +4055,17 @@
       "To: ${ emailAddress }": [
         "Kepada: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Kepada: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Ke: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Kode otentikasi dua faktor"
+      ],
+      "Upload file": [
+        "Unggah berkas"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -3828,6 +4160,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Jumlah kalender yang dibuat: ${ createdCalendars } dari ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Menghubungkan ke penyedia email Anda"
+      ],
       "Creating new calendars": [
         "Membuat kalender baru"
       ],
@@ -3906,6 +4241,33 @@
       ]
     },
     "Modal title": {
+      "How to import calendars from another service": [
+        "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
+      ],
+      "How to import calendars from Outlook": [
+        "Cara untuk mengimpor kalender-kalender dari Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cara untuk mengimpor kalender-kalender dari Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+      ],
+      "How to import contacts from Outlook": [
+        "Cara untuk mengimpor kontak-kontak dari Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cara untuk mengimpor email-email dari layanan email lainnya"
+      ],
+      "How to import emails from Outlook": [
+        "Cara untuk mengimpor email-email dari Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cara untuk mengimpor email-email dari Yahoo"
+      ],
       "Share calendar": [
         "Bagikan kalender"
       ],
@@ -5043,6 +5405,9 @@
       "Reactivate calendar keys": [
         "Aktifkan ulang kunci kalender"
       ],
+      "Reconnect your account": [
+        "Hubungkan kembali akun Anda"
+      ],
       "Recover data": [
         "Pulihkan data"
       ],
@@ -5136,6 +5501,12 @@
       "Sign out": [
         "Keluar"
       ],
+      "Start a new import": [
+        "Mulai impor baru"
+      ],
+      "Start import process": [
+        "Mulai proses impor"
+      ],
       "Update event": [
         "Perbarui acara"
       ],
@@ -5184,11 +5555,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
+      "Customize import to reduce the number of folders": [
+        "Sesuaikan impor untuk mengurangi jumlah folder"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Sesuaikan impor untuk mengurangi jumlah label"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Tanda tangan digital memastikan identitas Anda sebagai pengirim surel"
       ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"
+      ],
+      "Edit folder names": [
+        "Edit nama folder"
+      ],
+      "Edit label names": [
+        "Edit nama label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
@@ -5237,6 +5620,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Yakin ingin membuang impor Anda?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
       ],
@@ -5260,6 +5646,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton akan secara otomatis menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder yang ada sebelum Anda mengimpor."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
@@ -5287,6 +5676,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Fitur ini perlu akun Proton berbayar"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, kami sedang berada di luar jaringan. Silakan jelaskan permasalahan Anda melalui formulir di bawah ini. Kami akan memeriksanya apabila kami sudah kembali terhubung."

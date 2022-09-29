@@ -4,6 +4,14 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Volledig beeld (bekijk alle afspraakdetails)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Beperkt beeld (bekijk alleen beschikbaar/bezet)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
@@ -131,6 +139,12 @@
       "Customize": [
         "Personaliseer"
       ],
+      "Customize import": [
+        "Importeren aanpassen"
+      ],
+      "Decline invite": [
+        "Weiger de uitnodiging"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -241,6 +255,9 @@
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
+      "Join calendar": [
+        "Vervoeg agenda"
+      ],
       "Load image": [
         "Afbeelding laden"
       ],
@@ -334,6 +351,9 @@
       "Re-sign": [
         "Opnieuw tekenen"
       ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
       "Recover data": [
         "Gegevens herstellen"
       ],
@@ -366,6 +386,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Reset to default": [
+        "Terugzetten naar standaard"
       ],
       "Save": [
         "Opslaan"
@@ -614,6 +637,11 @@
         "Optioneel"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Binnenkort beschikbaar"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
@@ -735,6 +763,24 @@
       ],
       "You tentatively accepted the invitation": [
         "U hebt de uitnodiging voorlopig geaccepteerd"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "U kan eender wanneer de rechten aanpassen of verwijderen."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Rechten"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Bewerk (bekijk, creëer en bewerk afspraakdetails)"
+      ],
+      "Full view (see all event details)": [
+        "Volledig beeld (bekijk alle afspraakdetails)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -887,6 +933,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "Persoonlijke instellingen m.b.t. importeren sluiten?"
+      ],
+      "Quit import?": [
+        "Importeren beëindigen?"
       ]
     },
     "Contact field label": {
@@ -1968,8 +2017,14 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "Account does not exist": [
+        "Account bestaat niet"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
+      ],
+      "Already a member of this calendar": [
+        "Al lid van deze agenda"
       ],
       "Answer failed to be sent": [
         "Antwoord kon niet verzonden worden"
@@ -2103,11 +2158,17 @@
       "No keys retrieved for internal user": [
         "Geen keys ontvangen van interne gebruiker"
       ],
+      "No public key for Proton address": [
+        "Proton adres heeft geen publieke sleutel"
+      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
+      ],
+      "Not a Proton account": [
+        "Geen Proton-account"
       ],
       "Not a valid number": [
         "Ongeldig getal"
@@ -2133,6 +2194,9 @@
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
+      ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet gedecodeerd"
       ],
@@ -2144,6 +2208,10 @@
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Dubbele ontvanger verwijderd: ${ joinedRecipients }",
+        "Dubbele ontvangers verwijderd: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -2162,6 +2230,12 @@
       ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Sommige van uw mapnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -2219,6 +2293,12 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Validation error": [
+        "Validatiefout"
+      ],
+      "We were unable to connect to your service provider.": [
+        "We kunnen geen verbinding maken met uw serviceprovider."
       ],
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
@@ -2732,6 +2812,252 @@
         "ProtonContacts ondersteunt ${ forNow } nog geen:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2-staps-verificatie is ingeschakeld in uw externe account."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Als ${ bold2StepsDisabled } (standaard Gmail-instellingen), zorg er dan voor dat:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Als ${ bold2StepsDisabled } in Gmail (standaard instellingen), zorg er dan voor:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Als ${ bold2StepsEnabled } in Gmail, zorg er dan voor dat u uw app-wachtwoord gebruikt in plaats van uw reguliere wachtwoord."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Als ${ bold2StepsEnabled }, zorg er dan voor dat uw e-mailadres en app-wachtwoord juist zijn. Gebruik ${ boldNot } uw reguliere wachtwoord."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP-toegang is ingeschakeld in uw externe account."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP toegang is ingeschakeld in uw Yahoo account."
+      ],
+      "Invalid IMAP port": [
+        "Ongeldige IMAP poort"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat Gmail IMAP-toegang is ingeschakeld."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat IMAP toegang is ingeschakeld in uw Gmail account."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw externe account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw Gmail-account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw Yahoo account. Gelieve ervoor te zorgen dat:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
+      ],
+      "Use your app password if:": [
+        "Gebruik uw app-wachtwoord als:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
+      ],
+      "Your email account requires one to export your data.": [
+        "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
+      ],
+      "Your email address and password are correct.": [
+        "Uw e-mailadres en wachtwoord zijn juist."
+      ],
+      "Your password is correct.": [
+        "Uw wachtwoord is juist."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "tweestapsverificatie (2FA) is uitgeschakeld"
+      ],
+      "2-step verification is enabled": [
+        "tweestapsverificatie (2FA) is ingeschakeld"
+      ],
+      "all your other Google accounts": [
+        "al uw andere Google-accounts"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "niet"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik op ${ boldManage } om het keuzemenu uit te vouwen."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Vouw het dropdown-menu uit door te klikken op de 3 puntjes (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Ga naar ${ boldAccountInfo } onder uw profiel in ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Ga naar ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Ga naar Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Als 2-staps-verificatie uit staat, schakelt u deze in."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Open de contacten van uw ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Open uw Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Selecteer ${ boldExportContacts } en kies welke contactpersonen u wilt exporteren."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Selecteer ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Rekeninginformatie"
+      ],
+      "Account security": [
+        "Accountbeveiliging"
+      ],
+      "app password": [
+        "app-wachtwoord"
+      ],
+      "Can view all details": [
+        "Kan alle details bekijken"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Export contacts": [
+        "Contactpersonen exporteren"
+      ],
+      "Export to CSV file": [
+        "Exporteer naar CSV bestand"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Beheren"
+      ],
+      "Publish a calendar": [
+        "Publiceer een agenda"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "app-wachtwoord"
+      ],
+      "app password or enable IMAP": [
+        "appwachtwoord of IMAP inschakelen"
+      ],
+      "contacts": [
+        "contactpersonen"
+      ],
+      "full calendar view": [
+        "volledige agendaweergave"
+      ],
+      "ICS file": [
+        "ICS-bestand"
+      ],
+      "security settings": [
+        "beveiligingsinstellingen"
+      ],
+      "shared calendars": [
+        "gedeelde agenda's"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik op de ${ boldICS }-link en download het bestand."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Ga naar ${ calendarLink } in uw Outlook-instellingen."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Ga naar ${ calendarViewLink } in Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Beweeg uw muis naar de agenda die u wilt importeren en open het dropdown-menu."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Selecteer de agenda die u wilt importeren onder ${ boldPublish }. Stel de machtiging in op ${ boldCanViewAllDetails } en publiceer het."
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -2797,6 +3123,14 @@
         "Één contactpersoon",
         "${ numContacts } contactpersonen"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } map gevonden",
+        "${ providerFoldersNumLocalized } mappen gevonden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label gevonden in Gmail",
+        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
@@ -2808,6 +3142,14 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label geselecteerd",
         "${ selectedFoldersCount } labels geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } map geselecteerd",
+        "${ selectedFoldersCountLocalized } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label geselecteerd",
+        "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
@@ -2937,6 +3279,9 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
@@ -2986,6 +3331,9 @@
       "Import in progress": [
         "Bezig met importeren"
       ],
+      "Import mailbox": [
+        "Mailbox importeren"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
@@ -3006,6 +3354,9 @@
       ],
       "Key fingerprint": [
         "Vingerafdruk van sleutel"
+      ],
+      "Label all imported messages as": [
+        "Label alle geïmporteerde berichten als"
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
@@ -3290,6 +3641,9 @@
       "Yearly": [
         "Jaarlijks"
       ],
+      "You already joined this calendar": [
+        "U hebt deze agenda al vervoegd"
+      ],
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
       ],
@@ -3313,6 +3667,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "U hebt uw wachtwoord opnieuw ingesteld en afspraken gekoppeld aan de volgende agenda's konden niet worden ontsleuteld.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
@@ -3362,6 +3719,12 @@
       "Your events will be encrypted and then saved.": [
         "Uw afspraken worden versleuteld en vervolgens opgeslagen."
       ],
+      "Your import will not be processed.": [
+        "Uw import zal niet worden verwerkt."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -3380,6 +3743,14 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Meerdere contacten zien er identiek uit. ${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Toegang"
+      ],
+      "Label (optional)": [
+        "Label (optioneel)"
       ]
     },
     "Input placeholder": {
@@ -3429,6 +3800,9 @@
       "All-day event notifications": [
         "De hele dag meldingen van afspraken"
       ],
+      "App password": [
+        "App-wachtwoord"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -3465,6 +3839,9 @@
       "Color": [
         "Kleur"
       ],
+      "Coming soon": [
+        "Binnenkort beschikbaar"
+      ],
       "Contacts": [
         "Contactpersonen"
       ],
@@ -3491,6 +3868,9 @@
       ],
       "Do not ask again": [
         "Vraag niet opnieuw"
+      ],
+      "Email": [
+        "E-mailadres"
       ],
       "Email address": [
         "E-mailadres"
@@ -3531,8 +3911,14 @@
       "Frequency": [
         "Frequentie"
       ],
+      "From: ${ emailFrom }": [
+        "Van: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Van: ${ importedEmailAddress }"
       ],
       "Good": [
         "Goed"
@@ -3575,6 +3961,9 @@
       ],
       "Location": [
         "Locatie"
+      ],
+      "Mail Server (IMAP)": [
+        "Mailserver (IMAP)"
       ],
       "Mailbox password": [
         "Mailbox-wachtwoord"
@@ -3634,6 +4023,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Port": [
+        "Poort"
+      ],
       "Post office box": [
         "Postbus"
       ],
@@ -3670,8 +4062,17 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Naar: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Aan: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Tweestapsverificatiecode"
+      ],
+      "Upload file": [
+        "Bestand uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -3766,6 +4167,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Verbinding maken met uw e-mailprovider"
+      ],
       "Creating new calendars": [
         "Nieuwe agenda's maken"
       ],
@@ -3821,7 +4225,42 @@
         "Agenda's beheren"
       ]
     },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Vervoeg agenda"
+      ]
+    },
     "Modal title": {
+      "How to import calendars from another service": [
+        "Hoe u agenda's importeert uit een andere dienst"
+      ],
+      "How to import calendars from Outlook": [
+        "Hoe u agenda's importeert uit Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Hoe u agenda's importeert uit Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Hoe u contacten importeert uit een andere dienst"
+      ],
+      "How to import contacts from Outlook": [
+        "Hoe u contacten importeert uit Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Hoe u contacten importeert uit Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Hoe u e-mails importeert uit een andere dienst"
+      ],
+      "How to import emails from Outlook": [
+        "Hoe u e-mails importeert uit Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Hoe u e-mails importeert uit Yahoo"
+      ],
+      "Share calendar": [
+        "Deel agenda"
+      ],
       "Time zone changed": [
         "Tijdzone gewijzigd"
       ],
@@ -4009,6 +4448,12 @@
       ],
       "Contact group updated": [
         "Contactgroep bijgewerkt"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Lid toegevoegd",
+        "Leden toegevoegd"
       ]
     },
     "Notification suffix": {
@@ -4415,6 +4860,11 @@
         "Instellingen wijzigen mislukt"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Voeg mensen en groepen toe"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Agenda beheren"
@@ -4809,6 +5259,9 @@
       "Create new group": [
         "Nieuwe groep maken"
       ],
+      "Create public link": [
+        "Maak een publieke link"
+      ],
       "Currency": [
         "Valuta"
       ],
@@ -4953,6 +5406,9 @@
       "Reactivate calendar keys": [
         "Agendasleutels heractiveren"
       ],
+      "Reconnect your account": [
+        "Uw account opnieuw verbinden"
+      ],
       "Recover data": [
         "Gegevens herstellen"
       ],
@@ -5046,6 +5502,12 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Start a new import": [
+        "Start een nieuwe import"
+      ],
+      "Start import process": [
+        "Importproces starten"
+      ],
       "Update event": [
         "Afspraak bijwerken"
       ],
@@ -5094,11 +5556,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
       ],
+      "Customize import to reduce the number of folders": [
+        "Import aanpassen om het aantal mappen te verminderen"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Import aanpassen om het aantal labels te verminderen"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u worden verzonden"
       ],
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"
+      ],
+      "Edit folder names": [
+        "Mapnamen bewerken"
+      ],
+      "Edit label names": [
+        "Labelnamen bewerken"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailversleuteling vereist dat u de e-mails ook ondertekent, zodat anderen uw berichten kunnen verifiëren"
@@ -5148,6 +5622,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contactgroepen permanent wilt verwijderen?"
@@ -5173,6 +5650,9 @@
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
+      ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -5200,6 +5680,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Deze functie vereist een betaald Proton-account"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw Proton account. Overweeg om uw import aan te passen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."

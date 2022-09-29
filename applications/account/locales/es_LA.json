@@ -102,8 +102,8 @@
       "Apply": [
         "Aplicar"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Aplicar a los mensajes existentes"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
@@ -486,11 +486,14 @@
       "No": [
         "No"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "No es spam"
       ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -543,11 +546,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Refrescar la página"
-      ],
       "refresh the page": [
         "refresque la página"
+      ],
+      "Refresh the page": [
+        "Refrescar la página"
       ],
       "Reload": [
         "Recargar"
@@ -2634,6 +2637,23 @@
         "Los subdominios 'www' no se usan para correo electrónico. ¿Está seguro que desea usar este valor de dominio?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } añadido"
+      ],
+      "${ name } deletion failed": [
+        "Error al eliminar ${ name }"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "Error al mover ${ name } a la Lista de no spam"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } movido a la Lista de no spam"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado con éxito"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
@@ -2720,6 +2740,35 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } ha aceptado tentativamente su invitación para ${ eventTitle }"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } añadido"
+      ],
+      "${ name } deletion failed": [
+        "Error al eliminar ${ name }"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "Error al mover ${ name } a la Lista de no spam"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } movido a la Lista de no spam"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado con éxito"
       ]
     },
     "Email subject": {
@@ -3049,11 +3098,17 @@
       "Signature verification failed": [
         "Falló la verificación de la firma"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Algunos nombres de sus carpetas están reservados. Personalice la importación para editar estos nombres."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las carpetas no están disponibles. Personalice la importación para editar estos nombres."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Algunos nombres de sus etiquetas están reservados. Personalice la importación para editar estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las etiquetas no están disponibles. Personalice la importación para editar estos nombres."
@@ -3675,7 +3730,7 @@
         "Los correos de direcciones bloqueadas no serán entregados."
       ],
       "Search in Allow List and Block List": [
-        "Buscar en las listas deseada y no deseada"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4132,8 +4187,8 @@
       "contacts": [
         "contactos"
       ],
-      "CSV file": [
-        "archivo CSV"
+      "CSV or a VCF (vCard) file": [
+        "CSV o un archivo VCF (vCard)"
       ],
       "full calendar view": [
         "vista completa de calendario"
@@ -6364,6 +6419,9 @@
       " and ${ l }": [
         " y ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "Correo o nombre de usuario de ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
@@ -6528,6 +6586,9 @@
       ],
       "Color": [
         "Color"
+      ],
+      "Coming soon": [
+        "Próximamente"
       ],
       "Composer": [
         "Compositor"
@@ -7105,6 +7166,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Cargue 1 o más archivos de recuperación o claves de cifrado"
       ],
+      "Upload file": [
+        "Cargar archivo"
+      ],
       "URL": [
         "URL"
       ],
@@ -7453,9 +7517,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todos los mensajes de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7738,29 +7810,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "Desde ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Desde ${ _price2 } por usuario"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Seguir en ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Actualizar ahora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continuar a la revisión"
@@ -7800,6 +7849,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "Desde ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Desde ${ _price2 } por usuario"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Seguir en ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
       ]
     },
     "new_plans: attribute": {
@@ -8162,17 +8234,6 @@
         "Su plan seleccionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prueba de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Actualizar a ${ planName }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -8194,6 +8255,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Prueba de ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Actualizar a ${ planName }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -9228,35 +9300,6 @@
         "Nombre de usuario"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "${ name } añadido"
-      ],
-      "${ name } deletion failed": [
-        "Error al eliminar ${ name }"
-      ],
-      "${ name } failed to move to Block List": [
-        "Error al mover ${ name } a la Lista no deseada"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "Error al mover ${ name } a la Lista de no spam"
-      ],
-      "${ name } failed to move to Spam List": [
-        "Error al mover ${ name } a la Lista de spam"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } movido a la Lista no deseada"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } movido a la Lista de no spam"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } movido a la Lista de spam"
-      ],
-      "${ name } successfully deleted": [
-        "${ name } eliminado con éxito"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
@@ -9814,9 +9857,9 @@
         "Añadir filtro Sieve"
       ],
       "Add to block list": [
-        "Añadir a la lista de bloqueo"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "Añadir a lista de no spam"
       ],
       "Add to spam list": [

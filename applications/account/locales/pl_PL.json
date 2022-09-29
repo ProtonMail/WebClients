@@ -102,8 +102,8 @@
       "Apply": [
         "Zastosuj"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
+      "Apply to existing messages": [
+        "Zastosuj do obecnych wiadomości"
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
@@ -486,11 +486,14 @@
       "No": [
         "Nie"
       ],
-      "OK": [
-        "OK"
+      "Non spam": [
+        "To nie jest spam"
       ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -543,10 +546,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -2668,6 +2671,23 @@
         "Subdomeny 'www' nie są zazwyczaj używane do poczty e-mail. Czy na pewno chcesz użyć tej domeny?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "Domena ${ name } została dodana"
+      ],
+      "${ name } deletion failed": [
+        "Usunięcie domeny ${ name } nie powiodło się"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "Usunięcie domeny ${ name } z listy spamu nie powiodło się"
+      ],
+      "${ name } moved to Non spam list": [
+        "Domena ${ name } została usunięta z listy spamu"
+      ],
+      "${ name } successfully deleted": [
+        "Domena ${ name } została usunięta"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Błędy lub problemy z jakością usługi"
@@ -2754,6 +2774,35 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "Adres ${ name } został dodany"
+      ],
+      "${ name } deletion failed": [
+        "Usunięcie adresu ${ name } nie powiodło się"
+      ],
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "Usunięcie adresu ${ name } z listy spamu nie powiodło się"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Non spam list": [
+        "Adres ${ name } został usunięty z listy spamu"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ],
+      "${ name } successfully deleted": [
+        "Adres ${ name } został usunięty"
       ]
     },
     "Email subject": {
@@ -3093,11 +3142,17 @@
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Niektóre nazwy folderów są zarezerwowane. Dostosuj proces importowania, aby zmienić te nazwy."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Niektóre nazwy folderów są niedostępne. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy folderów przekraczają maksymalny limit znaków. Dostosuj proces importowania, aby zmienić te nazwy."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Niektóre nazwy etykiet są zarezerwowane. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet są niedostępne. Dostosuj proces importowania, aby zmienić te nazwy."
@@ -3737,7 +3792,7 @@
         "Wiadomości od zablokowanych adresów nie zostaną dostarczone."
       ],
       "Search in Allow List and Block List": [
-        "Przeszukaj listę dozwolonych i odrzuconych"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4216,8 +4271,8 @@
       "contacts": [
         "kontakty"
       ],
-      "CSV file": [
-        "pliku CSV"
+      "CSV or a VCF (vCard) file": [
+        "pliku CSV lub VCF (vCard)"
       ],
       "full calendar view": [
         "widoku kalendarza"
@@ -6510,6 +6565,9 @@
       " and ${ l }": [
         " oraz ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "Adres e-mail lub nazwa użytkownika ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
       ],
@@ -6680,6 +6738,9 @@
       ],
       "Color": [
         "Kolor"
+      ],
+      "Coming soon": [
+        "Wkrótce"
       ],
       "Composer": [
         "Edytor"
@@ -7257,6 +7318,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Prześlij co najmniej 1 plik odzyskiwania lub klucz szyfrowania"
       ],
+      "Upload file": [
+        "Prześlij plik"
+      ],
       "URL": [
         "Adres URL"
       ],
@@ -7605,11 +7669,23 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importuj wiadomości z ${ totalLabelsCount } folderu od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7904,29 +7980,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ _price }": [
-        "Od ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Od ${ _price2 } za użytkownika"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Zachowaj moje konto ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -7966,6 +8019,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "Od ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Od ${ _price2 } za użytkownika"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Zachowaj moje konto ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: attribute": {
@@ -8358,17 +8434,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Wersja próbna planu ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepszenie do planu ${ planName }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -8390,6 +8455,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Wersja próbna planu ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepszenie do planu ${ planName }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -9446,35 +9522,6 @@
         "Nazwa użytkownika"
       ]
     },
-    "Spam notification": {
-      "${ name } added": [
-        "Dodano ${ name }"
-      ],
-      "${ name } deletion failed": [
-        "Usuwanie ${ name } nie powiodło się"
-      ],
-      "${ name } failed to move to Block List": [
-        "Przenoszenie ${ name } do listy odrzuconych nie powiodło się"
-      ],
-      "${ name } failed to move to Non spam List": [
-        "Usunięcie ${ name } z listy spamu nie powiodło się"
-      ],
-      "${ name } failed to move to Spam List": [
-        "Przenoszenie ${ name } do listy spamu nie powiodło się"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } przeniesiono do listy odrzuconych"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } usunięto z listy spamu"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } przeniesiono do listy spamu"
-      ],
-      "${ name } successfully deleted": [
-        "Usunięto ${ name }"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Dysk ${ DRIVE_APP_NAME } wyszedł z wersji beta! Zapewnij swoim plikom takie samo bezpieczeństwo, jak poczcie e-mail."
@@ -10064,9 +10111,9 @@
         "Dodaj filtr Sieve"
       ],
       "Add to block list": [
-        "Dodaj do listy odrzuconych"
+        "Add to your block list"
       ],
-      "Add to not spam list": [
+      "Add to non spam list": [
         "Usuń z listy spamu"
       ],
       "Add to spam list": [

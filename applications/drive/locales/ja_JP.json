@@ -128,6 +128,9 @@
       "Continue": [
         "続行"
       ],
+      "Continue import": [
+        "インポートを続行"
+      ],
       "Continue transfers": [
         "転送を続行"
       ],
@@ -155,6 +158,9 @@
       "Customize": [
         "カスタマイズ"
       ],
+      "Customize import": [
+        "インポートをカスタマイズ"
+      ],
       "Delete": [
         "削除"
       ],
@@ -181,6 +187,9 @@
       ],
       "Didn't receive the code?": [
         "コードを受け取っていませんか?"
+      ],
+      "Discard": [
+        "破棄"
       ],
       "Done": [
         "完了"
@@ -374,6 +383,9 @@
       "Re-sign": [
         "再署名"
       ],
+      "Reconnect": [
+        "再接続"
+      ],
       "Recover data": [
         "データを復元"
       ],
@@ -403,6 +415,9 @@
       ],
       "Request new code": [
         "新しいコードをリクエスト"
+      ],
+      "Reset to default": [
+        "初期値に戻す"
       ],
       "Reset zoom": [
         "倍率をリセット"
@@ -766,6 +781,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "インポートのカスタマイズを終了しますか?"
+      ],
+      "Quit import?": [
+        "インポートを終了しますか？"
       ]
     },
     "Contact field label": {
@@ -1783,6 +1801,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "再認証を行い、権限が正しく設定されていることを確認してください。"
+      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -1809,6 +1830,12 @@
       ],
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "フォルダー名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -1872,6 +1899,9 @@
       ],
       "Unknown error": [
         "不明なエラー"
+      ],
+      "We were unable to connect to your service provider.": [
+        "サービスプロバイダーに接続できませんでした。"
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
@@ -2112,6 +2142,249 @@
         "ProtonContactsは${ forNow } をサポートしていません"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "Google アカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています。"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "2 段階認証は外部アカウントで有効になっています。"
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "2 段階認証は外部メールアカウントで有効になっています。"
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Gmail で ${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Gmailで ${ bold2StepsEnabled } の場合は、通常のパスワードの代わりにアプリのパスワードを使用していることを確認してください。"
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "${ bold2StepsEnabled } の場合は、メールアドレスとアプリのパスワードが正しいことを確認してください。${ boldNot } は通常のパスワードを使用します。"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP アクセスは外部アカウントで有効になっています。"
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP アクセスは Yahoo アカウントで有効になっています。"
+      ],
+      "Invalid IMAP port": [
+        "無効な IMAP ポート番号"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Protonはあなたのアカウントに接続できません。Gmail IMAPアクセスが有効になっていることを確認してください。"
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Protonはあなたのアカウントに接続できません。Gmail アカウントで IMAP アクセスが有効になっていることを確認してください。"
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Protonはあなたのアカウントに接続できません。以下を確認してください。"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton が外部アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Protonは外部アカウントに接続できません。以下を確認してください。"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton が Gmail アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton が Yahoo アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton はあなたの Yahoo アカウントに接続できません。以下をご確認ください:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
+      ],
+      "Use your app password if:": [
+        "次の場合にアプリのパスワードを使用してください。"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
+      ],
+      "Your email account requires an app password to export your data.": [
+        "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
+      ],
+      "Your email account requires one to export your data.": [
+        "データをエクスポートするためにメールアカウントが必要です。"
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
+      ],
+      "Your email address and password are correct.": [
+        "あなたのメールアドレスとパスワードは正しいです。"
+      ],
+      "Your password is correct.": [
+        "パスワードは正しいです。"
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "2 段階認証が無効"
+      ],
+      "2-step verification is enabled": [
+        "2 段階認証が有効"
+      ],
+      "all your other Google accounts": [
+        "ほかのすべての Google アカウント"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "しないで"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "${ boldManage } をクリックしてオプション メニューを展開してください。"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "手順がメールサービスプロバイダーによって異なるため、Proton にメールをインポートする前に ${ knowledgeBaseLink } を生成することをおすすめします。"
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "${ boldAppPassword } を生成し、Proton からプロンプトが表示に通常のパスワードの代わりに入力してください。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "${ boldAppPassword }を生成し、Proton からプロンプトが表示されたら、通常のパスワードを入力します。"
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity }に移動します。"
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Outlook ${ securitySettingsLink } へ移動してください。"
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "2 段階認証がオフの場合、オンにしてください。"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } の連絡先を開きます。"
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Outlook ${ outlookContactsLink } を開きます。"
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "${ boldExportContacts } を選択し、どの連絡先をエクスポートするか選びます。"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } を選択します。"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "連絡先を Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "メールを Proton へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "メールを Proton へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "アカウント情報"
+      ],
+      "Account security": [
+        "アカウントのセキュリティ"
+      ],
+      "app password": [
+        "アプリ パスワード"
+      ],
+      "Can view all details": [
+        "すべての詳細を閲覧可能"
+      ],
+      "Export": [
+        "エクスポート"
+      ],
+      "Export contacts": [
+        "連絡先のエクスポート"
+      ],
+      "Export to CSV file": [
+        "CSV ファイルでエクスポート"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "管理"
+      ],
+      "Publish a calendar": [
+        "予定表を公開する"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "アプリ パスワード"
+      ],
+      "app password or enable IMAP": [
+        "IMAP を有効にするか、アプリ パスワード"
+      ],
+      "contacts": [
+        "連絡先"
+      ],
+      "full calendar view": [
+        "フルカレンダー表示"
+      ],
+      "ICS file": [
+        "ICS ファイル"
+      ],
+      "security settings": [
+        "セキュリティ設定"
+      ],
+      "shared calendars": [
+        "共有されたカレンダー"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "${ boldICS } をクリックしてファイルをダウンロードします。"
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Outlook 設定から ${ calendarLink } へ移動してください。"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo の ${ calendarViewLink } へ移動してください。"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "${ boldPublish } から、インポートしたいカレンダーを選択します。アクセス許可を ${ boldCanViewAllDetails } にし公開します。"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
@@ -2184,6 +2457,12 @@
       "${ pausedCount } paused": [
         "${ pausedCount } 一時停止"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } 件のフォルダーが存在"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } 件のうち ${ selectedCalendarsTotal } 件のカレンダー"
       ],
@@ -2192,6 +2471,12 @@
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
       "${ speed }/s": [
         "${ speed }/秒"
@@ -2376,6 +2661,9 @@
       "Encrypted search is here": [
         "暗号化された検索が利用できます"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "インポートするメールアカウントの認証情報を入力します。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
@@ -2466,6 +2754,9 @@
       "Import in progress": [
         "インポートは進行しています"
       ],
+      "Import mailbox": [
+        "メールボックスのインポート"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
@@ -2495,6 +2786,9 @@
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
+      ],
+      "Label all imported messages as": [
+        "インポートされたすべてのメッセージに次のようにラベル"
       ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
@@ -2922,6 +3216,12 @@
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
       ],
+      "Your import will not be processed.": [
+        "インポートできませんでした。"
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "インポート完了後、ログイン情報は保存されません。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
@@ -3009,6 +3309,9 @@
       ],
       "Add to group": [
         "グループに追加"
+      ],
+      "App password": [
+        "アプリのパスワード"
       ],
       "Apply to all duplicated files": [
         "すべての重複したファイルに適用"
@@ -3136,8 +3439,14 @@
       "Folder name": [
         "フォルダー名"
       ],
+      "From: ${ emailFrom }": [
+        "差出人: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "移行元: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "移行元: ${ importedEmailAddress }"
       ],
       "Good": [
         "いい"
@@ -3180,6 +3489,9 @@
       ],
       "Location": [
         "場所"
+      ],
+      "Mail Server (IMAP)": [
+        "メールサーバー (IMAP)"
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
@@ -3240,6 +3552,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "適切な対応を行えるようにするために、詳細な情報を提供してください"
+      ],
+      "Port": [
+        "ポート"
       ],
       "Post office box": [
         "私書箱"
@@ -3310,6 +3625,12 @@
       "To: ${ emailAddress }": [
         "移行先: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "宛先: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "移行先: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "2 要素認証コード"
       ],
@@ -3330,6 +3651,9 @@
       ],
       "Upload anyway": [
         "とにかくアップロード"
+      ],
+      "Upload file": [
+        "ファイルをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -3421,6 +3745,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "メールプロバイダーに接続しています"
+      ],
       "Creating new calendars": [
         "新しいカレンダーを作成しています"
       ],
@@ -3458,6 +3785,35 @@
       ],
       "Plain text": [
         "プレーンテキスト"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "その他のサービスからカレンダーをインポートする方法"
+      ],
+      "How to import calendars from Outlook": [
+        "Outlook からカレンダーをインポートする方法"
+      ],
+      "How to import calendars from Yahoo": [
+        "Yahoo からカレンダーをインポートする方法"
+      ],
+      "How to import contacts from another service": [
+        "その他のサービスから連絡先をインポートする方法"
+      ],
+      "How to import contacts from Outlook": [
+        "Outlook から連絡先をインポートする方法"
+      ],
+      "How to import contacts from Yahoo": [
+        "Yahoo から連絡先をインポートする方法"
+      ],
+      "How to import emails from another service": [
+        "その他のサービスからメールをインポートする方法"
+      ],
+      "How to import emails from Outlook": [
+        "Outlook からメールをインポートする方法"
+      ],
+      "How to import emails from Yahoo": [
+        "Yahoo からメールをインポートする方法"
       ]
     },
     "New Label form": {
@@ -4313,6 +4669,9 @@
       "Re-signing contacts": [
         "連絡先を再署名する"
       ],
+      "Reconnect your account": [
+        "アカウントに再接続"
+      ],
       "Recover data": [
         "データを復元"
       ],
@@ -4381,6 +4740,12 @@
       ],
       "Sort files/folders": [
         "ファイル・フォルダーの並び替え"
+      ],
+      "Start a new import": [
+        "新しいインポートを開始"
+      ],
+      "Start import process": [
+        "インポートを開始"
       ],
       "Stop sharing": [
         "共有を停止"
@@ -4467,11 +4832,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
+      "Customize import to reduce the number of folders": [
+        "フォルダー数を減らすためにインポートをカスタマイズします"
+      ],
+      "Customize import to reduce the number of labels": [
+        "ラベルの数を減らすためにインポートをカスタマイズします"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "デジタル署名されたメールはメッセージがあなたから送信されたことの検証に役立ちます"
       ],
       "Each imported email will have this label": [
         "インポートされたメールすべてにこのラベルがついています。"
+      ],
+      "Edit folder names": [
+        "フォルダー名を編集"
+      ],
+      "Edit label names": [
+        "ラベル名を編集"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "メール暗号化は送信したメッセージの証明を手助けするためメール署名を強制します"
@@ -4532,6 +4909,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "インポートを破棄してよろしいですか?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } 件の連絡先グループを完全に削除してよろしいですか？"
       ],
@@ -4556,6 +4936,9 @@
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
       ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Protonは、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
       ],
@@ -4579,6 +4962,9 @@
       ],
       "This feature requires a paid Proton account": [
         "この機能は有料の Proton アカウントが必要です"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "このインポートは現在Protonアカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "現在オンラインではありません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"

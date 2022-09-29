@@ -128,6 +128,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue import": [
+        "Continuare importare"
+      ],
       "Continue transfers": [
         "Continuare transferuri"
       ],
@@ -154,6 +157,9 @@
       ],
       "Customize": [
         "Personalizare"
+      ],
+      "Customize import": [
+        "Personalizare importare"
       ],
       "Delete": [
         "Ștergere"
@@ -185,6 +191,9 @@
       ],
       "Didn't receive the code?": [
         "Nu ați primit codul?"
+      ],
+      "Discard": [
+        "Renunțare"
       ],
       "Done": [
         "Gata"
@@ -378,6 +387,9 @@
       "Re-sign": [
         "Reînregistrare"
       ],
+      "Reconnect": [
+        "Reconectare"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -407,6 +419,9 @@
       ],
       "Request new code": [
         "Solicitare cod nou"
+      ],
+      "Reset to default": [
+        "Revenire la setări inițiale"
       ],
       "Reset zoom": [
         "Resetare dimensiune"
@@ -770,6 +785,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "Părăsiți personalizarea importării?"
+      ],
+      "Quit import?": [
+        "Anulați importarea?"
       ]
     },
     "Contact field label": {
@@ -1818,6 +1836,9 @@
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
+      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -1844,6 +1865,18 @@
       ],
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Unele nume de foldere depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Unele nume de etichete sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de etichete nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
@@ -1910,6 +1943,9 @@
       ],
       "Unknown error": [
         "Eroare necunoscută."
+      ],
+      "We were unable to connect to your service provider.": [
+        "Nu am reușit să ne conectăm la furnizorul dvs. de servicii."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari."
@@ -2176,6 +2212,255 @@
         "ProtonContacts nu acceptă ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Verificarea în 2 pași este activată în contul extern."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "verificarea în 2 pași este activată în contul extern de e-mail."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Dacă ${ bold2StepsDisabled } (setare implicită în Gmail), asigurați-vă că:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Dacă ${ bold2StepsDisabled } în Gmail (setare implicită), asigurați-vă că:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Dacă ${ bold2StepsEnabled } în Gmail, asigurați-vă că folosiți parola aplicației în loc de parola obișnuită de conectare."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Dacă ${ bold2StepsEnabled }, asigurați-vă că adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Accesul IMAP este activat în contul extern."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Accesul IMAP este activat în contul Yahoo."
+      ],
+      "Invalid IMAP port": [
+        "Port IMAP nevalid"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul Gmail IMAP este activat."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul IMAP este activat în contul Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton nu se poate conecta la cont. Asigurați-vă că:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nu se poate conecta la contul extern. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton nu se poate conecta la contul extern. Asigurați-vă că:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Prea multe solicitări recente. Reîncercați mai târziu."
+      ],
+      "Use your app password if:": [
+        "Folosiți parola aplicației dacă:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Folosiți parola aplicației în locul parolei obișnuite dacă:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Mai puteți înerca să vă deconectați din ${ boldGoogleAccounts } din navigatorul web, apoi să deblocați ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Parola aplicației este corectă. Să ${ boldNot } folosiți parola obișnuită."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
+      ],
+      "Your email account requires one to export your data.": [
+        "Contul de e-mail necesită o parolă pentru a exporta datele."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
+      ],
+      "Your email address and password are correct.": [
+        "Adresa de e-mail și parola sunt corecte."
+      ],
+      "Your password is correct.": [
+        "Parola este corectă."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "verificarea în doi pași este dezactivată"
+      ],
+      "2-step verification is enabled": [
+        "verificarea în doi pași este activată"
+      ],
+      "all your other Google accounts": [
+        "toate celelalte conturi Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "nu"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Accesați ${ boldAccountInfo } din profilul personal în ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Salt la ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Accesați ${ securitySettingsLink } din Outlook."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Dacă verificarea în doi pași este dezactivată, activați-o."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Deschideți lista de contacte ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Deschideți ${ outlookContactsLink } din Outlook."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Selectați ${ boldExportContacts } și alegeți contactele ce trebuie exportate."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Selectați ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa contacte în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Informații cont"
+      ],
+      "Account security": [
+        "Securitate cont"
+      ],
+      "app password": [
+        "parola aplicației"
+      ],
+      "Can view all details": [
+        "Poate vedea toate detaliile"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
+      ],
+      "Export to CSV file": [
+        "Exportare în fișier CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Gestionare"
+      ],
+      "Publish a calendar": [
+        "Publicare calendar"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "parola aplicației"
+      ],
+      "app password or enable IMAP": [
+        "parola aplicației sau să activați IMAP"
+      ],
+      "contacts": [
+        "contacte"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Un fişier CSV sau VCF (vCard)"
+      ],
+      "full calendar view": [
+        "vedere completă calendar"
+      ],
+      "ICS file": [
+        "fișier ICS"
+      ],
+      "security settings": [
+        "setări securitate"
+      ],
+      "shared calendars": [
+        "calendare partajate"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Faceți clic pe ${ boldICS } și descărcați fișierul."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Accesați ${ calendarLink } din setările Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Accesați ${ calendarViewLink } din Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Mutați cursorul peste calendarul de importat și deschideți meniul derulant."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Sub ${ boldPublish }, selectați calendarul pe care doriți să îl importați. Setați permisiunea la ${ boldCanViewAllDetails } și publicați-l."
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
@@ -2286,6 +2571,16 @@
         "${ pausedCount } suspendate",
         "${ pausedCount } suspendate"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "S-a găsit un folder",
+        "S-au găsit ${ providerFoldersNumLocalized } foldere",
+        "S-au găsit ${ providerFoldersNumLocalized } de foldere"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "S-a găsit o etichetă în Gmail",
+        "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
+        "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
@@ -2300,6 +2595,16 @@
         "S-a selectat o etichetă",
         "S-au selectat ${ selectedFoldersCount } etichete",
         "S-au selectat ${ selectedFoldersCount } de etichete"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Este selectat un folder",
+        "Sunt selectate ${ selectedFoldersCountLocalized } foldere",
+        "Sunt selectate ${ selectedFoldersCountLocalized } de foldere"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "S-a selectat o etichetă",
+        "S-au selectat ${ selectedFoldersCountLocalized } etichete",
+        "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -2499,6 +2804,9 @@
       "Encrypted search is here": [
         "Căutarea criptată este aici"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
@@ -2599,6 +2907,9 @@
       "Import in progress": [
         "Importare în derulare"
       ],
+      "Import mailbox": [
+        "Importare mesaje"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
@@ -2631,6 +2942,9 @@
       ],
       "Key fingerprint": [
         "Amprentă cheie"
+      ],
+      "Label all imported messages as": [
+        "Etichetare toate mesajele importate cu"
       ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
@@ -3088,6 +3402,12 @@
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "Your import will not be processed.": [
+        "Importarea nu va fi procesată."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Informațiile de conectare nu vor fi salvate după terminarea importării."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
@@ -3176,6 +3496,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "App password": [
+        "Parola aplicației"
+      ],
       "Apply to all duplicated files": [
         "Aplicare la toate fișierele duplicate"
       ],
@@ -3223,6 +3546,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Coming soon": [
+        "În curând"
       ],
       "Comment": [
         "Comentariu"
@@ -3307,8 +3633,14 @@
       "Folder name": [
         "Nume folder"
       ],
+      "From: ${ emailFrom }": [
+        "De la: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "De la: ${ importedEmailAddress }"
       ],
       "Good": [
         "Bună"
@@ -3351,6 +3683,9 @@
       ],
       "Location": [
         "Cale"
+      ],
+      "Mail Server (IMAP)": [
+        "Server e-mail (IMAP)"
       ],
       "Mailbox password": [
         "Parolă mesaje"
@@ -3411,6 +3746,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "Furnizați-ne mai multe detalii pentru a ne ajuta să luăm măsurile potrivite."
+      ],
+      "Port": [
+        "Port"
       ],
       "Post office box": [
         "Cutie poștală"
@@ -3481,6 +3819,12 @@
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Către: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Către: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Cod autentificare cu doi factori"
       ],
@@ -3501,6 +3845,9 @@
       ],
       "Upload anyway": [
         "Încărcare așa"
+      ],
+      "Upload file": [
+        "Încărcare fișier"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -3592,6 +3939,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Se conectează la furnizorul de e-mail"
+      ],
       "Creating new calendars": [
         "Se crează calendarele"
       ],
@@ -3606,10 +3956,20 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
         "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele de la o etichetă începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
@@ -3633,6 +3993,35 @@
       ],
       "Plain text": [
         "Text simplu"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Cum se importă calendarele din alt serviciu"
+      ],
+      "How to import calendars from Outlook": [
+        "Cum se importă calendarele din Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Cum se importă calendarele din Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Cum se importă contactele din alt serviciu"
+      ],
+      "How to import contacts from Outlook": [
+        "Cum se importă contactele din Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Cum se importă contactele din Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Cum se importă e-mailurile din alt serviciu"
+      ],
+      "How to import emails from Outlook": [
+        "Cum se importă e-mailurile din Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Cum se importă e-mailurile din Yahoo"
       ]
     },
     "New Label form": {
@@ -4571,6 +4960,9 @@
       "Re-signing contacts": [
         "Resemnare contacte"
       ],
+      "Reconnect your account": [
+        "Reconectați-vă contul"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -4639,6 +5031,12 @@
       ],
       "Sort files/folders": [
         "Sortare fișiere/foldere"
+      ],
+      "Start a new import": [
+        "Începere importare nouă"
+      ],
+      "Start import process": [
+        "Începere proces de importare"
       ],
       "Stop sharing": [
         "Oprire partajare"
@@ -4725,11 +5123,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
       ],
+      "Customize import to reduce the number of folders": [
+        "Modificați importarea pentru a reduce numărul folderelor"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Modificare opțiuni de importare pentru a reduce numărul de etichete."
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Semnarea digitală a mesajelor ajută la confirmarea că mesajele sunt trimise de către dvs."
       ],
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."
+      ],
+      "Edit folder names": [
+        "Editare nume foldere"
+      ],
+      "Edit label names": [
+        "Editare nume etichete"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise."
@@ -4797,6 +5207,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Sigur doriți să anulați importarea?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Sigur doriți să ștergeți definitiv un grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
@@ -4825,6 +5238,9 @@
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
       ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
@@ -4851,6 +5267,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Această funcționalitate necesită un cont Proton cu plată"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont Proton. Luați în considerare modificarea opțiunilor de importare."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

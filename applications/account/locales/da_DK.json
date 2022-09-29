@@ -83,9 +83,6 @@
       "Apply": [
         "Anvend"
       ],
-      "Apply to existing message": [
-        "Apply to existing messages"
-      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -467,10 +464,10 @@
       "No": [
         "Nej"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -524,11 +521,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Genopfrisk siden"
-      ],
       "refresh the page": [
         "genopfrisk siden"
+      ],
+      "Refresh the page": [
+        "Genopfrisk siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -2443,6 +2440,20 @@
         "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
       ]
     },
+    "Email spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } failed to move to your block list"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } failed to move to spam list"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } moved to your block list"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } moved to spam list"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annullering af en begivenhed den ${ formattedStart }"
@@ -3276,7 +3287,7 @@
     },
     "FilterSettings": {
       "Search in Allow List and Block List": [
-        "Søg i godkendt-liste og blokeringsliste"
+        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -3678,9 +3689,6 @@
       ],
       "contacts": [
         "kontakter"
-      ],
-      "CSV file": [
-        "CSV fil"
       ],
       "full calendar view": [
         "fuld kalendervisning"
@@ -6497,6 +6505,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Upload 1 eller flere gendannelsesfiler eller krypteringsnøgler"
       ],
+      "Upload file": [
+        "Upload fil"
+      ],
       "URL": [
         "URL"
       ],
@@ -7077,20 +7088,6 @@
         "Etiketnavn"
       ]
     },
-    "new_plans: Action": {
-      "From ${ _price }": [
-        "Fra ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Fra ${ _price2 } per bruger"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -7103,6 +7100,20 @@
       ],
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ]
+    },
+    "new_plans: Action": {
+      "From ${ _price }": [
+        "Fra ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Fra ${ _price2 } per bruger"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: attribute": {
@@ -8404,10 +8415,7 @@
         "Tilføj Sieve-filter"
       ],
       "Add to block list": [
-        "Føj til blokeringsliste"
-      ],
-      "Add to not spam list": [
-        "Føj til ikke-spam-liste"
+        "Add to your block list"
       ],
       "Add to spam list": [
         "Føj til spam-liste"

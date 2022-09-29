@@ -128,6 +128,9 @@
       "Continue": [
         "Продовжити"
       ],
+      "Continue import": [
+        "Продовжити імпорт"
+      ],
       "Continue transfers": [
         "Продовжити передавання"
       ],
@@ -154,6 +157,9 @@
       ],
       "Customize": [
         "Налаштувати"
+      ],
+      "Customize import": [
+        "Налаштувати імпорт"
       ],
       "Delete": [
         "Видалити"
@@ -187,6 +193,9 @@
       ],
       "Didn't receive the code?": [
         "Не отримали код?"
+      ],
+      "Discard": [
+        "Відхилити"
       ],
       "Done": [
         "Готово"
@@ -380,6 +389,9 @@
       "Re-sign": [
         "Перепідписати"
       ],
+      "Reconnect": [
+        "Відновити з'єднання"
+      ],
       "Recover data": [
         "Відновити дані"
       ],
@@ -409,6 +421,9 @@
       ],
       "Request new code": [
         "Запит нового коду"
+      ],
+      "Reset to default": [
+        "Відновити типові"
       ],
       "Reset zoom": [
         "Скинути масштаб"
@@ -772,6 +787,9 @@
     "Confirm modal title": {
       "Quit import customization?": [
         "Закрити налаштування імпорту?"
+      ],
+      "Quit import?": [
+        "Вийти з імпорту?"
       ]
     },
     "Contact field label": {
@@ -1827,6 +1845,9 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
       ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
+      ],
       "Primary address key is not decrypted": [
         "Основний ключ адреси не розшифрований"
       ],
@@ -1853,6 +1874,18 @@
       ],
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
+      ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Назви деяких ваших тек зарезервовані. Налаштуйте імпорт для зміни цих назв."
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Назви деяких ваших тек перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Назви деяких ваших міток зарезервовані. Налаштуйте імпорт для зміни цих назв."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших міток недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
@@ -1919,6 +1952,9 @@
       ],
       "Unknown error": [
         "Невідома помилка"
+      ],
+      "We were unable to connect to your service provider.": [
+        "Не вдається з'єднатися з вашим постачальником послуг."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ви не можете надіслати лист понад 100 отримувачам"
@@ -2195,6 +2231,255 @@
         "ProtonContacts не підтримує ${ forNow }:"
       ]
     },
+    "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "«Доступ менш захищених програм» увімкнено у налаштуваннях безпеки вашого облікового запису Google."
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі пошти."
+      ],
+      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
+        "Якщо ${ bold2StepsDisabled } (типові налаштування Gmail), переконайтеся, що:"
+      ],
+      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
+        "Якщо ${ bold2StepsDisabled } в Gmail (типові налаштування), переконайтеся, що:"
+      ],
+      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
+        "Якщо ${ bold2StepsEnabled } в Gmail, переконайтеся, що ви використовуєте пароль програм замість свого звичайного пароля."
+      ],
+      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Якщо ${ bold2StepsEnabled }, переконайтеся що ваша адреса е-пошти і пароль правильні. ${ boldNot } використовуйте свій звичайний пароль."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "Доступ до IMAP увімкнено у вашому зовнішньому обліковому записі."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "Доступ до IMAP увімкнено в вашому обліковому записі Yahoo."
+      ],
+      "Invalid IMAP port": [
+        "Неправильний порт IMAP"
+      ],
+      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "Proton не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ Gmail IMAP увімкнено."
+      ],
+      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "Proton не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ IMAP увімкнено у вашому обліковому записі Gmail."
+      ],
+      "Proton can't connect to your account. Please make sure that:": [
+        "Proton не може з'єднатися з вашим обліковим записом. Переконайтеся, що:"
+      ],
+      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "Proton не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що адреса поштового сервера і номер порту правильні."
+      ],
+      "Proton can't connect to your external account. Please make sure that:": [
+        "Proton не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що:"
+      ],
+      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "Proton не може з'єднатися з вашим обліковим записом Gmail. Переконайтеся, що адреса поштового сервера і номер порту правильні."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що:"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Забагато недавніх запитів. Будь ласка, спробуйте ще раз за хвильку."
+      ],
+      "Use your app password if:": [
+        "Використовуйте свій пароль програм, якщо:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Використовуйте пароль програм замість свого звичайного пароля якщо:"
+      ],
+      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
+        "Ви також можете спробувати вийти з ${ boldGoogleAccounts } в браузері, потім розблокувати ${ linkCAPTCHA }."
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Ваш поштовий обліковий запис вимагає пароль програм для експортування даних."
+      ],
+      "Your email account requires one to export your data.": [
+        "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Ваша адреса е-пошти та пароль програм правильні. ${ boldNot } використовуйте свій звичайний пароль."
+      ],
+      "Your email address and password are correct.": [
+        "Ваші адреса е-пошти та пароль правильні."
+      ],
+      "Your password is correct.": [
+        "Ваш пароль правильний."
+      ]
+    },
+    "Import error emphasis": {
+      "2-step verification is disabled": [
+        "Двоетапну перевірку вимкнено"
+      ],
+      "2-step verification is enabled": [
+        "Двоетапну перевірку увімкнено"
+      ],
+      "all your other Google accounts": [
+        "усі інші ваші облікові записи Google"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "not": [
+        "не"
+      ]
+    },
+    "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Натисніть ${ boldManage }, щоб розгорнути меню опцій."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Залежно від вашого постачальника е-пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Розгорніть випадне меню, натиснувши на 3 крапки (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від Proton."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Згенеруйте ${ boldAppPassword } та скористайтеся ним замість свого звичайного пароля під час запиту від Proton."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Перейдіть до ${ boldAccountInfo } у своєму профілі ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Відкрийте ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Перейдіть до Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Якщо двоетапна перевірка вимкнена, увімкніть її."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Відкрийте свої контакти ${ yahooMailLink }."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Відкрийте свої Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Виберіть ${ boldExportContacts } та вкажіть, які контакти потрібно експортувати."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Виберіть ${ boldExportCSV }."
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
+      ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Щоб імпортувати листи до Proton, вам необхідний ${ appPasswordLink } від Outlook. Отримайте його, дотримуючись цих кроків:"
+      ],
+      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Щоб імпортувати листи до Proton, вам необхідний ${ appPasswordLink } від Yahoo. Отримайте його, дотримуючись цих кроків:"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Інформація про обліковий запис"
+      ],
+      "Account security": [
+        "Безпека облікового запису"
+      ],
+      "app password": [
+        "пароль програм"
+      ],
+      "Can view all details": [
+        "Може переглядати всі подробиці"
+      ],
+      "Export": [
+        "Експортувати"
+      ],
+      "Export contacts": [
+        "Експортувати контакти"
+      ],
+      "Export to CSV file": [
+        "Експортувати у файл CSV"
+      ],
+      "ICS": [
+        "ICS"
+      ],
+      "Manage": [
+        "Керувати"
+      ],
+      "Publish a calendar": [
+        "Оприлюднити календар"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "пароль програм"
+      ],
+      "app password or enable IMAP": [
+        "пароль програм чи увімкніть IMAP"
+      ],
+      "contacts": [
+        "контакти"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Файл CSV або VCF (vCard)"
+      ],
+      "full calendar view": [
+        "повний вигляд календаря"
+      ],
+      "ICS file": [
+        "файл ICS"
+      ],
+      "security settings": [
+        "налаштування безпеки"
+      ],
+      "shared calendars": [
+        "спільні календарі"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Натисніть посилання ${ boldICS } та завантажте файл."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Перейдіть до ${ calendarLink } в налаштуваннях Outlook."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Перейдіть до ${ calendarViewLink } в Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Наведіть курсор миші на календар для імпорту й відкрийте випадне меню."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Під ${ boldPublish } виберіть календар для імпортування. Встановіть дозвіл ${ boldCanViewAllDetails } та оприлюдніть його."
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
@@ -2324,6 +2609,18 @@
         "${ pausedCount } призупинено",
         "${ pausedCount } призупинено"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Знайдено ${ providerFoldersNumLocalized } теку",
+        "Знайдено ${ providerFoldersNumLocalized } теки",
+        "Знайдено ${ providerFoldersNumLocalized } тек",
+        "Знайдено ${ providerFoldersNumLocalized } тек"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } мітка знайдена в Gmail",
+        "${ providerFoldersNumLocalized } мітки знайдені в Gmail",
+        "${ providerFoldersNumLocalized } міток знайдено в Gmail",
+        "${ providerFoldersNumLocalized } міток знайдено в Gmail"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
@@ -2341,6 +2638,18 @@
         "${ selectedFoldersCount } вибрані мітки",
         "${ selectedFoldersCount } вибраних міток",
         "${ selectedFoldersCount } вибраних міток"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Вибрано ${ selectedFoldersCountLocalized } теку",
+        "Вибрано ${ selectedFoldersCountLocalized } теки",
+        "Вибрано ${ selectedFoldersCountLocalized } тек",
+        "Вибрано ${ selectedFoldersCountLocalized } тек"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } вибрана мітка",
+        "${ selectedFoldersCountLocalized } вибрані мітки",
+        "${ selectedFoldersCountLocalized } вибраних міток",
+        "${ selectedFoldersCountLocalized } вибраних міток"
       ],
       "${ speed }/s": [
         "${ speed }/с"
@@ -2546,6 +2855,9 @@
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
@@ -2648,6 +2960,9 @@
       "Import in progress": [
         "Виконується імпортування"
       ],
+      "Import mailbox": [
+        "Імпортувати поштову скриньку"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
@@ -2680,6 +2995,9 @@
       ],
       "Key fingerprint": [
         "Цифровий відбиток ключа"
+      ],
+      "Label all imported messages as": [
+        "Позначити всі імпортовані повідомлення"
       ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
@@ -3140,6 +3458,12 @@
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
       ],
+      "Your import will not be processed.": [
+        "Ваш імпорт не буде оброблений."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
@@ -3228,6 +3552,9 @@
       "Add to group": [
         "Додати до групи"
       ],
+      "App password": [
+        "Пароль програми"
+      ],
       "Apply to all duplicated files": [
         "Застосувати до всіх дублікатів файлів"
       ],
@@ -3275,6 +3602,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
+      ],
+      "Coming soon": [
+        "Незабаром з'явиться"
       ],
       "Comment": [
         "Коментар"
@@ -3360,8 +3690,14 @@
       "Folder name": [
         "Назва теки"
       ],
+      "From: ${ emailFrom }": [
+        "Від: ${ emailFrom }"
+      ],
       "From: ${ importedEmail }": [
         "Від: ${ importedEmail }"
+      ],
+      "From: ${ importedEmailAddress }": [
+        "Від: ${ importedEmailAddress }"
       ],
       "Good": [
         "Добре"
@@ -3404,6 +3740,9 @@
       ],
       "Location": [
         "Розташування"
+      ],
+      "Mail Server (IMAP)": [
+        "Поштовий сервер (IMAP)"
       ],
       "Mailbox password": [
         "Пароль поштової скриньки"
@@ -3464,6 +3803,9 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "Будь ласка, надайте повну інформацію, щоб допомогти нам виконати відповідні дії"
+      ],
+      "Port": [
+        "Порт"
       ],
       "Post office box": [
         "Поштова скринька"
@@ -3534,6 +3876,12 @@
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Кому: ${ emailTo }"
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Кому: ${ PMEmailAddress }"
+      ],
       "Two-factor authentication code": [
         "Код двоетапної перевірки"
       ],
@@ -3554,6 +3902,9 @@
       ],
       "Upload anyway": [
         "Все одно вивантажити"
+      ],
+      "Upload file": [
+        "Вивантажити файл"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -3645,6 +3996,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Кількість створених календарів: ${ createdCalendars } з ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Підключення до вашого постачальника електронної пошти"
+      ],
       "Creating new calendars": [
         "Створення нового календаря"
       ],
@@ -3659,11 +4013,23 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } теки з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
         "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } теки, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -3688,6 +4054,35 @@
       ],
       "Plain text": [
         "Звичайний текст"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Як імпортувати календарі з іншого сервісу"
+      ],
+      "How to import calendars from Outlook": [
+        "Як імпортувати календарі з Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Як імпортувати календарі з Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Як імпортувати контакти з іншого сервісу"
+      ],
+      "How to import contacts from Outlook": [
+        "Як імпортувати контакти з Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Як імпортувати контакти з Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Як імпортувати листи з іншого сервісу"
+      ],
+      "How to import emails from Outlook": [
+        "Як імпортувати листи з Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Як імпортувати листи з Yahoo"
       ]
     },
     "New Label form": {
@@ -4659,6 +5054,9 @@
       "Re-signing contacts": [
         "Повторне підписання контактів"
       ],
+      "Reconnect your account": [
+        "Повторно під'єднайте свій обліковий запис"
+      ],
       "Recover data": [
         "Відновити дані"
       ],
@@ -4727,6 +5125,12 @@
       ],
       "Sort files/folders": [
         "Сортувати файли/теки"
+      ],
+      "Start a new import": [
+        "Почати новий імпорт"
+      ],
+      "Start import process": [
+        "Розпочати процес імпортування"
       ],
       "Stop sharing": [
         "Припинити спільний доступ"
@@ -4813,11 +5217,23 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Автоматично означає, що для надсилання цьому користувачу використовується формат редактора. Звичайний текст означає, що повідомлення завжди перетворюватиметься у звичайний текст під час надсилання."
       ],
+      "Customize import to reduce the number of folders": [
+        "Налаштуйте імпорт щоб зменшити кількість тек"
+      ],
+      "Customize import to reduce the number of labels": [
+        "Налаштуйте імпорт щоб зменшити кількість міток"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Цифровий підпис листів допомагає засвідчити справжність надісланих вами повідомлень"
       ],
       "Each imported email will have this label": [
         "Кожен імпортований лист матиме цю мітку"
+      ],
+      "Edit folder names": [
+        "Змінити назви тек"
+      ],
+      "Edit label names": [
+        "Редагувати назви міток"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
@@ -4887,6 +5303,9 @@
       ]
     },
     "Warning": {
+      "Are you sure you want to discard your import?": [
+        "Ви дійсно хочете відхилити імпортування?"
+      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",
         "Ви дійсно хочете остаточно видалити ${ count } групи контактів?",
@@ -4917,6 +5336,9 @@
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
       ],
+      "Proton will transfer as much data as possible, starting with your most recent messages.": [
+        "Proton перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте будь-яку конфіденційну інформацію."
       ],
@@ -4943,6 +5365,9 @@
       ],
       "This feature requires a paid Proton account": [
         "Ця функція вимагає платного тарифного плану Proton"
+      ],
+      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
+        "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису Proton. Розгляньте можливість налаштування вашого імпортування."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."
