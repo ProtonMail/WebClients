@@ -12,9 +12,13 @@ export interface StepperProps extends ComponentPropsWithoutRef<'ul'> {
      * Index of the currently active step.
      */
     activeStep: number;
+    /**
+     * Sets the position of the steps. Defaults to `center`.
+     */
+    position?: 'start' | 'center' | 'end';
 }
 
-const Stepper = ({ activeStep, className, children, ...rest }: StepperProps) => {
+const Stepper = ({ activeStep, position = 'center', className, children, ...rest }: StepperProps) => {
     const childrenArray = Children.toArray(children).filter((child) => isValidElement(child) && child.type === Step);
     const steps = childrenArray.map((step, index) => {
         return cloneElement(step as ReactElement, {
@@ -27,7 +31,10 @@ const Stepper = ({ activeStep, className, children, ...rest }: StepperProps) => 
 
     return (
         <StepperContext.Provider value={contextValue}>
-            <ul {...rest} className={clsx(['stepper', 'unstyled flex flex-nowrap m0', className])}>
+            <ul
+                {...rest}
+                className={clsx(['stepper', 'unstyled flex flex-nowrap m0', `flex-justify-${position}`, className])}
+            >
                 {steps}
             </ul>
         </StepperContext.Provider>
