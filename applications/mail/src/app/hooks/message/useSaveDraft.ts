@@ -10,7 +10,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
-import { isDecryptionError, isNetworkError } from '../../helpers/errors';
+import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '../../helpers/errors';
 import { getCurrentFolderID } from '../../helpers/labels';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { deleteConversation } from '../../logic/conversations/conversationsActions';
@@ -68,7 +68,7 @@ const useUpdateDraft = () => {
                 const errorMessage = c('Error').t`Error while saving draft. Please try again.`;
                 createNotification({ text: errorMessage, type: 'error' });
                 if (!isNetworkError(error) && !isDecryptionError(error)) {
-                    captureMessage(errorMessage, { extra: { message, error } });
+                    captureMessage(errorMessage, { extra: { message: pickMessageInfosForSentry(message), error } });
                 }
                 throw error;
             }
