@@ -19,6 +19,7 @@ import unique from '@proton/utils/unique';
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
 import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
+import { pickMessageInfosForSentry } from '../../helpers/errors';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
 import { encryptPackages } from '../../helpers/send/sendEncrypt';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
@@ -140,7 +141,7 @@ export const useSendMessage = () => {
                 );
                 if (hasHtml && message.messageDocument?.document === undefined) {
                     const errorMessage = 'Sending with missing document error';
-                    captureMessage(errorMessage, { extra: { message } });
+                    captureMessage(errorMessage, { extra: { message: pickMessageInfosForSentry(message) } });
                     throw new Error(errorMessage);
                 }
 
