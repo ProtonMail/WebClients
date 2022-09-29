@@ -133,6 +133,8 @@ const LoginForm = ({
         withSubmitting(run()).catch(noop);
     };
 
+    const usernameLabel = isVPN ? c('Label').t`${BRAND_NAME} email or username` : c('Label').t`Email or username`;
+
     return (
         <>
             {loading && (
@@ -155,6 +157,7 @@ const LoginForm = ({
                     noLoader
                     challengeRef={challengeRefLogin}
                     type={0}
+                    title={usernameLabel}
                     name="login"
                     onSuccess={() => {
                         setChallengeLoading(false);
@@ -167,7 +170,7 @@ const LoginForm = ({
                     <InputFieldTwo
                         id="username"
                         bigger
-                        label={isVPN ? c('Label').t`${BRAND_NAME} email or username` : c('Label').t`Email or username`}
+                        label={usernameLabel}
                         error={validator([requiredValidator(username)])}
                         disableChange={submitting}
                         autoComplete="username"
