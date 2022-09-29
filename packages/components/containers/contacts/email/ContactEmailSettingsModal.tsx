@@ -319,8 +319,10 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                             }
                             disableFullWidth
                             onClick={() => setShowPgpSettings(!showPgpSettings)}
-                            // TODO: Improve disabled style during loading
-                            className={clsx(['text-underline color-primary', loading && 'color-weak'])}
+                            className={clsx([
+                                'color-primary',
+                                loading ? 'color-weak text-no-decoration' : 'text-underline',
+                            ])}
                         >
                             {showPgpSettings
                                 ? c('Action').t`Hide advanced PGP settings`
