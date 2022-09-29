@@ -66,7 +66,7 @@ export interface MessageViewRef {
     expand: () => void;
 }
 
-const OFFSET_PERCENTAGE = 0.25; // 25%
+const OFFSET_PERCENTAGE = 0.05; // 5%
 
 const MessageView = (
     {
