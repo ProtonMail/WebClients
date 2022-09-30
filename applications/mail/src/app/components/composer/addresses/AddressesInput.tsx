@@ -243,6 +243,7 @@ const AddressesInput = ({
                         <Tooltip title={c('Action').t`Insert contacts`}>
                             <Button
                                 type="button"
+                                tabIndex={-1}
                                 onClick={addContactAction}
                                 color="weak"
                                 shape="ghost"
