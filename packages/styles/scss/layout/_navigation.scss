@@ -55,9 +55,11 @@ $padding-block-link: rem(7) !default;
 }
 
 // specificity...
-.navigation-link-header-group.navigation-link-header-group:not(.navigation-link-header-group--expandable) {
-	padding-inline: calc($padding-inline-start-link + 0.8em) $padding-inline-end-link;
-	color: var(--text-weak);
+.navigation-link-header-group {
+	&#{&}:not(#{&}--expandable) {
+		padding-inline: calc($padding-inline-start-link + 0.8em) $padding-inline-end-link;
+		color: var(--text-weak);
+	}
 }
 
 // get spacing right and add line in accounts sidebar
