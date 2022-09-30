@@ -126,7 +126,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         }, {} as { [labelID: string]: boolean });
     }, [selectedIDs, initialState, selectedLabelIDs]);
 
-    const alwaysDisabled = useMemo(() => {
+    const alwaysCheckboxDisabled = useMemo(() => {
         return (
             !getSendersToFilter(getElementsFromIDs(selectedIDs)).length ||
             Object.values(changes).every((value) => !value)
@@ -134,10 +134,10 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     }, [getSendersToFilter, selectedIDs, changes]);
 
     useEffect(() => {
-        if (alwaysDisabled && always) {
+        if (alwaysCheckboxDisabled && always) {
             setAlways(false);
         }
-    }, [alwaysDisabled, always]);
+    }, [alwaysCheckboxDisabled, always]);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -228,10 +228,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         await withLoading(handleApply());
     };
 
-    const alwaysTooltip = alwaysDisabled
-        ? c('Context filtering disabled').t`Your selection contains only yourself as sender`
-        : undefined;
-
     return (
         <form onSubmit={handleSubmit}>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
@@ -313,22 +309,20 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 </ul>
             </div>
             {displayContextFiltering && (
-                <Tooltip title={alwaysTooltip}>
-                    <div className={classnames(['p1 border-top', alwaysDisabled && 'color-disabled'])}>
-                        <Checkbox
-                            className="mr0-5"
-                            id={alwaysCheckID}
-                            checked={always}
-                            disabled={alwaysDisabled}
-                            onChange={({ target }) => setAlways(target.checked)}
-                            data-testid="label-dropdown:always-move"
-                            data-prevent-arrow-navigation
-                        />
-                        <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                            {c('Label').t`Always label sender's emails`}
-                        </label>
-                    </div>
-                </Tooltip>
+                <div className={classnames(['p1 border-top', alwaysCheckboxDisabled && 'color-disabled'])}>
+                    <Checkbox
+                        className="mr0-5"
+                        id={alwaysCheckID}
+                        checked={always}
+                        disabled={alwaysCheckboxDisabled}
+                        onChange={({ target }) => setAlways(target.checked)}
+                        data-testid="label-dropdown:always-move"
+                        data-prevent-arrow-navigation
+                    />
+                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                        {c('Label').t`Always label sender's emails`}
+                    </label>
+                </div>
             )}
             <div className={classnames([!displayContextFiltering && 'py1 border-top', 'flex ml1 mr1'])}>
                 <Checkbox
