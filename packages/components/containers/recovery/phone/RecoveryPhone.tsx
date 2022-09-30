@@ -7,7 +7,7 @@ import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
+import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
 import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
@@ -21,39 +21,49 @@ interface Props {
 
 const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) => {
     const [input, setInput] = useState(phone.Value || '');
-    const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const { call } = useEventManager();
     const { onFormSubmit } = useFormErrors();
     const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
+    const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
+    const [authModal, setAuthModal, renderAuthModal] = useModalState();
 
-    const handleSubmit = async () => {
-        const confirmStep = !input && hasReset;
-        if (confirmStep) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<ConfirmRemovePhoneModal onClose={reject} onConfirm={resolve} />);
-            });
-        }
-
-        await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updatePhone({ Phone: input })} />);
-        });
-
-        await call();
-
-        createNotification({ text: c('Success').t`Phone number updated` });
-    };
+    const confirmStep = !input && hasReset;
+    const loading = renderConfirmModal || renderAuthModal || renderVerifyRecoveryPhoneModal;
 
     return (
         <>
+            {renderConfirmModal && (
+                <ConfirmRemovePhoneModal
+                    {...confirmModal}
+                    onConfirm={() => {
+                        setAuthModal(true);
+                    }}
+                />
+            )}
+            {renderAuthModal && (
+                <AuthModal
+                    {...authModal}
+                    onCancel={undefined}
+                    onSuccess={async () => {
+                        await call();
+                        createNotification({ text: c('Success').t`Phone number updated` });
+                    }}
+                    config={updatePhone({ Phone: input })}
+                />
+            )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             <form
                 className={classnames(['flex flex-wrap on-mobile-flex-column', className])}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (onFormSubmit()) {
-                        void withSubmitting(handleSubmit());
+                    if (!onFormSubmit()) {
+                        return;
+                    }
+                    if (confirmStep) {
+                        setConfirmModal(true);
+                    } else {
+                        setAuthModal(true);
                     }
                 }}
             >
@@ -61,7 +71,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     <InputFieldTwo
                         as={PhoneInput}
                         id="phoneInput"
-                        disableChange={submitting}
+                        disableChange={loading}
                         defaultCountry={defaultCountry}
                         value={input}
                         onChange={setInput}
@@ -102,7 +112,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                         shape="outline"
                         type="submit"
                         disabled={(phone.Value || '') === input}
-                        loading={submitting}
+                        loading={loading}
                         data-testid="account:recovery:phoneSubmit"
                     >
                         {c('Action').t`Save`}

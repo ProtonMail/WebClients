@@ -1,4 +1,5 @@
 import { DENSITY } from '../constants';
+import { RegisteredKey } from '../webauthn/interface';
 import { ChecklistId } from './Checklist';
 
 export enum SETTINGS_STATUS {
@@ -43,7 +44,7 @@ export enum SETTINGS_TIME_FORMAT {
 
 export enum SETTINGS_2FA_ENABLED {
     OTP = 1,
-    U2F = 2,
+    FIDO2 = 2,
 }
 
 export interface Flags {
@@ -52,16 +53,10 @@ export interface Flags {
 
 export interface UserSettings {
     '2FA': {
-        Enabled: number; // 0 for disabled, 1 for OTP, 2 for U2F, 3 for both
-        Allowed: number; // 0 for disabled, 1 for OTP, 2 for U2F, 3 for both
-        ExpirationTime: number; // If set, after this time force add 2FA
-        U2FKeys: [
-            {
-                Label: string;
-                KeyHandle: string;
-                Compromised: number;
-            }
-        ];
+        Enabled: number; // 0 for disabled, 1 for OTP, 2 for FIDO2, 3 for both
+        Allowed: number; // 0 for disabled, 1 for OTP, 2 for FIDO2, 3 for both
+        ExpirationTime: number | null; // If set, after this time force add 2FA
+        RegisteredKeys: RegisteredKey[];
     };
     AppWelcome: {
         Account?: string[];

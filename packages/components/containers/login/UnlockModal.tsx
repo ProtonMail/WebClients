@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,17 +19,25 @@ import {
     ModalProps,
     PasswordInputTwo,
 } from '../../components';
-import { useApi } from '../../hooks';
+import { useApi, useErrorHandler } from '../../hooks';
 
 interface Props extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess'> {
     onSuccess?: (password: string) => Promise<void> | void;
     onClose?: () => void;
+    onCancel?: () => void;
 }
 
-const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
+const UnlockModal = ({ onClose, onSuccess, onCancel, ...rest }: Props) => {
     const api = useApi();
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    const passwordRef = useRef<HTMLInputElement>(null);
+    const errorHandler = useErrorHandler();
+
+    const cancelClose = () => {
+        onCancel?.();
+        onClose?.();
+    };
 
     const handleSubmit = async () => {
         try {
@@ -37,27 +45,33 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             await srpAuth({
                 api,
                 credentials: { password },
-                config: queryUnlock(),
+                config: { ...queryUnlock(), silence: true },
             });
-            await onSuccess?.(password);
+            // We want to just keep the modal open until the consumer's promise is finished. Not interested in errors.
+            await onSuccess?.(password)?.catch(noop);
             onClose?.();
         } catch (error: any) {
+            errorHandler(error);
             setLoading(false);
             const { code } = getApiError(error);
             if (code !== PASSWORD_WRONG_ERROR) {
-                onClose?.();
+                cancelClose();
+                return;
             }
+            setPassword('');
+            passwordRef.current?.focus();
         }
     };
 
     // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
-    const handleClose = loading ? noop : onClose;
+    const handleClose = loading ? noop : cancelClose;
 
     return (
         <Modal {...rest} size="small" as={Form} onSubmit={() => handleSubmit()} onClose={handleClose}>
             <ModalHeader title={c('Title').t`Sign in again to continue`} />
             <ModalContent>
                 <InputFieldTwo
+                    ref={passwordRef}
                     required
                     autoFocus
                     autoComplete="current-password"

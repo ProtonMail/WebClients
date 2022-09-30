@@ -1,27 +1,25 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
+import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
-import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
     AlertModal,
     Button,
-    Loader,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalProps,
+    useModalState,
 } from '../../components';
 import { useApi, useEventManager, useGetUserKeys, useLoading, useUser } from '../../hooks';
-import { PasswordTotpInputs, useAskAuth } from '../password';
+import AuthModal from '../password/AuthModal';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 enum STEPS {
@@ -43,18 +41,14 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
         MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
         MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
         MnemonicStatus === MNEMONIC_STATUS.PROMPT;
+    const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
 
     const nonConfirmStep = callReactivateEndpoint ? STEPS.MNEMONIC_PHRASE : STEPS.AUTH;
     const [step, setStep] = useState(confirmStep ? STEPS.CONFIRM : nonConfirmStep);
 
     const api = useApi();
     const { call } = useEventManager();
-    const [submittingAuth, setSubmittingAuth] = useState(false);
     const getUserKeys = useGetUserKeys();
-
-    const [password, setPassword] = useState('');
-    const [totp, setTotp] = useState('');
-    const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
 
     const [generating, withGenerating] = useLoading();
     const [reactivating, withReactivating] = useLoading();
@@ -68,11 +62,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
         return generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: Name });
     };
 
-    const handleReactivate = async (data: MnemonicData | undefined) => {
-        if (!data) {
-            return;
-        }
-
+    const handleReactivate = async (data: MnemonicData) => {
         try {
             const payload = await getPayload(data);
             await api(reactivateMnemonicPhrase(payload));
@@ -86,133 +76,95 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
         }
     };
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        if (!mnemonicData) {
-            return;
-        }
-
-        try {
-            setSubmittingAuth(true);
-            const payload = await getPayload(mnemonicData);
-
-            await srpAuth({
-                api,
-                credentials: { password, totp },
-                config: updateMnemonicPhrase(payload),
-            });
-            await call();
-
-            setStep(STEPS.MNEMONIC_PHRASE);
-        } catch (error: any) {
-            const { code } = getApiError(error);
-            setSubmittingAuth(false);
-            if (code !== PASSWORD_WRONG_ERROR) {
-                onClose?.();
-            }
-        }
-    };
-
     useEffect(() => {
-        if (!open) {
-            return;
-        }
-
         const generateMnemonicData = async () => {
             const data = await generateMnemonicWithSalt();
             setMnemonicData(data);
+
+            if (step === STEPS.AUTH) {
+                setAuthModalOpen(true);
+                return;
+            }
 
             if (!confirmStep && callReactivateEndpoint) {
                 await handleReactivate(data);
             }
         };
-
         void withGenerating(generateMnemonicData());
-    }, [open]);
+    }, []);
 
-    if (step === STEPS.CONFIRM) {
-        return (
-            <AlertModal
-                open={open}
-                title={c('Title').t`Generate new recovery phrase?`}
-                buttons={[
-                    <Button
-                        color="norm"
-                        disabled={!mnemonicData}
-                        loading={reactivating}
-                        onClick={() => {
-                            if (callReactivateEndpoint) {
-                                void withReactivating(handleReactivate(mnemonicData));
-                            } else {
-                                setStep(STEPS.AUTH);
-                            }
-                        }}
-                    >
-                        {c('Action').t`Generate recovery phrase`}
-                    </Button>,
-                    <Button disabled={reactivating} onClick={onClose}>
-                        {c('Action').t`Cancel`}
-                    </Button>,
-                ]}
-                onExit={onExit}
-            >
-                <p className="m0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
-            </AlertModal>
-        );
-    }
+    const authenticating = step === STEPS.AUTH;
+    const mnemonic = authenticating ? undefined : mnemonicData?.mnemonic;
+    const handleClose = generating ? noop : onClose;
 
-    if (step === STEPS.AUTH) {
-        const handleClose = submittingAuth ? noop : onClose;
-
-        const loading = !mnemonicData || submittingAuth || isLoadingAuth;
-
-        return (
-            <Modal as="form" size="small" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
-                <ModalHeader title={c('Title').t`Sign in again to continue`} />
-                <ModalContent>
-                    {isLoadingAuth ? (
-                        <Loader />
-                    ) : (
-                        <PasswordTotpInputs
-                            password={password}
-                            setPassword={setPassword}
-                            totp={totp}
-                            setTotp={setTotp}
-                            showTotp={hasTOTPEnabled}
+    return (
+        <>
+            {renderAuthModal && mnemonicData && (
+                <AuthModal
+                    config={unlockPasswordChanges()}
+                    {...authModalProps}
+                    onCancel={undefined}
+                    onSuccess={async () => {
+                        try {
+                            const payload = await getPayload(mnemonicData);
+                            await api(updateMnemonicPhrase(payload));
+                            await call();
+                            await api(lockSensitiveSettings());
+                            setStep(STEPS.MNEMONIC_PHRASE);
+                        } catch (e) {
+                            onClose?.();
+                        }
+                    }}
+                />
+            )}
+            {step === STEPS.CONFIRM && (
+                <AlertModal
+                    open={open}
+                    title={c('Title').t`Generate new recovery phrase?`}
+                    buttons={[
+                        <Button
+                            color="norm"
+                            disabled={!mnemonicData}
+                            loading={reactivating}
+                            onClick={() => {
+                                if (!mnemonicData) {
+                                    return;
+                                }
+                                if (callReactivateEndpoint) {
+                                    void withReactivating(handleReactivate(mnemonicData));
+                                } else {
+                                    setAuthModalOpen(true);
+                                }
+                            }}
+                        >
+                            {c('Action').t`Generate recovery phrase`}
+                        </Button>,
+                        <Button disabled={reactivating} onClick={onClose}>
+                            {c('Action').t`Cancel`}
+                        </Button>,
+                    ]}
+                    onExit={onExit}
+                >
+                    <p className="m0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
+                </AlertModal>
+            )}
+            {(step === STEPS.MNEMONIC_PHRASE || authenticating) && (
+                <Modal size="small" open={open} onClose={handleClose} onExit={onExit}>
+                    <ModalHeader title={c('Info').t`Your recovery phrase`} />
+                    <ModalContent>
+                        <MnemonicPhraseStepContent mnemonic={mnemonic} loading={generating || authenticating} />
+                    </ModalContent>
+                    <ModalFooter>
+                        <MnemonicPhraseStepButtons
+                            mnemonic={mnemonic}
+                            disabled={generating || authenticating}
+                            onDone={onClose}
                         />
-                    )}
-                </ModalContent>
-                <ModalFooter>
-                    <Button onClick={handleClose} disabled={loading}>
-                        {c('Action').t`Cancel`}
-                    </Button>
-                    <Button loading={loading} type="submit" color="norm">
-                        {c('Action').t`Submit`}
-                    </Button>
-                </ModalFooter>
-            </Modal>
-        );
-    }
-
-    if (step === STEPS.MNEMONIC_PHRASE) {
-        const mnemonic = mnemonicData?.mnemonic;
-        const handleClose = generating ? noop : onClose;
-
-        return (
-            <Modal size="small" open={open} onClose={handleClose} onExit={onExit}>
-                <ModalHeader title={c('Info').t`Your recovery phrase`} />
-                <ModalContent>
-                    <MnemonicPhraseStepContent mnemonic={mnemonic} loading={generating} />
-                </ModalContent>
-                <ModalFooter>
-                    <MnemonicPhraseStepButtons mnemonic={mnemonic} disabled={generating} onDone={onClose} />
-                </ModalFooter>
-            </Modal>
-        );
-    }
-
-    throw new Error('Unknown step');
+                    </ModalFooter>
+                </Modal>
+            )}
+        </>
+    );
 };
 
 export default GenerateMnemonicModal;

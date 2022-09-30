@@ -9,7 +9,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { Button, Icon, InputFieldTwo, useFormErrors, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
+import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
 import VerifyRecoveryEmailModal from './VerifyRecoveryEmailModal';
@@ -23,46 +23,51 @@ interface Props {
 
 const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
     const [input, setInput] = useState(email.Value || '');
-    const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
     const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
+    const [authModal, setAuthModal, renderAuthModal] = useModalState();
+    const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
 
-    const handleSubmit = async () => {
-        const confirmStep = !input && (hasReset || hasNotify);
-        if (confirmStep) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(
-                    <ConfirmRemoveEmailModal
-                        hasReset={hasReset}
-                        hasNotify={hasNotify}
-                        onClose={reject}
-                        onConfirm={resolve}
-                    />
-                );
-            });
-        }
-
-        await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updateEmail({ Email: input })} />);
-        });
-
-        await call();
-
-        createNotification({ text: c('Success').t`Email updated` });
-    };
+    const loading = renderVerifyRecoveryEmailModal || renderConfirmModal || renderAuthModal;
+    const confirmStep = !input && (hasReset || hasNotify);
 
     return (
         <>
+            {renderAuthModal && (
+                <AuthModal
+                    {...authModal}
+                    onCancel={undefined}
+                    onSuccess={async () => {
+                        await call();
+                        createNotification({ text: c('Success').t`Email updated` });
+                    }}
+                    config={updateEmail({ Email: input })}
+                />
+            )}
+            {renderConfirmModal && (
+                <ConfirmRemoveEmailModal
+                    hasReset={hasReset}
+                    hasNotify={hasNotify}
+                    {...confirmModal}
+                    onConfirm={() => {
+                        setAuthModal(true);
+                    }}
+                />
+            )}
             {renderVerifyRecoveryEmailModal && <VerifyRecoveryEmailModal email={email} {...verifyRecoveryEmailModal} />}
             <form
                 className={classnames(['flex flex-wrap on-mobile-flex-column', className])}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (onFormSubmit()) {
-                        void withSubmitting(handleSubmit());
+                    if (!onFormSubmit()) {
+                        return;
+                    }
+                    if (confirmStep) {
+                        setConfirmModal(true);
+                    } else {
+                        setAuthModal(true);
                     }
                 }}
             >
@@ -71,7 +76,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                         type="email"
                         autoComplete="email"
                         id="recovery-email-input"
-                        disableChange={submitting}
+                        disableChange={loading}
                         value={input || ''}
                         placeholder={c('Info').t`Not set`}
                         error={validator([input && emailValidator(input)].filter(isTruthy))}
@@ -112,7 +117,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                         type="submit"
                         shape="outline"
                         disabled={(email.Value || '') === input}
-                        loading={submitting}
+                        loading={loading}
                         data-testid="account:recovery:emailSubmit"
                     >
                         {c('Action').t`Save`}

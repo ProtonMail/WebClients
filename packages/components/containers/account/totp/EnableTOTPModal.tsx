@@ -1,23 +1,23 @@
-import { ReactNode, useState } from 'react';
+import { FormEvent, ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { APPS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
-import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
-    Alert,
     Button,
     Form,
     Href,
     InlineLinkButton,
+    InputFieldTwo,
     Loader,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -25,17 +25,18 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
     QRCode,
-} from '../../components';
-import { useApi, useConfig, useEventManager, useLoading, useModals, useNotifications, useUser } from '../../hooks';
-import AuthModal from '../password/AuthModal';
-import PasswordTotpInputs from '../password/PasswordTotpInputs';
+    TotpInput,
+    useFormErrors,
+} from '../../../components';
+import { useApi, useConfig, useEventManager, useLoading, useNotifications, useUser } from '../../../hooks';
+import AuthModal from '../../password/AuthModal';
 
 interface ModalProperties {
     section: ReactNode;
     cancelButtonText?: string | null;
     onCancel?: () => void;
-    submitButtonText?: string;
-    onSubmit?: () => void;
+    submitButtonText?: string | null;
+    onSubmit?: (event: FormEvent<HTMLFormElement>) => void;
 }
 
 interface SetupTOTPResponse {
@@ -55,20 +56,33 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const [{ sharedSecret, uri = '', period, digits }] = useState(() => {
         return getTOTPData(user.Email || user.Name);
     });
     const [step, setStep] = useState(STEPS.INFO);
     const [manualCode, setManualCode] = useState(false);
     const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
-    const [password, setPassword] = useState('');
-    const [totp, setTotp] = useState('');
-    const [passwordError, setPasswordError] = useState('');
+    const [confirmationCode, setConfirmationCode] = useState('');
     const [totpError, setTotpError] = useState('');
     const [loading, withLoading] = useLoading();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const handleClose = loading ? noop : onClose;
+
+    const [authed, setAuthed] = useState(false);
+
+    if (!authed) {
+        return (
+            <AuthModal
+                config={unlockPasswordChanges()}
+                {...rest}
+                onCancel={onClose}
+                onSuccess={async () => {
+                    setAuthed(true);
+                }}
+            />
+        );
+    }
 
     const {
         section,
@@ -187,43 +201,13 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
         if (step === STEPS.CONFIRM_CODE) {
             const handleSubmit = async () => {
                 try {
-                    const apiConfig = setupTotp(sharedSecret, totp);
-                    let result: SetupTOTPResponse;
-
-                    // Signed into a public user as an admin, the password and totp are related to the admin and not the user
-                    // so to clarify that we ask in another modal
-                    if (user.isSubUser) {
-                        result = await new Promise<SetupTOTPResponse>((resolve, reject) => {
-                            createModal(
-                                <AuthModal<SetupTOTPResponse>
-                                    onClose={reject}
-                                    onSuccess={({ result }) => resolve(result)}
-                                    config={apiConfig}
-                                />
-                            );
-                        });
-                    } else {
-                        result = await srpAuth<SetupTOTPResponse>({
-                            api,
-                            credentials: { password },
-                            config: apiConfig,
-                        });
-                    }
-
+                    const result = await api<SetupTOTPResponse>(setupTotp(sharedSecret, confirmationCode));
                     await call();
                     createNotification({ text: c('Info').t`Two-factor authentication enabled` });
                     setRecoveryCodes(result.TwoFactorRecoveryCodes);
                     setStep(STEPS.RECOVERY_CODES);
                 } catch (error: any) {
                     const { code, message } = getApiError(error);
-
-                    setPasswordError('');
-                    setTotpError('');
-
-                    if (code === PASSWORD_WRONG_ERROR) {
-                        setPasswordError(message);
-                    }
-
                     if (code === TOTP_WRONG_ERROR) {
                         setTotpError(message);
                     }
@@ -232,23 +216,33 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
             return {
                 section: (
-                    <PasswordTotpInputs
-                        password={password}
-                        // Password is asked for in a modal when signed into public user
-                        setPassword={user.isSubUser ? undefined : setPassword}
-                        passwordError={passwordError}
-                        totp={totp}
-                        setTotp={setTotp}
-                        totpError={totpError}
-                        showTotp
-                    />
+                    <>
+                        <div className="mb1">{c('Info').t`Enter code from your authenticator app`}</div>
+                        <InputFieldTwo
+                            as={TotpInput}
+                            autoFocus
+                            length={6}
+                            autoComplete="one-time-code"
+                            id="totp"
+                            value={confirmationCode}
+                            disableChange={loading}
+                            onValue={(value: string) => {
+                                setConfirmationCode(value);
+                                setTotpError('');
+                            }}
+                            error={validator([requiredValidator(confirmationCode), totpError])}
+                        />
+                    </>
                 ),
                 cancelButtonText: c('Action').t`Back`,
                 onCancel: () => {
                     setStep(STEPS.SCAN_CODE);
                 },
                 submitButtonText: c('Action').t`Submit`,
-                onSubmit() {
+                onSubmit(event: FormEvent<HTMLFormElement>) {
+                    if (!onFormSubmit(event.currentTarget)) {
+                        return;
+                    }
                     void withLoading(handleSubmit());
                 },
             };
@@ -258,14 +252,14 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <Alert className="mb1">
+                        <div className="mb1">
                             <span className="text-bold">{c('Info')
                                 .t`Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.`}</span>
                             <br />
                             <br />
                             {c('Info')
                                 .t`If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.`}
-                        </Alert>
+                        </div>
                         <div className="flex text-center">
                             {recoveryCodes.map((code) => {
                                 return (
@@ -277,6 +271,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         </div>
                         <div className="text-center">
                             <Button
+                                color="norm"
                                 onClick={() => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {
                                         type: 'text/plain;charset=utf-8',
@@ -290,11 +285,11 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         </div>
                     </>
                 ),
-                submitButtonText: c('Action').t`Ok`,
+                submitButtonText: null,
                 onSubmit() {
                     onClose?.();
                 },
-                cancelButtonText: null,
+                cancelButtonText: c('Action').t`Close`,
             };
         }
 
@@ -302,7 +297,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     })();
 
     return (
-        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} size="large" {...rest}>
+        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} size="medium" {...rest}>
             <ModalHeader title={c('Title').t`Set up two-factor authentication`} />
             <ModalContent>{section}</ModalContent>
             <ModalFooter>
@@ -314,9 +309,11 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     // Maintain submit button positioning
                     <div />
                 )}
-                <Button loading={loading} type="submit" color="norm">
-                    {submitButtonText || c('Action').t`Next`}
-                </Button>
+                {submitButtonText !== null && (
+                    <Button loading={loading} type="submit" color="norm">
+                        {submitButtonText || c('Action').t`Next`}
+                    </Button>
+                )}
             </ModalFooter>
         </Modal>
     );
