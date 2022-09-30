@@ -13,7 +13,8 @@ export const addTreeFilter = (
 ) => ({
     method: 'post',
     url: 'mail/v4/filters',
-    data: { ID, Name, Status, Version, Simple, Tree, Sieve, Source },
+    data: { ID, Name, Status, Version, Simple, Tree, Sieve },
+    params: { Source },
 });
 
 export const queryFilters = () => ({
