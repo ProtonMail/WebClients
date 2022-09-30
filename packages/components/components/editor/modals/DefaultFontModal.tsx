@@ -21,8 +21,6 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const api = useApi();
     const [settings] = useMailSettings();
 
-    console.log(settings?.FontFace);
-
     const [fontFace, setFontFace] = useState(getFontFaceValueFromId(settings?.FontFace) || DEFAULT_FONT_FACE);
     const [fontSize, setFontSize] = useState(settings?.FontSize || DEFAULT_FONT_SIZE);
     const [loading, setLoading] = useState(false);
@@ -59,8 +57,6 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
         setLoading(false);
         onClose?.();
     };
-
-    console.log(fontFace);
 
     return (
         <ModalTwo onSubmit={onSubmit} onClose={onClose} as={Form} size="small" {...rest}>
