@@ -92,8 +92,8 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
 
-    const alwaysDisabled = useMemo(() => {
-        return !getSendersToFilter(elements).length;
+    const alwaysCheckboxDisabled = useMemo(() => {
+        return !getSendersToFilter(elements).length || !selectedFolder;
     }, [getSendersToFilter, elements]);
 
     const list = treeview
@@ -146,10 +146,6 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const folderButtonID = (ID: string) => `${uid}-${ID}`;
     const autoFocusSearch = !breakpoints.isNarrow;
     const applyDisabled = selectedFolder?.ID === undefined;
-
-    const alwaysTooltip = alwaysDisabled
-        ? c('Context filtering disabled').t`Your selection contains only yourself as sender`
-        : undefined;
 
     return (
         <form onSubmit={handleSubmit}>
@@ -228,22 +224,20 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 </ul>
             </div>
             {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
-                <Tooltip title={alwaysTooltip}>
-                    <div className={classnames(['p1 pb0 border-top', alwaysDisabled && 'color-disabled'])}>
-                        <Checkbox
-                            className="mr0-5"
-                            id={alwaysCheckID}
-                            checked={always}
-                            disabled={alwaysDisabled}
-                            onChange={({ target }) => setAlways(target.checked)}
-                            data-testid="move-dropdown:always-move"
-                            data-prevent-arrow-navigation
-                        />
-                        <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                            {c('Label').t`Always move sender's emails`}
-                        </label>
-                    </div>
-                </Tooltip>
+                <div className={classnames(['p1 pb0 border-top', alwaysCheckboxDisabled && 'color-disabled'])}>
+                    <Checkbox
+                        className="mr0-5"
+                        id={alwaysCheckID}
+                        checked={always}
+                        disabled={alwaysCheckboxDisabled}
+                        onChange={({ target }) => setAlways(target.checked)}
+                        data-testid="move-dropdown:always-move"
+                        data-prevent-arrow-navigation
+                    />
+                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                        {c('Label').t`Always move sender's emails`}
+                    </label>
+                </div>
             )}
             <div className="m1">
                 <PrimaryButton
