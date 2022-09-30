@@ -10,7 +10,7 @@ import { classnames } from '../../../helpers';
 import { useActiveBreakpoint } from '../../../hooks';
 import { ButtonGroup } from '../../button';
 import Icon from '../../icon/Icon';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
+import { DEFAULT_FONT_SIZE } from '../constants';
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
 import { EditorMetadata } from '../interface';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
@@ -50,7 +50,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 value={config.fontFace.value}
                 setValue={config.fontFace.setValue}
                 onClickDefault={config.defaultFont.showModal}
-                defaultValue={mailSettings?.FontFace || DEFAULT_FONT_FACE}
+                defaultValue={mailSettings?.FontFace}
                 showDefaultFontSelector={metadata.supportDefaultFontSelector}
             />
             <ToolbarFontSizeDropdown
