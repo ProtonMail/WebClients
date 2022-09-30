@@ -36,15 +36,16 @@ const hasFont = (font: string): boolean => {
 };
 
 const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault, showDefaultFontSelector }: Props) => {
-    const [computedValue, setComputedValue] = useState(
-        value || getFontFaceValueFromId(defaultValue) || DEFAULT_FONT_FACE
-    );
+    const defaultFontFaceValue = getFontFaceValueFromId(defaultValue);
+    const [computedValue, setComputedValue] = useState(value || DEFAULT_FONT_FACE);
 
     const onChange = (nextFont: string) => {
         setComputedValue(nextFont);
         setValue(nextFont);
     };
 
+    // Value changes when we move cursor to another place.
+    // We reflect those changes to the computed value
     useEffect(() => {
         if (!value || !hasFont(value) || value === computedValue) {
             return;
@@ -55,11 +56,13 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
         }
     }, [value]);
 
+    // defaultFontFaceValue changes when we select a new default value
+    // We reflect those changes to the computedValue
     useEffect(() => {
-        if (defaultValue) {
-            setComputedValue(defaultValue);
+        if (defaultFontFaceValue) {
+            setComputedValue(defaultFontFaceValue);
         }
-    }, [defaultValue]);
+    }, [defaultFontFaceValue]);
 
     return (
         <ToolbarDropdown
@@ -77,9 +80,9 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
             }
         >
             <DropdownMenu>
-                {Object.values(FONT_FACES).map(({ label: fontLabel, value: fontValue }) => (
+                {Object.values(FONT_FACES).map(({ label: fontLabel, value: fontValue, id: fontId }) => (
                     <DropdownMenuContainer
-                        key={fontValue}
+                        key={fontId}
                         className={classnames([fontValue === value && 'dropdown-item--is-selected'])}
                         buttonClassName="text-left"
                         aria-pressed={fontValue === value}
@@ -89,7 +92,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                         data-testid={`editor-font-${fontLabel}`}
                         buttonContent={<span className="pr0-5">{fontLabel}</span>}
                         extraContent={
-                            fontValue.toLowerCase() === (defaultValue || '').toLowerCase() &&
+                            fontValue.toLowerCase() === (defaultFontFaceValue || '').toLowerCase() &&
                             showDefaultFontSelector ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
                                     <Button

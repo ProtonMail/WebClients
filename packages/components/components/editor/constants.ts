@@ -46,17 +46,17 @@ export const FONT_FACES: Record<FontFace, { id: string; label: string; value: st
     GEORGIA: {
         id: 'Georgia',
         label: 'Georgia',
-        value: 'Georgia',
+        value: 'Georgia, serif',
     },
     ARIAL: {
         id: 'Arial',
         label: 'Arial',
-        value: 'Arial',
+        value: 'Arial, sans-serif',
     },
     HELVETICA: {
         id: 'Helvetica',
         label: 'Helvetica',
-        value: 'Helvetica',
+        value: 'Helvetica, sans-serif',
     },
     MONOSPACE: {
         id: 'Menlo, Consolas, Courier New, Monospace',
@@ -71,17 +71,17 @@ export const FONT_FACES: Record<FontFace, { id: string; label: string; value: st
     VERDANA: {
         id: 'Verdana',
         label: 'Verdana',
-        value: 'Verdana',
+        value: 'Verdana, sans-serif',
     },
     TIMES_NEW_ROMAN: {
         id: 'Times New Roman',
         label: 'Times New Roman',
-        value: 'Times New Roman',
+        value: 'Times New Roman, serif',
     },
     TREBUCHET_MS: {
         id: 'Trebuchet MS',
         label: 'Trebuchet MS',
-        value: 'Trebuchet MS',
+        value: 'Trebuchet MS, sans-serif',
     },
 };
 
