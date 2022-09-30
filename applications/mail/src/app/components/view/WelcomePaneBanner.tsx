@@ -72,9 +72,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
 
     const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
-    const getLink = (url: string, optionID: number) => {
-        return `${WELCOME_PANE_OPTIONS_URLS.plansSelection}?ref=${upsellRefLink}${optionID}`;
-    };
+    const getLink = (url: string, optionID: number) => `${url}?ref=${upsellRefLink}${optionID}`;
 
     const messagesOptions: MessageOption[] = [
         {
