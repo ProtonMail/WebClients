@@ -42,36 +42,44 @@ type FontFace =
 /**
  * Used in composer font selector
  */
-export const FONT_FACES: Record<FontFace, { label: string; value: string }> = {
+export const FONT_FACES: Record<FontFace, { id: string; label: string; value: string }> = {
     GEORGIA: {
+        id: 'Georgia',
         label: 'Georgia',
         value: 'Georgia',
     },
     ARIAL: {
+        id: 'Arial',
         label: 'Arial',
         value: 'Arial',
     },
     HELVETICA: {
+        id: 'Helvetica',
         label: 'Helvetica',
         value: 'Helvetica',
     },
     MONOSPACE: {
+        id: 'Menlo, Consolas, Courier New, Monospace',
         label: 'Monospace',
         value: 'Menlo, Consolas, Courier New, Monospace',
     },
     TAHOMA: {
+        id: 'Tahoma, sans-serif',
         label: 'Tahoma',
         value: 'Tahoma, sans-serif',
     },
     VERDANA: {
+        id: 'Verdana',
         label: 'Verdana',
         value: 'Verdana',
     },
     TIMES_NEW_ROMAN: {
+        id: 'Times New Roman',
         label: 'Times New Roman',
         value: 'Times New Roman',
     },
     TREBUCHET_MS: {
+        id: 'Trebuchet MS',
         label: 'Trebuchet MS',
         value: 'Trebuchet MS',
     },

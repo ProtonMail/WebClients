@@ -7,13 +7,14 @@ import { Button } from '@proton/atoms';
 import { classnames } from '../../../helpers';
 import { Badge } from '../../badge';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
-import { FONT_FACES } from '../constants';
+import { DEFAULT_FONT_FACE, FONT_FACES } from '../constants';
+import { getFontFaceValueFromId } from '../helpers/fontFace';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
     value?: string;
     setValue: (font: string) => void;
-    defaultValue: string;
+    defaultValue: string | null | undefined;
     onClickDefault: () => void;
     showDefaultFontSelector?: boolean;
 }
@@ -35,7 +36,9 @@ const hasFont = (font: string): boolean => {
 };
 
 const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault, showDefaultFontSelector }: Props) => {
-    const [computedValue, setComputedValue] = useState(value || defaultValue);
+    const [computedValue, setComputedValue] = useState(
+        value || getFontFaceValueFromId(defaultValue) || DEFAULT_FONT_FACE
+    );
 
     const onChange = (nextFont: string) => {
         setComputedValue(nextFont);
