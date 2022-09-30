@@ -19,7 +19,7 @@ const Header = ({ right, title, subTitle, onBack, ...rest }: Props) => {
             ) : null}
             {title ? (
                 <div className="flex flex-justify-space-between">
-                    <h1 className="sign-layout-title mt1 mb0 on-mobile-mt0-5">{title}</h1>
+                    <h1 className="sign-layout-title mt1 mb0 on-mobile-mt0-5 on-tiny-mobile-mt0">{title}</h1>
                     {right}
                 </div>
             ) : null}

@@ -128,8 +128,12 @@
 		inset-inline-start: -4em;
 
 		@include respond-to($breakpoint-small) {
-			inset-block-start: -4em;
+			inset-block-start: -9em;
 			inset-inline-start: calc(50% - 50vw + 1em);
+		}
+
+		@include respond-to($breakpoint-tiny) {
+			inset-block-start: -10em;
 		}
 	}
 
@@ -142,7 +146,7 @@
 		}
 
 		@include respond-to($breakpoint-tiny, 'max') {
-			padding-inline: 0;
+			padding: 0;
 		}
 	}
 
@@ -152,6 +156,7 @@
 
 		@include respond-to($breakpoint-tiny, 'max') {
 			padding-inline: 0;
+			@include rhythm(map-get($title-sizes, 'h3'));
 		}
 	}
 

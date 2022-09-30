@@ -41,6 +41,7 @@ import {
     Plan,
 } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import clsx from '@proton/utils/clsx';
 
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
@@ -405,7 +406,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const children = (
         <>
             {stepper && (
-                <Stepper className="mb1" position="center" activeStep={stepper.activeStep}>
+                <Stepper className="mb2-5" position="center" activeStep={stepper.activeStep}>
                     {stepper.steps.map((step) => (
                         <Step key={step}>{step}</Step>
                     ))}
@@ -657,7 +658,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const hasDecoration = [ACCOUNT_CREATION_USERNAME].includes(step);
 
     return (
-        <Layout hasBackButton={!!handleBackStep} bottomRight={<SignupSupportDropdown />} hasDecoration={hasDecoration}>
+        <Layout
+            hasBackButton={!!handleBackStep}
+            bottomRight={<SignupSupportDropdown />}
+            hasDecoration={hasDecoration}
+            headerClassName={clsx(stepper && 'mb1 on-tiny-mobile-mb2')}
+        >
             {children}
         </Layout>
     );
