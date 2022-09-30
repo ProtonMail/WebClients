@@ -3,6 +3,7 @@ import React, { ReactNode, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import {
+    Button,
     DropdownMenu,
     DropdownMenuButton,
     FeatureCode,
@@ -231,7 +232,13 @@ const CalendarSidebar = ({
                                 </Tooltip>
                             </Spotlight>
                         ) : (
-                            <button className="navigation-link-header-group-control flex cursor-pointer">
+                            <Button
+                                shape="ghost"
+                                color="weak"
+                                size="medium"
+                                icon
+                                className="navigation-link-header-group-control"
+                            >
                                 <Tooltip title={addCalendarText}>
                                     <Icon
                                         onClick={() => handleCreatePersonalCalendar()}
@@ -240,7 +247,7 @@ const CalendarSidebar = ({
                                         alt={addCalendarText}
                                     />
                                 </Tooltip>
-                            </button>
+                            </Button>
                         )}
                         {headerButton}
                     </div>
