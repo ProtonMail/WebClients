@@ -41,7 +41,7 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
     const infoText = c('Info')
         .jt`One of your encrypted drives is locked. This is most likely due to a recent password reset.`;
 
-    const deleteDriveLabelText = c('Info').ngettext(msgid`Delete drive`, `Delete drives`, volumeCount);
+    const deleteDriveLabelText = c('Info').ngettext(msgid`Delete locked drive`, `Delete locked drives`, volumeCount);
 
     const radioOptions = [
         {
@@ -66,7 +66,7 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
             label: (
                 <OptionLabel
                     title={deleteDriveLabelText}
-                    info={c('Info').t`Permanently delete all files in your drive`}
+                    info={c('Info').t`Permanently delete all files in your locked drive`}
                 />
             ),
             value: LockedVolumeResolveMethod.DeleteOldFiles,
