@@ -95,3 +95,13 @@
 	border-radius: 25%;
 	object-fit: cover;
 }
+
+// Disable drag on image to properly propagate event for drag & drop of item itself.
+.file-browser-grid-item--thumbnail,
+.file-browser-list-item--thumbnail {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
