@@ -39,7 +39,6 @@ const ComposerMeta = ({
         onChange({ data: { Subject: input.value } });
     };
 
-    //
     return (
         <div className="composer-meta flex-item-noshrink ml0-5 mr1-5 pl1-25 pr0-25">
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w100">
