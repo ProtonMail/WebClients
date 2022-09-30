@@ -2,7 +2,7 @@ import Sieve from '@proton/shared/lib/filters/sieve';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES } from './constants';
+import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES, getDefaultFolders } from './constants';
 import {
     Filter,
     FilterActions,
@@ -172,7 +172,7 @@ export const createUniqueName = (baseName: string, filters: Filter[]) => {
 
 export const createDefaultLabelsFilter = (
     senders: string[],
-    labels: { ID: string; Name: string }[],
+    labels: { ID: string; Name: string; Path: string }[],
     filters: Filter[]
 ) => {
     return senders.map<Filter>((sender) => {
@@ -196,7 +196,15 @@ export const createDefaultLabelsFilter = (
                     },
                 ],
                 Actions: {
-                    FileInto: labels.map((label) => label.ID),
+                    FileInto: labels.map((label) => {
+                        // We need to send the label Name as action here.
+                        // In case it's a default folder, we want to make sure the folder is sent the correct way (without upper cases)
+                        const defaultFolderNames = getDefaultFolders().map((f) => f.value);
+                        if (defaultFolderNames.includes(label.Name.toLowerCase())) {
+                            return label.Name.toLowerCase();
+                        }
+                        return label.Path;
+                    }),
                     Vacation: '',
                     Mark: { Read: false, Starred: false },
                 },
