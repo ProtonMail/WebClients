@@ -104,6 +104,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                         color="norm"
                         shape="ghost"
                         size="small"
+                        tabIndex={-1}
                         icon
                         title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                         onClick={toggleExpanded}
@@ -116,6 +117,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                     <Tooltip title={c('Action').t`Insert contacts`}>
                         <Button
                             type="button"
+                            tabIndex={-1}
                             onClick={handleContactModal('ToList')}
                             onFocus={handleFocuButton}
                             color="weak"

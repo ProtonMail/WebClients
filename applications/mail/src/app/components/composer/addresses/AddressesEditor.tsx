@@ -71,6 +71,7 @@ const AddressesEditor = ({
                     <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 composer-to-ccbcc-buttons sticky-top">
                         <Button
                             color="norm"
+                            tabIndex={-1}
                             shape="ghost"
                             size="small"
                             icon
@@ -87,6 +88,7 @@ const AddressesEditor = ({
                         <Tooltip title={c('Action').t`Insert contacts`}>
                             <Button
                                 type="button"
+                                tabIndex={-1}
                                 onClick={handleContactModal('ToList')}
                                 color="weak"
                                 className="pt0-25 pb0-25 flex-item-noshrink"
