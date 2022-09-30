@@ -1,14 +1,18 @@
 import { getRandomSrpVerifier, getSrp } from '@proton/srp';
 
 import { getInfo, getModulus } from './api/auth';
-import { InfoResponse, ModulusResponse } from './authentication/interface';
+import { Fido2Data, InfoResponse, ModulusResponse } from './authentication/interface';
 import { Api } from './interfaces';
 
-interface Credentials {
+export interface AuthCredentials {
     username?: string;
     password: string;
-    totp?: string;
 }
+
+export type Credentials =
+    | AuthCredentials
+    | (AuthCredentials & { totp: string })
+    | (AuthCredentials & { fido2: Fido2Data });
 
 interface SrpAuthData {
     ClientProof: string;
@@ -30,26 +34,30 @@ interface CallAndValidateArguments {
     authData: SrpAuthData;
     expectedServerProof: string;
 }
-const callAndValidate = async <T>({
+
+const callAndValidate = async ({
     api,
     config: { data, ...restConfig },
     authData,
     expectedServerProof,
 }: CallAndValidateArguments) => {
-    const result = await api<T & { ServerProof: string }>({
+    const response: Response = await api({
         ...restConfig,
+        output: 'raw',
         data: {
             ...authData,
             ...data,
         },
     });
-    const { ServerProof } = result;
+    const clonedResponse = response.clone();
+    const result = await clonedResponse.json();
 
+    const { ServerProof } = result;
     if (ServerProof !== expectedServerProof) {
         throw new Error('Unexpected server proof');
     }
 
-    return result;
+    return response;
 };
 
 /**
@@ -62,16 +70,18 @@ interface SrpAuthArguments {
     info?: InfoResponse;
     version?: number;
 }
-export const srpAuth = async <T>({ api, credentials, config, info, version }: SrpAuthArguments) => {
+
+export const srpAuth = async ({ api, credentials, config, info, version }: SrpAuthArguments) => {
     const actualInfo = info || (await api<InfoResponse>(getInfo(credentials.username)));
     const { expectedServerProof, clientProof, clientEphemeral } = await getSrp(actualInfo, credentials, version);
     const authData = {
         ClientProof: clientProof,
         ClientEphemeral: clientEphemeral,
-        TwoFactorCode: credentials.totp,
         SRPSession: actualInfo.SRPSession,
+        ...('totp' in credentials ? { TwoFactorCode: credentials.totp } : undefined),
+        ...('fido2' in credentials ? { FIDO2: credentials.fido2 } : undefined),
     };
-    return callAndValidate<T>({
+    return callAndValidate({
         api,
         config,
         authData,

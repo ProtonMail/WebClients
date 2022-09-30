@@ -24,6 +24,12 @@ export enum AuthStep {
     DONE,
 }
 
+export interface AuthTypes {
+    totp: boolean;
+    fido2: boolean;
+    unlock: boolean;
+}
+
 export interface AuthCacheResult {
     appName: APP_NAMES;
     authVersion: AuthVersion;
@@ -31,9 +37,7 @@ export interface AuthCacheResult {
     api: Api;
     authApi: Api;
     userSaltResult?: [tsUser, tsKeySalt[]];
-    hasTotp: boolean;
-    hasU2F: boolean;
-    hasUnlock: boolean;
+    authTypes: AuthTypes;
     username: string;
     persistent: boolean;
     loginPassword: string;

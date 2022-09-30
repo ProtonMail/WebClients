@@ -7,7 +7,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
-import { InfoResponse } from '@proton/shared/lib/authentication/interface';
+import { Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
@@ -369,18 +369,14 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
 };
 
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
-    const { hasTotp, hasUnlock, hasU2F, authApi, authResult, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
+    const { authTypes, authApi, authResult, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN) {
-        if (hasTotp) {
+        if (authTypes.fido2 || authTypes.totp) {
             return {
                 cache,
                 to: AuthStep.TWO_FA,
             };
-        } else if (hasU2F) {
-            // U2F must be enabled together with TOTP for backwards support. Since we don't support any type of U2F right now,
-            // error out if only that is enabled.
-            throw new Error('U2F is not supported');
         }
     }
 
@@ -411,7 +407,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
         return finalizeLogin({ cache, loginPassword, user: User });
     }
 
-    if (hasUnlock) {
+    if (authTypes.unlock) {
         return {
             cache,
             to: AuthStep.UNLOCK,
@@ -419,6 +415,20 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
     }
 
     return handleUnlock({ cache, clearKeyPassword: loginPassword, isOnePasswordMode: true });
+};
+
+export const handleFido2 = async ({
+    cache,
+    payload,
+}: {
+    cache: AuthCacheResult;
+    payload: Fido2Data;
+}): Promise<AuthActionResponse> => {
+    const { authApi } = cache;
+
+    await authApi(auth2FA({ FIDO2: payload }));
+
+    return next({ cache, from: AuthStep.TWO_FA });
 };
 
 /**
@@ -434,7 +444,7 @@ export const handleTotp = async ({
 }): Promise<AuthActionResponse> => {
     const { authApi } = cache;
 
-    await authApi(auth2FA({ totp })).catch((e) => {
+    await authApi(auth2FA({ TwoFactorCode: totp })).catch((e) => {
         if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
             const error = new Error(
                 getApiErrorMessage(e) || c('Error').t`Incorrect login credentials. Please try again.`
@@ -458,6 +468,7 @@ export const handleLogin = async ({
     hasTrustedDeviceRecovery,
     appName,
     hasInternalAddressSetup,
+    hasFido2,
     payload,
 }: {
     username: string;
@@ -469,6 +480,7 @@ export const handleLogin = async ({
     hasTrustedDeviceRecovery: boolean;
     appName: APP_NAMES;
     hasInternalAddressSetup: boolean;
+    hasFido2: boolean;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
@@ -487,7 +499,7 @@ export const handleLogin = async ({
         api,
         appName,
         authApi,
-        ...getAuthTypes(authResult),
+        authTypes: getAuthTypes(authResult, hasFido2),
         username,
         persistent,
         loginPassword: password,

@@ -44,9 +44,13 @@ function usePublicSessionProvider() {
         });
     };
 
-    const getSessionToken = async (token: string, password: string, initHandshake: SRPHandshakeInfo) => {
+    const getSessionToken = async (
+        token: string,
+        password: string,
+        initHandshake: SRPHandshakeInfo
+    ): Promise<{ AccessToken: string; UID: string }> => {
         const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = initHandshake;
-        return srpAuth<{ AccessToken: string; UID: string }>({
+        const response = await srpAuth({
             api,
             credentials: { password },
             info: {
@@ -58,6 +62,7 @@ function usePublicSessionProvider() {
             },
             config: queryShareURLAuth(token),
         });
+        return response.json();
     };
 
     const initSession = async (token: string, password: string, handshakeInfo: SRPHandshakeInfo) => {

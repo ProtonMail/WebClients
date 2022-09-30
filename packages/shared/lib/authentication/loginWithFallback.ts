@@ -14,6 +14,7 @@ interface Arguments {
     initialAuthInfo?: InfoResponse;
     payload?: any;
 }
+
 const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }: Arguments) => {
     let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
         authInfo: initialAuthInfo,
@@ -34,13 +35,13 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }:
                 ...auth(data),
                 ...suppress,
             };
-            const result = await srpAuth<AuthResponse>({
+            const result = await srpAuth({
                 api,
                 credentials,
                 config: srpConfig,
                 info: authInfo,
                 version,
-            });
+            }).then((response): Promise<AuthResponse> => response.json());
             return {
                 authVersion: version,
                 result,

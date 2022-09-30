@@ -12,16 +12,16 @@ export const getHasTOTPEnabled = (Enabled?: number) => {
     return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.OTP);
 };
 
-export const getHasU2FEnabled = (Enabled?: number) => {
-    return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.U2F);
+export const getHasFIDO2Enabled = (Enabled?: number) => {
+    return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.FIDO2);
 };
 
 export const getHasTOTPSettingEnabled = (userSettings?: Pick<UserSettings, '2FA'>) => {
     return getHasTOTPEnabled(userSettings?.['2FA']?.Enabled);
 };
 
-export const getHasU2FSettingEnabled = (userSettings?: Pick<UserSettings, '2FA'>) => {
-    return getHasU2FEnabled(userSettings?.['2FA'].Enabled);
+export const getHasFIDO2SettingEnabled = (userSettings?: Pick<UserSettings, '2FA'>) => {
+    return getHasFIDO2Enabled(userSettings?.['2FA'].Enabled);
 };
 
 export const getTOTPData = (identifier: string) => {
