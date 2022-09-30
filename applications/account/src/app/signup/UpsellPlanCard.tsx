@@ -24,8 +24,8 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
 
     return (
         <>
-            <div className="mb1">{price}</div>
-            <div className="mt1 mb2 on-mobile-mb0">{button}</div>
+            <div className="mb1 on-mobile-mb0-5">{price}</div>
+            <div className="mb2 on-mobile-mb0">{button}</div>
 
             {!isNarrow ? (
                 <>
