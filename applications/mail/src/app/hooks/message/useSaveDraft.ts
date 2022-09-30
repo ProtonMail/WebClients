@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useFolders, useMailSettings, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -11,7 +11,6 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '../../helpers/errors';
-import { getCurrentFolderID } from '../../helpers/labels';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { deleteConversation } from '../../logic/conversations/conversationsActions';
 import { deleteDraft, draftSaved } from '../../logic/messages/draft/messagesDraftActions';
@@ -20,7 +19,7 @@ import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
-const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+const { ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
 
 export const useCreateDraft = () => {
     const api = useApi();
@@ -114,7 +113,6 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
 export const useDeleteDraft = () => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
-    const [folders = []] = useFolders();
     const dispatch = useDispatch();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -123,7 +121,7 @@ export const useDeleteDraft = () => {
     return useCallback(
         async (message: MessageState) => {
             const showMoved = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
-            const currentLabelID = showMoved ? ALL_DRAFTS : getCurrentFolderID(message.data?.LabelIDs, folders);
+            const currentLabelID = showMoved ? ALL_DRAFTS : DRAFTS;
             const messageID = message.data?.ID;
             if (!messageID) {
                 return;
