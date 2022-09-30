@@ -15,11 +15,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
     const translationsMap: Record<SpamListActionName, Record<ApiCallState, string>> = {
         block: {
             fail: isDomain
-                ? c('Domain spam notification').t`${ name } failed to move to your block list`
-                : c('Email spam notification').t`${ name } failed to move to your block list`,
+                ? c('Domain spam notification').t`${name} failed to move to your block list`
+                : c('Email spam notification').t`${name} failed to move to your block list`,
             success: isDomain
-                ? c('Domain spam notification').t`${ name } moved to your block list`
-                : c('Email spam notification').t`${ name } moved to your block list`,
+                ? c('Domain spam notification').t`${name} moved to your block list`
+                : c('Email spam notification').t`${name} moved to your block list`,
         },
         delete: {
             fail: isDomain
@@ -39,11 +39,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
         },
         spam: {
             fail: isDomain
-                ? c('Domain spam notification').t`${ name } failed to move to spam list`
-                : c('Email spam notification').t`${ name } failed to move to spam list`,
+                ? c('Domain spam notification').t`${name} failed to move to spam list`
+                : c('Email spam notification').t`${name} failed to move to spam list`,
             success: isDomain
-                ? c('Domain spam notification').t`${ name } moved to spam list`
-                : c('Email spam notification').t`${ name } moved to spam list`,
+                ? c('Domain spam notification').t`${name} moved to spam list`
+                : c('Email spam notification').t`${name} moved to spam list`,
         },
         unspam: {
             fail: isDomain
@@ -59,7 +59,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
 };
 
 export type HandleSpamListActionClick = (type: SpamListActionName, item: SpamItem) => void;
-export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActionClick): SpamListAction[] => {
+export const getActionsByLocation = (
+    item: SpamItem,
+    onClick: HandleSpamListActionClick,
+    blockSenderFeatureEnabled: boolean
+): SpamListAction[] => {
     const actions: Record<SpamListActionName, SpamListAction> = {
         block: { name: c('Action').t`Block`, onClick: () => onClick('block', item) },
         unblock: { name: c('Action').t`Remove Block`, onClick: () => onClick('delete', item) },
@@ -72,9 +76,9 @@ export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActi
         case 'BLOCKED':
             return [actions.unblock, actions.spam];
         case 'SPAM':
-            return [actions.unspam, actions.block, actions.delete];
+            return [actions.unspam, ...(blockSenderFeatureEnabled ? [actions.block] : []), actions.delete];
         case 'NON_SPAM':
-            return [actions.spam, actions.block, actions.delete];
+            return [actions.spam, ...(blockSenderFeatureEnabled ? [actions.block] : []), actions.delete];
         default:
             throw new Error('Invalid use case');
     }
