@@ -85,7 +85,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
 
                         await new Promise((resolve, reject) => {
                             createModal(
-                                <AuthModal onClose={reject} onSuccess={resolve} config={unlockPasswordChanges()} />
+                                <AuthModal onCancel={reject} onSuccess={resolve} config={unlockPasswordChanges()} />
                             );
                         });
                         onSetupOrganization?.();

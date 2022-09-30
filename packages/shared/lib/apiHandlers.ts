@@ -1,11 +1,11 @@
-export const createOnceHandler = (createPromise) => {
-    let promise;
+export const createOnceHandler = <T extends any>(createPromise: (...args: T[]) => Promise<void>) => {
+    let promise: Promise<void> | undefined;
 
     const clear = () => {
         promise = undefined;
     };
 
-    return (...args) => {
+    return (...args: T[]) => {
         if (promise) {
             return promise;
         }

@@ -1,16 +1,15 @@
-export interface U2FKeyResponse {
-    Version: string;
-    KeyHandle: string;
+import { AuthenticationCredentialsPayload, AuthenticationOptions, RegisteredKey } from '../webauthn/interface';
+
+export interface Fido2Response {
+    AuthenticationOptions: AuthenticationOptions;
+    RegisteredKeys: RegisteredKey[];
 }
 
-export interface U2FResponse {
-    Challenge: string;
-    RegisteredKeys: U2FKeyResponse[];
-}
+export type Fido2Data = AuthenticationCredentialsPayload;
 
 export interface TwoFaResponse {
     Enabled: number;
-    U2F: null | U2FResponse;
+    FIDO2: Fido2Response | null;
     TOTP: number;
 }
 

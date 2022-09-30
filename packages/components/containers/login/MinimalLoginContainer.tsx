@@ -296,6 +296,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                             payload,
                             api: silentApi,
                             hasGenerateKeys: false,
+                            hasFido2: false,
                             ignoreUnlock,
                             hasInternalAddressSetup: false,
                             hasTrustedDeviceRecovery: false,

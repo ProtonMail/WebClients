@@ -7,6 +7,8 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
+import { RegistrationOptions } from '../../lib/webauthn/interface';
+
 export const TOTP_WRONG_ERROR = 12060;
 
 export const getSettings = () => ({
@@ -122,6 +124,34 @@ export const verifyPhone = (Token: string) => ({
     url: 'settings/phone/verify',
     method: 'post',
     data: { Token },
+});
+
+export const registerSecurityKey = (data: {
+    RegistrationOptions: RegistrationOptions;
+    ClientData: string;
+    AttestationObject: string;
+    Transports: string[];
+    Name: string;
+}) => ({
+    url: 'settings/2fa/register',
+    method: 'post',
+    data,
+});
+
+export const getSecurityKeyChallenge = () => ({
+    url: 'settings/2fa/register',
+    method: 'get',
+});
+
+export const removeSecurityKey = (credentialID: string) => ({
+    url: `settings/2fa/${credentialID}/remove`,
+    method: 'post',
+});
+
+export const renameSecurityKey = (credentialID: string, data: { Name: string }) => ({
+    url: `settings/2fa/${credentialID}/rename`,
+    method: 'put',
+    data,
 });
 
 export const setupTotp = (TOTPSharedSecret: string, TOTPConfirmation: string) => ({

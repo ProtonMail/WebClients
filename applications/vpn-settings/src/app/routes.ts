@@ -61,12 +61,12 @@ export const getRoutes = (user: UserModel) => {
             icon: 'user-circle',
             subsections: [
                 {
-                    text: c('Title').t`Username`,
-                    id: 'username',
+                    text: '',
+                    id: 'account',
                 },
                 {
-                    text: c('Title').t`Passwords`,
-                    id: 'passwords',
+                    text: c('Title').t`Two-factor authentication`,
+                    id: 'two-fa',
                 },
                 {
                     text: c('Title').t`OpenVPN / IKEv2 username`,
