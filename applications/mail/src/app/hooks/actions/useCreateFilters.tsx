@@ -1,19 +1,43 @@
 import { useCallback, useMemo } from 'react';
+
 import { c } from 'ttag';
-import unique from '@proton/utils/unique';
-import isTruthy from '@proton/utils/isTruthy';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+
+import { useAddresses, useApi, useFilters, useFolders, useLabels, useNotifications } from '@proton/components';
 import { InlineLinkButton, useAppLink } from '@proton/components/components';
+import { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
-import { useNotifications, useFilters, useApi, useLabels, useFolders, useAddresses } from '@proton/components';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { APPS } from '@proton/shared/lib/constants';
-import { Filter } from '@proton/components/containers/filters/interfaces';
 import diff from '@proton/utils/diff';
+import isTruthy from '@proton/utils/isTruthy';
+import unique from '@proton/utils/unique';
+
 import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
+import { getFolderName } from '../../helpers/labels';
 import { Element } from '../../models/element';
+
+const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
+const DEFAULT_FOLDERS: Folder[] = [
+    {
+        ID: INBOX,
+        Name: getFolderName(INBOX),
+    } as Folder,
+    {
+        ID: TRASH,
+        Name: getFolderName(TRASH),
+    } as Folder,
+    {
+        ID: SPAM,
+        Name: getFolderName(SPAM),
+    } as Folder,
+    {
+        ID: ARCHIVE,
+        Name: getFolderName(ARCHIVE),
+    } as Folder,
+];
 
 const getNotificationTextFolder = (isMessage: boolean, senders: string[], folder: string) => {
     let notificationText: string;
@@ -76,7 +100,7 @@ export const useCreateFilters = () => {
 
         const doCreateFilters = async (elements: Element[], labelIDs: string[], isFolder: boolean) => {
             const senders = getSendersToFilter(elements);
-            const usedLabels: (Label | Folder)[] = isFolder ? folders : labels;
+            const usedLabels: (Label | Folder)[] = isFolder ? [...folders, ...DEFAULT_FOLDERS] : labels;
             const appliedLabels = labelIDs
                 .map((labelID) => usedLabels.find((label) => label.ID === labelID))
                 .filter(isTruthy);
