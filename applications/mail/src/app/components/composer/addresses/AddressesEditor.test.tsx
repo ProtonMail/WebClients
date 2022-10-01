@@ -245,4 +245,13 @@ describe('AddressesEditor', () => {
         const remainingAddresses = getAllByTestId('composer-addresses-item');
         expect(remainingAddresses.length).toEqual(1);
     });
+
+    it('should not focus CC BCC or Insert contacts buttons', async () => {
+        const { getByTestId } = await render(<AddressesEditor {...props} />);
+        const ccBccButton = getByTestId('composer:cc-bcc-button');
+        const insertContactsButton = getByTestId('composer:to-button');
+
+        expect(ccBccButton.getAttribute('tabindex')).toEqual('-1');
+        expect(insertContactsButton.getAttribute('tabindex')).toEqual('-1');
+    });
 });
