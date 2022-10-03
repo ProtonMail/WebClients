@@ -12,7 +12,7 @@ import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/addresses';
-import { blockAddress } from '../logic/incomingDefaults/incomingDefaultsActions';
+import { addBlockAddress, updateBlockAddress } from '../logic/incomingDefaults/incomingDefaultsActions';
 import { Element } from '../models/element';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 
@@ -57,12 +57,9 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
                 const foundItem = isAddressIncluded(incomingDefaultsAddresses, senderEmail);
 
                 return dispatch(
-                    blockAddress({
-                        api,
-                        address: senderEmail,
-                        ID: foundItem?.ID,
-                        type: foundItem ? 'update' : 'create',
-                    })
+                    foundItem
+                        ? updateBlockAddress({ api, address: senderEmail, ID: foundItem.ID })
+                        : addBlockAddress({ api, address: senderEmail, overwrite: true })
                 );
             })
         );

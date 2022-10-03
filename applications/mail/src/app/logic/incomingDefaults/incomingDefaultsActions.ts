@@ -57,21 +57,44 @@ export const load = createAsyncThunk<LoadResults, LoadParams>('incomingDefaults/
 
 export const event = createAction<IncomingDefaultEvent>('incomingDefaults/event');
 
-interface BlockParams {
+interface AddBlockParams {
     api: Api;
     address: string;
-    ID?: string;
-    type: 'create' | 'update';
+    overwrite?: boolean;
 }
 
-export const blockAddress = createAsyncThunk<IncomingDefault, BlockParams>(
-    'incomingDefaults/blockAddress',
-    async ({ api, address, ID, type }) => {
+export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockParams>(
+    'incomingDefaults/addBlockAddress',
+    async ({ api, address, overwrite }) => {
         try {
             const result = await api<{ IncomingDefault: IncomingDefault }>(
-                type === 'update' && ID
-                    ? updateIncomingDefault(ID, { Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
-                    : addIncomingDefault({ Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
+                addIncomingDefault({
+                    Email: address,
+                    Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
+                    Overwrite: overwrite,
+                })
+            );
+
+            return result.IncomingDefault;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+);
+
+interface UpdateBlockParams {
+    api: Api;
+    address: string;
+    ID: string;
+}
+
+export const updateBlockAddress = createAsyncThunk<IncomingDefault, UpdateBlockParams>(
+    'incomingDefaults/updateBlockAddress',
+    async ({ api, address, ID }) => {
+        try {
+            const result = await api<{ IncomingDefault: IncomingDefault }>(
+                updateIncomingDefault(ID, { Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
             );
 
             return result.IncomingDefault;
