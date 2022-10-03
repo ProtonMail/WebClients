@@ -29,12 +29,15 @@ export default function usePublicDownload() {
         token: string,
         linkId: string,
         pagination: Pagination
-    ): Promise<DriveFileBlock[]> => {
+    ): Promise<{ blocks: DriveFileBlock[]; manifestSignature: string }> => {
         const { Revision } = await request<{ Revision: SharedURLRevision }>(
             querySharedURLFileRevision(token, linkId, pagination),
             abortSignal
         );
-        return Revision.Blocks;
+        return {
+            blocks: Revision.Blocks,
+            manifestSignature: Revision.ManifestSignature,
+        };
     };
 
     const getKeys = async (abortSignal: AbortSignal, token: string, linkId: string) => {

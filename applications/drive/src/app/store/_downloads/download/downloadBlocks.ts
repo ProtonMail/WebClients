@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { VERIFICATION_STATUS } from '@proton/crypto';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import isArrayOfUint8Array from '@proton/utils/isArrayOfUint8Array';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import orderBy from '@proton/utils/orderBy';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
@@ -30,16 +29,16 @@ export type DownloadBlocksCallbacks = Omit<
             FromBlockIndex: number;
             PageSize: number;
         }
-    ) => Promise<DriveFileBlock[] | Uint8Array[]>;
-    transformBlockStream?: (
+    ) => Promise<{ blocks: DriveFileBlock[]; manifestSignature: string }>;
+    transformBlockStream: (
         abortSignal: AbortSignal,
         stream: ReadableStream<Uint8Array>,
         EncSignature: string
     ) => Promise<{
+        hash: Uint8Array;
         data: ReadableStream<Uint8Array>;
-        verifiedPromise: Promise<VERIFICATION_STATUS>;
     }>;
-    checkBlockSignature?: (abortSignal: AbortSignal, verifiedPromise: Promise<VERIFICATION_STATUS>) => Promise<void>;
+    checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => Promise<void>;
     onProgress?: (bytes: number) => void;
 };
 
@@ -54,7 +53,7 @@ export default function initDownloadBlocks(
     {
         getBlocks,
         transformBlockStream,
-        checkBlockSignature,
+        checkManifestSignature,
         onProgress,
         onError,
         onNetworkError,
@@ -82,17 +81,21 @@ export default function initDownloadBlocks(
         }
 
         const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
-        let blocksOrBuffer: DriveFileBlock[] | Uint8Array[] = [];
         let fromBlockIndex = 1;
 
         let blocks: DriveFileBlock[] = [];
         let activeIndex = 1;
 
+        const hashes: Uint8Array[] = [];
+        let manifestSignature: string;
+
         const hasMorePages = (currentPageLength: number) => currentPageLength === BATCH_REQUEST_SIZE;
 
         const getBlocksPaged = async (pagination: { FromBlockIndex: number; PageSize: number }) => {
             try {
-                blocksOrBuffer = await getBlocks(abortController.signal, pagination);
+                const result = await getBlocks(abortController.signal, pagination);
+                blocks = result.blocks;
+                manifestSignature = result.manifestSignature;
             } catch (err: any) {
                 // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
                 if (paused && isTransferCancelError(err)) {
@@ -104,27 +107,6 @@ export default function initDownloadBlocks(
             }
 
             return true;
-        };
-
-        const preloadBuffer = async () => {
-            for (const buffer of blocksOrBuffer) {
-                await fsWriter.write(buffer as Uint8Array);
-            }
-
-            while (hasMorePages(blocksOrBuffer.length)) {
-                fromBlockIndex += BATCH_REQUEST_SIZE;
-
-                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE })) {
-                    for (const buffer of blocksOrBuffer) {
-                        await fsWriter.write(buffer as Uint8Array);
-                    }
-                } else {
-                    return;
-                }
-            }
-
-            await fsWriter.ready;
-            await fsWriter.close();
         };
 
         const flushBuffer = async (Index: number) => {
@@ -173,15 +155,11 @@ export default function initDownloadBlocks(
                 revertProgress();
                 abortController = new AbortController();
                 if (refetchBlocks) {
-                    const newBlocks = await getBlocks(abortController.signal, {
+                    const result = await getBlocks(abortController.signal, {
                         FromBlockIndex: fromBlockIndex,
                         PageSize: BATCH_REQUEST_SIZE,
                     });
-                    if (isArrayOfUint8Array(newBlocks)) {
-                        throw new Error('Unexpected Uint8Array block data');
-                    }
-                    blocksOrBuffer = newBlocks;
-                    blocks = newBlocks;
+                    blocks = result.blocks;
                 }
 
                 let retryCount = 0;
@@ -221,13 +199,11 @@ export default function initDownloadBlocks(
                         });
                         const rawContentStream = blockStream.pipeThrough(progressStream);
 
-                        // Decrypt the file block content using streaming decryption
-                        const { data: transformedContentStream, verifiedPromise } = transformBlockStream
-                            ? await transformBlockStream(abortController.signal, rawContentStream, EncSignature || '')
-                            : {
-                                  data: rawContentStream,
-                                  verifiedPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
-                              };
+                        const { hash, data: transformedContentStream } = await transformBlockStream(
+                            abortController.signal,
+                            rawContentStream,
+                            EncSignature || ''
+                        );
 
                         await untilStreamEnd(transformedContentStream, async (data) => {
                             if (abortController.signal.aborted) {
@@ -240,10 +216,10 @@ export default function initDownloadBlocks(
                                 buffers.set(Index, { done: false, chunks: [data] });
                             }
                         });
-                        await checkBlockSignature?.(abortController.signal, verifiedPromise);
 
                         const currentBuffer = buffers.get(Index);
 
+                        hashes[Index] = hash;
                         if (currentBuffer) {
                             currentBuffer.done = true;
                         }
@@ -342,11 +318,10 @@ export default function initDownloadBlocks(
         };
 
         const downloadTheRestOfBlocks = async () => {
-            while (hasMorePages(blocksOrBuffer.length)) {
+            while (hasMorePages(blocks.length)) {
                 fromBlockIndex += BATCH_REQUEST_SIZE;
 
                 if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE })) {
-                    blocks = blocksOrBuffer as DriveFileBlock[];
                     activeIndex = 1;
                     await startDownload(getBlockQueue());
                 } else {
@@ -365,18 +340,13 @@ export default function initDownloadBlocks(
 
             await fsWriter.ready;
 
-            // If initialized with preloaded buffer instead of blocks to download
-            if (isArrayOfUint8Array(blocksOrBuffer)) {
-                await preloadBuffer();
-                return;
-            }
-
-            blocks = blocksOrBuffer;
-
             await startDownload(getBlockQueue());
             if (!(await downloadTheRestOfBlocks())) {
                 return;
             }
+
+            const hash = mergeUint8Arrays(hashes);
+            await checkManifestSignature?.(abortController.signal, hash, manifestSignature);
 
             // Wait for stream to be flushed
             await fsWriter.ready;

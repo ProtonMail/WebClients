@@ -3,6 +3,7 @@ import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
 import { DecryptFileKeys, DownloadCallbacks, DownloadStreamControls, LinkDownload } from '../interface';
 import initDownloadBlocks from './downloadBlocks';
@@ -31,23 +32,41 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
             format: 'binary',
         });
 
+        const binaryMessage = await readToEnd(stream);
+        const hash = (await generateContentHash(binaryMessage)).BlockHash;
+
         const { data, verified } = await CryptoProxy.decryptMessage({
-            binaryMessage: await readToEnd(stream),
+            binaryMessage,
             binarySignature: decryptedSignature,
             sessionKeys: keys.sessionKeys,
             verificationKeys: keys.addressPublicKeys,
             format: 'binary',
         });
+
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
+        }
+
         return {
+            hash,
             data: toStream(data) as ReadableStream<Uint8Array>,
-            verifiedPromise: Promise.resolve(verified), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise
         };
     };
 
-    const checkBlockSignature = async (abortSignal: AbortSignal, verifiedPromise: Promise<VERIFICATION_STATUS>) => {
-        const verified = await verifiedPromise;
+    const checkManifestSignature = async (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => {
+        if (!keysPromise) {
+            keysPromise = callbacks.getKeys(abortSignal, link);
+        }
+        const keys = await keysPromise;
+
+        const { verified } = await CryptoProxy.verifyMessage({
+            binaryData: hash,
+            verificationKeys: keys.addressPublicKeys || [],
+            armoredSignature: signature,
+        });
+
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
+            await callbacks.onSignatureIssue?.(abortSignal, link, { manifest: verified });
         }
     };
 
@@ -55,7 +74,7 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
         ...callbacks,
         getBlocks: (abortSignal, pagination) => callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination),
         transformBlockStream,
-        checkBlockSignature,
+        checkManifestSignature,
         onProgress: (bytes: number) => callbacks.onProgress?.([link.linkId], bytes),
     });
     return {
