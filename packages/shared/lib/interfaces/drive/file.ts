@@ -72,6 +72,7 @@ export interface DriveFileRevision {
     ManifestSignature: string;
     SignatureAddress: string;
     Blocks: DriveFileBlock[];
+    ThumbnailHash: string;
 }
 
 export interface DriveFileRevisionResult {

@@ -28,10 +28,11 @@ const createStreamResponse = (chunks: number[][]) =>
         },
     });
 
-const wrapGetBlocksWithManifestSignature = (blocks: DriveFileBlock[], manifestSignature = '') => {
+const createGetBlocksResponse = (blocks: DriveFileBlock[], manifestSignature = '') => {
     return {
         blocks,
         manifestSignature,
+        thumbnailHash: '',
     };
 };
 
@@ -85,7 +86,7 @@ describe('initDownload', () => {
             'filename',
             {
                 getBlocks: async () =>
-                    wrapGetBlocksWithManifestSignature([
+                    createGetBlocksResponse([
                         {
                             Index: 1,
                             BareURL: 'url:1',
@@ -117,7 +118,7 @@ describe('initDownload', () => {
                 'filename',
                 {
                     getBlocks: async () =>
-                        wrapGetBlocksWithManifestSignature([
+                        createGetBlocksResponse([
                             {
                                 Index: 1,
                                 BareURL: 'url:1',
@@ -145,7 +146,7 @@ describe('initDownload', () => {
             'filename',
             {
                 getBlocks: async () =>
-                    wrapGetBlocksWithManifestSignature([
+                    createGetBlocksResponse([
                         {
                             Index: 1,
                             BareURL: 'url:1',
@@ -219,7 +220,7 @@ describe('initDownload', () => {
 
                     shouldValidateBlock = true;
 
-                    return wrapGetBlocksWithManifestSignature([
+                    return createGetBlocksResponse([
                         {
                             Index: 1,
                             BareURL: 'url:1',
@@ -258,7 +259,7 @@ describe('initDownload', () => {
                     }
                     blockRetryCount++;
 
-                    return wrapGetBlocksWithManifestSignature([
+                    return createGetBlocksResponse([
                         {
                             Index: 1,
                             BareURL: 'url:1',
@@ -285,7 +286,7 @@ describe('initDownload', () => {
             'filename',
             {
                 getBlocks: async () => {
-                    return wrapGetBlocksWithManifestSignature([
+                    return createGetBlocksResponse([
                         {
                             Index: 1,
                             BareURL: expiredURL,

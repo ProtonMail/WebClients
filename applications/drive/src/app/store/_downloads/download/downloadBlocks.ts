@@ -4,6 +4,7 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -29,7 +30,7 @@ export type DownloadBlocksCallbacks = Omit<
             FromBlockIndex: number;
             PageSize: number;
         }
-    ) => Promise<{ blocks: DriveFileBlock[]; manifestSignature: string }>;
+    ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }>;
     transformBlockStream: (
         abortSignal: AbortSignal,
         stream: ReadableStream<Uint8Array>,
@@ -95,6 +96,9 @@ export default function initDownloadBlocks(
             try {
                 const result = await getBlocks(abortController.signal, pagination);
                 blocks = result.blocks;
+                if (result.thumbnailHash) {
+                    hashes[0] = base64StringToUint8Array(result.thumbnailHash);
+                }
                 manifestSignature = result.manifestSignature;
             } catch (err: any) {
                 // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
