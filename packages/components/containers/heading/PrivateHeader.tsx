@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 
-import { usePaidCookie } from '../..';
+import { useBFCookie } from '../..';
 import { AppLink, Hamburger, Icon } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
@@ -44,7 +44,7 @@ const PrivateHeader = ({
     onToggleExpand,
     title,
 }: Props) => {
-    usePaidCookie();
+    useBFCookie();
 
     if (backUrl) {
         return (
