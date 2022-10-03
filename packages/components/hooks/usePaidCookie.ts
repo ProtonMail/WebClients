@@ -25,7 +25,7 @@ const usePaidCookie = () => {
                 expirationDate: lastDayOfTheYear.toUTCString(),
                 path: '/',
             });
-        } else if (cookie === '1') {
+        } else if (user?.isFree && cookie === '1') {
             setCookie({
                 cookieName: COOKIE_NAME,
                 cookieValue: undefined,
