@@ -15,7 +15,9 @@ const usePaidCookie = () => {
     const [user] = useUser();
 
     useEffect(() => {
-        if (user?.isPaid && getCookie(COOKIE_NAME) !== '1') {
+        const cookie = getCookie(COOKIE_NAME);
+
+        if (user?.isPaid && cookie !== '1') {
             setCookie({
                 cookieName: COOKIE_NAME,
                 cookieValue: '1',
@@ -23,13 +25,7 @@ const usePaidCookie = () => {
                 expirationDate: lastDayOfTheYear.toUTCString(),
                 path: '/',
             });
-        }
-    }, [user]);
-};
-
-export const useClearPaidCookie = () => {
-    useEffect(() => {
-        if (getCookie(COOKIE_NAME) === '1') {
+        } else if (cookie === '1') {
             setCookie({
                 cookieName: COOKIE_NAME,
                 cookieValue: undefined,
@@ -38,7 +34,7 @@ export const useClearPaidCookie = () => {
                 path: '/',
             });
         }
-    }, []);
+    }, [user]);
 };
 
 export default usePaidCookie;
