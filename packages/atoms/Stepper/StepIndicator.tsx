@@ -5,14 +5,13 @@ import clsx from '@proton/utils/clsx';
 import StepListItem, { StepListItemProps } from './StepListItem';
 import StepperContext from './StepperContext';
 
-export interface StepProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete'> {}
+export interface StepIndicatorProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete'> {}
 
-const Step = ({
+const StepIndicator = ({
     index,
-    children,
     className,
     ...rest
-}: StepProps & {
+}: StepIndicatorProps & {
     /**
      * `index` of the step. Added automatically by Stepper.
      */
@@ -29,21 +28,13 @@ const Step = ({
             firstItem={firstItem}
             active={active}
             complete={complete}
-            className={clsx('flex-item-fluid', className)}
+            className={clsx('relative flex-item-fluid flex flex-column flex-align-items-center flex-nowrap', className)}
             {...rest}
         >
-            <span
-                className={clsx(
-                    'mt0-5 text-semibold text-sm text-center text-ellipsis-two-lines',
-                    !active && 'color-weak'
-                )}
-                title={children?.toString()}
-                {...rest}
-            >
-                {children}
-            </span>
+            {!firstItem && <div className="stepper-item-connector" />}
+            <span className="stepper-item-dot" />
         </StepListItem>
     );
 };
 
-export default Step;
+export default StepIndicator;
