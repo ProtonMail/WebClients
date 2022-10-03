@@ -35,7 +35,7 @@ export default function useUploadConflict(
 
     // List of all issues which needs to be handled.
     const [signatureIssues, setSignatureIssues] = useState<
-        { download: Download; link: LinkDownload; signatureIssues: SignatureIssues }[]
+        { download: Download; link: LinkDownload; linkSignatureIssues: SignatureIssues }[]
     >([]);
 
     useEffect(() => {
@@ -73,7 +73,7 @@ export default function useUploadConflict(
                 return Promise.resolve(strategy);
             }
 
-            setSignatureIssues((issues) => [...issues, { download, link, signatureIssues }]);
+            setSignatureIssues((issues) => [...issues, { download, link, linkSignatureIssues: signatureIssues }]);
             updateWithData(download.id, TransferState.SignatureIssue, {});
 
             return new Promise((resolve, reject) => {
@@ -150,12 +150,12 @@ export default function useUploadConflict(
             return;
         }
 
-        const { download, link } = signatureIssues[0];
+        const { download, link, linkSignatureIssues } = signatureIssues[0];
         openSignatureIssueModal(download.id, link.linkId, {
             isFile: link.isFile,
             name: link.name,
             downloadName: download.meta.filename,
-            signatureIssues: link.signatureIssues as SignatureIssues,
+            signatureIssues: linkSignatureIssues,
             signatureAddress: link.signatureAddress,
         });
     }, [signatureIssues]);
