@@ -35,11 +35,15 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
 
     const contextValue = useMemo(() => ({ activeStep }), [activeStep]);
 
+    const sharedUlClasses = clsx('unstyled flex flex-gap-0-5 flex-nowrap m0', `flex-justify-${position}`);
+
     return (
         <StepperContext.Provider value={contextValue}>
             <div className={clsx('stepper', className)} {...rest}>
-                <ul className={clsx(['unstyled flex flex-gap-0-5 flex-nowrap m0', `flex-justify-${position}`])}>{stepIndicators}</ul>
-                <ul className={clsx(['unstyled flex flex-gap-0-5 flex-nowrap m0', `flex-justify-${position}`])}>{steps}</ul>
+                <ul className={clsx('stepper-indicators', sharedUlClasses)}>{stepIndicators}</ul>
+                <ul className={clsx('stepper-labels', sharedUlClasses)} aria-hidden="true">
+                    {steps}
+                </ul>
             </div>
         </StepperContext.Provider>
     );

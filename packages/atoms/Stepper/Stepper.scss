@@ -1,6 +1,10 @@
 @import '~@proton/styles/scss/config';
 
 .stepper {
+	$mobile-padding: 10%;
+
+	padding-inline: $mobile-padding;
+
 	&-item {
 		$dot-size: em(12);
 		$weak-opacity: 0.2;
@@ -40,6 +44,25 @@
 		&--active &-connector,
 		&--completed &-connector {
 			opacity: 1;
+		}
+	}
+
+	&-label {
+		flex: 1 1 0px;
+	}
+
+	@include respond-to($breakpoint-tiny, 'max') {
+		&-labels {
+			margin-inline: -$mobile-padding;
+		}
+
+		&-label {
+			visibility: hidden;
+
+			&.stepper-item--active {
+				visibility: visible;
+				flex: 2 1 0px;
+			}
 		}
 	}
 }
