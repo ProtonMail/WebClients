@@ -87,7 +87,7 @@ export { default as useNotifications } from './useNotifications';
 export { default as useOnline } from './useOnline';
 export * from './useOrganization';
 export { default as useOrganizationKey } from './useOrganizationKey';
-export { default as usePaidCookie, useClearPaidCookie } from './usePaidCookie';
+export { default as useNoBFCookie } from './useNoBFCookie';
 export { default as usePaymentMethods } from './usePaymentMethods';
 export { default as usePlans } from './usePlans';
 export { default as usePremiumDomains } from './usePremiumDomains';
