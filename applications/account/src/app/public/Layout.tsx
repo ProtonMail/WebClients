@@ -1,112 +1,24 @@
 import { ReactNode } from 'react';
 
-import { c } from 'ttag';
-
 import {
-    CalendarLogo,
-    DriveLogo,
     Href,
-    IconSize,
-    MailLogo,
     ProtonLogo,
     PublicTopBanners,
-    VpnLogo,
     classnames,
     getAppVersion,
     useActiveBreakpoint,
     useConfig,
 } from '@proton/components';
 import NudgeTopBanner, { getIsProtonMailDomain } from '@proton/components/containers/topBanners/NudgeTopBanner';
-import {
-    APPS,
-    APP_NAMES,
-    CALENDAR_APP_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    VPN_APP_NAME,
-} from '@proton/shared/lib/constants';
-import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
+import { APPS } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 
 import LanguageSelect from './LanguageSelect';
+import LayoutFooter from './LayoutFooter';
+import LayoutLogos from './LayoutLogos';
 
 import './Layout.scss';
-
-interface AppLogosProps {
-    app: APP_NAMES;
-    className: string;
-    size: IconSize;
-}
-
-const AppLogos = ({ className, size, app }: AppLogosProps) => {
-    return (
-        <div className={className}>
-            {[
-                {
-                    title: MAIL_APP_NAME,
-                    url: app === APPS.PROTONVPN_SETTINGS ? 'https://proton.me/mail' : getStaticURL('/mail'),
-                    logo: <MailLogo variant="glyph-only" size={size} />,
-                },
-                {
-                    title: CALENDAR_APP_NAME,
-                    url: app === APPS.PROTONVPN_SETTINGS ? 'https://proton.me/calendar' : getStaticURL('/calendar'),
-                    logo: <CalendarLogo variant="glyph-only" size={size} />,
-                },
-                {
-                    title: DRIVE_APP_NAME,
-                    url: app === APPS.PROTONVPN_SETTINGS ? 'https://proton.me/drive' : getStaticURL('/drive'),
-                    logo: <DriveLogo variant="glyph-only" size={size} />,
-                },
-                {
-                    title: VPN_APP_NAME,
-                    url: 'https://protonvpn.com',
-                    logo: <VpnLogo variant="glyph-only" size={size} />,
-                },
-            ].map(({ title, url, logo }) => {
-                return (
-                    <Href
-                        key={title}
-                        href={url}
-                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
-                        title={title}
-                    >
-                        {logo}
-                    </Href>
-                );
-            })}
-        </div>
-    );
-};
-
-interface FooterProps {
-    className: string;
-    version: string;
-    app: APP_NAMES;
-}
-
-const Footer = ({ className, app, version }: FooterProps) => {
-    return (
-        <footer className={className}>
-            <div className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</div>
-            <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
-                <span className="auto-tiny-mobile">
-                    <Href key="terms" className="signup-footer-link" href={getTermsURL(app)}>{c('Link').t`Terms`}</Href>
-                </span>
-                <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
-                    |
-                </span>
-                <span className="auto-tiny-mobile">
-                    <Href key="privacy" className="signup-footer-link" href={getPrivacyPolicyURL(app)}>{c('Link')
-                        .t`Privacy policy`}</Href>
-                </span>
-                <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
-                    |
-                </span>
-                <span className="auto-tiny-mobile">{c('Info').jt`Version ${version}`}</span>
-            </div>
-        </footer>
-    );
-};
 
 export interface Props {
     children: ReactNode;
@@ -144,14 +56,14 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, hasBackButto
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center p1 mt0 on-mobile-m0 on-mobile-pb0">
-                            <AppLogos app={APP_NAME} size={70} className="p0-5 on-mobile-p0" />
+                            <LayoutLogos app={APP_NAME} size={70} className="p0-5 on-mobile-p0" />
                         </div>
                     )}
                 </div>
             </div>
             {hasDecoration ? (
                 <>
-                    <Footer
+                    <LayoutFooter
                         app={APP_NAME}
                         className="flex-item-noshrink text-center p1 on-mobile-pt0 on-mobile-pb0"
                         version={appVersion}
