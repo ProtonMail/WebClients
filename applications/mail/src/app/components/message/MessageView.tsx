@@ -361,6 +361,7 @@ const MessageView = (
             data-shortcut-target="message-container"
             onFocus={handleFocus('BUBBLED_EVENT')}
             onBlur={handleBlur}
+            data-hasfocus={hasFocus}
         >
             {expanded ? (
                 <>

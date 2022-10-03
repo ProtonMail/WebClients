@@ -43,9 +43,10 @@ export const useConversationFocus = (messages: Message[]) => {
             return;
         }
         const element = document.querySelector(
-            `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
+            `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"] iframe`
         ) as HTMLElement;
         element?.focus({ preventScroll: true });
+
         if (nextScrollTo) {
             element?.scrollIntoView({ behavior: 'smooth' });
             setNextScrollTo(false);
