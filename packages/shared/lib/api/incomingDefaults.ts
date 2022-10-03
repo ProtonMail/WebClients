@@ -20,11 +20,23 @@ interface IncomingDefaultConfig {
     Location: number;
 }
 
-export const addIncomingDefault = ({ Email, Domain, Location }: IncomingDefaultConfig) => ({
-    method: 'post',
-    url: 'mail/v4/incomingdefaults',
-    data: { Email, Domain, Location },
-});
+interface AddIncomingDefaultConfig extends IncomingDefaultConfig {
+    Overwrite?: boolean;
+}
+
+export const addIncomingDefault = ({ Email, Domain, Location, Overwrite }: AddIncomingDefaultConfig) => {
+    let url = 'mail/v4/incomingdefaults';
+
+    if (Overwrite) {
+        url = `${url}?Overwrite=1`;
+    }
+
+    return {
+        method: 'post',
+        url,
+        data: { Email, Domain, Location },
+    };
+};
 
 export const updateIncomingDefault = (
     incomingDefaultID: string,
