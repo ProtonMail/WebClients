@@ -15,7 +15,7 @@ const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
 const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 
 /**
- * Set a cookie for non eligible user
+ * Set a cookie for non eligible user to BF offer
  * Used by proton.me website to hide BF banner
  */
 const useNoBFCookie = () => {
