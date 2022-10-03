@@ -1,6 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
@@ -26,6 +27,20 @@ const createStreamResponse = (chunks: number[][]) =>
             ctrl.close();
         },
     });
+
+const wrapGetBlocksWithManifestSignature = (blocks: DriveFileBlock[], manifestSignature = '') => {
+    return {
+        blocks,
+        manifestSignature,
+    };
+};
+
+const mockTransformBlockStream = async (abortSignal: AbortSignal, stream: ReadableStream<Uint8Array>) => {
+    return {
+        hash: [] as unknown as Uint8Array,
+        data: stream,
+    };
+};
 
 const mockDownloadBlock = jest.fn(
     (abortController: AbortController, url: string): Promise<ReadableStream<Uint8Array>> => {
@@ -69,23 +84,25 @@ describe('initDownload', () => {
         const downloadControls = initDownloadBlocks(
             'filename',
             {
-                getBlocks: async () => [
-                    {
-                        Index: 1,
-                        BareURL: 'url:1',
-                        Token: '1',
-                    },
-                    {
-                        Index: 2,
-                        BareURL: 'url:2',
-                        Token: '2',
-                    },
-                    {
-                        Index: 3,
-                        BareURL: 'url:3',
-                        Token: '3',
-                    },
-                ],
+                getBlocks: async () =>
+                    wrapGetBlocksWithManifestSignature([
+                        {
+                            Index: 1,
+                            BareURL: 'url:1',
+                            Token: '1',
+                        },
+                        {
+                            Index: 2,
+                            BareURL: 'url:2',
+                            Token: '2',
+                        },
+                        {
+                            Index: 3,
+                            BareURL: 'url:3',
+                            Token: '3',
+                        },
+                    ]),
+                transformBlockStream: mockTransformBlockStream,
             },
             mockDownloadBlock
         );
@@ -99,13 +116,15 @@ describe('initDownload', () => {
             const downloadControls = initDownloadBlocks(
                 'filename',
                 {
-                    getBlocks: async () => [
-                        {
-                            Index: 1,
-                            BareURL: 'url:1',
-                            Token: '1',
-                        },
-                    ],
+                    getBlocks: async () =>
+                        wrapGetBlocksWithManifestSignature([
+                            {
+                                Index: 1,
+                                BareURL: 'url:1',
+                                Token: '1',
+                            },
+                        ]),
+                    transformBlockStream: mockTransformBlockStream,
                     onError: reject,
                     onFinish: () => resolve(),
                 },
@@ -117,20 +136,6 @@ describe('initDownload', () => {
         await expect(promise).rejects.toThrowError(TransferCancel);
     });
 
-    it('should download data from preloaded data buffer if provided', async () => {
-        const sendData = [new Uint8Array([1, 2, 3]), new Uint8Array([4, 5, 6]), new Uint8Array([7, 8, 9])];
-        const downloadControls = initDownloadBlocks(
-            'filename',
-            {
-                getBlocks: async () => sendData,
-            },
-            mockDownloadBlock
-        );
-        const stream = downloadControls.start();
-        const buffer = await streamToBuffer(stream);
-        expect(buffer).toEqual(sendData);
-    });
-
     it('should reuse already downloaded data after recovering from network error', async () => {
         // Make sure to not reset retries counter during the test.
         mockConstants.TIME_TO_RESET_RETRIES = 10000;
@@ -139,28 +144,30 @@ describe('initDownload', () => {
         const downloadControls = initDownloadBlocks(
             'filename',
             {
-                getBlocks: async () => [
-                    {
-                        Index: 1,
-                        BareURL: 'url:1',
-                        Token: '1',
-                    },
-                    {
-                        Index: 2,
-                        BareURL: 'url:2',
-                        Token: '2',
-                    },
-                    {
-                        Index: 3,
-                        BareURL: 'url:3',
-                        Token: '3',
-                    },
-                    {
-                        Index: 4,
-                        BareURL: 'url:4',
-                        Token: '4',
-                    },
-                ],
+                getBlocks: async () =>
+                    wrapGetBlocksWithManifestSignature([
+                        {
+                            Index: 1,
+                            BareURL: 'url:1',
+                            Token: '1',
+                        },
+                        {
+                            Index: 2,
+                            BareURL: 'url:2',
+                            Token: '2',
+                        },
+                        {
+                            Index: 3,
+                            BareURL: 'url:3',
+                            Token: '3',
+                        },
+                        {
+                            Index: 4,
+                            BareURL: 'url:4',
+                            Token: '4',
+                        },
+                    ]),
+                transformBlockStream: mockTransformBlockStream,
                 onNetworkError: (err) => {
                     expect(err).toEqual(createOfflineError({}));
                     // Simulate connection is back up and user clicked to resume download.
@@ -212,14 +219,15 @@ describe('initDownload', () => {
 
                     shouldValidateBlock = true;
 
-                    return [
+                    return wrapGetBlocksWithManifestSignature([
                         {
                             Index: 1,
                             BareURL: 'url:1',
                             Token: '1',
                         },
-                    ];
+                    ]);
                 },
+                transformBlockStream: mockTransformBlockStream,
             },
             mockDownloadBlock
         );
@@ -250,14 +258,15 @@ describe('initDownload', () => {
                     }
                     blockRetryCount++;
 
-                    return [
+                    return wrapGetBlocksWithManifestSignature([
                         {
                             Index: 1,
                             BareURL: 'url:1',
                             Token: '1',
                         },
-                    ];
+                    ]);
                 },
+                transformBlockStream: mockTransformBlockStream,
             },
             mockDownloadBlock
         );
@@ -276,14 +285,15 @@ describe('initDownload', () => {
             'filename',
             {
                 getBlocks: async () => {
-                    return [
+                    return wrapGetBlocksWithManifestSignature([
                         {
                             Index: 1,
                             BareURL: expiredURL,
                             Token: '1',
                         },
-                    ];
+                    ]);
                 },
+                transformBlockStream: mockTransformBlockStream,
             },
             mockDownloadBlock
         );

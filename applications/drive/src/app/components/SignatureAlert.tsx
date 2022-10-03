@@ -69,6 +69,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
         contentKeyPacket: c('Item').t`file data key`,
         blocks: c('Item').t`file data`,
         thumbnail: c('Item').t`thumbnail`,
+        manifest: c('Item').t`file data order`,
     };
     const items = Object.keys(signatureIssues)
         .map((location) => locationTranslations[location as SignatureIssueLocation])
