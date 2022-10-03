@@ -42,7 +42,7 @@ export default function useDownload() {
         shareId: string,
         linkId: string,
         pagination: Pagination
-    ): Promise<{ blocks: DriveFileBlock[]; manifestSignature: string }> => {
+    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }> => {
         let link = await getLink(abortSignal, shareId, linkId);
         const revisionId = link.activeRevision?.id;
         if (!revisionId) {
@@ -55,6 +55,7 @@ export default function useDownload() {
         );
         return {
             blocks: Revision.Blocks,
+            thumbnailHash: Revision.ThumbnailHash,
             manifestSignature: Revision.ManifestSignature,
         };
     };

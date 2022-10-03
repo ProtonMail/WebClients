@@ -64,7 +64,6 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
             verificationKeys: keys.addressPublicKeys || [],
             armoredSignature: signature,
         });
-
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             await callbacks.onSignatureIssue?.(abortSignal, link, { manifest: verified });
         }

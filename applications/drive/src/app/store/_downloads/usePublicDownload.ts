@@ -29,13 +29,14 @@ export default function usePublicDownload() {
         token: string,
         linkId: string,
         pagination: Pagination
-    ): Promise<{ blocks: DriveFileBlock[]; manifestSignature: string }> => {
+    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }> => {
         const { Revision } = await request<{ Revision: SharedURLRevision }>(
             querySharedURLFileRevision(token, linkId, pagination),
             abortSignal
         );
         return {
             blocks: Revision.Blocks,
+            thumbnailHash: Revision.ThumbnailHash,
             manifestSignature: Revision.ManifestSignature,
         };
     };
