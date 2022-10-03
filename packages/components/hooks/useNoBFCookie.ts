@@ -14,7 +14,11 @@ const FIRST_OCTOBER_2022 = new Date(2022, 9, 1);
 const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
 const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 
-const useBFCookie = () => {
+/**
+ * Set a cookie for non eligible user
+ * Used by proton.me website to hide BF banner
+ */
+const useNoBFCookie = () => {
     const [user, loadingUser] = useUser();
     const [lastSubscriptionEnd, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
     const loading = loadingUser || loadingLastSubscriptionEnd;
@@ -48,4 +52,4 @@ const useBFCookie = () => {
     }, [user, lastSubscriptionEnd, loading]);
 };
 
-export default useBFCookie;
+export default useNoBFCookie;
