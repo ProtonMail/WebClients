@@ -30,6 +30,7 @@ const getConfig = (env) => {
         errorLogs: env.errorLogs || false,
         overlayWarnings: env.overlayWarnings || false,
         overlayErrors: env.overlayErrors || false,
+        logical: env.logical || false,
     };
 
     return {
