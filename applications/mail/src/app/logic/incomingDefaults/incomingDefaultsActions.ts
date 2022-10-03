@@ -66,20 +66,15 @@ interface AddBlockParams {
 export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockParams>(
     'incomingDefaults/addBlockAddress',
     async ({ api, address, overwrite }) => {
-        try {
-            const result = await api<{ IncomingDefault: IncomingDefault }>(
-                addIncomingDefault({
-                    Email: address,
-                    Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
-                    Overwrite: overwrite,
-                })
-            );
+        const result = await api<{ IncomingDefault: IncomingDefault }>(
+            addIncomingDefault({
+                Email: address,
+                Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
+                Overwrite: overwrite,
+            })
+        );
 
-            return result.IncomingDefault;
-        } catch (error) {
-            console.log(error);
-            throw error;
-        }
+        return result.IncomingDefault;
     }
 );
 
@@ -92,16 +87,11 @@ interface UpdateBlockParams {
 export const updateBlockAddress = createAsyncThunk<IncomingDefault, UpdateBlockParams>(
     'incomingDefaults/updateBlockAddress',
     async ({ api, address, ID }) => {
-        try {
-            const result = await api<{ IncomingDefault: IncomingDefault }>(
-                updateIncomingDefault(ID, { Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
-            );
+        const result = await api<{ IncomingDefault: IncomingDefault }>(
+            updateIncomingDefault(ID, { Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
+        );
 
-            return result.IncomingDefault;
-        } catch (error) {
-            console.log(error);
-            throw error;
-        }
+        return result.IncomingDefault;
     }
 );
 
@@ -112,12 +102,7 @@ export const remove = createAsyncThunk<
         ID: string;
     }
 >('incomingDefaults/remove', async ({ api, ID }) => {
-    try {
-        const result = await api<{ Responses: { ID: string }[] }>(deleteIncomingDefaults([ID]));
+    const result = await api<{ Responses: { ID: string }[] }>(deleteIncomingDefaults([ID]));
 
-        return result.Responses;
-    } catch (error) {
-        console.log(error);
-        throw error;
-    }
+    return result.Responses;
 });
