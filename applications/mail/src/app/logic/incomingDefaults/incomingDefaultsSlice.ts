@@ -19,7 +19,6 @@ const incomingDefaultsSlice = createSlice({
         builder.addCase(actions.event, reducer.event);
 
         builder.addCase(actions.addBlockAddress.fulfilled, reducer.blockAddressFullfilled);
-        builder.addCase(actions.updateBlockAddress.fulfilled, reducer.blockAddressFullfilled);
 
         builder.addCase(actions.remove.fulfilled, reducer.removeFullfilled);
     },

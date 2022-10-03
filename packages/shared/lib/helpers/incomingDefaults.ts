@@ -4,7 +4,7 @@ import { IncomingDefault } from '../interfaces';
 /**
  * Check if an email address is inside email in incomingDefaults
  */
-export const isAddressIncluded = (
+const isAddressIncluded = (
     incomingDefaults: IncomingDefault[] = [],
     emailAddress: string,
     location?: INCOMING_DEFAULTS_LOCATION

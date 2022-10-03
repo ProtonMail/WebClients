@@ -21,6 +21,10 @@ interface IncomingDefaultConfig {
 }
 
 interface AddIncomingDefaultConfig extends IncomingDefaultConfig {
+    /**
+     * If email is already registered in incomingDefaults we overwrite the location
+     * Avoids to find the already exiting item ID
+     */
     Overwrite?: boolean;
 }
 
