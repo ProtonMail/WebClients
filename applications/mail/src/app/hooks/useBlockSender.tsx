@@ -7,12 +7,11 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { FeatureCode } from '@proton/components/containers';
 import { useAddresses, useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
-import { isAddressIncluded } from '@proton/shared/lib/helpers/incomingDefaults';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/addresses';
-import { addBlockAddress, updateBlockAddress } from '../logic/incomingDefaults/incomingDefaultsActions';
+import { addBlockAddress } from '../logic/incomingDefaults/incomingDefaultsActions';
 import { Element } from '../models/element';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 
@@ -54,13 +53,10 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
         await Promise.all(
             senders.map((sender) => {
                 const senderEmail = sender?.Address || '';
-                const foundItem = isAddressIncluded(incomingDefaultsAddresses, senderEmail);
 
-                return dispatch(
-                    foundItem
-                        ? updateBlockAddress({ api, address: senderEmail, ID: foundItem.ID })
-                        : addBlockAddress({ api, address: senderEmail, overwrite: true })
-                );
+                let promise = dispatch(addBlockAddress({ api, address: senderEmail, overwrite: true }));
+
+                return promise;
             })
         );
 

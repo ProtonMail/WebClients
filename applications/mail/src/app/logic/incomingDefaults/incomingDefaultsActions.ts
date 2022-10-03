@@ -4,7 +4,6 @@ import {
     addIncomingDefault,
     deleteIncomingDefaults,
     getIncomingDefaults,
-    updateIncomingDefault,
 } from '@proton/shared/lib/api/incomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import { Api, IncomingDefault } from '@proton/shared/lib/interfaces';
@@ -72,23 +71,6 @@ export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockParams>
                 Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
                 Overwrite: overwrite,
             })
-        );
-
-        return result.IncomingDefault;
-    }
-);
-
-interface UpdateBlockParams {
-    api: Api;
-    address: string;
-    ID: string;
-}
-
-export const updateBlockAddress = createAsyncThunk<IncomingDefault, UpdateBlockParams>(
-    'incomingDefaults/updateBlockAddress',
-    async ({ api, address, ID }) => {
-        const result = await api<{ IncomingDefault: IncomingDefault }>(
-            updateIncomingDefault(ID, { Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
         );
 
         return result.IncomingDefault;
