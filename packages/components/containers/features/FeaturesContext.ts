@@ -54,7 +54,6 @@ export enum FeatureCode {
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     DarkStylesInBody = 'DarkStylesInBody',
     EasySwitch = 'EasySwitch',
-    SpotlightDiscoverProtonServices = 'SpotlightDiscoverProtonServices',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     ReferralProgram = 'ReferralProgram',
     ReferralProgramSpotlight = 'ReferralProgramSpotlight',
