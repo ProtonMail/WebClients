@@ -29,7 +29,7 @@ const Step = ({
             firstItem={firstItem}
             active={active}
             complete={complete}
-            className={clsx('stepper-label', className)}
+            className={clsx('stepper-label flex-item-fluid', className)}
             {...rest}
         >
             <span

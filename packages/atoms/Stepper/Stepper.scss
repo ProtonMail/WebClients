@@ -47,10 +47,6 @@
 		}
 	}
 
-	&-label {
-		flex: 1 1 0px;
-	}
-
 	@include respond-to($breakpoint-tiny, 'max') {
 		&-labels {
 			margin-inline: -$mobile-padding;
