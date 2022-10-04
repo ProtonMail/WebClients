@@ -11,10 +11,8 @@ import {
     Tooltip,
     classnames,
     useModalState,
-    useUser,
 } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
-import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
@@ -24,7 +22,6 @@ interface Props {
 }
 
 const EncryptedSearchField = ({ esState }: Props) => {
-    const [user] = useUser();
     const {
         enableEncryptedSearch,
         enableContentSearch,
@@ -32,7 +29,6 @@ const EncryptedSearchField = ({ esState }: Props) => {
         pauseIndexing,
         toggleEncryptedSearch,
         getProgressRecorderRef,
-        activateContentSearch,
     } = useEncryptedSearchContext();
     const {
         isEnablingContentSearch,
@@ -42,16 +38,13 @@ const EncryptedSearchField = ({ esState }: Props) => {
         isEnablingEncryptedSearch,
         isPaused,
         contentIndexingDone,
-        activatingPartialES,
     } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
 
     const [enableESModalProps, setEnableESModalOpen] = useModalState();
 
     // Switches
-    const showProgress =
-        isPaid(user) &&
-        (isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing && !activatingPartialES));
+    const showProgress = isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing);
     const showSubTitleSection = contentIndexingDone && !isRefreshing && isDBLimited && !isEnablingEncryptedSearch;
     const isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
     const showToggle = isEnablingContentSearch || isPaused || contentIndexingDone;
@@ -77,19 +70,8 @@ const EncryptedSearchField = ({ esState }: Props) => {
             : c('Info').t`Turn on to search the content of your messages`;
     }
 
-    const esExplanation = isPaid(user)
-        ? c('Info')
-              .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`
-        : c('Info')
-              .t`This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.`;
-
-    const esActivationTooltip = c('Info').t`The local database is being prepared`;
-    const esActivationLoading = isEnablingEncryptedSearch || activatingPartialES;
-    const esActivationButton = (
-        <Button onClick={() => setEnableESModalOpen(true)} loading={esActivationLoading}>
-            {c('Action').t`Activate`}
-        </Button>
-    );
+    const esExplanation = c('Info')
+        .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`;
 
     const esCTA = showToggle ? (
         <Tooltip title={esToggleTooltip}>
@@ -103,12 +85,10 @@ const EncryptedSearchField = ({ esState }: Props) => {
                 />
             </span>
         </Tooltip>
-    ) : esActivationLoading ? (
-        <Tooltip title={esActivationTooltip}>
-            <span>{esActivationButton}</span>
-        </Tooltip>
     ) : (
-        esActivationButton
+        <Button onClick={() => setEnableESModalOpen(true)} loading={isEnablingEncryptedSearch}>
+            {c('Action').t`Activate`}
+        </Button>
     );
     const info = <Info questionMark title={esExplanation} />;
     const esHeader = showToggle ? (
@@ -174,7 +154,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
 
     const handleEnableES = async () => {
         enableESModalProps.onClose();
-        void enableEncryptedSearch().then(() => activateContentSearch());
+        void enableEncryptedSearch().then(() => enableContentSearch());
     };
 
     return (

@@ -132,7 +132,6 @@ export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 export const defaultESMailStatus: ESDBStatusMail = {
     dropdownOpened: false,
     temporaryToggleOff: false,
-    activatingPartialES: false,
     lastContentTime: 0,
 };
 export const defaultESContextMail: EncryptedSearchFunctionsMail = {
@@ -142,10 +141,8 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     setTemporaryToggleOff: () => {},
     cacheMailContent: async () => {},
     getESDBStatus: () => ({ ...defaultESContext.getESDBStatus(), ...defaultESMailStatus }),
-    activateContentSearch: async () => {},
 };
 export const MAIL_EVENTLOOP_NAME = 'core';
-export const ES_BANNER_REF = 'content_search_banner';
 
 export const upsellRefLink = 'upsell_mail-banner-';
 

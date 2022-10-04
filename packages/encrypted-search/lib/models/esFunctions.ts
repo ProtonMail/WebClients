@@ -148,7 +148,7 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
      * the EncryptedSearchProvider runs, as it checks for new events, continues indexing in
      * case a previous one was started, checks whether the index key is still accessible
      */
-    initializeES: (shouldCache?: boolean) => Promise<void>;
+    initializeES: () => Promise<void>;
 
     /**
      * Pause the currently ongoing indexing process, if any

@@ -35,7 +35,6 @@ export interface ESMessageContent {
 export interface ESDBStatusMail {
     dropdownOpened: boolean;
     temporaryToggleOff: boolean;
-    activatingPartialES: boolean;
     lastContentTime: number;
 }
 
@@ -63,7 +62,6 @@ export interface EncryptedSearchFunctionsMail
     setTemporaryToggleOff: () => void;
     getESDBStatus: () => ESDBStatusMail & ESDBStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
     cacheMailContent: () => Promise<void>;
-    activateContentSearch: () => Promise<void>;
 }
 
 export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
