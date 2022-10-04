@@ -228,7 +228,7 @@ const LoginForm = ({
                     </div>
                 )}
 
-                <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt1-75">
+                <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt1-5">
                     {
                         // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
                         submitting ? c('Action').t`Signing in` : signInText
