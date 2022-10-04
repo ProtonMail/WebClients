@@ -1,4 +1,15 @@
-import { Children, HTMLProps, ReactElement, ReactNode, cloneElement, useContext, useEffect, useState } from 'react';
+import {
+    Children,
+    HTMLProps,
+    ReactElement,
+    ReactNode,
+    Ref,
+    cloneElement,
+    forwardRef,
+    useContext,
+    useEffect,
+    useState,
+} from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
 import isTruthy from '@proton/utils/isTruthy';
@@ -61,15 +72,10 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
-const Tooltip = ({
-    children,
-    title,
-    originalPlacement = 'top',
-    type = 'info',
-    anchorOffset,
-    isOpen: isExternalOpen,
-    ...rest
-}: Props) => {
+const TooltipBase = (
+    { children, title, originalPlacement = 'top', type = 'info', anchorOffset, isOpen: isExternalOpen, ...rest }: Props,
+    ref: Ref<HTMLElement>
+) => {
     const uid = useInstance(() => generateUID('tooltip'));
     const [isRTL] = useRightToLeft();
 
@@ -95,7 +101,7 @@ const Tooltip = ({
     const child = Children.only(children);
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
     // @ts-ignore
-    const mergedRef = useCombinedRefs(anchorRef, child?.ref);
+    const mergedRef = useCombinedRefs(anchorRef, child?.ref, ref);
 
     useEffect(() => {
         if (combinedIsOpen) {
@@ -136,5 +142,7 @@ const Tooltip = ({
         </>
     );
 };
+
+const Tooltip = forwardRef<HTMLElement, Props>(TooltipBase);
 
 export default Tooltip;
