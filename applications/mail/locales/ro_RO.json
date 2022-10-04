@@ -92,6 +92,9 @@
       "Attachment": [
         "Atașament"
       ],
+      "Authenticate": [
+        "Autentificare"
+      ],
       "Back": [
         "Înapoi"
       ],
@@ -360,6 +363,9 @@
       "Fewer search options": [
         "Mai puține opțiuni de căutare"
       ],
+      "Filter on...": [
+        "Filtrare după..."
+      ],
       "Font": [
         "Font"
       ],
@@ -430,7 +436,7 @@
         "Ascundere mesaje"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Ascundere e-mail"
       ],
       "Hide my email": [
         "Ascundere e-mail"
@@ -598,6 +604,12 @@
       ],
       "Move to inbox": [
         "Mutare în «Primite»"
+      ],
+      "Move to inbox (not spam)": [
+        "Mutare în «Primite» (nu e nesolicitat)"
+      ],
+      "Move to spam": [
+        "Mutare în «Nedorite»"
       ],
       "Move to spam and unsubscribe": [
         "Mutare în «Nedorite» și dezabonare"
@@ -988,8 +1000,14 @@
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
       ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
       "Use for sending": [
         "Folosire pentru trimitere"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilizați mouse-ul pentru a redimensiona vizualizarea. Dacă folosiți tastatura, puteți utiliza tastele săgeată stânga și dreapta pentru redimensionare."
@@ -1198,6 +1216,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preț standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Cel mai popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Get the deal now": [
+        "Obțineți oferta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pe lună"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 luni"
       ]
     },
     "Bug category": {
@@ -1919,11 +1990,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Selecția vă conține doar pe dvs. ca expeditor."
       ]
     },
     "Country name": {
@@ -2697,6 +2763,9 @@
       "Attachment": [
         "Atașament"
       ],
+      "Filter on": [
+        "Filtrare după"
+      ],
       "Next": [
         "Înainte"
       ],
@@ -3266,6 +3335,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "A apărut o problemă la căutarea în conținut. S-a folosit căutarea implicită."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "A apărut o problemă la actualizarea mesajelor locale. Vor fi redescărcate pentru activarea căutarea conținutului."
+      ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
       ],
@@ -3289,6 +3361,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Prea multe filtre active. Trebuie să treceți la un plan cu plată pentru a putea activa mai multe filtre."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -3579,6 +3654,24 @@
         "Experiența personală"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
     "file size format": {
       "byte": [
         "bait",
@@ -3654,6 +3747,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Dacă atașamentul"
+      ],
+      "If the recipient": [
+        "Dacă destinatarul"
+      ],
+      "If the sender": [
+        "Dacă expeditorul"
+      ],
+      "If the subject": [
+        "Dacă subiectul"
+      ],
       "Select…": [
         "Selectare…"
       ],
@@ -4602,6 +4707,9 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar odată."
+      ],
       "Edit encryption": [
         "Editare criptare"
       ],
@@ -4642,11 +4750,17 @@
       "End of search results from past 30 days": [
         "Sfârșit rezultate căutare din ultimele 30 de zile"
       ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Timp estimat rămas: ${ estimatedMinutes } minut",
@@ -5069,7 +5183,7 @@
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
       "Seems like you are all caught up for now": [
-        "Se pare că deocamdată sunteți ocupat(ă)"
+        "Se pare că toate au fost preluate."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
@@ -5338,6 +5452,9 @@
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Se actualizează mesajele locale, conținutul mesajelor nu vor fi căutate în timpul acestei actualizări."
+      ],
       "Upgrade to add more addresses to your account.": [
         "Treceţi la un plan superior pentru a adăuga mai multe adrese în contul personal."
       ],
@@ -5424,6 +5541,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -5895,6 +6015,9 @@
       "Attachments": [
         "Atașamente"
       ],
+      "Authenticator app": [
+        "Aplicație Authenticator"
+      ],
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
@@ -6290,6 +6413,9 @@
       ],
       "Wonderful": [
         "Minunată"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
       ]
     },
     "Label for contact group color": {
@@ -7545,8 +7671,8 @@
       "Conversation moved to ${ folderName }.": [
         "Conversația s-a mutat în «${ folderName }»."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Conversația a fost mutată în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversație ștearsă din ${ labelName }."
@@ -7602,14 +7728,14 @@
       "Message marked as unread.": [
         "Mesaj marcat ca necitit."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Mesajul a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
       "Message moved to ${ folderName }.": [
         "Mesaj mutat în ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Mesajul a fost mutat în «Nesolicitate» și expeditorul adăugat în lista de adrese blocate."
       ],
       "Message removed from ${ labelName }.": [
         "Mesaj eliminat din ${ labelName }."
@@ -7975,6 +8101,9 @@
       "Feedback": [
         "Feedback"
       ],
+      "Filter on...": [
+        "Filtrare după..."
+      ],
       "Forward": [
         "Redirecționare"
       ],
@@ -8060,10 +8189,10 @@
         "Mutare în «Primite»"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Mutare în «Primite» (nu e nesolicitat)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Mutare în «Nesolicitate»"
       ],
       "Move to trash": [
         "Mutare în «Gunoi»"

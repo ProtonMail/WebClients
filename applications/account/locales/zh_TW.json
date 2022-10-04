@@ -478,10 +478,10 @@
       "Non spam": [
         "非垃圾郵件"
       ],
-      "Ok": [
+      "OK": [
         "確定"
       ],
-      "OK": [
+      "Ok": [
         "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -535,10 +535,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1006,6 +1006,59 @@
       ],
       "Two-year": [
         "兩年"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "測試版"
+      ],
+      "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準價格：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最熱門"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Get the deal now": [
+        "立即取得優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "省下 ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "一個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
       ]
     },
     "breadcrumb": {
@@ -2431,20 +2484,6 @@
         "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
       ]
     },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "原訂 ${ formattedStart } 一事取消"
@@ -3284,9 +3323,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "新增一個自訂的篩選器可以自動進行某些操作，例如為郵件添加標籤或歸檔。篩選器可以直接使用 Sieve 語言建立或修改。"
-      ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -6730,9 +6766,6 @@
       "General": [
         "一般"
       ],
-      "Go to subscription plans": [
-        "前往訂閱方案"
-      ],
       "How to unlock data": [
         "如何解鎖資料"
       ],
@@ -6774,9 +6807,6 @@
       ],
       "Trouble signing in?": [
         "登入遇到困難嗎？"
-      ],
-      "Upgrade": [
-        "升級"
       ],
       "Upgrade account": [
         "升級帳號"
@@ -8320,11 +8350,6 @@
         "/ 每使用者每月"
       ]
     },
-    "Suffix for price": {
-      "/month": [
-        "/ 月"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "位址"
@@ -8493,9 +8518,6 @@
       ],
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add to non spam list": [
         "新增到非垃圾郵件清單"

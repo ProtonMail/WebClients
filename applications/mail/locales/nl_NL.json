@@ -92,6 +92,9 @@
       "Attachment": [
         "Bijlage"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Back": [
         "Terug"
       ],
@@ -358,6 +361,9 @@
       "Fewer search options": [
         "Minder zoekopties"
       ],
+      "Filter on...": [
+        "Filter aan..."
+      ],
       "Font": [
         "Lettertype"
       ],
@@ -428,7 +434,7 @@
         "Verberg berichten"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Verberg Mijn E-mailadres"
       ],
       "Hide my email": [
         "Verberg mijn e-mailadres"
@@ -595,6 +601,12 @@
       ],
       "Move to inbox": [
         "Naar Postvak IN verplaatsen"
+      ],
+      "Move to inbox (not spam)": [
+        "Verplaatsen naar inbox (geen spam)"
+      ],
+      "Move to spam": [
+        "Naar spam verplaatsen"
       ],
       "Move to spam and unsubscribe": [
         "Verplaatsen naar spam en afmelden"
@@ -987,6 +999,9 @@
       "Use for sending": [
         "Gebruiken om te versturen"
       ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gebruik uw muis om de grootte van het beeld te wijzigen. Als u uw toetsenbord gebruikt, kunt u de linker en rechter pijltjestoetsen gebruiken om de grootte te wijzigen."
       ],
@@ -1193,6 +1208,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bètaversie"
+      ],
+      "Includes": [
+        "Inclusief"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standaardprijs: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Populairste keuze"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Get the deal now": [
+        "Pak nu deze deal"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per maand"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
       ]
     },
     "Bug category": {
@@ -1914,11 +1982,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Uw selectie bevat alleen uzelf als afzender"
       ]
     },
     "Country name": {
@@ -3188,11 +3251,17 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw mapnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw labels zijn gereserveerd. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -3263,6 +3332,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -3622,6 +3694,9 @@
       ]
     },
     "Filter modal type": {
+      "If the subject": [
+        "Indien het onderwerp"
+      ],
       "Select…": [
         "Selecteren…"
       ],
@@ -4096,6 +4171,9 @@
       ],
       "contacts": [
         "contactpersonen"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV of een VCF (vCard) bestand"
       ],
       "full calendar view": [
         "volledige agendaweergave"
@@ -4955,6 +5033,9 @@
       ],
       "Saved on ${ dateString }": [
         "Opgeslagen op ${ dateString }"
+      ],
+      "Saved yesterday": [
+        "Gisteren bewaard"
       ],
       "Saving draft…": [
         "Concept opslaan…"
@@ -6179,6 +6260,9 @@
       ],
       "Wonderful": [
         "Uitstekend"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7392,9 +7476,6 @@
       "Conversation moved to ${ folderName }.": [
         "Gesprek verplaatst naar ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Gesprek verwijderd van ${ labelName }."
       ],
@@ -7449,14 +7530,8 @@
       "Message marked as unread.": [
         "Bericht gemarkeerd als ongelezen."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Bericht verwijderd van ${ labelName }."
@@ -7807,6 +7882,9 @@
       "Feedback": [
         "Feedback"
       ],
+      "Filter on...": [
+        "Filter aan..."
+      ],
       "Forward": [
         "Doorsturen"
       ],
@@ -7892,10 +7970,10 @@
         "Verplaats naar inbox"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Verplaatsen naar inbox (geen spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Naar spam verplaatsen"
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"

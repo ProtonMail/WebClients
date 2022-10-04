@@ -50,6 +50,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Authenticate": [
+        "Автентифікація"
+      ],
       "Back": [
         "Назад"
       ],
@@ -488,8 +491,14 @@
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
       ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
       "Use for sending": [
         "Застосувати для надсилання"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
       ],
       "Verify": [
         "Перевірити"
@@ -649,6 +658,45 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "Включає"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Найпопулярніша"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Get the deal now": [
+        "Скористатися пропозицією"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 місяць"
+      ],
+      "12 months": [
+        "12 місяців"
+      ],
+      "24 months": [
+        "24 місяці"
       ]
     },
     "Bug category": {
@@ -2677,6 +2725,24 @@
         "Ваш відгук"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -3414,11 +3480,20 @@
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
+      "Each code can only be used once": [
+        "Кожен код може бути використаний тільки один раз"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з програми автентифікації"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Existent and added participants will be notified.": [
         "Наявні та додані учасники отримають сповіщення."
@@ -3744,6 +3819,9 @@
       "Week": [
         "Тиждень"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
+      ],
       "Which event would you like to delete?": [
         "Яку подію ви бажаєте видалити?"
       ],
@@ -3944,6 +4022,9 @@
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
+      ],
+      "Authenticator app": [
+        "Програма автентифікації"
       ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
@@ -4235,6 +4316,9 @@
       ],
       "Your calendar URL": [
         "URL-адреса вашого календаря"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "Label for contact group color": {
@@ -4273,9 +4357,6 @@
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
-      "Go to subscription plans": [
-        "Перейти до тарифних планів"
-      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -4290,9 +4371,6 @@
       ],
       "Subscribed calendars": [
         "Підписки на календарі"
-      ],
-      "Upgrade": [
-        "Покращити"
       ],
       "Upgrade account": [
         "Покращити обліковий запис"
@@ -5308,11 +5386,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Відгук надіслано"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/місяць"
       ]
     },
     "Table header": {

@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
       ],
+      "Authenticate": [
+        "Asesteb"
+      ],
       "Back": [
         "Ɣer deffir"
       ],
@@ -565,6 +568,9 @@
       "Use for sending": [
         "Seqdec i tuzna"
       ],
+      "Use recovery code": [
+        "Seqdec tangalt n tririt"
+      ],
       "Verify": [
         "Senqed"
       ],
@@ -620,6 +626,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Yella deg-s"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Atig anaway: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Anezdi-a ad yettwales s yimek awurman seg-a ɣef sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Aɣerfan akk"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Get the deal now": [
+        "Faṛes tagnit"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "i wayyur"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Asumer uzzig"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 wayyur"
+      ],
+      "12 months": [
+        "12 wayyuren"
+      ],
+      "24 months": [
+        "24 wayyuren"
       ]
     },
     "Bug category": {
@@ -2399,10 +2458,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Ifuyla CSV seg Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yinasen-nniḍen akked yimasalen vCard 3.1 akked 4.0 (UTF-8 encoding) ttwadehlen."
       ],
-      "Delete drive": [
-        "Kkes ameɣri",
-        "Kkes imeɣriyen"
-      ],
       "Downloaded": [
         "Yettusader"
       ],
@@ -3226,6 +3281,9 @@
       ],
       "Wonderful": [
         "Igerrez"
+      ],
+      "Your password (admin)": [
+        "Awal-ik uffir (anedbal)"
       ]
     },
     "Label for contact group color": {
@@ -3261,9 +3319,6 @@
       "clearing your browser cache": [
         "asfaḍ n tuffirt n yiminig"
       ],
-      "Go to subscription plans": [
-        "Rzu ɣer yiɣawasen n ujerred"
-      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -3278,9 +3333,6 @@
       ],
       "Trash": [
         "Taqecwalt"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ],
       "Upgrade account": [
         "Sali aswir n umiḍan"
@@ -3759,11 +3811,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Awennit yettwazen"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/ayyur"
       ]
     },
     "Table header": {

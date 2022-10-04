@@ -92,6 +92,9 @@
       "Attachment": [
         "Ek dosya"
       ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
       "Back": [
         "Geri"
       ],
@@ -431,7 +434,7 @@
         "İletileri gizle"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "E-posta adresimi gizle"
       ],
       "Hide my email": [
         "E-posta adresimi gizle"
@@ -598,6 +601,12 @@
       ],
       "Move to inbox": [
         "Gelen kutusuna taşı"
+      ],
+      "Move to inbox (not spam)": [
+        "Gelen kutusuna taşı (istenmeyen değil)"
+      ],
+      "Move to spam": [
+        "İstenmeyen kutusuna taşı"
       ],
       "Move to spam and unsubscribe": [
         "İstenmeyen kutusuna taşı ve abonelikten ayrıl"
@@ -987,8 +996,14 @@
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodu kullan"
+      ],
       "Use for sending": [
         "Gönderim için kullan"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullan"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Fareyi ya da klavyedeki sağ ve sol ok tuşlarını kullanarak görünümün boyutunu değiştirebilirsiniz."
@@ -1196,6 +1211,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "İçerdikleri"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standart fiyat: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "En popüler olanlar"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlan"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- %${ percentage }"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
       ]
     },
     "Bug category": {
@@ -1917,11 +1985,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Seçiminiz gönderici olarak yalnızca sizi içeriyor"
       ]
     },
     "Country name": {
@@ -3252,6 +3315,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "İçerik aramasıyla ilgili bir sorun çıktı. Varsayılan arama yöntemi kullanıldı."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Yerel iletileriniz güncellenirken bir sorun çıktı. İçerik aramasının etkinleştirilebilmesi için iletiler yeniden indirilecek"
+      ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
       ],
@@ -3565,6 +3631,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Geri bildiriminiz"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
       ]
     },
     "file size format": {
@@ -4549,6 +4633,9 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
       "Edit encryption": [
         "Şifrelemeyi düzenle"
       ],
@@ -4587,11 +4674,17 @@
       "End of search results from past 30 days": [
         "Son 30 günün arama sonuçlarının sonu"
       ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
@@ -5274,6 +5367,9 @@
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Yerel iletileriniz güncelleniyor. Güncelleme sırasında yerel ileti içeriğinizde arama yapamayacaksınız"
+      ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
       ],
@@ -5360,6 +5456,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -5820,6 +5919,9 @@
       "Attachments": [
         "Ek dosyalar"
       ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
       ],
@@ -6215,6 +6317,9 @@
       ],
       "Wonderful": [
         "Çok iyi"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
       ]
     },
     "Label for contact group color": {
@@ -7436,8 +7541,8 @@
       "Conversation moved to ${ folderName }.": [
         "Yazışma ${ folderName } klasörüne taşındı."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Yazışma İstenmeyenler klasörüne taşındı ve gönderici engellenenler listenize eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
@@ -7493,14 +7598,14 @@
       "Message marked as unread.": [
         "İletiyi okunmamış olarak işaretlendi."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "İleti ${ folderName } klasörüne taşındı ve gönderici izin verilenler listenize eklendi."
       ],
       "Message moved to ${ folderName }.": [
         "İleti ${ folderName } klasörüne taşındı."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Ileti İstenmeyen kutusuna taşındı ve gönderici engellenenler listenize eklendi."
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."
@@ -7939,10 +8044,10 @@
         "Gelen kutusuna taşı"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Gelen kutusuna taşı (istenmeyen değil)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "İstenmeyen kutusuna taşı"
       ],
       "Move to trash": [
         "Çöpe at"

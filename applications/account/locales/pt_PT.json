@@ -323,10 +323,10 @@
       "No": [
         "Não"
       ],
-      "Ok": [
+      "OK": [
         "Aceitar"
       ],
-      "OK": [
+      "Ok": [
         "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -371,11 +371,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -721,6 +721,53 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclui"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mais popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtenha o lidar"
+      ],
+      "Get the deal now": [
+        "Obtenha a promoção já"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
       ]
     },
     "Bridge version load failed": {
@@ -1152,20 +1199,6 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou provisoriamente o seu convite para ${ eventTitle }"
-      ]
-    },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
       ]
     },
     "Email subject": {
@@ -1796,11 +1829,6 @@
       ],
       "starred": [
         "com estrela"
-      ]
-    },
-    "FilterSettings": {
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4114,9 +4142,6 @@
       "General": [
         "Geral"
       ],
-      "Go to subscription plans": [
-        "Ir para os planos de subscrição"
-      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -4137,9 +4162,6 @@
       ],
       "Terms": [
         "Termos"
-      ],
-      "Upgrade": [
-        "Actualizar"
       ],
       "Upgrade account": [
         "Actualizar conta"
@@ -5237,9 +5259,6 @@
       ],
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add user": [
         "Adicionar utilizador"

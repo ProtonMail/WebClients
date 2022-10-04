@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
+      "Authenticate": [
+        "驗證"
+      ],
       "Back": [
         "返回"
       ],
@@ -575,6 +578,9 @@
       "Use for sending": [
         "用於傳送郵件"
       ],
+      "Use recovery code": [
+        "使用復原代碼"
+      ],
       "Verify": [
         "驗證"
       ],
@@ -630,6 +636,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "若您遇上問題，您隨時可以停止體驗測試版。"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "測試版"
+      ],
+      "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準價格：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最熱門"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Get the deal now": [
+        "立即取得優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "省下 ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "一個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
       ]
     },
     "Bug category": {
@@ -2574,9 +2633,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
-      "Delete drive": [
-        "刪除雲端硬碟"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
       ],
@@ -2870,9 +2926,6 @@
       ],
       "Paused": [
         "已暫停"
-      ],
-      "Permanently delete all files in your drive": [
-        "永久刪除雲端硬碟中所有文件"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
@@ -3669,6 +3722,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "是的，我想要永久刪除我的舊檔案"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ]
     },
     "Label for contact group color": {
@@ -3704,9 +3760,6 @@
       "clearing your browser cache": [
         "清除瀏覽器快取"
       ],
-      "Go to subscription plans": [
-        "前往訂閱方案"
-      ],
       "Learn more": [
         "了解更多"
       ],
@@ -3721,9 +3774,6 @@
       ],
       "Trash": [
         "垃圾桶"
-      ],
-      "Upgrade": [
-        "升級"
       ],
       "Upgrade account": [
         "升級帳號"
@@ -4311,11 +4361,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見回饋已傳送"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/月"
       ]
     },
     "Table header": {

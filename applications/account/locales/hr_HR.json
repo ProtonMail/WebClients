@@ -341,10 +341,10 @@
       "No": [
         "Ne"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -392,11 +392,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -766,6 +766,59 @@
       ],
       "Two-year": [
         "2 godine"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Uključuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standardna cijena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Ovaj se pretplatnički odnos automatski obnavlja nakon dvije godine po istoj cijeni dok se ne otkaže."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Najpopularniji odabir"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Get the deal now": [
+        "Ugrabite ponudu sada"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "mjesečno"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Posebna ponuda"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mjesec"
+      ],
+      "12 months": [
+        "12 mjeseci"
+      ],
+      "24 months": [
+        "24 mjeseca"
       ]
     },
     "Bridge version load failed": {
@@ -1199,20 +1252,6 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } je uvjetno prihvatio vašu pozivnicu za ${ eventTitle }"
-      ]
-    },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
       ]
     },
     "Email subject": {
@@ -1832,11 +1871,6 @@
       ],
       "starred": [
         "označeno zvijezdicom"
-      ]
-    },
-    "FilterSettings": {
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4088,9 +4122,6 @@
       "General": [
         "Općenito"
       ],
-      "Go to subscription plans": [
-        "Idi na planove pretplate"
-      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -4111,9 +4142,6 @@
       ],
       "Terms": [
         "Uvjeti"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
       ],
       "Upgrade account": [
         "Nadogradi račun"
@@ -5212,9 +5240,6 @@
       ],
       "Add Sieve filter": [
         "Dodaj Sieve filtar"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add user": [
         "Dodaj korisnika"

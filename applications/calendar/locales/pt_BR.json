@@ -55,6 +55,9 @@
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -253,7 +256,7 @@
         "Importar de .csv ou vCard"
       ],
       "Join calendar": [
-        "Juntar a calendário"
+        "Juntar ao calendário"
       ],
       "Load image": [
         "Carregar imagem"
@@ -489,8 +492,14 @@
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
       ],
+      "Use authentication code": [
+        "Usar código de autenticação"
+      ],
       "Use for sending": [
         "Usar para envio"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperação"
       ],
       "Verify": [
         "Verificar"
@@ -661,6 +670,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Se você tiver problemas, poderá desativar o Acesso beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclui"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preço normal: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta assinatura será renovada automaticamente após 2 anos pelo mesmo valor, a menos que seja cancelada."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mais popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obter oferta"
+      ],
+      "Get the deal now": [
+        "Obter oferta agora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
       ]
     },
     "Bug category": {
@@ -2676,6 +2738,16 @@
         "Seu comentário"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -4150,6 +4222,9 @@
       ],
       "Your calendar URL": [
         "URL do seu calendário"
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
       ]
     },
     "Label for contact group color": {
@@ -4188,9 +4263,6 @@
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
-      "Go to subscription plans": [
-        "Ir para planos de assinatura"
-      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -4205,9 +4277,6 @@
       ],
       "Subscribed calendars": [
         "Calendários assinados"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ],
       "Upgrade account": [
         "Fazer upgrade de conta"
@@ -4246,7 +4315,7 @@
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        ""
+        "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4303,7 +4372,7 @@
     },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
-        "Juntar a calendário"
+        "Juntar ao calendário"
       ],
       "Unable to join more calendars": [
         "Incapaz de juntar mais calendários"
@@ -4975,7 +5044,7 @@
         "Não perca nenhum evento"
       ],
       "Easily accept invites": [
-        "Aceita facilmente convites"
+        "Aceite convites facilmente"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenha até 18 meses de ${ planName } gratuitamente"
@@ -5176,11 +5245,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentário enviado"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mês"
       ]
     },
     "Table header": {

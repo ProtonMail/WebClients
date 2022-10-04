@@ -86,6 +86,9 @@
       "Attachment": [
         "Prilog"
       ],
+      "Authenticate": [
+        "Autenticiraj"
+      ],
       "Back": [
         "Natrag"
       ],
@@ -366,9 +369,6 @@
       "Hide messages": [
         "Sakrij poruke"
       ],
-      "Hide My Email": [
-        "Hide My Email"
-      ],
       "I have a question": [
         "Imam pitanje"
       ],
@@ -505,6 +505,12 @@
       ],
       "Move to inbox": [
         "Premjesti u pristiglu poštu"
+      ],
+      "Move to inbox (not spam)": [
+        "Premjesti u pristiglu poštu (nije neželjena pošta)"
+      ],
+      "Move to spam": [
+        "Premjesti u neželjenu poštu"
       ],
       "Move to trash": [
         "Premjesti u otpad"
@@ -829,6 +835,9 @@
       "Use for sending": [
         "Koristi za slanje"
       ],
+      "Use recovery code": [
+        "Koristi kôd za oporavak"
+      ],
       "Use “${ label }” setting": [
         "Koristi “${ label }” postavku"
       ],
@@ -976,6 +985,59 @@
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Uključuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standardna cijena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Ovaj se pretplatnički odnos automatski obnavlja nakon dvije godine po istoj cijeni dok se ne otkaže."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Najpopularniji odabir"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Get the deal now": [
+        "Ugrabite ponudu sada"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "mjesečno"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Posebna ponuda"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mjesec"
+      ],
+      "12 months": [
+        "12 mjeseci"
+      ],
+      "24 months": [
+        "24 mjeseca"
       ]
     },
     "Bug category": {
@@ -3533,6 +3595,9 @@
       ],
       "without attachments": [
         "bez privitaka"
+      ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
       ]
     },
     "Label for contact group color": {
@@ -4443,9 +4508,6 @@
       "Conversation moved to ${ folderName }.": [
         "Razgovor premješten u ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Draft deleted": [
         "Skica izbrisana"
       ],
@@ -4479,14 +4541,8 @@
       "Message marked as legitimate": [
         "Poruka označena legitimnom"
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Poruka premještena u ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Move ${ selectionCount } conversation": [
         "Premjesti ${ selectionCount } razgovor",
@@ -4858,10 +4914,10 @@
         "Premjesti u pristiglu poštu"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Premjesti u pristiglu poštu (nije neželjena pošta)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Premjesti u neželjenu poštu"
       ],
       "Move to trash": [
         "Premjesti u otpad"
