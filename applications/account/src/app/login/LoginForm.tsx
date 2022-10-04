@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Card } from '@proton/atoms';
 import {
     Button,
-    ButtonLike,
     Challenge,
     ChallengeError,
     ChallengeRef,
@@ -115,6 +114,12 @@ const LoginForm = ({
         <Href className="color-inherit" key="learn-more" url={getKnowledgeBaseUrl('/keep-me-signed-in')}>
             {c('Info').t`Why?`}
         </Href>
+    );
+
+    const signUp = (
+        <Link key="signup" className="link text-nowrap" to={SSO_PATHS.SIGNUP}>
+            {c('Link').t`Create account`}
+        </Link>
     );
 
     const loading = challengeLoading || trustedDeviceRecoveryFeature?.loading;
@@ -230,20 +235,16 @@ const LoginForm = ({
                     }
                 </Button>
 
-                <ButtonLike
-                    className="mt1"
-                    fullWidth
-                    size="large"
-                    shape="outline"
-                    color="norm"
-                    as={Link}
-                    to={SSO_PATHS.SIGNUP}
-                    disabled={submitting}
-                >
-                    {c('Action').t`Create free account`}
-                </ButtonLike>
+                <div className="text-center mt1-25">
+                    {
+                        // translator: Full sentence "New to Proton? Create account"
+                        c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
+                    }
+                </div>
 
-                <div className="text-center mt2">
+                <hr className="my1-25" />
+
+                <div className="text-center">
                     <SupportDropdown content={c('Link').t`Trouble signing in?`}>
                         <Link
                             to={SSO_PATHS.RESET_PASSWORD}
