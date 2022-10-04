@@ -1,7 +1,6 @@
 import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
-import debounce from '@proton/utils/debounce';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
@@ -18,30 +17,27 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
     const isMountedCallback = useIsMounted();
     const prevHeightRef = useRef<number>(0);
 
-    const debouncedSetIframeHeight = useCallback(
-        debounce(() => {
-            if (!isMountedCallback() || !iframeRef || !iframeRef.current) {
-                return;
-            }
+    const setIframeHeight = useCallback(() => {
+        if (!isMountedCallback() || !iframeRef || !iframeRef.current) {
+            return;
+        }
 
-            const emailContentRoot = iframeRef.current?.contentWindow?.document.getElementById(MESSAGE_IFRAME_ROOT_ID);
-            const prevHeight = prevHeightRef.current;
-            const height = emailContentRoot?.scrollHeight;
+        const emailContentRoot = iframeRef.current?.contentWindow?.document.getElementById(MESSAGE_IFRAME_ROOT_ID);
+        const prevHeight = prevHeightRef.current;
+        const height = emailContentRoot?.scrollHeight;
 
-            if (!emailContentRoot || height === undefined) {
-                return;
-            }
+        if (!emailContentRoot || height === undefined) {
+            return;
+        }
 
-            const heightIsOutOfBoudaries =
-                height && (height > prevHeight + ALLOWED_PX_INTERVAL || height < prevHeight - ALLOWED_PX_INTERVAL);
+        const heightIsOutOfBoudaries =
+            height && (height > prevHeight + ALLOWED_PX_INTERVAL || height < prevHeight - ALLOWED_PX_INTERVAL);
 
-            if (heightIsOutOfBoudaries) {
-                prevHeightRef.current = height;
-                iframeRef.current.style.height = `${height}px`;
-            }
-        }, 150),
-        []
-    );
+        if (heightIsOutOfBoudaries) {
+            prevHeightRef.current = height;
+            iframeRef.current.style.height = `${height}px`;
+        }
+    }, []);
 
     useEffect(() => {
         if (!startObserving) {
@@ -49,14 +45,14 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
         }
 
         // We're ready set some height
-        debouncedSetIframeHeight();
+        setIframeHeight();
 
         const iframeRootDiv = iframeRef.current?.contentWindow?.document.getElementById(
             MESSAGE_IFRAME_ROOT_ID
         ) as HTMLDivElement;
 
         const resizeObserver = new ResizeObserver(() => {
-            debouncedSetIframeHeight();
+            setIframeHeight();
         });
 
         // Only checks iframe root div widths changes (window resize or inner resize when column mailbox layout is set)
@@ -64,7 +60,6 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
 
         return () => {
             resizeObserver.disconnect();
-            debouncedSetIframeHeight.abort();
         };
     }, [startObserving]);
 };
