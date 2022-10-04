@@ -13,10 +13,6 @@ export interface CollapsibleHeaderOwnProps {
      */
     suffix?: ReactNode;
     /**
-     * Disables the header.
-     */
-    disabled?: boolean;
-    /**
      * Disables the header content from growing to fill available space.
      */
     disableFullWidth?: boolean;
