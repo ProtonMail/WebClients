@@ -451,7 +451,7 @@
         "Definir como padrão"
       ],
       "Mark as not spam": [
-        "Marcar como não spam"
+        "Marcar como não é spam"
       ],
       "Mark as spam": [
         "Marcar como spam"
@@ -486,11 +486,11 @@
       "Non spam": [
         "Não é spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -543,11 +543,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Atualizar"
@@ -1069,6 +1069,59 @@
         "Dois anos"
       ]
     },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclui"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preço normal: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta assinatura será renovada automaticamente após 2 anos pelo mesmo valor, a menos que seja cancelada."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mais popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obter oferta"
+      ],
+      "Get the deal now": [
+        "Obter oferta agora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ]
+    },
     "breadcrumb": {
       "Calendars": [
         "Calendários"
@@ -1201,6 +1254,12 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Você atingiu a quantidade máxima de calendários pessoais que podem ser criados em seu plano."
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Você atingiu o número máximo de calendários pessoais que pode ter. Para aceitar convites de agenda pendentes, você precisa remover algumas de suas agendas."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Você atingiu o número máximo de calendários compartilhados que pode ter. Para aceitar convites de agenda pendentes, você precisa remover algumas de suas agendas."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Você atingiu o número máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendário assinado.",
@@ -2492,6 +2551,12 @@
       "Error on row ${ rowsThatErrored }.": [
         "Erro na linha ${ rowsThatErrored }."
       ],
+      "It looks like your file is missing the 'EmailAddresses' header.": [
+        "Parece que seu arquivo não tem o cabeçalho 'EmailAddresses'."
+      ],
+      "It looks like your file is missing the 'Password' header.": [
+        "Parece que seu arquivo não tem o cabeçalho 'Password'."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Detectamos erros em várias linhas durante a importação, por favor revise o seu arquivo CSV."
       ]
@@ -2632,8 +2697,20 @@
       "${ name } failed to move to Non spam List": [
         "${ name } falhou ao mover para a lista de não spam"
       ],
+      "${ name } failed to move to spam list": [
+        "${ name } falhou ao mover para a lista de spam"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } falhou ao mover para a sua lista de bloqueio"
+      ],
       "${ name } moved to Non spam list": [
         "${ name } movido para a lista de não spam"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } movido para a lista de Spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } movido para a sua lista de bloqueados"
       ],
       "${ name } successfully deleted": [
         "${ name } excluído com sucesso"
@@ -2734,23 +2811,23 @@
       "${ name } deletion failed": [
         "Falha na exclusão de ${ name }"
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "${ name } falhou ao mover para a lista de não spam"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "${ name } falhou ao mover para a lista de spam"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "${ name } falhou ao mover para a sua lista de bloqueio"
       ],
       "${ name } moved to Non spam list": [
         "${ name } movido para a lista de não spam"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "${ name } movido para a lista de Spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } movido para a sua lista de bloqueados"
       ],
       "${ name } successfully deleted": [
         "${ name } excluído com sucesso"
@@ -3642,7 +3719,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Arquivados"
+        "Arquivo"
       ],
       "Do not move": [
         "Não mover"
@@ -3714,8 +3791,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "E-mails de endereços bloqueados não serão entregues."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Pesquise nas suas listas de permissões e bloqueios"
       ]
     },
     "Font Face Default": {
@@ -4765,6 +4842,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
       ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Baixe nosso modelo CSV, preencha os detalhes do usuário e, em seguida, carregue seu arquivo CSV completo para criar as contas para esses usuários."
+      ],
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
       ],
@@ -5062,7 +5142,7 @@
         "Saiba mais"
       ],
       "learn more about Sieve programming language": [
-        "Saiba mais sobre a linguagem de programação Sieve"
+        "saber mais sobre a linguagem de programação Sieve"
       ],
       "Left to Right": [
         "Esquerda para direita"
@@ -7059,7 +7139,7 @@
         "Mostrar fuso horário secundário"
       ],
       "Show week numbers": [
-        "Exibir números da semana"
+        "Exibir números das semanas"
       ],
       "Sign external messages": [
         "Assinar mensagens externas"
@@ -7397,9 +7477,6 @@
       "General": [
         "Geral"
       ],
-      "Go to subscription plans": [
-        "Ir para planos de assinatura"
-      ],
       "How to unlock data": [
         "Como desbloquear dados"
       ],
@@ -7444,9 +7521,6 @@
       ],
       "Trouble signing in?": [
         "Problemas para fazer login?"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ],
       "Upgrade account": [
         "Upgrade de conta"
@@ -7505,7 +7579,7 @@
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        ""
+        "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -8212,6 +8286,17 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Avaliação do ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Fazer upgrade para o ${ planName }"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -8233,17 +8318,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Avaliação do ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Fazer upgrade para o ${ planName }"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -8797,8 +8871,14 @@
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } para adicionar mais usuários, ou remover algumas contas de usuário para liberar espaço."
       ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } para obter mais contas ou remover o acesso VPN de alguns usuários."
+      ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
         "${ upgradeLink } para adicionar mais endereços, ou remover alguns endereços para liberar espaço."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } para obter mais armazenamento ou remova algo do armazenamento para liberar espaço."
       ],
       "Your plan includes a maximum of ${ availableAddresses } address.": [
         "Seu plano inclui um máximo de ${ availableAddresses } endereço.",
@@ -8807,6 +8887,10 @@
       "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
         "Seu plano inclui um máximo de ${ availableNumberOfMembers } usuário para a organização.",
         "Seu plano inclui um máximo de ${ availableNumberOfMembers } usuários para a organização."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+        "Seu plano inclui no máximo ${ availableVPNAccess } conta de VPN.",
+        "Seu plano inclui no máximo ${ availableVPNAccess } contas de VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
         "Seu plano inclui um máximo de ${ humanReadableAvailableSpace } armazenamento."
@@ -9625,9 +9709,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/mês"
-      ],
       "per month": [
         "por mês"
       ]
@@ -9814,11 +9895,14 @@
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
+      "Add to non spam list": [
+        "Adicionar à lista de não spam"
       ],
       "Add to spam list": [
         "Adicionar à lista de spam"
+      ],
+      "Add to your block list": [
+        "Adicionar na sua lista de bloqueio"
       ],
       "Add user": [
         "Adicionar usuário"
@@ -10422,7 +10506,7 @@
         "Ordenar marcadores alfabeticamente"
       ],
       "Spam and block list": [
-        "Spam e lista de bloqueio"
+        "Lista de spam e de bloqueados"
       ],
       "Start a new import": [
         "Iniciar uma nova importação"
@@ -10441,6 +10525,10 @@
       ],
       "Success": [
         "Sucesso"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Conta de usuário ${ successfullyCreatedUsers.length } criada com sucesso",
+        "Contas de usuário ${ successfullyCreatedUsers.length } criadas com sucesso"
       ],
       "Switch to one-password mode": [
         "Alternar para modo de senha única"
@@ -10786,6 +10874,9 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Atualize para um plano pago do Mail para criar até ${ MAX_CALENDARS_PAID } calendário, permitindo que você crie calendários para o trabalho, para compartilhar com amigos e apenas para você.",
         "Atualize para um plano pago do Mail para criar até ${ MAX_CALENDARS_PAID } calendários, permitindo que você crie calendários para o trabalho, para compartilhar com amigos e apenas para você."
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Atualize para um plano pago do Mail para compartilhar seu calendário."
       ]
     },
     "User referee invited via email": {

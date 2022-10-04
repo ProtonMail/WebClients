@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
+      "Authenticate": [
+        "Autentificare"
+      ],
       "Back": [
         "Înapoi"
       ],
@@ -576,8 +579,14 @@
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
       ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
       "Use for sending": [
         "Folosire pentru trimitere"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
       ],
       "Verify": [
         "Verificare"
@@ -634,6 +643,62 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preț standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Cel mai bun"
+      ],
+      "Most popular": [
+        "Cel mai popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Get the deal now": [
+        "Obțineți oferta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pe lună"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 luni"
       ]
     },
     "Bug category": {
@@ -2057,6 +2122,24 @@
         "Experiența personală"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
     "file size format": {
       "byte": [
         "bait",
@@ -2754,11 +2837,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
       ],
-      "Delete drive": [
-        "Ștergere unitate",
-        "Ștergere unități",
-        "Ștergere unități"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
       ],
@@ -2795,6 +2873,9 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar odată."
+      ],
       "Enabling drive search": [
         "Se activează căutarea în unitate."
       ],
@@ -2804,11 +2885,17 @@
       "Encrypted search is here": [
         "Căutarea criptată este aici"
       ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Timp estimat rămas: un minut",
@@ -3058,9 +3145,6 @@
       ],
       "Paused": [
         "Suspendat"
-      ],
-      "Permanently delete all files in your drive": [
-        "Ștergeți permanent toate fișierele din unitate"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
@@ -3342,6 +3426,9 @@
       "What would you like to do?": [
         "Ce v-ar plăcea să faceți?"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
       ],
@@ -3513,6 +3600,9 @@
       ],
       "Audio file": [
         "Fișier audio"
+      ],
+      "Authenticator app": [
+        "Aplicație Authenticator"
       ],
       "Automatically save contacts": [
         "Salvare automată contacte"
@@ -3869,6 +3959,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Da, vreau să șterg definitiv\nfișierele mele vechi."
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
       ]
     },
     "Label for contact group color": {
@@ -3904,9 +3997,6 @@
       "clearing your browser cache": [
         "golind bufferul navigatorului"
       ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
       "Learn more": [
         "Detalii"
       ],
@@ -3921,9 +4011,6 @@
       ],
       "Trash": [
         "Gunoi"
-      ],
-      "Upgrade": [
-        "Migrare"
       ],
       "Upgrade account": [
         "Migrare cont"
@@ -4571,11 +4658,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/lună"
       ]
     },
     "Table header": {

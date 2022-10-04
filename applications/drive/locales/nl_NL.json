@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Back": [
         "Terug"
       ],
@@ -574,6 +577,9 @@
       "Use for sending": [
         "Gebruik voor verzenden"
       ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
+      ],
       "Verify": [
         "Verifiëer"
       ],
@@ -629,6 +635,62 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bètaversie"
+      ],
+      "Includes": [
+        "Inclusief"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standaardprijs: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Beste deal"
+      ],
+      "Most popular": [
+        "Populairste keuze"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Get the deal now": [
+        "Pak nu deze deal"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per maand"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
       ]
     },
     "Bug category": {
@@ -1854,11 +1916,17 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw mapnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw labels zijn gereserveerd. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -2394,6 +2462,9 @@
       "contacts": [
         "contactpersonen"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV of een VCF (vCard) bestand"
+      ],
       "full calendar view": [
         "volledige agendaweergave"
       ],
@@ -2692,10 +2763,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
-      "Delete drive": [
-        "Verwijder drive",
-        "Verwijder drives"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
       ],
@@ -2987,9 +3054,6 @@
       "Paused": [
         "Gepauzeerd"
       ],
-      "Permanently delete all files in your drive": [
-        "Verwijder permanent alle bestanden op uw schijf"
-      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
@@ -3092,6 +3156,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Deelbare koppeling voor ${ boldNameText }"
+      ],
+      "Shared link failed to be loaded": [
+        "De gedeelde link kon niet worden geladen"
       ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
@@ -3788,6 +3855,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ja, ik wil permanent\nmijn oude bestanden verwijderen"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3823,9 +3893,6 @@
       "clearing your browser cache": [
         "uw browser cache wissen"
       ],
-      "Go to subscription plans": [
-        "Ga naar abonnementen"
-      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -3840,9 +3907,6 @@
       ],
       "Trash": [
         "Prullenbak"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ],
       "Upgrade account": [
         "Account upgraden"
@@ -4442,11 +4506,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback verzonden"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/maand"
       ]
     },
     "Table header": {

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -496,8 +499,14 @@
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
       ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
       "Use for sending": [
         "Używaj do wysyłania"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
       ],
       "Verify": [
         "Zweryfikuj"
@@ -668,6 +677,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Zawiera"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standardowa cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Subskrypcja zostanie odnowiona automatycznie po 2 latach za tę samą cenę aż do momentu anulowania jej."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Najpopularniejszy"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Get the deal now": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "miesięcznie"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
       ]
     },
     "Bug category": {
@@ -2733,6 +2795,24 @@
         "Twoja opinia"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -3470,11 +3550,20 @@
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
+      "Each code can only be used once": [
+        "Każdy kod może zostać użyty tylko jeden raz"
+      ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administratora organizacji)."
       ],
       "Existent and added participants will be notified.": [
         "Obecni i dodani uczestnicy zostaną powiadomieni."
@@ -3759,7 +3848,7 @@
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
+        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -3799,6 +3888,9 @@
       ],
       "Week": [
         "Tydzień"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
       "Which event would you like to delete?": [
         "Które wydarzenie chcesz usunąć?"
@@ -4000,6 +4092,9 @@
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
+      ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
       ],
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
@@ -4291,6 +4386,9 @@
       ],
       "Your calendar URL": [
         "Twój adres URL kalendarza"
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
       ]
     },
     "Label for contact group color": {
@@ -4329,9 +4427,6 @@
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
-      "Go to subscription plans": [
-        "Przejdź do planów subskrypcji"
-      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -4346,9 +4441,6 @@
       ],
       "Subscribed calendars": [
         "Subskrybowane kalendarze"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ],
       "Upgrade account": [
         "Ulepsz konto"
@@ -4451,7 +4543,7 @@
     },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
-        "Użytkownik ${ calendarOwnerDisplayName } udostępnił Ci kalendarz ${ boldCalendarName }."
+        "Użytkownik ${ calendarOwnerDisplayName } udostępnił kalendarz ${ boldCalendarName }."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -5403,11 +5495,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/ miesiąc"
       ]
     },
     "Table header": {

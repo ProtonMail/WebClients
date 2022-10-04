@@ -472,11 +472,11 @@
       "Non spam": [
         "No es spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -529,11 +529,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "actualizar la página"
-      ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ],
       "Reload": [
         "Recargar"
@@ -1034,6 +1034,59 @@
       ],
       "Two-year": [
         "Bienal"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Incluye"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Get the deal now": [
+        "Aprovecha la oferta ahora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
       ]
     },
     "breadcrumb": {
@@ -2441,6 +2494,35 @@
         "Los subdominios 'www' no se utilizan para correo electrónico. ¿Estás seguro que quieres utilizar este valor de dominio?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } añadido"
+      ],
+      "${ name } deletion failed": [
+        "${ name } no se pudo eliminar"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } no se pudo mover a la Lista de No-spam"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } no se pudo mover a la lista de spam"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } no se pudo mover a tu lista negra"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } movido a la lista de No-spam"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } movido a la lista de spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } movido a tu lista negra"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado con éxito"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
@@ -2530,17 +2612,32 @@
       ]
     },
     "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
+      "${ name } added": [
+        "${ name } añadido"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } deletion failed": [
+        "${ name } no se pudo eliminar"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to Non spam List": [
+        "${ name } no se pudo mover a la Lista de No-spam"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } failed to move to spam list": [
+        "${ name } no se pudo mover a la lista de spam"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } no se pudo mover a tu lista negra"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } movido a la lista de No-spam"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } movido a la lista de spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } movido a tu lista negra"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado con éxito"
       ]
     },
     "Email subject": {
@@ -3492,8 +3589,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Los correos de las direcciones bloqueadas no serán entregados."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Buscar en tus listas de permitidos y bloqueados"
       ]
     },
     "Font Face Default": {
@@ -7065,9 +7162,6 @@
       "General": [
         "General"
       ],
-      "Go to subscription plans": [
-        "Ir a los planes de suscripción"
-      ],
       "How to unlock data": [
         "Cómo desbloquear datos"
       ],
@@ -7106,9 +7200,6 @@
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
-      ],
-      "Upgrade": [
-        "Mejorar"
       ],
       "Upgrade account": [
         "Mejorar cuenta"
@@ -7864,6 +7955,17 @@
         "Has seleccionado el plan ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Prueba de ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Pasar a ${ planName }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7885,17 +7987,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sube de nivel para disfrutar de funciones prémium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prueba de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Pasar a ${ planName }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -9218,9 +9309,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/mes"
-      ],
       "per month": [
         "por mes"
       ]
@@ -9399,14 +9487,14 @@
       "Add Sieve filter": [
         "Añadir filtro Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Añadir a la lista de no-spam"
       ],
       "Add to spam list": [
         "Añadir a la lista de spam"
+      ],
+      "Add to your block list": [
+        "Añadir a la lista negra"
       ],
       "Add user": [
         "Añadir usuario"

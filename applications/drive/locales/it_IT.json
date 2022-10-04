@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
+      "Authenticate": [
+        "Autentica"
+      ],
       "Back": [
         "Indietro"
       ],
@@ -574,8 +577,14 @@
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
       ],
+      "Use authentication code": [
+        "Usa il codice di autenticazione"
+      ],
       "Use for sending": [
         "Usa per inviare"
+      ],
+      "Use recovery code": [
+        "Utilizza un codice di recupero"
       ],
       "Verify": [
         "Verifica"
@@ -632,6 +641,62 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Prezzo standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Miglior offerta"
+      ],
+      "Most popular": [
+        "Il più richiesto"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Get the deal now": [
+        "Ottieni la promo ora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mese"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offerta Speciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mese"
+      ],
+      "12 months": [
+        "12 mesi"
+      ],
+      "24 months": [
+        "24 mesi"
       ]
     },
     "Bug category": {
@@ -2048,6 +2113,24 @@
         "Il tuo feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -2704,9 +2787,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
-      "Delete drive": [
-        "Elimina spazio",
-        "Elimina spazi"
+      "Delete locked drive": [
+        "Elimina spazio bloccato",
+        "Elimina spazi bloccati"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questo file è stato caricato in modo sicuro da ${ emailAddress }."
@@ -2744,6 +2827,9 @@
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
       ],
+      "Each code can only be used once": [
+        "Ogni codice può essere utilizzato una sola volta"
+      ],
       "Enabling drive search": [
         "Abilitazione della ricerca di unità"
       ],
@@ -2753,11 +2839,17 @@
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
       ],
+      "Enter the code from your authenticator app": [
+        "Inserisci il codice dalla tua app di autenticazione"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo rimanente stimato: ${ estimatedMinutes } minuto",
@@ -3005,8 +3097,8 @@
       "Paused": [
         "In pausa"
       ],
-      "Permanently delete all files in your drive": [
-        "Elimina definitivamente tutti i file nello spazio"
+      "Permanently delete all files in your locked drive": [
+        "Elimina definitivamente tutti i file nello spazio bloccato"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
@@ -3286,6 +3378,9 @@
       "What would you like to do?": [
         "Cosa ti piacerebbe fare?"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
       ],
@@ -3457,6 +3552,9 @@
       ],
       "Audio file": [
         "File audio"
+      ],
+      "Authenticator app": [
+        "App di autenticazione"
       ],
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
@@ -3812,6 +3910,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Sì, voglio eliminare definitivamente\ni miei vecchi file"
+      ],
+      "Your password (admin)": [
+        "La tua password (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3847,9 +3948,6 @@
       "clearing your browser cache": [
         "pulendo la cache del browser"
       ],
-      "Go to subscription plans": [
-        "Vai ai piani di abbonamento"
-      ],
       "Learn more": [
         "Per saperne di più"
       ],
@@ -3864,9 +3962,6 @@
       ],
       "Trash": [
         "Cestino"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
@@ -4487,11 +4582,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Commento inviato"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mese"
       ]
     },
     "Table header": {

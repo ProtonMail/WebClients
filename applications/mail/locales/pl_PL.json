@@ -92,6 +92,9 @@
       "Attachment": [
         "załącznik"
       ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -435,7 +438,7 @@
         "Ukryj wiadomości"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Ukryj mój adres e-mail"
       ],
       "Hide my email": [
         "Ukryj mój adres e-mail"
@@ -604,6 +607,12 @@
       ],
       "Move to inbox": [
         "Przenieś do Odebranych"
+      ],
+      "Move to inbox (not spam)": [
+        "Przenieś do Odebranych (to nie jest spam)"
+      ],
+      "Move to spam": [
+        "Przenieś do Spamu"
       ],
       "Move to spam and unsubscribe": [
         "Przenieś do Spamu i anuluj subskrypcję"
@@ -995,8 +1004,14 @@
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
       ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
       "Use for sending": [
         "Używaj do wysyłania"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Użyj myszy, aby zmienić rozmiar widoku. Jeśli używasz klawiatury, możesz użyć lewego i prawego klawisza strzałki."
@@ -1206,6 +1221,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Zawiera"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standardowa cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Subskrypcja zostanie odnowiona automatycznie po 2 latach za tę samą cenę aż do momentu anulowania jej."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Najpopularniejszy"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Get the deal now": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "miesięcznie"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
       ]
     },
     "Bug category": {
@@ -1927,11 +1995,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Zaznaczono tylko siebie jako nadawcę"
       ]
     },
     "Country name": {
@@ -3292,6 +3355,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Wystąpił problem z wyszukiwaniem zawartości. Zamiast tego używasz domyślnej wyszukiwarki."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Wystąpił problem podczas aktualizowania lokalnych wiadomości. Wiadomości zostaną ponownie pobrane"
+      ],
       "There was an error when exporting the contacts vCards": [
         "Wystąpił błąd podczas eksportowania kontaktów do plików vCard"
       ],
@@ -3607,6 +3673,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Twoja opinia"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klucz bezpieczeństwa"
       ]
     },
     "file size format": {
@@ -4697,6 +4781,9 @@
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
+      "Each code can only be used once": [
+        "Każdy kod może zostać użyty tylko jeden raz"
+      ],
       "Edit encryption": [
         "Edytuj szyfrowanie"
       ],
@@ -4739,11 +4826,17 @@
       "End of search results from past 30 days": [
         "Koniec wyników z ostatnich 30 dni"
       ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administratora organizacji)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
@@ -5337,7 +5430,7 @@
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
+        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -5441,6 +5534,9 @@
       "Updating message content search...": [
         "Aktualizacja wyszukiwania zawartości wiadomości..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Trwa aktualizowanie lokalnych wiadomości. Zawartość wiadomości nie będzie w tym czasie przeszukiwana"
+      ],
       "Upgrade to add more addresses to your account.": [
         "Ulepsz konto, aby dodać więcej adresów."
       ],
@@ -5527,6 +5623,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jeśli włączysz zaufane klucze dla adresu ${ senderName }, klucz publiczny zostanie dodany do szczegółów kontaktu."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -6009,6 +6108,9 @@
       "Attachments": [
         "Zawiera załącznik"
       ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
+      ],
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
@@ -6404,6 +6506,9 @@
       ],
       "Wonderful": [
         "Wspaniale"
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
       ]
     },
     "Label for contact group color": {
@@ -7693,8 +7798,8 @@
       "Conversation moved to ${ folderName }.": [
         "Wątek został przeniesiony do folderu ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Wątek został przeniesiony do Spamu, a nadawca został dodany do listy odrzuconych."
       ],
       "Conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }."
@@ -7750,14 +7855,14 @@
       "Message marked as unread.": [
         "Wiadomość została oznaczona jako nieprzeczytana."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Wiadomość została przeniesiona do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych."
       ],
       "Message moved to ${ folderName }.": [
         "Wiadomość została przeniesiona do folderu ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Wiadomość została przeniesiona do Spamu, a nadawca został dodany do listy odrzuconych."
       ],
       "Message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }."
@@ -8226,10 +8331,10 @@
         "Przenieś do Odebranych"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Przenieś do Odebranych (to nie jest spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Przenieś do Spamu"
       ],
       "Move to trash": [
         "Przenieś do Kosza"

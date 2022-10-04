@@ -92,6 +92,9 @@
       "Attachment": [
         "Anexo"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -431,10 +434,10 @@
         "Ocultar mensagens"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Esconder meu e-mail"
       ],
       "Hide my email": [
-        "Esconda meu e-mail"
+        "Esconder meu e-mail"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -599,6 +602,12 @@
       "Move to inbox": [
         "Mover para caixa de entrada"
       ],
+      "Move to inbox (not spam)": [
+        "Mover para caixa de entrada (não é spam)"
+      ],
+      "Move to spam": [
+        "Mover para spam"
+      ],
       "Move to spam and unsubscribe": [
         "Mover para spam e cancelar a inscrição"
       ],
@@ -660,7 +669,7 @@
         "Abrir navegação"
       ],
       "Open shop": [
-        "Loja aberta"
+        "Abrir loja"
       ],
       "Ordered list": [
         "Lista ordenada"
@@ -987,8 +996,14 @@
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
       ],
+      "Use authentication code": [
+        "Usar código de autenticação"
+      ],
       "Use for sending": [
         "Usar para envio"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperação"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Use o mouse para redimensionar a visualização. Se estiver usando o teclado, você pode usar as teclas de seta para a esquerda e para a direita para redimensionar."
@@ -1196,6 +1211,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Se você tiver problemas, você pode sempre desativar o Acesso beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclui"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preço normal: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta assinatura será renovada automaticamente após 2 anos pelo mesmo valor, a menos que seja cancelada."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mais popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obter oferta"
+      ],
+      "Get the deal now": [
+        "Obter oferta agora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
       ]
     },
     "Bug category": {
@@ -1919,11 +1987,6 @@
         "Yomi"
       ]
     },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Sua seleção contém apenas você como remetente"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abecásia"
@@ -2421,7 +2484,7 @@
         "Ilha Norfolk"
       ],
       "North Korea": [
-        "Coréia do Norte"
+        "Coreia do Norte"
       ],
       "North Macedonia": [
         "Macedônia do Norte"
@@ -3567,6 +3630,16 @@
         "Seu comentário"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -4507,7 +4580,7 @@
       ],
       "Day": [
         "Dia",
-        "dias"
+        "Dias"
       ],
       "Default email application": [
         "Aplicativo de e-mail padrão"
@@ -4667,7 +4740,7 @@
         "Horas"
       ],
       "How Hide My Email works": [
-        "Como o Ocultar meu e-mail funciona"
+        "Como funciona Esconder meu e-mail"
       ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Estou enviando essa mensagem para um não-usuário do Proton Mail."
@@ -4893,7 +4966,7 @@
         "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP/MIME envia automaticamente a mensagem usando o modo compositor atual. Observe que ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
+        "O PGP/MIME envia automaticamente a mensagem usando o modo de composição atual. Por favor, note que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
       "Phone number": [
         "Número do telefone"
@@ -4969,7 +5042,7 @@
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "Reportando uma mensagem como tentativa de phishing, você estará enviando esta mensagem\npara nós, para que possamos analisá-la e melhorar nossos filtros. Isso significa que seremos capazes de ver todo o conteúdo da mensagem."
+        "Reportar uma mensagem como tentativa de phishing enviará a mensagem para nós, para podermos analisá-la e aprimorar nossos filtros. Isso significa que conseguiremos ver todo o conteúdo da mensagem."
       ],
       "Request read receipt": [
         "Solicitar confirmação de leitura"
@@ -5056,7 +5129,7 @@
         "Exibir mensagem original"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "A Entrada Simples é um serviço Proton, e sua Conta Proton inclui os aliases do Ocultar meu e-mail. Para começar a mascarar seu endereço de e-mail, acesse Entrada Simples e crie seu primeiro alias."
+        "O SimpleLogin é um serviço do Proton, e sua Conta do Proton inclui os aliases do Ocultar meu e-mail. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O Login Simples fornece uma maneira simples de criar logins em sites de terceiros não confiáveis, nos quais você não deseja expor seu endereço de e-mail real."
@@ -5132,7 +5205,7 @@
         "Houve um erro com a assinatura usada para verificar os detalhes do contato, o que pode ser o resultado de uma redefinição da senha."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Eles não podem enviar spam para você se não souberem seu endereço eletrônico. Proteja sua caixa de entrada com Ocultar meu endereço eletrônico."
+        "Não podem enviar spam para você se não souberem seu endereço eletrônico. Proteja sua caixa de entrada com Ocultar meu endereço eletrônico."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
@@ -5869,7 +5942,7 @@
         "Condições"
       ],
       "Confirm password": [
-        "Confirme a senha"
+        "Confirmar senha"
       ],
       "Contacts": [
         "Contatos"
@@ -6160,7 +6233,7 @@
         "Então"
       ],
       "Time": [
-        "Horário"
+        "Hora"
       ],
       "To": [
         "Até"
@@ -6215,6 +6288,9 @@
       ],
       "Wonderful": [
         "Maravilhoso"
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
       ]
     },
     "Label for contact group color": {
@@ -6476,7 +6552,7 @@
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        ""
+        "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7432,9 +7508,6 @@
       "Conversation moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Conversa removida de ${ labelName }."
       ],
@@ -7489,14 +7562,8 @@
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Mensagem removida de ${ labelName }."
@@ -7935,10 +8002,10 @@
         "Mover para caixa de entrada"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Mover para caixa de entrada (não é spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Mover para spam"
       ],
       "Move to trash": [
         "Mover para lixeira"

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Authenticate": [
+        "Аутентифицировать"
+      ],
       "Back": [
         "Назад"
       ],
@@ -499,6 +502,9 @@
       "Use for sending": [
         "Использовать для отправки"
       ],
+      "Use recovery code": [
+        "Использовать код восстановления"
+      ],
       "Verify": [
         "Подтвердить"
       ],
@@ -668,6 +674,97 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Если вы столкнетесь с проблемами, вы всегда можете отключить доступ к Beta."
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Воспользоваться"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "бета"
+      ],
+      "Includes": [
+        "Включает"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Лучшее предложение"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Get the deal now": [
+        "Получить скидку"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "– ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        "Условия специального предложения"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Спецпредложение"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bug category": {
@@ -4291,6 +4388,9 @@
       ],
       "Your calendar URL": [
         "URL вашего календаря"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ]
     },
     "Label for contact group color": {
@@ -4329,9 +4429,6 @@
       "clearing your browser cache": [
         "очистка кэша браузера"
       ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -4346,9 +4443,6 @@
       ],
       "Subscribed calendars": [
         "Подписанные календари"
-      ],
-      "Upgrade": [
-        "Улучшить"
       ],
       "Upgrade account": [
         "Улучшить тариф"
@@ -5403,11 +5497,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Отзыв отправлен"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/месяц"
       ]
     },
     "Table header": {

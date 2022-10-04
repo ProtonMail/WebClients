@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Authenticate": [
+        "Otentikasi"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -490,8 +493,14 @@
       "Use ${ label } theme": [
         "Gunakan tema ${ label }"
       ],
+      "Use authentication code": [
+        "Gunakan kode otentikasi"
+      ],
       "Use for sending": [
         "Gunakan untuk pengiriman"
+      ],
+      "Use recovery code": [
+        "Gunakan kode pemulihan"
       ],
       "Verify": [
         "Verifikasi"
@@ -662,6 +671,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Termasuk"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Harga standar: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Paling populer"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
+      "Get the deal now": [
+        "Dapatkan penawaran sekarang"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per bulan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
       ]
     },
     "Bug category": {
@@ -2048,7 +2110,7 @@
         "Salah satu grup tidak memiliki kontak: ${ _list2 }\n\nBeberapa grup tidak memiliki kontak: ${ noContactGroupList }"
       ],
       "${ list } doesn't have a valid email address": [
-        "${ list } tidak memiliki sebuah alamat email yang valid"
+        "${ list } tidak memiliki alamat email yang valid"
       ],
       "${ list } has invalid emails": [
         "${ list } mempunyai alamat email yang tidak valid"
@@ -2263,11 +2325,17 @@
       "Some groups could not be deleted": [
         "Beberapa grup tidak dapat dihapus"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama folder yang bersangkutan dengan menyesuaikan parameter impor Anda."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama label yang bersangkutan dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama ini dengan menyesuaikan parameter impor Anda."
@@ -2658,6 +2726,24 @@
         "Tanggapan Anda"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte"
@@ -3041,6 +3127,9 @@
       "contacts": [
         "kontak"
       ],
+      "CSV or a VCF (vCard) file": [
+        "Berkas CSV atau VCF (vCard)"
+      ],
       "full calendar view": [
         "tampilan kalender seutuhnya"
       ],
@@ -3275,11 +3364,20 @@
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
       ],
+      "Each code can only be used once": [
+        "Masing-masing kode hanya dapat digunakan sekali"
+      ],
+      "Enter the code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
       "Existent and added participants will be notified.": [
         "Peserta yang sudah ada atau yang ditambahkan akan diberi tahu."
@@ -3599,6 +3697,9 @@
       "Week": [
         "Pekan"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+      ],
       "Which event would you like to delete?": [
         "Acara mana yang ingin dihapus?"
       ],
@@ -3799,6 +3900,9 @@
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
+      ],
+      "Authenticator app": [
+        "Aplikasi otentikator"
       ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
@@ -4087,6 +4191,9 @@
       ],
       "Your calendar URL": [
         "URL kalender Anda"
+      ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
       ]
     },
     "Label for contact group color": {
@@ -4125,9 +4232,6 @@
       "clearing your browser cache": [
         "membersihkan cache peramban Anda"
       ],
-      "Go to subscription plans": [
-        "Ke paket langganan"
-      ],
       "Learn more": [
         "Lebih lanjut"
       ],
@@ -4142,9 +4246,6 @@
       ],
       "Subscribed calendars": [
         "Kalender yang dilanggan"
-      ],
-      "Upgrade": [
-        "Pemutakhiran"
       ],
       "Upgrade account": [
         "Tingkatkan akun"
@@ -4177,8 +4278,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli mereka dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ totalLabelsCount } folder yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli mereka dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -5087,11 +5194,6 @@
         "Umpan balik terkirim"
       ]
     },
-    "Suffix for price": {
-      "/month": [
-        "/bulan"
-      ]
-    },
     "Table header": {
       "Action": [
         "Tindakan"
@@ -5478,7 +5580,7 @@
         "Pilih saat Anda ingin notifikasi ini dikirim"
       ],
       "Select which calendar to add this event to": [
-        "Pilih kalender yang akan ditambahkan acara ini"
+        "Pilih ke kalender mana acara ini akan ditambahkan"
       ],
       "Send feedback": [
         "Kirim umpan balik"

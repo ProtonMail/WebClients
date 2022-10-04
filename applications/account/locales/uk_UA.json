@@ -483,10 +483,10 @@
       "Non spam": [
         "Не спам"
       ],
-      "Ok": [
+      "OK": [
         "Гаразд"
       ],
-      "OK": [
+      "Ok": [
         "Гаразд"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -540,11 +540,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -1078,6 +1078,45 @@
       ],
       "Two-year": [
         "Два роки"
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "Включає"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Найпопулярніша"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Get the deal now": [
+        "Скористатися пропозицією"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 місяць"
+      ],
+      "12 months": [
+        "12 місяців"
+      ],
+      "24 months": [
+        "24 місяці"
       ]
     },
     "breadcrumb": {
@@ -2652,14 +2691,29 @@
       ]
     },
     "Domain spam notification": {
+      "${ name } added": [
+        "${ name } додано"
+      ],
       "${ name } deletion failed": [
         "Не вдалося видалити ${ name }"
       ],
       "${ name } failed to move to Non spam List": [
         "Не вдалося перемістити ${ name } до списку не спаму"
       ],
+      "${ name } failed to move to spam list": [
+        "Не вдалося перемістити ${ name } до вашого списку спаму"
+      ],
+      "${ name } failed to move to your block list": [
+        "Не вдалося перемістити ${ name } до вашого списку блокування"
+      ],
       "${ name } moved to Non spam list": [
         "${ name } переміщено до списку не спаму"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } переміщено до списку спаму"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } переміщено до вашого списку блокування"
       ],
       "${ name } successfully deleted": [
         "${ name } успішно видалено"
@@ -2754,26 +2808,29 @@
       ]
     },
     "Email spam notification": {
+      "${ name } added": [
+        "${ name } додано"
+      ],
       "${ name } deletion failed": [
         "Не вдалося видалити ${ name }"
-      ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
       ],
       "${ name } failed to move to Non spam List": [
         "Не вдалося перемістити ${ name } до списку не спаму"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "Не вдалося перемістити ${ name } до вашого списку блокування"
       ],
       "${ name } moved to Non spam list": [
         "${ name } переміщено до списку не спаму"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "${ name } переміщено до списку спаму"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } переміщено до вашого списку блокування"
       ],
       "${ name } successfully deleted": [
         "${ name } успішно видалено"
@@ -3759,8 +3816,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Електронні листи із заблокованих адрес не доставлятимуться."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Шукати у списках дозволених і заблокованих"
       ]
     },
     "Font Face Default": {
@@ -7535,9 +7592,6 @@
       "General": [
         "Загальні"
       ],
-      "Go to subscription plans": [
-        "Перейти до тарифних планів"
-      ],
       "How to unlock data": [
         "Як розблокувати дані"
       ],
@@ -7582,9 +7636,6 @@
       ],
       "Trouble signing in?": [
         "Проблеми з входом?"
-      ],
-      "Upgrade": [
-        "Покращити"
       ],
       "Upgrade account": [
         "Покращити обліковий запис"
@@ -8402,6 +8453,17 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Пробна версія ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Покращити до ${ planName }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -8423,17 +8485,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробна версія ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Покращити до ${ planName }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -9855,9 +9906,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/місяць"
-      ],
       "per month": [
         "на місяць"
       ]
@@ -10050,14 +10098,14 @@
       "Add Sieve filter": [
         "Додати фільтр Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Додати до списку не спаму"
       ],
       "Add to spam list": [
         "Додати до списку спаму"
+      ],
+      "Add to your block list": [
+        "Додати до вашого списку блокування"
       ],
       "Add user": [
         "Додати користувача"

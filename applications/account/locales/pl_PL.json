@@ -489,11 +489,11 @@
       "Non spam": [
         "To nie jest spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -546,10 +546,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -1084,6 +1084,59 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Zawiera"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standardowa cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Subskrypcja zostanie odnowiona automatycznie po 2 latach za tę samą cenę aż do momentu anulowania jej."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Najpopularniejszy"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Get the deal now": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "miesięcznie"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
       ]
     },
     "breadcrumb": {
@@ -2681,8 +2734,20 @@
       "${ name } failed to move to Non spam List": [
         "Usunięcie domeny ${ name } z listy spamu nie powiodło się"
       ],
+      "${ name } failed to move to spam list": [
+        "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
+      ],
+      "${ name } failed to move to your block list": [
+        "Przenoszenie domeny ${ name } do listy odrzuconych nie powiodło się"
+      ],
       "${ name } moved to Non spam list": [
         "Domena ${ name } została usunięta z listy spamu"
+      ],
+      "${ name } moved to spam list": [
+        "Domena ${ name } została przeniesiona do listy spamu"
+      ],
+      "${ name } moved to your block list": [
+        "Domena ${ name } została przeniesiona do listy odrzuconych"
       ],
       "${ name } successfully deleted": [
         "Domena ${ name } została usunięta"
@@ -2783,23 +2848,23 @@
       "${ name } deletion failed": [
         "Usunięcie adresu ${ name } nie powiodło się"
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "Usunięcie adresu ${ name } z listy spamu nie powiodło się"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "Przenoszenie adresu ${ name } do listy spamu nie powiodło się"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "Przenoszenie adresu ${ name } do listy odrzuconych nie powiodło się"
       ],
       "${ name } moved to Non spam list": [
         "Adres ${ name } został usunięty z listy spamu"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "Adres ${ name } został przeniesiony do listy spamu"
+      ],
+      "${ name } moved to your block list": [
+        "Adres ${ name } został przeniesiony do listy odrzuconych"
       ],
       "${ name } successfully deleted": [
         "Adres ${ name } został usunięty"
@@ -3791,8 +3856,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Wiadomości od zablokowanych adresów nie zostaną dostarczone."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Przeszukaj listę dozwolonych i odrzuconych"
       ]
     },
     "Font Face Default": {
@@ -5708,7 +5773,7 @@
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
+        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -7567,9 +7632,6 @@
       "General": [
         "Ogólne"
       ],
-      "Go to subscription plans": [
-        "Przejdź do planów subskrypcji"
-      ],
       "How to unlock data": [
         "Jak odblokować dane"
       ],
@@ -7614,9 +7676,6 @@
       ],
       "Trouble signing in?": [
         "Problem z logowaniem?"
-      ],
-      "Upgrade": [
-        "Ulepsz"
       ],
       "Upgrade account": [
         "Ulepsz konto"
@@ -8434,6 +8493,17 @@
         "Wybrany plan: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Wersja próbna planu ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepszenie do planu ${ planName }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -8455,17 +8525,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Wersja próbna planu ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepszenie do planu ${ planName }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -9915,9 +9974,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/ miesiąc"
-      ],
       "per month": [
         "miesięcznie"
       ]
@@ -10110,14 +10166,14 @@
       "Add Sieve filter": [
         "Dodaj filtr Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Usuń z listy spamu"
       ],
       "Add to spam list": [
         "Dodaj do listy spamu"
+      ],
+      "Add to your block list": [
+        "Dodaj do listy odrzuconych"
       ],
       "Add user": [
         "Dodaj użytkownika"
