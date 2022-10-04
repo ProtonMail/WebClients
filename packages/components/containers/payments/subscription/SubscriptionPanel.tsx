@@ -279,10 +279,14 @@ const SubscriptionPanel = ({
                 }
                 return getDefault();
             })()}
-            {user.isPaid && user.canPay ? (
-                <Button onClick={handleEditPayment} className="mb0-5" size="large" color="weak" fullWidth>{c('Action')
-                    .t`Edit billing details`}</Button>
-            ) : null}
+            {
+                // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
+                user.isPaid && user.canPay ? (
+                    <Button onClick={handleEditPayment} className="mb0-5" size="large" color="weak" fullWidth>{c(
+                        'Action'
+                    ).t`Edit billing details`}</Button>
+                ) : null
+            }
             {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
                 <Button
                     onClick={handleCustomizeSubscription}
