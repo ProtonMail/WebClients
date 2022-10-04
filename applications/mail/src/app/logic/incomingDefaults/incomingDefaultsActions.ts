@@ -56,27 +56,6 @@ export const load = createAsyncThunk<LoadResults, LoadParams>('incomingDefaults/
 
 export const event = createAction<IncomingDefaultEvent>('incomingDefaults/event');
 
-interface AddBlockAddressParams {
-    api: Api;
-    address: string;
-    overwrite?: boolean;
-}
-
-export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockAddressParams>(
-    'incomingDefaults/addBlockAddress',
-    async ({ api, address, overwrite }) => {
-        const result = await api<{ IncomingDefault: IncomingDefault }>(
-            addIncomingDefault({
-                Email: address,
-                Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
-                Overwrite: overwrite,
-            })
-        );
-
-        return result.IncomingDefault;
-    }
-);
-
 interface AddBlockAddressesParams {
     api: Api;
     addresses: string[];
