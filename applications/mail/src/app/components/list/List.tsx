@@ -122,10 +122,9 @@ const List = (
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
-    const { contentIndexingDone } = getESDBStatus();
+    const { shouldHighlight } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
-    const isCompactView = userSettings.Density === DENSITY.COMPACT && !(shouldHighlight() && contentIndexingDone);
+    const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
     const [user] = useUser();
     const onCompose = useOnCompose();
