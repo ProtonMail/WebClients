@@ -138,12 +138,12 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
             className="flex flex-nowrap flex-gap-1 flex-align-items-center flex-justify-space-between color-weak bg-norm py1 px1-5"
             key="ESLimitedContentElement"
         >
-            <hr className="m0 w10 flex-item-grow-2" aria-hidden="true" />
+            <hr className="m0 w10 flex-item-grow-2" />
             <div className="flex wauto flex-nowrap flex-column text-center">
                 {limitedContentTitle}
                 {limitedContentText}
             </div>
-            <hr className="m0 w10 flex-item-grow-2" aria-hidden="true" />
+            <hr className="m0 w10 flex-item-grow-2" />
         </div>
     );
 
