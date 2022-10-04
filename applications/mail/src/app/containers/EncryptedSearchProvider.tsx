@@ -6,29 +6,14 @@ import { c } from 'ttag';
 import {
     FeatureCode,
     useApi,
-    useFeatures,
+    useFeature,
     useGetMessageCounts,
     useGetUserKeys,
-    useNotifications,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
-import {
-    ESProgress,
-    INDEXING_STATUS,
-    cacheMetadata,
-    checkRecoveryFormat,
-    checkVersionedESDB,
-    defaultESCache,
-    defaultESProgress,
-    esSentryReport,
-    getIndexKey,
-    getOldestCachedContentTimepoint,
-    readContentProgress,
-    useEncryptedSearch,
-    writeContentProgress,
-} from '@proton/encrypted-search';
+import { checkVersionedESDB, getOldestCachedContentTimepoint, useEncryptedSearch } from '@proton/encrypted-search';
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -36,15 +21,9 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { getESHelpers, getItemInfo } from '../helpers/encryptedSearch/encryptedSearchMailHelpers';
-import { convertEventType, getTotal } from '../helpers/encryptedSearch/esSync';
+import { convertEventType } from '../helpers/encryptedSearch/esSync';
 import { parseSearchParams } from '../helpers/encryptedSearch/esUtils';
 import { migrate } from '../helpers/encryptedSearch/migration';
-import {
-    activatePartialES,
-    getWindowStart,
-    removeOldContent,
-    revertPartialESActivation,
-} from '../helpers/encryptedSearch/partialES';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import {
     ESBaseMessage,
@@ -70,11 +49,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
-    const [{ update: updateSpotlightES }, { get: getPartialES }] = useFeatures([
-        FeatureCode.SpotlightEncryptedSearch,
-        FeatureCode.PartialEncryptedSearch,
-    ]);
-    const { createNotification } = useNotifications();
+    const { update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
     const { isSearch, page } = parseSearchParams(history.location);
 
     const [esMailStatus, setESMailStatus] = useState<ESDBStatusMail>(defaultESMailStatus);
@@ -89,12 +64,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         history,
     });
 
-    const successMessage = c('Success').t`Message content search activated`;
-
     const esLibraryFunctions = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esHelpers,
-        successMessage,
+        successMessage: c('Success').t`Message content search activated`,
     });
 
     /**
@@ -146,12 +119,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * built at page load)
      */
     const cacheMailContent = async () => {
-        // Kill switch to control the release of partial ES
-        const partialES = await getPartialES();
-        if (!isPaid(user) && !!partialES && !partialES.Value) {
-            return esLibraryFunctions.esDelete();
-        }
-
         const { dbExists, contentIndexingDone } = getESDBStatus();
 
         // If content indexing is over, we can cache content
@@ -172,58 +139,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     /**
-     * Activate the full or partial content search depending
-     * on whether the user is paid or not
-     */
-    const activateContentSearch = async () => {
-        if (isPaid(user)) {
-            return esLibraryFunctions.enableContentSearch();
-        }
-
-        setESMailStatus((esMailStatus) => ({
-            ...esMailStatus,
-            activatingPartialES: true,
-        }));
-
-        const esCacheRef = esLibraryFunctions.getESCache();
-        try {
-            await activatePartialES(api, user, getUserKeys, esHelpers, esCacheRef);
-
-            createNotification({
-                text: successMessage,
-            });
-
-            // After activating partial ES, initializeES is called to set
-            // all the appropriate esDBStatus flags
-            await esLibraryFunctions.initializeES(false);
-        } catch (error: any) {
-            // If something goes wrong, we just need to "clean" the content
-            // part of IDB
-            await revertPartialESActivation(user.ID, esCacheRef);
-
-            createNotification({
-                text: c('Error').t`Something went wrong, please try again`,
-                type: 'error',
-            });
-            void esSentryReport('activatePartialES', error);
-        }
-
-        setESMailStatus((esMailStatus) => ({
-            ...esMailStatus,
-            activatingPartialES: false,
-        }));
-    };
-
-    /**
      * Initialize ES
      */
     const initializeESMail = async () => {
-        // Kill switch to control the release of partial ES
-        const partialES = await getPartialES();
-        if (!isPaid(user) && !!partialES && !partialES.Value) {
-            return esLibraryFunctions.esDelete();
-        }
-
         // Migrate old IDBs
         const success = await migrate(
             user.ID,
@@ -235,129 +153,21 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             await esLibraryFunctions.esDelete();
         }
 
-        // Enable encrypted search for all new users. For paid users only,
-        // automatically enable content search too
-        if (welcomeFlags.isWelcomeFlow && !isMobile()) {
-            // Prevent showing the spotlight for ES to them
-            await updateSpotlightES(false);
-            return esLibraryFunctions.enableEncryptedSearch().then(() => {
-                if (isPaid(user)) {
-                    return esLibraryFunctions.enableContentSearch({ notify: false });
-                }
-            });
-        }
-
-        // Existence of IDB is checked since the following operations interact with it
-        if (!(await checkVersionedESDB(user.ID))) {
-            return;
-        }
-
-        let contentProgress = await readContentProgress(user.ID);
-        if (!contentProgress) {
-            return esLibraryFunctions.initializeES();
-        }
-
-        // We need to cache the metadata directly, since the library is
-        // not yet initialised, i.e. the flags in memory are not yet set.
-        // The reason for not initialising the library just yet is that
-        // in case an upgrade/downgrade is needed, the flags would be set
-        // incorrectly due to the way we encode the latter
-        const indexKey = await getIndexKey(getUserKeys, user.ID);
-        if (!indexKey) {
+        // In case of a downgrade from paid to free, remove everything
+        if ((await checkVersionedESDB(user.ID)) && !isPaid(user)) {
             return esLibraryFunctions.esDelete();
         }
-        const esCacheRef = { current: defaultESCache };
-        await cacheMetadata<ESBaseMessage>(user.ID, indexKey, esHelpers.getItemInfo, esCacheRef);
 
-        if (isPaid(user)) {
-            // Upgrade comes almost for free since we can turn the previously partial
-            // content progress into an indexing one and start from where the time window
-            // left off. This should happen in case a user is paid, has an
-            // ACTIVE content indexing progress and (which is important to tell apart
-            // users with full content search) has a recovery point of the form [number, number]
-            if (
-                contentProgress.status === INDEXING_STATUS.ACTIVE &&
-                checkRecoveryFormat(contentProgress.recoveryPoint)
-            ) {
-                const newContentProgress: ESProgress = {
-                    ...defaultESProgress,
-                    totalItems: await getTotal(getMessageCounts)(),
-                    recoveryPoint: contentProgress.recoveryPoint,
-                    status: INDEXING_STATUS.INDEXING,
-                };
-                await writeContentProgress(
-                    user.ID,
-                    newContentProgress,
-                    esCacheRef.current.esCache,
-                    esHelpers.getItemInfo
-                );
-            }
-        } else {
-            // Downgrade is handled by re-encoding the content progress in the way
-            // partial ES does (i.e. setting the status to ACTIVE, the recoverPoint to
-            // the last message with content, which coincides with the last one for a
-            // previously full index, and leaving all other properties to their default)
-            // and then let the removeOldContent do its job.
-            // This should happen in case a user is not paid, has an
-            // ACTIVE content indexing progress and (which is important to tell apart
-            // users with only partial ES) has no recovery point in the latter
-            if (
-                (contentProgress.status === INDEXING_STATUS.ACTIVE && !contentProgress.recoveryPoint) ||
-                contentProgress.status === INDEXING_STATUS.INDEXING ||
-                contentProgress.status === INDEXING_STATUS.PAUSED
-            ) {
-                // The first message in cache is the oldest
-                const iter = esCacheRef.current.esCache.values().next();
-                const lastTimePoint = iter.done ? undefined : [iter.value.metadata.Time, iter.value.metadata.Order];
-
-                // A last item must exist. If it doesn't we consider it a corruption
-                // therefore we remove everything and we re-index first metadata, then
-                // content only for the last month. Another option is that, in case indexing
-                // was in progress or paused prior to the downgrade, it didn't cover enough
-                // ground to include all messages in the time window
-                if (!lastTimePoint || lastTimePoint[0] > getWindowStart()) {
-                    await esLibraryFunctions.esDelete();
-                    return esLibraryFunctions.enableEncryptedSearch({ isRefreshed: true }).then(activateContentSearch);
-                }
-
-                const lastContentTime = lastTimePoint[0] * SECOND;
-                setESMailStatus((esMailStatus) => ({
-                    ...esMailStatus,
-                    lastContentTime,
-                }));
-
-                const newContentProgress = {
-                    ...defaultESProgress,
-                    recoveryPoint: lastTimePoint,
-                    status: INDEXING_STATUS.ACTIVE,
-                };
-                contentProgress = newContentProgress;
-
-                await writeContentProgress(
-                    user.ID,
-                    newContentProgress,
-                    esCacheRef.current.esCache,
-                    esHelpers.getItemInfo
-                );
-            }
-
-            // If a free user has a partial content index, trim it to the new time window
-            if (checkRecoveryFormat(contentProgress.recoveryPoint)) {
-                try {
-                    await removeOldContent(user.ID, getUserKeys, esCacheRef);
-                } catch (error: any) {
-                    await revertPartialESActivation(user.ID, esCacheRef);
-
-                    createNotification({
-                        text: c('Error').t`Something went wrong, please try again`,
-                        type: 'error',
-                    });
-                    void esSentryReport('removeOldContent', error);
-                }
-            }
+        // Enable encrypted search for all new users
+        if (welcomeFlags.isWelcomeFlow && !isMobile() && isPaid(user)) {
+            // Prevent showing the spotlight for ES to them
+            await updateSpotlightES(false);
+            return esLibraryFunctions
+                .enableEncryptedSearch()
+                .then(() => esLibraryFunctions.enableContentSearch({ notify: false }));
         }
 
-        return esLibraryFunctions.initializeES(false);
+        return esLibraryFunctions.initializeES();
     };
 
     useSubscribeEventManager(async (event: Event) => esLibraryFunctions.handleEvent(convertEventType(event)));
@@ -415,7 +225,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         closeDropdown,
         setTemporaryToggleOff,
         cacheMailContent,
-        activateContentSearch,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

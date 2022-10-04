@@ -881,7 +881,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             esHelpers.getItemInfo,
             TIMESTAMP_TYPE.STOP
         );
-        void sendIndexingMetrics(api, user);
+        void sendIndexingMetrics(api, userID);
 
         if (notify) {
             createNotification({
@@ -1221,7 +1221,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * the EncryptedSearchProvider runs, as it checks for new events, continues indexing in
      * case a previous one was started, checks whether the index key is still accessible
      */
-    const initializeES = async (shouldCache: boolean = true) => {
+    const initializeES = async () => {
         // Check whether the ES IDB exists for the current user. Nothing else is
         // needed in case it doesn't
         if (!(await checkVersionedESDB(userID))) {
@@ -1243,11 +1243,8 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             return dbCorruptError();
         }
 
-        // Cache is needed at load time, unless otherwise specified because
-        // it was already built by another process
-        if (shouldCache) {
-            await cacheMetadata<ESItemMetadata>(userID, indexKey, esHelpers.getItemInfo, esCacheRef);
-        }
+        // Cache is needed at load time
+        await cacheMetadata<ESItemMetadata>(userID, indexKey, esHelpers.getItemInfo, esCacheRef);
 
         if (metadataProgress.status === INDEXING_STATUS.INDEXING) {
             return enableEncryptedSearch();

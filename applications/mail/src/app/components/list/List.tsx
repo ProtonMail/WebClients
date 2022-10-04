@@ -148,20 +148,12 @@ const List = (
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
-    const {
-        showESSlowToolbar,
-        loadingElement,
-        disableGoToLast,
-        useLoadingElement,
-        limitedContentElement,
-        showESLimitedContent,
-        limitedContentIndex,
-    } = useEncryptedSearchList({
+    const { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } = useEncryptedSearchList(
         isSearch,
         loading,
         page,
-        total,
-    });
+        total
+    );
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -223,7 +215,6 @@ const List = (
                         <>
                             {/* div needed here for focus management */}
                             <div>
-                                {showESLimitedContent && limitedContentIndex === -1 && limitedContentElement}
                                 {elements.map((element, index) => (
                                     <Fragment key={element.ID}>
                                         <Item
@@ -246,7 +237,6 @@ const List = (
                                             onFocus={onFocus}
                                             onBack={onBack}
                                         />
-                                        {showESLimitedContent && limitedContentIndex === index && limitedContentElement}
                                     </Fragment>
                                 ))}
                             </div>
