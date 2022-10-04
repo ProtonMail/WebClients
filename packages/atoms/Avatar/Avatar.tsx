@@ -15,7 +15,7 @@ const Avatar = <E extends ElementType = typeof element>({
 }: PolymorphicComponentProps<E, {}>) => {
     const className = clsx(classNameProp, 'avatar rounded inline-flex flex-justify-center flex-align-items-center');
 
-    return <Box as={element} className={className} {...rest} />;
+    return <Box as={element} className={className} {...rest} aria-hidden="true" />;
 };
 
 export default Avatar;
