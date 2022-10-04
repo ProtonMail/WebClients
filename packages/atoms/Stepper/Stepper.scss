@@ -13,7 +13,7 @@
 		&-dot {
 			inline-size: $dot-size;
 			block-size: $dot-size;
-			border-radius: $dot-size / 2;
+			border-radius: 50%;
 		}
 
 		&-connector {
