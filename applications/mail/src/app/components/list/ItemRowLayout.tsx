@@ -20,7 +20,6 @@ import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
-import useEncryptedSearchItem from './useEncryptedSearchItem';
 
 interface Props {
     isCompactView: boolean;
@@ -53,13 +52,12 @@ const ItemRowLayout = ({
     loading,
     onBack,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
+    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
-    const { contentIndexingDone } = getESDBStatus();
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, conversationMode);
 
-    const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
+    const body = (element as ESMessage).decryptedBody;
     const { Subject } = element;
 
     const sendersContent = useMemo(
@@ -86,10 +84,6 @@ const ItemRowLayout = ({
         `${numOccurrences} occurrences found`,
         numOccurrences
     );
-
-    // For free users with limited content search, we want to make obvious that the third
-    // line in an item is the content
-    const { showContentLabel, contentLabel } = useEncryptedSearchItem(!!resultJSX);
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
@@ -135,7 +129,6 @@ const ItemRowLayout = ({
                                 title={bodyTitle}
                                 aria-hidden="true"
                             >
-                                {showContentLabel && contentLabel}
                                 {resultJSX}
                             </span>
                             <span className="sr-only">{bodyTitle}</span>

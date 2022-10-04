@@ -1,8 +1,7 @@
-import { ES_MAX_CACHE, ES_MAX_ITEMS_PER_BATCH } from '../constants';
-import { readContentItemsBatch, readMetadata, readNumContent } from '../esIDB';
-import { CachedItem, ESCache, GetItemInfo } from '../models';
-import { decryptFromDB } from './esSearch';
-import { isTimepointSmaller } from './esUtils';
+import { ES_MAX_CACHE } from '../constants';
+import { ESCache } from '../models';
+import { checkEndSearchReverse, decryptFromDB, initializeTimeBounds, updateBatchTimeBound } from './esSearch';
+import { getNumItemsDB, openESDB } from './esUtils';
 
 /**
  * Estimate the size of a ESItem object in memory
@@ -29,365 +28,229 @@ export const sizeOfESItem = (value: any): number => {
 };
 
 /**
- * Sorting helper to sort in chronological order, i.e. oldest
- * first, based on timepoints. Note that we assume there can
- * be no two equal timepoints, therefore we don't need to ever
- * return 0
+ * Check whether the cache is limited
  */
-export const sortChronologicalOrder = (t1: [number, number], t2: [number, number]) =>
-    isTimepointSmaller(t1, t2) ? -1 : 1;
-
-/**
- * Return the oldest cached item with content, which is the
- * first one with content since the cache is in chronological
- * order
- */
-export const getOldestCachedContentItem = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>
-): Required<CachedItem<ESItemMetadata, ESItemContent>> | undefined => {
-    if (!esCacheRef.current.isContentCached) {
-        return;
-    }
-
-    const values = esCacheRef.current.esCache.values();
-    let value = values.next();
-
-    while (!value.done) {
-        // Since the cache is in chronological order, the first item
-        // to have content must be the oldest to do so
-        if (!!value.value.content) {
-            return { metadata: value.value.metadata, content: value.value.content };
-        }
-        value = values.next();
-    }
-};
-
-/**
- * Return the timepoint of the oldest cached item with content
- */
-export const getOldestCachedContentTimepoint = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
-    if (!esCacheRef.current.isContentCached) {
-        return;
-    }
-
-    const item = getOldestCachedContentItem(esCacheRef);
-    if (!item) {
-        return;
-    }
-
-    return getItemInfo(item.metadata).timepoint;
-};
-
-/**
- * Return the most recent cached item with content
- */
-export const getMostRecentCachedContentItem = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>
-): Required<CachedItem<ESItemMetadata, ESItemContent>> | undefined => {
-    if (!esCacheRef.current.isContentCached) {
-        return;
-    }
-
-    const values = [...esCacheRef.current.esCache.values()];
-    values.reverse();
-
-    // Note that we might need to scan deeper than the first element since it
-    // might be that content isn't there for the first items due to decryption
-    // failure while indexing
-    return values.find((item) => !!item.content) as Required<CachedItem<ESItemMetadata, ESItemContent>> | undefined;
-};
-
-/**
- * Return the timepoint of the oldest cached item with content
- */
-export const getMostRecentCachedContentTimepoint = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
-    if (!esCacheRef.current.isContentCached) {
-        return;
-    }
-
-    const item = getMostRecentCachedContentItem(esCacheRef);
-    if (!item) {
-        return;
-    }
-
-    return getItemInfo(item.metadata).timepoint;
-};
-
-/**
- * Cache the whole metadata table, under the assumption that metadata
- * always fit in memory. The order of insertion into the map is the
- * chronological order, so that such an order is maintained
- * in the data structure
- */
-export const cacheMetadata = async <ESItemMetadata>(
+const checkIsCacheLimited = async <ESItem>(
     userID: string,
-    indexKey: CryptoKey,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    storeName: string
 ) => {
-    const ciphertexts = await readMetadata(userID);
-    if (!ciphertexts) {
-        throw new Error('ESDB cannot be opened to cache metadata');
-    }
-
-    // We sort the items to cache such that the order of insertion into the cache
-    // is the chronological order, i.e. the first element is the oldest. This way
-    // newer messages can simply be set into the map and will be in order
-    const itemsToCache = await Promise.all(
-        ciphertexts.map(async (ciphertext) => decryptFromDB<ESItemMetadata>(ciphertext, indexKey))
-    );
-    itemsToCache.sort((i1, i2) => sortChronologicalOrder(getItemInfo(i1).timepoint, getItemInfo(i2).timepoint));
-
-    itemsToCache.forEach((itemMetadata) => {
-        esCacheRef.current.esCache.set(getItemInfo(itemMetadata).ID, { metadata: itemMetadata });
-        esCacheRef.current.cacheSize += sizeOfESItem(itemMetadata);
-    });
-
-    esCacheRef.current.isCacheReady = true;
+    const count = await getNumItemsDB(userID, storeName);
+    return esCacheRef.current.esCache.length < count;
 };
 
 /**
- * Return a batch of item IDs from metadata cache in reverse chronological order,
- * whose content needs to be fetched from disk
+ * Remove extra items from cache
  */
-export const extractBatch = <ESItemMetadata>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
-    recoveryPoint?: [number, number],
-    batchSize: number = ES_MAX_ITEMS_PER_BATCH
-) => {
-    const entries = [...esCacheRef.current.esCache.entries()];
-    entries.reverse();
-
-    let lastIndex = -1;
-    if (recoveryPoint) {
-        lastIndex = entries.findIndex(
-            ([, { metadata }]) =>
-                getItemInfo(metadata).timepoint[0] === recoveryPoint[0] &&
-                getItemInfo(metadata).timepoint[1] === recoveryPoint[1]
-        );
-        if (lastIndex === -1) {
-            throw new Error('Inconsistent recovery point from cache');
+const trimCache = <ESItem>(esCacheRef: React.MutableRefObject<ESCache<ESItem>>) => {
+    let rollingSize = 0;
+    for (let index = 0; index < esCacheRef.current.esCache.length; index++) {
+        if (rollingSize >= ES_MAX_CACHE) {
+            esCacheRef.current.esCache = esCacheRef.current.esCache.slice(0, index);
+            esCacheRef.current.cacheSize = rollingSize;
+            return;
         }
-    }
 
-    return entries.slice(lastIndex + 1, lastIndex + 1 + batchSize);
+        rollingSize += sizeOfESItem(esCacheRef.current.esCache[index]);
+    }
 };
 
 /**
- * Cache items' content. The cache is always guaranteed to contain all metadata
- * of all items, as well as content (if applicable) up until a hardcoded
- * limit is reached
+ * Callback to sort cached messages by Time and Order, such that the last element is the oldest
  */
-export const cacheContent = async <ESItemMetadata, ESItemContent>(
+const sortCachedItems =
+    <ESItem>(getTimePoint: (item: ESItem) => [number, number]) =>
+    (firstEl: ESItem, secondEl: ESItem) => {
+        const [firstTime, firstOrder] = getTimePoint(firstEl);
+        const [secondTime, secondOrder] = getTimePoint(secondEl);
+        return secondTime - firstTime || secondOrder - firstOrder;
+    };
+
+/**
+ * Cache IndexedDB
+ */
+export const cacheDB = async <ESItem, ESCiphertext>(
     indexKey: CryptoKey,
     userID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    storeName: string,
+    indexName: string,
+    getTimePoint: (item: ESItem | ESCiphertext) => [number, number],
     inputTimeBound?: [number, number]
 ) => {
-    let recoveryPoint = inputTimeBound;
-    // In case the content table is empty, there is nothing to cache
-    const count = await readNumContent(userID);
-    if (!count) {
-        return;
-    }
+    const initialTimeBounds = await initializeTimeBounds<ESCiphertext>(
+        userID,
+        storeName,
+        indexName,
+        getTimePoint,
+        inputTimeBound
+    );
+    const { searchTimeBound } = initialTimeBounds;
+    let { batchTimeBound } = initialTimeBounds;
 
-    esCacheRef.current.isCacheReady = false;
-
-    while (true) {
-        if (esCacheRef.current.isCacheLimited) {
-            break;
-        }
-
+    const esDB = await openESDB(userID);
+    let keepCaching = true;
+    while (keepCaching) {
         // Fetch data from IDB
-        const itemsMetadata = extractBatch<ESItemMetadata>(esCacheRef, getItemInfo, recoveryPoint);
-
-        const storedData = await readContentItemsBatch(
-            userID,
-            itemsMetadata.map(([ID]) => ID)
-        );
-        if (!storedData) {
-            throw new Error('Content caching fetched corrupt data');
-        }
-
-        if (!storedData.length) {
-            break;
-        }
+        const storedData = await esDB.getAllFromIndex(storeName, indexName, batchTimeBound);
 
         // Decrypt and process the retrieved data
-        const decryptedItems = await Promise.all(
-            storedData.map(async ({ aesGcmCiphertext }) => decryptFromDB<ESItemContent>(aesGcmCiphertext, indexKey))
+        await Promise.all(
+            storedData.map(async (storedCiphertext) => {
+                const itemToCache = await decryptFromDB<ESItem, ESCiphertext>(storedCiphertext, indexKey);
+                esCacheRef.current.cacheSize += sizeOfESItem(itemToCache);
+                esCacheRef.current.esCache.push(itemToCache);
+            })
         );
 
-        // Decrypted items are processed one by one in such a way that if
-        // at any point the limit is reached, we stop
-        for (let i = 0; i < decryptedItems.length; i++) {
-            const itemToCache = decryptedItems[i];
-
-            esCacheRef.current.esCache.set(itemsMetadata[i][0], {
-                metadata: itemsMetadata[i][1].metadata,
-                content: itemToCache,
-            });
-            esCacheRef.current.cacheSize += sizeOfESItem(itemToCache);
-
-            if (esCacheRef.current.cacheSize >= ES_MAX_CACHE) {
-                esCacheRef.current.isCacheLimited = true;
-                break;
-            }
-
-            recoveryPoint = getItemInfo(itemsMetadata[i][1].metadata).timepoint;
+        // Check we reached the specified time boundaries
+        if (esCacheRef.current.cacheSize >= ES_MAX_CACHE || checkEndSearchReverse(batchTimeBound, searchTimeBound)) {
+            keepCaching = false;
         }
+
+        // Set the time boundaries for the subsequent batch
+        batchTimeBound = updateBatchTimeBound(batchTimeBound, searchTimeBound);
     }
 
-    esCacheRef.current.isCacheReady = true;
-    esCacheRef.current.isContentCached = true;
+    esDB.close();
+
+    // Sort the cached messages by time, such that the last element is the oldest
+    esCacheRef.current.esCache.sort(sortCachedItems<ESItem>(getTimePoint));
+    // Since batches are processed as a whole, trimming is necessery to make sure the cache
+    // size limit is not exceeded by too much
+    trimCache<ESItem>(esCacheRef);
+    esCacheRef.current.isCacheLimited = await checkIsCacheLimited<ESItem>(userID, esCacheRef, storeName);
 };
 
 /**
- * Remove a single item from cache. If contentOnly is true,
- * the item's metadata is kept, otherwise it is completely
- * removed from cache. It returns the size of the removed item
- * (or portion thereof)
+ * Check whether an item should be added to cache or not
  */
-export const removeFromESCache = <ESItemMetadata, ESItemContent>(
+const checkAddToCache = <ESItem>(
+    newESItem: ESItem,
+    esCache: ESItem[],
+    getTimePoint: (item: ESItem) => [number, number]
+) => {
+    const [Time, Order] = getTimePoint(newESItem);
+    const [lastTime, lastOrder] = getTimePoint(esCache[esCache.length - 1]);
+    return Time > lastTime || (Time === lastTime && Order > lastOrder);
+};
+
+/**
+ * Add a single item to cache, depending on whether the size limit has been reached or not
+ */
+export const addToESCache = <ESItem>(
+    itemToCache: ESItem,
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    getTimePoint: (item: ESItem) => [number, number],
+    itemSize?: number
+) => {
+    if (!esCacheRef.current.esCache.length && !esCacheRef.current.isCacheReady) {
+        return false;
+    }
+
+    let itemAdded = false;
+
+    if (esCacheRef.current.cacheSize < ES_MAX_CACHE) {
+        esCacheRef.current.esCache.push(itemToCache);
+        itemAdded = true;
+    } else if (checkAddToCache(itemToCache, esCacheRef.current.esCache, getTimePoint)) {
+        // It is assumed that the last item is the oldest
+        const lastIndex = esCacheRef.current.esCache.length - 1;
+        esCacheRef.current.cacheSize -= sizeOfESItem(esCacheRef.current.esCache[lastIndex]);
+        esCacheRef.current.esCache[lastIndex] = itemToCache;
+        itemAdded = true;
+    }
+
+    if (itemAdded) {
+        esCacheRef.current.cacheSize += itemSize || sizeOfESItem(itemToCache);
+        // Sort the cached items by time, such that the last element is the oldest
+        esCacheRef.current.esCache.sort(sortCachedItems<ESItem>(getTimePoint));
+    }
+};
+
+/**
+ * Find the index of an item in cache. Should return -1 if the index is not found
+ */
+export const findItemIndex = <ESItem>(
     itemID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    contentOnly: boolean
-) => {
-    let returnSize = 0;
-
-    const item = esCacheRef.current.esCache.get(itemID);
-    if (!item) {
-        return returnSize;
-    }
-
-    if (contentOnly) {
-        esCacheRef.current.esCache.set(itemID, { metadata: item.metadata });
-        returnSize = sizeOfESItem(item.content);
-    } else {
-        esCacheRef.current.esCache.delete(itemID);
-        returnSize = sizeOfESItem(item);
-    }
-
-    esCacheRef.current.cacheSize -= returnSize;
-
-    return returnSize;
-};
+    esCache: ESItem[],
+    getIDStoredItem: (storedItem: ESItem) => string
+) => esCache.findIndex((cachedMessage) => getIDStoredItem(cachedMessage) === itemID);
 
 /**
- * Restructure the cache in such a way that the order of insertion
- * correspond to the chronological order of items
+ * Remove a single item from cache
  */
-export const reorderCache = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
+export const removeFromESCache = <ESItem>(
+    itemToRemove: string,
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    getIDStoredItem: (storedItem: ESItem) => string,
+    messageSize?: number
 ) => {
-    const entries = [...esCacheRef.current.esCache.entries()];
-    entries.sort(([, i1], [, i2]) =>
-        sortChronologicalOrder(getItemInfo(i1.metadata).timepoint, getItemInfo(i2.metadata).timepoint)
-    );
-    esCacheRef.current.esCache.clear();
-
-    entries.forEach(([ID, value]) => {
-        esCacheRef.current.esCache.set(ID, value);
-    });
-};
-
-/**
- * Remove content of older items to make room for the content of the
- * given one
- */
-const freeCacheSpace = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
-    oldestItem: Required<CachedItem<ESItemMetadata, ESItemContent>> | undefined,
-    itemSize: number
-) => {
-    while (oldestItem && esCacheRef.current.esCache.size + itemSize >= ES_MAX_CACHE) {
-        removeFromESCache(getItemInfo(oldestItem.metadata).ID, esCacheRef, true);
-        oldestItem = getOldestCachedContentItem(esCacheRef);
+    const index = findItemIndex(itemToRemove, esCacheRef.current.esCache, getIDStoredItem);
+    if (index !== -1) {
+        const size = messageSize || sizeOfESItem(esCacheRef.current.esCache[index]);
+        esCacheRef.current.cacheSize -= size;
+        esCacheRef.current.esCache.splice(index, 1);
+        return size;
     }
 };
 
 /**
- * Add a single item to cache, depending on whether the size limit has been reached or not.
- * Either way, its metadata is added
+ * Update an existing item in cache with a given one. Since this is an update, the old and
+ * new items are supposed to have the same ID
  */
-export const addToESCache = <ESItemMetadata, ESItemContent>(
-    inputItem: CachedItem<ESItemMetadata, ESItemContent>,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
+export const replaceInESCache = <ESItem>(
+    itemToCache: ESItem,
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    getIDStoredItem: (storedItem: ESItem) => string,
+    getTimePoint: (item: ESItem) => [number, number],
+    isDraftUpdate: boolean,
+    sizeDelta?: number
 ) => {
-    if (!esCacheRef.current.esCache.size && !esCacheRef.current.isCacheReady) {
-        return;
-    }
+    const index = findItemIndex(getIDStoredItem(itemToCache), esCacheRef.current.esCache, getIDStoredItem);
+    if (index !== -1) {
+        esCacheRef.current.cacheSize +=
+            sizeDelta || sizeOfESItem(itemToCache) - sizeOfESItem(esCacheRef.current.esCache[index]);
+        esCacheRef.current.esCache.splice(index, 1, itemToCache);
 
-    const itemSize = sizeOfESItem(inputItem);
-    const isSpaceLimited = esCacheRef.current.isCacheLimited || esCacheRef.current.cacheSize + itemSize >= ES_MAX_CACHE;
-
-    let shouldIncludeContent = !!inputItem.content;
-    let wasContentRemoved = false;
-    if (isSpaceLimited && shouldIncludeContent) {
-        // The oldest item is needed as a reference to decide whether to include content
-        // of the given one or not
-        const oldestItem = getOldestCachedContentItem(esCacheRef);
-        shouldIncludeContent =
-            !!oldestItem &&
-            isTimepointSmaller(getItemInfo(oldestItem.metadata).timepoint, getItemInfo(inputItem.metadata).timepoint);
-
-        if (shouldIncludeContent) {
-            wasContentRemoved = true;
-            freeCacheSpace<ESItemMetadata, ESItemContent>(esCacheRef, getItemInfo, oldestItem, itemSize);
+        // The time order am item can change only if it was a draft being updated.
+        // In this case we sort again
+        if (isDraftUpdate) {
+            esCacheRef.current.esCache.sort(sortCachedItems<ESItem>(getTimePoint));
         }
     }
-
-    const itemToAdd = {
-        metadata: inputItem.metadata,
-        content: shouldIncludeContent ? inputItem.content : undefined,
-    };
-    const size = sizeOfESItem(itemToAdd);
-
-    esCacheRef.current.esCache.set(getItemInfo(itemToAdd.metadata).ID, itemToAdd);
-    esCacheRef.current.cacheSize += size;
-    esCacheRef.current.isCacheLimited ||= wasContentRemoved;
-
-    // If the item to be added is not newer than the most recent item in
-    // cache, the whole cache needs to be rebuilt to keep the
-    // chronological order of the cache (which is a map, therefore insertion
-    // order matters)
-    const mostRecentTimepoint = getMostRecentCachedContentTimepoint(esCacheRef, getItemInfo);
-    if (mostRecentTimepoint && isTimepointSmaller(getItemInfo(inputItem.metadata).timepoint, mostRecentTimepoint)) {
-        return reorderCache(esCacheRef, getItemInfo);
-    }
 };
 
 /**
- * Add more content to a limited cache in case many were removed
+ * Add more messages to a limited cache in case many were removed
  */
-export const refreshESCache = async <ESItemMetadata, ESItemContent>(
+export const refreshESCache = async <ESItem, ESCiphertext>(
     indexKey: CryptoKey,
     userID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    storeName: string,
+    indexName: string,
+    getTimePoint: (item: ESItem | ESCiphertext) => [number, number]
 ) => {
-    const { cacheSize, isCacheReady, isCacheLimited } = esCacheRef.current;
+    const { cacheSize, isCacheReady } = esCacheRef.current;
+    const isCachePartial = await checkIsCacheLimited(userID, esCacheRef, storeName);
 
     // Perform this operation only if there is space left in cache but not all items are cached, and if the initial
     // caching operation had succeeded
-    if (cacheSize < ES_MAX_CACHE && isCacheLimited && isCacheReady) {
-        return cacheContent<ESItemMetadata, ESItemContent>(
+    if (cacheSize < ES_MAX_CACHE && isCachePartial && isCacheReady) {
+        // The last item is assumed to be the oldest one
+        const esTimeBound = getTimePoint(esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1]);
+        await cacheDB<ESItem, ESCiphertext>(
             indexKey,
             userID,
             esCacheRef,
-            getItemInfo,
-            getOldestCachedContentTimepoint(esCacheRef, getItemInfo)
+            storeName,
+            indexName,
+            getTimePoint,
+            esTimeBound
         );
     }
+
+    // Update the cache status after the above change
+    esCacheRef.current.isCacheLimited = await checkIsCacheLimited(userID, esCacheRef, storeName);
 };

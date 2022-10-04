@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Progress, classnames } from '@proton/components';
+import { Progress, classnames, useUser } from '@proton/components';
+import { getESCurrentProgress, getESTotal } from '@proton/encrypted-search';
 
 import { useSearchLibrary } from '../../../store';
 import useSearchState from '../../../store/_search/useSearchState';
@@ -10,23 +11,25 @@ import useSearchState from '../../../store/_search/useSearchState';
 import './SearchDropdown.scss';
 
 export const SearchIndexingProgress = () => {
-    const { getESDBStatus, getProgressRecorderRef } = useSearchLibrary();
+    const [user] = useUser();
+    const { getESDBStatus } = useSearchLibrary();
     const { isRefreshing } = getESDBStatus();
-    const { esProgress, totalIndexingItems, estimatedMinutes, currentProgressValue } = useSearchState();
-    const isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
+    const { esProgress, totalIndexingMessages, estimatedMinutes, currentProgressValue } = useSearchState();
+    const isEstimating =
+        estimatedMinutes === 0 && (totalIndexingMessages === 0 || esProgress !== totalIndexingMessages);
 
-    const progressFromBuildEvent = isRefreshing ? 0 : getProgressRecorderRef().current[0];
+    const progressFromBuildEvent = isRefreshing ? 0 : getESCurrentProgress(user.ID);
     const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Progress indicator
-    const totalProgressToShow = Math.max(esProgress, getProgressRecorderRef().current[1]);
+    const totalProgressToShow = Math.max(esProgress, getESTotal(user.ID));
     let progressStatus: string = '';
     if (isEstimating) {
         progressStatus = c('Info').t`Estimating time remaining...`;
     } else if (isRefreshing) {
         progressStatus = c('Info').t`Updating drive search...`;
     } else {
-        // translator: esProgress is a number representing the current message being fetched, totalIndexingItems is the total number of message in the mailbox
+        // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
         progressStatus = c('Info').jt`Indexing items ${esProgress} out of ${totalProgressToShow}` as string;
     }
 
