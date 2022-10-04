@@ -56,13 +56,13 @@ export const load = createAsyncThunk<LoadResults, LoadParams>('incomingDefaults/
 
 export const event = createAction<IncomingDefaultEvent>('incomingDefaults/event');
 
-interface AddBlockParams {
+interface AddBlockAddressParams {
     api: Api;
     address: string;
     overwrite?: boolean;
 }
 
-export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockParams>(
+export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockAddressParams>(
     'incomingDefaults/addBlockAddress',
     async ({ api, address, overwrite }) => {
         const result = await api<{ IncomingDefault: IncomingDefault }>(
@@ -74,6 +74,34 @@ export const addBlockAddress = createAsyncThunk<IncomingDefault, AddBlockParams>
         );
 
         return result.IncomingDefault;
+    }
+);
+
+interface AddBlockAddressesParams {
+    api: Api;
+    addresses: string[];
+    overwrite?: boolean;
+}
+
+export const addBlockAddresses = createAsyncThunk<IncomingDefault[], AddBlockAddressesParams>(
+    'incomingDefaults/addBlockAddresses',
+    async ({ api, addresses, overwrite }) => {
+        const promises = addresses.map((address) => {
+            return api<{ IncomingDefault: IncomingDefault }>(
+                addIncomingDefault({
+                    Email: address,
+                    Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
+                    Overwrite: overwrite,
+                })
+            );
+        });
+
+        let incomingDefaults: IncomingDefault[] = [];
+
+        const results = await Promise.all(promises);
+        incomingDefaults = results.map((result) => result.IncomingDefault);
+
+        return incomingDefaults;
     }
 );
 
