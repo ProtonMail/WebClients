@@ -37,6 +37,7 @@ const LanguageSelect = ({ className, locales = {}, outlined, globe }: Props) => 
             cookieValue: localeCode,
             expirationDate: addDays(new Date(), 30).toUTCString(),
             cookieDomain,
+            path: '/',
         });
         forceRefresh();
     };
