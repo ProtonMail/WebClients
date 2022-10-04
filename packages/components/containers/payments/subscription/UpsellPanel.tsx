@@ -263,7 +263,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 ? {
                       icon: 'calendar-checkmark',
                       text: c('new_plans: Upsell attribute').ngettext(
-                          msgid`Create up to ${numberOfPersonalCalendars} personal calendar`,
+                          msgid`Create ${numberOfPersonalCalendars} personal calendar`,
                           `Create up to ${numberOfPersonalCalendars} personal calendars`,
                           numberOfPersonalCalendars
                       ),
