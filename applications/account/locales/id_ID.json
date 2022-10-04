@@ -102,6 +102,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Apply to existing messages": [
+        "Terapkan kepada pesan yang telah ada"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -486,11 +489,11 @@
       "Non spam": [
         "Bukan spam"
       ],
-      "Ok": [
-        "Ya"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ya"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
@@ -543,11 +546,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -1060,6 +1063,59 @@
       ],
       "Two-year": [
         "Dua tahun"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Termasuk"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Harga standar: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Paling populer"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
+      "Get the deal now": [
+        "Dapatkan penawaran sekarang"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per bulan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
       ]
     },
     "breadcrumb": {
@@ -2617,6 +2673,35 @@
         "Subdomain 'www' pada umumnya tidak digunakan untuk email. Apakah Anda tetap ingin menggunakan domain ini?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } ditambahkan"
+      ],
+      "${ name } deletion failed": [
+        "${ name } gagal dihapus"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } gagal dipindahkan ke Daftar Bukan spam"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } gagal dipindahkan ke daftar spam"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } gagal dipindahkan ke daftar blokir"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } dipindahkan ke daftar Bukan spam"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } dipindahkan ke daftar spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } dipindahkan ke daftar blokir"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } berhasil dihapus"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
@@ -2706,17 +2791,32 @@
       ]
     },
     "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
+      "${ name } added": [
+        "${ name } ditambahkan"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } deletion failed": [
+        "${ name } gagal dihapus"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to Non spam List": [
+        "${ name } gagal dipindahkan ke Daftar Bukan spam"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } failed to move to spam list": [
+        "${ name } gagal dipindahkan ke daftar spam"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } gagal dipindahkan ke daftar blokir"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } dipindahkan ke daftar Bukan spam"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } dipindahkan ke daftar spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } dipindahkan ke daftar blokir"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } berhasil dihapus"
       ]
     },
     "Email subject": {
@@ -3041,11 +3141,17 @@
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama folder yang bersangkutan dengan menyesuaikan parameter impor Anda."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama label yang bersangkutan dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
@@ -3657,8 +3763,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Email yang berasal dari alamat yang diblokir tidak akan disampaikan."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Cari di daftar izin dan blokir"
       ]
     },
     "Font Face Default": {
@@ -4103,6 +4209,9 @@
       ],
       "contacts": [
         "kontak"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "Berkas CSV atau VCF (vCard)"
       ],
       "full calendar view": [
         "tampilan kalender seutuhnya"
@@ -6302,6 +6411,9 @@
       " and ${ l }": [
         " dan ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "Email atau nama pengguna ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
       ],
@@ -6408,7 +6520,7 @@
         "Siklus tagihan"
       ],
       "Block email tracking": [
-        "Blokir program pelacak email"
+        "Blokir pelacak email"
       ],
       "Block malware only": [
         "Blokir malware saja"
@@ -7292,9 +7404,6 @@
       "General": [
         "Umum"
       ],
-      "Go to subscription plans": [
-        "Pergi ke paket langganan"
-      ],
       "How to unlock data": [
         "Bagaimana cara membuka kunci data"
       ],
@@ -7339,9 +7448,6 @@
       ],
       "Trouble signing in?": [
         "Mengalami masalah saat akan masuk?"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
       ],
       "Upgrade account": [
         "Tingkatkan akun"
@@ -7394,8 +7500,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ totalLabelsCount } folder yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -8081,6 +8193,17 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Uji Coba ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -8102,17 +8225,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Uji Coba ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -9490,9 +9602,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/bulan"
-      ],
       "per month": [
         "per bulan"
       ]
@@ -9676,11 +9785,14 @@
       "Add Sieve filter": [
         "Tambah filter Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
+      "Add to non spam list": [
+        "Tambah ke daftar bukan spam"
       ],
       "Add to spam list": [
         "Tambahkan ke daftar spam"
+      ],
+      "Add to your block list": [
+        "Tambah ke daftar blokir"
       ],
       "Add user": [
         "Tambah pengguna"

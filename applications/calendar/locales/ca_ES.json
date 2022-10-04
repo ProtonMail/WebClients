@@ -50,6 +50,9 @@
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Torna"
       ],
@@ -478,8 +481,14 @@
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
       ],
+      "Use authentication code": [
+        "Utilitzar el codi d'autenticació"
+      ],
       "Use for sending": [
         "Utilitzar per enviar"
+      ],
+      "Use recovery code": [
+        "Utilitzar un codi de recuperació"
       ],
       "Verify": [
         "Verifica"
@@ -626,6 +635,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclou"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preu estàndard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix percentatge fins que es cancel·li."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Més popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
+      "Get the deal now": [
+        "Obteniu l’oferta ara"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
       ]
     },
     "Bug category": {
@@ -3722,6 +3784,9 @@
       ],
       "Wonderful": [
         "Meravellosa"
+      ],
+      "Your password (admin)": [
+        "La seva contrasenya (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3760,9 +3825,6 @@
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
       ],
-      "Go to subscription plans": [
-        "Anar als plans de subscripció"
-      ],
       "Learn more": [
         "Més informació"
       ],
@@ -3777,9 +3839,6 @@
       ],
       "Subscribed calendars": [
         "Calendaris subscrits"
-      ],
-      "Upgrade": [
-        "Actualitzar"
       ],
       "Upgrade account": [
         "Millorar el compte"
@@ -4623,11 +4682,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinió enviada"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mes"
       ]
     },
     "Table header": {

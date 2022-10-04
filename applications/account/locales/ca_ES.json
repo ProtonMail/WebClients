@@ -442,11 +442,11 @@
       "No": [
         "No"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "D'acord"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -496,11 +496,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "recarregar la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "recarregar la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -944,6 +944,59 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclou"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preu estàndard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix percentatge fins que es cancel·li."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Més popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
+      "Get the deal now": [
+        "Obteniu l’oferta ara"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
       ]
     },
     "breadcrumb": {
@@ -2372,20 +2425,6 @@
         "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
       ]
     },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Cancel·lació d'un esdeveniment el ${ formattedStart }"
@@ -3140,11 +3179,6 @@
       ],
       "starred": [
         "destacat"
-      ]
-    },
-    "FilterSettings": {
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -5988,9 +6022,6 @@
       "General": [
         "General"
       ],
-      "Go to subscription plans": [
-        "Anar als plans de subscripció"
-      ],
       "Import/export": [
         "Importa/exporta"
       ],
@@ -6017,9 +6048,6 @@
       ],
       "Terms": [
         "Termes"
-      ],
-      "Upgrade": [
-        "Millora"
       ],
       "Upgrade account": [
         "Millorar el compte"
@@ -6380,14 +6408,14 @@
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
       ]
     },
-    "new_plans: title": {
-      "Unlock premium features by upgrading": [
-        "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
     "new_plans: Title": {
       "Upgrade to ${ planName }": [
         "Milloreu a ${ planName }"
+      ]
+    },
+    "new_plans: title": {
+      "Unlock premium features by upgrading": [
+        "Milloreu el pla i desbloquegeu funcions prèmium"
       ]
     },
     "new_plans: upgrade": {
@@ -7294,9 +7322,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/mes"
-      ],
       "per month": [
         "per mes"
       ]
@@ -7451,9 +7476,6 @@
       ],
       "Add Sieve filter": [
         "Afegir filtre Sieve"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add user": [
         "Afegir usuari"

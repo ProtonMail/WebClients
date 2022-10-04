@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -577,6 +580,9 @@
       "Use for sending": [
         "Zum Senden verwenden"
       ],
+      "Use recovery code": [
+        "Wiederherstellungscode verwenden"
+      ],
       "Verify": [
         "Bestätigen"
       ],
@@ -632,6 +638,97 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Zum Angebot"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Umfasst"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Regulärer Preis: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Dieses Abonnement verlängert sich nach zwei Jahren automatisch, bis es gekündigt wird."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Bester Preis"
+      ],
+      "Most popular": [
+        "Am beliebtesten"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Spare noch mehr durch die Kombination von Mail und VPN"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Get the deal now": [
+        "Jetzt zugreifen"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pro Monat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Sonderangebot"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
+      ],
+      "1 month": [
+        "1 Monat"
+      ],
+      "12 months": [
+        "12 Monate"
+      ],
+      "24 months": [
+        "24 Monate"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Zum Preis von ${ amount } in den ersten zwei Jahren.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Zum Preis von ${ amount } im ersten Monat.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Zum Preis von ${ amount } im ersten Jahr.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -2704,10 +2801,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
-      "Delete drive": [
-        "Laufwerk löschen",
-        "Laufwerke löschen"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Diese Datei wurde von ${ emailAddress } sicher hochgeladen."
       ],
@@ -3001,9 +3094,6 @@
       ],
       "Paused": [
         "Angehalten"
-      ],
-      "Permanently delete all files in your drive": [
-        "Alle Dateien auf deinem Laufwerk dauerhaft löschen"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
@@ -3806,6 +3896,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ja, ich möchte meine alten Dateien dauerhaft löschen"
+      ],
+      "Your password (admin)": [
+        "Ihr Passwort (Admin)"
       ]
     },
     "Label for contact group color": {
@@ -3841,9 +3934,6 @@
       "clearing your browser cache": [
         "Browser-Cache leeren"
       ],
-      "Go to subscription plans": [
-        "Zu den Abonnement-Plänen"
-      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -3858,9 +3948,6 @@
       ],
       "Trash": [
         "Papierkorb"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ],
       "Upgrade account": [
         "Konto upgraden"
@@ -4481,11 +4568,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback gesendet"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/Monat"
       ]
     },
     "Table header": {

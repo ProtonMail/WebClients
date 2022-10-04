@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -574,6 +577,9 @@
       "Use for sending": [
         "Usar para enviar"
       ],
+      "Use recovery code": [
+        "Utilizar un código de recuperación"
+      ],
       "Verify": [
         "Verificar"
       ],
@@ -629,6 +635,62 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Incluye"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Mejor oferta"
+      ],
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Get the deal now": [
+        "Aprovecha la oferta ahora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
       ]
     },
     "Bug category": {
@@ -2686,10 +2748,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
-      "Delete drive": [
-        "Eliminar unidad",
-        "Eliminar unidades"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este archivo ha sido cargado de forma segura por ${ emailAddress }."
       ],
@@ -2980,9 +3038,6 @@
       ],
       "Paused": [
         "Pausado"
-      ],
-      "Permanently delete all files in your drive": [
-        "Borra permanentemente todos los archivos de tu disco"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
@@ -3785,6 +3840,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Sí, quiero borrar permanentemente\nmis archivos antiguos"
+      ],
+      "Your password (admin)": [
+        "Tu contraseña (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3820,9 +3878,6 @@
       "clearing your browser cache": [
         "vaciar la caché del navegador"
       ],
-      "Go to subscription plans": [
-        "Ir a los planes de suscripción"
-      ],
       "Learn more": [
         "Más información"
       ],
@@ -3837,9 +3892,6 @@
       ],
       "Trash": [
         "Papelera"
-      ],
-      "Upgrade": [
-        "Mejorar"
       ],
       "Upgrade account": [
         "Mejorar cuenta"
@@ -4452,11 +4504,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentarios enviados"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mes"
       ]
     },
     "Table header": {

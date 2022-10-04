@@ -92,6 +92,9 @@
       "Attachment": [
         "Vedhæftning"
       ],
+      "Authenticate": [
+        "Godkend"
+      ],
       "Back": [
         "Tilbage"
       ],
@@ -428,7 +431,7 @@
         "Skjul beskeder"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Skjul Min E-mail"
       ],
       "Hide my email": [
         "Skjul min e-mail"
@@ -595,6 +598,12 @@
       ],
       "Move to inbox": [
         "Flyt til indbakke"
+      ],
+      "Move to inbox (not spam)": [
+        "Flyt til indbakke (ikke spam)"
+      ],
+      "Move to spam": [
+        "Flyt til spam"
       ],
       "Move to spam and unsubscribe": [
         "Flyt til spam og afmeld"
@@ -987,6 +996,9 @@
       "Use for sending": [
         "Benyt til afsendelse"
       ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Brug din mus til at ændre på størrelsen af visningen. Hvis du bruger dit tastatur, kan du bruge venstre og højre piletast til at ændre størrelsen."
       ],
@@ -1193,6 +1205,53 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inkluderer"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mest populært"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Get the deal now": [
+        "Gør brug af tilduddet nu"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "Spar ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pr. måned"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Særtilbud"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
       ]
     },
     "Bug category": {
@@ -1803,11 +1862,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Dit valg indeholder kun dig selv som afsender"
       ]
     },
     "Country name": {
@@ -5979,6 +6033,9 @@
       ],
       "Wonderful": [
         "Vidunderlig"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7192,9 +7249,6 @@
       "Conversation moved to ${ folderName }.": [
         "Samtale flyttet til ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Samtale fjernet fra ${ labelName }."
       ],
@@ -7249,14 +7303,8 @@
       "Message marked as unread.": [
         "Besked markeret som ulæst."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Besked flyttet til ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Besked fjernet fra ${ labelName }."
@@ -7692,10 +7740,10 @@
         "Flyt til indbakke"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Flyt til indbakke (ikke spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Flyt til spam"
       ],
       "Move to trash": [
         "Flyt til papirkurv"

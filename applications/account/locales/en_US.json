@@ -4,44 +4,6 @@
     "language": "en_US"
   },
   "contexts": {
-    "Domain spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
-    "FilterSettings": {
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
-      ]
-    },
-    "Title": {
-      "Add to block list": [
-        "Add to your block list"
-      ]
-    },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",

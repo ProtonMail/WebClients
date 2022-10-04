@@ -92,6 +92,9 @@
       "Attachment": [
         "Adjunto"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -358,6 +361,9 @@
       "Fewer search options": [
         "Menos opciones de búsqueda"
       ],
+      "Filter on...": [
+        "Filtrar por..."
+      ],
       "Font": [
         "Fuente"
       ],
@@ -428,7 +434,7 @@
         "Ocultar mensajes"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Ocultar mi dirección de correo electrónico"
       ],
       "Hide my email": [
         "Ocultar mi correo electrónico"
@@ -595,6 +601,12 @@
       ],
       "Move to inbox": [
         "Mover a la bandeja de entrada"
+      ],
+      "Move to inbox (not spam)": [
+        "Mover a la bandeja de entrada (no es spam)"
+      ],
+      "Move to spam": [
+        "Mover a spam"
       ],
       "Move to spam and unsubscribe": [
         "Mover a spam y cancelar suscripción"
@@ -987,6 +999,9 @@
       "Use for sending": [
         "Usar para enviar"
       ],
+      "Use recovery code": [
+        "Utilizar un código de recuperación"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilice el ratón para cambiar el tamaño de la vista. Si utiliza el teclado, puede usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
       ],
@@ -1188,6 +1203,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Incluye"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Get the deal now": [
+        "Aprovecha la oferta ahora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
       ]
     },
     "Bug category": {
@@ -1828,11 +1896,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Tu selección sólo te contiene a ti como remitente"
       ]
     },
     "Country name": {
@@ -2606,6 +2669,9 @@
       "Attachment": [
         "Adjunto"
       ],
+      "Filter on": [
+        "Filtrar por"
+      ],
       "Next": [
         "Siguiente"
       ],
@@ -3169,6 +3235,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
       ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Demasiados filtros activos. Actualice a un plan de pago para activar más filtros."
+      ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
       ],
@@ -3527,6 +3596,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Si los archivos adjuntos"
+      ],
+      "If the recipient": [
+        "Si el destinatario"
+      ],
+      "If the sender": [
+        "Si el remitente"
+      ],
+      "If the subject": [
+        "Si el asunto"
+      ],
       "Select…": [
         "Seleccionar…"
       ],
@@ -6060,6 +6141,9 @@
       ],
       "Wonderful": [
         "Maravilloso"
+      ],
+      "Your password (admin)": [
+        "Tu contraseña (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7270,9 +7354,6 @@
       "Conversation moved to ${ folderName }.": [
         "Conversación movida a ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Conversación eliminada de ${ labelName }."
       ],
@@ -7327,14 +7408,8 @@
       "Message marked as unread.": [
         "Mensaje marcado como no leído."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Mensaje eliminado de ${ labelName }."
@@ -7685,6 +7760,9 @@
       "Feedback": [
         "Comentarios"
       ],
+      "Filter on...": [
+        "Filtrar por..."
+      ],
       "Forward": [
         "Reenviar"
       ],
@@ -7770,10 +7848,10 @@
         "Mover a la bandeja de entrada"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Mover a la bandeja de entrada (no es spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Mover a spam"
       ],
       "Move to trash": [
         "Mover a la papelera"

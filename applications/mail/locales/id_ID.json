@@ -92,6 +92,9 @@
       "Attachment": [
         "Lampiran"
       ],
+      "Authenticate": [
+        "Otentikasi"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -356,6 +359,9 @@
       "Fewer search options": [
         "Lebih sedikit opsi pencarian"
       ],
+      "Filter on...": [
+        "Filter berdasarkan..."
+      ],
       "Font": [
         "Font"
       ],
@@ -593,6 +599,12 @@
       "Move to inbox": [
         "Pindahkan ke kotak masuk"
       ],
+      "Move to inbox (not spam)": [
+        "Pindahkan ke kotak masuk (bukan spam)"
+      ],
+      "Move to spam": [
+        "Pindah ke spam"
+      ],
       "Move to spam and unsubscribe": [
         "Pindahkan ke spam dan batalkan langganan"
       ],
@@ -630,7 +642,7 @@
         "Tidak"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Tidak ditemukan pelacak, tetapi beberapa gambar tidak dapat dimuat menggunakan pelindung pelacak."
+        "Tidak ada pelacak yang ditemukan, namun beberapa gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
       "No, I won't attend": [
         "Tidak, saya tidak akan hadir"
@@ -915,7 +927,7 @@
         "Pesan ini mengandung remote content."
       ],
       "Trust": [
-        "Percaya"
+        "Percayai"
       ],
       "Trust key": [
         "Percayai kunci"
@@ -930,7 +942,7 @@
         "Coba metode lain"
       ],
       "Turn on tracker protection": [
-        "Aktifkan perlindungan pelacak email"
+        "Aktifkan perlindungan pelacak"
       ],
       "Underline": [
         "Garis bawah"
@@ -957,7 +969,7 @@
         "Menghentikan langganan"
       ],
       "Untrust": [
-        "Jangan percayai"
+        "Berhenti percayai"
       ],
       "Update": [
         "Perbarui"
@@ -980,8 +992,14 @@
       "Use ${ label } theme": [
         "Gunakan tema ${ label }"
       ],
+      "Use authentication code": [
+        "Gunakan kode otentikasi"
+      ],
       "Use for sending": [
         "Gunakan untuk pengiriman"
+      ],
+      "Use recovery code": [
+        "Gunakan kode pemulihan"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
@@ -1188,6 +1206,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Termasuk"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Harga standar: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Paling populer"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
+      "Get the deal now": [
+        "Dapatkan penawaran sekarang"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per bulan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
       ]
     },
     "Bug category": {
@@ -1909,11 +1980,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Pilihan Anda hanya mencakup Anda sebagai pengirim seorang diri"
       ]
     },
     "Country name": {
@@ -2687,6 +2753,9 @@
       "Attachment": [
         "Lampiran"
       ],
+      "Filter on": [
+        "Filter berasarkan"
+      ],
       "Next": [
         "Selanjutnya"
       ],
@@ -3169,11 +3238,17 @@
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama folder yang bersangkutan dengan menyesuaikan parameter impor Anda."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama label yang bersangkutan dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
@@ -3220,6 +3295,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Terjadi suatu kesalahan dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Terdapat masalah dalam memperbarui pesan lokal Anda. Pesan lokal Anda akan diunduh ulang agar pencarian konten dapat kembali aktif"
+      ],
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
       ],
@@ -3243,6 +3321,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda."
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Terlalu banyak filter yang aktif. Mohon tingkatkan akun Anda untuk mengaktifkan lebih banyak filter."
       ],
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
@@ -3531,6 +3612,24 @@
         "Tanggapan Anda"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte"
@@ -3596,6 +3695,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Apabila lampiran"
+      ],
+      "If the recipient": [
+        "Apabila penerima"
+      ],
+      "If the sender": [
+        "Apabila pengirim"
+      ],
+      "If the subject": [
+        "Apabila subjek"
+      ],
       "Select…": [
         "Pilih…"
       ],
@@ -4064,6 +4175,9 @@
       "contacts": [
         "kontak"
       ],
+      "CSV or a VCF (vCard) file": [
+        "Berkas CSV atau VCF (vCard)"
+      ],
       "full calendar view": [
         "tampilan kalender seutuhnya"
       ],
@@ -4152,7 +4266,7 @@
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } program pelacak email telah diblokir"
+        "${ numberOfTrackers } pelacak email telah diblokir"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grup kontak"
@@ -4445,6 +4559,9 @@
       "Duplicate key updated": [
         "Kunci ganda diperbarui"
       ],
+      "Each code can only be used once": [
+        "Masing-masing kode hanya dapat digunakan sekali"
+      ],
       "Edit encryption": [
         "Sunting enkripsi"
       ],
@@ -4464,13 +4581,13 @@
         "Perlindungan pelacak email dinonakifkan"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "Program-program pelacak email dapat mengusik privasi Anda. Proton tidak menemukan program pelacak apapun pada email ini."
+        "Pelacak email dapat mengusik privasi Anda. Proton tidak menemukan pelacak apapun dalam pesan ini."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "Program pelacak email dapat mengusik privasi Anda. Proton telah menemukan dan memblokir ${ numberOfTrackers } program pelacak yang terdapat pada email ini."
+        "Pelacak email dapat mengusik privasi Anda. Proton telah menemukan dan memblokir ${ numberOfTrackers } pelacak yang terdapat pada email ini."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Program-program pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan-pesan yang Anda terima atau belum."
+        "Pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan yang Anda terima atau belum."
       ],
       "embedded image": [
         "gambar yang tersemat"
@@ -4481,11 +4598,17 @@
       "End of search results from past 30 days": [
         "Akhir dari seluruh hasil pencarian selama 30 hari terakhir"
       ],
+      "Enter the code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Waktu yang diperkirakan tersisa: ${ estimatedMinutes } menit"
@@ -4719,7 +4842,7 @@
         "Tidak ada alamat email"
       ],
       "No email trackers found": [
-        "Tidak ada program pelacak email yang ditemukan"
+        "Tidak ada pelacak email yang ditemukan"
       ],
       "No folder found": [
         "Tidak ada folder yang ditemukan"
@@ -4749,7 +4872,7 @@
         "Tidak ada hasil pencarian dalam rentang waktu 30 hari terakhir yang ditemukan. Mencari seisi kotak masuk Anda"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        "Tidak ditemukan pelacak, tetapi beberapa gambar tidak dapat dimuat menggunakan pelindung pelacak"
+        "Tidak ada pelacak yang ditemukan, namun beberapa gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif"
       ],
       "non-Proton Mail": [
         "non-Proton Mail"
@@ -4877,6 +5000,9 @@
       "Saved on ${ dateString }": [
         "Disimpan pada ${ dateString }"
       ],
+      "Saved yesterday": [
+        "Disimpan kemarin"
+      ],
       "Saving draft…": [
         "Menyimpan draf…"
       ],
@@ -4887,7 +5013,7 @@
         "Menjadwalkan pesan..."
       ],
       "Search full content of older messages with a ${ paidPlansButton }": [
-        "Aktifkan pencarian berbasis konten bagi pesan lama Anda dengan ${ paidPlansButton }"
+        "Aktifkan pencarian konten bagi pesan lama Anda dengan ${ paidPlansButton }"
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dalam pencarian Anda."
@@ -5016,7 +5142,7 @@
         "Ada kesalahan pada tanda tangan yang dipakai untuk memverifikasi rincian kontak, yang mungkin disebabkan oleh atur ulang kata sandi."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Mereka tidak dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan Hide My Email."
+        "Mereka tidak akan dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -5139,7 +5265,7 @@
         "Nonaktifkan pencarian konten. Kemajuan aktivasi tidak akan hilang."
       ],
       "Turn on to search the content of your messages": [
-        "Aktifkan untuk dapat mencari isi konten pesan-pesan Anda"
+        "Aktifkan untuk dapat mencari isi konten pesan Anda"
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
@@ -5155,6 +5281,9 @@
       ],
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
+      ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Memperbarui pesan lokal Anda. Konten pesan tidak akan dicari pada saat pembaruan berlangsung"
       ],
       "Upgrade to add more addresses to your account.": [
         "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
@@ -5242,6 +5371,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ketika Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik ditambahkan ke rincian kontak."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -5691,6 +5823,9 @@
       "Attachments": [
         "Lampiran"
       ],
+      "Authenticator app": [
+        "Aplikasi otentikator"
+      ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
       ],
@@ -6086,6 +6221,9 @@
       ],
       "Wonderful": [
         "Luar Biasa"
+      ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
       ]
     },
     "Label for contact group color": {
@@ -6341,8 +6479,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ totalLabelsCount } folder yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7114,7 +7258,7 @@
         "Pencarian Konten Pesan"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        "Demi melindungi privasi Anda, Proton telah memblokir program-program pelacak email yang terdapat pada pesan ini"
+        "Demi melindungi privasi Anda, Proton telah memblokir pelacak email yang terdapat pada pesan ini"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
@@ -7267,8 +7411,8 @@
       "Conversation moved to ${ folderName }.": [
         "Percakapan dipindah ke ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Percakapan dipindahkan ke spam dan pengirim ditambahkan ke daftar blokir Anda."
       ],
       "Conversation removed from ${ labelName }.": [
         "Percakapan dihapus dari ${ labelName }."
@@ -7324,14 +7468,14 @@
       "Message marked as unread.": [
         "Pesan ditandai belum dibaca."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Pesan dipindahkan ke ${ folderName } dan pengirim ditambahkan ke daftar izin Anda."
       ],
       "Message moved to ${ folderName }.": [
         "Pesan dipindah ke ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Pesan dipindahkan ke spam dan pengirim ditambahkan ke daftar blokir Anda."
       ],
       "Message removed from ${ labelName }.": [
         "Pesan dihapus dari ${ labelName }."
@@ -7667,6 +7811,9 @@
       "Feedback": [
         "Kritik dan Saran"
       ],
+      "Filter on...": [
+        "Filter berdasarkan..."
+      ],
       "Forward": [
         "Teruskan"
       ],
@@ -7752,10 +7899,10 @@
         "Pindahkan ke kotak masuk"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Pindahkan ke kotak masuk (bukan spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Pindahkan ke spam"
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
