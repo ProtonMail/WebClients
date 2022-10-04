@@ -88,7 +88,6 @@ export enum FeatureCode {
     OfferSpecialOffer2022 = 'OfferSpecialOffer2022',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
-    PartialEncryptedSearch = 'PartialEncryptedSearch',
     ConversationHeaderInScroll = 'ConversationHeaderInScroll',
     FIDO2 = 'FIDO2',
 }

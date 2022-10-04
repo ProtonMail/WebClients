@@ -4,33 +4,43 @@ import { useSearchEnabledFeature, useSearchLibrary } from '../_search';
 
 export default function useSearchControl() {
     const searchEnabled = useSearchEnabledFeature();
-    const { getESDBStatus, enableEncryptedSearch, esDelete } = useSearchLibrary();
-    const { dbExists, isEnablingEncryptedSearch, esSupported } = getESDBStatus();
+    const { cacheIndexedDB, getESDBStatus, resumeIndexing, esDelete } = useSearchLibrary();
+    const { dbExists, isBuilding, esSupported } = getESDBStatus();
 
     /**
-     * prepareSearchData starts initial sync to create db.
+     * prepareSearchData loads data from db to memory if db exists, otherwise
+     * it starts initial sync to create db.
      */
     const prepareSearchData = async () => {
-        if (!esSupported || dbExists || isEnablingEncryptedSearch) {
+        if (!esSupported) {
             return;
         }
 
-        await enableEncryptedSearch();
+        if (dbExists) {
+            await cacheIndexedDB();
+            return;
+        }
+
+        if (isBuilding) {
+            return;
+        }
+
+        await resumeIndexing();
     };
 
     const deleteData = () => esDelete();
 
-    const isDisabled = !esSupported || isEnablingEncryptedSearch;
+    const isDisabled = !esSupported || isBuilding;
     let disabledReason;
     if (isDisabled) {
-        disabledReason = isEnablingEncryptedSearch
+        disabledReason = isBuilding
             ? c('Info').t`Indexing search results…`
             : c('Info').t`Search cannot be enabled in this browser`;
     }
 
     return {
         searchEnabled,
-        isEnablingEncryptedSearch,
+        isBuilding,
         isDisabled,
         disabledReason,
         hasData: dbExists,
