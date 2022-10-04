@@ -64,6 +64,7 @@ const storeExperimentsInCookie = (experiments: { [key in ExperimentCode]?: strin
         cookieName: 'Features',
         cookieValue,
         cookieDomain,
+        path: '/',
         expirationDate: 'max',
         secure: true,
     });
