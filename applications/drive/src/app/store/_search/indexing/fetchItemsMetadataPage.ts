@@ -21,7 +21,7 @@ export const fetchItemsMetadataPage = async (
         session: Session;
     }>({
         fn: async (sessionName: Session['sessionName'], page?: number) => {
-            const lastIndex = page === undefined ? undefined : page * PAGE_SIZE - 1;
+            const lastIndex = page === undefined ? undefined : page * PAGE_SIZE + 1;
             const { Links, SessionName, More, Total } = await fetchShareMap({
                 shareId,
                 lastIndex,

@@ -2,11 +2,11 @@ import { useHistory } from 'react-router-dom';
 
 import { PrivateKeyReference } from '@proton/crypto';
 import {
+    AesGcmCiphertext,
     ESEvent,
     ESHelpers,
-    EventsObject,
+    esStorageHelpers,
     normalizeKeyword,
-    readAllLastEvents,
     testKeywords,
 } from '@proton/encrypted-search';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
@@ -15,53 +15,91 @@ import { Api, User } from '@proton/shared/lib/interfaces';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { driveEventsResultToDriveEvents } from '../_api';
+import { DecryptedLink } from '../_links';
 import { createLinkGenerator } from './indexing/createLinkGenerator';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import { FetchShareMap } from './indexing/useFetchShareMap';
-import { ESDriveSearchParams, ESLink } from './types';
-import { extractSearchParameters } from './utils';
+import { ESDriveSearchParams, ESItemChangesDrive, ESLink, StoredCiphertextDrive } from './types';
+import { extractSearchParameters, generateOrder, parseItemId } from './utils';
 
 interface Props {
     api: Api;
     user: User;
     shareId: Promise<string>;
     fetchShareMap: FetchShareMap;
+    getLink: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<DecryptedLink>;
     getSharePrivateKey: (abortSignal: AbortSignal, shareId: string) => Promise<PrivateKeyReference>;
     getLinkPrivateKey: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<PrivateKeyReference>;
 }
 
 let linkMapGenerator: AsyncGenerator<ESLink[]>;
 
+export const getItemID = (item: ESLink | StoredCiphertextDrive) => item.id;
+
 export const useESHelpers = ({
     api,
     user,
     shareId,
     fetchShareMap,
+    getLink,
     getSharePrivateKey,
     getLinkPrivateKey,
-}: Props): ESHelpers<ESLink, ESDriveSearchParams> => {
+}: Props): ESHelpers<ESLink, ESLink, ESDriveSearchParams, ESItemChangesDrive, StoredCiphertextDrive> => {
     const history = useHistory();
 
     const userID = user.ID;
-    const queryItemsMetadata = async (signal: AbortSignal) => {
-        if (!linkMapGenerator) {
-            const rootKey = await getSharePrivateKey(signal, await shareId);
+    const queryItemsMetadata = async (storedItem?: StoredCiphertextDrive) => {
+        if (!linkMapGenerator || storedItem === undefined) {
+            const rootKey = await getSharePrivateKey(new AbortController().signal, await shareId);
             linkMapGenerator = createLinkGenerator(await shareId, rootKey, { fetchShareMap });
         }
 
         const items = await linkMapGenerator.next();
-        return { resultMetadata: items.value || [] };
+        return items.value || [];
+    };
+    const { getES } = esStorageHelpers();
+
+    const fetchESItem = async (itemId: IDBValidKey, itemMetadata?: ESLink): Promise<ESLink | undefined> => {
+        if (itemMetadata) {
+            return itemMetadata;
+        }
+
+        const { shareId, linkId } = parseItemId(itemId as string);
+        const link = await getLink(new AbortController().signal, shareId, linkId);
+
+        return {
+            createTime: link.createTime,
+            MIMEType: link.mimeType,
+            id: itemId as string,
+            linkId,
+            shareId,
+            modifiedTime: link.fileModifyTime,
+            parentLinkId: link.parentLinkId,
+            size: link.size,
+            decryptedName: link.name,
+            order: await generateOrder(itemId as string),
+        };
     };
 
-    const getItemInfo = (item: ESLink): { ID: string; timepoint: [number, number] } => ({
-        ID: item.id,
-        timepoint: [item.createTime, item.order],
-    });
+    const prepareCiphertext = (itemToStore: ESLink, aesGcmCiphertext: AesGcmCiphertext) => {
+        const { createTime, linkId, id, shareId, size, modifiedTime, parentLinkId, order } = itemToStore;
+        return {
+            aesGcmCiphertext,
+            createTime,
+            id,
+            linkId,
+            modifiedTime,
+            parentLinkId,
+            shareId,
+            size,
+            order,
+        };
+    };
 
-    const searchMetadata = (esSearchParams: ESDriveSearchParams, itemToSearch: ESLink) => {
+    const applySearch = (esSearchParams: ESDriveSearchParams, itemToSearch: ESLink) => {
         const { normalisedKeywords } = esSearchParams;
         if (!normalisedKeywords) {
-            return false;
+            return true;
         }
 
         return testKeywords(normalisedKeywords, [itemToSearch.decryptedName]);
@@ -75,31 +113,30 @@ export const useESHelpers = ({
         };
     };
 
-    const getPreviousEventID = async (): Promise<EventsObject> => {
+    const getPreviousEventID = async () => {
         const latestEvent = await api<{ EventID: string }>(queryLatestEvents(await shareId));
-        let eventsToStore: EventsObject = {};
-        eventsToStore[await shareId] = latestEvent.EventID;
-        return eventsToStore;
+        return latestEvent.EventID;
     };
 
-    const getEventFromIDB = async (): Promise<{
+    const getEventFromLS = async (): Promise<{
         newEvents: ESEvent<ESLink>[];
         shouldRefresh: boolean;
-        eventsToStore: EventsObject;
+        eventToStore: string | undefined;
     }> => {
-        const storedEventIDs = await readAllLastEvents(userID);
-        if (!storedEventIDs) {
-            throw new Error('No event stored');
+        const storedEventID = getES.Event(userID);
+        if (!storedEventID) {
+            throw new Error('Event ID from local storage not found');
         }
 
-        const initialShareEvent = await api<DriveEventsResult>(
-            queryEvents(await shareId, storedEventIDs[await shareId])
-        );
+        const initialEvent = await api<DriveEventsResult>(queryEvents(await shareId, storedEventID));
+        if (!initialEvent) {
+            throw new Error('Event from local storage not found');
+        }
 
-        let keepSyncing = Boolean(initialShareEvent.More);
+        let keepSyncing = Boolean(initialEvent.More);
         let index = 0;
 
-        const newEvents: DriveEventsResult[] = [initialShareEvent];
+        const newEvents: DriveEventsResult[] = [initialEvent];
         while (keepSyncing) {
             const lastEventId = newEvents[index++].EventID;
 
@@ -118,9 +155,6 @@ export const useESHelpers = ({
             return hasBit(event.Refresh, 1);
         });
 
-        let eventsToStore: EventsObject = {};
-        eventsToStore[await shareId] = newEvents[newEvents.length - 1].EventID;
-
         return {
             newEvents: await Promise.all(
                 newEvents
@@ -128,29 +162,36 @@ export const useESHelpers = ({
                     .map(async (events) => convertDriveEventsToSearchEvents(await shareId, events, getLinkPrivateKey))
             ),
             shouldRefresh,
-            eventsToStore,
+            eventToStore: newEvents[newEvents.length - 1].EventID,
         };
     };
 
+    const getTimePoint = (item: ESLink | StoredCiphertextDrive): [number, number] => {
+        return [item.createTime, item.order];
+    };
+
     return {
-        getItemInfo,
+        getItemID,
+        fetchESItem,
+        prepareCiphertext,
         queryItemsMetadata,
-        searchMetadata,
+        applySearch,
+        getTimePoint,
         getTotalItems: (() => {
             let total: number;
             return async () => {
                 if (!total) {
-                    // The Total property counts all files and folders, including the root
-                    // folder which is neither indexed nor shown to users. For ES purposes
-                    // it should not be counted toward the total, therefore the -1
-                    total = (await fetchShareMap({ shareId: await shareId })).Total - 1;
+                    total = (await fetchShareMap({ shareId: await shareId })).Total;
                 }
                 return total;
             };
         })(),
+        updateESItem: (esItemMetadata: ESLink): ESLink => {
+            return esItemMetadata;
+        },
         getKeywords: (esSearchParams: ESDriveSearchParams) => esSearchParams.normalisedKeywords,
         getSearchParams,
         getPreviousEventID,
-        getEventFromIDB,
+        getEventFromLS,
     };
 };

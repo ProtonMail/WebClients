@@ -11,48 +11,44 @@ import {
     Tooltip,
     classnames,
     useModalState,
+    useUser,
 } from '@proton/components';
-import { ESIndexingState } from '@proton/encrypted-search';
+import {
+    ESIndexingState,
+    esStorageHelpers,
+    getESCurrentProgress,
+    getESTotal,
+    indexKeyExists,
+    isDBReadyAfterBuilding,
+    wasIndexingDone,
+} from '@proton/encrypted-search';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
 
 interface Props {
+    showMore: boolean;
+    toggleShowMore: () => void;
     esState: ESIndexingState;
 }
 
 const EncryptedSearchField = ({ esState }: Props) => {
-    const {
-        enableEncryptedSearch,
-        enableContentSearch,
-        getESDBStatus,
-        pauseIndexing,
-        toggleEncryptedSearch,
-        getProgressRecorderRef,
-    } = useEncryptedSearchContext();
-    const {
-        isEnablingContentSearch,
-        esEnabled,
-        isDBLimited,
-        isRefreshing,
-        isEnablingEncryptedSearch,
-        isPaused,
-        contentIndexingDone,
-    } = getESDBStatus();
-    const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
+    const [user] = useUser();
+    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch } = useEncryptedSearchContext();
+    const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
+    const { esProgress, oldestTime, totalIndexingMessages, estimatedMinutes, currentProgressValue } = esState;
+    const { getES } = esStorageHelpers();
 
     const [enableESModalProps, setEnableESModalOpen] = useModalState();
 
     // Switches
-    const showProgress = isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing);
-    const showSubTitleSection = contentIndexingDone && !isRefreshing && isDBLimited && !isEnablingEncryptedSearch;
-    const isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
-    const showToggle = isEnablingContentSearch || isPaused || contentIndexingDone;
+    const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
+    const showSubTitleSection = wasIndexingDone(user.ID) && !isRefreshing && isDBLimited;
+    const isEstimating =
+        estimatedMinutes === 0 && (totalIndexingMessages === 0 || esProgress !== totalIndexingMessages);
 
     // ES progress
-    const progressFromBuildEvent = isRefreshing
-        ? 0
-        : Math.ceil((getProgressRecorderRef().current[0] / getProgressRecorderRef().current[1]) * 100);
+    const progressFromBuildEvent = isRefreshing ? 0 : getESCurrentProgress(user.ID);
     const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Header
@@ -64,34 +60,37 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <span className="color-weak mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
     let esToggleTooltip = c('Info').t`Activation in progress`;
-    if (contentIndexingDone && !isEnablingContentSearch) {
+    if (wasIndexingDone(user.ID) && !isBuilding) {
         esToggleTooltip = esEnabled
             ? c('Info').t`Turn off content search. Activation progress won't be lost.`
             : c('Info').t`Turn on to search the content of your messages`;
     }
 
-    const esExplanation = c('Info')
-        .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`;
-
-    const esCTA = showToggle ? (
+    const esCTA = indexKeyExists(user.ID) ? (
         <Tooltip title={esToggleTooltip}>
             <span>
                 <Toggle
                     id="es-toggle"
                     className="mlauto flex-item-noshrink"
-                    checked={contentIndexingDone && esEnabled && !isEnablingContentSearch}
+                    checked={wasIndexingDone(user.ID) && esEnabled && !isBuilding}
                     onChange={toggleEncryptedSearch}
                     disabled={showProgress}
                 />
             </span>
         </Tooltip>
     ) : (
-        <Button onClick={() => setEnableESModalOpen(true)} loading={isEnablingEncryptedSearch}>
+        <Button onClick={() => setEnableESModalOpen(true)} loading={esEnabled && !isBuilding}>
             {c('Action').t`Activate`}
         </Button>
     );
-    const info = <Info questionMark title={esExplanation} />;
-    const esHeader = showToggle ? (
+    const info = (
+        <Info
+            questionMark
+            title={c('Tooltip')
+                .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
+        />
+    );
+    const esHeader = indexKeyExists(user.ID) ? (
         <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center w100">
             {esTitle}
             {info}
@@ -104,18 +103,17 @@ const EncryptedSearchField = ({ esState }: Props) => {
     );
 
     // Progress indicator
-    const totalProgress = getProgressRecorderRef().current[1];
-    const currentProgress = Math.min(esProgress, totalProgress);
+    const totalProgressToShow = Math.max(esProgress, getESTotal(user.ID));
     let progressStatus: string = '';
-    if (isPaused) {
+    if (getES.Pause(user.ID)) {
         progressStatus = c('Info').t`Indexing paused`;
     } else if (isEstimating) {
         progressStatus = c('Info').t`Estimating time remaining...`;
     } else if (isRefreshing) {
         progressStatus = c('Info').t`Updating message content search...`;
     } else {
-        // translator: esProgress is a number representing the current message being fetched, totalIndexingItems is the total number of message in the mailbox
-        progressStatus = c('Info').jt`Downloading message ${currentProgress} out of ${totalProgress}` as string;
+        // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
+        progressStatus = c('Info').jt`Downloading message ${esProgress} out of ${totalProgressToShow}` as string;
     }
 
     const etaMessage =
@@ -131,17 +129,20 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Progress
             value={progressValue || 0}
             aria-describedby="timeRemaining"
-            className={classnames(['mt1 mb1 flex-item-fluid', isPaused ? 'progress-bar--disabled' : undefined])}
+            className={classnames([
+                'mt1 mb1 flex-item-fluid',
+                getES.Pause(user.ID) ? 'progress-bar--disabled' : undefined,
+            ])}
         />
     );
-    const disablePauseResumeButton = contentIndexingDone && !isEnablingContentSearch;
-    const showPauseResumeButton = showProgress && (!contentIndexingDone || isEnablingContentSearch) && !isRefreshing;
-    const pauseResumeButton = isPaused ? (
+    const disablePauseResumeButton = wasIndexingDone(user.ID) && isBuilding;
+    const showPauseResumeButton = showProgress && (!wasIndexingDone(user.ID) || isBuilding) && !isRefreshing;
+    const pauseResumeButton = getES.Pause(user.ID) ? (
         <Button
             shape="solid"
             color="norm"
             className="ml1"
-            onClick={() => enableContentSearch()}
+            onClick={() => resumeIndexing()}
             disabled={disablePauseResumeButton}
         >
             {c('Action').t`Resume`}
@@ -154,7 +155,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
 
     const handleEnableES = async () => {
         enableESModalProps.onClose();
-        void enableEncryptedSearch().then(() => enableContentSearch());
+        await resumeIndexing();
     };
 
     return (
@@ -171,7 +172,8 @@ const EncryptedSearchField = ({ esState }: Props) => {
                         ]}
                         {...enableESModalProps}
                     >
-                        {esExplanation}
+                        {c('Info')
+                            .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
                     </AlertModal>
                 </div>
             </div>
@@ -195,7 +197,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                         aria-atomic="true"
                         className={classnames([
                             'color-weak relative advanced-search-time-remaining',
-                            isEstimating || isPaused ? 'visibility-hidden' : undefined,
+                            isEstimating || getES.Pause(user.ID) ? 'visibility-hidden' : undefined,
                         ])}
                     >
                         {etaMessage}
