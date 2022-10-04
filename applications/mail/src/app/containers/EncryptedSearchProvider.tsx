@@ -224,35 +224,15 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return esLibraryFunctions.esDelete();
         }
 
-        setESMailStatus((esMailStatus) => ({
-            ...esMailStatus,
-            isMigrating: true,
-        }));
-
         // Migrate old IDBs
-        const success = await migrate(user.ID, api, getUserKeys, getMessageKeys, () =>
-            esHelpers.queryItemsMetadata(new AbortController().signal)
-        ).catch((error) => {
-            esSentryReport(`migration: ${error.message}`, error);
-            return false;
-        });
-
-        setESMailStatus((esMailStatus) => ({
-            ...esMailStatus,
-            isMigrating: false,
-        }));
-
+        const success = await migrate(
+            user.ID,
+            getUserKeys,
+            () => esHelpers.queryItemsMetadata(new AbortController().signal),
+            esHelpers.getTotalItems
+        );
         if (!success) {
-            createNotification({
-                text: c('Error')
-                    .t`There was a problem updating your local messages, they will be downloaded again to re-enable content search`,
-                type: 'error',
-            });
-
-            return esLibraryFunctions
-                .esDelete()
-                .then(() => esLibraryFunctions.enableEncryptedSearch({ isRefreshed: true }))
-                .then(() => esLibraryFunctions.enableContentSearch({ isRefreshed: true }));
+            await esLibraryFunctions.esDelete();
         }
 
         // Enable encrypted search for all new users. For paid users only,

@@ -17,7 +17,6 @@ import {
     testKeywords,
 } from '@proton/encrypted-search';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Api, LabelCount, Recipient, UserModel } from '@proton/shared/lib/interfaces';
@@ -72,7 +71,7 @@ export const getESHelpers = ({
     // We need to keep the recovery point for metadata indexing in memory
     // for cases where IDB couldn't be instantiated but we still want to
     // index content
-    let metadataRecoveryPoint: MetadataRecoveryPoint | undefined;
+    let metadataRecoveryPoint: MetadataRecoveryPoint = {};
     const queryItemsMetadata = async (signal: AbortSignal) => {
         const messagesPromises: Promise<ESBaseMessage[] | undefined>[] = [];
         const Messages: ESBaseMessage[] = [];
@@ -81,7 +80,7 @@ export const getESHelpers = ({
         // Note that indexing, and therefore an instance of this function,
         // can exist even without an IDB, because we can index in memory only.
         // Therefore, we have to check if an IDB exists before querying it
-        if (!recoveryPoint && (await checkVersionedESDB(userID))) {
+        if (await checkVersionedESDB(userID)) {
             recoveryPoint = await readMetadataRecoveryPoint(userID);
         }
 
@@ -95,8 +94,7 @@ export const getESHelpers = ({
                 signal,
                 queryMessageMetadata({
                     PageSize: ES_MAX_PARALLEL_ITEMS,
-                    Limit: ES_MAX_PARALLEL_ITEMS,
-                    Location: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    Location: '5',
                     Sort: 'Time',
                     Desc: 1,
                     Page,
@@ -139,11 +137,9 @@ export const getESHelpers = ({
 
         return {
             resultMetadata: Messages,
-            setRecoveryPoint: async (setIDB: boolean = true) => {
+            setRecoveryPoint: async () => {
                 metadataRecoveryPoint = newRecoveryPoint;
-                if (setIDB) {
-                    await setMetadataRecoveryPoint(userID, newRecoveryPoint);
-                }
+                return setMetadataRecoveryPoint(userID, newRecoveryPoint);
             },
         };
     };

@@ -9,8 +9,7 @@ import { ESCache, ESEvent, EventsObject } from './interfaces';
 interface RequiredESHelpers<ESItemMetadata, ESSearchParameters> {
     /**
      * Retrieve a batch of items' metadata, the mechanism to keep track of where the fetching
-     * has arrived is supposed to be built-in (but can optionally take a boolean indicating whether
-     * to store progress in IDB or only in memory. It defaults to true, i.e. store in IDB too.)
+     * has arrived is supposed to be built-in
      * @param signal an abort signal to abort potential API calls in case of sudden aborts
      * @returns An array of metadata items, i.e. the next batch of items that need to be indexed,
      * as well as a callback to set the recovery point in IndexedDB for the next call to queryItemsMetadata
@@ -19,7 +18,7 @@ interface RequiredESHelpers<ESItemMetadata, ESSearchParameters> {
      */
     queryItemsMetadata: (signal: AbortSignal) => Promise<{
         resultMetadata?: ESItemMetadata[];
-        setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
+        setRecoveryPoint?: () => Promise<void>;
     }>;
 
     /**
