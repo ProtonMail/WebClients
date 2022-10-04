@@ -79,16 +79,6 @@ export const blockAddressesFullfilled = (
     });
 };
 
-export const blockAddressFullfilled = (state: Draft<IncomingDefaultsState>, action: PayloadAction<IncomingDefault>) => {
-    const itemIndex = state.list.findIndex((item) => item.ID === action.payload.ID);
-
-    if (itemIndex !== -1) {
-        state.list[itemIndex] = action.payload;
-    } else {
-        state.list.push(action.payload);
-    }
-};
-
 export const removeFullfilled = (state: Draft<IncomingDefaultsState>, action: PayloadAction<{ ID: string }[]>) => {
     const removedIDs = action.payload.map(({ ID }) => ID);
 
