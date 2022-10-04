@@ -3,7 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike, Icon, MainLogo, Unauthenticated, classnames } from '@proton/components';
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import './Layout.scss';
@@ -34,7 +34,12 @@ export default function SharedPageLayout({ reportAbuseButton, withSidebar, expan
                 </div>
                 <footer className="shared-page-layout-footer text-center">
                     {reportAbuseButton}
-                    <p>{c('Title').t`Based in Switzerland, available globally`}</p>
+                    <p>
+                        {
+                            // translator: full sentence 'Proton. Privacy by default.'
+                            c('Footer').t`${BRAND_NAME}. Privacy by default.`
+                        }
+                    </p>
                 </footer>
             </div>
         </Unauthenticated>

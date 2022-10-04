@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/components/components';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 
 interface FooterProps {
@@ -13,7 +13,12 @@ interface FooterProps {
 const LayoutFooter = ({ className, app, version }: FooterProps) => {
     return (
         <footer className={className}>
-            <div className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</div>
+            <div className="auto-mobile">
+                {
+                    // translator: full sentence 'Proton. Privacy by default.'
+                    c('Footer').t`${BRAND_NAME}. Privacy by default.`
+                }
+            </div>
             <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
                 <span className="auto-tiny-mobile">
                     <Href key="terms" className="signup-footer-link" href={getTermsURL(app)}>{c('Link').t`Terms`}</Href>

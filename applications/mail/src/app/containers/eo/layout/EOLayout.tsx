@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import {
     APP_NAMES,
+    BRAND_NAME,
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
@@ -100,7 +101,12 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 </div>
             </div>
             <footer className="flex-item-noshrink text-center p1">
-                <div className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</div>
+                <div className="auto-mobile">
+                    {
+                        // translator: full sentence 'Proton. Privacy by default.'
+                        c('Footer').t`${BRAND_NAME}. Privacy by default.`
+                    }
+                </div>
                 <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
                     <span className="auto-mobile">{termsLink}</span>
                     <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
