@@ -50,6 +50,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Authenticate": [
+        "認証"
+      ],
       "Back": [
         "戻る"
       ],
@@ -482,6 +485,9 @@
       "Use for sending": [
         "送信に使用"
       ],
+      "Use recovery code": [
+        "回復用コードを使用"
+      ],
       "Verify": [
         "検証"
       ],
@@ -630,6 +636,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "ベータ"
+      ],
+      "Includes": [
+        "プランには以下が含まれます"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準価格: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最も人気"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Get the deal now": [
+        "今すぐ割引を入手"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%割引"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        " / 月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別オファー"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1か月"
+      ],
+      "12 months": [
+        "12か月"
+      ],
+      "24 months": [
+        "24か月"
       ]
     },
     "Bug category": {
@@ -1974,6 +2033,9 @@
       ],
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
+      ],
+      "Cancellation failed to be sent": [
+        "イベント中止の通知を送信できませんでした"
       ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
@@ -3813,6 +3875,9 @@
       ],
       "Your calendar URL": [
         "カレンダーの URL"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ]
     },
     "Label for contact group color": {
@@ -3851,9 +3916,6 @@
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
-      "Go to subscription plans": [
-        "サブスクリプション プランへ移動"
-      ],
       "Learn more": [
         "より詳しく"
       ],
@@ -3868,9 +3930,6 @@
       ],
       "Subscribed calendars": [
         "購読済みカレンダー"
-      ],
-      "Upgrade": [
-        "アップグレード"
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
@@ -4698,11 +4757,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見が送信されました"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "毎月"
       ]
     },
     "Table header": {

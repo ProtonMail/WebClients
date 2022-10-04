@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
       "Back": [
         "Retour"
       ],
@@ -562,6 +565,9 @@
       "Upload file": [
         "Téléverser le fichier"
       ],
+      "Upload files": [
+        "Charger des fichiers"
+      ],
       "Upload folder": [
         "Téléverser le dossier"
       ],
@@ -573,6 +579,9 @@
       ],
       "Use for sending": [
         "Utiliser pour l'envoi"
+      ],
+      "Use recovery code": [
+        "Utiliser un code de récupération"
       ],
       "Verify": [
         "Vérifier "
@@ -629,6 +638,56 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bêta"
+      ],
+      "Includes": [
+        "Inclut"
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Meilleure offre"
+      ],
+      "Most popular": [
+        "Le plus populaire"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Get the deal now": [
+        "Obtenez l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "Économisez ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "par mois"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offre spéciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
       ]
     },
     "Bug category": {
@@ -1698,6 +1757,9 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
       ],
+      "A problem occurred, please try again.": [
+        "Une erreur s'est produite, veuillez réessayer."
+      ],
       "Authentication canceled.": [
         "Authentification annulée."
       ],
@@ -1814,6 +1876,9 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
+      "Please activate your search again": [
+        "Veuillez réactiver la recherche de contenu"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
@@ -1848,11 +1913,17 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Certains de vos noms de dossier sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Certains de vos noms de label sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
@@ -2388,6 +2459,9 @@
       "contacts": [
         "contacts"
       ],
+      "CSV or a VCF (vCard) file": [
+        "Fichier CSV ou VCF (vCard)"
+      ],
       "full calendar view": [
         "la vue complète du calendrier"
       ],
@@ -2686,10 +2760,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
-      "Delete drive": [
-        "Supprimer le disque",
-        "Supprimer les disques"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Signature numérique vérifiée. Ce fichier a été chargé de manière sécurisée par ${ emailAddress }."
       ],
@@ -2796,6 +2866,9 @@
       "Free up some space or contact your administrator.": [
         "Libérez de l'espace ou contactez votre administrateur·rice."
       ],
+      "Go ahead, upload a file": [
+        "Chargez un fichier"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Allez dans « Mes fichiers » et commencez à téléverser des fichiers."
       ],
@@ -2859,6 +2932,9 @@
       ],
       "Internet connection restored.": [
         "Connexion Internet rétablie."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Il suffit de glisser-déposer ou de sélectionner des fichiers"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -2981,9 +3057,6 @@
       "Paused": [
         "En pause"
       ],
-      "Permanently delete all files in your drive": [
-        "Supprimez définitivement tous les fichiers de votre disque"
-      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
@@ -3087,6 +3160,9 @@
       "Shareable link for ${ boldNameText }": [
         "Lien partageable pour ${ boldNameText }"
       ],
+      "Shared link failed to be loaded": [
+        "Le lien partagé n'a pas pu être chargé"
+      ],
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée"
       ],
@@ -3116,6 +3192,9 @@
       ],
       "Swiss privacy": [
         "Confidentialité suisse"
+      ],
+      "Tap the + button to upload a file or folder": [
+        "Tapotez sur le bouton + pour charger un fichier ou un dossier"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Le compte peut avoir une nouvelle clé ou les éléments suivants ont peut-être été falsifiés: ${ items }. N'ouvrez que si vous avez confiance."
@@ -3461,6 +3540,9 @@
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces"
       ],
+      "Coming soon": [
+        "Bientôt disponible"
+      ],
       "Comment": [
         "Commentaire"
       ],
@@ -3779,6 +3861,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Oui, je veux supprimer définitivement\nmes anciens fichiers"
+      ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3814,9 +3899,6 @@
       "clearing your browser cache": [
         "vider le cache de votre navigateur"
       ],
-      "Go to subscription plans": [
-        "Aller aux abonnements"
-      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -3831,9 +3913,6 @@
       ],
       "Trash": [
         "Corbeille"
-      ],
-      "Upgrade": [
-        "Changer d'offre"
       ],
       "Upgrade account": [
         "Changer d'offre"
@@ -3866,9 +3945,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedLabelsCount } dossier sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedLabelsCount } dossiers sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages de ${ selectedLabelsCount } sur ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages de ${ selectedLabelsCount } sur ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ totalLabelsCount } dossier depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ totalLabelsCount } dossiers depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages depuis ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4156,8 +4243,18 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Créer un lien de partage"
+      ],
+      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
+        "Commencez à utiliser Proton Drive et nous doublerons votre espace de stockage gratuit pour atteindre 1 Go!"
+      ],
       "Set a recovery method": [
         "Définir une méthode de récupération"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jour:",
+        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jours:"
       ],
       "Upload a file": [
         "Téléverser un fichier"
@@ -4189,6 +4286,9 @@
     "Onboarding Title": {
       "Welcome to ${ appName }": [
         "Bienvenue dans ${ appName }"
+      ],
+      "Your welcome bonus": [
+        "Votre bonus de bienvenue"
       ]
     },
     "Option": {
@@ -4433,11 +4533,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Avis envoyé"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mois"
       ]
     },
     "Table header": {

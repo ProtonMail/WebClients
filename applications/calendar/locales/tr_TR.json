@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
       "Back": [
         "Geri"
       ],
@@ -492,8 +495,14 @@
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodu kullan"
+      ],
       "Use for sending": [
         "Gönderim için kullan"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullan"
       ],
       "Verify": [
         "Doğrula"
@@ -664,6 +673,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "İçerdikleri"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standart fiyat: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "En popüler olanlar"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlan"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- %${ percentage }"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
       ]
     },
     "Bug category": {
@@ -2687,6 +2749,24 @@
         "Geri bildiriminiz"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
     "file size format": {
       "byte": [
         "bayt",
@@ -3346,11 +3426,20 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
       "Existent and added participants will be notified.": [
         "Var olan ve eklenen katılımcılara bildirilecek."
@@ -3672,6 +3761,9 @@
       "Week": [
         "Hafta"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
       ],
@@ -3872,6 +3964,9 @@
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
       ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
@@ -4161,6 +4256,9 @@
       ],
       "Your calendar URL": [
         "Takvim adresiniz"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
       ]
     },
     "Label for contact group color": {
@@ -4199,9 +4297,6 @@
       "clearing your browser cache": [
         "web tarayıcınızın ön belleğini temizlemek"
       ],
-      "Go to subscription plans": [
-        "Abonelik tarifelerine git"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -4216,9 +4311,6 @@
       ],
       "Subscribed calendars": [
         "Abone olunmuş takvimler"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ],
       "Upgrade account": [
         "Hesabı yüksek tarifeye geçir"
@@ -5201,11 +5293,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Geri bildirim gönderildi"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/ay"
       ]
     },
     "Table header": {

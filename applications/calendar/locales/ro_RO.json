@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
+      "Authenticate": [
+        "Autentificare"
+      ],
       "Back": [
         "Înapoi"
       ],
@@ -494,8 +497,14 @@
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
       ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
       "Use for sending": [
         "Folosire pentru trimitere"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
       ],
       "Verify": [
         "Verificare"
@@ -666,6 +675,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preț standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Cel mai popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Get the deal now": [
+        "Obțineți oferta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pe lună"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 luni"
       ]
     },
     "Bug category": {
@@ -2710,6 +2772,24 @@
         "Experiența personală"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
     "file size format": {
       "byte": [
         "bait",
@@ -3408,11 +3488,20 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar odată."
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare ale contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
       ],
       "Existent and added participants will be notified.": [
         "Participanţii existenți și adăugaţi vor fi notificaţi."
@@ -3736,6 +3825,9 @@
       "Week": [
         "Săptămâna"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+      ],
       "Which event would you like to delete?": [
         "Ce eveniment doriți să ștergeți?"
       ],
@@ -3936,6 +4028,9 @@
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
+      ],
+      "Authenticator app": [
+        "Aplicație Authenticator"
       ],
       "Automatically save contacts": [
         "Salvare automată contacte"
@@ -4226,6 +4321,9 @@
       ],
       "Your calendar URL": [
         "URL calendar"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
       ]
     },
     "Label for contact group color": {
@@ -4264,9 +4362,6 @@
       "clearing your browser cache": [
         "golind bufferul navigatorului"
       ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
       "Learn more": [
         "Detalii"
       ],
@@ -4281,9 +4376,6 @@
       ],
       "Subscribed calendars": [
         "Calendare abonate"
-      ],
-      "Upgrade": [
-        "Migrare"
       ],
       "Upgrade account": [
         "Migrare cont"
@@ -5302,11 +5394,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/lună"
       ]
     },
     "Table header": {

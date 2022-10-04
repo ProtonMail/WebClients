@@ -92,6 +92,9 @@
       "Attachment": [
         "Pièce jointe"
       ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
       "Back": [
         "Précédent"
       ],
@@ -431,7 +434,7 @@
         "Masquer les messages"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Masquer mon adresse e-mail"
       ],
       "Hide my email": [
         "Masquer mon adresse e-mail"
@@ -599,6 +602,12 @@
       "Move to inbox": [
         "Déplacer dans le dossier Boîte de réception"
       ],
+      "Move to inbox (not spam)": [
+        "Déplacer dans le dossier Boîte de réception (non indésirable/spam)"
+      ],
+      "Move to spam": [
+        "Déplacer dans le dossier Indésirables/spam"
+      ],
       "Move to spam and unsubscribe": [
         "Déplacer dans le dossier Indésirables/spam et se désabonner"
       ],
@@ -756,7 +765,7 @@
         "Signaler un bug"
       ],
       "Report phishing": [
-        "Signaler un hameçonnage"
+        "Signaler un phishing/hameçonnage"
       ],
       "Request a feature": [
         "Demander une fonctionnalité"
@@ -987,8 +996,14 @@
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
       ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
+      ],
       "Use for sending": [
         "Utiliser pour l'envoi"
+      ],
+      "Use recovery code": [
+        "Utiliser un code de récupération"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilisez votre souris pour redimensionner la vue. Si vous utilisez votre clavier, vous pouvez utiliser les touches fléchées gauche et droite pour redimensionner."
@@ -1196,6 +1211,97 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Profiter de l'offre"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bêta"
+      ],
+      "Includes": [
+        "Inclut"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Prix normal : ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Meilleure offre"
+      ],
+      "Most popular": [
+        "Le plus populaire"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Économisez plus en combinant Mail et VPN"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Get the deal now": [
+        "Profitez de l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "- ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        "Conditions générales des offres spéciales"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "par mois"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offre spéciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
+      ],
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Facturé ${ amount } pour le premier mois.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Facturé ${ amount } pour la première année.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
       ]
     },
     "Bug category": {
@@ -1917,11 +2023,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Votre sélection ne contient que vous-même comme expéditeur."
       ]
     },
     "Country name": {
@@ -2696,7 +2797,7 @@
         "Pièce jointe"
       ],
       "Filter on": [
-        "Filtrer sur"
+        "Filtrer par"
       ],
       "Next": [
         "Suivant"
@@ -3252,6 +3353,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Un problème est survenu lors de la mise à jour de vos messages locaux, ils seront téléchargés à nouveau pour réactiver la recherche de contenu."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s'est produite lors de l'exportation des vCards des contacts."
       ],
@@ -3565,6 +3669,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Votre retour d'expérience"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clef de sécurité"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clef de sécurité"
       ]
     },
     "file size format": {
@@ -4457,7 +4579,7 @@
         "Fermez cet écran pour quitter."
       ],
       "Confirm phishing report": [
-        "Confirmer le signalement d'hameçonnage"
+        "Confirmer le signalement de phishing/hameçonnage"
       ],
       "Content: ": [
         "Contenu : "
@@ -4549,6 +4671,9 @@
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Edit encryption": [
         "Modifier le chiffrement"
       ],
@@ -4587,11 +4712,17 @@
       "End of search results from past 30 days": [
         "Fin des résultats de recherche des 30 derniers jours"
       ],
+      "Enter the code from your authenticator app": [
+        "Entrez le code de votre application d'authentification."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimé : ${ estimatedMinutes } minute",
@@ -4884,7 +5015,7 @@
         "Autres options"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
+        "Notre système a marqué ce message comme étant une tentative de phishing/hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
       ],
       "per month.": [
         "par mois."
@@ -4969,7 +5100,7 @@
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "Signaler un message comme une tentative d'hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
+        "Signaler un message comme une tentative de phishing/hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
       ],
       "Request read receipt": [
         "Demander une confirmation de lecture"
@@ -5274,6 +5405,9 @@
       "Updating message content search...": [
         "Mise à jour de la recherche de contenu de message..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Mise à jour de vos messages locaux, le contenu des messages ne sera pas recherché pendant cette mise à jour."
+      ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
       ],
@@ -5360,6 +5494,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Lorsque vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification  ?"
@@ -5675,7 +5812,7 @@
         "Déplacer dans Corbeille"
       ],
       "Move to...": [
-        "Déplacer vers..."
+        "Déplacer dans..."
       ],
       "Move up": [
         "Déplacer vers le haut"
@@ -5819,6 +5956,9 @@
       ],
       "Attachments": [
         "Pièces jointes"
+      ],
+      "Authenticator app": [
+        "Application d'authentification"
       ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
@@ -6215,6 +6355,9 @@
       ],
       "Wonderful": [
         "Merveilleux"
+      ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7436,8 +7579,8 @@
       "Conversation moved to ${ folderName }.": [
         "Conversation déplacée dans le dossier ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -7493,14 +7636,14 @@
       "Message marked as unread.": [
         "Message marqué comme non lu."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Message déplacé dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées."
       ],
       "Message moved to ${ folderName }.": [
         "Message déplacé dans le dossier ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."
@@ -7523,7 +7666,7 @@
         "Mot de passe copié dans le presse-papiers"
       ],
       "Phishing reported": [
-        "Hameçonnage signalé"
+        "Phishing/hameçonnage signalé"
       ],
       "Phone number copied to clipboard": [
         "Numéro de téléphone copié dans le presse-papiers"
@@ -7939,10 +8082,10 @@
         "Déplacer dans le dossier Boîte de réception"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Déplacer dans le dossier Boîte de réception (non indésirable/spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Déplacer dans le dossier Indésirables/spam"
       ],
       "Move to trash": [
         "Déplacer dans Corbeille"

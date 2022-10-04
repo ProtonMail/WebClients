@@ -489,11 +489,11 @@
       "Non spam": [
         "非垃圾邮件"
       ],
-      "Ok": [
-        "确定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
@@ -546,10 +546,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -1063,6 +1063,56 @@
       ],
       "Two-year": [
         "两年付费"
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "原价：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此订阅将在两年后自动续订，价格不变，直至取消。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "人气最高"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Get the deal now": [
+        "立即享受优惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
       ]
     },
     "breadcrumb": {
@@ -2620,6 +2670,35 @@
         "电子邮箱通常不使用 \"www\" 子域名。您确定要继续使用吗？"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } 已添加"
+      ],
+      "${ name } deletion failed": [
+        "${ name } 删除失败"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "将 ${ name } 移入非垃圾邮件名单失败"
+      ],
+      "${ name } failed to move to spam list": [
+        "将 ${ name } 移入垃圾邮件名单失败"
+      ],
+      "${ name } failed to move to your block list": [
+        "将 ${ name } 移入黑名单失败"
+      ],
+      "${ name } moved to Non spam list": [
+        "已将 ${ name } 移入非垃圾邮件名单"
+      ],
+      "${ name } moved to spam list": [
+        "已将 ${ name } 移入垃圾邮件名单"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } 已移至黑名单"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } 删除成功"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bug 或质量问题"
@@ -2709,17 +2788,32 @@
       ]
     },
     "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
+      "${ name } added": [
+        "${ name } 已添加"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } deletion failed": [
+        "${ name } 删除失败"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to Non spam List": [
+        "将 ${ name } 移入非垃圾邮件名单失败"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } failed to move to spam list": [
+        "将 ${ name } 移入垃圾邮件名单失败"
+      ],
+      "${ name } failed to move to your block list": [
+        "将 ${ name } 移入黑名单失败"
+      ],
+      "${ name } moved to Non spam list": [
+        "已将 ${ name } 移入非垃圾邮件名单"
+      ],
+      "${ name } moved to spam list": [
+        "已将 ${ name } 移入垃圾邮件名单"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } 已移至黑名单"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } 删除成功"
       ]
     },
     "Email subject": {
@@ -3666,8 +3760,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "您将不会收到来自屏蔽邮箱地址的邮件"
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "在白名单和黑名单中搜索"
       ]
     },
     "Font Face Default": {
@@ -7307,9 +7401,6 @@
       "General": [
         "常规"
       ],
-      "Go to subscription plans": [
-        "转至订阅计划"
-      ],
       "How to unlock data": [
         "如何解锁数据"
       ],
@@ -7354,9 +7445,6 @@
       ],
       "Trouble signing in?": [
         "登录遇到问题？"
-      ],
-      "Upgrade": [
-        "升级"
       ],
       "Upgrade account": [
         "升级账户"
@@ -8102,6 +8190,17 @@
         "您所选的账户等级：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } $ 试用"
+      ],
+      "Upgrade to ${ planName }": [
+        "开通 ${ planName }"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -8123,17 +8222,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } $ 试用"
-      ],
-      "Upgrade to ${ planName }": [
-        "开通 ${ planName }"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -9511,9 +9599,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/月"
-      ],
       "per month": [
         "每月"
       ]
@@ -9697,14 +9782,14 @@
       "Add Sieve filter": [
         "创建 Sieve 规则"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "加入白名单"
       ],
       "Add to spam list": [
         "加入垃圾邮件名单"
+      ],
+      "Add to your block list": [
+        "加入黑名单"
       ],
       "Add user": [
         "添加用户"
