@@ -92,6 +92,9 @@
       "Attachment": [
         "Вкладення"
       ],
+      "Authenticate": [
+        "Автентифікація"
+      ],
       "Back": [
         "Назад"
       ],
@@ -435,7 +438,7 @@
         "Приховати повідомлення"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Сховати мою е‑адресу"
       ],
       "Hide my email": [
         "Сховати мою е‑адресу"
@@ -604,6 +607,12 @@
       ],
       "Move to inbox": [
         "Перемістити до вхідних"
+      ],
+      "Move to inbox (not spam)": [
+        "Перемістити до вхідних (не спам)"
+      ],
+      "Move to spam": [
+        "Перемістити до спаму"
       ],
       "Move to spam and unsubscribe": [
         "Перемістити до спаму і відписатися"
@@ -995,8 +1004,14 @@
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
       ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
       "Use for sending": [
         "Використовувати для надсилання"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Змініть розмір вікна перегляду за допомогою миші. Якщо ви використовуєте клавіатуру, можете змінювати розмір стрілками ліворуч та праворуч."
@@ -1206,6 +1221,45 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "Включає"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Найпопулярніша"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Get the deal now": [
+        "Скористатися пропозицією"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 місяць"
+      ],
+      "12 months": [
+        "12 місяців"
+      ],
+      "24 months": [
+        "24 місяці"
       ]
     },
     "Bug category": {
@@ -1927,11 +1981,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "У вашому виборі відправником є лише ви"
       ]
     },
     "Country name": {
@@ -3292,6 +3341,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Виникла проблема з оновленням ваших локальних повідомлень, вони будуть завантажені повторно, щоб повторно ввімкнути пошук вмісту"
+      ],
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
       ],
@@ -3607,6 +3659,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Ваш відгук"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
       ]
     },
     "file size format": {
@@ -4697,6 +4767,9 @@
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
+      "Each code can only be used once": [
+        "Кожен код може бути використаний тільки один раз"
+      ],
       "Edit encryption": [
         "Редагувати шифрування"
       ],
@@ -4739,11 +4812,17 @@
       "End of search results from past 30 days": [
         "Кінець результатів пошуку за останні 30 днів"
       ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з програми автентифікації"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
@@ -5444,6 +5523,9 @@
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Оновлення локальних повідомлень, вміст повідомлень не шукатиметься під час цього оновлення"
+      ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
       ],
@@ -5530,6 +5612,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Коли ви увімкнули довірені ключі для ${ senderName }, відкриті ключі було додано до контактних даних."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -6012,6 +6097,9 @@
       "Attachments": [
         "Вкладення"
       ],
+      "Authenticator app": [
+        "Програма автентифікації"
+      ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
@@ -6407,6 +6495,9 @@
       ],
       "Wonderful": [
         "Дивовижно"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "Label for contact group color": {
@@ -7696,8 +7787,8 @@
       "Conversation moved to ${ folderName }.": [
         "Розмову переміщено до теки ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Розмову переміщено до спаму, а відправника додано до вашого списку блокування."
       ],
       "Conversation removed from ${ labelName }.": [
         "Розмову вилучено з ${ labelName }."
@@ -7753,14 +7844,14 @@
       "Message marked as unread.": [
         "Повідомлення позначено непрочитаним."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Повідомлення переміщено до теки ${ folderName }, а відправника додано до вашого списку дозволених."
       ],
       "Message moved to ${ folderName }.": [
         "Повідомлення переміщено до теки ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Повідомлення переміщено до спаму, а відправника до вашого списку блокування."
       ],
       "Message removed from ${ labelName }.": [
         "Повідомлення вилучено з ${ labelName }."
@@ -8229,10 +8320,10 @@
         "Перемістити до вхідних"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Перемістити до вхідних (не спам)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Перемістити до спаму"
       ],
       "Move to trash": [
         "Перемістити до смітника"

@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Authenticate": [
+        "Автентифікація"
+      ],
       "Back": [
         "Назад"
       ],
@@ -578,8 +581,14 @@
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
       ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
       "Use for sending": [
         "Використовувати для надсилання"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
       ],
       "Verify": [
         "Перевірити"
@@ -636,6 +645,51 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "Включає в себе"
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Найкраща пропозиція"
+      ],
+      "Most popular": [
+        "Найпопулярніша"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Get the deal now": [
+        "Скористатися пропозицією зараз"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 місяць"
+      ],
+      "12 months": [
+        "12 місяців"
+      ],
+      "24 months": [
+        "24 місяці"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Отримайте спеціальну пропозицію наприкінці року на наш платний тариф Proton VPN PLUS прямо зараз"
       ]
     },
     "Bug category": {
@@ -2066,6 +2120,24 @@
         "Ваш відгук"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -2804,12 +2876,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
-      "Delete drive": [
-        "Видалити сховище",
-        "Видалити сховища",
-        "Видалити сховища",
-        "Видалити сховища"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цей файл безпечно вивантажено ${ emailAddress }."
       ],
@@ -2846,6 +2912,9 @@
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
+      "Each code can only be used once": [
+        "Кожен код може бути використаний тільки один раз"
+      ],
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
       ],
@@ -2855,11 +2924,17 @@
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з програми автентифікації"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Приблизно залишилося часу: ${ estimatedMinutes } хвилина",
@@ -3112,9 +3187,6 @@
       ],
       "Paused": [
         "Зупинено"
-      ],
-      "Permanently delete all files in your drive": [
-        "Остаточно видалити всі файли у сховищі"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
@@ -3398,6 +3470,9 @@
       "What would you like to do?": [
         "Що ви бажаєте зробити?"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
       ],
@@ -3569,6 +3644,9 @@
       ],
       "Audio file": [
         "Звуковий файл"
+      ],
+      "Authenticator app": [
+        "Програма автентифікації"
       ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
@@ -3926,6 +4004,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Так, я хочу остаточно видалити\nмої старі файли"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "Label for contact group color": {
@@ -3961,9 +4042,6 @@
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
-      "Go to subscription plans": [
-        "Перейти до тарифних планів"
-      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -3978,9 +4056,6 @@
       ],
       "Trash": [
         "Смітник"
-      ],
-      "Upgrade": [
-        "Покращити"
       ],
       "Upgrade account": [
         "Покращити обліковий запис"
@@ -4655,11 +4730,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Відгук надіслано"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/місяць"
       ]
     },
     "Table header": {

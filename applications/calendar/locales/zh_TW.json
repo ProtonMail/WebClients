@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
+      "Authenticate": [
+        "驗證"
+      ],
       "Back": [
         "上一步"
       ],
@@ -493,6 +496,9 @@
       "Use for sending": [
         "用於寄送"
       ],
+      "Use recovery code": [
+        "使用復原代碼"
+      ],
       "Verify": [
         "驗證"
       ],
@@ -662,6 +668,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果您遇到了問題，您還是可以停用測試版體驗。"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "測試版"
+      ],
+      "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準價格：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最熱門"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Get the deal now": [
+        "立即取得優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "省下 ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "一個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
       ]
     },
     "Bug category": {
@@ -3999,6 +4058,9 @@
       ],
       "Your calendar URL": [
         "您的行事曆網址"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ]
     },
     "Label for contact group color": {
@@ -4037,9 +4099,6 @@
       "clearing your browser cache": [
         "清除瀏覽器快取"
       ],
-      "Go to subscription plans": [
-        "前往訂購授權方案"
-      ],
       "Learn more": [
         "了解更多"
       ],
@@ -4054,9 +4113,6 @@
       ],
       "Subscribed calendars": [
         "已訂購授權的行事曆"
-      ],
-      "Upgrade": [
-        "升級"
       ],
       "Upgrade account": [
         "升級帳號"
@@ -4994,11 +5050,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見回饋已傳送"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/月"
       ]
     },
     "Table header": {

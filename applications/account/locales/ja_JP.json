@@ -466,10 +466,10 @@
       "No": [
         "いいえ"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -523,10 +523,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -1013,6 +1013,59 @@
       ],
       "Two-year": [
         "2年払い"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "ベータ"
+      ],
+      "Includes": [
+        "プランには以下が含まれます"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準価格: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最も人気"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Get the deal now": [
+        "今すぐ割引を入手"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%割引"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        " / 月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別オファー"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1か月"
+      ],
+      "12 months": [
+        "12か月"
+      ],
+      "24 months": [
+        "24か月"
       ]
     },
     "breadcrumb": {
@@ -2524,20 +2577,6 @@
         "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
       ]
     },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } のイベントのキャンセル"
@@ -3406,9 +3445,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
-      ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -6852,9 +6888,6 @@
       "General": [
         "一般"
       ],
-      "Go to subscription plans": [
-        "サブスクリプション プランへ移動"
-      ],
       "How to unlock data": [
         "データのロックを解除する方法"
       ],
@@ -6896,9 +6929,6 @@
       ],
       "Trouble signing in?": [
         "サインインに問題がある場合"
-      ],
-      "Upgrade": [
-        "アップグレード"
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
@@ -7571,6 +7601,17 @@
         "選択中のプラン: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } トライアル"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -7589,17 +7630,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } トライアル"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -8759,9 +8789,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/月"
-      ],
       "per month": [
         "毎月"
       ]
@@ -8931,9 +8958,6 @@
       ],
       "Add Sieve filter": [
         "Sieve フィルターの追加"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add to spam list": [
         "迷惑メールリストに追加"

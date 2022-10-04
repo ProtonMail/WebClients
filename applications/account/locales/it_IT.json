@@ -489,11 +489,11 @@
       "Non spam": [
         "Non spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -546,11 +546,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -1070,6 +1070,59 @@
       ],
       "Two-year": [
         "Due anni"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Prezzo standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Il più richiesto"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ],
+      "Get the deal now": [
+        "Ottieni la promo ora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mese"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offerta Speciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mese"
+      ],
+      "12 months": [
+        "12 mesi"
+      ],
+      "24 months": [
+        "24 mesi"
       ]
     },
     "breadcrumb": {
@@ -2647,8 +2700,20 @@
       "${ name } failed to move to Non spam List": [
         "spostamento di ${ name } nella lista dei non-spam non riuscito"
       ],
+      "${ name } failed to move to spam list": [
+        "Spostamento di ${ name } nella lista di mittenti spam fallito"
+      ],
+      "${ name } failed to move to your block list": [
+        "Spostamento di ${ name } nella lista mittenti bloccati fallito"
+      ],
       "${ name } moved to Non spam list": [
         "${ name } spostato nella lista dei non-spam"
+      ],
+      "${ name } moved to spam list": [
+        "Spostamento di ${ name } nella lista spam effettuato"
+      ],
+      "${ name } moved to your block list": [
+        "Spostamento di ${ name } nella tua lista mittenti bloccati effettuato"
       ],
       "${ name } successfully deleted": [
         "${ name } eliminato con successo"
@@ -2749,23 +2814,23 @@
       "${ name } deletion failed": [
         "eliminazione di ${ name } non riuscita"
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "spostamento di ${ name } nella lista dei non-spam non riuscito"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "Spostamento di ${ name } nella lista di mittenti spam fallito"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "Spostamento di ${ name } nella lista mittenti bloccati fallito"
       ],
       "${ name } moved to Non spam list": [
         "${ name } spostato nella lista dei non-spam"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "Spostamento di ${ name } nella lista spam effettuato"
+      ],
+      "${ name } moved to your block list": [
+        "Spostamento di ${ name } nella tua lista mittenti bloccati effettuato"
       ],
       "${ name } successfully deleted": [
         "${ name } eliminato con successo"
@@ -3729,8 +3794,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Le email da indirizzi bloccati non saranno consegnate."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Ricerca nella tua lista di mittenti affidabili e bloccati"
       ]
     },
     "Font Face Default": {
@@ -7415,9 +7480,6 @@
       "General": [
         "Generale"
       ],
-      "Go to subscription plans": [
-        "Vai ai piani di abbonamento"
-      ],
       "How to unlock data": [
         "Come sbloccare i dati"
       ],
@@ -7462,9 +7524,6 @@
       ],
       "Trouble signing in?": [
         "Problemi a registrarti?"
-      ],
-      "Upgrade": [
-        "Esecuzione dell'upgrade"
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
@@ -8234,6 +8293,17 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Prova ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminare l'account?"
@@ -8255,17 +8325,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzioni premium effettuando l'upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prova ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Effettua l'upgrade a ${ planName }"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -9667,9 +9726,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/mese"
-      ],
       "per month": [
         "al mese"
       ]
@@ -9856,14 +9912,14 @@
       "Add Sieve filter": [
         "Aggiungi filtro Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Aggiungi alla lista dei mittenti affidabili"
       ],
       "Add to spam list": [
         "Aggiungi alla lista degli spam"
+      ],
+      "Add to your block list": [
+        "Aggiungi alla tua lista mittenti bloccati"
       ],
       "Add user": [
         "Aggiungi utente"

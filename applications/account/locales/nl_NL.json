@@ -97,6 +97,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Apply to existing messages": [
+        "Pas toe op bestaande berichten"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -481,10 +484,10 @@
       "Non spam": [
         "Geen spam"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -538,11 +541,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "De pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -1046,6 +1049,59 @@
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bètaversie"
+      ],
+      "Includes": [
+        "Inclusief"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standaardprijs: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Populairste keuze"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Get the deal now": [
+        "Pak nu deze deal"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per maand"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
       ]
     },
     "breadcrumb": {
@@ -2555,6 +2611,17 @@
         "'www'-subdomeinen worden normaal gesproken niet gebruikt voor e-mailadressen. Weet u zeker dat u van deze domeinnaam gebruik wilt maken?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } toegevoegd"
+      ],
+      "${ name } deletion failed": [
+        "Verwijdering van ${ name } is mislukt"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } succesvol verwijderd"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
@@ -2644,17 +2711,14 @@
       ]
     },
     "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
+      "${ name } added": [
+        "${ name } toegevoegd"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } deletion failed": [
+        "Verwijdering van ${ name } is mislukt"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } successfully deleted": [
+        "${ name } succesvol verwijderd"
       ]
     },
     "Email subject": {
@@ -2984,11 +3048,17 @@
       "Signature verification failed": [
         "Handtekening controle mislukt"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw mapnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Sommige namen van uw labels zijn gereserveerd. Pas de import aan om deze namen te bewerken."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sommige labelnamen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
@@ -3608,9 +3678,6 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "E-mails van geblokkeerde adressen worden niet afgeleverd."
-      ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -4066,6 +4133,9 @@
       ],
       "contacts": [
         "contactpersonen"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV of een VCF (vCard) bestand"
       ],
       "full calendar view": [
         "volledige agendaweergave"
@@ -6287,6 +6357,9 @@
       " and ${ l }": [
         " en ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } e-mail of gebruikersnaam"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
       ],
@@ -7277,9 +7350,6 @@
       "General": [
         "Algemeen"
       ],
-      "Go to subscription plans": [
-        "Ga naar abonnementen"
-      ],
       "How to unlock data": [
         "Hoe gegevens ontgrendelen"
       ],
@@ -7324,9 +7394,6 @@
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ],
       "Upgrade account": [
         "Account upgraden"
@@ -8082,6 +8149,17 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Proefversie van ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -8103,17 +8181,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Proefversie van ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -9459,9 +9526,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/maand"
-      ],
       "per month": [
         "per maand"
       ]
@@ -9643,11 +9707,11 @@
       "Add Sieve filter": [
         "Sievefilter toevoegen"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to spam list": [
         "Toevoegen aan spamlijst"
+      ],
+      "Add to your block list": [
+        "Voeg toe aan uw blokkeerlijst"
       ],
       "Add user": [
         "Gebruiker toevoegen"

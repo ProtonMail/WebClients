@@ -92,6 +92,9 @@
       "Attachment": [
         "Příloha"
       ],
+      "Authenticate": [
+        "Ověřit"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -435,7 +438,7 @@
         "Skrýt zprávy"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Skrýt můj e-mail"
       ],
       "Hide my email": [
         "Skrýt můj e-mail"
@@ -604,6 +607,12 @@
       ],
       "Move to inbox": [
         "Přesunout do Doručené pošty"
+      ],
+      "Move to inbox (not spam)": [
+        "Přesunout do Doručené pošty (není spam)"
+      ],
+      "Move to spam": [
+        "Přesunout do Nevyžádané pošty"
       ],
       "Move to spam and unsubscribe": [
         "Přesunout do spamu a odhlásit"
@@ -995,8 +1004,14 @@
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
       ],
+      "Use authentication code": [
+        "Použít ověřovací kód"
+      ],
       "Use for sending": [
         "Použít pro odesílání"
+      ],
+      "Use recovery code": [
+        "Použít kód pro obnovení"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocí myši změňte velikost zobrazení. Pokud používáte klávesnici, můžete ke změně velikosti použít klávesy se šipkami doleva a doprava."
@@ -1206,6 +1221,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Zahrnuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Běžná cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Nejoblíbenější"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Get the deal now": [
+        "Objednat nyní"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "za měsíc"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciální nabídka"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
       ]
     },
     "Bug category": {
@@ -1927,11 +1995,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Váš výběr obsahuje pouze vás jako odesílatele"
       ]
     },
     "Country name": {
@@ -2705,6 +2768,9 @@
       "Attachment": [
         "Příloha"
       ],
+      "Filter on": [
+        "Filtr zapnut"
+      ],
       "Next": [
         "Další"
       ],
@@ -3289,6 +3355,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Vyskytl se problém s vyhledáváním obsahu. Místo toho bylo použito výchozí vyhledávání."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Došlo k problému s aktualizací vašich místních zpráv, budou znovu staženy, aby bylo možné znovu zapnout vyhledávání obsahu"
+      ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů vCard došlo k chybě"
       ],
@@ -3604,6 +3673,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Vaše zpětná vazba"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klíč zabezpečení"
       ]
     },
     "file size format": {
@@ -4694,6 +4781,9 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
+      "Each code can only be used once": [
+        "Každý kód lze použít pouze jednou"
+      ],
       "Edit encryption": [
         "Upravit šifrování"
       ],
@@ -4736,11 +4826,17 @@
       "End of search results from past 30 days": [
         "Konec výsledků vyhledávání za posledních 30 dní"
       ],
+      "Enter the code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Předpokládaný zbývající čas: ${ estimatedMinutes } minuta",
@@ -5441,6 +5537,9 @@
       "Updating message content search...": [
         "Aktualizuji vyhledávání ve zprávách..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Aktualizace místních zpráv, obsah zpráv nebude během této aktualizace prohledáván"
+      ],
       "Upgrade to add more addresses to your account.": [
         "Navyšte svůj účet a přidejte více e-mailových adres k vašemu účtu."
       ],
@@ -5527,6 +5626,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jakmile povolíte důvěrné klíče pro ${ senderName }, veřejné klíče budou doplněné k detailu kontaktu."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -6009,6 +6111,9 @@
       "Attachments": [
         "Přílohy"
       ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
+      ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
@@ -6404,6 +6509,9 @@
       ],
       "Wonderful": [
         "Úžasné"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7693,8 +7801,8 @@
       "Conversation moved to ${ folderName }.": [
         "Konverzace přesunuta do ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Konverzace byla přesunuta do spamu a odesílatel přidán do seznamu blokovaných kontaktů."
       ],
       "Conversation removed from ${ labelName }.": [
         "Konverzace odstraněna z ${ labelName }."
@@ -7750,14 +7858,14 @@
       "Message marked as unread.": [
         "Zpráva označena jako nepřečtená."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Zpráva přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu."
       ],
       "Message moved to ${ folderName }.": [
         "Zpráva byla přesunuta do složky ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Zpráva byla přesunuta do spamu a odesílatel přidán do seznamu blokovaných kontaktů."
       ],
       "Message removed from ${ labelName }.": [
         "Zpráva odstraněna z ${ labelName }."
@@ -8226,10 +8334,10 @@
         "Přesunout do složky Doručená pošta"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Přesunout do Doručené pošty (není spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Přesunout do spamu"
       ],
       "Move to trash": [
         "Přesunout do koše"

@@ -489,11 +489,11 @@
       "Non spam": [
         "Не спам"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
@@ -546,11 +546,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1084,6 +1084,97 @@
       ],
       "Two-year": [
         "Каждые 2 года"
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Воспользоваться"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "бета"
+      ],
+      "Includes": [
+        "Включает"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Лучшее предложение"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Get the deal now": [
+        "Получить скидку"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "– ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        "Условия специального предложения"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Спецпредложение"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "breadcrumb": {
@@ -2681,8 +2772,20 @@
       "${ name } failed to move to Non spam List": [
         "${ name } не удалось переместить в список не спама"
       ],
+      "${ name } failed to move to spam list": [
+        "не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } failed to move to your block list": [
+        "не удалось переместить ${ name } в список блокируемых"
+      ],
       "${ name } moved to Non spam list": [
         "${ name } перемещено в список не спама"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } перемещен в список спама"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } перемещен в список блокируемых"
       ],
       "${ name } successfully deleted": [
         "${ name } успешно удалено"
@@ -2783,23 +2886,23 @@
       "${ name } deletion failed": [
         "${ name } удаление не удалось"
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "${ name } не удалось переместить в список не спама"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "не удалось переместить ${ name } в список спама"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "не удалось переместить ${ name } в список блокируемых"
       ],
       "${ name } moved to Non spam list": [
         "${ name } перемещено в список не спама"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "${ name } перемещен в список спама"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } перемещен в список блокируемых"
       ],
       "${ name } successfully deleted": [
         "${ name } успешно удалено"
@@ -3791,8 +3894,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Эл. почта, поступающая с заблокированных адресов, не будет доставлена."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Поиск в ваших списках надежных и блокируемых"
       ]
     },
     "Font Face Default": {
@@ -7567,9 +7670,6 @@
       "General": [
         "Основные"
       ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
       "How to unlock data": [
         "Как разблокировать данные"
       ],
@@ -7614,9 +7714,6 @@
       ],
       "Trouble signing in?": [
         "Проблемы со входом?"
-      ],
-      "Upgrade": [
-        "Улучшить тариф"
       ],
       "Upgrade account": [
         "Улучшить аккаунт"
@@ -8434,6 +8531,17 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Пробная версия ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить до ${ planName }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -8455,17 +8563,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробная версия ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить до ${ planName }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -9915,9 +10012,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/месяц"
-      ],
       "per month": [
         "в месяц"
       ]
@@ -10110,14 +10204,14 @@
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Убрать из списка спама"
       ],
       "Add to spam list": [
         "Добавить в список спама"
+      ],
+      "Add to your block list": [
+        "Добавить в ваш список блокируемых"
       ],
       "Add user": [
         "Добавить пользователя"

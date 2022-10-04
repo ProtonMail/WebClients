@@ -489,11 +489,11 @@
       "Non spam": [
         "Dorite"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -546,11 +546,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -1077,6 +1077,59 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preț standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Cel mai popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Get the deal now": [
+        "Obțineți oferta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pe lună"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 luni"
       ]
     },
     "breadcrumb": {
@@ -2654,6 +2707,35 @@
         "Subdomeniile 'www' nu sunt folosite de obicei pentru e-mail. Sigur doriți să folosiți această valoare ca domeniu?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } s-a adăugat."
+      ],
+      "${ name } deletion failed": [
+        "Ștergerea lui ${ name } a eșuat."
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } nu s-a putut muta în lista de dorite."
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } nu s-a putut muta în lista de nedorite."
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } nu s-a putut muta în lista de blocare."
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } s-a mutat în lista de dorite."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } s-a mutat în lista de nedorite."
+      ],
+      "${ name } moved to your block list": [
+        "${ name } s-a mutat în lista de blocare."
+      ],
+      "${ name } successfully deleted": [
+        "S-a reușit ștergerea ${ name }."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Erori sau probleme de calitate."
@@ -2743,17 +2825,32 @@
       ]
     },
     "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
+      "${ name } added": [
+        "${ name } s-a adăugat."
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } deletion failed": [
+        "Ștergerea lui ${ name } a eșuat."
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to Non spam List": [
+        "${ name } nu s-a putut muta în lista de dorite."
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } failed to move to spam list": [
+        "${ name } nu s-a putut muta în lista de nedorite."
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } nu s-a putut muta în lista de blocare."
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } s-a mutat în lista de dorite."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } s-a mutat în lista de nedorite."
+      ],
+      "${ name } moved to your block list": [
+        "${ name } s-a mutat în lista de blocare."
+      ],
+      "${ name } successfully deleted": [
+        "S-a reușit ștergerea ${ name }."
       ]
     },
     "Email subject": {
@@ -3728,8 +3825,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Mesajele de la adresele blocate nu vor fi livrate."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Căutare în lista de permise și blocate"
       ]
     },
     "Font Face Default": {
@@ -7459,9 +7556,6 @@
       "General": [
         "Generale"
       ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
       "How to unlock data": [
         "Cum se deblochează datele"
       ],
@@ -7506,9 +7600,6 @@
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
-      ],
-      "Upgrade": [
-        "Migrare"
       ],
       "Upgrade account": [
         "Migrare cont"
@@ -8302,6 +8393,17 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Încercare ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgrade la ${ planName }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -8323,17 +8425,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium făcând upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Încercare ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgrade la ${ planName }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -9759,9 +9850,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/lună"
-      ],
       "per month": [
         "pe lună"
       ]
@@ -9951,14 +10039,14 @@
       "Add Sieve filter": [
         "Adăugare filtru Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Adăugare la lista de acceptate"
       ],
       "Add to spam list": [
         "Adăugare la lista de nedorite"
+      ],
+      "Add to your block list": [
+        "Adăugare la lista de blocare"
       ],
       "Add user": [
         "Adăugare utilizator"

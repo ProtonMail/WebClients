@@ -50,6 +50,9 @@
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
+      "Authenticate": [
+        "Ověřit"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -482,8 +485,14 @@
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
       ],
+      "Use authentication code": [
+        "Použít ověřovací kód"
+      ],
       "Use for sending": [
         "Použít pro odesílání"
+      ],
+      "Use recovery code": [
+        "Použít kód pro obnovení"
       ],
       "Verify": [
         "Ověřit"
@@ -638,6 +647,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Zahrnuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Běžná cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Nejoblíbenější"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Get the deal now": [
+        "Objednat nyní"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "za měsíc"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciální nabídka"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
       ]
     },
     "Bug category": {
@@ -2650,6 +2712,24 @@
         "Vaše zpětná vazba"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -3387,11 +3467,20 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
+      "Each code can only be used once": [
+        "Každý kód lze použít pouze jednou"
+      ],
+      "Enter the code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
       ],
       "Existent and added participants will be notified.": [
         "Existující a přidaní účastníci budou upozorněni."
@@ -3717,6 +3806,9 @@
       "Week": [
         "Týden"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
       "Which event would you like to delete?": [
         "Kterou událost chcete smazat?"
       ],
@@ -3911,6 +4003,9 @@
       ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
+      ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
       ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
@@ -4202,6 +4297,9 @@
       ],
       "Your calendar URL": [
         "URL adresa vašeho kalendáře"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
       ]
     },
     "Label for contact group color": {
@@ -4240,9 +4338,6 @@
       "clearing your browser cache": [
         "vymazávání mezipaměti prohlížeče"
       ],
-      "Go to subscription plans": [
-        "Zobrazit plány předplatného"
-      ],
       "Learn more": [
         "Zjistit více"
       ],
@@ -4257,9 +4352,6 @@
       ],
       "Subscribed calendars": [
         "Odebírané kalendáře"
-      ],
-      "Upgrade": [
-        "Navýšit tarif"
       ],
       "Upgrade account": [
         "Přejít na vyšší tarif"
@@ -5254,11 +5346,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/měsíc"
       ]
     },
     "Table header": {

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "添加截图"
       ],
+      "Authenticate": [
+        "认证"
+      ],
       "Back": [
         "返回"
       ],
@@ -490,8 +493,14 @@
       "Use ${ label } theme": [
         "使用${ label }主题"
       ],
+      "Use authentication code": [
+        "使用验证码"
+      ],
       "Use for sending": [
         "用于发送邮件"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ],
       "Verify": [
         "验证"
@@ -662,6 +671,56 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果您在使用过程中遇到问题，您可以随时禁用该选项"
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "原价：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此订阅将在两年后自动续订，价格不变，直至取消。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "人气最高"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Get the deal now": [
+        "立即享受优惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
       ]
     },
     "Bug category": {
@@ -2664,6 +2723,24 @@
         "意见反馈"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥进行身份验证时出错。请重试。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+      ],
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
     "file size format": {
       "byte": [
         "字节"
@@ -3284,11 +3361,20 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
+      "Each code can only be used once": [
+        "每条恢复码只能使用一次"
+      ],
+      "Enter the code from your authenticator app": [
+        "请输入您的双重验证应用中显示的验证码"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入你的密码（作为组织管理员）。"
       ],
       "Existent and added participants will be notified.": [
         "现有和添加的参与者将收到通知"
@@ -3608,6 +3694,9 @@
       "Week": [
         "周"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+      ],
       "Which event would you like to delete?": [
         "您要删除哪些日程？"
       ],
@@ -3808,6 +3897,9 @@
       ],
       "Attach screenshot(s)": [
         "附屏幕截图"
+      ],
+      "Authenticator app": [
+        "验证器应用程序"
       ],
       "Automatically save contacts": [
         "自动保存联系人"
@@ -4096,6 +4188,9 @@
       ],
       "Your calendar URL": [
         "您的日历链接"
+      ],
+      "Your password (admin)": [
+        "您的密码(管理员)"
       ]
     },
     "Label for contact group color": {
@@ -4134,9 +4229,6 @@
       "clearing your browser cache": [
         "清除浏览器缓存"
       ],
-      "Go to subscription plans": [
-        "转至订阅计划"
-      ],
       "Learn more": [
         "了解更多"
       ],
@@ -4151,9 +4243,6 @@
       ],
       "Subscribed calendars": [
         "已订阅日历"
-      ],
-      "Upgrade": [
-        "升级"
       ],
       "Upgrade account": [
         "升级账户"
@@ -5100,11 +5189,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "反馈已发送"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/月"
       ]
     },
     "Table header": {

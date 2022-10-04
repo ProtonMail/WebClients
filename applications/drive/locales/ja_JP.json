@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Authenticate": [
+        "認証"
+      ],
       "Back": [
         "戻る"
       ],
@@ -575,6 +578,9 @@
       "Use for sending": [
         "送信に使用"
       ],
+      "Use recovery code": [
+        "回復用コードを使用"
+      ],
       "Verify": [
         "検証"
       ],
@@ -630,6 +636,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "ベータ"
+      ],
+      "Includes": [
+        "プランには以下が含まれます"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準価格: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最も人気"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "割引価格で入手"
+      ],
+      "Get the deal now": [
+        "今すぐ割引を入手"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        " / 月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別オファー"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1か月"
+      ],
+      "12 months": [
+        "12か月"
+      ],
+      "24 months": [
+        "24か月"
       ]
     },
     "Bug category": {
@@ -2613,9 +2672,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora の CSV ファイルや vCard 3.1 および 4.0 フォーマット (UTF-8 エンコーディング) 形式をサポートしています。"
       ],
-      "Delete drive": [
-        "ドライブを削除"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "デジタル署名が検証されました。このファイルは ${ emailAddress } によって安全にアップロードされました。"
       ],
@@ -2721,6 +2777,9 @@
       "Free up some space or contact your administrator.": [
         "スペースを解放するか、管理者にお問い合わせしてください。"
       ],
+      "Go ahead, upload a file": [
+        "このフォルダーは空です。ファイルをアップロードしましょう。"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "「マイファイル」に移動し、ファイルをアップロードしてください。"
       ],
@@ -2780,6 +2839,9 @@
       ],
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "ドラッグアンドドロップまたはファイルを選択することでアップロードできます。"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -2868,6 +2930,9 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "一部転送が完了していないファイルがあります。当該ファイルの再ダウンロード・アップロードをお試しください。"
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "メモ: まだデータは ${ appName } をインストールしているデバイスで利用可能な場合があります。"
       ],
@@ -2894,9 +2959,6 @@
       ],
       "Paused": [
         "一時停止"
-      ],
-      "Permanently delete all files in your drive": [
-        "ドライブからすべてのファイルを完全に削除"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
@@ -3026,6 +3088,9 @@
       ],
       "Swiss privacy": [
         "スイス法準拠のプライバシー"
+      ],
+      "Tap the + button to upload a file or folder": [
+        "+ ボタンをタップするとファイルやフォルダーをアップロードできます。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
@@ -3675,6 +3740,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "はい、古いファイルを完全に削除します"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ]
     },
     "Label for contact group color": {
@@ -3710,9 +3778,6 @@
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
-      "Go to subscription plans": [
-        "サブスクリプション プランへ移動"
-      ],
       "Learn more": [
         "詳細"
       ],
@@ -3727,9 +3792,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ],
-      "Upgrade": [
-        "アップグレード"
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
@@ -4300,11 +4362,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見が送信されました"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/月"
       ]
     },
     "Table header": {
