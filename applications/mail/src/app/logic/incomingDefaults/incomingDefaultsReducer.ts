@@ -64,6 +64,21 @@ export const event = (state: Draft<IncomingDefaultsState>, action: PayloadAction
     }
 };
 
+export const blockAddressesFullfilled = (
+    state: Draft<IncomingDefaultsState>,
+    action: PayloadAction<IncomingDefault[]>
+) => {
+    action.payload.forEach((incomintDefault) => {
+        const itemIndex = state.list.findIndex((item) => item.ID === incomintDefault.ID);
+
+        if (itemIndex !== -1) {
+            state.list[itemIndex] = incomintDefault;
+        } else {
+            state.list.push(incomintDefault);
+        }
+    });
+};
+
 export const blockAddressFullfilled = (state: Draft<IncomingDefaultsState>, action: PayloadAction<IncomingDefault>) => {
     const itemIndex = state.list.findIndex((item) => item.ID === action.payload.ID);
 
