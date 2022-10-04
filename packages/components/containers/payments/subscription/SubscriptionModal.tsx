@@ -244,6 +244,7 @@ const SubscriptionModal = ({
 
             if (Code === API_CUSTOM_ERROR_CODES.PAYMENTS_SUBSCRIPTION_AMOUNT_MISMATCH) {
                 await check(); // eslint-disable-line @typescript-eslint/no-use-before-define
+                // translator: this message pops in a notification, in case user is waiting really too long, or does the checkout in another tab, which makes this ones not valid/expiring
                 createNotification({ text: c('Error').t`Checkout expired, please try again`, type: 'error' });
             }
             setModel({ ...model, step: SUBSCRIPTION_STEPS.CHECKOUT });
