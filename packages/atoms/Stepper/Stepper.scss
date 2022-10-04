@@ -19,7 +19,7 @@
 		&-connector {
 			block-size: $connector-height;
 			position: absolute;
-			inset-block-start: ($dot-size - $connector-height) / 2;
+			inset-block-start: calc(($dot-size - $connector-height) / 2);
 			inset-inline: calc(-50% + $connector-gap) calc(50% + $connector-gap + $dot-size / 2);
 		}
 
