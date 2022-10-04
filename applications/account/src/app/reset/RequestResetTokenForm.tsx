@@ -228,7 +228,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                     setTabIndex(newIndex);
                 }}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                 {currentMethod === 'mnemonic' ? c('Action').t`Reset password` : c('Action').t`Send code`}
             </Button>
             <Button

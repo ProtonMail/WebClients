@@ -387,7 +387,7 @@ const AccountStep = ({
                             rootClassName="mt0-5"
                         />
                     )}
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                         {c('Action').t`Create account`}
                     </Button>
 

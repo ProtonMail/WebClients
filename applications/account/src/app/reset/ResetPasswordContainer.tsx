@@ -318,7 +318,7 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
                     <Header title={c('Title').t`Error`} onBack={handleBackStep} />
                     <Content>
                         <GenericError />
-                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-75">{c('Action')
+                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-5">{c('Action')
                             .t`Return to sign in`}</Button>
                         <ButtonLike
                             as={Href}
