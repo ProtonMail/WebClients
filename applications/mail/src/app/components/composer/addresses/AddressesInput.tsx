@@ -78,7 +78,12 @@ const AddressesInput = ({
         }
     }, []);
 
-    const handleClick = (event: MouseEvent) => {
+    const handleClick = (event: MouseEvent<HTMLDivElement>) => {
+        // This click can get triggered if a modal is open, breaking the focus trap of the modal. The input re-focus
+        // should only happen if clicking on the element to which the handler is attached or any of its descendants.
+        if (!event.currentTarget.contains(event.target as Node)) {
+            return;
+        }
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
             event.stopPropagation();
             return;
