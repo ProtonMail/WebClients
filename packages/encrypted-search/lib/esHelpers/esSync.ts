@@ -189,7 +189,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata, ESSearchPara
                 const oldItem = esCacheRef.current.esCache.get(ID);
                 // Note that the item must exist, at the very least its metadata, in cache
                 if (!oldItem) {
-                    continue;
+                    throw new Error("Trying to update an item that doesn't exist");
                 }
 
                 const itemToCache: CachedItem<ESItemMetadata, ESItemContent> = {

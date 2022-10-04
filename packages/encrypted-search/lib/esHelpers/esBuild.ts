@@ -201,7 +201,7 @@ export const buildMetadataDB = async <ESItemMetadata>(
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
     queryItemsMetadata: (signal: AbortSignal) => Promise<{
         resultMetadata?: ESItemMetadata[];
-        setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
+        setRecoveryPoint?: () => Promise<void>;
     }>,
     getItemInfo: GetItemInfo<ESItemMetadata>,
     abortIndexingRef: React.MutableRefObject<AbortController>,
