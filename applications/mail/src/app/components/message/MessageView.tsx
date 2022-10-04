@@ -21,7 +21,9 @@ import noop from '@proton/utils/noop';
 
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isUnread } from '../../helpers/elements';
+import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
@@ -96,8 +98,11 @@ const MessageView = (
     // Actual expanded state
     const [expanded, setExpanded] = useState(getInitialExpand);
 
-    // Show or not the blockquote content
-    const [originalMessageMode, setOriginalMessageMode] = useState(false);
+    // Show or not the blockquote content, show by default in case of
+    // a forwarded message which is the result of an encrypted search
+    const { isSearchResult } = useEncryptedSearchContext();
+    const defaultOriginalMessageMode = isSearchResult(inputMessage.ID) && isMessageForwarded(inputMessage.Subject);
+    const [originalMessageMode, setOriginalMessageMode] = useState(defaultOriginalMessageMode);
 
     // HTML source should be shown instead of normal rendered content
     const [sourceMode, setSourceMode] = useState(false);
@@ -266,7 +271,7 @@ const MessageView = (
         if (message.data?.ID) {
             setExpanded(getInitialExpand);
             setSourceMode(false);
-            setOriginalMessageMode(false);
+            setOriginalMessageMode(defaultOriginalMessageMode);
         }
     }, [message.data?.ID]);
 
