@@ -92,6 +92,9 @@
       "Attachment": [
         "Συνημμένο"
       ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -416,7 +419,7 @@
         "Απόκρυψη μηνυμάτων"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Κρύψτε το email μου"
       ],
       "Hide my email": [
         "Κρύψτε το email μου"
@@ -583,6 +586,12 @@
       ],
       "Move to inbox": [
         "Μετακίνηση στα Εισερχόμενα"
+      ],
+      "Move to inbox (not spam)": [
+        "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
+      ],
+      "Move to spam": [
+        "Μετακίνηση στα ενοχλητικά"
       ],
       "Move to spam and unsubscribe": [
         "Μετακινήστε το στα ενοχλητικά και κάντε απεγγραφή"
@@ -969,6 +978,9 @@
       "Use for sending": [
         "Χρήση για αποστολή"
       ],
+      "Use recovery code": [
+        "Χρησιμοποιήστε κωδικό ανάκτησης"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Χρησιμοποιήστε το ποντίκι σας για να αλλάξετε το μέγεθος της προβολής. Εάν χρησιμοποιείτε το πληκτρολόγιό σας, μπορείτε να χρησιμοποιήσετε τα πλήκτρα αριστερού και δεξιού βέλους για να αλλάξετε το μέγεθος."
       ],
@@ -1143,6 +1155,59 @@
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "βήτα"
+      ],
+      "Includes": [
+        "Περιλαμβάνει"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Κανονική τιμή: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Αυτή η συνδρομή θα ανανεωθεί αυτόματα μετά από 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Τα πιο δημοφιλή"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Get the deal now": [
+        "Αποκτήστε την προσφορά τώρα"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "ανά μήνα"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Μοναδική προσφορά"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 μήνας"
+      ],
+      "12 months": [
+        "12 μήνες"
+      ],
+      "24 months": [
+        "24 μήνες"
       ]
     },
     "Bug category": {
@@ -5581,6 +5646,9 @@
       ],
       "Wonderful": [
         "Θαυμάσια"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
       ]
     },
     "Label for contact group color": {
@@ -6732,9 +6800,6 @@
       "Conversation moved to ${ folderName }.": [
         "Η συνομιλία μετακινήθηκε σε ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Η συνομιλία αφαιρέθηκε από ${ labelName }."
       ],
@@ -6783,14 +6848,8 @@
       "Message marked as unread.": [
         "Το μήνυμα σημάνθηκε ως μη διαβασμένο."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Το μήνυμα μετακινήθηκε στο ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Το μήνυμα αφαιρέθηκε από ${ labelName }."
@@ -7208,10 +7267,10 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Μετακίνηση στα εισερχόμενα (μη ενοχλητικό)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Μετακίνηση στα ενοχλητικά"
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"

@@ -92,6 +92,9 @@
       "Attachment": [
         "添付ファイル"
       ],
+      "Authenticate": [
+        "認証"
+      ],
       "Back": [
         "戻る"
       ],
@@ -426,7 +429,7 @@
         "メッセージを非表示"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "メールを非公開"
       ],
       "Hide my email": [
         "Hide My Email"
@@ -592,6 +595,12 @@
       ],
       "Move to inbox": [
         "受信トレイに移動"
+      ],
+      "Move to inbox (not spam)": [
+        "受信トレイに移動 (迷惑メールではない)"
+      ],
+      "Move to spam": [
+        "迷惑メールに移動"
       ],
       "Move to spam and unsubscribe": [
         "迷惑メールに移動し購読解除"
@@ -980,6 +989,9 @@
       "Use for sending": [
         "送信に使用"
       ],
+      "Use recovery code": [
+        "回復用コードを使用"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
       ],
@@ -1174,6 +1186,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "ベータ"
+      ],
+      "Includes": [
+        "プランには以下が含まれます"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準価格: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "最も人気"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Get the deal now": [
+        "今すぐ割引を入手"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%割引"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        " / 月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特別オファー"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1か月"
+      ],
+      "12 months": [
+        "12か月"
+      ],
+      "24 months": [
+        "24か月"
       ]
     },
     "Bug category": {
@@ -5763,6 +5828,9 @@
       ],
       "Wonderful": [
         "すばらしい"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ]
     },
     "Label for contact group color": {
@@ -6914,9 +6982,6 @@
       "Conversation moved to ${ folderName }.": [
         "会話を ${ folderName } に移動しました。"
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "会話を ${ labelName } から削除しました。"
       ],
@@ -6971,14 +7036,8 @@
       "Message marked as unread.": [
         "メッセージを未読にしました。"
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "メッセージが ${ folderName } に移動されました。"
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "メッセージを ${ labelName } から削除しました。"
@@ -7399,10 +7458,10 @@
         "受信トレイに移動"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "受信トレイに移動 (迷惑メールではない)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "迷惑メールに移動"
       ],
       "Move to trash": [
         "ごみ箱に移動"

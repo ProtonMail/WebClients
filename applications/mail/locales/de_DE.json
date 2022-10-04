@@ -92,6 +92,9 @@
       "Attachment": [
         "Anhang"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -599,6 +602,12 @@
       "Move to inbox": [
         "In Posteingang verschieben"
       ],
+      "Move to inbox (not spam)": [
+        "In Posteingang verschieben (kein Spam)"
+      ],
+      "Move to spam": [
+        "In Spam-Ordner verschieben"
+      ],
       "Move to spam and unsubscribe": [
         "In den Spam verschieben und abbestellen"
       ],
@@ -990,6 +999,9 @@
       "Use for sending": [
         "Für den Versand verwenden"
       ],
+      "Use recovery code": [
+        "Wiederherstellungscode verwenden"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Verwende deine Maus, um die Größe der Ansicht zu ändern. Wenn du deine Tastatur verwendest, kannst du die Größe mit den Pfeiltasten „Pfeil links“ und „Pfeil rechts“ ändern."
       ],
@@ -1196,6 +1208,97 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Zum Angebot"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Umfasst"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Regulärer Preis: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Dieses Abonnement verlängert sich nach zwei Jahren automatisch, bis es gekündigt wird."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Bester Preis"
+      ],
+      "Most popular": [
+        "Am beliebtesten"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Spare noch mehr durch die Kombination von Mail und VPN"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Get the deal now": [
+        "Jetzt zugreifen"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pro Monat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Sonderangebot"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
+      ],
+      "1 month": [
+        "1 Monat"
+      ],
+      "12 months": [
+        "12 Monate"
+      ],
+      "24 months": [
+        "24 Monate"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Zum Preis von ${ amount } in den ersten zwei Jahren.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Zum Preis von ${ amount } im ersten Monat.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Zum Preis von ${ amount } im ersten Jahr.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -1848,11 +1951,6 @@
       ],
       "Yomi": [
         "Lesung (Yomi)"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Deine Auswahl enthält nur dich selbst als Absender"
       ]
     },
     "Country name": {
@@ -6146,6 +6244,9 @@
       ],
       "Wonderful": [
         "Wunderbar"
+      ],
+      "Your password (admin)": [
+        "Ihr Passwort (Admin)"
       ]
     },
     "Label for contact group color": {
@@ -7367,9 +7468,6 @@
       "Conversation moved to ${ folderName }.": [
         "Unterhaltung in „${ folderName }” verschoben."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
       ],
@@ -7424,14 +7522,8 @@
       "Message marked as unread.": [
         "Nachricht als ungelesen gekennzeichnet."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Nachricht nach „${ folderName }” verschoben."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }” entfernt."
@@ -7870,10 +7962,10 @@
         "In Posteingang verschieben"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "In den Posteingang verschieben (kein Spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "In Spam-Ordner verschieben"
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"

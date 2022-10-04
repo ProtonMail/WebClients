@@ -464,10 +464,10 @@
       "No": [
         "Nej"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -521,11 +521,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "genopfrisk siden"
-      ],
       "Refresh the page": [
         "Genopfrisk siden"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1021,6 +1021,53 @@
       ],
       "Two-year": [
         "To-År"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inkluderer"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mest populært"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Get the deal now": [
+        "Gør brug af tilduddet nu"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "Spar ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pr. måned"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Særtilbud"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
       ]
     },
     "breadcrumb": {
@@ -2440,20 +2487,6 @@
         "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
       ]
     },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Annullering af en begivenhed den ${ formattedStart }"
@@ -3283,11 +3316,6 @@
       ],
       "starred": [
         "stjernemarkeret"
-      ]
-    },
-    "FilterSettings": {
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -6745,9 +6773,6 @@
       "General": [
         "Generelt"
       ],
-      "Go to subscription plans": [
-        "Gå til abonnementer"
-      ],
       "How to unlock data": [
         "Sådan oplåses data"
       ],
@@ -6783,9 +6808,6 @@
       ],
       "Terms and conditions": [
         "Vilkår og betingelser"
-      ],
-      "Upgrade": [
-        "Opgradér"
       ],
       "Upgrade account": [
         "Opgradér konto"
@@ -8238,9 +8260,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/måned"
-      ],
       "per month": [
         "pr. måned"
       ]
@@ -8413,9 +8432,6 @@
       ],
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add to spam list": [
         "Føj til spam-liste"

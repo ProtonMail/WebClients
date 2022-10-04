@@ -92,6 +92,9 @@
       "Attachment": [
         "Вложение"
       ],
+      "Authenticate": [
+        "Аутентифицировать"
+      ],
       "Back": [
         "Назад"
       ],
@@ -435,7 +438,7 @@
         "Скрыть сообщения"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Скрыть мою электронную почту"
       ],
       "Hide my email": [
         "Скрыть мою электронную почту"
@@ -604,6 +607,12 @@
       ],
       "Move to inbox": [
         "Переместить во Входящие"
+      ],
+      "Move to inbox (not spam)": [
+        "Переместить во входящие (не спам)"
+      ],
+      "Move to spam": [
+        "Переместить в спам"
       ],
       "Move to spam and unsubscribe": [
         "Переместить в Спам и отписаться"
@@ -998,6 +1007,9 @@
       "Use for sending": [
         "Использовать для отправки"
       ],
+      "Use recovery code": [
+        "Использовать код восстановления"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
       ],
@@ -1206,6 +1218,97 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Воспользоваться"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "бета"
+      ],
+      "Includes": [
+        "Включает"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Лучшее предложение"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Get the deal now": [
+        "Получить скидку"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "– ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        "Условия специального предложения"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Спецпредложение"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bug category": {
@@ -1927,11 +2030,6 @@
       ],
       "Yomi": [
         "Ёми"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Во всех выбранных письмах отправителем являетесь вы сами"
       ]
     },
     "Country name": {
@@ -6407,6 +6505,9 @@
       ],
       "Wonderful": [
         "Прекрасно"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7696,9 +7797,6 @@
       "Conversation moved to ${ folderName }.": [
         "Цепочка писем перемещена в ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Цепочка писем удалена из ${ labelName }."
       ],
@@ -7753,14 +7851,8 @@
       "Message marked as unread.": [
         "Сообщение помечено как непрочитанное."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Сообщение перемещено в ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Сообщение удалено из ${ labelName }."
@@ -8229,10 +8321,10 @@
         "Переместить во Входящие"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Переместить во входящие (не спам)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Переместить в Спам"
       ],
       "Move to trash": [
         "Переместить в корзину"

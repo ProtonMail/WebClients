@@ -489,10 +489,10 @@
       "Non spam": [
         "Non indésirables/spam"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -546,11 +546,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "rafraîchir la page"
-      ],
       "Refresh the page": [
         "Rafraîchir la page"
+      ],
+      "refresh the page": [
+        "rafraîchir la page"
       ],
       "Reload": [
         "Recharger"
@@ -1070,6 +1070,102 @@
       ],
       "Two-year": [
         "Tous les deux ans"
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Profiter de l'offre"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bêta"
+      ],
+      "Includes": [
+        "Inclut"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Prix normal : ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Meilleure offre"
+      ],
+      "Most popular": [
+        "Le plus populaire"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Économisez plus en combinant Mail et VPN"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Get the deal now": [
+        "Profitez de l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnPlus } Special Offer 2021 discount has been applied": [
+        "La réduction de l'offre spéciale ${ vpnPlus } Plus 2021 a été appliquée"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "- ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        "Conditions générales des offres spéciales"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "par mois"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offre spéciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
+      ],
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Facturé ${ amount } pour le premier mois.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Facturé ${ amount } pour la première année.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
       ]
     },
     "breadcrumb": {
@@ -2647,8 +2743,20 @@
       "${ name } failed to move to Non spam List": [
         "${ name } n'a pas pu être placé dans la liste des non indésirables/spam."
       ],
+      "${ name } failed to move to spam list": [
+        "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
+      ],
       "${ name } moved to Non spam list": [
         "${ name } est maintenant dans la liste des non indésirables/spam."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } est maintenant dans la liste des indésirables/spam."
+      ],
+      "${ name } moved to your block list": [
+        "${ name } est maintenant dans la liste d'adresses bloquées."
       ],
       "${ name } successfully deleted": [
         "${ name } a été supprimé."
@@ -2749,23 +2857,23 @@
       "${ name } deletion failed": [
         "La suppression de ${ name } a échoué."
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "${ name } n'a pas pu être placé dans la liste des non indésirables/spam."
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
       ],
       "${ name } moved to Non spam list": [
         "${ name } est maintenant dans la liste des non indésirables/spam."
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "${ name } est maintenant dans la liste des indésirables/spam."
+      ],
+      "${ name } moved to your block list": [
+        "${ name } est maintenant dans la liste d'adresses bloquées."
       ],
       "${ name } successfully deleted": [
         "${ name } a été supprimé."
@@ -3729,8 +3837,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Les messages provenant d'adresses bloquées ne seront pas délivrés."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Rechercher dans vos listes d'adresses autorisées et bloquées"
       ]
     },
     "Font Face Default": {
@@ -7415,9 +7523,6 @@
       "General": [
         "Général"
       ],
-      "Go to subscription plans": [
-        "Aller aux abonnements"
-      ],
       "How to unlock data": [
         "Comment déverrouiller les données"
       ],
@@ -7462,9 +7567,6 @@
       ],
       "Trouble signing in?": [
         "Un problème pour se connecter ?"
-      ],
-      "Upgrade": [
-        "Changer d'offre"
       ],
       "Upgrade account": [
         "Changer d'offre"
@@ -8234,6 +8336,17 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Essai de ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -8255,17 +8368,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Essai de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -9667,9 +9769,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/mois"
-      ],
       "per month": [
         "par mois"
       ]
@@ -9856,14 +9955,14 @@
       "Add Sieve filter": [
         "Ajouter un filtre Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Ajouter à la liste des non indésirables/spam"
       ],
       "Add to spam list": [
         "Ajouter à la liste des indésirables/spam"
+      ],
+      "Add to your block list": [
+        "Ajouter à votre liste d'adresses bloquées"
       ],
       "Add user": [
         "Ajouter un utilisateur"
@@ -10768,7 +10867,7 @@
         "Lorsque vous ajoutez un label à un message dans une conversation, il sera automatiquement appliqué à tous les futurs messages que vous enverrez ou recevrez dans cette conversation."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Lorsque vous cliquez sur un lien, cette fonction anti-hameçonnage vous montre le détail de l'URL de la page web pour que vous puissiez la vérifier avant de l'ouvrir dans votre navigateur."
+        "Lorsque vous cliquez sur un lien, cette fonction anti-phishing/hameçonnage vous montre le détail de l'URL de la page web pour que vous puissiez la vérifier avant de l'ouvrir dans votre navigateur."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Lorsque vous déplacez un message dans le dossier Indésirables/spam, vous êtes automatiquement désinscrit des listes de diffusion de l'expéditeur."

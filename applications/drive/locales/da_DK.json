@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmbillede(r)"
       ],
+      "Authenticate": [
+        "Godkend"
+      ],
       "Back": [
         "Tilbage"
       ],
@@ -577,6 +580,9 @@
       "Use for sending": [
         "Brug til afsendelse"
       ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
+      ],
       "Verify": [
         "Verificer"
       ],
@@ -632,6 +638,53 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inkluderer"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Mest populært"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
+      "Get the deal now": [
+        "Gør brug af tilduddet nu"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "Spar ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pr. måned"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Særtilbud"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
       ]
     },
     "Bug category": {
@@ -2621,10 +2674,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
       ],
-      "Delete drive": [
-        "Slet drev",
-        "Slet drev"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne fil blev uploaded sikkert af ${ emailAddress }."
       ],
@@ -2921,9 +2970,6 @@
       ],
       "Paused": [
         "Sat på pause"
-      ],
-      "Permanently delete all files in your drive": [
-        "Slet alle filer på dit drev permanent"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
@@ -3720,6 +3766,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ja, jeg ønsker at slette\nmine gamle filer permanent"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3755,9 +3804,6 @@
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
-      "Go to subscription plans": [
-        "Gå til abonnementer"
-      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -3772,9 +3818,6 @@
       ],
       "Trash": [
         "Papirkurv"
-      ],
-      "Upgrade": [
-        "Opgradér"
       ],
       "Upgrade account": [
         "Opgradér konto"
@@ -4371,11 +4414,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback sendt"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/måned"
       ]
     },
     "Table header": {

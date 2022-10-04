@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
+      "Authenticate": [
+        "Autentica"
+      ],
       "Back": [
         "Indietro"
       ],
@@ -492,8 +495,14 @@
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
       ],
+      "Use authentication code": [
+        "Usa il codice di autenticazione"
+      ],
       "Use for sending": [
         "Usa per inviare"
+      ],
+      "Use recovery code": [
+        "Utilizza un codice di recupero"
       ],
       "Verify": [
         "Verifica"
@@ -664,6 +673,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Include"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Prezzo standard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Il più richiesto"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ],
+      "Get the deal now": [
+        "Ottieni la promo ora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mese"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offerta Speciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mese"
+      ],
+      "12 months": [
+        "12 mesi"
+      ],
+      "24 months": [
+        "24 mesi"
       ]
     },
     "Bug category": {
@@ -2687,6 +2749,24 @@
         "Il tuo feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3346,11 +3426,20 @@
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
       ],
+      "Each code can only be used once": [
+        "Ogni codice può essere utilizzato una sola volta"
+      ],
+      "Enter the code from your authenticator app": [
+        "Inserisci il codice dalla tua app di autenticazione"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
       "Existent and added participants will be notified.": [
         "I partecipanti esistenti e aggiunti saranno notificati."
@@ -3672,6 +3761,9 @@
       "Week": [
         "Settimana"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
       "Which event would you like to delete?": [
         "Quale evento vuoi eliminare?"
       ],
@@ -3872,6 +3964,9 @@
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
+      ],
+      "Authenticator app": [
+        "App di autenticazione"
       ],
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
@@ -4161,6 +4256,9 @@
       ],
       "Your calendar URL": [
         "URL del tuo calendario"
+      ],
+      "Your password (admin)": [
+        "La tua password (admin)"
       ]
     },
     "Label for contact group color": {
@@ -4199,9 +4297,6 @@
       "clearing your browser cache": [
         "pulendo la cache del browser"
       ],
-      "Go to subscription plans": [
-        "Vai ai piani di abbonamento"
-      ],
       "Learn more": [
         "Per saperne di più"
       ],
@@ -4216,9 +4311,6 @@
       ],
       "Subscribed calendars": [
         "Calendari registrati"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
@@ -5201,11 +5293,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback inviato"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mese"
       ]
     },
     "Table header": {

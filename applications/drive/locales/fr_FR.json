@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
       "Back": [
         "Retour"
       ],
@@ -574,8 +577,14 @@
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
       ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
+      ],
       "Use for sending": [
         "Utiliser pour l'envoi"
+      ],
+      "Use recovery code": [
+        "Utiliser un code de récupération"
       ],
       "Verify": [
         "Vérifier"
@@ -632,6 +641,97 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
+      ]
+    },
+    "blackfriday Action": {
+      "Get the offer": [
+        "Profiter de l'offre"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "bêta"
+      ],
+      "Includes": [
+        "Inclut"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Prix normal : ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "Meilleure offre"
+      ],
+      "Most popular": [
+        "Le plus populaire"
+      ],
+      "Save more when combining Mail and VPN": [
+        "Économisez plus en combinant Mail et VPN"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Get the deal now": [
+        "Profitez de l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        "Conditions générales des offres spéciales"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "par mois"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offre spéciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
+      ],
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Facturé ${ amount } pour le premier mois.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Facturé ${ amount } pour la première année.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
       ]
     },
     "Bug category": {
@@ -2048,6 +2148,24 @@
         "Votre retour d'expérience"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clef de sécurité"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clef de sécurité"
+      ]
+    },
     "file size format": {
       "byte": [
         "octet",
@@ -2704,10 +2822,6 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
-      "Delete drive": [
-        "Supprimer le disque",
-        "Supprimer les disques"
-      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Signature numérique vérifiée. Ce fichier a été chargé de manière sécurisée par ${ emailAddress }."
       ],
@@ -2744,6 +2858,9 @@
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
       ],
@@ -2753,11 +2870,17 @@
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
       ],
+      "Enter the code from your authenticator app": [
+        "Entrez le code de votre application d'authentification."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimé : ${ estimatedMinutes } minute",
@@ -3004,9 +3127,6 @@
       ],
       "Paused": [
         "En pause"
-      ],
-      "Permanently delete all files in your drive": [
-        "Supprimez définitivement tous les fichiers de votre disque."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
@@ -3286,6 +3406,9 @@
       "What would you like to do?": [
         "Que voulez-vous faire ?"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
@@ -3457,6 +3580,9 @@
       ],
       "Audio file": [
         "Fichier audio"
+      ],
+      "Authenticator app": [
+        "Application d'authentification"
       ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
@@ -3812,6 +3938,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
+      ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3847,9 +3976,6 @@
       "clearing your browser cache": [
         "vider le cache de votre navigateur"
       ],
-      "Go to subscription plans": [
-        "Aller aux abonnements"
-      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -3864,9 +3990,6 @@
       ],
       "Trash": [
         "Corbeille"
-      ],
-      "Upgrade": [
-        "Changer d'offre"
       ],
       "Upgrade account": [
         "Changer d'offre"
@@ -4487,11 +4610,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Avis envoyé"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/mois"
       ]
     },
     "Table header": {

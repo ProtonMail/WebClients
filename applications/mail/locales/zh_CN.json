@@ -92,6 +92,9 @@
       "Attachment": [
         "上传为附件"
       ],
+      "Authenticate": [
+        "认证"
+      ],
       "Back": [
         "上一步"
       ],
@@ -356,6 +359,9 @@
       "Fewer search options": [
         "收起搜索选项"
       ],
+      "Filter on...": [
+        "筛选..."
+      ],
       "Font": [
         "字体"
       ],
@@ -426,7 +432,7 @@
         "隐藏邮件"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "隐藏邮箱地址"
       ],
       "Hide my email": [
         "隐藏邮箱地址"
@@ -592,6 +598,12 @@
       ],
       "Move to inbox": [
         "移至收件箱"
+      ],
+      "Move to inbox (not spam)": [
+        "移至收件箱（非垃圾邮件）"
+      ],
+      "Move to spam": [
+        "标为垃圾邮件"
       ],
       "Move to spam and unsubscribe": [
         "标为垃圾邮件并退订"
@@ -980,8 +992,14 @@
       "Use ${ label } theme": [
         "使用 ${ label } 配色"
       ],
+      "Use authentication code": [
+        "使用验证码"
+      ],
       "Use for sending": [
         "用于发送邮件"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用鼠标调整视图大小，若是键盘用户可使用左右箭头键来调整大小。"
@@ -1188,6 +1206,56 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "原价：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此订阅将在两年后自动续订，价格不变，直至取消。"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "人气最高"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Get the deal now": [
+        "立即享受优惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
       ]
     },
     "Bug category": {
@@ -1909,11 +1977,6 @@
       ],
       "Yomi": [
         "读音"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "您选择仅把您自己列入收件人"
       ]
     },
     "Country name": {
@@ -2687,6 +2750,9 @@
       "Attachment": [
         "上传为附件"
       ],
+      "Filter on": [
+        "筛选依据"
+      ],
       "Next": [
         "继续"
       ],
@@ -3226,6 +3292,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "全文搜索出现问题，已改为使用普通搜索。"
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "更新本地邮件时出现问题，将再次下载这些邮件以重新启用内容搜索"
+      ],
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
       ],
@@ -3249,6 +3318,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "此邮件可能含有当前浏览器无法正确打开的链接。"
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -3537,6 +3609,24 @@
         "意见反馈"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥进行身份验证时出错。请重试。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+      ],
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
     "file size format": {
       "byte": [
         "B"
@@ -3602,6 +3692,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "如果附件"
+      ],
+      "If the recipient": [
+        "如果收件人"
+      ],
+      "If the sender": [
+        "如果发件人"
+      ],
+      "If the subject": [
+        "如果主题"
+      ],
       "Select…": [
         "选择…"
       ],
@@ -4454,6 +4556,9 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
+      "Each code can only be used once": [
+        "每条恢复码只能使用一次"
+      ],
       "Edit encryption": [
         "更改加密方式"
       ],
@@ -4490,11 +4595,17 @@
       "End of search results from past 30 days": [
         "过去三十天的搜索结果已结束"
       ],
+      "Enter the code from your authenticator app": [
+        "请输入您的双重验证应用中显示的验证码"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入你的密码（作为组织管理员）。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
@@ -5168,6 +5279,9 @@
       "Updating message content search...": [
         "正在更新邮件内容..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "正在更新本地邮件，更新过程中不会搜索邮件内容"
+      ],
       "Upgrade to add more addresses to your account.": [
         "升级后可向您的账户添加更多地址。"
       ],
@@ -5254,6 +5368,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -5703,6 +5820,9 @@
       "Attachments": [
         "附件"
       ],
+      "Authenticator app": [
+        "验证器应用程序"
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
       ],
@@ -6098,6 +6218,9 @@
       ],
       "Wonderful": [
         "非常好"
+      ],
+      "Your password (admin)": [
+        "您的密码(管理员)"
       ]
     },
     "Label for contact group color": {
@@ -7285,8 +7408,8 @@
       "Conversation moved to ${ folderName }.": [
         "会话已移至${ folderName }。"
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "Conversation removed from ${ labelName }.": [
         "会话已移除 ${ labelName } 标签。"
@@ -7342,14 +7465,14 @@
       "Message marked as unread.": [
         "邮件已标记为未读。"
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "邮件已移至${ folderName }，其发件人已添加至白名单。"
       ],
       "Message moved to ${ folderName }.": [
         "邮件已移至${ folderName }。"
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "Message removed from ${ labelName }.": [
         "邮件已移除 ${ labelName } 标签。"
@@ -7685,6 +7808,9 @@
       "Feedback": [
         "用户反馈"
       ],
+      "Filter on...": [
+        "筛选..."
+      ],
       "Forward": [
         "转发"
       ],
@@ -7770,10 +7896,10 @@
         "移至收件箱"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "移至收件箱（不是垃圾邮件）"
       ],
       "Move to spam": [
-        "Move to spam"
+        "标为垃圾邮件"
       ],
       "Move to trash": [
         "移至废件箱"

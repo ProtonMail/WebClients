@@ -89,6 +89,9 @@
       "Attachment": [
         "Melléklet"
       ],
+      "Authenticate": [
+        "Azonosítás"
+      ],
       "Back": [
         "Vissza"
       ],
@@ -403,9 +406,6 @@
       "Hide messages": [
         "Üzenetek elrejtése"
       ],
-      "Hide My Email": [
-        "Hide My Email"
-      ],
       "I have a question": [
         "Kérdésem van"
       ],
@@ -565,6 +565,12 @@
       ],
       "Move to inbox": [
         "Áthelyezés a beérkezett üzenetekhez"
+      ],
+      "Move to inbox (not spam)": [
+        "Áthelyezés a beérkezett üzenetekhez (nem levélszemét)"
+      ],
+      "Move to spam": [
+        "Áthelyezés a levélszeméthez"
       ],
       "Move to trash": [
         "Áthelyezés a lomtárba"
@@ -945,6 +951,9 @@
       "Use for sending": [
         "Küldéshez használható"
       ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Az egérrel átméretezheti a nézetet. Ha a billentyűzetet használja, a jobba és balra nyilakkal méretezheti át."
       ],
@@ -1133,6 +1142,56 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "béta"
+      ],
+      "Includes": [
+        "Tartalmazza"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Normál ár: ${ regularPrice }"
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Legnépszerűbb"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Érdekel az ajánlat"
+      ],
+      "Get the deal now": [
+        "Érdekel az ajánlat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "havonta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Különleges ajánlat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 hónap"
+      ],
+      "12 months": [
+        "12 hónap"
+      ],
+      "24 months": [
+        "24 hónap"
       ]
     },
     "Bug category": {
@@ -5889,6 +5948,9 @@
       ],
       "Wonderful": [
         "Csodás"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Label for contact group color": {
@@ -7066,9 +7128,6 @@
       "Conversation moved to ${ folderName }.": [
         "A beszélgetés átkerült a ${ folderName } mappába."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva a beszélgetésről."
       ],
@@ -7117,14 +7176,8 @@
       "Message marked as unread.": [
         "Üzenet megjelölve olvasatlanként."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Az üzenet átkerült a ${ folderName } mappába."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva az üzenetről."
@@ -7545,10 +7598,10 @@
         "Áthelyezés a beérkezett üzenetekhez"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Áthelyezés a beérkezett üzenetekhez (nem levélszemét)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Áthelyezés a levélszeméthez"
       ],
       "Move to trash": [
         "Áthelyezés a lomtárba"

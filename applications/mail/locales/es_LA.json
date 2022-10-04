@@ -92,6 +92,9 @@
       "Attachment": [
         "Adjunta"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -431,7 +434,7 @@
         "Ocultar mensajes"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Ocultar mi correo"
       ],
       "Hide my email": [
         "Ocultar mi correo"
@@ -598,6 +601,12 @@
       ],
       "Move to inbox": [
         "Mover al buzón"
+      ],
+      "Move to inbox (not spam)": [
+        "Mover al buzón (no es spam)"
+      ],
+      "Move to spam": [
+        "Mover a spam"
       ],
       "Move to spam and unsubscribe": [
         "Mover a spam y cancelar suscripción"
@@ -987,8 +996,14 @@
       "Use ${ label } theme": [
         "Usar tema ${ label }"
       ],
+      "Use authentication code": [
+        "Usar código de autenticación"
+      ],
       "Use for sending": [
         "Usar para enviar"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperación"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Use su ratón para cambiar el tamaño de la vista. Si está usando su teclado, puede usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
@@ -1196,6 +1211,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentra problemas, siempre puede deshabilitar el acceso beta."
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "Incluye"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Get the deal now": [
+        "Obtener la oferta ahora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "Un mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
       ]
     },
     "Bug category": {
@@ -1917,11 +1985,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Context filtering disabled": {
-      "Your selection contains only yourself as sender": [
-        "Su selección solo le contiene a usted como remitente"
       ]
     },
     "Country name": {
@@ -2695,6 +2758,9 @@
       "Attachment": [
         "Adjunta"
       ],
+      "Filter on": [
+        "Filtrar por"
+      ],
       "Next": [
         "Siguiente"
       ],
@@ -3249,6 +3315,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Hubo un problema con la búsqueda de contenido. La búsqueda por defecto se ha usado en su lugar."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Hubo un problema al actualizar sus mensajes locales, volverán a descargarse otra vez para rehabilitar la búsqueda de contenido"
+      ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
       ],
@@ -3562,6 +3631,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Sus comentarios"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con su clave de seguridad. Intente de nuevo."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clave de seguridad"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clave de seguridad"
       ]
     },
     "file size format": {
@@ -4546,6 +4633,9 @@
       "Duplicate key updated": [
         "Clave duplicada actualizada"
       ],
+      "Each code can only be used once": [
+        "Cada código solo puede usarse una vez"
+      ],
       "Edit encryption": [
         "Editar cifrado"
       ],
@@ -4584,11 +4674,17 @@
       "End of search results from past 30 days": [
         "Fin de la búsqueda de resultados de los últimos 30 días"
       ],
+      "Enter the code from your authenticator app": [
+        "Ingrese el código de su app de autenticación"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que desea importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ingrese su propia contraseña (como administrador de la organización)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tiempo restante estimado: ${ estimatedMinutes } minuto",
@@ -5271,6 +5367,9 @@
       "Updating message content search...": [
         "Actualizando búsqueda de contenido de mensaje..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Actualizando sus mensajes locales, el contenido del mensaje no se buscará durante esta actualización"
+      ],
       "Upgrade to add more addresses to your account.": [
         "Actualice para añadir más direcciones a su cuenta."
       ],
@@ -5357,6 +5456,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando habilitó las claves de confianza para ${ senderName }, las claves públicas fueron añadidas a los datos del contacto."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -5817,6 +5919,9 @@
       "Attachments": [
         "Archivos adjuntos"
       ],
+      "Authenticator app": [
+        "App autenticadora"
+      ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
@@ -6212,6 +6317,9 @@
       ],
       "Wonderful": [
         "Excelente"
+      ],
+      "Your password (admin)": [
+        "Su contraseña (admin)"
       ]
     },
     "Label for contact group color": {
@@ -7433,8 +7541,8 @@
       "Conversation moved to ${ folderName }.": [
         "Conversación movida a ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
+      "Conversation moved to spam and sender added to your block list.": [
+        "Conversación movida a spam y el remitente añadido a la lista de bloqueo."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversación eliminada de ${ labelName }."
@@ -7490,14 +7598,14 @@
       "Message marked as unread.": [
         "Mensaje marcado como no leído."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Mensaje movido a ${ folderName } y el remitente añadido a la lista de permitidos."
       ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
       ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
+      "Message moved to spam and sender added to your block list.": [
+        "Mensaje movido a spam y el remitente añadido a la lista de bloqueo."
       ],
       "Message removed from ${ labelName }.": [
         "Mensaje eliminado de ${ labelName }."
@@ -7936,10 +8044,10 @@
         "Mover al buzón"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Mover al buzón (no es spam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Mover a spam"
       ],
       "Move to trash": [
         "Mover a la papelera"

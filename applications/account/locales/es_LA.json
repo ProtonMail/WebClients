@@ -489,11 +489,11 @@
       "Non spam": [
         "No es spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -546,11 +546,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "refresque la página"
-      ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Reload": [
         "Recargar"
@@ -1070,6 +1070,59 @@
       ],
       "Two-year": [
         "Dos años"
+      ]
+    },
+    "blackfriday Info": {
+      "Includes": [
+        "Incluye"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Get the deal now": [
+        "Obtener la oferta ahora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "Un mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
       ]
     },
     "breadcrumb": {
@@ -2647,8 +2700,20 @@
       "${ name } failed to move to Non spam List": [
         "Error al mover ${ name } a la Lista de no spam"
       ],
+      "${ name } failed to move to spam list": [
+        "Error al mover ${ name } a la Lista de spam"
+      ],
+      "${ name } failed to move to your block list": [
+        "Error al mover ${ name } a la Lista de bloqueo"
+      ],
       "${ name } moved to Non spam list": [
         "${ name } movido a la Lista de no spam"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } movido a la Lista de spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } movido a la Lista de bloqueo"
       ],
       "${ name } successfully deleted": [
         "${ name } eliminado con éxito"
@@ -2749,23 +2814,23 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "Error al mover ${ name } a la Lista de no spam"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "Error al mover ${ name } a la Lista de spam"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "Error al mover ${ name } a la Lista de bloqueo"
       ],
       "${ name } moved to Non spam list": [
         "${ name } movido a la Lista de no spam"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "${ name } movido a la Lista de spam"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } movido a la Lista de bloqueo"
       ],
       "${ name } successfully deleted": [
         "${ name } eliminado con éxito"
@@ -3729,8 +3794,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Los correos de direcciones bloqueadas no serán entregados."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "Buscar en las listas de no es spam y bloqueo"
       ]
     },
     "Font Face Default": {
@@ -7415,9 +7480,6 @@
       "General": [
         "General"
       ],
-      "Go to subscription plans": [
-        "Ir a los planes de suscripción"
-      ],
       "How to unlock data": [
         "Cómo desbloquear datos"
       ],
@@ -7462,9 +7524,6 @@
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
-      ],
-      "Upgrade": [
-        "Actualizar"
       ],
       "Upgrade account": [
         "Actualizar cuenta"
@@ -8234,6 +8293,17 @@
         "Su plan seleccionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Prueba de ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Actualizar a ${ planName }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -8255,17 +8325,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prueba de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Actualizar a ${ planName }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -9667,9 +9726,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/mes"
-      ],
       "per month": [
         "al mes"
       ]
@@ -9856,14 +9912,14 @@
       "Add Sieve filter": [
         "Añadir filtro Sieve"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "Añadir a lista de no spam"
       ],
       "Add to spam list": [
         "Añadir a la lista de spam"
+      ],
+      "Add to your block list": [
+        "Añadir a la lista de bloqueo"
       ],
       "Add user": [
         "Añadir usuario"

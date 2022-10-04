@@ -443,11 +443,11 @@
       "No": [
         "Όχι"
       ],
-      "Ok": [
-        "Οκ"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "Οκ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -500,11 +500,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανεώστε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανεώστε τη σελίδα"
       ],
       "Reload": [
         "Ανανέωση"
@@ -964,6 +964,59 @@
       ],
       "Two-year": [
         "Δύο έτη"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "βήτα"
+      ],
+      "Includes": [
+        "Περιλαμβάνει"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Κανονική τιμή: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Αυτή η συνδρομή θα ανανεωθεί αυτόματα μετά από 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Τα πιο δημοφιλή"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Get the deal now": [
+        "Αποκτήστε την προσφορά τώρα"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "ανά μήνα"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Μοναδική προσφορά"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 μήνας"
+      ],
+      "12 months": [
+        "12 μήνες"
+      ],
+      "24 months": [
+        "24 μήνες"
       ]
     },
     "breadcrumb": {
@@ -2346,20 +2399,6 @@
         "${ emailAddress } έχει αποδεχτεί προσωρινά την πρόσκληση σας στο ${ eventTitle }"
       ]
     },
-    "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
-      ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
-      ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
-      ]
-    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
@@ -3127,9 +3166,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Για την αυτόματη εκτέλεση κάποιων ενεργειών, όπως απόδοση ετικετών ή αρχειοθέτηση μηνυμάτων, προσθέστε ένα προσαρμοσμένο φίλτρο. Τα φίλτρα μπορούν να συνταχθούν και διορθωθούν άμεσα, στη γλώσσα προγραμματισμού Sieve."
-      ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -6478,9 +6514,6 @@
       "General": [
         "Γενικά"
       ],
-      "Go to subscription plans": [
-        "Μεταβείτε στα προγράμματα συνδρομής"
-      ],
       "How to unlock data": [
         "Πώς να ξεκλειδώσετε τα δεδομένα"
       ],
@@ -6516,9 +6549,6 @@
       ],
       "Terms and conditions": [
         "Όροι και προϋποθέσεις"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
       ],
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
@@ -7091,6 +7121,17 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Δοκιμή ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -7106,17 +7147,6 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Δοκιμή ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -8106,11 +8136,6 @@
         "/μήνα"
       ]
     },
-    "Suffix for price": {
-      "/month": [
-        "/μήνα"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Διευθύνσεις"
@@ -8265,9 +8290,6 @@
       ],
       "Add Sieve filter": [
         "Προσθήκη φίλτρου Sieve"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add user": [
         "Προσθήκη χρήστη"

@@ -489,10 +489,10 @@
       "Non spam": [
         "İstenmeyen değil"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -546,11 +546,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -1070,6 +1070,59 @@
       ],
       "Two-year": [
         "Iki yıllık"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "İçerdikleri"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standart fiyat: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "En popüler olanlar"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlan"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "- %${ percentage }"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
       ]
     },
     "breadcrumb": {
@@ -2647,8 +2700,20 @@
       "${ name } failed to move to Non spam List": [
         "${ name } istenmeyen değil listesine eklenemedi"
       ],
+      "${ name } failed to move to spam list": [
+        "${ name } istenmeyenler listenize eklenemedi"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } engellenenler listenize eklenemedi"
+      ],
       "${ name } moved to Non spam list": [
         "${ name } istenmeyen değil listesine eklendi"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } istenmeyenler listesine eklendi"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } engellenenler listenize eklendi"
       ],
       "${ name } successfully deleted": [
         "${ name } silindi"
@@ -2749,23 +2814,23 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
-      ],
       "${ name } failed to move to Non spam List": [
         "${ name } istenmeyen değil listesine eklenemedi"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } failed to move to spam list": [
+        "${ name } istenmeyenler listenize eklenemedi"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to your block list": [
+        "${ name } engellenenler listenize eklenemedi"
       ],
       "${ name } moved to Non spam list": [
         "${ name } istenmeyen değil listesine eklendi"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to spam list": [
+        "${ name } istenmeyenler listesine eklendi"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } engellenenler listenize eklendi"
       ],
       "${ name } successfully deleted": [
         "${ name } silindi"
@@ -3729,8 +3794,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Engellenmiş adreslerden gelen e-postalar alınmaz."
       ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
+      "Search in your allow and block lists": [
+        "İzin verilenler ve engellenenler listelerinizde arama yapın"
       ]
     },
     "Font Face Default": {
@@ -7415,9 +7480,6 @@
       "General": [
         "Genel"
       ],
-      "Go to subscription plans": [
-        "Abonelik tarifelerine git"
-      ],
       "How to unlock data": [
         "Verilerin kilidi nasıl açılır"
       ],
@@ -7462,9 +7524,6 @@
       ],
       "Trouble signing in?": [
         "Oturum açmakta sorun mu yaşıyorsunuz?"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ],
       "Upgrade account": [
         "Hesabınızı yükseltin"
@@ -8234,6 +8293,17 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } deneme"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -8255,17 +8325,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } deneme"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -9667,9 +9726,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/ay"
-      ],
       "per month": [
         "aylık"
       ]
@@ -9856,14 +9912,14 @@
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
       ],
-      "Add to block list": [
-        "Add to your block list"
-      ],
       "Add to non spam list": [
         "İstenmeyen değil listesine ekle"
       ],
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
+      ],
+      "Add to your block list": [
+        "Engellenenler listenize ekleyin"
       ],
       "Add user": [
         "Kullanıcı ekle"

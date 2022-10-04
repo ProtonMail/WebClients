@@ -92,6 +92,9 @@
       "Attachment": [
         "Amedday"
       ],
+      "Authenticate": [
+        "Asesteb"
+      ],
       "Back": [
         "Ɣer deffir"
       ],
@@ -407,7 +410,7 @@
         "Ffer iznan"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Ffer Imayl"
       ],
       "I have a question": [
         "Sɛiɣ asteqsi"
@@ -553,6 +556,12 @@
       ],
       "Move to inbox": [
         "Awi ar tanaka n urmas"
+      ],
+      "Move to inbox (not spam)": [
+        "Awi ɣer tenkult n tuṭtfa (mačči d aspam)"
+      ],
+      "Move to spam": [
+        "Awi ɣer yispamen"
       ],
       "Move to trash": [
         "Awi ar iḍumman"
@@ -936,6 +945,9 @@
       "Use for sending": [
         "Tuzna"
       ],
+      "Use recovery code": [
+        "Seqdec tangalt n tririt"
+      ],
       "Use “${ label }” setting": [
         "Seqdec iɣewwaṛen n “${ label }”"
       ],
@@ -1109,6 +1121,59 @@
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Yella deg-s"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Atig anaway: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Anezdi-a ad yettwales s yimek awurman seg-a ɣef sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Aɣerfan akk"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Get the deal now": [
+        "Faṛes tagnit"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "i wayyur"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Asumer uzzig"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 wayyur"
+      ],
+      "12 months": [
+        "12 wayyuren"
+      ],
+      "24 months": [
+        "24 wayyuren"
       ]
     },
     "Bug category": {
@@ -5372,6 +5437,9 @@
       ],
       "Wonderful": [
         "Igerrez"
+      ],
+      "Your password (admin)": [
+        "Awal-ik uffir (anedbal)"
       ]
     },
     "Label for contact group color": {
@@ -6454,9 +6522,6 @@
       "Conversation moved to ${ folderName }.": [
         "Adiwenni yettwasenkez ɣer ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Adiwenni yettwakkes seg ${ labelName }."
       ],
@@ -6505,14 +6570,8 @@
       "Message marked as unread.": [
         "Izen yettwacreḍ ur yettwaɣer ara."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Izen yettwasenkez ɣer ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Izen yettwakkes seg ${ labelName }."
@@ -6924,10 +6983,10 @@
         "Awi ɣer tenkult n urmas"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Awi ɣer tenkult n tuṭtfa (mačči d aspam)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Awi ɣer yispamen"
       ],
       "Move to trash": [
         "Awi ar iḍumman"

@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
       "Back": [
         "Geri"
       ],
@@ -574,8 +577,14 @@
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodu kullan"
+      ],
       "Use for sending": [
         "Gönderim için kullan"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullan"
       ],
       "Verify": [
         "Doğrula"
@@ -632,6 +641,65 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "İçerdikleri"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Standart fiyat: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
+        "En iyi teklif"
+      ],
+      "Most popular": [
+        "En popüler olanlar"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Ücretli Proton VPN Plus tarifemizi özel yıl sonu teklifi ile alın"
       ]
     },
     "Bug category": {
@@ -2048,6 +2116,24 @@
         "Geri bildiriminiz"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
     "file size format": {
       "byte": [
         "bayt",
@@ -2704,9 +2790,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
       ],
-      "Delete drive": [
-        "Sürücüyü sil",
-        "Sürücüleri sil"
+      "Delete locked drive": [
+        "Kilitlenmiş sürücüyü sil",
+        "Kilitlenmiş sürücüleri sil"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
@@ -2744,6 +2830,9 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
       "Enabling drive search": [
         "Drive araması etkinleştiriliyor"
       ],
@@ -2753,11 +2842,17 @@
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
@@ -3005,8 +3100,8 @@
       "Paused": [
         "Duraklatıldı"
       ],
-      "Permanently delete all files in your drive": [
-        "Sürücünüzdeki tüm dosyaları kalıcı olarak silin"
+      "Permanently delete all files in your locked drive": [
+        "Kilitlenmiş sürücüdeki tüm dosyaları kalıcı olarak sil"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
@@ -3286,6 +3381,9 @@
       "What would you like to do?": [
         "Ne yapmak istersiniz?"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
@@ -3457,6 +3555,9 @@
       ],
       "Audio file": [
         "Ses dosyası"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
       ],
       "Automatically save contacts": [
         "Kişiler otomatik olarak kaydedilsin"
@@ -3812,6 +3913,9 @@
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Evet, eski dosyalarımı kalıcı olarak \nsilmek istiyorum"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
       ]
     },
     "Label for contact group color": {
@@ -3847,9 +3951,6 @@
       "clearing your browser cache": [
         "web tarayıcınızın ön belleğini temizlemek"
       ],
-      "Go to subscription plans": [
-        "Abonelik tarifelerine git"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -3864,9 +3965,6 @@
       ],
       "Trash": [
         "Çöp kutusu"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ],
       "Upgrade account": [
         "Hesabı yükselt"
@@ -4487,11 +4585,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Geri bildirim gönderildi"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/ay"
       ]
     },
     "Table header": {

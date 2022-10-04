@@ -92,6 +92,9 @@
       "Attachment": [
         "Adjuntar"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Torna"
       ],
@@ -428,7 +431,7 @@
         "Amagar missatges"
       ],
       "Hide My Email": [
-        "Hide My Email"
+        "Amaga el meu correu"
       ],
       "Hide my email": [
         "Amaga el meu correu"
@@ -595,6 +598,12 @@
       ],
       "Move to inbox": [
         "Mou a la safata d'entrada"
+      ],
+      "Move to inbox (not spam)": [
+        "Moure a la safata d'entrada (no és correu brossa)"
+      ],
+      "Move to spam": [
+        "Moure a correu brossa"
       ],
       "Move to spam and unsubscribe": [
         "Mou a correu brossa i cancel·la la subscripció"
@@ -984,8 +993,14 @@
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
       ],
+      "Use authentication code": [
+        "Utilitzar el codi d'autenticació"
+      ],
       "Use for sending": [
         "Usar per enviar"
+      ],
+      "Use recovery code": [
+        "Utilitzar un codi de recuperació"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
@@ -1190,6 +1205,59 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Inclou"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Preu estàndard: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix percentatge fins que es cancel·li."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Més popular"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
+      "Get the deal now": [
+        "Obteniu l’oferta ara"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
       ]
     },
     "Bug category": {
@@ -5854,6 +5922,9 @@
       ],
       "Wonderful": [
         "Meravellosa"
+      ],
+      "Your password (admin)": [
+        "La seva contrasenya (admin)"
       ]
     },
     "Label for contact group color": {
@@ -6967,9 +7038,6 @@
       "Conversation moved to ${ folderName }.": [
         "Conversa moguda a ${ folderName }."
       ],
-      "Conversation moved to spam and sender added to Block List.": [
-        "Conversation moved to spam and sender added to your block list."
-      ],
       "Conversation removed from ${ labelName }.": [
         "Conversa esborrada de ${ labelName }."
       ],
@@ -7018,14 +7086,8 @@
       "Message marked as unread.": [
         "Missatge marcat com a no llegit."
       ],
-      "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Message moved to ${ folderName } and sender added to your allow list."
-      ],
       "Message moved to ${ folderName }.": [
         "Missatge mogut a ${ folderName }."
-      ],
-      "Message moved to spam and sender added to Block List.": [
-        "Message moved to spam and sender added to your block list."
       ],
       "Message removed from ${ labelName }.": [
         "Missatge esborrat de ${ labelName }."
@@ -7449,10 +7511,10 @@
         "Moure a la safata d'entrada"
       ],
       "Move to inbox (not spam)": [
-        "Move to inbox (not spam)"
+        "Mou a la safata d'entrada (no és correu brossa)"
       ],
       "Move to spam": [
-        "Move to spam"
+        "Mou al correu brossa"
       ],
       "Move to trash": [
         "Mou a la paperera"

@@ -478,11 +478,11 @@
       "Non spam": [
         "Není spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -535,11 +535,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -1073,6 +1073,59 @@
       ],
       "Two-year": [
         "Dva roky"
+      ]
+    },
+    "blackfriday Info": {
+      "beta": [
+        "beta"
+      ],
+      "Includes": [
+        "Zahrnuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Běžná cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ]
+    },
+    "blackfriday Title": {
+      "Most popular": [
+        "Nejoblíbenější"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Get the deal now": [
+        "Objednat nyní"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "za měsíc"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciální nabídka"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "1 month": [
+        "1 měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
       ]
     },
     "breadcrumb": {
@@ -2607,6 +2660,23 @@
         "Subdomény 'www' se obvykle nepoužívají pro e-mail. Opravdu chcete použít tuto doménu?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } přidán"
+      ],
+      "${ name } deletion failed": [
+        "Smazání ${ name } selhalo"
+      ],
+      "${ name } failed to move to Non spam List": [
+        "${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } přesunut na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } úspěšně smazán"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
@@ -2696,17 +2766,20 @@
       ]
     },
     "Email spam notification": {
-      "${ name } failed to move to Block List": [
-        "${ name } failed to move to your block list"
+      "${ name } added": [
+        "${ name } přidán"
       ],
-      "${ name } failed to move to Spam List": [
-        "${ name } failed to move to spam list"
+      "${ name } deletion failed": [
+        "Smazání ${ name } selhalo"
       ],
-      "${ name } moved to Block List": [
-        "${ name } moved to your block list"
+      "${ name } failed to move to Non spam List": [
+        "${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
       ],
-      "${ name } moved to Spam list": [
-        "${ name } moved to spam list"
+      "${ name } moved to Non spam list": [
+        "${ name } přesunut na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } úspěšně smazán"
       ]
     },
     "Email subject": {
@@ -3682,9 +3755,6 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "E-maily z blokovaných adres nebudou doručeny."
-      ],
-      "Search in Allow List and Block List": [
-        "Search in your allow and block lists"
       ]
     },
     "Font Face Default": {
@@ -7450,9 +7520,6 @@
       "General": [
         "Obecné"
       ],
-      "Go to subscription plans": [
-        "Prohlédněte si plány předplatného"
-      ],
       "How to unlock data": [
         "Jak odemknout údaje"
       ],
@@ -7497,9 +7564,6 @@
       ],
       "Trouble signing in?": [
         "Potíže s přihlášením?"
-      ],
-      "Upgrade": [
-        "Rozšířit"
       ],
       "Upgrade account": [
         "Rozšířit účet"
@@ -8309,6 +8373,17 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } Zkušební verze"
+      ],
+      "Upgrade to ${ planName }": [
+        "Přejít na ${ planName }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -8330,17 +8405,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } Zkušební verze"
-      ],
-      "Upgrade to ${ planName }": [
-        "Přejít na ${ planName }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -9753,9 +9817,6 @@
       ]
     },
     "Suffix for price": {
-      "/month": [
-        "/měsíc"
-      ],
       "per month": [
         "za měsíc"
       ]
@@ -9947,9 +10008,6 @@
       ],
       "Add Sieve filter": [
         "Přidat filtr Sieve"
-      ],
-      "Add to block list": [
-        "Add to your block list"
       ],
       "Add to non spam list": [
         "Přidat na seznam vyžádaných e-mailů"
