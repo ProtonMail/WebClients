@@ -2,11 +2,11 @@ import { CalendarLogo, DriveLogo, IconSize, MailLogo, VpnLogo } from '@proton/co
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 interface AppLogosProps {
-    className: string;
     size: IconSize;
+    className?: string;
 }
 
-const LayoutLogos = ({ className, size }: AppLogosProps) => {
+const LayoutLogos = ({ size, className }: AppLogosProps) => {
     return (
         <div className={className}>
             {[
