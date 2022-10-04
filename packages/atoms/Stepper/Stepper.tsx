@@ -33,7 +33,12 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
         <StepperContext.Provider value={contextValue}>
             <ul
                 {...rest}
-                className={clsx(['stepper', 'unstyled flex flex-nowrap m0', `flex-justify-${position}`, className])}
+                className={clsx([
+                    'stepper',
+                    'unstyled m0 flex flex-gap-0-5 flex-nowrap',
+                    `flex-justify-${position}`,
+                    className,
+                ])}
             >
                 {steps}
             </ul>
