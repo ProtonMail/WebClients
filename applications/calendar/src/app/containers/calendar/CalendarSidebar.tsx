@@ -6,6 +6,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     FeatureCode,
+    Href,
     Icon,
     Sidebar,
     SidebarList,
@@ -36,6 +37,7 @@ import { getIsPersonalCalendar, sortCalendars } from '@proton/shared/lib/calenda
 import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { APPS } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CALENDAR_TYPE, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import partition from '@proton/utils/partition';
@@ -83,6 +85,7 @@ const CalendarSidebar = ({
     const [isLimitReachedModal, setIsLimitReachedModalOpen, renderIsLimitReachedModal] = useModalState();
 
     const headerRef = useRef(null);
+    const dropdownRef = useRef(null);
 
     const [personalCalendars, otherCalendars] = useMemo(() => {
         const [personal, other] = partition<VisualCalendar>(calendars, getIsPersonalCalendar);
@@ -92,12 +95,18 @@ const CalendarSidebar = ({
 
     const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(otherCalendars);
 
-    const canShowSpotlight = !isWelcomeFlow && enabled && !unavailable && !!otherCalendars.length && !isNarrow;
-    const { show, onDisplayed } = useSpotlightOnFeature(
-        FeatureCode.SpotlightSubscribedCalendarReminder,
-        canShowSpotlight
-    );
-    const shouldShowSpotlight = useSpotlightShow(show);
+    const canShowSubscribedSpotlights = !isWelcomeFlow && enabled && !unavailable && !isNarrow;
+    const canShowSubscribedRemindersSpotlight = canShowSubscribedSpotlights && !!otherCalendars.length;
+    const canShowSubscribedCalendarsSpotlight = canShowSubscribedSpotlights && !otherCalendars.length;
+    const { show: showSubscribedRemindersSpotlight, onDisplayed: onSubscribedRemindersSpotlightDisplayed } =
+        useSpotlightOnFeature(FeatureCode.SpotlightSubscribedCalendarReminder, canShowSubscribedRemindersSpotlight);
+    const shouldShowSubscribedRemindersSpotlight = useSpotlightShow(showSubscribedRemindersSpotlight);
+    const {
+        show: showSubscribedCalendars,
+        onDisplayed: onSubscribedCalendarsSpotlightDisplayed,
+        onClose: onCloseSubscribedRemindersSpotlight,
+    } = useSpotlightOnFeature(FeatureCode.SpotlightSubscribedCalendars, canShowSubscribedCalendarsSpotlight);
+    const shouldShowSubscribedCalendarsSpotlight = useSpotlightShow(showSubscribedCalendars);
 
     const { isPersonalCalendarsLimitReached, isSubscribedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
         calendars,
@@ -163,38 +172,60 @@ const CalendarSidebar = ({
                 right={
                     <div className="flex flex-nowrap flex-align-items-center">
                         {enabled ? (
-                            <Tooltip title={addCalendarText}>
-                                <SimpleDropdown
-                                    as="button"
-                                    type="button"
-                                    hasCaret={false}
-                                    className="navigation-link-header-group-control flex"
-                                    content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
-                                >
-                                    <DropdownMenu>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={() => handleCreatePersonalCalendar()}
-                                        >
-                                            {c('Action').t`Create calendar`}
-                                        </DropdownMenuButton>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={() =>
-                                                unavailable
-                                                    ? createNotification({
-                                                          type: 'error',
-                                                          text: c('Subscribed calendar feature unavailable error')
-                                                              .t`Subscribing to a calendar is unavailable at the moment`,
-                                                      })
-                                                    : handleCreateSubscribedCalendar()
-                                            }
-                                        >
-                                            {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
-                                        </DropdownMenuButton>
-                                    </DropdownMenu>
-                                </SimpleDropdown>
-                            </Tooltip>
+                            <Spotlight
+                                show={shouldShowSubscribedCalendarsSpotlight}
+                                onDisplayed={onSubscribedCalendarsSpotlightDisplayed}
+                                type="new"
+                                content={
+                                    <>
+                                        <div className="text-lg text-bold mb0-25">{c('Spotlight')
+                                            .t`Subscribe to other calendars`}</div>
+                                        <p className="m0">
+                                            {c('Spotlight')
+                                                .t`You can subscribe to external calendars and read their events.`}{' '}
+                                            <Href url={getKnowledgeBaseUrl('/subscribe-to-external-calendar')}>
+                                                {c('Link').t`Learn more`}
+                                            </Href>
+                                        </p>
+                                    </>
+                                }
+                                anchorRef={dropdownRef}
+                            >
+                                <Tooltip title={addCalendarText}>
+                                    <SimpleDropdown
+                                        as="button"
+                                        type="button"
+                                        hasCaret={false}
+                                        className="navigation-link-header-group-control flex"
+                                        content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
+                                        onClick={onCloseSubscribedRemindersSpotlight}
+                                        ref={dropdownRef}
+                                    >
+                                        <DropdownMenu>
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={() => handleCreatePersonalCalendar()}
+                                            >
+                                                {c('Action').t`Create calendar`}
+                                            </DropdownMenuButton>
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={() =>
+                                                    unavailable
+                                                        ? createNotification({
+                                                              type: 'error',
+                                                              text: c('Subscribed calendar feature unavailable error')
+                                                                  .t`Subscribing to a calendar is unavailable at the moment`,
+                                                          })
+                                                        : handleCreateSubscribedCalendar()
+                                                }
+                                            >
+                                                {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
+                                            </DropdownMenuButton>
+                                        </DropdownMenu>
+                                    </SimpleDropdown>
+                                </Tooltip>
+                            </Spotlight>
                         ) : (
                             <div className="navigation-link-header-group-control flex cursor-pointer">
                                 <Tooltip title={addCalendarText}>
@@ -227,8 +258,8 @@ const CalendarSidebar = ({
 
     const subscribedCalendarsList = otherCalendars.length ? (
         <Spotlight
-            show={shouldShowSpotlight}
-            onDisplayed={onDisplayed}
+            show={shouldShowSubscribedRemindersSpotlight}
+            onDisplayed={onSubscribedRemindersSpotlightDisplayed}
             type="new"
             content={
                 <>
