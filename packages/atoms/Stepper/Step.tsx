@@ -29,7 +29,6 @@ const Step = ({
             className={clsx(
                 'stepper-item',
                 'relative flex-item-fluid flex flex-column flex-align-items-center flex-nowrap',
-                !firstItem && 'ml0-5',
                 active && 'stepper-item--active',
                 complete && 'stepper-item--completed',
                 className
