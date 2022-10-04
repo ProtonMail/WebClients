@@ -94,16 +94,14 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
     }
 
     const limitedContentTitle = (
-        <div>
-            <span className="text-semibold mr0-5">
+        <div className="mr1 ml1">
+            <span className="text-bold mr0-5">
                 {limitedContentIndex !== -1
                     ? c('Info').t`End of search results from past 30 days`
                     : c('Info').t`No search results from past 30 days. Searching the rest of your inbox`}
             </span>
             <Info
                 questionMark
-                filled
-                colorPrimary={false}
                 title={c('Tooltip')
                     .t`For messages older than 30 days, only the subject line and recipient list is searched`}
             />
@@ -114,7 +112,7 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
         <AppLink
             to={`/dashboard?ref=${ES_BANNER_REF}`}
             toApp={APPS.PROTONACCOUNT}
-            className="text-no-wrap"
+            className="text-bold"
             key="paid-plans-button"
         >
             {
@@ -125,7 +123,7 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
     );
 
     const limitedContentText = (
-        <div className="text-sm">
+        <div className="mr1 ml1">
             {
                 // translator: sentence appears when a free user has content search available only for most recent messages. Complete sentence example: "Content search of the entire inbox is available for paid plans."
                 c('Info').jt`Search full content of older messages with a ${paidPlansButton}`
@@ -135,15 +133,11 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
 
     const limitedContentElement = (
         <div
-            className="flex flex-nowrap flex-gap-1 flex-align-items-center flex-justify-space-between color-weak bg-norm py1 px1-5"
+            className="flex flex-nowrap flex-column flex-align-items-center flex-justify-center color-weak pt0-5 pb0-5 bg-strong"
             key="ESLimitedContentElement"
         >
-            <hr className="m0 w10 flex-item-grow-2" />
-            <div className="flex wauto flex-nowrap flex-column text-center">
-                {limitedContentTitle}
-                {limitedContentText}
-            </div>
-            <hr className="m0 w10 flex-item-grow-2" />
+            {limitedContentTitle}
+            {limitedContentText}
         </div>
     );
 
