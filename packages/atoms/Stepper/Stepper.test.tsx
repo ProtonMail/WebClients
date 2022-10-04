@@ -12,11 +12,11 @@ describe('<Stepper />', () => {
             </Stepper>
         );
 
-        const steps = container.querySelectorAll('li');
-        const labelSelector = '.stepper-item-label';
+        const labelSteps = container.querySelectorAll('.stepper-labels li');
+        const labelSelector = 'span';
 
-        expect(steps[0].querySelector(labelSelector)?.textContent).toBe('Item 1');
-        expect(steps[1].querySelector(labelSelector)?.textContent).toBe('Item 2');
+        expect(labelSteps[0].querySelector(labelSelector)?.textContent).toBe('Item 1');
+        expect(labelSteps[1].querySelector(labelSelector)?.textContent).toBe('Item 2');
     });
 
     it('renders a dot for each item', () => {
@@ -27,11 +27,11 @@ describe('<Stepper />', () => {
             </Stepper>
         );
 
-        const steps = container.querySelectorAll('li');
+        const indicatorSteps = container.querySelectorAll('.stepper-indicators li');
         const dotSelector = '.stepper-item-dot';
 
-        expect(steps[0].querySelector(dotSelector)).not.toBeNull();
-        expect(steps[1].querySelector(dotSelector)).not.toBeNull();
+        expect(indicatorSteps[0].querySelector(dotSelector)).not.toBeNull();
+        expect(indicatorSteps[1].querySelector(dotSelector)).not.toBeNull();
     });
 
     it('renders connector if step is not the first step', () => {
@@ -42,11 +42,11 @@ describe('<Stepper />', () => {
             </Stepper>
         );
 
-        const steps = container.querySelectorAll('li');
+        const indicatorSteps = container.querySelectorAll('.stepper-indicators li');
         const dotSelector = '.stepper-item-connector';
 
-        expect(steps[0].querySelector(dotSelector)).toBeNull();
-        expect(steps[1].querySelector(dotSelector)).not.toBeNull();
+        expect(indicatorSteps[0].querySelector(dotSelector)).toBeNull();
+        expect(indicatorSteps[1].querySelector(dotSelector)).not.toBeNull();
     });
 
     it('adds active class to current step', () => {
@@ -57,9 +57,11 @@ describe('<Stepper />', () => {
             </Stepper>
         );
 
-        const steps = container.querySelectorAll('li');
+        const indicatorSteps = container.querySelectorAll('.stepper-indicators li');
+        const labelSteps = container.querySelectorAll('.stepper-labels li');
 
-        expect(steps[0]).toHaveClass('stepper-item--active');
+        expect(indicatorSteps[0]).toHaveClass('stepper-item--active');
+        expect(labelSteps[0]).toHaveClass('stepper-item--active');
     });
 
     it('adds completed class to previous step', () => {
@@ -70,8 +72,10 @@ describe('<Stepper />', () => {
             </Stepper>
         );
 
-        const steps = container.querySelectorAll('li');
+        const indicatorSteps = container.querySelectorAll('.stepper-indicators li');
+        const labelSteps = container.querySelectorAll('.stepper-labels li');
 
-        expect(steps[0]).toHaveClass('stepper-item--completed');
+        expect(indicatorSteps[0]).toHaveClass('stepper-item--completed');
+        expect(labelSteps[0]).toHaveClass('stepper-item--completed');
     });
 });
