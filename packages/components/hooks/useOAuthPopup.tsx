@@ -46,7 +46,6 @@ const getOAuthAuthorizationUrl = ({
     params.append('redirect_uri', getOAuthRedirectURL(provider));
     params.append('response_type', 'code');
     params.append('scope', scope);
-    params.append('prompt', 'consent');
 
     if (provider === OAUTH_PROVIDER.GOOGLE) {
         params.append('access_type', 'offline');
