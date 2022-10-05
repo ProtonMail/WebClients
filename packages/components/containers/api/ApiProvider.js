@@ -80,7 +80,7 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
                                     reject(error);
                                     return;
                                 }
-                                return resolve(apiRef.current(options));
+                                return resolve(apiRef.current({ ...options, output: 'raw' }));
                             }}
                         />
                     );
