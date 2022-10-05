@@ -33,6 +33,7 @@ const TopNavbarUpgradeButton = () => {
                     icon={<Icon name="arrow-up-big-line" />}
                     path={upgradeUrl}
                     title={c('specialoffer: Link').t`Go to subscription plans`}
+                    data-testid="cta:upgrade-plan"
                 />
             </TopNavbarListItem>
         );
