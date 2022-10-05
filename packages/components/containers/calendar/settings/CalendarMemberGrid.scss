@@ -6,28 +6,6 @@
 	padding-inline: rem(6);
 }
 
-.calendar-members-grid {
-	display: grid;
-	grid-template-columns: auto minmax(auto, rem(250)) auto 1fr auto;
-
-	> * {
-		border-block-end: 1px solid var(--border-weak);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-block: rem(8);
-		padding-inline: rem(6);
-
-		&:nth-child(1) {
-			padding-inline-start: rem(8);
-		}
-
-		&:nth-child(4) {
-			padding-inline-end: rem(8);
-		}
-	}
-}
-
 .calendar-member-skeleton {
 	&-container {
 		display: flex;

@@ -10,6 +10,8 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
+import { TableCell, TableRow } from '../../../components';
+
 import './CalendarMemberGrid.scss';
 
 interface CalendarMemberRowProps {
@@ -58,40 +60,35 @@ const CalendarMemberRow = ({
 
     const getStatusLabel = () => {
         if (status === MEMBER_INVITATION_STATUS.PENDING) {
-            return (
-                <div>
-                    <MemberStatus>{c('Calendar invite status label').t`Invite sent`}</MemberStatus>
-                </div>
-            );
+            return <MemberStatus>{c('Calendar invite status label').t`Invite sent`}</MemberStatus>;
         }
 
         if (isStatusRejected) {
-            return (
-                <div>
-                    <MemberStatus>{c('Calendar invite status label').t`Declined`}</MemberStatus>
-                </div>
-            );
+            return <MemberStatus>{c('Calendar invite status label').t`Declined`}</MemberStatus>;
         }
 
         return null;
     };
 
     return (
-        <>
-            <div>
-                <Avatar className="avatar--weak">{getInitials(name)}</Avatar>
-            </div>
-            <div>
-                <div className="text-ellipsis" title={name}>
-                    {name}
-                </div>
-                {email !== name && (
-                    <div className="text-ellipsis text-sm m0 color-weak" title={email}>
-                        {email}
+        <TableRow>
+            <TableCell>
+                <div className="flex flex-nowrap flex-align-items-baseline flex-gap-0-5">
+                    <Avatar className="avatar--weak flex-item-noshrink on-mobile-hidden">{getInitials(name)}</Avatar>
+
+                    <div>
+                        <div className="text-ellipsis" title={name}>
+                            {name}
+                        </div>
+                        {email !== name && (
+                            <div className="text-ellipsis text-sm m0 color-weak" title={email}>
+                                {email}
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
-            <div>
+                </div>
+            </TableCell>
+            <TableCell>
                 {!isStatusRejected && (
                     <SelectTwo loading={isLoadingPermissionsUpdate} value={perms} onChange={handleChangePermissions}>
                         {Object.entries(permissionLabelMap).map(([value, label]) => (
@@ -99,24 +96,22 @@ const CalendarMemberRow = ({
                         ))}
                     </SelectTwo>
                 )}
-            </div>
-            <div>{getStatusLabel()}</div>
-            <div>
-                <div className="flex">
-                    <Tooltip title={deleteLabel}>
-                        <Button
-                            icon
-                            shape="ghost"
-                            loading={isLoadingDelete}
-                            onClick={handleDelete}
-                            className="flex-item-noshrink"
-                        >
-                            <Icon name="trash" alt={deleteLabel} />
-                        </Button>
-                    </Tooltip>
-                </div>
-            </div>
-        </>
+            </TableCell>
+            <TableCell>{getStatusLabel()}</TableCell>
+            <TableCell className="text-right">
+                <Tooltip title={deleteLabel}>
+                    <Button
+                        icon
+                        shape="ghost"
+                        loading={isLoadingDelete}
+                        onClick={handleDelete}
+                        className="flex-item-noshrink"
+                    >
+                        <Icon name="trash" alt={deleteLabel} />
+                    </Button>
+                </Tooltip>
+            </TableCell>
+        </TableRow>
     );
 };
 
