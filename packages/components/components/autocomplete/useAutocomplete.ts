@@ -28,10 +28,10 @@ export const useAutocompleteFilter = <V>(
             return [];
         }
 
-        const nextOptions = [];
+        const result = [];
 
         for (let i = 0; i < options.length; i++) {
-            if (nextOptions.length === limit) {
+            if (result.length === limit) {
                 break;
             }
 
@@ -42,7 +42,7 @@ export const useAutocompleteFilter = <V>(
             const chunks = getMatches(regex, normalizedText);
 
             if ((searchMinLength === 0 && normalizedSearchText.length === 0) || chunks.length > 0) {
-                nextOptions.push({
+                result.push({
                     text,
                     option,
                     chunks,
@@ -50,7 +50,7 @@ export const useAutocompleteFilter = <V>(
             }
         }
 
-        return nextOptions;
+        return result;
     }, [value, options, getData]);
 };
 
