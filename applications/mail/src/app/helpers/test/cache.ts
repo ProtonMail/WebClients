@@ -34,7 +34,8 @@ export const clearCache = () => cache.clear();
 export const minimalCache = () => {
     addToCache('User', { UsedSpace: 10, MaxSpace: 100 });
     addToCache('Addresses', []);
-    addToCache('MailSettings', {});
+    // Enable hotkeys to trigger composer save easily
+    addToCache('MailSettings', { Shortcuts: 1 });
     addToCache('UserSettings', { Flags: {} });
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
