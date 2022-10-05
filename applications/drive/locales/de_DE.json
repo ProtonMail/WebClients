@@ -577,6 +577,9 @@
       "Use ${ label } theme": [
         "Farbschema „${ label }” verwenden"
       ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
       "Use for sending": [
         "Zum Senden verwenden"
       ],
@@ -2145,6 +2148,24 @@
         "Dein Feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME } Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -2801,6 +2822,10 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
+      "Delete locked drive": [
+        "Gesperrtes Laufwerk löschen",
+        "Gesperrte Laufwerke löschen"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Diese Datei wurde von ${ emailAddress } sicher hochgeladen."
       ],
@@ -2837,6 +2862,9 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal benutzt werden"
+      ],
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
       ],
@@ -2846,11 +2874,17 @@
       "Encrypted search is here": [
         "Die verschlüsselte Suche ist hier"
       ],
+      "Enter the code from your authenticator app": [
+        "Code aus der Authenticator App eingeben"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Bitte den an ${ destinationText } gesendeten Verifizierungscode eingeben."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
@@ -3095,6 +3129,9 @@
       "Paused": [
         "Angehalten"
       ],
+      "Permanently delete all files in your locked drive": [
+        "Alle Dateien auf dem gesperrten Laufwerk dauerhaft löschen"
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
@@ -3230,6 +3267,9 @@
       ],
       "Swiss privacy": [
         "Schweizer Privatsphäre"
+      ],
+      "Tap the + button to upload a file or folder": [
+        "Tippe auf +, um eine Datei oder einen Ordner hochzuladen"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
@@ -3369,6 +3409,9 @@
       ],
       "What would you like to do?": [
         "Was möchtest du tun?"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode erhalten oder eine alternative Verifizierungsmethode verwenden?"
@@ -3541,6 +3584,9 @@
       ],
       "Audio file": [
         "Audiodatei"
+      ],
+      "Authenticator app": [
+        "Authenticator App"
       ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"

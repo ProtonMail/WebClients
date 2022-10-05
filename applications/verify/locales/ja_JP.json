@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "認証"
+      ],
+      "Back": [
+        "戻る"
+      ],
       "Cancel": [
         "キャンセル"
       ],
       "Close": [
         "閉じる"
+      ],
+      "Continue": [
+        "続行"
       ],
       "Didn't receive the code?": [
         "コードを受け取っていませんか?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "More info: ${ safeTitle }": [
+        "詳細: ${ safeTitle }"
+      ],
       "refresh the page": [
         "ページを更新"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "別の方法を試してください"
+      ],
+      "Use recovery code": [
+        "回復用コードを使用"
       ],
       "Verify": [
         "検証"
@@ -973,6 +988,9 @@
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
+      "Learn more": [
+        "詳細"
+      ],
       "Loading": [
         "読み込み中"
       ],
@@ -1028,6 +1046,9 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
       ]
     },
     "Link": {

@@ -850,6 +850,11 @@
         "Más opciones"
       ]
     },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Compartido conmigo"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "No sincronizado"
@@ -3810,13 +3815,13 @@
     },
     "Key badge": {
       "Compromised": [
-        "Comprometido"
+        "Comprometida"
       ],
       "Expired": [
         "Caducada"
       ],
       "Obsolete": [
-        "Obsoleto"
+        "Obsoleta"
       ],
       "Primary": [
         "Principal"
@@ -4945,11 +4950,17 @@
       "Invite friends and earn rewards!": [
         "¡Invita a tus amigos y gana recompensas!"
       ],
+      "Subscribe to other calendars": [
+        "Suscríbete a otros calendarios"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prueba ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Ahora puedes añadir notificaciones a los calendarios a los que estás suscrito."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Puedes suscribirte a calendarios externos y leer tus eventos."
       ]
     },
     "Spotlight settings link": {
@@ -5585,6 +5596,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Has invitado a participantes con correos electrónicos equivalentes"
+      ],
+      "Your calendar link": [
+        "Enlace a tu calendario"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Tu periodo de prueba gratuita termina pronto, el ${ formattedEndDate }"

@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Back": [
+        "Recuar"
+      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close": [
         "Fechar"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Edit email address": [
         "Editar o endereço de email"
@@ -19,6 +28,9 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mais informações: ${ safeTitle }"
       ],
       "refresh the page": [
         "actualizar a página"
@@ -31,6 +43,9 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperação"
       ],
       "Verify": [
         "Verificar"
@@ -117,6 +132,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
+      "Learn more": [
+        "Saiba mais"
+      ],
       "Loading": [
         "A carregar"
       ],
@@ -157,6 +175,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Your password (admin)": [
+        "A sua senha (admin)"
       ]
     },
     "Link": {

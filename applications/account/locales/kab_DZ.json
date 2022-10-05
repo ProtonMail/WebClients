@@ -125,9 +125,6 @@
       "Clear all formatting": [
         "Sfeḍ akk imasalen"
       ],
-      "Clear two-factor authentication code": [
-        "Sfeḍ tangalt n usesteb s snat n tarrayin"
-      ],
       "Close": [
         "Mdel"
       ],
@@ -238,6 +235,9 @@
       ],
       "Didn't receive the code?": [
         "Ur d-teṭṭifeḍ ara tangalt?"
+      ],
+      "Disable": [
+        "Sens"
       ],
       "Disable recovery phrase": [
         "Sens tafyirt n tririt"
@@ -764,9 +764,6 @@
       "Use recovery code": [
         "Seqdec tangalt n tririt"
       ],
-      "Use two-factor authentication code": [
-        "Seqdec tangalt n usesteb s snat n tarrayin"
-      ],
       "Use your current email address instead": [
         "Seqdec tansa n yimayl-ik·im amiran deg umḍiq"
       ],
@@ -974,57 +971,9 @@
         "Snat n tikkal i useggas"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Yella deg-s"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Atig anaway: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Anezdi-a ad yettwales s yimek awurman seg-a ɣef sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Aɣerfan akk"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Faṛes tagnit"
-      ],
-      "Get the deal now": [
-        "Faṛes tagnit"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "i wayyur"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Asumer uzzig"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 wayyur"
-      ],
-      "12 months": [
-        "12 wayyuren"
-      ],
-      "24 months": [
-        "24 wayyuren"
       ]
     },
     "breadcrumb": {
@@ -3740,6 +3689,9 @@
       "Are you sure you want to delete this label?": [
         "Tebɣiḍ ad tekkseḍ tabzimt-agi?"
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Tebɣiḍ ad tessenseḍ asesteb s nat n tarrayin?"
+      ],
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
@@ -3967,9 +3919,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Sekcem tansa imayl n umiḍan-ik·im ${ BRAND_NAME } neɣ isem n useqdac."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Sekcem awal uffir n usesteb akken ad tsentmeḍ timagit-ik."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Sekcem tansa n yimayl n tririt, nekkni ad ak·am-d-nazen isem-inek·inem n useqdac neɣ tansa-inek·inem n yimayl."
       ],
@@ -4172,9 +4121,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin tinabḍanin n Rrus akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Ḍmen belli tecfiḍ ɣef wawal uffir i wakken ad tkecmeḍ, ad tekkseḍ awgelhen i yimaylen. ${ boldAlert } Ad ak·akem-nweṣṣi ad ternuḍ ${ recoveryLink } d amezwaru."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Sekcem s ufus talqut ar yibenk-ik n usesteb s snat n tarrayin akked ad yeswel umiḍan-ik.${ _switchButton }."
       ],
@@ -4328,9 +4274,6 @@
       "Priority support": [
         "Tallalt yezwaren"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton ur yezmir ara ad ak·akem-iεawen ad d-terreḍ akk awalen uffiren iṛuḥen."
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton iseḥbes akatar i kra n wakud acku truḥ-as tuqqna d usaǧǧaw-nniḍen n yimayl-ik·im. Ttxil-k·m ales tuqqna."
       ],
@@ -4351,9 +4294,6 @@
       ],
       "Recovery file downloaded": [
         "Afae n tririt tettwasader-d"
-      ],
-      "recovery method": [
-        "tarrayt n tririt"
       ],
       "Recovery phrase copied to clipboard": [
         "Tafyirt n tririt tettwanɣel ɣer tecfawit"
@@ -4516,9 +4456,6 @@
       ],
       "Total storage": [
         "Amḍiq n usekles amatu"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Asesteb s snat n tarrayin irennu tissi-nniḍen n tɣellist ɣer umiḍan-ik·im ma yella yettwaker wawal-ik·im uffir."
       ],
       "Two-factor authentication disabled": [
         "Asesteb s snat n tarrayin yensa"
@@ -5345,9 +5282,6 @@
       "Credits used": [
         "Asmad yettwasqedcen"
       ],
-      "Current login password": [
-        "Awal uffir amiran"
-      ],
       "Customize invoices": [
         "Tifaturin tudmawanin"
       ],
@@ -5537,9 +5471,6 @@
       "Last month only": [
         "Ayyure-nni kan ineggura"
       ],
-      "Login password": [
-        "Awal uffir n tuqqna"
-      ],
       "Mail Server (IMAP)": [
         "Ameẓlu n yimayl (IMAP)"
       ],
@@ -5593,12 +5524,6 @@
       ],
       "Notification": [
         "Alɣu"
-      ],
-      "Old login password": [
-        "Awal uffir aqbuṛ"
-      ],
-      "Old password": [
-        "Awal uffir aqbur"
       ],
       "OpenVPN / IKEv2 password": [
         "Awal uffir n OpenVPN / IKEv2"
@@ -5686,9 +5611,6 @@
       ],
       "Read": [
         "Ɣeṛ"
-      ],
-      "Recovery code": [
-        "Tangalt n tririt"
       ],
       "Recovery email address": [
         "Tansa imayl n tririt"
@@ -5785,12 +5707,6 @@
       ],
       "Total (${ countdown })": [
         "Asemday (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Asesteb s snat n tarrayin"
-      ],
-      "Two-factor authentication code": [
-        "Tangalt n usesteb s snat n tarrayin"
       ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
@@ -6109,11 +6025,6 @@
       ],
       "Sign in": [
         "Qqen"
-      ]
-    },
-    "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Tebɣiḍ ad tessenseḍ asesteb s nat n tarrayin?"
       ]
     },
     "Message display when a new app version is available": {
@@ -6970,9 +6881,6 @@
       ],
       "Text": [
         "Aḍris"
-      ],
-      "Two-factor authentication code": [
-        "Tangalt n usesteb s snat n tarrayin"
       ],
       "Type text or keyword": [
         "Aru aḍris neɣ awal ufrin"
@@ -8054,9 +7962,6 @@
       "Password and keys": [
         "Awal uffir akked tsura"
       ],
-      "Passwords": [
-        "Awalen uffiren"
-      ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
@@ -8248,9 +8153,6 @@
       ],
       "Upgrade plan": [
         "Sali aɣawas"
-      ],
-      "Username": [
-        "Isem n useqdac"
       ],
       "Users and addresses": [
         "Iseqdacen d tansiwin"

@@ -104,6 +104,9 @@
       "Didn't receive the code?": [
         "Niste primili kod?"
       ],
+      "Disable": [
+        "Onemogući"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -290,9 +293,6 @@
       "Use recovery code": [
         "Koristi kôd za oporavak"
       ],
-      "Use two-factor authentication code": [
-        "Koristi kôd dvofaktorske autentikacije"
-      ],
       "User": [
         "Korisnik"
       ],
@@ -316,9 +316,6 @@
       ],
       "View invoice": [
         "Prikaži fakturu"
-      ],
-      "Yes": [
-        "Da"
       ],
       "Zoom in": [
         "Povećaj"
@@ -807,6 +804,9 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL čita vaše osobne podatke kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus ili Visionary pretplata je potrebna"
       ],
@@ -863,9 +863,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Unesite vašu lozinku za potvrdu identiteta."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Unesite svoju adresu e-pošte za oporavak za oporavak i poslat ćemo vam vaše korisničko ime ili adresu e-pošte."
@@ -1064,9 +1061,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Dvofaktorska autentikacija dodaje dodatnu razinu sigurnosti vašem računu u slučaju da je lozinka ugrožena."
       ],
       "Two-factor authentication disabled": [
         "Onemogućena je dvofaktorska autentikacija"
@@ -1355,9 +1349,6 @@
       "Key": [
         "Ključ"
       ],
-      "Login password": [
-        "Lozinka za prijavu"
-      ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
@@ -1375,12 +1366,6 @@
       ],
       "New password": [
         "Nova lozinka"
-      ],
-      "Old login password": [
-        "Stara lozinka za prijavu"
-      ],
-      "Old password": [
-        "Stara lozinka"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 lozinka"
@@ -1415,9 +1400,6 @@
       "Proton username": [
         "Proton korisničko ime"
       ],
-      "Recovery code": [
-        "Kôd za oporavak"
-      ],
       "Repeat password": [
         "Ponovite lozinku"
       ],
@@ -1432,12 +1414,6 @@
       ],
       "Total (${ countdown })": [
         "Ukupno (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Dvofaktorska autentikacija"
-      ],
-      "Two-factor authentication code": [
-        "Kôd dvofaktorske autentikacije"
       ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
@@ -1540,11 +1516,6 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Koja je razlika između UDP i TCP protokola?"
-      ]
-    },
-    "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
       ]
     },
     "Message display when a new app version is available": {
@@ -1700,9 +1671,6 @@
       ],
       "Select a reason": [
         "Odaberite razlog"
-      ],
-      "Two-factor authentication code": [
-        "Kôd dvofaktorske autentikacije"
       ],
       "ZIP": [
         "Poštanski broj"
@@ -2016,9 +1984,6 @@
       "Password": [
         "Lozinka"
       ],
-      "Passwords": [
-        "Lozinke"
-      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -2114,9 +2079,6 @@
       ],
       "Unsupported browser": [
         "Preglednik nije podržan"
-      ],
-      "Username": [
-        "Korisničko ime"
       ],
       "Warning": [
         "Upozorenje"
