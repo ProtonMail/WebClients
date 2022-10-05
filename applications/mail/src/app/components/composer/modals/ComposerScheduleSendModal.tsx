@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 
 import {
     addDays,
-    addMinutes,
     addSeconds,
     endOfDay,
     endOfToday,
@@ -21,6 +20,7 @@ import { DateInput, ErrorZone, Href, Label, TimeInput, generateUID } from '@prot
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
+import { getMinScheduleTime } from '../../../helpers/schedule';
 import { updateScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import ComposerInnerModal from './ComposerInnerModal';
@@ -101,21 +101,6 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
 
     const minDate = startOfToday();
     const maxDate = endOfDay(addDays(minDate, SCHEDULED_MAX_DATE_DAYS));
-
-    const getMinTime = () => {
-        if (!isToday(date)) {
-            return undefined;
-        }
-
-        const now = new Date();
-        now.setMinutes(0, 0);
-
-        const limit = addSeconds(now, 120);
-
-        const nextIntervals = Array.from(Array(2)).map((_, i) => addMinutes(now, 30 * (i + 1)));
-
-        return limit <= nextIntervals[0] ? nextIntervals[1] : nextIntervals[0];
-    };
 
     const errorDate = useMemo(() => {
         if (date < minDate) {
@@ -206,7 +191,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
                         id={`composer-schedule-time-${uid}`}
                         onChange={handleChangeTime}
                         value={time}
-                        min={getMinTime()}
+                        min={getMinScheduleTime(date)}
                         max={isToday(date) ? endOfToday() : undefined}
                         error={errorTime}
                         errorZoneClassName="hidden"
