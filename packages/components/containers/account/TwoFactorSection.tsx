@@ -183,7 +183,7 @@ const TwoFactorSection = () => {
                                     const id = getId(registeredKey);
                                     return (
                                         <div key={id} className="flex flex-align-items-center py0-5 border-bottom">
-                                            <div className="flex-item-fluid">{registeredKey.Name}</div>
+                                            <div className="flex-item-fluid text-break mr0-5">{registeredKey.Name}</div>
                                             <ButtonGroup size="small">
                                                 <Button
                                                     icon
