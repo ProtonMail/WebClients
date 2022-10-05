@@ -77,9 +77,8 @@ const MessageBodyImage = ({
 }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
 
-    const { type, status, error } = image;
-    const showPlaceholder =
-        error || status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
+    const { type, error } = image;
+    const showPlaceholder = error || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
     const showImage = !showPlaceholder;
 
     const attributes =

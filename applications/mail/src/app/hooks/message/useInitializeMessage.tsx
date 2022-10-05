@@ -149,17 +149,23 @@ export const useInitializeMessage = () => {
             };
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
+                const dispatchResult = imagesToLoad.map((image) => {
+                    return dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
+                });
                 return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 
             const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = dispatch(loadFakeProxy({ ID: localID, imagesToLoad, api }));
+                const dispatchResult = imagesToLoad.map((image) => {
+                    return dispatch(loadFakeProxy({ ID: localID, imageToLoad: image, api }));
+                });
                 return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
+                const dispatchResult = imagesToLoad.map((image) => {
+                    return dispatch(loadRemoteDirect({ ID: localID, imageToLoad: image, api }));
+                });
                 return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 

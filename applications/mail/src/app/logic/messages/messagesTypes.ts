@@ -335,7 +335,7 @@ export type LoadEmbeddedResults = { attachment: Attachment; blob: string }[];
 
 export interface LoadRemoteParams {
     ID: string;
-    imagesToLoad: MessageRemoteImage[];
+    imageToLoad: MessageRemoteImage;
     api: Api;
 }
 
