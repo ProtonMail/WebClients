@@ -5,7 +5,9 @@ import clsx from '@proton/utils/clsx';
 import StepListItem, { StepListItemProps } from './StepListItem';
 import StepperContext from './StepperContext';
 
-export interface StepProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete'> {}
+export interface StepProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete' | 'children'> {
+    children?: string;
+}
 
 const Step = ({
     index,
@@ -37,6 +39,7 @@ const Step = ({
                     'mt0-5 text-semibold text-sm text-center text-ellipsis-two-lines',
                     !active && 'color-weak'
                 )}
+                title={children}
                 {...rest}
             >
                 {children}
