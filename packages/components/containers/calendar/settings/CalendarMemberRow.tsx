@@ -85,6 +85,7 @@ const CalendarMemberRow = ({
                                 {email}
                             </div>
                         )}
+                        <div className="no-desktop">{getStatusLabel()}</div>
                     </div>
                 </div>
             </TableCell>
@@ -97,16 +98,10 @@ const CalendarMemberRow = ({
                     </SelectTwo>
                 )}
             </TableCell>
-            <TableCell>{getStatusLabel()}</TableCell>
-            <TableCell className="text-right">
+            <TableCell className="no-mobile no-tablet">{getStatusLabel()}</TableCell>
+            <TableCell className="text-right w5e">
                 <Tooltip title={deleteLabel}>
-                    <Button
-                        icon
-                        shape="ghost"
-                        loading={isLoadingDelete}
-                        onClick={handleDelete}
-                        className="flex-item-noshrink"
-                    >
+                    <Button icon shape="ghost" loading={isLoadingDelete} onClick={handleDelete} className="mlauto">
                         <Icon name="trash" alt={deleteLabel} />
                     </Button>
                 </Tooltip>
