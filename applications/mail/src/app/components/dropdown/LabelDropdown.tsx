@@ -75,6 +75,28 @@ const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
     return result;
 };
 
+const getIsApplyDisabled = (
+    initialState: SelectionState,
+    selectedLabelIDs: SelectionState,
+    checkedIDs: string[],
+    always: boolean,
+    alsoArchive: boolean
+) => {
+    // If same labels, no changes have been made in the label dropdown
+    const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
+
+    // If some labels are checked
+    // If there are no changes in the dropdown AND always label OR also archive are checked => We should be able to apply, so we return false
+    // Else, no changes are detected AND we have no action to do => Apply should be disabled
+    if (checkedIDs.length > 0) {
+        return areSameLabels && !(always || alsoArchive);
+    }
+    // If no labels are checked
+    // If no changes in the dropdown AND also archive is checked => We should be able to apply, so we return false
+    // Else, no changes are detected and no action to do => Apply should be disabled
+    return areSameLabels && !alsoArchive;
+};
+
 interface Props {
     selectedIDs: string[];
     labelID: string;
@@ -112,6 +134,17 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
 
+    // IDs currently checked in the modal
+    // We will use this string[] to always label sender's emails on all checked ids in the modal
+    const checkedIDs = useMemo(() => {
+        return Object.keys(selectedLabelIDs).reduce<string[]>((acc, LabelID) => {
+            if (selectedLabelIDs[LabelID] === LabelState.On) {
+                acc.push(LabelID);
+            }
+            return acc;
+        }, []);
+    }, [selectedLabelIDs]);
+
     const changes = useMemo(() => {
         const elements = getElementsFromIDs(selectedIDs);
         const initialState = getInitialState(labels, elements);
@@ -126,11 +159,9 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         }, {} as { [labelID: string]: boolean });
     }, [selectedIDs, initialState, selectedLabelIDs]);
 
+    // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
     const alwaysCheckboxDisabled = useMemo(() => {
-        return (
-            !getSendersToFilter(getElementsFromIDs(selectedIDs)).length ||
-            Object.values(changes).every((value) => !value)
-        );
+        return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length || checkedIDs.length < 1;
     }, [getSendersToFilter, selectedIDs, changes]);
 
     useEffect(() => {
@@ -156,8 +187,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const archiveCheckID = `${uid}-archive`;
     const alwaysCheckID = `${uid}-always`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
-    const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
-    const applyDisabled = areSameLabels && !alsoArchive;
+    const applyDisabled = getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive);
     const autoFocusSearch = !breakpoints.isNarrow;
     const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
@@ -170,13 +200,10 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     const handleApply = async () => {
         const elements = getElementsFromIDs(selectedIDs);
-        const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
 
         const promises = [];
 
-        if (!areSameLabels) {
-            promises.push(applyLabels(elements, changes, always));
-        }
+        promises.push(applyLabels(elements, changes, always, false, checkedIDs));
 
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
