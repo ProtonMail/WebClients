@@ -9,6 +9,7 @@ import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
 import { Breakpoints } from '../../models/utils';
 import LabelsAndFolders from './LabelsAndFolders';
+import MoreActions from './MoreActions';
 import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import NavigationControls from './NavigationControls';
@@ -125,6 +126,7 @@ const Toolbar = ({
                         onBack={onBack}
                     />
                 ) : null}
+                <MoreActions selectedIDs={selectedIDs} />
             </div>
             <div className="flex toolbar-inner">
                 {listInView ? (

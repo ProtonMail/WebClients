@@ -2,17 +2,19 @@ import { c } from 'ttag';
 
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, Key } from '@proton/shared/lib/interfaces';
+import { isBlockedIncomingDefaultAddress } from '@proton/shared/lib/helpers/incomingDefaults';
+import { Address, IncomingDefault, Key } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
+import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { ContactGroupsMap, ContactsMap } from '../logic/contacts/contactsTypes';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
-import { isMessage } from './elements';
+import { isMessage, isConversation as testIsConversation } from './elements';
 
 /**
  * Return the matching ContactEmail in the map taking care of email normalization
@@ -199,4 +201,42 @@ export const getNumParticipants = (element: Element) => {
     }
 
     return unique(recipients.map(({ Address }: Recipient) => canonizeInternalEmail(Address))).length;
+};
+
+export const getSendersToBlock = (
+    elements: Element[],
+    incomingDefaultsAddresses: IncomingDefault[],
+    addresses: Address[]
+) => {
+    const allSenders: Recipient[] = [];
+
+    // Get all senders without duplicates
+    elements.forEach((el) => {
+        const isConversation = testIsConversation(el);
+        if (isConversation) {
+            (el as Conversation)?.Senders?.map((sender) => {
+                if (sender && allSenders.every((s) => s.Address !== sender.Address)) {
+                    allSenders.push(sender);
+                }
+            });
+        } else {
+            const sender = (el as Message).Sender;
+            if (sender && allSenders.every((s) => s.Address !== sender.Address)) {
+                allSenders.push((el as Message).Sender);
+            }
+        }
+    }, []);
+
+    // Remove self and blocked addresses
+    return allSenders
+        .filter((sender) => {
+            if (sender) {
+                const isSenderBlocked = isBlockedIncomingDefaultAddress(incomingDefaultsAddresses, sender.Address);
+                const isSenderSelfAddress = isSelfAddress(sender.Address, addresses);
+
+                return !isSenderBlocked && !isSenderSelfAddress;
+            }
+            return;
+        })
+        .filter(isTruthy);
 };
