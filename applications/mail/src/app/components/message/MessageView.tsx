@@ -183,8 +183,15 @@ const MessageView = (
 
         const offset = containerHeight * OFFSET_PERCENTAGE;
 
-        // if the message is already in the offset area of the container, abort the scroll
-        if (elementRef.current.offsetTop - offset < containerRef.current.scrollTop) {
+        // If the message is already in the offset area of the container,
+        // Or is in message only view
+        // Or is focusing the first item of a conversation
+        // Then abort the scroll
+        if (
+            elementRef.current.offsetTop - offset < containerRef.current.scrollTop ||
+            !conversationMode ||
+            (conversationMode && conversationIndex === 0)
+        ) {
             return;
         }
 
