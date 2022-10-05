@@ -91,8 +91,6 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             ];
         }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup]);
 
-        const options = [...contactsAutocompleteItems];
-
         const handleAddRecipient = (newRecipients: Recipient[]) => {
             setInput('');
             onAddRecipients(newRecipients);
@@ -116,7 +114,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             return value.label;
         }, []);
 
-        const filteredOptions = useAutocompleteFilter(input, options, getData, limit, 1);
+        const filteredOptions = useAutocompleteFilter(input, contactsAutocompleteItems, getData, limit, 1);
 
         // If a group name is equal to the search input, we want to display it as the first option
         const exactNameGroup = filteredOptions.find(
