@@ -1,25 +1,26 @@
 import { useEffect, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
-import { AlertModal, AppLink, Button, Checkbox, Label } from '@proton/components';
+import { AlertModal, AppLink, Button, Checkbox, Label, ModalProps } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
-interface Props {
+interface Props extends ModalProps {
     onConfirm: (blockSenderConfirmation: boolean) => void;
-    senderEmail: string;
-    onClose: () => void;
+    senders: Recipient[];
     mailSettings: MailSettings;
+    onResolve: () => void;
+    onReject: () => void;
 }
 
-const BlockSenderModal = ({ senderEmail, onClose, onConfirm, mailSettings }: Props) => {
+const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onReject, ...rest }: Props) => {
     const [blockSenderConfirmation, setBlockSenderConfirmation] = useState(false);
 
     const handleConfirm = () => {
         onConfirm(blockSenderConfirmation);
-        onClose();
+        onResolve();
     };
 
     const manageBlockedAddressesSettingsLink = (
@@ -27,7 +28,33 @@ const BlockSenderModal = ({ senderEmail, onClose, onConfirm, mailSettings }: Pro
             .t`Manage blocked email addresses`}</AppLink>
     );
 
-    const senderEmailAddress = <b key={'senderEmail'}>{senderEmail}</b>;
+    const sendersEmails = senders.map((sender) => {
+        return sender?.Address;
+    });
+
+    const senderEmailAddress = sendersEmails.slice(0, 2).join(', ');
+
+    const otherSendersCount = sendersEmails.length - 2;
+
+    const blockSendersText =
+        sendersEmails.length <= 2
+            ? // translator: The variable contains email addresses (up to two mail addresses) that will be blocked
+              // Full sentence for reference "New emails from user1@domain.com, user2@domain.com won't be delivered and will be permanently deleted."
+              c('Description')
+                  .t`New emails from ${senderEmailAddress} won't be delivered and will be permanently deleted.`
+            : // translator: The variables are the following
+              // ${senderEmailAddress}: contains email addresses (up to two mail addresses) that will be blocked
+              // ${otherSendersCount}: since we display two addresses, the variable contains the number of address remaining which will be blocked
+              // Full sentence for reference "New emails from user1@domain.com, user2@domain.com and X others won't be delivered and will be permanently deleted."
+              c('Description').ngettext(
+                  msgid`New emails from ${senderEmailAddress} and ${otherSendersCount} other won't be delivered and will be permanently deleted.`,
+                  `New emails from ${senderEmailAddress} and ${otherSendersCount} others won't be delivered and will be permanently deleted.`,
+                  otherSendersCount
+              );
+
+    // translator: The variable is a link to the settings page
+    // Full sentence for reference "Manage blocked email addresses in settings."
+    const manageInSettingsText = c('Description').jt`${manageBlockedAddressesSettingsLink} in settings.`;
 
     useEffect(() => {
         setBlockSenderConfirmation(mailSettings?.BlockSenderConfirmation === BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK);
@@ -36,39 +63,31 @@ const BlockSenderModal = ({ senderEmail, onClose, onConfirm, mailSettings }: Pro
     return (
         <div onClick={(e) => e.stopPropagation()}>
             <AlertModal
-                open
                 title={c('Title').t`Block sender`}
                 buttons={[
                     <Button key="submit" type="submit" color="warning" onClick={handleConfirm}>
                         {c('Action').t`Block`}
                     </Button>,
-                    <Button
-                        key="reset"
-                        type="reset"
-                        onClick={() => {
-                            onClose();
-                        }}
-                    >
+                    <Button key="reset" type="reset" onClick={onReject}>
                         {c('Action').t`Cancel`}
                     </Button>,
                 ]}
+                {...rest}
             >
                 <div>
-                    <p>
-                        {
-                            // translator: Full sentence is "New emails from user@domain.com won't be delivered and will be permanently deleted. Manage blocked email addresses in settings."
-                            c('Description')
-                                .jt`New emails from ${senderEmailAddress} won't be delivered and will be permanently deleted. ${manageBlockedAddressesSettingsLink} in settings.`
-                        }
+                    <p className="text-break">
+                        <span>{blockSendersText}</span>
+                        <span className="ml0-25">{manageInSettingsText}</span>
                     </p>
-                    <Label htmlFor="block-sender-confirmation">
+                    <Label htmlFor="block-sender-confirmation" className="flex text-center">
                         <Checkbox
                             id="block-sender-confirmation"
                             checked={blockSenderConfirmation}
                             onChange={() => {
                                 setBlockSenderConfirmation(!blockSenderConfirmation);
                             }}
-                        />{' '}
+                            className="mr0-25"
+                        />
                         {c('Label').t`Don't show this again`}
                     </Label>
                 </div>
