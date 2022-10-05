@@ -23,6 +23,7 @@ import {
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     ProtonMailBridgeSection,
+    SenderImagesSection,
     SpamFiltersSection,
     ThemesSection,
     UserKeysSection,
@@ -70,6 +71,7 @@ const MailSettingsRouter = ({
                 <PrivateMainSettingsArea config={appearance}>
                     <ThemesSection />
                     <LayoutsSection />
+                    <SenderImagesSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, folder)}>

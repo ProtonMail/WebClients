@@ -11,7 +11,7 @@ export const getShowPmMeSection = (user: UserModel, addresses: Address[] = []) =
     const { hasPaidMail, canPay, Type } = user;
     const isExternalUser = Type === UserType.EXTERNAL;
     const isPMAddressActive = getHasPmMeAddress(addresses);
-    const hasNoOriginalAddresses = !addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_ORIGINAL);
+    const hasNoOriginalAddresses = !addresses.some((address) => address.Type === ADDRESS_TYPE.TYPE_ORIGINAL);
     return !isExternalUser && canPay && !hasNoOriginalAddresses && !(isPMAddressActive && hasPaidMail);
 };
 
@@ -88,6 +88,10 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Layout`,
                         id: 'layout',
+                    },
+                    {
+                        text: c('Title').t`Sender image`,
+                        id: 'sender-image',
                     },
                 ],
             },

@@ -14,4 +14,6 @@ export { default as TopNavbarListItemContactsDropdown } from './widget/TopNavbar
 export { default as ContactsRow } from './lists/ContactRow';
 export { default as ContactsList } from './lists/ContactsList';
 export { default as useApplyGroups } from './hooks/useApplyGroups';
+export { default as useSenderImage } from './hooks/useSenderImage';
+export { default as ContactImage } from './ContactImage';
 export { useContactModals } from './hooks/useContactModals';

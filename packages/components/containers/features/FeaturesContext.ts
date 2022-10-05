@@ -65,6 +65,7 @@ export enum FeatureCode {
     MailServiceWorker = 'MailServiceWorker',
     SeenV5WelcomeModal = 'SeenV5WelcomeModal',
     MailContextMenu = 'MailContextMenu',
+    ShowSenderImages = 'ShowSenderImages',
     NudgeProton = 'NudgeProton',
     EORedesign = 'EORedesign',
     CalendarViewInMail = 'CalendarViewInMail',
