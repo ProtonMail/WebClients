@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Back": [
+        "Πίσω"
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
       "Close": [
         "Κλείσιμο"
+      ],
+      "Continue": [
+        "Συνέχεια"
       ],
       "Didn't receive the code?": [
         "Δεν λάβατε τον κωδικό;"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "More info: ${ safeTitle }": [
+        "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
+      ],
+      "Use recovery code": [
+        "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -925,6 +940,9 @@
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
       "Loading": [
         "Φόρτωση"
       ],
@@ -980,6 +998,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
       ]
     },
     "Link": {

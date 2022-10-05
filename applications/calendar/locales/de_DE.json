@@ -495,6 +495,9 @@
       "Use ${ label } theme": [
         "Farbschema „${ label }” verwenden"
       ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
       "Use for sending": [
         "Zum Senden benutzen"
       ],
@@ -526,6 +529,9 @@
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Jeder, der den Link hat, kann diesen Kalender einsehen"
+      ],
+      "They can view or edit your calendar": [
+        "Sie können deinen Kalender einsehen oder bearbeiten"
       ]
     },
     "Action title": {
@@ -875,6 +881,11 @@
         "Du hast die Einladung unter Vorbehalt angenommen"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Nur du kannst die Kategorie sehen"
+      ]
+    },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
         "Du kannst Berechtigungen jederzeit bearbeiten oder entfernen."
@@ -883,6 +894,11 @@
     "Calendar permissions label": {
       "Permissions": [
         "Berechtigungen"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Du hast bereits Zugriff auf diesen Kalender."
       ]
     },
     "Calendar share limit modal": {
@@ -2763,6 +2779,24 @@
         "Dein Feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME } Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
     "file size format": {
       "byte": [
         "Byte",
@@ -3422,11 +3456,20 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal benutzt werden"
+      ],
+      "Enter the code from your authenticator app": [
+        "Code aus der Authenticator App eingeben"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Existent and added participants will be notified.": [
         "Vorhandene und hinzugefügte Teilnehmer werden benachrichtigt."
@@ -3748,6 +3791,9 @@
       "Week": [
         "Woche"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
       "Which event would you like to delete?": [
         "Welchen Termin möchtest du löschen?"
       ],
@@ -3784,6 +3830,9 @@
       "Yearly": [
         "Jährlich"
       ],
+      "You already joined this calendar": [
+        "Du bist diesem Kalender bereits beigetreten"
+      ],
       "You are about to open another browser tab and visit:": [
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
@@ -3807,6 +3856,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Du hast dein Passwort zurückgesetzt und die mit den folgenden Kalendern verknüpften Termine konnten nicht entschlüsselt werden. \nAlle zuvor erstellten Verknüpfungen zu freigegebenen Kalendern funktionieren daher nicht mehr.\nAlle aktiven abonnierten Kalender werden nach ein paar Minuten erneut synchronisiert."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Du hast diese Einladung zuvor abgelehnt. Bitte den Eigentümer um eine neue Einladung"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du hast ${ spaceDisplayed }% deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
@@ -3942,6 +3994,9 @@
       ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
+      ],
+      "Authenticator app": [
+        "Authenticator App"
       ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
@@ -4376,6 +4431,11 @@
       ],
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         "Sie können keine weiteren Kalender erstellen, da die maximale Anzahl an persönlichen Kalendern innerhalb Ihres Abonnements erreicht wurde."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "Der Kalender ${ boldCalendarName } von ${ calendarOwnerDisplayName } wurde mit dir geteilt."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -5024,6 +5084,16 @@
         "Aktualisieren der Einstellungen fehlgeschlagen"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Teile deinen Kalender mit einem Link, um Nicht-Proton-Benutzer einzuladen"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Füge die Proton-Konten hinzu, mit denen du ${ calendarName } teilen möchten. Wir werden ihnen eine Einladung schicken."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Personen oder Gruppen hinzufügen"
@@ -5058,11 +5128,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Jetzt werden Einladungen in deinem Kalender als ausstehende Termine angezeigt. Öffne einfach einen Termin, um zu antworten. ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "Abonniere andere Kalender"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } ausprobieren"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Es ist nun möglich, Benachrichtigungen zu abonnierten Kalendern hinzuzufügen."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Du kannst externe Kalender abonnieren und deren Termine lesen."
       ]
     },
     "Spotlight settings link": {
@@ -5856,6 +5932,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Um auf diesen geteilten Kalender zuzugreifen, aktiviere diese Adresse, oder bitte ${ boldCalendarOwnerEmail }, eine Einladung an eine aktive Adresse zu senden."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Du kannst diesem Kalender nicht beitreten, da deine eingeladene E-Mail-Adresse (${ boldInvitedAddress }) deaktiviert ist."
       ]
     },
     "Weekly recurring event, frequency": {

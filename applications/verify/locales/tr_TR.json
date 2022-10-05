@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
+      "Back": [
+        "Geri"
+      ],
       "Cancel": [
         "İptal"
       ],
       "Close": [
         "Kapat"
+      ],
+      "Continue": [
+        "İlerle"
       ],
       "Didn't receive the code?": [
         "Kodu almadınız mı?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "More info: ${ safeTitle }": [
+        "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
       "refresh the page": [
         "sayfayı yenile"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodu kullan"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullan"
       ],
       "Verify": [
         "Doğrula"
@@ -937,6 +955,24 @@
         "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
       ],
       "Loading": [
         "Yükleniyor"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
       ]
     },
     "Link": {

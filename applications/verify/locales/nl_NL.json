@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Authenticeren"
+      ],
+      "Back": [
+        "Terug"
+      ],
       "Cancel": [
         "Annuleren"
       ],
       "Close": [
         "Sluiten"
+      ],
+      "Continue": [
+        "Doorgaan"
       ],
       "Didn't receive the code?": [
         "Code niet ontvangen?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "More info: ${ safeTitle }": [
+        "Meer informatie: ${ safeTitle }"
+      ],
       "refresh the page": [
         "pagina vernieuwen"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
       ],
       "Verify": [
         "Verifiëren"
@@ -961,6 +979,12 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw verificatie-app in"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
@@ -972,6 +996,9 @@
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
+      ],
+      "Learn more": [
+        "Meer informatie"
       ],
       "Loading": [
         "Laden"
@@ -1028,6 +1055,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (admin)"
       ]
     },
     "Link": {

@@ -33,6 +33,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "${ name } updated": [
+        "${ name } s-a actualizat"
+      ],
       "activate": [
         "activare"
       ],
@@ -146,9 +149,6 @@
       ],
       "Clear all formatting": [
         "Eliminare formatări"
-      ],
-      "Clear two-factor authentication code": [
-        "Eliminare cod de autentificare cu doi factori"
       ],
       "Close": [
         "Închidere"
@@ -269,6 +269,9 @@
       ],
       "Didn't receive the code?": [
         "Nu ați primit codul?"
+      ],
+      "Disable": [
+        "Dezactivare"
       ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
@@ -810,11 +813,11 @@
       "Use a different payment method": [
         "Folosire metodă de plată diferită"
       ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
       "Use recovery code": [
         "Folosire cod de recuperare"
-      ],
-      "Use two-factor authentication code": [
-        "Folosire cod de autentificare cu doi factori"
       ],
       "Use your current email address instead": [
         "Folosire adresă adresă de e-mail actuală"
@@ -1079,57 +1082,9 @@
         "Bianual"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Include"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Preț standard: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Cel mai popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obțineți oferta"
-      ],
-      "Get the deal now": [
-        "Obțineți oferta"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "pe lună"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Ofertă specială"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 lună"
-      ],
-      "12 months": [
-        "12 luni"
-      ],
-      "24 months": [
-        "24 luni"
       ]
     },
     "breadcrumb": {
@@ -3713,6 +3668,88 @@
         "Suport torente (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Adăugare cheie de securitate"
+      ],
+      "Delete key": [
+        "Ștergere cheie"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Dezactivați 2FA prin cheie de securitate înainte de a dezactiva TOTP."
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Ceva a funcționat greșit la înregistrarea cheii de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Cheia de securitate 2FA a fost eliminată."
+      ],
+      "Add a name to identify your security key with.": [
+        "Adăugați un nume pentru identificarea cheii de securitate."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Sigur ștergeți cheia de securitate ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Introduceți cheia de securitate în portul USB al dispozitivului."
+      ],
+      "Security key": [
+        "Cheie securitate"
+      ],
+      "Security key removed": [
+        "Cheia de securitate a fost eliminată."
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Se vor șterge toate cheile de securitate asociate contului."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Pentru a activa 2FA cu o cheie de securitate, trebuie să activați 2FA prin aplicația Authenticator."
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Cheia de autentificare cu doi factori (2FA) este gata de utilizare."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Nume cheie"
+      ],
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Ștergeți cheia de securitate?"
+      ],
+      "Disable 2FA via security key?": [
+        "Dezactivați 2FA prin cheie de securitate?"
+      ],
+      "Name your security key": [
+        "Denumiți cheia de securitate"
+      ],
+      "Register your security key": [
+        "Înregistrați cheia de securitate"
+      ],
+      "Registered security keys": [
+        "Chei de securitate înregistrate"
+      ],
+      "Security key registered": [
+        "Cheie de securitate înregistrată"
+      ]
+    },
     "file size format": {
       "byte": [
         "bait",
@@ -4604,8 +4641,14 @@
       "Add a recovery email address": [
         "Adăugați o adresă de e-mail de recuperare"
       ],
+      "add a recovery method": [
+        "adăugat o metodă de recuperare"
+      ],
       "Add a recovery phone number": [
         "Adăugați un număr de telefon de recuperare"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Adaugă o nouă protecție contului. Va fi necesar să folosiți verificarea 2FA de fiecare dată când vă conectați."
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -4711,6 +4754,9 @@
       ],
       "Are you sure you want to delete this label?": [
         "Sigur doriţi să ştergeţi această etichetă?"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Sigur doriți dezactivarea autentificării cu doi factori?"
       ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
@@ -4929,6 +4975,9 @@
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat."
       ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar odată."
+      ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Ați câștigat ${ rewards } din ${ rewardsLimit } luni pentru ${ planName }."
       ],
@@ -4965,8 +5014,17 @@
       "Encryption setting updated": [
         "Setări criptare actualizate"
       ],
+      "Enter code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
       "Enter key manually instead": [
         "Introduceți cheia manual"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Introduceți noua parolă pentru utilizatorul ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Introduceți codul trimis la numărul de telefon ${ phone }."
@@ -4989,11 +5047,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Introduceți parola de conectare pentru a vă confirma identitatea."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Introduceți propria parolă (ca administrator al organizației) și noua parolă pentru acest utilizator ${ Name } (${ Email })."
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
@@ -5254,8 +5309,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii rusești şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Asigurați-vă că vă amintiți parola pentru a vă conecta și a decripta mesajele. ${ boldAlert } Vă recomandăm să adăugați mai întâi o ${ recoveryLink }."
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ _switchButton }."
@@ -5464,9 +5519,6 @@
       "Priority support": [
         "Asistență prioritară"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton nu vă poate ajuta să recuperați parolele pierdute."
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton a întrerupt importarea deoarece a pierdut conexiunea cu celălalt furnizor de e-mail. Reconectați-vă."
       ],
@@ -5475,6 +5527,9 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton va încerca să reia importarea imediat ce furnizorul de e-mail vă resetează ${ bandwithLimitLink } a contului. Nu trebuie să faceți nimic. Dacă anulați importarea, nu veți mai putea să o reluați și va trebui să o reîncepeți."
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Tehnologia de criptare Proton semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
       "Public link invite": [
         "Legătură publică invitație"
@@ -5499,9 +5554,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
-      ],
-      "recovery method": [
-        "metodă de recuperare"
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
@@ -5792,9 +5844,6 @@
       "Total VPN connections": [
         "Total conexiuni VPN"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Autentificarea cu doi factori vă adaugă securitate suplimentară contului în cazul în care parola vă este compromisă."
-      ],
       "Two-factor authentication disabled": [
         "Autentificare cu doi factori dezactivată"
       ],
@@ -5861,6 +5910,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Vă verificați identitatea cu o parolă unică temporară, generată de o aplicație de autentificare."
+      ],
       "Verifying your payment": [
         "Verificare plată"
       ],
@@ -5923,6 +5975,9 @@
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Când se vor abona la un plan cu plată, între 1 și 3 luni de ${ planName } vor fi creditate în contul dvs."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Când abonamentul se înnoiește, se va folosi mai întâi creditul disponibil înainte de a folosi metoda de plată de mai sus."
@@ -6656,6 +6711,9 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
+      "Authenticator app": [
+        "Aplicație Authenticator"
+      ],
       "Auto-detect primary time zone": [
         "Detectare automată fus orar primar"
       ],
@@ -6796,9 +6854,6 @@
       ],
       "Credits used": [
         "Credite folosite"
-      ],
-      "Current login password": [
-        "Parola actuală de conectare"
       ],
       "Customize invoices": [
         "Personalizare facturi"
@@ -7013,9 +7068,6 @@
       "Link label": [
         "Etichetă legătură"
       ],
-      "Login password": [
-        "Parolă conectare"
-      ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
       ],
@@ -7081,12 +7133,6 @@
       ],
       "Notification": [
         "Notificare"
-      ],
-      "Old login password": [
-        "Parola veche de conectare"
-      ],
-      "Old password": [
-        "Parola veche"
       ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
@@ -7177,9 +7223,6 @@
       ],
       "Read": [
         "Ca citit"
-      ],
-      "Recovery code": [
-        "Cod de recuperare"
       ],
       "Recovery email address": [
         "Adresa de e-mail de recuperare"
@@ -7288,12 +7331,6 @@
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Autentificare cu doi factori"
-      ],
-      "Two-factor authentication code": [
-        "Cod autentificare cu doi factori"
       ],
       "Two-password mode": [
         "Mod cu două parole"
@@ -7709,9 +7746,6 @@
     "Message": {
       "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
         "Toate acțiunile filtrului vor fi aplicate tuturor mesajelor din contul Proton Mail. Nu se vor trimite răspunsuri automate la mesaje."
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Sigur doriți dezactivarea autentificării cu doi factori?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
@@ -8262,6 +8296,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8328,26 +8382,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8617,7 +8651,7 @@
       "Cover more ground with support for 10 custom email domains": [
         "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
         "Creați un calendar personal",
         "Creați până la ${ numberOfPersonalCalendars } calendare personale",
         "Creați până la ${ numberOfPersonalCalendars } de calendare personale"
@@ -9146,9 +9180,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Two-factor authentication code": [
-        "Cod autentificare cu doi factori"
       ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
@@ -10497,9 +10528,6 @@
       "Password and keys": [
         "Parolă și chei"
       ],
-      "Passwords": [
-        "Parole"
-      ],
       "Pay invoice": [
         "Plată factură"
       ],
@@ -10711,9 +10739,6 @@
       ],
       "Upgrade plan": [
         "Migrare plan"
-      ],
-      "Username": [
-        "Nume utilizator"
       ],
       "Users and addresses": [
         "Utilizatori și adrese"

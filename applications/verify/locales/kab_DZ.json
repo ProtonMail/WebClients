@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Asesteb"
+      ],
+      "Back": [
+        "Ɣer deffir"
+      ],
       "Cancel": [
         "Sefsex"
       ],
       "Close": [
         "Mdel"
+      ],
+      "Continue": [
+        "Kemmel"
       ],
       "Didn't receive the code?": [
         "Ur d-teṭṭifeḍ ara tangalt?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Awi tangalt n usentem"
       ],
+      "More info: ${ safeTitle }": [
+        "Ugar n telɣut: ${ safeTitle }"
+      ],
       "refresh the page": [
         "smiren asebter"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
+      ],
+      "Use recovery code": [
+        "Seqdec tangalt n tririt"
       ],
       "Verify": [
         "Senqed"
@@ -904,6 +919,9 @@
       "Internet connection lost": [
         "Tuqqna internet truḥ"
       ],
+      "Learn more": [
+        "Issin ugar"
+      ],
       "Loading": [
         "Azdam"
       ],
@@ -956,6 +974,9 @@
       ],
       "Verification code": [
         "Tangalt n usenqed"
+      ],
+      "Your password (admin)": [
+        "Awal-ik uffir (anedbal)"
       ]
     },
     "Link": {

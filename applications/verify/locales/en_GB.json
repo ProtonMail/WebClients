@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Authenticate"
+      ],
+      "Back": [
+        "Back"
+      ],
       "Cancel": [
         "Cancel"
       ],
       "Close": [
         "Close"
+      ],
+      "Continue": [
+        "Continue"
       ],
       "Didn't receive the code?": [
         "Didn't receive the code?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Get verification code"
       ],
+      "More info: ${ safeTitle }": [
+        "More info: ${ safeTitle }"
+      ],
       "refresh the page": [
         "refresh the page"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "Try another method"
+      ],
+      "Use recovery code": [
+        "Use recovery code"
       ],
       "Verify": [
         "Verify"
@@ -132,6 +147,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "If you don't find the email in your inbox, please check your spam folder."
       ],
+      "Learn more": [
+        "Learn more"
+      ],
       "Loading": [
         "Loading"
       ],
@@ -178,6 +196,9 @@
       ],
       "Verification code": [
         "Verification code"
+      ],
+      "Your password (admin)": [
+        "Your password (admin)"
       ]
     },
     "Link": {

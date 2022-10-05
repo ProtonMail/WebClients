@@ -236,6 +236,9 @@
       "Didn't receive the code?": [
         "Δεν λάβατε τον κωδικό;"
       ],
+      "Disable": [
+        "Απενεργοποίηση"
+      ],
       "Disable recovery phrase": [
         "Απενεργοποίηση φράσης ανάκτησης"
       ],
@@ -746,9 +749,6 @@
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
-      "Use two-factor authentication code": [
-        "Χρήση κωδικού ταυτοποίησης δύο παραγόντων"
-      ],
       "Use your current email address instead": [
         "Εναλλακτικά, χρησιμοποιήστε την τρέχουσα διεύθυνσή σας"
       ],
@@ -966,57 +966,9 @@
         "Δύο έτη"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "βήτα"
-      ],
-      "Includes": [
-        "Περιλαμβάνει"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Κανονική τιμή: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Αυτή η συνδρομή θα ανανεωθεί αυτόματα μετά από 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Τα πιο δημοφιλή"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
-      "Get the deal now": [
-        "Αποκτήστε την προσφορά τώρα"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "ανά μήνα"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Μοναδική προσφορά"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 μήνας"
-      ],
-      "12 months": [
-        "12 μήνες"
-      ],
-      "24 months": [
-        "24 μήνες"
       ]
     },
     "breadcrumb": {
@@ -3934,6 +3886,9 @@
       "Are you sure you want to delete this label?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
+      ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
@@ -4188,12 +4143,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Πληκτρολογήστε τον κωδικό πρόσβασης για να επιβεβαιώσετε την ταυτότητα σας."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Εισάγετε τον δικό σας κωδικό πρόσβασης (ως διαχειριστής οργανισμού) και νέο κωδικό πρόσβασης για τον χρήστη ${ Name } (${ Email })."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -4439,9 +4388,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Το Mail.ru διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές, ρωσικές κυβερνητικές υπηρεσίες και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Βεβαιωθείτε πως θυμάστε τον κωδικό για να συνδεθείτε και να αποκρυπτογραφήσετε τα email. ${ boldAlert } Προτείνουμε πρώτα να προσθέσετε ένα ${ recoveryLink }."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ _switchButton }."
       ],
@@ -4629,9 +4575,6 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Το Proton δεν μπορεί να σας βοηθήσει να ανακτήσετε τυχόν χαμένους κωδικούς."
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Η Proton διέκοψε μια εισαγωγή επειδή έχασε τη σύνδεση με την άλλη υπηρεσία παροχής ηλεκτρονικού ταχυδρομείου. Παρακαλώ επανασύνδεσε."
       ],
@@ -4658,9 +4601,6 @@
       ],
       "Recovery files have been voided": [
         "Τα αρχεία ανάκτησης ακυρώθηκαν"
-      ],
-      "recovery method": [
-        "μέθοδο ανάκτησης"
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
@@ -4904,9 +4844,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Ο έλεγχος ταυτότητας δύο παραγόντων προσθέτει ένα επιπλέον επίπεδο ασφάλειας στο λογαριασμό σας στην περίπτωση που ο κωδικός πρόσβασής σας έχει παραβιαστεί."
       ],
       "Two-factor authentication disabled": [
         "Έλεγχος ταυτότητας δύο παραγόντων απενεργοποιημένος"
@@ -5806,9 +5743,6 @@
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
       ],
-      "Current login password": [
-        "Τρέχων κωδικός εισόδου"
-      ],
       "Customize invoices": [
         "Προσαρμογή τιμολογίων"
       ],
@@ -6004,9 +5938,6 @@
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
       ],
-      "Login password": [
-        "Κωδικός σύνδεσης"
-      ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
       ],
@@ -6066,12 +5997,6 @@
       ],
       "Notification": [
         "Ειδοποίηση"
-      ],
-      "Old login password": [
-        "Παλιός κωδικός σύνδεσης"
-      ],
-      "Old password": [
-        "Παλιός κωδικός"
       ],
       "OpenVPN / IKEv2 password": [
         "Κωδικός πρόσβασης OpenVPN / IKEv2"
@@ -6162,9 +6087,6 @@
       ],
       "Read": [
         "Διαβασμένα"
-      ],
-      "Recovery code": [
-        "Κωδικός ανάκτησης"
       ],
       "Recovery email address": [
         "Email Ανάκτησης"
@@ -6261,12 +6183,6 @@
       ],
       "Total (${ countdown })": [
         "Σύνολο (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Έλεγχος ταυτότητας δύο παραγόντων"
-      ],
-      "Two-factor authentication code": [
-        "Κωδικός ταυτοποίησης δύο παραγόντων"
       ],
       "Two-password mode": [
         "Λειτουργία δύο κωδικών"
@@ -6621,11 +6537,6 @@
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
-      ]
-    },
-    "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
       ]
     },
     "Message display when a new app version is available": {
@@ -7069,6 +6980,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -7087,17 +7009,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7184,10 +7095,6 @@
       ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Δημιουργία ${ numberOfPersonalCalendars } προσωπικού ημερολογίου",
-        "Δημιουργία έως και ${ numberOfPersonalCalendars } προσωπικών ημερολογίων"
       ],
       "Everything in ${ vpnPlanName }": [
         "Όλα στο ${ vpnPlanName }"
@@ -7617,9 +7524,6 @@
       ],
       "Text": [
         "Κείμενο"
-      ],
-      "Two-factor authentication code": [
-        "Κωδικός ταυτοποίησης δύο παραγόντων"
       ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
@@ -8697,9 +8601,6 @@
       "Password and keys": [
         "Κωδικός πρόσβασης και κλειδιά"
       ],
-      "Passwords": [
-        "Κωδικοί πρόσβασης"
-      ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
       ],
@@ -8897,9 +8798,6 @@
       ],
       "Upgrade plan": [
         "Αναβάθμιση προγράμματος"
-      ],
-      "Username": [
-        "Όνομα χρήστη"
       ],
       "Users and addresses": [
         "Χρήστες και διευθύνσεις"

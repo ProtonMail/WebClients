@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Back": [
+        "Înapoi"
+      ],
       "Cancel": [
         "Anulare"
       ],
       "Close": [
         "Închidere"
+      ],
+      "Continue": [
+        "Continuare"
       ],
       "Didn't receive the code?": [
         "Nu ați primit codul?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "More info: ${ safeTitle }": [
+        "Mai multe informații: ${ safeTitle }"
+      ],
       "refresh the page": [
         "împrospătați pagina"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
       ],
       "Verify": [
         "Verifică"
@@ -937,6 +955,24 @@
         "Puteți ${ refresh } sau reîncerca mai târziu."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie securitate"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar odată."
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
+      ],
+      "Learn more": [
+        "Detalii"
       ],
       "Loading": [
         "Se încarcă"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Aplicație Authenticator"
+      ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
       ]
     },
     "Link": {
