@@ -64,14 +64,14 @@ const CalendarMemberAndInvitationList = ({
                 </Alert>
             )}
 
-            <Table className="simple-table--has-actions">
-                <TableHeader>
+            <Table className="simple-table--has-actions on-desktop-table-auto">
+                <TableHeader className="no-mobile">
                     <TableRow>
-                        <TableHeaderCell className="w40">{c('Header').t`User`}</TableHeaderCell>
-                        <TableHeaderCell className="w30">
-                            {shouldDisplayPermissions && c('Header').t`Permissions`}
+                        <TableHeaderCell className="">{c('Header').t`User`}</TableHeaderCell>
+                        <TableHeaderCell>{shouldDisplayPermissions && c('Header').t`Permissions`}</TableHeaderCell>
+                        <TableHeaderCell className="no-tablet">
+                            {shouldDisplayStatus && c('Header').t`Status`}
                         </TableHeaderCell>
-                        <TableHeaderCell>{shouldDisplayStatus && c('Header').t`Status`}</TableHeaderCell>
                         <TableHeaderCell>{c('Header').t`Action`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>
