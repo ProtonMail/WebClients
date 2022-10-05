@@ -74,6 +74,7 @@ const prepareMessageMetadata = (message: Message | ESMessage) => {
         Time: message.Time,
         Order: message.Order,
         AttachmentInfo: message.AttachmentInfo,
+        DisplaySenderImage: message.DisplaySenderImage,
     };
     return messageForSearch;
 };

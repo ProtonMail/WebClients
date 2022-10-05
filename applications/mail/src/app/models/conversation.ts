@@ -4,6 +4,7 @@ import { AttachmentInfo } from '@proton/shared/lib/interfaces/mail/Message';
 
 export interface Conversation {
     ID: string;
+    DisplaySenderImage?: number;
     Subject?: string;
     Size?: number;
     Time?: number;

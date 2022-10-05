@@ -34,6 +34,7 @@ export interface UnsubscribeMethods {
 export interface Message {
     ID: string;
     Order: number;
+    DisplaySenderImage: number;
     ConversationID: string;
     Subject: string;
     Unread: number;
