@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "认证"
+      ],
+      "Back": [
+        "上一步"
+      ],
       "Cancel": [
         "取消"
       ],
       "Close": [
         "关闭"
+      ],
+      "Continue": [
+        "继续"
       ],
       "Didn't receive the code?": [
         "没收到验证码？"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "获取验证码"
       ],
+      "More info: ${ safeTitle }": [
+        "更多信息：${ safeTitle }"
+      ],
       "refresh the page": [
         "刷新页面"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "更换验证方式"
+      ],
+      "Use authentication code": [
+        "使用验证码"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ],
       "Verify": [
         "验证"
@@ -937,6 +955,24 @@
         "您也可以${ refresh }页面或稍后再试。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥进行身份验证时出错。请重试。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+      ],
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "验证码"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
+      "Each code can only be used once": [
+        "每条恢复码只能使用一次"
+      ],
+      "Enter the code from your authenticator app": [
+        "请输入您的双重验证应用中显示的验证码"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入你的密码（作为组织管理员）。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "网络连接已断开"
+      ],
+      "Learn more": [
+        "了解详情"
       ],
       "Loading": [
         "加载中"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "验证器应用程序"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "Your password (admin)": [
+        "您的密码(管理员)"
       ]
     },
     "Link": {

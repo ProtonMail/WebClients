@@ -22,6 +22,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "${ name } updated": [
+        "${ name } actualizado"
+      ],
       "activate": [
         "activar"
       ],
@@ -135,9 +138,6 @@
       ],
       "Clear all formatting": [
         "Borrar formato"
-      ],
-      "Clear two-factor authentication code": [
-        "Borrar el código de autenticación de doble factor"
       ],
       "Close": [
         "Cerrar"
@@ -258,6 +258,9 @@
       ],
       "Didn't receive the code?": [
         "¿No has recibido el código?"
+      ],
+      "Disable": [
+        "Deshabilitar"
       ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperación"
@@ -787,9 +790,6 @@
       "Use recovery code": [
         "Utilizar un código de recuperación"
       ],
-      "Use two-factor authentication code": [
-        "Utilizar código de autenticación de doble factor"
-      ],
       "Use your current email address instead": [
         "Utiliza tu dirección de correo actual en su lugar"
       ],
@@ -859,6 +859,16 @@
       ],
       "Try free for 30 days": [
         "Prueba gratis durante 30 días"
+      ]
+    },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Aceptar"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Rechazar"
       ]
     },
     "Addon": {
@@ -1036,57 +1046,9 @@
         "Bienal"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Incluye"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Get the deal now": [
-        "Aprovecha la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ]
     },
     "breadcrumb": {
@@ -1205,6 +1167,14 @@
         "Puedes importar archivos ICS de otro calendario a ${ CALENDAR_APP_NAME }. Esto te permite importar rápidamente un evento o toda tu agenda."
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "Rechazada"
+      ],
+      "Invite sent": [
+        "Invitación enviada"
+      ]
+    },
     "Calendar link purpose update success message": {
       "Label added": [
         "Etiqueta añadida"
@@ -1230,6 +1200,9 @@
       "Share calendar": [
         "Compartir calendario"
       ],
+      "Share outside Proton": [
+        "Compartir fuera de Proton"
+      ],
       "Share with anyone": [
         "Compartir con alguien"
       ],
@@ -1240,6 +1213,11 @@
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Mostrar ${ remainingItems } más"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Permisos cambiados para ${ email }"
       ]
     },
     "Calendar status": {
@@ -1327,7 +1305,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Minimizar tamaño"
+        "Contraer"
       ],
       "Expand": [
         "Expandir"
@@ -1336,6 +1314,15 @@
     "color": {
       "apple": [
         "manzana"
+      ],
+      "azureish white": [
+        "blanco azulado"
+      ],
+      "blanched almond": [
+        "almendra blanqueada"
+      ],
+      "blue-gray": [
+        "gris azulado"
       ],
       "caramel": [
         "caramelo"
@@ -1346,14 +1333,29 @@
       "cerise": [
         "cereza"
       ],
+      "cinnabar": [
+        "cinabrio"
+      ],
       "cobalt": [
         "cobalto"
       ],
       "copper": [
         "cobre"
       ],
+      "cyan-blue azure": [
+        "azul cian"
+      ],
       "dandelion": [
         "diente de león"
+      ],
+      "dark cerulean": [
+        "cerúleo oscuro"
+      ],
+      "dark midnight blue": [
+        "azul medianoche oscuro"
+      ],
+      "dim gray": [
+        "gris tenue"
       ],
       "enzian": [
         "genciana"
@@ -1364,14 +1366,23 @@
       "forest": [
         "bosque"
       ],
+      "japanese laurel": [
+        "laurel japonés"
+      ],
       "kiwi": [
         "kiwi"
       ],
       "lemon yellow": [
         "amarillo limón"
       ],
+      "light moss green": [
+        "verde musgo claro"
+      ],
       "maize": [
         "maíz"
+      ],
+      "mughal green": [
+        "මුගල් කොළ"
       ],
       "ocean": [
         "océano"
@@ -1379,8 +1390,32 @@
       "olive": [
         "aceituna"
       ],
+      "outer space": [
+        "espacio exterior"
+      ],
       "pacific": [
         "pacífico"
+      ],
+      "palatinate blue": [
+        "azul palatino"
+      ],
+      "pale cerulean": [
+        "azul pálido"
+      ],
+      "pastel gray": [
+        "gris pastel"
+      ],
+      "persian plum": [
+        "ciruela persa"
+      ],
+      "persian red": [
+        "rojo persa"
+      ],
+      "philippine gray": [
+        "gris filipino"
+      ],
+      "philippine silver": [
+        "plateado filipino"
       ],
       "pickle": [
         "pepinillo"
@@ -1406,6 +1441,9 @@
       "sahara": [
         "sahara"
       ],
+      "satin sheen gold": [
+        "oro brillo satinado"
+      ],
       "slateblue": [
         "azul pizarra"
       ],
@@ -1414,6 +1452,9 @@
       ],
       "strawberry": [
         "fresa"
+      ],
+      "vivid auburn": [
+        "castaño vívido"
       ],
       "white": [
         "blanco"
@@ -3485,6 +3526,76 @@
         "Soporte de Torrents (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Agregar llave de seguridad"
+      ],
+      "Delete key": [
+        "Eliminar llave"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Por favor, deshabilite 2FA con la llave de seguridad antes de desactivar TOTP"
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Algo salió mal al registrar tu llave de seguridad. Por favor, inténtelo nuevamente."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Doble factor de autenticación basada en llave de seguridad desactivado"
+      ],
+      "Add a name to identify your security key with.": [
+        "Defina un nombre para identificar su llave de seguridad."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "¿Está seguro de querer eliminar la llave de seguridad ${ name }?"
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Ingrese la llave de seguridad en el puerto USB."
+      ],
+      "Security key removed": [
+        "Llave de seguridad eliminada"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Esto eleminará todas las llaves de seguridad vinculadas a tu cuenta."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Activa 2FA con una llave de seguridad, para esto necesitará activar 2FA con la aplicación de autenticación"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifica tu identidad con una llave física de seguridad U2F o FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Tu llave para doble factor de autenticación está lista para ser usada."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Nombre de la llave"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "¿Eliminar la llave de seguridad?"
+      ],
+      "Disable 2FA via security key?": [
+        "¿Deshabilitar 2FA con la llave de seguridad?"
+      ],
+      "Name your security key": [
+        "Defina un nombre para la llave de seguridad"
+      ],
+      "Register your security key": [
+        "Registre su llave de seguridad"
+      ],
+      "Registered security keys": [
+        "Llaves de seguridad registradas"
+      ],
+      "Security key registered": [
+        "Llave de seguridad registrada"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3649,6 +3760,9 @@
       ],
       "Key type": [
         "Tipo de clave"
+      ],
+      "Label": [
+        "Etiqueta"
       ],
       "Name": [
         "Nombre"
@@ -4314,8 +4428,14 @@
       "Add a recovery email address": [
         "Añadir una dirección de correo de recuperación"
       ],
+      "add a recovery method": [
+        "añadir un método de recuperación"
+      ],
       "Add a recovery phone number": [
         "Añadir un número de teléfono de recuperación"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Agrega una capa adicional de seguridad a su cuenta. Necesitarás verificarte mediante un segundo factor de autenticación cada vez que ingreses."
       ],
       "Add image URL": [
         "Agregar URL de imagen"
@@ -4409,6 +4529,9 @@
       ],
       "Are you sure you want to delete this label?": [
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "¿Está seguro de que desea deshabilitar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -4652,8 +4775,14 @@
       "Encryption setting updated": [
         "Ajustes de cifrado actualizados"
       ],
+      "Enter code from your authenticator app": [
+        "Ingrese el código desde la aplicación de autenticación"
+      ],
       "Enter key manually instead": [
         "Introduce la clave manualmente"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Ingrese una nueva contraseña para el usuario ${ userName }."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Introduce el código enviado a tu número de teléfono ${ phone }."
@@ -4675,12 +4804,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduzca su dirección de correo electrónico o nombre de usuario de la cuenta ${ BRAND_NAME }."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Introduce tu contraseña de inicio de sesión para confirmar tu identidad."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Introduzca su propia contraseña (como administrador de la organización) y la nueva contraseña para este usuario ${ Name } (${ Email })."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
@@ -4936,8 +5059,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru lee tus datos personales con el fin de facilitar el acceso a anunciantes, agencias gubernamentales rusas y terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Asegúrate de recordar la contraseña para iniciar sesión y descifrar correos electrónicos. ${ boldAlert } Recomendamos añadir un ${ recoveryLink } primero."
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Asegúrese de ${ addARecoveryMethod } , de esta manera puede volver a tener acceso a su cuenta en caso de olvidar la contraseña."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduce manualmente esta información en el dispositivo de autenticación de doble factores para configurar tu cuenta. ${ _switchButton }."
@@ -5140,9 +5263,6 @@
       "Priority support": [
         "Soporte prioritario"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton no puede ayudarte a recuperar ninguna contraseña perdida."
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Por favor, vuelve a conectar."
       ],
@@ -5151,6 +5271,9 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton intentará reanudar la importación tan pronto como tu proveedor de correo restablezca el ${ bandwithLimitLink } de tu cuenta. No necesitas hacer nada. Si cancelas la importación, no podrás reanudarla y tendrás que empezar de nuevo."
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "La tecnología de encripción utilizada por Proton, garantiza que nadie tenga acceso a tu contraseña - Ni siquiera nosotros."
       ],
       "Public link invite": [
         "Invitación de enlace público"
@@ -5172,9 +5295,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo salvo que selecciones eliminarla."
-      ],
-      "recovery method": [
-        "método de recuperación"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperación copiada en el portapapeles"
@@ -5454,9 +5574,6 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "La autenticación de doble factor añade una capa extra de seguridad a tu cuenta en caso de que tu contraseña se vea comprometida."
-      ],
       "Two-factor authentication disabled": [
         "Autenticación de doble factor deshabilitada"
       ],
@@ -5522,6 +5639,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Verifica tu identidad con una clave de uso único basada en tiempo desde la aplicación de autenticación"
       ],
       "Verifying your payment": [
         "Verificando tu pago"
@@ -6421,9 +6541,6 @@
       "Credits used": [
         "Créditos utilizados"
       ],
-      "Current login password": [
-        "Contraseña de inicio de sesión actual"
-      ],
       "Customize invoices": [
         "Personalizar las facturas"
       ],
@@ -6447,6 +6564,9 @@
       ],
       "Default PGP scheme": [
         "Esquema PGP por defecto"
+      ],
+      "Default view": [
+        "Vista por defecto"
       ],
       "Delete": [
         "Eliminar"
@@ -6631,9 +6751,6 @@
       "Level for NetShield blocker filtering": [
         "Nivel de filtrado del bloqueador NetShield"
       ],
-      "Login password": [
-        "Contraseña de inicio de sesión"
-      ],
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
       ],
@@ -6699,12 +6816,6 @@
       ],
       "Notification": [
         "Notificación"
-      ],
-      "Old login password": [
-        "Contraseña anterior de inicio de sesión"
-      ],
-      "Old password": [
-        "Contraseña anterior"
       ],
       "OpenVPN / IKEv2 password": [
         "Contraseña OpenVPN / IKEv2"
@@ -6796,9 +6907,6 @@
       "Read": [
         "Leído"
       ],
-      "Recovery code": [
-        "Código de recuperación"
-      ],
       "Recovery email address": [
         "Dirección de correo electrónico de recuperación"
       ],
@@ -6834,6 +6942,9 @@
       ],
       "Show secondary time zone": [
         "Mostrar zona horaria secundaria"
+      ],
+      "Show week numbers": [
+        "Mostrar los números de la semana"
       ],
       "Sign external messages": [
         "Firmar mensajes externos"
@@ -6903,12 +7014,6 @@
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Autenticación de doble factor"
-      ],
-      "Two-factor authentication code": [
-        "Código de autenticación de doble factor"
       ],
       "Two-password mode": [
         "Modo de doble contraseña"
@@ -7267,6 +7372,12 @@
         "Puedes crear hasta ${ MAX_LINKS_PER_CALENDAR } enlaces por calendario. Para crear un nuevo enlace a este calendario, elimina uno de la lista de abajo."
       ]
     },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Has alcanzado el máximo de ${ MAX_CALENDAR_MEMBERS } miembro.",
+        "Has alcanzado el máximo de ${ MAX_CALENDAR_MEMBERS } miembros."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Eliminar"
@@ -7289,9 +7400,6 @@
     "Message": {
       "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
         "Todas las acciones de filtrado se aplicarán a todos los mensajes de tu cuenta Proton Mail. No se enviarán correos de respuesta automática."
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "¿Estás seguro de que quieres deshabilitar la autenticación de doble factor?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte su dominio personalizado a ${ BRAND_NAME } para configurar direcciones de correo electrónico personalizadas (por ejemplo, you@yourcompany.com). Nuestro asistente le guiará en el proceso."
@@ -7684,7 +7792,7 @@
         "Grupos de contactos"
       ],
       "Contact groups management": [
-        "Administración de grupos de contactos"
+        "Gestión de grupos de contactos"
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
@@ -7769,7 +7877,7 @@
         "Compartir archivos y carpetas mediante un enlace"
       ],
       "Sign in as user": [
-        "Inicio de sesión como usuario"
+        "Iniciar sesión como usuario"
       ],
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
@@ -7823,6 +7931,26 @@
       ],
       "Team management": [
         "Administración de equipos"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7891,26 +8019,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8178,10 +8286,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "Más posibilidades con 10 dominios de correo electrónico personalizados"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Capacidad para crear ${ numberOfPersonalCalendars } calendario personal",
-        "Capacidad para crear hasta ${ numberOfPersonalCalendars } calendarios personales"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Todo en ${ vpnPlanName }"
       ],
@@ -8216,9 +8320,18 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Invitación eliminada"
+      ],
+      "Invitation revoked": [
+        "Invitación revocada"
+      ],
       "Member added": [
         "Miembro añadido",
         "Miembros añadidos"
+      ],
+      "Member deleted": [
+        "Miembro eliminado"
       ]
     },
     "Notification time input": {
@@ -8372,6 +8485,9 @@
       ],
       "Android": [
         "Android"
+      ],
+      "Ask each time": [
+        "Preguntar cada vez"
       ],
       "Automatic (${ defaultDay })": [
         "Automático (${ defaultDay })"
@@ -8669,9 +8785,6 @@
       "Text": [
         "Texto"
       ],
-      "Two-factor authentication code": [
-        "Código de autenticación de doble factor"
-      ],
       "Type text or keyword": [
         "Escribe el texto o palabra clave"
       ],
@@ -8705,6 +8818,9 @@
       ]
     },
     "Primary timezone": {
+      "Primary time zone": [
+        "Zona horaria principal"
+      ],
       "Secondary time zone": [
         "Zona horaria secundaria"
       ]
@@ -9138,6 +9254,9 @@
       "Calendar information updated": [
         "Información del calendario actualizada"
       ],
+      "Calendar removed": [
+        "Calendario eliminado"
+      ],
       "Calendar updated": [
         "Calendario actualizado"
       ],
@@ -9152,6 +9271,9 @@
       ],
       "Credits added": [
         "Créditos añadidos"
+      ],
+      "Default calendar updated": [
+        "Calendario predeterminado actualizado"
       ],
       "DMARC value copied to clipboard": [
         "Valor DMARC copiado en el portapapeles"
@@ -9329,6 +9451,11 @@
       ],
       "For individuals": [
         "Para particulares"
+      ]
+    },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Compartido conmigo"
       ]
     },
     "TableHeader": {
@@ -9697,6 +9824,9 @@
       "Delete account": [
         "Eliminar cuenta"
       ],
+      "Delete calendar": [
+        "Eliminar calendario"
+      ],
       "Delete key permanently?": [
         "¿Eliminar clave permanentemente?"
       ],
@@ -9932,9 +10062,6 @@
       "Password and keys": [
         "Contraseña y claves"
       ],
-      "Passwords": [
-        "Contraseñas"
-      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -10146,9 +10273,6 @@
       "Upgrade plan": [
         "Mejorar plan"
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "Users and addresses": [
         "Usuarios y direcciones"
       ],
@@ -10181,6 +10305,9 @@
       ],
       "You already have a Proton account": [
         "Ya tienes una cuenta de Proton"
+      ],
+      "Your calendar link": [
+        "Enlace a tu calendario"
       ],
       "Your current plan": [
         "Tu plan actual"

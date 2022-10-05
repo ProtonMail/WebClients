@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Godkend"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
       "Cancel": [
         "Annullér"
       ],
       "Close": [
         "Luk"
+      ],
+      "Continue": [
+        "Fortsæt"
       ],
       "Didn't receive the code?": [
         "Ikke modtaget koden?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "More info: ${ safeTitle }": [
+        "Yderligere information: ${ safeTitle }"
+      ],
       "refresh the page": [
         "opdater siden"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "Prøv en anden metode"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
       ],
       "Verify": [
         "Bekræft"
@@ -937,6 +952,9 @@
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
       "Loading": [
         "Indlæser"
       ],
@@ -992,6 +1010,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "Link": {

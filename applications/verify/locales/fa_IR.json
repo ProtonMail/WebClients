@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "احراز هویت"
+      ],
+      "Back": [
+        "بازگشت"
+      ],
       "Cancel": [
         "انصراف"
       ],
       "Close": [
         "بستن"
+      ],
+      "Continue": [
+        "ادامه"
       ],
       "Didn't receive the code?": [
         "کد را دریافت نکردید؟"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "دریافت کد تایید"
       ],
+      "More info: ${ safeTitle }": [
+        "اطلاعات بیشتر: ${ safeTitle }"
+      ],
       "refresh the page": [
         "بازخوانی صفحه"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "روش دیگری بیازمایید"
+      ],
+      "Use recovery code": [
+        "از کد بازیابی استفاده کنید"
       ],
       "Verify": [
         "تایید"
@@ -973,6 +988,9 @@
       "Internet connection lost": [
         "اتصال اینترنت قطع شد"
       ],
+      "Learn more": [
+        "بیشتر بدانید"
+      ],
       "Loading": [
         "در حال بارگذاری"
       ],
@@ -1028,6 +1046,9 @@
       ],
       "Verification code": [
         "کد تایید"
+      ],
+      "Your password (admin)": [
+        "گذرواژه شما (مدیر)"
       ]
     },
     "Link": {

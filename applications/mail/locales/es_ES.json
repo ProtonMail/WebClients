@@ -579,13 +579,13 @@
         "Mover todas las conversaciones de esta carpeta"
       ],
       "Move all conversations from this label": [
-        "Mover todas las conversaciones con esta etiqueta"
+        "Mover todas las conversaciones de esta etiqueta"
       ],
       "Move all messages from this folder": [
         "Mover todos los mensajes de esta carpeta"
       ],
       "Move all messages from this label": [
-        "Mover todos los mensajes con esta etiqueta"
+        "Mover todos los mensajes de esta etiqueta"
       ],
       "Move all to trash": [
         "Mover todo a la papelera"
@@ -846,7 +846,7 @@
         "Establecer como predeterminado"
       ],
       "Set encryption": [
-        "Establecer cifrado"
+        "Definir cifrado"
       ],
       "Set expiration time": [
         "Establecer fecha de expiración"
@@ -1135,6 +1135,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversación"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
       ]
     },
     "Alternative text for SimpleLogin image": {
@@ -1644,7 +1649,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Minimizar tamaño"
+        "Contraer"
       ],
       "Expand": [
         "Expandir"
@@ -1653,6 +1658,15 @@
     "color": {
       "apple": [
         "manzana"
+      ],
+      "azureish white": [
+        "blanco azulado"
+      ],
+      "blanched almond": [
+        "almendra blanqueada"
+      ],
+      "blue-gray": [
+        "gris azulado"
       ],
       "caramel": [
         "caramelo"
@@ -1663,14 +1677,29 @@
       "cerise": [
         "cereza"
       ],
+      "cinnabar": [
+        "cinabrio"
+      ],
       "cobalt": [
         "cobalto"
       ],
       "copper": [
         "cobre"
       ],
+      "cyan-blue azure": [
+        "azul cian"
+      ],
       "dandelion": [
         "diente de león"
+      ],
+      "dark cerulean": [
+        "cerúleo oscuro"
+      ],
+      "dark midnight blue": [
+        "azul medianoche oscuro"
+      ],
+      "dim gray": [
+        "gris tenue"
       ],
       "enzian": [
         "genciana"
@@ -1681,14 +1710,23 @@
       "forest": [
         "bosque"
       ],
+      "japanese laurel": [
+        "laurel japonés"
+      ],
       "kiwi": [
         "kiwi"
       ],
       "lemon yellow": [
         "amarillo limón"
       ],
+      "light moss green": [
+        "verde musgo claro"
+      ],
       "maize": [
         "maíz"
+      ],
+      "mughal green": [
+        "මුගල් කොළ"
       ],
       "ocean": [
         "océano"
@@ -1696,8 +1734,32 @@
       "olive": [
         "aceituna"
       ],
+      "outer space": [
+        "espacio exterior"
+      ],
       "pacific": [
         "pacífico"
+      ],
+      "palatinate blue": [
+        "azul palatino"
+      ],
+      "pale cerulean": [
+        "azul pálido"
+      ],
+      "pastel gray": [
+        "gris pastel"
+      ],
+      "persian plum": [
+        "ciruela persa"
+      ],
+      "persian red": [
+        "rojo persa"
+      ],
+      "philippine gray": [
+        "gris filipino"
+      ],
+      "philippine silver": [
+        "plateado filipino"
       ],
       "pickle": [
         "pepinillo"
@@ -1723,6 +1785,9 @@
       "sahara": [
         "sahara"
       ],
+      "satin sheen gold": [
+        "oro brillo satinado"
+      ],
       "slateblue": [
         "azul pizarra"
       ],
@@ -1731,6 +1796,9 @@
       ],
       "strawberry": [
         "fresa"
+      ],
+      "vivid auburn": [
+        "castaño vívido"
       ],
       "white": [
         "blanco"
@@ -4415,6 +4483,9 @@
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
       ],
+      "Content: ": [
+        "Contenido: "
+      ],
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
       ],
@@ -4958,7 +5029,7 @@
         "Seleccione los calendarios que desea importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "Enviar un mensaje encriptado y protegido por contraseña a una dirección de correo electrónico que no es de ${ boldText }."
+        "Envía un mensaje cifrado y protegido con contraseña a una dirección de correo electrónico que no es de ${ boldText }."
       ],
       "Sender has been blocked.": [
         "El remitente ha sido bloqueado."
@@ -5461,13 +5532,13 @@
     },
     "Key badge": {
       "Compromised": [
-        "Comprometido"
+        "Comprometida"
       ],
       "Expired": [
         "Expirada"
       ],
       "Obsolete": [
-        "Obsoleto"
+        "Obsoleta"
       ],
       "Primary": [
         "Principal"
@@ -8135,10 +8206,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        "Haga clic para reproducir el vídeo"
+        "Clic para repetir el video"
       ],
       "Replay video": [
-        "Repetición del vídeo"
+        "Repetir video"
       ]
     },
     "Warning": {

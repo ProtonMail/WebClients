@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Otentikasi"
+      ],
+      "Back": [
+        "Kembali"
+      ],
       "Cancel": [
         "Batal"
       ],
       "Close": [
         "Tutup"
+      ],
+      "Continue": [
+        "Lanjut"
       ],
       "Didn't receive the code?": [
         "Tidak menerima kode yang dimaksud?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "More info: ${ safeTitle }": [
+        "Info lebih lanjut: ${ safeTitle }"
+      ],
       "refresh the page": [
         "muat ulang halaman"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Use authentication code": [
+        "Gunakan kode otentikasi"
+      ],
+      "Use recovery code": [
+        "Gunakan kode pemulihan"
       ],
       "Verify": [
         "Verifikasi"
@@ -937,6 +955,24 @@
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
+      "Each code can only be used once": [
+        "Masing-masing kode hanya dapat digunakan sekali"
+      ],
+      "Enter the code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
       ],
       "Loading": [
         "Memuat"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Aplikasi otentikator"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
       ]
     },
     "Link": {

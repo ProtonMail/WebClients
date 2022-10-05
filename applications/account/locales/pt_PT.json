@@ -188,6 +188,9 @@
       "Didn't receive a code?": [
         "Não recebeu o código?"
       ],
+      "Disable": [
+        "Desactivar"
+      ],
       "Disable recovery phrase": [
         "Desactivar a frase de recuperação"
       ],
@@ -566,9 +569,6 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
-      "Use two-factor authentication code": [
-        "Usar código de autenticação em dois passos"
-      ],
       "Use “${ label }” setting": [
         "Usar configuração de “${ label }”"
       ],
@@ -723,51 +723,9 @@
         "Bianual"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Inclui"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtenha o lidar"
-      ],
-      "Get the deal now": [
-        "Obtenha a promoção já"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "por mês"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ]
     },
     "Bridge version load failed": {
@@ -2311,6 +2269,9 @@
       "Are you sure you want to delete this label?": [
         "Tem a certeza de que deseja eliminar esta etiqueta?"
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Tem certeza de que deseja desactivar a autenticação em dois passos?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
       ],
@@ -2491,9 +2452,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação enviado para ${ destinationText }."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Insira a senha de início de sessão para confirmar a sua identidade."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
@@ -2899,9 +2857,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "A autenticação em dois passos adiciona uma camada extra de segurança à sua conta, caso a senha seja comprometida."
       ],
       "Two-factor authentication disabled": [
         "Autenticação em dois passos desactivada"
@@ -3715,9 +3670,6 @@
       "Last month only": [
         "Último mês"
       ],
-      "Login password": [
-        "Senha de início de sessão"
-      ],
       "Mail Server (IMAP)": [
         "Servidor de email (IMAP)"
       ],
@@ -3771,12 +3723,6 @@
       ],
       "Notification": [
         "Notificação"
-      ],
-      "Old login password": [
-        "Senha de início antiga"
-      ],
-      "Old password": [
-        "Senha antiga"
       ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN/IKEv2"
@@ -3846,9 +3792,6 @@
       ],
       "Read": [
         "Lido"
-      ],
-      "Recovery code": [
-        "Código de recuperação"
       ],
       "Recovery phrase": [
         "Frase de recuperação"
@@ -3921,12 +3864,6 @@
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Autenticação em dois passos"
-      ],
-      "Two-factor authentication code": [
-        "Código de autenticação em dois passos"
       ],
       "Two-password mode": [
         "Modo Senha dupla"
@@ -4198,11 +4135,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ]
-    },
-    "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Tem certeza de que deseja desactivar a autenticação em dois passos?"
       ]
     },
     "Message display when a new app version is available": {
@@ -4780,9 +4712,6 @@
       ],
       "Text": [
         "Texto"
-      ],
-      "Two-factor authentication code": [
-        "Código de autenticação em dois passos"
       ],
       "Type text or keyword": [
         "Insira o texto ou palavra-chave"
@@ -5545,9 +5474,6 @@
       "Password": [
         "Senha"
       ],
-      "Passwords": [
-        "Senhas"
-      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -5700,9 +5626,6 @@
       ],
       "Unsupported browser": [
         "Navegador não suportado"
-      ],
-      "Username": [
-        "Nome de utilizador"
       ],
       "Users and addresses": [
         "Utilizadores e endereços"
