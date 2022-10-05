@@ -23,6 +23,7 @@ import {
 } from '../../../components';
 import { useApi, useErrorHandler, useEventManager, useLoading } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
+import { maxSecurityKeyNameLength } from './constants';
 
 enum Steps {
     Tutorial,
@@ -159,6 +160,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                     <>
                         <InputFieldTwo
                             autoFocus
+                            maxLength={maxSecurityKeyNameLength}
                             label={c('fido2: Label').t`Key name`}
                             error={validator([requiredValidator(name)])}
                             value={name}

@@ -17,6 +17,7 @@ import {
     useFormErrors,
 } from '../../../components';
 import { useApi, useErrorHandler, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { maxSecurityKeyNameLength } from './constants';
 
 interface Props extends ModalProps {
     id: string;
@@ -39,7 +40,7 @@ const EditSecurityKeyModal = ({ id, name, onClose, ...rest }: Props) => {
                 await silentApi(renameSecurityKey(id, { Name: newName }));
                 await call();
                 createNotification({
-                    text: c('Action').t`${name} updated`,
+                    text: c('fido2: Info').t`Security key updated`,
                 });
                 onClose?.();
             } catch (e) {
@@ -67,8 +68,9 @@ const EditSecurityKeyModal = ({ id, name, onClose, ...rest }: Props) => {
             <ModalContent>
                 <InputFieldTwo
                     autoFocus
+                    maxLength={maxSecurityKeyNameLength}
                     label={c('fido2: Label').t`Key name`}
-                    error={validator([requiredValidator(name)])}
+                    error={validator([requiredValidator(newName)])}
                     value={newName}
                     onValue={setNewName}
                 />
