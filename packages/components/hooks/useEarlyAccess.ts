@@ -1,4 +1,5 @@
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
+import { Environment } from '@proton/shared/lib/environment/helper';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
@@ -7,8 +8,6 @@ import useApi from './useApi';
 import useFeature from './useFeature';
 import useLoading from './useLoading';
 import useUserSettings from './useUserSettings';
-
-export type Environment = 'alpha' | 'beta';
 
 export const getVersionCookieIsValid = (
     versionCookie: Environment | undefined,
