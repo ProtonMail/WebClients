@@ -27,24 +27,30 @@ export const useAutocompleteFilter = <V>(
         if (searchMinLength > 0 && value.length < searchMinLength) {
             return [];
         }
-        return (
-            options
-                .map((option: V) => {
-                    const text = getData(option);
-                    const normalizedText = normalize(text, true);
-                    const regex = new RegExp(escapeRegex(normalizedSearchText), 'gi');
-                    return {
-                        text,
-                        option,
-                        chunks: getMatches(regex, normalizedText),
-                    };
-                })
-                // If the search input is zero there won't be any chunks
-                .filter(
-                    ({ chunks }) => (searchMinLength === 0 && normalizedSearchText.length === 0) || chunks.length > 0
-                )
-                .slice(0, limit)
-        );
+
+        const result = [];
+
+        for (let i = 0; i < options.length; i++) {
+            if (result.length === limit) {
+                break;
+            }
+
+            const option = options[i];
+            const text = getData(option);
+            const normalizedText = normalize(text, true);
+            const regex = new RegExp(escapeRegex(normalizedSearchText), 'gi');
+            const chunks = getMatches(regex, normalizedText);
+
+            if ((searchMinLength === 0 && normalizedSearchText.length === 0) || chunks.length > 0) {
+                result.push({
+                    text,
+                    option,
+                    chunks,
+                });
+            }
+        }
+
+        return result;
     }, [value, options, getData]);
 };
 
