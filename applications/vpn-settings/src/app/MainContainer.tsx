@@ -55,6 +55,7 @@ import LiveChatZendesk, {
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
+import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -66,6 +67,8 @@ import { getRoutes } from './routes';
 const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
 
 const MainContainer = () => {
+    useTelemetryScreenSize();
+
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [tagsArray, setTagsArray] = useState<string[]>([]);
