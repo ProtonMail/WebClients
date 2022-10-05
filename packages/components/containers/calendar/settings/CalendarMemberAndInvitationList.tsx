@@ -11,6 +11,7 @@ import {
     MEMBER_INVITATION_STATUS,
 } from '@proton/shared/lib/interfaces/calendar';
 
+import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import CalendarMemberRow from './CalendarMemberRow';
 
@@ -62,75 +63,78 @@ const CalendarMemberAndInvitationList = ({
                     )}
                 </Alert>
             )}
-            <div className="calendar-members-grid">
-                {[
-                    c('Header').t`User`,
-                    shouldDisplayPermissions ? c('Header').t`Permissions` : '',
-                    shouldDisplayStatus ? c('Header').t`Status` : '',
-                    c('Header').t`Action`,
-                ].map((text, index) => (
-                    <div className="text-bold" style={index === 0 ? { gridColumn: '1 / 3' } : undefined}>
-                        {text}
-                    </div>
-                ))}
-                {members.map(({ ID, Email, Permissions }) => {
-                    const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                        canonicalizeInternalEmail(Email)
-                    ] || {
-                        Name: Email,
-                        Email,
-                    };
 
-                    return (
-                        <CalendarMemberRow
-                            key={ID}
-                            onDelete={() => onDeleteMember(ID)}
-                            onPermissionsUpdate={async (newPermissions) => {
-                                await api(updateMember(calendarID, ID, { Permissions: newPermissions }));
-                                showPermissionChangeSuccessNotification(contactEmail);
-                            }}
-                            name={contactName}
-                            email={contactEmail}
-                            deleteLabel={c('Action').t`Remove this member`}
-                            permissions={Permissions}
-                        />
-                    );
-                })}
-                {invitations.map(({ CalendarInvitationID, Email, Permissions, Status }) => {
-                    if (Status === MEMBER_INVITATION_STATUS.ACCEPTED) {
-                        return null;
-                    }
+            <Table className="simple-table--has-actions">
+                <TableHeader>
+                    <TableRow>
+                        <TableHeaderCell className="w40">{c('Header').t`User`}</TableHeaderCell>
+                        <TableHeaderCell className="w30">
+                            {shouldDisplayPermissions && c('Header').t`Permissions`}
+                        </TableHeaderCell>
+                        <TableHeaderCell>{shouldDisplayStatus && c('Header').t`Status`}</TableHeaderCell>
+                        <TableHeaderCell>{c('Header').t`Action`}</TableHeaderCell>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {members.map(({ ID, Email, Permissions }) => {
+                        const { Name: contactName, Email: contactEmail } = contactEmailsMap[
+                            canonizeInternalEmail(Email)
+                        ] || {
+                            Name: Email,
+                            Email,
+                        };
 
-                    const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                        canonicalizeInternalEmail(Email)
-                    ] || {
-                        Name: Email,
-                        Email,
-                    };
-                    const isDeclined = Status === MEMBER_INVITATION_STATUS.REJECTED;
-                    const deleteLabel = isDeclined ? c('Action').t`Delete` : c('Action').t`Revoke this invitation`;
+                        return (
+                            <CalendarMemberRow
+                                key={ID}
+                                onDelete={() => onDeleteMember(ID)}
+                                onPermissionsUpdate={async (newPermissions) => {
+                                    await api(updateMember(calendarID, ID, { Permissions: newPermissions }));
+                                    showPermissionChangeSuccessNotification(contactEmail);
+                                }}
+                                name={contactName}
+                                email={contactEmail}
+                                deleteLabel={c('Action').t`Remove this member`}
+                                permissions={Permissions}
+                            />
+                        );
+                    })}
+                    {invitations.map(({ CalendarInvitationID, Email, Permissions, Status }) => {
+                        if (Status === MEMBER_INVITATION_STATUS.ACCEPTED) {
+                            return null;
+                        }
 
-                    return (
-                        <CalendarMemberRow
-                            key={CalendarInvitationID}
-                            onDelete={() => onDeleteInvitation(CalendarInvitationID, isDeclined)}
-                            onPermissionsUpdate={async (newPermissions) => {
-                                await api(
-                                    updateInvitation(calendarID, CalendarInvitationID, {
-                                        Permissions: newPermissions,
-                                    })
-                                );
-                                showPermissionChangeSuccessNotification(contactEmail);
-                            }}
-                            name={contactName}
-                            email={contactEmail}
-                            deleteLabel={deleteLabel}
-                            permissions={Permissions}
-                            status={Status}
-                        />
-                    );
-                })}
-            </div>
+                        const { Name: contactName, Email: contactEmail } = contactEmailsMap[
+                            canonizeInternalEmail(Email)
+                        ] || {
+                            Name: Email,
+                            Email,
+                        };
+                        const isDeclined = Status === MEMBER_INVITATION_STATUS.REJECTED;
+                        const deleteLabel = isDeclined ? c('Action').t`Delete` : c('Action').t`Revoke this invitation`;
+
+                        return (
+                            <CalendarMemberRow
+                                key={CalendarInvitationID}
+                                onDelete={() => onDeleteInvitation(CalendarInvitationID, isDeclined)}
+                                onPermissionsUpdate={async (newPermissions) => {
+                                    await api(
+                                        updateInvitation(calendarID, CalendarInvitationID, {
+                                            Permissions: newPermissions,
+                                        })
+                                    );
+                                    showPermissionChangeSuccessNotification(contactEmail);
+                                }}
+                                name={contactName}
+                                email={contactEmail}
+                                deleteLabel={deleteLabel}
+                                permissions={Permissions}
+                                status={Status}
+                            />
+                        );
+                    })}
+                </TableBody>
+            </Table>
         </>
     );
 };
