@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FileIcon, Icon, Loader, TableCell } from '@proton/components';
+import { FileIcon, Icon, Loader, TableCell, useActiveBreakpoint } from '@proton/components';
 
 import { Cells, HeaderCellsPresets } from '../FileBrowser';
 import { getLinkIconText } from '../sections/FileBrowser/utils';
@@ -43,12 +43,14 @@ function NameCell({ item }: { item: PublicLink }) {
 }
 
 function SizeCell({ item }: { item: PublicLink }) {
+    const { isNarrow } = useActiveBreakpoint();
+
     if (item.progress) {
         // Yes, when progress is ongoing, the size is wider than normal size cell,
         // including the header. This is wanted UI element.
         return (
             <TableCell className="m0 w35 flex flex-nowrap flex-justify-end" data-testid="column-size">
-                {item.progress.progress > 0 && (
+                {!isNarrow && item.progress.progress > 0 && (
                     <>
                         <Cells.SizeCell size={item.progress.progress} />/
                     </>
@@ -59,7 +61,7 @@ function SizeCell({ item }: { item: PublicLink }) {
         );
     }
     return (
-        <TableCell className="m0 w20 flex flex-nowrap" data-testid="column-size">
+        <TableCell className="m0 w25 flex flex-nowrap" data-testid="column-size">
             {item.isFile ? <Cells.SizeCell size={item.size} /> : '-'}
         </TableCell>
     );
