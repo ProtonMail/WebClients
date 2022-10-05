@@ -74,7 +74,7 @@ const CalendarMemberRow = ({
         <TableRow>
             <TableCell>
                 <div className="flex flex-nowrap flex-align-items-baseline flex-gap-0-5">
-                    <Avatar className="avatar--weak flex-item-noshrink on-mobile-hidden">{getInitials(name)}</Avatar>
+                    <Avatar className="avatar--weak flex-item-noshrink no-mobile">{getInitials(name)}</Avatar>
 
                     <div>
                         <div className="text-ellipsis" title={name}>
