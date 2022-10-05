@@ -1,18 +1,21 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
+
+import { useApi, useEventManager, useLabels, useNotifications } from '@proton/components';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
+
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
+import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { Element } from '../../models/element';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
-import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { useCreateFilters } from './useCreateFilters';
 
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
@@ -95,7 +98,8 @@ export const useApplyLabels = () => {
             elements: Element[],
             changes: { [labelID: string]: boolean },
             createFilters: boolean,
-            silent = false
+            silent = false,
+            selectedLabelIDs: string[] = []
         ) => {
             if (!elements.length) {
                 return;
@@ -134,13 +138,7 @@ export const useApplyLabels = () => {
                                 }
                             })
                         ),
-                        createFilters
-                            ? doCreateFilters(
-                                  elements,
-                                  changesKeys.filter((labelID) => changes[labelID]),
-                                  false
-                              )
-                            : undefined,
+                        createFilters ? doCreateFilters(elements, selectedLabelIDs, false) : undefined,
                     ]);
                 } finally {
                     dispatch(backendActionFinished());
