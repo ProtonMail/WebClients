@@ -204,3 +204,9 @@ export const updateBlockSenderConfirmation = (BlockSenderConfirmation: BLOCK_SEN
     method: 'put',
     data: { BlockSenderConfirmation },
 });
+
+export const updateHideSenderImages = (HideSenderImages: number) => ({
+    url: 'mail/v4/settings/hide-sender-images',
+    method: 'put',
+    data: { HideSenderImages },
+});

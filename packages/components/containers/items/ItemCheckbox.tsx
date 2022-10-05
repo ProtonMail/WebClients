@@ -1,28 +1,32 @@
 import { ChangeEvent, MouseEvent } from 'react';
 
 import { DENSITY } from '@proton/shared/lib/constants';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { Checkbox, Icon } from '../../components';
 import { classnames } from '../../helpers';
 import { useUserSettings } from '../../hooks';
+import { ContactImage } from '../contacts';
 
 interface Props {
     ID?: string;
     name?: string;
+    email?: string;
     compactClassName?: string;
     normalClassName?: string;
     checked: boolean;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const ItemCheckbox = ({ ID = '', name = '', compactClassName, normalClassName, checked, onChange }: Props) => {
-    const [userSettings, loading] = useUserSettings();
-
-    if (loading) {
-        return null;
-    }
-
+const ItemCheckbox = ({
+    ID = '',
+    name = '',
+    email = '',
+    compactClassName,
+    normalClassName,
+    checked,
+    onChange,
+}: Props) => {
+    const [userSettings] = useUserSettings();
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const handleClick = (event: MouseEvent) => {
@@ -53,7 +57,9 @@ const ItemCheckbox = ({ ID = '', name = '', compactClassName, normalClassName, c
                 className="item-icon flex-item-noshrink relative rounded inline-flex"
                 data-testid="element-list:message-checkbox"
             >
-                <span className="mauto item-abbr">{getInitials(name)}</span>
+                <span className="mauto item-abbr">
+                    <ContactImage email={email} name={name} className="w100 h100 rounded" />
+                </span>
                 <span className="item-icon-fakecheck mauto">
                     <Icon name="checkmark" className="item-icon-fakecheck-icon" />
                 </span>
