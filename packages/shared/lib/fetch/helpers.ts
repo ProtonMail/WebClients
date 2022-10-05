@@ -39,7 +39,7 @@ export const checkStatus = (response: Response, config: any) => {
 };
 
 export const getDateHeader = (headers: Headers) => {
-    const dateHeader = headers.get('date');
+    const dateHeader = headers?.get?.('date');
     if (!dateHeader) {
         return;
     }
