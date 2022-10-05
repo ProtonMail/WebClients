@@ -20,6 +20,7 @@ export interface ComposerHotkeysHandlers {
     lock: boolean;
     saving: boolean;
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
+    hasHotkeysEnabled: boolean;
 }
 
 export const useComposerHotkeys = ({
@@ -35,6 +36,7 @@ export const useComposerHotkeys = ({
     lock,
     saving,
     editorActionsRef,
+    hasHotkeysEnabled,
 }: ComposerHotkeysHandlers) => {
     const isSafari = checkIsSafari();
 
@@ -102,35 +104,37 @@ export const useComposerHotkeys = ({
         },
     };
 
-    const hotKeysActions: HotkeyTuple[] = [
-        [editorShortcuts.close, keyHandlers.close],
-        [editorShortcuts.send, keyHandlers.send],
-        [editorShortcuts.deleteDraft, keyHandlers.delete],
-        [editorShortcuts.save, keyHandlers.save],
-        [
-            editorShortcuts.minimize,
-            (e) => {
-                if (!isSafari) {
-                    keyHandlers.minimize(e);
-                }
-            },
-        ],
-        [
-            editorShortcuts.maximize,
-            (e) => {
-                if (!isSafari) {
-                    keyHandlers.maximize(e);
-                }
-            },
-        ],
-        [editorShortcuts.addAttachment, keyHandlers.addAttachment],
-        [editorShortcuts.addEncryption, keyHandlers.encrypt],
-        [editorShortcuts.addExpiration, keyHandlers.addExpiration],
-        [editorShortcuts.addLink, keyHandlers.linkModal],
-        [editorShortcuts.emojiPicker, keyHandlers.emojiPicker],
-    ];
+    const hotKeysActions: HotkeyTuple[] = hasHotkeysEnabled
+        ? [
+              [editorShortcuts.close, keyHandlers.close],
+              [editorShortcuts.send, keyHandlers.send],
+              [editorShortcuts.deleteDraft, keyHandlers.delete],
+              [editorShortcuts.save, keyHandlers.save],
+              [
+                  editorShortcuts.minimize,
+                  (e) => {
+                      if (!isSafari) {
+                          keyHandlers.minimize(e);
+                      }
+                  },
+              ],
+              [
+                  editorShortcuts.maximize,
+                  (e) => {
+                      if (!isSafari) {
+                          keyHandlers.maximize(e);
+                      }
+                  },
+              ],
+              [editorShortcuts.addAttachment, keyHandlers.addAttachment],
+              [editorShortcuts.addEncryption, keyHandlers.encrypt],
+              [editorShortcuts.addExpiration, keyHandlers.addExpiration],
+              [editorShortcuts.addLink, keyHandlers.linkModal],
+              [editorShortcuts.emojiPicker, keyHandlers.emojiPicker],
+          ]
+        : [];
 
     useHotkeys(composerRef, hotKeysActions);
 
-    return { composerRef, attachmentTriggerRef, hotKeysActions };
+    return attachmentTriggerRef;
 };

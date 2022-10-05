@@ -8,9 +8,12 @@ import {
     addApiKeys,
     addApiMock,
     addKeysToAddressKeysCache,
+    addToCache,
     clearAll,
+    clearCache,
     createDocument,
     generateKeys,
+    minimalCache,
     waitForNotification,
 } from '../../../helpers/test/helper';
 import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
@@ -38,9 +41,20 @@ describe('Composer hotkeys', () => {
         await releaseCryptoProxy();
     });
 
+    afterEach(() => {
+        clearCache();
+    });
+
     beforeEach(clearAll);
 
-    const setup = async () => {
+    const setup = async (hasShortcutsEnabled = true) => {
+        minimalCache();
+        if (hasShortcutsEnabled) {
+            addToCache('MailSettings', { Shortcuts: 1 });
+        } else {
+            addToCache('MailSettings', { Shortcuts: 0 });
+        }
+
         addKeysToAddressKeysCache(AddressID, fromKeys);
 
         const message = prepareMessage({
@@ -50,7 +64,7 @@ describe('Composer hotkeys', () => {
 
         addApiKeys(false, toAddress, []);
 
-        const result = await renderComposer(message.localID);
+        const result = await renderComposer(message.localID, false);
 
         const iframe = result.container.querySelector('iframe') as HTMLIFrameElement;
 
@@ -68,6 +82,16 @@ describe('Composer hotkeys', () => {
             ctrlShftX: () => fireEvent.keyDown(iframe, { key: 'X', ctrlKey: true, shiftKey: true }),
         };
     };
+
+    it('shortcut should not work when app shortcuts settings are disabled', async () => {
+        const { container, esc } = await setup(false);
+
+        esc();
+
+        const composer = container.querySelector('.composer-container');
+
+        expect(composer).not.toBe(null);
+    });
 
     it('should close composer on escape', async () => {
         const { container, esc } = await setup();
