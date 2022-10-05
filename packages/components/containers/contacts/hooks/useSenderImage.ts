@@ -24,7 +24,7 @@ const useSenderImage = (emailAddress?: string) => {
         }
 
         void getSenderLogo(api, emailAddress, CHECKBOX_SIZE).then(setUrl);
-    }, [mailSettings?.HideSenderImages, feature?.Value, emailAddress, api]);
+    }, [mailSettings?.HideSenderImages, feature?.Value, emailAddress]);
 
     return url;
 };
