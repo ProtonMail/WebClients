@@ -50,9 +50,6 @@
       "Chat with us": [
         "Чат з нами"
       ],
-      "Clear two-factor authentication code": [
-        "Прибрати код двоетапної перевірки"
-      ],
       "Close": [
         "Закрити"
       ],
@@ -118,6 +115,9 @@
       ],
       "Didn't receive the code?": [
         "Не отримали код?"
+      ],
+      "Disable": [
+        "Вимкнути"
       ],
       "Done": [
         "Виконано"
@@ -356,11 +356,11 @@
       "Use a different payment method": [
         "Використати інший спосіб оплати"
       ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
       "Use recovery code": [
         "Використати код відновлення"
-      ],
-      "Use two-factor authentication code": [
-        "Використати код двоетапної перевірки"
       ],
       "Use your current email address instead": [
         "Використати натомість вашу поточну адресу е-пошти"
@@ -394,9 +394,6 @@
       ],
       "What do I get?": [
         "Що я отримую?"
-      ],
-      "Yes": [
-        "Так"
       ],
       "Zoom in": [
         "Збільшити масштаб"
@@ -1759,6 +1756,24 @@
         "Підтримка торентів (P2P)"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -1937,6 +1952,9 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL читає ваші особисті дані, щоб забезпечити доступ для рекламодавців та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
+      ],
       "Based in Switzerland, available globally": [
         "Розташований у Швейцарії, доступний у всьому світі"
       ],
@@ -2003,6 +2021,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
       ],
+      "Each code can only be used once": [
+        "Кожен код може бути використаний тільки один раз"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Хостинг для 10 власних доменних імен електронної пошти включено безплатно. Додаткові домени можна додати за ${ price }."
       ],
@@ -2014,6 +2035,9 @@
       ],
       "Enter key manually instead": [
         "Ввести ключ вручну"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з програми автентифікації"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Введіть код, надісланий на ваш номер телефону ${ phone }."
@@ -2030,11 +2054,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Уведіть свою адресу е-пошти ${ BRAND_NAME } або ім'я користувача."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Введіть пароль входу, щоб підтвердити вашу особу."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Введіть власний пароль (як адміністратор організації) та новий пароль для користувача ${ Name } (${ Email })."
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введіть свою резервну адресу електронної пошти і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
@@ -2147,9 +2168,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, російських державних агенцій та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Переконайтеся, що ви запам'ятали пароль для входу та розшифрування пошти. ${ boldAlert } Ми рекомендуємо спочатку додати ${ recoveryLink }."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
       ],
@@ -2225,9 +2243,6 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton не може допомогти вам відновити будь-які втрачені паролі."
-      ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
       ],
@@ -2236,9 +2251,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
-      ],
-      "recovery method": [
-        "спосіб відновлення"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
@@ -2357,9 +2369,6 @@
       "Total VPN connections": [
         "Усього VPN-з'єднань"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Двоетапна перевірка підвищує рівень безпеки вашого облікового запису у випадку компрометації пароля."
-      ],
       "Two-factor authentication disabled": [
         "Двоетапну перевірку вимкнено"
       ],
@@ -2440,6 +2449,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Ми змінюємо ваш поточний тарифний план на кращий, з більшими можливостями за таку саму ціну. Поки наші системи оновлюються, ви не зможете його змінити. Ми надішлемо вам повідомлення одразу після завершення."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
@@ -2685,6 +2697,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Authenticator app": [
+        "Програма автентифікації"
+      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -2763,9 +2778,6 @@
       "Credits used": [
         "Витрата кредитів"
       ],
-      "Current login password": [
-        "Поточний пароль для входу"
-      ],
       "Customize invoices": [
         "Налаштування рахунків"
       ],
@@ -2829,9 +2841,6 @@
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
       ],
-      "Login password": [
-        "Пароль входу"
-      ],
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
@@ -2858,12 +2867,6 @@
       ],
       "Non-standard ports": [
         "Нестандартні порти"
-      ],
-      "Old login password": [
-        "Старий пароль входу"
-      ],
-      "Old password": [
-        "Старий пароль"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -2910,9 +2913,6 @@
       "Proton username": [
         "Ім'я користувача Proton"
       ],
-      "Recovery code": [
-        "Код відновлення"
-      ],
       "Recovery email address": [
         "Електронна пошта для відновлення"
       ],
@@ -2942,12 +2942,6 @@
       ],
       "Total (${ countdown })": [
         "Всього (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Двоетапна перевірка"
-      ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
       ],
       "Two-password mode": [
         "Двопарольний режим"
@@ -3087,9 +3081,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
       ]
@@ -3783,12 +3774,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Створіть ${ numberOfPersonalCalendars } особистий календар",
-        "Створіть ${ numberOfPersonalCalendars } особисті календарі",
-        "Створіть ${ numberOfPersonalCalendars } особистих календарів",
-        "Створіть ${ numberOfPersonalCalendars } особистих календарів"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Усе в ${ vpnPlanName }"
       ],
@@ -3921,9 +3906,6 @@
       ],
       "Select a reason": [
         "Виберіть причину"
-      ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
       ],
       "ZIP": [
         "Поштовий індекс"
@@ -4503,9 +4485,6 @@
       "Password": [
         "Пароль"
       ],
-      "Passwords": [
-        "Паролі"
-      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
@@ -4619,9 +4598,6 @@
       ],
       "Unsupported browser": [
         "Непідтримуваний браузер"
-      ],
-      "Username": [
-        "Ім'я користувача"
       ],
       "Verification": [
         "Перевірка"

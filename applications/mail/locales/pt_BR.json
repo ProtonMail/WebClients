@@ -2858,7 +2858,7 @@
         "Nenhuma pasta"
       ],
       "No labels": [
-        "Sem marcadores"
+        "Nenhum marcador"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o arquivo for maior, divida-o em arquivos menores.",
@@ -3754,7 +3754,7 @@
         "Ocultar mensagens movidas"
       ],
       "Read": [
-        "Lido"
+        "Lidas"
       ],
       "Show moved message": [
         "Mostrar mensagens movidas"
@@ -4622,6 +4622,9 @@
       "Duplicate key updated": [
         "Chave duplicada atualizada"
       ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma única vez"
+      ],
       "Edit encryption": [
         "Editar criptografia"
       ],
@@ -4659,6 +4662,9 @@
       ],
       "End of search results from past 30 days": [
         "Fim dos resultados de pesquisa dos últimos 30 dias"
+      ],
+      "Enter the code from your authenticator app": [
+        "Insira o código do seu aplicativo autenticador"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
@@ -5893,6 +5899,9 @@
       "Attachments": [
         "Anexos"
       ],
+      "Authenticator app": [
+        "Aplicativo autenticador"
+      ],
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
       ],
@@ -6164,7 +6173,7 @@
         "Chaves públicas"
       ],
       "Read": [
-        "Lido"
+        "Lidas"
       ],
       "Recipient": [
         "Destinatário"

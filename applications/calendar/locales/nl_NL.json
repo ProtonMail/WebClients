@@ -495,6 +495,9 @@
       "Use ${ label } theme": [
         "Gebruik thema ${ label }"
       ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
       "Use for sending": [
         "Gebruik voor verzenden"
       ],
@@ -3352,6 +3355,12 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw verificatie-app in"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
@@ -4964,11 +4973,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "Abonneer op andere agenda's"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "U kan nu meldingen toevoegen aan agenda's waarop u geabonneerd bent."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "U kunt zich abonneren op externe agenda's en de bijbehorende gebeurtenissen lezen."
       ]
     },
     "Spotlight settings link": {

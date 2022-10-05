@@ -996,6 +996,9 @@
       "Use ${ label } theme": [
         "Farbschema „${ label }” verwenden"
       ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
       "Use for sending": [
         "Für den Versand verwenden"
       ],
@@ -3281,6 +3284,9 @@
       "There has been an issue with content search. Default search has been used instead.": [
         "Es ist ein Problem mit der Inhalts-Suche aufgetreten. Stattdessen wurde die Standardsuche verwendet."
       ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Es gab ein Problem bei der Aktualisierung deiner lokalen Nachrichten. Sie werden erneut heruntergeladen, um die Inhaltssuche wieder zu aktivieren."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
       ],
@@ -3594,6 +3600,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Dein Feedback"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME } Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
       ]
     },
     "file size format": {
@@ -4578,6 +4602,9 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal benutzt werden"
+      ],
       "Edit encryption": [
         "Verschlüsselung bearbeiten"
       ],
@@ -4616,11 +4643,17 @@
       "End of search results from past 30 days": [
         "Ende der Suchergebnisse der letzten 30 Tage"
       ],
+      "Enter the code from your authenticator app": [
+        "Code aus der Authenticator App eingeben"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
@@ -4892,7 +4925,7 @@
         "Keine Tracker gefunden, aber einige Bilder konnten nicht mit Tracking-Schutz geladen werden"
       ],
       "non-Proton Mail": [
-        "Keine Proton Mail"
+        "Nicht-Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wird automatisch deaktiviert."
@@ -5390,6 +5423,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
       ],
@@ -5848,6 +5884,9 @@
       ],
       "Attachments": [
         "Anhänge"
+      ],
+      "Authenticator app": [
+        "Authenticator App"
       ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
@@ -7468,6 +7507,9 @@
       "Conversation moved to ${ folderName }.": [
         "Unterhaltung in „${ folderName }” verschoben."
       ],
+      "Conversation moved to spam and sender added to your block list.": [
+        "Unterhaltung in Spam verschoben und Absender zur Sperrliste hinzugefügt."
+      ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
       ],
@@ -7522,8 +7564,14 @@
       "Message marked as unread.": [
         "Nachricht als ungelesen gekennzeichnet."
       ],
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Nachricht in ${ folderName } verschoben und Absender zur Ausnahmeliste hinzugefügt."
+      ],
       "Message moved to ${ folderName }.": [
         "Nachricht nach „${ folderName }” verschoben."
+      ],
+      "Message moved to spam and sender added to your block list.": [
+        "Nachricht in Spam verschoben und Absender zur Sperrliste hinzugefügt."
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }” entfernt."

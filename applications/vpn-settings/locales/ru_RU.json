@@ -50,9 +50,6 @@
       "Chat with us": [
         "Поговорить с нами"
       ],
-      "Clear two-factor authentication code": [
-        "Очистить код двухфакторной аутентификации"
-      ],
       "Close": [
         "Закрыть"
       ],
@@ -118,6 +115,9 @@
       ],
       "Didn't receive the code?": [
         "Не получили код?"
+      ],
+      "Disable": [
+        "Отключить"
       ],
       "Done": [
         "Готово"
@@ -359,9 +359,6 @@
       "Use recovery code": [
         "Использовать код восстановления"
       ],
-      "Use two-factor authentication code": [
-        "Использовать код двухфакторной аутентификации"
-      ],
       "Use your current email address instead": [
         "Вместо этого используйте свой текущий адрес электронной почты"
       ],
@@ -394,9 +391,6 @@
       ],
       "What do I get?": [
         "Что я получу?"
-      ],
-      "Yes": [
-        "Да"
       ],
       "Zoom in": [
         "Приблизить"
@@ -1989,6 +1983,9 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL читает ваши личные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для большей конфиденциальности создайте защищенный адрес электронной почты."
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
+      ],
       "Based in Switzerland, available globally": [
         "Находится в Швейцарии, доступна везде"
       ],
@@ -2081,12 +2078,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Для подтверждения своей личности введите пароль для входа."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Введите свой собственный пароль (как администратора организации) и новый пароль для пользователя ${ Name } (${ Email })."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты для восстановления, и мы отправим вам имя вашего пользователя или адрес электронной почты."
@@ -2199,9 +2190,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читает ваши персональные данные с целью предоставления доступа рекламодателям, государственным учреждениям России и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Убедитесь, что вы помните пароль для входа и расшифровки писем. ${ boldAlert } Мы рекомендуем сначала добавить ${ recoveryLink }."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
       ],
@@ -2277,9 +2265,6 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton не может помочь вам восстановить утраченные пароли."
-      ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
@@ -2288,9 +2273,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
-      ],
-      "recovery method": [
-        "способ восстановления"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решает большинство проблем."
@@ -2408,9 +2390,6 @@
       ],
       "Total VPN connections": [
         "VPN-подключений, всего"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Двухфакторная аутентификация добавляет дополнительный уровень безопасности вашей учетной записи на случай, если ваш пароль скомпрометирован."
       ],
       "Two-factor authentication disabled": [
         "Двухфакторная аутентификация отключена"
@@ -2815,9 +2794,6 @@
       "Credits used": [
         "Кредиты использованы"
       ],
-      "Current login password": [
-        "Текущий пароль для входа"
-      ],
       "Customize invoices": [
         "Настройка счетов"
       ],
@@ -2881,9 +2857,6 @@
       "Level for NetShield blocker filtering": [
         "Уровень фильтрации для блокировщика NetShield"
       ],
-      "Login password": [
-        "Пароль для входа"
-      ],
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
@@ -2910,12 +2883,6 @@
       ],
       "Non-standard ports": [
         "Нестандартные порты"
-      ],
-      "Old login password": [
-        "Старый пароль для входа"
-      ],
-      "Old password": [
-        "Старый пароль"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -2962,9 +2929,6 @@
       "Proton username": [
         "Имя пользователя Proton"
       ],
-      "Recovery code": [
-        "Код восстановления"
-      ],
       "Recovery email address": [
         "Электронная почта для восстановления"
       ],
@@ -2994,12 +2958,6 @@
       ],
       "Total (${ countdown })": [
         "Всего (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Двухфакторная аутентификация"
-      ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
       ],
       "Two-password mode": [
         "Режим двух паролей"
@@ -3139,9 +3097,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
       ]
@@ -3835,12 +3790,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Создайте до ${ numberOfPersonalCalendars } личного календаря",
-        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
-        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
-        "Создайте до ${ numberOfPersonalCalendars } личных календарей"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Все, что входит в ${ vpnPlanName }"
       ],
@@ -3973,9 +3922,6 @@
       ],
       "Select a reason": [
         "Выберите причину"
-      ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
       ],
       "ZIP": [
         "Почтовый индекс"
@@ -4555,9 +4501,6 @@
       "Password": [
         "Пароль"
       ],
-      "Passwords": [
-        "Пароли"
-      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
@@ -4671,9 +4614,6 @@
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
-      ],
-      "Username": [
-        "Имя пользователя"
       ],
       "Verification": [
         "Подтверждение"

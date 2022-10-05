@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "${ name } updated": [
+        "${ name } aggiornato"
+      ],
       "Activate recovery": [
         "Attiva il ripristino"
       ],
@@ -49,9 +52,6 @@
       ],
       "Chat with us": [
         "Chatta con noi"
-      ],
-      "Clear two-factor authentication code": [
-        "Cancella il codice di autenticazione a due fattori"
       ],
       "Close": [
         "Chiudi"
@@ -118,6 +118,9 @@
       ],
       "Didn't receive the code?": [
         "Non hai ricevuto il codice?"
+      ],
+      "Disable": [
+        "Disabilita"
       ],
       "Done": [
         "Completato"
@@ -356,11 +359,11 @@
       "Use a different payment method": [
         "Usa un metodo di pagamento differente"
       ],
+      "Use authentication code": [
+        "Usa il codice di autenticazione"
+      ],
       "Use recovery code": [
         "Utilizza un codice di recupero"
-      ],
-      "Use two-factor authentication code": [
-        "Utilizza il codice di autenticazione a due fattori"
       ],
       "Use your current email address instead": [
         "Usa invece il tuo indirizzo email attuale"
@@ -394,9 +397,6 @@
       ],
       "What do I get?": [
         "Cosa ottengo?"
-      ],
-      "Yes": [
-        "Sì"
       ],
       "Zoom in": [
         "Zoom avanti"
@@ -1749,6 +1749,88 @@
         "Supporto torrenting (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Aggiungi chiave di sicurezza"
+      ],
+      "Delete key": [
+        "Elimina la chiave"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Sei pregato di disabilitare l'A2F tramite la chiave di sicurezza prima di disabilitare TOTP"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Qualcosa è andato storto registrando la tua chiave di sicurezza. Sei pregato di riprovare."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Autenticazione a due fattori tramite chiave di sicurezza disabilitata"
+      ],
+      "Add a name to identify your security key with.": [
+        "Aggiungi un nome con cui identificare la tua chiave di sicurezza."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Inserisci la tua chiave di sicurezza nella porta USB del tuo dispositivo."
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
+      ],
+      "Security key removed": [
+        "Chiave di sicurezza rimossa"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Questo cancellerà tutte le chiavi di sicurezza collegate al tuo account."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Per attivare l'A2F tramite la chiave di sicurezza, dovrai attivare l'A2F tramite l'app d'autenticazione"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifica la tua identità con una U2F fisica o una chiave di sicurezza FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "La tua chiave di autenticazione a due fattori è pronta all'uso."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Nome della chiave"
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Eliminare la chiave di sicurezza?"
+      ],
+      "Disable 2FA via security key?": [
+        "Disabilitare l'A2F tramite la chiave di sicurezza?"
+      ],
+      "Name your security key": [
+        "Denomina la tua chiave di sicurezza"
+      ],
+      "Register your security key": [
+        "Registra la tua chiave di sicurezza"
+      ],
+      "Registered security keys": [
+        "Chiavi di sicurezza registrate"
+      ],
+      "Security key registered": [
+        "Chiave di sicurezza registrata"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1899,6 +1981,12 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
+      "add a recovery method": [
+        "aggiungere un metodo di recupero"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Aggiungi un altro livello di sicurezza al tuo account. Dovrai verificare la tua identità con 2FA ogni volta che accedi."
+      ],
       "Additional options": [
         "Opzioni aggiuntive"
       ],
@@ -1910,6 +1998,9 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL legge i tuoi dati personali al fine di fornire accesso agli inserzionisti e ad altri software di terze parti. Per una migliore privacy, crea un indirizzo email sicuro."
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
       ],
       "Based in Switzerland, available globally": [
         "Con sede in Svizzera, disponibile a livello globale"
@@ -1977,6 +2068,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
       ],
+      "Each code can only be used once": [
+        "Ogni codice può essere utilizzato una sola volta"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
       ],
@@ -1986,8 +2080,17 @@
       "Emailing preference saved": [
         "Preferenze email salvate"
       ],
+      "Enter code from your authenticator app": [
+        "Inserisci il codice dalla tua app di autenticazione"
+      ],
       "Enter key manually instead": [
         "Inserisci invece la chiave manualmente"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Inserire una nuova password per l'utente ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Inserisci il codice dalla tua app di autenticazione"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Inserisci il codice inviato al tuo numero di telefono ${ phone }."
@@ -2004,11 +2107,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Inserisci l'indirizzo email o il nome utente del tuo account ${ BRAND_NAME }."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Inserisci la tua password di accesso per confermare la tua identità."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Inserisci la tua password (come amministratore dell'organizzazione) e la nuova password per questo utente ${ Name } (${ Email })."
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Inserisci il tuo indirizzo email di recupero e ti invieremo il tuo nome utente o indirizzo email."
@@ -2121,8 +2221,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru legge i tuoi dati personali al fine di fornire accesso a inserzionisti, agenzie governative Russe e altri software di terze parti. Per una migliore privacy, crea un indirizzo email sicuro."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Assicurati di ricordare la password per accedere e decifrare le email. ${ boldAlert } Si consiglia di aggiungere prima un ${ recoveryLink }."
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Assicurati di ${ addARecoveryMethod } in modo da poter tornare al tuo account se dimentichi la password."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Inserisci manualmente queste informazioni nel tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ _switchButton }."
@@ -2199,8 +2299,8 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton non può aiutarti a recuperare le password perse."
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "La tecnologia di criptazione di Proton significa che nessuno può accedere alla tua password - nemmeno noi."
       ],
       "read our two-factor authentication guide first": [
         "leggi prima la nostra guida all'autenticazione a due fattori"
@@ -2210,9 +2310,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
-      ],
-      "recovery method": [
-        "metodo di recupero"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
@@ -2331,9 +2428,6 @@
       "Total VPN connections": [
         "Totale connessioni VPN"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "L'autenticazione a due fattori aggiunge un ulteriore livello di sicurezza al tuo account nel caso in cui la password venga compromessa."
-      ],
       "Two-factor authentication disabled": [
         "Autenticazione a due fattori"
       ],
@@ -2376,6 +2470,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Verifica la tua identità con una password temporanea usa e getta dall'app di autenticazione"
+      ],
       "Verifying your payment": [
         "Verifica del pagamento"
       ],
@@ -2414,6 +2511,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai modificarlo. Ti invieremo un'e-mail non appena sarà terminato."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento sopra riportato."
@@ -2657,6 +2757,9 @@
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
+      "Authenticator app": [
+        "App di autenticazione"
+      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -2735,9 +2838,6 @@
       "Credits used": [
         "Crediti utilizzati"
       ],
-      "Current login password": [
-        "Password d'accesso attuale"
-      ],
       "Customize invoices": [
         "Personalizza le fatture"
       ],
@@ -2801,9 +2901,6 @@
       "Level for NetShield blocker filtering": [
         "Livello di filtro per NetShield"
       ],
-      "Login password": [
-        "Password di accesso"
-      ],
       "Mailbox password": [
         "Password della casella email"
       ],
@@ -2830,12 +2927,6 @@
       ],
       "Non-standard ports": [
         "Porte non standard"
-      ],
-      "Old login password": [
-        "Vecchia password di accesso"
-      ],
-      "Old password": [
-        "Vecchia password"
       ],
       "OpenVPN / IKEv2 password": [
         "Password OpenVPN / IKEv2"
@@ -2882,9 +2973,6 @@
       "Proton username": [
         "Nome utente di Proton"
       ],
-      "Recovery code": [
-        "Codice di recupero"
-      ],
       "Recovery email address": [
         "Indirizzo email di recupero"
       ],
@@ -2914,12 +3002,6 @@
       ],
       "Total (${ countdown })": [
         "Totale (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Autenticazione a due fattori"
-      ],
-      "Two-factor authentication code": [
-        "Codice di autenticazione a due fattori"
       ],
       "Two-password mode": [
         "Modalità a due password"
@@ -3059,9 +3141,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
@@ -3723,8 +3802,8 @@
       "Cover more ground with support for 10 custom email domains": [
         "Ottieni di più con 10 domini email personalizzati inclusi"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Crea fino a ${ numberOfPersonalCalendars } calendario personale",
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Crea ${ numberOfPersonalCalendars } calendario personale",
         "Crea fino a ${ numberOfPersonalCalendars } calendari personali"
       ],
       "Everything in ${ vpnPlanName }": [
@@ -3859,9 +3938,6 @@
       ],
       "Select a reason": [
         "Seleziona un motivo"
-      ],
-      "Two-factor authentication code": [
-        "Codice di autenticazione a due fattori"
       ],
       "ZIP": [
         "CAP"
@@ -4411,9 +4487,6 @@
       "Password": [
         "Password"
       ],
-      "Passwords": [
-        "Password"
-      ],
       "Pay invoice": [
         "Pagamento della fattura"
       ],
@@ -4527,9 +4600,6 @@
       ],
       "Unsupported browser": [
         "Browser non supportato"
-      ],
-      "Username": [
-        "Nome utente"
       ],
       "Verification": [
         "Verifica"

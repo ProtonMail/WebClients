@@ -50,9 +50,6 @@
       "Chat with us": [
         "با ما گفتگو کنید"
       ],
-      "Clear two-factor authentication code": [
-        "پاک کردن از کد اصالت‌ سنجی دو عاملی"
-      ],
       "Close": [
         "بستن"
       ],
@@ -118,6 +115,9 @@
       ],
       "Didn't receive the code?": [
         "کد را دریافت نکردید؟"
+      ],
+      "Disable": [
+        "غیرفعال"
       ],
       "Done": [
         "انجام شد"
@@ -359,9 +359,6 @@
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
-      "Use two-factor authentication code": [
-        "استفاده از کد اصالت‌سنجی دو-عاملی"
-      ],
       "Use your current email address instead": [
         "در عوض از نشانی ایمیل فعلی خود استفاده کنید"
       ],
@@ -394,9 +391,6 @@
       ],
       "What do I get?": [
         "چه چیزی دیافت میکنم?"
-      ],
-      "Yes": [
-        "بله"
       ],
       "Zoom in": [
         "بزرگنمایی"
@@ -1911,6 +1905,9 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
+      ],
       "Based in Switzerland, available globally": [
         "مستقر در سوئیس، قابل دسترس به صورت جهانی"
       ],
@@ -2003,12 +2000,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "آدرس ایمیل یا نام کاربری حساب ${ BRAND_NAME } خودرا وارد کنید."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "برای احراز هویت، رمز خود را وارد کنید."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "رمزعبور خود (بعنوان مدیر سازمان) و یک رمزعبور جدید برای کاربر جدید ${ Name } (${ Email }) وارد کنید."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
@@ -2121,9 +2112,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های دولتی روسیه و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "برای ورود به سیستم و رمزگشایی ایمیل ها حتما رمزعبور را به خاطر بسپارید. ${ boldAlert } توصیه می‌کنیم ابتدا یک ${ recoveryLink } اضافه کنید."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "برای تنظیم حساب خود ، این اطلاعات را به صورت دستی در دستگاه تأیید اعتبار 2 عامل وارد کنید. ${ _switchButton }."
       ],
@@ -2199,9 +2187,6 @@
       "Priority support": [
         "اولویت پشتیبانی"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton نمی‌تواند به شما در بازیابی رمزعبور فراموش شده کمک کند."
-      ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
       ],
@@ -2210,9 +2195,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "اطلاعات بازیابی بر روی این دستگاه باقی خواهد ماند مگر اینکه شما آن را برای حذف انتخاب کنید."
-      ],
-      "recovery method": [
-        "روش بازیابی"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
@@ -2327,9 +2309,6 @@
       ],
       "Total VPN connections": [
         "مجموع اتصالات VPN"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "تایید هویت دو مرحله‌ای یک لایهٔ امنیتی اضافه به حساب کاربری شما در صورتی که گذرواژهٔ شما افشا شود اضافه می‌کند."
       ],
       "Two-factor authentication disabled": [
         "تأیید هویت دو عاملی غیرفعال است"
@@ -2729,9 +2708,6 @@
       "Credits used": [
         "اعتبار استفاده شده"
       ],
-      "Current login password": [
-        "گذرواژه کنونی"
-      ],
       "Customize invoices": [
         "شخصی‌سازی صورتحساب‌ها"
       ],
@@ -2795,9 +2771,6 @@
       "Level for NetShield blocker filtering": [
         "سطح فیلتر کردن مسدود کننده NetShield"
       ],
-      "Login password": [
-        "رمز عبور"
-      ],
       "Mailbox password": [
         "رمزعبور صندوق پست"
       ],
@@ -2824,12 +2797,6 @@
       ],
       "Non-standard ports": [
         "درگاه‌های غیر استاندارد"
-      ],
-      "Old login password": [
-        "رمز عبور قبلی"
-      ],
-      "Old password": [
-        "رمز عبور قبلی"
       ],
       "OpenVPN / IKEv2 password": [
         "رمز عبور OpenVPN / IKEv2"
@@ -2876,9 +2843,6 @@
       "Proton username": [
         "نام کاربری پروتن"
       ],
-      "Recovery code": [
-        "کد بازیابی"
-      ],
       "Recovery email address": [
         "نشانی ایمیل بازیابی"
       ],
@@ -2908,12 +2872,6 @@
       ],
       "Total (${ countdown })": [
         "کل (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "احراز هویت دو مرحله‌ای"
-      ],
-      "Two-factor authentication code": [
-        "کد تایید هویت دو مرحله‌ای"
       ],
       "Two-password mode": [
         "حالت دو-گذرواژه‌ای"
@@ -3053,9 +3011,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "مهلت دورهٔ آزمایشی رایگان شما به پایان رسیده‌است. دسترسی به حساب شما به‌زودی غیرفعال خواهد شد. ${ action }"
       ]
@@ -3714,10 +3669,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "با پشتیبانی از 10 دامنه ایمیل سفارشی پیشرفت بیشتری کنید"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "تا ${ numberOfPersonalCalendars } تقویم شخصی ایجاد کنید",
-        "تا ${ numberOfPersonalCalendars } تقویم شخصی ایجاد کنید"
-      ],
       "Everything in ${ vpnPlanName }": [
         "همه چیز موجود در ${ vpnPlanName }"
       ],
@@ -3850,9 +3801,6 @@
       ],
       "Select a reason": [
         "یک دلیل انتخاب کنید"
-      ],
-      "Two-factor authentication code": [
-        "کد تایید هویت دو مرحله‌ای"
       ],
       "ZIP": [
         "ZIP"
@@ -4402,9 +4350,6 @@
       "Password": [
         "رمز عبور"
       ],
-      "Passwords": [
-        "گذرواژه‌ها"
-      ],
       "Pay invoice": [
         "پرداخت صورتحساب"
       ],
@@ -4518,9 +4463,6 @@
       ],
       "Unsupported browser": [
         "مرورگر پشتیبانی نشده"
-      ],
-      "Username": [
-        "نام کاربری"
       ],
       "Verification": [
         "تایید"

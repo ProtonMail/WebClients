@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "${ name } updated": [
+        "${ name } güncellendi"
+      ],
       "Activate recovery": [
         "Kurtarmayı etkinleştir"
       ],
@@ -49,9 +52,6 @@
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
-      ],
-      "Clear two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodunu temizle"
       ],
       "Close": [
         "Kapat"
@@ -118,6 +118,9 @@
       ],
       "Didn't receive the code?": [
         "Doğrulama kodunu almadınız mı?"
+      ],
+      "Disable": [
+        "Devre dışı bırak"
       ],
       "Done": [
         "Tamam"
@@ -356,11 +359,11 @@
       "Use a different payment method": [
         "Başka bir ödeme yöntemi kullanın"
       ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodu kullan"
+      ],
       "Use recovery code": [
         "Kurtarma kodu kullanılsın"
-      ],
-      "Use two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodu kullanılsın"
       ],
       "Use your current email address instead": [
         "Bunun yerine var olan e-posta adresinizi kullanın"
@@ -394,9 +397,6 @@
       ],
       "What do I get?": [
         "Ne alacağım?"
-      ],
-      "Yes": [
-        "Evet"
       ],
       "Zoom in": [
         "Yakınlaştır"
@@ -1749,6 +1749,88 @@
         "Torrent desteği (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Güvenlik anahtarı ekle"
+      ],
+      "Delete key": [
+        "Anahtarı sil"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Tek kullanımlık zamana dayalı parolayı devre dışı bırakmadan önce lütfen güvenlik anahtarı kullanan iki aşamalı kimlik doğrulamasını devre dışı bırakın"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Güvenlik anahtarınız kaydedilirken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Güvenlik anahtarı kullanan iki aşamalı kimlik doğrulaması devre dışı bırakıldı"
+      ],
+      "Add a name to identify your security key with.": [
+        "Güvenlik anahtarınızı tanımlayacak bir ad yazın."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ],
+      "Security key removed": [
+        "Güvenlik anahtarı silindi"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Güvenlik anahtarı kullanarak iki aşamalı kimlik doğrulaması yapmak için, kimlik doğrulama uygulaması üzerinden iki aşamalı kimlik doğrulamayı etkinleştirmeniz gerekir"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "İki aşamalı kimlik doğrulama anahtarınız kullanılmaya hazır."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Anahtar adı"
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Güvenlik anahtarı silinsin mi?"
+      ],
+      "Disable 2FA via security key?": [
+        "Güvenlik anahtarı kullanan iki aşamalı kimlik doğrulaması devre dışı bırakılsın mı?"
+      ],
+      "Name your security key": [
+        "Güvenlik anahtarınıza bir ad verin"
+      ],
+      "Register your security key": [
+        "Güvenlik anahtarınızı kaydedin"
+      ],
+      "Registered security keys": [
+        "Kayıtlı güvenlik anahtarları"
+      ],
+      "Security key registered": [
+        "Güvenlik anahtarı kaydedildi"
+      ]
+    },
     "file size format": {
       "byte": [
         "bayt",
@@ -1899,6 +1981,12 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
+      "add a recovery method": [
+        "bir kurtarma yöntemi ekleyin"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki aşamalı kimlik doğrulaması ile siz olduğunuzu doğrulamanız gerekir."
+      ],
       "Additional options": [
         "Ek seçenekler"
       ],
@@ -1910,6 +1998,9 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL, reklamcılara ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
       ],
       "Based in Switzerland, available globally": [
         "İsviçre merkezli, tüm dünyada kullanılabilir"
@@ -1977,6 +2068,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
       ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
@@ -1986,8 +2080,17 @@
       "Emailing preference saved": [
         "E-posta tercihi kaydedildi"
       ],
+      "Enter code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
       "Enter key manually instead": [
         "Bunun yerine anahtarı el ile yazın"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "${ userName } kullanıcısı için yeni parolayı yazın."
+      ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "${ phone } numaranıza gönderdiğimiz kodu yazın."
@@ -2004,11 +2107,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Kimliğinizi doğrulamak için oturum açma parolanızı yazın."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Kendi parolanızı (kuruluş yöneticisi olarak) ve ${ Name } (${ Email }) kullanıcısı için yeni parolayı yazın."
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
@@ -2121,8 +2221,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru, reklamcılara, Rus devlet kurumlarına ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Oturum açmak ve e-posta şifresini çözmek için kullandığınız parolayı hatırlayacağınızdan emin olun. ${ boldAlert }. Öncelikle bir ${ recoveryLink } eklemenizi öneririz."
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
@@ -2199,8 +2299,8 @@
       "Priority support": [
         "Öncelikli destek"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton kaybolan parolaları kurtarmanıza yardımcı olamaz."
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Proton şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
       "read our two-factor authentication guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
@@ -2210,9 +2310,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
-      ],
-      "recovery method": [
-        "kurtarma yöntemi"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -2331,9 +2428,6 @@
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "İki aşamalı kimlik doğrulaması, parolanızın ele geçirilmesi durumunda hesabınıza ek bir güvenlik katmanı ekler."
-      ],
       "Two-factor authentication disabled": [
         "İki aşamalı kimlik doğrulaması devre dışı bırakıldı"
       ],
@@ -2376,6 +2470,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar derhal iade edilir."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Kimliğinizi, kimlik doğrulama uygulamasından alacağınız zamana dayalı tek kullanımlık parola ile doğrulayın"
+      ],
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
       ],
@@ -2414,6 +2511,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Geçerli tarifenizi aynı fiyata daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
@@ -2657,6 +2757,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -2735,9 +2838,6 @@
       "Credits used": [
         "Kullanılan kredi"
       ],
-      "Current login password": [
-        "Geçerli oturum açma parolası"
-      ],
       "Customize invoices": [
         "Faturaları özelleştir"
       ],
@@ -2801,9 +2901,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
       ],
-      "Login password": [
-        "Oturum açma parolası"
-      ],
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
@@ -2830,12 +2927,6 @@
       ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
-      ],
-      "Old login password": [
-        "Eski oturum açma parolası"
-      ],
-      "Old password": [
-        "Eski parola"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
@@ -2882,9 +2973,6 @@
       "Proton username": [
         "Proton kullanıcı adı"
       ],
-      "Recovery code": [
-        "Kurtarma kodu"
-      ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
       ],
@@ -2914,12 +3002,6 @@
       ],
       "Total (${ countdown })": [
         "Toplam (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "İki aşamalı kimlik doğrulama"
-      ],
-      "Two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodu"
       ],
       "Two-password mode": [
         "İki parola kipi"
@@ -3059,9 +3141,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
       ]
@@ -3723,8 +3802,8 @@
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "${ numberOfPersonalCalendars } kişisel takvime kadar ekleyin",
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "${ numberOfPersonalCalendars } kişisel takvim ekleyin",
         "${ numberOfPersonalCalendars } kişisel takvime kadar ekleyin"
       ],
       "Everything in ${ vpnPlanName }": [
@@ -3859,9 +3938,6 @@
       ],
       "Select a reason": [
         "Bir neden seçin"
-      ],
-      "Two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodu"
       ],
       "ZIP": [
         "ZIP"
@@ -4411,9 +4487,6 @@
       "Password": [
         "Parola"
       ],
-      "Passwords": [
-        "Parolalar"
-      ],
       "Pay invoice": [
         "Faturayı öde"
       ],
@@ -4527,9 +4600,6 @@
       ],
       "Unsupported browser": [
         "Web tarayıcı desteklenmiyor"
-      ],
-      "Username": [
-        "Kullanıcı adı"
       ],
       "Verification": [
         "Doğrulama"

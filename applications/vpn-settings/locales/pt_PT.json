@@ -95,6 +95,9 @@
       "Didn't receive a code?": [
         "Não recebeu o código?"
       ],
+      "Disable": [
+        "Desactivar"
+      ],
       "Done": [
         "Feito"
       ],
@@ -263,9 +266,6 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
-      "Use two-factor authentication code": [
-        "Usar código de autenticação em dois passos"
-      ],
       "User": [
         "Utilizador"
       ],
@@ -283,9 +283,6 @@
       ],
       "View invoice": [
         "Ver factura"
-      ],
-      "Yes": [
-        "Sim"
       ],
       "Zoom in": [
         "Ampliar"
@@ -763,6 +760,9 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "O AOL lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Tem certeza de que deseja desactivar a autenticação em dois passos?"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
       ],
@@ -822,9 +822,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Insira a senha de início de sessão para confirmar a sua identidade."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
@@ -1029,9 +1026,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "A autenticação em dois passos adiciona uma camada extra de segurança à sua conta, caso a senha seja comprometida."
       ],
       "Two-factor authentication disabled": [
         "Autenticação em dois passos desactivada"
@@ -1323,9 +1317,6 @@
       "Key": [
         "Chave"
       ],
-      "Login password": [
-        "Senha de início de sessão"
-      ],
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
@@ -1343,12 +1334,6 @@
       ],
       "New password": [
         "Nova senha"
-      ],
-      "Old login password": [
-        "Senha de início antiga"
-      ],
-      "Old password": [
-        "Senha antiga"
       ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN/IKEv2"
@@ -1383,9 +1368,6 @@
       "Proton username": [
         "Nome de utilizador Proton"
       ],
-      "Recovery code": [
-        "Código de recuperação"
-      ],
       "Recovery phrase": [
         "Frase de recuperação"
       ],
@@ -1403,12 +1385,6 @@
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Autenticação em dois passos"
-      ],
-      "Two-factor authentication code": [
-        "Código de autenticação em dois passos"
       ],
       "Two-password mode": [
         "Modo Senha dupla"
@@ -1511,11 +1487,6 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
-      ]
-    },
-    "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Tem certeza de que deseja desactivar a autenticação em dois passos?"
       ]
     },
     "Message display when a new app version is available": {
@@ -1671,9 +1642,6 @@
       ],
       "Select a reason": [
         "Seleccione um motivo"
-      ],
-      "Two-factor authentication code": [
-        "Código de autenticação em dois passos"
       ],
       "ZIP": [
         "CP"
@@ -1998,9 +1966,6 @@
       "Password": [
         "Senha"
       ],
-      "Passwords": [
-        "Senhas"
-      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -2096,9 +2061,6 @@
       ],
       "Unsupported browser": [
         "Navegador não suportado"
-      ],
-      "Username": [
-        "Utilizador"
       ],
       "Warning": [
         "Aviso"

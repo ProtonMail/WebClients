@@ -50,9 +50,6 @@
       "Chat with us": [
         "Chat met ons"
       ],
-      "Clear two-factor authentication code": [
-        "Wis tweestapsverificatiecode"
-      ],
       "Close": [
         "Sluit"
       ],
@@ -118,6 +115,9 @@
       ],
       "Didn't receive the code?": [
         "Code niet ontvangen?"
+      ],
+      "Disable": [
+        "Uitschakelen"
       ],
       "Done": [
         "Klaar"
@@ -356,11 +356,11 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
       "Use recovery code": [
         "Herstelcode gebruiken"
-      ],
-      "Use two-factor authentication code": [
-        "Gebruik tweestapsverificatiecode"
       ],
       "Use your current email address instead": [
         "Gebruik in plaats daarvan uw huidige e-mailadres"
@@ -394,9 +394,6 @@
       ],
       "What do I get?": [
         "Wat krijg ik?"
-      ],
-      "Yes": [
-        "Ja"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -1911,6 +1908,9 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
+      ],
       "Based in Switzerland, available globally": [
         "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
       ],
@@ -1977,6 +1977,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u naartoe gaat."
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
@@ -1988,6 +1991,9 @@
       ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
+      ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw verificatie-app in"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Voer de code in die naar uw telefoonnummer ${ phone } is gestuurd."
@@ -2003,12 +2009,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Voer uw wachtwoord in om uw identiteit te bevestigen."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder) en het nieuwe wachtwoord voor deze gebruiker: ${ Name } (${ Email })."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -2121,9 +2121,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru leest uw persoonlijke gegevens om toegang te bieden aan adverteerders, Russische overheidsinstanties en andere derde partijen. Maak een veilig e-mailadres aan voor betere privacy."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Vergeet niet het wachtwoord voor het inloggen en ontsleutelen van e-mails. ${ boldAlert }. We raden u het toevoegen van ${ recoveryLink } eerst aan."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatie-apparaat om uw account te configureren. ${ _switchButton }."
       ],
@@ -2199,9 +2196,6 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
-      ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
       ],
@@ -2210,9 +2204,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
-      ],
-      "recovery method": [
-        "herstelmethode"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
@@ -2330,9 +2321,6 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Tweestapsverificatie voegt een extra beveiligingslaag toe aan uw account in het geval uw wachtwoord wordt aangetast."
       ],
       "Two-factor authentication disabled": [
         "Tweestapsverificatie uitgeschakeld"
@@ -2735,9 +2723,6 @@
       "Credits used": [
         "Credits gebruikt"
       ],
-      "Current login password": [
-        "Huidig loginwachtwoord"
-      ],
       "Customize invoices": [
         "Facturen aanpassen"
       ],
@@ -2801,9 +2786,6 @@
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
       ],
-      "Login password": [
-        "Inlogwachtwoord"
-      ],
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
@@ -2830,12 +2812,6 @@
       ],
       "Non-standard ports": [
         "Niet-standaard poorten"
-      ],
-      "Old login password": [
-        "Oud inlogwachtwoord"
-      ],
-      "Old password": [
-        "Oud wachtwoord"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 wachtwoord"
@@ -2882,9 +2858,6 @@
       "Proton username": [
         "Proton gebruikersnaam"
       ],
-      "Recovery code": [
-        "Herstelcode"
-      ],
       "Recovery email address": [
         "E-mailadres voor herstel"
       ],
@@ -2914,12 +2887,6 @@
       ],
       "Total (${ countdown })": [
         "Totaal (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Tweestapsverificatie"
-      ],
-      "Two-factor authentication code": [
-        "Tweestapsverificatiecode"
       ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
@@ -3059,9 +3026,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
       ]
@@ -3723,10 +3687,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Maak ${ numberOfPersonalCalendars } persoonlijke agenda",
-        "Maak tot ${ numberOfPersonalCalendars } persoonlijke agenda's"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Alles van ${ vpnPlanName }"
       ],
@@ -3859,9 +3819,6 @@
       ],
       "Select a reason": [
         "Selecteer een reden"
-      ],
-      "Two-factor authentication code": [
-        "Tweestapsverificatiecode"
       ],
       "ZIP": [
         "Postcode"
@@ -4411,9 +4368,6 @@
       "Password": [
         "Wachtwoord"
       ],
-      "Passwords": [
-        "Wachtwoorden"
-      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -4527,9 +4481,6 @@
       ],
       "Unsupported browser": [
         "Niet-ondersteunde browser"
-      ],
-      "Username": [
-        "Gebruikersnaam"
       ],
       "Verification": [
         "Verificatie"

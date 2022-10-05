@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Back": [
+        "Torna"
+      ],
       "Cancel": [
         "Cancel·la"
       ],
       "Close": [
         "Tanca"
+      ],
+      "Continue": [
+        "Continua"
       ],
       "Didn't receive the code?": [
         "No heu rebut el codi?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
+      "More info: ${ safeTitle }": [
+        "Més informació: ${ safeTitle }"
+      ],
       "refresh the page": [
         "refresqueu la pàgina"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
+      ],
+      "Use authentication code": [
+        "Utilitzar el codi d'autenticació"
+      ],
+      "Use recovery code": [
+        "Utilitzar un codi de recuperació"
       ],
       "Verify": [
         "Verifica"
@@ -946,6 +964,9 @@
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
       ],
+      "Learn more": [
+        "Més informació"
+      ],
       "Loading": [
         "Carregant"
       ],
@@ -1001,6 +1022,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Your password (admin)": [
+        "La seva contrasenya (admin)"
       ]
     },
     "Link": {
