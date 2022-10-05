@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Back": [
+        "Tillbaka"
+      ],
       "Cancel": [
         "Avbryt"
       ],
       "Close": [
         "Stäng"
+      ],
+      "Continue": [
+        "Fortsätt"
       ],
       "Didn't receive the code?": [
         "Fick du inte koden?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "More info: ${ safeTitle }": [
+        "Mer information: ${ safeTitle }"
+      ],
       "refresh the page": [
         "uppdatera sidan"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Prova annan metod"
+      ],
+      "Use authentication code": [
+        "Använd autentiseringskod"
+      ],
+      "Use recovery code": [
+        "Använd återställningskod"
       ],
       "Verify": [
         "Verifiera"
@@ -937,6 +955,21 @@
         "Du kan också ${ refresh } eller försöka igen senare."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +994,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
+      "Each code can only be used once": [
+        "Varje kod kan endast användas en gång"
+      ],
+      "Enter the code from your authenticator app": [
+        "Ange koden från din autentiseringsapp"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ange verifieringskoden som skickades till ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
@@ -972,6 +1014,9 @@
       ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
+      ],
+      "Learn more": [
+        "Lär dig mer"
       ],
       "Loading": [
         "Laddar"
@@ -1008,6 +1053,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Autentiseringsapp"
+      ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
       ],
@@ -1028,6 +1076,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
       ]
     },
     "Link": {

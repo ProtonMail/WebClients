@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "${ name } updated": [
+        "${ name } diperbarui"
+      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -49,9 +52,6 @@
       ],
       "Chat with us": [
         "Mengobrol dengan kami"
-      ],
-      "Clear two-factor authentication code": [
-        "Hapus kode otentikasi dua faktor"
       ],
       "Close": [
         "Tutup"
@@ -118,6 +118,9 @@
       ],
       "Didn't receive the code?": [
         "Tidak menerima kode yang dimaksud?"
+      ],
+      "Disable": [
+        "Nonaktifkan"
       ],
       "Done": [
         "Selesai"
@@ -356,11 +359,11 @@
       "Use a different payment method": [
         "Gunakan metode pembayaran lainnya"
       ],
+      "Use authentication code": [
+        "Gunakan kode otentikasi"
+      ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
-      ],
-      "Use two-factor authentication code": [
-        "Gunakan kode otentikasi dua faktor"
       ],
       "Use your current email address instead": [
         "Gunakan alamat email Anda saat ini"
@@ -394,9 +397,6 @@
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
-      ],
-      "Yes": [
-        "Ya"
       ],
       "Zoom in": [
         "Perbesar"
@@ -1737,6 +1737,24 @@
         "Mendukung torrent (P2P)"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte"
@@ -1879,6 +1897,9 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
+      "add a recovery method": [
+        "tambah metode pemulihan"
+      ],
       "Additional options": [
         "Pengaturan tambahan"
       ],
@@ -1890,6 +1911,9 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
       ],
       "Based in Switzerland, available globally": [
         "Berbasis di Swiss, tersedia secara global"
@@ -1957,6 +1981,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit anda hari ini dan bawa privasi kemana pun anda pergi."
       ],
+      "Each code can only be used once": [
+        "Masing-masing kode hanya dapat digunakan sekali"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
       ],
@@ -1966,8 +1993,17 @@
       "Emailing preference saved": [
         "Preferensi email disimpan"
       ],
+      "Enter code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
+      ],
       "Enter key manually instead": [
         "Masukkan kunci secara manual"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Masukkan kata sandi baru untuk pengguna ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi otentikator Anda"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Masukkan kode yang terkirim ke nomor ponsel ${ phone } milik Anda."
@@ -1984,11 +2020,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Masukkan alamat email atau nama pengguna akun ${ BRAND_NAME } Anda."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Masukkan kata sandi masuk Anda untuk mengkonfirmasi identitas Anda."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Masukkan kata sandi Anda (selaku admin organisasi) dan kata sandi baru untuk pengguna ${ Name } (${ Email })."
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
@@ -2101,9 +2134,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru membaca data pribadi Anda untuk disampaikan kepada para pengiklan, lembaga pemerintahan Rusia, dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Pastikan Anda mengingat kata sandi yang Anda gunakan untuk masuk dan mendekripsi email. ${ boldAlert } Kami menyarankan Anda untuk terlebih dahulu menambahkan ${ recoveryLink }."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
       ],
@@ -2179,8 +2209,8 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton tidak dapat membantu Anda memulihkan kata sandi yang hilang."
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Teknologi enkripsi Proton memastikan bahwa tidak ada siapapun yang akan dapat mengakses kata sandi Anda - termasuk kami sendiri."
       ],
       "read our two-factor authentication guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
@@ -2190,9 +2220,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
-      ],
-      "recovery method": [
-        "metode pemulihan"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -2311,9 +2338,6 @@
       "Total VPN connections": [
         "Total koneksi VPN"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Otentikasi dua faktor akan menambahkan lapisan keamanan ekstra pada akun Anda di kala kata sandi Anda jatuh ke tangan pihak-pihak yang tidak bertanggung jawab."
-      ],
       "Two-factor authentication disabled": [
         "Otentikasi dua-faktor dinonaktifkan"
       ],
@@ -2394,6 +2418,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Kami tengah meningkatkan paket Anda ke paket yang berharga sama namun lebih kaya akan fitur. Selama proses ini berlangsung, Anda tidak akan dapat mengubah status berlangganan Anda. Kami akan memberitahukan Anda melalui email ketika proses ini telah selesai."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Saat langganan Anda diperbarui, kami akan menagih kredit yang tersedia sebelum kami menagih metode pembayaran di atas."
@@ -2636,6 +2663,9 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Authenticator app": [
+        "Aplikasi otentikator"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -2714,9 +2744,6 @@
       "Credits used": [
         "Kredit terpakai"
       ],
-      "Current login password": [
-        "Kata sandi saat ini"
-      ],
       "Customize invoices": [
         "Sesuaikan tagihan"
       ],
@@ -2780,9 +2807,6 @@
       "Level for NetShield blocker filtering": [
         "Level pemfilteran pemblokir NetShield"
       ],
-      "Login password": [
-        "Kata sandi masuk"
-      ],
       "Mailbox password": [
         "Kata sandi kotak masuk"
       ],
@@ -2809,12 +2833,6 @@
       ],
       "Non-standard ports": [
         "Port non-standar"
-      ],
-      "Old login password": [
-        "Kata sandi lama untuk masuk"
-      ],
-      "Old password": [
-        "Kata sandi lama"
       ],
       "OpenVPN / IKEv2 password": [
         "Kata sandi OpenVPN / IKEv2"
@@ -2861,9 +2879,6 @@
       "Proton username": [
         "Nama Pengguna Proton"
       ],
-      "Recovery code": [
-        "Kode pemulihan"
-      ],
       "Recovery email address": [
         "Alamat email pemulihan"
       ],
@@ -2893,12 +2908,6 @@
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Otentikasi dua-faktor"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
       ],
       "Two-password mode": [
         "Mode dua kata sandi"
@@ -3038,9 +3047,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
       ]
@@ -3686,9 +3692,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Buat hingga ${ numberOfPersonalCalendars } kalender personal"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Segalanya di ${ vpnPlanName }"
       ],
@@ -3821,9 +3824,6 @@
       ],
       "Select a reason": [
         "Pilih alasan"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
       ],
       "ZIP": [
         "ZIP"
@@ -4358,9 +4358,6 @@
       "Password": [
         "Kata sandi"
       ],
-      "Passwords": [
-        "Kata Sandi"
-      ],
       "Pay invoice": [
         "Bayar tagihan"
       ],
@@ -4474,9 +4471,6 @@
       ],
       "Unsupported browser": [
         "Peramban tidak didukung"
-      ],
-      "Username": [
-        "Nama Pengguna"
       ],
       "Verification": [
         "Verifikasi"

@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Аутентифицировать"
+      ],
+      "Back": [
+        "Назад"
+      ],
       "Cancel": [
         "Отменить"
       ],
       "Close": [
         "Закрыть"
+      ],
+      "Continue": [
+        "Продолжить"
       ],
       "Didn't receive the code?": [
         "Не получили код?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "More info: ${ safeTitle }": [
+        "Больше информации: ${ safeTitle }"
+      ],
       "refresh the page": [
         "обновить страницу"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "Попробуйте другой способ"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановления"
       ],
       "Verify": [
         "Подтвердить"
@@ -973,6 +988,9 @@
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
       ],
+      "Learn more": [
+        "Узнать больше"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -1028,6 +1046,9 @@
       ],
       "Verification code": [
         "Проверочный код"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ]
     },
     "Link": {

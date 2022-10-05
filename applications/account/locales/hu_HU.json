@@ -122,9 +122,6 @@
       "Clear all formatting": [
         "Formázás törlése"
       ],
-      "Clear two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód törlése"
-      ],
       "Close": [
         "Bezárás"
       ],
@@ -244,6 +241,9 @@
       ],
       "Didn't receive the code?": [
         "Nem kapta meg a kódot?"
+      ],
+      "Disable": [
+        "Letiltás"
       ],
       "Disable recovery phrase": [
         "Helyreállító jelmondat kikapcsolása"
@@ -776,9 +776,6 @@
       "Use recovery code": [
         "Helyreállító kód használata"
       ],
-      "Use two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód használata"
-      ],
       "Use your current email address instead": [
         "Inkább a jelenlegi e-mail cím használata"
       ],
@@ -1017,54 +1014,9 @@
         "Kétévente"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "béta"
-      ],
-      "Includes": [
-        "Tartalmazza"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Normál ár: ${ regularPrice }"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Legnépszerűbb"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Érdekel az ajánlat"
-      ],
-      "Get the deal now": [
-        "Érdekel az ajánlat"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "havonta"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Különleges ajánlat"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 hónap"
-      ],
-      "12 months": [
-        "12 hónap"
-      ],
-      "24 months": [
-        "24 hónap"
       ]
     },
     "breadcrumb": {
@@ -4214,6 +4166,9 @@
       "Are you sure you want to delete this label?": [
         "Biztosan törli ezt a címkét?"
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Biztosan ki szeretné kapcsolni a kétlépcsős hitelesítést?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
       ],
@@ -4468,12 +4423,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Írja be a bejelentkezési jelszavát az azonosításhoz."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Írja be saját jelszavát (a szervezet adminisztrátoraként) és az új jelszót ennek a felhasználónak ${ Name } (${ Email })."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
       ],
@@ -4722,9 +4671,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "A Mail.ru olvassa az ön személyes adatait, hogy hirdetőknek, orosz kormányzati intézményeknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Mindenképpen emlékezzen a bejelentkezési és az e-mail titkosítási jelszavaira. ${ boldAlert }. Javasoljuk, hogy előbb állítson be egy ${ recoveryLink }."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Fiókjának beállításához kézileg írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ _switchButton }."
       ],
@@ -4909,9 +4855,6 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "A Proton nem tud segíteni semmilyen elveszített jelszó helyreállításában."
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "A Proton felfüggesztette az importálást, mert megszakadt a kapcsolat a külső e-mail szolgáltatóval. Próbáljon újra csatlakozni."
       ],
@@ -4938,9 +4881,6 @@
       ],
       "Recovery files have been voided": [
         "A helyreállítási fájlok érvénytelenítésre kerültek"
-      ],
-      "recovery method": [
-        "helyreállítási módot"
       ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
@@ -5184,9 +5124,6 @@
       ],
       "Tor": [
         "Tor"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "A kétlépcsős hitelesítés további biztonságot nyújt abban az esetben, ha a jelszava illetéktelen kezekbe kerülne."
       ],
       "Two-factor authentication disabled": [
         "Kétlépcsős azonosítás kikapcsolva"
@@ -6125,9 +6062,6 @@
       "Credits used": [
         "Felhasznált kredit"
       ],
-      "Current login password": [
-        "Jelenlegi bejelentkezési jelszó"
-      ],
       "Customize invoices": [
         "Számlák személyre szabása"
       ],
@@ -6329,9 +6263,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield blokkoló szűrési szintje"
       ],
-      "Login password": [
-        "Bejelentkezési jelszó"
-      ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
       ],
@@ -6394,12 +6325,6 @@
       ],
       "Notification": [
         "Értesítés"
-      ],
-      "Old login password": [
-        "Korábbi bejelentkezési jelszó"
-      ],
-      "Old password": [
-        "Régi jelszó"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 jelszó"
@@ -6490,9 +6415,6 @@
       ],
       "Read": [
         "Olvasott"
-      ],
-      "Recovery code": [
-        "Helyreállítási kód"
       ],
       "Recovery email address": [
         "Helyreállító e-mail cím"
@@ -6601,12 +6523,6 @@
       ],
       "Total (${ countdown })": [
         "Összesen (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Kétlépcsős hitelesítés"
-      ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
       ],
       "Two-password mode": [
         "Két jelszavas mód"
@@ -6981,9 +6897,6 @@
     "Message": {
       "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
         "Minden szűrőművelet alkalmazásra kerül a Proton Mail fiókjában található összes levélre. Automatikus válasz e-mailek nem kerülnek kiküldésre."
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Biztosan ki szeretné kapcsolni a kétlépéses hitelesítést?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Kapcsolja saját domain nevét a ${ BRAND_NAME } fiókjához, hogy egyedi e-mail címeket hozhasson létre (pl. önneve@öncége.com). A beállítási varázsló végigvezeti a szükséges lépéseken."
@@ -7517,6 +7430,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7585,26 +7518,6 @@
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } a ${ humanMaxSpace } tárhelyből"
@@ -7666,7 +7579,7 @@
         "Hamarosan új csomagok érkeznek!"
       ],
       "Review subscription and pay": [
-        "Eőfizetés áttekintése és fizetés"
+        "Előfizetés áttekintése és fizetés"
       ],
       "Start exploring the Proton universe": [
         "Fedezze fel a Proton univerzumát"
@@ -7866,10 +7779,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Hozzon létre ${ numberOfPersonalCalendars } személyes naptárat",
-        "Hozzon létre akár ${ numberOfPersonalCalendars } személyes naptárat"
       ],
       "Everything in ${ vpnPlanName }": [
         "Minden a ${ vpnPlanName } csomagból"
@@ -8348,9 +8257,6 @@
       ],
       "Text": [
         "Szöveg"
-      ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
       ],
       "Type text or keyword": [
         "Írjon be szöveget"
@@ -9581,9 +9487,6 @@
       "Password and keys": [
         "Jelszó és kulcsok"
       ],
-      "Passwords": [
-        "Jelszavak"
-      ],
       "Pay invoice": [
         "Számla kifizetése"
       ],
@@ -9794,9 +9697,6 @@
       ],
       "Upgrade plan": [
         "Váltás nagyobb csomagra"
-      ],
-      "Username": [
-        "Felhasználónév"
       ],
       "Users and addresses": [
         "Felhasználók és címek"

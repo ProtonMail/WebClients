@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Back": [
+        "Atrás"
+      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close": [
         "Cerrar"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Didn't receive the code?": [
         "¿No recibió el código?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "More info: ${ safeTitle }": [
+        "Más información: ${ safeTitle }"
+      ],
       "refresh the page": [
         "refresque la página"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Intente otro método"
+      ],
+      "Use authentication code": [
+        "Usar código de autenticación"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperación"
       ],
       "Verify": [
         "Verificar"
@@ -937,6 +955,24 @@
         "También puede ${ refresh } o intentarlo más tarde."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con su clave de seguridad. Intente de nuevo."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clave de seguridad"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clave de seguridad"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
+      "Each code can only be used once": [
+        "Cada código solo puede usarse una vez"
+      ],
+      "Enter the code from your authenticator app": [
+        "Ingrese el código de su app de autenticación"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ingrese su propia contraseña (como administrador de la organización)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear su cuenta, solicite una invitación y responderemos dentro de un día hábil."
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "Sin conexión a Internet"
+      ],
+      "Learn more": [
+        "Más información"
       ],
       "Loading": [
         "Cargando"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "App autenticadora"
+      ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Your password (admin)": [
+        "Su contraseña (admin)"
       ]
     },
     "Link": {

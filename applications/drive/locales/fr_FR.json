@@ -2822,6 +2822,10 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
+      "Delete locked drive": [
+        "Supprimer le disque verrouillé",
+        "Supprimer les disques verrouillés"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Signature numérique vérifiée. Ce fichier a été chargé de manière sécurisée par ${ emailAddress }."
       ],
@@ -3127,6 +3131,9 @@
       ],
       "Paused": [
         "En pause"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Supprimez définitivement tous les fichiers de votre disque dur verrouillé."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."

@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autenticiraj"
+      ],
+      "Back": [
+        "Natrag"
+      ],
       "Cancel": [
         "Poništi"
       ],
       "Close": [
         "Zatvori"
+      ],
+      "Continue": [
+        "Nastavi"
       ],
       "Didn't receive the code?": [
         "Niste primili kod?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "More info: ${ safeTitle }": [
+        "Više informacija: ${ safeTitle }"
+      ],
       "refresh the page": [
         "osvježi stranicu"
       ],
@@ -37,6 +49,9 @@
       ],
       "Try another method": [
         "Isprobajte drugu metodu"
+      ],
+      "Use recovery code": [
+        "Koristi kôd za oporavak"
       ],
       "Verify": [
         "Potvrdi"
@@ -129,6 +144,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
+      "Learn more": [
+        "Saznajte više"
+      ],
       "Loading": [
         "Učitavanje"
       ],
@@ -169,6 +187,9 @@
       ],
       "Verification code": [
         "Kôd za provjeru"
+      ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
       ]
     },
     "Link": {

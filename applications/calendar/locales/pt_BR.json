@@ -3407,6 +3407,12 @@
       "Duplicate key updated": [
         "Chave duplicada atualizada"
       ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma única vez"
+      ],
+      "Enter the code from your authenticator app": [
+        "Insira o código do seu aplicativo autenticador"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
       ],
@@ -3933,6 +3939,9 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
+      ],
+      "Authenticator app": [
+        "Aplicativo autenticador"
       ],
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
@@ -5055,11 +5064,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Agora os convites aparecem no seu calendário como eventos pendentes. Basta abrir um evento para responder. ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "Assinar outros calendários"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Experimente ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Agora você pode adicionar notificações aos calendários em que se inscreveu."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Você pode assinar calendários externos e ler seus eventos."
       ]
     },
     "Spotlight settings link": {

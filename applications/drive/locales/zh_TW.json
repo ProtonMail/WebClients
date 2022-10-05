@@ -2633,6 +2633,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
+      "Delete locked drive": [
+        "刪除已鎖定的硬碟"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
       ],
@@ -2926,6 +2929,9 @@
       ],
       "Paused": [
         "已暫停"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "永久刪除您已鎖定硬碟中的所有檔案"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"

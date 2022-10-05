@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Azonosítás"
+      ],
+      "Back": [
+        "Vissza"
+      ],
       "Cancel": [
         "Mégsem"
       ],
       "Close": [
         "Bezárás"
+      ],
+      "Continue": [
+        "Tovább"
       ],
       "Didn't receive the code?": [
         "Nem kapta meg a kódot?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
+      "More info: ${ safeTitle }": [
+        "További információk: ${ safeTitle }"
+      ],
       "refresh the page": [
         "frissítse az oldalt"
       ],
@@ -37,6 +49,9 @@
       ],
       "Try another method": [
         "Másik módszer"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ],
       "Verify": [
         "Ellenőrzés"
@@ -958,6 +973,9 @@
       "Internet connection lost": [
         "Az internetkapcsolat megszakadt"
       ],
+      "Learn more": [
+        "További információk"
+      ],
       "Loading": [
         "Betöltés"
       ],
@@ -1013,6 +1031,9 @@
       ],
       "Verification code": [
         "Ellenőrző kód"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Link": {
