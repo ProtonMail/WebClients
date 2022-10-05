@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
+        "@openpgp/web-stream-tools": "^0.0.11",
         "@proton/components": "workspace:packages/components",
         "@proton/crypto": "workspace:packages/crypto",
         "@proton/pack": "workspace:packages/pack",
