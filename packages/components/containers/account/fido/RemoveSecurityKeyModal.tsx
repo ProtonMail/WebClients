@@ -26,7 +26,7 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
     const { createNotification } = useNotifications();
 
     const name = (
-        <span className="text-bold" key="name">
+        <span className="text-bold text-break" key="name">
             {keys[0].name}
         </span>
     );
