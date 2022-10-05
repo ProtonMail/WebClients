@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Auðkenna"
+      ],
+      "Back": [
+        "Til baka"
+      ],
       "Cancel": [
         "Hætta við"
       ],
       "Close": [
         "Loka"
+      ],
+      "Continue": [
+        "Halda áfram"
       ],
       "Didn't receive the code?": [
         "Fékkstu ekki kóðann?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Sækja staðfestingarkóða"
       ],
+      "More info: ${ safeTitle }": [
+        "Meiri upplýsingar: ${ safeTitle }"
+      ],
       "refresh the page": [
         "endurlesa síðuna"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "Prófa aðra aðferð"
+      ],
+      "Use recovery code": [
+        "Nota endurheimtukóða"
       ],
       "Verify": [
         "Sannreyna"
@@ -961,6 +976,9 @@
       "Internet connection lost": [
         "Nettenging rofnaði"
       ],
+      "Learn more": [
+        "Kanna nánar"
+      ],
       "Loading": [
         "Hleð inn"
       ],
@@ -1016,6 +1034,9 @@
       ],
       "Verification code": [
         "Sannvottunarkóði"
+      ],
+      "Your password (admin)": [
+        "Lykilorðið þitt (stjórnandi)"
       ]
     },
     "Link": {

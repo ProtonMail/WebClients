@@ -2837,6 +2837,11 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
       ],
+      "Delete locked drive": [
+        "Ștergere unitate blocată",
+        "Ștergere unități blocate",
+        "Ștergere unități blocate"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
       ],
@@ -3145,6 +3150,9 @@
       ],
       "Paused": [
         "Suspendat"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Ștergere permanentă a tuturor fișierelor din unitatea blocată"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."

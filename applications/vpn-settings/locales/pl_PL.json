@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
+      "${ name } updated": [
+        "Klucz ${ name } został zaktualizowany"
+      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -49,9 +52,6 @@
       ],
       "Chat with us": [
         "Czatuj z nami"
-      ],
-      "Clear two-factor authentication code": [
-        "Wyczyść kod uwierzytelniający"
       ],
       "Close": [
         "Zamknij"
@@ -118,6 +118,9 @@
       ],
       "Didn't receive the code?": [
         "Nie otrzymano kodu?"
+      ],
+      "Disable": [
+        "Wyłącz"
       ],
       "Done": [
         "Gotowe"
@@ -356,11 +359,11 @@
       "Use a different payment method": [
         "Użyj innej metody płatności"
       ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
-      ],
-      "Use two-factor authentication code": [
-        "Użyj kodu uwierzytelniającego"
       ],
       "Use your current email address instead": [
         "Użyj swojego obecnego adresu e-mail"
@@ -394,9 +397,6 @@
       ],
       "What do I get?": [
         "Co otrzymam?"
-      ],
-      "Yes": [
-        "Tak"
       ],
       "Zoom in": [
         "Powiększ"
@@ -1773,6 +1773,88 @@
         "Wsparcie dla torrentów (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Dodaj klucz bezpieczeństwa"
+      ],
+      "Delete key": [
+        "Usuń klucz"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Przed wyłączeniem aplikacji uwierzytelniającej, wyłącz uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Coś poszło nie tak z rejestracją klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa zostało wyłączone"
+      ],
+      "Add a name to identify your security key with.": [
+        "Dodaj nazwę klucza bezpieczeństwa."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Włóż klucz bezpieczeństwa do portu USB."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ],
+      "Security key removed": [
+        "Klucz bezpieczeństwa został usunięty"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Spowoduje to usunięcie wszystkich kluczy bezpieczeństwa powiązanych z kontem."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Aby włączyć uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa, musisz skonfigurować aplikację uwierzytelniającą"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Zweryfikuj swoją tożsamość za pomocą fizycznego klucza bezpieczeństwa U2F lub FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Klucz bezpieczeństwa został dodany."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Nazwa klucza"
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Usunąć klucz bezpieczeństwa?"
+      ],
+      "Disable 2FA via security key?": [
+        "Wyłączyć uwierzytelnianie dwustopniowe za pomocą klucza bezpieczeństwa?"
+      ],
+      "Name your security key": [
+        "Wpisz nazwę klucza bezpieczeństwa"
+      ],
+      "Register your security key": [
+        "Zarejestruj klucz bezpieczeństwa"
+      ],
+      "Registered security keys": [
+        "Zarejestrowane klucze bezpieczeństwa"
+      ],
+      "Security key registered": [
+        "Klucz bezpieczeństwa został zarejestrowany"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -1939,6 +2021,12 @@
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
+      "add a recovery method": [
+        "Dodaj metodę odzyskiwania"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Dodaj dodatkową warstwę bezpieczeństwa do swojego konta. Ustaw uwierzytelnianie dwustopniowe podczas logowania się do konta."
+      ],
       "Additional options": [
         "Dodatkowe opcje"
       ],
@@ -1950,6 +2038,9 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
       ],
       "Based in Switzerland, available globally": [
         "Ulokowany w Szwajcarii, dostępny na całym świecie"
@@ -2017,6 +2108,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
+      "Each code can only be used once": [
+        "Każdy kod może zostać użyty tylko jeden raz"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
@@ -2026,8 +2120,17 @@
       "Emailing preference saved": [
         "Ustawienia list mailingowych zostały zapisane"
       ],
+      "Enter code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
       "Enter key manually instead": [
         "Zamiast tego wpisz klucz ręcznie"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Wpisz nowe hasło dla użytkownika ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Wpisz kod wysłany na numer telefonu ${ phone }."
@@ -2044,11 +2147,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Wpisz adres e-mail lub nazwę użytkownika konta ${ BRAND_NAME }."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Wpisz hasło logowania, aby potwierdzić tożsamość."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Wpisz swoje hasło (jako administratora organizacji) i nowe hasło użytkownika ${ Name } (${ Email })."
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administrator organizacji)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Wpisz adres pomocniczy w celu wysłania Twojej nazwy użytkownika lub adresu e-mail."
@@ -2161,8 +2261,8 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom, rosyjskim agencjom rządowym i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Upewnij się, że pamiętasz hasło, aby zalogować się i odszyfrować wiadomości. ${ boldAlert } Zalecamy w pierwszej kolejności dodanie ${ recoveryLink }."
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ _switchButton }."
@@ -2239,8 +2339,8 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton nie może odzyskać utraconych haseł."
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Technologia szyfrowania Proton oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
@@ -2250,9 +2350,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
-      ],
-      "recovery method": [
-        "metody odzyskiwania"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
@@ -2371,9 +2468,6 @@
       "Total VPN connections": [
         "Połączenia VPN"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "W przypadku naruszenia hasła, uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa do Twojego konta."
-      ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
       ],
@@ -2416,6 +2510,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien. Twoje konto nie zostanie obciążone, kwota pobrana w celu zweryfikowania karty płatniczej, zostanie od razu zwrócona."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Zweryfikuj swoją tożsamość za pomocą kodu z aplikacji uwierzytelniającej"
+      ],
       "Verifying your payment": [
         "Weryfikowanie płatności"
       ],
@@ -2454,6 +2551,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Zmieniamy Twój obecny plan do ulepszonego, który oferuje więcej funkcji za tę samą cenę. Gdy nasze systemy rozpoczną aktualizację, nie będziesz mógł już go zmienić. Wyślemy wiadomość, kiedy proces zostanie zakończony."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
@@ -2699,6 +2799,9 @@
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -2777,9 +2880,6 @@
       "Credits used": [
         "Użyte środki"
       ],
-      "Current login password": [
-        "Obecne hasło logowania"
-      ],
       "Customize invoices": [
         "Dostosuj faktury"
       ],
@@ -2843,9 +2943,6 @@
       "Level for NetShield blocker filtering": [
         "Poziom filtrów NetShield"
       ],
-      "Login password": [
-        "Hasło logowania"
-      ],
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
@@ -2872,12 +2969,6 @@
       ],
       "Non-standard ports": [
         "Niestandardowe porty"
-      ],
-      "Old login password": [
-        "Stare hasło logowania"
-      ],
-      "Old password": [
-        "Stare hasło"
       ],
       "OpenVPN / IKEv2 password": [
         "Hasło OpenVPN / IKEv2"
@@ -2924,9 +3015,6 @@
       "Proton username": [
         "Nazwa użytkownika Proton"
       ],
-      "Recovery code": [
-        "Kod odzyskiwania"
-      ],
       "Recovery email address": [
         "Adres pomocniczy"
       ],
@@ -2956,12 +3044,6 @@
       ],
       "Total (${ countdown })": [
         "Łącznie (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Uwierzytelnianie dwustopniowe"
-      ],
-      "Two-factor authentication code": [
-        "Kod uwierzytelniający"
       ],
       "Two-password mode": [
         "Tryb podwójnego hasła"
@@ -3101,9 +3183,6 @@
       ]
     },
     "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Darmowa wersja próbna zakończyła się. Dostęp do konta zostanie wkrótce wyłączony. ${ action }"
       ]
@@ -3797,8 +3876,8 @@
       "Cover more ground with support for 10 custom email domains": [
         "Pracuj przy wielu projektach dzięki wsparciu dla 10 niestandardowych domen"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Utwórz do ${ numberOfPersonalCalendars } osobistego kalendarza",
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Utwórz ${ numberOfPersonalCalendars } osobisty kalendarz",
         "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy",
         "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy",
         "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy"
@@ -3935,9 +4014,6 @@
       ],
       "Select a reason": [
         "Wybierz przyczynę"
-      ],
-      "Two-factor authentication code": [
-        "Kod uwierzytelniający"
       ],
       "ZIP": [
         "Kod pocztowy"
@@ -4517,9 +4593,6 @@
       "Password": [
         "Hasło"
       ],
-      "Passwords": [
-        "Hasła"
-      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
@@ -4633,9 +4706,6 @@
       ],
       "Unsupported browser": [
         "Przeglądarka jest nieobsługiwana"
-      ],
-      "Username": [
-        "Nazwa użytkownika"
       ],
       "Verification": [
         "Weryfikacja"

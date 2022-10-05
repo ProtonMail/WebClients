@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Back": [
+        "Voltar"
+      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close": [
         "Fechar"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Didn't receive the code?": [
         "Não recebeu o código?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "More info: ${ safeTitle }": [
+        "Mais informações: ${ safeTitle }"
+      ],
       "refresh the page": [
         "atualizar a página"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Use authentication code": [
+        "Usar código de autenticação"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperação"
       ],
       "Verify": [
         "Verificar"
@@ -937,6 +955,16 @@
         "Você também pode ${ refresh } ou tentar novamente mais tarde."
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,6 +989,12 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma única vez"
+      ],
+      "Enter the code from your authenticator app": [
+        "Insira o código do seu aplicativo autenticador"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
@@ -972,6 +1006,9 @@
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
+      ],
+      "Learn more": [
+        "Saiba mais"
       ],
       "Loading": [
         "Carregando"
@@ -1008,6 +1045,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Aplicativo autenticador"
+      ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
       ],
@@ -1028,6 +1068,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
       ]
     },
     "Link": {

@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "驗證"
+      ],
+      "Back": [
+        "返回"
+      ],
       "Cancel": [
         "取消"
       ],
       "Close": [
         "關閉"
+      ],
+      "Continue": [
+        "繼續"
       ],
       "Didn't receive the code?": [
         "沒有收到驗證碼嗎？"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "More info: ${ safeTitle }": [
+        "更多資訊：${ safeTitle }"
+      ],
       "refresh the page": [
         "重新整理此頁面"
       ],
@@ -40,6 +52,9 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Use recovery code": [
+        "使用復原代碼"
       ],
       "Verify": [
         "驗證"
@@ -940,6 +955,9 @@
       "Internet connection lost": [
         "網際網路連線中斷"
       ],
+      "Learn more": [
+        "瞭解詳情"
+      ],
       "Loading": [
         "正在載入"
       ],
@@ -995,6 +1013,9 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
       ]
     },
     "Link": {

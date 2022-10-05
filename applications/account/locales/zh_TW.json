@@ -136,9 +136,6 @@
       "Clear all formatting": [
         "清除所有格式"
       ],
-      "Clear two-factor authentication code": [
-        "清除雙重身分驗證碼"
-      ],
       "Close": [
         "關閉"
       ],
@@ -258,6 +255,9 @@
       ],
       "Didn't receive the code?": [
         "尚未收到驗證碼？"
+      ],
+      "Disable": [
+        "停用"
       ],
       "Disable recovery phrase": [
         "停用復原短語"
@@ -796,9 +796,6 @@
       "Use recovery code": [
         "使用復原代碼"
       ],
-      "Use two-factor authentication code": [
-        "使用兩步驟驗證代碼"
-      ],
       "Use your current email address instead": [
         "沿用您目前的電郵位址"
       ],
@@ -1008,57 +1005,9 @@
         "兩年"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "測試版"
-      ],
-      "Includes": [
-        "包含"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "標準價格：${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "最熱門"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Get the deal now": [
-        "立即取得優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "省下 ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "每月"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "特別優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "一個月"
-      ],
-      "12 months": [
-        "12 個月"
-      ],
-      "24 months": [
-        "24 個月"
       ]
     },
     "breadcrumb": {
@@ -4068,6 +4017,9 @@
       "Are you sure you want to delete this label?": [
         "您確定要刪除此標籤嗎？"
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "您確定要停用兩步驟驗證嗎？"
+      ],
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
@@ -4323,12 +4275,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
       ],
-      "Enter your login password to confirm your identity.": [
-        "請輸入您的登入密碼，以便確認您的身份。"
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "輸入您自己的密碼（以組織管理員身份）與此使用者 ${ Name } (${ Email }) 的新密碼。"
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
       ],
@@ -4581,9 +4527,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "確定您記住密碼以登入與解密電郵。${ boldAlert } 我們建議您先加入 ${ recoveryLink }。"
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
       ],
@@ -4773,9 +4716,6 @@
       "Priority support": [
         "優先支援"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton 無法協助您復原任何遺失的密碼。"
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton 暫停了一項匯入，因為與您另一個電郵提供者的連線已中斷。請重新連線。"
       ],
@@ -4802,9 +4742,6 @@
       ],
       "Recovery files have been voided": [
         "帳號救援金鑰已被作廢"
-      ],
-      "recovery method": [
-        "復原方法"
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
@@ -5084,9 +5021,6 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "兩步驟驗證為您的帳號增添一重保安，以防您的密碼萬一被洩露。"
       ],
       "Two-factor authentication disabled": [
         "兩步驟驗證已停用"
@@ -6024,9 +5958,6 @@
       "Credits used": [
         "已使用儲值"
       ],
-      "Current login password": [
-        "目前的登入密碼"
-      ],
       "Customize invoices": [
         "自訂帳單"
       ],
@@ -6237,9 +6168,6 @@
       "Link label": [
         "連結標籤"
       ],
-      "Login password": [
-        "登入密碼"
-      ],
       "Mail Server (IMAP)": [
         "郵件伺服器 (IMAP)"
       ],
@@ -6305,12 +6233,6 @@
       ],
       "Notification": [
         "通知"
-      ],
-      "Old login password": [
-        "舊有登入密碼"
-      ],
-      "Old password": [
-        "舊有密碼"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 密碼"
@@ -6401,9 +6323,6 @@
       ],
       "Read": [
         "已讀"
-      ],
-      "Recovery code": [
-        "復原代碼"
       ],
       "Recovery email address": [
         "復原電郵位址"
@@ -6512,12 +6431,6 @@
       ],
       "Total (${ countdown })": [
         "總計 (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "兩步驟認證"
-      ],
-      "Two-factor authentication code": [
-        "兩步驟驗證代碼"
       ],
       "Two-password mode": [
         "雙重密碼模式"
@@ -6886,9 +6799,6 @@
       "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
         "所有篩選器將會套用至您 Proton Mail 帳號的所有訊息。自動回覆電郵將不再傳送。"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "您確定要停用兩步驟驗證嗎？"
-      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用已結束。很快就會停用對您帳號的存取權。${ action }"
       ]
@@ -7197,7 +7107,7 @@
         "Secure Core 伺服器"
       ],
       "Two-factor authentication": [
-        "兩步驟認證"
+        "兩步驟驗證"
       ]
     },
     "new_plans: heading": {
@@ -7736,9 +7646,6 @@
       ],
       "Text": [
         "文字"
-      ],
-      "Two-factor authentication code": [
-        "兩步驟驗證代碼"
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
@@ -8966,9 +8873,6 @@
       "Password and keys": [
         "密碼和金鑰"
       ],
-      "Passwords": [
-        "密碼"
-      ],
       "Pay invoice": [
         "支付帳單"
       ],
@@ -9175,9 +9079,6 @@
       ],
       "Upgrade plan": [
         "升級方案"
-      ],
-      "Username": [
-        "使用者名稱"
       ],
       "Users and addresses": [
         "使用者及電郵位址"

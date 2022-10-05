@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Ověřit"
+      ],
+      "Back": [
+        "Zpět"
+      ],
       "Cancel": [
         "Zrušit"
       ],
       "Close": [
         "Zavřít"
+      ],
+      "Continue": [
+        "Pokračovat"
       ],
       "Didn't receive the code?": [
         "Nedostali jste kód?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "More info: ${ safeTitle }": [
+        "Více informací: ${ safeTitle }"
+      ],
       "refresh the page": [
         "obnovit stránku"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
+      ],
+      "Use authentication code": [
+        "Použít ověřovací kód"
+      ],
+      "Use recovery code": [
+        "Použít kód pro obnovení"
       ],
       "Verify": [
         "Ověřit"
@@ -937,6 +955,24 @@
         "Můžete taky stránku ${ refresh } nebo to zkusit později."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
+      "Each code can only be used once": [
+        "Každý kód lze použít pouze jednou"
+      ],
+      "Enter the code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "Připojení k Internetu bylo ztraceno"
+      ],
+      "Learn more": [
+        "Zjistěte více"
       ],
       "Loading": [
         "Načítání"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Ověřovací aplikace"
+      ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (admin)"
       ]
     },
     "Link": {

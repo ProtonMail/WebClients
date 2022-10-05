@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Автентифікація"
+      ],
+      "Back": [
+        "Назад"
+      ],
       "Cancel": [
         "Скасувати"
       ],
       "Close": [
         "Закрити"
+      ],
+      "Continue": [
+        "Продовжити"
       ],
       "Didn't receive the code?": [
         "Не отримали код?"
@@ -26,6 +35,9 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
+      "More info: ${ safeTitle }": [
+        "Докладніше: ${ safeTitle }"
+      ],
       "refresh the page": [
         "оновити сторінку"
       ],
@@ -40,6 +52,12 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
+      ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
       ],
       "Verify": [
         "Перевірити"
@@ -937,6 +955,24 @@
         "Ви можете також ${ refresh }, або спробувати знову пізніше."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -961,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
+      "Each code can only be used once": [
+        "Кожен код може бути використаний тільки один раз"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з програми автентифікації"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -972,6 +1017,9 @@
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
+      ],
+      "Learn more": [
+        "Докладніше"
       ],
       "Loading": [
         "Завантаження"
@@ -991,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
       ],
@@ -1008,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Програма автентифікації"
+      ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
@@ -1028,6 +1082,9 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "Link": {

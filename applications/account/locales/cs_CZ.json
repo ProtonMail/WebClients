@@ -136,9 +136,6 @@
       "Clear all formatting": [
         "Vymazat veškeré formátování"
       ],
-      "Clear two-factor authentication code": [
-        "Odstranit kód dvoufázového ověření"
-      ],
       "Close": [
         "Zavřít"
       ],
@@ -258,6 +255,9 @@
       ],
       "Didn't receive the code?": [
         "Neobdrželi jste kód?"
+      ],
+      "Disable": [
+        "Vypnout"
       ],
       "Disable recovery phrase": [
         "Deaktivace obnovovací fráze"
@@ -799,11 +799,11 @@
       "Use a different payment method": [
         "Použít jinou platební metodu"
       ],
+      "Use authentication code": [
+        "Použít ověřovací kód"
+      ],
       "Use recovery code": [
         "Použít kód pro obnovení"
-      ],
-      "Use two-factor authentication code": [
-        "Použít dvoufázový ověřovací kód"
       ],
       "Use your current email address instead": [
         "Místo toho použijte vaši aktuální e-mailovou adresu"
@@ -1075,57 +1075,9 @@
         "Dva roky"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Zahrnuje"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Běžná cena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Nejoblíbenější"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Využít nabídku"
-      ],
-      "Get the deal now": [
-        "Objednat nyní"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "za měsíc"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Speciální nabídka"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 měsíc"
-      ],
-      "12 months": [
-        "12 měsíců"
-      ],
-      "24 months": [
-        "24 měsíců"
       ]
     },
     "breadcrumb": {
@@ -3639,6 +3591,24 @@
         "Podpora Torrentu (P2P)"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klíč zabezpečení"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -4673,6 +4643,9 @@
       "Are you sure you want to delete this label?": [
         "Jste si jisti, že chcete odstranit tento štítek?"
       ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Opravdu chcete zakázat dvoufázové ověřování?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
       ],
@@ -4892,6 +4865,9 @@
       "Drop the file here to upload": [
         "Přetažením sem nahrajte soubor"
       ],
+      "Each code can only be used once": [
+        "Každý kód lze použít pouze jednou"
+      ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Připsáno ${ rewards } z ${ rewardsLimit } ${ planName } měsíců."
       ],
@@ -4928,6 +4904,9 @@
       "Enter key manually instead": [
         "Místo toho vložte klíč ručně"
       ],
+      "Enter the code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Zadejte kód, který byl zaslán na Vaše telefonní číslo ${ phone }."
       ],
@@ -4949,11 +4928,8 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadejte svou e-mailovou adresu nebo uživatelské jméno účtu ${ BRAND_NAME }."
       ],
-      "Enter your login password to confirm your identity.": [
-        "Zadejte své přihlašovací heslo k potvrzení Vaší totožnosti."
-      ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        "Zadejte své vlastní heslo (jako správce organizace) a nové heslo pro tohoto uživatele ${ Name } (${ Email })."
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadejte vaši obnovovací e-mailovou adresu a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
@@ -5216,9 +5192,6 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru čte Vaše osobní údaje s cílem poskytnout přístup inzerentům, ruským vládním agenturám a dalším třetím stranám. Pro lepší soukromí vytvořte bezpečnou e-mailovou adresu."
       ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "Ujistěte se, že si pamatujete heslo pro přihlášení a dešifrování emailů. ${ boldAlert } Doporučujeme nejprve přidat ${ recoveryLink }."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ _switchButton }."
       ],
@@ -5429,9 +5402,6 @@
       "Priority support": [
         "Prioritní podpora"
       ],
-      "Proton can't help you recover any lost passwords.": [
-        "Proton vám nemůže pomoci obnovit ztracená hesla."
-      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton pozastavil import, protože ztratil spojení s Vaším jiným poskytovatelem e-mailů. Prosím zkontrolujte připojení."
       ],
@@ -5464,9 +5434,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
-      ],
-      "recovery method": [
-        "metoda obnovení"
       ],
       "Recovery phrase copied to clipboard": [
         "Obnovovací fráze byla zkopírovaná do schránky"
@@ -5756,9 +5723,6 @@
       "Total VPN connections": [
         "Celkem VPN připojení"
       ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Dvoufázové ověření přidává k Vašemu účtu další bezpečnostní vrstvu pro případ, že je Vaše heslo prozrazeno."
-      ],
       "Two-factor authentication disabled": [
         "Dvoufázové ověřování je vypnuto"
       ],
@@ -5887,6 +5851,9 @@
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Když si předplatí placený tarif, bude na váš účet připsáno 1 až 3 měsíce ${ planName }."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Až se Vaše předplatné obnoví, použijeme všechny dostupné kredity před tím, než budeme účtovat výše uvedenou platební metodu."
@@ -6620,6 +6587,9 @@
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
+      ],
       "Auto-detect primary time zone": [
         "Automaticky rozpoznat primární časové pásmo"
       ],
@@ -6760,9 +6730,6 @@
       ],
       "Credits used": [
         "Použité kredity"
-      ],
-      "Current login password": [
-        "Aktuální přihlašovací heslo"
       ],
       "Customize invoices": [
         "Přizpůsobení faktur"
@@ -6977,9 +6944,6 @@
       "Link label": [
         "Označení odkazu"
       ],
-      "Login password": [
-        "Přihlašovací heslo"
-      ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
       ],
@@ -7045,12 +7009,6 @@
       ],
       "Notification": [
         "Upozornění"
-      ],
-      "Old login password": [
-        "Staré přihlašovací heslo"
-      ],
-      "Old password": [
-        "Staré heslo"
       ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
@@ -7141,9 +7099,6 @@
       ],
       "Read": [
         "Přečteno"
-      ],
-      "Recovery code": [
-        "Kód pro obnovení"
       ],
       "Recovery email address": [
         "E-mailová adresa pro obnovení"
@@ -7252,12 +7207,6 @@
       ],
       "Total (${ countdown })": [
         "Celkem (${ countdown })"
-      ],
-      "Two-factor authentication": [
-        "Dvoufaktorové ověření"
-      ],
-      "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
       ],
       "Two-password mode": [
         "Režim se dvěma hesly"
@@ -7671,9 +7620,6 @@
     "Message": {
       "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
         "Všechny akce filtru se použijí na všechny zprávy ve Vašem Proton Mail účtu. Nebudou odesílány žádné e-maily s automatickou odpovědí."
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Opravdu chcete vypnout dvoufázové ověřování?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Připojte vlastní doménu k ${ BRAND_NAME } a nastavte vlastní e-mailové adresy (např. vy@vasefirma.cz). Náš průvodce vás provede celým procesem."
@@ -8241,6 +8187,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8307,26 +8273,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8597,12 +8543,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Vytvořte ${ numberOfPersonalCalendars } osobní kalendář",
-        "Vytvořte až ${ numberOfPersonalCalendars } osobní kalendáře",
-        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů",
-        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů"
       ],
       "Everything in ${ vpnPlanName }": [
         "Vše v ${ vpnPlanName }"
@@ -9122,9 +9062,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
       ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
@@ -10465,9 +10402,6 @@
       "Password and keys": [
         "Heslo a klíče"
       ],
-      "Passwords": [
-        "Hesla"
-      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -10680,9 +10614,6 @@
       ],
       "Upgrade plan": [
         "Navýšit tarif"
-      ],
-      "Username": [
-        "Uživatelské jméno"
       ],
       "Users and addresses": [
         "Uživatelé a adresy"

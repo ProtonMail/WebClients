@@ -2951,7 +2951,7 @@
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
       "Enter your own password (as organization admin).": [
-        "Wpisz swoje hasło (jako administratora organizacji)."
+        "Wpisz swoje hasło (jako administrator organizacji)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
@@ -5369,10 +5369,10 @@
         "Nazwa nie może zawierać niewidocznych znaków, / lub \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Nazwa może posiadać maksymalnie ${ MAX_NAME_LENGTH } znak",
-        "Nazwa może posiadać maksymalnie ${ MAX_NAME_LENGTH } znaki",
-        "Nazwa może posiadać maksymalnie ${ MAX_NAME_LENGTH } znaków",
-        "Nazwa może posiadać maksymalnie ${ MAX_NAME_LENGTH } znaków"
+        "Nazwa może zawierać maksymalnie ${ MAX_NAME_LENGTH } znak",
+        "Nazwa może zawierać maksymalnie ${ MAX_NAME_LENGTH } znaki",
+        "Nazwa może zawierać maksymalnie ${ MAX_NAME_LENGTH } znaków",
+        "Nazwa może zawierać maksymalnie ${ MAX_NAME_LENGTH } znaków"
       ],
       "Name must not be empty": [
         "Nazwa nie może być pusta"
