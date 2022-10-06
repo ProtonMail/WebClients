@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { FeatureCode } from '@proton/components/containers';
 import { classnames } from '@proton/components/helpers';
 import { APPS } from '@proton/shared/lib/constants';
-import { getHasWebAuthnSupport } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
+import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 
 import { Button, ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
@@ -79,8 +79,8 @@ const TwoFactorSection = () => {
             ? 'https://protonvpn.com/support/two-factor-authentication'
             : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
-    const canEnableSecurityKey =
-        APP_NAME === APPS.PROTONACCOUNT && (fido2Feature.feature?.Value === true || hasFIDO2Enabled);
+    const hasSecurityKeySupport =
+        getHasFIDO2Support(APP_NAME, location.hostname) && (fido2Feature.feature?.Value === true || hasFIDO2Enabled);
 
     return (
         <SettingsSection>
@@ -105,7 +105,7 @@ const TwoFactorSection = () => {
                     <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {getHasWebAuthnSupport() && canEnableSecurityKey && (
+            {hasSecurityKeySupport && (
                 <>
                     {renderAddSecurityKeyModal && <AddSecurityKeyModal {...addSecurityKeyModal} />}
                     {renderRemoveSecurityKeyModal && tmpRemove.keys.length && (

@@ -48,7 +48,6 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     hasGenerateKeys?: boolean;
-    hasFido2?: boolean;
     hasActiveSessions?: boolean;
 }
 
@@ -61,7 +60,6 @@ const LoginContainer = ({
     shouldSetupInternalAddress,
     hasRemember = true,
     hasGenerateKeys = true,
-    hasFido2 = true,
     hasActiveSessions = false,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -166,7 +164,6 @@ const LoginContainer = ({
                                     hasGenerateKeys,
                                     hasTrustedDeviceRecovery,
                                     appName: APP_NAME,
-                                    hasFido2,
                                     ignoreUnlock: false,
                                     hasInternalAddressSetup: !!shouldSetupInternalAddress,
                                     payload,
