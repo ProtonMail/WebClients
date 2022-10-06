@@ -153,6 +153,15 @@ const ItemColumnLayout = ({
                 <div className="item-icons flex flex-item-noshrink flex-nowrap no-mobile">
                     <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
                     <span className="flex item-meta-infos">
+                        {hasLabels && isCompactView && (
+                            <ItemLabels
+                                className="ml0-5"
+                                labels={labels}
+                                element={element}
+                                labelID={labelID}
+                                maxNumber={1}
+                            />
+                        )}
                         {hasExpiration && (
                             <ItemExpiration expirationTime={expirationTime} className="ml0-25 flex-align-self-center" />
                         )}
@@ -181,7 +190,7 @@ const ItemColumnLayout = ({
                 </div>
             </div>
 
-            {hasLabels && (
+            {hasLabels && !isCompactView && (
                 <div className="flex flex-nowrap flex-align-items-center max-w100 no-scroll">
                     <div className="item-icons flex flex-item-noshrink flex-nowrap mt0-25">
                         <ItemLabels
@@ -190,7 +199,6 @@ const ItemColumnLayout = ({
                             element={element}
                             labelID={labelID}
                             maxNumber={breakpoints.isNarrow ? 1 : 5}
-                            showDropdown={false}
                             isCollapsed={false}
                         />
                     </div>
