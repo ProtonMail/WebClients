@@ -468,7 +468,6 @@ export const handleLogin = async ({
     hasTrustedDeviceRecovery,
     appName,
     hasInternalAddressSetup,
-    hasFido2,
     payload,
 }: {
     username: string;
@@ -480,7 +479,6 @@ export const handleLogin = async ({
     hasTrustedDeviceRecovery: boolean;
     appName: APP_NAMES;
     hasInternalAddressSetup: boolean;
-    hasFido2: boolean;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
@@ -499,7 +497,7 @@ export const handleLogin = async ({
         api,
         appName,
         authApi,
-        authTypes: getAuthTypes(authResult, hasFido2),
+        authTypes: getAuthTypes(authResult, appName),
         username,
         persistent,
         loginPassword: password,
