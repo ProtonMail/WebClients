@@ -91,7 +91,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     return (
         <ComposeProvider onCompose={handleCompose}>
             {children({ isComposerOpened })}
-            <div className="composer-container">
+            <div>
                 {messageIDs.map((messageID, i) => (
                     <ComposerFrame
                         key={messageID}
