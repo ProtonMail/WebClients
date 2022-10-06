@@ -20,6 +20,7 @@ import SettingsSection from './SettingsSection';
 import AddSecurityKeyModal from './fido/AddSecurityKeyModal';
 import EditSecurityKeyModal from './fido/EditSecurityKeyModal';
 import RemoveSecurityKeyModal from './fido/RemoveSecurityKeyModal';
+import { maxSecurityKeyLength } from './fido/constants';
 import DisableTOTPModal from './totp/DisableTOTPModal';
 import EnableTOTPModal from './totp/EnableTOTPModal';
 
@@ -166,6 +167,7 @@ const TwoFactorSection = () => {
                         <div className="mb1">
                             <div>
                                 <Button
+                                    disabled={registeredKeys.length >= maxSecurityKeyLength}
                                     onClick={() => {
                                         setAddSecurityKeyModal(true);
                                     }}
