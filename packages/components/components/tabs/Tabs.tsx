@@ -94,6 +94,7 @@ export const Tabs = ({
                         className={classnames([
                             'tabs-list unstyled flex relative m0 p0',
                             fullWidth && 'tabs-list--fullWidth',
+                            'flex-align-items-end',
                         ])}
                         role="tablist"
                         ref={containerRef}
