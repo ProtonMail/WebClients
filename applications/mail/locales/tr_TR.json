@@ -3015,8 +3015,8 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
-      "A problem occurred, please try again.": [
-        "Bir sorun çıktı. Lütfen yeniden deneyin."
+      "A problem occurred, please try again": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -3195,8 +3195,8 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
-      "Please activate your search again": [
-        "Lütfen aramanızı yeniden etkinleştirin"
+      "Please activate your content search again": [
+        "Lütfen içerik aramayı yeniden etkinleştirin"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -3278,9 +3278,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
-      "Something went wrong, please try again": [
-        "Bir şeyler ters gitti. Lütfen yeniden deneyin"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Ne yazık ki, Proton iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
       ],
@@ -3314,9 +3311,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "İçerik aramasıyla ilgili bir sorun çıktı. Varsayılan arama yöntemi kullanıldı."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Yerel iletileriniz güncellenirken bir sorun çıktı. İçerik aramasının etkinleştirilebilmesi için iletiler yeniden indirilecek"
       ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
@@ -4543,9 +4537,6 @@
       "Confirm phishing report": [
         "Kimlik avı bildirimini onayla"
       ],
-      "Content: ": [
-        "İçerik: "
-      ],
       "Continue with ${ planName }": [
         "${ planName } aboneliğini kullanmayı sürdür"
       ],
@@ -4612,8 +4603,8 @@
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "İletiler indiriliyor ${ currentProgress } / ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "İleti ${ esProgress } / ${ totalProgressToShow } indiriliyor"
       ],
       "Draft": [
         "Taslak"
@@ -4670,9 +4661,6 @@
       ],
       "Encrypt message": [
         "İletiyi şifrele"
-      ],
-      "End of search results from past 30 days": [
-        "Son 30 günün arama sonuçlarının sonu"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -4949,9 +4937,6 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Son 30 günde bir sonuç bulunamadı. Tüm gelen kutunuz aranıyor"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir"
       ],
@@ -5094,9 +5079,6 @@
       "Scheduling message...": [
         "İleti zamanlanıyor..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Daha eski iletilerin tüm içeriğini arayabilmek için bir ${ paidPlansButton } kullanın"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Arama çok uzun mu sürüyor? Bu arama oturumunu ${ dropdownButton } ya da ${ toggleOffButton }."
       ],
@@ -5199,9 +5181,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Sayfadan ayrılırsanız taslağa yazdığınız veriler kaydedilmeyebilir."
       ],
-      "The local database is being prepared": [
-        "Yerel veritabanı hazırlanıyor"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "İletmeye ya da yanıtlamaya çalıştığınız iletinin aslı hala gönderiliyor. İlerlerseniz asıl iletinin gönderilmesini geri alamazsınız."
       ],
@@ -5232,9 +5211,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Bu işlem yakın zamandaki iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres devre dışı. Bu adrese e-posta gönderebilmek için önce sahibi adresi etkinleştirmelidir."
@@ -5366,9 +5342,6 @@
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Yerel iletileriniz güncelleniyor. Güncelleme sırasında yerel ileti içeriğinizde arama yapamayacaksınız"
       ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
@@ -6472,9 +6445,6 @@
       ],
       "Outbox": [
         "Gönderilmiş kutusu"
-      ],
-      "paid plan": [
-        "ücretli tarife"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -8282,9 +8252,6 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "30 günden eski iletilerin, yalnızca konu satırı ve alıcı listesi aranır"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
@@ -8296,6 +8263,9 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
       ],
       "This feature is only available for paid users": [
         "Bu özelliği yalnızca ücretli tarife kullanıcıları kullanabilir"

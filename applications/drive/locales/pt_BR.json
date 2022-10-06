@@ -2779,6 +2779,10 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim como os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
+      "Delete locked drive": [
+        "Excluir unidade bloqueada",
+        "Excluir unidades bloqueadas"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Assinatura digital verificada. Esse arquivo foi enviado seguramente por ${ emailAddress }."
       ],
@@ -2890,6 +2894,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libere algum espaço ou contate seu administrador."
+      ],
+      "Go ahead, upload a file": [
+        "Vai em frente, envie um arquivo"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Vá para \"Meus arquivos\" e carregue alguns arquivos primeiro."
@@ -3078,6 +3085,9 @@
       ],
       "Paused": [
         "Em pausa"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Excluir permanentemente todos os arquivos na sua unidade bloqueada"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
@@ -4272,6 +4282,10 @@
       ],
       "Set a recovery method": [
         "Definir um método de recuperação"
+      ],
+      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
+        "Basta preencher o seguinte no próximo ${ remainingDaysForGift } dia:",
+        "Basta preencher o seguinte nos próximos ${ remainingDaysForGift } dias:"
       ],
       "Upload a file": [
         "Enviar um arquivo"

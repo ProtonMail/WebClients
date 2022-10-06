@@ -3012,8 +3012,8 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A problem occurred, please try again.": [
-        "Er is een probleem opgetreden, probeer het opnieuw."
+      "A problem occurred, please try again": [
+        "Er is een probleem opgetreden, probeer het opnieuw"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -3192,8 +3192,8 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
-      "Please activate your search again": [
-        "Activeer opnieuw uw zoekopdracht"
+      "Please activate your content search again": [
+        "Activeer het zoeken naar inhoud opnieuw"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
@@ -3274,9 +3274,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Er ging iets mis, probeer opnieuw"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Sorry, Proton kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
@@ -4510,9 +4507,6 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
-      "Content: ": [
-        "Inhoud: "
-      ],
       "Continue with ${ planName }": [
         "Ga door met ${ planName }"
       ],
@@ -4579,8 +4573,8 @@
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Bericht ${ currentProgress } van ${ totalProgress } aan het downloaden"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Bericht ${ esProgress } van ${ totalProgressToShow } aan het downloaden"
       ],
       "Draft": [
         "Concept"
@@ -4910,9 +4904,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Geen resultaten van de afgelopen 30 dagen gevonden, de rest van uw inbox wordt doorzocht"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
@@ -5055,9 +5046,6 @@
       "Scheduling message...": [
         "Bericht plannen..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Doorzoek de volledige inhoud van oudere berichten met een ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Duurt de zoekopdracht te lang? ${ dropdownButton } of ${ toggleOffButton } van deze zoeksessie."
       ],
@@ -5160,9 +5148,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Het opgestelde concept gaat verloren als u de pagina verlaat."
       ],
-      "The local database is being prepared": [
-        "De lokale database wordt voorbereid"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
       ],
@@ -5193,9 +5178,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Deze actie zal de meest berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -6424,9 +6406,6 @@
       ],
       "Outbox": [
         "Postvak UIT"
-      ],
-      "paid plan": [
-        "betaald abonnement"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -8217,9 +8196,6 @@
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Voor berichten ouder dan 30 dagen, wordt enkel het onderwerp en ontvangerslijst doorzocht"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
@@ -8231,6 +8207,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This feature is only available for paid users": [
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"

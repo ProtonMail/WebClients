@@ -2904,9 +2904,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Новые письма от ${ senderEmailAddress } не будут доставлены, и будут безвозвратно удалены. ${ manageBlockedAddressesSettingsLink } в настройках."
-      ],
       "No folders": [
         "Нет папок"
       ],
@@ -3071,9 +3068,6 @@
       ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
-      ],
-      "A problem occurred, please try again.": [
-        "Возникла проблема, попробуйте снова."
       ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
@@ -3264,9 +3258,6 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Please activate your search again": [
-        "Активируйте поиск снова"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
@@ -3350,9 +3341,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Что-то пошло не так, пожалуйста, попробуйте снова"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Извините, Proton не может расшифровать ваше сообщение. Убедитесь, что все ваши ключи активны."
@@ -4699,9 +4687,6 @@
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
       ],
-      "Content: ": [
-        "Содержание: "
-      ],
       "Continue with ${ planName }": [
         "Продолжить с ${ planName }"
       ],
@@ -4774,9 +4759,6 @@
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Загрузка ${ currentProgress } сообщения из ${ totalProgress }"
-      ],
       "Draft": [
         "Черновик"
       ],
@@ -4833,9 +4815,6 @@
       ],
       "Encrypt message": [
         "Зашифровать сообщение"
-      ],
-      "End of search results from past 30 days": [
-        "Конец результатов поиска за последние 30 дней"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
@@ -5116,9 +5095,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Нет результатов поиска за последние 30 дней. Выполнение поиска в остальной части вашего почтового ящика"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания"
       ],
@@ -5263,9 +5239,6 @@
       "Scheduling message...": [
         "Сообщение ставится в очередь..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Поиск полного содержания старых сообщений с помощью ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Поиск занимает слишком много времени? ${ dropdownButton } или ${ toggleOffButton } из этой поисковой сессии."
       ],
@@ -5368,9 +5341,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Если вы покинете эту страницу, то введенные данные могут быть не сохранены в черновике."
       ],
-      "The local database is being prepared": [
-        "Идет подготовка локальной базы данных"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Исходное сообщение, которое вы пытаетесь переслать или ответ на которое вы пытаетесь отправить, находится в процессе отправки. Если вы продолжите, то больше не сможете отменить отправку исходного сообщения."
       ],
@@ -5403,9 +5373,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Это действие загрузит последние сообщения, чтобы их можно было искать локально. Очистка данных браузера отключит эту возможность."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включён его владельцем."
@@ -6661,9 +6628,6 @@
       "Outbox": [
         "Исходящие"
       ],
-      "paid plan": [
-        "платный тариф"
-      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
@@ -7084,9 +7048,6 @@
       ],
       "Password has been set successfully": [
         "Пароль был успешно установлен"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Отправитель ${ senderEmail } заблокирован"
       ]
     },
     "Oauth instructions": {
@@ -8561,9 +8522,6 @@
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Для сообщений старше 30 дней поиск осуществляется только в строке темы и списке получателей"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
@@ -8575,6 +8533,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
       ],
       "This feature is only available for paid users": [
         "Эта функция доступна только пользователям с платными тарифами"

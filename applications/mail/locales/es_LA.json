@@ -2851,9 +2851,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Los correos nuevos desde ${ senderEmailAddress } no se entregarán y serán eliminados permanentemente. ${ manageBlockedAddressesSettingsLink } en los ajustes."
-      ],
       "No folders": [
         "Sin carpetas"
       ],
@@ -3014,9 +3011,6 @@
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
-      ],
-      "A problem occurred, please try again.": [
-        "Ocurrió un problema, intente de nuevo."
       ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
@@ -3195,9 +3189,6 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
-      "Please activate your search again": [
-        "Active su búsqueda de nuevo"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Solucione el conflicto resaltado para continuar.",
         "Solucione los conflictos resaltados para continuar."
@@ -3278,9 +3269,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Algo salió mal, intente de nuevo"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Lo sentimos, Proton no puede descifrar su mensaje. Compruebe que todas sus claves están activas."
       ],
@@ -3314,9 +3302,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Hubo un problema con la búsqueda de contenido. La búsqueda por defecto se ha usado en su lugar."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Hubo un problema al actualizar sus mensajes locales, volverán a descargarse otra vez para rehabilitar la búsqueda de contenido"
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
@@ -4543,9 +4528,6 @@
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
       ],
-      "Content: ": [
-        "Contenido: "
-      ],
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
       ],
@@ -4612,9 +4594,6 @@
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Descargando mensaje ${ currentProgress } de ${ totalProgress }"
-      ],
       "Draft": [
         "Borrador"
       ],
@@ -4670,9 +4649,6 @@
       ],
       "Encrypt message": [
         "Cifrar mensaje"
-      ],
-      "End of search results from past 30 days": [
-        "Fin de la búsqueda de resultados de los últimos 30 días"
       ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de su app de autenticación"
@@ -4949,9 +4925,6 @@
       "No results found": [
         "No se encontraron resultados"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "No hay resultados de búsqueda en los últimos 30 días. Buscando en el resto del buzón."
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "No se encontraron rastreadores, pero algunas imágenes podrían no cargarse sin protección de rastreo"
       ],
@@ -5094,9 +5067,6 @@
       "Scheduling message...": [
         "Programando mensaje..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Busque contenido completo de mensajes anteriores con un ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "¿La búsqueda tarda demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de búsqueda."
       ],
@@ -5199,9 +5169,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Los datos que ha ingresado en el borrador pueden no guardarse si sale de la página."
       ],
-      "The local database is being prepared": [
-        "La base de datos local está siendo preparada"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "El mensaje original al que está intentando reenviar/responder está en proceso de ser enviado. Si continúa, no podrá deshacer más el envío del mensaje original."
       ],
@@ -5232,9 +5199,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Esta acción descargará todos los mensajes para que se puedan buscar localmente. Limpiar los datos de su navegador desactivará esta opción."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará los mensajes más recientes para ser buscados localmente. Borrar los datos de su navegador deshabilitará esta opción."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está deshabilitada. Para poder enviar a esta dirección, el dueño debe primero habilitar la dirección."
@@ -5366,9 +5330,6 @@
       ],
       "Updating message content search...": [
         "Actualizando búsqueda de contenido de mensaje..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Actualizando sus mensajes locales, el contenido del mensaje no se buscará durante esta actualización"
       ],
       "Upgrade to add more addresses to your account.": [
         "Actualice para añadir más direcciones a su cuenta."
@@ -6473,9 +6434,6 @@
       "Outbox": [
         "Buzón de salida"
       ],
-      "paid plan": [
-        "plan de pago"
-      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -6882,9 +6840,6 @@
       ],
       "Password has been set successfully": [
         "La contraseña se ha cambiado con éxito"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Remitente ${ senderEmail } bloqueado"
       ]
     },
     "Oauth instructions": {
@@ -8282,9 +8237,6 @@
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Para mensajes anteriores a 30 días, solo se buscará el asunto y el destinatario"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
@@ -8296,6 +8248,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta acción descargará todos los mensajes para que se puedan buscar localmente. Limpiar los datos de su navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"

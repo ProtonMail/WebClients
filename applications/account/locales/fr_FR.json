@@ -33,9 +33,6 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "${ name } updated": [
-        "${ name } mis à jour"
-      ],
       "activate": [
         "activer"
       ],
@@ -3687,6 +3684,9 @@
       ],
       "Security key removed": [
         "La clé de sécurité a été supprimée."
+      ],
+      "Security key updated": [
+        "La clé de sécurité a été mise à jour."
       ],
       "This will delete all security keys linked to your account.": [
         "Cela supprimera toutes les clés de sécurité liées à votre compte."
@@ -8554,6 +8554,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficiez de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés."
+      ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Créez ${ numberOfPersonalCalendars } calendrier personnel",
+        "Créez jusqu'à ${ numberOfPersonalCalendars } calendriers personnels"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"

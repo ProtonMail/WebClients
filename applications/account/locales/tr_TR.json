@@ -33,9 +33,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "${ name } updated": [
-        "${ name } güncellendi"
-      ],
       "activate": [
         "etkinleştir"
       ],
@@ -3682,6 +3679,9 @@
       ],
       "Security key removed": [
         "Güvenlik anahtarı silindi"
+      ],
+      "Security key updated": [
+        "Güvenlik anahtarı güncellendi"
       ],
       "This will delete all security keys linked to your account.": [
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."

@@ -33,9 +33,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "${ name } updated": [
-        "${ name } aktualisiert"
-      ],
       "activate": [
         "aktivieren"
       ],
@@ -3597,6 +3594,9 @@
       ],
       "Security key removed": [
         "Sicherheitsschlüssel entfernt"
+      ],
+      "Security key updated": [
+        "Sicherheitsschlüssel aktualisiert"
       ],
       "This will delete all security keys linked to your account.": [
         "Hierdurch werden alle Sicherheitsschlüssel gelöscht, die mit deinem Account verbunden sind."
@@ -10999,7 +10999,7 @@
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Wöchentlich an allen Tagen, ${ untilString }",
-        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
+        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Alle ${ interval } Wochen am Freitag",

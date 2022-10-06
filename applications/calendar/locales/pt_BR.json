@@ -7,6 +7,9 @@
     "Access level": {
       "Full view (see all event details)": [
         "Visualização completa (ver todos os detalhes do evento)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Visualização limitada (vê apenas livre/ocupado)"
       ]
     },
     "Action": {
@@ -872,6 +875,14 @@
       ],
       "Unable to share this calendar with more Proton users": [
         "Incapaz de compartilhar esse calendário com mais usuários do Proton"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membros para este calendário.\nPara compartilhar este calendário com mais contas Proton, remova alguns membros.",
+        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membros para este calendário.\nPara compartilhar este calendário com mais contas Proton, remova alguns membros."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Você atingiu o máximo de ${ MAX_LINKS_PER_CALENDAR } link para este calendário.\nPara criar um novo link para este calendário, exclua um existente.",
+        "Você atingiu o máximo de ${ MAX_LINKS_PER_CALENDAR } links para este calendário.\nPara criar um novo link para este calendário, exclua um existente."
       ]
     },
     "Calendar sharing access option label": {
@@ -2272,7 +2283,7 @@
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
       ],
       "Not a Proton account": [
-        "Não é um conta Proton"
+        "Não é uma conta Proton"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -5030,6 +5041,16 @@
         "Para convidar usuários fora do Proton, compartilhe seu calendário com um link"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Você excedeu o máximo de ${ MAX_CALENDAR_MEMBERS } membros por calendário"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Adicione as contas Proton com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Adicionar pessoas ou grupos"
@@ -5065,7 +5086,7 @@
         "Agora os convites aparecem no seu calendário como eventos pendentes. Basta abrir um evento para responder. ${ goToSettingsLink }"
       ],
       "Subscribe to other calendars": [
-        "Assinar outros calendários"
+        "Inscrever em outros calendários"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Experimente ${ DRIVE_APP_NAME }"
@@ -5074,7 +5095,7 @@
         "Agora você pode adicionar notificações aos calendários em que se inscreveu."
       ],
       "You can subscribe to external calendars and read their events.": [
-        "Você pode assinar calendários externos e ler seus eventos."
+        "Você pode inscrever em calendários externos e ler seus eventos."
       ]
     },
     "Spotlight settings link": {
