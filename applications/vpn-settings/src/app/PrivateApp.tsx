@@ -10,7 +10,7 @@ import {
     UserSettingsModel,
 } from '@proton/shared/lib/models';
 
-const getAppContainer = () => import('./MainContainer');
+const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './MainContainer');
 
 interface Props {
     onLogout: () => void;

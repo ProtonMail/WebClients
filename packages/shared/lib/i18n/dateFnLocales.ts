@@ -1,6 +1,11 @@
 import { DateFnsLocaleMap } from '../interfaces/Locale';
 
-const dateFnLocales = require.context('date-fns/locale', true, /^\.\/[a-z]{2}(-([A-Z]{2}))?\/index\.js$/, 'lazy');
+const dateFnLocales = import.meta.webpackContext!('date-fns/locale', {
+    recursive: true,
+    regExp: /^\.\/[a-z]{2}(-([A-Z]{2}))?\/index\.js$/,
+    mode: 'lazy',
+    chunkName: 'date-fns/[request]',
+});
 
 export default dateFnLocales.keys().reduce((acc: DateFnsLocaleMap, key: string) => {
     const end = key.lastIndexOf('/');

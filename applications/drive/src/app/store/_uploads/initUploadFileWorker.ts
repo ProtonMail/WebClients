@@ -39,7 +39,13 @@ export function initUploadFileWorker(
         });
 
         return new Promise<void>((resolve, reject) => {
-            const worker = new Worker(new URL('./worker/worker.ts', import.meta.url));
+            const worker = new Worker(
+                new URL(
+                    /* webpackChunkName: "drive-worker" */
+                    './worker/worker.ts',
+                    import.meta.url
+                )
+            );
             workerApi = new UploadWorkerController(worker, {
                 keysGenerated: (keys: FileKeys) => {
                     mimeTypePromise
