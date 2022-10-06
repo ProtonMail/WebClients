@@ -105,7 +105,7 @@ const Meter = ({
         {...rest}
     >
         <div
-            className={classnames(['meter-bar-thumb w-custom', `bg-${getMeterColor(value)}`, 'mrauto'])}
+            className={classnames(['meter-bar-thumb w-custom', `meter-bar-thumb--${getMeterColor(value)}`, 'mrauto'])}
             style={{ '--width-custom': `${Math.ceil((value / max) * 100)}%` }}
         >
             {!rest['aria-labelledby'] && <span className="sr-only">{label || `${value} / ${max}`}</span>}

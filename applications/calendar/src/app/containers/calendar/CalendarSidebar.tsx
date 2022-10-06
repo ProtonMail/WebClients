@@ -3,6 +3,7 @@ import React, { ReactNode, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import {
+    Button,
     DropdownMenu,
     DropdownMenuButton,
     FeatureCode,
@@ -174,7 +175,7 @@ const CalendarSidebar = ({
                 toggle={displayPersonalCalendars}
                 onToggle={() => setDisplayPersonalCalendars((prevState) => !prevState)}
                 right={
-                    <div className="flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap flex-align-items-center pr0-75">
                         {enabled ? (
                             <Spotlight
                                 show={shouldShowSubscribedCalendarsSpotlight}
@@ -231,7 +232,13 @@ const CalendarSidebar = ({
                                 </Tooltip>
                             </Spotlight>
                         ) : (
-                            <div className="navigation-link-header-group-control flex cursor-pointer">
+                            <Button
+                                shape="ghost"
+                                color="weak"
+                                size="medium"
+                                icon
+                                className="navigation-link-header-group-control"
+                            >
                                 <Tooltip title={addCalendarText}>
                                     <Icon
                                         onClick={() => handleCreatePersonalCalendar()}
@@ -240,12 +247,13 @@ const CalendarSidebar = ({
                                         alt={addCalendarText}
                                     />
                                 </Tooltip>
-                            </div>
+                            </Button>
                         )}
                         {headerButton}
                     </div>
                 }
                 text={c('Link').t`My calendars`}
+                testId="calendar-sidebar:my-calendars-button"
             />
             {displayPersonalCalendars && (
                 <CalendarSidebarListItems
@@ -280,6 +288,7 @@ const CalendarSidebar = ({
                     toggle={displayOtherCalendars}
                     onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
                     text={c('Link').t`Subscribed calendars`}
+                    testId="calendar-sidebar:subscribed-calendars-button"
                     headerRef={headerRef}
                 />
                 {displayOtherCalendars && (

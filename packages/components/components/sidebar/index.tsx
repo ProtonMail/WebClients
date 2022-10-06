@@ -13,6 +13,7 @@ export { default as SidebarListItemHeaderLink } from './SidebarListItemHeaderLin
 export { default as SidebarListItemContent } from './SidebarListItemContent';
 export { default as SidebarListItemContentIcon } from './SidebarListItemContentIcon';
 export { default as SidebarListItemDiv } from './SidebarListItemDiv';
+export { default as SidebarListItemLabel } from './SidebarListItemLabel';
 export { default as SidebarListItemLink } from './SidebarListItemLink';
 export { default as SidebarListItemButton } from './SidebarListItemButton';
 export { default as SidebarNav } from './SidebarNav';
