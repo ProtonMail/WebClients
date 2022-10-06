@@ -41,7 +41,6 @@ const SidebarFolders = ({
                 onToggle={handleToggleFolder}
                 expanded={Boolean(folder.Expanded)}
                 unreadCount={getUnreadCount(counterMap, folder)}
-                unreadWeak={true}
                 id={folder.ID}
                 onFocus={updateFocusItem}
                 treeMode={!onlyOneLevel}
