@@ -2725,9 +2725,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Nye e-mails fra ${ senderEmailAddress } vil ikke blive leveret og vil blive slettet permanent. ${ manageBlockedAddressesSettingsLink } i indstillinger."
-      ],
       "No folders": [
         "Ingen mapper"
       ],
@@ -4295,9 +4292,6 @@
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
       ],
-      "Content: ": [
-        "Indhold: "
-      ],
       "Continue with ${ planName }": [
         "Fortsæt med ${ planName }"
       ],
@@ -4363,9 +4357,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
-      ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Downloader besked ${ currentProgress } ud af ${ totalProgress }"
       ],
       "Draft": [
         "Kladde"
@@ -4930,9 +4921,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data, du har indtastet i kladden, kan ikke gemmes, hvis du forlader siden."
       ],
-      "The local database is being prepared": [
-        "Den lokale database er ved at blive klargjort"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
       ],
@@ -4963,9 +4951,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Denne handling vil downloade de seneste beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne mulighed."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -6189,9 +6174,6 @@
       "Outbox": [
         "Udbakke"
       ],
-      "paid plan": [
-        "betalt abonnement"
-      ],
       "Pay invoice": [
         "Betal faktura"
       ],
@@ -6590,9 +6572,6 @@
       ],
       "Password has been set successfully": [
         "Adgangskode er blevet ændret"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Afsender ${ senderEmail } blokeret"
       ]
     },
     "Oauth instructions": {
@@ -7989,6 +7968,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"

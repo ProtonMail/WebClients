@@ -793,6 +793,9 @@
       "Use a different payment method": [
         "改用另一個付款方法"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use recovery code": [
         "使用復原代碼"
       ],
@@ -3071,6 +3074,9 @@
     "Error message, recovery": {
       "sign in": [
         "登入"
+      ],
+      "There was a problem verifying your email address.": [
+        "驗證您的電郵位址時發生問題。"
       ]
     },
     "Error message, unsubscribe": {
@@ -3175,6 +3181,14 @@
       ],
       "Torrenting support (P2P)": [
         "Torrenting 支援 (P2P)"
+      ]
+    },
+    "fido2: Info": {
+      "Security key updated": [
+        "安全金鑰已被更新"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "使用實體 U2F 或 FIDO2 金鑰來確保您的身份"
       ]
     },
     "file size format": {
@@ -3929,6 +3943,9 @@
       ],
       "Add a recovery phone number": [
         "加入復原手機號碼"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "為您的帳戶增加一層保障。 其後在每次登入時，您將需使用 2FA 證明您的身份。"
       ],
       "Add image URL": [
         "加入圖像 URL"
@@ -5084,6 +5101,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "使用身份驗證應用程式生成基於時間的一次性密碼 (OTP) 來確保您的身份"
       ],
       "Verifying your payment": [
         "正在驗證您的付款"
@@ -7784,6 +7804,12 @@
       ],
       "Verify now": [
         "立刻驗證"
+      ],
+      "Verify recovery phone?": [
+        "驗證還原電話？"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"
       ]
     },
     "Remark about a key type option": {

@@ -4178,9 +4178,6 @@
       "Confirm phishing report": [
         "フィッシング報告の確認"
       ],
-      "Content: ": [
-        "コンテンツ: "
-      ],
       "Continue with ${ planName }": [
         "${ planName } で続行"
       ],
@@ -6360,9 +6357,6 @@
       ],
       "Password has been set successfully": [
         "パスワードは正常に設定されました"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "送信者 ${ senderEmail } をブロックしました"
       ]
     },
     "Oauth instructions": {
@@ -7703,6 +7697,9 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
       ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"

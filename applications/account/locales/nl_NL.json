@@ -568,6 +568,9 @@
       "Remove this label": [
         "Label verwijderen"
       ],
+      "Remove this member": [
+        "Verwijder dit lid"
+      ],
       "Remove this notification": [
         "Deze melding verwijderen"
       ],
@@ -630,6 +633,9 @@
       ],
       "Revoke all other sessions": [
         "Alle andere sessies beëindigen"
+      ],
+      "Revoke this invitation": [
+        "Trek deze uitnodiging in"
       ],
       "Save": [
         "Opslaan"
@@ -1175,6 +1181,11 @@
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "U kunt ICS-bestanden importeren van een andere agenda naar ${ CALENDAR_APP_NAME }. Hiermee kunt u snel een afspraak of een volledige agenda importeren."
+      ]
+    },
+    "Calendar invite status label": {
+      "Invite sent": [
+        "Uitnodiging verzonden"
       ]
     },
     "Calendar limit warning": {
@@ -3522,6 +3533,11 @@
       ],
       "Torrenting support (P2P)": [
         "Ondersteuning voor Torrents (P2P)"
+      ]
+    },
+    "fido2: Info": {
+      "Security key updated": [
+        "Veiligheidssleutel bijgewerkt"
       ]
     },
     "file size format": {
@@ -7383,6 +7399,12 @@
         "U kunt maximaal ${ MAX_LINKS_PER_CALENDAR } koppelingen per agenda maken. Als u een nieuwe koppeling naar deze agenda wilt maken, verwijder een bestaande uit de onderstaande lijst."
       ]
     },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid bereikt.",
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden bereikt."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Verwijderen"
@@ -8291,6 +8313,10 @@
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
       ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Maak ${ numberOfPersonalCalendars } persoonlijke agenda",
+        "Maak tot ${ numberOfPersonalCalendars } persoonlijke agenda's"
+      ],
       "Everything in ${ vpnPlanName }": [
         "Alles van ${ vpnPlanName }"
       ],
@@ -8328,6 +8354,9 @@
       "Member added": [
         "Lid toegevoegd",
         "Leden toegevoegd"
+      ],
+      "Member deleted": [
+        "Lid verwijderd"
       ]
     },
     "Notification success": {
@@ -9048,6 +9077,11 @@
       ],
       "Labels": [
         "Labels"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden per agenda overschreden"
       ]
     },
     "Share calendar modal input placeholder": {
