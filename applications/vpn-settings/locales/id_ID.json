@@ -1573,7 +1573,7 @@
         "Gagal sambung ke API Bitcoin."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Jika saat di TV Anda kedaluwarsa, klik Segarkan pada TV Anda dan masukkan kode lagi."
+        "Apabila waktu yang tertera pada TV Anda telah habis, klik Muat Ulang pada TV Anda dan masukkan kode Anda kembali."
       ],
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
@@ -1748,11 +1748,31 @@
       ],
       "Security key": [
         "Kunci keamanan"
+      ],
+      "Security key removed": [
+        "Kunci keamanan dihapus"
       ]
     },
     "fido2: Label": {
       "Security key": [
         "Kunci keamanan"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Hapus kunci keamanan?"
+      ],
+      "Disable 2FA via security key?": [
+        "Hapus 2FA via kunci keamanan?"
+      ],
+      "Name your security key": [
+        "Beri nama kunci keamanan Anda"
+      ],
+      "Register your security key": [
+        "Daftarkan kunci keamanan Anda"
+      ],
+      "Registered security keys": [
+        "Kunci keamanan yang terdaftar"
       ]
     },
     "file size format": {
@@ -1899,6 +1919,9 @@
       ],
       "add a recovery method": [
         "tambah metode pemulihan"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Berikan akun Anda lapisan keamanan tambahan. Anda akan perlu untuk memverifikasi diri Anda dengan 2FA setiap kali Anda masuk."
       ],
       "Additional options": [
         "Pengaturan tambahan"
@@ -2133,6 +2156,9 @@
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru membaca data pribadi Anda untuk disampaikan kepada para pengiklan, lembaga pemerintahan Rusia, dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
+      ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
@@ -2379,6 +2405,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifikasi akan membuka tab baru, mohon menonaktifkan pemblokir popup. Anda tidak akan dikenakan biaya. Berapapun jumlah yang digunakan untuk verifikasi akan segera dikembalikan."
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi otentikator"
       ],
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
@@ -2778,7 +2807,7 @@
         "Masukkan nama organisasi untuk dapat melanjutkan"
       ],
       "Enter the code displayed on your TV": [
-        "Masukkan kode yang ditampilkan di TV Anda"
+        "Masukkan kode yang tertera pada TV Anda"
       ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
@@ -3691,6 +3720,9 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
+      ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Buat hingga ${ numberOfPersonalCalendars } kalender personal"
       ],
       "Everything in ${ vpnPlanName }": [
         "Segalanya di ${ vpnPlanName }"

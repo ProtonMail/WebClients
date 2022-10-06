@@ -989,6 +989,9 @@
       "Use ${ label } theme": [
         "使用 ${ label } 佈景主題"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use for sending": [
         "用於寄送"
       ],
@@ -4199,9 +4202,6 @@
       "Confirm phishing report": [
         "確認網路釣魚報告"
       ],
-      "Content: ": [
-        "內容包括: "
-      ],
       "Continue with ${ planName }": [
         "繼續使用 ${ planName }"
       ],
@@ -4264,9 +4264,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
-      ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "正在下載 ${ totalProgress } 則訊息中的 ${ currentProgress } 則"
       ],
       "Draft": [
         "草稿"
@@ -4583,9 +4580,6 @@
       "No results found": [
         "找不到相符的結果"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "在過去 30 天裡的訊息找不到您要的資料，請試著在全部收件匣中進行搜尋"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
       ],
@@ -4822,9 +4816,6 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "若您離開此頁面，您在草稿中輸入的資料將不作儲存。"
-      ],
-      "The local database is being prepared": [
-        "本地端的資料庫正在準備中"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在嘗試轉寄/回覆的原始郵件仍有待傳送。若您繼續，您將自此刻起無法再取消傳送原始郵件。"
@@ -7761,6 +7752,9 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
       ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"

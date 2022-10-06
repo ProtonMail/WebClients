@@ -2860,9 +2860,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Mesajele noi de la ${ senderEmailAddress } nu vor fi livrate și vor fi șterse permanent. ${ manageBlockedAddressesSettingsLink } în setări."
-      ],
       "No folders": [
         "Nu sunt foldere."
       ],
@@ -3025,9 +3022,6 @@
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
-      ],
-      "A problem occurred, please try again.": [
-        "A apărut o eroare. Mai reîncercați."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -3212,9 +3206,6 @@
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
-      "Please activate your search again": [
-        "Reactivați căutarea."
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
@@ -3297,9 +3288,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Ceva nu a funcționat bine. Mai încercați."
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Proton nu poate decripta mesajul. Verificați dacă toate cheile sunt active."
       ],
@@ -3334,9 +3322,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "A apărut o problemă la căutarea în conținut. S-a folosit căutarea implicită."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "A apărut o problemă la actualizarea mesajelor locale. Vor fi redescărcate pentru activarea căutarea conținutului."
       ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
@@ -4614,9 +4599,6 @@
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
       ],
-      "Content: ": [
-        "Conținut: "
-      ],
       "Continue with ${ planName }": [
         "Continuare cu ${ planName }"
       ],
@@ -4686,9 +4668,6 @@
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Se descarcă mesajul ${ currentProgress } din ${ totalProgress }"
-      ],
       "Draft": [
         "Ciornă"
       ],
@@ -4746,9 +4725,6 @@
       ],
       "Encrypt message": [
         "Criptare mesaj"
-      ],
-      "End of search results from past 30 days": [
-        "Sfârșit rezultate căutare din ultimele 30 de zile"
       ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
@@ -5030,9 +5006,6 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Niciun rezultat găsit în ultimele 30 de zile. Căutarea continuă în restul mesajelor primite."
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nu s-au găsit urmăritori, dar unele imagini nu au putut fi încărcare cu protecția la urmărire activă."
       ],
@@ -5176,9 +5149,6 @@
       "Scheduling message...": [
         "Se programează mesajul..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Căutare conținut complet în mesaje vechi cu un ${ paidPlansButton }."
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
@@ -5281,9 +5251,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Datele pe care le-ați introdus în ciornă nu pot fi salvate dacă părăsiți pagina."
       ],
-      "The local database is being prepared": [
-        "Se pregătește baza de date locală."
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Mesajul original pe care încercați să-l redirecționați / să-i răspundeți este în curs de a fi trimis. Dacă continuați, nu veți mai putea anula trimiterea mesajului original."
       ],
@@ -5315,9 +5282,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Această acțiune va descărca cele mai recente mesaje pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
@@ -5451,9 +5415,6 @@
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Se actualizează mesajele locale, conținutul mesajelor nu vor fi căutate în timpul acestei actualizări."
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceţi la un plan superior pentru a adăuga mai multe adrese în contul personal."
@@ -6569,9 +6530,6 @@
       "Outbox": [
         "De trimis"
       ],
-      "paid plan": [
-        "plan cu plată"
-      ],
       "Pay invoice": [
         "Plată factură"
       ],
@@ -6985,9 +6943,6 @@
       ],
       "Password has been set successfully": [
         "Parola a fost setată cu succes."
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Expeditorul ${ senderEmail } a fost blocat."
       ]
     },
     "Oauth instructions": {
@@ -8428,9 +8383,6 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Pentru mesaje mai vechi de 30 de zile, căutarea se va face numai în câmpurile subiect și destinatar."
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
@@ -8442,6 +8394,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
       ],
       "This feature is only available for paid users": [
         "Această opțiune este valabilă doar pentru utilizatorii cu plată."

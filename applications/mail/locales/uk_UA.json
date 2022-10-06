@@ -2855,9 +2855,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Нові електронні листи від ${ senderEmailAddress } не доставлятимуться та будуть назавжди видалені. ${ manageBlockedAddressesSettingsLink } у налаштуваннях."
-      ],
       "No folders": [
         "Немає тек"
       ],
@@ -3022,9 +3019,6 @@
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
-      ],
-      "A problem occurred, please try again.": [
-        "Виникла проблема, повторіть спробу."
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -3215,9 +3209,6 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your search again": [
-        "Активуйте пошук знову"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -3302,9 +3293,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Сталася помилка, повторіть спробу"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але Proton не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
       ],
@@ -3340,9 +3328,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Виникла проблема з оновленням ваших локальних повідомлень, вони будуть завантажені повторно, щоб повторно ввімкнути пошук вмісту"
       ],
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
@@ -4671,9 +4656,6 @@
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
       ],
-      "Content: ": [
-        "Вміст: "
-      ],
       "Continue with ${ planName }": [
         "Продовжити з ${ planName }"
       ],
@@ -4746,9 +4728,6 @@
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Завантаження повідомлення ${ currentProgress } з ${ totalProgress }"
-      ],
       "Draft": [
         "Чернетка"
       ],
@@ -4808,9 +4787,6 @@
       ],
       "Encrypt message": [
         "Зашифрувати повідомлення"
-      ],
-      "End of search results from past 30 days": [
-        "Кінець результатів пошуку за останні 30 днів"
       ],
       "Enter the code from your authenticator app": [
         "Введіть код з програми автентифікації"
@@ -5097,9 +5073,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Немає результатів пошуку за останні 30 днів. Пошук у решті теки «Вхідні»"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
@@ -5244,9 +5217,6 @@
       "Scheduling message...": [
         "Планування повідомлення..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Пошук усього вмісту старих повідомлень за допомогою ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук триває надто довго? ${ dropdownButton } або ${ toggleOffButton } з цього пошукового сеансу."
       ],
@@ -5349,9 +5319,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Введені в чернетку дані можуть не зберегтися, якщо ви покинете сторінку."
       ],
-      "The local database is being prepared": [
-        "Готується локальна база даних"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Оригінальне повідомлення, яке ви намагаєтеся переслати / відповісти, знаходиться в процесі надсилання. Якщо ви продовжите, ви не зможете скасувати надсилання оригінального повідомлення."
       ],
@@ -5384,9 +5351,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ця дія завантажить найновіші повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -5522,9 +5486,6 @@
       ],
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Оновлення локальних повідомлень, вміст повідомлень не шукатиметься під час цього оновлення"
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
@@ -6651,9 +6612,6 @@
       "Outbox": [
         "Вихідні"
       ],
-      "paid plan": [
-        "платний тарифний план"
-      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
@@ -7074,9 +7032,6 @@
       ],
       "Password has been set successfully": [
         "Пароль успішно встановлено"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Відправника ${ senderEmail } заблоковано"
       ]
     },
     "Oauth instructions": {
@@ -8560,9 +8515,6 @@
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Для повідомлень давніших за 30 днів, пошук виконується лише за темою або списком отримувачів"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
@@ -8574,6 +8526,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"

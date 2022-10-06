@@ -2852,7 +2852,7 @@
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Le nuove email da ${ senderEmailAddress } non verranno consegnate e verranno eliminate definitivamente. ${ manageBlockedAddressesSettingsLink } nelle impostazioni."
+        "Qualsiasi nuova email da ${ senderEmailAddress } non verrà consegnate, e verrà eliminata definitivamente. ${ manageBlockedAddressesSettingsLink } nelle impostazioni."
       ],
       "No folders": [
         "Nessuna cartella"
@@ -3015,8 +3015,8 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
-      "A problem occurred, please try again.": [
-        "Si è verificato un problema, riprova per favore."
+      "A problem occurred, please try again": [
+        "Si è verificato un problema, si prega di riprovare"
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -3195,8 +3195,8 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
-      "Please activate your search again": [
-        "Si prega di attivare nuovamente la ricerca"
+      "Please activate your content search again": [
+        "Si prega di attivare nuovamente la ricerca di contenuti"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -3278,9 +3278,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Qualcosa è andato storto. Per favore riprova"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Siamo spiacenti, Proton non può decifrare il messaggio. Si prega di controllare che tutte le chiavi siano attive."
       ],
@@ -3314,9 +3311,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Si è verificato un problema con la ricerca di contenuti. E' stata utilizzata la ricerca predefinita."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Si è verificato un problema durante l'aggiornamento dei messaggi locali, verranno scaricati di nuovo per riattivare la ricerca del contenuto"
       ],
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
@@ -4543,9 +4537,6 @@
       "Confirm phishing report": [
         "Conferma segnalazione di phishing"
       ],
-      "Content: ": [
-        "Contenuto: "
-      ],
       "Continue with ${ planName }": [
         "Continua con ${ planName }"
       ],
@@ -4612,8 +4603,8 @@
       "Don't forget to share the password with the recipient": [
         "Non dimenticare di condividere la tua password con il destinatario"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Scaricando il messaggio ${ currentProgress } di ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Scaricamento del messaggio ${ esProgress } di ${ totalProgressToShow }"
       ],
       "Draft": [
         "Bozza"
@@ -4670,9 +4661,6 @@
       ],
       "Encrypt message": [
         "Cifra messaggio"
-      ],
-      "End of search results from past 30 days": [
-        "Fine del risultato di ricerca degli ultimi 30 giorni"
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione"
@@ -4949,9 +4937,6 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Nessun risultato trovato negli ultimi 30 giorni. Ricercando nel resto della casella di posta"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nessun tracker trovato, tuttavia alcune immagini non possono essere caricate con la protezione dal tracking attivata"
       ],
@@ -5094,9 +5079,6 @@
       "Scheduling message...": [
         "Pianificando il messaggio..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Ricerca il contenuto completo dei messaggi più vecchi, con ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La ricerca sta impiegando troppo tempo? ${ dropdownButton } o ${ toggleOffButton } da questa sessione di ricerca."
       ],
@@ -5199,9 +5181,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
       ],
-      "The local database is being prepared": [
-        "Il database locale è in preparazione"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Il messaggio originale che stai cercando di inoltrare / rispondere è in procinto di essere inviato. Se continui, non sarà più possibile annullare l'invio del messaggio originale."
       ],
@@ -5232,9 +5211,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Quest'azione scaricherà i messaggi più recenti, così che possano essere ricercati in locale. La pulizia dei dati del tuo browser impedirà questa opzione."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
@@ -5366,9 +5342,6 @@
       ],
       "Updating message content search...": [
         "Aggiornando la ricerca del contenuto del messaggio..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Aggiornamento dei tuoi messaggi locali, il contenuto del messaggio non verrà cercato durante questo aggiornamento"
       ],
       "Upgrade to add more addresses to your account.": [
         "Aggiorna per aggiungere altri indirizzi al tuo profilo."
@@ -6473,9 +6446,6 @@
       "Outbox": [
         "In Uscita"
       ],
-      "paid plan": [
-        "piano a pagamento"
-      ],
       "Pay invoice": [
         "Pagamento della fattura"
       ],
@@ -6884,7 +6854,7 @@
         "La password è stata impostata con successo"
       ],
       "Sender ${ senderEmail } blocked": [
-        "Il mittente ${ senderEmail } è stato bloccato"
+        "Il mittente ${ senderEmail } è bloccato"
       ]
     },
     "Oauth instructions": {
@@ -8282,9 +8252,6 @@
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Per i messaggi più vecchi di 30 giorni, verranno cercati solo l'oggetto e l'elenco dei destinatari"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
@@ -8296,6 +8263,9 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
       ],
       "This feature is only available for paid users": [
         "Questa funzionalità è disponibile solo per utenti paganti"
