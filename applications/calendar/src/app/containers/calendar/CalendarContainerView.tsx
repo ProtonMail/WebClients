@@ -368,7 +368,12 @@ const CalendarContainerView = ({
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { show, onDisplayed } = useSpotlightOnFeature(
         FeatureCode.SpotlightAutoAddedInvites,
-        !isWelcomeFlow && !isNarrow
+        !isWelcomeFlow && !isNarrow,
+        {
+            alpha: Date.UTC(2021, 7, 24, 12),
+            beta: Date.UTC(2021, 7, 24, 12),
+            default: Date.UTC(2022, 7, 24, 10),
+        }
     );
     const shouldShowSpotlight = useSpotlightShow(show);
     const goToSettingsLink = (

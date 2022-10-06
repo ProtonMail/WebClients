@@ -1,4 +1,4 @@
-import { Environment } from '@proton/components/hooks/useEarlyAccess';
+import { Environment } from '@proton/shared/lib/environment/helper';
 
 import { User as tsUser } from '../interfaces';
 import { ThemeTypes } from '../themes/themes';
