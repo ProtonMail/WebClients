@@ -53,3 +53,7 @@ jest.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
 
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
+
+jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
+    __esModule: true,
+}));
