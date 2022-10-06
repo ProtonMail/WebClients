@@ -41,7 +41,7 @@ const EmailPrivacySection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="remoteToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
+                        <span className="mr0-5">{c('Label').t`Auto show remote images`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/images-by-default')}
                             title={c('Info')
