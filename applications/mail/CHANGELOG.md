@@ -1,3 +1,14 @@
+## Release 5.0.10.0 — October 19, 2022
+
+### Improvements
+
+-   Added the ability to block a sender
+-   Added the ability to hide/show system folder in the More section of the sidebar
+
+### Bug fixes
+
+-   Fixed an issue in which labels in compact view were not aligned with the subject of the email
+
 ## Release 5.0.9 - October 6, 2022
 
 ### Improvements
