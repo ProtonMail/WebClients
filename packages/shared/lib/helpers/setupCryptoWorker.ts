@@ -21,7 +21,9 @@ const init = async (options?: Parameters<WorkerPoolInterface['init']>[0]) => {
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
         // dynamic import needed to avoid loading openpgp into the main thread, unless we get here
-        const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
+        const { Api: CryptoApi } = await import(
+            /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
+        );
         CryptoApi.init();
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     } else {
