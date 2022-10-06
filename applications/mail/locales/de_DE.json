@@ -2820,9 +2820,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Neue E-Mails von ${ senderEmailAddress } werden nicht zugestellt und permanent gelöscht. ${ manageBlockedAddressesSettingsLink } in den Einstellungen."
-      ],
       "No folders": [
         "Keine Ordner"
       ],
@@ -2983,9 +2980,6 @@
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
-      ],
-      "A problem occurred, please try again.": [
-        "Es ist ein Problem aufgetreten, bitte versuche es erneut."
       ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
@@ -3164,9 +3158,6 @@
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
-      "Please activate your search again": [
-        "Bitte die Suche erneut aktivieren"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
@@ -3247,9 +3238,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Etwas ist schief gelaufen. Bitte versuche es erneut"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Leider konnte Proton deine Nachricht nicht entschlüsseln. Bitte prüfe, ob alle deine Schlüssel aktiv sind."
       ],
@@ -3283,9 +3271,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Es ist ein Problem mit der Inhalts-Suche aufgetreten. Stattdessen wurde die Standardsuche verwendet."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Es gab ein Problem bei der Aktualisierung deiner lokalen Nachrichten. Sie werden erneut heruntergeladen, um die Inhaltssuche wieder zu aktivieren."
       ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
@@ -4512,9 +4497,6 @@
       "Confirm phishing report": [
         "Phishing-Bericht bestätigen"
       ],
-      "Content: ": [
-        "Inhalt: "
-      ],
       "Continue with ${ planName }": [
         "Fahre mit ${ planName } fort"
       ],
@@ -4581,9 +4563,6 @@
       "Don't forget to share the password with the recipient": [
         "Vergiss nicht, dem Empfänger das Passwort mitzuteilen"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Nachricht ${ currentProgress } von ${ totalProgress } wird heruntergeladen"
-      ],
       "Draft": [
         "Entwurf"
       ],
@@ -4639,9 +4618,6 @@
       ],
       "Encrypt message": [
         "Nachricht verschlüsseln"
-      ],
-      "End of search results from past 30 days": [
-        "Ende der Suchergebnisse der letzten 30 Tage"
       ],
       "Enter the code from your authenticator app": [
         "Code aus der Authenticator App eingeben"
@@ -4918,9 +4894,6 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Es gibt keine Suchergebnisse aus den letzten 30 Tagen. Suche im Rest deines Posteingangs läuft"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Keine Tracker gefunden, aber einige Bilder konnten nicht mit Tracking-Schutz geladen werden"
       ],
@@ -5063,9 +5036,6 @@
       "Scheduling message...": [
         "Nachricht wird geplant …"
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Volltextsuche in älteren Nachrichten ist verfügbar mit einem ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Die Suche dauert zu lange? ${ dropdownButton } oder ${ toggleOffButton } diesem Suchlauf aus."
       ],
@@ -5168,9 +5138,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn du die Seite verlässt."
       ],
-      "The local database is being prepared": [
-        "Die lokale Datenbank wird vorbereitet"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchtest, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr widerrufen werden."
       ],
@@ -5201,9 +5168,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Mit dieser Aktion werden die neuesten Nachrichten heruntergeladen, damit diese lokal durchsucht werden können. Durch das Löschen der Browserdaten wird diese Option deaktiviert."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -6439,9 +6403,6 @@
       "Outbox": [
         "Postausgang"
       ],
-      "paid plan": [
-        "kostenpflichtiges Abonnement"
-      ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
@@ -6848,9 +6809,6 @@
       ],
       "Password has been set successfully": [
         "Das Passwort wurde erfolgreich festgelegt"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Absender ${ senderEmail } gesperrt"
       ]
     },
     "Oauth instructions": {
@@ -8248,9 +8206,6 @@
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Bei Nachrichten, die älter als 30 Tage sind, werden nur die Betreffzeile und die Empfängerliste durchsucht"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
@@ -8262,6 +8217,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
       ],
       "This feature is only available for paid users": [
         "Diese Funktion ist nur für zahlende Benutzer verfügbar"
@@ -8406,7 +8364,7 @@
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Wöchentlich an allen Tagen, ${ untilString }",
-        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
+        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Alle ${ interval } Wochen am Freitag",

@@ -2830,9 +2830,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puedes cerrar esta ventana."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Los correos nuevos de ${ senderEmailAddress } no serán entregados y serán eliminados de forma permanente. ${ manageBlockedAddressesSettingsLink } en ajustes."
-      ],
       "No folders": [
         "No hay directorios"
       ],
@@ -4482,9 +4479,6 @@
       ],
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
-      ],
-      "Content: ": [
-        "Contenido: "
       ],
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
@@ -6766,9 +6760,6 @@
       ],
       "Password has been set successfully": [
         "La contraseña ha sido cambiada con éxito"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "Remitente ${ senderEmail } bloqueado"
       ]
     },
     "Oauth instructions": {
@@ -8168,6 +8159,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Limpiar los datos de su navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"

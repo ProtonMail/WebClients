@@ -3037,8 +3037,8 @@
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
-      "A problem occurred, please try again.": [
-        "Wystąpił problem. Spróbuj ponownie."
+      "A problem occurred, please try again": [
+        "Wystąpił problem. Spróbuj ponownie"
       ],
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
@@ -3229,8 +3229,8 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
-      "Please activate your search again": [
-        "Włącz ponownie wyszukiwanie"
+      "Please activate your content search again": [
+        "Włącz ponownie wyszukiwanie zawartości"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Popraw zaznaczony konflikt, aby kontynuować.",
@@ -3316,9 +3316,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Coś poszło nie tak. Spróbuj ponownie później"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Proton nie może odszyfrować wiadomości. Sprawdź, czy wszystkie klucze są aktywne."
       ],
@@ -3354,9 +3351,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Wystąpił problem z wyszukiwaniem zawartości. Zamiast tego używasz domyślnej wyszukiwarki."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Wystąpił problem podczas aktualizowania lokalnych wiadomości. Wiadomości zostaną ponownie pobrane"
       ],
       "There was an error when exporting the contacts vCards": [
         "Wystąpił błąd podczas eksportowania kontaktów do plików vCard"
@@ -4685,9 +4679,6 @@
       "Confirm phishing report": [
         "Potwierdź próbę wyłudzenia informacji"
       ],
-      "Content: ": [
-        "Zawartość: "
-      ],
       "Continue with ${ planName }": [
         "Kontynuuj z planem ${ planName }"
       ],
@@ -4760,8 +4751,8 @@
       "Don't forget to share the password with the recipient": [
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Pobieranie wiadomości (${ currentProgress }/${ totalProgress })"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Pobieranie wiadomości (${ esProgress }/${ totalProgressToShow })"
       ],
       "Draft": [
         "Szkic"
@@ -4822,9 +4813,6 @@
       ],
       "Encrypt message": [
         "Zaszyfruj wiadomość"
-      ],
-      "End of search results from past 30 days": [
-        "Koniec wyników z ostatnich 30 dni"
       ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
@@ -5111,9 +5099,6 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Nie znaleziono żadnych wyników z ostatnich 30 dni. Trwa przeszukiwanie pozostałych wiadomości"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Brak elementów śledzących, ale niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
       ],
@@ -5255,9 +5240,6 @@
       "Scheduling message...": [
         "Planowanie wiadomości..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Wyszukiwanie pełnej zawartości starszych wiadomości dostępne jest w ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Wyszukiwanie trwa zbyt długo? ${ dropdownButton } lub ${ toggleOffButton }."
       ],
@@ -5360,9 +5342,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Jeśli opuścisz stronę, dane wpisane w szkicu mogą nie zostać zapisane."
       ],
-      "The local database is being prepared": [
-        "Lokalna baza danych jest przygotowywana"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Oryginalna wiadomość, którą chcesz przekazać dalej lub na nią odpowiedzieć jest w trakcie wysyłania. Jeśli to zrobisz, nie będziesz mógł anulować wysyłania tej wiadomości."
       ],
@@ -5395,9 +5374,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ta akcja spowoduje pobranie wszystkich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ta akcja spowoduje pobranie ostatnich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
@@ -5533,9 +5509,6 @@
       ],
       "Updating message content search...": [
         "Aktualizacja wyszukiwania zawartości wiadomości..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Trwa aktualizowanie lokalnych wiadomości. Zawartość wiadomości nie będzie w tym czasie przeszukiwana"
       ],
       "Upgrade to add more addresses to your account.": [
         "Ulepsz konto, aby dodać więcej adresów."
@@ -6661,9 +6634,6 @@
       ],
       "Outbox": [
         "Skrzynka nadawcza"
-      ],
-      "paid plan": [
-        "płatnym planie"
       ],
       "Pay invoice": [
         "Zapłać fakturę"
@@ -8571,9 +8541,6 @@
       "Encrypted data with verified digital signature": [
         "Zaszyfrowane dane ze zweryfikowanym podpisem cyfrowym"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "W przypadku wiadomości starszych niż 30 dni przeszukiwany jest tylko temat i lista odbiorców"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automatycznie dodaje kategorie (jak Społeczności lub Oferty) do niektórych wiadomości. Wybierz, gdzie zaimportować te wiadomości."
       ],
@@ -8585,6 +8552,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Proces importowania rozpocznie się od najnowszych wiadomości."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ta akcja spowoduje pobranie wszystkich wiadomości do wyszukiwania lokalnego. Wyczyszczenie pamięci podręcznej przeglądarki wyłączy tę opcję."
       ],
       "This feature is only available for paid users": [
         "Ta funkcja jest dostępna tylko dla użytkowników płatnego planu"
