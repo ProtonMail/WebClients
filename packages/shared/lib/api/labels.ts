@@ -1,6 +1,6 @@
 import { LABEL_TYPE } from '../constants';
 
-const { MESSAGE_LABEL, MESSAGE_FOLDER, CONTACT_GROUP } = LABEL_TYPE;
+const { MESSAGE_LABEL, MESSAGE_FOLDER, CONTACT_GROUP, SYSTEM_FOLDER } = LABEL_TYPE;
 
 export const get = (Type: number) => ({
     url: 'v4/labels',
@@ -38,20 +38,22 @@ export const create = ({ Name, Color, Type, Notify, ParentID, Expanded }: Create
     data: { Name, Color, Type, Notify, ParentID, Expanded },
 });
 
+interface UpdateLabelArguments {
+    Name: string;
+    Color: string;
+    Notify?: number;
+    ParentID?: string | number;
+    Sticky?: number;
+    Expanded?: number;
+    Display?: number;
+}
 export const updateLabel = (
     labelID: string,
-    {
-        Name,
-        Color,
-        Notify,
-        ParentID,
-        Sticky,
-        Expanded,
-    }: { Name: string; Color: string; Notify?: number; ParentID?: string | number; Sticky?: number; Expanded?: number }
+    { Name, Color, Notify, ParentID, Sticky, Expanded, Display }: UpdateLabelArguments
 ) => ({
     method: 'put',
     url: `v4/labels/${labelID}`,
-    data: { Name, Color, Notify, ParentID, Sticky, Expanded },
+    data: { Name, Color, Notify, ParentID, Sticky, Expanded, Display },
 });
 
 export const deleteLabel = (labelID: string) => ({
@@ -73,11 +75,17 @@ export const checkLabelAvailability = (params: { Name: string; Type: LABEL_TYPE;
 
 export const getLabels = () => get(MESSAGE_LABEL);
 export const getFolders = () => get(MESSAGE_FOLDER);
+export const getSystemFolders = () => get(SYSTEM_FOLDER);
 export const getContactGroup = () => get(CONTACT_GROUP);
 
 export const orderFolders = (opt: PartialLabelOrderArgument) => order({ ...opt, Type: MESSAGE_FOLDER });
 export const orderLabels = (opt: PartialLabelOrderArgument) => order({ ...opt, Type: MESSAGE_LABEL });
+export const orderSystemFolders = (opt: Pick<PartialLabelOrderArgument, 'LabelIDs'>) =>
+    order({ ...opt, ParentID: undefined, Type: SYSTEM_FOLDER });
 export const orderContactGroup = (opt: PartialLabelOrderArgument) => order({ ...opt, Type: CONTACT_GROUP });
 
 export const createLabel = (opt: PartialCreateLabelArgument) => create({ ...opt, Type: MESSAGE_LABEL });
 export const createContactGroup = (opt: PartialCreateLabelArgument) => create({ ...opt, Type: CONTACT_GROUP });
+
+export const updateSystemFolders = (labelId: string, opt: Pick<UpdateLabelArguments, 'Color' | 'Name' | 'Display'>) =>
+    updateLabel(labelId, { ...opt });

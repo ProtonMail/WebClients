@@ -7,10 +7,8 @@ import {
     MainLogo,
     Sidebar,
     SidebarNav,
-    SidebarPrimaryButton,
     Spotlight,
     Tooltip,
-    useMailSettings,
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
@@ -24,6 +22,7 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/checklists';
 import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal';
 import MailSidebarList from './MailSidebarList';
+import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 import SidebarVersion from './SidebarVersion';
 
 interface Props {
@@ -41,7 +40,6 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const [mailGetStartedChecklistModalOpen, setMailGetStartedChecklistModalOpen] = useState(false);
     const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
@@ -50,26 +48,6 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
         setMailGetStartedChecklistModalOpen(true);
     };
 
-    const titlePrimaryButton = Shortcuts ? (
-        <>
-            {c('Title').t`New message`}
-            <br />
-            <kbd className="border-none">N</kbd>
-        </>
-    ) : null;
-
-    const sideBarPrimaryButton = Shortcuts ? (
-        <Tooltip title={titlePrimaryButton} originalPlacement="top">
-            <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
-                {c('Action').t`New message`}
-            </SidebarPrimaryButton>
-        </Tooltip>
-    ) : (
-        <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
-            {c('Action').t`New message`}
-        </SidebarPrimaryButton>
-    );
-
     const shouldShowSpotlight = useSpotlightShow(getStartedChecklistDismissed && show);
 
     return (
@@ -77,7 +55,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
             <Sidebar
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
-                primary={sideBarPrimaryButton}
+                primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
                 logo={<MainLogo to="/inbox" />}
                 version={<SidebarVersion />}
                 storageGift={
