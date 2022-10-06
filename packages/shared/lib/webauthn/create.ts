@@ -51,13 +51,7 @@ export const getCreatePayload = async (
         AttestationObject: response.attestationObject
             ? encodeBase64(arrayToBinaryString(new Uint8Array(response.attestationObject)))
             : null!,
-        Transports:
-            response.getTransports?.().map((value) => {
-                if (value === 'usb') {
-                    return 'USB';
-                }
-                return value;
-            }) || [],
+        Transports: response.getTransports?.() || [],
         Name: '',
     };
 };
