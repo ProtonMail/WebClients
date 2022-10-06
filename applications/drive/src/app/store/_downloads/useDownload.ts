@@ -42,7 +42,7 @@ export default function useDownload() {
         shareId: string,
         linkId: string,
         pagination: Pagination
-    ): Promise<DriveFileBlock[]> => {
+    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }> => {
         let link = await getLink(abortSignal, shareId, linkId);
         const revisionId = link.activeRevision?.id;
         if (!revisionId) {
@@ -53,7 +53,11 @@ export default function useDownload() {
             queryFileRevision(shareId, linkId, revisionId, pagination),
             abortSignal
         );
-        return Revision.Blocks;
+        return {
+            blocks: Revision.Blocks,
+            thumbnailHash: Revision.ThumbnailHash,
+            manifestSignature: Revision.ManifestSignature,
+        };
     };
 
     const getKeysWithSignatures = async (
@@ -171,6 +175,13 @@ export default function useDownload() {
                     onError: reject,
                     onNetworkError: reject,
                     onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                        // Ignore manifest as that needs to download the whole file.
+                        if (signatureIssues.manifest) {
+                            delete signatureIssues.manifest;
+                            if (Object.entries(signatureIssues).length === 0) {
+                                return;
+                            }
+                        }
                         await setSignatureIssues(abortSignal, shareId, linkId, signatureIssues);
                         resolve(signatureIssues);
                     },

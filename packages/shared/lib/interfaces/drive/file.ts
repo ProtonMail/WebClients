@@ -68,12 +68,11 @@ export interface DriveFileRevision {
     ID: string;
     CreateTime: number;
     Size: number;
-    Hash: string;
     State: number;
-    RootHash: string;
-    RootHashSignature: string;
+    ManifestSignature: string;
     SignatureAddress: string;
     Blocks: DriveFileBlock[];
+    ThumbnailHash: string;
 }
 
 export interface DriveFileRevisionResult {
