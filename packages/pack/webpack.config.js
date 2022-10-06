@@ -63,7 +63,7 @@ const getConfig = (env) => {
             filename: options.isProduction ? '[name].[contenthash:8].js' : '[name].js',
             publicPath: options.publicPath,
             chunkFilename: options.isProduction ? '[name].[contenthash:8].chunk.js' : '[name].chunk.js',
-            assetModuleFilename: 'assets/[hash][ext][query]',
+            assetModuleFilename: 'assets/[name].[hash][ext][query]',
             crossOriginLoading: 'anonymous',
         },
         cache: {
