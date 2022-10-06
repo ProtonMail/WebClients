@@ -158,7 +158,7 @@ const SidebarItem = ({
                     right={
                         <LocationAside
                             unreadCount={unreadCount}
-                            weak={labelID === MAILBOX_LABEL_IDS.INBOX}
+                            weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
                             active={active}
                             refreshing={refreshing}
                         />
