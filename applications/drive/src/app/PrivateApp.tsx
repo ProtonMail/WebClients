@@ -14,7 +14,7 @@ import {
 import UserSettingsProvider from './components/sections/UserSettingsProvider';
 import { SettingsProvider, useUserSettings } from './store';
 
-const getAppContainer = () => import('./containers/MainContainer');
+const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer');
 
 interface Props {
     onLogout: () => void;

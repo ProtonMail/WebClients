@@ -40,10 +40,19 @@ import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch from './SettingsSearch';
 import { getRoutes } from './routes';
 
-const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
-const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
-const VpnSettingsRouter = lazy(() => import('../containers/vpn/VpnSettingsRouter'));
-const DriveSettingsRouter = lazy(() => import('../containers/drive/DriveSettingsRouter'));
+const MailSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/MailSettingsRouter" */ '../containers/mail/MailSettingsRouter')
+);
+const CalendarSettingsRouter = lazy(
+    () =>
+        import(/* webpackChunkName: "routers/CalendarSettingsRouter" */ '../containers/calendar/CalendarSettingsRouter')
+);
+const VpnSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/VpnSettingsRouter" */ '../containers/vpn/VpnSettingsRouter')
+);
+const DriveSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/DriveSettingsRouter" */ '../containers/drive/DriveSettingsRouter')
+);
 
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
