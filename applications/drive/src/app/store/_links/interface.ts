@@ -83,7 +83,8 @@ export type SignatureIssueLocation =
     | 'xattrs'
     | 'contentKeyPacket'
     | 'blocks'
-    | 'thumbnail';
+    | 'thumbnail'
+    | 'manifest';
 
 export interface EncryptedLink extends Link {
     nodeKey: string;
