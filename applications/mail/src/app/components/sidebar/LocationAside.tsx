@@ -8,13 +8,14 @@ import './RefreshRotation.scss';
 interface Props {
     unreadCount?: number;
     active?: boolean;
+    weak?: boolean;
     refreshing?: boolean;
 }
 
 const { GROUP } = VIEW_MODE;
 const UNREAD_LIMIT = 9999;
 
-const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: Props) => {
+const LocationAside = ({ unreadCount = 0, active = false, refreshing = false, weak = false }: Props) => {
     const [mailSettings] = useMailSettings();
 
     const getUnreadTitle = () => {
@@ -32,15 +33,22 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
         <>
             {active && (
                 <Icon
-                    className={classnames([unreadCount > 0 && 'mr0-5', refreshing && 'location-refresh-rotate'])}
+                    className={classnames([
+                        unreadCount > 0 ? 'mr0-5' : 'mr0-15',
+                        refreshing && 'location-refresh-rotate',
+                    ])}
                     name="arrow-rotate-right"
                     data-testid="navigation-link:refresh-folder"
                 />
             )}
             {unreadCount > 0 ? (
                 <span
-                    className="navigation-counter-item flex-item-noshrink"
+                    className={classnames([
+                        'navigation-counter-item flex-item-noshrink',
+                        weak && 'navigation-counter-item--weak',
+                    ])}
                     title={getUnreadTitle()}
+                    aria-label={getUnreadTitle()}
                     data-testid="navigation-link:unread-count"
                 >
                     {unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount}

@@ -155,7 +155,14 @@ const SidebarItem = ({
             >
                 <SidebarListItemContent
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
-                    right={<LocationAside unreadCount={unreadCount} active={active} refreshing={refreshing} />}
+                    right={
+                        <LocationAside
+                            unreadCount={unreadCount}
+                            weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
+                            active={active}
+                            refreshing={refreshing}
+                        />
+                    }
                 >
                     <span className="text-ellipsis">{content}</span>
                     {totalMessagesCounter}

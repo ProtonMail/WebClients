@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { addMonths, endOfMonth, isSameMonth, startOfMonth } from 'date-fns';
+import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 
@@ -128,6 +129,7 @@ const MiniCalendar = ({
 
     return (
         <div className="minicalendar" onMouseDown={handleMouseDown} aria-label={monthLabel}>
+            <h2 className="sr-only">{c('Title').t`Minicalendar`}</h2>
             <div className="flex flex-align-items-center flex-nowrap p1">
                 <span className="text-bold flex-item-fluid text-ellipsis">{monthLabel}</span>
 
