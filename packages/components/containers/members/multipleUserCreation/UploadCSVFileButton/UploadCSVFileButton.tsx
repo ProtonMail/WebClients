@@ -6,9 +6,9 @@ import { useModals, useNotifications } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonProps, FileInput, InlineLinkButton } from '../../../../components';
+import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';
 import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';
-import { downloadSampleCSV, parseMultiUserCsv } from '../lib';
 import { UserTemplate } from '../types';
 import CsvFormatErrorModal from './CsvFormatErrorModal';
 
