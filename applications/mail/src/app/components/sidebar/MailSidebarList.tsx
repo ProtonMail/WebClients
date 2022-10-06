@@ -247,6 +247,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     showScheduled={showScheduled}
                     onToggleMoreItems={toggleDisplayMoreItems}
                 />
+                <hr aria-hidden="true" className="my0-25" />
                 <SimpleSidebarListItemHeader
                     toggle={displayFolders}
                     onToggle={(display: boolean) => toggleFolders(display)}
