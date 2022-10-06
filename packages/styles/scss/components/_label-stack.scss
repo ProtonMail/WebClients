@@ -70,7 +70,6 @@
 
 		& > * {
 			display: block;
-			padding-block: 0.125em;
 			padding-inline: 0.25em 0.375em;
 			color: var(--text-norm);
 		}
@@ -82,7 +81,7 @@
 
 	&.is-stacked {
 		overflow: hidden;
-		align-items: baseline;
+		align-items: center;
 		flex-wrap: nowrap;
 
 		.label-stack-item {
