@@ -247,6 +247,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     showScheduled={showScheduled}
                     onToggleMoreItems={toggleDisplayMoreItems}
                 />
+                <hr aria-hidden="true" className="my0-25" />
                 <SimpleSidebarListItemHeader
                     toggle={displayFolders}
                     onToggle={(display: boolean) => toggleFolders(display)}
@@ -255,28 +256,26 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="toggle-folders"
                     onFocus={setFocusedItem}
                     right={
-                        displayFolders ? (
-                            <div className="flex flex-align-items-center">
-                                <button
-                                    type="button"
-                                    className="flex navigation-link-header-group-control flex-item-noshrink"
-                                    onClick={() => handleOpenLabelModal('folder')}
-                                    title={c('Action').t`Create a new folder`}
-                                    data-testid="navigation-link:add-folder"
-                                >
-                                    <Icon name="plus" alt={c('Action').t`Create a new folder`} />
-                                </button>
-                                <SidebarListItemHeaderLink
-                                    to="/mail/folders-labels"
-                                    toApp={APPS.PROTONACCOUNT}
-                                    icon="cog-wheel"
-                                    title={c('Info').t`Manage your folders`}
-                                    info={c('Link').t`Manage your folders`}
-                                    target="_self"
-                                    data-testid="navigation-link:folders-settings"
-                                />
-                            </div>
-                        ) : undefined
+                        <div className="flex flex-align-items-center pr0-75">
+                            <button
+                                type="button"
+                                className="flex navigation-link-header-group-control flex-item-noshrink"
+                                onClick={() => handleOpenLabelModal('folder')}
+                                title={c('Action').t`Create a new folder`}
+                                data-testid="navigation-link:add-folder"
+                            >
+                                <Icon name="plus" alt={c('Action').t`Create a new folder`} />
+                            </button>
+                            <SidebarListItemHeaderLink
+                                to="/mail/folders-labels"
+                                toApp={APPS.PROTONACCOUNT}
+                                icon="cog-wheel"
+                                title={c('Info').t`Manage your folders`}
+                                info={c('Link').t`Manage your folders`}
+                                target="_self"
+                                data-testid="navigation-link:folders-settings"
+                            />
+                        </div>
                     }
                 />
                 {displayFolders && (
@@ -290,6 +289,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         foldersTreeview={foldersTreeview}
                     />
                 )}
+                <hr aria-hidden="true" className="my0-25" />
                 <SimpleSidebarListItemHeader
                     toggle={displayLabels}
                     onToggle={(display: boolean) => toggleLabels(display)}
@@ -298,28 +298,26 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="toggle-labels"
                     onFocus={setFocusedItem}
                     right={
-                        displayLabels ? (
-                            <div className="flex flex-align-items-center">
-                                <button
-                                    type="button"
-                                    className="flex navigation-link-header-group-control flex-item-noshrink"
-                                    onClick={() => handleOpenLabelModal('label')}
-                                    title={c('Action').t`Create a new label`}
-                                    data-testid="navigation-link:add-label"
-                                >
-                                    <Icon name="plus" alt={c('Action').t`Create a new label`} />
-                                </button>
-                                <SidebarListItemHeaderLink
-                                    to="/mail/folders-labels"
-                                    toApp={APPS.PROTONACCOUNT}
-                                    icon="cog-wheel"
-                                    title={c('Info').t`Manage your labels`}
-                                    info={c('Link').t`Manage your labels`}
-                                    target="_self"
-                                    data-testid="navigation-link:labels-settings"
-                                />
-                            </div>
-                        ) : undefined
+                        <div className="flex flex-align-items-center pr0-75">
+                            <button
+                                type="button"
+                                className="flex navigation-link-header-group-control flex-item-noshrink"
+                                onClick={() => handleOpenLabelModal('label')}
+                                title={c('Action').t`Create a new label`}
+                                data-testid="navigation-link:add-label"
+                            >
+                                <Icon name="plus" alt={c('Action').t`Create a new label`} />
+                            </button>
+                            <SidebarListItemHeaderLink
+                                to="/mail/folders-labels"
+                                toApp={APPS.PROTONACCOUNT}
+                                icon="cog-wheel"
+                                title={c('Info').t`Manage your labels`}
+                                info={c('Link').t`Manage your labels`}
+                                target="_self"
+                                data-testid="navigation-link:labels-settings"
+                            />
+                        </div>
                     }
                 />
                 {displayLabels && (

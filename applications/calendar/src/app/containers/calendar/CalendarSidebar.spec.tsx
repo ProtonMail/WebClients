@@ -178,7 +178,7 @@ describe('CalendarSidebar', () => {
         expect(screen.getByText(/mockedLogo/)).toBeInTheDocument();
         expect(screen.getByText(/mockedMiniCalendar/)).toBeInTheDocument();
 
-        const myCalendarsButton = screen.getByText(/My calendars/);
+        const myCalendarsButton = screen.getByTestId('calendar-sidebar:my-calendars-button');
         expect(myCalendarsButton).toBeInTheDocument();
         expect(screen.queryByText(/Subscribed calendars/)).not.toBeInTheDocument();
 
@@ -199,9 +199,9 @@ describe('CalendarSidebar', () => {
             })
         );
 
-        const subscribedCalendarsButton = screen.getByText(/Subscribed calendars/);
+        const subscribedCalendarsButton = screen.getByTestId('calendar-sidebar:subscribed-calendars-button');
 
-        expect(screen.getByText(/My calendars/)).toBeInTheDocument();
+        expect(screen.getByTestId('calendar-sidebar:my-calendars-button')).toBeInTheDocument();
         expect(subscribedCalendarsButton).toBeInTheDocument();
 
         expect(screen.getByText(/calendar3/)).toBeInTheDocument();

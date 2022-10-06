@@ -10,9 +10,7 @@ interface Props extends SidebarConfig {
 const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
     return (
         <SidebarList>
-            <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
-                {header}
-            </SidebarListItem>
+            <SidebarListItem className="text-uppercase text-sm navigation-link-header-group">{header}</SidebarListItem>
             {Object.values(routes).map(
                 (section) =>
                     getIsSectionAvailable(section) && (
