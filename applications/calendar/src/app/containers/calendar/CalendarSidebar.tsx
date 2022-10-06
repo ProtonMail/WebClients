@@ -105,7 +105,11 @@ const CalendarSidebar = ({
         show: showSubscribedCalendars,
         onDisplayed: onSubscribedCalendarsSpotlightDisplayed,
         onClose: onCloseSubscribedRemindersSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.SpotlightSubscribedCalendars, canShowSubscribedCalendarsSpotlight);
+    } = useSpotlightOnFeature(FeatureCode.SpotlightSubscribedCalendars, canShowSubscribedCalendarsSpotlight, {
+        alpha: Date.UTC(2021, 7, 5, 12),
+        beta: Date.UTC(2021, 7, 5, 12),
+        default: Date.UTC(2022, 9, 5, 12),
+    });
     const shouldShowSubscribedCalendarsSpotlight = useSpotlightShow(showSubscribedCalendars);
 
     const { isPersonalCalendarsLimitReached, isSubscribedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
