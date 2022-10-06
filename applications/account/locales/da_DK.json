@@ -83,6 +83,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Apply to existing messages": [
+        "Anvend på eksisterende beskeder"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -3941,6 +3944,9 @@
       "Add a recovery email address": [
         "Tilføj en e-mailadresse til gendannelse"
       ],
+      "add a recovery method": [
+        "tilføj en gendannelsesmetode"
+      ],
       "Add a recovery phone number": [
         "Tilføj telefonnummer til gendannelse"
       ],
@@ -4287,6 +4293,9 @@
       ],
       "Enter key manually instead": [
         "Indtast nøgle manuelt i stedet"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Indtast ny adgangskode for bruger ${ userName }."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Indtast koden sendt til dit telefonnummer ${ phone }."
@@ -4917,6 +4926,14 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Den e-mailadresse, du placerer øverst på listen, er din standard e-mailadresse. Træk og slip for at omarrangere dine adresser."
+      ],
+      "The following address is invalid.": [
+        "Den følgende adresse er ugyldig.",
+        "De følgende adresser er ugyldige."
+      ],
+      "The following address is unavailable.": [
+        "Den følgende adresse er ikke tilgængelig.",
+        "De følgende adresser er ikke tilgængelige."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Med appen Import-Eksport kan du eksportere beskeder til lokale sikkerhedskopier og genskabe tidligere sikkerhedskopier på din konto."
@@ -5879,6 +5896,9 @@
       "Block malware, ads and trackers": [
         "Blokér malware, reklamer og trackere"
       ],
+      "Blocked": [
+        "Blokeret"
+      ],
       "bonus storage": [
         "bonuslagerplads"
       ],
@@ -6247,6 +6267,9 @@
       ],
       "No label found": [
         "Ingen etikette fundet"
+      ],
+      "Non Spam": [
+        "Ikke spam"
       ],
       "Non-standard ports": [
         "Ikke-standard porte"
@@ -7010,6 +7033,9 @@
       ],
       "Back to Mail": [
         "Tilbage til Mail"
+      ],
+      "Blocked": [
+        "Blokeret"
       ],
       "Spam": [
         "Spam"
@@ -8346,8 +8372,14 @@
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
+      "Add to non spam list": [
+        "Føj til ikke-spam-liste"
+      ],
       "Add to spam list": [
         "Føj til spam-liste"
+      ],
+      "Add to your block list": [
+        "Føj til din blokeringsliste"
       ],
       "Add user": [
         "Tilføj bruger"

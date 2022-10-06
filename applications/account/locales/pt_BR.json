@@ -18,6 +18,9 @@
       ],
       "Limited view": [
         "Visualização limitada"
+      ],
+      "Limited view (see only free/busy)": [
+        "Visualização limitada (vê apenas livre/ocupado)"
       ]
     },
     "Action": {
@@ -29,9 +32,6 @@
       ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
-      ],
-      "${ name } updated": [
-        "${ name } atualizado"
       ],
       "activate": [
         "ativar"
@@ -3015,7 +3015,7 @@
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
       ],
       "Not a Proton account": [
-        "Não é um conta Proton"
+        "Não é uma conta Proton"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -3650,6 +3650,9 @@
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
         "Por favor, desative A2F através da chave de segurança antes de desativar TOTP"
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Algo deu errado ao registrar sua chave de segurança. Por favor, tente novamente."
       ]
     },
     "fido2: Info": {
@@ -3670,6 +3673,9 @@
       ],
       "Security key removed": [
         "Chave de segurança removida"
+      ],
+      "Security key updated": [
+        "Chave de segurança atualizada"
       ],
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
@@ -9330,6 +9336,16 @@
     "Share calendar assistive text": {
       "To invite non-Proton users, share your calendar with a link": [
         "Para convidar usuários fora do Proton, compartilhe seu calendário com um link"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "Você excedeu o máximo de ${ MAX_CALENDAR_MEMBERS } membros por calendário"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Adicione as contas Proton com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
       ]
     },
     "Share calendar modal input placeholder": {

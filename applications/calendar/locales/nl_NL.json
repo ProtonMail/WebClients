@@ -840,6 +840,9 @@
     "Calendar share limit modal": {
       "Manage links": [
         "Beheer links"
+      ],
+      "Manage members": [
+        "Beheer leden"
       ]
     },
     "Calendar sharing access option label": {
@@ -4942,6 +4945,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Instellingen wijzigen mislukt"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden per agenda overschreden"
       ]
     },
     "Share calendar modal input placeholder": {

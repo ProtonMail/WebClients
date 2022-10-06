@@ -2837,9 +2837,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés. ${ manageBlockedAddressesSettingsLink } dans les paramètres."
-      ],
       "No folders": [
         "Aucun dossier"
       ],
@@ -3000,9 +2997,6 @@
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
-      ],
-      "A problem occurred, please try again.": [
-        "Une erreur s'est produite, veuillez réessayer."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée"
@@ -3181,9 +3175,6 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
-      "Please activate your search again": [
-        "Veuillez réactiver la recherche de contenu"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
@@ -3263,9 +3254,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Un problème est survenu, veuillez réessayer plus tard"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Désolé, Proton ne peut pas déchiffrer votre message. Veuillez vérifier que toutes vos clés sont activées."
@@ -4508,9 +4496,6 @@
       "Confirm phishing report": [
         "Confirmer le signalement d'hameçonnage"
       ],
-      "Content: ": [
-        "Contenu: "
-      ],
       "Continue with ${ planName }": [
         "Continuer avec ${ planName }"
       ],
@@ -4577,9 +4562,6 @@
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Téléchargement du message ${ currentProgress } sur ${ totalProgress }"
-      ],
       "Draft": [
         "Brouillon"
       ],
@@ -4632,9 +4614,6 @@
       ],
       "Encrypt message": [
         "Chiffrer le message"
-      ],
-      "End of search results from past 30 days": [
-        "Fin des résultats de recherche des 30 derniers jours"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
@@ -4905,9 +4884,6 @@
       "No results found": [
         "Aucun résultat trouvé"
       ],
-      "No search results from past 30 days. Searching the rest of your inbox": [
-        "Aucun résultat de recherche pour les 30 derniers jours. Recherche en cours dans le reste de votre boîte de réception"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
       ],
@@ -5050,9 +5026,6 @@
       "Scheduling message...": [
         "Programmation du message..."
       ],
-      "Search full content of older messages with a ${ paidPlansButton }": [
-        "Recherchez dans l'intégralité du contenu de messages plus anciens avec un ${ paidPlansButton }"
-      ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La recherche prend trop de temps? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
       ],
@@ -5155,9 +5128,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Les données que vous avez saisies dans le brouillon ne peuvent pas être enregistrées si vous quittez la page."
       ],
-      "The local database is being prepared": [
-        "La base de données locale est en cours de préparation"
-      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Le message original que vous essayez de transférer ou auquel vous répondez est en cours d'envoi. Si vous continuez, vous ne pourrez plus annuler l'envoi du message original."
       ],
@@ -5188,9 +5158,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera les messages les plus récents afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer à cette adresse, le propriétaire doit d'abord activer cette adresse."
@@ -6420,9 +6387,6 @@
       "Outbox": [
         "Boîte d'envoi"
       ],
-      "paid plan": [
-        "abonnement payant"
-      ],
       "Pay invoice": [
         "Payer la facture"
       ],
@@ -6829,9 +6793,6 @@
       ],
       "Password has been set successfully": [
         "Le mot de passe a été correctement défini"
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "L'expéditeur ${ senderEmail } est bloqué"
       ]
     },
     "Oauth instructions": {
@@ -8220,9 +8181,6 @@
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
-      "For messages older than 30 days, only the subject line and recipient list is searched": [
-        "Pour les messages datant de plus de 30 jours, seuls l'objet et la liste des destinataires seront recherchés"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains courriels comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces courriels."
       ],
@@ -8234,6 +8192,9 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est uniquement disponible pour les utilisateurs payants"
