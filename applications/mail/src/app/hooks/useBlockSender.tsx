@@ -1,5 +1,4 @@
 import { MouseEvent, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -7,12 +6,12 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { FeatureCode } from '@proton/components/containers';
 import { useAddresses, useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
-import { isAddressIncluded } from '@proton/shared/lib/helpers/incomingDefaults';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/addresses';
-import { blockAddress } from '../logic/incomingDefaults/incomingDefaultsActions';
+import { addBlockAddresses } from '../logic/incomingDefaults/incomingDefaultsActions';
+import { useAppDispatch } from '../logic/store';
 import { Element } from '../models/element';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 
@@ -23,7 +22,7 @@ interface Props {
 
 const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
@@ -46,36 +45,24 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const canShowBlockSender =
         blockSenderFeature?.Value === true && incomingDefaultsStatus === 'loaded' && senders.length > 0;
 
-    const handleBlockSender = async () => {
+    const handleBlockSender = (): Promise<void> => {
         if (!senders || senders.length === 0) {
-            return;
+            return Promise.resolve();
         }
-
-        await Promise.all(
-            senders.map((sender) => {
-                const senderEmail = sender?.Address || '';
-                const foundItem = isAddressIncluded(incomingDefaultsAddresses, senderEmail);
-
-                return dispatch(
-                    blockAddress({
-                        api,
-                        address: senderEmail,
-                        ID: foundItem?.ID,
-                        type: foundItem ? 'update' : 'create',
-                    })
-                );
-            })
-        );
 
         const firstSenderAddress = senders[0]?.Address;
 
         // translator: The variable contains the address of the sender which will be blocked
-        const notificationMessage =
+        const successNotificationMessage =
             senders.length === 1
                 ? c('Notification').t`Sender ${firstSenderAddress} blocked`
                 : c('Notification').t`Senders blocked`;
 
-        createNotification({ text: notificationMessage });
+        return dispatch(addBlockAddresses({ api, addresses: senders.map((sender) => sender.Address), overwrite: true }))
+            .unwrap()
+            .then(() => {
+                createNotification({ text: successNotificationMessage });
+            });
     };
 
     // Confirm blocking address from the modal

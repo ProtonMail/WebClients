@@ -4,7 +4,6 @@ import {
     addIncomingDefault,
     deleteIncomingDefaults,
     getIncomingDefaults,
-    updateIncomingDefault,
 } from '@proton/shared/lib/api/incomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import { Api, IncomingDefault } from '@proton/shared/lib/interfaces';
@@ -57,28 +56,31 @@ export const load = createAsyncThunk<LoadResults, LoadParams>('incomingDefaults/
 
 export const event = createAction<IncomingDefaultEvent>('incomingDefaults/event');
 
-interface BlockParams {
+interface AddBlockAddressesParams {
     api: Api;
-    address: string;
-    ID?: string;
-    type: 'create' | 'update';
+    addresses: string[];
+    overwrite?: boolean;
 }
 
-export const blockAddress = createAsyncThunk<IncomingDefault, BlockParams>(
-    'incomingDefaults/blockAddress',
-    async ({ api, address, ID, type }) => {
-        try {
-            const result = await api<{ IncomingDefault: IncomingDefault }>(
-                type === 'update' && ID
-                    ? updateIncomingDefault(ID, { Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
-                    : addIncomingDefault({ Email: address, Location: INCOMING_DEFAULTS_LOCATION.BLOCKED })
+export const addBlockAddresses = createAsyncThunk<IncomingDefault[], AddBlockAddressesParams>(
+    'incomingDefaults/addBlockAddresses',
+    async ({ api, addresses, overwrite }) => {
+        const promises = addresses.map((address) => {
+            return api<{ IncomingDefault: IncomingDefault }>(
+                addIncomingDefault({
+                    Email: address,
+                    Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
+                    Overwrite: overwrite,
+                })
             );
+        });
 
-            return result.IncomingDefault;
-        } catch (error) {
-            console.log(error);
-            throw error;
-        }
+        let incomingDefaults: IncomingDefault[] = [];
+
+        const results = await Promise.all(promises);
+        incomingDefaults = results.map((result) => result.IncomingDefault);
+
+        return incomingDefaults;
     }
 );
 
@@ -89,12 +91,7 @@ export const remove = createAsyncThunk<
         ID: string;
     }
 >('incomingDefaults/remove', async ({ api, ID }) => {
-    try {
-        const result = await api<{ Responses: { ID: string }[] }>(deleteIncomingDefaults([ID]));
+    const result = await api<{ Responses: { ID: string }[] }>(deleteIncomingDefaults([ID]));
 
-        return result.Responses;
-    } catch (error) {
-        console.log(error);
-        throw error;
-    }
+    return result.Responses;
 });
