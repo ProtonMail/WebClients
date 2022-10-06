@@ -14,7 +14,6 @@ import SidebarItem from './SidebarItem';
 
 interface Props {
     counterMap: UnreadCounts;
-    unreadWeak: boolean;
     currentLabelID: string;
     location: Location;
     mailSettings: MailSettings | undefined;
@@ -63,7 +62,6 @@ const MailSidebarSystemFolders = ({
         labelID,
         isConversation,
         unreadCount: counterMap[labelID],
-        unreadWeak: true,
         totalMessagesCount: totalMessagesMap[labelID] || 0,
     });
 

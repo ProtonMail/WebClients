@@ -48,7 +48,6 @@ interface Props {
     content?: ReactNode;
     color?: string;
     unreadCount?: number;
-    unreadWeak?: boolean;
     totalMessagesCount?: number;
     shortcutHandlers?: HotkeyTuple[];
     onFocus?: (id: string) => void;
@@ -66,7 +65,6 @@ const SidebarItem = ({
     color,
     isFolder,
     unreadCount,
-    unreadWeak = false,
     totalMessagesCount = 0,
     shortcutHandlers = defaultShortcutHandlers,
     onFocus = noop,
@@ -160,7 +158,7 @@ const SidebarItem = ({
                     right={
                         <LocationAside
                             unreadCount={unreadCount}
-                            weak={unreadWeak}
+                            weak={labelID === MAILBOX_LABEL_IDS.INBOX}
                             active={active}
                             refreshing={refreshing}
                         />
