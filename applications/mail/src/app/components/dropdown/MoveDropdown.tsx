@@ -121,13 +121,21 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             return normName.includes(normSearch);
         });
 
-    const handleMove = async () => {
-        await moveToFolder(elements, selectedFolder?.ID || '', selectedFolder?.Name || '', labelID, always);
+    const actualMoveFolder = async (selectedFolderID: string, selectedFolderName: string) => {
+        await moveToFolder(elements, selectedFolderID, selectedFolderName, labelID, always);
         onClose();
 
         if (!isMessage || !conversationMode) {
             onBack();
         }
+    };
+
+    const handleMove = async () => {
+        await actualMoveFolder(selectedFolder?.ID || '', selectedFolder?.Name || '');
+    };
+
+    const handleApplyDirectly = async (selectedFolderID: string, selectedFolderName: string) => {
+        await actualMoveFolder(selectedFolderID, selectedFolderName);
     };
 
     const handleCreate = () => {
@@ -203,6 +211,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                     data-level={folder.level}
                                     className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
+                                    onClick={() => handleApplyDirectly(folder.ID, folder.Name)}
                                 >
                                     <FolderIcon
                                         folder={folder}

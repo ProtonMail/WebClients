@@ -198,7 +198,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         return normName.includes(normSearch);
     });
 
-    const handleApply = async () => {
+    const actualApplyLabels = async (changes: { [p: string]: boolean }) => {
         const elements = getElementsFromIDs(selectedIDs);
 
         const promises = [];
@@ -213,6 +213,10 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
         await Promise.all(promises);
         onClose();
+    };
+
+    const handleApply = async () => {
+        await actualApplyLabels(changes);
     };
 
     const applyCheck = (labelIDs: string[], selected: boolean) => {
@@ -253,6 +257,15 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         await withLoading(handleApply());
+    };
+
+    const handleApplyDirectly = async (labelID: string) => {
+        const updatedChanges = {
+            ...changes,
+            [labelID]: selectedLabelIDs[labelID] !== LabelState.On,
+        };
+
+        await actualApplyLabels(updatedChanges);
     };
 
     return (
@@ -315,6 +328,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                 title={Name}
                                 className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
                                 data-testid={`label-dropdown:label-${Name}`}
+                                onClick={() => handleApplyDirectly(ID)}
                             >
                                 <Icon
                                     name="circle-filled"
