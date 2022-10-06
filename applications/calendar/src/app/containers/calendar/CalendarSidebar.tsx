@@ -175,7 +175,7 @@ const CalendarSidebar = ({
                 toggle={displayPersonalCalendars}
                 onToggle={() => setDisplayPersonalCalendars((prevState) => !prevState)}
                 right={
-                    <div className="flex flex-nowrap flex-align-items-center pr1 mr0-15">
+                    <div className="flex flex-nowrap flex-align-items-center pr0-75">
                         {enabled ? (
                             <Spotlight
                                 show={shouldShowSubscribedCalendarsSpotlight}
