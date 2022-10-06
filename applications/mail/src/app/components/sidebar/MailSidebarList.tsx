@@ -255,7 +255,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="toggle-folders"
                     onFocus={setFocusedItem}
                     right={
-                        <div className="flex flex-align-items-center pr1 mr0-15">
+                        <div className="flex flex-align-items-center pr0-75">
                             <button
                                 type="button"
                                 className="flex navigation-link-header-group-control flex-item-noshrink"
@@ -297,7 +297,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     id="toggle-labels"
                     onFocus={setFocusedItem}
                     right={
-                        <div className="flex flex-align-items-center pr1 mr0-15">
+                        <div className="flex flex-align-items-center pr0-75">
                             <button
                                 type="button"
                                 className="flex navigation-link-header-group-control flex-item-noshrink"
