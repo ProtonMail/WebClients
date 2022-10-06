@@ -28,7 +28,7 @@ const EVENT_MODELS = [
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel, CalendarsModel, CalendarUserSettingsModel];
 
-const getAppContainer = () => import('../containers/calendar/MainContainer');
+const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ '../containers/calendar/MainContainer');
 
 interface Props {
     onLogout: () => void;

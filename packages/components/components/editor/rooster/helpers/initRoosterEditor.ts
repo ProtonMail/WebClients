@@ -42,7 +42,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         moveCurrentSnapshot,
         setDirection,
         createLink,
-    } = await import(/* webpackPreload: true */ 'roosterjs');
+    } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
 
     const plugins: EditorPlugin[] = [
         new ContentEdit(),
