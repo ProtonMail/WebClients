@@ -733,6 +733,7 @@ export enum LABEL_TYPE {
     MESSAGE_LABEL = 1,
     CONTACT_GROUP = 2,
     MESSAGE_FOLDER = 3,
+    SYSTEM_FOLDER = 4,
 }
 
 export const DEFAULT_LOCALE = 'en_US';

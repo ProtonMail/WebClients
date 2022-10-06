@@ -34,6 +34,12 @@ export const useFolders = (): [Folder[] | undefined, boolean] => {
     return [folders, loading];
 };
 
+export const useSystemFolders = (): [Label[] | undefined, boolean] => {
+    const [categories, loading] = useCategories();
+    const systemFolders = useMemo(() => filterCategories(categories, LABEL_TYPE.SYSTEM_FOLDER), [categories]);
+    return [systemFolders, loading];
+};
+
 export const useContactGroups = (): [ContactGroup[] | undefined, boolean] => {
     const [categories, loading] = useCategories();
     const contactGroups = useMemo(() => filterCategories(categories, LABEL_TYPE.CONTACT_GROUP), [categories]);
