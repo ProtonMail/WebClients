@@ -6,6 +6,10 @@ import CollapsibleContext, { CollapsibleContextValue } from './CollapsibleContex
 
 export interface CollapsibleOwnProps {
     /**
+     * Disables the collapsible component
+     */
+    disabled?: boolean;
+    /**
      * Shows content by default if true.
      */
     expandByDefault?: boolean;
@@ -16,6 +20,7 @@ export type CollapsibleProps<E extends ElementType> = PolymorphicComponentProps<
 const element = 'div';
 
 const Collapsible = <E extends ElementType = typeof element>({
+    disabled = false,
     expandByDefault = false,
     children: childrenProp,
     ...rest
@@ -32,6 +37,7 @@ const Collapsible = <E extends ElementType = typeof element>({
 
     const contextValue: CollapsibleContextValue = {
         isExpanded,
+        disabled,
         toggle,
         headerId,
         contentId,
