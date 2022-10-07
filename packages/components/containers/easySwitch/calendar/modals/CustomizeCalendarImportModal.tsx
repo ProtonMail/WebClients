@@ -19,7 +19,7 @@ import CustomizeCalendarImportRow from './CustomizeCalendarImportRow';
 interface Props {
     providerCalendars: ImportedCalendar[];
     calendars: VisualCalendar[];
-    activeCalendars: VisualCalendar[];
+    activeWritableCalendars: VisualCalendar[];
     importedEmailAddress: string;
     toEmail: string;
     payload: CalendarImporterPayload;
@@ -38,7 +38,7 @@ type CalendarMapping = {
 const CustomizeCalendarImportModal = ({
     providerCalendars,
     calendars,
-    activeCalendars,
+    activeWritableCalendars,
     importedEmailAddress,
     toEmail,
     payload,
@@ -134,11 +134,12 @@ const CustomizeCalendarImportModal = ({
     const disabled = calendarLimitReached || selectedCalendarsTotal === 0;
     const calendarToFixCount = Math.abs(MAX_CALENDARS_PAID - calendars.length - calendarsToBeCreatedCount);
 
-    const canMerge = activeCalendars.length > 0;
+    const canMerge = activeWritableCalendars.length > 0;
 
     const errorBox = (
         <div className="rounded-lg p1 mb1 bg-danger color-white text-semibold border-none">
-            {c('Error').t`You have reached the maximum number of personal calendars. Some calendars couldn't be imported.`}
+            {c('Error')
+                .t`You have reached the maximum number of personal calendars. Some calendars couldn't be imported.`}
             <ul className="m0">
                 <li>
                     {canMerge
@@ -217,7 +218,7 @@ const CustomizeCalendarImportModal = ({
                     checked={checkedMap[calendar.ID]}
                     toggleChecked={toggleChecked}
                     isLast={i + 1 === providerCalendars.length}
-                    activeCalendars={activeCalendars}
+                    activeCalendars={activeWritableCalendars}
                     value={calendarMapping[calendar.ID]}
                     updateCalendarMapping={updateCalendarMapping}
                     calendarLimitReached={calendarLimitReached}

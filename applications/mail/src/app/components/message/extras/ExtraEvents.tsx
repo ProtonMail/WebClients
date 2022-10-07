@@ -25,7 +25,6 @@ import {
     getDefaultCalendar,
     getIsCalendarDisabled,
     getMaxUserCalendarsDisabled,
-    getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
@@ -123,8 +122,7 @@ const ExtraEvents = ({ message }: Props) => {
                         getCalendars,
                         getCalendarUserSettings,
                     });
-                    const activeCalendars = getProbablyActiveCalendars(calendars);
-                    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
+                    const defaultCalendar = getDefaultCalendar(calendars, calendarUserSettings.DefaultCalendarID);
                     const disabledCalendars = calendars.filter(unary(getIsCalendarDisabled));
                     const canCreateCalendar = getCanCreateCalendar(calendars, !user.hasPaidMail);
                     const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, !user.hasPaidMail);
