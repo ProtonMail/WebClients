@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Button, Icon, Tooltip } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 
-import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
 import { MessageImages } from '../../../logic/messages/messagesTypes';
 

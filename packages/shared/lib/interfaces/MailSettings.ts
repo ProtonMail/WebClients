@@ -26,13 +26,15 @@ export interface MailSettings {
     AutoWildcardSearch: number;
     ComposerMode: number;
     MessageButtons: number;
-    ShowImages: number;
+    ShowImages: number; // Soon deprecated, use HideRemoteImages or HideEmbeddedImages instead
     ShowMoved: number;
     ViewMode: number;
     ViewLayout: number;
     SwipeLeft: number;
     SwipeRight: number;
     AlsoArchive: number;
+    HideEmbeddedImages: number;
+    HideRemoteImages: number;
     Hotkeys: number; // used by v3 (Angular)
     Shortcuts: number; // used by v4
     PMSignature: number;

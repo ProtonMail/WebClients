@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage, toImage } from '@proton/shared/lib/helpers/image';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { isBase64Image } from '@proton/shared/lib/helpers/validators';
+import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 import noop from '@proton/utils/noop';
 
 import { Icon, Loader } from '../../../components';
@@ -28,11 +28,13 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     const isBase64 = isBase64Image(photo);
     const [showAnyway, setShowAnyway] = useState(false);
     const [image, setImage] = useState<ImageModel>({ src: photo });
-    const [{ ShowImages } = { ShowImages: SHOW_IMAGES.NONE }, loadingMailSettings] = useMailSettings();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
     const [loadingResize, withLoadingResize] = useLoading(true);
     const loading = loadingMailSettings || loadingResize;
+    const hasShowRemoteImages = hasShowRemote(mailSettings);
+    const hasShowEmbeddedImages = hasShowEmbedded(mailSettings);
     const shouldShow =
-        showAnyway || ShowImages === SHOW_IMAGES.ALL || (isBase64 ? true : ShowImages === SHOW_IMAGES.REMOTE);
+        showAnyway || (hasShowEmbeddedImages && hasShowRemoteImages) || (isBase64 ? true : hasShowRemoteImages);
 
     useEffect(() => {
         if (!photo || !shouldShow) {

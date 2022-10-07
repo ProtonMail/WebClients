@@ -67,10 +67,11 @@ const MessageDetailsModal = ({
 
     const sizeText = humanSize(getSize(message.data || ({} as Element)));
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
+    const { hasProtection, hasShowRemoteImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
     });
-    const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
+    const displayTrackerIcon =
+        !(!hasProtection && hasShowRemoteImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
 
     const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
         getAttachments(message.data),

@@ -36,7 +36,7 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
 
     const isSimpleLoginIntegration = false; //TODO replace with when we will need simpleLoginIntegration?.Value;
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
+    const { hasProtection, hasShowRemoteImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
     });
 
@@ -53,7 +53,7 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
      * Loading remote images is automatic and email protection is OFF : We consider that the user don't want any protection at all.
      * But the user might have set recently the protection to OFF, so if we find trackers in previous emails, we still display the icon.
      */
-    if (sent || (!hasProtection && hasShowImage && numberOfTrackers === 0)) {
+    if (sent || (!hasProtection && hasShowRemoteImage && numberOfTrackers === 0)) {
         // TODO check also loadingSimpleLoginIntegrationFeature
         return null;
     }

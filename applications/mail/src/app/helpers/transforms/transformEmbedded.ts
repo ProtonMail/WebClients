@@ -1,11 +1,11 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
 import { getAttachments, isDMARCValidationFailure, isDraft } from '@proton/shared/lib/mail/messages';
 
 import { WHITE_LISTED_ADDRESSES } from '../../constants';
 import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
-import { hasShowEmbedded } from '../mailSettings';
 import {
     decryptEmbeddedImages,
     findEmbedded,
