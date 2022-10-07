@@ -1,163 +1,134 @@
-import { useEffect, useState } from 'react';
+import { RefObject, useLayoutEffect, useMemo } from 'react';
 
-import { getScrollParent } from '@proton/shared/lib/helpers/dom';
-import debounce from '@proton/utils/debounce';
+import { UseFloatingReturn, autoUpdate, flip, hide, offset, shift, useFloating } from '@floating-ui/react-dom';
 
-import { ALL_PLACEMENTS, Position, adjustPosition, computedSize } from './utils';
+import { PopperArrow, PopperPlacement, PopperPosition } from './interface';
+import { allPopperPlacements, anchorOffset, arrowOffset, getClickRect, getFallbackPlacements } from './utils';
 
-interface GetPositionProps {
-    anchorEl: HTMLElement;
-    popperEl: HTMLElement;
-    contentAreaEl: HTMLElement;
-    originalPlacement: string;
-    availablePlacements: string[];
-    offset: number;
-    originalPosition?: Position;
-    /**
-     * Related to iframe scroll edge cases.
-     * Default to false
-     */
-    skipOutOfBoundsCheck?: boolean;
-}
-
-const getPosition = ({
-    anchorEl,
-    popperEl,
-    contentAreaEl,
-    originalPlacement,
-    availablePlacements,
-    offset,
-    originalPosition,
-    skipOutOfBoundsCheck = false,
-}: GetPositionProps): { position: Position; placement: string } => {
-    const anchorRect = anchorEl.getBoundingClientRect();
-    const tooltipRect = popperEl.getBoundingClientRect();
-    const contentRect = contentAreaEl.getBoundingClientRect();
-
-    const wrapperStyles = window.getComputedStyle(anchorEl);
-    const tooltipStyles = window.getComputedStyle(popperEl);
-
-    const normalizedAnchorRect = {
-        top: anchorRect.top,
-        left: anchorRect.left,
-        width: computedSize(wrapperStyles.width, anchorRect.width),
-        height: computedSize(wrapperStyles.height, anchorRect.height),
-    };
-
-    const normalizedTooltipRect = {
-        top: tooltipRect.top,
-        left: tooltipRect.left,
-        width: computedSize(tooltipStyles.width, tooltipRect.width),
-        height: computedSize(tooltipStyles.height, tooltipRect.height),
-    };
-
-    const isOutOfBoundsBottom = normalizedAnchorRect.top + normalizedAnchorRect.height - contentRect.top < 0;
-    const isOutOfBoundsTop = normalizedAnchorRect.top - (contentRect.top + contentRect.height) > 0;
-
-    if (!skipOutOfBoundsCheck && (isOutOfBoundsBottom || isOutOfBoundsTop)) {
-        return {
-            position: {
-                top: -9999,
-                left: -9999,
-                '--arrow-offset': 0,
-            },
-            placement: 'hidden',
-        };
-    }
-
-    return adjustPosition(
-        normalizedAnchorRect,
-        normalizedTooltipRect,
-        originalPlacement,
-        offset,
-        originalPosition,
-        availablePlacements
-    );
+const hiddenPosition: PopperPosition = {
+    top: -9999,
+    left: -9999,
 };
 
+interface PopperReturnValue {
+    floating: UseFloatingReturn['floating'] | null;
+    reference: UseFloatingReturn['reference'] | null;
+    position: PopperPosition;
+    arrow: PopperArrow;
+    placement: PopperPlacement | 'hidden';
+}
+
 interface Props {
-    popperEl?: HTMLElement | null;
-    anchorEl?: HTMLElement | null;
     isOpen?: boolean;
-    originalPlacement?: string;
-    availablePlacements?: string[];
-    originalPosition?: Position;
+    originalPlacement?: PopperPlacement;
+    availablePlacements?: PopperPlacement[];
+    reference?:
+        | {
+              mode: 'element';
+              value: HTMLElement | null | undefined;
+          }
+        | {
+              mode: 'position';
+              value: PopperPosition | null;
+              anchor?: HTMLElement | null;
+          };
+    relativeReference?: RefObject<HTMLElement>;
     offset?: number;
-    updatePositionOnDOMChange?: boolean;
-    anchorOffset?: { x: number; y: number };
+    updateAnimationFrame?: boolean;
 }
 
 const usePopper = ({
-    popperEl,
-    anchorEl,
     isOpen = false,
-    originalPlacement = 'bottom',
-    availablePlacements = ALL_PLACEMENTS,
-    originalPosition,
-    offset = 10,
-    updatePositionOnDOMChange = true,
-    anchorOffset,
-}: Props) => {
-    const initialPosition: Position = { top: -1000, left: -1000, '--arrow-offset': 0 };
-    const [placement, setPlacement] = useState(originalPlacement);
-    const [position, setPosition] = useState(initialPosition);
+    originalPlacement = 'top',
+    availablePlacements = allPopperPlacements,
+    offset: offsetPx = 10,
+    relativeReference,
+    reference: anchorReference,
+    updateAnimationFrame = false,
+}: Props): PopperReturnValue => {
+    const fallbackPlacements = useMemo(() => {
+        return getFallbackPlacements(originalPlacement, availablePlacements);
+    }, []);
+    const { reference, floating, x, y, middlewareData, placement } = useFloating({
+        strategy: 'fixed',
+        placement: originalPlacement,
+        middleware: [
+            anchorOffset(relativeReference),
+            offset(offsetPx),
+            flip({ fallbackPlacements }),
+            shift(),
+            hide(),
+            arrowOffset(),
+        ],
+        whileElementsMounted: (reference, floating, update) => {
+            const unsubscribe = autoUpdate(reference, floating, update, {
+                animationFrame: updateAnimationFrame,
+            });
+            let relativeUnsubscribe: (() => void) | undefined;
+            if (relativeReference?.current) {
+                relativeUnsubscribe = autoUpdate(relativeReference.current, floating, update, {
+                    animationFrame: updateAnimationFrame,
+                });
+            }
+            return () => {
+                unsubscribe();
+                relativeUnsubscribe?.();
+            };
+        },
+    });
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!isOpen) {
+            reference(null);
+            floating(null);
+        }
+    }, [isOpen]);
+
+    useLayoutEffect(() => {
+        if (!anchorReference) {
             return;
         }
-
-        const contentArea = getScrollParent(anchorEl);
-
-        const updatePosition = () => {
-            if (anchorEl && popperEl) {
-                const { placement: adjustedPlacement, position: adjustedPosition } = getPosition({
-                    anchorEl,
-                    popperEl,
-                    contentAreaEl: contentArea,
-                    originalPlacement,
-                    availablePlacements,
-                    offset,
-                    originalPosition,
-                    skipOutOfBoundsCheck: !!anchorOffset,
-                });
-                setPlacement(adjustedPlacement);
-                setPosition(adjustedPosition);
+        if (!isOpen) {
+            reference(null);
+            return;
+        }
+        if (anchorReference.mode === 'element') {
+            reference(anchorReference.value || null);
+            return;
+        }
+        if (anchorReference.mode === 'position') {
+            if (!anchorReference.value) {
+                reference(null);
                 return;
             }
-
-            setPlacement(originalPlacement);
-            setPosition(initialPosition);
-        };
-
-        updatePosition();
-
-        const debouncedUpdatePosition = debounce(updatePosition, 100);
-        const observer = updatePositionOnDOMChange ? new MutationObserver(debouncedUpdatePosition) : undefined;
-        if (observer && popperEl) {
-            observer.observe(popperEl, { childList: true, subtree: true });
+            const clickRect = getClickRect(anchorReference.value);
+            reference({
+                getBoundingClientRect: () => {
+                    return clickRect;
+                },
+            });
+            return;
         }
-        contentArea.addEventListener('scroll', debouncedUpdatePosition);
-        window.addEventListener('resize', debouncedUpdatePosition);
-        return () => {
-            if (observer) {
-                observer.disconnect();
-            }
-            contentArea.removeEventListener('scroll', debouncedUpdatePosition);
-            window.removeEventListener('resize', debouncedUpdatePosition);
-        };
-    }, [isOpen, anchorEl, popperEl]);
+    }, [reference, anchorReference?.value, anchorReference?.mode, isOpen]);
 
-    let computedPosition = position;
-    if (anchorOffset) {
-        computedPosition = {
-            ...position,
-            top: position.top + anchorOffset.y,
-            left: position.left + anchorOffset.x,
-        };
-    }
+    // x and y are null initially, before the layout effect has fired
+    const hidden = Boolean(middlewareData.hide?.referenceHidden) || x === null || y === null;
+    const arrowOffsetValue: string | number = middlewareData.arrowOffset?.value;
 
-    return { position: computedPosition, placement };
+    return {
+        reference: isOpen ? reference : null,
+        floating: isOpen ? floating : null,
+        position: hidden
+            ? hiddenPosition
+            : {
+                  top: y || 0,
+                  left: x || 0,
+              },
+        arrow: {
+            '--arrow-offset': !arrowOffsetValue ? 0 : `${arrowOffsetValue}px`,
+        },
+        placement: hidden ? 'hidden' : placement,
+    };
 };
 
 export default usePopper;

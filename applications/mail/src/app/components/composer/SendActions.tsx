@@ -30,7 +30,7 @@ const SendActions = (
                     ref={dropdownRef}
                     as={Button}
                     icon
-                    originalPlacement="bottom-right"
+                    originalPlacement="bottom-end"
                     disabled={disabled}
                     loading={loading}
                     className="flex-item-noshrink composer-actions-secondary"

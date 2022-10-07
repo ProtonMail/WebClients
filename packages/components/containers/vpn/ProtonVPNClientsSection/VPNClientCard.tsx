@@ -36,7 +36,7 @@ const VPNClientCard = ({ title, link, items, icon }: Props) => {
                     <SimpleDropdown
                         icon
                         as={Button}
-                        originalPlacement="bottom-right"
+                        originalPlacement="bottom-end"
                         title={c('Title').t`Open actions dropdown`}
                     >
                         <DropdownMenu>{items}</DropdownMenu>
