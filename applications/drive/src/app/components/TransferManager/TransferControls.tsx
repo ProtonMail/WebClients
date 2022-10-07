@@ -40,7 +40,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     // children in progress as that would lead to some edge cases that
     // parent with its children is removed from transfer manager but some
     // ongoing transfers are still finishing up.
-    const isClearAvailable =
+    const isRemoveAvailable =
         isFinished && (type === TransferType.Download || isTransferWithChildrenFinished(transfer as Upload));
 
     const pauseText = type === TransferType.Download ? c('Action').t`Pause download` : c('Action').t`Pause upload`;
@@ -73,13 +73,13 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
             });
         }
 
-        if (isClearAvailable) {
+        if (isRemoveAvailable) {
             buttons.push({
                 onClick: () => transferControls.remove(transfer, type),
                 title: removeText,
                 disabled: isFinalizing,
                 iconName: 'broom',
-                testId: testIdPrefix + 'clear',
+                testId: testIdPrefix + 'remove',
             });
         }
 

@@ -19,7 +19,10 @@ const EmptyShared = ({ shareId }: Props) => {
     };
 
     return (
-        <EmptyViewContainer imageProps={{ src: noLinksSvg, title: c('Info').t`Share files with links` }}>
+        <EmptyViewContainer
+            imageProps={{ src: noLinksSvg, title: c('Info').t`Share files with links` }}
+            data-test-id="shared-links-empty-placeholder"
+        >
             <h3 className="text-bold">{c('Info').t`Share files with links`}</h3>
             <p>{c('Info').t`Create links and share your files with others.`}</p>
             <div className="flex flex-justify-center">

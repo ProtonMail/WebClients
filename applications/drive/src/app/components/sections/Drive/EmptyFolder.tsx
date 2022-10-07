@@ -39,7 +39,10 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
     return (
         <>
             <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
-                <EmptyViewContainer imageProps={{ src: uploadSvg, title: c('Info').t`There are no files yet` }}>
+                <EmptyViewContainer
+                    imageProps={{ src: uploadSvg, title: c('Info').t`There are no files yet` }}
+                    data-test-id="my-files-empty-placeholder"
+                >
                     <h3 className="text-bold">{c('Info').t`Go ahead, upload a file`}</h3>
                     <p className="color-weak">
                         {!isNarrow
