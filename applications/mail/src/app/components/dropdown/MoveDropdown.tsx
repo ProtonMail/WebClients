@@ -209,7 +209,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                 <label
                                     htmlFor={folderButtonID(folder.ID)}
                                     data-level={folder.level}
-                                    className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
+                                    className="flex flex-nowrap flex-align-items-center flex-item-fluid"
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
                                     onClick={() => handleApplyDirectly(folder.ID, folder.Name)}
                                 >
