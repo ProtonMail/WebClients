@@ -13,7 +13,7 @@ import {
     startImportTask,
 } from '@proton/shared/lib/api/easySwitch';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getVisualCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getPersonalCalendars, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import { ACCENT_COLORS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
@@ -677,7 +677,7 @@ const EasySwitchOauthModal = ({
                             updateCheckedTypes={(importTypes) => setCheckedTypes(importTypes)}
                             modalModel={modalModel}
                             toEmail={addressMap[modalModel.AddressID].Email}
-                            calendars={getWritableCalendars(visualCalendars)}
+                            calendars={getPersonalCalendars(visualCalendars)}
                             addresses={addresses}
                             labels={labels}
                             folders={folders}
