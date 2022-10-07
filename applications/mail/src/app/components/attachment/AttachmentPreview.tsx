@@ -86,7 +86,7 @@ const AttachmentPreview = (
     return (
         <Portal>
             <FilePreview
-                loading={!previewing.contents}
+                isLoading={!previewing.contents}
                 contents={previewing.contents}
                 fileName={previewing.attachment?.Name}
                 mimeType={previewing.attachment?.MIMEType}
