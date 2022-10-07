@@ -92,10 +92,7 @@ const LoginForm = ({
         if (challengeLoading) {
             return;
         }
-        // Special focus management for challenge
-        setTimeout(() => {
-            challengeRefLogin.current?.focus('#username');
-        }, 0);
+        usernameRef.current?.focus();
     }, [challengeLoading]);
 
     const { validator, onFormSubmit } = useFormErrors();
