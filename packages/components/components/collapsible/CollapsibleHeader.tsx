@@ -35,9 +35,12 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
     onClick,
     ...rest
 }: CollapsibleHeaderProps<E>) => {
-    const { toggle, headerId } = useContext(CollapsibleContext);
+    const { toggle, headerId, disabled } = useContext(CollapsibleContext);
 
     const handleContainerClick = () => {
+        if (disabled) {
+            return;
+        }
         if (!disableContainerToggle) {
             toggle();
         }
@@ -47,12 +50,14 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
     return (
         <Box
             as={element}
+            disabled={disabled}
             {...rest}
             onClick={handleContainerClick}
             className={clsx(
                 className,
                 'flex flex-nowrap flex-align-items-center',
-                !disableContainerToggle && 'collapsible-header--clickable'
+                disabled && 'no-pointer-events',
+                !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
         >
             <div

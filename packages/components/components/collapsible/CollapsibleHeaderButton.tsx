@@ -21,10 +21,11 @@ const CollapsibleHeaderButton = ({
     expandText = c('Collapsible tooltip').t`Expand`,
     collapseText = c('Collapsible tooltip').t`Collapse`,
     children,
+    disabled,
     onClick,
     ...rest
 }: CollapsibleHeaderButtonProps) => {
-    const { isExpanded, toggle, headerId, contentId } = useContext(CollapsibleContext);
+    const { isExpanded, toggle, headerId, contentId, disabled: contextDisabled } = useContext(CollapsibleContext);
 
     const tooltipText = isExpanded ? collapseText : expandText;
 
@@ -39,6 +40,7 @@ const CollapsibleHeaderButton = ({
         <Tooltip title={tooltipText}>
             <Button
                 {...rest}
+                disabled={disabled || contextDisabled}
                 aria-expanded={isExpanded}
                 aria-describedby={headerId}
                 aria-controls={contentId}
