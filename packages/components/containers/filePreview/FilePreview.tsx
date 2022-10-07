@@ -22,7 +22,9 @@ import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
 
 interface Props {
-    loading: boolean;
+    isMetaLoading?: boolean;
+    isLoading: boolean;
+
     fileName?: string;
     mimeType?: string;
     fileSize?: number;
@@ -31,6 +33,7 @@ interface Props {
     sharedStatus?: SharedStatus;
     signatureStatus?: ReactNode;
     signatureConfirmation?: ReactNode;
+    imgThumbnailUrl?: string;
     onClose?: () => void;
     onSave?: () => void;
     onDetail?: () => void;
@@ -39,11 +42,13 @@ interface Props {
 
 const FilePreview = (
     {
+        isMetaLoading = false,
+        isLoading = false,
+
         contents,
         fileName,
         mimeType,
         fileSize,
-        loading,
         navigationControls,
         sharedStatus,
         signatureStatus,
@@ -52,6 +57,7 @@ const FilePreview = (
         onSave,
         onDetail,
         onShare,
+        imgThumbnailUrl,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -73,13 +79,17 @@ const FilePreview = (
     ]);
 
     const renderPreview = () => {
+        if (!imgThumbnailUrl && isLoading) {
+            return <PreviewLoader />;
+        }
+
         if (signatureConfirmation && !forcePreview) {
             return (
                 <SignatureIssue signatureConfirmation={signatureConfirmation} onClick={() => setForcePreview(true)} />
             );
         }
 
-        if (!contents || !mimeType || !isPreviewAvailable(mimeType, fileSize)) {
+        if ((!contents && !imgThumbnailUrl) || !mimeType || !isPreviewAvailable(mimeType, fileSize)) {
             return (
                 <div className="file-preview-container">
                     <UnsupportedPreview onSave={onSave} />
@@ -88,7 +98,15 @@ const FilePreview = (
         }
 
         if (isSupportedImage(mimeType)) {
-            return <ImagePreview contents={contents} mimeType={mimeType} onSave={onSave} />;
+            return (
+                <ImagePreview
+                    isLoading={isLoading}
+                    placeholderSrc={imgThumbnailUrl}
+                    contents={contents}
+                    mimeType={mimeType}
+                    onSave={onSave}
+                />
+            );
         }
         if (isSupportedVideo(mimeType, fileSize)) {
             return <VideoPreview contents={contents} mimeType={mimeType} onSave={onSave} />;
@@ -118,7 +136,7 @@ const FilePreview = (
             >
                 {navigationControls}
             </Header>
-            {loading ? <PreviewLoader /> : renderPreview()}
+            {isMetaLoading ? <PreviewLoader /> : renderPreview()}
         </div>
     );
 };
