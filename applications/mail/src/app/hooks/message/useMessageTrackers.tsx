@@ -3,8 +3,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMailSettings } from '@proton/components';
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { hasToSkipProxy } from '../../helpers/message/messageRemotes';
@@ -70,7 +70,7 @@ export const useMessageTrackers = ({ message }: Props) => {
     const [modalText, setModalText] = useState<string>('');
 
     const hasProtection = (mailSettings?.ImageProxy ? mailSettings.ImageProxy : 0) > IMAGE_PROXY_FLAGS.NONE;
-    const hasShowImage = hasBit(mailSettings?.ShowImages ? mailSettings.ShowImages : 0, SHOW_IMAGES.REMOTE);
+    const hasShowRemoteImage = hasShowRemote(mailSettings);
 
     const { trackers, numberOfTrackers } = useMemo(() => getTrackers(message), [message]);
 
@@ -83,7 +83,8 @@ export const useMessageTrackers = ({ message }: Props) => {
      * If email protection is OFF and we do not load the image automatically, the user is aware about the need of protection.
      * From our side, we want to inform him that he can also turn on protection mode in the settings.
      */
-    const needsMoreProtection = !hasProtection && !hasShowImage;
+    const needsMoreProtection = !hasProtection && !hasShowRemoteImage;
+    console.log('needsMoreProtection', { needsMoreProtection, hasShowRemoteImage, mailSettings });
 
     useEffect(() => {
         let nextTitle;
@@ -118,5 +119,5 @@ export const useMessageTrackers = ({ message }: Props) => {
         }
     }, [numberOfTrackers, needsMoreProtection, hasProtection, hasFailLoadSomeImgThroughProxy]);
 
-    return { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title, modalText, trackers };
+    return { hasProtection, hasShowRemoteImage, numberOfTrackers, needsMoreProtection, title, modalText, trackers };
 };

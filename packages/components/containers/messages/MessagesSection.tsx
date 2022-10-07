@@ -21,13 +21,19 @@ import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
 
-const { EMBEDDED } = SHOW_IMAGES;
-
 const MessagesSection = () => {
-    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1, SpamAction = null } = {}] =
-        useMailSettings();
-    const [showImages, setShowImages] = useState(ShowImages);
-    const handleChange = (newValue: number) => setShowImages(newValue);
+    const [
+        {
+            ViewMode = 0,
+            StickyLabels = 0,
+            HideEmbeddedImages = SHOW_IMAGES.SHOW,
+            HideRemoteImages = SHOW_IMAGES.SHOW,
+            ConfirmLink = 1,
+            SpamAction = null,
+        } = {},
+    ] = useMailSettings();
+    const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
+    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -37,7 +43,8 @@ const MessagesSection = () => {
     const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
     const [loadingSpamAction, withLoadingSpamAction] = useLoading();
 
-    const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
+    const handleChangeHideEmbedded = (newValue: number) => setHideEmbeddedImages(newValue);
+    const handleChangeHideRemote = (newValue: number) => setHideRemoteImages(newValue);
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
@@ -77,7 +84,11 @@ const MessagesSection = () => {
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt0-5">
-                        <RemoteToggle id="remoteToggle" showImages={showImages} onChange={handleChangeShowImage} />
+                        <RemoteToggle
+                            id="remoteToggle"
+                            hideRemoteImages={hideRemoteImages}
+                            onChange={handleChangeHideRemote}
+                        />
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
@@ -93,7 +104,11 @@ const MessagesSection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">
-                    <EmbeddedToggle id="embeddedToggle" showImages={showImages} onChange={handleChange} />
+                    <EmbeddedToggle
+                        id="embeddedToggle"
+                        hideEmbeddedImages={hideEmbeddedImages}
+                        onChange={handleChangeHideEmbedded}
+                    />
                 </SettingsLayoutRight>
             </SettingsLayout>
             <SettingsLayout>

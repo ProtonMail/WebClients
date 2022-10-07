@@ -2,29 +2,26 @@ import { c } from 'ttag';
 
 import { updateShowImages } from '@proton/shared/lib/api/mailSettings';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
-import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications, useToggle } from '../../hooks';
 
-const { EMBEDDED } = SHOW_IMAGES;
-
 interface Props {
     id: string;
-    showImages: number;
+    hideEmbeddedImages: number;
     onChange: (value: number) => void;
 }
 
-const EmbeddedToggle = ({ id, showImages, onChange }: Props) => {
+const EmbeddedToggle = ({ id, hideEmbeddedImages, onChange }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const api = useApi();
-    const { state, toggle } = useToggle(hasBit(showImages, EMBEDDED));
+    const { state, toggle } = useToggle(hideEmbeddedImages === SHOW_IMAGES.SHOW);
 
     const handleChange = async (checked: boolean) => {
-        const bit = checked ? setBit(showImages, EMBEDDED) : clearBit(showImages, EMBEDDED);
-        await api(updateShowImages(bit));
+        const bit = checked ? SHOW_IMAGES.SHOW : SHOW_IMAGES.HIDE;
+        await api(updateShowImages(bit)); // TODO
         await call();
         toggle();
         onChange(bit);

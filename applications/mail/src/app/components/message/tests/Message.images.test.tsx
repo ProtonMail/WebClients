@@ -51,8 +51,6 @@ describe('Message images', () => {
     afterEach(clearAll);
 
     it('should display all elements other than images', async () => {
-        addToCache('MailSettings', { ShowImages: SHOW_IMAGES.NONE });
-
         const document = createDocument(content);
 
         const message: MessageState = {
@@ -71,6 +69,7 @@ describe('Message images', () => {
         };
 
         minimalCache();
+        addToCache('MailSettings', { HideRemoteImages: SHOW_IMAGES.HIDE });
 
         initMessage(message);
 
@@ -140,7 +139,7 @@ describe('Message images', () => {
         };
 
         minimalCache();
-        addToCache('MailSettings', { ShowImages: SHOW_IMAGES.NONE, ImageProxy: IMAGE_PROXY_FLAGS.PROXY });
+        addToCache('MailSettings', { HideRemoteImages: SHOW_IMAGES.HIDE, ImageProxy: IMAGE_PROXY_FLAGS.PROXY });
 
         initMessage(message);
 
@@ -212,7 +211,7 @@ describe('Message images', () => {
         });
 
         minimalCache();
-        addToCache('MailSettings', { ShowImages: SHOW_IMAGES.NONE, ImageProxy: IMAGE_PROXY_FLAGS.PROXY });
+        addToCache('MailSettings', { HideRemoteImages: SHOW_IMAGES.HIDE, ImageProxy: IMAGE_PROXY_FLAGS.PROXY });
 
         initMessage(message);
 

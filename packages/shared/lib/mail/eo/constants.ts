@@ -25,7 +25,9 @@ export const eoDefaultMailSettings = {
     AutoWildcardSearch: 1,
     ComposerMode: 0,
     MessageButtons: 0,
-    ShowImages: SHOW_IMAGES.NONE,
+    ShowImages: SHOW_IMAGES.HIDE, // TODO CHECK
+    HideRemoteImages: SHOW_IMAGES.HIDE, // TODO CHECK
+    HideEmbeddedImages: SHOW_IMAGES.SHOW, // TODO CHECK
     ShowMoved: 0,
     ViewMode: 0,
     ViewLayout: 0,
