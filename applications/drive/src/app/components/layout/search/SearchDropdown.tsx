@@ -30,7 +30,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
             <Dropdown
                 anchorRef={anchorRef as React.RefObject<HTMLElement>}
                 isOpen={isOpen}
-                originalPlacement="bottom-left"
+                originalPlacement="bottom-start"
                 autoClose={false}
                 autoCloseOutside={true}
                 noMaxSize

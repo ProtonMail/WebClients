@@ -2,14 +2,13 @@ import { MouseEvent, ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { classnames, generateUID } from '../../helpers';
 import Icon from '../icon/Icon';
-import { Popper, usePopper, usePopperAnchor } from '../popper';
+import { Popper, PopperPlacement, usePopper, usePopperAnchor } from '../popper';
 import useTooltipHandlers from '../tooltip/useTooltipHandlers';
 
 interface Props {
-    originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
+    originalPlacement?: PopperPlacement;
     url?: string;
     title?: ReactNode;
     buttonClass?: string;
@@ -18,6 +17,7 @@ interface Props {
     questionMark?: boolean;
     colorPrimary?: boolean;
 }
+
 const Info = ({
     originalPlacement = 'top',
     url,
@@ -31,18 +31,10 @@ const Info = ({
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
-    const [isRTL] = useRightToLeft();
-    const rtlAdjustedPlacement = originalPlacement.includes('right')
-        ? originalPlacement.replace('right', 'left')
-        : originalPlacement.replace('left', 'right');
-
-    const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
-    const { anchorRef, open, close, isOpen } = usePopperAnchor<HTMLButtonElement>();
-    const { position, placement } = usePopper({
-        popperEl,
-        anchorEl: anchorRef?.current,
+    const { open, close, isOpen } = usePopperAnchor<HTMLButtonElement>();
+    const { floating, reference, position, arrow, placement } = usePopper({
         isOpen,
-        originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
+        originalPlacement,
     });
 
     const handleClick = (event: MouseEvent) => {
@@ -61,7 +53,7 @@ const Info = ({
                 tabIndex={buttonTabIndex}
                 className={buttonClass}
                 onClick={handleClick}
-                ref={anchorRef}
+                ref={reference}
                 {...tooltipHandlers}
                 aria-describedby={uid}
                 type="button"
@@ -76,10 +68,10 @@ const Info = ({
             </button>
             {title && isOpen ? (
                 <Popper
-                    divRef={setPopperEl}
+                    divRef={floating}
                     id={uid}
                     isOpen={isOpen}
-                    style={position}
+                    style={{ ...position, ...arrow }}
                     className={classnames(['tooltip', `tooltip--${placement}`])}
                 >
                     {title}

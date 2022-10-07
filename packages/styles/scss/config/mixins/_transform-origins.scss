@@ -7,17 +7,17 @@
 		$origin
 			in (
 				(top, bottom center),
-				(top-left, bottom left),
-				(top-right, bottom right),
+				(top-start, bottom left),
+				(top-end, bottom right),
 				(bottom, top center),
-				(bottom-left, top left),
-				(bottom-right, top right),
+				(bottom-start, top left),
+				(bottom-end, top right),
 				(left, right center),
-				(left-bottom, right bottom),
-				(left-top, right top),
+				(left-end, right bottom),
+				(left-start, right top),
 				(right, left center),
-				(right-bottom, left bottom),
-				(right-top, left top)
+				(right-end, left bottom),
+				(right-start, left top)
 			)
 	{
 		&--#{$position} {

@@ -2,16 +2,13 @@ import { ReactNode, RefObject, useEffect, useState } from 'react';
 
 import { generateUID } from '../../helpers';
 import { Dropdown } from '../dropdown';
-import { CORNERS_ONLY_PLACEMENTS, Position } from '../popper/utils';
+import { PopperPosition, cornerPopperPlacements } from '../popper';
 
 export interface ContextMenuProps {
     anchorRef: RefObject<HTMLElement>;
     isOpen: boolean;
     children: ReactNode;
-    position?: {
-        top: number;
-        left: number;
-    };
+    position?: PopperPosition;
     close: () => void;
     autoClose?: boolean;
     noMaxHeight?: boolean;
@@ -46,20 +43,17 @@ const ContextMenu = ({
         };
     }, [isOpen, autoClose, close]);
 
-    // ContextMenu don't use the arrow, no need to complexify the API with arrow positioning
-    const originalPosition: Position | undefined = position ? { ...position, '--arrow-offset': 0 } : undefined;
-
     return (
         <Dropdown
             id={uid}
             isOpen={isOpen}
-            originalPosition={originalPosition}
-            availablePlacements={CORNERS_ONLY_PLACEMENTS}
+            anchorRef={anchorRef}
+            anchorPosition={position}
+            availablePlacements={cornerPopperPlacements}
             noCaret
             autoCloseOutsideAnchor={false}
-            originalPlacement="bottom-left"
+            originalPlacement="bottom-start"
             offset={1}
-            anchorRef={anchorRef}
             onClose={close}
             onContextMenu={(e) => e.stopPropagation()}
             noMaxHeight={noMaxHeight}
