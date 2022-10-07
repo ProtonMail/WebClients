@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 
+import { classnames } from '../..';
 import useElementRect from '../../hooks/useElementRect';
 import UnsupportedPreview from './UnsupportedPreview';
 import ZoomControl from './ZoomControl';
@@ -14,9 +15,17 @@ interface Props {
     mimeType: string;
     onSave?: () => void;
     contents?: Uint8Array[];
+    placeholderSrc?: string;
+    isLoading: boolean;
 }
 
 const FALLBACK_IMAGE_DIMENSION_VALUE = window.innerHeight / 2;
+
+// These are just arbitrary numbers to keep image reasonable size
+// on giant screens when we don't have information about image
+// dimensions
+const DEFAULT_IMAGE_DIMENSION_LIMIT_WIDTH = 2400;
+const DEFAULT_IMAGE_DIMENSION_LIMIT_HEIGHT = 1400;
 
 /*
  * Svg image dimension are 0 in Firefox. For these cases fallback values
@@ -46,19 +55,58 @@ function sanitizeSVG(contents: Uint8Array[]): Uint8Array[] {
     return [stringToUint8Array(sanitzedSVG)];
 }
 
-const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
+const ImagePreview = ({ isLoading = false, mimeType, contents, onSave, placeholderSrc }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const containerBounds = useElementRect(containerRef);
+
     const [error, setError] = useState(false);
+    const [thumbnailScale, setThumbnailScale] = useState(0);
     const [scale, setScale] = useState(0);
     const [imageData, setImageData] = useState({
         src: '',
     });
+    const [ready, setReady] = useState(false);
+
+    const handleZoomOut = () => setScale((zoom) => (zoom ? zoom * 0.9 : 1));
+    const handleZoomIn = () => setScale((zoom) => (zoom ? zoom * 1.1 : 1));
+    const fitToContainer = () => {
+        if (!imageRef.current || !containerBounds) {
+            return;
+        }
+
+        const heightLimit = Math.min(containerBounds.height, DEFAULT_IMAGE_DIMENSION_LIMIT_HEIGHT);
+        const widthLimit = Math.min(containerBounds.width, DEFAULT_IMAGE_DIMENSION_LIMIT_WIDTH);
+
+        const dimensions = getImageNaturalDimensions(imageRef.current);
+        const heightRatio = heightLimit / dimensions.height;
+        const widthRatio = widthLimit / dimensions.width;
+
+        const scale = Math.min(heightRatio, widthRatio);
+
+        if (isLoading) {
+            setThumbnailScale(scale);
+        } else {
+            setScale(scale);
+        }
+    };
+
+    const handleBrokenImage = () => {
+        if (!error) {
+            setError(true);
+        }
+    };
+
+    const dimensions = getImageNaturalDimensions(imageRef.current);
+    const scaledDimensions = {
+        height: dimensions.height * (scale || thumbnailScale),
+        width: dimensions.width * (scale || thumbnailScale),
+    };
+
+    const styles = isLoading ? {} : scaledDimensions;
+    const shouldHideZoomControls = isLoading || !Boolean(scale);
 
     useEffect(() => {
-        let src: string;
-
         if (error) {
             setError(false);
         }
@@ -70,44 +118,25 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
 
         const data = isSVG(mimeType) ? sanitizeSVG(contents) : contents;
         const blob = new Blob(data, { type: mimeType });
+        const srcUrl = URL.createObjectURL(blob);
+
         setImageData({
-            src: URL.createObjectURL(blob),
+            src: srcUrl,
         });
 
+        // Load image before rendering
+        const buffer = new Image();
+        buffer.onload = () => {
+            setReady(true);
+        };
+        buffer.src = srcUrl;
+
         return () => {
-            if (src) {
-                URL.revokeObjectURL(src);
+            if (srcUrl) {
+                URL.revokeObjectURL(srcUrl);
             }
         };
     }, [contents, mimeType]);
-
-    const handleZoomOut = () => setScale((zoom) => (zoom ? zoom * 0.9 : 1));
-    const handleZoomIn = () => setScale((zoom) => (zoom ? zoom * 1.1 : 1));
-    const fitToContainer = () => {
-        if (!imageRef.current || !containerBounds) {
-            return;
-        }
-
-        const dimensions = getImageNaturalDimensions(imageRef.current);
-        const heightRatio = containerBounds.height / dimensions.height;
-        const widthRatio = containerBounds.width / dimensions.width;
-
-        const scale = Math.min(1, heightRatio, widthRatio);
-
-        setScale(scale);
-    };
-
-    const handleBrokenImage = () => {
-        if (!error) {
-            setError(true);
-        }
-    };
-
-    const dimensions = getImageNaturalDimensions(imageRef.current);
-    const scaledDimensions = {
-        height: dimensions.height * scale,
-        width: dimensions.width * scale,
-    };
 
     return (
         <>
@@ -115,32 +144,56 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                 {error ? (
                     <UnsupportedPreview onSave={onSave} type="image" />
                 ) : (
-                    imageData.src && (
-                        <div
-                            className="flex-no-min-children mauto relative"
-                            style={{
-                                ...scaledDimensions,
-                                // Add checkered background to override any theme
-                                // so transparent images are better visible.
-                                background:
-                                    'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
-                            }}
-                        >
+                    <div
+                        className="flex-no-min-children mauto relative"
+                        style={{
+                            ...scaledDimensions,
+                            // Add checkered background to override any theme
+                            // so transparent images are better visible.
+                            background: isLoading
+                                ? ''
+                                : 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                            overflow: 'hidden',
+                        }}
+                    >
+                        {!isLoading && ready && (
                             <img
                                 ref={imageRef}
                                 onLoad={() => fitToContainer()}
                                 onError={handleBrokenImage}
-                                className="file-preview-image"
-                                style={scaledDimensions}
+                                className={classnames(['file-preview-image file-preview-image-full-size'])}
+                                style={styles}
                                 src={imageData.src}
                                 alt={c('Info').t`Preview`}
                             />
-                        </div>
-                    )
+                        )}
+                        <img
+                            ref={imageRef}
+                            onLoad={() => fitToContainer()}
+                            onError={handleBrokenImage}
+                            className={classnames(['file-preview-image', ready && 'hide'])}
+                            style={{
+                                // Scaling up the image to hide its edges that become
+                                // transparent when blurred
+                                transform: 'scale(1.1)',
+                                filter: 'blur(5px)',
+                                ...scaledDimensions,
+                            }}
+                            src={placeholderSrc}
+                            alt={c('Info').t`Preview`}
+                        />
+                    </div>
                 )}
             </div>
+
             {!error && (
-                <ZoomControl onReset={fitToContainer} scale={scale} onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />
+                <ZoomControl
+                    className={shouldHideZoomControls ? 'visibility-hidden' : ''}
+                    onReset={fitToContainer}
+                    scale={scale}
+                    onZoomIn={handleZoomIn}
+                    onZoomOut={handleZoomOut}
+                />
             )}
         </>
     );

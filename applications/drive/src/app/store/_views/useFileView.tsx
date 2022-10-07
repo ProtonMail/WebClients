@@ -18,7 +18,8 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     const { download } = useDownloadProvider();
     const { downloadStream } = useDownload();
 
-    const [isLoading, withLoading] = useLoading(true);
+    const [isContentLoading, withContentLoading] = useLoading(true);
+
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
     const [contents, setContents] = useState<Uint8Array[]>();
@@ -27,7 +28,8 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     const preloadFile = async (abortSignal: AbortSignal) => {
         const link = await getLink(abortSignal, shareId, linkId);
 
-        if (isPreviewAvailable(link.mimeType, link.size)) {
+        if (link && isPreviewAvailable(link.mimeType, link.size)) {
+            setLink(link);
             const { stream, controls } = downloadStream([
                 {
                     ...link,
@@ -39,17 +41,21 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
             });
 
             setContents(await streamToBuffer(stream));
-            // Get latest link with signature updates.
+            // After file content download is finished we have complete information
+            // about signatures
             setLink(await getLink(abortSignal, shareId, linkId));
         } else {
             setContents(undefined);
-            setLink(link);
+            if (link) {
+                setLink(link);
+            }
         }
     };
 
     useEffect(() => {
         const ac = new AbortController();
-        withLoading(preloadFile(ac.signal)).catch((err) => {
+
+        withContentLoading(preloadFile(ac.signal)).catch((err) => {
             if (!isIgnoredError(err)) {
                 setError(err);
             }
@@ -76,7 +82,8 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     }, [shareId, link, contents]);
 
     return {
-        isLoading,
+        isLinkLoading: !link && !error,
+        isContentLoading,
         error,
         link,
         contents,
