@@ -73,7 +73,7 @@ export const SearchField = () => {
         <div ref={indexingDropdownAnchorRef} className="searchfield-container">
             <Spotlight
                 className="search-spotlight"
-                originalPlacement="bottom-left"
+                originalPlacement="bottom-start"
                 show={shouldShowSpotlight}
                 onDisplayed={searchSpotlight.onDisplayed}
                 content={

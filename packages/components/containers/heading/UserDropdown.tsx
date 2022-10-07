@@ -187,7 +187,8 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                 anchorRef={anchorRef}
                 autoClose={false}
                 onClose={close}
-                originalPlacement="bottom-right"
+                originalPlacement="bottom-end"
+                UNSTABLE_AUTO_HEIGHT
             >
                 <DropdownMenu>
                     <div className="px1 py0-5">
@@ -298,7 +299,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
                     <SimpleDropdown
                         as={DropdownMenuButton}
-                        originalPlacement="left-top"
+                        originalPlacement="left-start"
                         hasCaret={false}
                         dropdownStyle={{ '--min-width': '15em' }}
                         title={c('Title').t`Open help menu`}

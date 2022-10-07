@@ -56,7 +56,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                 id={uid}
                 isOpen={isOpen}
                 onClose={close}
-                originalPlacement="bottom-left"
+                originalPlacement="bottom-start"
                 contentProps={{
                     className: 'flex flex-column flex-nowrap',
                 }}

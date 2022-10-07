@@ -116,7 +116,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     <Tooltip
                         title={title}
                         type={tooltipType}
-                        originalPlacement="top-right"
+                        originalPlacement="top-end"
                         isOpen={isFocused && !rest.value}
                     >
                         <span className="flex flex-item-noshrink p0-25">
