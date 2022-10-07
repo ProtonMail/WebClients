@@ -131,8 +131,12 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                             size="small"
                                             icon
                                             disabled={!!isLoading}
+                                            className="flex-item-noshrink"
                                         >
-                                            <Icon name="cog-wheel" className="flex-item-noshrink" />
+                                            <Icon
+                                                name="cog-wheel"
+                                                alt={c('Calendar table settings button tooltip').t`Open settings`}
+                                            />
                                         </ButtonLike>
                                     </Tooltip>
                                 </div>
