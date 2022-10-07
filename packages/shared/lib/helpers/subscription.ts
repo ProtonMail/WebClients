@@ -66,6 +66,24 @@ export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePl
 export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
 export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
+export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {
+    if (hasFree(subscription)) {
+        switch (app) {
+            case APPS.PROTONDRIVE:
+                return PLANS.DRIVE;
+            case APPS.PROTONVPN_SETTINGS:
+                return PLANS.VPN;
+            default:
+            case APPS.PROTONMAIL:
+                return PLANS.MAIL;
+        }
+    }
+    if (hasBundle(subscription) || hasBundlePro(subscription)) {
+        return PLANS.BUNDLE_PRO;
+    }
+    return PLANS.BUNDLE;
+};
+
 export const getIsB2BPlan = (planName: PLANS | ADDON_NAMES) => {
     return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE].includes(planName as any);
 };
