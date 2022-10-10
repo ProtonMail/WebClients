@@ -163,7 +163,34 @@ export const parseMultiUserCsv = async (files: File[]) => {
     return convertCSVUsers(csvUsers);
 };
 
-export const downloadSampleCSV = () => {
+const defaultSampleCSV: ExportedCSVUser[] = [
+    {
+        DisplayName: 'Alice',
+        EmailAddresses: 'alice@mydomain.com',
+        Password: 'alice_password',
+        TotalStorage: GIGA,
+        VPNAccess: 1,
+        PrivateSubUser: 0,
+    },
+    {
+        DisplayName: 'Bob',
+        EmailAddresses: 'bob@mydomain.com',
+        Password: 'bob_password',
+        TotalStorage: GIGA,
+        VPNAccess: 0,
+        PrivateSubUser: 1,
+    },
+    {
+        DisplayName: 'Charlie',
+        EmailAddresses: 'charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com',
+        Password: 'charlie_password',
+        TotalStorage: GIGA,
+        VPNAccess: 1,
+        PrivateSubUser: 1,
+    },
+];
+
+export const getSampleCSV = (userArray: ExportedCSVUser[] = defaultSampleCSV) => {
     const commentLine = {
         DisplayName: '# Display name for the user',
         EmailAddresses:
@@ -174,34 +201,11 @@ export const downloadSampleCSV = () => {
         PrivateSubUser: '# Enter 1 to make the user account private',
     };
 
-    const exampleCSV: ExportedCSVUser[] = [
-        {
-            DisplayName: 'Alice',
-            EmailAddresses: 'alice@mydomain.com',
-            Password: 'alice_password',
-            TotalStorage: GIGA,
-            VPNAccess: 1,
-            PrivateSubUser: 0,
-        },
-        {
-            DisplayName: 'Bob',
-            EmailAddresses: 'bob@mydomain.com',
-            Password: 'bob_password',
-            TotalStorage: GIGA,
-            VPNAccess: 0,
-            PrivateSubUser: 1,
-        },
-        {
-            DisplayName: 'Charlie',
-            EmailAddresses: 'charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com',
-            Password: 'charlie_password',
-            TotalStorage: GIGA,
-            VPNAccess: 1,
-            PrivateSubUser: 1,
-        },
-    ];
+    return toCsv([commentLine, ...userArray]);
+};
 
-    const csv = toCsv([commentLine, ...exampleCSV]);
+export const downloadSampleCSV = () => {
+    const csv = getSampleCSV();
     const blob = new Blob([csv], { type: 'text/csv' });
 
     downloadFile(blob, 'example_proton_bulk_user_upload.csv');
