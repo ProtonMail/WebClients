@@ -39,7 +39,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     }
 
     const remoteText = couldLoadDirect
-        ? c('Action').t`No trackers found, but some images could not be loaded with tracking protection.`
+        ? c('Action').t`Some images failed to load with tracking protection.`
         : c('Action').t`This message contains remote content.`;
 
     const embeddedText = c('Action').t`This message contains embedded images.`;
@@ -47,7 +47,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     const text = type === 'remote' ? remoteText : embeddedText;
 
     const actionText = couldLoadDirect
-        ? c('Action').t`Load unprotected`
+        ? c('Action').t`Load anyway`
         : type === 'embedded'
         ? c('Action').t`Load embedded images`
         : c('Action').t`Load`;
