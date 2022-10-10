@@ -50,6 +50,21 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
     const { emailAddress } = model;
     const totalApiKeys = model.publicKeys.apiKeys.length;
 
+    // translator: Please translate as in the sentence "this key is the primary one"
+    const primaryText = c('Key badge').t`Primary`;
+    // translator: Please translate as in the sentence "this key is obsolete"
+    const obsoleteText = c('Key badge').t`Obsolete`;
+    // translator: Please translate as in the sentence "this key is compromised"
+    const compromisedText = c('Key badge').t`Compromised`;
+    // translator: WKD stands for Web Key Directory (https://wiki.gnupg.org/WKD). You might not need to translate it
+    const wkdText = c('Key badge').t`WKD`;
+    // translator: Please translate as in the sentence "this key is trusted"
+    const trustedText = c('Key badge').t`Trusted`;
+    // translator: Please translate as in the sentence "this key is revoked"
+    const revokedText = c('Key badge').t`Revoked`;
+    // translator: Please translate as in the sentence "this key is expired"
+    const expiredText = c('Key badge').t`Expired`;
+
     /**
      * Extract keys info from model.publicKeys to define table body
      */
@@ -326,14 +341,14 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
                             !isNarrow && algo,
                             <Fragment key={fingerprint}>
-                                {isPrimary ? <Badge type="primary">{c('Key badge').t`Primary`}</Badge> : null}
+                                {isPrimary ? <Badge type="primary">{primaryText}</Badge> : null}
                                 {isObsolete && !isCompromised ? (
                                     <Badge
                                         type="warning"
                                         url={getKnowledgeBaseUrl('/download-public-private-key')}
                                         tooltip={obsoleteTooltipText}
                                     >
-                                        {c('Key badge').t`Obsolete`}
+                                        {obsoleteText}
                                     </Badge>
                                 ) : null}
                                 {isCompromised ? (
@@ -342,13 +357,13 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                         url={getKnowledgeBaseUrl('/download-public-private-key')}
                                         tooltip={compromisedTooltipText}
                                     >
-                                        {c('Key badge').t`Compromised`}
+                                        {compromisedText}
                                     </Badge>
                                 ) : null}
-                                {isWKD ? <Badge type="origin">{c('Key badge').t`WKD`}</Badge> : null}
-                                {isTrusted ? <Badge type="success">{c('Key badge').t`Trusted`}</Badge> : null}
-                                {isRevoked ? <Badge type="error">{c('Key badge').t`Revoked`}</Badge> : null}
-                                {isExpired ? <Badge type="error">{c('Key badge').t`Expired`}</Badge> : null}
+                                {isWKD ? <Badge type="origin">{wkdText}</Badge> : null}
+                                {isTrusted ? <Badge type="success">{trustedText}</Badge> : null}
+                                {isRevoked ? <Badge type="error">{revokedText}</Badge> : null}
+                                {isExpired ? <Badge type="error">{expiredText}</Badge> : null}
                             </Fragment>,
                             <DropdownActions key={fingerprint} size="small" list={list} />,
                         ].filter(Boolean);
