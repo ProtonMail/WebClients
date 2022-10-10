@@ -91,7 +91,8 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`Layout`,
                         id: 'layout',
                     },
-                    isShowSenderImagesEnabled && {
+                    {
+                        available: isShowSenderImagesEnabled,
                         text: c('Title').t`Sender image`,
                         id: 'sender-image',
                     },
