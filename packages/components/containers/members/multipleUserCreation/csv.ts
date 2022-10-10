@@ -98,7 +98,7 @@ const convertCSVUsers = (csvUsers: ImportedCSVUser[]) => {
 };
 
 export const parseMultiUserCsv = async (files: File[]) => {
-    if (!files) {
+    if (files.length === 0) {
         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
     }
     const [file] = files;
