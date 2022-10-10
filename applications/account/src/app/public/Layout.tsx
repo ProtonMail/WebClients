@@ -13,6 +13,7 @@ import NudgeTopBanner, { getIsProtonMailDomain } from '@proton/components/contai
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import clsx from '@proton/utils/clsx';
 
 import LanguageSelect from './LanguageSelect';
 import LayoutFooter from './LayoutFooter';
@@ -27,9 +28,10 @@ export interface Props {
     hasDecoration?: boolean;
     hasBackButton?: boolean;
     hasWelcome?: boolean;
+    headerClassName?: string;
 }
 
-const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, hasBackButton }: Props) => {
+const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, hasBackButton, headerClassName }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const { isTinyMobile } = useActiveBreakpoint();
@@ -39,7 +41,12 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, hasBackButto
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
             <PublicTopBanners>{hasWelcome ? welcome : null}</PublicTopBanners>
-            <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
+            <header
+                className={clsx(
+                    headerClassName,
+                    'sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5'
+                )}
+            >
                 <Href
                     className="flex-item-noshrink"
                     href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}

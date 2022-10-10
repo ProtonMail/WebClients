@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Step, Stepper } from '@proton/atoms/Stepper';
 import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import {
     useApi,
@@ -40,6 +41,7 @@ import {
     Plan,
 } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import clsx from '@proton/utils/clsx';
 
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
@@ -118,7 +120,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
-    const [[steps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
+    const [[previousSteps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
         [],
         SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
     ]);
@@ -229,16 +231,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     }, []);
 
     const handleBack = () => {
-        if (!steps.length) {
+        if (!previousSteps.length) {
             return;
         }
-        const newSteps = [...steps];
+        const newSteps = [...previousSteps];
         const newStep = newSteps.pop()!;
         setStep([newSteps, newStep]);
     };
 
     const handleStep = (to: SIGNUP_STEPS) => {
-        setStep([[...steps, step], to]);
+        setStep([[...previousSteps, step], to]);
     };
 
     const handleResult = (result: SignupActionResponse) => {
@@ -363,8 +365,53 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
     const accountData = cache?.accountData;
 
+    const stepper = useMemo(
+        () =>
+            (() => {
+                const stepLabels = {
+                    accountSetup: c('Signup step').t`Account setup`,
+                    verification: c('Signup step').t`Verification`,
+                    payment: c('Signup step').t`Payment`,
+                };
+
+                if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+                    const secondStep = (() => {
+                        if (!signupParameters.preSelectedPlan || signupParameters.preSelectedPlan === 'free') {
+                            return stepLabels.verification;
+                        }
+
+                        return stepLabels.payment;
+                    })();
+
+                    return { activeStep: 0, steps: [stepLabels.accountSetup, secondStep] };
+                }
+
+                if (step === SIGNUP_STEPS.UPSELL) {
+                    return { activeStep: 0, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                }
+
+                if (step === SIGNUP_STEPS.HUMAN_VERIFICATION) {
+                    return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                }
+
+                if (step === SIGNUP_STEPS.PAYMENT) {
+                    return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.payment] };
+                }
+
+                return;
+            })(),
+        [step, signupParameters.preSelectedPlan]
+    );
+
     const children = (
         <>
+            {stepper && (
+                <Stepper className="mb2-5" position="center" activeStep={stepper.activeStep}>
+                    {stepper.steps.map((step) => (
+                        <Step key={step}>{step}</Step>
+                    ))}
+                </Stepper>
+            )}
             {step === ACCOUNT_CREATION_USERNAME && (
                 <AccountStep
                     clientType={clientType}
@@ -611,7 +658,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const hasDecoration = [ACCOUNT_CREATION_USERNAME].includes(step);
 
     return (
-        <Layout hasBackButton={!!handleBackStep} bottomRight={<SignupSupportDropdown />} hasDecoration={hasDecoration}>
+        <Layout
+            hasBackButton={!!handleBackStep}
+            bottomRight={<SignupSupportDropdown />}
+            hasDecoration={hasDecoration}
+            headerClassName={clsx(stepper && 'mb1 on-tiny-mobile-mb2')}
+        >
             {children}
         </Layout>
     );
