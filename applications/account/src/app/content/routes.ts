@@ -16,6 +16,7 @@ interface Arguments {
     isInviteSettingEnabled: boolean;
     isReferralProgramEnabled: boolean;
     isBulkUserUploadEnabled: boolean;
+    isShowSenderImagesEnabled: boolean;
     isSubscribeCalendarEnabled: boolean;
     isDataRecoveryAvailable: boolean;
     recoveryNotification?: ThemeColor;
@@ -29,13 +30,14 @@ export const getRoutes = ({
     isSpyTrackerEnabled,
     isReferralProgramEnabled,
     isBulkUserUploadEnabled,
+    isShowSenderImagesEnabled,
     isSubscribeCalendarEnabled,
     isInviteSettingEnabled,
     recoveryNotification,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({ user, isDataRecoveryAvailable, isReferralProgramEnabled, recoveryNotification }),
-        mail: getMailAppRoutes({ user, addresses, organization, isSpyTrackerEnabled }),
+        mail: getMailAppRoutes({ user, addresses, organization, isSpyTrackerEnabled, isShowSenderImagesEnabled }),
         calendar: getCalendarAppRoutes(isSubscribeCalendarEnabled, isInviteSettingEnabled),
         drive: getDriveAppRoutes(),
         organization: getOrganizationAppRoutes({ user, organization, isBulkUserUploadEnabled }),
