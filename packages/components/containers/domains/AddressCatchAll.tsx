@@ -1,11 +1,9 @@
 import { c } from 'ttag';
 
-
-
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
-import { Radio } from '../../components';
+import { Checkbox } from '../../components';
 import { useApiWithoutResult, useNotifications } from '../../hooks';
 
 interface Props {
@@ -20,8 +18,7 @@ const AddressCatchAll = ({ address, domain, onChange, disabled }: Props) => {
     const { createNotification } = useNotifications();
 
     return (
-        <Radio
-            name="catchAllRadioGroup"
+        <Checkbox
             id={address.ID}
             disabled={loading || disabled}
             checked={!!address.CatchAll}
