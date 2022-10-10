@@ -1,10 +1,15 @@
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { MessageWithOptionalBody } from '../logic/messages/messagesTypes';
 import { Conversation } from '../models/conversation';
 import {
     applyLabelChangesOnConversation,
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
+    shouldDisplayTotal,
 } from './labels';
+
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 const labelID = 'LabelID';
 
@@ -109,5 +114,27 @@ describe('labels', () => {
             expect(updatedConversation.Labels?.length).toBe(1);
             expect(updatedConversation.Labels?.[0].ContextNumMessages).toBe(numMessages + 1);
         });
+    });
+
+    describe('shouldDisplayTotal', () => {
+        it.each`
+            label         | expectedShouldDisplayTotal
+            ${SCHEDULED}  | ${true}
+            ${INBOX}      | ${false}
+            ${TRASH}      | ${false}
+            ${SPAM}       | ${false}
+            ${ARCHIVE}    | ${false}
+            ${SENT}       | ${false}
+            ${ALL_SENT}   | ${false}
+            ${DRAFTS}     | ${false}
+            ${ALL_DRAFTS} | ${false}
+        `(
+            'should display the total: [$expectedShouldDisplayTotal] in [$label]',
+            async ({ label, expectedShouldDisplayTotal }) => {
+                const needsToDisplayTotal = shouldDisplayTotal(label);
+
+                expect(expectedShouldDisplayTotal).toEqual(needsToDisplayTotal);
+            }
+        );
     });
 });
