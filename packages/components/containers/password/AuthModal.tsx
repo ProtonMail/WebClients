@@ -73,7 +73,7 @@ const TOTPForm = ({
         <Form
             id={FORM_ID}
             onSubmit={(event) => {
-                if (!onFormSubmit(event.currentTarget)) {
+                if (!onFormSubmit(event.currentTarget) || loading) {
                     return;
                 }
                 onSubmit(safeCode);
@@ -119,7 +119,7 @@ const PasswordForm = ({
         <Form
             id={FORM_ID}
             onSubmit={(event) => {
-                if (!onFormSubmit(event.currentTarget)) {
+                if (!onFormSubmit(event.currentTarget) || loading) {
                     return;
                 }
                 onSubmit(password);
@@ -202,6 +202,10 @@ const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, ...rest }: P
     }, []);
 
     const handleSubmit = async ({ password, twoFa }: { password: string; twoFa: TwoFactorData | undefined }) => {
+        if (submitting || isLoadingAuth) {
+            return;
+        }
+
         let twoFaCredentials: Unwrap<ReturnType<typeof getTwoFaCredentials>>;
         try {
             setFidoError(false);
