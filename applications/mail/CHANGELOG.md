@@ -11,17 +11,10 @@
 
 ## Release 5.0.9 - October 6, 2022
 
-### Improvements
-
--   Added the ability to automatically assign a label to a sender
--   Added the ability to automatically assign a folder to a sender
-
 ### Bug fixes
 
--   Fixed an issue in which imported contacts were not properly displayed
--   Fixed an issue in which the expiration date was not displayed in some cases
--   Fixed an issue in which selecting a text in the search field would not open the search
--   Fixed a bug in which Safari would freeze while an email is being composed
+-   Fixed an issue in which the title of the email was not scrolling
+-   Fixed an issue in which the keyboard focus would be displayed without any keyboard input
 
 ## Release 5.0.8 - September 21, 2022
 
@@ -34,7 +27,8 @@
 
 -   Fixed an issue where imported contacts were not properly displayed
 -   Fixed an issue where the expiration date was not displayed in some cases
--   Fixed an issue in which selecting text in the search field did not open the search pop-up
+-   Fixed an issue in which selecting text in the search field did not open the search
+-   Fixed a bug in which Safari would freeze while an email is being composed
 
 ## Release 5.0.7 - September 7, 2022
 
