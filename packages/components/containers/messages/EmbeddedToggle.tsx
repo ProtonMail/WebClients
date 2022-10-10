@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { updateShowImages } from '@proton/shared/lib/api/mailSettings';
+import { updateHideEmbeddedImages } from '@proton/shared/lib/api/mailSettings';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';
@@ -21,7 +21,7 @@ const EmbeddedToggle = ({ id, hideEmbeddedImages, onChange }: Props) => {
 
     const handleChange = async (checked: boolean) => {
         const bit = checked ? SHOW_IMAGES.SHOW : SHOW_IMAGES.HIDE;
-        await api(updateShowImages(bit)); // TODO
+        await api(updateHideEmbeddedImages(bit));
         await call();
         toggle();
         onChange(bit);

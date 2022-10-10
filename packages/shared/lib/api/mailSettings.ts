@@ -13,10 +13,16 @@ export const updateShowMoved = (ShowMoved: number) => ({
     data: { ShowMoved },
 });
 
-export const updateShowImages = (ShowImages: number) => ({
-    url: 'mail/v4/settings/images',
+export const updateHideRemoteImages = (HideRemoteImages: number) => ({
+    url: 'mail/v4/settings/hide-remote-images',
     method: 'put',
-    data: { ShowImages },
+    data: { HideRemoteImages },
+});
+
+export const updateHideEmbeddedImages = (HideEmbeddedImages: number) => ({
+    url: 'mail/v4/settings/hide-embedded-images',
+    method: 'put',
+    data: { HideEmbeddedImages },
 });
 
 export const updateAutoSaveContacts = (AutoSaveContacts: number) => ({
