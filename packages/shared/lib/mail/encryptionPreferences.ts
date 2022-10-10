@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { PublicKeyReference } from '@proton/crypto';
 
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
-import { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
+import { BRAND_NAME, CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
 import { ContactPublicKeyModel, MailSettings, PublicKeyModel, SelfSend } from '../interfaces';
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
@@ -104,7 +104,8 @@ const extractEncryptionPreferencesOwnAddress = (
             ...result,
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY,
-                c('Error').t`No keys retrieved for internal user`
+                // Proton users should always have keys, so this case should never happen in practice. Therefore we don't translate the error message
+                'No key was found for the Proton user'
             ),
         };
     }
@@ -174,7 +175,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY,
-                c('Error').t`No keys retrieved for internal user`
+                // Proton users should always have keys, so this case should never happen in practice. Therefore we don't translate the error message
+                'No key was found for the Proton user'
             ),
         };
     }
@@ -186,7 +188,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND,
-                c('Error').t`Primary key retrieved for internal user is not valid for sending`
+                c('Error').t`Primary key retrieved for ${BRAND_NAME} user is not valid for sending`
             ),
         };
     }
