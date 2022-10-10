@@ -43,7 +43,7 @@ const EmailPrivacySection = () => {
                         <Info
                             url={getKnowledgeBaseUrl('/images-by-default')}
                             title={c('Info')
-                                .t`Prevents content from the sender's server from loading without your permission.`}
+                                .t`Loaded content is being protected by our proxy when the block tracker is activated.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
