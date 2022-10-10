@@ -10,6 +10,7 @@ import {
     CalendarMemberInvitation,
     MEMBER_INVITATION_STATUS,
 } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
@@ -45,11 +46,11 @@ const CalendarMemberAndInvitationList = ({
         });
     };
 
-    const shouldDisplayStatus = invitations.some(({ Status }) =>
+    const displayStatus = invitations.some(({ Status }) =>
         [MEMBER_INVITATION_STATUS.REJECTED, MEMBER_INVITATION_STATUS.PENDING].includes(Status)
     );
     // do not display permissions if there are only declined invitations
-    const shouldDisplayPermissions =
+    const displayPermissions =
         !!members.length || invitations.some(({ Status }) => Status !== MEMBER_INVITATION_STATUS.REJECTED);
 
     return (
@@ -68,10 +69,12 @@ const CalendarMemberAndInvitationList = ({
                 <TableHeader className="no-mobile">
                     <TableRow>
                         <TableHeaderCell className="">{c('Header').t`User`}</TableHeaderCell>
-                        <TableHeaderCell>{shouldDisplayPermissions && c('Header').t`Permissions`}</TableHeaderCell>
-                        <TableHeaderCell className="no-tablet">
-                            {shouldDisplayStatus && c('Header').t`Status`}
-                        </TableHeaderCell>
+                        {displayPermissions && <TableHeaderCell>{c('Header').t`Permissions`}</TableHeaderCell>}
+                        {displayStatus && (
+                            <TableHeaderCell className={clsx([displayPermissions && 'no-tablet'])}>
+                                {c('Header').t`Status`}
+                            </TableHeaderCell>
+                        )}
                         <TableHeaderCell>{c('Header').t`Action`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>
@@ -96,6 +99,8 @@ const CalendarMemberAndInvitationList = ({
                                 email={contactEmail}
                                 deleteLabel={c('Action').t`Remove this member`}
                                 permissions={Permissions}
+                                displayPermissions={displayPermissions}
+                                displayStatus={displayStatus}
                             />
                         );
                     })}
@@ -130,6 +135,8 @@ const CalendarMemberAndInvitationList = ({
                                 deleteLabel={deleteLabel}
                                 permissions={Permissions}
                                 status={Status}
+                                displayPermissions={displayPermissions}
+                                displayStatus={displayStatus}
                             />
                         );
                     })}
