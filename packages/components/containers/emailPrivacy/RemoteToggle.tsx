@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { updateShowImages } from '@proton/shared/lib/api/mailSettings';
+import { updateHideRemoteImages } from '@proton/shared/lib/api/mailSettings';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';
@@ -21,7 +21,7 @@ const RemoteToggle = ({ id, hideRemoteImages, onChange, ...rest }: Props) => {
 
     const handleChange = async (checked: boolean) => {
         const bit = checked ? SHOW_IMAGES.SHOW : SHOW_IMAGES.HIDE;
-        await api(updateShowImages(bit)); // TODO
+        await api(updateHideRemoteImages(bit));
         await call();
         toggle();
         onChange(bit);
