@@ -326,7 +326,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             <label
                                 htmlFor={labelCheckID(ID)}
                                 title={Name}
-                                className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
+                                className="flex flex-nowrap flex-align-items-center flex-item-fluid"
                                 data-testid={`label-dropdown:label-${Name}`}
                                 onClick={() => handleApplyDirectly(ID)}
                             >
