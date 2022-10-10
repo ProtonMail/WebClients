@@ -260,13 +260,10 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const scheduledElement = getByTestId(`navigation-link:Scheduled`);
-
-        const scheduledLocationAside = scheduledElement.querySelectorAll('.navigation-counter-item');
+        const scheduledLocationAside = getByTestId(`navigation-link:unread-count`);
 
         // We have two navigation counters for scheduled messages, one to display the number of scheduled messages and one for unread scheduled messages
-        expect(scheduledLocationAside[0]?.innerHTML).toBe(`${scheduledMessages.Total}`);
-        expect(scheduledLocationAside[1]?.innerHTML).toBe(`${scheduledMessages.Unread}`);
+        expect(scheduledLocationAside.innerHTML).toBe(`${scheduledMessages.Total}`);
     });
 
     it('should not show scheduled sidebar item without scheduled messages', async () => {
