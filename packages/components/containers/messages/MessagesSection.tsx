@@ -27,7 +27,7 @@ const MessagesSection = () => {
             ViewMode = 0,
             StickyLabels = 0,
             HideEmbeddedImages = SHOW_IMAGES.SHOW,
-            HideRemoteImages = SHOW_IMAGES.SHOW,
+            HideRemoteImages = SHOW_IMAGES.HIDE,
             ConfirmLink = 1,
             SpamAction = null,
         } = {},

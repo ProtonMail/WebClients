@@ -16,7 +16,7 @@ import ProtectionModeSelect from './ProtectionModeSelect';
 import RemoteToggle from './RemoteToggle';
 
 const EmailPrivacySection = () => {
-    const [{ HideRemoteImages = SHOW_IMAGES.SHOW, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
+    const [{ HideRemoteImages = SHOW_IMAGES.HIDE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
     const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [, setImageProxy] = useState(ImageProxy);
     const [{ feature: featureSpyTracker }, { feature: featureSpyTrackerIncorporator }] = useFeatures([
