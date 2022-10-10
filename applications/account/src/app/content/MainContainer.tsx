@@ -79,6 +79,7 @@ const MainContainer = () => {
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.BulkUserUpload,
+        FeatureCode.ShowSenderImages,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
@@ -92,12 +93,14 @@ const MainContainer = () => {
         calendarAutoImportInviteFeature,
         referralProgramFeature,
         bulkUserUploadFeature,
+        showSenderImages,
     ] = features;
 
     const isSpyTrackerEnabled = spyTrackerFeature.feature?.Value === true;
     const isInviteLocaleFeatureEnabled = calendarInviteLocaleFeature.feature?.Value === true;
     const isAutoImportInviteFeatureEnabled = calendarAutoImportInviteFeature.feature?.Value === true;
     const isBulkUserUploadEnabled = bulkUserUploadFeature.feature?.Value === true;
+    const isShowSenderImagesEnabled = showSenderImages.feature?.Value === true;
 
     const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
@@ -113,6 +116,7 @@ const MainContainer = () => {
         isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isBulkUserUploadEnabled,
+        isShowSenderImagesEnabled,
         isDataRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
     });

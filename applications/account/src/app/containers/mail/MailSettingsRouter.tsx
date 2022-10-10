@@ -27,7 +27,7 @@ import {
     SpamFiltersSection,
     ThemesSection,
     UserKeysSection,
-    useAddresses,
+    useAddresses, useFeature, FeatureCode,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
@@ -40,6 +40,7 @@ const MailSettingsRouter = ({
     mailAppRoutes: ReturnType<typeof getMailAppRoutes>;
     redirect: ReactNode;
 }) => {
+    const { feature: showSenderImagesFeature } = useFeature(FeatureCode.ShowSenderImages);
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
 
@@ -71,7 +72,7 @@ const MailSettingsRouter = ({
                 <PrivateMainSettingsArea config={appearance}>
                     <ThemesSection />
                     <LayoutsSection />
-                    <SenderImagesSection />
+                    {showSenderImagesFeature?.Value && <SenderImagesSection />}
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, folder)}>

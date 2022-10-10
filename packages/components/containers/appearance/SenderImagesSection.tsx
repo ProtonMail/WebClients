@@ -1,17 +1,10 @@
 import { c } from 'ttag';
 
-import { FeatureCode, useFeature } from '../..';
 import { Info } from '../../components';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../account';
 import SenderImagesToggle from './SenderImagesToggle';
 
 const SenderImagesSection = () => {
-    const { feature } = useFeature(FeatureCode.ShowSenderImages);
-
-    if (!feature?.Value) {
-        return null;
-    }
-
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
