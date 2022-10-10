@@ -1,12 +1,11 @@
 import Papa, { ParseLocalConfig, ParseResult } from 'papaparse';
-import { c } from 'ttag';
 
 import { GIGA } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';
-import { CsvFormatError, TooManyUsersError } from './errors/CsvFormatErrors';
+import { CSV_FORMAT_ERROR_TYPE, CsvFormatError, TooManyUsersError } from './errors/CsvFormatErrors';
 import ImportFileError, { IMPORT_ERROR_TYPE } from './errors/ImportFileError';
 import { ExportedCSVUser, ImportedCSVUser, UserTemplate } from './types';
 
@@ -131,33 +130,20 @@ export const parseMultiUserCsv = async (files: File[]) => {
     }
 
     if (!meta.fields?.includes('EmailAddresses')) {
-        throw new CsvFormatError(
-            c('CSV format error').t`It looks like your file is missing the 'EmailAddresses' header.`
-        );
+        throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD, fieldName: 'EmailAddresses' });
     }
 
     if (!meta.fields?.includes('Password')) {
-        throw new CsvFormatError(c('CSV format error').t`It looks like your file is missing the 'Password' header.`);
+        throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD, fieldName: 'Password' });
     }
 
     if (parseCsvErrors.length) {
-        /**
-         * Throw one error at a time
-         */
-        if (parseCsvErrors.length > 3) {
-            throw new CsvFormatError(
-                c('CSV format error').t`We detected errors in multiple rows during import, please review your CSV file.`
-            );
-        }
-
-        const rowsThatErrored = parseCsvErrors
-            .map(({ row }) => {
-                // Row is indexed by 0
-                const rowNumber = row + 1;
-                return rowNumber;
-            })
-            .join(', ');
-        throw new CsvFormatError(c('CSV format error').t`Error on row ${rowsThatErrored}.`);
+        const rowsThatErrored = parseCsvErrors.map(({ row }) => {
+            // Row is indexed by 0
+            const rowNumber = row + 1;
+            return `${rowNumber}`;
+        });
+        throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.PARSED_CSV_ERRORS, rowsThatErrored });
     }
 
     return convertCSVUsers(csvUsers);
