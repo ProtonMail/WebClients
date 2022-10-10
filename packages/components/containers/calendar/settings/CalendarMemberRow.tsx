@@ -9,6 +9,7 @@ import { useLoading } from '@proton/components/hooks';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import { TableCell, TableRow } from '../../../components';
 
@@ -20,6 +21,8 @@ interface CalendarMemberRowProps {
     deleteLabel: string;
     permissions: number;
     status?: MEMBER_INVITATION_STATUS;
+    displayPermissions: boolean;
+    displayStatus: boolean;
     onPermissionsUpdate: (newPermissions: number) => Promise<void>;
     onDelete: () => Promise<void>;
 }
@@ -37,13 +40,15 @@ export const MemberStatus = ({ children }: { children: string }) => (
 );
 
 const CalendarMemberRow = ({
-    onPermissionsUpdate,
     email,
     name,
     deleteLabel,
     permissions,
-    onDelete,
     status,
+    displayPermissions,
+    displayStatus,
+    onPermissionsUpdate,
+    onDelete,
 }: CalendarMemberRowProps) => {
     const [isLoadingDelete, withLoadingDelete] = useLoading();
     const [isLoadingPermissionsUpdate, withLoadingPermissionsUpdate] = useLoading();
@@ -85,20 +90,30 @@ const CalendarMemberRow = ({
                                 {email}
                             </div>
                         )}
-                        <div className="no-desktop">{getStatusLabel()}</div>
+                        {displayPermissions && <div className="no-desktop">{getStatusLabel()}</div>}
                     </div>
                 </div>
             </TableCell>
-            <TableCell>
-                {!isStatusRejected && (
-                    <SelectTwo loading={isLoadingPermissionsUpdate} value={perms} onChange={handleChangePermissions}>
-                        {Object.entries(permissionLabelMap).map(([value, label]) => (
-                            <Option key={value} value={+value} title={label} />
-                        ))}
-                    </SelectTwo>
-                )}
-            </TableCell>
-            <TableCell className="no-mobile no-tablet">{getStatusLabel()}</TableCell>
+            {displayPermissions && (
+                <TableCell>
+                    {!isStatusRejected && (
+                        <SelectTwo
+                            loading={isLoadingPermissionsUpdate}
+                            value={perms}
+                            onChange={handleChangePermissions}
+                        >
+                            {Object.entries(permissionLabelMap).map(([value, label]) => (
+                                <Option key={value} value={+value} title={label} />
+                            ))}
+                        </SelectTwo>
+                    )}
+                </TableCell>
+            )}
+            {displayStatus && (
+                <TableCell className={clsx([displayPermissions && 'no-mobile no-tablet'])}>
+                    {getStatusLabel()}
+                </TableCell>
+            )}
             <TableCell className="text-right w5e">
                 <Tooltip title={deleteLabel}>
                     <Button icon shape="ghost" loading={isLoadingDelete} onClick={handleDelete} className="mlauto">
