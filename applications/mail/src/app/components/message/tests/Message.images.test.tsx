@@ -233,7 +233,7 @@ describe('Message images', () => {
         expect(placeholder).not.toBe(null);
         assertIcon(placeholder.querySelector('svg'), 'cross-circle');
 
-        getByText('Load unprotected', { exact: false });
+        getByText('Load anyway', { exact: false });
 
         loadButton = getByTestId('remote-content:load');
         fireEvent.click(loadButton);
