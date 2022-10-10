@@ -80,10 +80,6 @@ const getExperimentsFromCookie = () => {
     return {};
 };
 
-const DEFAULT_EXPERIMENT = {
-    Value: DEFAULT_EXPERIMENT_VALUE, // Since experiment option name is forced, we know A always exists and default to it
-};
-
 const ExperimentsProvider = ({ children }: Props) => {
     const api = useApi();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
@@ -101,13 +97,6 @@ const ExperimentsProvider = ({ children }: Props) => {
         setLoading(true);
 
         const promise = silentApi<{ Experiments: Experiment[] }>(getExperiments())
-            .catch(() => ({
-                // Define default experiments if the API call fails
-                Experiments: Object.values(ExperimentCode).map((Name) => ({
-                    Value: experiments[Name] || DEFAULT_EXPERIMENT.Value, // Avoid to erase existing experiments
-                    Name,
-                })),
-            }))
             .then((results) => {
                 setExperiments((cookieExperiments) => ({
                     ...purgeExperiments(cookieExperiments, results.Experiments), // filter existing experiments stored in the cookie
