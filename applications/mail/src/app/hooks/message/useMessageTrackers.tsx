@@ -84,7 +84,6 @@ export const useMessageTrackers = ({ message }: Props) => {
      * From our side, we want to inform him that he can also turn on protection mode in the settings.
      */
     const needsMoreProtection = !hasProtection && !hasShowRemoteImage;
-    console.log('needsMoreProtection', { needsMoreProtection, hasShowRemoteImage, mailSettings });
 
     useEffect(() => {
         let nextTitle;
