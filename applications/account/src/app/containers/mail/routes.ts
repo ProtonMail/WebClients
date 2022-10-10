@@ -20,11 +20,13 @@ export const getMailAppRoutes = ({
     addresses,
     organization,
     isSpyTrackerEnabled,
+    isShowSenderImagesEnabled,
 }: {
     user: UserModel;
     addresses: Address[];
     organization: Organization;
     isSpyTrackerEnabled: boolean;
+    isShowSenderImagesEnabled: boolean;
 }) => {
     const hasOrganization = !!organization?.HasKeys;
     return <const>{
@@ -89,7 +91,7 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`Layout`,
                         id: 'layout',
                     },
-                    {
+                    isShowSenderImagesEnabled && {
                         text: c('Title').t`Sender image`,
                         id: 'sender-image',
                     },
