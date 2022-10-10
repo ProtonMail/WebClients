@@ -199,9 +199,11 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
         ({
             clearDeviceRecoveryData = false,
             persistedSession,
+            type,
         }: {
             clearDeviceRecoveryData?: boolean;
             persistedSession?: PersistedSession;
+            type?: 'soft';
         } = {}) => {
             authentication.setUID(undefined);
             authentication.setPassword(undefined);
@@ -220,9 +222,12 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             pathRef.current = '/';
 
             if (isSSOMode) {
-                return replaceUrl(
-                    serializeLogoutURL(persistedSession ? [persistedSession] : [], clearDeviceRecoveryData).toString()
-                );
+                const url =
+                    type === 'soft'
+                        ? // Prevent clearing session data on soft logouts
+                          serializeLogoutURL([], false)
+                        : serializeLogoutURL(persistedSession ? [persistedSession] : [], clearDeviceRecoveryData);
+                return replaceUrl(url.toString());
             }
             return replaceUrl(getBasename());
         },
@@ -242,7 +247,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                 const persistedSession = getPersistedSession(authentication.getLocalID());
 
                 if (type === 'soft') {
-                    handleFinalizeLogout({ persistedSession, clearDeviceRecoveryData });
+                    handleFinalizeLogout({ persistedSession, clearDeviceRecoveryData, type });
                     return authData;
                 }
 
