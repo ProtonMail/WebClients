@@ -117,6 +117,8 @@ export const parseMultiUserCsv = async (files: File[]) => {
         meta,
     } = await parseCsv<ImportedCSVUser>(file, {
         header: true,
+        transformHeader: (value) => value.trim(),
+        transform: (value) => value.trim(),
         dynamicTyping: true,
         comments: '#',
     });
