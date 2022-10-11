@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { Location } from 'history';
 
-import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from '@proton/components';
+import { HotkeyTuple, useFolders, useHotkeys, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -81,16 +81,11 @@ export const useMailboxHotkeys = (
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
     const [folders] = useFolders();
-    const [labels] = useLabels();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
-
-    const labelIDs = labels?.map(({ ID }) => ID);
     const elementIDForList = checkedIDs.length ? undefined : elementID;
-
     const elementRef = useRef<HTMLDivElement>(null);
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
-
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
     const star = useStar();
     const markAs = useMarkAs();
@@ -119,9 +114,8 @@ export const useMailboxHotkeys = (
         e.stopPropagation();
 
         const folderName = getFolderName(LabelID, folders);
-        const fromLabelID = labelIDs?.includes(labelID) ? INBOX : labelID;
 
-        await moveToFolder(elements, LabelID, folderName, fromLabelID, false);
+        await moveToFolder(elements, LabelID, folderName, labelID, false);
         if (elementIDForList) {
             handleBack();
         }
