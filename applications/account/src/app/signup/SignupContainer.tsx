@@ -42,6 +42,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
@@ -368,22 +369,48 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const stepper = useMemo(
         () =>
             (() => {
+                const hasPaidPlanPreSelected =
+                    signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free';
                 const stepLabels = {
                     accountSetup: c('Signup step').t`Account setup`,
                     verification: c('Signup step').t`Verification`,
                     payment: c('Signup step').t`Payment`,
                 };
 
+                const isExternalAccountFlow =
+                    accountData?.signupType === SignupType.Email || accountData?.signupType === SignupType.VPN;
+                if (isExternalAccountFlow) {
+                    if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+                        return {
+                            activeStep: 0,
+                            steps: [
+                                stepLabels.accountSetup,
+                                stepLabels.verification,
+                                hasPaidPlanPreSelected && stepLabels.payment,
+                            ].filter(isTruthy),
+                        };
+                    }
+
+                    if (step === SIGNUP_STEPS.HUMAN_VERIFICATION || step === SIGNUP_STEPS.UPSELL) {
+                        return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                    }
+
+                    if (step === SIGNUP_STEPS.PAYMENT) {
+                        return {
+                            activeStep: 2,
+                            steps: [stepLabels.accountSetup, stepLabels.verification, stepLabels.payment],
+                        };
+                    }
+                }
+
                 if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
-                    const secondStep = (() => {
-                        if (!signupParameters.preSelectedPlan || signupParameters.preSelectedPlan === 'free') {
-                            return stepLabels.verification;
-                        }
-
-                        return stepLabels.payment;
-                    })();
-
-                    return { activeStep: 0, steps: [stepLabels.accountSetup, secondStep] };
+                    return {
+                        activeStep: 0,
+                        steps: [
+                            stepLabels.accountSetup,
+                            hasPaidPlanPreSelected ? stepLabels.payment : stepLabels.verification,
+                        ],
+                    };
                 }
 
                 if (step === SIGNUP_STEPS.UPSELL) {
