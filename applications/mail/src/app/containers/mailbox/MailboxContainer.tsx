@@ -11,7 +11,7 @@ import {
     useItemsSelection,
     useLabels,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
+import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -275,9 +275,8 @@ const MailboxContainer = ({
     const handleMove = useCallback(
         async (LabelID: string) => {
             const folderName = getFolderName(LabelID, folders);
-            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
             const elements = getElementsFromIDs(selectedIDs);
-            await moveToFolder(elements, LabelID, folderName, fromLabelID, false);
+            await moveToFolder(elements, LabelID, folderName, labelID, false);
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }

@@ -108,9 +108,8 @@ export const useMessageHotkeys = (
         }
 
         const folderName = getFolderName(LabelID, folders);
-        const fromLabelID = message.data.LabelIDs?.includes(labelID) ? INBOX : labelID;
 
-        await moveToFolder([message.data], LabelID, folderName, fromLabelID, false);
+        await moveToFolder([message.data], LabelID, folderName, labelID, false);
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
