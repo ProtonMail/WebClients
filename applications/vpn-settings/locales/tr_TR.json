@@ -14,9 +14,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "${ name } updated": [
-        "${ name } güncellendi"
-      ],
       "Activate recovery": [
         "Kurtarmayı etkinleştir"
       ],
@@ -500,57 +497,9 @@
         "İki yıllık"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "İçerdikleri"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standart fiyat: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "En popüler olanlar"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Tekliften yararlan"
-      ],
-      "Get the deal now": [
-        "Tekliften şimdi yararlan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- %${ percentage }"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "aylık"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Özel teklif"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "24 months": [
-        "24 ay"
       ]
     },
     "Bug category": {
@@ -1790,6 +1739,9 @@
       "Security key removed": [
         "Güvenlik anahtarı silindi"
       ],
+      "Security key updated": [
+        "Güvenlik anahtarı güncellendi"
+      ],
       "This will delete all security keys linked to your account.": [
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
       ],
@@ -2078,7 +2030,7 @@
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. Proton etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini Proton üzerinde barındırabilirsiniz."
       ],
       "Emailing preference saved": [
-        "E-posta tercihi kaydedildi"
+        "E-posta ayarı kaydedildi"
       ],
       "Enter code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"

@@ -2300,9 +2300,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
-      "No keys retrieved for internal user": [
-        "Keine Schlüssel für interne Benutzer abgerufen"
-      ],
       "No public key for Proton address": [
         "Kein öffentlicher Schlüssel für Proton-Adresse"
       ],
@@ -2351,8 +2348,8 @@
       "Primary key is not valid for sending": [
         "Primärschlüssel ist für das Senden nicht gültig"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Der für den internen Benutzer abgerufene Primärschlüssel ist für das Senden nicht gültig"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Der für den Benutzer ${ BRAND_NAME } abgerufene Primärschlüssel ist für den Versand nicht gültig."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Doppelten Empfänger entfernt: ${ joinedRecipients }",
@@ -5546,6 +5543,9 @@
       "Edit contact group": [
         "Kontaktgruppe bearbeiten"
       ],
+      "Edit email settings": [
+        "E-Mail-Einstellungen bearbeiten"
+      ],
       "Edit image": [
         "Grafik bearbeiten"
       ],
@@ -5554,9 +5554,6 @@
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-Mail-Einstellungen (${ emailAddress })"
       ],
       "Enter your password": [
         "Passwort eingeben"

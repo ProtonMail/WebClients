@@ -2953,6 +2953,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A problem occurred, please try again": [
+        "S'ha produït un problema. Intenteu-ho de nou"
+      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -3095,9 +3098,6 @@
       "No address with keys available to compose a message": [
         "Cap adreça amb les claus disponibles per redactar un missatge"
       ],
-      "No keys retrieved for internal user": [
-        "No s’ha recuperat cap clau per a l’usuari intern"
-      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -3117,6 +3117,9 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
+      ],
+      "Please activate your content search again": [
+        "Siusplau, activeu de nou la vostra cerca de continguts"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -3140,8 +3143,8 @@
       "Primary key is not valid for sending": [
         "La clau principal no és vàlida per a l'enviament"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clau principal obtinguda per l'usuari intern no és vàlida per a l'enviament"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per enviar"
       ],
       "Public key could not be trusted": [
         "La clau pública no pot ser verificada"
@@ -4319,6 +4322,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "No oblidi compartir la contrassenya amb el destinatari"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Descarregant missatge ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Esborrany"
@@ -7381,6 +7387,9 @@
       "Edit contact group": [
         "Edita Grup de Contactes"
       ],
+      "Edit email settings": [
+        "Edita la configuració del correu electrònic"
+      ],
       "Edit filter": [
         "Editar filtre"
       ],
@@ -7398,9 +7407,6 @@
       ],
       "Email settings": [
         "Configuració del correu"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Preferències de correu electrònic (${ emailAddress })"
       ],
       "Enable message content search": [
         "Activar la cerca de contingut dels missatges"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Zablokuj wiadomości od tego nadawcy"
       ],
+      "Block senders": [
+        "Zablokuj nadawców"
+      ],
       "Bold": [
         "Pogrubienie"
       ],
@@ -324,7 +327,7 @@
         "Edytuj szczegóły logowania"
       ],
       "Email settings": [
-        "Ustawienia poczty e-mail"
+        "Ustawienia adresu e-mail"
       ],
       "Emoji": [
         "Emoji"
@@ -2854,6 +2857,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } w ustawieniach."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
       ],
@@ -2869,8 +2875,14 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Nowe wiadomości z adresu ${ senderEmailAddress } nie zostaną dostarczone i zostaną trwale usunięte. ${ manageBlockedAddressesSettingsLink } w ustawieniach."
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nowe wiadomości z adresu ${ senderEmailAddress } i ${ otherSendersCount } innego nie zostaną dostarczone i zostaną trwale usunięte.",
+        "Nowe wiadomości z adresu ${ senderEmailAddress } i ${ otherSendersCount } innych nie zostaną dostarczone i zostaną trwale usunięte.",
+        "Nowe wiadomości z adresu ${ senderEmailAddress } i ${ otherSendersCount } innych nie zostaną dostarczone i zostaną trwale usunięte.",
+        "Nowe wiadomości z adresu ${ senderEmailAddress } i ${ otherSendersCount } innych nie zostaną dostarczone i zostaną trwale usunięte."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nowe wiadomości z adresu ${ senderEmailAddress } nie zostaną dostarczone i zostaną trwale usunięte."
       ],
       "No folders": [
         "Brak folderów"
@@ -3202,9 +3214,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
       ],
-      "No keys retrieved for internal user": [
-        "Nie odzyskano kluczy dla wewnętrznego użytkownika"
-      ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
       ],
@@ -3255,9 +3264,6 @@
       ],
       "Primary key is not valid for sending": [
         "Klucz główny nie jest przeznaczony do wysyłania wiadomości"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Odzyskany klucz główny dla wewnętrznego użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
       "Public key could not be trusted": [
         "Klucz publiczny nie może zostać dodany do zaufanych"
@@ -6288,6 +6294,9 @@
       "Mark as": [
         "Oznacz jako"
       ],
+      "Move ${ sidebarElementName }": [
+        "Przenieś ${ sidebarElementName }"
+      ],
       "Move to": [
         "Przenieś do"
       ],
@@ -7056,8 +7065,11 @@
       "Password has been set successfully": [
         "Hasło zostało ustawione"
       ],
-      "Sender ${ senderEmail } blocked": [
-        "Nadawca ${ senderEmail } został zablokowany"
+      "Sender ${ firstSenderAddress } blocked": [
+        "Nadawca ${ firstSenderAddress } został zablokowany"
+      ],
+      "Senders blocked": [
+        "Nadawcy zostali zablokowani"
       ]
     },
     "Oauth instructions": {
@@ -8187,10 +8199,7 @@
         "Zawartość wiadomości"
       ],
       "Email settings": [
-        "Ustawienia poczty e-mail"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ustawienia poczty e-mail (${ emailAddress })"
+        "Ustawienia adresu e-mail"
       ],
       "Enable message content search": [
         "Włącz wyszukiwanie zawartości wiadomości"
@@ -8282,8 +8291,14 @@
       "Message will expire": [
         "Wiadomość wygaśnie"
       ],
+      "Minicalendar": [
+        "Minikalendarz"
+      ],
       "More": [
         "Więcej"
+      ],
+      "More actions": [
+        "Więcej akcji"
       ],
       "More options": [
         "Więcej opcji"

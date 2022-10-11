@@ -3125,9 +3125,6 @@
       "This will overwrite the existing folder": [
         "這將會覆寫現有的資料夾"
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "要啟用真正的隱私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。在此期您仍然可以正常使用 ${ DRIVE_APP_NAME } - 我們會在索引完成後通知您。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
@@ -3431,6 +3428,9 @@
       ],
       "Country": [
         "國家"
+      ],
+      "Create a share link": [
+        "創建共享連結"
       ],
       "Created": [
         "已建立"
@@ -4094,9 +4094,6 @@
       "Set a recovery method": [
         "設定備援方法"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "只要在接下來的 ${ remainingDaysForGift } 天完成以下任務："
-      ],
       "Upload a file": [
         "上載檔案"
       ],
@@ -4604,9 +4601,6 @@
       ],
       "Email settings": [
         "電郵設定"
-      ],
-      "Email settings (${ emailAddress })": [
-        "電郵設定 (${ emailAddress })"
       ],
       "Empty trash": [
         "清空垃圾桶"

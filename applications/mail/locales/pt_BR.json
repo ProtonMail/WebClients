@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bloquear mensagens deste remetente"
       ],
+      "Block senders": [
+        "Bloquear remetente"
+      ],
       "Bold": [
         "Negrito"
       ],
@@ -2836,6 +2839,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } em configurações."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descriptografando contatos... Isso pode levar alguns minutos. Quando o processo for concluído, você poderá baixar o arquivo com todos seus contatos exportados."
       ],
@@ -2850,6 +2856,13 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Novos e-mails de ${ senderEmailAddress } e outros ${ otherSendersCount } não serão entregues e serão excluídos permanentemente.",
+        "Novos e-mails de ${ senderEmailAddress } e outros ${ otherSendersCount } não serão entregues e serão excluídos permanentemente."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Novos e-mails de ${ senderEmailAddress } não serão entregues e serão excluídos permanentemente."
       ],
       "No folders": [
         "Nenhuma pasta"
@@ -3012,6 +3025,9 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
+      "A problem occurred, please try again": [
+        "Ocorreu um erro. Tente novamente"
+      ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
@@ -3166,9 +3182,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
       ],
-      "No keys retrieved for internal user": [
-        "Nenhuma chave recuperada para o usuário interno"
-      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
@@ -3188,6 +3201,9 @@
       ],
       "Passwords do not match": [
         "As senhas não correspondem"
+      ],
+      "Please activate your content search again": [
+        "Ative a busca de conteúdo novamente"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, corrija o conflito em destaque para prosseguir.",
@@ -3211,8 +3227,8 @@
       "Primary key is not valid for sending": [
         "A chave primária não é valida para o envio"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Chave primária recuperada para o usuário interno não é válida para o envio"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Chave primária recuperada para o usuário ${ BRAND_NAME } não é válida para o envio"
       ],
       "Public key could not be trusted": [
         "A chave pública não pode ser confiável"
@@ -3618,7 +3634,15 @@
         "Seu comentário"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Por favor, tente novamente."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Chave de segurança"
       ]
@@ -4288,7 +4312,7 @@
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } rastreador de e-mails encontrado",
-        "${ numberOfTrackers } rastreadores de e-mails encontrados"
+        "${ numberOfTrackers } rastreadores de e-mails bloqueados"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contatos",
@@ -4586,6 +4610,9 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueça de compartilhar a senha com o destinatário"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Baixando mensagem ${ esProgress } de ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Rascunho"
       ],
@@ -4650,6 +4677,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -4740,7 +4770,7 @@
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "Se seu, aliás for vendido, vazado ou abusado, basta desativá-lo para parar de receber spam."
+        "Se o seu alias for vendido, vazado ou abusado, basta desativá-lo para deixar de receber spam."
       ],
       "Image description": [
         "Descrição da imagem"
@@ -5111,7 +5141,7 @@
         "O SimpleLogin é um serviço do Proton, e sua Conta do Proton inclui os aliases do Ocultar meu e-mail. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "O Login Simples fornece uma maneira simples de criar logins em sites de terceiros não confiáveis, nos quais você não deseja expor seu endereço de e-mail real."
+        "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não confiáveis nos quais você não quer expor o seu endereço de e-mail real."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
@@ -5402,10 +5432,13 @@
         "Quando você deseja que sua mensagem seja enviada?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Ao distribuir seu e-mail, use um, aliás exclusivo e descartável do Ocultar meu e-mail em vez do seu endereço de e-mail real."
+        "Quando for compartilhar seu e-mail, use um alias exclusivo e descartável do Ocultar meu E-mail, em vez do seu endereço de e-mail real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves confiáveis para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -6073,6 +6106,9 @@
       "Mark as": [
         "Marcar como"
       ],
+      "Move ${ sidebarElementName }": [
+        "Mover ${ sidebarElementName }"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -6519,6 +6555,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } pastas desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -6822,6 +6862,12 @@
       ],
       "Password has been set successfully": [
         "A senha foi definida com sucesso"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Remetente ${ firstSenderAddress } bloqueado"
+      ],
+      "Senders blocked": [
+        "Remetentes bloqueados"
       ]
     },
     "Oauth instructions": {
@@ -7478,6 +7524,9 @@
       "Conversation moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
       ],
+      "Conversation moved to spam and sender added to your block list.": [
+        "Conversa movida para spam e o remetente adicionado à lista de bloqueio."
+      ],
       "Conversation removed from ${ labelName }.": [
         "Conversa removida de ${ labelName }."
       ],
@@ -7532,8 +7581,14 @@
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
       ],
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Mensagem movida para ${ folderName } e remetente adicionado à Lista de Permissões."
+      ],
       "Message moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your block list.": [
+        "Mensagem movida para spam e remetente adicionado à lista de bloqueio."
       ],
       "Message removed from ${ labelName }.": [
         "Mensagem removida de ${ labelName }."
@@ -7842,6 +7897,9 @@
       "Edit contact group": [
         "Editar grupo de contatos"
       ],
+      "Edit email settings": [
+        "Editar configurações de e-mail"
+      ],
       "Edit filter": [
         "Editar filtro"
       ],
@@ -7859,9 +7917,6 @@
       ],
       "Email settings": [
         "Configurações de e-mail"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Configurações do e-mail (${ emailAddress })"
       ],
       "Enable message content search": [
         "Ativar a pesquisa em conteúdo de mensagens"
@@ -7953,8 +8008,14 @@
       "Message will expire": [
         "A mensagem irá expirar"
       ],
+      "Minicalendar": [
+        "Mini calendário"
+      ],
       "More": [
         "Mais"
+      ],
+      "More actions": [
+        "Mais ações"
       ],
       "More options": [
         "Mais opções"

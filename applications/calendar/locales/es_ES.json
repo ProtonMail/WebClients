@@ -4,6 +4,11 @@
     "language": "es_ES"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Vista completa (ver todos los detalles del evento)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introducción"
@@ -487,6 +492,9 @@
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
       ],
+      "Use authentication code": [
+        "Utilizar código de autenticación"
+      ],
       "Use for sending": [
         "Usar para enviar"
       ],
@@ -824,6 +832,11 @@
         "Has aceptado provisionalmente la invitación"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Solo tú puedes ver la etiqueta"
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Permisos"
@@ -840,6 +853,11 @@
       ],
       "Manage members": [
         "Gestionar miembros"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Full view (see all event details)": [
+        "Vista completa (ver todos los detalles del evento)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2219,9 +2237,6 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar - la cuenta no tiene una bandeja de entrada"
       ],
-      "No keys retrieved for internal user": [
-        "No se recuperaron claves para el usuario interno"
-      ],
       "No public key for Proton address": [
         "No hay clave pública para esta dirección Proton"
       ],
@@ -2270,8 +2285,8 @@
       "Primary key is not valid for sending": [
         "La clave principal no es válida para realizar el envío"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clave principal recuperada para el usuario interno no es válida para el envío"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clave principal recuperada para el usuario ${ BRAND_NAME }, no es válida para envíos"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatario duplicado eliminado: ${ joinedRecipients }",
@@ -2295,11 +2310,17 @@
       "Some groups could not be deleted": [
         "Algunos grupos no pueden ser eliminados"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Algunos de tus nombres de carpetas están reservados. Por favor, personaliza la importación para editar estos nombres."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de tus nombres de carpetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de los nombres de sus carpetas superan el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación para editar estos nombres."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Algunos de sus nombres de etiquetas están reservados. Por favor, personalice la importación para editar estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de sus nombres de etiquetas no están disponibles. Por favor, personalice la importación para editar estos nombres."
@@ -2690,6 +2711,16 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Tus comentarios"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Clave de seguridad"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clave de seguridad"
       ]
     },
     "file size format": {
@@ -3091,6 +3122,9 @@
       "contacts": [
         "contactos"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV o un archivo VCF (vCard)"
+      ],
       "full calendar view": [
         "vista de calendario completa"
       ],
@@ -3348,11 +3382,17 @@
       "Duplicate key updated": [
         "Clave duplicada actualizada"
       ],
+      "Enter the code from your authenticator app": [
+        "Ingrese el código desde la aplicación de autenticación"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduce tu propia contraseña (como administrador de la organización)."
       ],
       "Existent and added participants will be notified.": [
         "Se notificarán a los participantes existentes y agregados."
@@ -3808,6 +3848,14 @@
         "Múltiples contactos parecen idénticos. ${ mergeAction }"
       ]
     },
+    "Input label": {
+      "Access": [
+        "Acceso"
+      ],
+      "Label (optional)": [
+        "Etiqueta (opcional)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Añadir etiqueta"
@@ -3860,6 +3908,9 @@
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
+      ],
+      "Authenticator app": [
+        "Aplicación de autenticación"
       ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
@@ -4277,6 +4328,12 @@
     "Modal for limit of calendars reached": {
       "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
         "No se pueden añadir más calendarios. Has alcanzado el máximo de calendarios personales con tu plan."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "No se pueden añadir más calendarios. Has alcanzado el número máximo de calendarios permitidos dentro de tu plan."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "No se pueden crear más calendarios. Has alcanzado el número máximo de calendarios personales dentro de tu plan."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -4944,6 +5001,9 @@
       "Don't miss any events": [
         "No te pierdas ningún evento"
       ],
+      "Easily accept invites": [
+        "Acepta invitaciones fácilmente"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtén hasta 18 meses gratis de ${ planName }"
       ],
@@ -5368,6 +5428,9 @@
       "Edit contact group": [
         "Editar grupo de contactos"
       ],
+      "Edit email settings": [
+        "Editar configuración de correo electrónico"
+      ],
       "Edit image": [
         "Editar imagen"
       ],
@@ -5376,9 +5439,6 @@
       ],
       "Email settings": [
         "Ajustes de correo electrónico"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ajustes de correo electrónico (${ emailAddress })"
       ],
       "Enter your password": [
         "Introduce tu contraseña"
@@ -5434,6 +5494,9 @@
       ],
       "Merging contacts": [
         "Combinando contactos"
+      ],
+      "Minicalendar": [
+        "Minicalendario"
       ],
       "Open actions dropdown": [
         "Abrir acciones desplegables"

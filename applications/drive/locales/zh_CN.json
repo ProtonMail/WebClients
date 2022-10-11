@@ -1757,8 +1757,8 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again.": [
-        "出错了，请重试。"
+      "A problem occurred, please try again": [
+        "出错了，请重试"
       ],
       "Authentication canceled.": [
         "验证被取消。"
@@ -1871,8 +1871,8 @@
       "Passwords do not match": [
         "两次输入的密码不一致"
       ],
-      "Please activate your search again": [
-        "请重新进行搜索"
+      "Please activate your content search again": [
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -3232,9 +3232,6 @@
       "This will overwrite the existing folder": [
         "这将覆盖现有文件夹"
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。在此期间您仍然可以正常使用 ${ DRIVE_APP_NAME } - 索引完成后我们会立即通知您。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -3545,6 +3542,12 @@
       "Country": [
         "国家"
       ],
+      "Create a share link": [
+        "创建分享链接"
+      ],
+      "Create Proton account": [
+        "创建Proton账户"
+      ],
       "Created": [
         "创建时间"
       ],
@@ -3763,6 +3766,9 @@
       ],
       "Set expiration date": [
         "设置有效期"
+      ],
+      "Set recovery method": [
+        "设置恢复方法"
       ],
       "Sign emails": [
         "发信附带数字签名"
@@ -4215,9 +4221,6 @@
       ],
       "Set a recovery method": [
         "设置恢复方法"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "只需在接下来的 ${ remainingDaysForGift } 天内完成以下任务："
       ],
       "Upload a file": [
         "上传文件"
@@ -4727,9 +4730,6 @@
       "Email settings": [
         "邮件设置"
       ],
-      "Email settings (${ emailAddress })": [
-        "邮件设置（${ emailAddress }）"
-      ],
       "Empty trash": [
         "清空回收站"
       ],
@@ -4804,6 +4804,9 @@
       ],
       "MIME type": [
         "MIME 类型"
+      ],
+      "Minicalendar": [
+        "迷你日历"
       ],
       "Modified": [
         "修改时间"

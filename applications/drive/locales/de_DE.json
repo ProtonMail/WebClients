@@ -1801,8 +1801,8 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
-      "A problem occurred, please try again.": [
-        "Es ist ein Problem aufgetreten, bitte versuche es erneut."
+      "A problem occurred, please try again": [
+        "Es ist ein Problem aufgetreten, bitte erneut versuchen."
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -1920,8 +1920,8 @@
       "Passwords do not match": [
         "Passwörter stimmen nicht überein"
       ],
-      "Please activate your search again": [
-        "Bitte die Suche erneut aktivieren"
+      "Please activate your content search again": [
+        "Bitte aktiviere die Inhaltssuche erneut."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortzufahren.",
@@ -3329,9 +3329,6 @@
       "This will overwrite the existing folder": [
         "Dadurch wird der vorhandene Ordner überschrieben"
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiternutzen - wir informieren dich, sobald die Indexierung erfolgt ist."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Um Spam und Missbrauch zu bekämpfen, bestätige bitte, dass du ein Mensch sind."
       ],
@@ -3642,6 +3639,9 @@
       "Country": [
         "Land"
       ],
+      "Create a share link": [
+        "Erstelle einen Freigabelink"
+      ],
       "Created": [
         "Erstellt"
       ],
@@ -3861,6 +3861,9 @@
       ],
       "Set expiration date": [
         "Ablaufdatum festlegen"
+      ],
+      "Set recovery method": [
+        "Wiederherstellungsmethode festlegen"
       ],
       "Sign emails": [
         "E-Mails signieren"
@@ -4335,10 +4338,6 @@
       ],
       "Set a recovery method": [
         "Wiederherstellungsmethode festlegen"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "Führe einfach die folgenden Schritte in ${ remainingDaysForGift } Tag aus:",
-        "Führe einfach die folgenden Schritte in den nächsten ${ remainingDaysForGift } Tagen aus:"
       ],
       "Upload a file": [
         "Datei hochladen"
@@ -4852,6 +4851,9 @@
       "Edit contact group": [
         "Kontaktgruppe bearbeiten"
       ],
+      "Edit email settings": [
+        "E-Mail-Einstellungen bearbeiten"
+      ],
       "Edit image": [
         "Bild bearbeiten"
       ],
@@ -4860,9 +4862,6 @@
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-Mail-Einstellungen (${ emailAddress })"
       ],
       "Empty trash": [
         "Papierkorb leeren"

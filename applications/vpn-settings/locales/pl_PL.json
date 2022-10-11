@@ -14,9 +14,6 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "${ name } updated": [
-        "Klucz ${ name } został zaktualizowany"
-      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -514,57 +511,9 @@
         "Co dwa lata"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Zawiera"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standardowa cena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Subskrypcja zostanie odnowiona automatycznie po 2 latach za tę samą cenę aż do momentu anulowania jej."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Najpopularniejszy"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
-      "Get the deal now": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "miesięcznie"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Oferta specjalna"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 miesiąc"
-      ],
-      "12 months": [
-        "12 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
       ]
     },
     "Bug category": {
@@ -1813,6 +1762,9 @@
       ],
       "Security key removed": [
         "Klucz bezpieczeństwa został usunięty"
+      ],
+      "Security key updated": [
+        "Klucz bezpieczeństwa został zaktualizowany"
       ],
       "This will delete all security keys linked to your account.": [
         "Spowoduje to usunięcie wszystkich kluczy bezpieczeństwa powiązanych z kontem."
@@ -3791,7 +3743,7 @@
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Chroń każde urządzenie podłączone do Twojej sieci Wi-Fi. Jest to również przydatne, jeśli masz urządzenia, które nie obsługują bezpośrednio ustawień VPN."
+        "Chroń każde urządzenie podłączone do sieci Wi-Fi. Jest to również przydatne, jeśli masz urządzenia, które nie obsługują bezpośrednio ustawień VPN."
       ],
       "Quickly set up out-of-office messages": [
         "Ustaw autoresponder na czas swojej nieobecności"

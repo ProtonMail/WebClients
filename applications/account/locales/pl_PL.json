@@ -3042,9 +3042,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
       ],
-      "No keys retrieved for internal user": [
-        "Nie odzyskano kluczy dla wewnętrznego użytkownika"
-      ],
       "No public key for Proton address": [
         "Brak klucza publicznego dla adresu Proton"
       ],
@@ -3131,9 +3128,6 @@
       ],
       "Primary key is not valid for sending": [
         "Klucz główny nie jest przeznaczony do wysyłania wiadomości"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Odzyskany klucz główny dla wewnętrznego użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
       "Process aborted": [
         "Proces został przerwany"
@@ -7336,6 +7330,9 @@
       "Show secondary time zone": [
         "Pokaż dodatkową strefę czasową"
       ],
+      "Show sender images": [
+        "Pokaż zdjęcie nadawcy"
+      ],
       "Show week numbers": [
         "Pokaż numery tygodni"
       ],
@@ -8659,7 +8656,7 @@
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Chroń każde urządzenie podłączone do Twojej sieci Wi-Fi. Jest to również przydatne, jeśli masz urządzenia, które nie obsługują bezpośrednio ustawień VPN."
+        "Chroń każde urządzenie podłączone do sieci Wi-Fi. Jest to również przydatne, jeśli masz urządzenia, które nie obsługują bezpośrednio ustawień VPN."
       ],
       "Quickly set up out-of-office messages": [
         "Ustaw autoresponder na czas swojej nieobecności"
@@ -10611,6 +10608,9 @@
       "Messages and composing": [
         "Wiadomości i edytor"
       ],
+      "Minicalendar": [
+        "Minikalendarz"
+      ],
       "Multi-user support": [
         "Obsługa wielu użytkowników"
       ],
@@ -10763,6 +10763,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Wybierz, kiedy to powiadomienie ma zostać wysłane"
+      ],
+      "Sender image": [
+        "Zdjęcie nadawcy"
       ],
       "Session management": [
         "Zarządzanie sesją"
@@ -11069,6 +11072,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Ustawia stopkę w wysyłanych wiadomościach: ${ signature } Link wskazuje na Twój link polecający. Stopka zostanie dodana pod Twoim podpisem. Podpis możesz spersonalizować w ustawieniach."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Pokazuje zdjęcie każdego nadawcy na liście wiadomości. Jeśli zdjęcie nie jest dostępne, zostaną wyświetlone inicjały nadawcy."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Podpisy utworzone za pomocą tego klucza są traktowane jako nieprawidłowe. Klucz nie może zostać użyty do szyfrowania"

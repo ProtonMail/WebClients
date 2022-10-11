@@ -565,6 +565,9 @@
       "Upload file": [
         "Subir archivo"
       ],
+      "Upload files": [
+        "Cargar archivos"
+      ],
       "Upload folder": [
         "Subir carpeta"
       ],
@@ -573,6 +576,9 @@
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
+      ],
+      "Use authentication code": [
+        "Utilizar código de autenticación"
       ],
       "Use for sending": [
         "Usar para enviar"
@@ -594,6 +600,9 @@
       ],
       "View invoice": [
         "Ver factura"
+      ],
+      "Your 500 MB bonus": [
+        "Tu bonus de 500 MB"
       ],
       "Zoom in": [
         "Acercar"
@@ -1760,6 +1769,9 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
+      "A problem occurred, please try again": [
+        "Ha ocurrido un problema. Inténtalo de nuevo."
+      ],
       "Authentication canceled.": [
         "Autenticación cancelada."
       ],
@@ -1876,6 +1888,9 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
+      "Please activate your content search again": [
+        "Por favor, activa de nuevo tu búsqueda de contenido"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, arregle el conflicto resaltado para proceder.",
         "Por favor, arregle los conflictos resaltados para proceder."
@@ -1910,11 +1925,17 @@
       "Some groups could not be deleted": [
         "Algunos grupos no se pueden eliminar"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Algunos de tus nombres de carpetas están reservados. Por favor, personaliza la importación para editar estos nombres."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de tus nombres de carpetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de los nombres de sus carpetas superan el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación para editar estos nombres."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Algunos de sus nombres de etiquetas están reservados. Por favor, personalice la importación para editar estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
@@ -2093,6 +2114,16 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Tus comentarios"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Clave de seguridad"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clave de seguridad"
       ]
     },
     "file size format": {
@@ -2450,6 +2481,9 @@
       "contacts": [
         "contactos"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV o un archivo VCF (vCard)"
+      ],
       "full calendar view": [
         "vista de calendario completa"
       ],
@@ -2748,6 +2782,10 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
+      "Delete locked drive": [
+        "Eliminar unidad bloqueada",
+        "Eliminar unidades bloqueadas"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este archivo ha sido cargado de forma segura por ${ emailAddress }."
       ],
@@ -2793,11 +2831,17 @@
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
       ],
+      "Enter the code from your authenticator app": [
+        "Ingrese el código desde la aplicación de autenticación"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduce tu propia contraseña (como administrador de la organización)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tiempo restante estimado: ${ estimatedMinutes } minutos",
@@ -2917,6 +2961,9 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
+      ],
+      "It’s easy and secure": [
+        "Es fácil y seguro"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Simplemente confirme su selección y nosotros haremos el resto."
@@ -3038,6 +3085,9 @@
       ],
       "Paused": [
         "Pausado"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Eliminar permanentemente todos los archivos en tu unidad bloqueada"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
@@ -3175,6 +3225,9 @@
       "Swiss privacy": [
         "Privacidad suiza"
       ],
+      "Tap the + button to upload a file or folder": [
+        "Pulsa el botón + para subir un archivo o una carpeta"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o los siguientes elementos pueden haber sido manipulados: ${ items }. Abrir sólo si son de su confianza."
       ],
@@ -3229,9 +3282,6 @@
       ],
       "This will overwrite the existing folder": [
         "Esta acción sobreescribirá el directorio existente"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Para permitir una búsqueda verdaderamente privada, ${ DRIVE_APP_NAME } debe indexar sus archivos localmente. Puedes seguir utilizando ${ DRIVE_APP_NAME } normalmente - te avisaremos cuando la indexación haya terminado."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
@@ -3486,6 +3536,9 @@
       "Audio file": [
         "Archivo de audio"
       ],
+      "Authenticator app": [
+        "Aplicación de autenticación"
+      ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
@@ -3536,6 +3589,12 @@
       ],
       "Country": [
         "País"
+      ],
+      "Create a share link": [
+        "Crear un enlace compartido"
+      ],
+      "Create Proton account": [
+        "Crea una cuenta Proton"
       ],
       "Created": [
         "Creado"
@@ -3756,6 +3815,9 @@
       ],
       "Set expiration date": [
         "Establecer fecha de expiración"
+      ],
+      "Set recovery method": [
+        "Establezca un método de recuperación"
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
@@ -4053,44 +4115,40 @@
       "\"${ newName }\" renamed successfully": [
         "${ newName }\" fue renombrado con éxito"
       ],
-      "${ count } item failed to be decrypted": [
-        "El elemento ${ count } no pudo ser descifrado",
-        "Los elementos ${ count } no pudieron ser descifrados"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "El elemento ${ numberOfItems } ha sido eliminado de la papelera de forma permanente",
-        "Los elementos ${ numberOfItems } han sido eliminados de la papelera de forma permanente"
+        "${ numberOfItems } elemento eliminado permanentemente de la papelera",
+        "${ numberOfItems } elementos eliminados permanentemente de la papelera"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "El elemento \"${ numberOfItems }\" no pudo ser eliminado de forma permanente de la papelera",
-        "Los elementos \"${ numberOfItems }\" no pudieron ser eliminados de forma permanente de la papelera"
+        "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
+        "Error al eliminar ${ numberOfItems } elementos permanentemente de la papelera"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "No se pudo mover el elemento ${ numberOfItems }",
-        "No se pudieron mover los elementos ${ numberOfItems }"
+        "${ numberOfItems } elemento no se pudo mover",
+        "${ numberOfItems } elementos no se pudieron mover"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "El elemento ${ numberOfItems } no se pudo mover a la papelera",
-        "Los elementos ${ numberOfItems } no se pudieron mover a la papelera"
+        "Error al mover ${ numberOfItems } elemento a la papelera",
+        "Error al mover ${ numberOfItems } elementos a la papelera"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "El elemento ${ numberOfItems } no se pudo restaurar desde la papelera",
-        "Los elementos ${ numberOfItems } no se pudieron restaurar desde la papelera"
+        "Error al restaurar ${ numberOfItems } elemento de la papelera",
+        "Error al restaurar ${ numberOfItems } elementos de la papelera"
       ],
       "${ numberOfItems } item moved to trash": [
-        "El elemento ${ numberOfItems } se ha movido a la papelera",
-        "Los elementos ${ numberOfItems } se han movido a la papelera"
+        "${ numberOfItems } elemento movido a la papelera",
+        "${ numberOfItems } elementos movidos a la papelera"
       ],
       "${ numberOfItems } item restored from trash": [
-        "El elemento ${ numberOfItems } se ha restaurado desde la papelera",
-        "Los elementos ${ numberOfItems } se han restaurado desde la papelera"
+        "${ numberOfItems } elemento restaurado de la papelera",
+        "${ numberOfItems } elementos restaurados de la papelera"
       ],
       "${ numberOfItems } item successfully moved": [
-        "El elemento ${ numberOfItems } fue movido con éxito",
-        "Los elementos ${ numberOfItems } fueron movidos con éxito"
+        "${ numberOfItems } elemento movido con éxito",
+        "${ numberOfItems } elementos movidos con éxito"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "No se pudo eliminar en enlace ${ numberOfItems } a tu elemento",
+        "Error al eliminar ${ numberOfItems } enlace a su archivo",
         "No se pudieron eliminar los enlaces ${ numberOfItems } a tus elementos"
       ],
       "${ numberOfItems } link to your item was deleted": [
@@ -4222,10 +4280,6 @@
       ],
       "Set a recovery method": [
         "Establecer un método de recuperación"
-      ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "Completa las siguientes acciones durante el próximo ${ remainingDaysForGift } día:",
-        "Completa las siguientes acciones durante los próximos ${ remainingDaysForGift } días:"
       ],
       "Upload a file": [
         "Subir un archivo"
@@ -4739,6 +4793,9 @@
       "Edit contact group": [
         "Editar grupo de contactos"
       ],
+      "Edit email settings": [
+        "Editar configuración de correo electrónico"
+      ],
       "Edit image": [
         "Editar imagen"
       ],
@@ -4747,9 +4804,6 @@
       ],
       "Email settings": [
         "Ajustes de correo electrónico"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ajustes de correo electrónico (${ emailAddress })"
       ],
       "Empty trash": [
         "Vaciar papelera"
@@ -4826,6 +4880,9 @@
       ],
       "MIME type": [
         "Tipo MIME"
+      ],
+      "Minicalendar": [
+        "Minicalendario"
       ],
       "Modified": [
         "Modificado"
@@ -5028,8 +5085,17 @@
       "You've got files": [
         "Has recibido archivos"
       ],
+      "Your 500 MB bonus": [
+        "Tu bonus de 500 MB"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Su prueba gratuita termina pronto, en ${ formattedEndDate }"
+      ],
+      "Your welcome actions": [
+        "Tus acciones de bienvenida"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Has obtenido 1 GB de almacenamiento"
       ]
     },
     "Today icon tooltip in mini calendar": {

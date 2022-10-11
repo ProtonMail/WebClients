@@ -2238,9 +2238,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
-      "No keys retrieved for internal user": [
-        "Pro interního uživatele nebyly získány žádné klíče"
-      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
@@ -2288,9 +2285,6 @@
       ],
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primární klíč pro interního uživatele není určen k odesílání"
       ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
@@ -3807,7 +3801,7 @@
         "Týden"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+        "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
       "Which event would you like to delete?": [
         "Kterou událost chcete smazat?"
@@ -5595,9 +5589,6 @@
       "Email settings": [
         "Nastavení e-mailu"
       ],
-      "Email settings (${ emailAddress })": [
-        "Nastavení e-mailu (${ emailAddress })"
-      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
@@ -5654,6 +5645,9 @@
       ],
       "Merging contacts": [
         "Slučování kontaktů"
+      ],
+      "Minicalendar": [
+        "Minikalendář"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"

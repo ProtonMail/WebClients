@@ -2287,9 +2287,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
-      "No keys retrieved for internal user": [
-        "Nicio cheie preluată pentru utilizatorul intern"
-      ],
       "No public key for Proton address": [
         "Nu există cheie publică pentru adresa Proton."
       ],
@@ -2341,8 +2338,8 @@
       "Primary key is not valid for sending": [
         "Cheia primară nu este validă pentru trimiteri."
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Cheia primară preluată pentru utilizatorul intern nu este validă pentru trimiteri."
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Cheia primară preluată pentru utilizatorul ${ BRAND_NAME } nu este validă pentru trimiteri."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "A fost eliminat un destinatar duplicat: ${ joinedRecipients }",
@@ -5628,6 +5625,9 @@
       "Edit contact group": [
         "Editare grup de contacte"
       ],
+      "Edit email settings": [
+        "Editare setări e-mail"
+      ],
       "Edit image": [
         "Editare imagine"
       ],
@@ -5636,9 +5636,6 @@
       ],
       "Email settings": [
         "Setări e-mail"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Setări e-mail (${ emailAddress })"
       ],
       "Enter your password": [
         "Introduceţi parola"
@@ -5695,6 +5692,9 @@
       ],
       "Merging contacts": [
         "Se îmbină contactele"
+      ],
+      "Minicalendar": [
+        "Minicalendar"
       ],
       "Open actions dropdown": [
         "Meniu acțiuni deschidere"

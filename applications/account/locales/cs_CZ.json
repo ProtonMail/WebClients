@@ -4,6 +4,11 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Bez označení"
+      ]
+    },
     "Access level": {
       "Full view": [
         "Plné zobrazení"
@@ -1202,6 +1207,9 @@
       ]
     },
     "Calendar invite status label": {
+      "Declined": [
+        "Odmítnuto"
+      ],
       "Invite sent": [
         "Pozvánka odeslána"
       ]
@@ -1209,6 +1217,12 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Dosáhli jste maximálního počtu osobních kalendářů, které můžete v rámci svého tarifu vytvořit."
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Dosáhli jste maximálního počtu osobních kalendářů, které můžete mít. Chcete-li přijmout čekající pozvánky kalendářů, musíte některé ze svých kalendářů odebrat."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Dosáhli jste maximálního počtu sdílených kalendářů, které můžete mít. Chcete-li přijmout čekající pozvánky kalendářů, musíte některé ze svých kalendářů odebrat."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Dosáhli jste maxima ${ MAX_SUBSCRIBED_CALENDARS } odebíraného kalendáře.",
@@ -1238,6 +1252,16 @@
         "Již máte přístup k tomuto kalendáři"
       ]
     },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Vytvořte odkaz do svého kalendáře a sdílejte ho s kýmkoli mimo Proton. Pouze vy můžete přidat nebo odebrat události."
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Sdílejte svůj kalendář s ostatními uživateli Protonu. Umožněte jim spolupráci tím, že jim dovolíte přidávat a upravovat události v kalendáři. Oprávnění uživatelů můžete kdykoli změnit."
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "Sdílet kalendář"
@@ -1249,6 +1273,16 @@
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Zobrazit ${ remainingItems } další"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Zobrazit všechny detaily události"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Oprávnění pro ${ email } změněno"
       ]
     },
     "Calendar status": {
@@ -2614,19 +2648,31 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "${ name } přidán"
+        "Doména ${ name } přidána"
       ],
       "${ name } deletion failed": [
         "Smazání ${ name } selhalo"
       ],
       "${ name } failed to move to Non spam List": [
-        "${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
+        "Doménu ${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } failed to move to spam list": [
+        "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
+      ],
+      "${ name } failed to move to your block list": [
+        "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
       ],
       "${ name } moved to Non spam list": [
-        "${ name } přesunut na Seznam vyžádaných e-mailů"
+        "Doména ${ name } přesunuta na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } moved to spam list": [
+        "Doména ${ name } byla přesunuta na Seznam spamů"
+      ],
+      "${ name } moved to your block list": [
+        "Doména ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } successfully deleted": [
-        "${ name } úspěšně smazán"
+        "Doména ${ name } úspěšně smazána"
       ]
     },
     "Downgrade account reason": {
@@ -2719,19 +2765,31 @@
     },
     "Email spam notification": {
       "${ name } added": [
-        "${ name } přidán"
+        "Doména ${ name } přidána"
       ],
       "${ name } deletion failed": [
         "Smazání ${ name } selhalo"
       ],
       "${ name } failed to move to Non spam List": [
-        "${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
+        "Doménu ${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } failed to move to spam list": [
+        "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
+      ],
+      "${ name } failed to move to your block list": [
+        "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
       ],
       "${ name } moved to Non spam list": [
-        "${ name } přesunut na Seznam vyžádaných e-mailů"
+        "Doména ${ name } přesunuta na Seznam vyžádaných e-mailů"
+      ],
+      "${ name } moved to spam list": [
+        "Doména ${ name } byla přesunuta na Seznam spamů"
+      ],
+      "${ name } moved to your block list": [
+        "Doména ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } successfully deleted": [
-        "${ name } úspěšně smazán"
+        "Doména ${ name } úspěšně smazána"
       ]
     },
     "Email subject": {
@@ -2954,9 +3012,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
-      "No keys retrieved for internal user": [
-        "Pro interního uživatele nebyly získány žádné klíče"
-      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
@@ -3037,9 +3092,6 @@
       ],
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primární klíč pro interního uživatele není možné použít pro odesílání"
       ],
       "Process aborted": [
         "Proces přerušen"
@@ -3591,25 +3643,89 @@
         "Podpora Torrentu (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Přidat bezpečnostní klíč"
+      ],
+      "Delete key": [
+        "Odstranit klíč"
+      ]
+    },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Před deaktivací TOTP deaktivujte 2FA pomocí bezpečnostního klíče"
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Při registraci bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA prostřednictvím bezpečnostního klíče deaktivováno"
+      ],
+      "Add a name to identify your security key with.": [
+        "Přidejte název, kterým identifikujete svůj bezpečnostní klíč."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Opravdu chcete odstranit bezpečnostní klíč ${ name }?"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
       ],
+      "Insert your security key into your device's USB port.": [
+        "Vložte bezpečnostní klíč do USB portu v zařízení."
+      ],
       "Security key": [
         "Klíč zabezpečení"
       ],
+      "Security key removed": [
+        "Bezpečnostní klíč odebrán"
+      ],
       "Security key updated": [
         "Bezpečnostní klíč aktualizován"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Tím odstraníte všechny bezpečnostní klíče spojené s vaším účtem."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Chcete-li zapnout 2FA prostřednictvím bezpečnostního klíče, musíte aktivovat 2FA prostřednictvím autentizační aplikace"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Váš dvoufázový ověřovací klíč je připraven k použití."
       ]
     },
     "fido2: Label": {
+      "Key name": [
+        "Název klíče"
+      ],
       "Security key": [
         "Klíč zabezpečení"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Odstranit bezpečnostní klíč?"
+      ],
+      "Disable 2FA via security key?": [
+        "Deaktivovat 2FA prostřednictvím bezpečnostního klíče?"
+      ],
+      "Name your security key": [
+        "Název bezpečnostního klíče"
+      ],
+      "Register your security key": [
+        "Zaregistrujte svůj bezpečnostní klíč"
+      ],
+      "Registered security keys": [
+        "Registrované bezpečnostní klíče"
+      ],
+      "Security key registered": [
+        "Bezpečnostní klíč registrován"
       ]
     },
     "file size format": {
@@ -3728,6 +3844,9 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "E-maily z blokovaných adres nebudou doručeny."
+      ],
+      "Search in your allow and block lists": [
+        "Hledání v povolených a blokovaných seznamech"
       ]
     },
     "Font Face Default": {
@@ -4535,8 +4654,14 @@
       "Add a recovery email address": [
         "Přidat e-mail pro obnovení"
       ],
+      "add a recovery method": [
+        "přidali metodu obnovení"
+      ],
       "Add a recovery phone number": [
         "Přidat telefonní číslo pro obnovení"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Přidejte ke svému účtu další úroveň zabezpečení. Při každém přihlášení se musíte ověřit pomocí 2FA."
       ],
       "Add image URL": [
         "Přidat URL obrázku"
@@ -4898,14 +5023,23 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-maily s tímto štítkem nebudou smazány a je možné je nalézt v příslušné složce."
       ],
+      "Enable this address to join this calendar": [
+        "Povolte tuto adresu, aby se připojila k tomuto kalendáři"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opětovné povolení obnovení pomocí fráze vygeneruje novou frázi pro obnovení."
       ],
       "Encryption setting updated": [
         "Nastavení šifrování bylo aktualizováno"
       ],
+      "Enter code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
       "Enter key manually instead": [
         "Místo toho vložte klíč ručně"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Zadejte nové heslo pro uživatele ${ userName }."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -5195,6 +5329,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru čte Vaše osobní údaje s cílem poskytnout přístup inzerentům, ruským vládním agenturám a dalším třetím stranám. Pro lepší soukromí vytvořte bezpečnou e-mailovou adresu."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ _switchButton }."
       ],
@@ -5414,6 +5551,9 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton se pokusí pokračovat v importu, jakmile váš poskytovatel e-mailu obnoví Váš účet ${ bandwithLimitLink }. Nemusíte nic dělat. Pokud zrušíte import, nebudete jej moci obnovit a budete muset začít znovu."
       ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Díky šifrovací technologii Protonu se k vašemu heslu nikdo nedostane - ani my ne."
+      ],
       "Public link invite": [
         "Pozvánka na veřejný odkaz"
       ],
@@ -5458,6 +5598,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Remove one of your calendars to join this one": [
+        "Odstraňte jeden ze svých kalendářů a připojte se k tomuto"
       ],
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
@@ -5670,7 +5813,7 @@
         "Toto nahradí vaše dočasné heslo. V budoucnu jej použijete pro přístup k vašemu ${ BRAND_NAME } Účtu."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Tím se odhlásíte ze všech aktivních relací a zakážete 2-faktorové ověřování."
+        "Tím se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem Proton účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější Proton účet."
@@ -5792,6 +5935,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Nebude účtován žádný poplatek. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Ověřte totožnost pomocí časově omezeného jednorázového hesla z autentizační aplikace"
+      ],
       "Verifying your payment": [
         "Ověřování vaší platby"
       ],
@@ -5856,7 +6002,7 @@
         "Když si předplatí placený tarif, bude na váš účet připsáno 1 až 3 měsíce ${ planName }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+        "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Až se Vaše předplatné obnoví, použijeme všechny dostupné kredity před tím, než budeme účtovat výše uvedenou platební metodu."
@@ -7139,6 +7285,9 @@
       "Show secondary time zone": [
         "Zobrazit sekundární časové pásmo"
       ],
+      "Show sender images": [
+        "Zobrazit obrázky odesílatele"
+      ],
       "Show week numbers": [
         "Zobrazovat číslo týdne"
       ],
@@ -7599,6 +7748,14 @@
         "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazy na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
         "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazů na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
         "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazů na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } člena.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů."
       ]
     },
     "Member action": {
@@ -8547,6 +8704,12 @@
       "Cover more ground with support for 10 custom email domains": [
         "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
       ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Vytvořte ${ numberOfPersonalCalendars } osobní kalendář",
+        "Vytvořte až ${ numberOfPersonalCalendars } osobní kalendáře",
+        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů",
+        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů"
+      ],
       "Everything in ${ vpnPlanName }": [
         "Vše v ${ vpnPlanName }"
       ],
@@ -9228,6 +9391,9 @@
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události tohoto kalendáře budou z vašeho účtu odstraněny, ale i nadále budou k dispozici pod originálním veřejným odkazem."
+      ],
+      "You will no longer have access to this calendar.": [
+        "K tomuto kalendáři již nebudete mít přístup."
       ]
     },
     "Remove calendar section text": {
@@ -9955,6 +10121,9 @@
       "Add to spam list": [
         "Přidat do seznamu \"spam\""
       ],
+      "Add to your block list": [
+        "Přidat na seznam blokovaných"
+      ],
       "Add user": [
         "Přidat uživatele"
       ],
@@ -10360,6 +10529,9 @@
       "Messages and composing": [
         "Zprávy a psaní"
       ],
+      "Minicalendar": [
+        "Minikalendář"
+      ],
       "Multi-user support": [
         "Podpora pro více uživatelů"
       ],
@@ -10513,6 +10685,9 @@
       "Select when you want this notification to be sent": [
         "Vyberte, kdy chcete, aby bylo toto oznámení odesláno"
       ],
+      "Sender image": [
+        "Obrázek odesílatele"
+      ],
       "Session management": [
         "Správce relací"
       ],
@@ -10604,7 +10779,7 @@
         "Vyzkoušejte zdarma to nejlepší z ${ MAIL_APP_NAME }"
       ],
       "Two-factor authentication": [
-        "Dvoufaktorové ověření"
+        "Dvoufázové ověření"
       ],
       "Type": [
         "Typ"
@@ -10819,6 +10994,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "V odesílaných e-mailech nastaví následující zápatí: ${ signature } Odkaz odkazuje na váš doporučující odkaz. Zápatí se zobrazí pod vaším podpisem. Podpis si můžete kdykoli přizpůsobit v nastavení."
       ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Zobrazení obrázku každého odesílatele v seznamu zpráv. Pokud není k dispozici fotka, zobrazí se iniciály odesílatele."
+      ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Podpisy vytvořené tímto klíčem jsou považovány za neplatné a tento klíč nelze použít pro šifrování"
       ],
@@ -10927,6 +11105,9 @@
         "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendářů, které můžete používat pro práci, sdílet s přáteli a také pro sebe.",
         "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendářů, které můžete používat pro práci, sdílet s přáteli a také pro sebe.",
         "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendářů, které můžete používat pro práci, sdílet s přáteli a také pro sebe."
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Chcete-li sdílet kalendář, přejděte na placený e-mailový tarif."
       ]
     },
     "User referee invited via email": {

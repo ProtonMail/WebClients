@@ -137,6 +137,9 @@
       "Customize import": [
         "Tilpas import"
       ],
+      "Decline invite": [
+        "Afslå invitation"
+      ],
       "Delete": [
         "Slet"
       ],
@@ -246,6 +249,9 @@
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
+      ],
+      "Join calendar": [
+        "Tilmeld kalender"
       ],
       "Load image": [
         "Indlæs billede"
@@ -480,6 +486,9 @@
       ],
       "Use ${ label } theme": [
         "Brug ${ label } temaet"
+      ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
       ],
       "Use for sending": [
         "Brug til afsendelse"
@@ -797,6 +806,11 @@
       ],
       "You tentatively accepted the invitation": [
         "Du har foreløbigt accepteret invitationen"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Du har allerede adgang til denne kalender"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1997,8 +2011,14 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "Account does not exist": [
+        "Konto findes ikke"
+      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
+      ],
+      "Already a member of this calendar": [
+        "Allerede et medlem af denne kalender"
       ],
       "Answer failed to be sent": [
         "Svaret kunne ikke sendes"
@@ -2129,14 +2149,17 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
-      "No keys retrieved for internal user": [
-        "Ingen nøgler hentet for intern bruger"
+      "No public key for Proton address": [
+        "Ingen offentlig nøgle til Proton-adresse"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
+      ],
+      "Not a Proton account": [
+        "Ikke en Proton-konto"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
@@ -2174,8 +2197,9 @@
       "Primary key is not valid for sending": [
         "Primær nøgle er ikke gyldig til afsendelse"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primær nøgle hentet for intern bruger er ikke gyldig til afsendelse"
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Fjernede dublet af modtager: ${ joinedRecipients }",
+        "Fjernede dubletter af modtagere: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -2195,11 +2219,17 @@
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -2258,6 +2288,9 @@
       "Unknown error": [
         "Ukendt fejl"
       ],
+      "Validation error": [
+        "Bekræftelsesfejl"
+      ],
       "We were unable to connect to your service provider.": [
         "Vi kunne ikke oprette forbindelse til din tjenesteudbyder."
       ],
@@ -2266,6 +2299,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Du kan ikke sende vCards med mere end 10 kontakter"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -2575,6 +2611,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Din feedback"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
       ]
     },
     "file size format": {
@@ -2931,6 +2985,9 @@
       "contacts": [
         "kontakter"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV eller en VCF-fil (vCard)"
+      ],
       "full calendar view": [
         "fuld kalendervisning"
       ],
@@ -3168,11 +3225,20 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din autentificeringsapp"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Existent and added participants will be notified.": [
         "Eksisterende og tilføjede deltagere vil blive underrettet."
@@ -3491,6 +3557,9 @@
       "Week": [
         "Uge"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "Which event would you like to delete?": [
         "Hvilken begivenhed ønsker du at slette?"
       ],
@@ -3527,6 +3596,9 @@
       "Yearly": [
         "Årlig"
       ],
+      "You already joined this calendar": [
+        "Du er allerede tilmeldt denne kalender"
+      ],
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en ny browserfane og besøge:"
       ],
@@ -3550,6 +3622,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Du har nulstillet din adgangskode, og begivenheder tilknyttet følgende kalendere kunne ikke dekrypteres. \nAlle delte kalenderlinks du tidligere har oprettet, vil ikke længere virke. \nAlle aktive, tilmeldte kalendere vil blive synkroniseret igen efter nogle få minutter."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Du har tidligere afvist denne invitation. Bed ejeren om en ny invitation"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
@@ -3677,6 +3752,9 @@
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
+      ],
+      "Authenticator app": [
+        "Godkendelsesapp"
       ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
@@ -4047,9 +4125,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4088,6 +4174,22 @@
         "Administrer kalendere"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Ikke muligt at tilføje flere kalendere. Du har nået det maksimale antal tilmeldte kalendere for dit abonnement."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Tilmeld kalender"
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Sådan importerer du kalendere fra en anden tjeneste"
@@ -4115,6 +4217,9 @@
       ],
       "How to import emails from Yahoo": [
         "Sådan importerer du e-mails fra Yahoo"
+      ],
+      "Share calendar": [
+        "Del kalender"
       ],
       "Time zone changed": [
         "Tidszone ændret"
@@ -4303,6 +4408,20 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe opdateret"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Medlem tilføjet",
+        "Medlemmer tilføjet"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Kalenderinvitation afslået"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Tilmeldte ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4733,11 +4852,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nu vises invitationer i din kalender som afventende begivenheder. Du skal blot åbne en begivenhed for at svare. ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "Abonnér på andre kalendere"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Du kan nu tilføje notifikationer til kalendere, du har abonneret på."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Du kan abonnere på eksterne kalendere og læse deres begivenheder."
       ]
     },
     "Spotlight settings link": {
@@ -5098,6 +5223,9 @@
       "Create new group": [
         "Opret ny gruppe"
       ],
+      "Create public link": [
+        "Opret et offentligt link"
+      ],
       "Currency": [
         "Valuta"
       ],
@@ -5150,9 +5278,6 @@
       ],
       "Email settings": [
         "E-mailindstillinger"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailindstillinger (${ emailAddress })"
       ],
       "Enter your password": [
         "Indtast din adgangskode"
@@ -5208,6 +5333,9 @@
       ],
       "Merging contacts": [
         "Fletter kontakter"
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
