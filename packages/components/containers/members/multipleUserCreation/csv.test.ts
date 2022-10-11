@@ -354,21 +354,6 @@ describe('multi user upload csv.ts', () => {
             });
 
             describe('totalStorage', () => {
-                it('adds error if the value is not a valid number', async () => {
-                    const totalStorage = 'not a number';
-                    const fileContent = [
-                        defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
-                    ].join('\n');
-                    const file = getFile(fileContent);
-
-                    const result = await parseMultiUserCsv([file]);
-
-                    expect(result.errors.length).toBe(1);
-                    expect(result.errors[0].type).toBe(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
-                    expect(result.errors[0].rowNumber).toBe(1);
-                });
-
                 it('returns no errors if set to a valid number', async () => {
                     const totalStorage = '123';
                     const fileContent = [
@@ -384,6 +369,21 @@ describe('multi user upload csv.ts', () => {
                     expect(user.totalStorage).toBe(123);
                 });
 
+                it('uses default if value is not a valid number', async () => {
+                    const totalStorage = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(20 * GIGA);
+                });
+
                 it('defaults to 20GB', async () => {
                     const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
                     const file = getFile(fileContent);
@@ -397,21 +397,6 @@ describe('multi user upload csv.ts', () => {
             });
 
             describe('vpnAccess', () => {
-                it('adds error if the value is not a valid number', async () => {
-                    const vpnAccess = 'not a number';
-                    const fileContent = [
-                        defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
-                    ].join('\n');
-                    const file = getFile(fileContent);
-
-                    const result = await parseMultiUserCsv([file]);
-
-                    expect(result.errors.length).toBe(1);
-                    expect(result.errors[0].type).toBe(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
-                    expect(result.errors[0].rowNumber).toBe(1);
-                });
-
                 it('returns no errors if set to 0', async () => {
                     const vpnAccess = 0;
                     const fileContent = [
@@ -442,6 +427,21 @@ describe('multi user upload csv.ts', () => {
                     expect(user.vpnAccess).toBe(true);
                 });
 
+                it('uses default if value is not a valid number', async () => {
+                    const vpnAccess = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.vpnAccess).toBe(false);
+                });
+
                 it('defaults to false', async () => {
                     const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
                     const file = getFile(fileContent);
@@ -455,21 +455,6 @@ describe('multi user upload csv.ts', () => {
             });
 
             describe('privateSubUser', () => {
-                it('adds error if the value is not a valid number', async () => {
-                    const privateSubUser = 'not a number';
-                    const fileContent = [
-                        defaultCsvFields,
-                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
-                    ].join('\n');
-                    const file = getFile(fileContent);
-
-                    const result = await parseMultiUserCsv([file]);
-
-                    expect(result.errors.length).toBe(1);
-                    expect(result.errors[0].type).toBe(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
-                    expect(result.errors[0].rowNumber).toBe(1);
-                });
-
                 it('returns no errors if set to 0', async () => {
                     const privateSubUser = 0;
                     const fileContent = [
@@ -498,6 +483,21 @@ describe('multi user upload csv.ts', () => {
 
                     expect(result.errors.length).toBe(0);
                     expect(user.privateSubUser).toBe(true);
+                });
+
+                it('uses default if value is not a valid number', async () => {
+                    const privateSubUser = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
                 });
 
                 it('defaults to false', async () => {
