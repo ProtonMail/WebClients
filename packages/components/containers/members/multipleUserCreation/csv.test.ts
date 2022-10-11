@@ -262,11 +262,26 @@ describe('multi user upload csv.ts', () => {
                     expect(user.emailAddresses[1]).toBe('alice2@mydomain.com');
                 });
 
+                it('is considered to be defined if set to falsy 0 value', async () => {
+                    const emailAddresses = 0;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,${emailAddresses},alice_password,1073741824,1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.emailAddresses.length).toBe(1);
+                    expect(user.emailAddresses[0]).toBe('0');
+                });
+
                 it('casts to a string', async () => {
                     const emailAddresses = 123;
                     const fileContent = [
                         defaultCsvFields,
-
                         `Alice,${emailAddresses},alice_password,1073741824,1,0`,
                     ].join('\n');
                     const file = getFile(fileContent);
