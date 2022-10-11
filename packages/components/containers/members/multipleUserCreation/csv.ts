@@ -23,34 +23,52 @@ const toCsv = <T>(data: T[]) => Papa.unparse(data);
 const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number) => {
     const { EmailAddresses, Password, DisplayName, TotalStorage, VPNAccess = 0, PrivateSubUser = 0 } = csvUser;
 
-    if (EmailAddresses === null || EmailAddresses === undefined || EmailAddresses === '') {
+    if (!EmailAddresses || typeof EmailAddresses !== 'string') {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.EMAIL_REQUIRED);
     }
 
-    if (Password === null || Password === undefined || Password === '') {
+    if (!Password || typeof Password !== 'string') {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
     }
 
-    const emailAddresses = `${EmailAddresses}`.split(',').map((item) => item.trim());
+    const emailAddresses = EmailAddresses.split(',').map((item) => item.trim());
     const displayName = (() => {
-        if (DisplayName === null || DisplayName === undefined || DisplayName === '') {
+        if (!DisplayName || typeof DisplayName !== 'string') {
             return emailAddresses[0];
         }
 
-        return `${DisplayName}`;
+        return DisplayName;
     })();
 
-    const totalStorage = TotalStorage || 20 * GIGA;
-    if (typeof totalStorage !== 'number') {
-        throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
-    }
+    const totalStorage = (() => {
+        const totalStorageNumber = +TotalStorage;
 
-    const vpnAccess = VPNAccess || 0;
+        if (isNaN(totalStorageNumber)) {
+            return 20 * GIGA;
+        }
+        return totalStorageNumber;
+    })();
+
+    const vpnAccess = (() => {
+        const vpnAccessNumber = +VPNAccess;
+
+        if (isNaN(vpnAccessNumber)) {
+            return 0;
+        }
+        return vpnAccessNumber;
+    })();
     if (vpnAccess !== 0 && vpnAccess !== 1) {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
     }
 
-    const privateSubUser = PrivateSubUser || 0;
+    const privateSubUser = (() => {
+        const privateSubUserNumber = +PrivateSubUser;
+
+        if (isNaN(privateSubUserNumber)) {
+            return 0;
+        }
+        return privateSubUserNumber;
+    })();
     if (privateSubUser !== 0 && privateSubUser !== 1) {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
     }
@@ -58,7 +76,7 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number) => {
     const user: UserTemplate = {
         id: `${rowNumber}`,
         emailAddresses,
-        password: `${Password}`,
+        password: Password,
         displayName,
         totalStorage,
         vpnAccess: Boolean(vpnAccess),
@@ -118,7 +136,6 @@ export const parseMultiUserCsv = async (files: File[]) => {
         header: true,
         transformHeader: (value) => value.trim(),
         transform: (value) => value.trim(),
-        dynamicTyping: true,
         comments: '#',
     });
 
