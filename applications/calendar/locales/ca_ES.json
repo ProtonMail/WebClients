@@ -2113,9 +2113,6 @@
       "Name required": [
         "Nom requerit"
       ],
-      "No keys retrieved for internal user": [
-        "No s’ha recuperat cap clau per a l’usuari intern"
-      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -2158,8 +2155,8 @@
       "Primary key is not valid for sending": [
         "La clau principal no és vàlida per enviar"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clau principal obtinguda per l'usuari intern no és vàlida per enviar"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per enviar"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -4904,6 +4901,9 @@
       "Edit contact group": [
         "Editar grup de contactes"
       ],
+      "Edit email settings": [
+        "Edita la configuració del correu electrònic"
+      ],
       "Edit image": [
         "Editar imatge"
       ],
@@ -4912,9 +4912,6 @@
       ],
       "Email settings": [
         "Configuració del correu electrònic"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Preferències de correu electrònic (${ emailAddress })"
       ],
       "Enter your password": [
         "Introdueix la teva contrasenya"

@@ -3033,9 +3033,6 @@
       "No address with keys available to compose a message": [
         "Nincs elérhető kulcsokkal rendelkező cím az üzenet íráshoz"
       ],
-      "No keys retrieved for internal user": [
-        "Nem található kulcs a belső felhasználóhoz"
-      ],
       "No valid address found": [
         "Nincs érvényes cím"
       ],
@@ -3077,9 +3074,6 @@
       ],
       "Primary key is not valid for sending": [
         "Az elsődleges kulcs nem érvényes a küldéshez"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "A belső felhasználóhoz letöltött elsődleges kulcs nem érvényes a küldéshez"
       ],
       "Public key could not be trusted": [
         "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
@@ -7491,9 +7485,6 @@
       ],
       "Email settings": [
         "E-mail beállítások"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mail beállítások (${ emailAddress })"
       ],
       "Enable message content search": [
         "Üzenetek tartalmában való keresés engedélyezése"

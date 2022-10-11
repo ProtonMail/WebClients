@@ -2253,9 +2253,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
-      "No keys retrieved for internal user": [
-        "Tidak ada kunci untuk pengguna internal yang diterima"
-      ],
       "No public key for Proton address": [
         "Tidak ada kunci publik untuk alamat Proton"
       ],
@@ -2300,9 +2297,6 @@
       ],
       "Primary key is not valid for sending": [
         "Kunci utama tidak valid untuk pengiriman"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Kunci utama yang diambil untuk pengguna internal tidak dapat digunakan untuk pengiriman"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Penerima duplikat dihapus: ${ joinedRecipients }"
@@ -5011,7 +5005,7 @@
         "Coba ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
-        "Anda kini dapat menambahkan notifikasi pada kalender yang Anda langgan."
+        "Anda dapat berlangganan ke kalender eksternal dan melihat acara yang tertera di dalamnya."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Anda dapat langganan ke kalender eksternal dan melihat acaranya."
@@ -5423,9 +5417,6 @@
       "Email settings": [
         "Pengaturan surel"
       ],
-      "Email settings (${ emailAddress })": [
-        "Pengaturan surel (${ emailAddress })"
-      ],
       "Enter your password": [
         "Masukkan sandi Anda"
       ],
@@ -5479,6 +5470,9 @@
       ],
       "Merging contacts": [
         "Menggabungkan kontak"
+      ],
+      "Minicalendar": [
+        "Kalender mini"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"

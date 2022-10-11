@@ -2889,9 +2889,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette fenêtre."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés. ${ manageBlockedAddressesSettingsLink } dans les paramètres."
-      ],
       "No folders": [
         "Aucun dossier"
       ],
@@ -3210,9 +3207,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Aucun e-mail à importer, le compte n'a pas de Boîte de réception."
       ],
-      "No keys retrieved for internal user": [
-        "Aucune clé récupérée pour l'utilisateur interne"
-      ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
       ],
@@ -3257,9 +3251,6 @@
       ],
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi."
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi."
       ],
       "Public key could not be trusted": [
         "La clé publique n'a pas pu être approuvée."
@@ -6890,9 +6881,6 @@
       ],
       "Password has been set successfully": [
         "Le mot de passe a bien été défini."
-      ],
-      "Sender ${ senderEmail } blocked": [
-        "L'expéditeur ${ senderEmail } est bloqué."
       ]
     },
     "Oauth instructions": {
@@ -7939,9 +7927,6 @@
       ],
       "Email settings": [
         "Paramètres d'adresse électronique"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Paramètres d'adresse électronique (${ emailAddress })"
       ],
       "Enable message content search": [
         "Activer la recherche de contenu de message"

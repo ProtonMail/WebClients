@@ -256,6 +256,9 @@
       "Forward as attachment": [
         "Reenviar com a adjunt"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Obtenir ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Obtén l'enllaç"
       ],
@@ -523,6 +526,9 @@
       "Submit": [
         "Enviar"
       ],
+      "Submit report": [
+        "Envieu informe"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -594,6 +600,9 @@
       ],
       "View invoice": [
         "Veure factura"
+      ],
+      "Your 500 MB bonus": [
+        "El vostre bonus de 500 MB"
       ],
       "Zoom in": [
         "Apropa"
@@ -1730,6 +1739,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A problem occurred, please try again": [
+        "S'ha produït un problema. Intenteu-ho de nou"
+      ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
       ],
@@ -1836,6 +1848,9 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
+      ],
+      "Please activate your content search again": [
+        "Siusplau, activeu de nou la vostra cerca de continguts"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte destacat per poder continuar.",
@@ -3196,6 +3211,9 @@
       "Country": [
         "País"
       ],
+      "Create a share link": [
+        "Crear un enllaç per a compartir"
+      ],
       "Created": [
         "Creat"
       ],
@@ -3722,10 +3740,6 @@
       "Set a recovery method": [
         "Configura un mètode de recuperació"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "Completeu els següents passos abans d'${ remainingDaysForGift } dia:",
-        "Completeu els següents passos abans de: ${ remainingDaysForGift } dies:"
-      ],
       "Upload a file": [
         "Puja un fitxer"
       ]
@@ -4218,6 +4232,9 @@
       "Edit contact group": [
         "Editar grup de contactes"
       ],
+      "Edit email settings": [
+        "Edita la configuració del correu electrònic"
+      ],
       "Edit image": [
         "Editar imatge"
       ],
@@ -4226,9 +4243,6 @@
       ],
       "Email settings": [
         "Configuració del correu electrònic"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Preferències de correu electrònic (${ emailAddress })"
       ],
       "Empty trash": [
         "Buida la paperera"
@@ -4507,8 +4521,17 @@
       "You've got files": [
         "Tens fitxers"
       ],
+      "Your 500 MB bonus": [
+        "El vostre bonus de 500 MB"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
+      ],
+      "Your welcome actions": [
+        "Les vostres accions de benvinguda"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Teniu 1 GB de emmagatzematge"
       ]
     },
     "Today icon tooltip in mini calendar": {

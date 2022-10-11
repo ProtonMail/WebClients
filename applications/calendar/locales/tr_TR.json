@@ -2270,9 +2270,6 @@
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
-      "No keys retrieved for internal user": [
-        "İç kullanıcı için herhangi bir anahtar alınamadı"
-      ],
       "No public key for Proton address": [
         "Proton adresinin herkese açık anahtarı yok"
       ],
@@ -2320,9 +2317,6 @@
       ],
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli değil"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
@@ -3891,7 +3885,7 @@
         "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi tercihinizi güncellemek ister misiniz?"
+        "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi ayarınızı güncellemek ister misiniz?"
       ]
     },
     "Info on errors": {
@@ -5104,7 +5098,7 @@
         "Artık davetler takviminizde bekleyen etkinlikler olarak görüntülenecek. Yanıtlamak istediğiniz etkinliği açmanız yeterli. ${ goToSettingsLink }"
       ],
       "Subscribe to other calendars": [
-        "Diğer Takvimlere abone ol"
+        "Diğer takvimlere abone ol"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
@@ -5113,7 +5107,7 @@
         "Artık abone olduğunuz takvimlere bildirim ekleyebilirsiniz."
       ],
       "You can subscribe to external calendars and read their events.": [
-        "Harici takvimlere abone olabilir ve etkinliklerini okuyabilirsiniz."
+        "Dış takvimlere abone olarak etkinliklerini okuyabilirsiniz."
       ]
     },
     "Spotlight settings link": {
@@ -5287,10 +5281,10 @@
         "Telefon numarası panoya kopyalandı"
       ],
       "Preference saved": [
-        "Tercih kaydedildi"
+        "Ayar kaydedildi"
       ],
       "Preferences saved": [
-        "Tercihler kaydedildi"
+        "Ayarlar kaydedildi"
       ],
       "Verification successful": [
         "Doğrulandı"
@@ -5530,9 +5524,6 @@
       "Email settings": [
         "E-posta ayarları"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-posta ayarları (${ emailAddress })"
-      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -5587,6 +5578,9 @@
       ],
       "Merging contacts": [
         "Kişileri birleştirme"
+      ],
+      "Minicalendar": [
+        "Mini takvim"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
