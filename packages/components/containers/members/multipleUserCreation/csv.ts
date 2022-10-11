@@ -46,12 +46,12 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number) => {
     }
 
     const vpnAccess = VPNAccess || 0;
-    if (typeof vpnAccess !== 'number' || (vpnAccess !== 0 && vpnAccess !== 1)) {
+    if (vpnAccess !== 0 && vpnAccess !== 1) {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
     }
 
     const privateSubUser = PrivateSubUser || 0;
-    if (typeof privateSubUser !== 'number' || (privateSubUser !== 0 && privateSubUser !== 1)) {
+    if (privateSubUser !== 0 && privateSubUser !== 1) {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
     }
 
