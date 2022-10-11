@@ -499,6 +499,9 @@
       "Use ${ label } theme": [
         "Использовать тему: ${ label }"
       ],
+      "Use authentication code": [
+        "Используйте код аутентификации"
+      ],
       "Use for sending": [
         "Использовать для отправки"
       ],
@@ -2339,9 +2342,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
       ],
-      "No keys retrieved for internal user": [
-        "Ключи для внутреннего пользователя не получены"
-      ],
       "No public key for Proton address": [
         "Нет открытого ключа для адреса Proton"
       ],
@@ -2396,8 +2396,8 @@
       "Primary key is not valid for sending": [
         "Доверенные ключи не действительны для отправки"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Первичный ключ, полученный для внутреннего пользователя, не действителен для отправки"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Основной ключ, полученный для пользователя ${ BRAND_NAME }, недействителен для отправки"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Удалено дубликатов получателя: ${ joinedRecipients }",
@@ -2828,6 +2828,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Ваш отзыв"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
       ]
     },
     "file size format": {
@@ -3567,11 +3585,20 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
       ],
       "Existent and added participants will be notified.": [
         "Существующие и добавленные участники будут уведомлены."
@@ -3897,6 +3924,9 @@
       "Week": [
         "Неделя"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
       "Which event would you like to delete?": [
         "Какое событие вы хотите удалить?"
       ],
@@ -4097,6 +4127,9 @@
       ],
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
+      ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
       ],
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
@@ -5303,11 +5336,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Теперь приглашения появляются в вашем календаре как ожидающие события. Просто откройте событие, чтобы ответить. ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "Подписаться на другие календари"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробовать ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Теперь можно добавлять уведомления для календарей, на которые вы подписаны."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Можно подписаться на внешние календари и читать события из них."
       ]
     },
     "Spotlight settings link": {
@@ -5731,6 +5770,9 @@
       "Edit contact group": [
         "Изменить группу контактов"
       ],
+      "Edit email settings": [
+        "Изменить настройки электронной почты"
+      ],
       "Edit image": [
         "Изменение изображения"
       ],
@@ -5739,9 +5781,6 @@
       ],
       "Email settings": [
         "Настройки эл. почты"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Настройки эл. почты (${ emailAddress })"
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -5799,6 +5838,9 @@
       ],
       "Merging contacts": [
         "Объединение контактов"
+      ],
+      "Minicalendar": [
+        "Мини-календарь"
       ],
       "Open actions dropdown": [
         "Показать выпадающий список доступных действий"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bloquear mensajes de este remitente"
       ],
+      "Block senders": [
+        "Bloquear remitentes"
+      ],
       "Bold": [
         "Negrita"
       ],
@@ -2836,6 +2839,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } en los ajustes."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos sus contactos exportados."
       ],
@@ -2850,6 +2856,13 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Los correos nuevos de ${ senderEmailAddress } y otro ${ otherSendersCount } no serán entregados y serán eliminados de forma permanente.",
+        "Los correos nuevos de ${ senderEmailAddress } y otros ${ otherSendersCount } no serán entregados y serán eliminados de forma permanente."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Los correos nuevos de ${ senderEmailAddress } no serán entregados y serán eliminados de forma permanente."
       ],
       "No folders": [
         "Sin carpetas"
@@ -3012,6 +3025,9 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
+      "A problem occurred, please try again": [
+        "Ocurrió un problema, intente de nuevo"
+      ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
       ],
@@ -3166,9 +3182,6 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
-      "No keys retrieved for internal user": [
-        "No se recuperaron claves para el usuario interno"
-      ],
       "No valid address found": [
         "Ninguna dirección válida encontrada"
       ],
@@ -3188,6 +3201,9 @@
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
+      ],
+      "Please activate your content search again": [
+        "Habilite de nuevo la búsqueda de contenido"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Solucione el conflicto resaltado para continuar.",
@@ -3211,8 +3227,8 @@
       "Primary key is not valid for sending": [
         "La clave principal no es válida para enviar"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clave principal recuperada para el usuario interno no es válida para enviar"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clave principal recuperada para el usuario de ${ BRAND_NAME }, no es válida para envíos"
       ],
       "Public key could not be trusted": [
         "No se pudo confiar la clave pública"
@@ -4593,6 +4609,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Descargando mensaje ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Borrador"
@@ -6087,6 +6106,9 @@
       "Mark as": [
         "Marcar como"
       ],
+      "Move ${ sidebarElementName }": [
+        "Mover ${ sidebarElementName }"
+      ],
       "Move to": [
         "Mover a"
       ],
@@ -6840,6 +6862,12 @@
       ],
       "Password has been set successfully": [
         "La contraseña se ha cambiado con éxito"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Remitente ${ firstSenderAddress } bloqueado"
+      ],
+      "Senders blocked": [
+        "Remitentes bloqueados"
       ]
     },
     "Oauth instructions": {
@@ -7869,6 +7897,9 @@
       "Edit contact group": [
         "Editar grupo de contactos"
       ],
+      "Edit email settings": [
+        "Editar ajustes del correo"
+      ],
       "Edit filter": [
         "Editar filtro"
       ],
@@ -7886,9 +7917,6 @@
       ],
       "Email settings": [
         "Ajustes del correo"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ajustes de correo (${ emailAddress })"
       ],
       "Enable message content search": [
         "Habilitar la búsqueda de contenido de mensajes"
@@ -7980,8 +8008,14 @@
       "Message will expire": [
         "El mensaje expirará"
       ],
+      "Minicalendar": [
+        "Minicalendario"
+      ],
       "More": [
         "Más"
+      ],
+      "More actions": [
+        "Más opciones"
       ],
       "More options": [
         "Más opciones"

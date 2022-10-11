@@ -577,6 +577,9 @@
       "Use ${ label } theme": [
         "Brug temaet “${ label }”"
       ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
       "Use for sending": [
         "Brug til afsendelse"
       ],
@@ -1754,6 +1757,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A problem occurred, please try again": [
+        "Der opstod et problem. Prøv venligst igen"
+      ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
       ],
@@ -1870,6 +1876,9 @@
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
+      "Please activate your content search again": [
+        "Aktiver venligst din indholdssøgning igen"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
@@ -1904,11 +1913,17 @@
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -1984,6 +1999,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Du kan ikke sende vCards med mere end 10 kontakter"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -2084,6 +2102,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Din feedback"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
       ]
     },
     "file size format": {
@@ -2395,6 +2431,9 @@
       ],
       "contacts": [
         "kontakter"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV eller en VCF-fil (vCard)"
       ],
       "full calendar view": [
         "fuld kalendervisning"
@@ -2710,6 +2749,9 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
       ],
@@ -2719,11 +2761,17 @@
       "Encrypted search is here": [
         "Nu med krypteret søgning"
       ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din autentificeringsapp"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Anslået resterende tid: ${ estimatedMinutes } minut",
@@ -3159,9 +3207,6 @@
       "This will overwrite the existing folder": [
         "Dette vil overskrive den eksisterende mappe"
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } som normalt - vi giver dig besked, når indekseringen er færdig."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
@@ -3242,6 +3287,9 @@
       ],
       "What would you like to do?": [
         "Hvad vil du gerne gøre?"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -3414,6 +3462,9 @@
       ],
       "Audio file": [
         "Lydfil"
+      ],
+      "Authenticator app": [
+        "Godkendelsesapp"
       ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
@@ -3850,9 +3901,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4658,9 +4717,6 @@
       "Email settings": [
         "E-mailindstillinger"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-mailindstillinger (${ emailAddress })"
-      ],
       "Empty trash": [
         "Tøm Papirkurv"
       ],
@@ -4736,6 +4792,9 @@
       ],
       "MIME type": [
         "MIME-type"
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ],
       "Modified": [
         "Ændret"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Blocare mesaje de la acest expeditor"
       ],
+      "Block senders": [
+        "Blocare expeditori"
+      ],
       "Bold": [
         "Îngroşat"
       ],
@@ -2845,6 +2848,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } în setări."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
       ],
@@ -2859,6 +2865,14 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Mesajele noi de la ${ senderEmailAddress } și încă unul nu vor fi livrate și vor fi șterse permanent.",
+        "Mesajele noi de la ${ senderEmailAddress } și încă ${ otherSendersCount } nu vor fi livrate și vor fi șterse permanent.",
+        "Mesajele noi de la ${ senderEmailAddress } și încă ${ otherSendersCount } nu vor fi livrate și vor fi șterse permanent."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Mesajele noi de la ${ senderEmailAddress } nu vor fi livrate și vor fi șterse permanent."
       ],
       "No folders": [
         "Nu sunt foldere."
@@ -3023,6 +3037,9 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
+      "A problem occurred, please try again": [
+        "A apărut o eroare. Mai reîncercați."
+      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
@@ -3181,9 +3198,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
-      "No keys retrieved for internal user": [
-        "Nicio cheie preluată pentru utilizatorul intern"
-      ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
       ],
@@ -3205,6 +3219,9 @@
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
+      ],
+      "Please activate your content search again": [
+        "Reactivați căutarea în conținutul mesajelor."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
@@ -3229,8 +3246,8 @@
       "Primary key is not valid for sending": [
         "Cheia primară nu este validă pentru trimiteri."
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Cheia primară preluată pentru utilizatorul intern nu este validă pentru trimiteri."
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Cheia primară preluată pentru utilizatorul ${ BRAND_NAME } nu este validă pentru trimiteri."
       ],
       "Public key could not be trusted": [
         "Cheia publică nu poate fi de încredere."
@@ -4667,6 +4684,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Se descarcă mesajul ${ esProgress } din ${ totalProgressToShow }"
       ],
       "Draft": [
         "Ciornă"
@@ -6183,6 +6203,9 @@
       "Mark as": [
         "Marcare"
       ],
+      "Move ${ sidebarElementName }": [
+        "Mutare ${ sidebarElementName }"
+      ],
       "Move to": [
         "Mutare în"
       ],
@@ -6943,6 +6966,12 @@
       ],
       "Password has been set successfully": [
         "Parola a fost setată cu succes."
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Expeditorul ${ firstSenderAddress } a fost blocat."
+      ],
+      "Senders blocked": [
+        "Expeditori blocați"
       ]
     },
     "Oauth instructions": {
@@ -8014,6 +8043,9 @@
       "Edit contact group": [
         "Editare grup de contacte"
       ],
+      "Edit email settings": [
+        "Editare setări e-mail"
+      ],
       "Edit filter": [
         "Editare filtru"
       ],
@@ -8031,9 +8063,6 @@
       ],
       "Email settings": [
         "Setări e-mail"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Setări e-mail (${ emailAddress })"
       ],
       "Enable message content search": [
         "Activați căutarea conținutului mesajului"
@@ -8125,8 +8154,14 @@
       "Message will expire": [
         "Mesajul va expira"
       ],
+      "Minicalendar": [
+        "Minicalendar"
+      ],
       "More": [
         "Mai multe"
+      ],
+      "More actions": [
+        "Alte acțiuni"
       ],
       "More options": [
         "Mai multe opțiuni"

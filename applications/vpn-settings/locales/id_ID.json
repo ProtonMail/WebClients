@@ -14,9 +14,6 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "${ name } updated": [
-        "${ name } diperbarui"
-      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -493,57 +490,9 @@
         "Dua tahun"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Termasuk"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Harga standar: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Paling populer"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Dapatkan penawaran"
-      ],
-      "Get the deal now": [
-        "Dapatkan penawaran sekarang"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "per bulan"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Penawaran Spesial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 bulan"
-      ],
-      "12 months": [
-        "12 bulan"
-      ],
-      "24 months": [
-        "24 bulan"
       ]
     },
     "Bug category": {
@@ -1737,23 +1686,67 @@
         "Mendukung torrent (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Tambah kunci keamanan"
+      ],
+      "Delete key": [
+        "Hapus kunci"
+      ]
+    },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Silakan nonaktifkan 2FA via kunci keamanan sebelum menonaktifkan TOTP"
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Terdapat kesalahan dalam mendaftarkan kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA via kunci keamanan dinonaktifkan"
+      ],
+      "Add a name to identify your security key with.": [
+        "Beri nama kunci keamanan Anda agar lebih mudah untuk dikenali."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Masukkan kunci keamanan Anda ke port USB milik perangkat Anda."
       ],
       "Security key": [
         "Kunci keamanan"
       ],
       "Security key removed": [
         "Kunci keamanan dihapus"
+      ],
+      "Security key updated": [
+        "Kunci keamanan diperbarui"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Tindakan ini akan menghapus seluruh kunci keamanan yang terhubung dengan akun Anda."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Untuk mengaktifkan 2FA via kunci keamanan, Anda perlu untuk mengaktifkan 2FA via aplikasi otentikator"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Kunci otentikasi dua faktor Anda siap digunakan."
       ]
     },
     "fido2: Label": {
+      "Key name": [
+        "Nama kunci"
+      ],
       "Security key": [
         "Kunci keamanan"
       ]
@@ -1773,6 +1766,9 @@
       ],
       "Registered security keys": [
         "Kunci keamanan yang terdaftar"
+      ],
+      "Security key registered": [
+        "Kunci keamanan didaftarkan"
       ]
     },
     "file size format": {

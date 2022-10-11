@@ -2308,9 +2308,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Aucun e-mail à importer, le compte n'a pas de Boîte de réception."
       ],
-      "No keys retrieved for internal user": [
-        "Aucune clé récupérée pour l’utilisateur interne"
-      ],
       "No public key for Proton address": [
         "Pas de clé publique pour l'adresse Proton"
       ],
@@ -2358,9 +2355,6 @@
       ],
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinataire dupliqué supprimé : ${ joinedRecipients }",
@@ -5567,9 +5561,6 @@
       ],
       "Email settings": [
         "Paramètres d’e-mail"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Paramètres d’adresse électronique (${ emailAddress })"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."

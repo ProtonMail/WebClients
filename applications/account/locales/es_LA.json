@@ -3002,9 +3002,6 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
-      "No keys retrieved for internal user": [
-        "No se recuperaron claves para el usuario interno"
-      ],
       "No public key for Proton address": [
         "No hay clave pública para la dirección de Proton"
       ],
@@ -3090,8 +3087,8 @@
       "Primary key is not valid for sending": [
         "La clave principal no es válida para enviar"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clave principal recuperada para el usuario interno no es válida para enviar"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clave principal recuperada para el usuario de ${ BRAND_NAME }, no es válida para envíos"
       ],
       "Process aborted": [
         "Proceso abortado"
@@ -7184,6 +7181,9 @@
       "Show secondary time zone": [
         "Mostrar zona horaria secundaria"
       ],
+      "Show sender images": [
+        "Mostrar imágenes del remitente"
+      ],
       "Show week numbers": [
         "Mostrar números de semana"
       ],
@@ -10355,6 +10355,9 @@
       "Messages and composing": [
         "Mensajes y redacción"
       ],
+      "Minicalendar": [
+        "Minicalendario"
+      ],
       "Multi-user support": [
         "Soporte multi usuario"
       ],
@@ -10507,6 +10510,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Seleccione cuándo desea que se envíe esta notificación"
+      ],
+      "Sender image": [
+        "Imagen del remitente"
       ],
       "Session management": [
         "Gestión de sesiones"
@@ -10811,6 +10817,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Establece el siguiente pie de página en los correos electrónicos que envía: ${ signature } El enlace apunta a su enlace de referencia. El pie de página aparecerá debajo de su firma. Puede personalizar su firma en cualquier momento en los ajustes."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Muestra la imagen de cada remitente en la lista de mensajes. O se mostrará la inicial del remitente si no hay una foto disponible."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede usarse para cifrar"

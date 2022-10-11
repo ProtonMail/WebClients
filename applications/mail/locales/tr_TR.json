@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bu göndericiden gelen iletileri engelle"
       ],
+      "Block senders": [
+        "Göndericileri engelle"
+      ],
       "Bold": [
         "Koyu"
       ],
@@ -2836,6 +2839,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Ayarlar bölümünden ${ manageBlockedAddressesSettingsLink }."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
       ],
@@ -2851,8 +2857,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "${ senderEmailAddress } adresinden gönderilen yeni e-postalar alınmayacak ve kalıcı olarak silinecek. Bu durumu ${ manageBlockedAddressesSettingsLink } bölümünden değiştirebilirsiniz."
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "${ senderEmailAddress } ve diğer ${ otherSendersCount } kişiden gelen yeni e-postalar teslim edilmeyip ve kalıcı olarak silinecek.",
+        "${ senderEmailAddress } ve diğer ${ otherSendersCount } kişiden gelen yeni e-postalar teslim edilmeyip ve kalıcı olarak silinecek."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "${ senderEmailAddress } adresinden gelen yeni e-postalar teslim edilmeyip kalıcı olarak silinecek."
       ],
       "No folders": [
         "Henüz bir klasör yok"
@@ -3172,9 +3182,6 @@
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
-      "No keys retrieved for internal user": [
-        "İç kullanıcı için bir anahtarı alınamadı"
-      ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
@@ -3219,9 +3226,6 @@
       ],
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli değil"
       ],
       "Public key could not be trusted": [
         "Herkese açık anahtara güvenilemedi"
@@ -6099,6 +6103,9 @@
       "Mark as": [
         "Şöyle işaretlensin"
       ],
+      "Move ${ sidebarElementName }": [
+        "${ sidebarElementName } ögesini taşı"
+      ],
       "Move to": [
         "Şuraya taşınsın"
       ],
@@ -6853,8 +6860,11 @@
       "Password has been set successfully": [
         "Parola ayarlandı"
       ],
-      "Sender ${ senderEmail } blocked": [
-        "${ senderEmail } göndericisi engellendi"
+      "Sender ${ firstSenderAddress } blocked": [
+        "${ firstSenderAddress } göndericisi engellendi"
+      ],
+      "Senders blocked": [
+        "Göndericiler engellendi"
       ]
     },
     "Oauth instructions": {
@@ -7213,7 +7223,7 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        "Şu adreslerin kişileri silindi. İlgili şifreleme tercihleri uygun şekilde güncellendi:"
+        "Şu adreslerin kişileri silindi. İlgili şifreleme ayarları uygun şekilde güncellendi:"
       ]
     },
     "Send email with errors": {
@@ -7536,7 +7546,7 @@
         "Klasör temizlendi"
       ],
       "Keyboard shortcuts preferences updated": [
-        "Klavye kısayol tercihleri güncellendi"
+        "Klavye kısayol ayarları güncellendi"
       ],
       "Label cleared": [
         "Etiket temizlendi"
@@ -7587,8 +7597,8 @@
         "${ sendersList } tarafından gönderilen iletiler ${ folder } klasörüne taşınacak"
       ],
       "Move ${ selectionCount } conversation": [
-        "${ selectionCount } yazışmayı taşıma",
-        "${ selectionCount } yazışmayı taşıma"
+        "${ selectionCount } yazışmayı taşı",
+        "${ selectionCount } yazışmayı taşı"
       ],
       "Move ${ selectionCount } message": [
         "${ selectionCount } iletiyi taşıma",
@@ -7604,10 +7614,10 @@
         "Telefon numarası panoya kopyalandı"
       ],
       "Preference saved": [
-        "Tercih kaydedildi"
+        "Ayar kaydedildi"
       ],
       "Preferences saved": [
-        "Tercihler kaydedildi"
+        "Ayarlar kaydedildi"
       ],
       "Public key trusted": [
         "Herkese açık anahtara güvenildi"
@@ -7902,9 +7912,6 @@
       "Email settings": [
         "E-posta ayarları"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-posta ayarları (${ emailAddress })"
-      ],
       "Enable message content search": [
         "İleti içeriği aramasını etkinleştir"
       ],
@@ -7995,8 +8002,14 @@
       "Message will expire": [
         "İleti geçerlilik süresi"
       ],
+      "Minicalendar": [
+        "Mini takvim"
+      ],
       "More": [
         "Diğer"
+      ],
+      "More actions": [
+        "Diğer işlemler"
       ],
       "More options": [
         "Diğer seçenekler"
@@ -8113,7 +8126,7 @@
         "Geri bildirimi gönder"
       ],
       "Send with changed preferences?": [
-        "Değiştirilmiş tercihlerle gönderilsin mi?"
+        "Değiştirilmiş ayarlarla gönderilsin mi?"
       ],
       "Send without expiration?": [
         "Geçerlilik süresi olmadan gönderilsin mi?"

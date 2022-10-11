@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Заблокувати повідомлення від цього відправника"
       ],
+      "Block senders": [
+        "Блокувати відправників"
+      ],
       "Bold": [
         "Жирний"
       ],
@@ -2840,6 +2843,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } у налаштуваннях."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
@@ -2854,6 +2860,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } іншого не можуть бути доставлені та будуть безповоротно видалені.",
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } інших не можуть бути доставлені та будуть безповоротно видалені.",
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } інших не можуть бути доставлені та будуть безповоротно видалені.",
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } інших не можуть бути доставлені та будуть безповоротно видалені."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Нові листи від ${ senderEmailAddress } не можуть бути доставлені та будуть безповоротно видалені."
       ],
       "No folders": [
         "Немає тек"
@@ -3020,6 +3035,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "A problem occurred, please try again": [
+        "Виникла проблема. Повторіть спробу"
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -3182,9 +3200,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
-      "No keys retrieved for internal user": [
-        "Для внутрішнього користувача не отримано жодного ключа"
-      ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
       ],
@@ -3209,6 +3224,9 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
+      "Please activate your content search again": [
+        "Активуйте пошук вмісту знову"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -3232,9 +3250,6 @@
       ],
       "Primary key is not valid for sending": [
         "Основний ключ недійсний для надсилання"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Для внутрішнього користувача отримано недійсний основний ключ для надсилання"
       ],
       "Public key could not be trusted": [
         "Відкритий ключ не може бути довіреним"
@@ -4727,6 +4742,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Завантаження повідомлень ${ esProgress } з ${ totalProgressToShow }"
       ],
       "Draft": [
         "Чернетка"
@@ -6265,6 +6283,9 @@
       "Mark as": [
         "Позначити як"
       ],
+      "Move ${ sidebarElementName }": [
+        "Перемістити ${ sidebarElementName }"
+      ],
       "Move to": [
         "Перемістити"
       ],
@@ -7032,6 +7053,12 @@
       ],
       "Password has been set successfully": [
         "Пароль успішно встановлено"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Відправника ${ firstSenderAddress } заблоковано"
+      ],
+      "Senders blocked": [
+        "Відправники заблоковані"
       ]
     },
     "Oauth instructions": {
@@ -8163,9 +8190,6 @@
       "Email settings": [
         "Налаштування е-пошти"
       ],
-      "Email settings (${ emailAddress })": [
-        "Налаштування е-пошти (${ emailAddress })"
-      ],
       "Enable message content search": [
         "Увімкнути пошук вмісту повідомлень"
       ],
@@ -8256,8 +8280,14 @@
       "Message will expire": [
         "Термін дії повідомлення завершиться"
       ],
+      "Minicalendar": [
+        "Мінікалендар"
+      ],
       "More": [
         "Більше"
+      ],
+      "More actions": [
+        "Додаткові дії"
       ],
       "More options": [
         "Додаткові параметри"

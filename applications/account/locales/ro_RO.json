@@ -3022,9 +3022,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
-      "No keys retrieved for internal user": [
-        "Nicio cheie preluată pentru utilizatorul intern"
-      ],
       "No public key for Proton address": [
         "Nu există cheie publică pentru adresa Proton."
       ],
@@ -3111,8 +3108,8 @@
       "Primary key is not valid for sending": [
         "Cheia primară nu este validă pentru trimiteri."
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Cheia primară preluată pentru utilizatorul intern nu este validă pentru trimiteri."
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Cheia primară preluată pentru utilizatorul ${ BRAND_NAME } nu este validă pentru trimiteri."
       ],
       "Process aborted": [
         "Proces abandonat"
@@ -7260,6 +7257,9 @@
       "Show secondary time zone": [
         "Afișare fus orar secundar"
       ],
+      "Show sender images": [
+        "Afișare imagini expeditori"
+      ],
       "Show week numbers": [
         "Afișare număr săptămână"
       ],
@@ -10483,6 +10483,9 @@
       "Messages and composing": [
         "Mesaje și compunere"
       ],
+      "Minicalendar": [
+        "Minicalendar"
+      ],
       "Multi-user support": [
         "Suport utilizatori multipli"
       ],
@@ -10635,6 +10638,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Selectați când doriți să fie trimisă această notificare"
+      ],
+      "Sender image": [
+        "Imagine expeditor"
       ],
       "Session management": [
         "Gestionare sesiuni"
@@ -10940,6 +10946,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Setează următorul subsol în e-mailurile pe care le trimiteți: ${ signature }. Legătura duce spre legătura personală de recomandare. Subsolul va apărea sub semnătura personală. Puteți modifica semnătura oricând în setări."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Se afișează imaginea fiecărui expeditor în lista de mesaje. Dacă nu este disponibilă o fotografie, se va afișa imaginea implicită."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Semnăturile produse de această cheie sunt considerate nevalide, iar această cheie nu poate fi folosită pentru criptare."
