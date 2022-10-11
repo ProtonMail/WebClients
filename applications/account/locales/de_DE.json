@@ -1246,6 +1246,11 @@
         "Du hast bereits Zugriff auf diesen Kalender."
       ]
     },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Erstelle einen Link zu deinem Kalender und teile ihn mit Personen außerhalb von Proton. Nur du selbst kannst Termine hinzufügen oder entfernen."
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "Kalender teilen"
@@ -2917,9 +2922,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
-      "No keys retrieved for internal user": [
-        "Keine Schlüssel für internen Benutzer abgerufen"
-      ],
       "No public key for Proton address": [
         "Kein öffentlicher Schlüssel für Proton-Adresse"
       ],
@@ -3005,8 +3007,8 @@
       "Primary key is not valid for sending": [
         "Primärschlüssel ist für das Senden nicht gültig"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Der für den internen Benutzer abgerufene Primärschlüssel ist für das Senden nicht gültig"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Der für den Benutzer ${ BRAND_NAME } abgerufene Primärschlüssel ist für den Versand nicht gültig."
       ],
       "Process aborted": [
         "Prozess abgebrochen"
@@ -4494,6 +4496,9 @@
       ],
       "Add a recovery email address": [
         "Emailadresse zur Wiederherstellung hinzufügen"
+      ],
+      "add a recovery method": [
+        "wiederherstellungsmethode hinzufügen"
       ],
       "Add a recovery phone number": [
         "Rufnummer für die Wiederherstellung hinzufügen"

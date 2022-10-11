@@ -3002,9 +3002,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
       ],
-      "No keys retrieved for internal user": [
-        "Nenhuma chave recuperada para o usuário interno"
-      ],
       "No public key for Proton address": [
         "Nenhuma chave pública para o endereço do Proton"
       ],
@@ -3090,8 +3087,8 @@
       "Primary key is not valid for sending": [
         "A chave primária não é valida para o envio"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Chave primária recuperada para o usuário interno não é válida para o envio"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Chave primária recuperada para o usuário ${ BRAND_NAME } não é válida para o envio"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -3651,6 +3648,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Por favor, desative A2F através da chave de segurança antes de desativar TOTP"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Por favor, tente novamente."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Algo deu errado ao registrar sua chave de segurança. Por favor, tente novamente."
       ]
@@ -3664,6 +3664,9 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira sua chave de segurança na porta USB do seu dispositivo."
@@ -4975,6 +4978,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
@@ -5893,6 +5899,9 @@
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Quando eles assinam um plano pago, 1 a 3 meses de ${ planName } serão creditados em sua conta."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
@@ -7172,6 +7181,9 @@
       "Show secondary time zone": [
         "Mostrar fuso horário secundário"
       ],
+      "Show sender images": [
+        "Mostrar imagens do remetente"
+      ],
       "Show week numbers": [
         "Exibir números das semanas"
       ],
@@ -7601,6 +7613,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } pastas desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -10339,6 +10355,9 @@
       "Messages and composing": [
         "Mensagens e composição"
       ],
+      "Minicalendar": [
+        "Mini calendário"
+      ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"
       ],
@@ -10491,6 +10510,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Selecione quando você deseja que esta notificação seja enviada"
+      ],
+      "Sender image": [
+        "Imagem do remetente"
       ],
       "Session management": [
         "Gerenciamento de sessão"
@@ -10795,6 +10817,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Define o seguinte rodapé nos emails que você envia: ${ signature } O link aponta para o seu link de referência. O rodapé aparecerá abaixo de sua assinatura. Você pode personalizar sua assinatura a qualquer momento nas configurações."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Mostrar a imagem de cada remetente na lista de mensagens. Em seguida, as iniciais do remetente será mostrada se uma foto não estiver disponível."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Assinaturas efetuadas com esta chave são tratadas como inválidas, por isso essa chave não pode ser usada para criptografar"

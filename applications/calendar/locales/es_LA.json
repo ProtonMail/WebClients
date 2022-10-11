@@ -2270,9 +2270,6 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
-      "No keys retrieved for internal user": [
-        "No se recuperaron claves para el usuario interno"
-      ],
       "No public key for Proton address": [
         "No hay clave pública para la dirección de Proton"
       ],
@@ -2321,8 +2318,8 @@
       "Primary key is not valid for sending": [
         "La clave principal no es válida para enviar"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clave principal recuperada para el usuario interno no es válida para enviar"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clave principal recuperada para el usuario de ${ BRAND_NAME }, no es válida para envíos"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatario duplicado eliminado: ${ joinedRecipients }",
@@ -5521,6 +5518,9 @@
       "Edit contact group": [
         "Editar grupo de contactos"
       ],
+      "Edit email settings": [
+        "Editar ajustes del correo"
+      ],
       "Edit image": [
         "Editar imagen"
       ],
@@ -5529,9 +5529,6 @@
       ],
       "Email settings": [
         "Ajustes del correo"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ajustes de correo (${ emailAddress })"
       ],
       "Enter your password": [
         "Ingrese su contraseña"
@@ -5587,6 +5584,9 @@
       ],
       "Merging contacts": [
         "Combinando contactos"
+      ],
+      "Minicalendar": [
+        "Minicalendario"
       ],
       "Open actions dropdown": [
         "Abrir menú de acciones"

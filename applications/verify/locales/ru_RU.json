@@ -53,6 +53,9 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
+      "Use authentication code": [
+        "Используйте код аутентификации"
+      ],
       "Use recovery code": [
         "Использовать код восстановления"
       ],
@@ -952,6 +955,24 @@
         "Вы также можете ${ refresh } или повторить попытку позже."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -976,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
@@ -1009,6 +1039,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
       ],
@@ -1026,6 +1059,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],

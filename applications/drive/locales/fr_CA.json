@@ -1757,9 +1757,6 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
       ],
-      "A problem occurred, please try again.": [
-        "Une erreur s'est produite, veuillez réessayer."
-      ],
       "Authentication canceled.": [
         "Authentification annulée."
       ],
@@ -1875,9 +1872,6 @@
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
-      ],
-      "Please activate your search again": [
-        "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -3251,9 +3245,6 @@
       "This will overwrite the existing folder": [
         "Ceci va écraser le dossier existant"
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Pour activer la recherche réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement. Vous pourrez toujours utiliser ${ DRIVE_APP_NAME } normalement, nous vous ferons savoir quand l'indexation sera terminée."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les pourriels et les abus, veuillez prouver que vous êtes humain."
       ],
@@ -3557,6 +3548,9 @@
       ],
       "Country": [
         "Pays"
+      ],
+      "Create a share link": [
+        "Créer un lien de partage"
       ],
       "Created": [
         "Créé"
@@ -4252,10 +4246,6 @@
       "Set a recovery method": [
         "Définir une méthode de récupération"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jour:",
-        "Il suffit de faire les actions suivantes d'ici ${ remainingDaysForGift } jours:"
-      ],
       "Upload a file": [
         "Téléverser un fichier"
       ],
@@ -4776,9 +4766,6 @@
       ],
       "Email settings": [
         "Paramètres des courriels"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Paramètres de courriel (${ emailAddress })"
       ],
       "Empty trash": [
         "Vider la corbeille"

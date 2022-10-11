@@ -2142,9 +2142,6 @@
       "No contacts found to import": [
         "インポートする連絡先が見つかりません"
       ],
-      "No keys retrieved for internal user": [
-        "内部ユーザーのために取得された鍵はありません"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
       ],
@@ -2177,9 +2174,6 @@
       ],
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "内部ユーザー用に取得されたプライマリー鍵は送信に使用できません"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "競合する宛先を削除しました: ${ joinedRecipients }"
@@ -3594,6 +3588,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Authenticator app": [
+        "認証アプリ"
+      ],
       "Automatically save contacts": [
         "連絡先への宛先の自動追加"
       ],
@@ -4981,9 +4978,6 @@
       ],
       "Email settings": [
         "メールの設定"
-      ],
-      "Email settings (${ emailAddress })": [
-        "メールの設定 (${ emailAddress })"
       ],
       "Enter your password": [
         "パスワードを入力してください"

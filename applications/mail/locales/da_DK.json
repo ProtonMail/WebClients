@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Blokér beskeder fra denne afsender"
       ],
+      "Block senders": [
+        "Blokér afsendere"
+      ],
       "Bold": [
         "Fed"
       ],
@@ -360,6 +363,9 @@
       ],
       "Fewer search options": [
         "Færre søgemuligheder"
+      ],
+      "Filter on...": [
+        "Filtrer efter..."
       ],
       "Font": [
         "Skrifttype"
@@ -992,6 +998,9 @@
       ],
       "Use ${ label } theme": [
         "Brug ${ label } tema"
+      ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
       ],
       "Use for sending": [
         "Benyt til afsendelse"
@@ -1691,6 +1700,9 @@
       ],
       "reef": [
         "rev"
+      ],
+      "ruddy pink": [
+        "rødlig pink"
       ],
       "slateblue": [
         "skiferblå"
@@ -2635,6 +2647,9 @@
       "Attachment": [
         "Vedhæftning"
       ],
+      "Filter on": [
+        "Filtrer efter"
+      ],
       "Next": [
         "Næste"
       ],
@@ -2710,6 +2725,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } i indstillinger."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
       ],
@@ -2724,6 +2742,13 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nye e-mails fra ${ senderEmailAddress } og ${ otherSendersCount } anden vil ikke blive leveret og vil blive slettet permanent.",
+        "Nye e-mails fra ${ senderEmailAddress } og ${ otherSendersCount } andre vil ikke blive leveret og vil blive slettet permanent."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nye e-mails fra ${ senderEmailAddress } vil ikke blive leveret og vil blive permanent slettet."
       ],
       "No folders": [
         "Ingen mapper"
@@ -2886,6 +2911,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A problem occurred, please try again": [
+        "Der opstod et problem. Prøv venligst igen"
+      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -3040,9 +3068,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
-      "No keys retrieved for internal user": [
-        "Ingen nøgler hentet for intern bruger"
-      ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
@@ -3062,6 +3087,9 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
+      ],
+      "Please activate your content search again": [
+        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -3084,9 +3112,6 @@
       ],
       "Primary key is not valid for sending": [
         "Primær nøgle er ikke gyldig til afsendelse"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primær nøgle hentet for intern bruger er ikke gyldig til afsendelse"
       ],
       "Public key could not be trusted": [
         "Den offentlige nøgle kunne ikke stoles på"
@@ -3122,11 +3147,17 @@
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -3195,6 +3226,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "For mange aktive filtre. Opgrader venligst til et betalt abonnement for at aktivere flere filtre."
+      ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
@@ -3222,6 +3256,9 @@
       ],
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -3480,6 +3517,24 @@
         "Din feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3550,6 +3605,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Hvis vedhæftningerne"
+      ],
+      "If the recipient": [
+        "Hvis modtageren"
+      ],
+      "If the sender": [
+        "Hvis afsenderen"
+      ],
+      "If the subject": [
+        "Hvis emnet"
+      ],
       "Select…": [
         "Vælg…"
       ],
@@ -3980,6 +4047,9 @@
       "contacts": [
         "kontakter"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV eller en VCF-fil (vCard)"
+      ],
       "full calendar view": [
         "fuld kalendervisning"
       ],
@@ -4358,6 +4428,9 @@
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Henter besked ${ esProgress } ud af ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Kladde"
       ],
@@ -4375,6 +4448,9 @@
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
       ],
       "Edit encryption": [
         "Rediger kryptering"
@@ -4411,11 +4487,17 @@
       "Encrypt message": [
         "Krypter besked"
       ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din autentificeringsapp"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Anslået resterende tid: ${ estimatedMinutes } minut",
@@ -4810,6 +4892,9 @@
       "Saved on ${ dateString }": [
         "Gemt ${ dateString }"
       ],
+      "Saved yesterday": [
+        "Gemt i går"
+      ],
       "Saving draft…": [
         "Gemmer kladde…"
       ],
@@ -5166,6 +5251,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -5626,6 +5714,9 @@
       "Attachments": [
         "Vedhæftninger"
       ],
+      "Authenticator app": [
+        "Godkendelsesapp"
+      ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
@@ -5826,6 +5917,9 @@
       ],
       "Mark as": [
         "Markér som"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Flyt ${ sidebarElementName }"
       ],
       "Move to": [
         "Flyt til"
@@ -6273,9 +6367,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6572,6 +6674,12 @@
       ],
       "Password has been set successfully": [
         "Adgangskode er blevet ændret"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Afsender ${ firstSenderAddress } blokeret"
+      ],
+      "Senders blocked": [
+        "Afsendere blokeret"
       ]
     },
     "Oauth instructions": {
@@ -7228,6 +7336,9 @@
       "Conversation moved to ${ folderName }.": [
         "Samtale flyttet til ${ folderName }."
       ],
+      "Conversation moved to spam and sender added to your block list.": [
+        "Samtale flyttet til spam og afsender føjet til din blokeringsliste."
+      ],
       "Conversation removed from ${ labelName }.": [
         "Samtale fjernet fra ${ labelName }."
       ],
@@ -7282,8 +7393,14 @@
       "Message marked as unread.": [
         "Besked markeret som ulæst."
       ],
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Besked flyttet til ${ folderName } og afsender tilføjet din godkendt-liste."
+      ],
       "Message moved to ${ folderName }.": [
         "Besked flyttet til ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your block list.": [
+        "Besked flyttet til spam og afsender føjet til din blokeringsliste."
       ],
       "Message removed from ${ labelName }.": [
         "Besked fjernet fra ${ labelName }."
@@ -7610,9 +7727,6 @@
       "Email settings": [
         "E-mail indstillinger"
       ],
-      "Email settings (${ emailAddress })": [
-        "E-mailindstillinger (${ emailAddress })"
-      ],
       "Enable message content search": [
         "Aktiver beskedindholdssøgning"
       ],
@@ -7633,6 +7747,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter on...": [
+        "Filtrer efter..."
       ],
       "Forward": [
         "Videresend"
@@ -7700,8 +7817,14 @@
       "Message will expire": [
         "Besked vil udløbe"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "More": [
         "Mere"
+      ],
+      "More actions": [
+        "Flere muligheder"
       ],
       "More options": [
         "Flere muligheder"

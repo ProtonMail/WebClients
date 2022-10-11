@@ -356,6 +356,9 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
+      "Use authentication code": [
+        "Используйте код аутентификации"
+      ],
       "Use recovery code": [
         "Использовать код восстановления"
       ],
@@ -508,95 +511,9 @@
         "Каждые 2 года"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Воспользоваться"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "бета"
-      ],
-      "Includes": [
-        "Включает"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Обычная цена: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Лучшее предложение"
-      ],
-      "Most popular": [
-        "Самое популярное"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Сэкономьте больше, оплачивая Mail и VPN вместе"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Получить скидку"
-      ],
-      "Get the deal now": [
-        "Получить скидку"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "– ${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Условия специального предложения"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "в месяц"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Спецпредложение"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
-      ],
-      "1 month": [
-        "1 месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Оплата в размере ${ amount } за первый год.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bug category": {
@@ -1805,6 +1722,91 @@
         "Поддержка торрентов (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Добавить ключ безопасности"
+      ],
+      "Delete key": [
+        "Удалить ключ"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Пожалуйста, отключите 2ФА через ключ безопасности перед отключением TOTP"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Что-то пошло не так при регистрации вашего ключа безопасности. Попробуйте снова."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Ключ 2ФА отключен"
+      ],
+      "Add a name to identify your security key with.": [
+        "Добавьте имя, чтобы потом понять, что это за ключ безопасности."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Вставьте свой ключ безопасности в USB-порт вашего устройства."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ],
+      "Security key removed": [
+        "Ключ безопасности удален"
+      ],
+      "Security key updated": [
+        "Ключ безопасности обновлен"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Это удалит все ключи безопасности, связанные с вашим аккаунтом."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Чтобы включить 2ФА через ключ безопасности, потребуется требуется активировать 2ФА через приложение аутентификатор"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Проверьте свою личность физическим ключом U2F или FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Ваш ключ двухфакторной аутентификации готов к использованию."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Имя ключа"
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Удалить ключ безопасности?"
+      ],
+      "Disable 2FA via security key?": [
+        "Отключить 2ФА через ключ безопасности?"
+      ],
+      "Name your security key": [
+        "Назовите свой ключ безопасности"
+      ],
+      "Register your security key": [
+        "Зарегистрируйте свой ключ безопасности"
+      ],
+      "Registered security keys": [
+        "Зарегистрированные ключи безопасности"
+      ],
+      "Security key registered": [
+        "Ключ безопасности зарегистрирован"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -1971,6 +1973,12 @@
       "Account successfully updated": [
         "Учетная запись успешно обновлена"
       ],
+      "add a recovery method": [
+        "добавить метод восстановления"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Добавьте дополнительный слой безопасности к вашему аккаунту. Вам надо будет удостоверять себя с помощью 2ФА при каждом входе."
+      ],
       "Additional options": [
         "Дополнительные параметры"
       ],
@@ -2052,6 +2060,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и берите конфиденциальность с собой, куда бы вы ни пошли."
       ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 пользовательских почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
@@ -2061,8 +2072,17 @@
       "Emailing preference saved": [
         "Настройки отправки почты обновлены"
       ],
+      "Enter code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Введите новый пароль для пользователя ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Введите код, отправленный на ваш номер телефона ${ phone }."
@@ -2078,6 +2098,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты для восстановления, и мы отправим вам имя вашего пользователя или адрес электронной почты."
@@ -2190,6 +2213,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читает ваши персональные данные с целью предоставления доступа рекламодателям, государственным учреждениям России и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
       ],
@@ -2264,6 +2290,9 @@
       ],
       "Priority support": [
         "Приоритетная поддержка"
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Технология шифрования Proton значит, что ни у кого нет доступа к Вашему паролю – даже у нас."
       ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
@@ -2433,6 +2462,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Для подтверждения оплаты откроется новая вкладка. Пожалуйста, отключите любые блокировщики всплывающих окон. Снятия ваших средств не произойдёт. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Проверьте свою личность с помощью временного одноразового пароля из приложения-аутентификаторв"
+      ],
       "Verifying your payment": [
         "Подтверждение вашего платежа"
       ],
@@ -2471,6 +2503,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Мы переводим ваш текущий тариф на улучшенный тариф, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении Вашей подписки, сначала мы используем любые доступные кредиты, а потом списываем недостающую сумму через вышеуказанный метод оплаты."
@@ -2715,6 +2750,9 @@
       ],
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
+      ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -3789,6 +3827,12 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
+      ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Создайте до ${ numberOfPersonalCalendars } личного календаря",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей"
       ],
       "Everything in ${ vpnPlanName }": [
         "Все, что входит в ${ vpnPlanName }"

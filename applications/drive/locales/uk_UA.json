@@ -1761,8 +1761,8 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A problem occurred, please try again.": [
-        "Виникла проблема, повторіть спробу."
+      "A problem occurred, please try again": [
+        "Виникла проблема. Повторіть спробу"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -1890,8 +1890,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your search again": [
-        "Активуйте пошук знову"
+      "Please activate your content search again": [
+        "Активуйте пошук вмісту знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -3386,9 +3386,6 @@
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
       ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Для забезпечення справді приватного пошуку ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально. Ви, як і раніше, можете використовувати ${ DRIVE_APP_NAME } у звичайному режимі, а ми повідомимо вас, коли індексація буде завершена."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -3698,6 +3695,9 @@
       ],
       "Country": [
         "Країна"
+      ],
+      "Create a share link": [
+        "Створіть спільне посилання"
       ],
       "Created": [
         "Створено"
@@ -4439,12 +4439,6 @@
       "Set a recovery method": [
         "Вказати спосіб відновлення"
       ],
-      "Simply complete the following in the next ${ remainingDaysForGift } day:": [
-        "Просто виконайте ці дії впродовж наступного дня:",
-        "Просто виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів:",
-        "Просто виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів:",
-        "Просто виконайте ці дії впродовж наступних ${ remainingDaysForGift } днів:"
-      ],
       "Upload a file": [
         "Вивантажити файл"
       ],
@@ -4992,9 +4986,6 @@
       "Email settings": [
         "Налаштування електронної пошти"
       ],
-      "Email settings (${ emailAddress })": [
-        "Налаштування електронної пошти (${ emailAddress })"
-      ],
       "Empty trash": [
         "Спорожнити смітник"
       ],
@@ -5072,6 +5063,9 @@
       ],
       "MIME type": [
         "Тип MIME"
+      ],
+      "Minicalendar": [
+        "Мінікалендар"
       ],
       "Modified": [
         "Змінено"

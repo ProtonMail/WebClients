@@ -2982,9 +2982,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
-      "No keys retrieved for internal user": [
-        "Tidak ada kunci untuk pengguna internal yang diambil"
-      ],
       "No public key for Proton address": [
         "Tidak ada kunci publik untuk alamat Proton"
       ],
@@ -3068,9 +3065,6 @@
       ],
       "Primary key is not valid for sending": [
         "Kunci utama tidak valid untuk pengiriman"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Kunci utama yang diambil untuk pengguna internal tidak dapat digunakan untuk pengiriman"
       ],
       "Process aborted": [
         "Proses dibatalkan"
@@ -3613,14 +3607,40 @@
         "Mendukung torrent (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Tambah kunci keamanan"
+      ],
+      "Delete key": [
+        "Hapus kunci"
+      ]
+    },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Silakan nonaktifkan 2FA via kunci keamanan sebelum menonaktifkan TOTP"
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Terdapat kesalahan dalam mendaftarkan kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA via kunci keamanan dinonaktifkan"
+      ],
+      "Add a name to identify your security key with.": [
+        "Beri nama kunci keamanan Anda agar lebih mudah untuk dikenali."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Masukkan kunci keamanan Anda ke port USB milik perangkat Anda."
       ],
       "Security key": [
         "Kunci keamanan"
@@ -3630,9 +3650,24 @@
       ],
       "Security key updated": [
         "Kunci keamanan diperbarui"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Tindakan ini akan menghapus seluruh kunci keamanan yang terhubung dengan akun Anda."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Untuk mengaktifkan 2FA via kunci keamanan, Anda perlu untuk mengaktifkan 2FA via aplikasi otentikator"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Kunci otentikasi dua faktor Anda siap digunakan."
       ]
     },
     "fido2: Label": {
+      "Key name": [
+        "Nama kunci"
+      ],
       "Security key": [
         "Kunci keamanan"
       ]
@@ -3652,6 +3687,9 @@
       ],
       "Registered security keys": [
         "Kunci keamanan yang terdaftar"
+      ],
+      "Security key registered": [
+        "Kunci keamanan didaftarkan"
       ]
     },
     "file size format": {
@@ -7064,6 +7102,9 @@
       "Show secondary time zone": [
         "Tampilkan zona waktu sekunder"
       ],
+      "Show sender images": [
+        "Tampilkan gambar pengirim"
+      ],
       "Show week numbers": [
         "Tampilkan nomor pekan"
       ],
@@ -10183,6 +10224,9 @@
       "Messages and composing": [
         "Pesan dan penulisan"
       ],
+      "Minicalendar": [
+        "Kalender mini"
+      ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
       ],
@@ -10335,6 +10379,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Tentukan kapan Anda ingin notifikasi ini dikirim"
+      ],
+      "Sender image": [
+        "Gambar pengirim"
       ],
       "Session management": [
         "Pengelolaan sesi"
@@ -10638,6 +10685,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Menampilkan catatan kaki berikut pada email yang Anda kirim: ${ signature } Tautan tersebut merupakan tautan rujukan Anda. Catatan kaki ini akan muncul di bawah tanda tangan Anda dan dapat Anda sesuaikan kapan saja pada menu pengaturan."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Menampilkan gambar tampilan masing-masing pengirim pada daftar pesan. Apabila pengirim tidak memiliki gambar tampilan, inisial mereka akan ditampilkan sebagai gantinya."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Tanda tangan yang diproduksi dengan kunci ini dianggap tidak valid dan kunci ini tidak dapat dipakai untuk mengenkripsi"
