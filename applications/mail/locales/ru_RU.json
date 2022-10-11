@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Заблокировать сообщения этого отправителя"
       ],
+      "Block senders": [
+        "Заблокировать отправителей"
+      ],
       "Bold": [
         "Полужирный"
       ],
@@ -1003,6 +1006,9 @@
       ],
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
+      ],
+      "Use authentication code": [
+        "Используйте код аутентификации"
       ],
       "Use for sending": [
         "Использовать для отправки"
@@ -2889,6 +2895,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } в настройках."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
@@ -2903,6 +2912,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Новые письма от ${ senderEmailAddress } и ${ otherSendersCount } другого не будут доставлены и будут безвозвратно удалены.",
+        "Новые письма от ${ senderEmailAddress } и ${ otherSendersCount } других не будут доставлены и будут безвозвратно удалены.",
+        "Новые письма от ${ senderEmailAddress } и ${ otherSendersCount } других не будут доставлены и будут безвозвратно удалены.",
+        "Новые письма от ${ senderEmailAddress } и ${ otherSendersCount } других не будут доставлены и будут безвозвратно удалены."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Новые письма от ${ senderEmailAddress } не будут доставлены и будут безвозвратно удалены."
       ],
       "No folders": [
         "Нет папок"
@@ -3069,6 +3087,9 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
+      "A problem occurred, please try again": [
+        "Возникла проблема. Попробуйте еще раз"
+      ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
@@ -3231,9 +3252,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
       ],
-      "No keys retrieved for internal user": [
-        "Нет загруженных ключей для внутреннего пользователя"
-      ],
       "No valid address found": [
         "Не найдено действительных адресов"
       ],
@@ -3257,6 +3275,9 @@
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
+      ],
+      "Please activate your content search again": [
+        "Активируйте поиск содержимого снова"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -3282,8 +3303,8 @@
       "Primary key is not valid for sending": [
         "Основной ключ не действителен для отправки"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Основной ключ, полученный для внутреннего пользователя, недействителен для отправки"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Основной ключ, полученный для пользователя ${ BRAND_NAME }, недействителен для отправки"
       ],
       "Public key could not be trusted": [
         "Открытый ключ не может быть доверенным"
@@ -3693,6 +3714,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Ваш отзыв"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
       ]
     },
     "file size format": {
@@ -4759,6 +4798,9 @@
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Скачивание сообщения ${ esProgress } из ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Черновик"
       ],
@@ -4776,6 +4818,9 @@
       ],
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
+      ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
       ],
       "Edit encryption": [
         "Изменить шифрование"
@@ -4816,11 +4861,17 @@
       "Encrypt message": [
         "Зашифровать сообщение"
       ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -5596,6 +5647,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Когда вы сделали активными доверенные ключи для ${ senderName }, эти открытые ключи были добавлены к контактным данным."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
       ],
@@ -6077,6 +6131,9 @@
       "Attachments": [
         "Вложения"
       ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
       "Automatically save contacts": [
         "Автоматическое сохранение контактов"
       ],
@@ -6280,6 +6337,9 @@
       ],
       "Mark as": [
         "Отметить как"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Переместить ${ sidebarElementName }"
       ],
       "Move to": [
         "Переместить в"
@@ -7048,6 +7108,12 @@
       ],
       "Password has been set successfully": [
         "Пароль был успешно установлен"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Отправитель ${ firstSenderAddress } заблокирован"
+      ],
+      "Senders blocked": [
+        "Отправители заблокированы"
       ]
     },
     "Oauth instructions": {
@@ -7758,6 +7824,9 @@
       "Conversation moved to ${ folderName }.": [
         "Цепочка писем перемещена в ${ folderName }."
       ],
+      "Conversation moved to spam and sender added to your block list.": [
+        "Цепочка писем перемещена в спам, а отправитель добавлен в черный список."
+      ],
       "Conversation removed from ${ labelName }.": [
         "Цепочка писем удалена из ${ labelName }."
       ],
@@ -7812,8 +7881,14 @@
       "Message marked as unread.": [
         "Сообщение помечено как непрочитанное."
       ],
+      "Message moved to ${ folderName } and sender added to your allow list.": [
+        "Сообщение перемещено в ${ folderName }, а отправитель добавлен в ваш белый список."
+      ],
       "Message moved to ${ folderName }.": [
         "Сообщение перемещено в ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your block list.": [
+        "Сообщение перемещено в спам, а отправитель добавлен в ваш черный список."
       ],
       "Message removed from ${ labelName }.": [
         "Сообщение удалено из ${ labelName }."
@@ -8152,6 +8227,9 @@
       "Edit contact group": [
         "Изменение группы контактов"
       ],
+      "Edit email settings": [
+        "Изменить настройки электронной почты"
+      ],
       "Edit filter": [
         "Изменение фильтра"
       ],
@@ -8169,9 +8247,6 @@
       ],
       "Email settings": [
         "Настройки эл. почты"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Настройки электронной почты (${ emailAddress })"
       ],
       "Enable message content search": [
         "Включить поиск содержимого сообщений"
@@ -8263,8 +8338,14 @@
       "Message will expire": [
         "Срок действия сообщения истечет"
       ],
+      "Minicalendar": [
+        "Мини-календарь"
+      ],
       "More": [
         "Еще"
+      ],
+      "More actions": [
+        "Больше действий"
       ],
       "More options": [
         "Дополнительные параметры"

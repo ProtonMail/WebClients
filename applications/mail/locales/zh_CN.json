@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "屏蔽来自此发件人的所有邮件"
       ],
+      "Block senders": [
+        "屏蔽发件人"
+      ],
       "Bold": [
         "粗体"
       ],
@@ -2824,6 +2827,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "设置中的 ${ manageBlockedAddressesSettingsLink } 。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
       ],
@@ -2838,6 +2844,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "来自 ${ senderEmailAddress } 与另外 ${ otherSendersCount } 个邮箱的新邮件将被直接删除，不再送达。"
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "来自 ${ senderEmailAddress } 的新邮件将被直接删除，不再送达。"
       ],
       "No folders": [
         "无文件夹"
@@ -2998,6 +3010,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again": [
+        "出错了，请重试"
+      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -3148,9 +3163,6 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
-      "No keys retrieved for internal user": [
-        "没有为内部用户检索到密钥"
-      ],
       "No valid address found": [
         "未找到有效地址"
       ],
@@ -3168,6 +3180,9 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
+      ],
+      "Please activate your content search again": [
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -3189,9 +3204,6 @@
       ],
       "Primary key is not valid for sending": [
         "主密钥无法发送邮件"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "内部用户的主密钥无效，无法发送邮件"
       ],
       "Public key could not be trusted": [
         "无法信任公钥"
@@ -4516,6 +4528,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "正在下载邮件：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
       ],
       "Draft": [
         "草稿"
@@ -5988,6 +6003,9 @@
       "Mark as": [
         "标为"
       ],
+      "Move ${ sidebarElementName }": [
+        "移动 ${ sidebarElementName }"
+      ],
       "Move to": [
         "移至"
       ],
@@ -6734,6 +6752,12 @@
       ],
       "Password has been set successfully": [
         "密码已设置成功"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "发件人 ${ firstSenderAddress } 已屏蔽"
+      ],
+      "Senders blocked": [
+        "发件人已屏蔽"
       ]
     },
     "Oauth instructions": {
@@ -7739,9 +7763,6 @@
       "Email settings": [
         "邮件设置"
       ],
-      "Email settings (${ emailAddress })": [
-        "邮件设(${ emailAddress })"
-      ],
       "Enable message content search": [
         "启用邮件全文搜索"
       ],
@@ -7832,8 +7853,14 @@
       "Message will expire": [
         "此邮件已设置有效期"
       ],
+      "Minicalendar": [
+        "迷你日历"
+      ],
       "More": [
         "更多"
+      ],
+      "More actions": [
+        "更多动作"
       ],
       "More options": [
         "更多选项"

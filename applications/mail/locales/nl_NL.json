@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Berichten van deze afzender blokkeren"
       ],
+      "Block senders": [
+        "Blokkeer afzenders"
+      ],
       "Bold": [
         "Vet"
       ],
@@ -2833,6 +2836,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } via instellingen."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -2848,8 +2854,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
-        "Nieuwe e-mails van ${ senderEmailAddress } worden niet afgeleverd en worden permanent verwijderd. ${ manageBlockedAddressesSettingsLink } in instellingen."
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nieuwe e-mails van ${ senderEmailAddress } en ${ otherSendersCount } andere worden niet meer afgeleverd en zullen permanent verwijderd worden.",
+        "Nieuwe e-mails van ${ senderEmailAddress } en ${ otherSendersCount } andere worden niet meer afgeleverd en zullen permanent verwijderd worden."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nieuwe e-mails van ${ senderEmailAddress } worden niet meer afgeleverd en zullen permanent verwijderd worden."
       ],
       "No folders": [
         "Geen mappen"
@@ -3169,9 +3179,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
-      "No keys retrieved for internal user": [
-        "Geen keys ontvangen van interne gebruiker"
-      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
@@ -3217,8 +3224,8 @@
       "Primary key is not valid for sending": [
         "Primaire sleutel is niet geldig voor verzenden"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primaire sleutel opgehaald voor ${ BRAND_NAME } gebruiker is niet geldig voor verzenden"
       ],
       "Public key could not be trusted": [
         "De openbare sleutel is niet vertrouwd"
@@ -6060,6 +6067,9 @@
       "Mark as": [
         "Markeren als"
       ],
+      "Move ${ sidebarElementName }": [
+        "Verplaats ${ sidebarElementName }"
+      ],
       "Move to": [
         "Verplaatsen naar"
       ],
@@ -6806,8 +6816,11 @@
       "Password has been set successfully": [
         "Wachtwoord is succesvol ingesteld"
       ],
-      "Sender ${ senderEmail } blocked": [
-        "Afzender ${ senderEmail } geblokkeerd"
+      "Sender ${ firstSenderAddress } blocked": [
+        "Afzender ${ firstSenderAddress } geblokkeerd"
+      ],
+      "Senders blocked": [
+        "Afzenders geblokkeerd"
       ]
     },
     "Oauth instructions": {
@@ -7464,6 +7477,9 @@
       "Conversation moved to ${ folderName }.": [
         "Gesprek verplaatst naar ${ folderName }."
       ],
+      "Conversation moved to spam and sender added to your block list.": [
+        "Conversatie verplaatst naar spam en afzender toegevoegd aan uw blokkeringslijst."
+      ],
       "Conversation removed from ${ labelName }.": [
         "Gesprek verwijderd van ${ labelName }."
       ],
@@ -7520,6 +7536,9 @@
       ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your block list.": [
+        "Bericht verplaatst naar spam en afzender toegevoegd aan uw blokkeringslijst."
       ],
       "Message removed from ${ labelName }.": [
         "Bericht verwijderd van ${ labelName }."
@@ -7828,6 +7847,9 @@
       "Edit contact group": [
         "Contactgroep bewerken"
       ],
+      "Edit email settings": [
+        "Bewerk e-mailinstellingen"
+      ],
       "Edit filter": [
         "Filter bewerken"
       ],
@@ -7845,9 +7867,6 @@
       ],
       "Email settings": [
         "E-mailinstellingen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailinstellingen voor (${ emailAddress })"
       ],
       "Enable message content search": [
         "Inschakelen van zoeken op berichtinhoud"
@@ -7939,8 +7958,14 @@
       "Message will expire": [
         "Bericht zal verlopen"
       ],
+      "Minicalendar": [
+        "Mini-agenda"
+      ],
       "More": [
         "Meer"
+      ],
+      "More actions": [
+        "Meer acties"
       ],
       "More options": [
         "Meer opties"

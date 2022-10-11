@@ -200,7 +200,7 @@
         "Edytuj szczegóły logowania"
       ],
       "Email settings": [
-        "Ustawienia poczty e-mail"
+        "Ustawienia adresu e-mail"
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
@@ -2304,9 +2304,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
       ],
-      "No keys retrieved for internal user": [
-        "Nie odzyskano kluczy dla wewnętrznego użytkownika"
-      ],
       "No public key for Proton address": [
         "Brak klucza publicznego dla adresu Proton"
       ],
@@ -2360,9 +2357,6 @@
       ],
       "Primary key is not valid for sending": [
         "Klucz główny nie jest przeznaczony do wysyłania wiadomości"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Odzyskany klucz główny dla wewnętrznego użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Zduplikowany odbiorca ${ joinedRecipients } został usunięty",
@@ -5742,10 +5736,7 @@
         "Adresy e-mail"
       ],
       "Email settings": [
-        "Ustawienia poczty e-mail"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Ustawienia poczty e-mail (${ emailAddress })"
+        "Ustawienia adresu e-mail"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -5803,6 +5794,9 @@
       ],
       "Merging contacts": [
         "Scalanie kontaktów"
+      ],
+      "Minicalendar": [
+        "Minikalendarz"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"

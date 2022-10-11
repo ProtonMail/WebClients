@@ -14,9 +14,6 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "${ name } updated": [
-        "${ name } atualizado"
-      ],
       "Activate recovery": [
         "Ativar a recuperação"
       ],
@@ -500,57 +497,9 @@
         "Dois anos"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Inclui"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Preço normal: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente após 2 anos pelo mesmo valor, a menos que seja cancelada."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obter oferta"
-      ],
-      "Get the deal now": [
-        "Obter oferta agora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "por mês"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ]
     },
     "Bug category": {
@@ -1761,6 +1710,9 @@
       "Please disable 2FA via security key before disabling TOTP": [
         "Por favor, desative A2F através da chave de segurança antes de desativar TOTP"
       ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Por favor, tente novamente."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Algo deu errado ao registrar sua chave de segurança. Por favor, tente novamente."
       ]
@@ -1775,6 +1727,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+      ],
       "Insert your security key into your device's USB port.": [
         "Insira sua chave de segurança na porta USB do seu dispositivo."
       ],
@@ -1783,6 +1738,9 @@
       ],
       "Security key removed": [
         "Chave de segurança removida"
+      ],
+      "Security key updated": [
+        "Chave de segurança atualizada"
       ],
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
@@ -2100,6 +2058,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
@@ -2502,6 +2463,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Estamos atualizando seu plano atual para um plano aprimorado que oferece mais pelo mesmo preço. Enquanto nossos sistemas estiverem sendo atualizados, você não poderá alterá-los. Enviaremos um e-mail assim que estiver pronto."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."

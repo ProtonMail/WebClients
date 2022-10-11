@@ -2997,9 +2997,6 @@
       "No address with keys available to compose a message": [
         "沒有電郵位址及金鑰可用於撰寫新郵件"
       ],
-      "No keys retrieved for internal user": [
-        "未為內部使用者檢索到密鑰"
-      ],
       "No valid address found": [
         "未能找到有效位址"
       ],
@@ -3038,9 +3035,6 @@
       ],
       "Primary key is not valid for sending": [
         "寄件用的主金鑰不正確。"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
       ],
       "Public key could not be trusted": [
         "公開金鑰無法信任"
@@ -7397,9 +7391,6 @@
       ],
       "Email settings": [
         "電郵設定"
-      ],
-      "Email settings (${ emailAddress })": [
-        "電郵設定 (${ emailAddress })"
       ],
       "Enable message content search": [
         "啟用郵件內容搜尋"

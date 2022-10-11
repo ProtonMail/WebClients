@@ -2225,9 +2225,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
-      "No keys retrieved for internal user": [
-        "Geen keys ontvangen van interne gebruiker"
-      ],
       "No public key for Proton address": [
         "Proton adres heeft geen publieke sleutel"
       ],
@@ -2276,8 +2273,8 @@
       "Primary key is not valid for sending": [
         "Primaire sleutel is niet geldig voor verzenden"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primaire sleutel opgehaald voor ${ BRAND_NAME } gebruiker is niet geldig voor verzenden"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Dubbele ontvanger verwijderd: ${ joinedRecipients }",
@@ -5399,6 +5396,9 @@
       "Edit contact group": [
         "Contactgroep bewerken"
       ],
+      "Edit email settings": [
+        "Bewerk e-mailinstellingen"
+      ],
       "Edit image": [
         "Afbeelding bewerken"
       ],
@@ -5407,9 +5407,6 @@
       ],
       "Email settings": [
         "E-mail instellingen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailinstellingen (${ emailAddress })"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -5465,6 +5462,9 @@
       ],
       "Merging contacts": [
         "Contactpersonen samenvoegen"
+      ],
+      "Minicalendar": [
+        "Mini-agenda"
       ],
       "Open actions dropdown": [
         "Open acties dropdownmenu"

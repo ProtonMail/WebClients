@@ -2239,9 +2239,6 @@
       "Name required": [
         "名稱為必填"
       ],
-      "No keys retrieved for internal user": [
-        "內部使用者沒有擷取到任何金鑰"
-      ],
       "No public key for Proton address": [
         "Proton 地址沒有公開金鑰"
       ],
@@ -2286,9 +2283,6 @@
       ],
       "Primary key is not valid for sending": [
         "主要金鑰對傳送無效"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "擷取出的內部使用者專屬主金鑰不適用於傳送郵件"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "已移除重複的收件者：${ joinedRecipients }"
@@ -4865,11 +4859,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "訂閱其他行事曆"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試 ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "你已可以添加提醒到你訂閱的行事曆了。"
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "您可以訂閱外部行事曆並讀取他們的活動。"
       ]
     },
     "Spotlight settings link": {
@@ -5277,9 +5277,6 @@
       ],
       "Email settings": [
         "電郵設定"
-      ],
-      "Email settings (${ emailAddress })": [
-        "電郵設定 (${ emailAddress })"
       ],
       "Enter your password": [
         "請輸入您的密碼"

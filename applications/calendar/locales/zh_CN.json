@@ -2250,9 +2250,6 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
-      "No keys retrieved for internal user": [
-        "没有为内部用户检索到密钥"
-      ],
       "No public key for Proton address": [
         "未找到 Proton 邮箱的公钥"
       ],
@@ -2297,9 +2294,6 @@
       ],
       "Primary key is not valid for sending": [
         "主密钥无法发送邮件"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "内部用户的主密钥无效，无法发送邮件"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "已删除重复收件人：${ joinedRecipients }"
@@ -5001,11 +4995,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "现在，邀请将在您的日历中显示为待处理事件。 只需打开事件就可以回复。 ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "订阅其他日历"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "您现在可以向订阅的日历添加通知了。"
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "您可以通过订阅外部日历来获取其日程。"
       ]
     },
     "Spotlight settings link": {
@@ -5414,9 +5414,6 @@
       "Email settings": [
         "邮件设置"
       ],
-      "Email settings (${ emailAddress })": [
-        "邮件设置 (${ emailAddress })"
-      ],
       "Enter your password": [
         "输入密码"
       ],
@@ -5470,6 +5467,9 @@
       ],
       "Merging contacts": [
         "正在合并联系人"
+      ],
+      "Minicalendar": [
+        "迷你日历"
       ],
       "Open actions dropdown": [
         "展开操作菜单"

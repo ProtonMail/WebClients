@@ -2561,9 +2561,6 @@
       "No active sessions": [
         "No hi ha sessions actives"
       ],
-      "No keys retrieved for internal user": [
-        "No s’ha recuperat cap clau per a l’usuari intern"
-      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -2625,8 +2622,8 @@
       "Primary key is not valid for sending": [
         "La clau principal no és vàlida per a l'enviament"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "La clau principal obtinguda per l'usuari intern no és vàlida per a l'enviament"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per enviar"
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -6354,6 +6351,10 @@
     "new_plans: Upsell attribute": {
       "10 email addresses/aliases": [
         "10 adreces de correu/àlies"
+      ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Crea ${ numberOfPersonalCalendars } nou calendari personal",
+        "Crea ${ numberOfPersonalCalendars } nous calendaris personals"
       ],
       "Priority support": [
         "Suport prioritari"

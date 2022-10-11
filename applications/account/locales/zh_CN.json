@@ -2982,9 +2982,6 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
-      "No keys retrieved for internal user": [
-        "没有为内部用户检索到密钥"
-      ],
       "No public key for Proton address": [
         "未找到 Proton 邮箱的公钥"
       ],
@@ -3068,9 +3065,6 @@
       ],
       "Primary key is not valid for sending": [
         "主密钥无法发送邮件"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "内部用户的主密钥无效，无法发送邮件"
       ],
       "Process aborted": [
         "操作已中止"
@@ -3611,6 +3605,11 @@
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
+      ]
+    },
+    "fido2: Action": {
+      "Delete key": [
+        "删除密钥"
       ]
     },
     "fido2: Error": {
@@ -4451,6 +4450,9 @@
       ],
       "Add a recovery email address": [
         "添加密保邮箱"
+      ],
+      "add a recovery method": [
+        "添加恢复方法"
       ],
       "Add a recovery phone number": [
         "添加密保手机"
@@ -10135,6 +10137,9 @@
       ],
       "Messages and composing": [
         "邮件与编辑"
+      ],
+      "Minicalendar": [
+        "迷你日历"
       ],
       "Multi-user support": [
         "多用户功能"

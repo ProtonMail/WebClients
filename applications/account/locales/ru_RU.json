@@ -810,6 +810,9 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
+      "Use authentication code": [
+        "Используйте код аутентификации"
+      ],
       "Use recovery code": [
         "Использовать код восстановления"
       ],
@@ -3039,9 +3042,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
       ],
-      "No keys retrieved for internal user": [
-        "Нет загруженных ключей для внутреннего пользователя"
-      ],
       "No public key for Proton address": [
         "Нет открытого ключа для адреса Proton"
       ],
@@ -3129,8 +3129,8 @@
       "Primary key is not valid for sending": [
         "Основной ключ не действителен для отправки"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Основной ключ, полученный для внутреннего пользователя, недействителен для отправки"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Основной ключ, полученный для пользователя ${ BRAND_NAME }, недействителен для отправки"
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -3686,6 +3686,91 @@
       ],
       "Torrenting support (P2P)": [
         "Поддержка торрентов (P2P)"
+      ]
+    },
+    "fido2: Action": {
+      "Add security key": [
+        "Добавить ключ безопасности"
+      ],
+      "Delete key": [
+        "Удалить ключ"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Пожалуйста, отключите 2ФА через ключ безопасности перед отключением TOTP"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Что-то пошло не так при регистрации вашего ключа безопасности. Попробуйте снова."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "Ключ 2ФА отключен"
+      ],
+      "Add a name to identify your security key with.": [
+        "Добавьте имя, чтобы потом понять, что это за ключ безопасности."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Вставьте свой ключ безопасности в USB-порт вашего устройства."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ],
+      "Security key removed": [
+        "Ключ безопасности удален"
+      ],
+      "Security key updated": [
+        "Ключ безопасности обновлен"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Это удалит все ключи безопасности, связанные с вашим аккаунтом."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Чтобы включить 2ФА через ключ безопасности, потребуется требуется активировать 2ФА через приложение аутентификатор"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Проверьте свою личность физическим ключом U2F или FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Ваш ключ двухфакторной аутентификации готов к использованию."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Имя ключа"
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Удалить ключ безопасности?"
+      ],
+      "Disable 2FA via security key?": [
+        "Отключить 2ФА через ключ безопасности?"
+      ],
+      "Name your security key": [
+        "Назовите свой ключ безопасности"
+      ],
+      "Register your security key": [
+        "Зарегистрируйте свой ключ безопасности"
+      ],
+      "Registered security keys": [
+        "Зарегистрированные ключи безопасности"
+      ],
+      "Security key registered": [
+        "Ключ безопасности зарегистрирован"
       ]
     },
     "file size format": {
@@ -4614,8 +4699,14 @@
       "Add a recovery email address": [
         "Добавить адрес эл. почты для восстановления доступа"
       ],
+      "add a recovery method": [
+        "добавить метод восстановления"
+      ],
       "Add a recovery phone number": [
         "Добавить номер телефона для восстановления"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Добавьте дополнительный слой безопасности к вашему аккаунту. Вам надо будет удостоверять себя с помощью 2ФА при каждом входе."
       ],
       "Add image URL": [
         "Добавить ссылку на изображение"
@@ -4947,6 +5038,9 @@
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
       ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Получено ${ rewards } из ${ rewardsLimit } месяцев ${ planName }."
       ],
@@ -4983,8 +5077,17 @@
       "Encryption setting updated": [
         "Настройка шифрования обновлена"
       ],
+      "Enter code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Введите новый пароль для пользователя ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Введите код, отправленный на ваш номер телефона ${ phone }."
@@ -5006,6 +5109,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
@@ -5268,6 +5374,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читает ваши персональные данные с целью предоставления доступа рекламодателям, государственным учреждениям России и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
       ],
@@ -5486,6 +5595,9 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton попытается возобновить импорт, как только ваш поставщик услуг электронной почты сбросит ${ bandwithLimitLink } вашего аккаунта. Вам не нужно ничего делать. Если вы отмените импорт, вы не сможете возобновить его, и вам нужно будет начать заново."
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Технология шифрования Proton значит, что ни у кого нет доступа к Вашему паролю – даже у нас."
       ],
       "Public link invite": [
         "Приглашение по публичной ссылке"
@@ -5868,6 +5980,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Проверьте свою личность с помощью временного одноразового пароля из приложения-аутентификаторв"
+      ],
       "Verifying your payment": [
         "Подтверждение вашего платежа"
       ],
@@ -5930,6 +6045,9 @@
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Когда они подпишутся на платный план, от 1 до 3 месяцев ${ planName } $ будут зачислены на ваш счет."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
@@ -6666,6 +6784,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
       "Auto-detect primary time zone": [
         "Автоопределение основного часового пояса"
       ],
@@ -7211,6 +7332,9 @@
       ],
       "Show secondary time zone": [
         "Отображать дополнительный часовой пояс"
+      ],
+      "Show sender images": [
+        "Показать изображения отправителей"
       ],
       "Show week numbers": [
         "Отображать номера недель"
@@ -8627,6 +8751,12 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
+      ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Создайте до ${ numberOfPersonalCalendars } личного календаря",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей"
       ],
       "Everything in ${ vpnPlanName }": [
         "Все, что входит в ${ vpnPlanName }"
@@ -10481,6 +10611,9 @@
       "Messages and composing": [
         "Сообщения и написание"
       ],
+      "Minicalendar": [
+        "Мини-календарь"
+      ],
       "Multi-user support": [
         "Многопользовательская поддержка"
       ],
@@ -10633,6 +10766,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Выберите, когда отправить это уведомление"
+      ],
+      "Sender image": [
+        "Изображение отправителя"
       ],
       "Session management": [
         "Управление сеансами"
@@ -10939,6 +11075,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Устанавливает следующий нижний колонтитул в отправляемых вами электронных письмах: ${ signature }. Ссылка указывает на вашу реферальную ссылку. Нижний колонтитул будет отображаться под вашей подписью. Вы можете персонализировать свою подпись в настройках любое время."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Показать изображение каждого отправителя в списке сообщений. Затем будут показаны инициалы отправителя, если фото недоступно."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Подписи, произведённые данным ключом, считаются недействительными, и этот ключ не может быть использован для шифрования"
