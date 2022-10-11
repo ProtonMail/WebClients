@@ -107,8 +107,6 @@ interface Props {
 
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [labels = []] = useLabels();
-
-    const labelIDs = labels.map(({ ID }) => ID);
     const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
     const displayContextFiltering =
         contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false;
@@ -207,8 +205,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
-            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
-            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID, false));
+            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, labelID, false));
         }
 
         await Promise.all(promises);
