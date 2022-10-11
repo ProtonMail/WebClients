@@ -788,6 +788,9 @@
       "Use a different payment method": [
         "Benyt en anden betalingsmetode"
       ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
       "Use recovery code": [
         "Brug gendannelseskode"
       ],
@@ -1134,6 +1137,16 @@
         "E-mail"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Du har allerede adgang til denne kalender"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Del kalender"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktiv"
@@ -1297,6 +1310,9 @@
       ],
       "reef": [
         "rev"
+      ],
+      "ruddy pink": [
+        "rødlig pink"
       ],
       "sahara": [
         "sahara"
@@ -2488,11 +2504,17 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "Account does not exist": [
+        "Konto findes ikke"
+      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
+      ],
+      "Already a member of this calendar": [
+        "Allerede et medlem af denne kalender"
       ],
       "Amount above the maximum.": [
         "Beløb over maksimum."
@@ -2653,14 +2675,17 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
-      "No keys retrieved for internal user": [
-        "Ingen nøgler hentet for intern bruger"
+      "No public key for Proton address": [
+        "Ingen offentlig nøgle til Proton-adresse"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
+      ],
+      "Not a Proton account": [
+        "Ikke en Proton-konto"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
@@ -2735,11 +2760,12 @@
       "Primary key is not valid for sending": [
         "Primær nøgle er ikke gyldig til afsendelse"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primær nøgle hentet for intern bruger er ikke gyldig til afsendelse"
-      ],
       "Process aborted": [
         "Proces afbrudt"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Fjernede dublet af modtager: ${ joinedRecipients }",
+        "Fjernede dubletter af modtagere: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -2756,11 +2782,17 @@
       "Signature verification failed": [
         "Signaturbekræftelse mislykkedes"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -2852,6 +2884,9 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
       ],
+      "Validation error": [
+        "Bekræftelsesfejl"
+      ],
       "Verification did not succeed, please try again in an hour.": [
         "Bekræftelse mislykkedes, forsøg igen om en time."
       ],
@@ -2872,6 +2907,9 @@
       ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
@@ -3177,6 +3215,24 @@
       ],
       "Torrenting support (P2P)": [
         "Understøttelse af torrenting (P2P)"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
       ]
     },
     "file size format": {
@@ -3675,6 +3731,9 @@
       ],
       "contacts": [
         "kontakter"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV eller en VCF-fil (vCard)"
       ],
       "full calendar view": [
         "fuld kalendervisning"
@@ -4258,6 +4317,9 @@
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Optjente ${ rewards } af ${ rewardsLimit } ${ planName } måneder."
       ],
@@ -4297,6 +4359,9 @@
       "Enter new password for user ${ userName }.": [
         "Indtast ny adgangskode for bruger ${ userName }."
       ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din autentificeringsapp"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Indtast koden sendt til dit telefonnummer ${ phone }."
       ],
@@ -4317,6 +4382,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Indtast e-mailadresse eller brugernavn for din ${ BRAND_NAME }-konto."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Indtast din e-mailadresse til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
@@ -5193,6 +5261,9 @@
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Når de abonnerer på et betalt abonnement, vil 1 til 3 måneder af ${ planName } $ blive krediteret din konto."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når dit abonnement fornyes, vil alle tilgængelige kreditter blive brugt først, før vi laver en opkrævning på dine betalingsmetoder ovenfor."
       ],
@@ -5874,6 +5945,9 @@
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
+      ],
+      "Authenticator app": [
+        "Godkendelsesapp"
       ],
       "Auto-load embedded images": [
         "Auto-indlæs indlejrede billeder"
@@ -6799,9 +6873,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7200,6 +7282,20 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Medlem tilføjet",
+        "Medlemmer tilføjet"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Kalenderinvitation afslået"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Tilmeldte ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification time input": {
@@ -8516,6 +8612,9 @@
       "Create multiple user accounts": [
         "Opret flere brugerkonti"
       ],
+      "Create public link": [
+        "Opret et offentligt link"
+      ],
       "Create user accounts": [
         "Opret brugerkonti"
       ],
@@ -8780,6 +8879,9 @@
       ],
       "Messages and composing": [
         "Beskeder og skrivning"
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"

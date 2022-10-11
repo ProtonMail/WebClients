@@ -2731,9 +2731,6 @@
       "No contacts found to import": [
         "インポートする連絡先が見つかりません"
       ],
-      "No keys retrieved for internal user": [
-        "内部ユーザーの鍵が取得できません"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
       ],
@@ -2808,9 +2805,6 @@
       ],
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "内部ユーザー用に取得されたプライマリー鍵は送信に使用できません"
       ],
       "Process aborted": [
         "処理が中断されました"
@@ -3394,6 +3388,9 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
+      ],
+      "Search in your allow and block lists": [
+        "許可・ブロックリストを検索"
       ]
     },
     "Font Face Default": {
@@ -5218,6 +5215,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "認証アプリのタイムベースドワンタイムパスワードで認証します"
+      ],
       "Verifying your payment": [
         "支払いを検証しています"
       ],
@@ -5936,6 +5936,9 @@
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
+      ],
+      "Authenticator app": [
+        "認証アプリ"
       ],
       "Auto-detect primary time zone": [
         "2 つ目のタイムゾーンを自動検出"
@@ -9444,6 +9447,9 @@
       ],
       "Sort labels alphabetically": [
         "ラベルをアルファベット順に並べ替え"
+      ],
+      "Spam and block list": [
+        "迷惑メールとブロックリスト"
       ],
       "Start a new import": [
         "新しいインポートを開始"

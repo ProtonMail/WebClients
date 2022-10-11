@@ -667,7 +667,7 @@
         "Tarife özelliklerini görün"
       ],
       "Select ${ planTitle }": [
-        "${ planTitle } seçin"
+        "${ planTitle } tarifesini seçin"
       ],
       "Select calendar view": [
         "Takvim görünümünü seçin"
@@ -3002,9 +3002,6 @@
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
-      "No keys retrieved for internal user": [
-        "İç kullanıcı için bir anahtarı alınamadı"
-      ],
       "No public key for Proton address": [
         "Proton adresinin herkese açık anahtarı yok"
       ],
@@ -3089,9 +3086,6 @@
       ],
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli değil"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -3487,7 +3481,7 @@
     },
     "Error message, unsubscribe": {
       "Please ${ signIn } to update your email subscription preferences.": [
-        "E-posta abonelik tercihlerinizi güncellemek için lütfen ${ signIn }ın."
+        "E-posta abonelik ayarlarınızı güncellemek için lütfen ${ signIn }ın."
       ],
       "sign in": [
         "oturum aç"
@@ -4931,7 +4925,7 @@
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. Proton etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini Proton üzerinde barındırabilirsiniz."
       ],
       "Emailing preference saved": [
-        "E-posta tercihi kaydedildi"
+        "E-posta ayarı kaydedildi"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Bu klasörde depolanmış e-postalar silinmeyecek ve hala Tüm e-postalar kutusunda bulunabilecek."
@@ -7184,6 +7178,9 @@
       "Show secondary time zone": [
         "İkincil saat dilimi görüntülensin"
       ],
+      "Show sender images": [
+        "Gönderici görselleri görüntülensin"
+      ],
       "Show week numbers": [
         "Hafta numaraları görüntülensin"
       ],
@@ -7486,7 +7483,7 @@
         "${ label.Name } güncellendi"
       ],
       "Preference saved": [
-        "Tercih kaydedildi"
+        "Ayar kaydedildi"
       ]
     },
     "Link": {
@@ -9632,7 +9629,7 @@
         "Fatura ödendi"
       ],
       "Keyboard shortcuts preferences updated": [
-        "Klavye kısayol tercihleri güncellendi"
+        "Klavye kısayol ayarları güncellendi"
       ],
       "Keys updated": [
         "Anahtarlar güncellendi"
@@ -9659,7 +9656,7 @@
         "Telefon numarası güncellendi"
       ],
       "Preference saved": [
-        "Tercih kaydedildi"
+        "Ayar kaydedildi"
       ],
       "Premium address created": [
         "Ücretli hesap eklendi"
@@ -10355,6 +10352,9 @@
       "Messages and composing": [
         "İletiler ve ileti oluşturma"
       ],
+      "Minicalendar": [
+        "Mini takvim"
+      ],
       "Multi-user support": [
         "Çok kullanıcı desteği"
       ],
@@ -10507,6 +10507,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Bu bildirimin ne zaman gönderilmesini istediğinizi seçin"
+      ],
+      "Sender image": [
+        "Gönderici görseli"
       ],
       "Session management": [
         "Oturum yönetimi"
@@ -10811,6 +10814,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Gönderdiğiniz e-postalara şu alt bilgi eklenir: ${ signature } Bağlantı, öneri bağlantınıza yönlenir. Alt bilgi, imzanızın altında görüntülenir. İmzanızı istediğiniz zaman ayarlar bölümünden kişiselleştirebilirsiniz."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "İleti listesinde her göndericinin görseli görüntülenir. Göndericinin görseli yoksa adı ve soyadının baş harfleri görüntülenir."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Bu anahtar tarafından oluşturulan imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"

@@ -2898,9 +2898,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
-      "No keys retrieved for internal user": [
-        "Geen keys ontvangen van interne gebruiker"
-      ],
       "No public key for Proton address": [
         "Proton adres heeft geen publieke sleutel"
       ],
@@ -2986,8 +2983,8 @@
       "Primary key is not valid for sending": [
         "Primaire sleutel is niet geldig voor verzenden"
       ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primaire sleutel opgehaald voor ${ BRAND_NAME } gebruiker is niet geldig voor verzenden"
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -6955,6 +6952,9 @@
       "Show secondary time zone": [
         "Toon secundaire tijdzone"
       ],
+      "Show sender images": [
+        "Toon afbeeldingen afzender"
+      ],
       "Show week numbers": [
         "Weeknummers weergeven"
       ],
@@ -10062,6 +10062,9 @@
       "Messages and composing": [
         "Berichten en opstellen"
       ],
+      "Minicalendar": [
+        "Mini-agenda"
+      ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
       ],
@@ -10214,6 +10217,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
+      ],
+      "Sender image": [
+        "Afbeelding afzender"
       ],
       "Session management": [
         "Sessiebeheer"

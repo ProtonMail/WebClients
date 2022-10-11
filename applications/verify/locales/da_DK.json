@@ -53,6 +53,9 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
       "Use recovery code": [
         "Brug gendannelseskode"
       ],
@@ -916,6 +919,24 @@
         "Du kan også ${ refresh }, eller forsøge igen senere."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -940,8 +961,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din autentificeringsapp"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -973,6 +1003,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
@@ -990,6 +1023,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Godkendelsesapp"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],

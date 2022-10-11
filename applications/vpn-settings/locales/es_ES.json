@@ -14,9 +14,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } tienda"
       ],
-      "${ name } updated": [
-        "${ name } actualizado"
-      ],
       "Activate recovery": [
         "Activar recuperación"
       ],
@@ -359,6 +356,9 @@
       "Use a different payment method": [
         "Usa un método de pago diferente"
       ],
+      "Use authentication code": [
+        "Utilizar código de autenticación"
+      ],
       "Use recovery code": [
         "Utilizar código de recuperación"
       ],
@@ -497,57 +497,9 @@
         "Dos años"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Incluye"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Get the deal now": [
-        "Aprovecha la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ]
     },
     "Bug category": {
@@ -1775,8 +1727,14 @@
       "Insert your security key into your device's USB port.": [
         "Ingrese la llave de seguridad en el puerto USB."
       ],
+      "Security key": [
+        "Clave de seguridad"
+      ],
       "Security key removed": [
         "Llave de seguridad eliminada"
+      ],
+      "Security key updated": [
+        "Clave de seguridad actualizada"
       ],
       "This will delete all security keys linked to your account.": [
         "Esto eleminará todas las llaves de seguridad vinculadas a tu cuenta."
@@ -1794,6 +1752,9 @@
     "fido2: Label": {
       "Key name": [
         "Nombre de la llave"
+      ],
+      "Security key": [
+        "Clave de seguridad"
       ]
     },
     "fido2: Title": {
@@ -2071,6 +2032,9 @@
       "Enter new password for user ${ userName }.": [
         "Ingrese una nueva contraseña para el usuario ${ userName }."
       ],
+      "Enter the code from your authenticator app": [
+        "Ingrese el código desde la aplicación de autenticación"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Introduce el código enviado a tu número de teléfono ${ phone }."
       ],
@@ -2085,6 +2049,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduzca su dirección de correo electrónico o nombre de usuario de la cuenta ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduce tu propia contraseña (como administrador de la organización)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
@@ -2488,6 +2455,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando tu suscripción se renueva, aplicaremos cualquier crédito disponible antes de cobrar el método de pago anterior."
       ],
+      "Why?": [
+        "¿Por qué?"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Le gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
@@ -2723,6 +2693,9 @@
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
+      ],
+      "Authenticator app": [
+        "Aplicación de autenticación"
       ],
       "Billing cycle": [
         "Ciclo de facturación"

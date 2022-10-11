@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Blokir pesan dari pengirim ini"
       ],
+      "Block senders": [
+        "Blokir pengirim"
+      ],
       "Bold": [
         "Tebal"
       ],
@@ -2827,6 +2830,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } di pengaturan."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -2841,6 +2847,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Email baru dari ${ senderEmailAddress } dan ${ otherSendersCount } pengirim lainnya tidak akan disampaikan kepada Anda dan akan dihapus secara permanen."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Email baru dari ${ senderEmailAddress } tidak akan disampaikan kepada Anda dan akan dihapus secara permanen."
       ],
       "No folders": [
         "Tidak ada folder"
@@ -3001,6 +3013,9 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "A problem occurred, please try again": [
+        "Terdapat suatu masalah, silakan coba lagi"
+      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
@@ -3151,9 +3166,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
-      "No keys retrieved for internal user": [
-        "Tidak ada kunci untuk pengguna internal yang diambil"
-      ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
       ],
@@ -3171,6 +3183,9 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
+      ],
+      "Please activate your content search again": [
+        "Silakan aktifkan kembali pencarian konten Anda"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -3192,9 +3207,6 @@
       ],
       "Primary key is not valid for sending": [
         "Kunci utama tidak valid untuk pengiriman"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Kunci utama yang diambil untuk pengguna internal tidak dapat digunakan untuk pengiriman"
       ],
       "Public key could not be trusted": [
         "Kunci publik tidak dapat dipercaya"
@@ -4519,6 +4531,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Mengunduh pesan ${ esProgress } dari ${ totalProgressToShow }"
       ],
       "Draft": [
         "Draf"
@@ -5991,6 +6006,9 @@
       "Mark as": [
         "Tandai sebagai"
       ],
+      "Move ${ sidebarElementName }": [
+        "Pindahkan ${ sidebarElementName }"
+      ],
       "Move to": [
         "Pindah ke"
       ],
@@ -6737,6 +6755,12 @@
       ],
       "Password has been set successfully": [
         "Kata sandi telah berhasil ditentukan"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Pengirim ${ firstSenderAddress } diblokir"
+      ],
+      "Senders blocked": [
+        "Pengirim diblokir"
       ]
     },
     "Oauth instructions": {
@@ -7742,9 +7766,6 @@
       "Email settings": [
         "Pengaturan email"
       ],
-      "Email settings (${ emailAddress })": [
-        "Pengaturan email (${ emailAddress })"
-      ],
       "Enable message content search": [
         "Aktifkan pencarian konten pesan"
       ],
@@ -7835,8 +7856,14 @@
       "Message will expire": [
         "Pesan akan kedaluwarsa"
       ],
+      "Minicalendar": [
+        "Kalender mini"
+      ],
       "More": [
         "Lainnya"
+      ],
+      "More actions": [
+        "Tindakan lainnya"
       ],
       "More options": [
         "Pilihan lainnya"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Blokovat zprávy tohoto odesílatele"
       ],
+      "Block senders": [
+        "Blokovat odesílatele"
+      ],
       "Bold": [
         "Tučně"
       ],
@@ -2854,6 +2857,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } v nastavení."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -2868,6 +2874,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nové e-maily od ${ senderEmailAddress } a ${ otherSendersCount } dalšího nebudou doručeny a budou trvale smazány.",
+        "Nové e-maily od ${ senderEmailAddress } a ${ otherSendersCount } dalších nebudou doručeny a budou trvale smazány.",
+        "Nové e-maily od ${ senderEmailAddress } a ${ otherSendersCount } dalších nebudou doručeny a budou trvale smazány.",
+        "Nové e-maily od ${ senderEmailAddress } a ${ otherSendersCount } dalších nebudou doručeny a budou trvale smazány."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nové e-maily od ${ senderEmailAddress } nebudou doručeny a budou trvale smazány."
       ],
       "No folders": [
         "Žádné složky"
@@ -3034,6 +3049,9 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
+      "A problem occurred, please try again": [
+        "Objevil se problém, prosím zkuste to znovu"
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
@@ -3196,9 +3214,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
-      "No keys retrieved for internal user": [
-        "Pro interního uživatele nebyly získány žádné klíče"
-      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
@@ -3223,6 +3238,9 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
+      "Please activate your content search again": [
+        "Prosím, aktivujte znovu vyhledávání obsahu"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
@@ -3246,9 +3264,6 @@
       ],
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        "Primární klíč pro interního uživatele není možné použít pro odesílání"
       ],
       "Public key could not be trusted": [
         "Veřejnému klíči nebylo možné věřit"
@@ -4742,6 +4757,9 @@
       "Don't forget to share the password with the recipient": [
         "Nezapomeňte příjemci sdělit heslo"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Stahování zprávy ${ esProgress } z ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Koncept"
       ],
@@ -5589,7 +5607,7 @@
         "Jakmile povolíte důvěrné klíče pro ${ senderName }, veřejné klíče budou doplněné k detailu kontaktu."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Při nastavení dvoufaktorového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+        "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -6278,6 +6296,9 @@
       ],
       "Mark as": [
         "Označit jako"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Přesunout ${ sidebarElementName }"
       ],
       "Move to": [
         "Přesunout do"
@@ -7046,6 +7067,12 @@
       ],
       "Password has been set successfully": [
         "Heslo bylo úspěšně nastaveno"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Odesílatel ${ firstSenderAddress } zablokován"
+      ],
+      "Senders blocked": [
+        "Odesílatelé zablokováni"
       ]
     },
     "Oauth instructions": {
@@ -8177,9 +8204,6 @@
       "Email settings": [
         "Nastavení e-mailu"
       ],
-      "Email settings (${ emailAddress })": [
-        "Nastavení e-mailu (${ emailAddress })"
-      ],
       "Enable message content search": [
         "Povolit hledání v obsahu zprávy"
       ],
@@ -8270,8 +8294,14 @@
       "Message will expire": [
         "Platnost zprávy vyprší"
       ],
+      "Minicalendar": [
+        "Minikalendář"
+      ],
       "More": [
         "Více"
+      ],
+      "More actions": [
+        "Další akce"
       ],
       "More options": [
         "Více možností"
