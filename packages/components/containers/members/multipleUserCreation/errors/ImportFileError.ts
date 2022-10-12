@@ -11,7 +11,7 @@ export enum IMPORT_ERROR_TYPE {
     FILE_CORRUPTED,
 }
 
-export const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
+const getImportFileErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     const formattedFilename = truncate(filename, MAX_FILENAME_CHARS_DISPLAY);
     if (errorType === IMPORT_ERROR_TYPE.NO_FILE_SELECTED) {
         return c('Error importing users').t`An error occurred uploading your file. No file has been selected.`;
@@ -31,7 +31,7 @@ export const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => 
 
 export default class ImportFileError extends Error {
     constructor(errorType: IMPORT_ERROR_TYPE, filename?: string) {
-        super(getErrorMessage(errorType, filename));
+        super(getImportFileErrorMessage(errorType, filename));
         Object.setPrototypeOf(this, ImportFileError.prototype);
     }
 }
