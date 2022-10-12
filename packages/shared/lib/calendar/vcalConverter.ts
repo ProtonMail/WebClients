@@ -8,7 +8,7 @@ import {
     toLocalDate,
     toUTCDate,
 } from '../date/timezone';
-import { buildMailTo, canonizeEmail, getEmailTo } from '../helpers/email';
+import { buildMailTo, canonicalizeEmail, getEmailTo } from '../helpers/email';
 import {
     DateTime,
     Participant,
@@ -249,10 +249,10 @@ export const getHasModifiedAttendees = ({
     }
     // We check if attendees other than the invitation attendees have been modified
     const otherAttendeesIcs = attendeesIcs.filter(
-        (attendee) => canonizeEmail(getAttendeeEmail(attendee)) !== canonizeEmail(attendeeIcs.emailAddress)
+        (attendee) => canonicalizeEmail(getAttendeeEmail(attendee)) !== canonicalizeEmail(attendeeIcs.emailAddress)
     );
     const otherAttendeesApi = attendeesApi.filter(
-        (attendee) => canonizeEmail(getAttendeeEmail(attendee)) !== canonizeEmail(attendeeApi.emailAddress)
+        (attendee) => canonicalizeEmail(getAttendeeEmail(attendee)) !== canonicalizeEmail(attendeeApi.emailAddress)
     );
     return otherAttendeesIcs.reduce((acc, attendee) => {
         if (acc === true) {

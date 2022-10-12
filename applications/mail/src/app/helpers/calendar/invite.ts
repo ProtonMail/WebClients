@@ -44,7 +44,7 @@ import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/ve
 import { SECOND } from '@proton/shared/lib/constants';
 import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -233,7 +233,7 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
         return false;
     }
     const organizerEmail = getAttendeeEmail(event.organizer);
-    return canonizeInternalEmail(organizerEmail) === canonizeInternalEmail(emailTo);
+    return canonicalizeInternalEmail(organizerEmail) === canonicalizeInternalEmail(emailTo);
 };
 
 export const getSingleEditWidgetData = ({
@@ -725,9 +725,9 @@ export const getParticipantsList = (attendees?: Participant[], organizer?: Parti
     const list = attendees ? [...attendees] : [];
     if (organizer) {
         // we remove the organizer from the list of participants in case it's duplicated there
-        const canonicalOrganizerEmail = canonizeEmailByGuess(organizer.emailAddress);
+        const canonicalOrganizerEmail = canonicalizeEmailByGuess(organizer.emailAddress);
         const organizerIndex = list.findIndex(
-            ({ emailAddress }) => canonizeEmailByGuess(emailAddress) === canonicalOrganizerEmail
+            ({ emailAddress }) => canonicalizeEmailByGuess(emailAddress) === canonicalOrganizerEmail
         );
         if (organizerIndex !== -1) {
             list.splice(organizerIndex, 1);

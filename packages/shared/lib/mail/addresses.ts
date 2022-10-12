@@ -1,4 +1,4 @@
-import { addPlusAlias, canonizeInternalEmail } from '../helpers/email';
+import { addPlusAlias, canonicalizeInternalEmail } from '../helpers/email';
 import { Address } from '../interfaces';
 
 /**
@@ -6,8 +6,8 @@ import { Address } from '../interfaces';
  * Remove + alias and transform to lower case
  */
 export const getByEmail = (addresses: Address[], email = '') => {
-    const value = canonizeInternalEmail(email);
-    return addresses.find(({ Email }) => canonizeInternalEmail(Email) === value);
+    const value = canonicalizeInternalEmail(email);
+    return addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === value);
 };
 
 /**

@@ -2,7 +2,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
 
@@ -192,7 +192,7 @@ export const resign = (
 
 export const resetVerification = (state: Draft<MessagesState>, { payload: emails }: PayloadAction<string[]>) => {
     Object.values(state).forEach((message) => {
-        const senderAddress = canonizeEmail(message?.data?.Sender.Address || '');
+        const senderAddress = canonicalizeEmail(message?.data?.Sender.Address || '');
         if (message && emails.includes(senderAddress)) {
             message.verification = undefined;
         }

@@ -8,7 +8,7 @@ import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { readSigned } from '@proton/shared/lib/contacts/decrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { Cache } from '@proton/shared/lib/helpers/cache';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
@@ -37,7 +37,7 @@ const processContactUpdate = async (
     }
     const { data: signedVcard } = await readSigned(signedCard, { publicKeys });
     const vCardContact = parseToVCard(signedVcard);
-    const emails = (vCardContact.email || []).map((property) => canonizeEmail(property.value));
+    const emails = (vCardContact.email || []).map((property) => canonicalizeEmail(property.value));
 
     // Looking in the EncryptionPreference cache
     const encryptionPreferenceCache = globalCache.get(CACHE_KEY) as Map<string, any>;

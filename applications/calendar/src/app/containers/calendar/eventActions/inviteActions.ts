@@ -11,7 +11,7 @@ import {
 } from '@proton/shared/lib/calendar/integration/invite';
 import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -38,17 +38,17 @@ const {
 
 const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     const normalizedNewEmails = (newVevent.attendee || []).map((attendee) =>
-        canonizeEmailByGuess(getAttendeeEmail(attendee))
+        canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );
     const normalizedOldEmails = (oldVevent.attendee || []).map((attendee) =>
-        canonizeEmailByGuess(getAttendeeEmail(attendee))
+        canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );
     const addedAttendees = newVevent.attendee?.filter((attendee) => {
-        const normalizedNewEmail = canonizeEmailByGuess(getAttendeeEmail(attendee));
+        const normalizedNewEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedOldEmails.includes(normalizedNewEmail);
     });
     const removedAttendees = oldVevent.attendee?.filter((attendee) => {
-        const normalizedOldEmail = canonizeEmailByGuess(getAttendeeEmail(attendee));
+        const normalizedOldEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedNewEmails.includes(normalizedOldEmail);
     });
     return { addedAttendees, removedAttendees };

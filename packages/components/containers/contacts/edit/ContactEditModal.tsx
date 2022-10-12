@@ -12,7 +12,7 @@ import {
 import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -74,7 +74,8 @@ const ContactEditModal = ({
     const getContactEmail = (email: string) =>
         contactEmails.find(
             (contactEmail) =>
-                contactEmail.ContactID === contactID && canonizeEmail(contactEmail.Email) === canonizeEmail(email)
+                contactEmail.ContactID === contactID &&
+                canonicalizeEmail(contactEmail.Email) === canonicalizeEmail(email)
         );
 
     useEffect(() => {

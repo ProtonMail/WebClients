@@ -31,7 +31,7 @@ export const useGetCanonicalEmailsMap = () => {
                         getCanonicalAddresses(batch)
                     );
                     if (Code !== API_CODES.GLOBAL_SUCCESS) {
-                        throw new Error('Canonize operation failed');
+                        throw new Error('Canonicalize operation failed');
                     }
                     return Responses.reduce<SimpleMap<string>>((acc, { Email, Response: { CanonicalEmail } }) => {
                         acc[Email] = CanonicalEmail;

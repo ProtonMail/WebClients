@@ -1,6 +1,6 @@
 import { KeyboardEvent, RefObject, forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -63,7 +63,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             return recipients.reduce<[Set<string>, Set<string>]>(
                 (acc, { Address, Group }) => {
                     if (Address) {
-                        acc[0].add(canonizeEmail(Address));
+                        acc[0].add(canonicalizeEmail(Address));
                     }
                     if (Group) {
                         acc[1].add(Group);
@@ -82,7 +82,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             return [
                 ...getContactsAutocompleteItems(
                     contactEmails,
-                    ({ Email }) => !recipientsByAddress.has(canonizeEmail(Email))
+                    ({ Email }) => !recipientsByAddress.has(canonicalizeEmail(Email))
                 ),
                 ...getContactGroupsAutocompleteItems(
                     contactGroups,

@@ -56,7 +56,7 @@ export const verifyPublicKeys = async (
     if (!canonicalEmail) {
         return {
             code: KT_STATUS.KT_FAILED,
-            error: `Failed to canonize email "${email}"`,
+            error: `Failed to canonicalize email "${email}"`,
         };
     }
     // Parse key lists
@@ -142,7 +142,7 @@ export const ktSelfAudit = async (
         }
     > = new Map();
 
-    // Canonize emails
+    // Canonicalize emails
     let canonicalEmailMap: SimpleMap<string> | undefined;
     try {
         canonicalEmailMap = await getCanonicalEmailMap(
@@ -163,7 +163,7 @@ export const ktSelfAudit = async (
         if (!canonicalEmailMap) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
-                error: 'Failed to get canonized emails',
+                error: 'Failed to get canonicalized emails',
             });
             continue;
         }
@@ -171,7 +171,7 @@ export const ktSelfAudit = async (
         if (!email) {
             addressesToVerifiedEpochs.set(address.ID, {
                 code: KT_STATUS.KT_FAILED,
-                error: `Failed to canonize email ${address.Email}`,
+                error: `Failed to canonicalize email ${address.Email}`,
             });
             continue;
         }

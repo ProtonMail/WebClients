@@ -7,7 +7,7 @@ import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
-import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
+import { canonicalizeEmail, canonicalizeEmailByGuess, canonicalizeInternalEmail } from '../../helpers/email';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
@@ -76,11 +76,11 @@ export const getParticipant = ({
     xYahooUserStatus?: string;
 }): Participant => {
     const emailAddress = getAttendeeEmail(participant);
-    const canonicalInternalEmail = canonizeInternalEmail(emailAddress);
-    const canonicalEmail = canonizeEmailByGuess(emailAddress);
-    const isSelf = selfAddress && canonizeInternalEmail(selfAddress.Email) === canonicalInternalEmail;
-    const isYou = emailTo ? canonizeInternalEmail(emailTo) === canonicalInternalEmail : isSelf;
-    const contact = contactEmails.find(({ Email }) => canonizeEmail(Email) === canonicalEmail);
+    const canonicalInternalEmail = canonicalizeInternalEmail(emailAddress);
+    const canonicalEmail = canonicalizeEmailByGuess(emailAddress);
+    const isSelf = selfAddress && canonicalizeInternalEmail(selfAddress.Email) === canonicalInternalEmail;
+    const isYou = emailTo ? canonicalizeInternalEmail(emailTo) === canonicalInternalEmail : isSelf;
+    const contact = contactEmails.find(({ Email }) => canonicalizeEmail(Email) === canonicalEmail);
     const participantName = participant?.parameters?.cn || emailAddress;
     const displayName = (isSelf && selfAddress?.DisplayName) || contact?.Name || participantName;
     const result: Participant = {
@@ -226,9 +226,9 @@ export const createInviteIcs = ({
 export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = []) => {
     // treat all emails as internal. This is not fully correct (TO BE IMPROVED),
     // but it's better to have some false positives rather than many false negatives
-    const canonicalEmail = canonizeInternalEmail(email);
+    const canonicalEmail = canonicalizeInternalEmail(email);
     const index = attendees.findIndex(
-        (attendee) => canonizeInternalEmail(getAttendeeEmail(attendee)) === canonicalEmail
+        (attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)) === canonicalEmail
     );
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };

@@ -4,7 +4,7 @@ import { Alert } from '@proton/components/components';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { updateInvitation, updateMember } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import {
     CalendarMember,
     CalendarMemberInvitation,
@@ -75,7 +75,7 @@ const CalendarMemberAndInvitationList = ({
                 ))}
                 {members.map(({ ID, Email, Permissions }) => {
                     const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                        canonizeInternalEmail(Email)
+                        canonicalizeInternalEmail(Email)
                     ] || {
                         Name: Email,
                         Email,
@@ -102,7 +102,7 @@ const CalendarMemberAndInvitationList = ({
                     }
 
                     const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                        canonizeInternalEmail(Email)
+                        canonicalizeInternalEmail(Email)
                     ] || {
                         Name: Email,
                         Email,
