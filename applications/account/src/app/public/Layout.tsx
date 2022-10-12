@@ -63,7 +63,7 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, hasBackButto
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center p1 mt0 on-mobile-m0 on-mobile-pb0">
-                            <LayoutLogos app={APP_NAME} size={70} className="p0-5 on-mobile-p0" />
+                            <LayoutLogos size={70} className="p0-5 on-mobile-p0" />
                         </div>
                     )}
                 </div>
