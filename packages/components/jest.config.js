@@ -2,7 +2,12 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+    collectCoverageFrom: [
+        'components/**/*.{js,jsx,ts,tsx}',
+        'containers/**/*.{js,jsx,ts,tsx}',
+        'helpers/**/*.{js,jsx,ts,tsx}',
+        'hooks/**/*.{js,jsx,ts,tsx}',
+    ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto-v7|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart)/)',

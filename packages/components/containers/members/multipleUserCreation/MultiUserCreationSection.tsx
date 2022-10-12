@@ -6,7 +6,7 @@ import { Button, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
-import { downloadSampleCSV } from './lib';
+import { downloadSampleCSV } from './csv';
 import { UserTemplate } from './types';
 
 const MultiUserCreationSection = () => {
