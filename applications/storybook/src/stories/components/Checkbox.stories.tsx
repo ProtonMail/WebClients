@@ -29,6 +29,13 @@ export const Basic = () => {
             <div className="my1">
                 <Checkbox id="upsetti">Upsetti</Checkbox>
             </div>
+            <div className="my1">
+                <Checkbox id="overflow">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
+                    obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
+                    blanditiis quos?
+                </Checkbox>
+            </div>
         </div>
     );
 };
