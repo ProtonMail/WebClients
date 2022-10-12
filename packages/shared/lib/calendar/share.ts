@@ -1,8 +1,19 @@
+import { c } from 'ttag';
+
 import { serverTime } from '@proton/crypto';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/calendars';
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { SECOND } from '@proton/shared/lib/constants';
-import { Api } from '@proton/shared/lib/interfaces';
-import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
+import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import {
+    CalendarMemberInvitation,
+    MEMBER_INVITATION_STATUS,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { decryptPassphrase, signPassphrase } from '@proton/shared/lib/keys/calendarKeys';
@@ -64,4 +75,20 @@ export const rejectCalendarShareInvitation = ({
     api: Api;
 }) => {
     return api(rejectInvitation(calendarID, addressID));
+};
+
+export const getCalendarCreatedByText = (calendar: VisualCalendar, contactEmailsMap: SimpleMap<ContactEmail>) => {
+    // we only need to display the owner for shared calendars
+    if (getIsSubscribedCalendar(calendar) || getIsOwnedCalendar(calendar)) {
+        return;
+    }
+    const { Name: contactName, Email: contactEmail } = contactEmailsMap[canonicalizeEmail(calendar.Owner.Email)] || {};
+    const email = contactEmail || calendar.Owner.Email;
+    const { nameEmail: ownerName } = getContactDisplayNameEmail({
+        name: contactName,
+        email,
+        emailDelimiters: ['(', ')'],
+    });
+
+    return c('Shared calendar; Info about calendar owner').t`Created by ${ownerName}`;
 };

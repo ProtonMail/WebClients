@@ -2,8 +2,10 @@ import { ChangeEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/share';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -12,7 +14,6 @@ import { FeatureCode } from '../..';
 import {
     Button,
     ColorPicker,
-    Field,
     Form,
     InputFieldTwo,
     Loader,
@@ -23,7 +24,6 @@ import {
     Option,
     SelectTwo,
     TextArea,
-    Toggle,
     TooltipExclusive,
 } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
@@ -41,10 +41,11 @@ const URL_MAX_DISPLAY_LENGTH = 100;
 
 export enum CALENDAR_MODAL_TYPE {
     COMPLETE,
+    SHARED,
     VISUAL,
 }
 
-const { COMPLETE, VISUAL } = CALENDAR_MODAL_TYPE;
+const { COMPLETE, VISUAL, SHARED } = CALENDAR_MODAL_TYPE;
 
 export interface CalendarModalProps {
     calendar?: VisualCalendar | SubscribedCalendar;
@@ -70,6 +71,7 @@ export const CalendarModal = ({
     type = COMPLETE,
 }: CalendarModalProps) => {
     const [loadingAction, withLoadingAction] = useLoading();
+    const { contactEmailsMap } = useContactEmailsCache() || {};
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
@@ -137,10 +139,16 @@ export const CalendarModal = ({
         }
 
         if (type === VISUAL) {
-            return c('Title').t`Calendar information`;
+            return c('Title; edit calendar information modal').t`Edit information`;
         }
 
         return initialCalendar ? c('Title').t`Edit calendar` : c('Title').t`Create calendar`;
+    };
+    const getSubline = () => {
+        if (type !== CALENDAR_MODAL_TYPE.SHARED || !calendar || !contactEmailsMap) {
+            return;
+        }
+        return getCalendarCreatedByText(calendar, contactEmailsMap);
     };
     const getSize = (type: CALENDAR_MODAL_TYPE) => {
         if (type === VISUAL) {
@@ -203,22 +211,6 @@ export const CalendarModal = ({
             color={model.color}
             onChange={(color: string) => setModel({ ...model, color })}
         />
-    );
-
-    const displayRow = (
-        <div className="flex flex-nowrap flex-align-items-center">
-            {getFakeLabel(c('Label').t`Display`)}
-            <Field className="ml1">
-                <Toggle
-                    id="calendar-display-toggle"
-                    className="p0"
-                    checked={model.display}
-                    onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                        setModel({ ...model, display: target.checked })
-                    }
-                />
-            </Field>
-        </div>
     );
 
     const descriptionRow = (
@@ -337,12 +329,22 @@ export const CalendarModal = ({
             );
         }
 
+        if (type === SHARED) {
+            return (
+                <>
+                    {calendarNameRow}
+                    {colorRow}
+                    {addressRow}
+                    {descriptionRow}
+                </>
+            );
+        }
+
         return (
             <>
                 {calendarNameRow}
                 {colorRow}
                 {addressRow}
-                {displayRow}
                 {descriptionRow}
                 {defaultEventDurationRow}
                 {defaultNotificationsRow}
@@ -372,7 +374,7 @@ export const CalendarModal = ({
                     <Loader />
                 ) : (
                     <>
-                        <ModalTwoHeader title={getTitle(type)} />
+                        <ModalTwoHeader title={getTitle(type)} subline={getSubline()} />
                         <ModalTwoContent className="calendar-modal-content">
                             {hasError ? <GenericError /> : getContentRows(type)}
                         </ModalTwoContent>

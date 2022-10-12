@@ -26,7 +26,7 @@ import {
 } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
+import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareModal/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
@@ -110,6 +110,7 @@ const CalendarSidebarListItems = ({
 
     const [importModalCalendar, setImportModalCalendar] = useState<Nullable<VisualCalendar>>(null);
     const [calendarModalCalendar, setCalendarModalCalendar] = useState<Nullable<VisualCalendar>>(null);
+    const [calendarModalType, setCalendarModalType] = useState(CALENDAR_MODAL_TYPE.COMPLETE);
     const [isSharePrivatelyModalOpen, setIsSharePrivatelyModalOpen] = useState(false);
 
     const [shareModalCalendar, setShareModalCalendar] = useState<Nullable<VisualCalendar>>(null);
@@ -118,7 +119,6 @@ const CalendarSidebarListItems = ({
     const [members, setMembers] = useState<CalendarMember[]>([]);
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
-
     const [
         { open: isImportModalOpen, onClose: onCloseImportModal, onExit: onExitImportModal, ...importModalProps },
         setIsImportModalOpen,
@@ -134,10 +134,9 @@ const CalendarSidebarListItems = ({
         return null;
     }
 
-    const isPersonalCalendar = getIsPersonalCalendar(calendars[0]);
-
     const result = calendars.map((calendar, i) => {
         const { ID, Name, Display, Color } = calendar;
+        const isPersonalCalendar = getIsPersonalCalendar(calendar);
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
         const isOwnedCalendar = getIsOwnedCalendar(calendar);
 
@@ -210,53 +209,55 @@ const CalendarSidebarListItems = ({
                                     content={<Icon name="three-dots-horizontal" />}
                                 >
                                     <DropdownMenu>
-                                        {getIsOwnedCalendar(calendar) && (
-                                            <>
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() => {
+                                                setCalendarModalCalendar(calendar);
+                                                setCalendarModalType(
+                                                    isOwnedCalendar
+                                                        ? CALENDAR_MODAL_TYPE.COMPLETE
+                                                        : CALENDAR_MODAL_TYPE.SHARED
+                                                );
+                                                setIsCalendarModalOpen(true);
+                                            }}
+                                        >
+                                            {c('Action').t`Edit`}
+                                        </DropdownMenuButton>
+                                        {isPersonalCalendar &&
+                                            isOwnedCalendar &&
+                                            user.hasPaidMail &&
+                                            (isCalendarSharingEnabled ? (
                                                 <DropdownMenuButton
                                                     className="text-left"
                                                     onClick={() => {
-                                                        setCalendarModalCalendar(calendar);
-                                                        setIsCalendarModalOpen(true);
+                                                        setShareModalCalendar(calendar);
+                                                        setIsShareModalOpen(true);
                                                     }}
                                                 >
-                                                    {c('Action').t`Edit`}
+                                                    {c('Action').t`Share`}
                                                 </DropdownMenuButton>
-                                                {isPersonalCalendar &&
-                                                    user.hasPaidMail &&
-                                                    (isCalendarSharingEnabled ? (
-                                                        <DropdownMenuButton
-                                                            className="text-left"
-                                                            onClick={() => {
-                                                                setShareModalCalendar(calendar);
-                                                                setIsShareModalOpen(true);
-                                                            }}
-                                                        >
-                                                            {c('Action').t`Share`}
-                                                        </DropdownMenuButton>
-                                                    ) : (
-                                                        <DropdownMenuLink
-                                                            as={SettingsLink}
-                                                            path={`/calendars/${calendar.ID}#${CALENDAR_SETTINGS_SUBSECTION_ID.SHARE}`}
-                                                        >
-                                                            {c('Action').t`Share`}
-                                                        </DropdownMenuLink>
-                                                    ))}
-                                                {isPersonalCalendar && !isCalendarDisabled && (
-                                                    <DropdownMenuButton
-                                                        className="text-left"
-                                                        onClick={() => {
-                                                            if (user.hasNonDelinquentScope) {
-                                                                setImportModalCalendar(calendar);
-                                                                setIsImportModalOpen(true);
-                                                            }
-                                                        }}
-                                                    >
-                                                        {c('Action').t`Import events`}
-                                                    </DropdownMenuButton>
-                                                )}
-                                                <hr className="mt0-5 mb0-5" />
-                                            </>
+                                            ) : (
+                                                <DropdownMenuLink
+                                                    as={SettingsLink}
+                                                    path={`/calendars/${calendar.ID}#${CALENDAR_SETTINGS_SUBSECTION_ID.SHARE}`}
+                                                >
+                                                    {c('Action').t`Share`}
+                                                </DropdownMenuLink>
+                                            ))}
+                                        {isPersonalCalendar && isOwnedCalendar && !isCalendarDisabled && (
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={() => {
+                                                    if (user.hasNonDelinquentScope) {
+                                                        setImportModalCalendar(calendar);
+                                                        setIsImportModalOpen(true);
+                                                    }
+                                                }}
+                                            >
+                                                {c('Action').t`Import events`}
+                                            </DropdownMenuButton>
                                         )}
+                                        <hr className="mt0-5 mb0-5" />
                                         <DropdownMenuLink
                                             as={SettingsLink}
                                             app={APPS.PROTONCALENDAR}
@@ -454,7 +455,6 @@ To share this calendar with more Proton accounts, remove some members.`,
                     loadingLinks={loadingLinks}
                 />
             )}
-
             {!!calendarModalCalendar && (
                 <CalendarModal
                     {...calendarModalProps}
@@ -463,9 +463,9 @@ To share this calendar with more Proton accounts, remove some members.`,
                         onExitCalendarModal?.();
                     }}
                     calendar={calendarModalCalendar}
+                    type={calendarModalType}
                 />
             )}
-
             {!!importModalCalendar && (
                 <ImportModal
                     {...importModalProps}
