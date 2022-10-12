@@ -2810,7 +2810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mattiasbuelens/web-streams-adapter@npm:0.1.0, @mattiasbuelens/web-streams-adapter@npm:~0.1.0":
+"@mattiasbuelens/web-streams-adapter@npm:0.1.0":
   version: 0.1.0
   resolution: "@mattiasbuelens/web-streams-adapter@npm:0.1.0"
   checksum: c5aeb378043a47aede08fa3623e385ac64b67e2583016c57b5fca8e71f1776c0d1cf33a149d683d6bf2bef6d401f4baf71c1c4be58d2059d769a246092654583
@@ -3715,10 +3715,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/asmcrypto.js@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "@openpgp/asmcrypto.js@npm:2.3.2"
-  checksum: 0fb69cb4110acb693b3b9208c5073c188c6796f60f85091f6b2817460648471956f5f3183247ca79f681246cbfdceb5db882032f40e996e852d5920fc00b60d4
+"@openpgp/asmcrypto.js@npm:^2.3.3-0":
+  version: 2.3.3-0
+  resolution: "@openpgp/asmcrypto.js@npm:2.3.3-0"
+  checksum: 6ac31f931ac8911a8cca0ee3426a7909ad5b23badafe03a19d2716192adc855804b4d272aec987e3f27e13fad73df45adbf44d1f559d720d4500f90b5841b1e5
   languageName: node
   linkType: hard
 
@@ -3729,23 +3729,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/web-stream-tools@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@openpgp/web-stream-tools@npm:0.0.10"
-  dependencies:
-    "@mattiasbuelens/web-streams-adapter": ~0.1.0
-    web-streams-polyfill: ~3.0.3
-  checksum: 3cd9f8255b9ff5d2d5b9b05bdea16ff780809e49d9889977884dd5fc7bf415531b682b4080248667189ac30988e4da272520f064cc66eaf2bfd2fd7f6749201a
-  languageName: node
-  linkType: hard
-
-"@openpgp/web-stream-tools@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@openpgp/web-stream-tools@npm:0.0.11"
-  dependencies:
-    "@mattiasbuelens/web-streams-adapter": ~0.1.0
-    web-streams-polyfill: ~3.0.3
-  checksum: db749921dd4d8b7371fb0432f54be07f8c1e8b2d8b22e5abe87e7751194900f1d94135ee3f61d0be239f760928649902cf1d527cd614a94d7943ea83a8b1f4b7
+"@openpgp/web-stream-tools@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@openpgp/web-stream-tools@npm:0.0.12"
+  checksum: cff6f05f0a740eb84f10b293faccc47b935daf8557edde40b471eff3e429d1f32eee8c6c3339311a7dfacca9c8434a1bfb80c320cba14c9804d4e2dcdec2d6ad
   languageName: node
   linkType: hard
 
@@ -3977,7 +3964,7 @@ __metadata:
     karma-webpack: ^5.0.0
     mocha: ^10.0.0
     playwright: ^1.26.1
-    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.2.1"
+    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.2.2"
     prettier: ^2.7.1
     ts-loader: ^9.4.1
     typescript: ^4.8.4
@@ -24184,15 +24171,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto-v7@npm:@protontech/pmcrypto@^7.2.1":
-  version: 7.2.1
-  resolution: "@protontech/pmcrypto@npm:7.2.1"
+"pmcrypto-v7@npm:@protontech/pmcrypto@^7.2.2":
+  version: 7.2.2
+  resolution: "@protontech/pmcrypto@npm:7.2.2"
   dependencies:
-    "@openpgp/asmcrypto.js": ^2.3.2
+    "@openpgp/asmcrypto.js": ^2.3.3-0
     "@openpgp/tweetnacl": ^1.0.3
-    "@openpgp/web-stream-tools": ^0.0.10
+    "@openpgp/web-stream-tools": ^0.0.12
     openpgp: "npm:@protontech/openpgp@~5.4.0"
-  checksum: f554f5c8cd1f8e2e5580dc046d1175de8ecf39db1be34c73d98d019c711d3be92ec61b638b931406772e15133ce8d6387dcd0e011dae907672ebe9365514274b
+  checksum: b2c626cc1c031133e76e7fda8a03e1f1c5d81500ee7f5de0426fd0c72bb9d12c4cb5b16a4cc8a1db08396bbbfd784faaf6d7822aa80e10c8ce2cb7830c193847
   languageName: node
   linkType: hard
 
@@ -25226,6 +25213,7 @@ fsevents@^1.2.7:
   resolution: "proton-drive@workspace:applications/drive"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": 0.1.0
+    "@openpgp/web-stream-tools": ^0.0.12
     "@proton/components": "workspace:packages/components"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
@@ -27270,7 +27258,6 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@openpgp/web-stream-tools": ^0.0.11
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     "@trivago/prettier-plugin-sort-imports": ^3.3.0
@@ -31318,13 +31305,6 @@ fsevents@^1.2.7:
   version: 3.2.1
   resolution: "web-streams-polyfill@npm:3.2.1"
   checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
-  languageName: node
-  linkType: hard
-
-"web-streams-polyfill@npm:~3.0.3":
-  version: 3.0.3
-  resolution: "web-streams-polyfill@npm:3.0.3"
-  checksum: 14299a9cbbca1bf0ffc16c7844990fc85eb0921ba7ff84efbad964738f0ff8e6d2bc3b2617a8728415843be7f40236992c136ff2c89cde3a153636e824b3e712
   languageName: node
   linkType: hard
 
