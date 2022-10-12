@@ -5,9 +5,13 @@ import { c } from 'ttag';
 import { Alert, ButtonLike, Icon, Tooltip, useModalState } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { SettingsSection } from '@proton/components/containers';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { classnames } from '@proton/components/helpers';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -21,10 +25,29 @@ interface Props {
     isEditDisabled: boolean;
 }
 
-const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEditDisabled }: Props) => {
+const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, isEditDisabled }: Props) => {
+    const { contactEmailsMap } = useContactEmailsCache();
+
     const { Name, Description, Color, Email } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
+
+    const ownerText = (() => {
+        // we only need to display the owner for shared calendars
+        if (isSubscribed || getIsOwnedCalendar(calendar)) {
+            return '';
+        }
+        const { Name: contactName, Email: contactEmail } =
+            contactEmailsMap[canonicalizeEmail(calendar.Owner.Email)] || {};
+        const email = contactEmail || calendar.Owner.Email;
+        const { nameEmail: ownerName } = getContactDisplayNameEmail({
+            name: contactName,
+            email,
+            emailDelimiters: ['(', ')'],
+        });
+
+        return c('Shared calendar; Info about calendar owner').t`Created by ${ownerName}`;
+    })();
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
 
@@ -49,6 +72,11 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
                         {Name}
                     </h1>
                     {Description && <div className="mb0-25 text-break">{Description}</div>}
+                    {ownerText && (
+                        <div className="text-break mt0-25" title={ownerText}>
+                            {ownerText}
+                        </div>
+                    )}
                     <div className="text-ellipsis color-weak" title={Email}>
                         {Email}
                     </div>
@@ -98,4 +126,4 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
     );
 };
 
-export default CalendarSettingsHeaderSection;
+export default CalendarSubpageHeaderSection;
