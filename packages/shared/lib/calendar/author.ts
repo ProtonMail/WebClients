@@ -2,7 +2,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import { canonizeInternalEmail } from '../helpers/email';
+import { canonicalizeInternalEmail } from '../helpers/email';
 import { Address } from '../interfaces';
 import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
@@ -16,7 +16,7 @@ const { SIGNED, ENCRYPTED_AND_SIGNED } = CALENDAR_CARD_TYPE;
 
 export const withNormalizedAuthor = (x: CalendarEventData) => ({
     ...x,
-    Author: canonizeInternalEmail(x.Author),
+    Author: canonicalizeInternalEmail(x.Author),
 });
 export const withNormalizedAuthors = (x: CalendarEventData[]) => {
     if (!x) {
@@ -46,13 +46,13 @@ export const getAuthorPublicKeysMap = async ({
                     // no need to fetch keys in this case
                     return;
                 }
-                return canonizeInternalEmail(Author);
+                return canonicalizeInternalEmail(Author);
             })
             .filter(isTruthy)
     );
     const normalizedAddresses = addresses.map((address) => ({
         ...address,
-        normalizedEmailAddress: canonizeInternalEmail(address.Email),
+        normalizedEmailAddress: canonicalizeInternalEmail(address.Email),
     }));
     const promises = authors.map(async (author) => {
         const ownAddress = normalizedAddresses.find(({ normalizedEmailAddress }) => normalizedEmailAddress === author);

@@ -10,11 +10,11 @@ export const getCanonicalEmailMap = async (emails: string[] = [], api: Api) => {
         const encodedEmails = emails.map((email) => encodeURIComponent(email));
         const { Responses, Code } = await api<GetCanonicalAddressesApiResponse>(getCanonicalAddresses(encodedEmails));
         if (Code !== API_CODES.GLOBAL_SUCCESS) {
-            throw new Error('Canonize operation failed');
+            throw new Error('Canonicalize operation failed');
         }
         Responses.forEach(({ Email, Response: { Code, CanonicalEmail } }) => {
             if (Code !== API_CODES.SINGLE_SUCCESS) {
-                throw new Error('Canonize operation failed');
+                throw new Error('Canonicalize operation failed');
             }
             map[Email] = CanonicalEmail;
         });

@@ -5,7 +5,7 @@ import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -110,9 +110,9 @@ const replyAll = (
     const ToList = data.ReplyTos;
 
     // Remove user address in CCList and ToList
-    const userAddresses = addresses.map(({ Email = '' }) => canonizeInternalEmail(Email));
+    const userAddresses = addresses.map(({ Email = '' }) => canonicalizeInternalEmail(Email));
     const CCListAll: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
-    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(canonizeInternalEmail(Address)));
+    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(canonicalizeInternalEmail(Address)));
 
     return { data: { Subject, ToList, CCList, Attachments }, messageImages };
 };
