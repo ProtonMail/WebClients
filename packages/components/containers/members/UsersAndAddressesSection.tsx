@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { APP_NAMES, DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Member } from '@proton/shared/lib/interfaces';
@@ -37,6 +37,7 @@ import { AddressModal } from '../addresses';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import DeleteMemberModal from './DeleteMemberModal';
 import EditMemberModal from './EditMemberModal';
+import LoginMemberModal, { validateMemberLogin } from './LoginMemberModal';
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 import MemberFeatures from './MemberFeatures';
@@ -46,7 +47,7 @@ import validateAddUser from './validateAddUser';
 
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
-const UsersAndAddressesSection = () => {
+const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [domains, loadingDomains] = useDomains();
@@ -61,6 +62,7 @@ const UsersAndAddressesSection = () => {
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const [memberModalProps, setMemberModalOpen, renderMemberModal] = useModalState();
     const [editMemberModal, setEditMemberModal, renderEditMemberModal] = useModalState();
+    const [loginMemberModal, setLoginMemberModal, renderLoginMemberModal] = useModalState();
     const [deleteMemberModal, setDeleteMemberModal, renderDeleteMemberModal] = useModalState();
 
     const verifiedDomains = useMemo(
@@ -132,6 +134,15 @@ const UsersAndAddressesSection = () => {
         setEditMemberModal(true);
     };
 
+    const handleLoginUser = (member: Member) => {
+        const error = validateMemberLogin(organization, organizationKey);
+        if (error) {
+            return createNotification({ type: 'error', text: error });
+        }
+        setTmpMember(member);
+        setLoginMemberModal(true);
+    };
+
     const headerCells = [
         { node: c('Title header for members table').t`Name` },
         {
@@ -189,6 +200,9 @@ const UsersAndAddressesSection = () => {
                     <DeleteMemberModal member={tmpMember} onDelete={handleDeleteUserConfirm} {...deleteMemberModal} />
                 )}
                 {renderEditMemberModal && tmpMember && <EditMemberModal member={tmpMember} {...editMemberModal} />}
+                {renderLoginMemberModal && tmpMember && (
+                    <LoginMemberModal app={app} member={tmpMember} {...loginMemberModal} />
+                )}
                 {renderMemberModal && organizationKey && domains?.length && (
                     <MemberModal
                         organization={organization}
@@ -259,6 +273,7 @@ const UsersAndAddressesSection = () => {
                                             onEdit={handleEditUser}
                                             onDelete={handleDeleteUser}
                                             onRevoke={handleRevokeUserSessions}
+                                            onLogin={handleLoginUser}
                                             member={member}
                                             addresses={memberAddresses}
                                             organization={organization}
@@ -324,6 +339,7 @@ const UsersAndAddressesSection = () => {
                                     onEdit={handleEditUser}
                                     onDelete={handleDeleteUser}
                                     onRevoke={handleRevokeUserSessions}
+                                    onLogin={handleLoginUser}
                                     member={member}
                                     addresses={memberAddresses}
                                     organization={organization}
