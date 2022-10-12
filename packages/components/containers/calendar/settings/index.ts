@@ -5,8 +5,8 @@ export { default as SubscribedCalendarsSection } from './SubscribedCalendarsSect
 export { default as CalendarTimeSection } from './CalendarTimeSection';
 export { default as CalendarSecondaryTimezoneSection } from './SecondaryTimezoneSection';
 export { default as CalendarLayoutSection } from './CalendarLayoutSection';
-export { default as CalendarSettingsSection } from './SingleCalendarSettingsSection';
-export { default as CalendarSettingsHeaderSection } from './CalendarSettingsHeaderSection';
+export { default as CalendarSubpage } from './CalendarSubpage';
+export { default as CalendarSettingsHeaderSection } from './CalendarSubpageHeaderSection';
 export { default as CalendarDeleteSection } from './CalendarDeleteSection';
 export { default as CalendarEventSettingsSection } from './CalendarEventDefaultsSection';
 export { default as SharedCalendarsSection } from './SharedCalendarsSection';
