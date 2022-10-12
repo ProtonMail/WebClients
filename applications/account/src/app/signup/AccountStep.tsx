@@ -113,7 +113,7 @@ const AccountStep = ({
     const [recoveryEmail, setRecoveryEmail] = useState(defaultRecoveryEmail || '');
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
     const defaultSignupType = maybeDefaultSignupType || SignupType.Username;
-    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType || defaultSignupType);
+    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType);
     const [loginModal, setLoginModal, renderLoginModal] = useModalState();
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
