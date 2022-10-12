@@ -8,7 +8,6 @@ import {
     Checkbox,
     Icon,
     InputTwo,
-    Label,
     Marks,
     ModalProps,
     ModalTwo,
@@ -251,15 +250,14 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-justify-space-between align-items-center create-user-accounts-additional-content mt1">
-                        <Label htmlFor="selectAll">
-                            <Checkbox
-                                id="selectAll"
-                                checked={isSelectAllChecked}
-                                onChange={handleSelectAllFilteredOptionsClick}
-                            />
+                    <div className="flex flex-justify-space-between flex-align-items-center create-user-accounts-additional-content mt1">
+                        <Checkbox
+                            id="selectAll"
+                            checked={isSelectAllChecked}
+                            onChange={handleSelectAllFilteredOptionsClick}
+                        >
                             {c('Checkbox label').t`All`}
-                        </Label>
+                        </Checkbox>
                         <InputTwo
                             className="max-w270p"
                             placeholder={c('Placeholder').t`Search`}
@@ -287,19 +285,18 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 return (
                                     <tr key={displayName.text} onClick={() => handleCheckboxChange(id)}>
                                         <TableCell key="displayName" className="align-top">
-                                            <div className="flex flex-row flex-align-items-start">
-                                                <Checkbox
-                                                    id={checkboxId}
-                                                    checked={isItemSelected}
-                                                    onChange={(e) => {
-                                                        handleCheckboxChange(id);
-                                                        e.stopPropagation();
-                                                    }}
-                                                />
-                                                <div className="flex-item-fluid" title={displayName.text}>
+                                            <Checkbox
+                                                id={checkboxId}
+                                                checked={isItemSelected}
+                                                onChange={(e) => {
+                                                    handleCheckboxChange(id);
+                                                    e.stopPropagation();
+                                                }}
+                                            >
+                                                <div title={displayName.text}>
                                                     <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
                                                 </div>
-                                            </div>
+                                            </Checkbox>
                                         </TableCell>
                                         <TableCell key="emailAddresses" className="align-top">
                                             <ul className="unstyled m0">
