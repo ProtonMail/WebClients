@@ -209,6 +209,7 @@ const MainContainer = () => {
                 </Route>
                 <Route path={anyOrganizationAppRoute}>
                     <OrganizationSettingsRouter
+                        app={app}
                         path={prefixPath}
                         organizationAppRoutes={routes.organization}
                         isBulkUserUploadEnabled={isBulkUserUploadEnabled}

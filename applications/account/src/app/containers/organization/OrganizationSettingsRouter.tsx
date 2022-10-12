@@ -12,15 +12,18 @@ import {
     useOrganization,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { getOrganizationAppRoutes } from './routes';
 
 const OrganizationSettingsRouter = ({
+    app,
     redirect,
     path,
     organizationAppRoutes,
     isBulkUserUploadEnabled,
 }: {
+    app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
@@ -73,7 +76,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(users) && (
                 <Route path={getSectionPath(path, users)}>
                     <PrivateMainSettingsArea config={users}>
-                        <UsersAndAddressesSection />
+                        <UsersAndAddressesSection app={app} />
                         {isBulkUserUploadEnabled && <MultiUserCreationSection />}
                     </PrivateMainSettingsArea>
                 </Route>
