@@ -25,7 +25,7 @@ import {
 } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -316,10 +316,10 @@ const Composer = (
                 shouldReloadSendInfo = true;
             }
 
-            return Contact?.ContactEmails.map(({ Email }) => canonizeEmail(Email)) || [];
+            return Contact?.ContactEmails.map(({ Email }) => canonicalizeEmail(Email)) || [];
         }).flat();
 
-        const recipientsAddresses = getRecipients(modelMessage.data).map(({ Address }) => canonizeEmail(Address));
+        const recipientsAddresses = getRecipients(modelMessage.data).map(({ Address }) => canonicalizeEmail(Address));
 
         const matches = updatedAddresses.find((address) => recipientsAddresses.includes(address));
 

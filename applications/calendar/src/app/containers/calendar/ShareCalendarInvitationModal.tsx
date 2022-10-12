@@ -14,7 +14,7 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_TYPE_EXTENDED,
@@ -39,8 +39,10 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     const [loadingReject, withLoadingReject] = useLoading();
     const { accept, reject } = useCalendarShareInvitationActions();
 
-    const canonizedInvitedEmail = canonizeInternalEmail(invitation.Email);
-    const invitedAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizedInvitedEmail);
+    const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitation.Email);
+    const invitedAddress = addresses.find(
+        ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
+    );
 
     if (!invitedAddress) {
         createNotification({

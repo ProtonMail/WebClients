@@ -5,7 +5,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
 import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
-import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
+import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
 import {
@@ -251,10 +251,10 @@ export const getEquivalentAttendees = (attendees?: VcalAttendeeProperty[]) => {
             ? equivalentAttendees.filter((group) => group.length > 1)
             : undefined;
     }
-    // not all attendees have token, so we're gonna canonize emails and compare based on that
+    // not all attendees have token, so we're gonna canonicalize emails and compare based on that
     const attendeesWithCanonicalEmail = attendees.map((attendee) => {
         const email = getAttendeeEmail(attendee);
-        const canonicalEmail = canonizeEmailByGuess(email);
+        const canonicalEmail = canonicalizeEmailByGuess(email);
         return { email, canonicalEmail };
     });
     const equivalentAttendees = groupWith(

@@ -4,7 +4,7 @@ import { CryptoProxy, PublicKeyReference, serverTime } from '@proton/crypto';
 
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
-import { canonizeEmailByGuess, canonizeInternalEmail, extractEmailFromUserID } from '../helpers/email';
+import { canonicalizeEmailByGuess, canonicalizeInternalEmail, extractEmailFromUserID } from '../helpers/email';
 import { toBitMap } from '../helpers/object';
 import { ApiKeysConfig, ContactPublicKeyModel, ProcessedApiKey, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 import { getKeyHasFlagsToEncrypt } from './keyFlags';
@@ -31,7 +31,9 @@ export const getEmailMismatchWarning = (
     emailAddress: string,
     isInternal: boolean
 ): string[] => {
-    const canonicalEmail = isInternal ? canonizeInternalEmail(emailAddress) : canonizeEmailByGuess(emailAddress);
+    const canonicalEmail = isInternal
+        ? canonicalizeInternalEmail(emailAddress)
+        : canonicalizeEmailByGuess(emailAddress);
     const userIDs = publicKey.getUserIDs();
     const keyEmails = userIDs.reduce<string[]>((acc, userID) => {
         const email = extractEmailFromUserID(userID) || userID;
@@ -40,7 +42,7 @@ export const getEmailMismatchWarning = (
         return acc;
     }, []);
     const canonicalKeyEmails = keyEmails.map((email) =>
-        isInternal ? canonizeInternalEmail(email) : canonizeEmailByGuess(email)
+        isInternal ? canonicalizeInternalEmail(email) : canonicalizeEmailByGuess(email)
     );
     if (!canonicalKeyEmails.includes(canonicalEmail)) {
         const keyUserIds = keyEmails.join(', ');

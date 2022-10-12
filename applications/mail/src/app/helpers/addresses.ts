@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { isBlockedIncomingDefaultAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { Address, IncomingDefault, Key } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -20,7 +20,7 @@ import { isMessage, isConversation as testIsConversation } from './elements';
  * Return the matching ContactEmail in the map taking care of email normalization
  */
 export const getContactEmail = (contactsMap: ContactsMap, email: string | undefined) => {
-    const normalizedEmail = canonizeEmail(email || '');
+    const normalizedEmail = canonicalizeEmail(email || '');
     return contactsMap[normalizedEmail];
 };
 
@@ -35,7 +35,7 @@ export const isDirtyAddress = ({ Keys, Status }: Address) => !Keys.length || Sta
 export const isOwnAddress = (address?: Address, keys: Key[] = []) => !!address && !isFallbackAddress(address, keys);
 
 export const isSelfAddress = (email: string | undefined, addresses: Address[]) =>
-    !!addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(email || ''));
+    !!addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(email || ''));
 
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
@@ -200,7 +200,7 @@ export const getNumParticipants = (element: Element) => {
         recipients = [...Recipients, ...Senders];
     }
 
-    return unique(recipients.map(({ Address }: Recipient) => canonizeInternalEmail(Address))).length;
+    return unique(recipients.map(({ Address }: Recipient) => canonicalizeInternalEmail(Address))).length;
 };
 
 export const getSendersToBlock = (

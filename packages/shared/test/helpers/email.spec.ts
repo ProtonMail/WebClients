@@ -1,8 +1,8 @@
 import {
-    CANONIZE_SCHEME,
-    canonizeEmail,
-    canonizeEmailByGuess,
-    canonizeInternalEmail,
+    CANONICALIZE_SCHEME,
+    canonicalizeEmail,
+    canonicalizeEmailByGuess,
+    canonicalizeInternalEmail,
     getEmailTo,
     parseMailtoURL,
     validateDomain,
@@ -101,8 +101,8 @@ describe('email', () => {
         });
     });
 
-    describe('canonize', () => {
-        it('should canonize internal emails properly', () => {
+    describe('canonicalize', () => {
+        it('should canonicalize internal emails properly', () => {
             const emails = [
                 'testing@pm.me',
                 'TeS.--TinG@PM.ME',
@@ -112,7 +112,7 @@ describe('email', () => {
                 'no-DOM.a.in+one',
                 'NO_DOMAIN+two@',
             ];
-            const canonized = [
+            const canonicalized = [
                 'testing@pm.me',
                 'testing@pm.me',
                 'abc@protonmail.com',
@@ -121,10 +121,10 @@ describe('email', () => {
                 'nodomain',
                 'nodomain@',
             ];
-            expect(emails.map((email) => canonizeInternalEmail(email))).toEqual(canonized);
+            expect(emails.map((email) => canonicalizeInternalEmail(email))).toEqual(canonicalized);
         });
 
-        it('should canonize with the gmail scheme', () => {
+        it('should canonicalize with the gmail scheme', () => {
             const emails = [
                 'testing@pm.me',
                 'TeS.--TinG@PM.ME',
@@ -134,7 +134,7 @@ describe('email', () => {
                 'no-DOM.a.in+one',
                 'NO_DOMAIN+two@',
             ];
-            const canonized = [
+            const canonicalized = [
                 'testing@pm.me',
                 'tes--ting@pm.me',
                 'abc@protonmail.com',
@@ -143,10 +143,10 @@ describe('email', () => {
                 'no-domain',
                 'no_domain@',
             ];
-            expect(emails.map((email) => canonizeEmail(email, CANONIZE_SCHEME.GMAIL))).toEqual(canonized);
+            expect(emails.map((email) => canonicalizeEmail(email, CANONICALIZE_SCHEME.GMAIL))).toEqual(canonicalized);
         });
 
-        it('should canonize with the plus scheme', () => {
+        it('should canonicalize with the plus scheme', () => {
             const emails = [
                 'testing@pm.me',
                 'TeS.--TinG@PM.ME',
@@ -156,7 +156,7 @@ describe('email', () => {
                 'no-DOM.a.in+one',
                 'NO_DOMAIN+two@',
             ];
-            const canonized = [
+            const canonicalized = [
                 'testing@pm.me',
                 'tes.--ting@pm.me',
                 'abc@protonmail.com',
@@ -165,10 +165,10 @@ describe('email', () => {
                 'no-dom.a.in',
                 'no_domain@',
             ];
-            expect(emails.map((email) => canonizeEmail(email, CANONIZE_SCHEME.PLUS))).toEqual(canonized);
+            expect(emails.map((email) => canonicalizeEmail(email, CANONICALIZE_SCHEME.PLUS))).toEqual(canonicalized);
         });
 
-        it('should canonize guessing the scheme', () => {
+        it('should canonicalize guessing the scheme', () => {
             const emails = [
                 'testing+1@pm.me',
                 'TeS.--TinG+2@PM.ME',
@@ -178,7 +178,7 @@ describe('email', () => {
                 'no-DOM.a.in+one',
                 'NO_DOMAIN+two@',
             ];
-            const canonized = [
+            const canonicalized = [
                 'testing@pm.me',
                 'testing@pm.me',
                 'abc-@gmail.com',
@@ -187,7 +187,7 @@ describe('email', () => {
                 'no-dom.a.in+one',
                 'no_domain+two@',
             ];
-            expect(emails.map((email) => canonizeEmailByGuess(email))).toEqual(canonized);
+            expect(emails.map((email) => canonicalizeEmailByGuess(email))).toEqual(canonicalized);
         });
     });
 

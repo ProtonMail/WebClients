@@ -17,7 +17,7 @@ import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
-import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Address, Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { encryptPassphraseSessionKey } from '@proton/shared/lib/keys/calendarKeys';
@@ -104,13 +104,13 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     >({});
     const [loading, withLoading] = useLoading();
 
-    const currentEmails = recipients.map(({ Address }) => canonizeInternalEmail(Address));
+    const currentEmails = recipients.map(({ Address }) => canonicalizeInternalEmail(Address));
     const pendingInvitations = filterOutAcceptedInvitations(invitations);
-    const existingEmails = [...pendingInvitations, ...members].map(({ Email }) => canonizeInternalEmail(Email));
+    const existingEmails = [...pendingInvitations, ...members].map(({ Email }) => canonicalizeInternalEmail(Email));
     const totalRecipients = recipients.length;
     const maxRecipients = Math.max(MAX_CALENDAR_MEMBERS - existingEmails.length, 0);
 
-    const ownNormalizedEmails = getSelfSendAddresses(addresses).map(({ Email }) => canonizeInternalEmail(Email));
+    const ownNormalizedEmails = getSelfSendAddresses(addresses).map(({ Email }) => canonicalizeInternalEmail(Email));
 
     useEffect(() => {
         if (!rest.open) {
@@ -145,15 +145,15 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const handleAddRecipients = (recipients: Recipient[]) => {
         const { newRecipients, duplicateRecipients, existingRecipients } = recipients.reduce<{
             newRecipients: Recipient[];
-            addedCanonizedAddresses: string[];
+            addedCanonicalizedAddresses: string[];
             duplicateRecipients: Recipient[];
             existingRecipients: Recipient[];
         }>(
             (acc, recipient) => {
                 const address = recipient.Address;
-                const canonizedAddress = canonizeInternalEmail(address);
+                const canonicalizedAddress = canonicalizeInternalEmail(address);
 
-                if (ownNormalizedEmails.includes(canonizedAddress)) {
+                if (ownNormalizedEmails.includes(canonicalizedAddress)) {
                     createNotification({
                         type: 'error',
                         text: c('Calendar self sharing error').t`You already have access to this calendar`,
@@ -169,18 +169,18 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                     }));
                 }
 
-                if (existingEmails.includes(canonizedAddress)) {
+                if (existingEmails.includes(canonicalizedAddress)) {
                     acc.existingRecipients.push(recipient);
-                } else if ([...currentEmails, ...acc.addedCanonizedAddresses].includes(canonizedAddress)) {
+                } else if ([...currentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)) {
                     acc.duplicateRecipients.push(recipient);
                 } else {
                     acc.newRecipients.push(recipient);
-                    acc.addedCanonizedAddresses.push(canonizedAddress);
+                    acc.addedCanonicalizedAddresses.push(canonicalizedAddress);
                 }
 
                 return acc;
             },
-            { newRecipients: [], addedCanonizedAddresses: [], duplicateRecipients: [], existingRecipients: [] }
+            { newRecipients: [], addedCanonicalizedAddresses: [], duplicateRecipients: [], existingRecipients: [] }
         );
 
         if (existingRecipients.length) {
