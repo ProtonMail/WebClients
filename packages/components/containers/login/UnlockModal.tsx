@@ -68,7 +68,7 @@ const UnlockModal = ({ onClose, onSuccess, onCancel, ...rest }: Props) => {
 
     return (
         <Modal {...rest} size="small" as={Form} onSubmit={() => handleSubmit()} onClose={handleClose}>
-            <ModalHeader title={c('Title').t`Sign in again to continue`} />
+            <ModalHeader title={c('Title').t`Enter your password`} />
             <ModalContent>
                 <InputFieldTwo
                     ref={passwordRef}
@@ -86,7 +86,7 @@ const UnlockModal = ({ onClose, onSuccess, onCancel, ...rest }: Props) => {
             <ModalFooter>
                 <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
                 <Button color="norm" type="submit" loading={loading}>
-                    {c('Action').t`Submit`}
+                    {c('Action').t`Authenticate`}
                 </Button>
             </ModalFooter>
         </Modal>
