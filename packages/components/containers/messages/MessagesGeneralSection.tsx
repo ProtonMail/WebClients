@@ -2,10 +2,11 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
-import { SettingsLink, useModalState } from '../../components';
+import { Info, SettingsLink, useModalState } from '../../components';
 import Icon from '../../components/icon/Icon';
 import { useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
@@ -13,10 +14,8 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 import { MailShortcutsModal } from '../mail';
-import {
-    DailyEmailNotificationToggleInput,
-    DailyEmailNotificationToggleLabel,
-} from '../recovery/DailyEmailNotificationToggle';
+import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
+import RecoveryEmail from '../recovery/email/RecoveryEmail';
 
 const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();
@@ -24,18 +23,18 @@ const MessagesGeneralSection = () => {
 
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
-    const showDailyEmailNotificationSection = !userLoading && !user.isSubUser && user.isPrivate;
-
     const handleOpenShortcutsModal = (e: MouseEvent) => {
         e.preventDefault();
         setMailShortcutsModalOpen(true);
     };
 
+    const nonPrivateSubUser = !userLoading && (!user.isPrivate || user.isSubUser);
     const isDailyEmailEnabled = !!userSettings?.Email?.Notify && !!userSettings?.Email?.Value;
     const canEnableDailyEmail = !!userSettings?.Email?.Value;
 
     return (
         <>
+            <MailShortcutsModal {...mailShortcutsProps} />
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="shortcutsToggle" className="flex-item-fluid">
@@ -49,10 +48,18 @@ const MessagesGeneralSection = () => {
                     <ShortcutsToggle className="mr1" id="shortcutsToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {showDailyEmailNotificationSection && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <DailyEmailNotificationToggleLabel />
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
+                        <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
+                        <Info
+                            url={getStaticURL('/support/notification-email')}
+                            title={c('Info')
+                                .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
+                        />
+                    </label>
+
+                    {!nonPrivateSubUser && (
                         <div className="text-sm">
                             <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
                                 {isDailyEmailEnabled && userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
@@ -60,16 +67,32 @@ const MessagesGeneralSection = () => {
                                     : c('Link').t`Set email address`}
                             </SettingsLink>{' '}
                         </div>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt0-5">
-                        <DailyEmailNotificationToggleInput
+                    )}
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="flex-item-fluid">
+                    {nonPrivateSubUser && (
+                        <RecoveryEmail
+                            className="mb0 on-mobile-mb1"
+                            email={userSettings.Email}
+                            hasReset={!!userSettings.Email.Reset}
+                            hasNotify={!!userSettings.Email.Notify}
+                        />
+                    )}
+                    <div className="flex flex-align-items-center">
+                        <DailyEmailNotificationToggle
+                            id="dailyNotificationsToggle"
+                            className="mr0-5"
                             isEnabled={isDailyEmailEnabled}
                             canEnable={canEnableDailyEmail}
                         />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
-            <MailShortcutsModal {...mailShortcutsProps} />
+                        {nonPrivateSubUser && (
+                            <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
+                                {c('Label').t`Allow notifications by email`}
+                            </label>
+                        )}
+                    </div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </>
     );
 };
