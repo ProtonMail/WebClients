@@ -12,6 +12,11 @@
 	th {
 		padding: em(9);
 		border-block-end: 1px solid var(--border-norm);
+		@include respond-to($breakpoint-small) {
+			&.on-mobile-pl0 {
+				@extend .on-mobile-pl0;
+			}
+		}
 	}
 
 	th:not(#{&}-row-th) {
