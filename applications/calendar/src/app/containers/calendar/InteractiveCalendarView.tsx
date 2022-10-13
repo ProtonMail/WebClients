@@ -142,7 +142,7 @@ import getSaveEventActions from './eventActions/getSaveEventActions';
 import { getSendIcsAction } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
-import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
+import getComponentFromCalendarEventUnencryptedPart from './eventStore/cache/getComponentFromCalendarEventUnencryptedPart';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
 import {
     upsertSyncMultiActionsResponses,
@@ -493,7 +493,7 @@ const InteractiveCalendarView = ({
         if (!parentEvent) {
             return undefined;
         }
-        return getComponentFromCalendarEvent(parentEvent);
+        return getComponentFromCalendarEventUnencryptedPart(parentEvent);
     };
 
     const getUpdateModel = ({
