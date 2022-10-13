@@ -68,20 +68,20 @@ export default function useAction() {
     };
 
     const renameLink = async (abortSignal: AbortSignal, shareId: string, linkId: string, newName: string) => {
+        // translator: ${newName} is for a folder or file name.
+        const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
+        // translator: ${newName} is for a folder or file name.
+        const failNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
+
         return link
             .renameLink(abortSignal, shareId, linkId, newName)
             .then(() => {
                 createNotification({
-                    text: (
-                        <span className="text-pre-wrap">{c('Notification').t`"${newName}" renamed successfully`}</span>
-                    ),
+                    text: <span className="text-pre-wrap">{successNotificationText}</span>,
                 });
             })
             .catch((e) => {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${newName}" failed to be renamed`}</span>
-                );
+                showErrorNotification(e, <span className="text-pre-wrap">{failNotificationText}</span>);
                 throw e;
             });
     };
