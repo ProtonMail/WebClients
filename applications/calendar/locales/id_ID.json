@@ -2298,6 +2298,9 @@
       "Primary key is not valid for sending": [
         "Kunci utama tidak valid untuk pengiriman"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Kunci utama yang diambil untuk pengguna ${ BRAND_NAME } tidak valid untuk pengiriman"
+      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Penerima duplikat dihapus: ${ joinedRecipients }"
       ],
@@ -5407,6 +5410,9 @@
       ],
       "Edit contact group": [
         "Edit grup kontak"
+      ],
+      "Edit email settings": [
+        "Sunting pengaturan email"
       ],
       "Edit image": [
         "Edit gambar"

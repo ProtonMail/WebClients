@@ -3208,6 +3208,9 @@
       "Primary key is not valid for sending": [
         "Kunci utama tidak valid untuk pengiriman"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Kunci utama yang diambil untuk pengguna ${ BRAND_NAME } tidak valid untuk pengiriman"
+      ],
       "Public key could not be trusted": [
         "Kunci publik tidak dapat dipercaya"
       ],
@@ -7748,6 +7751,9 @@
       "Edit contact group": [
         "Sunting grup kontak"
       ],
+      "Edit email settings": [
+        "Sunting pengaturan email"
+      ],
       "Edit filter": [
         "Sunting filter"
       ],
@@ -8003,9 +8009,6 @@
       "Settings": [
         "Pengaturan"
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
       ],
@@ -8044,6 +8047,9 @@
       ],
       "Trust public key?": [
         "Percaya kunci publik?"
+      ],
+      "Two-factor authentication": [
+        "Otentikasi dua faktor"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
