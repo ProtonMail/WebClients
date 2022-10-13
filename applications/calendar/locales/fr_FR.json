@@ -2356,6 +2356,9 @@
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
+      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinataire dupliqué supprimé : ${ joinedRecipients }",
         "Destinataires dupliqués supprimés : ${ joinedRecipients }"
@@ -5553,6 +5556,9 @@
       "Edit contact group": [
         "Modifier le groupe de contacts"
       ],
+      "Edit email settings": [
+        "Modifier les paramètres d'e-mail"
+      ],
       "Edit image": [
         "Modifier l’image"
       ],
@@ -5616,6 +5622,9 @@
       ],
       "Merging contacts": [
         "Fusion des contacts"
+      ],
+      "Minicalendar": [
+        "Mini calendrier"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"

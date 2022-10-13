@@ -3293,6 +3293,91 @@
         "Torrent 対応 (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "セキュリティキーを追加"
+      ],
+      "Delete key": [
+        "キーを削除"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "TOTP を無効にする前に、セキュリティキーによる 2 要素認証を無効にしてください"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "セキュリティキーの登録に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "セキュリティキーによる 2 要素認証が無効になりました"
+      ],
+      "Add a name to identify your security key with.": [
+        "セキュリティキーに名前を付けます。"
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "セキュリティキー ${ name } を削除してよろしいですか？"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Insert your security key into your device's USB port.": [
+        "セキュリティキーをデバイスの USB ポートに挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ],
+      "Security key removed": [
+        "セキュリティキーが削除されました"
+      ],
+      "Security key updated": [
+        "セキュリティキーが更新されました"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "この操作により、アカウントに紐づけられたセキュリティキーがすべて削除されます。"
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "セキュリティキーによる 2 要素認証をオンにするには、認証アプリによる 2 要素認証を有効にする必要があります。"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "物理的な U2F または FIDO2 セキュリティキーで認証します"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "2 要素認証キーが使用可能になりました。"
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "キーの名前"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "セキュリティキーを削除しますか？"
+      ],
+      "Disable 2FA via security key?": [
+        "セキュリティキーによる 2 要素認証を無効にしますか？"
+      ],
+      "Name your security key": [
+        "セキュリティキーの名前"
+      ],
+      "Register your security key": [
+        "セキュリティキーの登録"
+      ],
+      "Registered security keys": [
+        "登録されたセキュリティキー"
+      ],
+      "Security key registered": [
+        "セキュリティキーが登録されました"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -4378,6 +4463,9 @@
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
       ],
+      "Each code can only be used once": [
+        "各コードは 1 回のみ使用可能です"
+      ],
       "Edit label": [
         "ラベルを編集"
       ],
@@ -4408,8 +4496,14 @@
       "Encryption setting updated": [
         "暗号化の設定が更新されました。"
       ],
+      "Enter code from your authenticator app": [
+        "認証アプリのコードを入力してください"
+      ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
+      ],
+      "Enter the code from your authenticator app": [
+        "認証アプリのコードを入力してください"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "電話番号 ${ phone } に送信したコードを入力してください。"
@@ -5274,6 +5368,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスに通知を送信します。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
@@ -6813,6 +6910,9 @@
       "Learn more": [
         "詳細"
       ],
+      "Learn more about data recovery": [
+        "データの回復の詳細"
+      ],
       "Need help?": [
         "問題がある場合"
       ],
@@ -7415,20 +7515,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7474,6 +7560,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8350,6 +8450,11 @@
         "ユーザー名"
       ]
     },
+    "Signup step": {
+      "Verification": [
+        "検証"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
@@ -9127,6 +9232,9 @@
       "Encryption and keys": [
         "暗号化と鍵"
       ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Error": [
         "エラー"
       ],
@@ -9252,6 +9360,9 @@
       ],
       "Messages and composing": [
         "メッセージと作成"
+      ],
+      "Minicalendar": [
+        "ミニカレンダー"
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -9432,9 +9543,6 @@
       ],
       "Sign in": [
         "サインイン"
-      ],
-      "Sign in again to continue": [
-        "再度サインインして続行"
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"

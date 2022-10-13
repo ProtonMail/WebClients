@@ -1760,6 +1760,9 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
+      "A problem occurred, please try again": [
+        "發生錯誤，請再試一次"
+      ],
       "Authentication canceled.": [
         "認證已取消。"
       ],
@@ -1847,6 +1850,15 @@
       "Missing signature": [
         "簽章遺失"
       ],
+      "No calendars found to import": [
+        "沒有找到行事曆可以匯入"
+      ],
+      "No contacts found to import": [
+        "沒有找到聯絡人可以匯入"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
+      ],
       "No valid address found": [
         "未能找到有效位址"
       ],
@@ -1861,6 +1873,9 @@
       ],
       "Passwords do not match": [
         "密碼不相符"
+      ],
+      "Please activate your content search again": [
+        "請再次啟用您的內容搜尋"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -1895,8 +1910,14 @@
       "Some groups could not be deleted": [
         "無法刪除部份群組"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
@@ -1972,6 +1993,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "您不能傳送超過 10 個聯絡人的 vCard"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -2072,6 +2096,16 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "您的意見回饋"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "安全性金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全性金鑰"
       ]
     },
     "file size format": {
@@ -2388,6 +2422,9 @@
       ],
       "contacts": [
         "聯絡人"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV 或 VCF (vCard) 檔案"
       ],
       "full calendar view": [
         "完整行事曆檢視方式"
@@ -3378,6 +3415,9 @@
       "Audio file": [
         "音訊檔"
       ],
+      "Authenticator app": [
+        "驗證器APP"
+      ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
       ],
@@ -3440,6 +3480,9 @@
       ],
       "Delete drive?": [
         "刪除雲端硬碟?"
+      ],
+      "Delete recovery-related information.": [
+        "刪除復原相關的資料"
       ],
       "Deleted": [
         "已刪除"
@@ -4592,6 +4635,9 @@
       ],
       "Edit contact group": [
         "編輯聯絡人群組"
+      ],
+      "Edit email settings": [
+        "編輯電子郵件設定"
       ],
       "Edit image": [
         "編輯圖像"

@@ -2286,6 +2286,9 @@
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primární klíč pro uživatele ${ BRAND_NAME } není možné použít pro odesílání"
+      ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
       ],
@@ -5579,6 +5582,9 @@
       ],
       "Edit contact group": [
         "Upravit skupinu kontaktů"
+      ],
+      "Edit email settings": [
+        "Upravit nastavení e-mailu"
       ],
       "Edit image": [
         "Upravit obrázek"

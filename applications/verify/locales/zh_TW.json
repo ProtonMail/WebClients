@@ -922,6 +922,16 @@
         "您亦可${ refresh } 或稍後再試一次。"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "安全性金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全性金鑰"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "驗證碼"
@@ -996,6 +1006,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "驗證器APP"
+      ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],
@@ -1043,6 +1056,9 @@
       ]
     },
     "Title": {
+      "Enter your password": [
+        "請輸入您的密碼"
+      ],
       "Human verification": [
         "真人身分驗證"
       ],
@@ -1052,8 +1068,8 @@
       "Request new code": [
         "重新傳送驗證碼"
       ],
-      "Sign in again to continue": [
-        "請重新登入以繼續"
+      "Two-factor authentication": [
+        "兩步驟驗證"
       ]
     },
     "Validation": {

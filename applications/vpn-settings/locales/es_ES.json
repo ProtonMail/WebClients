@@ -1700,7 +1700,7 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Agregar llave de seguridad"
+        "Añadir llave de seguridad"
       ],
       "Delete key": [
         "Eliminar llave"
@@ -1716,25 +1716,28 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Doble factor de autenticación basada en llave de seguridad desactivado"
+        "Se ha desactivado 2FA mediante llave de seguridad"
       ],
       "Add a name to identify your security key with.": [
-        "Defina un nombre para identificar su llave de seguridad."
+        "Añade un nombre para identificar tu llave de seguridad."
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "¿Está seguro de querer eliminar la llave de seguridad ${ name }?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
       "Insert your security key into your device's USB port.": [
-        "Ingrese la llave de seguridad en el puerto USB."
+        "Inserta tu llave de seguridad en el puerto USB."
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ],
       "Security key removed": [
         "Llave de seguridad eliminada"
       ],
       "Security key updated": [
-        "Clave de seguridad actualizada"
+        "Llave de seguridad actualizada"
       ],
       "This will delete all security keys linked to your account.": [
         "Esto eleminará todas las llaves de seguridad vinculadas a tu cuenta."
@@ -1754,7 +1757,7 @@
         "Nombre de la llave"
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "fido2: Title": {
@@ -1762,13 +1765,13 @@
         "¿Eliminar la llave de seguridad?"
       ],
       "Disable 2FA via security key?": [
-        "¿Deshabilitar 2FA con la llave de seguridad?"
+        "¿Deshabilitar 2FA mediante llave de seguridad?"
       ],
       "Name your security key": [
-        "Defina un nombre para la llave de seguridad"
+        "Nombre de tu llave de seguridad"
       ],
       "Register your security key": [
-        "Registre su llave de seguridad"
+        "Registra tu llave de seguridad"
       ],
       "Registered security keys": [
         "Llaves de seguridad registradas"
@@ -1931,7 +1934,7 @@
         "añadir un método de recuperación"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Agrega una capa adicional de seguridad a su cuenta. Necesitarás verificarte mediante un segundo factor de autenticación cada vez que ingreses."
+        "Añade una capa adicional de seguridad a tu cuenta. Necesitarás verificarte mediante autenticación de doble factor cada vez que inicies sesión."
       ],
       "Additional options": [
         "Opciones adicionales"

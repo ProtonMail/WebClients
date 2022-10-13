@@ -3265,6 +3265,9 @@
       "Primary key is not valid for sending": [
         "Klucz główny nie jest przeznaczony do wysyłania wiadomości"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Odzyskany klucz główny dla użytkownika ${ BRAND_NAME } nie jest przeznaczony do wysyłania wiadomości"
+      ],
       "Public key could not be trusted": [
         "Klucz publiczny nie może zostać dodany do zaufanych"
       ],
@@ -8183,6 +8186,9 @@
       "Edit contact group": [
         "Edytuj grupę kontaktów"
       ],
+      "Edit email settings": [
+        "Edytuj ustawienia adresu e-mail"
+      ],
       "Edit filter": [
         "Edytuj filtr"
       ],
@@ -8438,9 +8444,6 @@
       "Settings": [
         "Ustawienia"
       ],
-      "Sign in again to continue": [
-        "Zaloguj się ponownie, aby kontynuować"
-      ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
       ],
@@ -8482,6 +8485,9 @@
       ],
       "Trust public key?": [
         "Zaufać kluczowi publicznemu?"
+      ],
+      "Two-factor authentication": [
+        "Uwierzytelnianie dwustopniowe"
       ],
       "Unsubscribe": [
         "Anuluj subskrypcję"

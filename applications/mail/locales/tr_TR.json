@@ -3227,6 +3227,9 @@
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "${ BRAND_NAME } kullanıcısı için alınan birincil anahtar, gönderim için geçerli değil"
+      ],
       "Public key could not be trusted": [
         "Herkese açık anahtara güvenilemedi"
       ],
@@ -7894,6 +7897,9 @@
       "Edit contact group": [
         "Kişi grubunu düzenle"
       ],
+      "Edit email settings": [
+        "E-posta ayarlarını düzenle"
+      ],
       "Edit filter": [
         "Süzgeci düzenle"
       ],
@@ -8149,9 +8155,6 @@
       "Settings": [
         "Ayarlar"
       ],
-      "Sign in again to continue": [
-        "İlerlemek için yeniden oturum açın"
-      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -8191,6 +8194,9 @@
       ],
       "Trust public key?": [
         "Herkese açık anahtara güvenilsin mi?"
+      ],
+      "Two-factor authentication": [
+        "İki aşamalı kimlik doğrulama"
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"

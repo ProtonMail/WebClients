@@ -2299,15 +2299,6 @@
       ]
     },
     "CSV format error": {
-      "Error on row ${ rowsThatErrored }.": [
-        "Hiba a sorban: ${ rowsThatErrored }."
-      ],
-      "It looks like your file is missing the 'EmailAddresses' header.": [
-        "A fájlból hiányzik az 'EmailAddresses' címsor."
-      ],
-      "It looks like your file is missing the 'Password' header.": [
-        "A fájlból hiányzik az 'Password' címsor."
-      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Több sorban is hiba van az importált fájlban. Vizsgálja meg a CSV fájlt."
       ]
@@ -7424,26 +7415,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7510,6 +7481,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8504,6 +8495,11 @@
         "Felhasználónév"
       ]
     },
+    "Signup step": {
+      "Verification": [
+        "Ellenőrzés"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
@@ -9309,6 +9305,9 @@
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
       "Error": [
         "Hiba"
       ],
@@ -9615,9 +9614,6 @@
       ],
       "Sign in": [
         "Bejelentkezés"
-      ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
       ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
