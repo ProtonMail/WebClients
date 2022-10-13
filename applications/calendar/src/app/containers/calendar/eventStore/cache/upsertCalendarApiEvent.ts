@@ -6,7 +6,7 @@ import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { CalendarEventsCache } from '../interface';
-import getComponentFromCalendarEvent from './getComponentFromCalendarEvent';
+import getComponentFromCalendarEventUnencryptedPart from './getComponentFromCalendarEventUnencryptedPart';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 
@@ -39,7 +39,7 @@ const upsertCalendarApiEvent = (
 ) => {
     const { ID: eventID, UID, ModifyTime } = Event;
     try {
-        const eventComponent = getComponentFromCalendarEvent(Event);
+        const eventComponent = getComponentFromCalendarEventUnencryptedPart(Event);
         const eventData = pick(Event, FIELDS_TO_KEEP);
         const newCalendarEventStoreRecord = getCalendarEventStoreRecord(eventComponent, eventData);
         const didUpsert = upsertCalendarEventStoreRecord(eventID, newCalendarEventStoreRecord, calendarEventsCache);
