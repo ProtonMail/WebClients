@@ -20,15 +20,15 @@ const NudgeTopBanner = () => {
     }
 
     const link = (
-        <Href key="link" className="color-inherit" href="https://proton.me">
-            proton.me
+        <Href key="link" className="color-inherit" href="https://account.proton.me">
+            account.proton.me
         </Href>
     );
     return (
         <TopBanner className="bg-primary">
             {
-                // translator: followed by a link "proton.me"
-                c('Info').jt`We're moving! Join us at our new site: ${link}.`
+                // translator: followed by a link "account.proton.me"
+                c('Info').jt`We've moved! Please sign in at our new domain: ${link}.`
             }
         </TopBanner>
     );
