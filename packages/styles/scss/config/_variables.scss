@@ -87,7 +87,7 @@ $fields-focus-ring-size: 0.1875rem; // 3px
 $conversations-column-width: 35% !default; // used also to align search bar on top
 
 $label-width: 18em !default;
-$conversation-icon-size: 32 !default;
+$conversation-icon-size: 34 !default; // 32px + 1px border (so 2 px), for proper display of sender image with focus-visible
 
 // Z-indexes for stacking management
 $layer-upper: 10;
