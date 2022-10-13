@@ -10,7 +10,6 @@ import {
     CalendarMemberInvitation,
     MEMBER_INVITATION_STATUS,
 } from '@proton/shared/lib/interfaces/calendar';
-import clsx from '@proton/utils/clsx';
 
 import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
@@ -65,23 +64,23 @@ const CalendarMemberAndInvitationList = ({
                 </Alert>
             )}
 
-            <Table className="simple-table--has-actions on-desktop-table-auto">
+            <Table className="simple-table--has-actions">
                 <TableHeader className="no-mobile">
                     <TableRow>
-                        <TableHeaderCell className="">{c('Header').t`User`}</TableHeaderCell>
-                        {displayPermissions && <TableHeaderCell>{c('Header').t`Permissions`}</TableHeaderCell>}
-                        {displayStatus && (
-                            <TableHeaderCell className={clsx([displayPermissions && 'no-tablet'])}>
-                                {c('Header').t`Status`}
-                            </TableHeaderCell>
+                        <TableHeaderCell>{c('Header').t`User`}</TableHeaderCell>
+                        {displayPermissions && (
+                            <TableHeaderCell className="no-mobile">{c('Header').t`Permissions`}</TableHeaderCell>
                         )}
-                        <TableHeaderCell>{c('Header').t`Action`}</TableHeaderCell>
+                        {displayStatus && (
+                            <TableHeaderCell className="no-tablet no-mobile">{c('Header').t`Status`}</TableHeaderCell>
+                        )}
+                        <TableHeaderCell className="w15">{c('Header').t`Action`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {members.map(({ ID, Email, Permissions }) => {
                         const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                            canonizeInternalEmail(Email)
+                            canonicalizeInternalEmail(Email)
                         ] || {
                             Name: Email,
                             Email,
@@ -110,7 +109,7 @@ const CalendarMemberAndInvitationList = ({
                         }
 
                         const { Name: contactName, Email: contactEmail } = contactEmailsMap[
-                            canonizeInternalEmail(Email)
+                            canonicalizeInternalEmail(Email)
                         ] || {
                             Name: Email,
                             Email,

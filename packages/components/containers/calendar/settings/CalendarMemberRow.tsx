@@ -9,7 +9,6 @@ import { useLoading } from '@proton/components/hooks';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
-import clsx from '@proton/utils/clsx';
 
 import { TableCell, TableRow } from '../../../components';
 
@@ -34,7 +33,10 @@ const permissionLabelMap = {
 };
 
 export const MemberStatus = ({ children }: { children: string }) => (
-    <span className="calendar-member-status inline-flex text-sm text-semibold color-weak bg-strong text-uppercase rounded text-no-wrap">
+    <span
+        title={children}
+        className="calendar-member-status inline-block text-ellipsis text-sm text-semibold color-weak bg-strong text-uppercase rounded text-no-wrap"
+    >
         {children}
     </span>
 );
@@ -77,9 +79,9 @@ const CalendarMemberRow = ({
 
     return (
         <TableRow>
-            <TableCell>
-                <div className="flex flex-nowrap flex-align-items-baseline flex-gap-0-5">
-                    <Avatar className="avatar--weak flex-item-noshrink no-mobile">{getInitials(name)}</Avatar>
+            <TableCell className="on-mobile-pl0">
+                <div className="flex flex-nowrap flex-align-items-baseline flex-gap-0-5 on-mobile-w40">
+                    <Avatar className="avatar--weak flex-item-noshrink no-mobile no-tablet">{getInitials(name)}</Avatar>
 
                     <div>
                         <div className="text-ellipsis" title={name}>
@@ -90,12 +92,26 @@ const CalendarMemberRow = ({
                                 {email}
                             </div>
                         )}
-                        {displayPermissions && <div className="no-desktop">{getStatusLabel()}</div>}
+                        {displayStatus && <div className="no-desktop">{getStatusLabel()}</div>}
+
+                        {displayPermissions && !isStatusRejected && (
+                            <div className="no-desktop no-tablet on-mobile-inline-flex">
+                                <SelectTwo
+                                    loading={isLoadingPermissionsUpdate}
+                                    value={perms}
+                                    onChange={handleChangePermissions}
+                                >
+                                    {Object.entries(permissionLabelMap).map(([value, label]) => (
+                                        <Option key={value} value={+value} title={label} />
+                                    ))}
+                                </SelectTwo>
+                            </div>
+                        )}
                     </div>
                 </div>
             </TableCell>
             {displayPermissions && (
-                <TableCell>
+                <TableCell className="no-mobile">
                     {!isStatusRejected && (
                         <SelectTwo
                             loading={isLoadingPermissionsUpdate}
@@ -109,12 +125,8 @@ const CalendarMemberRow = ({
                     )}
                 </TableCell>
             )}
-            {displayStatus && (
-                <TableCell className={clsx([displayPermissions && 'no-mobile no-tablet'])}>
-                    {getStatusLabel()}
-                </TableCell>
-            )}
-            <TableCell className="text-right w5e">
+            {displayStatus && <TableCell className="no-mobile no-tablet">{getStatusLabel()}</TableCell>}
+            <TableCell className="w5e">
                 <Tooltip title={deleteLabel}>
                     <Button icon shape="ghost" loading={isLoadingDelete} onClick={handleDelete} className="mlauto">
                         <Icon name="trash" alt={deleteLabel} />
