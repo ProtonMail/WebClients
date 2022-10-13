@@ -12,6 +12,7 @@ import { useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsSection from '../account/SettingsSection';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 import { MailShortcutsModal } from '../mail';
 import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
@@ -35,64 +36,66 @@ const MessagesGeneralSection = () => {
     return (
         <>
             <MailShortcutsModal {...mailShortcutsProps} />
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="shortcutsToggle" className="flex-item-fluid">
-                        <span className="pr0-5 text-semibold">{c('Title').t`Keyboard shortcuts`}</span>
-                        <button type="button" onClick={handleOpenShortcutsModal}>
-                            <Icon className="color-primary mb0-25" name="info-circle" size={16} />
-                        </button>
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
-                    <ShortcutsToggle className="mr1" id="shortcutsToggle" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
-                        <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
-                        <Info
-                            url={getStaticURL('/support/notification-email')}
-                            title={c('Info')
-                                .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
-                        />
-                    </label>
+            <SettingsSection>
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="shortcutsToggle" className="flex-item-fluid">
+                            <span className="pr0-5 text-semibold">{c('Title').t`Keyboard shortcuts`}</span>
+                            <button type="button" onClick={handleOpenShortcutsModal}>
+                                <Icon className="color-primary mb0-25" name="info-circle" size={16} />
+                            </button>
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
+                        <ShortcutsToggle className="mr1" id="shortcutsToggle" />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
+                            <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
+                            <Info
+                                url={getStaticURL('/support/notification-email')}
+                                title={c('Info')
+                                    .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
+                            />
+                        </label>
 
-                    {!nonPrivateSubUser && (
-                        <div className="text-sm">
-                            <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
-                                {isDailyEmailEnabled && userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
-                                    ? c('Action').t`Requires a verified recovery email address`
-                                    : c('Link').t`Set email address`}
-                            </SettingsLink>{' '}
-                        </div>
-                    )}
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex-item-fluid">
-                    {nonPrivateSubUser && (
-                        <RecoveryEmail
-                            className="mb0 on-mobile-mb1"
-                            email={userSettings.Email}
-                            hasReset={!!userSettings.Email.Reset}
-                            hasNotify={!!userSettings.Email.Notify}
-                        />
-                    )}
-                    <div className="flex flex-align-items-center">
-                        <DailyEmailNotificationToggle
-                            id="dailyNotificationsToggle"
-                            className="mr0-5"
-                            isEnabled={isDailyEmailEnabled}
-                            canEnable={canEnableDailyEmail}
-                        />
-                        {nonPrivateSubUser && (
-                            <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
-                                {c('Label').t`Allow notifications by email`}
-                            </label>
+                        {!nonPrivateSubUser && (
+                            <div className="text-sm">
+                                <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
+                                    {isDailyEmailEnabled && userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
+                                        ? c('Action').t`Requires a verified recovery email address`
+                                        : c('Link').t`Set email address`}
+                                </SettingsLink>{' '}
+                            </div>
                         )}
-                    </div>
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="flex-item-fluid">
+                        {nonPrivateSubUser && (
+                            <RecoveryEmail
+                                className="mb0 on-mobile-mb1"
+                                email={userSettings.Email}
+                                hasReset={!!userSettings.Email.Reset}
+                                hasNotify={!!userSettings.Email.Notify}
+                            />
+                        )}
+                        <div className="flex flex-align-items-center">
+                            <DailyEmailNotificationToggle
+                                id="dailyNotificationsToggle"
+                                className="mr0-5"
+                                isEnabled={isDailyEmailEnabled}
+                                canEnable={canEnableDailyEmail}
+                            />
+                            {nonPrivateSubUser && (
+                                <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
+                                    {c('Label').t`Allow notifications by email`}
+                                </label>
+                            )}
+                        </div>
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            </SettingsSection>
         </>
     );
 };
