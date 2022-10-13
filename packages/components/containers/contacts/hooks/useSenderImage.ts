@@ -5,7 +5,7 @@ import { useApi, useFeature, useMailSettings } from '@proton/components/hooks';
 
 import { getSenderLogo } from '../helpers/senderImage';
 
-const CHECKBOX_SIZE = 32;
+const IMAGE_SIZE = 128;
 
 /**
  * Return the sender image for a given email address
@@ -23,7 +23,7 @@ const useSenderImage = (emailAddress?: string) => {
             return;
         }
 
-        void getSenderLogo(api, emailAddress, CHECKBOX_SIZE).then(setUrl);
+        void getSenderLogo(api, emailAddress, IMAGE_SIZE).then(setUrl);
     }, [mailSettings?.HideSenderImages, feature?.Value, emailAddress]);
 
     return url;
