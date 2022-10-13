@@ -53,6 +53,9 @@
       "Try another method": [
         "روش دیگری بیازمایید"
       ],
+      "Use authentication code": [
+        "از کد تایید استفاده نمایید"
+      ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
@@ -976,8 +979,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
+      "Each code can only be used once": [
+        "هر کد را تنها یک بار می توانید استفاده نمایید"
+      ],
+      "Enter the code from your authenticator app": [
+        "کد سامانه تایید کننده را وارد نمایید"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که به ${ destinationText } ارسال شد را وارد نمایید."
+      ],
+      "Enter your own password (as organization admin).": [
+        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر در ایجاد حساب کاربری خود مشکلی دارید، لطفا یک دعوت‌ نامه درخواست کنید و ما ظرف یک روز کاری پاسخ خواهیم داد."
@@ -1073,6 +1085,9 @@
       ]
     },
     "Title": {
+      "Enter your password": [
+        "گذرواژه خود را وارد کنید"
+      ],
       "Human verification": [
         "تشخیص انسان"
       ],
@@ -1082,8 +1097,8 @@
       "Request new code": [
         "درخواست کد جدید"
       ],
-      "Sign in again to continue": [
-        "برای ادامه، دوباره وارد شوید"
+      "Two-factor authentication": [
+        "احراز هویت دو مرحله‌ای"
       ]
     },
     "Validation": {

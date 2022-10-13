@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bloquer les messages de cet expéditeur"
       ],
+      "Block senders": [
+        "Bloquer les expéditeurs"
+      ],
       "Bold": [
         "Gras"
       ],
@@ -362,7 +365,7 @@
         "Moins d'options de recherche"
       ],
       "Filter on...": [
-        "Filtrer sur..."
+        "Filtrer par..."
       ],
       "Font": [
         "Police"
@@ -2874,6 +2877,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } dans les paramètres."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Lorsque cette opération sera terminée, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -2888,6 +2894,13 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas délivrés et seront définitivement supprimés.",
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas délivrés et seront définitivement supprimés."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés."
       ],
       "No folders": [
         "Aucun dossier"
@@ -3251,6 +3264,9 @@
       ],
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi."
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
       ],
       "Public key could not be trusted": [
         "La clé publique n'a pas pu être approuvée."
@@ -6128,6 +6144,9 @@
       "Mark as": [
         "Marquer comme"
       ],
+      "Move ${ sidebarElementName }": [
+        "Déplacer ${ sidebarElementName }"
+      ],
       "Move to": [
         "Déplacer dans"
       ],
@@ -6881,6 +6900,12 @@
       ],
       "Password has been set successfully": [
         "Le mot de passe a bien été défini."
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "L'expéditeur ${ firstSenderAddress } est bloqué."
+      ],
+      "Senders blocked": [
+        "Expéditeurs bloqués"
       ]
     },
     "Oauth instructions": {
@@ -7910,6 +7935,9 @@
       "Edit contact group": [
         "Modifier le groupe de contacts"
       ],
+      "Edit email settings": [
+        "Modifier les paramètres d'e-mail"
+      ],
       "Edit filter": [
         "Modifier le filtre"
       ],
@@ -7950,7 +7978,7 @@
         "Votre avis"
       ],
       "Filter on...": [
-        "Filtrer sur..."
+        "Filtrer par..."
       ],
       "Forward": [
         "Transférer"
@@ -8018,8 +8046,14 @@
       "Message will expire": [
         "Le message va expirer"
       ],
+      "Minicalendar": [
+        "Mini calendrier"
+      ],
       "More": [
         "Plus"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
       ],
       "More options": [
         "Plus d'options"
@@ -8159,9 +8193,6 @@
       "Settings": [
         "Paramètres"
       ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer."
-      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
@@ -8201,6 +8232,9 @@
       ],
       "Trust public key?": [
         "Approuver la clé publique ?"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Unsubscribe": [
         "Se désabonner"

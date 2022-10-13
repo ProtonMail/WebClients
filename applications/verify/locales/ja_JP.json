@@ -952,6 +952,24 @@
         "${ refresh } するか再度お試しください。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -975,6 +993,12 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
+      ],
+      "Each code can only be used once": [
+        "各コードは 1 回のみ使用可能です"
+      ],
+      "Enter the code from your authenticator app": [
+        "認証アプリのコードを入力してください"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -1008,6 +1032,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
@@ -1076,6 +1103,9 @@
       ]
     },
     "Title": {
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Human verification": [
         "人間であることの検証"
       ],
@@ -1085,8 +1115,8 @@
       "Request new code": [
         "新しいコードのリクエスト"
       ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
+      "Two-factor authentication": [
+        "2要素認証"
       ]
     },
     "Validation": {

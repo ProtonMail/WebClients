@@ -2435,14 +2435,11 @@
       ]
     },
     "CSV format error": {
-      "Error on row ${ rowsThatErrored }.": [
-        "Fout op rij ${ rowsThatErrored }."
+      "Error on row ${ erroredRowsString }.": [
+        "Fout op rij ${ erroredRowsString }."
       ],
-      "It looks like your file is missing the 'EmailAddresses' header.": [
-        "Het lijkt erop dat in uw bestand de 'EmailAddresses'-header ontbreekt."
-      ],
-      "It looks like your file is missing the 'Password' header.": [
-        "Het lijkt erop dat in uw bestand de 'Password'-header ontbreekt."
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Het lijkt erop dat in uw bestand de '${ options.fieldName }'-header ontbreekt."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "We hebben fouten ontdekt in meerdere rijen tijdens het importeren, controleer uw CSV-bestand."
@@ -7960,26 +7957,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8046,6 +8023,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9105,6 +9102,14 @@
         "Gebruikersnaam"
       ]
     },
+    "Signup step": {
+      "Payment": [
+        "Betaling"
+      ],
+      "Verification": [
+        "Verificatie"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
@@ -9935,6 +9940,9 @@
       "Encryption and keys": [
         "Versleuteling en sleutels"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Error": [
         "Fout"
       ],
@@ -10247,9 +10255,6 @@
       ],
       "Sign in": [
         "Inloggen"
-      ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"

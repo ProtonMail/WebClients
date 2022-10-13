@@ -907,7 +907,7 @@
         "Han pasado más de 12 horas desde la última actualización"
       ],
       "Unsupported calendar format": [
-        "Formato de calendario no compatible"
+        "Formato de calendario no soportado"
       ]
     },
     "Calendar subscription not synced error; long version": {
@@ -934,7 +934,7 @@
     },
     "Calendar view selector": {
       "Change time range to": [
-        "Cambiar el intervalo de tiempo a"
+        "Cambiar a la vista de"
       ]
     },
     "Collapsible tooltip": {
@@ -2505,7 +2505,7 @@
         "Falló la validación del evento"
       ],
       "Floating times not supported": [
-        "Tiempos flotantes no admitidos"
+        "Tiempos flotantes no compatibles"
       ],
       "Free-busy time information": [
         "Información de disponibilidad por Internet"
@@ -2645,7 +2645,7 @@
         "El archivo ICS adjunto no ha podido ser descifrado"
       ],
       "Attached ICS file could not be read": [
-        "El archivo ICS adjunto no se ha podido leer"
+        "No se ha podido leer el archivo ICS adjunto"
       ],
       "Invalid invitation": [
         "Invitación no válida"
@@ -2714,13 +2714,16 @@
       ]
     },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+      ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "file size format": {
@@ -3492,7 +3495,7 @@
         "Cargando eventos"
       ],
       "Manage your calendars": [
-        "Gestiona tus calendarios"
+        "Gestionar calendarios"
       ],
       "Merged": [
         "Fusionado"
@@ -4075,7 +4078,7 @@
         "Contraseña del buzón"
       ],
       "Manage categories": [
-        "Administrar categorías"
+        "Gestionar categorías"
       ],
       "Manage folders": [
         "Gestionar carpetas"
@@ -5009,6 +5012,9 @@
       ],
       "Invite friends and earn rewards!": [
         "¡Invita a tus amigos y gana recompensas!"
+      ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Ahora las invitaciones aparecen en tu calendario como eventos pendientes. Solo abre un evento para responder. ${ goToSettingsLink }"
       ],
       "Subscribe to other calendars": [
         "Suscríbete a otros calendarios"
