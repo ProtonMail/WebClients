@@ -91,7 +91,6 @@ export enum FeatureCode {
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
     ConversationHeaderInScroll = 'ConversationHeaderInScroll',
-    FIDO2 = 'FIDO2',
 }
 
 export interface FeaturesContextValue {
