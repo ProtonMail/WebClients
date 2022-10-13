@@ -115,6 +115,7 @@ const AccountStep = ({
     const defaultSignupType = maybeDefaultSignupType || SignupType.Username;
     const [signupType, setSignupType] = useState<SignupType>(defaultSignupType || defaultSignupType);
     const [loginModal, setLoginModal, renderLoginModal] = useModalState();
+    const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
     const trimmedUsername = username.trim();
 
@@ -239,6 +240,12 @@ const AccountStep = ({
         </Fragment>
     );
 
+    const signIn = (
+        <Link key="signin" className="link" to={SSO_PATHS.LOGIN}>
+            {c('Link').t`Sign in`}
+        </Link>
+    );
+
     return (
         <Main>
             {renderLoginModal && <SignInPromptModal email={recoveryEmail} {...loginModal} />}
@@ -335,11 +342,12 @@ const AccountStep = ({
                             </UnderlineButton>
                         </div>
                     ) : null}
+
                     <InputFieldTwo
                         as={PasswordInputTwo}
                         id="password"
                         label={c('Label').t`Password`}
-                        assistiveText={getMinPasswordLengthMessage()}
+                        assistiveText={passwordInputFocused && getMinPasswordLengthMessage()}
                         error={validator([requiredValidator(password), passwordLengthValidator(password)])}
                         bigger
                         disableChange={loading}
@@ -347,7 +355,10 @@ const AccountStep = ({
                         value={password}
                         onValue={setPassword}
                         rootClassName="mt0-5"
+                        onFocus={() => setPasswordInputFocused(true)}
+                        onBlur={() => setPasswordInputFocused(false)}
                     />
+
                     <InputFieldTwo
                         as={PasswordInputTwo}
                         id="repeat-password"
@@ -380,17 +391,14 @@ const AccountStep = ({
                         {c('Action').t`Create account`}
                     </Button>
 
-                    <ButtonLike
-                        className="mt1"
-                        fullWidth
-                        color="norm"
-                        shape="outline"
-                        size="large"
-                        as={Link}
-                        to={SSO_PATHS.LOGIN}
-                    >
-                        {c('Link').t`Sign in`}
-                    </ButtonLike>
+                    <div className="mt1 text-center">
+                        {
+                            // translator: Full sentence "Already have an account? Sign in"
+                            c('Go to sign in').jt`Already have an account? ${signIn}`
+                        }
+                    </div>
+
+                    <hr className="my1" />
 
                     <div className="color-weak text-center text-sm mt1 pl2 pr2">
                         {
