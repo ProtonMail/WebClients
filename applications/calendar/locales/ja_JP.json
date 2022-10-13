@@ -2571,6 +2571,24 @@
         "あなたのご意見"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -3161,6 +3179,12 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは 1 回のみ使用可能です"
+      ],
+      "Enter the code from your authenticator app": [
+        "認証アプリのコードを入力してください"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
@@ -3427,6 +3451,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Which event would you like to delete?": [
         "どの予定を削除しますか？"
@@ -5026,6 +5053,9 @@
       ],
       "Merging contacts": [
         "連絡先の統合中"
+      ],
+      "Minicalendar": [
+        "ミニカレンダー"
       ],
       "Open actions dropdown": [
         "アクションドロップダウンを開く"
