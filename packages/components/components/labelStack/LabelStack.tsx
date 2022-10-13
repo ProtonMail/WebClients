@@ -1,5 +1,7 @@
 import { MouseEvent } from 'react';
 
+import { c } from 'ttag';
+
 import { classnames } from '../../helpers';
 import Tooltip from '../tooltip/Tooltip';
 import LabelStackItem from './LabelStackItem';
@@ -38,6 +40,9 @@ const LabelStack = ({
     const labelsToShow = labels.slice(0, maxNumber);
     const labelsOverflow = labels.slice(maxNumber || labels.length);
 
+    // translator: this text is not visible in the interface, it will be vocalized for blind people, to give them context of label buttons, like "Labels: <vocalisation of labels buttons>"
+    const labelsContext = c('Info').t`Labels:`;
+
     return (
         <ul
             className={classnames([
@@ -45,6 +50,7 @@ const LabelStack = ({
                 isStacked ? `is-stacked ${leftToRight ? 'flex-row-reverse' : 'flex-row'}` : 'flex-row',
                 className,
             ])}
+            aria-label={labelsContext}
         >
             {labelsToShow.map((label: LabelDescription) => (
                 <LabelStackItem label={label} key={label.name} showDropdown={showDropDown} showDelete={showDelete} />
