@@ -171,6 +171,7 @@ const SwitchAccountContainer = ({ toAppName, onLogin, activeSessions, onAddAccou
             const { LocalID, DisplayName, Username, PrimaryEmail } = session.remote;
             const isLoading = loadingMap[LocalID];
 
+            const isAdminSignedIntoMember = session.persisted.isSubUser;
             const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
             const initials = getInitials(nameToDisplay);
 
@@ -204,7 +205,15 @@ const SwitchAccountContainer = ({ toAppName, onLogin, activeSessions, onAddAccou
                                     void handleClickSession(LocalID);
                                 }}
                             >
-                                <strong className="block text-break">{nameToDisplay}</strong>
+                                <div className="text-break">
+                                    <strong>{nameToDisplay}</strong>
+                                    {isAdminSignedIntoMember && (
+                                        <span className="color-weak">
+                                            {' - '}
+                                            {c('Info').t`Member`}
+                                        </span>
+                                    )}
+                                </div>
                                 {PrimaryEmail && <div className="text-break color-weak">{PrimaryEmail}</div>}
                             </button>
                             <div>

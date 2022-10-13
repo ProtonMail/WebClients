@@ -1,33 +1,15 @@
 import { c } from 'ttag';
 
-import { revoke } from '@proton/shared/lib/api/auth';
-import { authMember } from '@proton/shared/lib/api/members';
-import { getUser } from '@proton/shared/lib/api/user';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import memberLogin from '@proton/shared/lib/authentication/memberLogin';
-import {
-    maybeResumeSessionByUser,
-    persistSessionWithPassword,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, MEMBER_PRIVATE, isSSOMode, isStandaloneMode } from '@proton/shared/lib/constants';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import {
-    CachedOrganizationKey,
-    Member,
-    Organization,
-    PartialMemberAddress,
-    User as tsUser,
-} from '@proton/shared/lib/interfaces';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { CachedOrganizationKey, Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 
 import { DropdownActions } from '../../components';
-import { useApi, useAuthentication, useLoading, useModals, useNotifications } from '../../hooks';
-import AuthModal from '../password/AuthModal';
+import { useLoading } from '../../hooks';
 
 interface Props {
     member: Member;
+    onLogin: (member: Member) => void;
     onEdit: (member: Member) => void;
     onDelete: (member: Member) => Promise<void>;
     onRevoke: (member: Member) => Promise<void>;
@@ -36,91 +18,8 @@ interface Props {
     organizationKey: CachedOrganizationKey | undefined;
 }
 
-const validateMemberLogin = (
-    organization: Organization | undefined,
-    organizationKey: CachedOrganizationKey | undefined
-) => {
-    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
-    if (organizationKeyInfo.userNeedsToActivateKey) {
-        return c('Error').t`The organization key must be activated first.`;
-    }
-    if (organizationKeyInfo.userNeedsToReactivateKey) {
-        return c('Error').t`Permission denied, administrator privileges have been restricted.`;
-    }
-    if (!organizationKey?.privateKey) {
-        return c('Error').t`Organization key is not decrypted.`;
-    }
-};
-
-const MemberActions = ({
-    member,
-    onEdit,
-    onDelete,
-    onRevoke,
-    addresses = [],
-    organization,
-    organizationKey,
-}: Props) => {
-    const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
-    const authentication = useAuthentication();
-    const { createNotification } = useNotifications();
+const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses = [], organization }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { createModal } = useModals();
-
-    const login = async () => {
-        const error = validateMemberLogin(organization, organizationKey);
-        if (error) {
-            return createNotification({ type: 'error', text: error });
-        }
-        const apiConfig = authMember(member.ID);
-        const { UID, LocalID } = await new Promise<{ UID: string; LocalID: number }>((resolve, reject) => {
-            createModal(
-                <AuthModal
-                    onCancel={reject}
-                    onSuccess={({ response }) => resolve(response.json())}
-                    config={apiConfig}
-                />
-            );
-        });
-
-        if (isSSOMode) {
-            const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
-            const User = await memberApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-
-            const done = (localID: number) => {
-                const url = getAppHref('/overview', APPS.PROTONACCOUNT, localID);
-                window.open(url);
-            };
-
-            const validatedSession = await maybeResumeSessionByUser(silentApi, User);
-            if (validatedSession) {
-                memberApi(revoke()).catch(noop);
-                done(validatedSession.LocalID);
-                return;
-            }
-
-            await persistSessionWithPassword({
-                api: memberApi,
-                keyPassword: authentication.getPassword(),
-                User,
-                LocalID,
-                UID,
-                persistent: authentication.getPersistent(),
-                trusted: false,
-            });
-            done(LocalID);
-            return;
-        }
-
-        if (isStandaloneMode) {
-            return;
-        }
-
-        // Legacy mode
-        const url = `${window.location.origin}/login/sub`;
-        await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url } as any);
-    };
 
     const canDelete = !member.Self;
     const canEdit = organization.HasKeys;
@@ -146,7 +45,10 @@ const MemberActions = ({
             } as const),
         canLogin && {
             text: c('Member action').t`Sign in`,
-            onClick: login,
+            onClick: () => {
+                // Add Addresses to member, missing when updated through event loop
+                onLogin({ ...member, Addresses: addresses });
+            },
         },
         canRevokeSessions && {
             text: c('Member action').t`Revoke sessions`,
