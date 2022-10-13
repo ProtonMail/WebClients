@@ -3265,6 +3265,9 @@
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primární klíč pro uživatele ${ BRAND_NAME } není možné použít pro odesílání"
+      ],
       "Public key could not be trusted": [
         "Veřejnému klíči nebylo možné věřit"
       ],
@@ -8186,6 +8189,9 @@
       "Edit contact group": [
         "Upravit skupinu kontaktů"
       ],
+      "Edit email settings": [
+        "Upravit nastavení e-mailu"
+      ],
       "Edit filter": [
         "Upravit filtr"
       ],
@@ -8441,9 +8447,6 @@
       "Settings": [
         "Nastavení"
       ],
-      "Sign in again to continue": [
-        "Chcete-li pokračovat, znovu se přihlaste"
-      ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
       ],
@@ -8485,6 +8488,9 @@
       ],
       "Trust public key?": [
         "Důvěřovat veřejnému klíči?"
+      ],
+      "Two-factor authentication": [
+        "Dvoufázové ověření"
       ],
       "Unsubscribe": [
         "Odhlásit odběr"
