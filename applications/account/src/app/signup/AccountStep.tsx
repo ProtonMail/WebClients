@@ -1,4 +1,4 @@
-import { Fragment, KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { Dispatch, Fragment, KeyboardEvent, SetStateAction, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -66,7 +66,9 @@ interface Props {
     onBack?: () => void;
     defaultUsername?: string;
     defaultEmail?: string;
-    defaultSignupType?: SignupType;
+    defaultSignupType: SignupType;
+    signupType: SignupType;
+    setSignupType: Dispatch<SetStateAction<SignupType>>;
     defaultRecoveryEmail?: string;
     hasExternalSignup?: boolean;
     domains: string[];
@@ -92,7 +94,9 @@ const AccountStep = ({
     subTitle,
     defaultUsername,
     defaultEmail,
-    defaultSignupType: maybeDefaultSignupType,
+    defaultSignupType,
+    signupType,
+    setSignupType,
     defaultRecoveryEmail,
     onSubmit,
     hasExternalSignup,
@@ -112,8 +116,6 @@ const AccountStep = ({
     const [confirmPassword, setConfirmPassword] = useState('');
     const [recoveryEmail, setRecoveryEmail] = useState(defaultRecoveryEmail || '');
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
-    const defaultSignupType = maybeDefaultSignupType || SignupType.Username;
-    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType);
     const [loginModal, setLoginModal, renderLoginModal] = useModalState();
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 

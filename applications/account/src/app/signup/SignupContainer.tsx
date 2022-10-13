@@ -134,6 +134,14 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
     const [model, setModel] = useState<SignupModel>(DEFAULT_SIGNUP_MODEL);
 
+    const cache = cacheRef.current;
+    const accountData = cache?.accountData;
+
+    const defaultSignupType =
+        clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
+
+    const [signupType, setSignupType] = useState<SignupType>(accountData?.signupType || defaultSignupType);
+
     const setModelDiff = (diff: Partial<SignupModel>) => {
         return setModel((model) => ({
             ...model,
@@ -255,8 +263,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         errorHandler(error);
     };
 
-    const cache = cacheRef.current;
-
     if (step === NO_SIGNUP) {
         throw new Error('Missing dependencies');
     }
@@ -350,10 +356,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             return handleBack;
         }
     })();
-    const signupType =
-        clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
     const upsellPlanName = (() => {
-        if (signupType === SignupType.VPN) {
+        if (defaultSignupType === SignupType.VPN) {
             return PLANS.VPN;
         }
 
@@ -363,8 +367,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
         return PLANS.MAIL;
     })();
-
-    const accountData = cache?.accountData;
 
     const stepper = useMemo(
         () =>
@@ -377,8 +379,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     payment: c('Signup step').t`Payment`,
                 };
 
-                const isExternalAccountFlow =
-                    accountData?.signupType === SignupType.Email || accountData?.signupType === SignupType.VPN;
+                const isExternalAccountFlow = signupType === SignupType.Email || signupType === SignupType.VPN;
                 if (isExternalAccountFlow) {
                     if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
                         return {
@@ -427,7 +428,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
                 return;
             })(),
-        [step, signupParameters.preSelectedPlan]
+        [step, signupParameters.preSelectedPlan, signupType]
     );
 
     const children = (
@@ -460,7 +461,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     })()}
                     defaultEmail={accountData?.email}
                     defaultUsername={accountData?.username}
-                    defaultSignupType={accountData?.signupType || signupType}
+                    defaultSignupType={defaultSignupType}
+                    signupType={signupType}
+                    setSignupType={setSignupType}
                     defaultRecoveryEmail={
                         (accountData?.signupType === SignupType.VPN && accountData.recoveryEmail) || ''
                     }
