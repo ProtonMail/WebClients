@@ -91,7 +91,7 @@ const ProtonVPNClientsSection = () => {
             />
             <SettingsParagraph>
                 {c('Info')
-                    .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a ${VPN_APP_NAME} server.`}
+                    .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a server.`}
             </SettingsParagraph>
             <div className="flex on-mobile-flex-column">
                 <VPNClientCard
