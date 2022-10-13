@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { serverTime } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
@@ -23,7 +24,7 @@ import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
 import { generateVeventHashUID, getOriginalUID } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { getSupportedCalscale } from '../icsSurgery/vcal';
-import { getLinkedDateTimeProperty, getSupportedEvent } from '../icsSurgery/vevent';
+import { getLinkedDateTimeProperty, getSupportedEvent, withSupportedDtstamp } from '../icsSurgery/vevent';
 import { parseWithErrors, serialize } from '../vcal';
 import {
     getHasDtStart,
@@ -38,7 +39,6 @@ import {
     getIsTodoComponent,
     getPropertyTzid,
 } from '../vcalHelper';
-import { withDtstamp } from '../veventHelper';
 import { ImportFileError } from './ImportFileError';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
@@ -167,7 +167,7 @@ export const extractSupportedEvent = async ({
     if (!getHasDtStart(vcalComponent)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MISSING, 'vevent', componentId);
     }
-    const validVevent = withDtstamp(vcalComponent);
+    const validVevent = withSupportedDtstamp(vcalComponent, +serverTime());
     const generateHashUid = !validVevent.uid?.value || isInvitation;
     if (generateHashUid) {
         validVevent.uid = { value: await generateVeventHashUID(serialize(vcalComponent), vcalComponent?.uid?.value) };

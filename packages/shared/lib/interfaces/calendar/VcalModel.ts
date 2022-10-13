@@ -57,6 +57,14 @@ export interface VcalFloatingDateTimeProperty {
     value: VcalDateTimeValue;
 }
 
+export interface IcalJSDateOrDateTimeProperty {
+    parameters?: {
+        type?: 'date' | 'date-time';
+        tzid?: string;
+    };
+    value: VcalDateValue | VcalDateTimeValue;
+}
+
 export type VcalDateOrDateTimeProperty = VcalDateProperty | VcalDateTimeProperty;
 
 export type VcalRruleFreqValue = 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'YEARLY' | undefined | string;
