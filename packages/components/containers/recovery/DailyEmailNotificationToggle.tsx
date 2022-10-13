@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
 import { updateNotifyEmail } from '@proton/shared/lib/api/settings';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { Info, Toggle } from '../../components';
+import { Toggle } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
-interface DailyEmailNotificationToggleInputProps {
+interface DailyEmailNotificationToggleProps {
+    id: string;
     isEnabled: boolean;
     canEnable: boolean;
+    className?: string;
 }
 
-export const DailyEmailNotificationToggleInput = ({ isEnabled, canEnable }: DailyEmailNotificationToggleInputProps) => {
+const DailyEmailNotificationToggle = ({ id, isEnabled, canEnable, className }: DailyEmailNotificationToggleProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -31,22 +31,13 @@ export const DailyEmailNotificationToggleInput = ({ isEnabled, canEnable }: Dail
 
     return (
         <Toggle
-            className="mr0-5"
+            className={className}
             loading={isNotifyEmailApiCallLoading}
             checked={isEnabled}
-            id="dailyNotificationsToggle"
+            id={id}
             onChange={({ target: { checked } }) => withLoading(handleChangeEmailNotify(+checked))}
         />
     );
 };
 
-export const DailyEmailNotificationToggleLabel = () => (
-    <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
-        <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
-        <Info
-            url={getStaticURL('/support/notification-email')}
-            title={c('Info')
-                .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
-        />
-    </label>
-);
+export default DailyEmailNotificationToggle;
