@@ -33,7 +33,7 @@ export const sendFormatter = ({ ID, packages, expiresIn, delaySendSeconds, autoS
     if (delaySendSeconds) {
         payload.DelaySeconds = delaySendSeconds;
     }
-    if (autoSaveContacts) {
+    if (autoSaveContacts !== undefined) {
         payload.AutoSaveContacts = autoSaveContacts;
     }
     if (scheduledAt) {
