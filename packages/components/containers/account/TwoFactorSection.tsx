@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode } from '@proton/components/containers';
 import { classnames } from '@proton/components/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -11,7 +10,7 @@ import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 
 import { Button, ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
-import { useConfig, useFeature, useNotifications, useUserSettings } from '../../hooks';
+import { useConfig, useNotifications, useUserSettings } from '../../hooks';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
@@ -38,7 +37,6 @@ const TwoFactorSection = () => {
     const [tmpRemove, setTmpRemove] = useState<{ keys: { name: string; id: string }[]; type: 'all' | 'single' }>(
         defaultTmpRemove
     );
-    const fido2Feature = useFeature<boolean>(FeatureCode.FIDO2);
     const [tmpEdit, setTmpEdit] = useState<{ name: string; id: string } | undefined>(undefined);
 
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
@@ -79,8 +77,7 @@ const TwoFactorSection = () => {
             ? 'https://protonvpn.com/support/two-factor-authentication'
             : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
-    const hasSecurityKeySupport =
-        getHasFIDO2Support(APP_NAME, location.hostname) && (fido2Feature.feature?.Value === true || hasFIDO2Enabled);
+    const hasSecurityKeySupport = getHasFIDO2Support(APP_NAME, location.hostname);
 
     return (
         <SettingsSection>
