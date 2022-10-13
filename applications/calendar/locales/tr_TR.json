@@ -2318,6 +2318,9 @@
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "${ BRAND_NAME } kullanıcısı için alınan birincil anahtar, gönderim için geçerli değil"
+      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
         "Yinelenen alıcılar kaldırıldı: ${ joinedRecipients }"
@@ -5514,6 +5517,9 @@
       ],
       "Edit contact group": [
         "Kişi grubunu düzenle"
+      ],
+      "Edit email settings": [
+        "E-posta ayarlarını düzenle"
       ],
       "Edit image": [
         "Görseli düzenle"

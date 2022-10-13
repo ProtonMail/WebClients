@@ -2069,6 +2069,24 @@
         "あなたのご意見"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -2708,6 +2726,9 @@
       "Duplicate key updated": [
         "重複したキーはアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは 1 回のみ使用可能です"
+      ],
       "Enabling drive search": [
         "ドライブ検索を有効にしています"
       ],
@@ -2716,6 +2737,9 @@
       ],
       "Encrypted search is here": [
         "暗号化された検索が利用できます"
+      ],
+      "Enter the code from your authenticator app": [
+        "認証アプリのコードを入力してください"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
@@ -3102,7 +3126,7 @@
         "まだファイルがありません"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "これらのファイルはエンドツーエンド暗号化を使用して共有されています。あなたのドキュメント、写真、ファイルを安全に保管するには Proton Drive をご利用ください。使いやすく、無料で利用できます。"
+        "ファイルは、エンドツーエンド暗号化を使用して共有されました。Proton Drive を利用するとドキュメント、写真、ファイルを安全に保管できます。使いやすく、無料で利用できます。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -3217,6 +3241,9 @@
       ],
       "What would you like to do?": [
         "何をしたいですか?"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい検証コードを受け取るか、他の検証方法を使用しますか？"
@@ -4672,6 +4699,9 @@
       "MIME type": [
         "MIME タイプ"
       ],
+      "Minicalendar": [
+        "ミニカレンダー"
+      ],
       "Modified": [
         "更新日時"
       ],
@@ -4871,7 +4901,7 @@
         "フォルダーがありません"
       ],
       "You've got files": [
-        "ファイルを取得しました"
+        "ファイルを安全に保管する"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"

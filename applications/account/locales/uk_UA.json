@@ -2502,14 +2502,11 @@
       ]
     },
     "CSV format error": {
-      "Error on row ${ rowsThatErrored }.": [
-        "Помилка в рядку ${ rowsThatErrored }."
+      "Error on row ${ erroredRowsString }.": [
+        "Помилка в рядку ${ erroredRowsString }."
       ],
-      "It looks like your file is missing the 'EmailAddresses' header.": [
-        "Схоже, у вашому файлі відсутній заголовок 'EmailAddresses'."
-      ],
-      "It looks like your file is missing the 'Password' header.": [
-        "Схоже, у вашому файлі відсутній заголовок 'Password'."
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Схоже, у вашому файлі відсутній заголовок '${ options.fieldName }'."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Ми виявили помилки в кількох рядках під час імпорту. Перевірте свій CSV-файл."
@@ -8270,26 +8267,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8356,6 +8333,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9453,6 +9450,17 @@
         "Ім'я користувача"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Налаштування облікового запису"
+      ],
+      "Payment": [
+        "Оплата"
+      ],
+      "Verification": [
+        "Перевірка"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Зберігайте свої файли так само безпечно, як і електронні листи."
@@ -10323,6 +10331,9 @@
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
+      "Enter your password": [
+        "Введіть свій пароль"
+      ],
       "Error": [
         "Помилка"
       ],
@@ -10634,9 +10645,6 @@
       ],
       "Sign in": [
         "Увійти"
-      ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"

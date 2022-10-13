@@ -3357,6 +3357,24 @@
         "あなたのご意見"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
+      ],
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
     "file size format": {
       "byte": [
         "バイト"
@@ -4253,6 +4271,9 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは 1 回のみ使用可能です"
+      ],
       "Edit encryption": [
         "暗号化を編集"
       ],
@@ -4282,6 +4303,9 @@
       ],
       "Encrypt message": [
         "メッセージを暗号化"
+      ],
+      "Enter the code from your authenticator app": [
+        "認証アプリのコードを入力してください"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
@@ -4993,6 +5017,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
@@ -7427,6 +7454,9 @@
       "Message will expire": [
         "メッセージは期限切れです"
       ],
+      "Minicalendar": [
+        "ミニカレンダー"
+      ],
       "More": [
         "その他"
       ],
@@ -7568,9 +7598,6 @@
       "Settings": [
         "設定"
       ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
       "Sign in and grant access": [
         "サインインして権限を付与"
       ],
@@ -7609,6 +7636,9 @@
       ],
       "Trust public key?": [
         "公開鍵を信頼しますか?"
+      ],
+      "Two-factor authentication": [
+        "2要素認証"
       ],
       "Unsubscribe": [
         "退会"

@@ -2503,14 +2503,11 @@
       ]
     },
     "CSV format error": {
-      "Error on row ${ rowsThatErrored }.": [
-        "Error en la fila ${ rowsThatErrored }."
+      "Error on row ${ erroredRowsString }.": [
+        "Error en la fila ${ erroredRowsString }."
       ],
-      "It looks like your file is missing the 'EmailAddresses' header.": [
-        "Parece que a su archivo le falta el encabezado 'EmailAddresses'."
-      ],
-      "It looks like your file is missing the 'Password' header.": [
-        "Parece que a su archivo le falta el encabezado 'Password'."
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Parece que a su archivo le falta el encabezado '${ options.fieldName }'."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Hemos detectado errores en varias filas durante la importación, revise su archivo CSV."
@@ -3672,7 +3669,7 @@
         "Inserte la llave de seguridad en el puerto USB."
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ],
       "Security key removed": [
         "Llave de seguridad eliminada"
@@ -3698,7 +3695,7 @@
         "Nombre de la llave"
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "fido2: Title": {
@@ -8197,26 +8194,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8283,6 +8260,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9390,6 +9387,17 @@
         "Nombre de usuario"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Configuración de la cuenta"
+      ],
+      "Payment": [
+        "Pago"
+      ],
+      "Verification": [
+        "Verificación"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
@@ -10228,6 +10236,9 @@
       "Encryption and keys": [
         "Cifrado y claves"
       ],
+      "Enter your password": [
+        "Ingrese su contraseña"
+      ],
       "Error": [
         "Error"
       ],
@@ -10540,9 +10551,6 @@
       ],
       "Sign in": [
         "Iniciar sesión"
-      ],
-      "Sign in again to continue": [
-        "Inicie sesión otra vez para continuar"
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
