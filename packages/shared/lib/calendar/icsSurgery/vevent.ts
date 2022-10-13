@@ -3,10 +3,13 @@ import { addDays, fromUnixTime } from 'date-fns';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
+import { RequireOnly } from '../../../lib/interfaces';
 import { DAY } from '../../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
 import {
+    IcalJSDateOrDateTimeProperty,
     VcalDateOrDateTimeProperty,
+    VcalDateTimeValue,
     VcalDurationValue,
     VcalFloatingDateTimeProperty,
     VcalVeventComponent,
@@ -18,6 +21,7 @@ import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } 
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../rrule';
 import { durationToMilliseconds } from '../vcal';
 import {
+    dateTimeToProperty,
     dateToProperty,
     getDateTimeProperty,
     getDateTimePropertyInDifferentTimezone,
@@ -60,6 +64,53 @@ export const getDtendPropertyFromDuration = (
     const tzid = getPropertyTzid(dtstart);
 
     return getDateTimeProperty(convertUTCDateTimeToZone(end, tzid!), tzid!);
+};
+
+export const getSupportedDtstamp = (dtstamp: IcalJSDateOrDateTimeProperty | undefined, timestamp: number) => {
+    // as per RFC, the DTSTAMP value MUST be specified in the UTC time format. But that's not what we always receive from external providers
+    const value = dtstamp?.value;
+    const tzid = dtstamp?.parameters?.tzid;
+
+    if (!value) {
+        return dateTimeToProperty(fromUTCDate(new Date(timestamp)), true);
+    }
+
+    if (tzid) {
+        const supportedTzid = getSupportedTimezone(tzid);
+        if (!supportedTzid) {
+            // generate a new DTSTAMP
+            return dateTimeToProperty(fromUTCDate(new Date(timestamp)), true);
+        }
+        // we try to guess what the external provider meant
+        const guessedProperty = {
+            value: {
+                year: value.year,
+                month: value.month,
+                day: value.day,
+                hours: (value as VcalDateTimeValue)?.hours || 0,
+                minutes: (value as VcalDateTimeValue)?.minutes || 0,
+                seconds: (value as VcalDateTimeValue)?.seconds || 0,
+                isUTC: (value as VcalDateTimeValue)?.isUTC === true,
+            },
+            parameters: {
+                tzid: supportedTzid,
+            },
+        };
+
+        return dateTimeToProperty(fromUTCDate(propertyToUTCDate(guessedProperty)), true);
+    }
+
+    return dateTimeToProperty(fromUTCDate(propertyToUTCDate(dtstamp as VcalDateOrDateTimeProperty)), true);
+};
+
+export const withSupportedDtstamp = <T>(
+    properties: RequireOnly<VcalVeventComponent, 'uid' | 'component' | 'dtstart'> & T,
+    timestamp: number
+): VcalVeventComponent & T => {
+    return {
+        ...properties,
+        dtstamp: getSupportedDtstamp(properties.dtstamp, timestamp),
+    };
 };
 
 export const getSupportedDateOrDateTimeProperty = ({

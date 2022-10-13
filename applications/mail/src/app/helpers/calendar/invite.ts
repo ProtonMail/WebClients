@@ -12,13 +12,12 @@ import {
     cloneEventInvitationErrorWithConfig,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
-import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent';
+import { getSupportedEvent, withSupportedDtstamp } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/integration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
-    dateTimeToProperty,
     getDtendProperty,
     propertyToLocalDate,
     propertyToUTCDate,
@@ -42,7 +41,7 @@ import {
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
-import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
+import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
@@ -188,20 +187,6 @@ export const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: Non
         result.sequence = { ...vcalSequence };
     }
     return result;
-};
-
-const withMessageDtstamp = <T>(
-    properties: VcalVeventComponent & T,
-    { Time }: MessageWithOptionalBody
-): VcalVeventComponent & T => {
-    if (properties.dtstamp) {
-        return properties;
-    }
-    // use the received time of the mail as dtstamp
-    return {
-        ...properties,
-        dtstamp: dateTimeToProperty(fromUTCDate(new Date(Time * SECOND)), true),
-    };
 };
 
 export const getHasMultipleVevents = (vcal?: VcalVcalendar) => {
@@ -624,7 +609,10 @@ export const getSupportedEventInvitation = async ({
     if (!getHasDtStart(vevent)) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
-    const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
+    const completeVevent = withOutsideUIDAndSequence(
+        withSupportedDtstamp(vevent, message.Time * SECOND),
+        vcalComponent
+    );
     const hasMultipleVevents = getHasMultipleVevents(vcalComponent);
     const isImport = supportedMethod === ICAL_METHOD.PUBLISH;
     // To filter potentially equivalent invitation ics's, we have to generate a reliable
@@ -655,7 +643,7 @@ export const getSupportedEventInvitation = async ({
     try {
         const supportedEvent = getSupportedEvent({
             method: supportedMethod,
-            vcalVeventComponent: withMessageDtstamp(completeVevent, message),
+            vcalVeventComponent: completeVevent,
             hasXWrTimezone,
             calendarTzid,
             guessTzid,
