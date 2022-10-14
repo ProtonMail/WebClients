@@ -130,8 +130,8 @@ END:VCARD`;
 
         const expectedSignedCard = `BEGIN:VCARD
 VERSION:4.0
-FN;PREF=1:New name
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+FN;PREF=1:New name
 ITEM1.EMAIL;PREF=1:new@email.com
 END:VCARD`.replaceAll('\n', '\r\n');
 
