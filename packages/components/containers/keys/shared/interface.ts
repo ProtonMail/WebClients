@@ -22,6 +22,11 @@ export interface KeyActions {
     onSetNotObsolete: (id: string) => void;
 }
 
+export enum KeyType {
+    User,
+    Address,
+}
+
 export interface KeyStatus {
     isAddressDisabled: boolean;
     isPrimary: boolean;
@@ -29,9 +34,11 @@ export interface KeyStatus {
     isCompromised: boolean;
     isObsolete: boolean;
     isLoading: boolean;
+    isWeak: boolean;
 }
 
 export interface KeyDisplay {
+    type: KeyType;
     ID: string;
     fingerprint: string;
     flags: number;
@@ -40,7 +47,6 @@ export interface KeyDisplay {
     algorithmInfos: AlgorithmInfo[];
     status: KeyStatus;
     permissions: KeyPermissions;
-    isWeak: boolean;
 }
 
 export enum FlagAction {
