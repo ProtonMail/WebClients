@@ -35,7 +35,7 @@ import SpamModal, { SpamMode } from './modals/SpamModal';
 const INSERT_ACTIONS: { type: SpamLocation; getName: () => string }[] = [
     { type: 'BLOCKED', getName: () => c('Action').t`Block` },
     { type: 'SPAM', getName: () => c('Action').t`Spam` },
-    { type: 'NON_SPAM', getName: () => c('Action').t`Non spam` },
+    { type: 'NON_SPAM', getName: () => c('Action').t`Not spam` },
 ];
 
 const ELEMENTS_PER_PAGE = 10;
@@ -172,7 +172,7 @@ const Spams = () => {
                                     dispatch({ type: 'setSearch', payload: nextSearch });
                                 }
                             }}
-                            placeholder={c('FilterSettings').t`Search in your allow and block lists`}
+                            placeholder={c('FilterSettings').t`Search list`}
                         />
                     </div>
 

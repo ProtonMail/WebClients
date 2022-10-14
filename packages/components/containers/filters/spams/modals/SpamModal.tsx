@@ -32,7 +32,7 @@ interface Props {
 const SpamModal = ({ type, onAdd, modalProps }: Props) => {
     const I18N: Record<SpamLocation, string> = {
         BLOCKED: c('Title').t`Add to your block list`,
-        NON_SPAM: c('Title').t`Add to non spam list`,
+        NON_SPAM: c('Title').t`Add to not spam list`,
         SPAM: c('Title').t`Add to spam list`,
     };
 

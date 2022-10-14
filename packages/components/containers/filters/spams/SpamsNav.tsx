@@ -14,7 +14,7 @@ const getNav = (showBlockSender: boolean): [type: SpamNavItem, getName: () => st
     return [
         ['ALL', () => c('Navigation').t`All`],
         ['SPAM', () => c('Navigation').t`Spam`],
-        ['NON_SPAM', () => c('Navigation').t`Non spam`],
+        ['NON_SPAM', () => c('Navigation').t`Not spam`],
         ...(showBlockSender
             ? [['BLOCKED', () => c('Navigation').t`Blocked`] as [type: SpamNavItem, getName: () => string]]
             : []),
