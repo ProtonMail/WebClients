@@ -78,8 +78,8 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     };
 
     // The user click on block sender option/action
-    const handleClickBlockSender = async (event: MouseEvent) => {
-        event.stopPropagation();
+    const handleClickBlockSender = async (event?: MouseEvent) => {
+        event?.stopPropagation();
 
         // Close dropdown in order to avoid having modal and dropdown opened at same time
         onCloseDropdown?.();
