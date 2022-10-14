@@ -19,7 +19,7 @@ describe('ContactExportingModal', () => {
 
     const contact1 = {
         ID: 'ContactID1',
-        LabelIDs: [props.contactGroupID as string],
+        LabelIDs: [props.contactGroupID],
     };
 
     const vcard1 = `BEGIN:VCARD
@@ -32,7 +32,7 @@ END:VCARD`;
 
     const contact2 = {
         ID: 'ContactID2',
-        LabelIDs: [props.contactGroupID as string],
+        LabelIDs: [props.contactGroupID],
     };
 
     const vcard2 = `BEGIN:VCARD

@@ -23,6 +23,7 @@ export type VCardKey =
     | 'note'
     | 'url';
 
+// TODO: Deprecate this type. Use only VCardContact
 export type VCardProperty<T = any> = {
     field: string;
     value: T;
@@ -56,7 +57,7 @@ export type VCardAddress = {
 };
 
 export type VCardDateOrText = {
-    date?: Date;
+    date?: Date; // local date
     text?: string;
 };
 
@@ -82,7 +83,7 @@ export interface VCardContact {
     related?: VCardProperty<string>[];
     note?: VCardProperty<string>[];
     url?: VCardProperty<string>[];
-    categories?: VCardProperty<string>[];
+    categories?: VCardProperty<string | string[]>[];
     key?: VCardProperty<string>[];
     'x-pm-encrypt'?: VCardProperty<boolean>[];
     'x-pm-sign'?: VCardProperty<boolean>[];

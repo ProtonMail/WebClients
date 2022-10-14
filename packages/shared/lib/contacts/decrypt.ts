@@ -160,11 +160,13 @@ export const prepareVCardContact = async (
     try {
         const vCardContacts = vcards.map((vcard) => parseToVCard(vcard));
         const vCardContact = mergeVCard(vCardContacts);
+
         return { vCardContact, errors, isVerified };
     } catch (e: any) {
         // eslint-disable-next-line no-console
         console.error('Error in prepare vCard', e);
         const error = e instanceof Error ? e : new Error('Corrupted vcard data');
+
         return { vCardContact: { fn: [] }, errors: [error], isVerified };
     }
 };
