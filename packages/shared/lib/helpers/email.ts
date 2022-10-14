@@ -10,7 +10,7 @@
  */
 import isTruthy from '@proton/utils/isTruthy';
 
-export enum CANONIZE_SCHEME {
+export enum CANONICALIZE_SCHEME {
     DEFAULT,
     PLUS,
     GMAIL,
@@ -111,28 +111,28 @@ export const addPlusAlias = (email = '', plus = '') => {
 };
 
 /**
- * Canonize an email address following one of the known schemes
+ * Canonicalize an email address following one of the known schemes
  * Emails that have the same canonical form end up in the same inbox
  * See https://confluence.protontech.ch/display/MBE/Canonize+email+addresses
  */
-export const canonizeEmail = (email: string, scheme = CANONIZE_SCHEME.DEFAULT) => {
+export const canonicalizeEmail = (email: string, scheme = CANONICALIZE_SCHEME.DEFAULT) => {
     const [localPart, domain] = getEmailParts(email);
     const at = email[email.length - domain.length - 1] === '@' ? '@' : '';
-    if (scheme === CANONIZE_SCHEME.PROTON) {
+    if (scheme === CANONICALIZE_SCHEME.PROTON) {
         const cleanLocalPart = removePlusAliasLocalPart(localPart);
         const normalizedLocalPart = cleanLocalPart.replace(/[._-]/g, '').toLowerCase();
         const normalizedDomain = domain.toLowerCase();
 
         return `${normalizedLocalPart}${at}${normalizedDomain}`;
     }
-    if (scheme === CANONIZE_SCHEME.GMAIL) {
+    if (scheme === CANONICALIZE_SCHEME.GMAIL) {
         const cleanLocalPart = removePlusAliasLocalPart(localPart);
         const normalizedLocalPart = cleanLocalPart.replace(/[.]/g, '').toLowerCase();
         const normalizedDomain = domain.toLowerCase();
 
         return `${normalizedLocalPart}${at}${normalizedDomain}`;
     }
-    if (scheme === CANONIZE_SCHEME.PLUS) {
+    if (scheme === CANONICALIZE_SCHEME.PLUS) {
         const cleanLocalPart = removePlusAliasLocalPart(localPart);
         const normalizedLocalPart = cleanLocalPart.toLowerCase();
         const normalizedDomain = domain.toLowerCase();
@@ -143,28 +143,28 @@ export const canonizeEmail = (email: string, scheme = CANONIZE_SCHEME.DEFAULT) =
     return email.toLowerCase();
 };
 
-export const canonizeInternalEmail = (email: string) => canonizeEmail(email, CANONIZE_SCHEME.PROTON);
+export const canonicalizeInternalEmail = (email: string) => canonicalizeEmail(email, CANONICALIZE_SCHEME.PROTON);
 
 /**
- * Canonize an email by guessing the scheme that should be applied
+ * Canonicalize an email by guessing the scheme that should be applied
  * Notice that this helper will not apply the Proton scheme on custom domains;
  * Only the back-end knows about custom domains, but they also apply the default scheme in those cases.
  */
-export const canonizeEmailByGuess = (email: string) => {
+export const canonicalizeEmailByGuess = (email: string) => {
     const [, domain] = getEmailParts(email);
     const normalizedDomain = domain.toLowerCase();
     if (PROTONMAIL_DOMAINS.includes(normalizedDomain)) {
-        return canonizeEmail(email, CANONIZE_SCHEME.PROTON);
+        return canonicalizeEmail(email, CANONICALIZE_SCHEME.PROTON);
     }
     if (['gmail.com', 'googlemail.com', 'google.com'].includes(normalizedDomain)) {
-        return canonizeEmail(email, CANONIZE_SCHEME.GMAIL);
+        return canonicalizeEmail(email, CANONICALIZE_SCHEME.GMAIL);
     }
     if (
         ['hotmail.com', 'hotmail.co.uk', 'hotmail.fr', 'outlook.com', 'yandex.ru', 'mail.ru'].includes(normalizedDomain)
     ) {
-        return canonizeEmail(email, CANONIZE_SCHEME.PLUS);
+        return canonicalizeEmail(email, CANONICALIZE_SCHEME.PLUS);
     }
-    return canonizeEmail(email, CANONIZE_SCHEME.DEFAULT);
+    return canonicalizeEmail(email, CANONICALIZE_SCHEME.DEFAULT);
 };
 
 const extractStringItems = (str: string) => {

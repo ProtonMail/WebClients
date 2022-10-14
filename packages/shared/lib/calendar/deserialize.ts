@@ -2,7 +2,7 @@ import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/cry
 import unary from '@proton/utils/unary';
 
 import { getIsAddressDisabled } from '../helpers/address';
-import { canonizeInternalEmail } from '../helpers/email';
+import { canonicalizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
 import { Address, Nullable } from '../interfaces';
 import {
@@ -84,13 +84,13 @@ export const getSelfAddressData = ({
             isAttendee: false,
         };
     }
-    const ownCanonizedEmailsMap = addresses.reduce<SimpleMap<string>>((acc, { Email }) => {
-        acc[Email] = canonizeInternalEmail(Email);
+    const ownCanonicalizedEmailsMap = addresses.reduce<SimpleMap<string>>((acc, { Email }) => {
+        acc[Email] = canonicalizeInternalEmail(Email);
         return acc;
     }, {});
 
-    const organizerEmail = canonizeInternalEmail(getAttendeeEmail(organizer));
-    const organizerAddress = addresses.find(({ Email }) => ownCanonizedEmailsMap[Email] === organizerEmail);
+    const organizerEmail = canonicalizeInternalEmail(getAttendeeEmail(organizer));
+    const organizerAddress = addresses.find(({ Email }) => ownCanonicalizedEmailsMap[Email] === organizerEmail);
 
     if (organizerAddress) {
         return {
@@ -100,7 +100,7 @@ export const getSelfAddressData = ({
         };
     }
 
-    const canonicalAttendeeEmails = attendees.map((attendee) => canonizeInternalEmail(getAttendeeEmail(attendee)));
+    const canonicalAttendeeEmails = attendees.map((attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)));
 
     // start checking active addresses
     const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
@@ -114,7 +114,7 @@ export const getSelfAddressData = ({
             if (acc.answeredAttendeeFound) {
                 return acc;
             }
-            const canonicalSelfEmail = ownCanonizedEmailsMap[address.Email];
+            const canonicalSelfEmail = ownCanonicalizedEmailsMap[address.Email];
             const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
             if (index === -1) {
                 return acc;
@@ -154,7 +154,7 @@ export const getSelfAddressData = ({
             if (acc.answeredAttendeeFound) {
                 return acc;
             }
-            const canonicalSelfEmail = ownCanonizedEmailsMap[address.Email];
+            const canonicalSelfEmail = ownCanonicalizedEmailsMap[address.Email];
             const index = canonicalAttendeeEmails.findIndex((email) => email === canonicalSelfEmail);
             if (index === -1) {
                 return acc;

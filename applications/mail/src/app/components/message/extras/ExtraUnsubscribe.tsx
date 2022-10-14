@@ -29,7 +29,7 @@ import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -71,7 +71,9 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
     const toAddress = getOriginalTo(message);
-    const address = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(toAddress));
+    const address = addresses.find(
+        ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(toAddress)
+    );
     const unsubscribeMethods = message.UnsubscribeMethods || {};
 
     const needsSimpleLoginPresentation = simpleLoginIntegrationFeature?.Value && !hasSimpleLogin;

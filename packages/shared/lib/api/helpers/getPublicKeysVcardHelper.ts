@@ -5,7 +5,7 @@ import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parseToVCard } from '../../contacts/vcard';
-import { CANONIZE_SCHEME, canonizeEmail } from '../../helpers/email';
+import { CANONICALIZE_SCHEME, canonicalizeEmail } from '../../helpers/email';
 import { Api, PinnedKeysConfig } from '../../interfaces';
 import { ContactEmail, Contact as tsContact } from '../../interfaces/contacts';
 import { getContact, queryContactEmails } from '../contacts';
@@ -16,7 +16,7 @@ const getContactEmail = async (
     api: Api
 ) => {
     // Simple normalize here, internal version is to aggressive relative to contacts emails
-    const canonicalEmail = canonizeEmail(emailAddress);
+    const canonicalEmail = canonicalizeEmail(emailAddress);
     if (contactEmailsMap[canonicalEmail]) {
         return contactEmailsMap[canonicalEmail];
     }
@@ -63,8 +63,11 @@ const getPublicKeysVcardHelper = async (
         contactSignatureTimestamp = signatureTimestamp;
         const vCardContact = parseToVCard(signedVcard);
         const emailProperty = (vCardContact.email || []).find(({ field, value }) => {
-            const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
-            return field === 'email' && canonizeEmail(value as string, scheme) === canonizeEmail(emailAddress, scheme);
+            const scheme = isInternal ? CANONICALIZE_SCHEME.PROTON : CANONICALIZE_SCHEME.DEFAULT;
+            return (
+                field === 'email' &&
+                canonicalizeEmail(value as string, scheme) === canonicalizeEmail(emailAddress, scheme)
+            );
         });
         if (!emailProperty || !emailProperty.group) {
             throw new Error('Invalid vcard');

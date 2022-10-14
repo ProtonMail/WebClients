@@ -16,7 +16,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ACCENT_COLORS, API_CODES, APPS } from '@proton/shared/lib/constants';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import {
@@ -404,7 +404,7 @@ END:VCALENDAR`;
     it('should display the expected fields for the "already accepted invitation" happy case', async () => {
         // constants
         const dummyUID = 'testUID@example.domain';
-        const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+        const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
         const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -479,7 +479,7 @@ END:VCALENDAR`;
     it('should show the correct UI for an unsupported ics with import PUBLISH', async () => {
         // constants
         const dummyUID = 'testUID@example.domain';
-        const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+        const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
         // ics with unsupported time zone
         const ics = `BEGIN:VCALENDAR
@@ -513,7 +513,7 @@ END:VCALENDAR`;
     it('should not duplicate error banners', async () => {
         // constants
         const dummyUID = 'testUID@example.domain';
-        const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+        const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
         // ics with unsupported time zone
         const ics = `BEGIN:VCALENDAR
@@ -550,7 +550,7 @@ END:VCALENDAR`;
     describe('organizer mode', () => {
         it('method=reply: displays the correct UI for the case with no calendars', async () => {
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -586,7 +586,10 @@ END:VCALENDAR`;
             const alternativeCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(dummyAddressKey);
 
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(
+                canonicalizeInternalEmail(dummySenderEmailAddress),
+                dummyUID
+            );
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -657,7 +660,7 @@ END:VCALENDAR`;
 
         it('no event in db already exists', async () => {
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -696,7 +699,10 @@ END:VCALENDAR`;
 
         it('method=refresh from future', async () => {
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(
+                canonicalizeInternalEmail(dummySenderEmailAddress),
+                dummyUID
+            );
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -763,7 +769,10 @@ END:VCALENDAR`;
 
         it('method=reply outdated', async () => {
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(
+                canonicalizeInternalEmail(dummySenderEmailAddress),
+                dummyUID
+            );
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -830,7 +839,7 @@ END:VCALENDAR`;
     describe('attendee mode', () => {
         it('shows the correct UI for an outdated invitation', async () => {
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN
@@ -919,7 +928,7 @@ END:VCALENDAR`;
             const anotherEmailAddress = 'another@protonmail.ch';
             const [dummyToken, anotherToken] = await Promise.all(
                 [dummyUserEmailAddress, anotherEmailAddress].map((address) =>
-                    generateAttendeeToken(canonizeInternalEmail(address), dummyUID)
+                    generateAttendeeToken(canonicalizeInternalEmail(address), dummyUID)
                 )
             );
 
@@ -1048,7 +1057,7 @@ END:VCALENDAR`;
         it('should show the correct UI for a supported ics with import PUBLISH', async () => {
             // constants
             const dummyUID = 'testUID@example.domain';
-            const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummyUserEmailAddress), dummyUID);
+            const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
 
             const ics = `BEGIN:VCALENDAR
 PRODID:-//Proton AG//WebCalendar 4.5.0//EN

@@ -5,7 +5,7 @@ import {
     CalendarExportSection,
     CalendarImportSection,
     CalendarLayoutSection,
-    CalendarSettingsSection,
+    CalendarSubpage,
     CalendarTimeSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
@@ -125,7 +125,7 @@ const CalendarSettingsRouter = ({
                 />
             </Route>
             <Route path={`${getSectionPath(path, calendarsRoute)}/:calendarId`}>
-                <CalendarSettingsSection
+                <CalendarSubpage
                     calendars={visualCalendars}
                     addresses={addresses}
                     subscribedCalendars={subscribedCalendars}

@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext, useMemo } from 'react';
 
 import { useContactEmails, useContactGroups } from '@proton/components';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -43,7 +43,7 @@ export const useContactEmailsCache = () => {
 
 const toMapWithDuplicates = (contacts: ContactEmail[]) => {
     const contactEmailsMapWithDuplicates = contacts.reduce<SimpleMap<ContactEmail[]>>((acc, contact) => {
-        const email = canonizeEmail(contact.Email);
+        const email = canonicalizeEmail(contact.Email);
         const contacts = acc[email];
         if (!contacts) {
             acc[email] = [contact];

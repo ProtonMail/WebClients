@@ -4,7 +4,7 @@ import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/cr
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CONTACT_CARD_TYPE } from '../constants';
-import { CANONIZE_SCHEME, canonizeEmail } from '../helpers/email';
+import { CANONICALIZE_SCHEME, canonicalizeEmail } from '../helpers/email';
 import { generateProtonWebUID } from '../helpers/uid';
 import { ContactCard } from '../interfaces/contacts';
 import { VCardProperty } from '../interfaces/contacts/VCard';
@@ -57,8 +57,10 @@ export const pinKeyUpdateContact = async ({
     const signedVCard = parseToVCard(signedVcard);
     const signedProperties = getVCardProperties(signedVCard);
     const emailProperty = signedProperties.find(({ field, value }) => {
-        const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
-        return field === 'email' && canonizeEmail(value as string, scheme) === canonizeEmail(emailAddress, scheme);
+        const scheme = isInternal ? CANONICALIZE_SCHEME.PROTON : CANONICALIZE_SCHEME.DEFAULT;
+        return (
+            field === 'email' && canonicalizeEmail(value as string, scheme) === canonicalizeEmail(emailAddress, scheme)
+        );
     });
     const emailGroup = emailProperty?.group as string;
     const keyProperties = emailGroup

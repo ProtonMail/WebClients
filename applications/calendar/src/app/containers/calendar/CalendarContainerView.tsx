@@ -44,7 +44,7 @@ import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
 import { APPS } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -183,7 +183,7 @@ const CalendarContainerView = ({
     }, [utcDate, range, view]);
 
     const ownNormalizedEmails = useMemo(() => {
-        return addresses.map(({ Email }) => canonizeInternalEmail(Email));
+        return addresses.map(({ Email }) => canonicalizeInternalEmail(Email));
     }, [addresses]);
 
     const handleClickTodayIframe = () => {
@@ -260,7 +260,7 @@ const CalendarContainerView = ({
                 );
                 const participants = contactEmailsOfContacts.map(({ Email }) => emailToAttendee(Email));
                 const participantsWithoutSelf = participants.filter(
-                    ({ email }) => !ownNormalizedEmails.includes(canonizeInternalEmail(email))
+                    ({ email }) => !ownNormalizedEmails.includes(canonicalizeInternalEmail(email))
                 );
 
                 if (participantsWithoutSelf.length < participants.length) {
@@ -332,7 +332,7 @@ const CalendarContainerView = ({
                                         return [];
                                     }
 
-                                    if (!ownNormalizedEmails.includes(canonizeInternalEmail(Email))) {
+                                    if (!ownNormalizedEmails.includes(canonicalizeInternalEmail(Email))) {
                                         return [emailToAttendee(Email)];
                                     }
 

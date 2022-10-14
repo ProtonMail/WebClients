@@ -3,7 +3,7 @@ import unary from '@proton/utils/unary';
 import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
 import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
-import { canonizeInternalEmail } from './email';
+import { canonicalizeInternalEmail } from './email';
 
 export const getIsAddressDisabled = (address: Address) => {
     return address.Status === ADDRESS_STATUS.STATUS_DISABLED;
@@ -40,8 +40,8 @@ export const findUserAddress = (userEmail?: string, addresses: Address[] = []) =
     if (!userEmail) {
         return undefined;
     }
-    const canonicalUserEmail = canonizeInternalEmail(userEmail);
-    return addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonicalUserEmail);
+    const canonicalUserEmail = canonicalizeInternalEmail(userEmail);
+    return addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalUserEmail);
 };
 
 export const getSelfSendAddresses = (ownAddresses: Address[]) => {
