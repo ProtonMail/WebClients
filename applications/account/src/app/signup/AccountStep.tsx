@@ -241,7 +241,7 @@ const AccountStep = ({
     );
 
     const signIn = (
-        <Link key="signin" className="link" to={SSO_PATHS.LOGIN}>
+        <Link key="signin" className="link text-nowrap" to={SSO_PATHS.LOGIN}>
             {c('Link').t`Sign in`}
         </Link>
     );
@@ -387,20 +387,20 @@ const AccountStep = ({
                             rootClassName="mt0-5"
                         />
                     )}
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                    <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                         {c('Action').t`Create account`}
                     </Button>
 
-                    <div className="mt1 text-center">
+                    <div className="text-center mt1-25">
                         {
                             // translator: Full sentence "Already have an account? Sign in"
                             c('Go to sign in').jt`Already have an account? ${signIn}`
                         }
                     </div>
 
-                    <hr className="my1" />
+                    <hr className="my1-25" />
 
-                    <div className="color-weak text-center text-sm mt1 pl2 pr2">
+                    <div className="color-weak text-center text-sm px2">
                         {
                             // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                             c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}`

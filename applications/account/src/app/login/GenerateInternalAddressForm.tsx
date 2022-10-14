@@ -62,7 +62,7 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
                 }}
                 suffix={`@${domain}`}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                 {c('Action').t`Next`}
             </Button>
         </form>
