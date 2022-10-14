@@ -66,7 +66,9 @@ interface Props {
     onBack?: () => void;
     defaultUsername?: string;
     defaultEmail?: string;
-    defaultSignupType?: SignupType;
+    defaultSignupType: SignupType;
+    signupType: SignupType;
+    onChangeSignupType: (signupType: SignupType) => void;
     defaultRecoveryEmail?: string;
     hasExternalSignup?: boolean;
     domains: string[];
@@ -92,7 +94,9 @@ const AccountStep = ({
     subTitle,
     defaultUsername,
     defaultEmail,
-    defaultSignupType: maybeDefaultSignupType,
+    defaultSignupType,
+    signupType,
+    onChangeSignupType,
     defaultRecoveryEmail,
     onSubmit,
     hasExternalSignup,
@@ -112,8 +116,6 @@ const AccountStep = ({
     const [confirmPassword, setConfirmPassword] = useState('');
     const [recoveryEmail, setRecoveryEmail] = useState(defaultRecoveryEmail || '');
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
-    const defaultSignupType = maybeDefaultSignupType || SignupType.Username;
-    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType || defaultSignupType);
     const [loginModal, setLoginModal, renderLoginModal] = useModalState();
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
@@ -324,7 +326,7 @@ const AccountStep = ({
                                 id="existing-email-button"
                                 onClick={() => {
                                     // Reset verification parameters if email is changed
-                                    setSignupType(
+                                    onChangeSignupType(
                                         (() => {
                                             if (signupType === SignupType.Username || signupType === SignupType.VPN) {
                                                 return SignupType.Email;
