@@ -79,6 +79,7 @@ export const createContactPropertyUid = () => generateUID(UID_PREFIX);
 
 export const getContactPropertyUid = (uid: string) => Number(uid.replace(`${UID_PREFIX}-`, ''));
 
+// TODO: Deprecate this function. See VcardProperty interface
 export const getVCardProperties = (vCardContact: VCardContact): VCardProperty[] => {
     return Object.values(vCardContact).flatMap((property) => {
         if (Array.isArray(property)) {
@@ -90,7 +91,7 @@ export const getVCardProperties = (vCardContact: VCardContact): VCardProperty[] 
 };
 
 export const fromVCardProperties = (vCardProperties: VCardProperty[]): VCardContact => {
-    const vCardContact: VCardContact = { fn: [] };
+    const vCardContact = {} as VCardContact;
 
     vCardProperties.forEach((property) => {
         const field = property.field as keyof VCardContact;
