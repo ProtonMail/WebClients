@@ -382,6 +382,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                         }}
                         autocomplete={
                             <AddressesAutocompleteTwo
+                                hasAddOnBlur
                                 id={inputId}
                                 compact
                                 anchorRef={addressesAutocompleteRef}
