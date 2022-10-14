@@ -298,8 +298,11 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const remainingSpots = maxRecipients - totalRecipients;
     const maxReachedError =
         remainingSpots < 0
-            ? c('Share calendar max shares reached error')
-                  .t`You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} members per calendar`
+            ? c('Share calendar max shares reached error').ngettext(
+                  msgid`You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} member per calendar`,
+                  `You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} members per calendar`,
+                  MAX_CALENDAR_MEMBERS
+              )
             : null;
     const hint = (
         <span className={clsx([remainingSpots < 0 && 'color-danger'])}>
