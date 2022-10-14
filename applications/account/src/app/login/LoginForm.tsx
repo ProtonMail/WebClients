@@ -102,7 +102,7 @@ const LoginForm = ({
 
     const learnMore = (
         <Href
-            className="color-inherit"
+            className="color-inherit inline-block"
             key="learn-more"
             url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode')}
         >
@@ -111,7 +111,7 @@ const LoginForm = ({
     );
 
     const keepMeSignedInLearnMoreLink = (
-        <Href className="color-inherit" key="learn-more" url={getKnowledgeBaseUrl('/keep-me-signed-in')}>
+        <Href className="color-inherit inline-block" key="learn-more" url={getKnowledgeBaseUrl('/keep-me-signed-in')}>
             {c('Info').t`Why?`}
         </Href>
     );
