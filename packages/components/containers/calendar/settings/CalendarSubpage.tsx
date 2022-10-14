@@ -30,8 +30,8 @@ import {
 import { PrivateMainSettingsAreaBase } from '../../layout/PrivateMainSettingsArea';
 import CalendarDeleteSection from './CalendarDeleteSection';
 import CalendarEventDefaultsSection from './CalendarEventDefaultsSection';
-import CalendarSettingsHeaderSection from './CalendarSettingsHeaderSection';
 import CalendarShareSection from './CalendarShareSection';
+import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 
 interface Props {
     calendars: VisualCalendar[];
@@ -41,7 +41,7 @@ interface Props {
     user: UserModel;
 }
 
-const SingleCalendarSettingsSection = ({ calendars, subscribedCalendars, defaultCalendar, addresses, user }: Props) => {
+const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addresses, user }: Props) => {
     const { calendarId } = useParams<{ calendarId: string }>();
     const history = useHistory();
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -152,7 +152,7 @@ const SingleCalendarSettingsSection = ({ calendars, subscribedCalendars, default
             breadcrumbs={<CalendarSettingsBreadcrumbs calendar={calendar} calendars={calendars} />}
         >
             <div className="container-section-sticky-section container-section-sticky-section--single-calendar-section">
-                <CalendarSettingsHeaderSection
+                <CalendarSubpageHeaderSection
                     calendar={calendar}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}
@@ -186,4 +186,4 @@ const SingleCalendarSettingsSection = ({ calendars, subscribedCalendars, default
     );
 };
 
-export default SingleCalendarSettingsSection;
+export default CalendarSubpage;

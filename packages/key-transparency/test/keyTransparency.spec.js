@@ -43,13 +43,13 @@ describe('key transparency', () => {
         expect(result.error).toEqual('The keys were generated too recently to be included in key transparency');
     });
 
-    it('should fail with undefined canonizeEmail', async () => {
+    it('should fail with undefined canonicalizeEmail', async () => {
         const corruptAddress = JSON.parse(JSON.stringify(mockAddress));
         corruptAddress.Responses[0].Response.CanonicalEmail = undefined;
 
         const result = await verifyPublicKeys(keyList, testEmail, skl, mockApi(epoch, proof, corruptAddress));
         expect(result.code).toEqual(KT_STATUS.KT_FAILED);
-        expect(result.error).toEqual(`Failed to canonize email "${testEmail}"`);
+        expect(result.error).toEqual(`Failed to canonicalize email "${testEmail}"`);
     });
 
     it('should fail with no signed key list given', async () => {

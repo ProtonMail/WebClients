@@ -19,7 +19,7 @@ import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/cal
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import urlify from '@proton/shared/lib/calendar/urlify';
-import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -99,18 +99,22 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
 
     const { modal: linkModal } = useLinkHandler(popoverEventContentRef, mailSettings);
 
-    const canonizedOrganizerEmail = canonizeEmailByGuess(organizer?.email || '');
+    const canonicalizedOrganizerEmail = canonicalizeEmailByGuess(organizer?.email || '');
 
     const attendeesWithoutOrganizer = model.attendees.filter(
-        ({ email }) => canonizeEmailByGuess(email) !== canonizedOrganizerEmail
+        ({ email }) => canonicalizeEmailByGuess(email) !== canonicalizedOrganizerEmail
     );
     const groupedAttendees = attendeesWithoutOrganizer
         .map((attendee) => {
             const attendeeEmail = attendee.email;
             const selfEmail = model.selfAddress?.Email;
             const displayName =
-                displayNameEmailMap[canonizeEmailByGuess(attendeeEmail)]?.displayName || attendee.cn || attendeeEmail;
-            const isYou = !!(selfEmail && canonizeInternalEmail(selfEmail) === canonizeInternalEmail(attendeeEmail));
+                displayNameEmailMap[canonicalizeEmailByGuess(attendeeEmail)]?.displayName ||
+                attendee.cn ||
+                attendeeEmail;
+            const isYou = !!(
+                selfEmail && canonicalizeInternalEmail(selfEmail) === canonicalizeInternalEmail(attendeeEmail)
+            );
             const name = isYou ? c('Participant name').t`You` : displayName;
             const title = name === attendee.email || isYou ? attendeeEmail : `${name} <${attendeeEmail}>`;
             const initials = getInitials(displayName);
@@ -171,7 +175,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
 
     const organizerPartstat =
         hasOrganizer &&
-        model.attendees.find(({ email }) => canonizeEmailByGuess(email) === canonizedOrganizerEmail)?.partstat;
+        model.attendees.find(({ email }) => canonicalizeEmailByGuess(email) === canonicalizedOrganizerEmail)?.partstat;
     const organizerPartstatIcon = organizerPartstat ? <AttendeeStatusIcon partstat={organizerPartstat} /> : null;
 
     const groupedReplies = {

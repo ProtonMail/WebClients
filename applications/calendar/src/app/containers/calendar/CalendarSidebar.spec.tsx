@@ -22,6 +22,13 @@ import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
 jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', () => ({
     __esModule: true,
     CalendarModal: jest.fn(({ open }) => <span>{open ? 'CalendarModal' : null}</span>),
+    // It's not great having to mock this export manually, but the only alternative would be
+    // to move the enum definition somewhere else. Ideally we shouldn't mock CalendarModal at all
+    CALENDAR_MODAL_TYPE: {
+        COMPLETE: 0,
+        SHARED: 1,
+        VISUAL: 2,
+    },
 }));
 
 jest.mock('@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal', () => ({

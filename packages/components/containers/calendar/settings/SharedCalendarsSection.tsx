@@ -27,7 +27,7 @@ import {
     getDisabledCalendarBadge,
 } from '@proton/shared/lib/calendar/badges';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -198,12 +198,12 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
                     ))}
                     {isCalendarSharingEnabled &&
                         invitations.map((invitation) => {
-                            const disabledCanonizedEmails = addresses
+                            const disabledCanonicalizedEmails = addresses
                                 .filter((address) => getIsAddressDisabled(address))
-                                .map((address) => canonizeInternalEmail(address.Email));
+                                .map((address) => canonicalizeInternalEmail(address.Email));
 
-                            const isInvitedAddressDisabled = disabledCanonizedEmails.includes(
-                                canonizeInternalEmail(invitation.Email)
+                            const isInvitedAddressDisabled = disabledCanonicalizedEmails.includes(
+                                canonicalizeInternalEmail(invitation.Email)
                             );
 
                             return (

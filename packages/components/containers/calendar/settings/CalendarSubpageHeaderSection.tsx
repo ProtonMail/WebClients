@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import { Alert, ButtonLike, Icon, Tooltip, useModalState } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { SettingsSection } from '@proton/components/containers';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { classnames } from '@proton/components/helpers';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
+import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/share';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -21,10 +23,13 @@ interface Props {
     isEditDisabled: boolean;
 }
 
-const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEditDisabled }: Props) => {
+const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, isEditDisabled }: Props) => {
+    const { contactEmailsMap } = useContactEmailsCache();
+
     const { Name, Description, Color, Email } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
+    const createdByText = getCalendarCreatedByText(calendar, contactEmailsMap);
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
 
@@ -49,6 +54,11 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
                         {Name}
                     </h1>
                     {Description && <div className="mb0-25 text-break">{Description}</div>}
+                    {createdByText && (
+                        <div className="text-break mb0-25" title={createdByText}>
+                            {createdByText}
+                        </div>
+                    )}
                     <div className="text-ellipsis color-weak" title={Email}>
                         {Email}
                     </div>
@@ -98,4 +108,4 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
     );
 };
 
-export default CalendarSettingsHeaderSection;
+export default CalendarSubpageHeaderSection;

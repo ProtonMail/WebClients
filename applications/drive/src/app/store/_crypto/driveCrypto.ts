@@ -1,6 +1,6 @@
 import { PrivateKeyReference, PublicKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
@@ -70,7 +70,9 @@ const getOwnAddressKeys = async (
 ) => {
     const addresses = await getAddresses();
     // Some characters can be changed but still be the same email.
-    const ownAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(email));
+    const ownAddress = addresses.find(
+        ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(email)
+    );
     if (!ownAddress) {
         return;
     }

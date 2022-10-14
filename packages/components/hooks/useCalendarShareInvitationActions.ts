@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useAddresses, useEventManager, useGetAddressKeys, useNotifications } from '@proton/components/hooks/index';
 import useApi from '@proton/components/hooks/useApi';
 import { acceptCalendarShareInvitation, rejectCalendarShareInvitation } from '@proton/shared/lib/calendar/share';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
@@ -24,8 +24,10 @@ const useCalendarShareInvitationActions = () => {
                 Passphrase: armoredPassphrase,
                 Calendar: { SenderEmail: senderEmail, Name: calendarName },
             } = invitation;
-            const canonizedInvitedEmail = canonizeInternalEmail(invitedEmail);
-            const addressID = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizedInvitedEmail)?.ID;
+            const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitedEmail);
+            const addressID = addresses.find(
+                ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
+            )?.ID;
 
             try {
                 if (!addressID) {
@@ -57,8 +59,10 @@ const useCalendarShareInvitationActions = () => {
     const reject = useCallback(
         async (invitation: CalendarMemberInvitation, onFinish?: () => void) => {
             const { CalendarID: calendarID, Email: invitedEmail } = invitation;
-            const canonizedInvitedEmail = canonizeInternalEmail(invitedEmail);
-            const addressID = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizedInvitedEmail)?.ID;
+            const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitedEmail);
+            const addressID = addresses.find(
+                ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
+            )?.ID;
 
             if (!addressID) {
                 const text = 'Own address not found';

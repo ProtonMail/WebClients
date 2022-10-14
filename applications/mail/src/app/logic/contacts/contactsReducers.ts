@@ -1,7 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
@@ -10,7 +10,7 @@ import { ContactsMap, ContactsMapWithDuplicates, ContactsState, GroupsWithContac
 
 const toMapWithDuplicates = (contacts: ContactEmail[]) => {
     const contactsMapWithDuplicates = contacts.reduce<ContactsMapWithDuplicates>((acc, contact) => {
-        const email = canonizeEmail(contact.Email);
+        const email = canonicalizeEmail(contact.Email);
         const contacts = acc[email];
         if (!contacts) {
             acc[email] = [contact];
