@@ -5,7 +5,7 @@ import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/i
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getDefaultKeyFlags, getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 
-import { KeyDisplay } from './interface';
+import { KeyDisplay, KeyStatus, KeyType } from './interface';
 
 interface Arguments {
     User: UserModel;
@@ -38,8 +38,9 @@ export const getDisplayKey = ({
     const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(Address);
     const primary = signedKeyListItem?.Primary ?? Primary ?? 0;
 
-    const isAddressDisabled = Address?.Status === 0;
     const isAddressKey = !!Address;
+    const isAddressDisabled = Address?.Status === 0;
+
     const isPrimary = primary === 1;
 
     // Flags undefined for user keys
@@ -50,13 +51,14 @@ export const getDisplayKey = ({
     const isObsolete = isDecrypted && !isAddressDisabled && !canEncrypt;
     const isCompromised = !canEncrypt && !canSign;
 
-    const status = {
+    const status: KeyStatus = {
         isAddressDisabled,
         isPrimary,
         isDecrypted,
         isLoading,
         isCompromised,
         isObsolete,
+        isWeak,
     };
 
     const hasUserPermission = !isSubUser || isPrivate;
@@ -77,11 +79,11 @@ export const getDisplayKey = ({
         ID,
         fingerprint,
         algorithmInfos,
+        type: isAddressKey ? KeyType.Address : KeyType.User,
         flags,
         primary,
         algorithm: getFormattedAlgorithmNames(algorithmInfos),
         status,
         permissions,
-        isWeak,
     };
 };
