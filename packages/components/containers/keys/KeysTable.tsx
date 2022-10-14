@@ -10,6 +10,7 @@ import { KeyActions, KeyDisplay } from './shared/interface';
 interface Props extends Partial<KeyActions> {
     keys: KeyDisplay[];
 }
+
 const KeysTable = ({
     keys = [],
     onDeleteKey,
@@ -26,9 +27,9 @@ const KeysTable = ({
         { node: c('Title header for keys table').t`Key type`, className: 'w15 no-mobile' },
         { node: c('Title header for keys table').t`Status`, className: 'w10e no-tiny-mobile' },
         { node: c('Title header for keys table').t`Actions`, className: 'w10e' },
-    ].map(({ node, className = '' }, i) => {
+    ].map(({ node, className = '' }) => {
         return (
-            <TableCell key={i.toString()} className={className} type="header">
+            <TableCell key={node} className={className} type="header">
                 {node}
             </TableCell>
         );
@@ -40,7 +41,7 @@ const KeysTable = ({
                 <tr>{headerCells}</tr>
             </thead>
             <TableBody colSpan={4}>
-                {keys.map(({ ID, fingerprint, algorithm, status, permissions, isWeak }) => {
+                {keys.map(({ ID, type, fingerprint, algorithm, status, permissions }) => {
                     return (
                         <TableRow
                             key={ID}
@@ -54,13 +55,12 @@ const KeysTable = ({
                                     <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
                                         {fingerprint}
                                     </code>
-                                    <PersonalKeyWarningIcon
-                                        isWeak={isWeak}
-                                        className="mlauto no-mobile flex-item-noshrink"
-                                    />
+                                    {status.isWeak && (
+                                        <PersonalKeyWarningIcon className="mlauto no-mobile flex-item-noshrink" />
+                                    )}
                                 </div>,
                                 algorithm,
-                                <KeysStatus key={2} {...status} />,
+                                <KeysStatus key={2} type={type} {...status} />,
                                 <KeysActions
                                     key={3}
                                     isLoading={status.isLoading}

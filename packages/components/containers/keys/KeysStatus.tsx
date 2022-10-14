@@ -4,13 +4,23 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Badge } from '../../components';
-import { KeyStatus } from './shared/interface';
+import { KeyStatus, KeyType } from './shared/interface';
 
-const KeysStatus = ({ isPrimary, isDecrypted, isCompromised, isObsolete, isAddressDisabled }: Partial<KeyStatus>) => {
+const KeysStatus = ({
+    type,
+    isPrimary,
+    isDecrypted,
+    isCompromised,
+    isObsolete,
+    isAddressDisabled,
+}: Partial<KeyStatus> & { type: KeyType }) => {
     const list = [
         isPrimary &&
             ({
-                tooltip: c('Tooltip').t`${MAIL_APP_NAME} users will use this key by default for sending`,
+                tooltip:
+                    type === KeyType.User
+                        ? c('Tooltip').t`This key is used by ${MAIL_APP_NAME} to encrypt your contact's data`
+                        : c('Tooltip').t`${MAIL_APP_NAME} users will use this key by default for sending`,
                 title: c('Key state badge').t`Primary`,
                 type: 'primary',
             } as const),

@@ -33,7 +33,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
         const run = async () => {
             const Keys = Address ? Address.Keys : User.Keys;
             return Promise.all(
-                Keys.map(async (Key) => {
+                Keys.map(async (Key): Promise<ParsedKey> => {
                     // A PrivateKeyReference is always a decrypted key (stored inside CryptoProxy).
                     // If we don't already have a key reference, then we need to import the armored key as a PublicKey since we do not know
                     // the passphrase to successfully import it as PrivateKey.
