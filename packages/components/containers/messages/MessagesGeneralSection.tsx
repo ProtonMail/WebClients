@@ -42,7 +42,12 @@ const MessagesGeneralSection = () => {
                         <label htmlFor="shortcutsToggle" className="flex-item-fluid">
                             <span className="pr0-5 text-semibold">{c('Title').t`Keyboard shortcuts`}</span>
                             <button type="button" onClick={handleOpenShortcutsModal}>
-                                <Icon className="color-primary mb0-25" name="info-circle" size={16} />
+                                <Icon
+                                    className="color-primary mb0-25"
+                                    name="info-circle"
+                                    alt={c('Action').t`More info: Keyboard shortcuts`}
+                                    size={16}
+                                />
                             </button>
                         </label>
                     </SettingsLayoutLeft>
