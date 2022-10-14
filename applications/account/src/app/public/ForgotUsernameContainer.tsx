@@ -110,7 +110,7 @@ const ForgotUsernameForm = ({
                 value={method === 'email' ? 0 : 1}
                 onChange={(id) => onChangeMethod(id === 0 ? 'email' : 'phone')}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                 {c('Action').t`Send my username`}
             </Button>
             <Button

@@ -39,7 +39,7 @@ const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress
                     {recoveryAddress}
                 </div>
             )}
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} autoFocus className="mt1-75">
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} autoFocus className="mt1-5">
                 {c('Action').t`Create address`}
             </Button>
         </form>
