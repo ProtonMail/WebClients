@@ -179,7 +179,7 @@ const List = (
         }
     );
 
-    const { contextMenu, onContextMenu } = useItemContextMenu({
+    const { contextMenu, onContextMenu, blockSenderModal } = useItemContextMenu({
         elementID,
         labelID,
         anchorRef: ref as RefObject<HTMLElement>,
@@ -338,6 +338,7 @@ const List = (
                 />
             )}
             {contextMenu}
+            {blockSenderModal}
         </div>
     );
 };

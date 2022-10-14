@@ -25,9 +25,21 @@ interface Props {
     onMarkAs: (status: MARK_AS_STATUS) => void;
     onMove: (labelID: string) => void;
     onDelete: () => void;
+    canShowBlockSender: boolean;
+    onBlockSender: () => Promise<void>;
 }
 
-const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onMarkAs, ...rest }: Props) => {
+const ItemContextMenu = ({
+    checkedIDs,
+    elementID,
+    labelID,
+    onMove,
+    onDelete,
+    onMarkAs,
+    canShowBlockSender,
+    onBlockSender,
+    ...rest
+}: Props) => {
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
 
     const buttonMarkAsRead = useMemo(() => {
@@ -144,6 +156,15 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
     return (
         <ContextMenu noMaxHeight {...rest}>
             {moveButtons}
+            {canShowBlockSender && (
+                <ContextMenuButton
+                    key="context-menu-block"
+                    testId="context-menu-block"
+                    icon="circle-slash"
+                    name={c('Action').t`Block sender`}
+                    action={onBlockSender}
+                />
+            )}
             <ContextSeparator />
             {buttonMarkAsRead ? (
                 <ContextMenuButton
