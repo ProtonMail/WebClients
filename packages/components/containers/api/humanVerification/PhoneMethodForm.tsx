@@ -60,7 +60,7 @@ const PhoneMethodForm = ({ onSubmit, defaultPhone = '', defaultCountry, isEmbedd
                 fullWidth
                 loading={loading}
                 onClick={() => withLoading(handleSubmit()).catch(noop)}
-                className="mt1-75"
+                className="mt1-5"
             >
                 {c('Action').t`Get verification code`}
             </Button>
