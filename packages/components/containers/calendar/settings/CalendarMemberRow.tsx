@@ -14,32 +14,52 @@ import { TableCell, TableRow } from '../../../components';
 
 import './CalendarMemberGrid.scss';
 
-interface CalendarMemberRowProps {
-    email: string;
-    name: string;
-    deleteLabel: string;
-    permissions: number;
-    status?: MEMBER_INVITATION_STATUS;
-    displayPermissions: boolean;
-    displayStatus: boolean;
-    onPermissionsUpdate: (newPermissions: number) => Promise<void>;
-    onDelete: () => Promise<void>;
-}
-
 const permissionLabelMap = {
     // [CalendarMemberPermissions.EDIT]: c('Calendar share permission label').t`Edit`,
     [MEMBER_PERMISSIONS.FULL_VIEW]: c('Calendar share permission label').t`See all event details`,
     // [CalendarMemberPermissions.LIMITED]: c('Calendar share permission label').t`See only free/busy`,
 };
 
-export const MemberStatus = ({ children }: { children: string }) => (
-    <span
-        title={children}
-        className="calendar-member-status inline-block text-ellipsis text-sm text-semibold color-weak bg-strong text-uppercase rounded text-no-wrap"
-    >
-        {children}
-    </span>
-);
+const getStatusText = (status: MEMBER_INVITATION_STATUS) => {
+    if (status === MEMBER_INVITATION_STATUS.PENDING) {
+        return c('Calendar invite status label').t`Invite sent`;
+    }
+
+    if (status === MEMBER_INVITATION_STATUS.REJECTED) {
+        return c('Calendar invite status label').t`Declined`;
+    }
+
+    return '';
+};
+
+export const MemberStatus = ({ status }: { status: MEMBER_INVITATION_STATUS }) => {
+    if (status === MEMBER_INVITATION_STATUS.ACCEPTED) {
+        return null;
+    }
+
+    const text = getStatusText(status);
+
+    return (
+        <span
+            title={text}
+            className="calendar-member-status inline-block text-ellipsis text-sm text-semibold color-weak bg-strong text-uppercase rounded text-no-wrap"
+        >
+            {text}
+        </span>
+    );
+};
+
+interface CalendarMemberRowProps {
+    email: string;
+    name: string;
+    deleteLabel: string;
+    permissions: number;
+    status: MEMBER_INVITATION_STATUS;
+    displayPermissions: boolean;
+    displayStatus: boolean;
+    onPermissionsUpdate: (newPermissions: number) => Promise<void>;
+    onDelete: () => Promise<void>;
+}
 
 const CalendarMemberRow = ({
     email,
@@ -65,18 +85,6 @@ const CalendarMemberRow = ({
 
     const isStatusRejected = status === MEMBER_INVITATION_STATUS.REJECTED;
 
-    const getStatusLabel = () => {
-        if (status === MEMBER_INVITATION_STATUS.PENDING) {
-            return <MemberStatus>{c('Calendar invite status label').t`Invite sent`}</MemberStatus>;
-        }
-
-        if (isStatusRejected) {
-            return <MemberStatus>{c('Calendar invite status label').t`Declined`}</MemberStatus>;
-        }
-
-        return null;
-    };
-
     return (
         <TableRow>
             <TableCell className="on-mobile-pl0">
@@ -92,7 +100,11 @@ const CalendarMemberRow = ({
                                 {email}
                             </div>
                         )}
-                        {displayStatus && <div className="no-desktop">{getStatusLabel()}</div>}
+                        {displayStatus && (
+                            <div className="no-desktop">
+                                <MemberStatus status={status} />
+                            </div>
+                        )}
 
                         {displayPermissions && !isStatusRejected && (
                             <div className="no-desktop no-tablet on-mobile-inline-flex">
@@ -125,7 +137,11 @@ const CalendarMemberRow = ({
                     )}
                 </TableCell>
             )}
-            {displayStatus && <TableCell className="no-mobile no-tablet">{getStatusLabel()}</TableCell>}
+            {displayStatus && (
+                <TableCell className="no-mobile no-tablet">
+                    <MemberStatus status={status} />
+                </TableCell>
+            )}
             <TableCell className="w5e">
                 <Tooltip title={deleteLabel}>
                     <Button icon shape="ghost" loading={isLoadingDelete} onClick={handleDelete} className="mlauto">

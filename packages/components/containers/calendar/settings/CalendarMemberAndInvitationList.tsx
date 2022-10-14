@@ -97,6 +97,7 @@ const CalendarMemberAndInvitationList = ({
                                 name={contactName}
                                 email={contactEmail}
                                 deleteLabel={c('Action').t`Remove this member`}
+                                status={MEMBER_INVITATION_STATUS.ACCEPTED}
                                 permissions={Permissions}
                                 displayPermissions={displayPermissions}
                                 displayStatus={displayStatus}
