@@ -212,9 +212,9 @@ describe('getHasUserReachedCalendarLimit', () => {
             // all
             {
                 calendars: [
-                    ...generateOwnedPersonalCalendars(17),
+                    ...generateOwnedPersonalCalendars(MAX_CALENDARS_PAID - 3),
                     ...generateSharedCalendars(2),
-                    ...generateSubscribedCalendars(5),
+                    ...generateSubscribedCalendars(MAX_SUBSCRIBED_CALENDARS),
                 ],
                 isFreeUser: false,
                 result: {
