@@ -42,6 +42,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import Layout from '../public/Layout';
 import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
@@ -132,6 +133,14 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const [persistent] = useLocalState(false, defaultPersistentKey);
 
     const [model, setModel] = useState<SignupModel>(DEFAULT_SIGNUP_MODEL);
+
+    const cache = cacheRef.current;
+    const accountData = cache?.accountData;
+
+    const defaultSignupType =
+        clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
+
+    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType);
 
     const setModelDiff = (diff: Partial<SignupModel>) => {
         return setModel((model) => ({
@@ -254,8 +263,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         errorHandler(error);
     };
 
-    const cache = cacheRef.current;
-
     if (step === NO_SIGNUP) {
         throw new Error('Missing dependencies');
     }
@@ -349,10 +356,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             return handleBack;
         }
     })();
-    const signupType =
-        clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
     const upsellPlanName = (() => {
-        if (signupType === SignupType.VPN) {
+        if (defaultSignupType === SignupType.VPN) {
             return PLANS.VPN;
         }
 
@@ -363,27 +368,50 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         return PLANS.MAIL;
     })();
 
-    const accountData = cache?.accountData;
-
     const stepper = useMemo(
         () =>
             (() => {
+                const hasPaidPlanPreSelected =
+                    signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free';
                 const stepLabels = {
                     accountSetup: c('Signup step').t`Account setup`,
                     verification: c('Signup step').t`Verification`,
                     payment: c('Signup step').t`Payment`,
                 };
 
+                const isExternalAccountFlow = signupType === SignupType.Email || signupType === SignupType.VPN;
+                if (isExternalAccountFlow) {
+                    if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+                        return {
+                            activeStep: 0,
+                            steps: [
+                                stepLabels.accountSetup,
+                                stepLabels.verification,
+                                hasPaidPlanPreSelected && stepLabels.payment,
+                            ].filter(isTruthy),
+                        };
+                    }
+
+                    if (step === SIGNUP_STEPS.HUMAN_VERIFICATION || step === SIGNUP_STEPS.UPSELL) {
+                        return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                    }
+
+                    if (step === SIGNUP_STEPS.PAYMENT) {
+                        return {
+                            activeStep: 2,
+                            steps: [stepLabels.accountSetup, stepLabels.verification, stepLabels.payment],
+                        };
+                    }
+                }
+
                 if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
-                    const secondStep = (() => {
-                        if (!signupParameters.preSelectedPlan || signupParameters.preSelectedPlan === 'free') {
-                            return stepLabels.verification;
-                        }
-
-                        return stepLabels.payment;
-                    })();
-
-                    return { activeStep: 0, steps: [stepLabels.accountSetup, secondStep] };
+                    return {
+                        activeStep: 0,
+                        steps: [
+                            stepLabels.accountSetup,
+                            hasPaidPlanPreSelected ? stepLabels.payment : stepLabels.verification,
+                        ],
+                    };
                 }
 
                 if (step === SIGNUP_STEPS.UPSELL) {
@@ -400,7 +428,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
                 return;
             })(),
-        [step, signupParameters.preSelectedPlan]
+        [step, signupParameters.preSelectedPlan, signupType]
     );
 
     const children = (
@@ -433,7 +461,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     })()}
                     defaultEmail={accountData?.email}
                     defaultUsername={accountData?.username}
-                    defaultSignupType={accountData?.signupType || signupType}
+                    defaultSignupType={defaultSignupType}
+                    signupType={signupType}
+                    onChangeSignupType={setSignupType}
                     defaultRecoveryEmail={
                         (accountData?.signupType === SignupType.VPN && accountData.recoveryEmail) || ''
                     }
