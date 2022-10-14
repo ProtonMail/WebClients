@@ -140,7 +140,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const defaultSignupType =
         clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
 
-    const [signupType, setSignupType] = useState<SignupType>(accountData?.signupType || defaultSignupType);
+    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType);
 
     const setModelDiff = (diff: Partial<SignupModel>) => {
         return setModel((model) => ({
