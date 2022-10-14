@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useMemo, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -561,7 +561,9 @@ const IASelectImportTypeStep = ({
                                         <CustomizeCalendarImportModal
                                             providerCalendars={modalModel.data[CALENDAR].providerCalendars}
                                             calendars={calendars}
-                                            activeCalendars={getProbablyActiveCalendars(calendars)}
+                                            activeWritableCalendars={getWritableCalendars(
+                                                getProbablyActiveCalendars(calendars)
+                                            )}
                                             importedEmailAddress={modalModel.importedEmail}
                                             toEmail={toEmail}
                                             payload={modalModel.payload[CALENDAR] as CalendarImporterPayload}
