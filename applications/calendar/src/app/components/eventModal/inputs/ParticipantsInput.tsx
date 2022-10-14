@@ -8,9 +8,9 @@ import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import {
-    CANONIZE_SCHEME,
-    canonizeEmail,
-    canonizeInternalEmail,
+    CANONICALIZE_SCHEME,
+    canonicalizeEmail,
+    canonicalizeInternalEmail,
     validateEmailAddress,
 } from '@proton/shared/lib/helpers/email';
 import { Address, Recipient } from '@proton/shared/lib/interfaces';
@@ -52,7 +52,7 @@ const ParticipantsInput = ({
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
 
     const ownNormalizedEmails = useMemo(
-        () => getSelfSendAddresses(addresses).map(({ Email }) => canonizeInternalEmail(Email)),
+        () => getSelfSendAddresses(addresses).map(({ Email }) => canonicalizeInternalEmail(Email)),
         [addresses]
     );
 
@@ -60,7 +60,7 @@ const ParticipantsInput = ({
         return inputToRecipient(attendee.email);
     });
 
-    const recipientsSet = new Set(recipients.map(({ Address }) => canonizeEmail(Address)));
+    const recipientsSet = new Set(recipients.map(({ Address }) => canonicalizeEmail(Address)));
 
     const handleAddRecipients = (recipients: Recipient[]) => {
         setParticipantError?.(false);
@@ -68,7 +68,7 @@ const ParticipantsInput = ({
             const { Address } = recipient;
             return {
                 recipient,
-                normalizedAddress: canonizeEmail(Address),
+                normalizedAddress: canonicalizeEmail(Address),
                 valid: validateEmailAddress(Address),
             };
         });
@@ -84,7 +84,7 @@ const ParticipantsInput = ({
             return;
         }
         const attendees = newAttendees.reduce<AttendeeModel[]>((acc, cur) => {
-            if (!ownNormalizedEmails.includes(canonizeEmail(cur.email, CANONIZE_SCHEME.PROTON))) {
+            if (!ownNormalizedEmails.includes(canonicalizeEmail(cur.email, CANONICALIZE_SCHEME.PROTON))) {
                 acc.push(cur);
             }
 
@@ -150,7 +150,7 @@ const ParticipantsInput = ({
                     }
                 }}
                 validate={(email) => {
-                    if (ownNormalizedEmails.includes(canonizeInternalEmail(email))) {
+                    if (ownNormalizedEmails.includes(canonicalizeInternalEmail(email))) {
                         return c('Error').t`Self invitation not allowed`;
                     }
 

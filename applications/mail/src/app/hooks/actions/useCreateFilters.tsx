@@ -8,7 +8,7 @@ import { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import diff from '@proton/utils/diff';
@@ -76,7 +76,7 @@ export const useCreateFilters = () => {
     const [addresses = []] = useAddresses();
 
     const ownAddresses = useMemo(() => {
-        return addresses.map((address) => canonizeEmail(address.Email));
+        return addresses.map((address) => canonicalizeEmail(address.Email));
     }, [addresses]);
 
     const getSendersToFilter = useCallback(
@@ -86,7 +86,7 @@ export const useCreateFilters = () => {
                     .flatMap((element) => getSenders(element))
                     .map((recipient) => recipient?.Address)
                     .filter(isTruthy)
-                    .map((email) => canonizeEmail(email))
+                    .map((email) => canonicalizeEmail(email))
             );
             const senders = diff(allSenderAddresses, ownAddresses);
             return senders;

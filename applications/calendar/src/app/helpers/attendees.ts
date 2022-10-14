@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
-import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -63,7 +63,7 @@ export const getOrganizerDisplayData = (
             title: `${email}`,
         };
     }
-    const { displayName } = displayNameEmailMap[canonizeEmailByGuess(email)] || {};
+    const { displayName } = displayNameEmailMap[canonicalizeEmailByGuess(email)] || {};
     const name = displayName || cn || email;
     const title = name === email ? email : `${name} <${email}>`;
     return { name, title };

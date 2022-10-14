@@ -10,7 +10,7 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -203,7 +203,7 @@ const ExtraEvent = ({
                         // if we do not have invitationApi, it means we could not decrypt calendarEvent
                         // we can resort to checking attendee tokens in this case, since those are clear text
                         const senderToken = await generateAttendeeToken(
-                            canonizeEmailByGuess(message.data.Sender.Address),
+                            canonicalizeEmailByGuess(message.data.Sender.Address),
                             calendarEvent.UID
                         );
                         isPartyCrasher = !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);

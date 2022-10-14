@@ -8,6 +8,7 @@ import { CacheProvider } from '@proton/components/containers/cache';
 import useUser from '@proton/components/hooks/useUser';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
@@ -21,6 +22,13 @@ import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './Calen
 jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', () => ({
     __esModule: true,
     CalendarModal: jest.fn(() => <span>CalendarModal</span>),
+    // It's not great having to mock this export manually, but the only alternative would be
+    // to move the enum definition somewhere else. Ideally we shouldn't mock CalendarModal at all
+    CALENDAR_MODAL_TYPE: {
+        COMPLETE: 0,
+        SHARED: 1,
+        VISUAL: 2,
+    },
 }));
 
 jest.mock('@proton/components/containers/calendar/importModal/ImportModal', () => ({
@@ -90,28 +98,28 @@ const mockedGetCalendarIsNotSyncedInfo = getCalendarIsNotSyncedInfo as jest.Mock
 const mockedGetIsCalendarDisabled = getIsCalendarDisabled as jest.Mock<ReturnType<typeof getIsCalendarDisabled>>;
 
 const mockCalendar: VisualCalendar = {
-    ID: 'id3',
-    Name: 'calendar3',
-    Description: 'description3',
+    ID: 'id1',
+    Name: 'calendar1',
+    Description: 'description1',
     Display: 1, // CalendarDisplay.VISIBLE
     Color: '#f00',
-    Email: 'email3',
-    Permissions: 127,
+    Email: 'email1',
+    Permissions: MEMBER_PERMISSIONS.OWNS,
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
-    Owner: { Email: 'email3' },
+    Owner: { Email: 'email1' },
     Members: [
         {
-            Email: 'email3',
+            Email: 'email1',
             Permissions: 127,
             AddressID: 'AddressID',
             Display: 1,
             ID: 'ID',
             Flags: 1,
             Color: '#f00',
-            CalendarID: 'id3',
-            Name: 'calendar3',
-            Description: 'description3',
+            CalendarID: 'id1',
+            Name: 'calendar1',
+            Description: 'description1',
         },
     ],
 };
@@ -123,7 +131,7 @@ const mockCalendar2: VisualCalendar = {
     Display: 1,
     Color: '#f00',
     Email: 'email2',
-    Permissions: 127,
+    Permissions: MEMBER_PERMISSIONS.OWNS,
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Owner: { Email: 'email2' },
@@ -139,6 +147,33 @@ const mockCalendar2: VisualCalendar = {
             CalendarID: 'id2',
             Name: 'calendar2',
             Description: 'description2',
+        },
+    ],
+};
+
+const mockSharedCalendar: VisualCalendar = {
+    ID: 'id3',
+    Name: 'calendar3',
+    Description: 'description3',
+    Display: 1, // CalendarDisplay.VISIBLE
+    Color: '#f00',
+    Email: 'email3',
+    Permissions: MEMBER_PERMISSIONS.FULL_VIEW,
+    Flags: CALENDAR_FLAGS.ACTIVE,
+    Type: CALENDAR_TYPE.PERSONAL,
+    Owner: { Email: 'email1' },
+    Members: [
+        {
+            Email: 'email3',
+            Permissions: 127,
+            AddressID: 'AddressID',
+            Display: 1,
+            ID: 'ID',
+            Flags: 1,
+            Color: '#f00',
+            CalendarID: 'id3',
+            Name: 'calendar3',
+            Description: 'description3',
         },
     ],
 };
@@ -306,6 +341,23 @@ describe('CalendarSidebarListItems', () => {
         );
 
         fireEvent.click(screen.getAllByRole('button')[0]);
+
+        expect(screen.getByText(/Edit/)).toBeInTheDocument();
+        expect(screen.queryByText(/Share/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Import events/)).not.toBeInTheDocument();
+        const moreOptionsLink = screen.getByText(/More options/) as HTMLAnchorElement;
+        expect(moreOptionsLink).toBeInTheDocument();
+        expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars/id1`);
+    });
+
+    it('displays the correct dropdown items for shared calendars', () => {
+        render(
+            renderComponent({
+                calendars: [mockCalendar, mockSharedCalendar],
+            })
+        );
+
+        fireEvent.click(screen.getAllByRole('button')[1]);
 
         expect(screen.getByText(/Edit/)).toBeInTheDocument();
         expect(screen.queryByText(/Share/)).not.toBeInTheDocument();

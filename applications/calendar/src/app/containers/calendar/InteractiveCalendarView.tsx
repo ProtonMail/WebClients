@@ -66,7 +66,7 @@ import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
-import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -323,14 +323,14 @@ const InteractiveCalendarView = ({
     const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
     const displayNameEmailMap = useMemo(() => {
         const result = contacts.reduce<SimpleMap<DisplayNameEmail>>((acc, { Email, Name }) => {
-            const canonicalEmail = canonizeEmailByGuess(Email);
+            const canonicalEmail = canonicalizeEmailByGuess(Email);
             if (!acc[canonicalEmail]) {
                 acc[canonicalEmail] = { displayName: Name, displayEmail: Email };
             }
             return acc;
         }, {});
         addresses.forEach(({ DisplayName, Email }) => {
-            const normalizedEmail = canonizeInternalEmail(Email);
+            const normalizedEmail = canonicalizeInternalEmail(Email);
             if (!result[normalizedEmail]) {
                 result[normalizedEmail] = { displayName: DisplayName, displayEmail: Email };
             }

@@ -4,7 +4,7 @@ import identity from '@proton/utils/identity';
 
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
-import { canonizeInternalEmail, getEmailParts } from '../helpers/email';
+import { canonicalizeInternalEmail, getEmailParts } from '../helpers/email';
 import { isICS } from '../helpers/mimetype';
 import { AttachmentInfo, Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
@@ -102,7 +102,7 @@ export const isBounced = (message: Pick<Message, 'Sender' | 'Subject'>) => {
     // we don't have a great way of determining when a message is bounced as the BE cannot offer us neither
     // a specific header nor a specific flag. We hard-code the typical sender (the local part) and subject keywords
     const { Sender, Subject } = message;
-    const matchesSender = getEmailParts(canonizeInternalEmail(Sender.Address))[0] === 'mailerdaemon';
+    const matchesSender = getEmailParts(canonicalizeInternalEmail(Sender.Address))[0] === 'mailerdaemon';
     const matchesSubject = [/delivery/i, /undelivered/i, /returned/i, /failure/i].some((regex) => regex.test(Subject));
     return matchesSender && matchesSubject;
 };
