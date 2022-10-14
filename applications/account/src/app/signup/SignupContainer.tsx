@@ -463,7 +463,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     defaultUsername={accountData?.username}
                     defaultSignupType={defaultSignupType}
                     signupType={signupType}
-                    setSignupType={setSignupType}
+                    onChangeSignupType={setSignupType}
                     defaultRecoveryEmail={
                         (accountData?.signupType === SignupType.VPN && accountData.recoveryEmail) || ''
                     }

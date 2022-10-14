@@ -1,4 +1,4 @@
-import { Dispatch, Fragment, KeyboardEvent, SetStateAction, useEffect, useRef, useState } from 'react';
+import { Fragment, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -68,7 +68,7 @@ interface Props {
     defaultEmail?: string;
     defaultSignupType: SignupType;
     signupType: SignupType;
-    setSignupType: Dispatch<SetStateAction<SignupType>>;
+    onChangeSignupType: (signupType: SignupType) => void;
     defaultRecoveryEmail?: string;
     hasExternalSignup?: boolean;
     domains: string[];
@@ -96,7 +96,7 @@ const AccountStep = ({
     defaultEmail,
     defaultSignupType,
     signupType,
-    setSignupType,
+    onChangeSignupType,
     defaultRecoveryEmail,
     onSubmit,
     hasExternalSignup,
@@ -326,7 +326,7 @@ const AccountStep = ({
                                 id="existing-email-button"
                                 onClick={() => {
                                     // Reset verification parameters if email is changed
-                                    setSignupType(
+                                    onChangeSignupType(
                                         (() => {
                                             if (signupType === SignupType.Username || signupType === SignupType.VPN) {
                                                 return SignupType.Email;
