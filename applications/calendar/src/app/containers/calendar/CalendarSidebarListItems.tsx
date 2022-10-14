@@ -134,7 +134,7 @@ const CalendarSidebarListItems = ({
         return null;
     }
 
-    const result = calendars.map((calendar, i) => {
+    const result = calendars.map((calendar) => {
         const { ID, Name, Display, Color } = calendar;
         const isPersonalCalendar = getIsPersonalCalendar(calendar);
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
@@ -148,9 +148,9 @@ const CalendarSidebarListItems = ({
                 borderColor={Color}
                 checked={!!Display}
                 disabled={loading}
-                id={`calendar-${i}`}
-                name={`calendar-${i}`}
-                aria-describedby={`calendar-${i}`}
+                id={`calendar-${ID}`}
+                name={`calendar-${Name}`}
+                aria-describedby={`calendar-${Name}`}
                 onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
             />
         );
@@ -162,7 +162,7 @@ const CalendarSidebarListItems = ({
         return (
             <SidebarListItem key={ID}>
                 <SidebarListItemLabel
-                    htmlFor={`calendar-${i}`}
+                    htmlFor={`calendar-${ID}`}
                     className="calendar-sidebar-list-item opacity-on-hover-container py0-25 pr0-5"
                 >
                     <SidebarListItemContent
