@@ -11,25 +11,21 @@ interface Props {
     className?: string;
 }
 
+const BASE_64_IMAGE =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=';
+
 const ContactImage = ({ email, name, className }: Props) => {
     const initials = getInitials(name);
     const [load, setLoad] = useState(false);
     const url = useSenderImage(load ? email : '');
-    const handleError = () => setLoad(true);
+    const src = url || BASE_64_IMAGE;
+    const handleLoad = () => setLoad(true);
 
     if (load && !url) {
         return <>{initials}</>;
     }
 
-    return (
-        <img
-            className={clsx(className, 'item-sender-image')}
-            alt={name}
-            onError={handleError}
-            loading="lazy"
-            src={url}
-        />
-    );
+    return <img className={clsx(className, 'item-sender-image')} alt="" onLoad={handleLoad} loading="lazy" src={src} />;
 };
 
 export default ContactImage;
