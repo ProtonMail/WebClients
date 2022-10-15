@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
@@ -11,22 +11,37 @@ interface Props {
     className?: string;
 }
 
-// Transparent 1px image
-const BASE_64_IMAGE =
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=';
-
 const ContactImage = ({ email, name, className }: Props) => {
     const initials = getInitials(name);
     const [load, setLoad] = useState(false);
     const url = useSenderImage(load ? email : '');
-    const src = url || BASE_64_IMAGE;
-    const handleLoad = () => setLoad(true);
+    const ref = useRef<HTMLSpanElement>(null);
 
-    if (load && !url) {
-        return <>{initials}</>;
+    useEffect(() => {
+        const callback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (!load && entry.isIntersecting) {
+                    setLoad(true);
+                }
+            });
+        };
+        const options = { rootMargin: '50px' };
+        const observer = new IntersectionObserver(callback, options);
+
+        if (ref?.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [ref?.current]);
+
+    if (url) {
+        return <img className={clsx(className, 'item-sender-image')} alt="" src={url} />;
     }
 
-    return <img className={clsx(className, 'item-sender-image')} alt="" onLoad={handleLoad} loading="lazy" src={src} />;
+    return <span ref={ref}>{initials}</span>;
 };
 
 export default ContactImage;
