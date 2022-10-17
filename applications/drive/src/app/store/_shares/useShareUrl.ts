@@ -206,7 +206,7 @@ export default function useShareUrl() {
             )
         );
 
-        await events.pollShare(shareId);
+        await events.pollEvents.shares([shareId]);
 
         return {
             ShareURL: {
@@ -393,7 +393,7 @@ export default function useShareUrl() {
             fieldsToUpdate.Password = newPassword;
         }
 
-        await events.pollAllDriveEvents();
+        await events.pollEvents.driveEvents();
 
         return {
             ...fieldsToUpdate,
@@ -412,7 +412,7 @@ export default function useShareUrl() {
             await deleteShare(shareId).catch(reportError);
         };
         await preventLeave(deletePromise());
-        await events.pollAllDriveEvents();
+        await events.pollEvents.driveEvents();
     };
 
     const deleteShareUrls = async (abortSignal: AbortSignal, ids: { linkId: string; shareId: string }[]) => {
@@ -474,7 +474,7 @@ export default function useShareUrl() {
 
         const shareIdsToUpdate = unique(batches.map((batch) => batch[0].rootShareId));
 
-        await events.pollAllShareEvents(shareIdsToUpdate);
+        await events.pollEvents.shares(shareIdsToUpdate, { includeCommon: true });
 
         return { successes, failures };
     };

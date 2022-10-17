@@ -43,9 +43,9 @@ export function useLinksStateProvider() {
     useEffect(() => {
         const callback = (shareId: string, events: DriveEvents) =>
             setState((state) => updateByEvents(state, shareId, events));
-        const callbackId = events.registerEventHandler(callback);
+        const callbackId = events.eventHandlers.register(callback);
         return () => {
-            events.unregisterEventHandler(callbackId);
+            events.eventHandlers.unregister(callbackId);
         };
     }, []);
 

@@ -58,7 +58,7 @@ export function useLinksActions({
         try {
             return await callback();
         } finally {
-            await events.pollShare(shareId);
+            await events.pollEvents.shares([shareId]);
             unlockLinks(shareId, linkIds);
         }
     };
@@ -262,7 +262,7 @@ export function useLinksActions({
     const emptyTrash = async (abortSignal: AbortSignal, shareId: string) => {
         lockTrash(shareId);
         await debouncedRequest(queryEmptyTrashOfShare(shareId), abortSignal);
-        await events.pollShare(shareId);
+        await events.pollEvents.shares([shareId]);
     };
 
     return {
