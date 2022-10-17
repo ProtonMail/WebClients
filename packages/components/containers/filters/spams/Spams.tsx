@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import {
-    Button,
     LabelStack,
     Loader,
     Pagination,
@@ -32,11 +31,19 @@ import useSpamApi from './hooks/useSpamApi';
 import useSpamState from './hooks/useSpamState';
 import SpamModal, { SpamMode } from './modals/SpamModal';
 
-const INSERT_ACTIONS: { type: SpamLocation; getName: () => string }[] = [
-    { type: 'BLOCKED', getName: () => c('Action').t`Block` },
-    { type: 'SPAM', getName: () => c('Action').t`Spam` },
-    { type: 'NON_SPAM', getName: () => c('Action').t`Not spam` },
-];
+const getActions = (blockSenderFeatureEnabled: boolean): { type: SpamLocation; getName: () => string }[] => {
+    const actions = [
+        { type: 'SPAM', getName: () => c('Action').t`Spam` },
+        { type: 'NON_SPAM', getName: () => c('Action').t`Not spam` },
+    ] as { type: SpamLocation; getName: () => string }[];
+
+    // Put block as first element of the list if FF is enabled
+    if (blockSenderFeatureEnabled) {
+        actions.unshift({ type: 'BLOCKED', getName: () => c('Action').t`Block` });
+    }
+
+    return actions;
+};
 
 const ELEMENTS_PER_PAGE = 10;
 
@@ -132,36 +139,22 @@ const Spams = () => {
 
     return blockSenderLoading ? null : (
         <>
-            {blockSenderFeatureEnabled ? (
-                <div className="mb2">
-                    <SpamsButtonDropdown
-                        title={c('Action').t`Add address`}
-                        actions={INSERT_ACTIONS.map(({ getName, type }) => ({
-                            name: getName(),
-                            onClick: () => {
-                                dispatch({ type: 'setModal', payload: type });
-                                openModal(true);
-                            },
-                        }))}
-                        buttonProps={{
-                            hasCaret: true,
-                            color: 'norm',
-                        }}
-                    />
-                </div>
-            ) : (
-                <div className="mb2">
-                    <Button
-                        color="norm"
-                        onClick={() => {
-                            dispatch({ type: 'setModal', payload: INSERT_ACTIONS[1].type });
+            <div className="mb2">
+                <SpamsButtonDropdown
+                    title={c('Action').t`Add address`}
+                    actions={getActions(blockSenderFeatureEnabled).map(({ getName, type }) => ({
+                        name: getName(),
+                        onClick: () => {
+                            dispatch({ type: 'setModal', payload: type });
                             openModal(true);
-                        }}
-                    >
-                        {c('Action').t`Add address`}
-                    </Button>
-                </div>
-            )}
+                        },
+                    }))}
+                    buttonProps={{
+                        hasCaret: true,
+                        color: 'norm',
+                    }}
+                />
+            </div>
 
             {globalTotal > 0 && (
                 <>
