@@ -52,23 +52,23 @@ const getNotificationTextMoved = (
     if (folderID === SPAM) {
         if (isMessage) {
             if (elementsCount === 1) {
-                return c('Success').t`Message moved to spam and sender added to your Spam list.`;
+                return c('Success').t`Message moved to spam and sender added to your spam list.`;
             }
             return joinSentences(
                 c('Success').ngettext(
-                    msgid`${elementsCount} message moved to spam and sender added to Spam list.`,
-                    `${elementsCount} messages moved to spam and senders added to Spam list.`,
+                    msgid`${elementsCount} message moved to spam and sender added to your spam list.`,
+                    `${elementsCount} messages moved to spam and senders added to your spam list.`,
                     elementsCount
                 ),
                 notAuthorized
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to spam and sender added to your Spam list.`;
+            return c('Success').t`Conversation moved to spam and sender added to your spam list.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} conversation moved to spam and sender added to Spam list.`,
-            `${elementsCount} conversations moved to spam and senders added to Spam list.`,
+            msgid`${elementsCount} conversation moved to spam and sender added to your spam list.`,
+            `${elementsCount} conversations moved to spam and senders added to your spam list.`,
             elementsCount
         );
     }
@@ -77,24 +77,24 @@ const getNotificationTextMoved = (
         if (isMessage) {
             if (elementsCount === 1) {
                 // translator: Strictly 1 message moved from spam, the variable is the name of the destination folder
-                return c('Success').t`Message moved to ${folderName} and sender added to your Allow list.`;
+                return c('Success').t`Message moved to ${folderName} and sender added to your not spam list.`;
             }
             return joinSentences(
                 c('Success').ngettext(
                     // translator: The first variable is the number of message moved, written in digits, and the second one is the name of the destination folder
-                    msgid`${elementsCount} message moved to ${folderName} and sender added to Allow list.`,
-                    `${elementsCount} messages moved to ${folderName} and senders added to Allow list.`,
+                    msgid`${elementsCount} message moved to ${folderName} and sender added to your not spam list.`,
+                    `${elementsCount} messages moved to ${folderName} and senders added to your not spam list.`,
                     elementsCount
                 ),
                 notAuthorized
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to ${folderName} and sender added to Allow list.`;
+            return c('Success').t`Conversation moved to ${folderName} and sender added to your not spam list.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} conversation moved to ${folderName} and sender added to Allow list.`,
-            `${elementsCount} conversations moved to ${folderName} and senders added to Allow list.`,
+            msgid`${elementsCount} conversation moved to ${folderName} and sender added to your not spam list.`,
+            `${elementsCount} conversations moved to ${folderName} and senders added to your not spam list.`,
             elementsCount
         );
     }
