@@ -1,6 +1,8 @@
 import { fireEvent } from '@testing-library/dom';
+import { act } from '@testing-library/react';
 
 import { PublicKeyReference } from '@proton/crypto';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
 import { addApiMock } from '../../../helpers/test/api';
@@ -55,8 +57,12 @@ describe('Trust public key modal', () => {
 
         // Click on Trust key button
         const submitButton = getByTestId('trust-key-modal:submit');
-        fireEvent.click(submitButton);
-        await tick();
+
+        // Without the wait the test is sometimes failing because the call is not done
+        await act(async () => {
+            fireEvent.click(submitButton);
+            await wait(100);
+        });
 
         // Contact has been updated
         expect(updateSpy).toHaveBeenCalled();
