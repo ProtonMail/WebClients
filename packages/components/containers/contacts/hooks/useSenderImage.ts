@@ -5,7 +5,7 @@ import { useApi, useFeature, useMailSettings } from '@proton/components/hooks';
 
 import { getSenderLogo } from '../helpers/senderImage';
 
-const IMAGE_SIZE = 128;
+const IMAGE_SIZE = 64;
 
 /**
  * Return the sender image for a given email address
