@@ -116,10 +116,16 @@ export const useDeleteDraft = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const getConversation = useGetConversation();
+    const getMessage = useGetMessage();
 
     return useCallback(
         async (message: MessageState) => {
-            const messageID = message.data?.ID;
+            // Need to get again the message from state because if we are saving the draft for the first time,
+            // it might have been saved in the meantime.
+            // So the old reference would not be up to date, and we would not be able to delete the message
+            const messageFromState = getMessage(message.localID);
+            const messageID = messageFromState?.data?.ID;
+
             if (!messageID) {
                 return;
             }
