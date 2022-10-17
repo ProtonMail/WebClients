@@ -14,6 +14,7 @@ export function useDevicesListingProvider() {
 
     const loadDevices = async (abortSignal?: AbortSignal) => {
         const devices = await withLoading(devicesApi.loadDevices(abortSignal));
+
         if (devices) {
             setState(devices);
         }
@@ -54,6 +55,7 @@ export function DevicesListingProvider({ children }: { children: React.ReactNode
             ac.abort();
         };
     }, []);
+
     return (
         <LinksListingContext.Provider
             value={{

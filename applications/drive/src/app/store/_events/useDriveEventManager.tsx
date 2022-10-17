@@ -13,6 +13,29 @@ import { EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
 
+const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
+    getSubscriptionIds: () => [],
+    clear: () => undefined,
+
+    eventHandlers: {
+        register: () => 'id',
+        unregister: () => false,
+    },
+
+    shares: {
+        startSubscription: () => {
+            throw Error('Usage of uninitialized DriveEventManager!');
+        },
+        pauseSubscription: () => {},
+        unsubscribe: () => {},
+    },
+
+    pollEvents: {
+        shares: () => Promise.resolve(),
+        driveEvents: () => Promise.resolve(),
+    },
+};
+
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
     const eventHandlers = useRef(new Map<string, EventHandler>());
     const eventManagers = useRef(new Map<string, EventManager>());
@@ -50,18 +73,22 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
 
     /**
      * Creates event manager for specific share and starts interval polling of event.
-     * If there's already an event manager associated with passed shareId, function
-     * does nothing returning Promise<false>
      */
-    const subscribeToShare = async (shareId: string): Promise<boolean> => {
-        if (eventManagers.current.get(shareId)) {
-            return false;
-        }
-
+    const subscribeToShare = async (shareId: string) => {
         const eventManager = await createShareEventManager(shareId);
         eventManager.subscribe((payload: DriveEventsResult) => genericHandler(shareId, payload));
-        eventManager.start();
-        return true;
+        eventManagers.current.set(shareId, eventManager);
+    };
+
+    /**
+     * Creates an event manager for specified share if doesn't exist,
+     * and starts event polling
+     */
+    const startShareSubscription = async (shareId: string) => {
+        if (!eventManagers.current.get(shareId)) {
+            await subscribeToShare(shareId);
+        }
+        eventManagers.current.get(shareId)!.start();
     };
 
     /**
@@ -86,7 +113,8 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Polls events for specific share
+     * Polls drive events for specific share
+     * @private
      */
     const pollShare = async (shareId: string): Promise<void> => {
         const eventManager = eventManagers.current.get(shareId);
@@ -100,17 +128,27 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Polls event from all active event loop associcated with passed shareId's
+     * Polls events for specified list of shares
      */
-    const pollAllShareEvents = async (shareIds: string[]): Promise<void> => {
-        const pollingPromises = [...shareIds.map((shareId) => pollShare(shareId)), generalEventManager.call()];
-        await Promise.all(pollingPromises).catch(logError);
+    const pollShareEvents = async (
+        shareIds: string[],
+        params: { includeCommon: boolean } = { includeCommon: false }
+    ) => {
+        const pollingTasks = [];
+
+        if (params.includeCommon) {
+            pollingTasks.push(generalEventManager.call());
+        }
+
+        pollingTasks.push(...shareIds.map((shareId) => pollShare(shareId)));
+
+        await Promise.all(pollingTasks).catch(logError);
     };
 
     /**
      *  Polls drive events for all subscribed shares
      */
-    const pollAllDriveEvents = async (): Promise<void> => {
+    const pollDriveEvents = async (): Promise<void> => {
         const pollingPromises: Promise<unknown>[] = [];
         eventManagers.current.forEach((eventManager) => {
             pollingPromises.push(eventManager.call());
@@ -154,7 +192,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
      */
     const clear = () => {
         // clear timeouts and listeners
-        eventManagers.current.forEach((eventManager, key) => {
+        eventManagers.current.forEach((_, key) => {
             unsubscribeFromShare(key);
         });
         // clear references to event managers
@@ -164,17 +202,24 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     return {
-        subscribeToShare,
-        unsubscribeFromShare,
-        pauseShareSubscription,
-        registerEventHandler,
-        registerEventHandlerById,
-        unregisterEventHandler,
-        pollAllShareEvents,
-        pollShare,
-        pollAllDriveEvents,
         getSubscriptionIds,
         clear,
+
+        shares: {
+            startSubscription: startShareSubscription,
+            pauseSubscription: pauseShareSubscription,
+            unsubscribe: unsubscribeFromShare,
+        },
+
+        eventHandlers: {
+            register: registerEventHandler,
+            unregister: unregisterEventHandler,
+        },
+
+        pollEvents: {
+            shares: pollShareEvents,
+            driveEvents: pollDriveEvents,
+        },
     };
 }
 
@@ -197,21 +242,7 @@ export const useDriveEventManager = () => {
         // dependency, but that requires bigger changes. In the end, this
         // situation is just because of how React hooks work. One day, once
         // this all is shifted to worker instead, we can make it nicer.
-        return {
-            subscribeToShare: () => {
-                throw Error('Usage of uninitialized DriveEventManager!');
-            },
-            unsubscribeFromShare: () => Promise.resolve(false),
-            pauseShareSubscription: () => false,
-            registerEventHandler: () => 'id',
-            registerEventHandlerById: (id: string) => id,
-            unregisterEventHandler: () => false,
-            pollAllShareEvents: () => Promise.resolve(undefined),
-            pollShare: () => Promise.resolve(undefined),
-            pollAllDriveEvents: () => Promise.resolve(undefined),
-            getSubscriptionIds: () => [],
-            clear: () => undefined,
-        };
+        return DRIVE_EVENT_MANAGER_FUNCTIONS_STUB;
     }
     return state;
 };

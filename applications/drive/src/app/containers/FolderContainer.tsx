@@ -8,7 +8,7 @@ import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/
 import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
-import { useDefaultShare } from '../store';
+import { useDefaultShare, useDriveEventManager } from '../store';
 import PreviewContainer from './PreviewContainer';
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
@@ -18,6 +18,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     const [, setError] = useState();
     const { getDefaultShare } = useDefaultShare();
     useFolderContainerTitle({ params: match.params, setAppTitle: useAppTitle });
+    const events = useDriveEventManager();
 
     const hasValidLinkType = (type: string) => {
         return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
@@ -59,6 +60,14 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     lastFolderPromise.current = folderPromise;
 
     const shouldRenderDriveView = Boolean(activeFolder.shareId && activeFolder.linkId);
+
+    useEffect(() => {
+        events.shares.startSubscription(activeFolder.shareId).catch(reportError);
+
+        return () => {
+            events.shares.pauseSubscription(activeFolder.shareId);
+        };
+    }, [activeFolder.shareId]);
 
     return (
         <>
