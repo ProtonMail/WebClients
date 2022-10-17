@@ -347,7 +347,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             ),
         };
     }
-    if (!hasPinnedKeys) {
+    if (!hasPinnedKeys || !encrypt) {
         return result;
     }
     // Pinned keys are ordered in terms of preference. Make sure the first is valid
