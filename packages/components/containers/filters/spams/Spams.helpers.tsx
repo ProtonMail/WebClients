@@ -47,11 +47,11 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
         },
         unspam: {
             fail: isDomain
-                ? c('Domain spam notification').t`${name} failed to move to Not spam List`
-                : c('Email spam notification').t`${name} failed to move to Not spam List`,
+                ? c('Domain spam notification').t`${name} failed to move to not spam List`
+                : c('Email spam notification').t`${name} failed to move to not spam List`,
             success: isDomain
-                ? c('Domain spam notification').t`${name} moved to Not spam list`
-                : c('Email spam notification').t`${name} moved to Not spam list`,
+                ? c('Domain spam notification').t`${name} moved to not spam list`
+                : c('Email spam notification').t`${name} moved to not spam list`,
         },
     };
 
@@ -89,7 +89,7 @@ export const getLabelByLocation = (location: SpamLocation): { name: string; colo
         case 'BLOCKED':
             return { name: c('Label').t`Blocked`, color: ACCENT_COLORNAMES.strawberry.color };
         case 'NON_SPAM':
-            return { name: c('Label').t`Not Spam`, color: ACCENT_COLORNAMES.reef.color };
+            return { name: c('Label').t`Not spam`, color: ACCENT_COLORNAMES.reef.color };
         case 'SPAM':
             return { name: c('Label').t`Spam`, color: ACCENT_COLORNAMES.carrot.color };
         default:
