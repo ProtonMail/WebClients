@@ -169,7 +169,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
     ) : (
         <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/adding-contacts')}>
             {c('Description').ngettext(
-                msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
+                msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
                 `The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files.`,
                 MAX_IMPORT_CONTACTS
             )}
