@@ -469,7 +469,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 .item-checkbox {
 	& + .item-icon {
-		border: 1px solid transparent;
+		border: 0;
 	}
 
 	// hidden fake check by default
@@ -478,7 +478,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	}
 
 	&:focus-visible + .item-icon {
-		border-color: var(--field-focus);
 		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
 
