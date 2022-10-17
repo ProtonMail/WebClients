@@ -466,7 +466,7 @@ const Composer = (
     const handleDiscard = async () => {
         // syncedMessage can be a render late
         const message = getMessage(messageID);
-        if (message?.data?.ID) {
+        if (message) {
             await deleteDraft(message);
         }
         createNotification({ text: c('Info').t`Draft discarded` });
@@ -475,9 +475,10 @@ const Composer = (
     const handleDelete = async () => {
         autoSave.cancel?.();
         try {
-            await handleDiscard();
-        } finally {
             onClose();
+            await handleDiscard();
+        } catch {
+            // Nothing
         }
     };
 
