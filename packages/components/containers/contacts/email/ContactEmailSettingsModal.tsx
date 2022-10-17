@@ -22,7 +22,6 @@ import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import {
     getContactPublicKeyModel,
-    getIsValidForSending,
     getVerifyingKeys,
     sortApiKeys,
     sortPinnedKeys,
@@ -190,14 +189,11 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
         }
         /**
          * When the list of trusted, expired or revoked keys change,
-         * * update the encrypt toggle (off if all keys are expired or no keys are pinned)
+         * * update the list:
          * * re-check if the new keys can send
          * * re-order api keys (trusted take preference)
          * * move expired keys to the bottom of the list
          */
-        const noPinnedKeyCanSend =
-            !!model?.publicKeys?.pinnedKeys.length &&
-            !model?.publicKeys?.pinnedKeys.some((publicKey) => getIsValidForSending(publicKey.getFingerprint(), model));
 
         setModel((model?: ContactPublicKeyModel) => {
             if (!model) {
@@ -226,7 +222,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
 
             return {
                 ...model,
-                encrypt: !noPinnedKeyCanSend && !!model?.publicKeys?.pinnedKeys.length && model.encrypt,
+                encrypt: model?.publicKeys?.pinnedKeys.length > 0 && model.encrypt,
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             };
         });
