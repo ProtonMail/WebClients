@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { format } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -80,8 +80,11 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest
     const loading = loadingContacts || contactsExported.length + contactsNotExported.length !== countContacts;
     const display =
         loading || success
-            ? c('Progress bar description')
-                  .t`${contactsExported.length} out of ${countContacts} contacts successfully exported.`
+            ? c('Progress bar description').ngettext(
+                  msgid`${contactsExported.length} out of ${countContacts} contact successfully exported.`,
+                  `${contactsExported.length} out of ${countContacts} contacts successfully exported.`,
+                  countContacts
+              )
             : c('Progress bar description').t`No contacts exported.`;
 
     return (
