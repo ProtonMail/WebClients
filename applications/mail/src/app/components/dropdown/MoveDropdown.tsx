@@ -122,7 +122,12 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
         });
 
     const actualMoveFolder = async (selectedFolderID: string, selectedFolderName: string) => {
-        await moveToFolder(elements, selectedFolderID, selectedFolderName, labelID, always);
+        // If the destination folder is SPAM, we don't want to create a filter even if always is checked
+        // Senders will be moved to spam anyway, but since we don't want to create filters in the "Spam case",
+        // We only need to ignore the value in that scenario
+        const canApplyAlways = selectedFolderID !== SPAM;
+
+        await moveToFolder(elements, selectedFolderID, selectedFolderName, labelID, canApplyAlways ? always : false);
         onClose();
 
         if (!isMessage || !conversationMode) {
