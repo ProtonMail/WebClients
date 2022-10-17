@@ -58,7 +58,11 @@ const InviteSendEmail = () => {
         if (emails.length > emailSendLimitNumber) {
             createNotification({
                 type: 'warning',
-                text: c('Info').t`You can't send more than ${emailSendLimitNumber} email invites for the next 24 hours`,
+                text: c('Info').ngettext(
+                    msgid`You can't send more than ${emailSendLimitNumber} email invite for the next 24 hours`,
+                    `You can't send more than ${emailSendLimitNumber} email invites for the next 24 hours`,
+                    emailSendLimitNumber
+                ),
             });
             return;
         }
