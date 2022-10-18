@@ -2736,10 +2736,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
-        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
@@ -4257,9 +4253,6 @@
       "Background color": [
         "Háttérszín"
       ],
-      "Based in Switzerland, available globally": [
-        "Svájci székhelyű, világszerte elérhető"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
       ],
@@ -5096,9 +5089,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Költözünk! Csatlakozzon az új címünkön: ${ link }."
       ],
       "Web URL": [
         "Weblap link"
@@ -6693,9 +6683,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
@@ -7027,17 +7014,9 @@
         "${ elementsCount } beszélgetés olvasatlannak megjelölve.",
         "${ elementsCount } beszélgetés olvasatlannak megjelölve."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába.",
-        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába.",
         "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről.",
@@ -7059,17 +7038,9 @@
         "${ elementsCount } üzenet olvasatlannak megjelölve.",
         "${ elementsCount } üzenet olvasatlannak megjelölve."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába.",
-        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } üzenet átkerült a ${ folderName } mappába.",
         "${ elementsCount } üzenet átkerült a ${ folderName } mappába."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva ${ elementsCount } üzenetről.",
@@ -7115,9 +7086,6 @@
       ],
       "Conversation marked as unread.": [
         "Beszélgetés olvasatlannak megjelölve."
-      ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Az beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
       ],
       "Conversation moved to ${ folderName }.": [
         "A beszélgetés átkerült a ${ folderName } mappába."

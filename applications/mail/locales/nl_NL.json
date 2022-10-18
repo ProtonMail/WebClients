@@ -2867,10 +2867,6 @@
       "No labels": [
         "Geen labels"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden.",
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -3763,6 +3759,11 @@
         "Standaard"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy is standaard."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "We hebben de totale opslagruimte van uw account verhoogd naar ${ rewardInGb } GB. Krijg vandaag nog extra opslagruimte en ontgrendel premium functies."
@@ -4472,9 +4473,6 @@
       "Background color": [
         "Achtergrondkleur"
       ],
-      "Based in Switzerland, available globally": [
-        "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
@@ -4648,6 +4646,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
         "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
@@ -4799,6 +4800,9 @@
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
+      ],
+      "Labels:": [
+        "Labels:"
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
@@ -5386,8 +5390,8 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
       ],
       "Web URL": [
         "Website (URL)"
@@ -5403,6 +5407,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -7045,9 +7052,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } van de ${ countContacts } contactpersonen succesvol geëxporteerd."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
         "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
@@ -7382,17 +7386,9 @@
         "${ elementsCount } gesprek gemarkeerd als ongelezen.",
         "${ elementsCount } gesprekken gemarkeerd als ongelezen."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Één gesprek verplaatst naar ${ folderName } and afzender toegevoegd aan Toegestane Lijst.",
-        "${ elementsCount } gesprekken verplaatst naar ${ folderName } and afzender toegevoegd aan Toegestane Lijst."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } gesprek verplaatst naar ${ folderName }.",
         "${ elementsCount } gesprekken verplaatst naar ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } gesprek verwijderd van ${ labelName }.",
@@ -7414,17 +7410,9 @@
         "${ elementsCount } bericht gemarkeerd als ongelezen.",
         "${ elementsCount } berichten gemarkeerd als ongelezen."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } bericht verplaatst naar ${ folderName } en afzender toegevoegd aan Toegestane Lijst.",
-        "${ elementsCount } berichten verplaatst naar ${ folderName } en afzender toegevoegd aan Toegestane Lijst."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } bericht is verplaatst naar ${ folderName }.",
         "${ elementsCount } berichten zijn verplaatst naar ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } bericht verwijderd van ${ labelName }.",
@@ -7471,14 +7459,8 @@
       "Conversation marked as unread.": [
         "Conversatie gemarkeerd als ongelezen."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Conversatie verplaatst naar ${ folderName } en afzender toegevoegd aan Toegestane Lijst."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Gesprek verplaatst naar ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Conversatie verplaatst naar spam en afzender toegevoegd aan uw blokkeringslijst."
       ],
       "Conversation removed from ${ labelName }.": [
         "Gesprek verwijderd van ${ labelName }."
@@ -7536,9 +7518,6 @@
       ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Bericht verplaatst naar spam en afzender toegevoegd aan uw blokkeringslijst."
       ],
       "Message removed from ${ labelName }.": [
         "Bericht verwijderd van ${ labelName }."

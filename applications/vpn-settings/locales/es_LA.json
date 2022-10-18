@@ -86,9 +86,6 @@
       "Create address": [
         "Crear dirección"
       ],
-      "Create free account": [
-        "Crear cuenta gratuita"
-      ],
       "Current plan": [
         "Plan actual"
       ],
@@ -1711,7 +1708,7 @@
         "Deshabilite 2FA con la llave de seguridad antes de desactivar TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con su clave de seguridad. Intente de nuevo."
+        "Algo salió mal al autenticar con su llave de seguridad. Intente de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Algo salió mal al registrar su llave de seguridad. Intente nuevamente."
@@ -1728,7 +1725,7 @@
         "¿En verdad desea eliminar la llave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+        "Inserte una llave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Inserte la llave de seguridad en el puerto USB."
@@ -1816,6 +1813,11 @@
         "Megabytes"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 correo por mes)"
@@ -1825,6 +1827,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "¿Ya tiene una cuenta? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "¿Primera vez en ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1953,9 +1965,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "¿Está seguro que desea deshabilitar la autenticación de dos factores?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Con sede en Suiza, disponible globalmente"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Se requiere suscripción Basic, Plus o Visionary"
@@ -2359,8 +2368,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, seleccione un método de recuperación de cuenta para que podamos verificar la solicitud."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Para proteger su conexión a Internet, descargue e instale la aplicación de ${ VPN_APP_NAME } para su dispositivo y conéctese a un servidor de ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Para proteger su conexión a internet, descargue e instale la aplicación ${ VPN_APP_NAME } en su dispositivo y conéctese a un servidor."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recargue su cuenta con créditos que puede utilizar para suscribirse a un plan nuevo o renovar el actual. Obtiene un crédito por cada ${ i18nCurrency } gastado."
@@ -2452,8 +2461,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "¡Nos trasladamos! Únase a nosotros en nuestro sitio nuevo: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "¡Nos hemos mudado! Ingrese a nuestro dominio nuevo: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos un código de restablecimiento a la dirección de correo que proporcionó para la recuperación de la cuenta."
@@ -3040,6 +3049,9 @@
       ],
       "Common sign up issues": [
         "Problemas comunes de registro"
+      ],
+      "Create account": [
+        "Crear cuenta"
       ],
       "Forgot username?": [
         "¿Olvidó su usuario?"
@@ -3988,6 +4000,17 @@
         "Nombre de usuario"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Configuración de la cuenta"
+      ],
+      "Payment": [
+        "Pago"
+      ],
+      "Verification": [
+        "Verificación"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
@@ -4379,6 +4402,9 @@
       "Email subscriptions": [
         "Suscripciones de correo"
       ],
+      "Enter your password": [
+        "Ingrese su contraseña"
+      ],
       "Error": [
         "Error"
       ],
@@ -4516,9 +4542,6 @@
       ],
       "Sign in": [
         "Iniciar sesión"
-      ],
-      "Sign in again to continue": [
-        "Inicie sesión nuevamente para continuar"
       ],
       "Sign out": [
         "Cerrar sesión"

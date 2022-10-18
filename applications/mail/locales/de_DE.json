@@ -2839,10 +2839,6 @@
       "No labels": [
         "Keine Kategorie"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
@@ -4471,9 +4467,6 @@
       "Background color": [
         "Hintergrundfarbe"
       ],
-      "Based in Switzerland, available globally": [
-        "In der Schweiz ansässig, weltweit verfügbar"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Standardnavigation sowie Standardaktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
       ],
@@ -4801,6 +4794,9 @@
       ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
+      ],
+      "Labels:": [
+        "Kategorien:"
       ],
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
@@ -5387,9 +5383,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
       ],
       "Web URL": [
         "Web-URL"
@@ -7061,9 +7054,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakt(en) erfolgreich gelöscht.",
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
@@ -7398,17 +7388,9 @@
         "${ elementsCount } Unterhaltung als ungelesen markieren.",
         "${ elementsCount } Unterhaltungen als ungelesen markieren."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } Unterhaltung wurde in den Ordner „${ folderName }” verschoben und der Absender zur Ausnahmenliste hinzugefügt.",
-        "${ elementsCount } Unterhaltungen wurden in den Ordner „${ folderName }” verschoben und der/die Absender zur Ausnahmenliste hinzugefügt."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } Unterhaltung in „${ folderName }” verschoben.",
         "${ elementsCount } Unterhaltungen in „${ folderName }” verschoben."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } Unterhaltung aus „${ labelName }” entfernt.",
@@ -7430,17 +7412,9 @@
         "${ elementsCount } Nachricht als ungelesen gekennzeichnet.",
         "${ elementsCount } Nachrichten als ungelesen gekennzeichnet."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } Nachricht in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt.",
-        "${ elementsCount } Nachrichten in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } Nachricht nach „${ folderName }” verschoben.",
         "${ elementsCount } Nachrichten nach „${ folderName }” verschoben."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } Nachricht aus „${ labelName }” entfernt.",
@@ -7487,14 +7461,8 @@
       "Conversation marked as unread.": [
         "Unterhaltung als ungelesen markieren."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Unterhaltung in den Ordner „${ folderName }” verschoben und Absender zur Ausnahmenliste hinzugefügt."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Unterhaltung in „${ folderName }” verschoben."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Unterhaltung in Spam verschoben und Absender zur Sperrliste hinzugefügt."
       ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
@@ -7550,14 +7518,8 @@
       "Message marked as unread.": [
         "Nachricht als ungelesen gekennzeichnet."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Nachricht in ${ folderName } verschoben und Absender zur Ausnahmeliste hinzugefügt."
-      ],
       "Message moved to ${ folderName }.": [
         "Nachricht nach „${ folderName }” verschoben."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Nachricht in Spam verschoben und Absender zur Sperrliste hinzugefügt."
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }” entfernt."

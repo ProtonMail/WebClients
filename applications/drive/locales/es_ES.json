@@ -1736,10 +1736,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puedes cerrar esta ventana."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no deseas combinar."
       ],
@@ -2977,6 +2973,9 @@
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
+      "Labels:": [
+        "Etiquetas:"
+      ],
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
@@ -3355,8 +3354,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "¡Nos hemos mudado! Únete a nosotros en nuestro nuevo sitio: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "¡Nos hemos mudado! Por favor, ingrese a nuestro nuevo dominio: ${ link }."
       ],
       "Week": [
         "Semana"
@@ -4415,9 +4414,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -4688,9 +4684,6 @@
       ],
       "Back": [
         "Atrás"
-      ],
-      "Based in Switzerland, available globally": [
-        "Con sede en Suiza, disponible globalmente"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -4995,9 +4988,6 @@
       "Show actions": [
         "Mostrar acciones"
       ],
-      "Sign in again to continue": [
-        "Inicia sesión de nuevo para continuar"
-      ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
       ],
@@ -5048,6 +5038,9 @@
       ],
       "Trash": [
         "Papelera"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de doble factor"
       ],
       "Type": [
         "Tipo"

@@ -185,9 +185,6 @@
       "Create folder": [
         "Δημιουργία φακέλου"
       ],
-      "Create free account": [
-        "Δημιουργία δωρεάν λογαριασμού"
-      ],
       "Create label": [
         "Δημιουργία ετικέτας"
       ],
@@ -503,11 +500,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανεώστε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reload": [
         "Ανανέωση"
@@ -745,6 +742,9 @@
       ],
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
+      ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
@@ -1152,11 +1152,17 @@
       "cerise": [
         "κεράσι"
       ],
+      "cinnabar": [
+        "κιννάβαρη"
+      ],
       "cobalt": [
         "κοβάλτιο"
       ],
       "copper": [
         "χαλκός"
+      ],
+      "cyan-blue azure": [
+        "κυανό-μπλε γαλάζιο"
       ],
       "dandelion": [
         "ραδίκι"
@@ -1167,17 +1173,29 @@
       "dark midnight blue": [
         "μπλε μεσονυκτίου"
       ],
+      "dim gray": [
+        "αχνό γκρι"
+      ],
+      "enzian": [
+        "ενζιάν"
+      ],
       "fern": [
         "φτέρη"
       ],
       "forest": [
         "δάσος"
       ],
+      "gainsboro": [
+        "γκέινσμπορο"
+      ],
       "kiwi": [
         "ακτινίδιο"
       ],
       "lemon yellow": [
         "λεμονί"
+      ],
+      "light carmine pink": [
+        "ανοιχτό ροζ καρμίνη"
       ],
       "light red": [
         "ανοιχτό κόκκινο"
@@ -1203,6 +1221,21 @@
       "pale cerulean": [
         "χλωμός ουρανός"
       ],
+      "pastel gray": [
+        "παστέλ γκρι"
+      ],
+      "persian plum": [
+        "περσικό δαμασκηνί"
+      ],
+      "persian red": [
+        "περσικό κόκκινο"
+      ],
+      "philippine gray": [
+        "φιλιππινέζικο γκρι"
+      ],
+      "philippine silver": [
+        "φιλιππινέζικο ασημί"
+      ],
       "pickle": [
         "τουρσί"
       ],
@@ -1226,6 +1259,9 @@
       ],
       "reef": [
         "ύφαλος"
+      ],
+      "ruddy pink": [
+        "κατακόκκινο ροζ"
       ],
       "sahara": [
         "Σαχάρα"
@@ -2237,10 +2273,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
-        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε γεγονότα σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι ${ MAX_IMPORT_EVENTS_STRING } γεγονότα.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ]
@@ -3000,6 +3032,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας"
       ]
     },
     "Event title": {
@@ -3038,6 +3073,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3046,6 +3085,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter Actions": {
@@ -3913,9 +3970,6 @@
       "Background color": [
         "Χρώμα φόντου"
       ],
-      "Based in Switzerland, available globally": [
-        "Βασισμένο στην Ελβετία, διαθέσιμο παγκοσμίως"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
       ],
@@ -4385,6 +4439,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ _switchButton }."
       ],
+      "Member": [
+        "Μέλος"
+      ],
       "Merged": [
         "Συγχωνευμένα"
       ],
@@ -4641,6 +4698,9 @@
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
+      "Select what you want to import.": [
+        "Επιλέξτε τι θέλετε να εισάγετε."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
@@ -4827,9 +4887,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για συνέχεια, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή ${ VPN_APP_NAME }."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο σενάριο Sieve. Μπορείτε να ${ link }."
       ],
@@ -4932,9 +4989,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Μετακομίζουμε! Ελάτε μαζί μας στη νέα μας ιστοσελίδα: ${ link }."
-      ],
       "Web URL": [
         "Web URL"
       ],
@@ -5015,9 +5069,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Για σύνδεση σε διακομιστή ${ VPN_APP_NAME } με χρήση εφαρμογής VPN ανοικτού κώδικα τρίτων, όπως το Tunnelblick για macOS ή το OpenVPN για GNU/Linux, μπορείτε να χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
       ],
       "You cannot refer ${ appName } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ appName }"
@@ -5776,9 +5827,6 @@
       "Discount": [
         "Έκπτωση"
       ],
-      "Display": [
-        "Εμφάνιση"
-      ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
@@ -6414,6 +6462,9 @@
       ],
       "Common sign up issues": [
         "Συνηθισμένα ζητήματα εγγραφής"
+      ],
+      "Create account": [
+        "Δημιουργία λογαριασμού"
       ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
@@ -7095,6 +7146,9 @@
       ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
+      ],
+      "Support for 1 custom email domain": [
+        "Υποστήριξη για 1 παραμετροποιημένο τομέα email"
       ],
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -8193,6 +8247,9 @@
       ],
       "Add Sieve filter": [
         "Προσθήκη φίλτρου Sieve"
+      ],
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add user": [
         "Προσθήκη χρήστη"

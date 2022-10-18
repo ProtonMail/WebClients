@@ -86,9 +86,6 @@
       "Create address": [
         "Crea indirizzo"
       ],
-      "Create free account": [
-        "Crea un account gratuito"
-      ],
       "Current plan": [
         "Piano attuale"
       ],
@@ -1816,6 +1813,11 @@
         "Megabyte"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy di default."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email al mese)"
@@ -1825,6 +1827,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 email al mese)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Hai già un account? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Nuovo su ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1953,9 +1965,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Con sede in Svizzera, disponibile a livello globale"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Abbonamento Base, Plus o Visionary richiesto"
@@ -2359,8 +2368,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Per proteggere la tua connessione Internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Per proteggere la tua connessione a internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
@@ -2452,8 +2461,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ci spostiamo! Raggiungici al nostro nuovo sito: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ci siamo trasferiti! Accedi al nostro nuovo dominio: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
@@ -3040,6 +3049,9 @@
       ],
       "Common sign up issues": [
         "Problemi di registrazione comuni"
+      ],
+      "Create account": [
+        "Crea account"
       ],
       "Forgot username?": [
         "Nome utente dimenticato?"
@@ -3988,6 +4000,17 @@
         "Nome utente"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Impostazioni dell'account"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Verification": [
+        "Verifica"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } è uscito dalla fase beta! Garantite ai vostri file la stessa sicurezza delle vostre e-mail."
@@ -4379,6 +4402,9 @@
       "Email subscriptions": [
         "Newsletter"
       ],
+      "Enter your password": [
+        "Inserisci la tua password"
+      ],
       "Error": [
         "Errore"
       ],
@@ -4516,9 +4542,6 @@
       ],
       "Sign in": [
         "Accedi"
-      ],
-      "Sign in again to continue": [
-        "Accedi di nuovo per continuare"
       ],
       "Sign out": [
         "Esci"

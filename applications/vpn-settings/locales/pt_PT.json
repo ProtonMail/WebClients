@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Ativar recuperação"
+      ],
       "Add credit / debit card": [
         "Adicionar cartão de débito/crédito"
       ],
@@ -25,6 +28,9 @@
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "Authenticate": [
         "Autenticar"
@@ -93,6 +99,9 @@
         "Detalhes"
       ],
       "Didn't receive a code?": [
+        "Não recebeu o código?"
+      ],
+      "Didn't receive the code?": [
         "Não recebeu o código?"
       ],
       "Disable": [
@@ -170,6 +179,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Refer a friend": [
+        "Referencie um amigo"
+      ],
       "Refresh the page": [
         "Actualizar a página"
       ],
@@ -215,6 +227,9 @@
       "Send my username": [
         "Enviar nome de utilizador"
       ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
+      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -250,6 +265,15 @@
       ],
       "Unlock": [
         "Desbloquear"
+      ],
+      "Unlock data": [
+        "Desbloquear dados"
+      ],
+      "Update recovery file": [
+        "Atualizar ficheiro de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Actualizar"
@@ -680,6 +704,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } pode também ser usado com uma única palavra-passe que substitui ambas as palavras-passe de início de sessão e caixa de correio. Para mudar para o modo de uma única palavra-passe, digite a palavra-passe única que gostaria de usar e clique em salvar."
+      ],
       "${ number } city": [
         "${ number } cidade",
         "${ number } cidades"
@@ -723,6 +750,9 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Facturado no termo do seu ciclo de facturação actual (renova a ${ renewalDate })"
@@ -780,6 +810,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Insira a sua senha (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
@@ -1021,8 +1054,8 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, por favor desactive-os."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Estamos a mover! Junte-se a nós no nosso novo site: ${link }."
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos um novo código de verificação para ${ strong }"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
@@ -1038,6 +1071,9 @@
       ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
@@ -1170,6 +1206,19 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } email or username": [
+        "E-mail ou nome de usuário do ${ BRAND_NAME }"
+      ],
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ],
+      "${ MAIL_APP_NAME } address": [
+        "Endereço ${ MAIL_APP_NAME }"
+      ],
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
       "Allow recovery by email": [
         "Permitir recuperação por email"
       ],
@@ -1181,6 +1230,9 @@
       ],
       "Amount due": [
         "Quantia devida"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "bonus storage": [
         "bónus de armazenamento"
@@ -1475,6 +1527,18 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetas"
+      ],
+      "${ n } message per day": [
+        "${ n } mensagem por dia",
+        "${ n } mensagens por dia"
+      ],
+      "${ n } VPN connection": [
+        "${ n } ligação VPN",
+        "${ n } ligações VPN"
+      ],
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
       ],
@@ -1490,9 +1554,19 @@
         "Apoio ao cliente"
       ]
     },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ]
+    },
     "new_plans: signup": {
       "Subscription": [
         "Subscrição"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Teste do ${ mailPlanName }"
       ]
     },
     "Notification": {
@@ -1666,6 +1740,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } VPN connection": [
+        "${ n } ligação VPN",
+        "${ n } ligações VPN"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } endereço electrónico",
         "${ UsedAddresses } de ${ MaxAddresses } endereços electrónicos"
@@ -1870,6 +1948,9 @@
       "Email subscriptions": [
         "Subscrições de email"
       ],
+      "Enter your password": [
+        "Insira a sua senha"
+      ],
       "Error": [
         "Erro"
       ],
@@ -1987,9 +2068,6 @@
       "Sign in": [
         "Iniciar sessão"
       ],
-      "Sign in again to continue": [
-        "Reinicie sessão para continuar"
-      ],
       "Sign out": [
         "Terminar sessão"
       ],
@@ -2053,6 +2131,11 @@
         "Estado"
       ]
     },
+    "Title for PDF file": {
+      "${ MAIL_APP_NAME } invoice": [
+        "Fatura ${ MAIL_APP_NAME }"
+      ]
+    },
     "Tooltip": {
       "Discount applied for annual billing cycle": [
         "Desconto aplicado a ciclos de facturação anual"
@@ -2073,6 +2156,16 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Vídeo, BBC iPlayer, ESPN+, Disney+, HBO Now e muito mais."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n }+ servidores"
+      ],
+      "${ n } VPN connection": [
+        "${ n } ligação VPN",
+        "${ n } ligações VPN"
       ]
     },
     "VPNClient": {

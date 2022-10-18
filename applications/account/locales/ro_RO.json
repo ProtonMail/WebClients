@@ -213,9 +213,6 @@
       "Create folder": [
         "Creare folder"
       ],
-      "Create free account": [
-        "Creare cont gratuit"
-      ],
       "Create label": [
         "Creare etichetă"
       ],
@@ -454,7 +451,7 @@
         "Setare ca implicită"
       ],
       "Mark as not spam": [
-        "Marcare ca dorit"
+        "Marcare ca acceptat"
       ],
       "Mark as spam": [
         "Marcare ca nedorit"
@@ -486,8 +483,8 @@
       "No": [
         "Nu"
       ],
-      "Non spam": [
-        "Dorite"
+      "Not spam": [
+        "Acceptată"
       ],
       "OK": [
         "OK"
@@ -546,11 +543,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reload": [
         "Reîncărcare"
@@ -761,6 +758,9 @@
       ],
       "Support": [
         "Asistenţă"
+      ],
+      "Switch account": [
+        "Comutare cont"
       ],
       "Top up": [
         "Alimentare"
@@ -2623,11 +2623,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Urmăriți câte persoane v-au accesat legătura, s-au înscris și au devenit abonați. Priviți cum vi se adună lunile gratuite."
       ],
@@ -2663,17 +2658,11 @@
       "${ name } deletion failed": [
         "Ștergerea lui ${ name } a eșuat."
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } nu s-a putut muta în lista de dorite."
-      ],
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
       ],
       "${ name } failed to move to your block list": [
         "${ name } nu s-a putut muta în lista de blocare."
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } s-a mutat în lista de dorite."
       ],
       "${ name } moved to spam list": [
         "${ name } s-a mutat în lista de nedorite."
@@ -2780,17 +2769,11 @@
       "${ name } deletion failed": [
         "Ștergerea lui ${ name } a eșuat."
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } nu s-a putut muta în lista de dorite."
-      ],
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
       ],
       "${ name } failed to move to your block list": [
         "${ name } nu s-a putut muta în lista de blocare."
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } s-a mutat în lista de dorite."
       ],
       "${ name } moved to spam list": [
         "${ name } s-a mutat în lista de nedorite."
@@ -3851,13 +3834,13 @@
         "Adăugați un filtru personalizat pentru a efectua automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor. Filtrele pot fi editate și create direct prin intermediul limbajului de programare Sieve."
       ],
       "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către Proton vor ajunge în folderul «Nedorite». Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „dorit”."
+        "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către Proton vor ajunge în folderul «Nedorite». Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „acceptată”."
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Mesajele de la adresele blocate nu vor fi livrate."
       ],
-      "Search in your allow and block lists": [
-        "Căutare în lista de permise și blocate"
+      "Search list": [
+        "Căutare în listă"
       ]
     },
     "Font Face Default": {
@@ -3870,6 +3853,11 @@
         "Implicit"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Confidențialitate implicită."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(un mesaj pe lună)"
@@ -3879,6 +3867,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 mesaje pe lună)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Aveți deja un cont? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Utilizați prima dată ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4782,9 +4780,6 @@
       "Background color": [
         "Culoare fundal"
       ],
-      "Based in Switzerland, available globally": [
-        "Cu sediul în Elveția, disponibil la nivel global."
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
       ],
@@ -5126,7 +5121,7 @@
         "Dacă nu ați mai folosit autentificarea cu doi factori, vă recomandăm insistent să ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Dacă aveți setate atât SPF cât și DKIM, DMARC vă permite să specificați felul în care celelalte servicii de e-mail ar trebui să livreze mesajele pentru domeniul dvs. dacă verificarea SPF și DKIM a eșuat. Aceasta va îngreuna acțiunile celor care trimit spam de a pretinde că sunteți dvs., dar ar putea și cauza probleme de livrare dacă nu e executată corect."
+        "Dacă aveți setate atât SPF cât și DKIM, DMARC vă permite să specificați felul în care celelalte servicii de e-mail ar trebui să livreze mesajele pentru domeniul dvs. dacă verificarea SPF și DKIM a eșuat. Aceasta va îngreuna acțiunile celor care trimit mesaje nedorite de a pretinde că sunteți dvs., dar ar putea și cauza probleme de livrare dacă nu e executată corect."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Dacă vă pierdeți datele de conectare și trebuie să vă resetați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
@@ -5252,6 +5247,9 @@
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
       ],
+      "Labels:": [
+        "Etichete:"
+      ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
@@ -5308,6 +5306,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ _switchButton }."
+      ],
+      "Member": [
+        "Membru"
       ],
       "Merged": [
         "Îmbinat"
@@ -5814,8 +5815,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pentru a funcționa corect, fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid. Puteți să ${ link }."
@@ -5940,8 +5941,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ne mutăm! Veniți alături de noi pe noul nostru site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ne-am mutat! Conectați-vă pe noul nostri domeniu: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -6006,6 +6007,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Este conectat contul ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
       ],
@@ -6021,6 +6025,9 @@
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Acum puteți accesa și gestiona contul ca administrator."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite, de asemenea, e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
       ],
@@ -6032,9 +6039,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Nu puteți trimite mai mult de ${ emailSendLimitNumber } invitații pentru următoarele 24 de ore."
       ],
       "You cannot refer ${ appName } users": [
         "Nu puteți recomanda utilizatori ai ${ appName }."
@@ -6897,9 +6901,6 @@
       "Discount": [
         "Reducere"
       ],
-      "Display": [
-        "Afișare"
-      ],
       "Display name": [
         "Nume afișat"
       ],
@@ -7119,11 +7120,11 @@
       "No label found": [
         "Nicio etichetă găsită"
       ],
-      "Non Spam": [
-        "Nu e nedorit"
-      ],
       "Non-standard ports": [
         "Porturi nonstandard"
+      ],
+      "Not spam": [
+        "Acceptată"
       ],
       "Notification": [
         "Notificare"
@@ -7581,6 +7582,9 @@
       "Common sign up issues": [
         "Probleme comune de înregistrare"
       ],
+      "Create account": [
+        "Creare cont"
+      ],
       "Encryption and keys": [
         "Criptare și chei"
       ],
@@ -7956,8 +7960,8 @@
       "Blocked": [
         "Blocat"
       ],
-      "Non spam": [
-        "Dorite"
+      "Not spam": [
+        "Acceptată"
       ],
       "Spam": [
         "Nedorite"
@@ -9463,7 +9467,9 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Ați atins limita de maxim un membru per calendar.",
+        "Ați atins limita de maxim ${ MAX_CALENDAR_MEMBERS } membri per calendar.",
         "Ați atins limita de maxim ${ MAX_CALENDAR_MEMBERS } de membri per calendar."
       ]
     },
@@ -9485,6 +9491,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Adăugare etichetă"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Creat de ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -10078,8 +10089,8 @@
       "Add Sieve filter": [
         "Adăugare filtru Sieve"
       ],
-      "Add to non spam list": [
-        "Adăugare la lista de acceptate"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Adăugare la lista de nedorite"
@@ -10137,9 +10148,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
-      ],
-      "Calendar information": [
-        "Informații calendar"
       ],
       "Cancel Mail subscription": [
         "Anulare abonament pe e-mail"
@@ -10686,6 +10694,9 @@
       "Sign out": [
         "Deconectare"
       ],
+      "Signed in to member account": [
+        "Conectat în cont de membru"
+      ],
       "Sort folders alphabetically": [
         "Sortare alfabetică foldere"
       ],
@@ -10890,6 +10901,11 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Editare informații"
       ]
     },
     "Today icon tooltip in mini calendar": {

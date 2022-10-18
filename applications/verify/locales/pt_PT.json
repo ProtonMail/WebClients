@@ -20,6 +20,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Didn't receive the code?": [
+        "Não recebeu o código?"
+      ],
       "Edit email address": [
         "Editar o endereço de email"
       ],
@@ -120,11 +123,17 @@
       ]
     },
     "Info": {
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Insira a sua senha (como administrador da organização)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
@@ -143,6 +152,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos um novo código de verificação para ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"

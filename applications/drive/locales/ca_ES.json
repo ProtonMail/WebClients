@@ -1706,10 +1706,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
-        "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilitzeu Arrossegar i Deixar anar per classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
@@ -2997,9 +2993,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ens traslladem! Ara podreu trobar-nos a ${ link }."
-      ],
       "Week": [
         "Setmana"
       ],
@@ -3857,9 +3850,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contactes exportats satisfactòriament."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
@@ -4124,9 +4114,6 @@
       ],
       "Back": [
         "Torna"
-      ],
-      "Based in Switzerland, available globally": [
-        "Amb seu a Suïssa, disponible a tot el món"
       ],
       "Beta Access": [
         "Accés Beta"
@@ -4428,9 +4415,6 @@
       "Show actions": [
         "Mostra accions"
       ],
-      "Sign in again to continue": [
-        "Inicia sessió per continuar"
-      ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
@@ -4481,6 +4465,9 @@
       ],
       "Trash": [
         "Paperera"
+      ],
+      "Two-factor authentication": [
+        "Autenticació de dos factors"
       ],
       "Type": [
         "Tipus"

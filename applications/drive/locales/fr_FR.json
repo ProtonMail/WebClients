@@ -1771,10 +1771,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
@@ -2205,6 +2201,11 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } mis à jour"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Group": {
@@ -3035,6 +3036,9 @@
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
       ],
+      "Labels:": [
+        "Labels :"
+      ],
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
@@ -3422,8 +3426,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé ! Veuillez vous connecter à notre nouveau domaine : ${ link }."
       ],
       "Week": [
         "Semaine"
@@ -4510,9 +4514,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -4783,9 +4784,6 @@
       ],
       "Back": [
         "Retour"
-      ],
-      "Based in Switzerland, available globally": [
-        "Basé en Suisse, disponible dans le monde entier"
       ],
       "Beta Access": [
         "Accès à la version bêta"
@@ -5090,9 +5088,6 @@
       "Show actions": [
         "Afficher les actions"
       ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau"
-      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
@@ -5143,6 +5138,9 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Type": [
         "Type"

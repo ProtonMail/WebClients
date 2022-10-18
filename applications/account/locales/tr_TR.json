@@ -213,9 +213,6 @@
       "Create folder": [
         "Klasör ekle"
       ],
-      "Create free account": [
-        "Ücretsiz bir hesap açın"
-      ],
       "Create label": [
         "Etiket ekle"
       ],
@@ -486,7 +483,7 @@
       "No": [
         "Hayır"
       ],
-      "Non spam": [
+      "Not spam": [
         "İstenmeyen değil"
       ],
       "OK": [
@@ -546,11 +543,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -761,6 +758,9 @@
       ],
       "Support": [
         "Destek"
+      ],
+      "Switch account": [
+        "Hesabı değiştir"
       ],
       "Top up": [
         "Doldur"
@@ -2607,10 +2607,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Kaç kişinin bağlantınıza tıkladığını, hesap açtığını ve ücretli abone olduğunu izleyin. Ne kadar ücretsiz aylık kullanım kazandığınızı görün."
       ],
@@ -2646,17 +2642,11 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } istenmeyen değil listesine eklenemedi"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
       ],
       "${ name } failed to move to your block list": [
         "${ name } engellenenler listenize eklenemedi"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } istenmeyen değil listesine eklendi"
       ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
@@ -2763,17 +2753,11 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } istenmeyen değil listesine eklenemedi"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
       ],
       "${ name } failed to move to your block list": [
         "${ name } engellenenler listenize eklenemedi"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } istenmeyen değil listesine eklendi"
       ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
@@ -3825,8 +3809,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Engellenmiş adreslerden gelen e-postalar alınmaz."
       ],
-      "Search in your allow and block lists": [
-        "İzin verilenler ve engellenenler listelerinizde arama yapın"
+      "Search list": [
+        "Arama listesi"
       ]
     },
     "Font Face Default": {
@@ -3839,6 +3823,11 @@
         "Varsayılan"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Varsayılan olarak kişisel gizliliği korur."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(ayda 1 e-posta)"
@@ -3848,6 +3837,16 @@
       ],
       "(1-2 emails per month)": [
         "(ayda 1-2 e-posta)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Zaten bir hesabınız var mı? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "İlk kez mi ${ BRAND_NAME } kullanıyorsunuz? ${ signUp }"
       ]
     },
     "Group": {
@@ -4718,9 +4717,6 @@
       "Background color": [
         "Arka plan rengi"
       ],
-      "Based in Switzerland, available globally": [
-        "İsviçre merkezli, tüm dünyada kullanılabilir"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve işlemler, ayarlardaki klavyeyi kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
@@ -5184,6 +5180,9 @@
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
       ],
+      "Labels:": [
+        "Etiketler:"
+      ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
@@ -5240,6 +5239,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
+      ],
+      "Member": [
+        "Üye"
       ],
       "Merged": [
         "Birleştirilmiş"
@@ -5741,8 +5743,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "İnternet bağlantınızı güvence altına almak için cihazınıza ${ VPN_APP_NAME } uygulamasını indirip yükleyin ve bir ${ VPN_APP_NAME } sunucusuna bağlanın."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Düzgün çalışması için, her süzgecin en az bir adı ve geçerli bir Sieve betiği olmalıdır. ${ link }."
@@ -5867,8 +5869,8 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Taşındık. Lütfen yeni etki alanımızı kullanarak oturum açın: ${ link }."
       ],
       "Web URL": [
         "Web adresi"
@@ -5933,6 +5935,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "${ memberAddress } hesabıyla oturum açtınız."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ayrıca içe aktarılan takvimleri var olan Proton takvimleriyle birleştirebilirsiniz."
       ],
@@ -5948,6 +5953,9 @@
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Şimdi hesaba bir yönetici olarak erişebilir ve yönetebilirsiniz."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Artık, @pm.me adresinizle iletiler alabilirsiniz. @pm.me adresinizi kullanarak e-posta göndermek ve başka @pm.me adresleri eklemek için ücretli bir tarifeye geçin."
       ],
@@ -5959,9 +5967,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
       ],
       "You cannot refer ${ appName } users": [
         "${ appName } kullanıcılarını kaynak gösteremezsiniz"
@@ -6821,9 +6826,6 @@
       "Discount": [
         "İndirim"
       ],
-      "Display": [
-        "Görüntüle"
-      ],
       "Display name": [
         "Görüntülenecek ad"
       ],
@@ -7043,11 +7045,11 @@
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
-      "Non Spam": [
-        "İstenmeyen değil"
-      ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
+      ],
+      "Not spam": [
+        "İstenmeyen değil"
       ],
       "Notification": [
         "Bildirim"
@@ -7505,6 +7507,9 @@
       "Common sign up issues": [
         "Sık karşılaşılan hesap açma sorunları"
       ],
+      "Create account": [
+        "Hesap ekle"
+      ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
       ],
@@ -7871,7 +7876,7 @@
       "Blocked": [
         "Engellenmiş"
       ],
-      "Non spam": [
+      "Not spam": [
         "İstenmeyen değil"
       ],
       "Spam": [
@@ -9352,7 +9357,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız",
         "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız"
       ]
     },
@@ -9374,6 +9380,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Etiket ekle"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "${ ownerName } tarafından oluşturuldu"
       ]
     },
     "Signup label": {
@@ -9951,8 +9962,8 @@
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
       ],
-      "Add to non spam list": [
-        "İstenmeyen değil listesine ekle"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
@@ -10010,9 +10021,6 @@
       ],
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
-      ],
-      "Calendar information": [
-        "Takvim bilgileri"
       ],
       "Cancel Mail subscription": [
         "Mail aboneliğini iptal et"
@@ -10558,6 +10566,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Signed in to member account": [
+        "Üye hesabıyla oturum açıldı"
+      ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"
       ],
@@ -10761,6 +10772,11 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Bilgileri düzenle"
       ]
     },
     "Today icon tooltip in mini calendar": {
