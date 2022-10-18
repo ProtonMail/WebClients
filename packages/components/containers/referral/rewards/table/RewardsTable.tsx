@@ -24,7 +24,7 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
         <>
             <Table>
                 <TableHeader
-                    cells={[c('Label').t`User`, c('Label').t`Date`, c('Label').t`Activity`, c('Label').t`Your reward`]}
+                    cells={[c('Label').t`User`, c('Label').t`Date`, c('Label').t`Activity`, c('Label').t`Credits`]}
                 />
                 {referrals.length > 0 && (
                     <TableBody loading={loading}>
@@ -47,9 +47,6 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
                     </TableBody>
                 )}
             </Table>
-            {referrals.length === 0 && (
-                <p className="color-weak">{c('info').t`Track your referral link activities here`}</p>
-            )}
         </>
     );
 };
