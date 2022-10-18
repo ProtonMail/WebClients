@@ -32,7 +32,7 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             couponCode: COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
             popular: true,
-            header: () => c('specialOffer: Label').t`Most popular`,
+            header: () => c('specialoffer: Label').t`Most popular`,
             features: getUnlimitedFeatures,
             star: '2',
         },
