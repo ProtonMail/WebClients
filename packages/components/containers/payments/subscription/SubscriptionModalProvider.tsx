@@ -3,7 +3,13 @@ import { ReactNode, createContext, useContext, useRef } from 'react';
 import { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasB2BPlan,
+    getHasLegacyPlans,
+    getIsB2BPlan,
+    getNormalCycleFromCustomCycle,
+    getPlanIDs,
+} from '@proton/shared/lib/helpers/subscription';
 import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -101,6 +107,12 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
                             return;
                         }
 
+                        // The 15 and 30 month cycle are only valid coming from the black friday modal.
+                        // or Edit billing details.
+                        const subscriptionCycle = disablePlanSelection
+                            ? subscription.Cycle
+                            : getNormalCycleFromCustomCycle(subscription.Cycle);
+
                         const planIDs = plan
                             ? switchPlan({
                                   planIDs: subscriptionPlanIDs,
@@ -114,7 +126,7 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
                             planIDs,
                             step,
                             currency: currency || getCurrency(user, subscription, plans),
-                            cycle: cycle || subscription.Cycle,
+                            cycle: cycle || subscriptionCycle,
                             coupon: coupon || subscription.CouponCode || undefined,
                             defaultAudience:
                                 defaultAudience || (plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)

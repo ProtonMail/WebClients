@@ -18,6 +18,14 @@ const getTooltip = (cycle: Cycle) => {
     if (cycle === CYCLE.TWO_YEARS) {
         return c('Tooltip').t`Discount applied for two-year billing cycle`;
     }
+
+    if (cycle === CYCLE.THIRTY) {
+        return c('Tooltip').t`Discount applied for thirty months billing cycle`;
+    }
+
+    if (cycle === CYCLE.FIFTEEN) {
+        return c('Tooltip').t`Discount applied for fifteen months billing cycle`;
+    }
 };
 
 const CycleDiscountBadge = ({ cycle = CYCLE.MONTHLY, discount }: Props) => {

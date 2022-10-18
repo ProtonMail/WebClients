@@ -5,11 +5,13 @@ import { c, msgid } from 'ttag';
 import { CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { allCycles, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
 import { classnames } from '../../../helpers';
+import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
 
 interface Props {
     cycle: CYCLE;
@@ -22,8 +24,80 @@ interface Props {
     disabled?: boolean;
 }
 
+interface TotalPricing {
+    discount: number;
+    total: number;
+    totalPerMonth: number;
+}
+
+type TotalPricings = {
+    [key in CYCLE]: TotalPricing;
+};
+
 const getText = (n: number) => {
     return c('Label').ngettext(msgid`${n} month`, `${n} months`, n);
+};
+
+const getDiscountPrice = (discount: number, currency: Currency) => {
+    return discount ? (
+        <>
+            {c('Subscription saving').t`Save`}
+            <Price className="ml0-25" currency={currency}>
+                {discount}
+            </Price>
+        </>
+    ) : null;
+};
+
+const CycleItem = ({
+    totals,
+    currency,
+    cycle,
+    monthlySuffix,
+}: {
+    totals: TotalPricings;
+    monthlySuffix: string;
+    cycle: CYCLE;
+    currency: Currency;
+}) => {
+    const replacementCycle = getNormalCycleFromCustomCycle(cycle) || cycle;
+    const freeMonths = getMonthsFree(cycle);
+    const { total, totalPerMonth, discount } = totals[replacementCycle];
+
+    return (
+        <>
+            <div className="flex-item-fluid pl0-5">
+                <div className="flex flex-align-items-center">
+                    <strong className="text-lg flex-item-fluid mr1">{getText(replacementCycle)}</strong>
+                    <strong className="text-lg flex-item-noshrink color-primary">
+                        {c('Subscription price').t`For`}
+                        <Price className="ml0-25" currency={currency}>
+                            {total}
+                        </Price>
+                    </strong>
+                </div>
+                <div className="flex flex-align-items-center">
+                    <span className="color-weak flex flex-item-fluid">
+                        <Price currency={currency} suffix={monthlySuffix}>
+                            {totalPerMonth}
+                        </Price>
+                    </span>
+                    <span className="color-success flex flex-item-noshrink">
+                        {getDiscountPrice(discount, currency)}
+                    </span>
+                </div>
+                {freeMonths > 0 && (
+                    <div className="flex flex-align-items-center">
+                        <div className="flex-item-fluid"></div>
+                        <span className="color-success flex flex-item-noshrink">
+                            {` + `}
+                            {getMonthFreeText(freeMonths)}
+                        </span>
+                    </div>
+                )}
+            </div>
+        </>
+    );
 };
 
 const SubscriptionCycleSelector = ({
@@ -37,7 +111,12 @@ const SubscriptionCycleSelector = ({
     plans,
 }: Props) => {
     const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
-    const cycles = [CYCLE.TWO_YEARS, ...filteredCycles];
+
+    let cycles = [CYCLE.TWO_YEARS, ...filteredCycles];
+    // We don't allow to change cycle on the special cycles.
+    if (cycleSelected === CYCLE.FIFTEEN || cycleSelected === CYCLE.THIRTY) {
+        cycles = [cycleSelected];
+    }
 
     const supportedAddons = getSupportedAddons(planIDs);
     const plansMap = toMap(plans, 'Name') as PlansMap;
@@ -48,40 +127,38 @@ const SubscriptionCycleSelector = ({
                 return acc;
             }
 
-            acc.all[CYCLE.MONTHLY] += quantity * plan.Pricing[CYCLE.MONTHLY];
-            acc.all[CYCLE.YEARLY] += quantity * plan.Pricing[CYCLE.YEARLY];
-            acc.all[CYCLE.TWO_YEARS] += quantity * plan.Pricing[CYCLE.TWO_YEARS];
+            const add = (target: any, cycle: CYCLE) => {
+                const price = plan.Pricing[cycle];
+                if (price) {
+                    target[cycle] += quantity * price;
+                }
+            };
+
+            allCycles.forEach((cycle) => {
+                add(acc.all, cycle);
+            });
 
             if (plan.Type === PLAN_TYPES.PLAN) {
-                acc.plans[CYCLE.MONTHLY] += quantity * plan.Pricing[CYCLE.MONTHLY];
-                acc.plans[CYCLE.YEARLY] += quantity * plan.Pricing[CYCLE.YEARLY];
-                acc.plans[CYCLE.TWO_YEARS] += quantity * plan.Pricing[CYCLE.TWO_YEARS];
+                allCycles.forEach((cycle) => {
+                    add(acc.plans, cycle);
+                });
             }
 
             return acc;
         },
         {
-            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0 },
+            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0, [CYCLE.THIRTY]: 0, [CYCLE.FIFTEEN]: 0 },
             plans: {
                 [CYCLE.MONTHLY]: 0,
                 [CYCLE.YEARLY]: 0,
                 [CYCLE.TWO_YEARS]: 0,
+                [CYCLE.THIRTY]: 0,
+                [CYCLE.FIFTEEN]: 0,
             },
         }
     );
 
-    const getDiscountPrice = (discount: number) => {
-        return discount ? (
-            <>
-                {c('Subscription saving').t`Save`}
-                <Price className="ml0-25" currency={currency}>
-                    {discount}
-                </Price>
-            </>
-        ) : null;
-    };
-
-    const getTotal = (cycle: CYCLE) => {
+    const getTotal = (cycle: CYCLE): TotalPricing => {
         const total = pricing.all[cycle];
         const totalPerMonth = pricing.plans[cycle] / cycle;
         const discount = cycle === CYCLE.MONTHLY ? 0 : pricing.all[CYCLE.MONTHLY] * cycle - total;
@@ -96,7 +173,7 @@ const SubscriptionCycleSelector = ({
         ? c('Suffix').t`/user per month`
         : c('Suffix').t`/month`;
 
-    const totals = cycles.reduce<{ [key in CYCLE]: { discount: number; total: number; totalPerMonth: number } }>(
+    const totals = allCycles.reduce<{ [key in CYCLE]: { discount: number; total: number; totalPerMonth: number } }>(
         (acc, cycle) => {
             acc[cycle] = getTotal(cycle);
             return acc;
@@ -106,29 +183,13 @@ const SubscriptionCycleSelector = ({
 
     if (cycles.length === 1) {
         const cycle = cycles[0];
-        const { total, totalPerMonth, discount } = totals[cycle];
 
         return (
-            <div key={`${cycle}`} className="p1 mb1 border rounded bg-norm flex flex-nowrap flex-align-items-stretch">
-                <div className="flex-item-fluid">
-                    <div className="flex flex-align-items-center">
-                        <strong className="text-lg flex-item-fluid mr1">{getText(cycle)}</strong>
-                        <strong className="text-lg flex-item-noshrink color-primary">
-                            {c('Subscription price').t`For`}
-                            <Price className="ml0-25" currency={currency}>
-                                {total}
-                            </Price>
-                        </strong>
-                    </div>
-                    <div className="flex flex-align-items-center">
-                        <span className="color-weak flex flex-item-fluid">
-                            <Price currency={currency} suffix={monthlySuffix}>
-                                {totalPerMonth}
-                            </Price>
-                        </span>
-                        <span className="color-success flex flex-item-noshrink">{getDiscountPrice(discount)}</span>
-                    </div>
-                </div>
+            <div
+                key={`${cycle}`}
+                className="p1 mb1 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2"
+            >
+                <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
             </div>
         );
     }
@@ -158,7 +219,7 @@ const SubscriptionCycleSelector = ({
                                         cycle !== cycleSelected && 'color-success',
                                     ])}
                                 >
-                                    {getDiscountPrice(totals[cycle].discount)}
+                                    {getDiscountPrice(totals[cycle].discount, currency)}
                                 </span>
                             </div>
                         </Option>
@@ -172,13 +233,13 @@ const SubscriptionCycleSelector = ({
         <ul className="unstyled m0 plan-cycle-selector">
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
-                const { total, totalPerMonth, discount } = totals[cycle];
                 return (
                     <li key={`${cycle}`} className="flex flex-align-items-stretch mb1">
                         <button
                             className={classnames([
                                 'w100 p1 plan-cycle-button flex flex-nowrap border rounded text-left',
                                 isSelected && 'border-primary',
+                                isSelected && 'border-2',
                             ])}
                             disabled={disabled}
                             onClick={() => onChangeCycle(cycle)}
@@ -194,27 +255,12 @@ const SubscriptionCycleSelector = ({
                                     readOnly
                                 />
                             </div>
-                            <div className="flex-item-fluid pl0-5">
-                                <div className="flex flex-align-items-center">
-                                    <strong className="text-lg flex-item-fluid mr1">{getText(cycle)}</strong>
-                                    <strong className="text-lg flex-item-noshrink color-primary">
-                                        {c('Subscription price').t`For`}
-                                        <Price className="ml0-25" currency={currency}>
-                                            {total}
-                                        </Price>
-                                    </strong>
-                                </div>
-                                <div className="flex flex-align-items-center">
-                                    <span className="color-weak flex flex-item-fluid">
-                                        <Price currency={currency} suffix={monthlySuffix}>
-                                            {totalPerMonth}
-                                        </Price>
-                                    </span>
-                                    <span className="color-success flex flex-item-noshrink">
-                                        {getDiscountPrice(discount)}
-                                    </span>
-                                </div>
-                            </div>
+                            <CycleItem
+                                totals={totals}
+                                monthlySuffix={monthlySuffix}
+                                currency={currency}
+                                cycle={cycle}
+                            />
                         </button>
                     </li>
                 );

@@ -3,24 +3,33 @@ import { useEffect, useState } from 'react';
 import { useApi, useLoading } from '@proton/components/hooks';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import getDealPrices from '../helpers/getDealPrices';
+import { fetchDealPrices } from '../helpers/dealPrices';
 import { Offer, OfferConfig } from '../interface';
 
 interface Props {
-    offerConfig: OfferConfig;
+    offerConfig: OfferConfig | undefined;
     currency: Currency;
+    onSuccess?: () => void;
     onError?: () => void;
 }
 
-function useFetchOffer({ offerConfig, currency, onError }: Props): Offer | undefined {
+function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [Offer | undefined, boolean] {
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const [offer, setOffer] = useState<Offer>();
+    const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
 
     useEffect(() => {
+        if (!offerConfig) {
+            return;
+        }
         const updateOfferPrices = async () => {
             try {
-                const result = await getDealPrices(api, offerConfig, currency);
+                // Reset previous offer prices in case the offer config has changed from what was previously cached
+                if (state?.offerConfig !== offerConfig) {
+                    setState(undefined);
+                }
+
+                const result = await fetchDealPrices(api, offerConfig, currency);
 
                 // We make an offer based on offerConfig + fetched results above
                 const offer: Offer = {
@@ -38,17 +47,17 @@ function useFetchOffer({ offerConfig, currency, onError }: Props): Offer | undef
                         };
                     }),
                 };
-                setOffer(offer);
+                setState({ offer, offerConfig });
+                onSuccess?.();
             } catch (error) {
                 onError?.();
-                throw error;
             }
         };
 
         void withLoading(updateOfferPrices());
-    }, [currency]);
+    }, [offerConfig, currency]);
 
-    return loading ? undefined : offer;
+    return [state?.offer, loading];
 }
 
 export default useFetchOffer;

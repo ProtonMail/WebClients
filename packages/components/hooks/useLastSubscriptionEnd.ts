@@ -25,7 +25,7 @@ const useLastSubscriptionEnd = (): [latestSubscription: number, loading: boolean
                 const { LastSubscriptionEnd = 0 } = await api<LatestSubscription>(getLastCancelledSubscription());
 
                 if (isMounted()) {
-                    setLatestSubscription(LastSubscriptionEnd);
+                    setLatestSubscription(LastSubscriptionEnd || 0);
                 }
             } catch (e) {
                 // Ignore

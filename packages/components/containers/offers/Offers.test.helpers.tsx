@@ -17,7 +17,7 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { mockApi } from '@proton/testing/';
 
-export const config = {
+export const DEFAULT_CONFIG = {
     APP_NAME: APPS.PROTONMAIL,
     APP_VERSION: 'test-version',
     DATE_VERSION: 'test-date-version',
@@ -38,7 +38,13 @@ export const offersCache = {
     },
 };
 
-export const OffersTestProvider = ({ children }: { children: React.ReactNode }) => (
+export const OffersTestProvider = ({
+    children,
+    config = DEFAULT_CONFIG,
+}: {
+    children: React.ReactNode;
+    config?: ProtonConfig;
+}) => (
     <ConfigProvider config={config}>
         <ApiContext.Provider value={mockApi}>
             <NotificationsProvider>

@@ -23,6 +23,8 @@ export const FREE_PLAN = {
         [CYCLE.MONTHLY]: 0,
         [CYCLE.YEARLY]: 0,
         [CYCLE.TWO_YEARS]: 0,
+        [CYCLE.THIRTY]: 0,
+        [CYCLE.FIFTEEN]: 0,
     },
 } as Plan;
 

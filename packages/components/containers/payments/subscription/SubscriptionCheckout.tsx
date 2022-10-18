@@ -111,6 +111,8 @@ const CheckoutPlanIDs = ({
                     [CYCLE.YEARLY]: targetPlan.Pricing[CYCLE.YEARLY] + plan.Pricing[CYCLE.YEARLY] * plan.quantity,
                     [CYCLE.TWO_YEARS]:
                         targetPlan.Pricing[CYCLE.TWO_YEARS] + plan.Pricing[CYCLE.TWO_YEARS] * plan.quantity,
+                    [CYCLE.THIRTY]: targetPlan.Pricing[CYCLE.THIRTY] + plan.Pricing[CYCLE.THIRTY] * plan.quantity,
+                    [CYCLE.FIFTEEN]: targetPlan.Pricing[CYCLE.FIFTEEN] + plan.Pricing[CYCLE.FIFTEEN] * plan.quantity,
                 };
                 if (targetPlan.users === undefined) {
                     targetPlan.users = targetPlan.MaxMembers;
@@ -135,8 +137,6 @@ const CheckoutPlanIDs = ({
     const rows = collection.map(({ ID, Name, Title, Pricing, Type, users, quantity }) => {
         const update = (isUpdating && additions?.[Name as ADDON_NAMES]) || 0;
         const diff = quantity - update;
-        // translator: Visionary (Mail + VPN)
-        const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
 
         const cycleDiscount = getCycleDiscount(cycle, Name, plansMap);
         const cycleDiscountBadge = cycleDiscount ? <CycleDiscountBadge cycle={cycle} discount={cycleDiscount} /> : null;
@@ -146,7 +146,7 @@ const CheckoutPlanIDs = ({
             <Fragment key={ID}>
                 {(diff || update) && Type === PLAN_TYPES.PLAN && (
                     <div className="mb1">
-                        <strong>{displayTitle}</strong>
+                        <strong>{Title}</strong>
                     </div>
                 )}
                 {diff ? (

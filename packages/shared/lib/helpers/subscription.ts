@@ -172,5 +172,49 @@ export const isExternal = (subscription: Subscription | undefined) => {
 };
 
 export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
-    return subscription?.CouponCode === COUPON_CODES.BLACK_FRIDAY_2022;
+    return [
+        COUPON_CODES.BLACK_FRIDAY_2022,
+        COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
+        COUPON_CODES.VPN_BLACK_FRIDAY_2022,
+    ].includes(subscription?.CouponCode as COUPON_CODES);
+};
+
+export const hasVPNBlackFridayDiscount = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.VPN_BLACK_FRIDAY_2022;
+};
+
+export const hasMailBlackFridayDiscount = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.MAIL_BLACK_FRIDAY_2022;
+};
+
+export const allCycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS, CYCLE.FIFTEEN, CYCLE.THIRTY];
+
+export const getValidCycle = (cycle: number): CYCLE | undefined => {
+    return allCycles.includes(cycle) ? cycle : undefined;
+};
+
+export const getNormalCycleFromCustomCycle = (cycle: CYCLE | undefined) => {
+    if (!cycle) {
+        return undefined;
+    }
+    if (cycle === CYCLE.FIFTEEN) {
+        return CYCLE.YEARLY;
+    }
+    if (cycle === CYCLE.THIRTY) {
+        return CYCLE.TWO_YEARS;
+    }
+    return cycle;
+};
+
+export const getCustomCycleFromNormalCycle = (cycle: CYCLE | undefined) => {
+    if (!cycle) {
+        return undefined;
+    }
+    if (cycle === CYCLE.YEARLY) {
+        return CYCLE.FIFTEEN;
+    }
+    if (cycle === CYCLE.TWO_YEARS) {
+        return CYCLE.THIRTY;
+    }
+    return cycle;
 };
