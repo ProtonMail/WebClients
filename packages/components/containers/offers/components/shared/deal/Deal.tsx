@@ -2,6 +2,8 @@ import { ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { CYCLE } from '@proton/shared/lib/constants';
+import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import clsx from '@proton/utils/clsx';
 
 import { getDiscountWithCoupon } from '../../../helpers/dealPrices';
@@ -14,8 +16,8 @@ interface Props extends OfferProps {
 }
 
 const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, ref) => {
-    const { popular } = props.deal;
-    const discount = getDiscountWithCoupon(props.deal);
+    const { popular, cycle } = props.deal;
+    const discount = getDiscountWithCoupon({ ...props.deal, cycle: getNormalCycleFromCustomCycle(cycle) as CYCLE });
 
     return (
         <DealProvider {...props}>
@@ -33,7 +35,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                             popular ? 'bg-primary' : 'bg-weak color-weak border border-norm',
                         ])}
                     >
-                        {c('specialoffer: Offers').jt`Save ${discount}%`}
+                        {c('specialoffer: Offers').t`Save ${discount}%`}
                     </span>
                 ) : null}
                 <div
