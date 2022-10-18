@@ -8,14 +8,14 @@ interface Props {
 
 const OfferCloseButton = ({ onClose }: Props) => {
     return (
-        <Tooltip title={c('specialOffer: Action').t`Close`}>
+        <Tooltip title={c('specialoffer: Action').t`Close`}>
             <Button
                 className="flex-item-noshrink offer-close-button absolute right"
                 icon
                 shape="ghost"
                 onClick={onClose}
             >
-                <Icon className="modal-close-icon" name="cross-big" alt={c('specialOffer: Action').t`Close`} />
+                <Icon className="modal-close-icon" name="cross-big" alt={c('specialoffer: Action').t`Close`} />
             </Button>
         </Tooltip>
     );

@@ -23,7 +23,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
             features: getUnlimitedVPNFeatures,
             popular: true,
-            header: () => c('specialOffer: Label').t`Limited time only`,
+            header: () => c('specialoffer: Label').t`Limited time only`,
         },
     ],
     layout: Layout,

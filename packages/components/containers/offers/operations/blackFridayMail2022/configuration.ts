@@ -23,7 +23,7 @@ const config: OfferConfig = {
             features: getUnlimitedDealFeatures,
             star: '1',
             popular: true,
-            header: () => c('specialOffer: Label').t`Offer ends soon`,
+            header: () => c('specialoffer: Label').t`Offer ends soon`,
         },
     ],
     layout: Layout,
