@@ -22,7 +22,12 @@ const ItemUnread = ({ element, labelID, className, isSelected }: Props) => {
     return (
         <Tooltip title={c('Alt').t`Unread email`}>
             <span className={className}>
-                <Icon name="circle-filled" size={12} className={!isSelected ? 'color-primary' : undefined} />
+                <Icon
+                    name="circle-filled"
+                    size={12}
+                    className={!isSelected ? 'color-primary' : undefined}
+                    alt={c('Alt').t`Unread email`}
+                />
             </span>
         </Tooltip>
     );
