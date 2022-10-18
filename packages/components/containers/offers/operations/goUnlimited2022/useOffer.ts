@@ -19,12 +19,13 @@ const useOffer = (): Operation => {
     const isLoading = flagsLoading || userLoading || loading;
     const createDate = fromUnixTime(subscription?.CreateTime || subscription?.PeriodStart); // Subscription.CreateTime is not yet available
     const notTrial = !isTrial(subscription);
+    const noBF = !hasBlackFridayDiscount(subscription);
 
     const isValid =
         [PLANS.MAIL, PLANS.VPN].includes(plan?.Name as PLANS) &&
         notTrial &&
         isBefore(createDate, addDays(new Date(), -7)) &&
-        !hasBlackFridayDiscount(subscription) &&
+        noBF &&
         user.canPay &&
         isMailOrAccountSettings &&
         !user.isDelinquent &&

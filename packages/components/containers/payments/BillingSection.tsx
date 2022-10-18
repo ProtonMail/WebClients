@@ -1,38 +1,36 @@
-import { c, msgid } from 'ttag';
+import { ReactElement } from 'react';
 
-import { PLANS } from '@proton/shared/lib/constants';
+import { c } from 'ttag';
+
+import { getVPNConnections } from '@proton/components/containers/payments/features/vpn';
+import {
+    getCheckResultFromSubscription,
+    getCheckout,
+    getDiscountText,
+    getUserTitle,
+} from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import {
-    getBaseAmount,
-    getCycleDiscount,
-    getHasLegacyPlans,
-    hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
-import { Plan } from '@proton/shared/lib/interfaces';
-import unique from '@proton/utils/unique';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 
-import { Info, Loader, Time } from '../../components';
+import { Badge, Loader, Time } from '../../components';
 import Price from '../../components/price/Price';
 import { classnames } from '../../helpers';
-import { useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
+import { useOrganization, usePlans, useSubscription } from '../../hooks';
 import { SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import CycleDiscountBadge from './CycleDiscountBadge';
-import DiscountBadge from './DiscountBadge';
-import { getDueCycleText, getTotalBillingText } from './helper';
-import PlanPrice from './subscription/PlanPrice';
-import { formatPlans } from './subscription/helpers';
+import { getTotalBillingText } from './helper';
 
-const getRenewalText = (periodEnd: number) => {
+const getRenewalText = (periodEnd: number, amount?: ReactElement) => {
     const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
-    return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
+    if (!amount) {
+        return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
+    }
+    return c('Billing cycle').jt`Renews automatically on ${formattedEndTime} for ${amount}`;
 };
 
 const BillingSection = () => {
-    const [{ hasPaidMail, hasPaidVpn }] = useUser();
-    const [plans = [], loadingPlans] = usePlans();
-    const plansMap = toMap(plans, 'Name');
+    const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
@@ -44,13 +42,14 @@ const BillingSection = () => {
         return <MozillaInfoPanel />;
     }
 
-    const { Plans = [], Cycle, Currency, CouponCode, RenewAmount, PeriodEnd } = subscription;
-    const { plan, mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } =
-        formatPlans(Plans);
-    const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
-        return acc + getBaseAmount(planName as PLANS, plansMap, subscription, Cycle);
-    }, 0);
-    const discount = subTotal - RenewAmount;
+    const plansMap = toMap(plans, 'Name');
+    const { PeriodEnd, RenewAmount, Cycle, Currency } = subscription;
+
+    const result = getCheckout({
+        planIDs: getPlanIDs(subscription),
+        plansMap,
+        checkResult: getCheckResultFromSubscription(subscription),
+    });
     const spaceBonus = organization?.BonusSpace;
     const vpnBonus = organization?.BonusVPN;
     const maxUsers = organization?.MaxMembers || 1;
@@ -59,273 +58,83 @@ const BillingSection = () => {
     const priceLabelClassName = 'flex-item-fluid';
     const weakRowClassName = classnames([priceRowClassName, 'color-weak']);
 
-    const getCycleBadge = (plan: Plan) => {
-        const cycleDiscount = getCycleDiscount(Cycle, plan.Name, plansMap);
-        if (cycleDiscount) {
-            return (
-                <span className="ml0-5">
-                    <CycleDiscountBadge cycle={Cycle} discount={cycleDiscount} />
-                </span>
-            );
-        }
-        return null;
-    };
-
-    const hasLegacyPlans = getHasLegacyPlans(subscription);
-
-    const usersText = maxUsers
-        ? c('Title').ngettext(msgid`${maxUsers} user`, `${maxUsers} users`, maxUsers)
-        : undefined;
-
-    const addons = (
-        <>
-            {memberAddon && hasLegacyPlans ? (
-                <div className={weakRowClassName}>
-                    <div className={priceLabelClassName}>
-                        +{' '}
-                        {c('Addon unit for subscription').ngettext(
-                            msgid`${memberAddon.MaxMembers} user`,
-                            `${memberAddon.MaxMembers} users`,
-                            memberAddon.MaxMembers
-                        )}
-                        {getCycleBadge(memberAddon)}
-                    </div>
-                    <div className="text-right">
-                        <PlanPrice
-                            amount={getBaseAmount(memberAddon.Name, plansMap, subscription, Cycle)}
-                            currency={Currency}
-                            cycle={Cycle}
-                        />
-                    </div>
-                </div>
-            ) : null}
-            {addressAddon ? (
-                <div className={weakRowClassName}>
-                    <div className={priceLabelClassName}>
-                        +{' '}
-                        {c('Addon unit for subscription').ngettext(
-                            msgid`${addressAddon.MaxAddresses} address`,
-                            `${addressAddon.MaxAddresses} addresses`,
-                            addressAddon.MaxAddresses
-                        )}
-                        {getCycleBadge(addressAddon)}
-                    </div>
-                    <div className="text-right">
-                        <PlanPrice
-                            amount={getBaseAmount(addressAddon.Name, plansMap, subscription, Cycle)}
-                            currency={Currency}
-                            cycle={Cycle}
-                        />
-                    </div>
-                </div>
-            ) : null}
-            {domainAddon ? (
-                <div className={weakRowClassName}>
-                    <div className={priceLabelClassName}>
-                        +{' '}
-                        {c('Addon unit for subscription').ngettext(
-                            msgid`${domainAddon.MaxDomains} domain`,
-                            `${domainAddon.MaxDomains} domains`,
-                            domainAddon.MaxDomains
-                        )}
-                        {getCycleBadge(domainAddon)}
-                    </div>
-                    <div className="text-right">
-                        <PlanPrice
-                            amount={getBaseAmount(domainAddon.Name, plansMap, subscription, Cycle)}
-                            currency={Currency}
-                            cycle={Cycle}
-                        />
-                    </div>
-                </div>
-            ) : null}
-            {spaceAddon ? (
-                <div className={weakRowClassName}>
-                    <div className={priceLabelClassName}>
-                        + {humanSize(spaceAddon.MaxSpace)} {c('Label').t`extra storage`}
-                    </div>
-                    {getCycleBadge(spaceAddon)}
-                    <div className="text-right">
-                        <PlanPrice
-                            amount={getBaseAmount(spaceAddon.Name, plansMap, subscription, Cycle)}
-                            currency={Currency}
-                            cycle={Cycle}
-                        />
-                    </div>
-                </div>
-            ) : null}
-            {spaceBonus ? (
-                <div className={weakRowClassName}>
-                    <div className={priceLabelClassName}>
-                        + {humanSize(spaceBonus)} {c('Label').t`bonus storage`}
-                    </div>
-                    <div className="text-right">
-                        <PlanPrice amount={0} currency={Currency} cycle={Cycle} />
-                    </div>
-                </div>
-            ) : null}
-        </>
-    );
-
-    const priceInfo = (
-        <Info
-            title={c('new_plans: info')
-                .t`Price for future renewal: includes all applicable non-expired coupons saved to your account`}
-        />
-    );
-
     return (
         <SettingsSection>
-            {!hasLegacyPlans && plan ? (
-                <div className="border-bottom on-mobile-pb1">
-                    <div className={classnames([priceRowClassName, 'text-bold'])}>{plan.Title}</div>
+            <div className="border-bottom on-mobile-pb1">
+                <div className={classnames([priceRowClassName, 'text-bold'])}>{result.planTitle}</div>
+                <div className={weakRowClassName}>
+                    <div className={priceLabelClassName}>
+                        {getUserTitle(maxUsers)}
+                        {result.discountPercent > 0 && (
+                            <>
+                                {' '}
+                                <Badge type="success" tooltip={getDiscountText()}>
+                                    -{result.discountPercent}%
+                                </Badge>
+                            </>
+                        )}
+                    </div>
+                    <div className="text-right">
+                        <Price currency={Currency} suffix={c('Suffix').t`/month`}>
+                            {result.withDiscountPerMonth}
+                        </Price>
+                    </div>
+                </div>
+                {result.addons.length > 0 && (
+                    <div className="color-weak">
+                        {result.addons.map((addon) => {
+                            return (
+                                <div className="mb1" key={addon.name}>
+                                    {addon.title}
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
+                {spaceBonus > 0 && (
                     <div className={weakRowClassName}>
                         <div className={priceLabelClassName}>
-                            {usersText}
-                            {getCycleBadge(plan)}
+                            + {humanSize(spaceBonus)} {c('Label').t`bonus storage`}
                         </div>
                         <div className="text-right">
-                            <PlanPrice
-                                amount={
-                                    getBaseAmount(plan.Name, plansMap, subscription, Cycle) +
-                                    (memberAddon ? getBaseAmount(memberAddon.Name, plansMap, subscription, Cycle) : 0)
-                                }
-                                currency={Currency}
-                                cycle={Cycle}
-                            />
+                            <Price currency={Currency}>{0}</Price>
                         </div>
                     </div>
-                    {addons}
-                </div>
-            ) : null}
-            {hasLegacyPlans && hasPaidMail ? (
-                <div className="border-bottom on-mobile-pb1">
-                    {mailPlan ? (
-                        <div className={classnames([priceRowClassName, 'text-bold'])}>
-                            <div className={priceLabelClassName}>
-                                {mailPlan.Title}
-                                {getCycleBadge(mailPlan)}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getBaseAmount(mailPlan.Name, plansMap, subscription, Cycle)}
-                                    currency={Currency}
-                                    cycle={Cycle}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
-                    {addons}
-                </div>
-            ) : null}
-            {hasLegacyPlans && hasPaidVpn && !hasVisionary(subscription) ? (
-                <div className="border-bottom pt1 on-mobile-pb1">
-                    {vpnPlan ? (
-                        <div className={classnames([priceRowClassName, 'text-bold'])}>
-                            <div className={priceLabelClassName}>
-                                {vpnPlan.Title}
-                                {getCycleBadge(vpnPlan)}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getBaseAmount(vpnPlan.Name, plansMap, subscription, Cycle)}
-                                    currency={Currency}
-                                    cycle={Cycle}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
-                    {vpnAddon ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                +{' '}
-                                {c('Addon unit for subscription').ngettext(
-                                    msgid`${vpnAddon.MaxVPN} connection`,
-                                    `${vpnAddon.MaxVPN} connections`,
-                                    vpnAddon.MaxVPN
-                                )}
-                                {getCycleBadge(vpnAddon)}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice
-                                    amount={getBaseAmount(vpnAddon.Name, plansMap, subscription, Cycle)}
-                                    currency={Currency}
-                                    cycle={Cycle}
-                                />
-                            </div>
-                        </div>
-                    ) : null}
-                    {vpnBonus ? (
-                        <div className={weakRowClassName}>
-                            <div className={priceLabelClassName}>
-                                +{' '}
-                                {c('Addon unit for subscription').ngettext(
-                                    msgid`${vpnBonus} connection`,
-                                    `${vpnBonus} connections`,
-                                    vpnBonus
-                                )}
-                            </div>
-                            <div className="text-right">
-                                <PlanPrice amount={0} currency={Currency} cycle={Cycle} />
-                            </div>
-                        </div>
-                    ) : null}
-                </div>
-            ) : null}
-            {discount > 0 ? (
-                <>
-                    <div className="border-bottom pt1 on-mobile-pb1">
-                        <div className={classnames([priceRowClassName, 'text-bold'])}>
-                            <div className={priceLabelClassName}>{getTotalBillingText(Cycle)}</div>
-                            <div className="text-right">
-                                <Price currency={Currency}>{subTotal}</Price>
-                            </div>
-                        </div>
-                        <div className={weakRowClassName}>
-                            <div className={classnames([priceLabelClassName, 'flex flex-align-items-center'])}>
-                                {CouponCode ? (
-                                    <div className="">
-                                        {c('Coupon').t`Coupon applied: ${CouponCode}`}{' '}
-                                        <DiscountBadge code={CouponCode}>
-                                            {Math.round((Math.abs(discount) / subTotal) * 100)}%
-                                        </DiscountBadge>
-                                    </div>
-                                ) : (
-                                    <div className="">{c('Label').t`Discount`}</div>
-                                )}
-                            </div>
-                            <div className="text-right">
-                                <Price currency={Currency}>{-discount}</Price>
-                            </div>
+                )}
+                {vpnBonus > 0 && (
+                    <div className={weakRowClassName}>
+                        <div className={priceLabelClassName}>+ {getVPNConnections(vpnBonus).featureName}</div>
+                        <div className="text-right">
+                            <Price currency={Currency}>{0}</Price>
                         </div>
                     </div>
-                    <div className="pt1">
-                        <div className={classnames([priceRowClassName, 'text-bold'])}>
-                            <div className={priceLabelClassName}>
-                                <span className="mr0-5">{getDueCycleText(Cycle)}</span>
-                                {priceInfo}
-                            </div>
-                            <div className="text-right">
-                                <Price currency={Currency}>{RenewAmount}</Price>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            ) : (
-                <div className="pt1">
+                )}
+
+                <div className="mb1">
+                    <hr />
+                </div>
+                <div>
                     <div className={classnames([priceRowClassName, 'text-bold'])}>
                         <div className={priceLabelClassName}>
                             <span className="mr0-5">{getTotalBillingText(Cycle)}</span>
-                            {priceInfo}
                         </div>
                         <div className="text-right">
-                            <Price currency={Currency}>{RenewAmount}</Price>
+                            <Price currency={Currency}>{result.withDiscountPerCycle}</Price>
                         </div>
                     </div>
                 </div>
-            )}
+            </div>
             <div className={classnames([weakRowClassName, 'text-right mt1'])}>
-                <div className="text-right w100">{getRenewalText(PeriodEnd)}</div>
+                <div className="text-right w100">
+                    {getRenewalText(
+                        PeriodEnd,
+                        RenewAmount !== result.withDiscountPerCycle ? (
+                            <Price key="price" currency={Currency}>
+                                {RenewAmount}
+                            </Price>
+                        ) : undefined
+                    )}
+                </div>
             </div>
         </SettingsSection>
     );

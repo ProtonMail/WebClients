@@ -3,7 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { useLoad, usePlans, useSubscription, useSubscriptionModal, useUser } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { CURRENCIES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { CURRENCIES, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getCurrency } from './helpers';
@@ -17,6 +18,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
     const currencyParam = params.get('currency')?.toUpperCase();
     const target = params.get('target');
     const edit = params.get('edit');
+    const offer = params.get('offer');
 
     const parsedTarget = (() => {
         if (target === 'compare') {
@@ -27,8 +29,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         }
     })();
 
-    const parsedCycle =
-        cycleParam && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycleParam) ? cycleParam : undefined;
+    const parsedCycle = cycleParam && getValidCycle(cycleParam);
 
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
@@ -42,6 +43,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         currency: parsedCurrency || getCurrency(user, subscription, plans),
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: edit === 'disable',
+        disableCycleSelector: Boolean(offer),
     };
 };
 
@@ -61,7 +63,7 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
-        const { plan, currency, cycle, coupon, step, disablePlanSelection } = getParameters(
+        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector } = getParameters(
             location.search,
             plans,
             subscription,
@@ -80,6 +82,7 @@ const AutomaticSubscriptionModal = () => {
             coupon,
             step,
             disablePlanSelection,
+            disableCycleSelector,
         });
     }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
 

@@ -157,7 +157,7 @@
 
 	@include spacing-generator(
 		// coordinates
-		(p, pt, pr, pb, pl),
+		(p, pt, pr, pb, pl, px),
 		// padding sizes
 		(0, 0.25, 0.5, 1, 2),
 		// prefix
@@ -378,7 +378,7 @@
 
 	@include spacing-generator(
 		// coordinates
-		(p, pt, pr, pb, pl),
+		(p, pt, pr, pb, pl, px),
 		// padding sizes
 		(0),
 		// prefix

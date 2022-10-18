@@ -41,7 +41,7 @@ const Checkout = ({
                 </span>
             </div>
 
-            <div className={loading ? 'opacity-50' : ''}>{children}</div>
+            <div className={loading ? 'opacity-50 no-pointer-events-children' : ''}>{children}</div>
             <div className="text-sm lh-standard">
                 {hasPayments ? (
                     <div className="flex flex-nowrap color-weak mb0-5 mt0-5">

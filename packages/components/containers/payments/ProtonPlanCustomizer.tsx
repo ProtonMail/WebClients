@@ -39,7 +39,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     currentPlan: Plan;
     planIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
-    plans: Plan[];
     plansMap: { [key: string]: Plan };
     organization?: Organization;
     loading?: boolean;
@@ -265,7 +264,6 @@ const ProtonPlanCustomizer = ({
     onChangePlanIDs,
     planIDs,
     plansMap,
-    plans,
     currentPlan,
     organization,
     loading,
@@ -301,9 +299,10 @@ const ProtonPlanCustomizer = ({
                 const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
                 const maxTotal = max / divider;
 
+                const addonPricePerCycle = addon.Pricing[cycle] || 0;
                 const addonPriceInline = (
                     <Price key={`${addon.Name}-1`} currency={currency} suffix={c('Suffix for price').t`per month`}>
-                        {addon.Pricing[cycle] / cycle}
+                        {addonPricePerCycle / cycle}
                     </Price>
                 );
                 const input = (

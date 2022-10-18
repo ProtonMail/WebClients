@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,6 +9,10 @@ import { getUpgradedPlan } from '@proton/shared/lib/helpers/subscription';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
 import broadcast, { MessageType } from '../broadcast';
+import LiteBox from './LiteBox';
+import LiteLoaderPage from './LiteLoaderPage';
+import SubscribeAccountDone from './SubscribeAccountDone';
+import { SubscribeType } from './subscribeInterface';
 
 interface Props {
     redirect?: string | undefined;
@@ -23,6 +27,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [open, loadingSubscriptionModal] = useSubscriptionModal();
+    const [type, setType] = useState<SubscribeType | undefined>(undefined);
 
     const loading = loadingSubscriptionModal || loadingSubscription;
 
@@ -37,19 +42,25 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             return;
         }
 
-        const handleClose = () => {
+        const handleNotify = (type: SubscribeType) => {
             if (onceCloseRef.current) {
                 return;
             }
-
+            setType(type);
             onceCloseRef.current = true;
-
-            if (redirect && /^(\/$|\/[^/]|proton(vpn|mail|drive)?:\/\/)/.test(redirect)) {
+            if (redirect) {
                 document.location.replace(redirect);
                 return;
             }
-
             broadcast({ type: MessageType.CLOSE });
+        };
+
+        const handleClose = () => {
+            handleNotify(SubscribeType.Closed);
+        };
+
+        const handleSuccess = () => {
+            handleNotify(SubscribeType.Subscribed);
         };
 
         const maybeStart = queryParams.get('start');
@@ -74,22 +85,34 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
         open({
             step: maybeStep || defaultStep,
             onClose: handleClose,
-            onSuccess: handleClose,
+            onSuccess: handleSuccess,
             plan: plan,
             fullscreen,
             disableThanksStep: true,
         });
     }, [user, loading]);
 
-    return (
-        <div className="h100 ui-prominent">
-            {!canEdit ? (
-                <div className="flex flex-justify-center flex-align-items-center h100">
-                    {c('Action').t`Please contact the administrator of the organisation to manage the subscription`}
-                </div>
-            ) : null}
-        </div>
-    );
+    if (loading) {
+        return <LiteLoaderPage />;
+    }
+
+    if (type === SubscribeType.Subscribed || type === SubscribeType.Closed) {
+        return (
+            <LiteBox>
+                <SubscribeAccountDone type={type} />
+            </LiteBox>
+        );
+    }
+
+    if (!canEdit) {
+        return (
+            <LiteBox>
+                {c('Info').t`Please contact the administrator of the organisation to manage the subscription.`}
+            </LiteBox>
+        );
+    }
+
+    return null;
 };
 
 export default SubscribeAccount;
