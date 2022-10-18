@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { useInstance } from '@proton/hooks/index';
-import { getOwnedPersonalCalendars, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getOwnedPersonalCalendars, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 
 import Favicon from '../../components/Favicon';
@@ -46,7 +46,7 @@ const MainContainer = () => {
         FeatureCode.CalendarSharingEnabled,
     ]);
 
-    const memoedCalendars = useMemo(() => getVisualCalendars(calendars || []), [calendars]);
+    const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);
     const ownedPersonalCalendars = useMemo(() => getOwnedPersonalCalendars(memoedCalendars), [memoedCalendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 

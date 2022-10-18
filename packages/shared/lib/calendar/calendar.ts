@@ -113,10 +113,7 @@ const getCalendarWeight = (calendar: VisualCalendar) => {
 export const sortCalendars = (calendars: VisualCalendar[]) => {
     return [...calendars].sort((cal1, cal2) => {
         // personal owned calendars go first, shared second, and subscribed last
-        const w1 = getCalendarWeight(cal1);
-        const w2 = getCalendarWeight(cal2);
-
-        return w1 - w2;
+        return getCalendarWeight(cal1) - getCalendarWeight(cal2);
     });
 };
 
