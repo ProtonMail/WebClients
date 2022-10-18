@@ -183,7 +183,9 @@ export const getValidCycle = (cycle: number): CYCLE | undefined => {
     return allCycles.includes(cycle) ? cycle : undefined;
 };
 
-export const getNormalCycleFromCustomCycle = (cycle: CYCLE | undefined) => {
+export function getNormalCycleFromCustomCycle(cycle: CYCLE): CYCLE;
+
+export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE | undefined {
     if (!cycle) {
         return undefined;
     }
@@ -194,4 +196,4 @@ export const getNormalCycleFromCustomCycle = (cycle: CYCLE | undefined) => {
         return CYCLE.TWO_YEARS;
     }
     return cycle;
-};
+}
