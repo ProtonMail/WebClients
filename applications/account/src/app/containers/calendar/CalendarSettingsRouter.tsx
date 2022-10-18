@@ -24,6 +24,7 @@ import {
     getDefaultCalendar,
     getIsPersonalCalendar,
     getVisualCalendars,
+    sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -59,7 +60,7 @@ const CalendarSettingsRouter = ({
     const [calendars, loadingCalendars] = useCalendars();
 
     const { visualCalendars, personalCalendars, otherCalendars, allCalendarIDs } = useMemo(() => {
-        const visualCalendars = getVisualCalendars(calendars || []);
+        const visualCalendars = sortCalendars(getVisualCalendars(calendars || []));
         const [personalCalendars, otherCalendars] = partition<VisualCalendar>(
             visualCalendars || [],
             getIsPersonalCalendar
