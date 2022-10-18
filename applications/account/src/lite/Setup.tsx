@@ -10,7 +10,6 @@ import {
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
-import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -28,7 +27,9 @@ import { loadModels } from '@proton/shared/lib/models/helper';
 import getRandomString from '@proton/utils/getRandomString';
 
 import broadcast, { MessageType } from './broadcast';
-import MainContainer from './content/MainContainer';
+import LiteLayout from './containers/LiteLayout';
+import LiteLoaderPage from './containers/LiteLoaderPage';
+import MainContainer from './containers/MainContainer';
 
 interface Props {
     onLogin: (UID: string) => void;
@@ -134,13 +135,19 @@ const Setup = ({ onLogin, UID }: Props) => {
     }
 
     if (loading || !eventManagerRef.current) {
-        return <LoaderPage />;
+        return (
+            <LiteLayout>
+                <LiteLoaderPage />
+            </LiteLayout>
+        );
     }
 
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <ModalsChildren />
-            <MainContainer />
+            <LiteLayout>
+                <MainContainer />
+            </LiteLayout>
         </EventManagerProvider>
     );
 };

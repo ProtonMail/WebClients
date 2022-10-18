@@ -57,7 +57,6 @@ import SubscriptionCheckout from './SubscriptionCheckout';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import SubscriptionThanks from './SubscriptionThanks';
-import SubscriptionUpgrade from './SubscriptionUpgrade';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
 
@@ -588,11 +587,7 @@ const SubscriptionModal = ({
                         </div>
                     </div>
                 )}
-                {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
-                    <div className="text-center">
-                        <SubscriptionUpgrade />
-                    </div>
-                )}
+                {model.step === SUBSCRIPTION_STEPS.UPGRADE && <SubscriptionThanks loading={true} method={method} />}
                 {model.step === SUBSCRIPTION_STEPS.THANKS && (
                     <SubscriptionThanks
                         method={method}

@@ -32,8 +32,6 @@ import * as config from '../app/config';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 
-import '../app/app.scss';
-
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {

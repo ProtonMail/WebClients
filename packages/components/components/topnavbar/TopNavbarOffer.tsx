@@ -90,9 +90,12 @@ const TopNavbarOffer = ({ offerConfig }: Props) => {
                     onChangeCurrency={setCurrency}
                     offer={offer}
                     offerConfig={offerConfig}
-                    modalProps={offerModalProps}
-                    onClose={() => {
-                        setFetchOffer(false);
+                    modalProps={{
+                        ...offerModalProps,
+                        onClose: () => {
+                            offerModalProps.onClose?.();
+                            setFetchOffer(false);
+                        },
                     }}
                 />
             )}
