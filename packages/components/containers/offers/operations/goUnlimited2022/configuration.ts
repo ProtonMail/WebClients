@@ -19,7 +19,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.TWO_YEARS,
             popular: true,
-            header: () => c('specialOffer: Label').t`Limited time only`,
+            header: () => c('specialoffer: Label').t`Limited time only`,
         },
     ],
     layout: Layout,

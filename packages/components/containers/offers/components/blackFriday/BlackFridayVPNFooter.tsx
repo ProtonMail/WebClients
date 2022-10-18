@@ -6,7 +6,7 @@ const BlackFridayVPNFooter = ({ offer }: OfferProps) => {
     const dealWithStar = offer.deals.find((deal) => deal.star);
     return (
         <div className="mb1">
-            <p className="text-sm text-center color-weak">{c('specialOffer: Footer')
+            <p className="text-sm text-center color-weak">{c('specialoffer: Footer')
                 .t`Discounts are based on the standard monthly pricing.`}</p>
 
             {dealWithStar ? (

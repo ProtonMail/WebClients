@@ -14,7 +14,7 @@ const Layout = (props: OfferLayoutProps) => {
     return hasOffer(props) ? (
         <BlackFridayLayout {...props}>
             <OfferHeader {...props}>
-                <OfferTitle>{c('specialOffer: Title')
+                <OfferTitle>{c('specialoffer: Title')
                     .t`Our discontinued Visionary plan is back for a limited time only`}</OfferTitle>
             </OfferHeader>
 

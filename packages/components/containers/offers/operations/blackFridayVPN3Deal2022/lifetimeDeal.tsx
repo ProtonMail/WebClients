@@ -5,10 +5,10 @@ import { Tooltip } from '../../../../components';
 const LifetimeDeal = () => {
     return (
         <Tooltip
-            title={c('specialOffer: Label')
+            title={c('specialoffer: Label')
                 .t`The discount will continue to apply upon renewal until the subscription is canceled or modified`}
         >
-            <span>{c('specialOffer: Label').t`Lifetime deal`}</span>
+            <span>{c('specialoffer: Label').t`Lifetime deal`}</span>
         </Tooltip>
     );
 };

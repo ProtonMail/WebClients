@@ -13,7 +13,7 @@ const Layout = (props: OfferLayoutProps) => {
     return hasOffer(props) ? (
         <BlackFridayVPNLayout {...props}>
             <OfferHeader {...props}>
-                <h1 className="h2 text-center text-bold">{c('specialOffer: Title').t`End of year offer`}</h1>
+                <h1 className="h2 text-center text-bold">{c('specialoffer: Title').t`End of year offer`}</h1>
             </OfferHeader>
 
             <Deals {...props} />
