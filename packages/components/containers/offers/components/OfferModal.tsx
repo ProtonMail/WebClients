@@ -1,55 +1,48 @@
-import { useState } from 'react';
-
-import { CircleLoader, ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader, useUser } from '@proton/components';
-import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { ModalProps, ModalTwo, ModalTwoContent } from '@proton/components';
 import { Currency } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useFetchOffer from '../hooks/useFetchOffer';
 import useOnSelectDeal from '../hooks/useOnSelectDeal';
 import useVisitedOffer from '../hooks/useVisitedOffer';
-import { OfferConfig } from '../interface';
-import ProtonLogos from './ProtonLogos';
+import { Offer, OfferConfig } from '../interface';
+import OfferCloseButton from './shared/OfferCloseButton';
 
 import '../Offer.scss';
 
 interface Props extends ModalProps {
     offerConfig: OfferConfig;
+    offer: Offer;
     modalProps: ModalProps;
+    currency: Currency;
+    onChangeCurrency: (currency: Currency) => void;
 }
 
-const OfferModal = ({ offerConfig, modalProps }: Props) => {
+const OfferModal = ({ offer, offerConfig, modalProps, currency, onChangeCurrency }: Props) => {
     useVisitedOffer(offerConfig);
-    const [user] = useUser();
-    const defaultCurrency = user?.Currency || DEFAULT_CURRENCY;
-    const [currency, updateCurrency] = useState<Currency>(defaultCurrency);
     const { onClose: handleCloseModal } = modalProps;
-
-    const offer = useFetchOffer({
-        offerConfig,
-        currency: defaultCurrency,
-        onError: handleCloseModal,
-    });
 
     const handleOnSelectDeal = useOnSelectDeal(handleCloseModal);
 
     return (
-        <ModalTwo className="offer-modal" {...modalProps} size={offerConfig.deals.length > 1 ? 'large' : 'medium'}>
-            <ModalTwoHeader title={<ProtonLogos />} />
+        <ModalTwo
+            className={clsx(
+                'offer-modal',
+                `offer-${offerConfig.ID}`,
+                offerConfig.deals.length < 2 && 'offer-modal--one-deal'
+            )}
+            {...modalProps}
+            size="large"
+        >
             <ModalTwoContent>
-                {!offer ? (
-                    <div className="text-center">
-                        <CircleLoader size="large" className="mxauto flex mb2" />
-                    </div>
-                ) : (
-                    <offer.layout
-                        offer={offer}
-                        currency={currency}
-                        onChangeCurrency={updateCurrency}
-                        onSelectDeal={handleOnSelectDeal}
-                        onCloseModal={handleCloseModal || noop}
-                    />
-                )}
+                <OfferCloseButton onClose={modalProps.onClose} />
+                <offerConfig.layout
+                    offer={offer}
+                    currency={currency}
+                    onChangeCurrency={onChangeCurrency}
+                    onSelectDeal={handleOnSelectDeal}
+                    onCloseModal={handleCloseModal || noop}
+                />
             </ModalTwoContent>
         </ModalTwo>
     );

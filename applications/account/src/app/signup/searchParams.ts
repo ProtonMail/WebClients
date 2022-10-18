@@ -1,12 +1,11 @@
 import * as History from 'history';
 
-import { CYCLE, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
 
 import { SERVICES, SERVICES_KEYS } from './interfaces';
-
-const cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS];
 
 export const getSignupSearchParams = (search: History.Search) => {
     const searchParams = new URLSearchParams(search);
@@ -15,10 +14,10 @@ export const getSignupSearchParams = (search: History.Search) => {
     const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
 
     const maybeCycle = Number(searchParams.get('billing')) || Number(searchParams.get('cycle'));
-    const cycle = cycles.includes(maybeCycle) ? maybeCycle : undefined;
+    const cycle = getValidCycle(maybeCycle);
 
     const maybeMinimumCycle = Number(searchParams.get('minimumCycle'));
-    const minimumCycle = cycles.includes(maybeMinimumCycle) ? maybeMinimumCycle : undefined;
+    const minimumCycle = getValidCycle(maybeMinimumCycle);
 
     const maybeUsers = Number(searchParams.get('users'));
     const users = maybeUsers >= 1 && maybeUsers <= 5000 ? maybeUsers : undefined;

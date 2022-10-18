@@ -103,7 +103,7 @@ const ModalHeader = ({
                                 onClick={onClose}
                                 {...closeButtonProps}
                             >
-                                <Icon className="modal-close-icon" name="cross-big" />
+                                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>
                         </Tooltip>
                     )}

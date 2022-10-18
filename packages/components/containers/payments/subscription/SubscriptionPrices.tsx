@@ -34,6 +34,12 @@ const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suf
             {cycle === CYCLE.TWO_YEARS && (
                 <div className="text-sm mt0 mb0">{c('Details').jt`Billed as ${billedAmount} every 2 years`}</div>
             )}
+            {cycle === CYCLE.THIRTY && (
+                <div className="text-sm mt0 mb0">{c('Details').jt`Billed as ${billedAmount} every 30 months`}</div>
+            )}
+            {cycle === CYCLE.FIFTEEN && (
+                <div className="text-sm mt0 mb0">{c('Details').jt`Billed as ${billedAmount} every 15 months`}</div>
+            )}
         </>
     );
 };
