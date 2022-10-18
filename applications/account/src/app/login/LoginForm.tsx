@@ -70,6 +70,8 @@ const LoginForm = ({
 
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || toApp === APPS.PROTONVPN_SETTINGS;
 
+    const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
+
     useEffect(() => {
         if (hasActiveSessions) {
             setShowPasswordManagerHint(false);
@@ -88,11 +90,11 @@ const LoginForm = ({
     }, [hasActiveSessions, password]);
 
     useEffect(() => {
-        if (challengeLoading) {
+        if (loading) {
             return;
         }
         usernameRef.current?.focus();
-    }, [challengeLoading]);
+    }, [loading]);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -121,8 +123,6 @@ const LoginForm = ({
             {c('Link').t`Create account`}
         </Link>
     );
-
-    const loading = challengeLoading || trustedDeviceRecoveryFeature?.loading;
 
     const handleSubmit = () => {
         if (submitting || !onFormSubmit()) {
