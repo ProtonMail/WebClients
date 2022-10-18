@@ -19,7 +19,7 @@ export const headerCells = [
         type: 'size',
         getText: () => c('Label').t`Size`,
         props: {
-            className: 'w20',
+            className: 'w25',
         },
         sorting: true,
     },
