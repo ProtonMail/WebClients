@@ -2870,10 +2870,6 @@
       "No labels": [
         "Henüz bir etiket yok"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -3793,6 +3789,11 @@
         "Varsayılan"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Varsayılan olarak kişisel gizliliği korur."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Hesabınızın toplam depolama alanını ${ rewardInGb } GB yaptık. Bugün ek depolama alanı alın ve ücretli özelliklere erişin."
@@ -4502,9 +4503,6 @@
       "Background color": [
         "Arka plan rengi"
       ],
-      "Based in Switzerland, available globally": [
-        "İsviçre merkezli, tüm dünyada kullanılabilir"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
@@ -4832,6 +4830,9 @@
       ],
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
+      ],
+      "Labels:": [
+        "Etiketler:"
       ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
@@ -5419,8 +5420,8 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Taşındık. Lütfen yeni etki alanımızı kullanarak oturum açın: ${ link }."
       ],
       "Web URL": [
         "Web adresi"
@@ -7092,9 +7093,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } kişiden ${ contactsExported.length } kişi dışa aktarıldı."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi.",
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi."
@@ -7429,17 +7427,9 @@
         "${ elementsCount } yazışma okunmamış olarak işaretlendi.",
         "${ elementsCount } yazışma okunmamış olarak işaretlendi."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } yazışma ${ folderName } klasörüne taşındı ve gönderici izin verilenler listesine eklendi.",
-        "${ elementsCount } yazışma ${ folderName } klasörüne taşındı ve gönderici izin verilenler listesine eklendi."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı.",
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
@@ -7461,17 +7451,9 @@
         "${ elementsCount } ileti okunmamış olarak işaretlendi.",
         "${ elementsCount } ileti okunmamış olarak işaretlendi."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } ileti ${ folderName } klasörüne taşındı ve gönderici izin verilenler listesine eklendi.",
-        "${ elementsCount } ileti ${ folderName } klasörüne taşındı ve gönderici izin verilenler listesine eklendi."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı.",
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
@@ -7518,14 +7500,8 @@
       "Conversation marked as unread.": [
         "Yazışma okunmamış olarak işaretlendi."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Yazışma ${ folderName } klasörüne taşındı ve gönderici izin verilenler listesine eklendi."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Yazışma ${ folderName } klasörüne taşındı."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Yazışma İstenmeyenler klasörüne taşındı ve gönderici engellenenler listenize eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
@@ -7581,14 +7557,8 @@
       "Message marked as unread.": [
         "İletiyi okunmamış olarak işaretlendi."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "İleti ${ folderName } klasörüne taşındı ve gönderici izin verilenler listenize eklendi."
-      ],
       "Message moved to ${ folderName }.": [
         "İleti ${ folderName } klasörüne taşındı."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Ileti İstenmeyen kutusuna taşındı ve gönderici engellenenler listenize eklendi."
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."

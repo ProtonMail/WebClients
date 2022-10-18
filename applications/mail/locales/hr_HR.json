@@ -1484,11 +1484,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Spajanje kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Ako je vaša datoteka veća, podijelite je na manje datoteke.",
-        "Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_CONTACTS_STRING } kontakta. Ako je vaša datoteka veća, podijelite je na manje datoteke.",
-        "Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_CONTACTS_STRING } kontakata. Ako je vaša datoteka veća, podijelite je na manje datoteke."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Upotrijebite povlačenje i ispuštanje da biste rangirali prioritet među kontaktima. Odznačite kontakte koje ne želite spojiti."
       ],
@@ -4157,9 +4152,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } od ${ countContacts } kontakata uspješno uveženo."
-      ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "",
         "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
@@ -4438,10 +4430,6 @@
         "${ elementsCount } razgovora premještena u ${ folderName }.",
         "${ elementsCount } razgovora premješteno u ${ folderName }."
       ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
-      ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } razgovor uklonjen iz ${ labelName }.",
         "${ elementsCount } razgovora uklonjena iz ${ labelName }.",
@@ -4461,10 +4449,6 @@
         "${ elementsCount } poruka premještena u ${ folderName }.",
         "${ elementsCount } poruke premještene u ${ folderName }.",
         "${ elementsCount } poruka premješteno u ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } poruka uklonjena iz ${ labelName }.",

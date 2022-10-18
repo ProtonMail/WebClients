@@ -86,9 +86,6 @@
       "Create address": [
         "Adresse erstellen"
       ],
-      "Create free account": [
-        "Kostenloses Konto erstellen"
-      ],
       "Current plan": [
         "Aktuelles Abonnement"
       ],
@@ -1827,6 +1824,11 @@
         "(1-2 E-Mails pro Monat)"
       ]
     },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Neu bei ${ BRAND_NAME }? ${ signUp }"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -1953,9 +1955,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
-      ],
-      "Based in Switzerland, available globally": [
-        "In der Schweiz ansässig, weltweit verfügbar"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
@@ -2353,9 +2352,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Um deine Internetverbindung zu schützen, lade die App ${ VPN_APP_NAME } für dein Gerät herunter, installiere diese und verbinde dich mit einem ${ VPN_APP_NAME }-Server."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie einen neues Paket abonnieren oder Ihr aktuelles Paket verlängern können. Sie erhalten ein Guthaben für jeden ausgegebenen ${ i18nCurrency }."
       ],
@@ -2445,9 +2441,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Wir senden einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
@@ -3034,6 +3027,9 @@
       ],
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
+      ],
+      "Create account": [
+        "Konto erstellen"
       ],
       "Forgot username?": [
         "Benutzername vergessen?"
@@ -3978,6 +3974,17 @@
         "Benutzername"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Konto einrichten"
+      ],
+      "Payment": [
+        "Zahlung"
+      ],
+      "Verification": [
+        "Verifizierung"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
@@ -4369,6 +4376,9 @@
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
       "Error": [
         "Fehler"
       ],
@@ -4506,9 +4516,6 @@
       ],
       "Sign in": [
         "Anmelden"
-      ],
-      "Sign in again to continue": [
-        "Melde dich erneut an, um fortzufahren"
       ],
       "Sign out": [
         "Abmelden"

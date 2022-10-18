@@ -897,6 +897,11 @@
         "更多選項"
       ]
     },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "與我分享"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "未同步"
@@ -1964,9 +1969,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖放各聯絡人以排行合併優先順序。取消勾選您不要合併的聯絡人。"
       ],
@@ -2322,6 +2324,9 @@
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "其中一些資料夾名稱超出 ${ MAIL_APP_NAME } 的字元數目上限。請自訂匯入以編輯該等名稱。"
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
@@ -2899,6 +2904,9 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
+      "2-step verification is enabled in your external account.": [
+        "您的外部帳號已啟用雙重驗證。"
+      ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
       ],
@@ -2953,6 +2961,12 @@
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
       ],
+      "Your email account requires an app password to export your data.": [
+        "您的電子郵件帳號要求應用程式密碼來匯出您的資料。"
+      ],
+      "Your email account requires one to export your data.": [
+        "您的電子郵件帳號要求一個方式來匯出您的資料。"
+      ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
       ],
@@ -2982,7 +2996,7 @@
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "點擊三個點 (...) 展開下拉式選單"
+        "點擊 3 個點 (...) 可展開下拉式功能表。"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
@@ -3223,6 +3237,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一個新的驗證碼前，檢查你的垃圾郵件資料夾，然後檢查 ${ strong } 的位址是否正確。"
       ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "為分享此行事曆的完整事件細節，您允許 Proton Mail 存取此加密行事曆的資料。"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "記不起您的密碼嗎？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
@@ -3283,11 +3300,20 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "輸入從 ${ destinationText } 接收的驗證碼。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Existent and added participants will be notified.": [
         "現有及已加入的參與者將獲通知。"
@@ -3360,6 +3386,9 @@
       ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
+      ],
+      "Labels:": [
+        "標籤："
       ],
       "Large imports can take several days.": [
         "大型匯入或需時數天。"
@@ -3474,6 +3503,9 @@
       ],
       "Priority support": [
         "優先支援"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
@@ -3598,11 +3630,11 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "我們搬家嘍！到新網站來加入我們吧！ ${ link }"
-      ],
       "Week": [
         "週"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
       "Which event would you like to delete?": [
         "您要刪除哪一個事件？"
@@ -3864,9 +3896,6 @@
       ],
       "Description": [
         "描述"
-      ],
-      "Display": [
-        "顯示"
       ],
       "Do not ask again": [
         "下次無需再詢問"
@@ -4782,9 +4811,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } 中的 ${ model.deleted.length } 個聯絡人已成功刪除。"
       ],
@@ -4859,8 +4885,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "您已超過每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 成員的最大數量"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "您已超出每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 個成員的限額"
       ]
     },
     "Share calendar modal description": {
@@ -4876,6 +4902,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "與 Proton 使用者分享"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "由 ${ ownerName } 建立"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5228,9 +5259,6 @@
       "Calendar alarm": [
         "行事曆鬧鐘"
       ],
-      "Calendar information": [
-        "行事曆資訊"
-      ],
       "Change my answer": [
         "更改我的回答"
       ],
@@ -5498,9 +5526,6 @@
       "Show time zones for event start and end times": [
         "顯示事件的開始和結束時間以何時區作準"
       ],
-      "Sign in again to continue": [
-        "請重新登入以繼續"
-      ],
       "Sign in and grant access": [
         "登入並授予存取權"
       ],
@@ -5512,6 +5537,9 @@
       ],
       "Start import process": [
         "開始匯入流程"
+      ],
+      "Two-factor authentication": [
+        "兩步驟驗證"
       ],
       "Update event": [
         "更新事件"
@@ -5550,6 +5578,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "編輯資訊"
       ]
     },
     "Today icon tooltip in mini calendar": {

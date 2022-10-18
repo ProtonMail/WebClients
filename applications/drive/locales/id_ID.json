@@ -345,7 +345,7 @@
         "Pindahkan ke sampah"
       ],
       "New upload": [
-        "Unggah baru"
+        "Unggahan baru"
       ],
       "Next": [
         "Selanjutnya"
@@ -1737,9 +1737,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menggabungkan kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Berkas harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan pisahkan jadi berkas yang lebih kecil."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Batalkan tanda pada kontak yang tidak ingin digabung."
       ],
@@ -2159,6 +2156,11 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } diperbarui"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
       ]
     },
     "Group": {
@@ -2873,7 +2875,7 @@
         "Unggah berkas"
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Masuk ke \"Berkas-berkas saya\" dan unggah beberapa berkas terlebih dahulu."
+        "Masuk ke \"Berkas saya\" dan unggah beberapa berkas terlebih dahulu."
       ],
       "Group assignment applied": [
         "Penugasan grup diterapkan"
@@ -2949,6 +2951,9 @@
       ],
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
+      ],
+      "Labels:": [
+        "Label:"
       ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
@@ -3296,7 +3301,7 @@
         "Tanpa batasan jumlah pesan"
       ],
       "Unlock drive to recover files": [
-        "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
+        "Buka kunci drive untuk memulihkan berkas"
       ],
       "Unsupported file": [
         "File tidak didukung"
@@ -3334,8 +3339,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Kami telah pindah! Bergabunglah dengan kami pada situs baru kami: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Kami telah pindah! Silakan masuk melalui domain baru kami: ${ link }."
       ],
       "Week": [
         "Pekan"
@@ -3407,7 +3412,7 @@
         "Email Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Berkas-berkas Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses berkas-berkas Anda. ${ KeyReactivationButton }"
+        "Berkas Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses berkas Anda. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
@@ -3837,7 +3842,7 @@
         "Teks"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Tindakan ini akan menghapus berkas-berkas yang ada pada drive milik Anda yang terkunci."
+        "Tindakan ini akan menghapus seluruh berkas yang terdapat pada drive milik Anda yang terkunci."
       ],
       "To: ${ emailAddress }": [
         "Ke: ${ emailAddress }"
@@ -3894,7 +3899,7 @@
         "Luar Biasa"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        "Ya, saya ingin menghapus berkas-berkas lama\nmilik saya secara permanen"
+        "Ya, saya ingin menghapus seluruh berkas lama\nyang saya miliki secara permanen"
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
@@ -4158,7 +4163,7 @@
         "Pencarian terenkripsi diaktifkan"
       ],
       "Failed to download files: ${ err }": [
-        "Gagal mengunduh berkas-berkas berikut: ${ err }"
+        "Gagal mengunduh berkas: ${ err }"
       ],
       "Failed to move, please try again": [
         "Pemindahan gagal, silakan coba lagi"
@@ -4227,7 +4232,7 @@
         "Gagal mengosongkan sampah"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Berkas-berkas lama Anda akan terhapus dalam 72 jam"
+        "Berkas lama Anda akan terhapus dalam 72 jam"
       ],
       "Your settings failed to be saved": [
         "Pengaturan Anda gagal disimpan"
@@ -4398,9 +4403,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
       ],
@@ -4661,9 +4663,6 @@
       "Back": [
         "Kembali"
       ],
-      "Based in Switzerland, available globally": [
-        "Berbasis di Swiss, tersedia secara global"
-      ],
       "Beta Access": [
         "Akses Beta"
       ],
@@ -4860,10 +4859,10 @@
         "Dimodifikasi"
       ],
       "My files": [
-        "Berkas-berkas saya"
+        "Berkas saya"
       ],
       "My files ${ date }.zip": [
-        "Berkas-berkas saya ${ date }.zip"
+        "Berkas saya ${ date }.zip"
       ],
       "Name": [
         "Nama"
@@ -4964,9 +4963,6 @@
       "Show actions": [
         "Tampilkan tindakan"
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
       ],
@@ -5017,6 +5013,9 @@
       ],
       "Trash": [
         "Sampah"
+      ],
+      "Two-factor authentication": [
+        "Otentikasi dua faktor"
       ],
       "Type": [
         "Tipe"

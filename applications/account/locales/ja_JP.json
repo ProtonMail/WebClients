@@ -91,6 +91,9 @@
       "Apply": [
         "適用"
       ],
+      "Apply to existing messages": [
+        "存在するメッセージに適用"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -198,9 +201,6 @@
       ],
       "Create folder": [
         "フォルダーを作成"
-      ],
-      "Create free account": [
-        "無料アカウントを作成"
       ],
       "Create label": [
         "ラベルを作成"
@@ -439,6 +439,12 @@
       "Mark as default": [
         "既定として設定"
       ],
+      "Mark as not spam": [
+        "迷惑メールでないとしてマーク"
+      ],
+      "Mark as spam": [
+        "迷惑メールとしてマーク"
+      ],
       "mark emails as": [
         "メールをマーク"
       ],
@@ -465,6 +471,9 @@
       ],
       "No": [
         "いいえ"
+      ],
+      "Not spam": [
+        "迷惑メールでない"
       ],
       "OK": [
         "OK"
@@ -523,10 +532,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -729,6 +738,9 @@
       ],
       "Support": [
         "サポート"
+      ],
+      "Switch account": [
+        "アカウントを切り替え"
       ],
       "Top up": [
         "チャージ"
@@ -1159,9 +1171,17 @@
         "権限"
       ]
     },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "カレンダーへのリンクを作成し、非 Proton ユーザーに共有します。イベントの追加・削除が行えるのはあなただけです。"
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "カレンダーを共有"
+      ],
+      "Share outside Proton": [
+        "Proton 外に共有"
       ]
     },
     "Calendar status": {
@@ -1208,6 +1228,11 @@
       ],
       "Unsupported calendar format": [
         "非対応のカレンダー形式です"
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "設定を開く"
       ]
     },
     "Calendar view": {
@@ -2404,9 +2429,19 @@
         "水曜日"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "デフォルトのイベント設定"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "不明"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "このカレンダーの全イベントが削除されます。"
       ]
     },
     "Delinquent modal title": {
@@ -2421,9 +2456,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
       ]
@@ -2436,6 +2468,29 @@
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
         "通常、'www' サブドメインはメールには使用されません。このサブドメイン（www）を本当に使用しますか？"
+      ]
+    },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } が追加されました"
+      ],
+      "${ name } deletion failed": [
+        "${ name } の削除に失敗しました"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } の迷惑メールリストへの移動に失敗しました"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } のブロックリストへの移動に失敗しました"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } が迷惑メールリストに移動されました"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } がブロックリストに移動されました"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } が正常に削除されました"
       ]
     },
     "Downgrade account reason": {
@@ -2524,6 +2579,29 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } が追加されました"
+      ],
+      "${ name } deletion failed": [
+        "${ name } の削除に失敗しました"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } の迷惑メールリストへの移動に失敗しました"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } のブロックリストへの移動に失敗しました"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } が迷惑メールリストに移動されました"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } がブロックリストに移動されました"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } が正常に削除されました"
       ]
     },
     "Email subject": {
@@ -2645,7 +2723,7 @@
         "いずれかの条件にエラーがあります"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "アクティブなセッションを取得できませんでした。${ refresh } するか、後でもう一度お試しください。"
+        "アクティブなセッションを取得できませんでした。${ refresh } するか、後ほど再度お試しください。"
       ],
       "Filter with this name already exist": [
         "この名前のフィルターが既に存在します"
@@ -2765,7 +2843,7 @@
         "支払い処理がサポートされていません"
       ],
       "Payments are currently not available, please try again later": [
-        "お支払いが現在ご利用になれません。しばらくしてから再度お試しください。"
+        "お支払いは現在ご利用になれません。後ほど再度お試しください。"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "アクセスが拒否されました。管理者権限は制限されています。"
@@ -2861,7 +2939,7 @@
         "回復ファイルのキーを検証できません。サポートまでお問い合わせください。"
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "リカバリファイルのキーの検証ができません。 詳細については、個別にアップロードしてください。"
+        "回復ファイルのキーの検証ができません。 詳細については、個別にアップロードしてください。"
       ],
       "The label name is invalid. Please choose a different name.": [
         "このラベル名は無効です。別の名前を選択してください。"
@@ -3143,7 +3221,7 @@
         "${ refresh } または接続を確認してください。"
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "問題が発生しました。ページを更新するか再度お試しください。"
+        "問題が発生しました。ページを更新するか後ほど再度お試しください。"
       ],
       "There was a problem connecting to Proton.": [
         "Proton への接続に問題がありました。"
@@ -3474,8 +3552,8 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
       ],
-      "Search in your allow and block lists": [
-        "許可・ブロックリストを検索"
+      "Search list": [
+        "リストを検索"
       ]
     },
     "Font Face Default": {
@@ -3497,6 +3575,11 @@
       ],
       "(1-2 emails per month)": [
         "(毎月 1 〜 2 通のメール)"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "${ BRAND_NAME } を初めて利用する場合: ${ signUp }"
       ]
     },
     "Group": {
@@ -4166,6 +4249,9 @@
       "Add a recovery phone number": [
         "回復用電話番号を追加"
       ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "アカウントに追加のセキュリティ層を追加します。サインインするたびに 2FA 検証を行う必要があります。"
+      ],
       "Add image URL": [
         "画像の URL を追加"
       ],
@@ -4291,9 +4377,6 @@
       ],
       "Background color": [
         "背景色"
-      ],
-      "Based in Switzerland, available globally": [
-        "スイス拠点で、世界中で利用可能です"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "一般的なナビゲーションと基本操作はキーボードショートカットの設定に関係なく利用できます。"
@@ -4724,6 +4807,9 @@
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
+      "Labels:": [
+        "ラベル:"
+      ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
@@ -4777,6 +4863,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "アカウント設定のために、２要素認証デバイスに手動でこの情報を入力してください。 ${ _switchButton }"
+      ],
+      "Member": [
+        "メンバー"
       ],
       "Merged": [
         "結合"
@@ -5222,9 +5311,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロード・インストールして、${ VPN_APP_NAME } サーバーに接続してください。"
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "正常に動作させるには、それぞれのフィルターに正しい名前と有効な Sieve スクリプトが含まれている必要があります。${ link }ことができます。"
       ],
@@ -5247,10 +5333,10 @@
         "総VPN接続数"
       ],
       "Two-factor authentication disabled": [
-        "2要素認証が無効になりました"
+        "2 要素認証が無効になりました"
       ],
       "Two-factor authentication enabled": [
-        "2要素認証が有効になりました"
+        "2 要素認証が有効になりました"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
         "2 パスワードモードでは、アカウントへのログイン用とメールボックスの復号用の 2 つのパスワードを使用します。(高度な機能)"
@@ -5342,9 +5428,6 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Proton は新しいサイトへ移動しました! ${ link }"
-      ],
       "Web URL": [
         "Web URL"
       ],
@@ -5402,6 +5485,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "アカウント ${ memberAddress } でサインインしました"
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
@@ -5417,6 +5503,9 @@
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
       ],
+      "You can now access and manage the account as an administrator.": [
+        "管理者としてのアカウントでアクセスし管理することが可能です。"
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "@pm.me アドレスを使ってメッセージを受信できるようになりました。 有料プランにアップグレードすると、@pm.me アドレスを使用してメールを送信したり、追加の @pm.me アドレスを作成することもできます。"
       ],
@@ -5428,9 +5517,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "今後24時間は、${ emailSendLimitNumber } を超える招待メールを送信することはできません。"
       ],
       "You cannot refer ${ appName } users": [
         "${ appName } のユーザーは招待できません"
@@ -5940,7 +6026,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "詳細情報"
+        "詳細"
       ],
       "Learn more": [
         "詳細"
@@ -5982,6 +6068,9 @@
       ],
       "Address": [
         "アドレス"
+      ],
+      "Address type": [
+        "アドレスの種類"
       ],
       "Addresses": [
         "メールアドレス"
@@ -6220,9 +6309,6 @@
       "Discount": [
         "割引"
       ],
-      "Display": [
-        "表示"
-      ],
       "Display name": [
         "表示名"
       ],
@@ -6441,6 +6527,9 @@
       ],
       "Non-standard ports": [
         "標準的ではないポート"
+      ],
+      "Not spam": [
+        "迷惑メールでない"
       ],
       "Notification": [
         "通知"
@@ -6892,6 +6981,9 @@
       "Common sign up issues": [
         "一般的なサインアップの問題"
       ],
+      "Create account": [
+        "アカウントを作成"
+      ],
       "Encryption and keys": [
         "暗号化と鍵"
       ],
@@ -7226,6 +7318,9 @@
       ],
       "Blocked": [
         "ブロック中"
+      ],
+      "Not spam": [
+        "迷惑メールでない"
       ],
       "Spam": [
         "迷惑メール"
@@ -7667,6 +7762,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
       ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "プランのカスタマイズなど、サブスクリプションを管理することができます。お支払い方法は、クレジットカード、PayPal、暗号通貨、電信送金に対応しています。"
       ],
@@ -7728,6 +7826,9 @@
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
       ],
@@ -7770,6 +7871,11 @@
     "Notification in shared calendar modal": {
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName } に参加しました (${ senderEmail })"
+      ]
+    },
+    "Notification success": {
+      "Event defaults updated": [
+        "イベントのデフォルトが更新されました"
       ]
     },
     "Notification time input": {
@@ -8092,6 +8198,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "カレンダーを作成し、データの安全性を確保しつつ、スケジュールを管理できます。"
       ]
     },
     "Placeholder": {
@@ -8434,9 +8545,19 @@
         "ラベル"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
+      ]
+    },
     "Shared calendar label input placeholder": {
       "Add label": [
         "ラベルを追加"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "${ ownerName } で作成"
       ]
     },
     "Signup label": {
@@ -8518,6 +8639,11 @@
       ],
       "This link might be wrong": [
         "リンクが間違っています"
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "URL を使用して公開、外部、共有カレンダーを追加できます。"
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -8640,13 +8766,13 @@
         "${ methodTo } にコードを送信しました"
       ],
       "Credits added": [
-        "クレジットが追加されました。"
+        "クレジットが追加されました"
       ],
       "Default calendar updated": [
         "既定のカレンダーが更新されました"
       ],
       "DMARC value copied to clipboard": [
-        "DMARC値ががクリップボードにコピーされました"
+        "DMARC 値がクリップボードにコピーされました"
       ],
       "Domain verified": [
         "ドメインが確認されました"
@@ -8718,7 +8844,7 @@
         "セッションを失効しました"
       ],
       "SPF value copied to clipboard": [
-        "SPF値がクリップボードにコピーされました"
+        "SPF 値がクリップボードにコピーされました"
       ],
       "User created": [
         "ユーザーが作成されました。"
@@ -8971,6 +9097,9 @@
       "Add Sieve filter": [
         "Sieve フィルターの追加"
       ],
+      "Add to not spam list": [
+        "Add to Not spam list"
+      ],
       "Add to spam list": [
         "迷惑メールリストに追加"
       ],
@@ -9024,9 +9153,6 @@
       ],
       "Bridge for ${ platform }": [
         "${ platform } 版 Bridge"
-      ],
-      "Calendar information": [
-        "カレンダーの情報"
       ],
       "Cancel Mail subscription": [
         "Mail サブスクリプションのキャンセル"
@@ -9099,6 +9225,9 @@
       ],
       "Create calendar": [
         "カレンダーを作成"
+      ],
+      "Create public link": [
+        "公開リンクを作成"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成"
@@ -9550,6 +9679,9 @@
       "Sign out": [
         "サインアウト"
       ],
+      "Signed in to member account": [
+        "メンバーアカウントでサインイン"
+      ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"
       ],
@@ -9599,7 +9731,7 @@
         "${ MAIL_APP_NAME } を無料で試す"
       ],
       "Two-factor authentication": [
-        "2要素認証"
+        "2 要素認証"
       ],
       "Type": [
         "種類"
@@ -9749,6 +9881,11 @@
       ],
       "Role": [
         "権限"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "情報を編集する"
       ]
     },
     "Today icon tooltip in mini calendar": {

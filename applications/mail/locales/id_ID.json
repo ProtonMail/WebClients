@@ -2860,9 +2860,6 @@
       "No labels": [
         "Tidak ada label"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Berkas harus memiliki ukuran maksimum ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan bagi dan pisahkan ke dalam berkas-berkas yang lebih kecil."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
@@ -3766,6 +3763,11 @@
         "Default"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Kami telah meningkatkan kuota penyimpanan Anda menjadi ${ rewardInGb } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
@@ -4430,9 +4432,6 @@
       "Background color": [
         "Warna latar belakang"
       ],
-      "Based in Switzerland, available globally": [
-        "Berbasis di Swiss, tersedia secara global"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
       ],
@@ -4750,6 +4749,9 @@
       ],
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
+      ],
+      "Labels:": [
+        "Label:"
       ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
@@ -5190,7 +5192,7 @@
         "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
+        "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyuntingnya kembali di kemudian waktu. Anda akan perlu untuk mengatur ulang waktu pengiriman pesan ini."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Pesan ini akan terkirim pada ${ dateString } pukul ${ formattedTime }"
@@ -5333,8 +5335,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Kami telah pindah! Bergabunglah dengan kami pada situs baru kami: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Kami telah pindah! Silakan masuk melalui domain baru kami: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -6013,7 +6015,7 @@
         "Pindahkan ${ sidebarElementName }"
       ],
       "Move to": [
-        "Pindah ke"
+        "Pindahkan ke"
       ],
       "Move to Archive": [
         "Pindahkan ke Arsip"
@@ -6103,10 +6105,10 @@
         "Tentukan bagaimana jendela komposer Anda akan terbuka."
       ],
       "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
+        "Tentukan bagaimana daftar pesan Anda akan terlihat secara default."
       ],
       "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
+        "Tentukan bagaimana kotak surat Anda akan terlihat secara default."
       ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
@@ -6988,9 +6990,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
       ],
@@ -7310,15 +7309,8 @@
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } percakapan ditandai belum dibaca."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } percakapan dipindahkan ke ${ folderName }, dan pengirimnya masuk Daftar Putih."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } percakapan dipindah ke ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
+        "${ elementsCount } percakapan dipindahkan ke ${ folderName }."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } percakapan dihapus dari ${ labelName }."
@@ -7335,15 +7327,8 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } ditandai belum dibaca."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } pesan dipindahkan ke ${ folderName }, dan pengirimnya masuk Daftar Putih."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } pesan dipindah ke ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
+        "${ elementsCount } pesan dipindahkan ke ${ folderName }."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } pesan dihapus dari ${ labelName }."
@@ -7387,14 +7372,8 @@
       "Conversation marked as unread.": [
         "Percakapan ditandai belum dibaca."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Percakapan dipindahkan ke ${ folderName }, dan pengirimnya masuk Daftar Putih."
-      ],
       "Conversation moved to ${ folderName }.": [
-        "Percakapan dipindah ke ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Percakapan dipindahkan ke spam dan pengirim ditambahkan ke daftar blokir Anda."
+        "Percakapan dipindahkan ke ${ folderName }."
       ],
       "Conversation removed from ${ labelName }.": [
         "Percakapan dihapus dari ${ labelName }."
@@ -7450,14 +7429,8 @@
       "Message marked as unread.": [
         "Pesan ditandai belum dibaca."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Pesan dipindahkan ke ${ folderName } dan pengirim ditambahkan ke daftar izin Anda."
-      ],
       "Message moved to ${ folderName }.": [
-        "Pesan dipindah ke ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Pesan dipindahkan ke spam dan pengirim ditambahkan ke daftar blokir Anda."
+        "Pesan dipindahkan ke ${ folderName }."
       ],
       "Message removed from ${ labelName }.": [
         "Pesan dihapus dari ${ labelName }."
@@ -8058,7 +8031,7 @@
         "Permintaan berhenti berlangganan dikirim"
       ],
       "Upgrade required": [
-        "Butuh peningkatan akun"
+        "Peningkatan akun dibutuhkan"
       ],
       "Verification error": [
         "Kesalahan verifikasi"

@@ -188,9 +188,6 @@
       "Create folder": [
         "Mappa létrehozása"
       ],
-      "Create free account": [
-        "Ingyenes fiók létrehozása"
-      ],
       "Create label": [
         "Címke létrehozása"
       ],
@@ -458,9 +455,6 @@
       "No": [
         "Nem"
       ],
-      "Non spam": [
-        "Nem levélszemét"
-      ],
       "OK": [
         "OK"
       ],
@@ -518,11 +512,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reload": [
         "Újratöltés"
@@ -2384,10 +2378,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "A fájl maximum ${ MAX_IMPORT_FILE_SIZE_STRING } méretű lehet és maximum ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha a fájl nagyobb, bontsa szét több kisebbre.",
-        "A fájl maximum ${ MAX_IMPORT_FILE_SIZE_STRING } méretű lehet és maximum ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha a fájl nagyobb, bontsa szét több kisebbre."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Kövesse hány ember kattint az ajánlójára, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
       ],
@@ -4184,9 +4174,6 @@
       "Background color": [
         "Háttérszín"
       ],
-      "Based in Switzerland, available globally": [
-        "Svájci székhelyű, világszerte elérhető"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
       ],
@@ -4659,6 +4646,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Fiókjának beállításához kézileg írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ _switchButton }."
       ],
+      "Member": [
+        "Tag"
+      ],
       "Merged": [
         "Egyesítve"
       ],
@@ -5098,9 +5088,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ${ VPN_APP_NAME } alkalmazást és kapcsolódjon egy ${ VPN_APP_NAME } szerverhez."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "A megfelelő működéshez, minden szűrőhöz szükséges legalább egy név és egy érvényes Sieve parancsfájl. ${ link }."
       ],
@@ -5203,9 +5190,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Költözünk! Csatlakozzon az új címünkön: ${ link }."
-      ],
       "Web URL": [
         "Weblap link"
       ],
@@ -5289,9 +5273,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Nem küldhet több, mint ${ emailSendLimitNumber } e-mail meghívót a következő 24 óráig"
       ],
       "You cannot refer ${ appName } users": [
         "Nem ajánljhat ${ appName } felhasználókat"
@@ -6092,9 +6073,6 @@
       "Discount": [
         "Kedvezmény"
       ],
-      "Display": [
-        "Megjelenítés"
-      ],
       "Display name": [
         "Megjelenített név"
       ],
@@ -6301,9 +6279,6 @@
       ],
       "No label found": [
         "Nem található címke"
-      ],
-      "Non Spam": [
-        "Nem levélszemét"
       ],
       "Non-standard ports": [
         "Nem szabványos portok"
@@ -6755,6 +6730,9 @@
       "Common sign up issues": [
         "Általános problémák a regisztrációval"
       ],
+      "Create account": [
+        "Fiók létrehozása"
+      ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
@@ -7091,9 +7069,6 @@
       ],
       "Blocked": [
         "Letiltott"
-      ],
-      "Non spam": [
-        "Nem levélszemét"
       ],
       "Spam": [
         "Levélszemét"
@@ -9031,6 +9006,9 @@
       ],
       "Add Sieve filter": [
         "Új Sieve szűrő"
+      ],
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Hozzáadás a levélszemét listához"

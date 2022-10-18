@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bloquer les messages de cet expéditeur"
       ],
+      "Block senders": [
+        "Bloquer les expéditeurs"
+      ],
       "Bold": [
         "Gras"
       ],
@@ -995,6 +998,9 @@
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
+      ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
       ],
       "Use for sending": [
         "Utiliser pour l'envoi"
@@ -2822,6 +2828,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } dans les paramètres."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Ceci peut prendre quelques minutes. Lorsque cette opération sera terminée, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -2837,15 +2846,18 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Les nouveaux courriels de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas distribués et seront définitivement supprimés.",
+        "Les nouveaux courriels de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas distribués et seront définitivement supprimés."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés."
+      ],
       "No folders": [
         "Aucun dossier"
       ],
       "No labels": [
         "Aucun label"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
@@ -2997,6 +3009,9 @@
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
+      ],
+      "A problem occurred, please try again": [
+        "Une erreur est survenue, veuillez réessayer"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée"
@@ -3172,6 +3187,9 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
+      "Please activate your content search again": [
+        "Veuillez réactiver la recherche de contenu"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
@@ -3193,6 +3211,9 @@
       ],
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi."
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi"
       ],
       "Public key could not be trusted": [
         "La clé publique n'a pas pu être approuvée"
@@ -3596,6 +3617,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Votre retour d'expérience"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clé de sécurité"
       ]
     },
     "file size format": {
@@ -4448,9 +4487,6 @@
       "Background color": [
         "Couleur d'arrière-plan"
       ],
-      "Based in Switzerland, available globally": [
-        "Basé en Suisse, disponible dans le monde entier"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
@@ -4556,6 +4592,9 @@
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Téléchargement du message ${ esProgress } sur ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Brouillon"
       ],
@@ -4573,6 +4612,9 @@
       ],
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
+      ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois"
       ],
       "Edit encryption": [
         "Modifier le chiffrement"
@@ -4609,11 +4651,17 @@
       "Encrypt message": [
         "Chiffrer le message"
       ],
+      "Enter the code from your authenticator app": [
+        "Entrez le code de votre application d'authentification"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimé: ${ estimatedMinutes } minute",
@@ -4766,6 +4814,9 @@
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
+      ],
+      "Labels:": [
+        "Labels:"
       ],
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
@@ -5353,8 +5404,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons! Rejoignez-nous sur notre nouveau site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé! Veuillez vous connecter à notre nouveau domaine: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -5370,6 +5421,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Lorsque vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification?"
@@ -5830,6 +5884,9 @@
       "Attachments": [
         "Pièces jointes"
       ],
+      "Authenticator app": [
+        "Application d'authentification"
+      ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
@@ -6033,6 +6090,9 @@
       ],
       "Mark as": [
         "Marquer comme"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Déplacer ${ sidebarElementName }"
       ],
       "Move to": [
         "Déplacer vers"
@@ -6787,6 +6847,12 @@
       ],
       "Password has been set successfully": [
         "Le mot de passe a été correctement défini"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "L'expéditeur ${ firstSenderAddress } est bloqué"
+      ],
+      "Senders blocked": [
+        "Expéditeurs bloqués"
       ]
     },
     "Oauth instructions": {
@@ -7011,9 +7077,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -7348,17 +7411,9 @@
         "${ elementsCount } conversation marquée comme non lue.",
         "${ elementsCount } conversations marquées comme non lues."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } conversation déplacée vers ${ folderName } et expéditeur·rice ajouté·e à la liste d’autorisation.",
-        "${ elementsCount } conversations déplacées vers ${ folderName } et expéditeur·rice·s ajouté·e·s à la liste d’autorisation."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversation déplacée vers ${ folderName }.",
         "${ elementsCount } conversations déplacées vers ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation retirée de ${ labelName }.",
@@ -7380,17 +7435,9 @@
         "${ elementsCount } message marqué comme non lu.",
         "${ elementsCount } messages marqués comme non lus."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } message déplacé vers ${ folderName } et expéditeur·rice ajouté·e à la liste d’autorisation.",
-        "${ elementsCount } messages déplacés vers ${ folderName } et expéditeur·rice·s ajouté·e·s à la liste d’autorisation."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } message déplacé vers ${ folderName }.",
         "${ elementsCount } messages déplacés vers ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
@@ -7436,9 +7483,6 @@
       ],
       "Conversation marked as unread.": [
         "Conversation marquée comme non lue."
-      ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Conversation déplacée vers ${ folderName } et expéditeur·rice ajouté·e à la liste d’autorisation."
       ],
       "Conversation moved to ${ folderName }.": [
         "Conversation déplacée vers ${ folderName }."
@@ -7807,6 +7851,9 @@
       "Edit contact group": [
         "Modifier le groupe de contacts"
       ],
+      "Edit email settings": [
+        "Modifier les paramètres des courriels"
+      ],
       "Edit filter": [
         "Modifier le filtre"
       ],
@@ -7915,8 +7962,14 @@
       "Message will expire": [
         "Le message va expirer"
       ],
+      "Minicalendar": [
+        "Minicalendrier"
+      ],
       "More": [
         "Plus"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
       ],
       "More options": [
         "Plus d'options"

@@ -881,16 +881,16 @@
         "Nie można udostępnić kalendarza większej liczbie użytkownikom Proton"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
-        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
-        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
-        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
-        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS }). Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników."
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkownika kalendarza. Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkowników kalendarza. Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkowników kalendarza. Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników.",
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkowników kalendarza. Aby udostępnić kalendarz większej liczbie kont Proton, usuń obecnych użytkowników."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link.",
-        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link.",
-        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link.",
-        "Osiągnięto maksymalną liczbę linków do kalendarza (${ MAX_LINKS_PER_CALENDAR }). Aby utworzyć nowy link do kalendarza, usuń obecny link."
+        "Osiągnięto maksymalną liczbę ${ MAX_LINKS_PER_CALENDAR } linku do kalendarza. Aby utworzyć nowy link do kalendarza, usuń obecny link.",
+        "Osiągnięto maksymalną liczbę ${ MAX_LINKS_PER_CALENDAR } linków do kalendarza. Aby utworzyć nowy link do kalendarza, usuń obecny link.",
+        "Osiągnięto maksymalną liczbę ${ MAX_LINKS_PER_CALENDAR } linków do kalendarza. Aby utworzyć nowy link do kalendarza, usuń obecny link.",
+        "Osiągnięto maksymalną liczbę ${ MAX_LINKS_PER_CALENDAR } linków do kalendarza. Aby utworzyć nowy link do kalendarza, usuń obecny link."
       ]
     },
     "Calendar sharing access option label": {
@@ -1995,12 +1995,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
@@ -3637,6 +3631,9 @@
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
       ],
+      "Labels:": [
+        "Etykiety:"
+      ],
       "Large imports can take several days.": [
         "Importowanie dużej ilości danych może potrwać kilka dni."
       ],
@@ -3880,8 +3877,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Przenosimy się! Dołącz do nas na nowej stronie: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Przenieśliśmy się! Zaloguj się na nowej domenie: ${ link }."
       ],
       "Week": [
         "Tydzień"
@@ -4149,9 +4146,6 @@
       ],
       "Description": [
         "Opis"
-      ],
-      "Display": [
-        "Wyświetlanie"
       ],
       "Do not ask again": [
         "Nie pytaj ponownie"
@@ -5172,9 +5166,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktów."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "Kontakt został usunięty.",
         "Pomyślnie usunięto ${ model.deleted.length } z ${ totalBeDeleted } kontaktów.",
@@ -5255,8 +5246,11 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Osiągnięto maksymalną liczbę użytkowników kalendarza (${ MAX_CALENDAR_MEMBERS })"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkownika kalendarza",
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkowników kalendarza",
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkowników kalendarza",
+        "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkowników kalendarza"
       ]
     },
     "Share calendar modal description": {
@@ -5272,6 +5266,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Udostępnij użytkownikom Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Utworzony przez ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5642,9 +5641,6 @@
       "Calendar alarm": [
         "Powiadomienia kalendarza"
       ],
-      "Calendar information": [
-        "Informacje kalendarza"
-      ],
       "Change my answer": [
         "Zmień odpowiedź"
       ],
@@ -5924,9 +5920,6 @@
       "Show time zones for event start and end times": [
         "Pokaż strefy czasowe dla czasu rozpoczęcia i zakończenia wydarzenia"
       ],
-      "Sign in again to continue": [
-        "Zaloguj się ponownie, aby kontynuować"
-      ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
       ],
@@ -5938,6 +5931,9 @@
       ],
       "Start import process": [
         "Rozpocznij proces importowania"
+      ],
+      "Two-factor authentication": [
+        "Uwierzytelnianie dwustopniowe"
       ],
       "Update event": [
         "Zaktualizuj wydarzenie"
@@ -5976,6 +5972,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Wybierz numer"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Edytuj informacje"
       ]
     },
     "Today icon tooltip in mini calendar": {
