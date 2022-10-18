@@ -1834,10 +1834,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "A fájl maximum ${ MAX_IMPORT_FILE_SIZE_STRING } méretű lehet és maximum ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha a fájl nagyobb, bontsa szét több kisebbre.",
-        "A fájl maximum ${ MAX_IMPORT_FILE_SIZE_STRING } méretű lehet és maximum ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha a fájl nagyobb, bontsa szét több kisebbre."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
@@ -3456,9 +3452,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Költözünk! Csatlakozzon az új címünkön: ${ link }."
-      ],
       "Week": [
         "Hét"
       ],
@@ -3696,9 +3689,6 @@
       ],
       "Description": [
         "Leírás"
-      ],
-      "Display": [
-        "Megjelenítés"
       ],
       "Do not ask again": [
         "Ne kérdezze újra"
@@ -4571,9 +4561,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
@@ -5233,9 +5220,6 @@
       "Show time zones for event start and end times": [
         "Időzóna megjelenítése a kezdő és befejező időpontokhoz"
       ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
@@ -5247,6 +5231,9 @@
       ],
       "Start import process": [
         "Importálási folyamat indítása"
+      ],
+      "Two-factor authentication": [
+        "Kétlépcsős hitelesítés"
       ],
       "Update event": [
         "Esemény frissítése"

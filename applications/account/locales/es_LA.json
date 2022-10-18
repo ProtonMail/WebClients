@@ -213,9 +213,6 @@
       "Create folder": [
         "Crear carpeta"
       ],
-      "Create free account": [
-        "Crear cuenta gratuita"
-      ],
       "Create label": [
         "Crear etiqueta"
       ],
@@ -486,7 +483,7 @@
       "No": [
         "No"
       ],
-      "Non spam": [
+      "Not spam": [
         "No es spam"
       ],
       "OK": [
@@ -546,11 +543,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Refrescar la página"
-      ],
       "refresh the page": [
         "refresque la página"
+      ],
+      "Refresh the page": [
+        "Refrescar la página"
       ],
       "Reload": [
         "Recargar"
@@ -761,6 +758,9 @@
       ],
       "Support": [
         "Soporte"
+      ],
+      "Switch account": [
+        "Cambiar de cuenta"
       ],
       "Top up": [
         "Recargar"
@@ -2607,10 +2607,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Revise cuántas personas hacen clic en su enlace, se registran y se convierten en suscriptores de pago. Mire cómo se acumulan sus meses gratis."
       ],
@@ -2646,17 +2642,11 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
-      "${ name } failed to move to Non spam List": [
-        "Error al mover ${ name } a la Lista de no spam"
-      ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la Lista de spam"
       ],
       "${ name } failed to move to your block list": [
         "Error al mover ${ name } a la Lista de bloqueo"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } movido a la Lista de no spam"
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la Lista de spam"
@@ -2763,17 +2753,11 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
-      "${ name } failed to move to Non spam List": [
-        "Error al mover ${ name } a la Lista de no spam"
-      ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la Lista de spam"
       ],
       "${ name } failed to move to your block list": [
         "Error al mover ${ name } a la Lista de bloqueo"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } movido a la Lista de no spam"
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la Lista de spam"
@@ -3646,7 +3630,7 @@
         "Deshabilite 2FA con la llave de seguridad antes de desactivar TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con su clave de seguridad. Intente de nuevo."
+        "Algo salió mal al autenticar con su llave de seguridad. Intente de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Algo salió mal al registrar su llave de seguridad. Intente nuevamente."
@@ -3663,7 +3647,7 @@
         "¿En verdad desea eliminar la llave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+        "Inserte una llave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Inserte la llave de seguridad en el puerto USB."
@@ -3824,9 +3808,6 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Los correos de direcciones bloqueadas no serán entregados."
-      ],
-      "Search in your allow and block lists": [
-        "Buscar en las listas de no es spam y bloqueo"
       ]
     },
     "Font Face Default": {
@@ -3839,6 +3820,11 @@
         "Por defecto"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 correo por mes)"
@@ -3848,6 +3834,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "¿Ya tiene una cuenta? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "¿Primera vez en ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4718,9 +4714,6 @@
       "Background color": [
         "Color de fondo"
       ],
-      "Based in Switzerland, available globally": [
-        "Con sede en Suiza, disponible globalmente"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
@@ -5184,6 +5177,9 @@
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
+      "Labels:": [
+        "Etiquetas:"
+      ],
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
@@ -5240,6 +5236,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ _switchButton }."
+      ],
+      "Member": [
+        "Miembro"
       ],
       "Merged": [
         "Fusionado"
@@ -5741,8 +5740,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, seleccione un método de recuperación de cuenta para que podamos verificar la solicitud."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Para proteger su conexión a Internet, descargue e instale la aplicación de ${ VPN_APP_NAME } para su dispositivo y conéctese a un servidor de ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Para proteger su conexión a internet, descargue e instale la aplicación ${ VPN_APP_NAME } en su dispositivo y conéctese a un servidor."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script Sieve válido. Puede ${ link }."
@@ -5867,8 +5866,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "¡Nos trasladamos! Únase a nosotros en nuestro sitio nuevo: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "¡Nos hemos mudado! Ingrese a nuestro dominio nuevo: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -5933,6 +5932,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Ha iniciado sesión en la cuenta ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "También puede fusionar calendarios importados con calendarios de Proton existentes."
       ],
@@ -5948,6 +5950,9 @@
       "You can import one data type at a time.": [
         "Puede importar un tipo de datos a la vez."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Ahora puede acceder y gestionar la cuenta como administrador."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ahora puede recibir mensajes a su dirección @pm.me. Actualice a un plan de pago para enviar también correos usando su dirección @pm.me y crear direcciones @pm.me adicionales."
       ],
@@ -5959,9 +5964,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puede usar las siguientes credenciales para conectarse a un servidor de ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "No puede enviar más de ${ emailSendLimitNumber } invitaciones de correo en las siguientes 24 horas"
       ],
       "You cannot refer ${ appName } users": [
         "No puede referir usuarios de ${ appName }"
@@ -6821,9 +6823,6 @@
       "Discount": [
         "Descuento"
       ],
-      "Display": [
-        "Mostrar"
-      ],
       "Display name": [
         "Nombre a mostrar"
       ],
@@ -7043,11 +7042,11 @@
       "No label found": [
         "Ninguna etiqueta encontrada"
       ],
-      "Non Spam": [
-        "No spam"
-      ],
       "Non-standard ports": [
         "Puertos no estándares"
+      ],
+      "Not spam": [
+        "No es spam"
       ],
       "Notification": [
         "Notificación"
@@ -7505,6 +7504,9 @@
       "Common sign up issues": [
         "Problemas comunes de registro"
       ],
+      "Create account": [
+        "Crear cuenta"
+      ],
       "Encryption and keys": [
         "Cifrado y claves"
       ],
@@ -7871,7 +7873,7 @@
       "Blocked": [
         "Bloqueado"
       ],
-      "Non spam": [
+      "Not spam": [
         "No es spam"
       ],
       "Spam": [
@@ -9352,7 +9354,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Ha excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
         "Ha excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
       ]
     },
@@ -9374,6 +9377,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Añadir etiqueta"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Creado por ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -9951,8 +9959,8 @@
       "Add Sieve filter": [
         "Añadir filtro Sieve"
       ],
-      "Add to non spam list": [
-        "Añadir a lista de no spam"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Añadir a la lista de spam"
@@ -10010,9 +10018,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
-      ],
-      "Calendar information": [
-        "Información del calendario"
       ],
       "Cancel Mail subscription": [
         "Cancelar suscripción de Correo"
@@ -10558,6 +10563,9 @@
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Signed in to member account": [
+        "Sesión iniciada en la cuenta del miembro"
+      ],
       "Sort folders alphabetically": [
         "Ordenar carpetas alfabéticamente"
       ],
@@ -10761,6 +10769,11 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Editar información"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -2008,10 +2008,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt … Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du diese Meldung schließen."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Verwende Ziehen und Ablegen, um die Zusammenführungspriorität zwischen den Kontakten zu bewerten. Deaktiviere jene Kontakte, die du nicht zusammenführen möchtest."
       ],
@@ -3541,6 +3537,9 @@
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
       ],
+      "Labels:": [
+        "Kategorien:"
+      ],
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
       ],
@@ -3781,9 +3780,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
       ],
       "Week": [
         "Woche"
@@ -4051,9 +4047,6 @@
       ],
       "Description": [
         "Beschreibung"
-      ],
-      "Display": [
-        "Anzeigen"
       ],
       "Do not ask again": [
         "Nicht erneut nachfragen"
@@ -5008,9 +5001,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakt(en) erfolgreich gelöscht.",
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
@@ -5099,6 +5089,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Mit Proton-Nutzern teilen"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Erstellt von ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5457,9 +5452,6 @@
       "Calendar alarm": [
         "Kalenderbenachrichtigung"
       ],
-      "Calendar information": [
-        "Kalenderinformationen"
-      ],
       "Change my answer": [
         "Meine Antwort ändern"
       ],
@@ -5733,9 +5725,6 @@
       "Show time zones for event start and end times": [
         "Zeitzonen für Beginn und Ende des Termins anzeigen"
       ],
-      "Sign in again to continue": [
-        "Erneut anmelden, um fortzufahren"
-      ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
       ],
@@ -5747,6 +5736,9 @@
       ],
       "Start import process": [
         "Importvorgang starten"
+      ],
+      "Two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung"
       ],
       "Update event": [
         "Termin aktualisieren"
@@ -5785,6 +5777,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Anzahl auswählen"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Informationen bearbeiten"
       ]
     },
     "Today icon tooltip in mini calendar": {

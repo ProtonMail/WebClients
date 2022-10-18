@@ -193,9 +193,6 @@
       "Create folder": [
         "Crear carpeta"
       ],
-      "Create free account": [
-        "Crea un compte gratuït"
-      ],
       "Create label": [
         "Crear etiqueta"
       ],
@@ -499,11 +496,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "recarregar la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -2269,10 +2266,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
-        "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ]
@@ -3775,9 +3768,6 @@
       "Background color": [
         "Color de fons"
       ],
-      "Based in Switzerland, available globally": [
-        "Amb seu a Suïssa, disponible a tot el món"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
       ],
@@ -4150,6 +4140,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de dos factors per configurar el vostre compte. ${ _switchButton }."
+      ],
+      "Member": [
+        "Membre"
       ],
       "Merged": [
         "Combinats"
@@ -4592,9 +4585,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ens mudem! Entreu al nostre lloc nou: ${ link }."
       ],
       "Web URL": [
         "URL del web"
@@ -5334,9 +5324,6 @@
       "Discount": [
         "Descompte"
       ],
-      "Display": [
-        "Mostrar"
-      ],
       "Display name": [
         "Nom a mostrar"
       ],
@@ -5937,6 +5924,9 @@
       ],
       "Common sign up issues": [
         "Problemes comuns de registre"
+      ],
+      "Create account": [
+        "Crea un compte"
       ],
       "Encryption and keys": [
         "Xifratge i claus"
@@ -7404,6 +7394,9 @@
       ],
       "Add Sieve filter": [
         "Afegir filtre Sieve"
+      ],
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add user": [
         "Afegir usuari"

@@ -208,9 +208,6 @@
       "Create folder": [
         "Map maken"
       ],
-      "Create free account": [
-        "Maak een gratis account aan"
-      ],
       "Create label": [
         "Label maken"
       ],
@@ -481,9 +478,6 @@
       "No": [
         "Nee"
       ],
-      "Non spam": [
-        "Geen spam"
-      ],
       "OK": [
         "OK"
       ],
@@ -541,11 +535,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "De pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "De pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -2539,10 +2533,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden.",
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Volg hoeveel mensen klikken op uw link, registreren en betalende gebruikers worden. Kijk hoeveel gratis maanden er toegevoegd worden."
       ],
@@ -3652,6 +3642,11 @@
         "Standaard"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy is standaard."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email per maand)"
@@ -3661,6 +3656,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails per maand)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Heeft u al een account? ${ signIn }"
       ]
     },
     "Group": {
@@ -4522,9 +4522,6 @@
       "Background color": [
         "Achtergrondkleur"
       ],
-      "Based in Switzerland, available globally": [
-        "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
@@ -4770,6 +4767,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
       ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
@@ -4976,6 +4976,9 @@
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
       ],
+      "Labels:": [
+        "Labels:"
+      ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
@@ -5029,6 +5032,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ _switchButton }."
+      ],
+      "Member": [
+        "Lid"
       ],
       "Merged": [
         "Samengevoegd"
@@ -5524,8 +5530,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Om uw internetverbinding te beveiligen, installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een ${ VPN_APP_NAME }-server."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Om uw internetverbinding te beveiligen, download en installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een server."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Om goed te werken, moet elk filter minstens een naam en een geldig Sieve-script bevatten. U kunt ${ link }."
@@ -5647,8 +5653,8 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
       ],
       "Web URL": [
         "Web URL"
@@ -5676,6 +5682,9 @@
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Wanneer zij abonneren op een betaald abonnement, zal er 1 tot 3 maanden van ${ planName } gecrediteerd worden aan uw account."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -5736,9 +5745,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodigingen versturen voor de komende 24 uur"
       ],
       "You cannot refer ${ appName } users": [
         "U kan geen ${ appName }-gebruikers doorverwijzen"
@@ -6595,9 +6601,6 @@
       "Discount": [
         "Korting"
       ],
-      "Display": [
-        "Tonen"
-      ],
       "Display name": [
         "Weergavenaam"
       ],
@@ -6813,9 +6816,6 @@
       ],
       "No label found": [
         "Geen label gevonden"
-      ],
-      "Non Spam": [
-        "Geen Spam"
       ],
       "Non-standard ports": [
         "Niet-standaard poorten"
@@ -7276,6 +7276,9 @@
       "Common sign up issues": [
         "Problemen met algemene registratie"
       ],
+      "Create account": [
+        "Account aanmaken"
+      ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
       ],
@@ -7633,9 +7636,6 @@
       ],
       "Blocked": [
         "Geblokkeerd"
-      ],
-      "Non spam": [
-        "Geen spam"
       ],
       "Spam": [
         "Spam"
@@ -9077,7 +9077,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid per agenda overschreden",
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden per agenda overschreden"
       ]
     },
@@ -9103,6 +9104,9 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Account instelling"
+      ],
       "Payment": [
         "Betaling"
       ],
@@ -9658,6 +9662,9 @@
       "Add Sieve filter": [
         "Sievefilter toevoegen"
       ],
+      "Add to not spam list": [
+        "Add to Not spam list"
+      ],
       "Add to spam list": [
         "Toevoegen aan spamlijst"
       ],
@@ -9714,9 +9721,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
-      ],
-      "Calendar information": [
-        "Agenda-informatie"
       ],
       "Cancel Mail subscription": [
         "Mail-abonnement opzeggen"
@@ -10465,6 +10469,11 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Bewerk informatie"
       ]
     },
     "Today icon tooltip in mini calendar": {

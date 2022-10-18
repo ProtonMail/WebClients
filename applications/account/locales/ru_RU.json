@@ -213,9 +213,6 @@
       "Create folder": [
         "Создать папку"
       ],
-      "Create free account": [
-        "Создать бесплатный аккаунт"
-      ],
       "Create label": [
         "Создать ярлык"
       ],
@@ -486,7 +483,7 @@
       "No": [
         "Нет"
       ],
-      "Non spam": [
+      "Not spam": [
         "Не спам"
       ],
       "OK": [
@@ -546,11 +543,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -761,6 +758,9 @@
       ],
       "Support": [
         "Поддержка"
+      ],
+      "Switch account": [
+        "Сменить аккаунт"
       ],
       "Top up": [
         "Пополнить"
@@ -2527,6 +2527,12 @@
       ]
     },
     "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Ошибка в строке ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Похоже, в вашем файле не хватает заголовка '${ options.fieldName }'."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Мы обнаружили ошибки в нескольких строках во время импорта, просмотрите ваш файл CSV."
       ]
@@ -2633,12 +2639,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Максимальный размер файла может быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Максимальный размер файла может быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Максимальный размер файла может быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Максимальный размер файла может быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Отслеживайте, сколько людей переходят по вашей ссылке, регистрируются и становятся подписчиками платных тарифов. Следите за тем, как накапливаются ваши бесплатные месяцы."
       ],
@@ -2674,17 +2674,11 @@
       "${ name } deletion failed": [
         "${ name } удаление не удалось"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } не удалось переместить в список не спама"
-      ],
       "${ name } failed to move to spam list": [
         "не удалось переместить ${ name } в список спама"
       ],
       "${ name } failed to move to your block list": [
         "не удалось переместить ${ name } в список блокируемых"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } перемещено в список не спама"
       ],
       "${ name } moved to spam list": [
         "${ name } перемещен в список спама"
@@ -2791,17 +2785,11 @@
       "${ name } deletion failed": [
         "${ name } удаление не удалось"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } не удалось переместить в список не спама"
-      ],
       "${ name } failed to move to spam list": [
         "не удалось переместить ${ name } в список спама"
       ],
       "${ name } failed to move to your block list": [
         "не удалось переместить ${ name } в список блокируемых"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } перемещено в список не спама"
       ],
       "${ name } moved to spam list": [
         "${ name } перемещен в список спама"
@@ -3881,8 +3869,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Эл. почта, поступающая с заблокированных адресов, не будет доставлена."
       ],
-      "Search in your allow and block lists": [
-        "Поиск в ваших списках надежных и блокируемых"
+      "Search list": [
+        "Список поиска"
       ]
     },
     "Font Face Default": {
@@ -3895,6 +3883,11 @@
         "По умолчанию"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 письмо в месяц)"
@@ -3904,6 +3897,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 письма в месяц)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "У вас уже есть аккаут? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Как ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4840,9 +4843,6 @@
       "Background color": [
         "Цвет фона"
       ],
-      "Based in Switzerland, available globally": [
-        "Находится в Швейцарии, доступна везде"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
       ],
@@ -5314,6 +5314,9 @@
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
       ],
+      "Labels:": [
+        "Ярлыки:"
+      ],
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
@@ -5370,6 +5373,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
+      ],
+      "Member": [
+        "Участник"
       ],
       "Merged": [
         "Объединенные"
@@ -5881,8 +5887,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Чтобы защитить ваше интернет-соединение, скачайте и установите приложение ${ VPN_APP_NAME } для вашего устройства и подключитесь к серверу ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Чтобы защитить свое подключение к Интернету, скачайте и установите приложение ${ VPN_APP_NAME } для своего устройства и подключитесь к серверу."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для правильной работы каждый фильтр должен содержать как минимум имя и действительный скрипт Sieve. Вы можете ${ link }."
@@ -6007,8 +6013,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Мы переезжаем! Переходи на наш новый сайт: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Мы переехали! Пожалуйста, зарегистрируйтесь на нашем новом домене: ${ link }."
       ],
       "Web URL": [
         "Ссылка"
@@ -6073,6 +6079,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Вы вошли в аккаунт ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
@@ -6088,6 +6097,9 @@
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Теперь вы можете получить доступ к аккаунту и управлять им как администратор."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Теперь вы можете получать сообщения на свой адрес @pm.me. Перейдите на платный тариф, чтобы еще отправлять письма, используя свой адрес @pm.me, и создавать дополнительные адреса @pm.me."
       ],
@@ -6099,9 +6111,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Вы не можете отправить более ${ emailSendLimitNumber } приглашений по электронной почте в течение следующих 24 часов"
       ],
       "You cannot refer ${ appName } users": [
         "Вы не можете пригласить пользователей ${ appName }"
@@ -6967,9 +6976,6 @@
       "Discount": [
         "Скидка"
       ],
-      "Display": [
-        "Отображение"
-      ],
       "Display name": [
         "Отображаемое имя"
       ],
@@ -7189,11 +7195,11 @@
       "No label found": [
         "Ярлыки не найдены"
       ],
-      "Non Spam": [
-        "Не спам"
-      ],
       "Non-standard ports": [
         "Нестандартные порты"
+      ],
+      "Not spam": [
+        "Не спам"
       ],
       "Notification": [
         "Уведомление"
@@ -7651,6 +7657,9 @@
       "Common sign up issues": [
         "Частые проблемы при регистрации"
       ],
+      "Create account": [
+        "Создать аккаунт"
+      ],
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
@@ -8035,7 +8044,7 @@
       "Blocked": [
         "Заблокировано"
       ],
-      "Non spam": [
+      "Not spam": [
         "Не спам"
       ],
       "Spam": [
@@ -9568,8 +9577,11 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Вы превысили максимальное количество участников ${ MAX_CALENDAR_MEMBERS } для одного календаря"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участника для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря"
       ]
     },
     "Share calendar modal description": {
@@ -9592,6 +9604,11 @@
         "Добавить ярлык"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Создано ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Отображаемое имя"
@@ -9604,6 +9621,12 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Настройка аккаунта"
+      ],
+      "Payment": [
+        "Платёж"
+      ],
       "Verification": [
         "Подтверждение"
       ]
@@ -10193,8 +10216,8 @@
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
       ],
-      "Add to non spam list": [
-        "Убрать из списка спама"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Добавить в список спама"
@@ -10252,9 +10275,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
-      ],
-      "Calendar information": [
-        "Сведения о календаре"
       ],
       "Cancel Mail subscription": [
         "Отменить подписку на почту"
@@ -10802,6 +10822,9 @@
       "Sign out": [
         "Выйти"
       ],
+      "Signed in to member account": [
+        "Выполнен вход в аккаунт пользователя"
+      ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"
       ],
@@ -11007,6 +11030,11 @@
       ],
       "Role": [
         "Должность"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Изменить информацию"
       ]
     },
     "Today icon tooltip in mini calendar": {

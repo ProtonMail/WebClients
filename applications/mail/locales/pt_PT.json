@@ -14,14 +14,23 @@
       "Activate": [
         "Activar"
       ],
+      "Activate recovery": [
+        "Ativar recuperação"
+      ],
       "Add": [
         "Adicionar"
+      ],
+      "Add address": [
+        "Adicionar endereço"
       ],
       "Add condition": [
         "Adicionar condição"
       ],
       "Add contact": [
         "Adicionar contacto"
+      ],
+      "Add email": [
+        "Adicionar e-mail"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -31,6 +40,12 @@
       ],
       "Add new group": [
         "Adicionar novo grupo"
+      ],
+      "Add participant": [
+        "Adicionar participante"
+      ],
+      "Add phone number": [
+        "Adicionar número de telefone"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adicionar a ${ CALENDAR_APP_NAME }"
@@ -62,11 +77,17 @@
       "All Unstarred": [
         "Todo sem estrelas"
       ],
+      "Allow messages": [
+        "Permitir mensagens"
+      ],
       "Apply": [
         "Aplicar"
       ],
       "Archive": [
         "Arquivo"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "Attachment": [
         "Anexo"
@@ -80,6 +101,12 @@
       "Beta Access": [
         "Acesso Beta"
       ],
+      "Block": [
+        "Bloquear"
+      ],
+      "Block messages from this sender": [
+        "Bloquear mensagens deste remetente"
+      ],
       "Bold": [
         "Negrito"
       ],
@@ -88,6 +115,9 @@
       ],
       "Carbon Copy, Blind Carbon Copy": [
         "Cópia de mensagem, Cópia cega de mensagem"
+      ],
+      "CC BCC": [
+        "CC BCC"
       ],
       "Change page": [
         "Alterar página"
@@ -146,6 +176,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue import": [
+        "Continuar a importação"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -161,6 +194,9 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Copy password to clipboard": [
+        "Copiar senha para a área de transferência"
+      ],
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
@@ -175,6 +211,9 @@
       ],
       "Create new contact": [
         "Criar novo contacto"
+      ],
+      "Customize": [
+        "Personalizar"
       ],
       "Customize import": [
         "Personalizar importação"
@@ -217,6 +256,9 @@
       "Details": [
         "Detalhes"
       ],
+      "Didn't receive the code?": [
+        "Não recebeu o código?"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -240,6 +282,9 @@
       ],
       "Edit email address": [
         "Editar o endereço de email"
+      ],
+      "Edit encryption": [
+        "Editar encriptação"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -265,14 +310,26 @@
       "Export": [
         "Exportar"
       ],
+      "Export contact group": [
+        "Exportar grupo de contactos"
+      ],
       "Export contacts": [
         "Exportar contactos"
+      ],
+      "External encryption": [
+        "Encriptação externa"
+      ],
+      "Filter on...": [
+        "Filtrar por..."
       ],
       "Font": [
         "Letra"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate recovery phrase": [
+        "Gerar frase de recuperação"
       ],
       "Get started": [
         "Começar"
@@ -316,8 +373,17 @@
       "Hide details": [
         "Ocultar detalhes"
       ],
+      "Hide folders": [
+        "Ocultar pastas"
+      ],
+      "Hide labels": [
+        "Ocultar etiquetas"
+      ],
       "Hide messages": [
         "Ocultar mensagens"
+      ],
+      "Hide My Email": [
+        "Esconder meu e-mail"
       ],
       "I have a question": [
         "Tenho uma dúvida"
@@ -327,6 +393,9 @@
       ],
       "import": [
         "importar"
+      ],
+      "Import from .csv or vCard": [
+        "Importar de .csv ou vCard"
       ],
       "Inline": [
         "Incorporado"
@@ -422,6 +491,12 @@
       "Merge contacts": [
         "Unir contactos"
       ],
+      "Messages from this sender": [
+        "Mensagens deste remetente"
+      ],
+      "Messages to this recipient": [
+        "Mensagens para esse destinatário"
+      ],
       "Minimize composer": [
         "Minimizar compositor"
       ],
@@ -430,6 +505,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
+      ],
+      "Move": [
+        "Mover"
       ],
       "move emails to": [
         "mover emails para"
@@ -488,6 +566,9 @@
       "OK": [
         "Aceitar"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Abrir ${ CALENDAR_APP_NAME }"
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -527,6 +608,9 @@
       "Print": [
         "Imprimir"
       ],
+      "Quit": [
+        "Sair"
+      ],
       "Quote": [
         "Citação"
       ],
@@ -542,6 +626,9 @@
       "Recover data": [
         "Recuperar dados"
       ],
+      "Refer a friend": [
+        "Referencie um amigo"
+      ],
       "refresh the page": [
         "actualizar a página"
       ],
@@ -554,8 +641,17 @@
       "Remove ${ attachmentName }": [
         "Remover ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "Remover encriptação"
+      ],
+      "Remove expiration time": [
+        "Remover data de validade"
+      ],
       "Remove this label": [
         "Remover esta etiqueta"
+      ],
+      "Rename": [
+        "Renomear"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -584,6 +680,9 @@
       "Saving${ _ellipsis }": [
         "A gravar${ _ellipsis }"
       ],
+      "Schedule message": [
+        "Agendar mensagem"
+      ],
       "Search": [
         "Procurar"
       ],
@@ -608,8 +707,20 @@
       "send auto-reply email": [
         "enviar resposta automática"
       ],
+      "Send read receipt": [
+        "Enviar recibo de leitura"
+      ],
       "Set": [
         "Definir"
+      ],
+      "Set encryption": [
+        "Definir encriptação"
+      ],
+      "Set expiration time": [
+        "Definir data de validade"
+      ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
       ],
       "Share via link": [
         "Partilhar por ligação"
@@ -628,6 +739,15 @@
       ],
       "Show details": [
         "Mostrar detalhes"
+      ],
+      "Show folders": [
+        "Mostrar pastas"
+      ],
+      "Show labels": [
+        "Mostrar etiquetas"
+      ],
+      "Show less": [
+        "Mostrar menos"
       ],
       "Show messages": [
         "Mostrar mensagens"
@@ -655,6 +775,9 @@
       ],
       "Start setup": [
         "Iniciar a configuração"
+      ],
+      "Stay": [
+        "Ficar"
       ],
       "Submit": [
         "Submeter"
@@ -687,6 +810,9 @@
       "Undo": [
         "Desfazer"
       ],
+      "Unlock data": [
+        "Desbloquear dados"
+      ],
       "Unmark for deletion": [
         "Desmarcar para eliminação"
       ],
@@ -704,6 +830,12 @@
       ],
       "Untrust": [
         "Não confiar"
+      ],
+      "Update recovery file": [
+        "Atualizar ficheiro de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Actualizar"
@@ -744,11 +876,20 @@
       "View keys": [
         "Ver chaves"
       ],
+      "View message": [
+        "Visualizar mensagem"
+      ],
+      "View message details": [
+        "Ver detalhes da mensagem"
+      ],
       "View recipients": [
         "Ver destinatários"
       ],
       "View rendered HTML": [
         "Ver HTML processado"
+      ],
+      "Why not?": [
+        "Por que não?"
       ],
       "Yes": [
         "Sim"
@@ -1349,10 +1490,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "O ficheiro deve ter um máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro for maior, por favor divida-o.",
-        "O ficheiro deve ter um máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e até ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, por favor divida-o."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
@@ -1399,6 +1536,9 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } foi cancelado."
+      ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi actualizado.\n${ eventDetailsText }"
       ],
@@ -2055,6 +2195,9 @@
       ]
     },
     "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Acesso a aplicações menos seguras\" está ativado nas definições de segurança da sua conta Google."
+      ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
       ],
@@ -2163,6 +2306,9 @@
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } contém vários endereços de e-mail."
+      ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
@@ -2179,6 +2325,9 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ MAIL_APP_NAME } can protect your business as well.": [
+        "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Impossível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Impossível mover ${ messagesNotAuthorizedToMove } mensagens."
@@ -2194,6 +2343,14 @@
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } ficheiro anexado",
         "${ pureAttachmentsCount } ficheiros anexados"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta seleccionada",
@@ -2268,6 +2425,14 @@
       "Align right": [
         "Alinhar à direita"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Tudo (${ totalFoldersCount } pastas)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tudo (${ totalFoldersCount } etiqueta)",
+        "Tudo (${ totalFoldersCount } etiquetas)"
+      ],
       "All your calendars are disabled.": [
         "Todas as suas agendas estão desactivadas."
       ],
@@ -2310,6 +2475,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não activos nas definições."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
       "Body: ": [
         "Corpo: "
       ],
@@ -2336,6 +2504,12 @@
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferencia"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new contact group": [
         "Criar novo grupo de contactos"
@@ -2390,6 +2564,9 @@
       "Duplicate key updated": [
         "Chave duplicada actualizada"
       ],
+      "Edit encryption": [
+        "Editar encriptação"
+      ],
       "Email address": [
         "Endereço de email"
       ],
@@ -2402,6 +2579,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Insira a sua senha (como administrador da organização)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -2464,8 +2644,14 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Import in progress": [
+        "Importação em curso"
+      ],
       "Import mailbox": [
         "Importar caixa de correio"
+      ],
+      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
+        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Indexing paused": [
         "Indexação em pausa"
@@ -2575,8 +2761,14 @@
       "of": [
         "de"
       ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Altere estas configurações só se estiver a usar PGP com destinatários não-${ BRAND_NAME }."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítima."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "O PGP incorporado só é compatível com o formato Texto simples. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
       ],
       "Phone number": [
         "Número de telefone"
@@ -2590,8 +2782,14 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Por favor, note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
+      "Please select the folders you would like to import:": [
+        "Por favor, selecione as pastas que deseja importar:"
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Por favor, seleccione o tipo de ligação que deseja inserir e preencha todos os campos."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Por favor, selecione os endereços eletrónicos a adicionar a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, aguarde enquanto procuramos contactos que possam ser re-assinados com a chave de encriptação principal."
@@ -2649,6 +2847,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é uma funcionalidade paga. A sua mensagem será enviada do seu endereço predefinido ${ email }"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "A configuração do PGP permite o envio de e-mails encriptados de ponta-a-ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
       "Show original message": [
         "Mostrar mensagem original"
@@ -2795,8 +2996,8 @@
       "We could not verify the sender's trusted keys.": [
         "Impossível verificar as chaves confiadas do remetente."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Estamos a mover! Junte-se a nós no nosso novo site: ${link }."
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos um novo código de verificação para ${ strong }"
       ],
       "Web URL": [
         "URL da web"
@@ -2815,6 +3016,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
       "You can either update your search query or ${ button }": [
         "Pode actualizar a sua pesquisa ou ${ button }"
@@ -3155,6 +3359,9 @@
       ],
       "App password": [
         "Senha da aplicação"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "Attachments": [
         "Anexos"
@@ -4016,9 +4223,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contactos exportados com sucesso."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado com sucesso.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados com sucesso."
@@ -4291,10 +4495,6 @@
         "${ elementsCount } conversa movida para ${ folderName }.",
         "${ elementsCount } conversas movidas para ${ folderName }."
       ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
-      ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversa removida de ${ labelName }.",
         "${ elementsCount } conversas removidas de ${ labelName }."
@@ -4310,10 +4510,6 @@
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensagem movida para ${ folderName }.",
         "${ elementsCount } mensagens movidas para ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -4665,6 +4861,12 @@
       ],
       "Exporting contacts": [
         "A exportar contactos"
+      ],
+      "External encryption": [
+        "Encriptação externa"
+      ],
+      "Filter on...": [
+        "Filtrar por..."
       ],
       "Forward": [
         "Reencaminhar"

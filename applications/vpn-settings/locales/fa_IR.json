@@ -86,9 +86,6 @@
       "Create address": [
         "ایجاد آدرس"
       ],
-      "Create free account": [
-        "ایجاد حساب کاربری رایگان"
-      ],
       "Current plan": [
         "طرح فعلی"
       ],
@@ -1863,9 +1860,6 @@
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
       ],
-      "Based in Switzerland, available globally": [
-        "مستقر در سوئیس، قابل دسترس به صورت جهانی"
-      ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
       ],
@@ -2253,9 +2247,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "برای ادامه، لطفاً یک روش بازیابی حساب را انتخاب نمایید تا بتوانیم درخواست شما را تأیید کنیم."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "برای محافظت از ارتباط اینترنت خود، برنامه ${ VPN_APP_NAME } را برای دستگاه خود دانلود و نصب کنید و به یک سرور ${ VPN_APP_NAME } متصل شوید."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب‌تان را با اعتباری که می‌توانید برای اشتراک در یک طرح جدید یا تمدید طرح فعلی استفاده کنید شارژ کنید. شما برای هر ${ i18nCurrency } که هزینه می‌کنید یک واحد اعتبار دریافت می‌کنید."
       ],
@@ -2342,9 +2333,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "ما در حال جابجایی هستیم! به ما در سایت جدیدمان بپیوندید: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "برای بازیابی حسابتان، ما یک کد بازنشانی به آدرس ایمیل بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
@@ -2922,6 +2910,9 @@
       ],
       "Common sign up issues": [
         "مشکلات ثبت‌نام متداول"
+      ],
+      "Create account": [
+        "ایجاد حساب کاربری"
       ],
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
@@ -3863,6 +3854,11 @@
         "نام کاربری"
       ]
     },
+    "Signup step": {
+      "Verification": [
+        "تایید"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } از بتا خارج شد! به فایل های خود امنیتی بدهید که به ایمیل ها خود می گیرند."
@@ -4254,6 +4250,9 @@
       "Email subscriptions": [
         "اشتراک ایمیل"
       ],
+      "Enter your password": [
+        "گذرواژه خود را وارد کنید"
+      ],
       "Error": [
         "خطا"
       ],
@@ -4391,9 +4390,6 @@
       ],
       "Sign in": [
         "ورود"
-      ],
-      "Sign in again to continue": [
-        "براى ادامه، وارد شويد"
       ],
       "Sign out": [
         "خروج"

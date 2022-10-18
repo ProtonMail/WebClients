@@ -1641,10 +1641,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
       ],
@@ -3680,9 +3676,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } inermisen ɣef ${ countContacts } ttusfḍen-d akken iwata."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } n unermis ɣef ${ totalBeDeleted } yettwakkes akken iwata.",
         "${ model.deleted.length } inermisen ɣef ${ totalBeDeleted } ttwakksen akken iwata."
@@ -3938,9 +3931,6 @@
       ],
       "Back": [
         "Ar deffir"
-      ],
-      "Based in Switzerland, available globally": [
-        "Yella di tmurt n Sswis, yewjed deg umaḍal meṛṛa"
       ],
       "Beta Access": [
         "Anekcum Biṭa"
@@ -4215,9 +4205,6 @@
       "Show actions": [
         "Sken tigawin"
       ],
-      "Sign in again to continue": [
-        "Qqen tikelt-nniḍen akken ad tkemmled"
-      ],
       "Sign in and grant access": [
         "Qqen, tmuddeḍ anekcum"
       ],
@@ -4259,6 +4246,9 @@
       ],
       "Trash": [
         "Taqecwalt"
+      ],
+      "Two-factor authentication": [
+        "Asesteb s snat n tarrayin"
       ],
       "Type": [
         "Anaw"

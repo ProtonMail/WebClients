@@ -2857,9 +2857,6 @@
       "No labels": [
         "无标签"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
@@ -4424,9 +4421,6 @@
       "Background color": [
         "背景颜色"
       ],
-      "Based in Switzerland, available globally": [
-        "扎根瑞士，惠及全球"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
@@ -5326,9 +5320,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "我们改名了！欢迎造访我们的新域名：${ link }"
       ],
       "Web URL": [
         "网址"
@@ -6982,9 +6973,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "共 ${ countContacts } 名联系人，成功导出 ${ contactsExported.length } 名联系人。"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
@@ -7304,15 +7292,8 @@
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 条会话已标记为未读。"
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 条会话已移至${ folderName }，其发件人已添加至白名单。"
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 条会话已移至${ folderName }。"
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 条会话已移除 ${ labelName } 标签。"
@@ -7329,15 +7310,8 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 封邮件已标记为未读。"
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 封邮件已移至${ folderName }，其发件人已添加至白名单。"
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } 封邮件已移至${ folderName }。"
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 封邮件已移除 ${ labelName } 标签。"
@@ -7381,14 +7355,8 @@
       "Conversation marked as unread.": [
         "会话已标记为未读。"
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "会话已移至${ folderName }，其发件人已添加至白名单。"
-      ],
       "Conversation moved to ${ folderName }.": [
         "会话已移至${ folderName }。"
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "Conversation removed from ${ labelName }.": [
         "会话已移除 ${ labelName } 标签。"
@@ -7444,14 +7412,8 @@
       "Message marked as unread.": [
         "邮件已标记为未读。"
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "邮件已移至${ folderName }，其发件人已添加至白名单。"
-      ],
       "Message moved to ${ folderName }.": [
         "邮件已移至${ folderName }。"
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "Message removed from ${ labelName }.": [
         "邮件已移除 ${ labelName } 标签。"

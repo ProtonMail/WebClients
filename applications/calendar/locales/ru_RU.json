@@ -2034,12 +2034,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Максимальный размер файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то разбейте его на меньшие файлы.",
-        "Максимальный размер файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то разбейте его на меньшие файлы.",
-        "Максимальный размер файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то разбейте его на меньшие файлы.",
-        "Максимальный размер файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то разбейте его на меньшие файлы."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимайте галочки с контактов, которые вы не хотите объединять."
       ],
@@ -3675,6 +3669,9 @@
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
       ],
+      "Labels:": [
+        "Ярлыки:"
+      ],
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
@@ -3918,8 +3915,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Мы переезжаем! Переходи на наш новый сайт: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Мы переехали! Пожалуйста, зарегистрируйтесь на нашем новом домене: ${ link }."
       ],
       "Week": [
         "Неделя"
@@ -4187,9 +4184,6 @@
       ],
       "Description": [
         "Описание"
-      ],
-      "Display": [
-        "Показывать"
       ],
       "Do not ask again": [
         "Больше не спрашивать"
@@ -5210,9 +5204,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортировано."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
@@ -5293,8 +5284,11 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Вы превысили максимальное количество участников ${ MAX_CALENDAR_MEMBERS } для одного календаря"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участника для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря"
       ]
     },
     "Share calendar modal description": {
@@ -5310,6 +5304,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Поделиться с пользователями Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Создано ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5680,9 +5679,6 @@
       "Calendar alarm": [
         "Оповещение календаря"
       ],
-      "Calendar information": [
-        "Сведения о календаре"
-      ],
       "Change my answer": [
         "Изменить мой ответ"
       ],
@@ -5962,9 +5958,6 @@
       "Show time zones for event start and end times": [
         "Показывать часовые пояса времени начала и окончания события"
       ],
-      "Sign in again to continue": [
-        "Войдите снова, чтобы продолжить"
-      ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
       ],
@@ -5976,6 +5969,9 @@
       ],
       "Start import process": [
         "Начать процесс импорта"
+      ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
       ],
       "Update event": [
         "Обновить событие"
@@ -6014,6 +6010,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберите количество"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Изменить информацию"
       ]
     },
     "Today icon tooltip in mini calendar": {

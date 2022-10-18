@@ -4,6 +4,14 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Plné zobrazení (zobrazit všechny podrobnosti o události)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Omezené zobrazení (zobrazit pouze volný/zaneprázdněn)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } představení"
@@ -137,6 +145,9 @@
       "Customize import": [
         "Přizpůsobit import"
       ],
+      "Decline invite": [
+        "Odmítnout pozvánku"
+      ],
       "Delete": [
         "Smazat"
       ],
@@ -250,6 +261,9 @@
       ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
+      ],
+      "Join calendar": [
+        "Připojit ke kalendáři"
       ],
       "Load image": [
         "Načíst obrázek"
@@ -514,6 +528,22 @@
       ],
       "Yes, I'll attend": [
         "Ano, zúčastním se"
+      ]
+    },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Kdokoli s odkazem může zobrazit váš kalendář"
+      ],
+      "They can view or edit your calendar": [
+        "Mohou prohlížet nebo upravovat váš kalendář"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "Sdílet s kýmkoli"
+      ],
+      "Share with Proton users": [
+        "Sdílet s uživateli Protonu"
       ]
     },
     "Actions message": {
@@ -817,6 +847,16 @@
         "Nezávazně jste přijal(a) pozvání"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Pouze vy můžete vidět štítek"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Oprávnění můžete kdykoli změnit nebo odebrat."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Oprávnění"
@@ -833,6 +873,32 @@
       ],
       "Manage members": [
         "Spravovat členy"
+      ],
+      "Unable to create more calendar links": [
+        "Nelze vytvořit další odkazy na kalendář"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Nelze sdílet tento kalendář s více uživateli Protonu"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } člena pro tento kalendář.\nChcete-li sdílet tento kalendář s více Proton účty, odstraňte některé členy.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů pro tento kalendář.\nChcete-li sdílet tento kalendář s více Proton účty, odstraňte některé členy.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů pro tento kalendář.\nChcete-li sdílet tento kalendář s více Proton účty, odstraňte některé členy.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů pro tento kalendář.\nChcete-li sdílet tento kalendář s více Proton účty, odstraňte některé členy."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Dosáhli jste maximálního počtu ${ MAX_LINKS_PER_CALENDAR } odkazu na tento kalendář.\nChcete-li vytvořit nový odkaz na tento kalendář, odstraňte stávající odkaz.",
+        "Dosáhli jste maximálního počtu ${ MAX_LINKS_PER_CALENDAR } odkazů na tento kalendář.\nChcete-li vytvořit nový odkaz na tento kalendář, odstraňte stávající odkaz.",
+        "Dosáhli jste maximálního počtu ${ MAX_LINKS_PER_CALENDAR } odkazů na tento kalendář.\nChcete-li vytvořit nový odkaz na tento kalendář, odstraňte stávající odkaz.",
+        "Dosáhli jste maximálního počtu ${ MAX_LINKS_PER_CALENDAR } odkazů na tento kalendář.\nChcete-li vytvořit nový odkaz na tento kalendář, odstraňte stávající odkaz."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Upravit (zobrazit, vytvořit a upravit podrobnosti o události)"
+      ],
+      "Full view (see all event details)": [
+        "Plné zobrazení (zobrazit všechny podrobnosti o události)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1930,12 +1996,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat pouze ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
@@ -2238,11 +2298,17 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
+      "No public key for Proton address": [
+        "Žádný veřejný klíč pro adresu Protonu"
+      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Žádný z WKD klíčů získaných pro uživatele není platný pro odesílání"
+      ],
+      "Not a Proton account": [
+        "Nejedná se o účet Protonu"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -2288,6 +2354,12 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primární klíč pro uživatele ${ BRAND_NAME } není možné použít pro odesílání"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Odstraněn duplicitní příjemce: ${ joinedRecipients }",
+        "Odstraněno duplicitních příjemců: ${ joinedRecipients }",
+        "Odstraněno duplicitních příjemců: ${ joinedRecipients }",
+        "Odstraněno duplicitních příjemců: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
@@ -2396,6 +2468,11 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Pozvaná adresa neexistuje"
       ]
     },
     "Error importing calendar": {
@@ -3554,6 +3631,9 @@
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
       ],
+      "Labels:": [
+        "Štítky:"
+      ],
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
@@ -3797,8 +3877,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Přestěhovali jsme se! Přihlaste se prosím na naší nové doméně: ${ link }."
       ],
       "Week": [
         "Týden"
@@ -3868,6 +3948,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Resetovali jste své heslo a události propojené s následujícími kalendáři nemohly být dešifrovány.\nJakékoliv odkazy sdílených kalendářů, které jste před tím vytvořili, již nebudou fungovat.\nJakékoliv aktivně odebírané kalendáře budou znovu synchronizovány za několik minut."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Tuto pozvánku jste již dříve odmítli. Požádejte majitele o opětovné zaslání pozvánky"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
@@ -3946,6 +4029,9 @@
     "Input label": {
       "Access": [
         "Přístup"
+      ],
+      "Label (optional)": [
+        "Štítek (volitelné)"
       ]
     },
     "Input placeholder": {
@@ -4060,9 +4146,6 @@
       ],
       "Description": [
         "Popis"
-      ],
-      "Display": [
-        "Zobrazení"
       ],
       "Do not ask again": [
         "Příště se neptat"
@@ -4438,6 +4521,30 @@
         "Spravovat kalendáře"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého tarifu."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu odebíraných kalendářů v rámci svého tarifu."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Nelze vytvořit další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého tarifu."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } s vámi sdílel/a svůj kalendář ${ boldCalendarName }."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Připojit ke kalendáři"
+      ],
+      "Unable to join more calendars": [
+        "Nebylo možné připojit více kalendářů"
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Jak importovat kalendáře z jiné služby"
@@ -4662,6 +4769,22 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Člen přidán",
+        "Členové přidáni",
+        "Členové přidáni",
+        "Členové přidáni"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Pozvání do kalendáře bylo zamítnuto"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Připojen k ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -5043,9 +5166,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } z ${ countContacts } kontaktů bylo úspěšně exportováno."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktu byl úspěšně smazán.",
         "${ model.deleted.length } ze ${ totalBeDeleted } kontaktů byly úspěšně smazány.",
@@ -5120,9 +5240,37 @@
         "Aktualizace nastavení se nezdařila"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Chcete-li pozvat uživatele, kteří nemají účet Proton, sdílejte svůj kalendář pomocí odkazu"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } člena na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Přidejte účty Proton, se kterými chcete sdílet ${ calendarName }. Pošleme jim pozvánku."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Přidat lidi nebo skupiny"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Sdílet s uživateli Protonu"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Vytvořil/a ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5493,9 +5641,6 @@
       "Calendar alarm": [
         "Výstraha kalendáře"
       ],
-      "Calendar information": [
-        "Informace kalendáře"
-      ],
       "Change my answer": [
         "Změnit mou odpověď"
       ],
@@ -5775,9 +5920,6 @@
       "Show time zones for event start and end times": [
         "Zobrazit časová pásma pro časy začátku a konce události"
       ],
-      "Sign in again to continue": [
-        "Chcete-li pokračovat, znovu se přihlaste"
-      ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
       ],
@@ -5789,6 +5931,9 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
+      ],
+      "Two-factor authentication": [
+        "Dvoufázové ověření"
       ],
       "Update event": [
         "Aktualizovat událost"
@@ -5827,6 +5972,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vyberte číslo"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Upravit informace"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5980,6 +6130,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Chcete-li získat přístup k tomuto sdílenému kalendáři, povolte tuto adresu nebo požádejte ${ boldCalendarOwnerEmail } o zaslání pozvánky na aktivní adresu."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Nemůžete se připojit k tomuto kalendáři, protože vaše pozvaná e-mailová adresa (${ boldInvitedAddress }) je zakázána."
       ]
     },
     "Weekly recurring event, frequency": {

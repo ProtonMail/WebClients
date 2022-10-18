@@ -1987,11 +1987,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se îmbină contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
@@ -3574,6 +3569,9 @@
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
       ],
+      "Labels:": [
+        "Etichete:"
+      ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
@@ -3816,8 +3814,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ne mutăm! Veniți alături de noi pe noul nostru site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ne-am mutat! Conectați-vă pe noul nostri domeniu: ${ link }."
       ],
       "Week": [
         "Săptămâna"
@@ -4085,9 +4083,6 @@
       ],
       "Description": [
         "Descriere"
-      ],
-      "Display": [
-        "Afișare"
       ],
       "Do not ask again": [
         "Nu mă mai întreba"
@@ -5075,8 +5070,10 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "S-au exportat ${ contactsExported.length } din ${ countContacts } contacte cu succes."
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "S-a exportat ${ contactsExported.length } din ${ countContacts } contact cu succes.",
+        "",
+        ""
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "S-a șters un contact.",
@@ -5156,7 +5153,9 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Ați atins limita de maxim un membru per calendar.",
+        "Ați atins limita de maxim ${ MAX_CALENDAR_MEMBERS } membri per calendar.",
         "Ați atins limita de maxim ${ MAX_CALENDAR_MEMBERS } de membri per calendar."
       ]
     },
@@ -5173,6 +5172,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Partajare cu utilizatori Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Creat de ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5537,9 +5541,6 @@
       "Calendar alarm": [
         "Alarmă calendar"
       ],
-      "Calendar information": [
-        "Informații calendar"
-      ],
       "Change my answer": [
         "Schimbare răspuns"
       ],
@@ -5816,9 +5817,6 @@
       "Show time zones for event start and end times": [
         "Afișare fus orar pentru orele de început și de sfârșit ale evenimentului"
       ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
       ],
@@ -5830,6 +5828,9 @@
       ],
       "Start import process": [
         "Începere proces de importare"
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
       ],
       "Update event": [
         "Actualizare eveniment"
@@ -5868,6 +5869,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Alegeți un număr"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Editare informații"
       ]
     },
     "Today icon tooltip in mini calendar": {

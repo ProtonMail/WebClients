@@ -609,7 +609,7 @@
         "Mutare în «Primite»"
       ],
       "Move to inbox (not spam)": [
-        "Mutare în «Primite» (nu e nesolicitat)"
+        "Mutare în «Primite» (adresă acceptată)"
       ],
       "Move to spam": [
         "Mutare în «Nedorite»"
@@ -2880,11 +2880,6 @@
       "No labels": [
         "Nu sunt etichete."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
@@ -3425,13 +3420,13 @@
         "Ciornele nu pot fi mutate în „Primite”."
       ],
       "Drafts cannot be moved to Spam": [
-        "Ciornele nu pot fi mutate în „Nedorite”."
+        "Ciornele nu pot fi mutate în «Nedorite»."
       ],
       "Sent messages cannot be moved to Inbox": [
         "Mesajele trimise nu pot fi mutate în „Primite”."
       ],
       "Sent messages cannot be moved to Spam": [
-        "Mesajele trimise nu pot fi mutate în „Nedorite”."
+        "Mesajele trimise nu pot fi mutate în «Nedorite»."
       ],
       "This action cannot be performed": [
         "Această acțiune nu poate fi efectuată"
@@ -3818,6 +3813,11 @@
     "Font Size Default": {
       "Default": [
         "Implicit"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Confidențialitate implicită."
       ]
     },
     "Get started checklist completion": {
@@ -4574,9 +4574,6 @@
       "Background color": [
         "Culoare fundal"
       ],
-      "Based in Switzerland, available globally": [
-        "Cu sediul în Elveția, disponibil la nivel global."
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
       ],
@@ -4914,6 +4911,9 @@
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
+      ],
+      "Labels:": [
+        "Etichete:"
       ],
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
@@ -5505,8 +5505,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ne mutăm! Vino alături de noi pe noul nostru site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ne-am mutat! Conectați-vă pe noul nostri domeniu: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -7196,8 +7196,10 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "S-au exportat ${ contactsExported.length } din ${ countContacts } contacte cu succes."
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "S-a exportat ${ contactsExported.length } din ${ countContacts } contact cu succes.",
+        "",
+        ""
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "S-a șters un contact.",
@@ -7548,19 +7550,20 @@
         "${ elementsCount } conversații au fost marcate ca necitite.",
         "${ elementsCount } de conversații au fost marcate ca necitite."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "O conversația a fost mutată în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise.",
-        "S-au mutat ${ elementsCount } conversații în ${ folderName } și expeditorul a fost adăugat la lista de permise.",
-        "S-au mutat ${ elementsCount } de conversații în ${ folderName } și expeditorul a fost adăugat la lista de permise."
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversația a fost mutată în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise.",
+        "S-au mutat ${ elementsCount } conversații în ${ folderName } și expeditorii a fost adăugați în lista de adrese permise.",
+        "S-au mutat ${ elementsCount } de conversații în ${ folderName } și expeditorii a fost adăugați în lista de adrese permise."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "O conversație s-a mutat în «${ folderName }».",
         "S-au mutat ${ elementsCount } conversații în «${ folderName }».",
         "S-au mutat ${ elementsCount } de conversații în «${ folderName }»."
       ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "Conversația a fost mutată în «Nesolicitate» și expeditorul adăugat în lista de adrese blocate.",
+        "${ elementsCount } conversații au fost mutate în «Nesolicitate» și expeditorii adăugați în lista de adrese blocate.",
+        "${ elementsCount } de conversații au fost mutate în «Nesolicitate» și expeditorii adăugați în lista de adrese blocate."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "S-a șters o conversație din ${ labelName }.",
@@ -7587,19 +7590,20 @@
         "${ elementsCount } mesaje au fost marcate ca necitite.",
         "${ elementsCount } de mesaje au fost marcate ca necitite."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "Un mesaj a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise.",
-        "S-au mutat ${ elementsCount } mesaje în ${ folderName } și expeditorul a fost adăugat la lista de permise.",
-        "S-au mutat ${ elementsCount } de mesaje în ${ folderName } și expeditorul a fost adăugat la lista de permise."
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "Mesajul a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise.",
+        "S-au mutat ${ elementsCount } mesaje în ${ folderName } și expeditorii a fost adăugați în lista de adrese permise.",
+        "S-au mutat ${ elementsCount } de mesaje în ${ folderName } și expeditorii a fost adăugați în lista de adrese permise."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "S-a mutat un mesaj în «${ folderName }».",
         "S-au mutat ${ elementsCount } mesaje în «${ folderName }».",
         "S-au mutat ${ elementsCount } de mesaje în «${ folderName }»."
       ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "Mesajul a fost mutat în «Nesolicitate» și expeditorul adăugat în lista de adrese blocate.",
+        "${ elementsCount } mesaje au fost mutate în «Nesolicitate» și expeditorii adăugați în lista de adrese blocate.",
+        "${ elementsCount } de mesaje au fost mutate în «Nesolicitate» și expeditorii adăugați în lista de adrese blocate."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "S-a eliminat un mesaj din ${ labelName }.",
@@ -7649,13 +7653,13 @@
       "Conversation marked as unread.": [
         "Conversație marcată ca necitită."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
         "Conversația a fost mutată în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
       "Conversation moved to ${ folderName }.": [
         "Conversația s-a mutat în «${ folderName }»."
       ],
-      "Conversation moved to spam and sender added to your block list.": [
+      "Conversation moved to spam and sender added to your spam list.": [
         "Conversația a fost mutată în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
       ],
       "Conversation removed from ${ labelName }.": [
@@ -7712,13 +7716,13 @@
       "Message marked as unread.": [
         "Mesaj marcat ca necitit."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
         "Mesajul a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
       "Message moved to ${ folderName }.": [
         "Mesaj mutat în ${ folderName }."
       ],
-      "Message moved to spam and sender added to your block list.": [
+      "Message moved to spam and sender added to your spam list.": [
         "Mesajul a fost mutat în «Nesolicitate» și expeditorul adăugat în lista de adrese blocate."
       ],
       "Message removed from ${ labelName }.": [

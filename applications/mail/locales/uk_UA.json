@@ -2876,12 +2876,6 @@
       "No labels": [
         "Немає міток"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контакту. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -4629,9 +4623,6 @@
       "Background color": [
         "Колір тла"
       ],
-      "Based in Switzerland, available globally": [
-        "Розташований у Швейцарії, доступний у всьому світі"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
       ],
@@ -5574,8 +5565,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ми переїхали! Долучайтеся до нас на нашому новому сайті: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ми переїхали! Будь ласка, увійдіть на нашому новому домені: ${ link }."
       ],
       "Web URL": [
         "URL-адреса"
@@ -7283,9 +7274,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
         "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
@@ -7650,21 +7638,11 @@
         "${ elementsCount } розмов позначено непрочитаними.",
         "${ elementsCount } розмови позначено непрочитаною."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } розмову переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } розмови переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } розмову переміщено до теки ${ folderName }.",
         "${ elementsCount } розмови переміщено до теки ${ folderName }.",
         "${ elementsCount } розмов переміщено до теки ${ folderName }.",
         "${ elementsCount } розмов переміщено до теки ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } розмову вилучено з ${ labelName }.",
@@ -7696,21 +7674,11 @@
         "${ elementsCount } повідомлень позначено непрочитаними.",
         "${ elementsCount } повідомлення позначено непрочитаними."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
         "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
         "${ elementsCount } повідомлень переміщено до теки ${ folderName }.",
         "${ elementsCount } повідомлень переміщено до теки ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } повідомлення вилучено з ${ labelName }.",
@@ -7763,14 +7731,8 @@
       "Conversation marked as unread.": [
         "Розмову позначено непрочитаною."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Розмову переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Розмову переміщено до теки ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Розмову переміщено до спаму, а відправника додано до вашого списку блокування."
       ],
       "Conversation removed from ${ labelName }.": [
         "Розмову вилучено з ${ labelName }."
@@ -7826,14 +7788,8 @@
       "Message marked as unread.": [
         "Повідомлення позначено непрочитаним."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Повідомлення переміщено до теки ${ folderName }, а відправника додано до вашого списку дозволених."
-      ],
       "Message moved to ${ folderName }.": [
         "Повідомлення переміщено до теки ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Повідомлення переміщено до спаму, а відправника до вашого списку блокування."
       ],
       "Message removed from ${ labelName }.": [
         "Повідомлення вилучено з ${ labelName }."
