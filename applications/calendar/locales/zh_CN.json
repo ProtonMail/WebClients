@@ -1966,9 +1966,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "文件大小不应超过 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数不应超过 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出此限，请将其拆分成较小的文件"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "通过拖放可调整联系人合并优先级，未勾选的联系人不会被合并"
       ],
@@ -3682,9 +3679,6 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "我们改名了！欢迎造访我们的新域名：${ link }"
-      ],
       "Week": [
         "周"
       ],
@@ -3951,9 +3945,6 @@
       ],
       "Description": [
         "说明："
-      ],
-      "Display": [
-        "显示"
       ],
       "Do not ask again": [
         "不再询问"
@@ -4875,9 +4866,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } 联系人已成功导出"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
@@ -4949,11 +4937,6 @@
     "Share calendar assistive text": {
       "To invite non-Proton users, share your calendar with a link": [
         "分享日历链接即可邀请非 Proton 用户"
-      ]
-    },
-    "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "您已超过每个日历最多 ${ MAX_CALENDAR_MEMBERS } 成员的上限。"
       ]
     },
     "Share calendar modal description": {
@@ -5321,9 +5304,6 @@
       "Calendar alarm": [
         "日历闹钟"
       ],
-      "Calendar information": [
-        "日历信息"
-      ],
       "Change my answer": [
         "更改答复"
       ],
@@ -5591,9 +5571,6 @@
       "Show time zones for event start and end times": [
         "显示日程开始和结束时间的时区"
       ],
-      "Sign in again to continue": [
-        "此操作需要重新登录"
-      ],
       "Sign in and grant access": [
         "登录并授予权限"
       ],
@@ -5605,6 +5582,9 @@
       ],
       "Start import process": [
         "开始导入过程"
+      ],
+      "Two-factor authentication": [
+        "双重验证"
       ],
       "Update event": [
         "更新日程"

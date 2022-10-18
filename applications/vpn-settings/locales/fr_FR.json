@@ -86,9 +86,6 @@
       "Create address": [
         "Créer une adresse"
       ],
-      "Create free account": [
-        "Créer un compte gratuit"
-      ],
       "Current plan": [
         "Abonnement actuel"
       ],
@@ -1821,6 +1818,11 @@
         "Mega-octets"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail par mois)"
@@ -1830,6 +1832,16 @@
       ],
       "(1-2 emails per month)": [
         "(1 à 2 e-mails par mois)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Vous avez déjà un compte ? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Nouveau sur ${ BRAND_NAME } ? ${ signUp }"
       ]
     },
     "Group": {
@@ -1958,9 +1970,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Êtes-vous sûr de vouloir désactiver l'authentification à deux facteurs ?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Basé en Suisse, disponible dans le monde entier"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Abonnement Basic, Plus ou Visionary requis"
@@ -2364,8 +2373,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte afin que nous puissions vérifier la demande."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Rechargez votre compte avec des crédits que vous pouvez utiliser pour un nouvel abonnement ou pour renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
@@ -2457,8 +2466,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous allons envoyer un nouveau code de vérification à ${ strong }."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé ! Veuillez vous connecter à notre nouveau domaine : ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Nous enverrons un code de réinitialisation à l'adresse e-mail que vous nous avez fournie pour la récupération de compte."
@@ -3045,6 +3054,9 @@
       ],
       "Common sign up issues": [
         "Problèmes d'inscription courants"
+      ],
+      "Create account": [
+        "Créer un compte"
       ],
       "Forgot username?": [
         "Nom d'utilisateur oublié ?"
@@ -3993,6 +4005,17 @@
         "Nom d'utilisateur"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Configuration du compte"
+      ],
+      "Payment": [
+        "Paiement"
+      ],
+      "Verification": [
+        "Vérification"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
@@ -4384,6 +4407,9 @@
       "Email subscriptions": [
         "Abonnements par e-mail"
       ],
+      "Enter your password": [
+        "Saisissez votre mot de passe."
+      ],
       "Error": [
         "Erreur"
       ],
@@ -4521,9 +4547,6 @@
       ],
       "Sign in": [
         "Se connecter"
-      ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer"
       ],
       "Sign out": [
         "Se déconnecter"

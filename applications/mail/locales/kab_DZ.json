@@ -2571,10 +2571,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
       ],
@@ -3899,9 +3895,6 @@
       ],
       "Background color": [
         "Ini n ugilal"
-      ],
-      "Based in Switzerland, available globally": [
-        "Yella di tmurt n Sswis, yewjed deg umaḍal meṛṛa"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
@@ -6119,9 +6112,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } inermisen ɣef ${ countContacts } ttusfḍen-d akken iwata."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } n unermis ɣef ${ totalBeDeleted } yettwakkes akken iwata.",
         "${ model.deleted.length } inermisen ɣef ${ totalBeDeleted } ttwakksen akken iwata."
@@ -6424,17 +6414,9 @@
         "${ elementsCount } n udiwenni yettwacerḍen ur yettwaɣra ara.",
         "${ elementsCount } n yidiwenniyen yettwacerḍen ur ttwaɣran ara."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } n umeslay imutti ɣer ${ folderName } yerna amazan yettwarna ɣer tebdart n tsiregt.",
-        "${ elementsCount } n yimeslayen muttin ɣer ${ folderName } yerna amazan yettwarna ɣer tebdart n tsiregt."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } n udiwenni ittwasenkez ɣer ${ folderName }.",
         "${ elementsCount } n yidiwenniyen ttwasnekzen ɣer ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } n udiwenni ittwakkes seg ${ labelName }.",
@@ -6456,17 +6438,9 @@
         "${ elementsCount } n yizen yettwacreḍ en ur yettwaɣran ara.",
         "${ elementsCount } n yiznan yettwacerḍen ur ttwaɣran ara."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } n yizen imutti ɣer ${ folderName } yerna amazan yettwarna ɣer tebdart n tsiregt.",
-        "${ elementsCount } n yiznan muttin ɣer ${ folderName } yerna amazan yettwarna ɣer tebdart n tsiregt."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } n yizen ittwasenkez ɣer ${ folderName }.",
         "${ elementsCount } n yiznan ttwasnekzen ɣer ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } n yizen i yettwakksen seg ${ labelName }.",
@@ -6512,9 +6486,6 @@
       ],
       "Conversation marked as unread.": [
         "Adiwenni yettwacerḍen am wakken ur yettwaɣra ara."
-      ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Ameslay imutti ɣer ${ folderName } yerna amazan yettwarna ɣer tebdart n tsiregt."
       ],
       "Conversation moved to ${ folderName }.": [
         "Adiwenni yettwasenkez ɣer ${ folderName }."

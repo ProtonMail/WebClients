@@ -207,9 +207,6 @@
       "Create folder": [
         "Створити теку"
       ],
-      "Create free account": [
-        "Створити безплатний обліковий запис"
-      ],
       "Create label": [
         "Створити мітку"
       ],
@@ -480,9 +477,6 @@
       "No": [
         "Ні"
       ],
-      "Non spam": [
-        "Не спам"
-      ],
       "OK": [
         "Гаразд"
       ],
@@ -540,11 +534,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
       "refresh the page": [
         "оновити сторінку"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -2614,12 +2608,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контакту. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Стежте, скільки людей натискають на ваше посилання, реєструються та стають платними передплатниками. Дивіться, як підсумовуються ваші безплатні місяці."
       ],
@@ -2655,17 +2643,11 @@
       "${ name } deletion failed": [
         "Не вдалося видалити ${ name }"
       ],
-      "${ name } failed to move to Non spam List": [
-        "Не вдалося перемістити ${ name } до списку не спаму"
-      ],
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
       "${ name } failed to move to your block list": [
         "Не вдалося перемістити ${ name } до вашого списку блокування"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } переміщено до списку не спаму"
       ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
@@ -2772,17 +2754,11 @@
       "${ name } deletion failed": [
         "Не вдалося видалити ${ name }"
       ],
-      "${ name } failed to move to Non spam List": [
-        "Не вдалося перемістити ${ name } до списку не спаму"
-      ],
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
       ],
       "${ name } failed to move to your block list": [
         "Не вдалося перемістити ${ name } до вашого списку блокування"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } переміщено до списку не спаму"
       ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
@@ -3785,9 +3761,6 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Електронні листи із заблокованих адрес не доставлятимуться."
-      ],
-      "Search in your allow and block lists": [
-        "Шукати у списках дозволених і заблокованих"
       ]
     },
     "Font Face Default": {
@@ -3809,6 +3782,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 електронні листи на місяць)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Уже маєте обліковий запис? ${ signIn }"
       ]
     },
     "Group": {
@@ -4739,9 +4717,6 @@
       "Background color": [
         "Колір тла"
       ],
-      "Based in Switzerland, available globally": [
-        "Розташований у Швейцарії, доступний у всьому світі"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
       ],
@@ -5261,6 +5236,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
       ],
+      "Member": [
+        "Учасник"
+      ],
       "Merged": [
         "Об'єднано"
       ],
@@ -5768,8 +5746,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для належної роботи кожен фільтр повинен містити принаймні назву й дійсний скрипт Sieve. Ви можете ${ link }."
@@ -5891,8 +5869,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ми переїхали! Долучайтеся до нас на нашому новому сайті: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ми переїхали! Будь ласка, увійдіть на нашому новому домені: ${ link }."
       ],
       "Web URL": [
         "URL-посилання"
@@ -5983,9 +5961,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошень електронною поштою впродовж наступних 24 годин"
       ],
       "You cannot refer ${ appName } users": [
         "Ви не можете запрошувати користувачів ${ appName }"
@@ -6851,9 +6826,6 @@
       "Discount": [
         "Знижка"
       ],
-      "Display": [
-        "Вигляд"
-      ],
       "Display name": [
         "Показуване ім'я"
       ],
@@ -7072,9 +7044,6 @@
       ],
       "No label found": [
         "Мітку не знайдено"
-      ],
-      "Non Spam": [
-        "Не спам"
       ],
       "Non-standard ports": [
         "Нестандартні порти"
@@ -7532,6 +7501,9 @@
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
       ],
+      "Create account": [
+        "Зареєструватися"
+      ],
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
@@ -7915,9 +7887,6 @@
       ],
       "Blocked": [
         "Заблоковано"
-      ],
-      "Non spam": [
-        "Не спам"
       ],
       "Spam": [
         "Спам"
@@ -10046,8 +10015,8 @@
       "Add Sieve filter": [
         "Додати фільтр Sieve"
       ],
-      "Add to non spam list": [
-        "Додати до списку не спаму"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Додати до списку спаму"
@@ -10105,9 +10074,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
-      ],
-      "Calendar information": [
-        "Інформація календаря"
       ],
       "Cancel Mail subscription": [
         "Скасувати передплату Пошти"

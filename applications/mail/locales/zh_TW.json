@@ -2729,9 +2729,6 @@
       "No labels": [
         "沒有標籤"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 位聯絡人。若您的檔案超出此限，請將其拆分為較小的檔案。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
@@ -3118,6 +3115,9 @@
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
+      ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "其中一些資料夾名稱超出 ${ MAIL_APP_NAME } 的字元數目上限。請自訂匯入以編輯該等名稱。"
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
@@ -3819,6 +3819,9 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
+      "2-step verification is enabled in your external account.": [
+        "您的外部帳號已啟用雙重驗證。"
+      ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
       ],
@@ -3873,6 +3876,12 @@
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
       ],
+      "Your email account requires an app password to export your data.": [
+        "您的電子郵件帳號要求應用程式密碼來匯出您的資料。"
+      ],
+      "Your email account requires one to export your data.": [
+        "您的電子郵件帳號要求一個方式來匯出您的資料。"
+      ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
       ],
@@ -3910,7 +3919,7 @@
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "點擊三個點 (...) 展開下拉式選單"
+        "點擊 3 個點 (...) 可展開下拉式功能表。"
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
@@ -4238,9 +4247,6 @@
       "Background color": [
         "背景顏色"
       ],
-      "Based in Switzerland, available globally": [
-        "立足瑞士，惠及全球"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
@@ -4343,6 +4349,9 @@
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "正在下載 ${ totalProgressToShow } 則訊息中的 ${ esProgress } 則"
+      ],
       "Draft": [
         "草稿"
       ],
@@ -4360,6 +4369,9 @@
       ],
       "Duplicate key updated": [
         "重複金鑰已更新"
+      ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
       ],
       "Edit encryption": [
         "編譯加密"
@@ -4394,11 +4406,17 @@
       "Encrypt message": [
         "加密郵件"
       ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
@@ -4494,7 +4512,7 @@
         "圖像 URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "圖像已被移除，因為自動回覆不支援。"
+        "圖像檔案全數已移除，因在自動回覆無法使用它們"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -4546,6 +4564,9 @@
       ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
+      ],
+      "Labels:": [
+        "標籤："
       ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
@@ -4754,6 +4775,9 @@
       "Recipient: ": [
         "收件人 : "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
+      ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
       ],
@@ -4918,6 +4942,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "用來驗證連絡人詳細資料的簽章發生錯誤，可能是重設密碼所導致。"
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "別人不知道您郵箱位址，您就收不到垃圾郵件。立刻使用 Hide My Email 保護您的收件匣。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -5102,6 +5129,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電郵。"
       ],
+      "Using SimpleLogin is easy": [
+        "使用 SimpleLogin 很簡單"
+      ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
@@ -5120,9 +5150,6 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "我們搬家嘍！到新網站來加入我們吧！ ${ link }"
-      ],
       "Web URL": [
         "網頁 URL"
       ],
@@ -5137,6 +5164,9 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -5170,6 +5200,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
+      ],
+      "You can use ${ VPN_APP_NAME } for free today.": [
+        "今日您可以免費使用 ${ VPN_APP_NAME }。"
       ],
       "You cannot reply from the invited address.": [
         "您無法從獲邀的電郵位址回覆。"
@@ -6755,9 +6788,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "已成功匯出 ${ contactsExported.length }/${ countContacts } 位聯絡人。"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 位聯絡人已成功刪除。"
       ],
@@ -7077,15 +7107,8 @@
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 個交談已標記為未讀。"
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 個交談已移至 ${ folderName }，並將寄件人加入至允許清單。"
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 個交談已移至 ${ folderName }。"
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 個交談已移除 ${ labelName } 標籤。"
@@ -7102,15 +7125,8 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 封郵件標記為未讀。"
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 封郵件已移動到 ${ folderName }，並將寄件人加入至允許清單。"
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } 封郵件已移動到 ${ folderName }。"
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 封郵件已移除 ${ labelName } 標籤。"
@@ -7154,14 +7170,17 @@
       "Conversation marked as unread.": [
         "交談已標記為未讀。"
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "交談已移至 ${ folderName }，並將寄件人加入至允許清單。"
-      ],
       "Conversation moved to ${ folderName }.": [
         "交談已至 ${ folderName }。"
       ],
       "Conversation removed from ${ labelName }.": [
         "${ labelName } 標籤已從此交談撕下。"
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "與 ${ sendersList } 的對話將會被標示為 ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "與 ${ sendersList } 的對話將會被移到 ${ folder }"
       ],
       "Draft deleted": [
         "草稿已刪除"
@@ -7213,6 +7232,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "${ labelName } 標籤已移除。"
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "由 ${ sendersList } 發送的信息將會被標示為 ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "由 ${ sendersList } 發送的信息將會被移到 ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "移動 ${ selectionCount } 個交談"

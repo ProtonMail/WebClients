@@ -1978,10 +1978,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } bpyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } bpyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -3511,6 +3507,9 @@
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
       ],
+      "Labels:": [
+        "Etiketler:"
+      ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması bir kaç gün sürebilir."
       ],
@@ -3752,8 +3751,8 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Taşındık. Lütfen yeni etki alanımızı kullanarak oturum açın: ${ link }."
       ],
       "Week": [
         "Hafta"
@@ -4021,9 +4020,6 @@
       ],
       "Description": [
         "Açıklama"
-      ],
-      "Display": [
-        "Görüntülensin"
       ],
       "Do not ask again": [
         "Bir daha sorma"
@@ -4978,9 +4974,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } kişi dışa aktarıldı."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi.",
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi."
@@ -5057,7 +5050,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız",
         "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız"
       ]
     },
@@ -5074,6 +5068,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Proton kullanıcıları ile paylaş"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "${ ownerName } tarafından oluşturuldu"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5432,9 +5431,6 @@
       "Calendar alarm": [
         "Takvim alarmı"
       ],
-      "Calendar information": [
-        "Takvim bilgileri"
-      ],
       "Change my answer": [
         "Yanıtımı değiştir"
       ],
@@ -5708,9 +5704,6 @@
       "Show time zones for event start and end times": [
         "Etkinlik başlangıç ve bitiş saatlerinin saat dilimlerini gösterir"
       ],
-      "Sign in again to continue": [
-        "İlerlemek için yeniden oturum açın"
-      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -5722,6 +5715,9 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
+      ],
+      "Two-factor authentication": [
+        "İki aşamalı kimlik doğrulama"
       ],
       "Update event": [
         "Etkinliği güncelle"
@@ -5760,6 +5756,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Bir sayı seçin"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Bilgileri düzenle"
       ]
     },
     "Today icon tooltip in mini calendar": {

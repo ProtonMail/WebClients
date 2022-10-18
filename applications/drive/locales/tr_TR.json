@@ -1739,10 +1739,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } bpyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } bpyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -2173,6 +2169,11 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } güncellendi"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Varsayılan olarak kişisel gizliliği korur."
       ]
     },
     "Group": {
@@ -3003,6 +3004,9 @@
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
       ],
+      "Labels:": [
+        "Etiketler:"
+      ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
@@ -3390,8 +3394,8 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Taşındık. Lütfen yeni etki alanımızı kullanarak oturum açın: ${ link }."
       ],
       "Week": [
         "Hafta"
@@ -4478,9 +4482,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } kişi dışa aktarıldı."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi.",
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi."
@@ -4751,9 +4752,6 @@
       ],
       "Back": [
         "Geri"
-      ],
-      "Based in Switzerland, available globally": [
-        "İsviçre merkezli, küresel olarak erişilebilir"
       ],
       "Beta Access": [
         "Beta erişimi"
@@ -5058,9 +5056,6 @@
       "Show actions": [
         "İşlemleri göster"
       ],
-      "Sign in again to continue": [
-        "İlerlemek için yeniden oturum açın"
-      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -5111,6 +5106,9 @@
       ],
       "Trash": [
         "Çöp kutusu"
+      ],
+      "Two-factor authentication": [
+        "İki aşamalı kimlik doğrulama"
       ],
       "Type": [
         "Tür"

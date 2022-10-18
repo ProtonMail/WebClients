@@ -15,7 +15,7 @@
         "有効化"
       ],
       "Activate recovery": [
-        "リカバリーを有効化"
+        "回復を有効にする"
       ],
       "Add": [
         "追加"
@@ -106,6 +106,9 @@
       ],
       "Block messages from this sender": [
         "この差出人のメッセージをブロック"
+      ],
+      "Block senders": [
+        "差出人をブロック"
       ],
       "Bold": [
         "太字"
@@ -366,7 +369,7 @@
         "添付ファイルとして送信"
       ],
       "Generate recovery phrase": [
-        "リカバリーフレーズを生成"
+        "回復フレーズを生成"
       ],
       "Get SimpleLogin extension": [
         "SimpleLogin 拡張機能を入手"
@@ -639,7 +642,7 @@
         "いいえ"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        "トラッカーは見つかりませんでしたが、いくつかの画像はトラッカー保護により読み込まれませんでした。"
+        "トラッカーは見つかりませんでしたが、一部の画像はトラッキング防止により読み込まれませんでした。"
       ],
       "No, I won't attend": [
         "いいえ、参加しません"
@@ -843,7 +846,7 @@
         "有効期限を設定"
       ],
       "Set recovery phrase": [
-        "リカバリーフレーズを設定"
+        "回復フレーズを設定"
       ],
       "Share via link": [
         "リンクを共有"
@@ -972,7 +975,7 @@
         "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
-        "リカバリーフレーズを更新"
+        "回復フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -2652,9 +2655,6 @@
       "No labels": [
         "ラベルがありません"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -4154,9 +4154,6 @@
       "Background color": [
         "背景色"
       ],
-      "Based in Switzerland, available globally": [
-        "スイス拠点で、世界中で利用可能です"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "一般的なナビゲーションと基本操作はキーボードショートカットの設定に関係なく利用できます。"
       ],
@@ -4252,6 +4249,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "${ esProgress }/${ totalProgressToShow } メッセージをダウンロードしています"
       ],
       "Draft": [
         "下書き"
@@ -4454,6 +4454,9 @@
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
+      "Labels:": [
+        "ラベル:"
+      ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
@@ -4563,7 +4566,7 @@
         "該当する項目がありません"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        "トラッカーは見つかりませんでしたが、いくつかの画像はトラッカー保護により読み込まれませんでした"
+        "トラッカーは見つかりませんでしたが、一部の画像はトラッキング防止により読み込まれませんでした"
       ],
       "non-Proton Mail": [
         "非 Proton Mail"
@@ -4653,7 +4656,7 @@
         "宛先 "
       ],
       "Recovery phrase copied to clipboard": [
-        "リカバリーフレーズはクリップボードへコピーされました"
+        "回復フレーズはクリップボードへコピーされました"
       ],
       "Recovery phrase downloaded": [
         "回復用フレーズをダウンロードしました"
@@ -4734,7 +4737,7 @@
         "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
       ],
       "Set a recovery phrase": [
-        "リカバリーフレーズを設定"
+        "回復フレーズを設定"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -5003,9 +5006,6 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Proton は新しいサイトへ移動しました! ${ link }"
-      ],
       "Web URL": [
         "Web URL"
       ],
@@ -5154,7 +5154,7 @@
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ],
       "Your recovery phrase": [
-        "あなたのリカバリーフレーズ"
+        "回復フレーズ"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "回復用フレーズは 12 語の単語を順番に並べて構成されたものです。"
@@ -5432,6 +5432,12 @@
       ],
       "Also archive": [
         "アーカイブも実施する"
+      ],
+      "Always label sender's emails": [
+        "この差出人のメールを常にラベル付け"
+      ],
+      "Always move sender's emails": [
+        "この差出人のメールを常に移動"
       ],
       "AND": [
         "かつ"
@@ -5731,7 +5737,7 @@
         "宛先"
       ],
       "Recovery phrase": [
-        "リカバリーフレーズ"
+        "回復フレーズ"
       ],
       "Region": [
         "都道府県"
@@ -5812,7 +5818,7 @@
         "移行先: ${ PMEmailAddress }"
       ],
       "Two-factor authentication code": [
-        "2要素認証コード"
+        "2 要素認証コード"
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
@@ -6600,9 +6606,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"
       ],
@@ -6917,15 +6920,8 @@
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 件の会話を未読にしました。"
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 件の会話を ${ folderName } に移動し、差出人を許可リストに追加しました。"
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 件の会話を ${ labelName } から削除しました。"
@@ -6942,15 +6938,8 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 件のメッセージを未読にしました。"
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 件のメッセージが ${ folderName } に移動され、送信者が許可リストに追加されました。"
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } 件のメッセージが ${ folderName } に移動されました。"
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 件のメッセージが ${ labelName } から削除されました。"
@@ -6993,9 +6982,6 @@
       ],
       "Conversation marked as unread.": [
         "会話を未読にしました。"
-      ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "会話を ${ folderName } に移動し、差出人を許可リストに追加しました。"
       ],
       "Conversation moved to ${ folderName }.": [
         "会話を ${ folderName } に移動しました。"
@@ -7638,7 +7624,7 @@
         "公開鍵を信頼しますか?"
       ],
       "Two-factor authentication": [
-        "2要素認証"
+        "2 要素認証"
       ],
       "Unsubscribe": [
         "退会"

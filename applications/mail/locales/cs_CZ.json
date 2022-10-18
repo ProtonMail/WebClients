@@ -2890,12 +2890,6 @@
       "No labels": [
         "Bez štítků"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat pouze ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubory by měly mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud jsou Vaše soubory větší, rozdělte jej do menších souborů.",
-        "Soubory by měly mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud jsou Vaše soubory větší, rozdělte jej do menších souborů.",
-        "Soubory by měly mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud jsou Vaše soubory větší, rozdělte jej do menších souborů."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
@@ -3847,6 +3841,11 @@
         "Výchozí"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Soukromí je samozřejmostí."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Zvýšili jsme celkové úložiště vašeho účtu na ${ rewardInGb }. GB. Získejte další úložiště a odemkněte prémiové funkce ještě dnes."
@@ -4646,9 +4645,6 @@
       "Background color": [
         "Barva pozadí"
       ],
-      "Based in Switzerland, available globally": [
-        "Se sídlem ve Švýcarsku, celosvětově dostupné"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
@@ -4996,6 +4992,9 @@
       ],
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
+      ],
+      "Labels:": [
+        "Štítky:"
       ],
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
@@ -5591,8 +5590,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Přestěhovali jsme se! Přihlaste se prosím na naší nové doméně: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -7300,9 +7299,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } z ${ countContacts } kontaktů bylo úspěšně exportováno."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů byl úspěšně smazán.",
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů byly úspěšně smazány.",
@@ -7667,21 +7663,11 @@
         "${ elementsCount } konverzací označeno jako nepřečtené.",
         "${ elementsCount } konverzací označeno jako nepřečtené."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } konverzace přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu.",
-        "${ elementsCount } konverzace přesunuty do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
-        "${ elementsCount } konverzací přesunuto do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
-        "${ elementsCount } konverzací přesunuto do ${ folderName } a odesílatelé přidáni do povoleného seznamu."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } konverzace přesunuta do ${ folderName }.",
         "${ elementsCount } konverzace přesunuty do ${ folderName }.",
         "${ elementsCount } konverzací přesunuto do ${ folderName }.",
         "${ elementsCount } konverzací přesunuto do ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } konverzace odstraněna z ${ labelName }.",
@@ -7713,21 +7699,11 @@
         "${ elementsCount } zpráv označených jako nepřečtené.",
         "${ elementsCount } zpráv označených jako nepřečtené."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } zpráva přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu.",
-        "${ elementsCount } zprávy přesunuty do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
-        "${ elementsCount } zpráv přesunuto do ${ folderName } a odesílatelé přidáni do povoleného seznamu.",
-        "${ elementsCount } zpráv přesunuto do ${ folderName } a odesílatelé přidáni do povoleného seznamu."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } zpráva přesunuta do ${ folderName }.",
         "${ elementsCount } zprávy přesunuty do ${ folderName }.",
         "${ elementsCount } zpráv přesunuto do ${ folderName }.",
         "${ elementsCount } zpráv přesunuto do ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } zpráva odstraněna z ${ labelName }.",
@@ -7780,14 +7756,8 @@
       "Conversation marked as unread.": [
         "Konverzace označena jako nepřečtená."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Konverzace přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Konverzace přesunuta do ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Konverzace byla přesunuta do spamu a odesílatel přidán do seznamu blokovaných kontaktů."
       ],
       "Conversation removed from ${ labelName }.": [
         "Konverzace odstraněna z ${ labelName }."
@@ -7843,14 +7813,8 @@
       "Message marked as unread.": [
         "Zpráva označena jako nepřečtená."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Zpráva přesunuta do ${ folderName } a odesílatel přidán do povoleného seznamu."
-      ],
       "Message moved to ${ folderName }.": [
         "Zpráva byla přesunuta do složky ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Zpráva byla přesunuta do spamu a odesílatel přidán do seznamu blokovaných kontaktů."
       ],
       "Message removed from ${ labelName }.": [
         "Zpráva odstraněna z ${ labelName }."

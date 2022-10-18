@@ -23,6 +23,9 @@
       "Activate organization key": [
         "Activar chave de organização"
       ],
+      "Activate recovery": [
+        "Ativar recuperação"
+      ],
       "Add address": [
         "Adicionar endereço"
       ],
@@ -74,11 +77,17 @@
       "Apply": [
         "Aplicar"
       ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
       "Back": [
         "Recuar"
+      ],
+      "Block": [
+        "Bloquear"
       ],
       "Bold": [
         "Negrito"
@@ -188,6 +197,9 @@
       "Didn't receive a code?": [
         "Não recebeu o código?"
       ],
+      "Didn't receive the code?": [
+        "Não recebeu o código?"
+      ],
       "Disable": [
         "Desactivar"
       ],
@@ -244,6 +256,9 @@
       ],
       "Font": [
         "Letra"
+      ],
+      "Generate recovery phrase": [
+        "Gerar frase de recuperação"
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -371,14 +386,17 @@
       "Recover data": [
         "Recuperar dados"
       ],
+      "Refer a friend": [
+        "Referencie um amigo"
+      ],
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -473,6 +491,9 @@
       "Set catch-all": [
         "Definir captura-tudo"
       ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
+      ],
       "Share": [
         "Partilhar"
       ],
@@ -490,6 +511,9 @@
       ],
       "Show labels": [
         "Mostrar etiquetas"
+      ],
+      "Show less": [
+        "Mostrar menos"
       ],
       "Show more": [
         "Mostrar mais"
@@ -542,6 +566,9 @@
       "Unlock": [
         "Desbloquear"
       ],
+      "Unlock data": [
+        "Desbloquear dados"
+      ],
       "Unordered list": [
         "Lista desordenada"
       ],
@@ -550,6 +577,12 @@
       ],
       "Update": [
         "Actualizar"
+      ],
+      "Update recovery file": [
+        "Atualizar ficheiro de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Actualizar"
@@ -1074,10 +1107,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Por favor, reveja como esses grupos devem ser importados."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "O ficheiro deve ter um máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro for maior, por favor divida-o.",
-        "O ficheiro deve ter um máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e até ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, por favor divida-o."
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, por favor divida-o."
       ]
@@ -1098,6 +1127,11 @@
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
         "Sub-domínios \"www\" não são usados normalmente para email. Tem a certeza de que deseja utilizar este valor de domínio?"
+      ]
+    },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } adicionado"
       ]
     },
     "Downgrade account reason": {
@@ -1125,6 +1159,9 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } foi cancelado."
+      ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi actualizado.\n${ eventDetailsText }"
       ],
@@ -1157,6 +1194,11 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou provisoriamente o seu convite para ${ eventTitle }"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } adicionado"
       ]
     },
     "Email subject": {
@@ -1946,6 +1988,9 @@
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+      ],
       "vCard versions < 3.0": [
         "Versões vCard < 3.0"
       ]
@@ -1994,6 +2039,9 @@
       ]
     },
     "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Acesso a aplicações menos seguras\" está ativado nas definições de segurança da sua conta Google."
+      ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
       ],
@@ -2129,6 +2177,18 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
+      ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } é inválido"
+      ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } passará a ser a agenda predefinida."
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } pode também ser usado com uma única palavra-passe que substitui ambas as palavras-passe de início de sessão e caixa de correio. Para mudar para o modo de uma única palavra-passe, digite a palavra-passe única que gostaria de usar e clique em salvar."
+      ],
+      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "${ MAIL_APP_NAME } suporta assinaturas DKIM em domínios personalizados. Para utilizar a autenticação DKIM, por favor adicione o seguinte registo CNAME às suas definições DNS para este domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
       ],
       "${ n } address": [
         "${ n } endereço",
@@ -2299,14 +2359,14 @@
       "Background color": [
         "Cor de fundo"
       ],
-      "Based in Switzerland, available globally": [
-        "Baseado na Suíça, disponível globalmente"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não activos nas definições."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber emails dos seus novos endereços, é necessário criar as respectivas chaves de encriptação."
@@ -2450,6 +2510,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação enviado para ${ destinationText }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Insira a sua senha (como administrador da organização)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
       ],
@@ -2522,6 +2585,9 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Import in progress": [
+        "Importação em curso"
+      ],
       "Import mailbox": [
         "Importar caixa de correio"
       ],
@@ -2530,6 +2596,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANTE: alguns registadores não aceitam valores CNAME com um ponto no final (enquanto outros o obrigam). Se o seu registador não aceita registos CNAME, por favor elimine o ponto no final de cada valor CNAME e tente novamente."
+      ],
+      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
+        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Herdar da pasta-mãe"
@@ -2597,6 +2666,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Insira manualmente esta informação no seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ _switchButton }."
       ],
+      "Member": [
+        "Membro"
+      ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
       ],
@@ -2650,6 +2722,9 @@
       ],
       "of": [
         "de"
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Altere estas configurações só se estiver a usar PGP com destinatários não-${ BRAND_NAME }."
       ],
       "Organization keys activated": [
         "Chaves da organização activadas"
@@ -2758,6 +2833,9 @@
       ],
       "Server load": [
         "Carga do servidor"
+      ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
       ],
       "Show original message": [
         "Mostrar mensagem original"
@@ -2876,6 +2954,12 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
+      "Update recovery file": [
+        "Atualizar ficheiro de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar frase de recuperação"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -2900,8 +2984,8 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, por favor desactive-os."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Estamos a mover! Junte-se a nós no nosso novo site: ${ link }."
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos um novo código de verificação para ${ strong }"
       ],
       "Web URL": [
         "URL da web"
@@ -2935,6 +3019,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
@@ -3142,6 +3229,11 @@
       ],
       "Primary": [
         "Primária"
+      ]
+    },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (lenta, mas com melhor compatibilidade com programas antigos)"
       ]
     },
     "Keyboard shortcut name": {
@@ -3372,6 +3464,22 @@
       " and ${ l }": [
         " e ${ l }"
       ],
+      "${ BRAND_NAME } email or username": [
+        "E-mail ou nome de usuário do ${ BRAND_NAME }"
+      ],
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ],
+      "${ MAIL_APP_NAME } address": [
+        "Endereço ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "Rodapé ${ MAIL_APP_NAME }"
+      ],
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } endereço electrónico",
         "${ UsedAddresses } de ${ MaxAddresses } endereços electrónicos"
@@ -3426,6 +3534,9 @@
       ],
       "Attach public key": [
         "Anexar chave pública"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "Auto-load embedded images": [
         "Carregar automaticamente imagens incorporadas"
@@ -3537,9 +3648,6 @@
       ],
       "Discount": [
         "Desconto"
-      ],
-      "Display": [
-        "Mostrar"
       ],
       "Display name": [
         "Nome a mostrar"
@@ -4320,6 +4428,18 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetas"
+      ],
+      "${ n } message per day": [
+        "${ n } mensagem por dia",
+        "${ n } mensagens por dia"
+      ],
+      "${ n } VPN connection": [
+        "${ n } ligação VPN",
+        "${ n } ligações VPN"
+      ],
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
       ],
@@ -4335,9 +4455,19 @@
         "Apoio ao cliente"
       ]
     },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ]
+    },
     "new_plans: signup": {
       "Subscription": [
         "Subscrição"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Teste do ${ mailPlanName }"
       ]
     },
     "Notification": {
@@ -4903,6 +5033,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } VPN connection": [
+        "${ n } ligação VPN",
+        "${ n } ligações VPN"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } endereço electrónico",
         "${ UsedAddresses } de ${ MaxAddresses } endereços electrónicos"
@@ -5135,6 +5269,9 @@
       "${ appName } Keyboard Shortcuts": [
         "Atalhos de teclado de ${ appName }"
       ],
+      "${ MAIL_APP_NAME } Bridge": [
+        "${ MAIL_APP_NAME } Bridge"
+      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
@@ -5185,6 +5322,9 @@
       ],
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
+      ],
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add user": [
         "Adicionar utilizador"
@@ -5282,6 +5422,12 @@
       "Contact encryption keys": [
         "Chaves de encriptação de contactos"
       ],
+      "Continue with partial import?": [
+        "Continue com uma importação parcial?"
+      ],
+      "Create public link": [
+        "Criar ligação pública"
+      ],
       "Credentials": [
         "Credenciais"
       ],
@@ -5323,6 +5469,9 @@
       ],
       "Domain names": [
         "Nomes de domínio"
+      ],
+      "Edit calendar": [
+        "Editar agenda"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -5404,6 +5553,9 @@
       ],
       "Import events": [
         "Importar eventos"
+      ],
+      "Import failed": [
+        "Falha na importação"
       ],
       "Import key": [
         "Importar chave"
@@ -5509,6 +5661,9 @@
       ],
       "Recover data": [
         "Recuperar dados"
+      ],
+      "Refer a friend": [
+        "Referencie um amigo"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -5665,6 +5820,11 @@
         "Estado"
       ]
     },
+    "Title for PDF file": {
+      "${ MAIL_APP_NAME } invoice": [
+        "Fatura ${ MAIL_APP_NAME }"
+      ]
+    },
     "Title header": {
       "Actions": [
         "Acções"
@@ -5727,6 +5887,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "Os utilizadores do ${ MAIL_APP_NAME } usarão esta chave predefinida para enviar"
+      ],
       "Account is disconnected": [
         "A conta está desligada"
       ],
@@ -5851,6 +6014,16 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Vídeo, BBC iPlayer, ESPN+, Disney+, HBO Now e muito mais."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n }+ servidores"
+      ],
+      "${ n } VPN connection": [
+        "${ n } ligação VPN",
+        "${ n } ligações VPN"
       ]
     },
     "VPNClient": {

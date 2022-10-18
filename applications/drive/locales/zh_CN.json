@@ -1728,9 +1728,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
@@ -3325,9 +3322,6 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "我们改名了！欢迎造访我们的新域名：${ link }"
-      ],
       "Week": [
         "周"
       ],
@@ -4389,9 +4383,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "共 ${ countContacts } 名联系人，成功导出 ${ contactsExported.length } 名联系人。"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
@@ -4651,9 +4642,6 @@
       ],
       "Back": [
         "后退"
-      ],
-      "Based in Switzerland, available globally": [
-        "扎根瑞士，惠及全球"
       ],
       "Beta Access": [
         "测试版功能"
@@ -4952,9 +4940,6 @@
       "Show actions": [
         "显示操作"
       ],
-      "Sign in again to continue": [
-        "再次登录方可继续"
-      ],
       "Sign in and grant access": [
         "登录并授予权限"
       ],
@@ -5005,6 +4990,9 @@
       ],
       "Trash": [
         "回收站"
+      ],
+      "Two-factor authentication": [
+        "双重验证"
       ],
       "Type": [
         "类型"
