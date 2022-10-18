@@ -19,7 +19,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.YEARLY,
             popular: true,
-            header: () => c('specialOffer: Label').t`Most popular`,
+            header: () => c('specialoffer: Label').t`Most popular`,
         },
     ],
     layout: Layout,

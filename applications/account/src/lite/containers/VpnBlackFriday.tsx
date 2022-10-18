@@ -115,7 +115,7 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
             />
         );
     }
-    return <LiteBox>{c('specialOffer: Info').t`No available offers found.`}</LiteBox>;
+    return <LiteBox>{c('specialoffer: Info').t`No available offers found.`}</LiteBox>;
 };
 
 export default VpnBlackFriday;
