@@ -15,11 +15,12 @@ const useOffer = (): Operation => {
     const { APP_NAME } = useConfig();
     const isMailOrAccountSettings = APP_NAME === APPS.PROTONMAIL || APP_NAME === APPS.PROTONACCOUNT;
     const isLoading = flagsLoading || userLoading || loading;
+    const noBF = !hasBlackFridayDiscount(subscription);
 
     const isValid =
         plan?.Name === PLANS.BUNDLE &&
         subscription?.Cycle === 1 &&
-        !hasBlackFridayDiscount(subscription) &&
+        noBF &&
         user.canPay &&
         isMailOrAccountSettings &&
         !user.isDelinquent &&

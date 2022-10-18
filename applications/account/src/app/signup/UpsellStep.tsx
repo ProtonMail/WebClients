@@ -46,6 +46,12 @@ const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
     if (cycle === CYCLE.TWO_YEARS) {
         return c('new_plans: info').t`* With 24-month subscription. Other subscription options available at checkout.`;
     }
+    if (cycle === CYCLE.THIRTY) {
+        return c('new_plans: info').t`* With 30-month subscription. Other subscription options available at checkout.`;
+    }
+    if (cycle === CYCLE.FIFTEEN) {
+        return c('new_plans: info').t`* With 15-month subscription. Other subscription options available at checkout.`;
+    }
     return '';
 };
 

@@ -3,7 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { useLoad, usePlans, useSubscription, useSubscriptionModal, useUser } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { CURRENCIES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { CURRENCIES, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getCurrency } from './helpers';
@@ -27,8 +28,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         }
     })();
 
-    const parsedCycle =
-        cycleParam && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycleParam) ? cycleParam : undefined;
+    const parsedCycle = cycleParam && getValidCycle(cycleParam);
 
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;

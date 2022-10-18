@@ -27,6 +27,11 @@
 	}
 }
 
+.absolute-center-y {
+	inset-block-start: 50%;
+	transform: translateY(-50%);
+}
+
 .absolute-cover {
 	position: absolute;
 	inset: 0;
