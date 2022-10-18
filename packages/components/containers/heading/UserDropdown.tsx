@@ -164,6 +164,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                 anchorRef={anchorRef}
                 onDisplayed={onDisplayedSpotlight}
                 onClose={onCloseSpotlight}
+                user={user}
             >
                 <UserDropdownButton
                     data-testid="heading:userdropdown"
