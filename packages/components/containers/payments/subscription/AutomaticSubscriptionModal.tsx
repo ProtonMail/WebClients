@@ -18,6 +18,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
     const currencyParam = params.get('currency')?.toUpperCase();
     const target = params.get('target');
     const edit = params.get('edit');
+    const offer = params.get('offer');
 
     const parsedTarget = (() => {
         if (target === 'compare') {
@@ -42,6 +43,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         currency: parsedCurrency || getCurrency(user, subscription, plans),
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: edit === 'disable',
+        disableCycleSelector: Boolean(offer),
     };
 };
 
@@ -61,7 +63,7 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
-        const { plan, currency, cycle, coupon, step, disablePlanSelection } = getParameters(
+        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector } = getParameters(
             location.search,
             plans,
             subscription,
@@ -80,6 +82,7 @@ const AutomaticSubscriptionModal = () => {
             coupon,
             step,
             disablePlanSelection,
+            disableCycleSelector,
         });
     }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
 

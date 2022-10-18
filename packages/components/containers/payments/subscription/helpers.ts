@@ -1,15 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
-import {
-    ADDON_NAMES,
-    APPS,
-    APP_NAMES,
-    CYCLE,
-    DEFAULT_CURRENCY,
-    PLANS,
-    PLAN_SERVICES,
-    PLAN_TYPES,
-} from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -22,8 +13,6 @@ import {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 
-const { PLAN, ADDON } = PLAN_TYPES;
-const { MAIL, VPN } = PLAN_SERVICES;
 const OCTOBER_01 = getUnixTime(new Date(Date.UTC(2021, 9, 1)));
 
 /**
@@ -53,79 +42,6 @@ export const getSubTotal = ({
         const amount = plan?.Pricing?.[cycle] || 0;
         return acc + quantity * amount;
     }, 0);
-};
-
-/**
- * Merge addon to addition parameters
- */
-const mergeAddons = (
-    { Quantity = 0, Amount = 0, MaxDomains = 0, MaxAddresses = 0, MaxSpace = 0, MaxMembers = 0, MaxVPN = 0 } = {},
-    addon: Plan
-) => ({
-    ...addon,
-    MaxAddresses: MaxAddresses + addon.MaxAddresses,
-    MaxSpace: MaxSpace + addon.MaxSpace,
-    MaxMembers: MaxMembers + addon.MaxMembers,
-    MaxVPN: MaxVPN + addon.MaxVPN,
-    MaxDomains: MaxDomains + addon.MaxDomains,
-    Quantity: Quantity + addon.Quantity,
-    Amount: Amount + addon.Amount,
-});
-
-/**
- * Format plans to returns essential structure
- */
-export const formatPlans = (plans: Plan[] = []) => {
-    return plans.reduce<
-        Partial<{
-            plan: Plan;
-            mailPlan: Plan;
-            vpnPlan: Plan;
-            domainAddon: Plan;
-            memberAddon: Plan;
-            vpnAddon: Plan;
-            addressAddon: Plan;
-            spaceAddon: Plan;
-        }>
-    >((acc, plan) => {
-        if (plan.Type === PLAN) {
-            // visionary is a special case because it contains mail and vpn services
-            // we consider it as a mail plan
-            if (plan.Name === 'visionary') {
-                acc.mailPlan = plan;
-                return acc;
-            }
-            if (hasBit(plan.Services, MAIL)) {
-                acc.mailPlan = plan;
-            }
-            if (hasBit(plan.Services, VPN)) {
-                acc.vpnPlan = plan;
-            }
-            acc.plan = plan;
-            return acc;
-        }
-
-        if (plan.Type === ADDON) {
-            if (plan.Name.startsWith('1domain')) {
-                acc.domainAddon = mergeAddons(acc.domainAddon, plan);
-            }
-            if (plan.Name.startsWith('1member')) {
-                acc.memberAddon = mergeAddons(acc.memberAddon, plan);
-            }
-            if (plan.Name === ADDON_NAMES.VPN) {
-                acc.vpnAddon = mergeAddons(acc.vpnAddon, plan);
-            }
-            if (plan.Name === ADDON_NAMES.ADDRESS) {
-                acc.addressAddon = mergeAddons(acc.addressAddon, plan);
-            }
-            if (plan.Name === ADDON_NAMES.SPACE) {
-                acc.spaceAddon = mergeAddons(acc.spaceAddon, plan);
-            }
-            return acc;
-        }
-
-        return acc;
-    }, {});
 };
 
 /**

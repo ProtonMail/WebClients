@@ -1,6 +1,5 @@
 import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { Currency, Cycle, Organization, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Organization, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 
 import ProtonPlanCustomizer, { CustomiserMode } from '../ProtonPlanCustomizer';
 
@@ -10,14 +9,14 @@ interface Props {
     currency: Currency;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     planIDs: PlanIDs;
-    plans: Plan[];
+    plansMap: PlansMap;
     mode?: CustomiserMode;
     organization?: Organization;
 }
 
 const PlanCustomization = ({
     mode,
-    plans,
+    plansMap,
     planIDs,
     cycle,
     currency,
@@ -25,7 +24,6 @@ const PlanCustomization = ({
     loading,
     organization,
 }: Props) => {
-    const plansMap = toMap(plans, 'Name') as PlansMap;
     const [currentPlanName] =
         Object.entries(planIDs).find(([planName, planQuantity]) => {
             if (planQuantity) {
@@ -47,7 +45,6 @@ const PlanCustomization = ({
                     loading={loading}
                     cycle={cycle}
                     currency={currency}
-                    plans={plans}
                     planIDs={planIDs}
                     plansMap={plansMap}
                     currentPlan={currentPlan}
