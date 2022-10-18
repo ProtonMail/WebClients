@@ -2870,10 +2870,6 @@
       "No labels": [
         "Sin etiquetas"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
       ],
@@ -3636,12 +3632,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con su clave de seguridad. Intente de nuevo."
+        "Algo salió mal al autenticar con su llave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+        "Inserte una llave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Llave de seguridad"
@@ -3791,6 +3787,11 @@
     "Font Size Default": {
       "Default": [
         "Por defecto"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Get started checklist completion": {
@@ -4502,9 +4503,6 @@
       "Background color": [
         "Color de fondo"
       ],
-      "Based in Switzerland, available globally": [
-        "Con sede en Suiza, disponible globalmente"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
@@ -4832,6 +4830,9 @@
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
+      ],
+      "Labels:": [
+        "Etiquetas:"
       ],
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
@@ -5419,8 +5420,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "¡Nos trasladamos! Únase a nosotros en nuestro sitio nuevo: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "¡Nos hemos mudado! Ingrese a nuestro dominio nuevo: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -7092,9 +7093,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -7429,17 +7427,9 @@
         "${ elementsCount } conversación marcada como no leída.",
         "${ elementsCount } conversaciones marcadas como no leídas."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } conversación movida a ${ folderName } y remitente añadido a la lista deseada.",
-        "${ elementsCount } conversaciones movidas a ${ folderName } y remitente añadido a la lista deseada."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversación movida a ${ folderName }.",
         "${ elementsCount } conversaciones movidas a ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversación eliminada de ${ labelName }.",
@@ -7461,17 +7451,9 @@
         "${ elementsCount } mensaje marcado como no leído.",
         "${ elementsCount } mensajes marcados como no leídos."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } mensaje movido a ${ folderName } y remitente añadido a la lista deseada.",
-        "${ elementsCount } mensajes movidos a ${ folderName } y remitente añadido a la lista deseada."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensaje movido a ${ folderName }.",
         "${ elementsCount } mensajes movidos to ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensaje eliminado de ${ labelName }.",
@@ -7518,14 +7500,8 @@
       "Conversation marked as unread.": [
         "Conversación marcada como no leída."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Conversación movida a ${ folderName } y remitente añadido a la lista deseada."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Conversación movida a ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Conversación movida a spam y el remitente añadido a la lista de bloqueo."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversación eliminada de ${ labelName }."
@@ -7581,14 +7557,8 @@
       "Message marked as unread.": [
         "Mensaje marcado como no leído."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Mensaje movido a ${ folderName } y el remitente añadido a la lista de permitidos."
-      ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Mensaje movido a spam y el remitente añadido a la lista de bloqueo."
       ],
       "Message removed from ${ labelName }.": [
         "Mensaje eliminado de ${ labelName }."

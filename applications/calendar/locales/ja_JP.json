@@ -1875,9 +1875,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。ファイルが大きい場合は、それを小さいファイルに分割してください。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -2444,7 +2441,7 @@
         "${ refresh } または接続を確認してください。"
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "問題が発生しました。ページを更新するか再度お試しください。"
+        "問題が発生しました。ページを更新するか後ほど再度お試しください。"
       ],
       "There was a problem connecting to Proton.": [
         "Proton への接続に問題がありました。"
@@ -3251,6 +3248,9 @@
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
+      "Labels:": [
+        "ラベル:"
+      ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
@@ -3445,9 +3445,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Proton は新しいサイトへ移動しました! ${ link }"
       ],
       "Week": [
         "週"
@@ -3668,9 +3665,6 @@
       ],
       "Description": [
         "詳細"
-      ],
-      "Display": [
-        "表示"
       ],
       "Do not ask again": [
         "今後表示しない"
@@ -4549,9 +4543,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"
       ],
@@ -4620,6 +4611,16 @@
         "設定の更新に失敗しました"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "${ ownerName } で作成"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "カレンダーを管理"
@@ -4677,7 +4678,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "プライベートなカレンダーリンクの取得方法についての詳細"
+        "プライベートなカレンダーリンクの取得方法の詳細"
       ]
     },
     "Subscribed calendar extension warning": {
@@ -4919,9 +4920,6 @@
       "Calendar alarm": [
         "カレンダーアラーム"
       ],
-      "Calendar information": [
-        "カレンダーの情報"
-      ],
       "Change my answer": [
         "回答を変更"
       ],
@@ -4954,6 +4952,9 @@
       ],
       "Create new group": [
         "新しいグループの作成"
+      ],
+      "Create public link": [
+        "公開リンクを作成"
       ],
       "Currency": [
         "通貨"
@@ -5165,9 +5166,6 @@
       "Show time zones for event start and end times": [
         "イベントの開始時間と終了時間のタイムゾーンを表示"
       ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
       "Sign in and grant access": [
         "サインインして権限を付与"
       ],
@@ -5179,6 +5177,9 @@
       ],
       "Start import process": [
         "インポートを開始"
+      ],
+      "Two-factor authentication": [
+        "2 要素認証"
       ],
       "Update event": [
         "予定の更新"
@@ -5217,6 +5218,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "番号を選択"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "情報を編集する"
       ]
     },
     "Today icon tooltip in mini calendar": {

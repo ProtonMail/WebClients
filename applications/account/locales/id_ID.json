@@ -213,9 +213,6 @@
       "Create folder": [
         "Buat folder"
       ],
-      "Create free account": [
-        "Buat akun gratis"
-      ],
       "Create label": [
         "Buat label"
       ],
@@ -486,7 +483,7 @@
       "No": [
         "Tidak"
       ],
-      "Non spam": [
+      "Not spam": [
         "Bukan spam"
       ],
       "OK": [
@@ -546,11 +543,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -762,6 +759,9 @@
       "Support": [
         "Dukung"
       ],
+      "Switch account": [
+        "Ganti akun"
+      ],
       "Top up": [
         "Isi ulang"
       ],
@@ -969,7 +969,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "Ini akan memutuskan semua sambungan router dan klien yang menggunakan sertifikat ini."
+        "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
       ]
     },
     "Apps dropdown": {
@@ -2491,6 +2491,12 @@
       ]
     },
     "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Terdapat kesalahan pada baris ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Berkas Anda tampaknya tidak memiliki header '${ options.fieldName }'."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Kami mendeteksi kesalahan pada beberapa baris dalam proses impor. Silakan periksa kembali berkas CSV Anda."
       ]
@@ -2585,9 +2591,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor berisi beberapa grup. Mohon tinjau ulang bagaimana grup ini harus diimpor."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Berkas harus memiliki ukuran maksimum ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan bagi dan pisahkan ke dalam berkas-berkas yang lebih kecil."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Lacak berapa jumlah orang yang telah mengklik tautan Anda, mendaftar, dan menjadi pengguna berbayar. Saksikan jumlah bulan gratis yang Anda miliki bertambah seiring waktu."
       ],
@@ -2623,17 +2626,11 @@
       "${ name } deletion failed": [
         "${ name } gagal dihapus"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } gagal dipindahkan ke Daftar Bukan spam"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } gagal dipindahkan ke daftar blokir"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } dipindahkan ke daftar Bukan spam"
       ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
@@ -2740,17 +2737,11 @@
       "${ name } deletion failed": [
         "${ name } gagal dihapus"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } gagal dipindahkan ke Daftar Bukan spam"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } gagal dipindahkan ke daftar blokir"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } dipindahkan ke daftar Bukan spam"
       ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
@@ -3121,7 +3112,7 @@
         "Kunci-kunci yang ada dalam berkas pemulihan Anda tidak dapat diverifikasi. Silakan hubungi layanan dukungan."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Kunci-kunci yang ada dalam berkas-berkas pemulihan Anda tidak dapat diverifikasi. Harap unggah berkas-berkas pemulihan Anda secara satu persatu untuk mendapatkan keterangan lebih lanjut."
+        "Kunci yang terdapat pada berkas pemulihan Anda tidak dapat diverifikasi. Harap unggah berkas pemulihan Anda secara satu persatu untuk keterangan lebih lanjut."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Nama label tidak valid. Silakan pilih nama lain."
@@ -3181,7 +3172,7 @@
         "Berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Berkas-berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
+        "Berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
       ],
       "Validation error": [
         "Kesalahan validasi"
@@ -3595,10 +3586,10 @@
         "Server Secure Core"
       ],
       "Secure streaming support": [
-        "Mendukung pengaliran aman"
+        "Dukungan streaming aman"
       ],
       "Torrenting support (P2P)": [
-        "Mendukung torrent (P2P)"
+        "Dukungan torrent (P2P)"
       ]
     },
     "fido2: Action": {
@@ -3788,8 +3779,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Email yang berasal dari alamat yang diblokir tidak akan disampaikan."
       ],
-      "Search in your allow and block lists": [
-        "Cari di daftar izin dan blokir"
+      "Search list": [
+        "Daftar pencarian"
       ]
     },
     "Font Face Default": {
@@ -3802,6 +3793,11 @@
         "Default"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email per bulan)"
@@ -3811,6 +3807,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 email per bulan)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Telah memiliki akun? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Baru di ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4648,9 +4654,6 @@
       "Background color": [
         "Warna latar belakang"
       ],
-      "Based in Switzerland, available globally": [
-        "Berbasis di Swiss, tersedia secara global"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
       ],
@@ -5110,6 +5113,9 @@
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
       ],
+      "Labels:": [
+        "Label:"
+      ],
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
@@ -5166,6 +5172,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi berikut secara manual ke perangkat otentikasi dua faktor yang Anda miliki untuk menyiapkan akun Anda. ${ _switchButton }."
+      ],
+      "Member": [
+        "Anggota"
       ],
       "Merged": [
         "Tergabung"
@@ -5396,7 +5405,7 @@
         "Berkas pemulihan diunduh"
       ],
       "Recovery files have been voided": [
-        "Berkas-berkas pemulihan telah dianulir"
+        "Berkas pemulihan telah dianulir"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
@@ -5561,7 +5570,7 @@
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien-klien resmi."
+        "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien resmi."
       ],
       "This 30-day free trial is not available any other way.": [
         "Masa uji coba gratis 30 hari ini tidak dapat diperoleh dengan cara lainnya."
@@ -5662,8 +5671,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Untuk mengamankan koneksi internet Anda, unduh dan pasang aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan ke server ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan diri Anda ke server yang tersedia."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Untuk dapat bekerja, masing-masing filter harus memiliki nama dan kode Sieve yang valid. Anda dapat ${ link }."
@@ -5788,8 +5797,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Kami telah pindah! Bergabunglah dengan kami pada situs baru kami: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Kami telah pindah! Silakan masuk melalui domain baru kami: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -5854,6 +5863,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Anda terdaftar masuk dengan akun ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Anda juga dapat menggabungkan kalender-kalender yang Anda impor dengan kalender-kalender Proton yang telah ada sebelumnya."
       ],
@@ -5869,6 +5881,9 @@
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Anda kini dapat mengakses dan mengelola akun selaku administrator."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Kini Anda dapat menerima pesan melalui alamat @pm.me. Aktifkan paket berbayar supaya bisa mengirim email dari alamat @pm.me dan membuat alamat @pm.me tambahan."
       ],
@@ -5880,9 +5895,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan untuk 24 jam ke depan"
       ],
       "You cannot refer ${ appName } users": [
         "Anda tidak dapat mengirim rujukan kepada para pengguna ${ appName }"
@@ -6739,9 +6751,6 @@
       "Discount": [
         "Diskon"
       ],
-      "Display": [
-        "Tampilan"
-      ],
       "Display name": [
         "Nama tampilan"
       ],
@@ -6961,11 +6970,11 @@
       "No label found": [
         "Tidak ada label yang ditemukan"
       ],
-      "Non Spam": [
-        "Bukan Spam"
-      ],
       "Non-standard ports": [
         "Port non-standar"
+      ],
+      "Not spam": [
+        "Bukan spam"
       ],
       "Notification": [
         "Pemberitahuan"
@@ -7423,6 +7432,9 @@
       "Common sign up issues": [
         "Masalah umum proses daftar"
       ],
+      "Create account": [
+        "Buat akun"
+      ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
       ],
@@ -7780,7 +7792,7 @@
       "Blocked": [
         "Diblokir"
       ],
-      "Non spam": [
+      "Not spam": [
         "Bukan spam"
       ],
       "Spam": [
@@ -9168,7 +9180,7 @@
         "Unggah"
       ],
       "Upload additional files": [
-        "Unggah berkas-berkas tambahan"
+        "Unggah berkas tambahan"
       ]
     },
     "Select search results": {
@@ -9235,8 +9247,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Anda telah mencapai batas ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Anda telah mencapai batas maksimal ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
       ]
     },
     "Share calendar modal description": {
@@ -9259,6 +9271,11 @@
         "Tambah label"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Dibuat oleh ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nama tampilan"
@@ -9271,6 +9288,12 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Pengaturan akun"
+      ],
+      "Payment": [
+        "Pembayaran"
+      ],
       "Verification": [
         "Verifikasi"
       ]
@@ -9812,8 +9835,8 @@
       "Add Sieve filter": [
         "Tambah filter Sieve"
       ],
-      "Add to non spam list": [
-        "Tambah ke daftar bukan spam"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Tambahkan ke daftar spam"
@@ -9871,9 +9894,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
-      ],
-      "Calendar information": [
-        "Informasi kalender"
       ],
       "Cancel Mail subscription": [
         "Batalkan langganan Mail"
@@ -10418,6 +10438,9 @@
       "Sign out": [
         "Keluar"
       ],
+      "Signed in to member account": [
+        "Terdaftar masuk dengan akun anggota"
+      ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"
       ],
@@ -10620,6 +10643,11 @@
       ],
       "Role": [
         "Peran"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Sunting informasi"
       ]
     },
     "Today icon tooltip in mini calendar": {

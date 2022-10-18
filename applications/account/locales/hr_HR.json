@@ -395,11 +395,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -1119,11 +1119,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Ako je vaša datoteka veća, podijelite je na manje datoteke.",
-        "Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_CONTACTS_STRING } kontakta. Ako je vaša datoteka veća, podijelite je na manje datoteke.",
-        "Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_CONTACTS_STRING } kontakata. Ako je vaša datoteka veća, podijelite je na manje datoteke."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
@@ -2338,9 +2333,6 @@
       "Background color": [
         "Pozadinska boja"
       ],
-      "Based in Switzerland, available globally": [
-        "Bazirano u Švicarskoj, dostupno globalno"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
       ],
@@ -2618,6 +2610,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
+      ],
+      "Member": [
+        "Član"
       ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
@@ -3531,9 +3526,6 @@
       ],
       "Discount": [
         "Popust"
-      ],
-      "Display": [
-        "Zaslon"
       ],
       "Display name": [
         "Zaslonski naziv"
@@ -5160,6 +5152,9 @@
       ],
       "Add Sieve filter": [
         "Dodaj Sieve filtar"
+      ],
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add user": [
         "Dodaj korisnika"

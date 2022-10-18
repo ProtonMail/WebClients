@@ -481,6 +481,9 @@
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
       ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
       "Use for sending": [
         "Χρησιμοποιήστε την για αποστολή"
       ],
@@ -873,6 +876,9 @@
       "copper": [
         "χαλκός"
       ],
+      "enzian": [
+        "ενζιάν"
+      ],
       "fern": [
         "φτέρη"
       ],
@@ -1106,6 +1112,9 @@
       "Brazil": [
         "Βραζιλία"
       ],
+      "British Indian Ocean Territory": [
+        "Βρετανικό Έδαφος Ινδικού Ωκεανού"
+      ],
       "Brunei Darussalam": [
         "Μπρουνέι"
       ],
@@ -1235,6 +1244,9 @@
       "French Polynesia": [
         "Γαλλική Πολυνησία"
       ],
+      "French Southern Territories": [
+        "Γαλλικά Νότια και Ανταρκτικά Εδάφη"
+      ],
       "Gabon": [
         "Γκαμπόν"
       ],
@@ -1283,6 +1295,9 @@
       "Haiti": [
         "Αϊτή"
       ],
+      "Heard Island and McDonald Islands": [
+        "Νήσοι Χερντ και Μακντόναλντ"
+      ],
       "Holy See (Vatican City State)": [
         "Βατικανό"
       ],
@@ -1330,6 +1345,9 @@
       ],
       "Japan": [
         "Ιαπωνία"
+      ],
+      "Jersey": [
+        "Βαϊλάτο του Τζέρσεϊ"
       ],
       "Jordan": [
         "Ιορδανία"
@@ -1604,6 +1622,9 @@
       "South Africa": [
         "Νότια Αφρική"
       ],
+      "South Georgia and the South Sandwich Islands": [
+        "Νήσοι Νότια Γεωργία και Νότιες Σάντουιτς"
+      ],
       "South Korea": [
         "Νότια Κορέα"
       ],
@@ -1697,6 +1718,9 @@
       "United States": [
         "Ηνωμένες Πολιτείες"
       ],
+      "United States Minor Outlying Islands": [
+        "Απομακρυσμένες Νησίδες των Ηνωμένων Πολιτειών"
+      ],
       "Uruguay": [
         "Ουρουγουάη"
       ],
@@ -1717,6 +1741,9 @@
       ],
       "Virgin Islands, U.S.": [
         "Αμερικανικές Παρθένες Νήσοι"
+      ],
+      "Wallis and Futuna": [
+        "Ουαλίς και Φουτουνά"
       ],
       "Western Sahara": [
         "Δυτική Σαχάρα"
@@ -1806,10 +1833,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Συγχώνευση επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, μπορείτε να κλείσετε αυτό το παράθυρο."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
-        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
@@ -2460,6 +2483,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας"
       ]
     },
     "Event popover close button": {
@@ -2492,6 +2518,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2500,6 +2530,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -3217,6 +3265,9 @@
       "Other options": [
         "Άλλες επιλογές"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Το PGP/Inline είναι συμβατό μόνο με τη μορφή Σκέτου Κειμένου. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
       ],
@@ -3228,6 +3279,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδα.",
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδες."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -3253,6 +3311,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
+      "Select what you want to import.": [
+        "Επιλέξτε τι θέλετε να εισάγετε."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
@@ -3270,6 +3331,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
+      ],
+      "Support for 1 custom email domain": [
+        "Υποστήριξη για 1 παραμετροποιημένο τομέα email"
       ],
       "support team": [
         "ομάδα υποστήριξης"
@@ -3357,9 +3421,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Μετακομίζουμε! Ελάτε μαζί μας στη νέα μας ιστοσελίδα: ${ link }."
       ],
       "Week": [
         "Εβδομάδα"
@@ -3501,6 +3562,9 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Εκτεθειμένο"
+      ],
       "Expired": [
         "Έχει λήξει"
       ],
@@ -3592,9 +3656,6 @@
       ],
       "Description": [
         "Περιγραφή"
-      ],
-      "Display": [
-        "Εμφάνιση"
       ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -4453,9 +4514,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } από τις ${ countContacts } επαφές που έχουν εξαχθεί με επιτυχία."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "Το ${ model.deleted.length } από την ${ totalBeDeleted } επαφή διαγράφηκε με επιτυχία.",
         "Το ${ model.deleted.length } από τις ${ totalBeDeleted } επαφές διαγράφηκαν με επιτυχία."
@@ -5122,9 +5180,6 @@
       "Show time zones for event start and end times": [
         "Εμφάνιση ζωνών ώρας για τις ώρες έναρξης και λήξης εκδήλωσης"
       ],
-      "Sign in again to continue": [
-        "Συνδεθείτε ξανά για να συνεχίσετε"
-      ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
       ],
@@ -5136,6 +5191,9 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
+      ],
+      "Two-factor authentication": [
+        "Έλεγχος ταυτότητας δύο παραγόντων"
       ],
       "Update event": [
         "Ενημερωση γεγονοτος"
@@ -5163,6 +5221,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Έχετε προσκαλέσει συμμετέχοντες με ισοδύναμα μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Η δωρεάν δοκιμή σας τελειώνει σύντομα, στις ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

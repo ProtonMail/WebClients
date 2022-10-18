@@ -86,9 +86,6 @@
       "Create address": [
         "Criar endereço"
       ],
-      "Create free account": [
-        "Criar uma conta gratuita"
-      ],
       "Current plan": [
         "Plano atual"
       ],
@@ -1816,6 +1813,11 @@
         "Megabytes"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacidade por padrão."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail por mês)"
@@ -1825,6 +1827,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails por mês)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Já tem uma conta? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Novo em ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1953,9 +1965,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Você tem certeza de que deseja desativar a autenticação de dois fatores?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Com sede na Suíça, disponível globalmente"
       ],
       "Basic, Plus or Visionary subscription required": [
         "É necessária a assinatura Basic, Plus ou Visionary"
@@ -2359,8 +2368,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para prosseguir, selecione um método de recuperação de conta para que possamos verificar a sua solicitação."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
@@ -2452,8 +2461,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Estamos nos movendo! Junte-se a nós em nosso novo site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nós nos mudamos! Inicie sessão em nosso novo domínio: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de redefinição para o endereço de e-mail que você forneceu para a recuperação da conta."
@@ -3040,6 +3049,9 @@
       ],
       "Common sign up issues": [
         "Problemas frequentes ao se cadastrar"
+      ],
+      "Create account": [
+        "Criar conta"
       ],
       "Forgot username?": [
         "Esqueceu seu nome de usuário?"
@@ -3988,6 +4000,17 @@
         "Nome de usuário"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Configuração da conta"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Verification": [
+        "Verificação"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "O ${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
@@ -4379,6 +4402,9 @@
       "Email subscriptions": [
         "Inscrições de e-mail"
       ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
       "Error": [
         "Erro"
       ],
@@ -4516,9 +4542,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ],
-      "Sign in again to continue": [
-        "Inicie a sessão novamente para continuar"
       ],
       "Sign out": [
         "Encerrar sessão"

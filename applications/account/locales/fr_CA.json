@@ -213,9 +213,6 @@
       "Create folder": [
         "Créer un dossier"
       ],
-      "Create free account": [
-        "Créer un compte gratuit"
-      ],
       "Create label": [
         "Créer un label"
       ],
@@ -486,9 +483,6 @@
       "No": [
         "Non"
       ],
-      "Non spam": [
-        "Non indésirables"
-      ],
       "OK": [
         "OK"
       ],
@@ -546,11 +540,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Rafraîchir la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Rafraîchir la page"
       ],
       "Reload": [
         "Recharger"
@@ -762,6 +756,9 @@
       "Support": [
         "Assistance"
       ],
+      "Switch account": [
+        "Changer de compte"
+      ],
       "Top up": [
         "Recharger"
       ],
@@ -809,6 +806,9 @@
       ],
       "Use a different payment method": [
         "Utiliser un autre mode de paiement"
+      ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
       ],
       "Use recovery code": [
         "Utiliser un code de récupération"
@@ -2500,6 +2500,12 @@
       ]
     },
     "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Erreur sur la ligne ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Il semble que l'en-tête '${ options.fieldName }' manque dans votre fichier."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Nous avons détecté des erreurs dans plusieurs lignes lors de l'importation, nous vous invitons à vérifier votre fichier CSV."
       ]
@@ -2598,10 +2604,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne certains groupes. Veuillez vérifier comment ces groupes doivent être importés."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Suivez le nombre de personnes qui cliquent sur votre lien, s'inscrivent et deviennent des abonnés payants. Regardez s'accumuler vos mois gratuits."
       ],
@@ -2637,17 +2639,11 @@
       "${ name } deletion failed": [
         "La suppression de ${ name } a échoué"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } n'a pas pu être placé dans la liste des non indésirables"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être déplacé vers la liste des indésirables"
       ],
       "${ name } failed to move to your block list": [
         "${ name } n'a pas pu être déplacé vers la liste de blocages"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } est maintenant dans la liste des non indésirables"
       ],
       "${ name } moved to spam list": [
         "${ name } a été déplacé vers la liste des indésirables"
@@ -2754,17 +2750,11 @@
       "${ name } deletion failed": [
         "La suppression de ${ name } a échoué"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } n'a pas pu être placé dans la liste des non indésirables"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être déplacé vers la liste des indésirables"
       ],
       "${ name } failed to move to your block list": [
         "${ name } n'a pas pu être déplacé vers la liste de blocages"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } est maintenant dans la liste des non indésirables"
       ],
       "${ name } moved to spam list": [
         "${ name } a été déplacé vers la liste des indésirables"
@@ -3074,6 +3064,9 @@
       ],
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi."
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi"
       ],
       "Process aborted": [
         "Processus abandonné"
@@ -3621,6 +3614,91 @@
         "Prise en charge des torrents (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Ajouter une clé de sécurité"
+      ],
+      "Delete key": [
+        "Supprimer la clé"
+      ]
+    },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Veuillez désactiver l'authentification A2F via la clé de sécurité avant de désactiver TOTP"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'enregistrement de votre clé de sécurité. Nous vous invitons à réessayer."
+      ]
+    },
+    "fido2: Info": {
+      "2FA via security key disabled": [
+        "L'authentification A2F par clé de sécurité est désactivée"
+      ],
+      "Add a name to identify your security key with.": [
+        "Ajoutez un nom pour identifier votre clé de sécurité."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Voulez-vous vraiment supprimer la clé de sécurité ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Insérez votre clé de sécurité dans le port USB de votre appareil."
+      ],
+      "Security key": [
+        "Clé de sécurité"
+      ],
+      "Security key removed": [
+        "La clé de sécurité a été supprimée"
+      ],
+      "Security key updated": [
+        "La clé de sécurité a été mise à jour"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Cela supprimera toutes les clés de sécurité liées à votre compte."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Pour activer l'authentification A2F par clé de sécurité, vous devrez l'activer via votre application d'authentification"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Confirmez votre identité avec une clé de sécurité physique U2F ou FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Votre clé d'authentification à deux facteurs est prête à être utilisée."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Nom de la clé"
+      ],
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Supprimer la clé de sécurité?"
+      ],
+      "Disable 2FA via security key?": [
+        "Désactiver l'authentification A2F via la clé de sécurité?"
+      ],
+      "Name your security key": [
+        "Donnez un nom à votre clé de sécurité"
+      ],
+      "Register your security key": [
+        "Enregistrez votre clé de sécurité"
+      ],
+      "Registered security keys": [
+        "Clés de sécurité enregistrées"
+      ],
+      "Security key registered": [
+        "La clé de sécurité a été enregistrée"
+      ]
+    },
     "file size format": {
       "byte": [
         "octet",
@@ -3728,8 +3806,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Les courriels provenant d'adresses bloquées ne seront pas délivrés."
       ],
-      "Search in your allow and block lists": [
-        "Recherchez dans votre liste d'autorisations et votre liste de blocages"
+      "Search list": [
+        "Parcourir la liste"
       ]
     },
     "Font Face Default": {
@@ -3751,6 +3829,16 @@
       ],
       "(1-2 emails per month)": [
         "(1 à 2 courriels par mois)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Vous avez déjà un compte? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Nouveau sur ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4477,8 +4565,14 @@
       "Add a recovery email address": [
         "Ajoutez un courriel de récupération"
       ],
+      "add a recovery method": [
+        "ajouter une méthode de récupération"
+      ],
       "Add a recovery phone number": [
         "Ajouter un numéro de téléphone de récupération"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Ajoutez une sécurité supplémentaire à votre compte avec une A2F chaque fois que vous vous connecterez."
       ],
       "Add image URL": [
         "Ajouter l'URL de l'image"
@@ -4614,9 +4708,6 @@
       ],
       "Background color": [
         "Couleur d'arrière-plan"
-      ],
-      "Based in Switzerland, available globally": [
-        "Basé en Suisse, disponible dans le monde entier"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
@@ -4800,6 +4891,9 @@
       "Drop the file here to upload": [
         "Déposez un fichier ici pour le téléverser"
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois"
+      ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "${ rewards } sur ${ rewardsLimit } mois de ${ planName } gagnés."
       ],
@@ -4836,8 +4930,17 @@
       "Encryption setting updated": [
         "Paramètre de chiffrement mis à jour"
       ],
+      "Enter code from your authenticator app": [
+        "Saisissez le code de votre application d'authentification"
+      ],
       "Enter key manually instead": [
         "Entrez plutôt la clé manuellement"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Saisissez le nouveau mot de passe de l'utilisateur ${ userName }."
+      ],
+      "Enter the code from your authenticator app": [
+        "Entrez le code de votre application d'authentification"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Saisissez le code envoyé à votre numéro de téléphone ${ phone }."
@@ -4859,6 +4962,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Saisissez l'adresse électronique de votre compte ${ BRAND_NAME } ou votre nom d'utilisateur·rice."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Saisissez votre adresse courriel de récupération et nous vous enverrons votre nom d'utilisateur·rice ou votre adresse courriel."
@@ -5066,6 +5172,9 @@
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
       ],
+      "Labels:": [
+        "Labels:"
+      ],
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
@@ -5117,8 +5226,14 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements russes et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Entrez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
+      ],
+      "Member": [
+        "Membre"
       ],
       "Merged": [
         "Fusionné"
@@ -5329,6 +5444,9 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton essaiera de reprendre l'importation dès que votre fournisseur de messagerie réinitialisera la ${ bandwithLimitLink } de votre compte. Vous n'avez rien à faire. Si vous annulez votre importation, vous ne pourrez pas la reprendre et vous devrez recommencer."
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "La technologie de chiffrement de Proton signifie que personne ne peut accéder à votre mot de passe, pas même nous."
       ],
       "Public link invite": [
         "Lien d'invitation public"
@@ -5617,8 +5735,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte afin que nous puissions vérifier la demande."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Pour sécuriser votre connexion Internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pour fonctionner correctement, chaque filtre doit contenir au moins un nom et un script Sieve valide. Vous pouvez ${ link }."
@@ -5707,6 +5825,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification s'effectuera dans un nouvel onglet, veuillez désactiver tous les bloqueurs de fenêtres surgissantes. Vous ne serez pas facturé·e. Tout montant utilisé pour vérifier la carte sera immédiatement remboursé."
       ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Confirmez votre identité avec un mot de passe à usage unique et à durée limitée qui est généré par une application d'authentification"
+      ],
       "Verifying your payment": [
         "Vérification de votre paiement"
       ],
@@ -5740,8 +5861,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons! Rejoignez-nous sur notre nouveau site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé! Veuillez vous connecter à notre nouveau domaine: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -5769,6 +5890,9 @@
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "Lorsqu'ils souscrivent à un abonnement payant, 1 à 3 mois de ${ planName } seront crédités sur votre compte."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, tous les crédits disponibles seront d'abord utilisés avant que nous débitions vos modes de paiement ci-dessus."
@@ -5803,6 +5927,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Vous êtes actuellement connecté·e en tant que ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Vous êtes connecté·e au compte ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
       ],
@@ -5829,9 +5956,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application RPV à code source ouvert tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Vous ne pouvez pas envoyer plus de ${ emailSendLimitNumber } courriels d'invitation pendant les 24 prochaines heures"
       ],
       "You cannot refer ${ appName } users": [
         "Vous ne pouvez pas parrainer les utilisateur·rice·s de ${ appName }"
@@ -6499,6 +6623,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Authenticator app": [
+        "Application d'authentification"
+      ],
       "Auto-detect primary time zone": [
         "Détection automatique du fuseau horaire principal"
       ],
@@ -6687,9 +6814,6 @@
       ],
       "Discount": [
         "Remise"
-      ],
-      "Display": [
-        "Affichage"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -6910,9 +7034,6 @@
       "No label found": [
         "Aucun label trouvé"
       ],
-      "Non Spam": [
-        "Non indésirables"
-      ],
       "Non-standard ports": [
         "Ports non standards"
       ],
@@ -7044,6 +7165,9 @@
       ],
       "Show secondary time zone": [
         "Afficher le fuseau horaire secondaire"
+      ],
+      "Show sender images": [
+        "Afficher les images des expéditeurs"
       ],
       "Show week numbers": [
         "Afficher les numéros de semaine"
@@ -7368,6 +7492,9 @@
       ],
       "Common sign up issues": [
         "Problèmes d'inscription courants"
+      ],
+      "Create account": [
+        "Créer un compte"
       ],
       "Encryption and keys": [
         "Chiffrement et clés"
@@ -7734,9 +7861,6 @@
       ],
       "Blocked": [
         "Bloqué"
-      ],
-      "Non spam": [
-        "Non indésirables"
       ],
       "Spam": [
         "Indésirable"
@@ -8410,6 +8534,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficier de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés"
+      ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Créez ${ numberOfPersonalCalendars } calendrier personnel",
+        "Créez jusqu'à ${ numberOfPersonalCalendars } calendriers personnels"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"
@@ -9212,8 +9340,9 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Vous avez dépassé le nombre maximum de ${ MAX_CALENDAR_MEMBERS } membres par calendrier"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Vous avez dépassé le nombre maximal de ${ MAX_CALENDAR_MEMBERS } membre par calendrier",
+        "Vous avez dépassé le nombre maximal de ${ MAX_CALENDAR_MEMBERS } membres par calendrier"
       ]
     },
     "Share calendar modal description": {
@@ -9236,6 +9365,11 @@
         "Ajouter un label"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Créé par ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nom d'affichage"
@@ -9248,6 +9382,12 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Configuration du compte"
+      ],
+      "Payment": [
+        "Paiement"
+      ],
       "Verification": [
         "Vérification"
       ]
@@ -9805,8 +9945,8 @@
       "Add Sieve filter": [
         "Ajouter un filtre Sieve"
       ],
-      "Add to non spam list": [
-        "Ajouter à la liste des non indésirables"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Ajouter à la liste des indésirables"
@@ -9864,9 +10004,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge pour ${ platform }"
-      ],
-      "Calendar information": [
-        "Informations du calendrier"
       ],
       "Cancel Mail subscription": [
         "Annuler l'abonnement Mail"
@@ -10220,6 +10357,9 @@
       "Messages and composing": [
         "Messages et rédaction"
       ],
+      "Minicalendar": [
+        "Minicalendrier"
+      ],
       "Multi-user support": [
         "Prise en charge multiutilisateur·rice"
       ],
@@ -10372,6 +10512,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Choisissez quand vous souhaitez que cette notification soit envoyée"
+      ],
+      "Sender image": [
+        "Image de l'expéditeur"
       ],
       "Session management": [
         "Gestionnaire de session"
@@ -10611,6 +10754,11 @@
         "Rôle"
       ]
     },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Modifier les informations"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
@@ -10673,6 +10821,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Ajoutez la signature suivante en bas des courriels que vous envoyez: ${ signature } C'est votre lien de parrainage. Ce message apparaîtra sous votre signature. Vous pouvez personnaliser votre signature à tout moment depuis les paramètres."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Affichez l'image de chaque expéditeur dans la liste des messages. Si aucune photo n'est disponible, les initiales de l'expéditeur seront affichées."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Les signatures produites par cette clé sont considérées comme non valides et cette clé ne peut pas être utilisée pour le chiffrement"

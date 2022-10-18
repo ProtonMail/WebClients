@@ -2890,12 +2890,6 @@
       "No labels": [
         "Brak etykiet"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
       ],
@@ -3847,6 +3841,11 @@
         "Domyślny"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Prywatność to nasz standard."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Przestrzeń dyskowa Twojego konta została zwiększona do ${ rewardInGb } GB. Opcjonalnie możesz dodać dodatkową przestrzeń dyskową i odblokować funkcje premium."
@@ -4646,9 +4645,6 @@
       "Background color": [
         "Kolor tła"
       ],
-      "Based in Switzerland, available globally": [
-        "Ulokowany w Szwajcarii, dostępny na całym świecie"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Skróty klawiszowe podstawowej nawigacji i akcji są zawsze włączone."
       ],
@@ -4997,6 +4993,9 @@
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
       ],
+      "Labels:": [
+        "Etykiety:"
+      ],
       "Large imports can take several days.": [
         "Importowanie dużej ilości danych może potrwać kilka dni."
       ],
@@ -5028,7 +5027,7 @@
         "Zarządzaj etykietami"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Maksymalna liczba załączników (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) została przekroczona."
+        "Maksymalna liczba ${ EO_REPLY_NUM_ATTACHMENTS_LIMIT } załączników została przekroczona."
       ],
       "members": [
         "członków"
@@ -5588,8 +5587,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Przenosimy się! Dołącz do nas na nowej stronie: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Przenieśliśmy się! Zaloguj się na nowej domenie: ${ link }."
       ],
       "Web URL": [
         "Adres URL"
@@ -7297,9 +7296,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktów."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "Kontakt został usunięty.",
         "Pomyślnie usunięto ${ model.deleted.length } z ${ totalBeDeleted } kontaktów.",
@@ -7664,21 +7660,11 @@
         "${ elementsCount } wątków zostało oznaczonych jako nieprzeczytane.",
         "${ elementsCount } wątków zostało oznaczonych jako nieprzeczytane."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Wątek został przeniesiony do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych.",
-        "${ elementsCount } wątki zostały przeniesione do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych.",
-        "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych.",
-        "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "Wątek został przeniesiony do folderu ${ folderName }.",
         "${ elementsCount } wątki zostały przeniesione do folderu ${ folderName }.",
         "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }.",
         "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }.",
@@ -7710,21 +7696,11 @@
         "${ elementsCount } wiadomości zostało oznaczonych jako nieprzeczytane.",
         "${ elementsCount } wiadomości zostało oznaczonych jako nieprzeczytane."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "Wiadomość została przeniesiona do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych.",
-        "${ elementsCount } wiadomości zostały przeniesione do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych.",
-        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych.",
-        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "Wiadomość została przeniesiona do folderu ${ folderName }.",
         "${ elementsCount } wiadomości zostały przeniesione do folderu ${ folderName }.",
         "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }.",
         "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }.",
@@ -7777,14 +7753,8 @@
       "Conversation marked as unread.": [
         "Wątek został oznaczony jako nieprzeczytany."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Wątek został przeniesiony do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Wątek został przeniesiony do folderu ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Wątek został przeniesiony do Spamu, a nadawca został dodany do listy odrzuconych."
       ],
       "Conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }."
@@ -7840,14 +7810,8 @@
       "Message marked as unread.": [
         "Wiadomość została oznaczona jako nieprzeczytana."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Wiadomość została przeniesiona do folderu ${ folderName }, a nadawca został dodany do listy dozwolonych."
-      ],
       "Message moved to ${ folderName }.": [
         "Wiadomość została przeniesiona do folderu ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Wiadomość została przeniesiona do Spamu, a nadawca został dodany do listy odrzuconych."
       ],
       "Message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }."

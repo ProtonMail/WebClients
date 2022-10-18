@@ -86,9 +86,6 @@
       "Create address": [
         "Buat alamat"
       ],
-      "Create free account": [
-        "Buat akun gratis"
-      ],
       "Current plan": [
         "Paket saat ini"
       ],
@@ -1799,6 +1796,11 @@
         "Megabyte"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 surel per bulan)"
@@ -1808,6 +1810,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 surel per bulan)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Telah memiliki akun? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Baru di ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1933,9 +1945,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Berbasis di Swiss, tersedia secara global"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
@@ -2339,8 +2348,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Untuk mengamankan koneksi internet Anda, unduh dan pasang aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan ke server ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan diri Anda ke server yang tersedia."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
@@ -2432,8 +2441,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Kami telah pindah! Bergabunglah dengan kami pada situs baru kami: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Kami telah pindah! Silakan masuk melalui domain baru kami: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat email yang telah Anda tentukan sebelumnya."
@@ -3019,6 +3028,9 @@
       ],
       "Common sign up issues": [
         "Masalah pendaftaran umum"
+      ],
+      "Create account": [
+        "Buat akun"
       ],
       "Forgot username?": [
         "Lupa nama pengguna?"
@@ -3949,6 +3961,17 @@
         "Nama Pengguna"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Pengaturan akun"
+      ],
+      "Payment": [
+        "Pembayaran"
+      ],
+      "Verification": [
+        "Verifikasi"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } sudah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
@@ -4326,6 +4349,9 @@
       "Email subscriptions": [
         "Langganan email"
       ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
+      ],
       "Error": [
         "Galat"
       ],
@@ -4463,9 +4489,6 @@
       ],
       "Sign in": [
         "Masuk"
-      ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
       ],
       "Sign out": [
         "Keluar"

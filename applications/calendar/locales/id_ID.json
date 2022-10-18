@@ -1969,9 +1969,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menggabungkan kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Berkas harus memiliki ukuran maksimum ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan bagi dan pisahkan ke dalam berkas-berkas yang lebih kecil."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Batalkan tanda pada kontak yang tidak ingin digabung."
       ],
@@ -3448,6 +3445,9 @@
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
       ],
+      "Labels:": [
+        "Label:"
+      ],
       "Large imports can take several days.": [
         "Proses impor dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
@@ -3688,8 +3688,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Kami telah berpindah! Bergabunglah dengan kami pada situs baru kami: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Kami telah pindah! Silakan masuk melalui domain baru kami: ${ link }."
       ],
       "Week": [
         "Pekan"
@@ -3957,9 +3957,6 @@
       ],
       "Description": [
         "Deskripsi"
-      ],
-      "Display": [
-        "Tampilan"
       ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
@@ -4576,7 +4573,7 @@
     },
     "Notification suffix": {
       "by email": [
-        "melalui surel"
+        "melalui email"
       ]
     },
     "Notification time input": {
@@ -4881,9 +4878,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } dari ${ countContacts } kontak telah diekspor."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
       ],
@@ -4958,8 +4952,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Anda telah mencapai batas ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Anda telah mencapai batas maksimal ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
       ]
     },
     "Share calendar modal description": {
@@ -4975,6 +4969,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Bagikan dengan pengguna Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Dibuat oleh ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5327,9 +5326,6 @@
       "Calendar alarm": [
         "Pengingat kalender"
       ],
-      "Calendar information": [
-        "Informasi kalender"
-      ],
       "Change my answer": [
         "Ubah jawaban saya"
       ],
@@ -5600,9 +5596,6 @@
       "Show time zones for event start and end times": [
         "Tampilkan zona waktu awal dan akhir acara"
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
       ],
@@ -5614,6 +5607,9 @@
       ],
       "Start import process": [
         "Mulai proses impor"
+      ],
+      "Two-factor authentication": [
+        "Otentikasi dua faktor"
       ],
       "Update event": [
         "Perbarui acara"
@@ -5652,6 +5648,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Pilih angka"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Sunting informasi"
       ]
     },
     "Today icon tooltip in mini calendar": {

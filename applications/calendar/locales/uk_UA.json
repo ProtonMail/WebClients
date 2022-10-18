@@ -1937,12 +1937,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контакту. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -3807,8 +3801,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ми переїхали! Долучайтеся до нас на нашому новому сайті: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ми переїхали! Будь ласка, увійдіть на нашому новому домені: ${ link }."
       ],
       "Week": [
         "Тиждень"
@@ -4076,9 +4070,6 @@
       ],
       "Description": [
         "Опис"
-      ],
-      "Display": [
-        "Вигляд"
       ],
       "Do not ask again": [
         "Не питати знову"
@@ -5080,9 +5071,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
         "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
@@ -5530,9 +5518,6 @@
       "Calendar alarm": [
         "Попередження календаря"
       ],
-      "Calendar information": [
-        "Інформація календаря"
-      ],
       "Change my answer": [
         "Змінити мою відповідь"
       ],
@@ -5809,9 +5794,6 @@
       "Show time zones for event start and end times": [
         "Показати часові пояси для початку та завершення події"
       ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
-      ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
       ],
@@ -5823,6 +5805,9 @@
       ],
       "Start import process": [
         "Розпочати процес імпортування"
+      ],
+      "Two-factor authentication": [
+        "Двоетапна перевірка"
       ],
       "Update event": [
         "Оновити подію"

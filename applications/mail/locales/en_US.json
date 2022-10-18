@@ -4,16 +4,6 @@
     "language": "en_US"
   },
   "contexts": {
-    "Success": {
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
-      ]
-    },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
