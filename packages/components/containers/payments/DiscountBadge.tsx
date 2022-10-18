@@ -2,13 +2,20 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, BLACK_FRIDAY, COUPON_CODES } from '@proton/shared/lib/constants';
+import { COUPON_CODES } from '@proton/shared/lib/constants';
 
 import { Badge } from '../../components';
 
-const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019, BLACK_FRIDAY_2020 } = COUPON_CODES;
-const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+const {
+    BUNDLE,
+    PROTONTEAM,
+    BLACK_FRIDAY_2018,
+    BLACK_FRIDAY_2019,
+    BLACK_FRIDAY_2020,
+    BLACK_FRIDAY_2022,
+    MAIL_BLACK_FRIDAY_2022,
+    VPN_BLACK_FRIDAY_2022,
+} = COUPON_CODES;
 
 interface Props {
     code: string;
@@ -49,15 +56,10 @@ const DiscountBadge = ({ code, description, children }: Props) => {
         );
     }
 
-    const vpnPlus = `${vpnAppName} Plus`;
-    if (code === BLACK_FRIDAY.COUPON_CODE) {
+    if (code === BLACK_FRIDAY_2022 || code === MAIL_BLACK_FRIDAY_2022 || code === VPN_BLACK_FRIDAY_2022) {
         return (
-            <Badge
-                type="success"
-                tooltip={c('blackfriday: VPNspecialoffer Badge popup')
-                    .t`${vpnPlus} Special Offer 2021 discount has been applied`}
-            >
-                {c('blackfriday: VPNspecialoffer Promo title, need to be short').t`Special offer`}
+            <Badge type="success" tooltip={c('Info').t`Black Friday 2022 applied to your subscription`}>
+                Black Friday
             </Badge>
         );
     }

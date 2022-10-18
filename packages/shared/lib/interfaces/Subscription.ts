@@ -1,12 +1,15 @@
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
-export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS;
+export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS | CYCLE.THIRTY | CYCLE.FIFTEEN;
 
 export interface Pricing {
     [CYCLE.MONTHLY]: number;
     [CYCLE.YEARLY]: number;
     [CYCLE.TWO_YEARS]: number;
+    // Not always included for all plans
+    [CYCLE.THIRTY]?: number;
+    [CYCLE.FIFTEEN]?: number;
 }
 
 export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier';
@@ -35,7 +38,7 @@ export interface Plan {
     State: number;
 }
 
-enum External {
+export enum External {
     Default = 0,
     iOS = 1,
     Android = 2,
@@ -52,6 +55,7 @@ export interface Subscription {
     Currency: Currency;
     Amount: number;
     RenewAmount: number;
+    Discount: number;
     Plans: Plan[];
     External: External;
 }

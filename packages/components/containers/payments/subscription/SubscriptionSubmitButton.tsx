@@ -10,7 +10,6 @@ import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Props {
     className?: string;
-    canPay: Boolean;
     currency: Currency;
     step: SUBSCRIPTION_STEPS;
     onClose?: () => void;
@@ -24,7 +23,6 @@ interface Props {
 const SubscriptionSubmitButton = ({
     className,
     paypal,
-    canPay,
     currency,
     step,
     loading,
@@ -33,6 +31,8 @@ const SubscriptionSubmitButton = ({
     disabled,
     onClose,
 }: Props) => {
+    const amountDue = checkResult?.AmountDue || 0;
+
     if (step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} type="submit">
@@ -41,23 +41,16 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (checkResult?.AmountDue === 0) {
+    if (amountDue === 0) {
         return (
-            <PrimaryButton className={className} loading={loading} disabled={disabled || !canPay} type="submit">
+            <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit">
                 {c('Action').t`Confirm`}
             </PrimaryButton>
         );
     }
 
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
-        return (
-            <StyledPayPalButton
-                flow="subscription"
-                paypal={paypal}
-                className={className}
-                amount={checkResult?.AmountDue || 0}
-            />
-        );
+        return <StyledPayPalButton flow="subscription" paypal={paypal} className={className} amount={amountDue} />;
     }
 
     if (!loading && method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any)) {
@@ -70,13 +63,13 @@ const SubscriptionSubmitButton = ({
 
     const price = (
         <Price key="price" currency={currency}>
-            {checkResult?.AmountDue || 0}
+            {amountDue}
         </Price>
     );
 
     return (
-        <PrimaryButton className={className} loading={loading} disabled={disabled || !canPay} type="submit">
-            {(checkResult?.AmountDue || 0) > 0 ? c('Action').jt`Pay ${price}` : c('Action').t`Confirm`}
+        <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit">
+            {amountDue > 0 ? c('Action').jt`Pay ${price}` : c('Action').t`Confirm`}
         </PrimaryButton>
     );
 };

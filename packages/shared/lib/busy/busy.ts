@@ -62,7 +62,7 @@ export const isEditing = () => {
     return false;
 };
 
-const domIsBusy = () => {
+export const domIsBusy = () => {
     /*
      * These verifications perform some dom querying operations so in
      * order to not unnecessarily waste performance we return early

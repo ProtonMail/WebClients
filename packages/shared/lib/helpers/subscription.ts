@@ -1,7 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { ADDON_NAMES, APPS, APP_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
-import { Cycle, PlanIDs, PlansMap, Subscription } from '../interfaces';
+import { PlanIDs, PlansMap, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -129,10 +129,13 @@ export const getBaseAmount = (
     }
     return (subscription?.Plans || [])
         .filter(({ Name }) => Name === name)
-        .reduce((acc) => acc + base.Pricing[cycle], 0);
+        .reduce((acc) => {
+            const pricePerCycle = base.Pricing[cycle] || 0;
+            return acc + pricePerCycle;
+        }, 0);
 };
 
-export const getPlanIDs = (subscription: Subscription | undefined) => {
+export const getPlanIDs = (subscription: Subscription | undefined): PlanIDs => {
     return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
         acc[Name] = (acc[Name] || 0) + Quantity;
         return acc;
@@ -153,24 +156,42 @@ export const willTrialExpire = (subscription: Subscription | undefined) => {
     return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
 };
 
-export const getCycleDiscount = (cycle: Cycle, planName: PLANS | ADDON_NAMES, plansMap: PlansMap) => {
-    const pricing = plansMap[planName]?.Pricing;
-    if (!pricing) {
-        return 0;
-    }
-    const originalPrice = pricing[CYCLE.MONTHLY];
-    const normalisedPrice = pricing[cycle] / cycle;
-    if (normalisedPrice > originalPrice) {
-        return 0;
-    }
-    const percentage = (originalPrice - normalisedPrice) / originalPrice;
-    return Math.round(percentage * 100);
-};
-
 export const isExternal = (subscription: Subscription | undefined) => {
     return !!subscription?.External;
 };
 
 export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
-    return subscription?.CouponCode === COUPON_CODES.BLACK_FRIDAY_2022;
+    return [
+        COUPON_CODES.BLACK_FRIDAY_2022,
+        COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
+        COUPON_CODES.VPN_BLACK_FRIDAY_2022,
+    ].includes(subscription?.CouponCode as COUPON_CODES);
+};
+
+export const hasVPNBlackFridayDiscount = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.VPN_BLACK_FRIDAY_2022;
+};
+
+export const hasMailBlackFridayDiscount = (subscription: Subscription | undefined) => {
+    return subscription?.CouponCode === COUPON_CODES.MAIL_BLACK_FRIDAY_2022;
+};
+
+export const allCycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS, CYCLE.FIFTEEN, CYCLE.THIRTY];
+export const customCycles = [CYCLE.FIFTEEN, CYCLE.THIRTY];
+
+export const getValidCycle = (cycle: number): CYCLE | undefined => {
+    return allCycles.includes(cycle) ? cycle : undefined;
+};
+
+export const getNormalCycleFromCustomCycle = (cycle: CYCLE | undefined) => {
+    if (!cycle) {
+        return undefined;
+    }
+    if (cycle === CYCLE.FIFTEEN) {
+        return CYCLE.YEARLY;
+    }
+    if (cycle === CYCLE.THIRTY) {
+        return CYCLE.TWO_YEARS;
+    }
+    return cycle;
 };

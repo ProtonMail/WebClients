@@ -2,17 +2,21 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Info, UnderlineButton } from '../../components';
+import { Button, Icon, Info, InputTwo, UnderlineButton } from '../../components';
 import { useToggle } from '../../hooks';
-import GiftCodeForm from './subscription/GiftCodeForm';
 
 interface Props {
     loading?: boolean;
-    gift?: string;
+    giftCode?: string;
     onApply: (value: string) => void;
 }
 
-const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
+const getFormattedGiftCode = (giftCode: string) => {
+    const splittedGiftCode = giftCode.replace(/-/g, '').match(/.{1,4}/g) || [''];
+    return splittedGiftCode.join('-').toUpperCase();
+};
+
+const PaymentGiftCode = ({ giftCode = '', onApply, loading }: Props) => {
     const { state, toggle, set } = useToggle();
     const [code, setCode] = useState('');
 
@@ -23,17 +27,17 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
 
     useEffect(() => {
         // When we remove the gift code
-        if (!gift) {
+        if (!giftCode) {
             handleCancel();
         }
-    }, [gift]);
+    }, [giftCode]);
 
-    if (gift) {
+    if (giftCode) {
         return (
-            <div className="inline-flex flex-nowrap flex-align-items-center">
-                <span className="mr1 flex flex-nowrap flex-align-items-center">
-                    <Icon name="gift" className="mr0-5 mb0-25" />
-                    <code>{(gift.replace(/-/g, '').match(/.{1,4}/g) || ['']).join('-').toUpperCase()}</code>
+            <div className="flex flex-align-items-center">
+                <span className="flex-item-fluid flex-nowrap flex-align-items-center">
+                    <Icon name="gift" className="mr0-5 mb0-25 flex-item-noshrink" />
+                    <code>{getFormattedGiftCode(giftCode)}</code>
                 </span>
                 <Button
                     icon
@@ -53,11 +57,33 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
             if (!code) {
                 return;
             }
-
             onApply(code);
         };
 
-        return <GiftCodeForm code={code} onChange={setCode} onSubmit={handleSubmit} loading={loading} />;
+        return (
+            <div className="flex flex-nowrap flex-align-items-center flex-align-items-start">
+                <div className="pr0-5 flex-item-fluid">
+                    <InputTwo
+                        value={code}
+                        placeholder={c('Placeholder').t`Gift code`}
+                        onValue={setCode}
+                        onKeyDown={(event) => {
+                            if (event.key === 'Enter') {
+                                event.preventDefault();
+                                handleSubmit();
+                            }
+                        }}
+                    />
+                </div>
+                <Button
+                    color="norm"
+                    title={c('Title').t`Apply gift code`}
+                    loading={loading}
+                    disabled={!code}
+                    onClick={handleSubmit}
+                >{c('Action').t`Apply`}</Button>
+            </div>
+        );
     }
 
     return (

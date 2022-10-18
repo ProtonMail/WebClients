@@ -14,9 +14,13 @@ import {
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
-import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
+import SubscriptionCycleSelector, {
+    SubscriptionCheckoutCycleItem,
+} from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
+import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Api, Currency, Cycle, PaymentMethodStatus, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -56,6 +60,9 @@ const PaymentStep = ({
         paymentMethodStatus?.Card && PAYMENT_METHOD_TYPES.CARD,
         paymentMethodStatus?.Paypal && PAYMENT_METHOD_TYPES.PAYPAL,
     ].filter(isTruthy);
+
+    const plansMap = toMap(plans, 'Name') as PlansMap;
+
     const {
         card,
         setCard,
@@ -89,6 +96,11 @@ const PaymentStep = ({
         </Price>
     );
 
+    // Disable cycles during signup for custom cycles or if there is a black friday coupon. (Assume coming from offer page in that case).
+    const disableCycleSelector =
+        getIsCustomCycle(subscriptionData.cycle) ||
+        getIsOfferBasedOnCoupon(subscriptionData.checkResult.Coupon?.Code || '');
+
     return (
         <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
             <Main center={false}>
@@ -107,21 +119,29 @@ const PaymentStep = ({
                 />
                 <Content>
                     <div className="text-bold mb1">{c('new_plans: signup').jt`Your selected plan: ${planName}`}</div>
-                    <SubscriptionCycleSelector
-                        mode="buttons"
-                        cycle={subscriptionData.cycle}
-                        minimumCycle={subscriptionData.minimumCycle}
-                        currency={subscriptionData.currency}
-                        onChangeCycle={onChangeCycle}
-                        plans={plans}
-                        planIDs={subscriptionData.planIDs}
-                    />
+                    {disableCycleSelector ? (
+                        <SubscriptionCheckoutCycleItem
+                            checkResult={subscriptionData.checkResult}
+                            plansMap={plansMap}
+                            planIDs={subscriptionData.planIDs}
+                        />
+                    ) : (
+                        <SubscriptionCycleSelector
+                            mode="buttons"
+                            cycle={subscriptionData.cycle}
+                            minimumCycle={subscriptionData.minimumCycle}
+                            currency={subscriptionData.currency}
+                            onChangeCycle={onChangeCycle}
+                            plansMap={plansMap}
+                            planIDs={subscriptionData.planIDs}
+                        />
+                    )}
                     <PlanCustomization
                         mode="signup"
-                        plans={plans}
                         loading={false}
                         currency={subscriptionData.currency}
                         cycle={subscriptionData.cycle}
+                        plansMap={plansMap}
                         planIDs={subscriptionData.planIDs}
                         onChangePlanIDs={onChangePlanIDs}
                     />

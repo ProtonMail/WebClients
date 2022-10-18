@@ -138,6 +138,11 @@ const PlanSelection = ({
             ? selectedProductPlans[audience]
             : plansList[0]?.planName;
 
+        const price = plan.Pricing[cycle];
+        if (price === undefined) {
+            return null;
+        }
+
         return (
             <PlanCard
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
@@ -167,7 +172,7 @@ const PlanSelection = ({
                 disabled={loading || (isFree && !isSignupMode && isCurrentPlan)}
                 cycle={cycle}
                 key={plan.ID}
-                price={plan.Pricing[cycle]}
+                price={price}
                 features={
                     mode === 'settings' ? (
                         <PlanCardFeaturesShort plan={shortPlan} icon />
