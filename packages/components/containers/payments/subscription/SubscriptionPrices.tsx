@@ -14,9 +14,10 @@ interface Props {
 }
 
 const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suffix').t`per month` }: Props) => {
+    const pricingPerCycle = plan?.Pricing[cycle] || 0;
     const billedAmount = (
         <Price key="billed-amount" currency={currency}>
-            {plan.Pricing[cycle]}
+            {pricingPerCycle}
         </Price>
     );
     return (
@@ -26,7 +27,7 @@ const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suf
                 className="subscriptionPrices-monthly inline-flex flex-justify-center"
                 suffix={suffix}
             >
-                {plan.Pricing[cycle] / cycle}
+                {pricingPerCycle / cycle}
             </Price>
             {cycle === CYCLE.YEARLY && (
                 <div className="text-sm mt0 mb0">{c('Details').jt`Billed as ${billedAmount} per year`}</div>

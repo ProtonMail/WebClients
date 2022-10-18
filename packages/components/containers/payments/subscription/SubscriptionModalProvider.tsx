@@ -30,6 +30,7 @@ interface OpenCallbackProps {
     currency?: Currency;
     coupon?: string;
     disablePlanSelection?: boolean;
+    disableCycleSelector?: boolean;
     disableThanksStep?: boolean;
     onClose?: () => void;
     onSuccess?: () => void;
@@ -65,6 +66,7 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
         cycle?: Cycle;
         coupon?: string;
         disablePlanSelection?: boolean;
+        disableCycleSelector?: boolean;
         disableThanksStep?: boolean;
         onClose?: () => void;
         onSuccess?: () => void;
@@ -98,6 +100,7 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
                         defaultAudience,
                         defaultSelectedProductPlans,
                         disablePlanSelection,
+                        disableCycleSelector,
                         disableThanksStep,
                         onClose,
                         onSuccess,
@@ -135,6 +138,7 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
                             defaultSelectedProductPlans:
                                 defaultSelectedProductPlans || getDefaultSelectedProductPlans(app, planIDs),
                             disablePlanSelection,
+                            disableCycleSelector,
                             disableThanksStep,
                             onClose,
                             onSuccess,
