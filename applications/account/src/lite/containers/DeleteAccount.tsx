@@ -22,11 +22,7 @@ const DeleteAccount = () => {
         broadcast({ type: MessageType.CLOSE });
     };
 
-    return (
-        <div>
-            <DeleteAccountModal hideHeader fullscreen open onSuccess={handleSuccess} onClose={handleClose} />
-        </div>
-    );
+    return <DeleteAccountModal hideHeader fullscreen open onSuccess={handleSuccess} onClose={handleClose} />;
 };
 
 export default DeleteAccount;

@@ -1,24 +1,25 @@
-import { ModalProps, ModalTwo, ModalTwoContent } from '@proton/components';
 import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { ModalProps, ModalTwo, ModalTwoContent } from '../../../components/modalTwo';
 import useOnSelectDeal from '../hooks/useOnSelectDeal';
 import useVisitedOffer from '../hooks/useVisitedOffer';
-import { Offer, OfferConfig } from '../interface';
+import { Offer, OfferConfig, OfferProps } from '../interface';
 import OfferCloseButton from './shared/OfferCloseButton';
 
 import '../Offer.scss';
 
-interface Props extends ModalProps {
+interface Props {
     offerConfig: OfferConfig;
     offer: Offer;
     modalProps: ModalProps;
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
+    onSelectDeal?: OfferProps['onSelectDeal'];
 }
 
-const OfferModal = ({ offer, offerConfig, modalProps, currency, onChangeCurrency }: Props) => {
+const OfferModal = ({ offer, offerConfig, modalProps, currency, onChangeCurrency, onSelectDeal }: Props) => {
     useVisitedOffer(offerConfig);
     const { onClose: handleCloseModal } = modalProps;
 
@@ -35,12 +36,12 @@ const OfferModal = ({ offer, offerConfig, modalProps, currency, onChangeCurrency
             size="large"
         >
             <ModalTwoContent>
-                <OfferCloseButton onClose={modalProps.onClose} />
+                {modalProps.onClose && <OfferCloseButton onClose={modalProps.onClose} />}
                 <offerConfig.layout
                     offer={offer}
                     currency={currency}
                     onChangeCurrency={onChangeCurrency}
-                    onSelectDeal={handleOnSelectDeal}
+                    onSelectDeal={onSelectDeal || handleOnSelectDeal}
                     onCloseModal={handleCloseModal || noop}
                 />
             </ModalTwoContent>
