@@ -1933,10 +1933,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden.",
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -3367,6 +3363,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
       "Existent and added participants will be notified.": [
         "Bestaande en toegevoegde deelnemers worden op de hoogte gebracht."
       ],
@@ -3439,6 +3438,9 @@
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
+      ],
+      "Labels:": [
+        "Labels:"
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
@@ -3681,11 +3683,14 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
       ],
       "Week": [
         "Week"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
@@ -3944,9 +3949,6 @@
       ],
       "Description": [
         "Beschrijving"
-      ],
-      "Display": [
-        "Tonen"
       ],
       "Do not ask again": [
         "Vraag niet opnieuw"
@@ -4871,9 +4873,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } van de ${ countContacts } contacten succesvol geëxporteerd."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
         "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
@@ -4945,7 +4944,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid per agenda overschreden",
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden per agenda overschreden"
       ]
     },
@@ -5310,9 +5310,6 @@
       "Calendar alarm": [
         "Agendamelding"
       ],
-      "Calendar information": [
-        "Agenda-informatie"
-      ],
       "Change my answer": [
         "Mijn antwoord wijzigen"
       ],
@@ -5586,9 +5583,6 @@
       "Show time zones for event start and end times": [
         "Toon tijdzones voor afspraak start- en eindtijden"
       ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
-      ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
@@ -5600,6 +5594,9 @@
       ],
       "Start import process": [
         "Importproces starten"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
       ],
       "Update event": [
         "Afspraak bijwerken"
@@ -5638,6 +5635,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Kies een nummer"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Bewerk informatie"
       ]
     },
     "Today icon tooltip in mini calendar": {

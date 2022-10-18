@@ -86,9 +86,6 @@
       "Create address": [
         "Utwórz adres"
       ],
-      "Create free account": [
-        "Utwórz darmowe konto"
-      ],
       "Current plan": [
         "Obecny plan"
       ],
@@ -1850,6 +1847,11 @@
         "megabajtów"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Prywatność to nasz standard."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 wiadomość miesięcznie)"
@@ -1859,6 +1861,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 wiadomości miesięcznie)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Masz już konto? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Jesteś nowym użytkownikiem usługi ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1993,9 +2005,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Ulokowany w Szwajcarii, dostępny na całym świecie"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Subskrypcja planu Basic, Plus lub Visionary jest wymagana"
@@ -2399,7 +2408,7 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
@@ -2492,8 +2501,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Przenosimy się! Dołącz do nas na nowej stronie: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Przenieśliśmy się! Zaloguj się na nowej domenie: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Wyślemy kod resetowania na adres pomocniczy."
@@ -3082,6 +3091,9 @@
       ],
       "Common sign up issues": [
         "Typowe problemy z rejestracją"
+      ],
+      "Create account": [
+        "Utwórz konto"
       ],
       "Forgot username?": [
         "Nie pamiętasz nazwy użytkownika?"
@@ -4066,6 +4078,17 @@
         "Nazwa użytkownika"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Konfiguracja konta"
+      ],
+      "Payment": [
+        "Płatność"
+      ],
+      "Verification": [
+        "Weryfikacja"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Dysk ${ DRIVE_APP_NAME } wyszedł z wersji beta! Zapewnij swoim plikom takie samo bezpieczeństwo, jak poczcie e-mail."
@@ -4485,6 +4508,9 @@
       "Email subscriptions": [
         "Listy mailingowe"
       ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
       "Error": [
         "Błąd"
       ],
@@ -4622,9 +4648,6 @@
       ],
       "Sign in": [
         "Zaloguj się"
-      ],
-      "Sign in again to continue": [
-        "Zaloguj się ponownie, aby kontynuować"
       ],
       "Sign out": [
         "Wyloguj"

@@ -205,9 +205,6 @@
       "Create folder": [
         "Crear carpeta"
       ],
-      "Create free account": [
-        "Crear cuenta gratuita"
-      ],
       "Create label": [
         "Crear etiqueta"
       ],
@@ -478,9 +475,6 @@
       "No": [
         "No"
       ],
-      "Non spam": [
-        "No es spam"
-      ],
       "OK": [
         "OK"
       ],
@@ -538,11 +532,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar la página"
-      ],
       "refresh the page": [
         "actualizar la página"
+      ],
+      "Refresh the page": [
+        "Actualizar la página"
       ],
       "Reload": [
         "Recargar"
@@ -2575,10 +2569,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Revisa cómo deben importarse estos grupos."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Controla cuántas personas hacen clic en tu enlace, se registran y se convierten en suscriptores de pago. Vea cómo se acumulan sus meses gratuitos."
       ],
@@ -2614,17 +2604,11 @@
       "${ name } deletion failed": [
         "${ name } no se pudo eliminar"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } no se pudo mover a la Lista de No-spam"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } no se pudo mover a la lista de spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } no se pudo mover a tu lista negra"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } movido a la lista de No-spam"
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la lista de spam"
@@ -2731,17 +2715,11 @@
       "${ name } deletion failed": [
         "${ name } no se pudo eliminar"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } no se pudo mover a la Lista de No-spam"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } no se pudo mover a la lista de spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } no se pudo mover a tu lista negra"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } movido a la lista de No-spam"
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la lista de spam"
@@ -3789,9 +3767,6 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Los correos de las direcciones bloqueadas no serán entregados."
-      ],
-      "Search in your allow and block lists": [
-        "Buscar en tus listas de permitidos y bloqueados"
       ]
     },
     "Font Face Default": {
@@ -3813,6 +3788,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "¿Ya tienes una cuenta? ${ signIn }"
       ]
     },
     "Group": {
@@ -4671,9 +4651,6 @@
       "Background color": [
         "Color de fondo"
       ],
-      "Based in Switzerland, available globally": [
-        "Con sede en Suiza, disponible globalmente"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
@@ -5128,6 +5105,9 @@
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
+      "Labels:": [
+        "Etiquetas:"
+      ],
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
@@ -5181,6 +5161,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduce manualmente esta información en el dispositivo de autenticación de doble factores para configurar tu cuenta. ${ _switchButton }."
+      ],
+      "Member": [
+        "Miembro"
       ],
       "Merged": [
         "Fusionado"
@@ -5673,8 +5656,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, selecciona un método de recuperación de cuenta para que podamos verificar la solicitud."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Para proteger tu conexión a Internet, descarga e instala la aplicación de ${ VPN_APP_NAME } para tu dispositivo y conéctate a un servidor de ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Para proteger tu conexión a internet, descarga e installa la aplicación ${ VPN_APP_NAME } en tu dispositivo y conéctate a un servidor."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarga tu cuenta con créditos que puedes utilizar para suscribirte a un plan nuevo o renovar el actual. Obtienes un crédito por cada ${ i18nCurrency } gastado."
@@ -5793,8 +5776,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "¡Nos hemos mudado! Únete a nosotros en nuestro nuevo sitio: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "¡Nos hemos mudado! Por favor, ingrese a nuestro nuevo dominio: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -5882,9 +5865,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puede utilizar las siguientes credenciales para conectarse a un servidor ${ VPN_APP_NAME } utilizando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "No puedes enviar más de ${ emailSendLimitNumber } invitaciones de correo hasta pasadas 24 horas"
       ],
       "You cannot refer ${ appName } users": [
         "No puedes referir usuarios de ${ appName }"
@@ -6738,9 +6718,6 @@
       "Discount": [
         "Descuento"
       ],
-      "Display": [
-        "Mostrar"
-      ],
       "Display name": [
         "Nombre a mostrar"
       ],
@@ -6956,9 +6933,6 @@
       ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta"
-      ],
-      "Non Spam": [
-        "No es spam"
       ],
       "Non-standard ports": [
         "Puertos no estándares"
@@ -7410,6 +7384,9 @@
       "Common sign up issues": [
         "Problemas comunes de registro"
       ],
+      "Create account": [
+        "Crear cuenta"
+      ],
       "Encryption and keys": [
         "Cifrado y claves"
       ],
@@ -7761,9 +7738,6 @@
       ],
       "Blocked": [
         "Bloqueado"
-      ],
-      "Non spam": [
-        "No es spam"
       ],
       "Spam": [
         "Spam"
@@ -9209,11 +9183,6 @@
         "Etiquetas"
       ]
     },
-    "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Has alcanzado el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
-      ]
-    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Añadir personas o grupos"
@@ -9798,8 +9767,8 @@
       "Add Sieve filter": [
         "Añadir filtro Sieve"
       ],
-      "Add to non spam list": [
-        "Añadir a la lista de no-spam"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Añadir a la lista de spam"
@@ -9857,9 +9826,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
-      ],
-      "Calendar information": [
-        "Información del calendario"
       ],
       "Cancel Mail subscription": [
         "Cancelar suscripción"

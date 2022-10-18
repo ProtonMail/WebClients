@@ -2908,10 +2908,6 @@
       "No labels": [
         "Aucun label"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
@@ -3831,6 +3827,11 @@
         "Par défaut"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Nous avons augmenté l'espace de stockage total de votre compte à ${ rewardInGb } Go. Obtenez un espace de stockage supplémentaire et débloquez des fonctionnalités haut de gamme dès aujourd'hui."
@@ -4540,9 +4541,6 @@
       "Background color": [
         "Couleur d'arrière-plan"
       ],
-      "Based in Switzerland, available globally": [
-        "Basé en Suisse, disponible dans le monde entier"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
@@ -4870,6 +4868,9 @@
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
+      ],
+      "Labels:": [
+        "Labels :"
       ],
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
@@ -5457,8 +5458,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé ! Veuillez vous connecter à notre nouveau domaine : ${ link }."
       ],
       "Web URL": [
         "URL web"
@@ -5729,7 +5730,7 @@
         "Accéder à Brouillons"
       ],
       "Go to Inbox": [
-        "Aller à la Boite de réception"
+        "Accéder à Boite de réception"
       ],
       "Go to Sent": [
         "Accéder à Envoyés"
@@ -5768,7 +5769,7 @@
         "Marquer comme non lu"
       ],
       "Minimize / maximize composer": [
-        "Minimiser/Maximiser le composeur"
+        "Réduire/Agrandir le composeur"
       ],
       "Move down": [
         "Déplacer vers le bas"
@@ -7130,9 +7131,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -7467,17 +7465,9 @@
         "${ elementsCount } conversation marquée comme non lue.",
         "${ elementsCount } conversations marquées comme non lues."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées.",
-        "${ elementsCount } conversations déplacées dans le dossier ${ folderName } et expéditeurs ajoutés à la liste d'adresses autorisées."
-      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversation déplacée dans le dossier ${ folderName }.",
         "${ elementsCount } conversations déplacées dans le dossier ${ folderName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation moved to spam and sender added to your block list.",
-        "${ elementsCount } conversations moved to spam and senders added to the block list."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation retirée de ${ labelName }.",
@@ -7499,17 +7489,9 @@
         "${ elementsCount } message marqué comme non lu.",
         "${ elementsCount } messages marqués comme non lus."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } message déplacé dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées.",
-        "${ elementsCount } messages déplacés dans le dossier ${ folderName } et expéditeurs ajoutés à la liste d'adresses autorisées."
-      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } message déplacé dans le dossier ${ folderName }.",
         "${ elementsCount } messages déplacés dans le dossier ${ folderName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message moved to spam and sender added to your block list.",
-        "${ elementsCount } messages moved to spam and senders added to the block list."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
@@ -7556,14 +7538,8 @@
       "Conversation marked as unread.": [
         "Conversation marquée comme non lue."
       ],
-      "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées."
-      ],
       "Conversation moved to ${ folderName }.": [
         "Conversation déplacée dans le dossier ${ folderName }."
-      ],
-      "Conversation moved to spam and sender added to your block list.": [
-        "Conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -7619,14 +7595,8 @@
       "Message marked as unread.": [
         "Message marqué comme non lu."
       ],
-      "Message moved to ${ folderName } and sender added to your allow list.": [
-        "Message déplacé dans le dossier ${ folderName } et expéditeur ajouté à la liste d'adresses autorisées."
-      ],
       "Message moved to ${ folderName }.": [
         "Message déplacé dans le dossier ${ folderName }."
-      ],
-      "Message moved to spam and sender added to your block list.": [
-        "Message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à la liste d'adresses bloquées."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."

@@ -86,9 +86,6 @@
       "Create address": [
         "Створити адресу"
       ],
-      "Create free account": [
-        "Створити безплатний обліковий запис"
-      ],
       "Current plan": [
         "Поточний тарифний план"
       ],
@@ -1789,6 +1786,11 @@
         "(1-2 електронні листи на місяць)"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Уже маєте обліковий запис? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Обліковий запис"
@@ -1915,9 +1917,6 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
-      ],
-      "Based in Switzerland, available globally": [
-        "Розташований у Швейцарії, доступний у всьому світі"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Необхідна передплата Basic, Plus або Visionary"
@@ -2309,8 +2308,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
@@ -2399,8 +2398,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Ми переїхали! Долучайтеся до нас на нашому новому сайті: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Ми переїхали! Будь ласка, увійдіть на нашому новому домені: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
@@ -2989,6 +2988,9 @@
       ],
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
+      ],
+      "Create account": [
+        "Зареєструватися"
       ],
       "Forgot username?": [
         "Забули ім'я користувача?"
@@ -3967,6 +3969,17 @@
         "Ім'я користувача"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Налаштування облікового запису"
+      ],
+      "Payment": [
+        "Оплата"
+      ],
+      "Verification": [
+        "Перевірка"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
@@ -4386,6 +4399,9 @@
       "Email subscriptions": [
         "Підписки електронної пошти"
       ],
+      "Enter your password": [
+        "Введіть свій пароль"
+      ],
       "Error": [
         "Помилка"
       ],
@@ -4523,9 +4539,6 @@
       ],
       "Sign in": [
         "Увійти"
-      ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
       ],
       "Sign out": [
         "Вийти"

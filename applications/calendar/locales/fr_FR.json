@@ -2016,10 +2016,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu’à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu’à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
@@ -3549,6 +3545,9 @@
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
       ],
+      "Labels:": [
+        "Labels :"
+      ],
       "Large imports can take several days.": [
         "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
@@ -3790,8 +3789,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé ! Veuillez vous connecter à notre nouveau domaine : ${ link }."
       ],
       "Week": [
         "Semaine"
@@ -4059,9 +4058,6 @@
       ],
       "Description": [
         "Description"
-      ],
-      "Display": [
-        "Afficher"
       ],
       "Do not ask again": [
         "Ne plus demander"
@@ -5016,9 +5012,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -5095,8 +5088,9 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Vous avez dépassé le nombre maximum de ${ MAX_CALENDAR_MEMBERS } membres par calendrier."
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Vous avez dépassé le maximum d'${ MAX_CALENDAR_MEMBERS } membre par calendrier.",
+        "Vous avez dépassé le maximum de ${ MAX_CALENDAR_MEMBERS } membres par calendrier."
       ]
     },
     "Share calendar modal description": {
@@ -5112,6 +5106,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Partager avec les utilisateurs Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Créé par ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5470,9 +5469,6 @@
       "Calendar alarm": [
         "Alarme de calendrier"
       ],
-      "Calendar information": [
-        "Informations du calendrier"
-      ],
       "Change my answer": [
         "Changer ma réponse"
       ],
@@ -5746,9 +5742,6 @@
       "Show time zones for event start and end times": [
         "Afficher les fuseaux horaires pour les heures de début et de fin de l’événement"
       ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer"
-      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
@@ -5760,6 +5753,9 @@
       ],
       "Start import process": [
         "Démarrer le processus d'importation"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Update event": [
         "Mettre à jour l'événement"
@@ -5798,6 +5794,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Modifier les informations"
       ]
     },
     "Today icon tooltip in mini calendar": {

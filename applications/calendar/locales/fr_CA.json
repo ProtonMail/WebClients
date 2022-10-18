@@ -495,6 +495,9 @@
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
       ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
+      ],
       "Use for sending": [
         "Utiliser pour l'envoi"
       ],
@@ -1964,10 +1967,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
@@ -2303,6 +2302,9 @@
       ],
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinataire dupliqué supprimé: ${ joinedRecipients }",
@@ -2727,6 +2729,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Votre retour d'expérience"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clé de sécurité"
       ]
     },
     "file size format": {
@@ -3388,11 +3408,20 @@
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois"
+      ],
+      "Enter the code from your authenticator app": [
+        "Entrez le code de votre application d'authentification"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
       "Existent and added participants will be notified.": [
         "Les participant·e·s existant·e·s et ajouté·e·s seront notifié·e·s."
@@ -3466,6 +3495,9 @@
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
+      ],
+      "Labels:": [
+        "Labels:"
       ],
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
@@ -3708,11 +3740,14 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons! Rejoignez-nous sur notre nouveau site: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Nous avons déménagé! Veuillez vous connecter à notre nouveau domaine: ${ link }."
       ],
       "Week": [
         "Semaine"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "Which event would you like to delete?": [
         "Quel événement souhaitez-vous supprimer?"
@@ -3915,6 +3950,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Authenticator app": [
+        "Application d'authentification"
+      ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
@@ -3971,9 +4009,6 @@
       ],
       "Description": [
         "Description"
-      ],
-      "Display": [
-        "Afficher"
       ],
       "Do not ask again": [
         "Ne plus demander"
@@ -4928,9 +4963,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -5007,8 +5039,9 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "Vous avez dépassé le nombre maximum de ${ MAX_CALENDAR_MEMBERS } membres par calendrier"
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Vous avez dépassé le nombre maximal de ${ MAX_CALENDAR_MEMBERS } membre par calendrier",
+        "Vous avez dépassé le nombre maximal de ${ MAX_CALENDAR_MEMBERS } membres par calendrier"
       ]
     },
     "Share calendar modal description": {
@@ -5024,6 +5057,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Partager avec les utilisateurs Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Créé par ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5050,11 +5088,17 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Les invitations sont maintenant affichées dans votre calendrier comme des événements en attente. Pour répondre, il suffit d'ouvrir un événement. ${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "Abonnez-vous à d'autres calendriers"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Vous pouvez maintenant ajouter des notifications aux calendriers auxquels vous êtes abonné."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Vous pouvez vous abonner à des calendriers externes et voir leurs événements."
       ]
     },
     "Spotlight settings link": {
@@ -5376,9 +5420,6 @@
       "Calendar alarm": [
         "Alarme de calendrier"
       ],
-      "Calendar information": [
-        "Informations du calendrier"
-      ],
       "Change my answer": [
         "Changer ma réponse"
       ],
@@ -5462,6 +5503,9 @@
       "Edit contact group": [
         "Modifier le groupe de contacts"
       ],
+      "Edit email settings": [
+        "Modifier les paramètres des courriels"
+      ],
       "Edit image": [
         "Modifier l'image"
       ],
@@ -5525,6 +5569,9 @@
       ],
       "Merging contacts": [
         "Fusion des contacts"
+      ],
+      "Minicalendar": [
+        "Minicalendrier"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -5646,9 +5693,6 @@
       "Show time zones for event start and end times": [
         "Afficher les fuseaux horaires pour les heures de début et de fin de l'événement"
       ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer"
-      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
@@ -5660,6 +5704,9 @@
       ],
       "Start import process": [
         "Démarrer le processus d'importation"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Update event": [
         "Mettre à jour l'événement"
@@ -5698,6 +5745,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Modifier les informations"
       ]
     },
     "Today icon tooltip in mini calendar": {

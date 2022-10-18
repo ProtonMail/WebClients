@@ -1733,10 +1733,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contacten samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden.",
-        "Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en\ntot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splitst u het dan in kleinere bestanden."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Gebruik Sleep en Drop om prioriteit te ranken tussen samenvoegende contacten. Vink de contacten die u niet wilt samenvoegen."
       ],
@@ -2149,6 +2145,11 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy is standaard."
       ]
     },
     "Group": {
@@ -2832,6 +2833,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
         "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
@@ -2965,6 +2969,9 @@
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
+      ],
+      "Labels:": [
+        "Labels:"
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
@@ -3347,8 +3354,8 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
       ],
       "Week": [
         "Week"
@@ -3358,6 +3365,9 @@
       ],
       "What would you like to do?": [
         "Wat zou u willen doen?"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
@@ -4406,9 +4416,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } van de ${ countContacts } contacten succesvol geëxporteerd."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
         "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
@@ -4679,9 +4686,6 @@
       ],
       "Back": [
         "Vorige"
-      ],
-      "Based in Switzerland, available globally": [
-        "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -4986,9 +4990,6 @@
       "Show actions": [
         "Actie weergeven"
       ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
-      ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
@@ -5039,6 +5040,9 @@
       ],
       "Trash": [
         "Prullenbak"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
       ],
       "Type": [
         "Soort"

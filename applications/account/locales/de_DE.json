@@ -213,9 +213,6 @@
       "Create folder": [
         "Ordner erstellen"
       ],
-      "Create free account": [
-        "Kostenloses Konto erstellen"
-      ],
       "Create label": [
         "Kategorie erstellen"
       ],
@@ -486,7 +483,7 @@
       "No": [
         "Nein"
       ],
-      "Non spam": [
+      "Not spam": [
         "Kein Spam"
       ],
       "OK": [
@@ -546,10 +543,10 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Seite aktualisieren"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Seite aktualisieren"
       ],
       "Reload": [
@@ -761,6 +758,9 @@
       ],
       "Support": [
         "Support"
+      ],
+      "Switch account": [
+        "Konto wechseln"
       ],
       "Top up": [
         "Aufladen"
@@ -2524,10 +2524,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Es scheint, dass die zu importierende Kontaktliste einige Gruppen enthält. Bitte überprüfen Sie, wie diese Gruppen importiert werden sollen."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Erfahre, wie viele Personen auf deinen Link klicken, sich anmelden und bezahlte Abonnenten werden. Beobachte, wie sich deine Gratismonate summieren."
       ],
@@ -2563,17 +2559,11 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden"
       ],
       "${ name } failed to move to your block list": [
         "${ name } konnte nicht in die eigene Sperrliste verschoben werden"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } in Liste „Kein Spam“ verschoben"
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben"
@@ -2680,17 +2670,11 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
-      "${ name } failed to move to Non spam List": [
-        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden"
       ],
       "${ name } failed to move to your block list": [
         "${ name } konnte nicht in die eigene Sperrliste verschoben werden"
-      ],
-      "${ name } moved to Non spam list": [
-        "${ name } in Liste „Kein Spam“ verschoben"
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben"
@@ -3742,8 +3726,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "Nachrichten von gesperrten Adressen werden nicht zugestellt."
       ],
-      "Search in your allow and block lists": [
-        "Eigene Ausnahmen- und Sperrlisten durchsuchen"
+      "Search list": [
+        "Liste durchsuchen"
       ]
     },
     "Font Face Default": {
@@ -3765,6 +3749,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 E-Mails pro Monat)"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Neu bei ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4635,9 +4624,6 @@
       "Background color": [
         "Hintergrundfarbe"
       ],
-      "Based in Switzerland, available globally": [
-        "In der Schweiz ansässig, weltweit verfügbar"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlegende Navigation und Aktionen bleiben verfügbar, unabhängig davon, ob in den Einstellungen Tastaturkürzel aktiviert sind oder nicht."
       ],
@@ -5101,6 +5087,9 @@
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
       ],
+      "Labels:": [
+        "Kategorien:"
+      ],
       "Large imports can take several days.": [
         "Große Importe können mehrere Tage dauern."
       ],
@@ -5154,6 +5143,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Gib diese Informationen manuell in dein Zwei‐Faktor‐Authentifizierungsgerät ein, um dein Konto einzurichten. ${ _switchButton }."
+      ],
+      "Member": [
+        "Mitglied"
       ],
       "Merged": [
         "Zusammengeführt"
@@ -5652,9 +5644,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Um fortzufahren, wählen Sie eine Kontenwiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME } App für dein Gerät herunter und verbinde dich mit einem ${ VPN_APP_NAME }-Server."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten, damit er richtig funktioniert. Erfahre ${ link }."
       ],
@@ -5778,9 +5767,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
-      ],
       "Web URL": [
         "Web-URL"
       ],
@@ -5870,9 +5856,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Du kannst in den nächsten 24 Stunden nicht mehr als ${ emailSendLimitNumber } E-Mail-Einladungen versenden"
       ],
       "You cannot refer ${ appName } users": [
         "Du kannst keine ${ appName } Benutzer empfehlen"
@@ -6732,9 +6715,6 @@
       "Discount": [
         "Rabatt"
       ],
-      "Display": [
-        "Anzeigen"
-      ],
       "Display name": [
         "Anzeigename"
       ],
@@ -6954,11 +6934,11 @@
       "No label found": [
         "Keine Kategorie gefunden"
       ],
-      "Non Spam": [
-        "Kein Spam"
-      ],
       "Non-standard ports": [
         "Nicht standardisierte Ports"
+      ],
+      "Not spam": [
+        "Kein Spam"
       ],
       "Notification": [
         "Benachrichtigung"
@@ -7088,6 +7068,9 @@
       ],
       "Show secondary time zone": [
         "Zweite Zeitzone anzeigen"
+      ],
+      "Show sender images": [
+        "Absenderbild anzeigen"
       ],
       "Show week numbers": [
         "Kalenderwochen anzeigen"
@@ -7412,6 +7395,9 @@
       ],
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
+      ],
+      "Create account": [
+        "Konto erstellen"
       ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
@@ -7773,7 +7759,7 @@
       "Blocked": [
         "Gesperrt"
       ],
-      "Non spam": [
+      "Not spam": [
         "Kein Spam"
       ],
       "Spam": [
@@ -9266,6 +9252,11 @@
         "Kategorie hinzuf."
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Erstellt von ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Anzeigename"
@@ -9841,8 +9832,8 @@
       "Add Sieve filter": [
         "Sieve-Filter hinzufügen"
       ],
-      "Add to non spam list": [
-        "Zur Liste „Kein Spam“ hinzufügen"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Zur Spam-Liste hinzufügen"
@@ -9900,9 +9891,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge für ${ platform }"
-      ],
-      "Calendar information": [
-        "Kalenderinformationen"
       ],
       "Cancel Mail subscription": [
         "Mail-Abonnement kündigen"
@@ -10412,6 +10400,9 @@
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
       ],
+      "Sender image": [
+        "Absenderbild"
+      ],
       "Session management": [
         "Sitzungsverwaltung"
       ],
@@ -10444,6 +10435,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Signed in to member account": [
+        "Im Mitgliedskonto angemeldet"
       ],
       "Sort folders alphabetically": [
         "Ordner alphabetisch sortieren"
@@ -10650,6 +10644,11 @@
         "Rolle"
       ]
     },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Informationen bearbeiten"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Heute"
@@ -10712,6 +10711,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Setzt die folgende Fußzeile in die von dir gesendeten E-Mails: ${ signature } Der Link verweist auf deinen Empfehlungslink. Die Fußzeile wird unter deiner Signatur erscheinen. Du kannst deine Signatur jederzeit in den Einstellungen personalisieren."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Zeigt das Bild eines jeden Absenders in der Nachrichtenliste an. Wenn kein Foto vorhanden ist, werden die Initialen des Absenders angezeigt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Mit diesem Schlüssel erzeugte Signaturen werden als ungültig behandelt und können nicht zur Verschlüsselung verwendet werden."

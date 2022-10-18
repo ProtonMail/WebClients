@@ -213,9 +213,6 @@
       "Create folder": [
         "创建文件夹"
       ],
-      "Create free account": [
-        "免费注册"
-      ],
       "Create label": [
         "创建标签"
       ],
@@ -486,9 +483,6 @@
       "No": [
         "否"
       ],
-      "Non spam": [
-        "非垃圾邮件"
-      ],
       "OK": [
         "好"
       ],
@@ -546,10 +540,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -2585,9 +2579,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "在这里可以查询点击了您的邀请链接、注册以及开通付费账户的人数，亲眼目睹您的免费体验期逐步延长。"
       ],
@@ -2623,17 +2614,11 @@
       "${ name } deletion failed": [
         "${ name } 删除失败"
       ],
-      "${ name } failed to move to Non spam List": [
-        "将 ${ name } 移入非垃圾邮件名单失败"
-      ],
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
       ],
       "${ name } failed to move to your block list": [
         "将 ${ name } 移入黑名单失败"
-      ],
-      "${ name } moved to Non spam list": [
-        "已将 ${ name } 移入非垃圾邮件名单"
       ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
@@ -2740,17 +2725,11 @@
       "${ name } deletion failed": [
         "${ name } 删除失败"
       ],
-      "${ name } failed to move to Non spam List": [
-        "将 ${ name } 移入非垃圾邮件名单失败"
-      ],
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
       ],
       "${ name } failed to move to your block list": [
         "将 ${ name } 移入黑名单失败"
-      ],
-      "${ name } moved to Non spam list": [
-        "已将 ${ name } 移入非垃圾邮件名单"
       ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
@@ -3722,9 +3701,6 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "您将不会收到来自屏蔽邮箱地址的邮件"
-      ],
-      "Search in your allow and block lists": [
-        "在白名单和黑名单中搜索"
       ]
     },
     "Font Face Default": {
@@ -4580,9 +4556,6 @@
       "Background color": [
         "背景颜色"
       ],
-      "Based in Switzerland, available globally": [
-        "扎根瑞士，惠及全球"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
@@ -5090,6 +5063,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "在验证设备上手动输入下列信息完成账户设置，或${ _switchButton }。"
       ],
+      "Member": [
+        "成员"
+      ],
       "Merged": [
         "已合并"
       ],
@@ -5582,9 +5558,6 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "若需要保护与互联网之间的连接，下载并安装 ${ VPN_APP_NAME } 应用程序并连接至 ${ VPN_APP_NAME } 服务器。"
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"
       ],
@@ -5705,9 +5678,6 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "我们搬家了！在新地点加入我们：${ link }。"
-      ],
       "Web URL": [
         "网址"
       ],
@@ -5797,9 +5767,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ${ VPN_APP_NAME } 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
       ],
       "You cannot refer ${ appName } users": [
         "您不能邀请其他 ${ appName } 用户"
@@ -6656,9 +6623,6 @@
       "Discount": [
         "优惠"
       ],
-      "Display": [
-        "显示"
-      ],
       "Display name": [
         "称呼"
       ],
@@ -6877,9 +6841,6 @@
       ],
       "No label found": [
         "未找到标签"
-      ],
-      "Non Spam": [
-        "非垃圾邮件"
       ],
       "Non-standard ports": [
         "非标准端口"
@@ -7337,6 +7298,9 @@
       "Common sign up issues": [
         "常见注册问题"
       ],
+      "Create account": [
+        "创建账户"
+      ],
       "Encryption and keys": [
         "加密与密钥"
       ],
@@ -7693,9 +7657,6 @@
       ],
       "Blocked": [
         "已屏蔽"
-      ],
-      "Non spam": [
-        "非垃圾邮件"
       ],
       "Spam": [
         "垃圾邮件"
@@ -9145,11 +9106,6 @@
         "分享日历链接即可邀请非 Proton 用户"
       ]
     },
-    "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
-        "您已超过每个日历最多 ${ MAX_CALENDAR_MEMBERS } 成员的上限。"
-      ]
-    },
     "Share calendar modal description": {
       "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "添加您想分享 ${ calendarName } 的用户账号，我们会为您发送邀请。"
@@ -9723,8 +9679,8 @@
       "Add Sieve filter": [
         "创建 Sieve 规则"
       ],
-      "Add to non spam list": [
-        "加入白名单"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "加入垃圾邮件名单"
@@ -9782,9 +9738,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform } 客户端"
-      ],
-      "Calendar information": [
-        "日历信息"
       ],
       "Cancel Mail subscription": [
         "取消邮件订阅"

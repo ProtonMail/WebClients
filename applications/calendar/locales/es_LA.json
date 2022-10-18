@@ -1978,10 +1978,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
       ],
@@ -2748,12 +2744,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con su clave de seguridad. Intente de nuevo."
+        "Algo salió mal al autenticar con su llave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
+        "Inserte una llave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Llave de seguridad"
@@ -3511,6 +3507,9 @@
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
+      "Labels:": [
+        "Etiquetas:"
+      ],
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
@@ -3752,8 +3751,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "¡Nos trasladamos! Únase a nosotros en nuestro sitio nuevo: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "¡Nos hemos mudado! Ingrese a nuestro dominio nuevo: ${ link }."
       ],
       "Week": [
         "Semana"
@@ -4021,9 +4020,6 @@
       ],
       "Description": [
         "Descripción"
-      ],
-      "Display": [
-        "Mostrar"
       ],
       "Do not ask again": [
         "No volver a preguntar"
@@ -4978,9 +4974,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -5057,7 +5050,8 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Ha excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
         "Ha excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
       ]
     },
@@ -5074,6 +5068,11 @@
     "Share calendar modal title": {
       "Share with Proton users": [
         "Compartir con usuarios de Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Creado por ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5432,9 +5431,6 @@
       "Calendar alarm": [
         "Alarma del calendario"
       ],
-      "Calendar information": [
-        "Información del calendario"
-      ],
       "Change my answer": [
         "Cambiar mi respuesta"
       ],
@@ -5708,9 +5704,6 @@
       "Show time zones for event start and end times": [
         "Mostrar zonas horarias para las horas inicial y final del evento"
       ],
-      "Sign in again to continue": [
-        "Inicie sesión otra vez para continuar"
-      ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
       ],
@@ -5722,6 +5715,9 @@
       ],
       "Start import process": [
         "Iniciar proceso de importación"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ],
       "Update event": [
         "Actualizar evento"
@@ -5760,6 +5756,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Elija un número"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Editar información"
       ]
     },
     "Today icon tooltip in mini calendar": {

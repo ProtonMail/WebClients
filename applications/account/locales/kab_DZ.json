@@ -182,9 +182,6 @@
       "Create folder": [
         "Snulfu-d akaram"
       ],
-      "Create free account": [
-        "Rnu amiḍan baṭel"
-      ],
       "Create label": [
         "Rnu tabzimt"
       ],
@@ -506,11 +503,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
       "refresh the page": [
         "smiren asebter"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -2170,10 +2167,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
       ]
@@ -3719,9 +3712,6 @@
       "Background color": [
         "Ini n ugilal"
       ],
-      "Based in Switzerland, available globally": [
-        "Yella di tmurt n Sswis, yewjed deg umaḍal meṛṛa"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
       ],
@@ -4121,6 +4111,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Sekcem s ufus talqut ar yibenk-ik n usesteb s snat n tarrayin akked ad yeswel umiḍan-ik.${ _switchButton }."
       ],
+      "Member": [
+        "Amedraw"
+      ],
       "Merged": [
         "Ttusmezdin"
       ],
@@ -4441,9 +4434,6 @@
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "I wakken ad tḍefreḍ isnerniyen ineggura n yifarisen Proton, tzemreḍ ad tmuletɣeḍ ɣer yimaylen-nneɣ yemgaraden daɣen tzemreḍ ad terzuḍ ɣer ublug-nneɣ sya ɣer da."
-      ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Akken ad terreḍ tuqqna-inek•m ɣer internet d taɣelsant, sader yerna sbedd asnas ${ VPN_APP_NAME } i yibenk-inek sakin qqen ɣer uqeddac ${ VPN_APP_NAME }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ččar amiḍan-ik·im s yisemdan i tzemreḍ ad tesxedmeḍ i uttekki deg uɣawas amaynut neɣ allus n uɣawas-ik·im amiran. Ad d-tesɛud asmad i yal ${ i18nCurrency } i tserfeḍ."
@@ -5318,9 +5308,6 @@
       "Discount": [
         "Asaεed"
       ],
-      "Display": [
-        "Sken"
-      ],
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
@@ -5932,6 +5919,9 @@
       ],
       "Common sign up issues": [
         "Uguren n tuffɣa i d-yettuɣalen"
+      ],
+      "Create account": [
+        "Snulfu-d amiḍan"
       ],
       "Encryption and keys": [
         "Awgelhen d tsura"
@@ -7548,6 +7538,9 @@
       ],
       "Add Sieve filter": [
         "Rnu imsizdeg Sieve"
+      ],
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Rnu ɣer tebdart n yispamen"

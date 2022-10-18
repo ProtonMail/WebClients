@@ -13,8 +13,14 @@
       "Full view": [
         "Plné zobrazení"
       ],
+      "Full view (see all event details)": [
+        "Plné zobrazení (zobrazit všechny podrobnosti o události)"
+      ],
       "Limited view": [
         "Omezené zobrazení"
+      ],
+      "Limited view (see only free/busy)": [
+        "Omezené zobrazení (zobrazit pouze volný/zaneprázdněn)"
       ]
     },
     "Action": {
@@ -206,9 +212,6 @@
       ],
       "Create folder": [
         "Vytvořit složku"
-      ],
-      "Create free account": [
-        "Založit účet zdarma"
       ],
       "Create label": [
         "Vytvořit štítek"
@@ -480,7 +483,7 @@
       "No": [
         "Ne"
       ],
-      "Non spam": [
+      "Not spam": [
         "Není spam"
       ],
       "OK": [
@@ -540,11 +543,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -598,7 +601,7 @@
         "Obnovit klíče organizace"
       ],
       "Reset password": [
-        "Obnovit heslo"
+        "Resetovat heslo"
       ],
       "Reset to default": [
         "Obnovit výchozí nastavení"
@@ -755,6 +758,9 @@
       ],
       "Support": [
         "Podpora"
+      ],
+      "Switch account": [
+        "Přepnout účet"
       ],
       "Top up": [
         "Dobít"
@@ -1242,6 +1248,16 @@
         "Štítek změněn"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Pouze vy můžete vidět štítek"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Oprávnění můžete kdykoli změnit nebo odebrat."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Oprávnění"
@@ -1268,6 +1284,12 @@
       ],
       "Share outside Proton": [
         "Sdílet mimo Proton"
+      ],
+      "Share with anyone": [
+        "Sdílet s kýmkoli"
+      ],
+      "Share with Proton users": [
+        "Sdílet s uživateli Protonu"
       ]
     },
     "Calendar settings sidebar": {
@@ -1278,6 +1300,14 @@
     "Calendar share permission label": {
       "See all event details": [
         "Zobrazit všechny detaily události"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Upravit (zobrazit, vytvořit a upravit podrobnosti o události)"
+      ],
+      "Full view (see all event details)": [
+        "Plné zobrazení (zobrazit všechny podrobnosti o události)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2497,6 +2527,12 @@
       ]
     },
     "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Chyba na řádku ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Vypadá to, že ve vašem souboru chybí hlavička '${ options.fieldName }'."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Při importu jsme zjistili chyby ve více řádcích, zkontrolujte prosím svůj soubor CSV."
       ]
@@ -2603,12 +2639,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat pouze ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
-      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Sledujte, kolik lidí klikne na váš odkaz, zaregistrujte se a stane se předplatiteli. Sledujte, jak vaše bezplatné měsíce přibývají."
       ],
@@ -2644,17 +2674,11 @@
       "${ name } deletion failed": [
         "Smazání ${ name } selhalo"
       ],
-      "${ name } failed to move to Non spam List": [
-        "Doménu ${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
-      ],
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
       "${ name } failed to move to your block list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
-      ],
-      "${ name } moved to Non spam list": [
-        "Doména ${ name } přesunuta na Seznam vyžádaných e-mailů"
       ],
       "${ name } moved to spam list": [
         "Doména ${ name } byla přesunuta na Seznam spamů"
@@ -2761,17 +2785,11 @@
       "${ name } deletion failed": [
         "Smazání ${ name } selhalo"
       ],
-      "${ name } failed to move to Non spam List": [
-        "Doménu ${ name } se nepodařilo přesunout na Seznam vyžádaných e-mailů"
-      ],
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
       "${ name } failed to move to your block list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
-      ],
-      "${ name } moved to Non spam list": [
-        "Doména ${ name } přesunuta na Seznam vyžádaných e-mailů"
       ],
       "${ name } moved to spam list": [
         "Doména ${ name } byla přesunuta na Seznam spamů"
@@ -3003,11 +3021,17 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
+      "No public key for Proton address": [
+        "Žádný veřejný klíč pro adresu Protonu"
+      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Žádný WKD klíč pro uživatele není platný pro odesílání"
+      ],
+      "Not a Proton account": [
+        "Nejedná se o účet Protonu"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -3089,6 +3113,12 @@
       ],
       "Process aborted": [
         "Proces přerušen"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Odstraněn duplicitní příjemce: ${ joinedRecipients }",
+        "Odstraněno duplicitních příjemců: ${ joinedRecipients }",
+        "Odstraněno duplicitních příjemců: ${ joinedRecipients }",
+        "Odstraněno duplicitních příjemců: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
@@ -3839,8 +3869,8 @@
       "Emails from blocked addresses won't be delivered.": [
         "E-maily z blokovaných adres nebudou doručeny."
       ],
-      "Search in your allow and block lists": [
-        "Hledání v povolených a blokovaných seznamech"
+      "Search list": [
+        "Vyhledat v seznamu"
       ]
     },
     "Font Face Default": {
@@ -3853,6 +3883,11 @@
         "Výchozí"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Soukromí je samozřejmostí."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail měsíčně)"
@@ -3862,6 +3897,16 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-maily měsíčně)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Máte již účet? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Nováček v ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -4798,9 +4843,6 @@
       "Background color": [
         "Barva pozadí"
       ],
-      "Based in Switzerland, available globally": [
-        "Se sídlem ve Švýcarsku, celosvětově dostupné"
-      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní, nebo neaktivní klávesové zkratky v nastavení."
       ],
@@ -5272,6 +5314,9 @@
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
       ],
+      "Labels:": [
+        "Štítky:"
+      ],
       "Large imports can take several days.": [
         "Dokončení velkých importů může trvat i několik dní."
       ],
@@ -5328,6 +5373,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ _switchButton }."
+      ],
+      "Member": [
+        "Člen"
       ],
       "Merged": [
         "Sloučeno"
@@ -5807,7 +5855,7 @@
         "Toto nahradí vaše dočasné heslo. V budoucnu jej použijete pro přístup k vašemu ${ BRAND_NAME } Účtu."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Tím se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
+        "Toto vás odhlásí ze všech aktivních relací a zakáže dvoufázové ověřování."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem Proton účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější Proton účet."
@@ -5839,8 +5887,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Chcete-li pokračovat, vyberte způsob obnovení účtu, abychom mohli žádost ověřit."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Chcete-li zabezpečit své připojení k internetu, stáhněte a nainstalujte si do svého zařízení aplikaci ${ VPN_APP_NAME } a připojte se k serveru ${ VPN_APP_NAME }."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Chcete-li zabezpečit připojení k internetu, stáhněte a nainstalujte do svého zařízení aplikaci ${ VPN_APP_NAME } a připojte se k serveru."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pro správnou funkci musí každý filtr obsahovat alespoň název a platný skript Sieve. Můžete ${ link }."
@@ -5965,8 +6013,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Přestěhovali jsme se! Přihlaste se prosím na naší nové doméně: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -6031,6 +6079,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Jste přihlášeni k účtu ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
       ],
@@ -6046,6 +6097,9 @@
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Nyní můžete přijímat zprávy na svou adresu @pm.me. Přejděte na placený tarif, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
       ],
@@ -6057,9 +6111,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Následující přihlašovací údaje můžete použít pro připojení k ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran s otevřeným zdrojovým kódem, jako je Tunnelblick pro macOS nebo OpenVPN pro GNU/Linux."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek"
       ],
       "You cannot refer ${ appName } users": [
         "Nelze odkazovat ${ appName } uživatele"
@@ -6290,6 +6341,9 @@
     "Input label": {
       "Access": [
         "Přístup"
+      ],
+      "Label (optional)": [
+        "Štítek (volitelné)"
       ]
     },
     "Input placeholder": {
@@ -6922,9 +6976,6 @@
       "Discount": [
         "Sleva"
       ],
-      "Display": [
-        "Zobrazení"
-      ],
       "Display name": [
         "Zobrazované jméno"
       ],
@@ -7144,11 +7195,11 @@
       "No label found": [
         "Nebyl nalezen žádný štítek"
       ],
-      "Non Spam": [
-        "Není spam"
-      ],
       "Non-standard ports": [
         "Nestandardní porty"
+      ],
+      "Not spam": [
+        "Není spam"
       ],
       "Notification": [
         "Upozornění"
@@ -7606,6 +7657,9 @@
       "Common sign up issues": [
         "Běžné problémy s registrací"
       ],
+      "Create account": [
+        "Vytvořit účet"
+      ],
       "Encryption and keys": [
         "Šifrování a klíče"
       ],
@@ -7990,7 +8044,7 @@
       "Blocked": [
         "Blokováno"
       ],
-      "Non spam": [
+      "Not spam": [
         "Není spam"
       ],
       "Spam": [
@@ -8744,8 +8798,22 @@
       "Invitation revoked": [
         "Pozvánka zrušena"
       ],
+      "Member added": [
+        "Člen přidán",
+        "Členové přidáni",
+        "Členové přidáni",
+        "Členové přidáni"
+      ],
       "Member deleted": [
         "Člen smazán"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Pozvání do kalendáře bylo zamítnuto"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Připojen k ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -9503,14 +9571,42 @@
         "Štítky"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Chcete-li pozvat uživatele, kteří nemají účet Proton, sdílejte svůj kalendář pomocí odkazu"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } člena na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Přidejte účty Proton, se kterými chcete sdílet ${ calendarName }. Pošleme jim pozvánku."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Přidat lidi nebo skupiny"
       ]
     },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Sdílet s uživateli Protonu"
+      ]
+    },
     "Shared calendar label input placeholder": {
       "Add label": [
         "Přidat štítek"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Vytvořil/a ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -9525,6 +9621,12 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Nastavení účtu"
+      ],
+      "Payment": [
+        "Platba"
+      ],
       "Verification": [
         "Ověření"
       ]
@@ -10114,11 +10216,11 @@
       "Add Sieve filter": [
         "Přidat filtr Sieve"
       ],
-      "Add to non spam list": [
-        "Přidat na seznam vyžádaných e-mailů"
+      "Add to not spam list": [
+        "Add to Not spam list"
       ],
       "Add to spam list": [
-        "Přidat do seznamu \"spam\""
+        "Přidat do seznamu spamů"
       ],
       "Add to your block list": [
         "Přidat na seznam blokovaných"
@@ -10173,9 +10275,6 @@
       ],
       "Bridge for ${ platform }": [
         "Most pro ${ platform }"
-      ],
-      "Calendar information": [
-        "Informace kalendáře"
       ],
       "Cancel Mail subscription": [
         "Zrušit předplatné Mailu"
@@ -10723,6 +10822,9 @@
       "Sign out": [
         "Odhlásit se"
       ],
+      "Signed in to member account": [
+        "Přihlášeno k členskému účtu"
+      ],
       "Sort folders alphabetically": [
         "Řadit složky abecedně"
       ],
@@ -10928,6 +11030,11 @@
       ],
       "Role": [
         "Role"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Upravit informace"
       ]
     },
     "Today icon tooltip in mini calendar": {

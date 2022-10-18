@@ -86,9 +86,6 @@
       "Create address": [
         "Adres aanmaken"
       ],
-      "Create free account": [
-        "Maak een gratis account aan"
-      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -1736,6 +1733,11 @@
         "Megabytes"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy is standaard."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-mail per maand)"
@@ -1745,6 +1747,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails per maand)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Heeft u al een account? ${ signIn }"
       ]
     },
     "Group": {
@@ -1868,9 +1875,6 @@
       "Are you sure you want to disable two-factor authentication?": [
         "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
       ],
-      "Based in Switzerland, available globally": [
-        "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
-      ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus of Visionary abonnement vereist"
       ],
@@ -1966,6 +1970,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -2258,8 +2265,8 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Om uw internetverbinding te beveiligen, installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een ${ VPN_APP_NAME }-server."
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Om uw internetverbinding te beveiligen, download en installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een server."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Waardeer uw account op met 'credits' die u kunt gebruiken om een aanvullend abonnement af te sluiten of uw huidige abonnement te vernieuwen. U krijgt één 'credit' voor elke ${ i18nCurrency } die u gebruikt."
@@ -2348,8 +2355,8 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
@@ -2359,6 +2366,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -2930,6 +2940,9 @@
       ],
       "Common sign up issues": [
         "Veel voorkomende problemen bij registratie"
+      ],
+      "Create account": [
+        "Account aanmaken"
       ],
       "Forgot username?": [
         "Gebruikersnaam vergeten?"
@@ -3878,6 +3891,17 @@
         "Gebruikersnaam"
       ]
     },
+    "Signup step": {
+      "Account setup": [
+        "Account instelling"
+      ],
+      "Payment": [
+        "Betaling"
+      ],
+      "Verification": [
+        "Verificatie"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
@@ -4269,6 +4293,9 @@
       "Email subscriptions": [
         "Nieuwsbrieven"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Error": [
         "Fout"
       ],
@@ -4406,9 +4433,6 @@
       ],
       "Sign in": [
         "Inloggen"
-      ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
       ],
       "Sign out": [
         "Uitloggen"

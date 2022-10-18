@@ -11,11 +11,20 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Ativar recuperação"
+      ],
       "Add": [
         "Adicionar"
       ],
+      "Add address": [
+        "Adicionar endereço"
+      ],
       "Add contact": [
         "Adicionar contacto"
+      ],
+      "Add email": [
+        "Adicionar e-mail"
       ],
       "Add group": [
         "Adicionar grupo"
@@ -26,11 +35,17 @@
       "Add new group": [
         "Adicionar novo grupo"
       ],
+      "Add phone number": [
+        "Adicionar número de telefone"
+      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "Authenticate": [
         "Autenticar"
@@ -95,6 +110,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue import": [
+        "Continuar a importação"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -115,6 +133,9 @@
       ],
       "Create new folder": [
         "Criar nova pasta"
+      ],
+      "Customize": [
+        "Personalizar"
       ],
       "Customize import": [
         "Personalizar importação"
@@ -144,6 +165,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Didn't receive the code?": [
+        "Não recebeu o código?"
       ],
       "Discard": [
         "Descartar"
@@ -181,6 +205,9 @@
       "Export": [
         "Exportar"
       ],
+      "Export contact group": [
+        "Exportar grupo de contactos"
+      ],
       "Export contacts": [
         "Exportar contactos"
       ],
@@ -205,6 +232,12 @@
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
       ],
+      "Hide folders": [
+        "Ocultar pastas"
+      ],
+      "Hide labels": [
+        "Ocultar etiquetas"
+      ],
       "I have a question": [
         "Tenho uma dúvida"
       ],
@@ -213,6 +246,9 @@
       ],
       "import": [
         "importar"
+      ],
+      "Import from .csv or vCard": [
+        "Importar de .csv ou vCard"
       ],
       "Learn more": [
         "Saiba mais"
@@ -286,6 +322,9 @@
       "Previous month": [
         "Mês anterior"
       ],
+      "Quit": [
+        "Sair"
+      ],
       "Re-sign": [
         "Re-assinar"
       ],
@@ -294,6 +333,9 @@
       ],
       "Recover data": [
         "Recuperar dados"
+      ],
+      "Refer a friend": [
+        "Referencie um amigo"
       ],
       "Refresh the page": [
         "Actualizar a página"
@@ -352,6 +394,9 @@
       "Select all": [
         "Marcar todos"
       ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
+      ],
       "Share file": [
         "Partilhar ficheiro"
       ],
@@ -363,6 +408,12 @@
       ],
       "Show advanced PGP settings": [
         "Mostrar definições de PGP avançadas"
+      ],
+      "Show folders": [
+        "Mostrar pastas"
+      ],
+      "Show labels": [
+        "Mostrar etiquetas"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -382,6 +433,9 @@
       "Start setup": [
         "Iniciar a configuração"
       ],
+      "Stay": [
+        "Ficar"
+      ],
       "Stop sharing": [
         "Parar a partilha"
       ],
@@ -400,11 +454,20 @@
       "Undo": [
         "Desfazer"
       ],
+      "Unlock data": [
+        "Desbloquear dados"
+      ],
       "Unmark for deletion": [
         "Desmarcar para eliminação"
       ],
       "Untrust": [
         "Não confiar"
+      ],
+      "Update recovery file": [
+        "Atualizar ficheiro de recuperação"
+      ],
+      "Update recovery phrase": [
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Actualizar"
@@ -721,10 +784,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "O ficheiro deve ter um máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro for maior, por favor divida-o.",
-        "O ficheiro deve ter um máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e até ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, por favor divida-o."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
@@ -1071,6 +1130,9 @@
       ]
     },
     "Import error": {
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        "\"Acesso a aplicações menos seguras\" está ativado nas definições de segurança da sua conta Google."
+      ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
       ],
@@ -1167,13 +1229,32 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } cancelado",
+        "${ canceledCount } cancelados"
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } contém vários endereços de e-mail."
+      ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } terminado",
+        "${ doneCount } terminados"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } transferido",
+        "${ doneDownloadsCount } transferidos"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } falhado",
+        "${ errorCount } falhados"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
@@ -1186,6 +1267,14 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } etiqueta encontrada no Gmail",
         "${ providerFoldersNumLocalized } etiquetas encontradas no Gmail"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta seleccionada",
@@ -1224,6 +1313,14 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Está activada a verificação de endereço com chaves confiadas para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para enviar."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Tudo (${ totalFoldersCount } pastas)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tudo (${ totalFoldersCount } etiqueta)",
+        "Tudo (${ totalFoldersCount } etiquetas)"
+      ],
       "and": [
         "e"
       ],
@@ -1232,6 +1329,9 @@
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Canceled": [
         "Cancelado"
@@ -1250,6 +1350,12 @@
       ],
       "Conflict": [
         "Conflito"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
+      ],
+      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
+        "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new contact group": [
         "Criar um novo grupo de contactos"
@@ -1280,6 +1386,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Insira a sua senha (como administrador da organização)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -1333,8 +1442,14 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o email na sua caixa de entrada, verifique a pasta de spam."
       ],
+      "Import in progress": [
+        "Importação em curso"
+      ],
       "Import mailbox": [
         "Importar caixa de correio"
+      ],
+      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
+        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Herança da pasta-mãe"
@@ -1411,17 +1526,29 @@
       "of": [
         "de"
       ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Altere estas configurações só se estiver a usar PGP com destinatários não-${ BRAND_NAME }."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Só as pessoas com a ligação e a senha podem aceder ao ficheiro."
       ],
       "Paused": [
         "Em pausa"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "O PGP incorporado só é compatível com o formato Texto simples. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Por favor, note que os endereços atribuídos a este grupo NÃO serão eliminados."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Por favor, note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
+      ],
+      "Please select the folders you would like to import:": [
+        "Por favor, selecione as pastas que deseja importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Por favor, selecione os endereços eletrónicos a adicionar a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, aguarde enquanto procuramos contactos que possam ser re-assinados com a chave de encriptação principal."
@@ -1449,6 +1576,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de email predefinido a utilizar para este endereço de email."
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "A configuração do PGP permite o envio de e-mails encriptados de ponta-a-ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
       "Share files with links": [
         "Partilhe ficheiros com ligações"
@@ -1516,8 +1646,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de ficheiros de uma só vez pode ter impacto no desempenho."
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        "Estamos a mover! Junte-se a nós no nosso novo site: ${ link }."
+      "We'll send a new verification code to ${ strong }": [
+        "Enviaremos um novo código de verificação para ${ strong }"
       ],
       "Week": [
         "Semana"
@@ -1536,6 +1666,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Tem atualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode activar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -1628,6 +1761,9 @@
       ],
       "Apply to all duplicated folders": [
         "Aplicar a todas as pastas duplicadas"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar captura(s) de ecrã"
       ],
       "Audio file": [
         "Ficheiro de som"
@@ -1940,6 +2076,33 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" criado com sucesso"
+      ],
+      "\"${ name }\" deleted permanently from trash": [
+        "\"${ name }\" permanentemente eliminado do lixo"
+      ],
+      "\"${ name }\" failed to be created": [
+        "Falha ao criar \"${ name }\""
+      ],
+      "\"${ name }\" failed to be moved": [
+        "Falha ao mover \"${ name }\""
+      ],
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" movido para o lixo"
+      ],
+      "\"${ name }\" restored from trash": [
+        "\"${ name }\" restaurado do lixo"
+      ],
+      "\"${ name }\" successfully moved": [
+        "\"${ name }\" movido com sucesso"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "Falha ao renomear \"${ newName }\""
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "\"${ newName }\" renomeado com sucesso"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Todos os itens serão permanentemente eliminados do lixo"
       ],
@@ -2073,9 +2236,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contactos exportados com sucesso."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado com sucesso.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados com sucesso."
@@ -2513,9 +2673,6 @@
       "Show actions": [
         "Mostrar acções"
       ],
-      "Sign in again to continue": [
-        "Reinicie sessão para continuar"
-      ],
       "Sign out": [
         "Terminar sessão"
       ],
@@ -2545,6 +2702,9 @@
       ],
       "Trash": [
         "Lixo"
+      ],
+      "Two-factor authentication": [
+        "Autenticação em dois passos"
       ],
       "Type": [
         "Tipo"
