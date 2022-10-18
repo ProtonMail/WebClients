@@ -13,6 +13,12 @@ export const getDueCycleText = (cycle: Cycle) => {
     if (cycle === CYCLE.TWO_YEARS) {
         return c('Billing cycle').t`Payable every 24 months`;
     }
+    if (cycle === CYCLE.THIRTY) {
+        return c('Billing cycle').t`Payable every 30 months`;
+    }
+    if (cycle === CYCLE.FIFTEEN) {
+        return c('Billing cycle').t`Payable every 15 months`;
+    }
     return '';
 };
 

@@ -21,7 +21,7 @@ const getOfferRedirectionParams = ({ offer, deal, currency }: Props): URLSearchP
     params.set('type', 'offer');
     params.set('edit', 'disable'); // Disable the possibility to edit the configuration in the subscription modal
     params.set('offer', offer.ID);
-    params.set('ref', offer.ref); // Used by data team
+    params.set('ref', deal.ref); // Used by data team
 
     return params;
 };
