@@ -153,7 +153,7 @@ describe('should get checkout result', () => {
             withDiscountPerCycle: 11976,
             withDiscountPerMonth: 399.2,
             discountPerCycle: 17994,
-            discountPercent: 60,
+            discountPercent: 50,
         });
     });
 
