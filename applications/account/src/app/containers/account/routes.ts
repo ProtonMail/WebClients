@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { ThemeColor } from '@proton/colors';
-import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
+
 import { recoveryIds } from './recoveryIds';
 
 export const getAccountAppRoutes = ({
@@ -16,8 +18,8 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
 }) => {
-    const { isFree, canPay, isPaid, isPrivate, isMember } = user;
-    const mailPlus = `${MAIL_APP_NAME} Plus`;
+    const { isFree, canPay, isPaid, isPrivate, isMember, Currency } = user;
+    const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     return <const>{
         header: c('Settings section title').t`Account`,
         routes: {
@@ -155,7 +157,7 @@ export const getAccountAppRoutes = ({
             referral: <SectionConfig>{
                 text: c('Title').t`Refer a friend`,
                 description: c('Description')
-                    .t`Get up to 3 months of ${mailPlus} for free for every friend who subscribes to ${MAIL_APP_NAME}.`,
+                    .t`Get up to ${credits} in credits by inviting friends to Proton.`,
                 to: '/referral',
                 icon: 'gift',
                 available: !!isReferralProgramEnabled,
@@ -164,7 +166,7 @@ export const getAccountAppRoutes = ({
                         id: 'referral-invite-section',
                     },
                     {
-                        text: c('Title').t`Referral tracker`,
+                        text: c('Title').t`Track your referrals`,
                         id: 'referral-reward-section',
                     },
                 ],

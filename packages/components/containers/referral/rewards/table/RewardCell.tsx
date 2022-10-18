@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { ThemeColorUnion } from '@proton/colors';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
@@ -12,13 +12,11 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
     let reward: string | React.ReactNode = '-';
     let textColor: ThemeColorUnion | undefined;
 
-    const monthsRewarded = referral.RewardMonths || 0;
-
     switch (referral.State) {
         case ReferralState.SIGNED_UP:
         case ReferralState.TRIAL:
             if (!hasReachedRewardLimit) {
-                reward = c('Label').t`Waiting for subscription`;
+                reward = c('Label').t`Pending`;
                 textColor = 'warning';
             }
             break;
@@ -30,7 +28,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
                  * "Credits pending" means a variable number of reward. Can be 0, 1 or 3.
                  * And at this stage we have no variables allowing us to know the amount.
                  */
-                reward = c('Label').t`Credits pending`;
+                reward = c('Label').t`Pending`;
                 textColor = 'warning';
             }
             break;
@@ -41,11 +39,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
              * We show the reward user has been credited.
              * Example : "3 months credited"
              */
-            reward = c('Label').ngettext(
-                msgid`${monthsRewarded} month credited`,
-                `${monthsRewarded} months credited`,
-                monthsRewarded
-            );
+            reward = c('Label').t`Awarded`;
             textColor = 'success';
             break;
     }

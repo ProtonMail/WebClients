@@ -22,10 +22,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
             >
                 <Icon name="cross" alt={c('Action').t`Close`} />
             </Button>
-            <h2 className="text-bold">{
-                // translator: full sentense would be "Get up to 18 months of Mail Plus for free"
-                c('Title').t`Get up to 18 months of ${planName} for free`
-            }</h2>
+            <h2 className="text-bold">{c('Title').t`How to refer a friend and get credits`}</h2>
 
             <ol className="flex flex-nowrap flex-gap-1 unstyled on-tablet-flex-column mb2">
                 <li className="flex-item-fluid">
@@ -37,15 +34,11 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
                         // translator: full sentense would be "They try Mail Plus"
                         c('Info').t`2. They try ${planName}`
                     }</h3>
-                    {c('Info').t`This 30-day free trial is not available any other way.`}
+                    {c('Info').t`They'll receive a free month of ${planName}.`}
                 </li>
                 <li className="flex-item-fluid">
                     <h3 className="mb0-5 text-bold">{c('Info').t`3. You earn credits`}</h3>
-                    {
-                        // translator: full sentense would be "When they subscribe to a paid plan, 1 to 3 months of Mail Plus will be credited to your account."
-                        c('Info')
-                            .t`When they subscribe to a paid plan, 1 to 3 months of ${planName} will be credited to your account.`
-                    }
+                    {c('Info').t`When they subscribe to a plan, you'll get credits to use on your subscription.`}
                 </li>
             </ol>
             <p className="text-small mb0">
