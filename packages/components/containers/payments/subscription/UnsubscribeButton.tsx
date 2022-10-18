@@ -8,7 +8,7 @@ import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import Button, { ButtonProps } from '../../../components/button/Button';
@@ -34,7 +34,6 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
 import HighlightPlanDowngradeModal from './HighlightPlanDowngradeModal';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
-import { formatPlans } from './helpers';
 
 const { MAIL, VPN } = PLAN_SERVICES;
 
@@ -56,10 +55,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const getCalendars = useGetCalendars();
     const [loading, withLoading] = useLoading();
 
-    const { Plans = [], PeriodEnd = 0 } = subscription || {};
-    const { plan } = formatPlans(Plans);
-
-    const currentPlan = plan;
+    const { PeriodEnd = 0 } = subscription || {};
+    const currentPlan = getPlan(subscription);
     const plansMap = toMap(plans, 'Name');
 
     const handleUnsubscribe = async (data: FeedbackDowngradeData) => {

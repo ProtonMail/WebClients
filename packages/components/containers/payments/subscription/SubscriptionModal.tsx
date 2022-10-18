@@ -9,15 +9,26 @@ import {
 } from '@proton/shared/lib/calendar/subscription';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Audience, Currency, Cycle, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import {
+    Button,
+    Icon,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Tooltip,
+} from '../../../components';
 import { classnames } from '../../../helpers';
 import {
     useApi,
@@ -35,13 +46,14 @@ import GenericError from '../../error/GenericError';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import Payment from '../Payment';
+import PaymentGiftCode from '../PaymentGiftCode';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import usePayment from '../usePayment';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
-import SubscriptionCheckout, { SubscriptionCheckoutLocal } from './SubscriptionCheckout';
+import SubscriptionCheckout from './SubscriptionCheckout';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import SubscriptionThanks from './SubscriptionThanks';
@@ -60,6 +72,7 @@ interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     disablePlanSelection?: boolean;
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
+    disableCycleSelector?: boolean;
     defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
 }
@@ -78,6 +91,8 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
     [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.CUSTOMIZATION,
 };
 
+const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
+
 const SubscriptionModal = ({
     step = SUBSCRIPTION_STEPS.PLAN_SELECTION,
     cycle = DEFAULT_CYCLE,
@@ -87,6 +102,7 @@ const SubscriptionModal = ({
     onClose,
     onSuccess,
     disablePlanSelection,
+    disableCycleSelector: maybeDisableCycleSelector,
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
@@ -109,14 +125,14 @@ const SubscriptionModal = ({
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [plans = []] = usePlans();
+    const plansMap = toMap(plans, 'Name') as PlansMap;
     const [organization] = useOrganization();
     const getCalendars = useGetCalendars();
 
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
+    const [loadingGift, withLoadingGift] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
-    const { Code: couponCode } = checkResult?.Coupon || {}; // Coupon can be null
-    const creditsRemaining = (user.Credit + (checkResult?.Credit ?? 0)) / 100;
     const [audience, setAudience] = useState(defaultAudience);
     const [selectedProductPlans, setSelectedProductPlans] = useState(defaultSelectedProductPlans);
     const [model, setModel] = useState<Model>({
@@ -127,10 +143,13 @@ const SubscriptionModal = ({
         planIDs,
     });
 
+    const amountDue = checkResult?.AmountDue || 0;
+    const couponCode = checkResult?.Coupon?.Code;
+    const couponDescription = checkResult?.Coupon?.Description;
+    const creditsRemaining = (user.Credit + (checkResult?.Credit ?? 0)) / 100;
+
     const subscriptionCouponCode = subscription?.CouponCode;
     const latestValidCouponCodeRef = useRef('');
-
-    const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
         // Start promise early
@@ -254,7 +273,7 @@ const SubscriptionModal = ({
 
     const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
         usePayment({
-            amount: model.step === SUBSCRIPTION_STEPS.CHECKOUT ? checkResult?.AmountDue || 0 : 0, // Define amount only in the payment step to generate payment tokens
+            amount: model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0, // Define amount only in the payment step to generate payment tokens
             currency: checkResult?.Currency || DEFAULT_CURRENCY,
             onPay(params) {
                 return withLoading(handleSubscribe(params));
@@ -313,7 +332,7 @@ const SubscriptionModal = ({
     const handleCheckout = async () => {
         const params = await handlePaymentToken({
             params: {
-                Amount: checkResult?.AmountDue || 0,
+                Amount: amountDue,
                 Currency: model.currency,
                 ...parameters,
             },
@@ -325,12 +344,15 @@ const SubscriptionModal = ({
     };
 
     const handleGift = (gift = '') => {
+        if (loadingCheck) {
+            return;
+        }
         if (!gift) {
             const withoutGift = { ...model };
             delete withoutGift.gift;
-            return withLoadingCheck(check(withoutGift));
+            return withLoadingGift(check(withoutGift));
         }
-        void withLoadingCheck(check({ ...model, gift }, true));
+        void withLoadingGift(check({ ...model, gift }, true));
     };
 
     const handleChangeCurrency = (currency: Currency) => {
@@ -359,6 +381,8 @@ const SubscriptionModal = ({
     const isFreePlanSelected = !hasPlanIDs(model.planIDs);
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
 
+    const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
+
     useEffect(() => {
         // Each time the user switch between steps, it takes the user to the top of the modal
         topRef.current?.scrollIntoView();
@@ -379,6 +403,9 @@ const SubscriptionModal = ({
             ])}
             onSubmit={(e: FormEvent) => {
                 e.preventDefault();
+                if (loadingCheck || loadingGift) {
+                    return;
+                }
                 if (!handleCardSubmit()) {
                     creditCardTopRef.current?.scrollIntoView();
                     return;
@@ -420,10 +447,10 @@ const SubscriptionModal = ({
                         <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="max-w50e">
                                 <PlanCustomization
-                                    plans={plans}
                                     loading={loadingCheck}
                                     currency={model.currency}
                                     cycle={model.cycle}
+                                    plansMap={plansMap}
                                     planIDs={model.planIDs}
                                     organization={organization}
                                     onChangePlanIDs={(planIDs) => setModel({ ...model, planIDs })}
@@ -432,7 +459,7 @@ const SubscriptionModal = ({
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
                             <div className="subscriptionCheckout-container sticky-top">
-                                <SubscriptionCheckoutLocal
+                                <SubscriptionCheckout
                                     submit={
                                         <Button
                                             color="norm"
@@ -452,7 +479,9 @@ const SubscriptionModal = ({
                                             {c('new_plans: action').t`Continue to review`}
                                         </Button>
                                     }
-                                    plans={plans}
+                                    checkResult={getOptimisticCheckResult({ cycle, planIDs: model.planIDs, plansMap })}
+                                    plansMap={plansMap}
+                                    isOptimistic={true}
                                     loading={loadingCheck}
                                     currency={model.currency}
                                     cycle={model.cycle}
@@ -467,13 +496,13 @@ const SubscriptionModal = ({
                     <div className="subscriptionCheckout-top-container">
                         <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="mlauto mrauto max-w37e subscriptionCheckout-options ">
-                                {!isFreePlanSelected && (
+                                {!disableCycleSelector && (
                                     <>
                                         <h2 className="text-2xl text-bold mb1">{c('Label').t`Subscription options`}</h2>
                                         <div className="mb2">
                                             <SubscriptionCycleSelector
                                                 mode="buttons"
-                                                plans={plans}
+                                                plansMap={plansMap}
                                                 planIDs={model.planIDs}
                                                 cycle={model.cycle}
                                                 currency={model.currency}
@@ -483,14 +512,15 @@ const SubscriptionModal = ({
                                         </div>
                                     </>
                                 )}
-                                {checkResult?.AmountDue ? (
+                                {/* avoid mounting/unmounting the component which re-triggers the hook */}
+                                <div className={amountDue ? undefined : 'hidden'}>
                                     <Payment
                                         type="subscription"
                                         paypal={paypal}
                                         paypalCredit={paypalCredit}
                                         method={method}
-                                        amount={checkResult.AmountDue}
-                                        currency={checkResult.Currency}
+                                        amount={amountDue}
+                                        currency={checkResult?.Currency}
                                         coupon={couponCode}
                                         card={card}
                                         onMethod={setMethod}
@@ -498,16 +528,15 @@ const SubscriptionModal = ({
                                         cardErrors={cardErrors}
                                         creditCardTopRef={creditCardTopRef}
                                     />
-                                ) : (
-                                    <>
-                                        <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment details`}</h2>
-                                        <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
-                                        {checkResult?.Credit && creditsRemaining ? (
-                                            <div className="mb1">{c('Info')
-                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
-                                        ) : null}
-                                    </>
-                                )}
+                                </div>
+                                <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+                                    <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment details`}</h2>
+                                    <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
+                                    {checkResult?.Credit && creditsRemaining ? (
+                                        <div className="mb1">{c('Info')
+                                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
+                                    ) : null}
+                                </div>
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
@@ -517,25 +546,43 @@ const SubscriptionModal = ({
                                         <SubscriptionSubmitButton
                                             currency={model.currency}
                                             onClose={onClose}
-                                            canPay={canPay}
                                             paypal={paypal}
                                             step={model.step}
-                                            loading={loadingCheck || loading}
+                                            loading={loading}
                                             method={method}
                                             checkResult={checkResult}
                                             className="w100"
-                                            disabled={isFreeUserWithFreePlanSelected}
+                                            disabled={isFreeUserWithFreePlanSelected || !canPay}
                                         />
                                     }
-                                    plans={plans}
+                                    plansMap={plansMap}
                                     checkResult={checkResult}
                                     loading={loadingCheck}
                                     currency={model.currency}
                                     cycle={model.cycle}
                                     planIDs={model.planIDs}
-                                    gift={model.gift}
+                                    gift={
+                                        <>
+                                            {couponCode && (
+                                                <div className="flex flex-align-items-center mb0-25">
+                                                    <Icon name="gift" className="mr0-5 mb0-25" />
+                                                    <Tooltip title={couponDescription}>
+                                                        <code>{couponCode.toUpperCase()}</code>
+                                                    </Tooltip>
+                                                </div>
+                                            )}
+                                            <PaymentGiftCode
+                                                key={
+                                                    /* Reset the toggle state when a coupon code gets applied */
+                                                    couponCode
+                                                }
+                                                giftCode={model.gift}
+                                                onApply={handleGift}
+                                                loading={loadingGift}
+                                            />
+                                        </>
+                                    }
                                     onChangeCurrency={handleChangeCurrency}
-                                    onChangeGift={handleGift}
                                 />
                             </div>
                         </div>

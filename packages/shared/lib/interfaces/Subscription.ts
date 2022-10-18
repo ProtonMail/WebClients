@@ -7,8 +7,9 @@ export interface Pricing {
     [CYCLE.MONTHLY]: number;
     [CYCLE.YEARLY]: number;
     [CYCLE.TWO_YEARS]: number;
-    [CYCLE.THIRTY]: number;
-    [CYCLE.FIFTEEN]: number;
+    // Not always included for all plans
+    [CYCLE.THIRTY]?: number;
+    [CYCLE.FIFTEEN]?: number;
 }
 
 export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier';
@@ -54,6 +55,7 @@ export interface Subscription {
     Currency: Currency;
     Amount: number;
     RenewAmount: number;
+    Discount: number;
     Plans: Plan[];
     External: External;
 }
