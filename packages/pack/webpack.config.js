@@ -62,7 +62,15 @@ const getConfig = (env) => {
         output: {
             filename: options.isProduction ? '[name].[contenthash:8].js' : '[name].js',
             publicPath: options.publicPath,
-            chunkFilename: options.isProduction ? '[name].[contenthash:8].chunk.js' : '[name].chunk.js',
+            chunkFilename: (pathData) => {
+                const result = options.isProduction ? '[name].[contenthash:8].chunk.js' : '[name].chunk.js';
+                const chunkName = pathData.chunk.name;
+                if (chunkName && (chunkName.startsWith('date-fns/') || chunkName.startsWith('locales/'))) {
+                    const strippedChunkName = chunkName.replaceAll(/-index-js|-json/g, '');
+                    return result.replace('[name]', strippedChunkName);
+                }
+                return result;
+            },
             assetModuleFilename: 'assets/[name].[hash][ext][query]',
             crossOriginLoading: 'anonymous',
         },
