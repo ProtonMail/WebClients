@@ -169,17 +169,25 @@ const EditLabelModal = ({
         });
     };
 
-    const getTitle = () => {
+    // we might divide it to just getTitle function and getFolderTestId or something
+    const getTitleAndTestId = () => {
         const isFolder = model.Type === LABEL_TYPE.MESSAGE_FOLDER;
         if (mode === 'create') {
-            return isFolder ? c('Label/folder modal').t`Create folder` : c('Label/folder modal').t`Create label`;
+            return {
+                title: isFolder ? c('Label/folder modal').t`Create folder` : c('Label/folder modal').t`Create label`,
+                testId: isFolder ? 'create-folder-modal' : 'create-label-modal',
+            };
         }
-        return isFolder ? c('Label/folder modal').t`Edit folder` : c('Label/folder modal').t`Edit label`;
+        return {
+            title: isFolder ? c('Label/folder modal').t`Edit folder` : c('Label/folder modal').t`Edit label`,
+            testId: isFolder ? 'edit-folder-modal' : 'edit-label-modal',
+        };
     };
 
+
     return (
-        <ModalTwo size="large" {...rest}>
-            <ModalTwoHeader title={getTitle()} />
+        <ModalTwo size="large" data-testid={getTitleAndTestId().testId} {...rest}>
+            <ModalTwoHeader title={getTitleAndTestId().title} />
             <ModalTwoContent>
                 <NewLabelForm
                     label={model}
