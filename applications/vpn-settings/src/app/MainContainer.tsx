@@ -64,7 +64,7 @@ import TVContainer from './containers/TVContainer';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import { getRoutes } from './routes';
 
-const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
+const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 
 const MainContainer = () => {
     useTelemetryScreenSize();
