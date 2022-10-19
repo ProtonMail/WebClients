@@ -1,4 +1,10 @@
-import { ConfigProvider, StandardErrorPage, SubscriptionModalProvider, useConfig } from '@proton/components';
+import {
+    ConfigProvider,
+    StandardErrorPage,
+    SubscriptionModalProvider,
+    useActiveBreakpoint,
+    useConfig,
+} from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import DeleteAccount from './DeleteAccount';
@@ -39,11 +45,30 @@ const getRedirect = (redirect?: string) => {
     return redirect && /^(\/$|\/[^/]|proton(vpn|mail|drive)?:\/\/)/.test(redirect) ? redirect : undefined;
 };
 
+enum FullscreenOption {
+    On,
+    Off,
+    Auto,
+}
+
+const getFullscreenOption = (value: string | null | undefined) => {
+    if (value === 'off' || value === 'false') {
+        return FullscreenOption.Off;
+    }
+    if (value === 'auto') {
+        return FullscreenOption.Auto;
+    }
+    return FullscreenOption.On;
+};
+
 const MainContainer = () => {
     const config = useConfig();
+    const { isNarrow } = useActiveBreakpoint();
+
     const searchParams = new URLSearchParams(window.location.search);
     const action = searchParams.get('action');
     const client = searchParams.get('client');
+
     const defaultValues =
         {
             macOS: {
@@ -51,10 +76,18 @@ const MainContainer = () => {
                 fullscreen: 'off',
             },
         }[client || ''] || {};
+
     const redirect = getRedirect(searchParams.get('redirect') || defaultValues.redirect || undefined);
-    const fullscreenParam = searchParams.get('fullscreen') || defaultValues.fullscreen || undefined;
-    const fullscreen = fullscreenParam !== 'off' && fullscreenParam !== 'false';
+    const fullscreenOption = getFullscreenOption(
+        searchParams.get('fullscreen') || defaultValues.fullscreen || undefined
+    );
     const app = getApp(searchParams.get('app'), redirect);
+    const fullscreen = (() => {
+        if (fullscreenOption === FullscreenOption.Auto) {
+            return isNarrow;
+        }
+        return fullscreenOption !== FullscreenOption.Off;
+    })();
 
     if (!action || !Object.values<string>(SupportedActions).includes(action)) {
         return <StandardErrorPage>No action parameter found.</StandardErrorPage>;
