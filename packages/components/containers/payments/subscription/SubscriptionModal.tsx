@@ -478,7 +478,11 @@ const SubscriptionModal = ({
                                             {c('new_plans: action').t`Continue to review`}
                                         </Button>
                                     }
-                                    checkResult={getOptimisticCheckResult({ cycle, planIDs: model.planIDs, plansMap })}
+                                    checkResult={getOptimisticCheckResult({
+                                        cycle: model.cycle,
+                                        planIDs: model.planIDs,
+                                        plansMap,
+                                    })}
                                     plansMap={plansMap}
                                     isOptimistic={true}
                                     loading={loadingCheck}
