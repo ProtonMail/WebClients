@@ -302,3 +302,10 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
 
     return { updatedConversation: { ...conversation, Time, Labels }, conversationChanges };
 };
+
+// For some locations, we want to display the total number of messages instead of the number of unreads (e.g. Scheduled folder)
+export const shouldDisplayTotal = (labelID: string) => {
+    const needsDisplayTotalLabels = [SCHEDULED];
+
+    return needsDisplayTotalLabels.includes(labelID as MAILBOX_LABEL_IDS);
+};

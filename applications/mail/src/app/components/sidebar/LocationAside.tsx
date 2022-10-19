@@ -10,15 +10,29 @@ interface Props {
     active?: boolean;
     weak?: boolean;
     refreshing?: boolean;
+    shouldDisplayTotal: boolean;
 }
 
 const { GROUP } = VIEW_MODE;
 const UNREAD_LIMIT = 9999;
 
-const LocationAside = ({ unreadCount = 0, active = false, refreshing = false, weak = false }: Props) => {
+const LocationAside = ({
+    unreadCount = 0,
+    active = false,
+    refreshing = false,
+    weak = false,
+    shouldDisplayTotal,
+}: Props) => {
     const [mailSettings] = useMailSettings();
 
     const getUnreadTitle = () => {
+        if (shouldDisplayTotal) {
+            return c('Info').ngettext(
+                msgid`${unreadCount} scheduled message`,
+                `${unreadCount} scheduled messages`,
+                unreadCount
+            );
+        }
         if (mailSettings?.ViewMode === GROUP) {
             return c('Info').ngettext(
                 msgid`${unreadCount} unread conversation`,
