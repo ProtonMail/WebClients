@@ -8,7 +8,8 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
     return (
         <div className="mb1">
             {offer.deals.map((deal) => {
-                const { withoutCoupon = 0, withoutCouponMonthly = 0 } = deal.prices || {};
+                const { prices, cycle, planName, star } = deal;
+                const { withoutCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
                 const discount = getDiscount(deal);
                 const discountedAmount = (
                     <Price key="discounted-amount" currency={currency} isDisplayedInSentence>
@@ -17,20 +18,20 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
                 );
                 const regularAmount = (
                     <Price key="regular-amount" currency={currency} isDisplayedInSentence>
-                        {withoutCouponMonthly}
+                        {withoutCouponMonthly * cycle}
                     </Price>
                 );
-                const description = getRenewDescription(deal.cycle, discountedAmount, regularAmount, discount);
+                const description = getRenewDescription(cycle, discountedAmount, regularAmount, discount);
 
                 if (!description) {
                     return null;
                 }
 
-                const key = `${deal.planName}-${deal.cycle}`;
+                const key = `${planName}-${cycle}`;
 
                 return (
                     <p key={key} className="text-sm text-center color-weak">
-                        {deal.star ? <sup className="mr0-5">{deal.star}</sup> : null}
+                        {star ? <sup className="mr0-5">{star}</sup> : null}
                         {description}
                     </p>
                 );
