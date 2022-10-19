@@ -1,11 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { customCycles } from '@proton/shared/lib/helpers/subscription';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-
 import { ADDON_NAMES, COUPON_CODES, CYCLE, DEFAULT_CYCLE, MEMBER_PLAN_MAPPING, PLANS, PLAN_TYPES } from '../constants';
 import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse } from '../interfaces';
+import { FREE_PLAN } from '../subscription/freePlans';
+import humanSize from './humanSize';
+import { customCycles, getNormalCycleFromCustomCycle } from './subscription';
 
 export const getDiscountText = () => {
     return c('Info')
@@ -109,9 +108,16 @@ export const getCheckout = ({
     }, 0);
 
     const withoutDiscountPerCycle = withoutDiscountPerMonth * cycle;
+    const withoutDiscountPerNormalCycle = withoutDiscountPerMonth * getNormalCycleFromCustomCycle(cycle);
     const discountPerCycle = Math.min(withoutDiscountPerCycle - withDiscountPerCycle, withoutDiscountPerCycle);
+    const discountPerNormalCycle = Math.min(
+        withoutDiscountPerNormalCycle - withDiscountPerCycle,
+        withoutDiscountPerNormalCycle
+    );
     const discountPercent =
-        withoutDiscountPerCycle > 0 ? Math.round(100 * (discountPerCycle / withoutDiscountPerCycle)) : 0;
+        withoutDiscountPerNormalCycle > 0
+            ? Math.round(100 * (discountPerNormalCycle / withoutDiscountPerNormalCycle))
+            : 0;
 
     return {
         ...result,
