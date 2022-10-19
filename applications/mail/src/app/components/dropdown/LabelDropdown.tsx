@@ -303,7 +303,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 />
             </div>
             <div
-                className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container"
+                className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-container"
                 data-testid="label-dropdown-list"
             >
                 <ul className="unstyled mt0 mb0">
@@ -346,34 +346,36 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
+            <hr className="m0" />
             {displayContextFiltering && (
-                <div className={classnames(['p1 border-top', alwaysCheckboxDisabled && 'color-disabled'])}>
+                <div
+                    className={classnames([
+                        'label-dropdown-container px1 mt1',
+                        alwaysCheckboxDisabled && 'color-disabled',
+                    ])}
+                >
                     <Checkbox
-                        className="mr0-5"
                         id={alwaysCheckID}
                         checked={always}
                         disabled={alwaysCheckboxDisabled}
                         onChange={({ target }) => setAlways(target.checked)}
                         data-testid="label-dropdown:always-move"
                         data-prevent-arrow-navigation
-                    />
-                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                    >
                         {c('Label').t`Always label sender's emails`}
-                    </label>
+                    </Checkbox>
                 </div>
             )}
-            <div className={classnames([!displayContextFiltering && 'py1 border-top', 'flex ml1 mr1'])}>
+            <div className="label-dropdown-container px1 mt1">
                 <Checkbox
-                    className="mr0-5"
                     id={archiveCheckID}
                     checked={alsoArchive}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                     data-testid="label-dropdown:also-archive"
                     data-prevent-arrow-navigation
-                />
-                <label htmlFor={archiveCheckID} className="flex-item-fluid">
+                >
                     {c('Label').t`Also archive`}
-                </label>
+                </Checkbox>
             </div>
             <div className="m1">
                 <PrimaryButton
