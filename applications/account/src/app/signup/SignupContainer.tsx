@@ -379,7 +379,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     payment: c('Signup step').t`Payment`,
                 };
 
-                const isExternalAccountFlow = signupType === SignupType.Email || signupType === SignupType.VPN;
+                const isExternalAccountFlow = signupType === SignupType.Email;
                 if (isExternalAccountFlow) {
                     if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
                         return {
