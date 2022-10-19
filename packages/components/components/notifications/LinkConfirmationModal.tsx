@@ -81,7 +81,11 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
 
             {!isOutside && (
                 <Label className="flex">
-                    <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
+                    <Checkbox
+                        checked={dontAskAgain}
+                        onChange={() => setDontAskAgain(!dontAskAgain)}
+                        className="mr0-5"
+                    />
                     {c('Label').t`Do not ask again`}
                 </Label>
             )}
