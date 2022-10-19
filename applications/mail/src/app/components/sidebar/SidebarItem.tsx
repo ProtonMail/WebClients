@@ -1,8 +1,6 @@
 import { ReactNode, memo, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { c, msgid } from 'ttag';
-
 import {
     HotkeyTuple,
     IconName,
@@ -24,6 +22,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
+import { shouldDisplayTotal } from '../../helpers/labels';
 import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
@@ -32,8 +31,6 @@ import LocationAside from './LocationAside';
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 const noDrop: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
-
-const COUNTER_LIMIT = 9999;
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
@@ -88,7 +85,7 @@ const SidebarItem = ({
     const active = labelID === currentLabelID;
     const ariaCurrent = active ? 'page' : undefined;
 
-    const canDisplayTotalMessagesCounter = labelID === SCHEDULED && totalMessagesCount > 0;
+    const needsTotalDisplay = shouldDisplayTotal(labelID);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
         if (
@@ -121,24 +118,6 @@ const SidebarItem = ({
     const elementRef = useRef<HTMLAnchorElement>(null);
     useHotkeys(elementRef, shortcutHandlers);
 
-    const getTotalMessagesTitle = () => {
-        return c('Info').ngettext(
-            msgid`${totalMessagesCount} scheduled message`,
-            `${totalMessagesCount} scheduled messages`,
-            totalMessagesCount
-        );
-    };
-
-    const totalMessagesCounter = canDisplayTotalMessagesCounter && (
-        <span
-            className="navigation-counter-item navigation-counter-item--transparent flex-item-noshrink color-weak text-sm"
-            title={getTotalMessagesTitle()}
-            data-testid="navigation-link:total-messages-count"
-        >
-            {totalMessagesCount > COUNTER_LIMIT ? '9999+' : totalMessagesCount}
-        </span>
-    );
-
     return (
         <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
             <SidebarListItemLink
@@ -157,15 +136,15 @@ const SidebarItem = ({
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
                     right={
                         <LocationAside
-                            unreadCount={unreadCount}
+                            unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
                             weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
                             active={active}
                             refreshing={refreshing}
+                            shouldDisplayTotal={needsTotalDisplay}
                         />
                     }
                 >
                     <span className="text-ellipsis">{content}</span>
-                    {totalMessagesCounter}
                 </SidebarListItemContent>
             </SidebarListItemLink>
             {moveScheduledModal}
