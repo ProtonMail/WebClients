@@ -1,7 +1,5 @@
 import { useLocation } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -12,7 +10,7 @@ const AuthExtension = () => {
     const location = useLocation<{ type: 'success' | 'error'; payload?: string }>();
     const children = (
         <Main>
-            <Header title={c('Title').t`Extension`} />
+            <Header title="Extension" />
             <Content>
                 <Text>{location.state.type}</Text>
                 <Text>{location.state.payload}</Text>
