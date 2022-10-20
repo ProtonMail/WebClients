@@ -15,7 +15,7 @@ const CalendarResetSection = ({ calendarsToReset = [] }: Props) => {
                 <div className="text-pre-wrap">
                     {c('Info')
                         .t`You have reset your password and events linked to the following calendars couldn't be decrypted.
-                Any shared calendar links you created previously will no longer work.
+                Any calendar you shared will be inaccessible for the people you shared with.
                 Any active subscribed calendars will synchronize again after a few minutes.`}
                 </div>
             </Alert>

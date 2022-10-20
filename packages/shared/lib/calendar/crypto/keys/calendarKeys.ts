@@ -12,8 +12,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../../constants';
 import { uint8ArrayToBase64String } from '../../../helpers/encoding';
-import { EncryptionConfig, Nullable, SimpleMap } from '../../../interfaces';
-import { DecryptedCalendarKey, GenerateCalendarPayload, CalendarKey as tsKey } from '../../../interfaces/calendar';
+import { EncryptionConfig, SimpleMap } from '../../../interfaces';
+import { CreateOrResetCalendarPayload, DecryptedCalendarKey, CalendarKey as tsKey } from '../../../interfaces/calendar';
 import { CalendarSetupData } from '../../../interfaces/calendar/Api';
 import { getEncryptedSessionKey } from '../encrypt';
 
@@ -50,60 +50,35 @@ export const encryptPassphrase = async ({
     passphrase,
     privateKey,
     publicKey,
-    memberPublicKeys,
 }: {
     passphrase: string;
     privateKey: PrivateKeyReference;
-    /**
-     * Used after calendar creation
-     * Pass either this or memberPublicKeys
-     */
-    publicKey?: PublicKeyReference;
-    /**
-     * Used for calendar reset
-     * Pass either this or publicKey
-     */
-    memberPublicKeys?: { [key: string]: PublicKeyReference };
+    publicKey: PublicKeyReference;
 }): Promise<{
-    keyPackets: Nullable<SimpleMap<string>>;
-    keyPacket: Nullable<string>;
+    keyPacket: string;
     dataPacket: string;
     signature: string;
 }> => {
-    const memberPublicKeysList = memberPublicKeys ? Object.entries(memberPublicKeys) : null;
-    const maybePublicKeys = memberPublicKeysList?.map(([, publicKey]) => publicKey) || [publicKey];
-    const publicKeys = maybePublicKeys.filter(isTruthy);
-
-    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: publicKeys });
+    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: publicKey });
     // we encrypt using `sessionKey` directly instead of `encryptionKeys` so that returned message only includes
     // symmetrically encrypted data
     const { message: encryptedData, signature: binarySignature } = await CryptoProxy.encryptMessage({
         textData: passphrase, // stripTrailingSpaces: false
         sessionKey,
-        signingKeys: [privateKey],
+        signingKeys: privateKey,
         detached: true,
         format: 'binary',
     });
 
     // encrypt to each public key separetely to get separate serialized session keys
-    const encryptedSessionKeys = await Promise.all(
-        publicKeys.map((publicKey) =>
-            CryptoProxy.encryptSessionKey({
-                ...sessionKey,
-                encryptionKeys: publicKey,
-                format: 'binary',
-            })
-        )
-    );
+    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+        ...sessionKey,
+        encryptionKeys: publicKey,
+        format: 'binary',
+    });
 
     return {
-        keyPackets: !publicKey
-            ? memberPublicKeysList?.reduce((acc, [memberID], index) => {
-                  acc[memberID] = uint8ArrayToBase64String(encryptedSessionKeys[index]);
-                  return acc;
-              }, Object.create(null))
-            : null,
-        keyPacket: publicKey ? uint8ArrayToBase64String(encryptedSessionKeys[0]) : null,
+        keyPacket: uint8ArrayToBase64String(encryptedSessionKey),
         dataPacket: uint8ArrayToBase64String(encryptedData),
         signature: await CryptoProxy.getArmoredSignature({ binarySignature }),
     };
@@ -211,45 +186,28 @@ export const generateCalendarKeyPayload = async ({
     addressID,
     privateKey,
     publicKey,
-    memberPublicKeys,
 }: {
     addressID: string;
     privateKey: PrivateKeyReference;
-    /**
-     * Used after calendar creation
-     * Pass either this or memberPublicKeys
-     */
-    publicKey?: PublicKeyReference;
-    /**
-     * Used for calendar reset
-     * Pass either this or publicKey
-     */
-    memberPublicKeys?: { [key: string]: PublicKeyReference };
-}): Promise<GenerateCalendarPayload | CalendarSetupData> => {
+    publicKey: PublicKeyReference;
+}): Promise<CreateOrResetCalendarPayload | CalendarSetupData> => {
     const passphrase = generatePassphrase();
     const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
-    const [{ privateKeyArmored: PrivateKey }, { dataPacket: DataPacket, keyPackets, keyPacket, signature: Signature }] =
+    const [{ privateKeyArmored: PrivateKey }, { dataPacket: DataPacket, keyPacket: KeyPacket, signature: Signature }] =
         await Promise.all([
             generateCalendarKey({ passphrase, encryptionConfig }),
-            encryptPassphrase({ passphrase, privateKey, publicKey, memberPublicKeys }),
+            encryptPassphrase({ passphrase, privateKey, publicKey }),
         ]);
 
-    const payload: GenerateCalendarPayload = {
+    const payload: CreateOrResetCalendarPayload = {
         AddressID: addressID,
         Signature,
         PrivateKey,
         Passphrase: {
             DataPacket,
+            KeyPacket,
         },
     };
-
-    if (keyPackets) {
-        payload.Passphrase.KeyPackets = keyPackets;
-    } else if (keyPacket) {
-        payload.Passphrase.KeyPacket = keyPacket;
-    } else {
-        throw new Error('Missing key packet');
-    }
 
     return payload;
 };
