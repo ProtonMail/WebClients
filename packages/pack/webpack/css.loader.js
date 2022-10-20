@@ -20,7 +20,7 @@ const handleUrlResolve = (url) => {
     return true;
 };
 
-module.exports = ({ browserslist }) => {
+module.exports = ({ browserslist, logical }) => {
     const sassLoaders = [
         {
             loader: require.resolve('css-loader'),
@@ -38,10 +38,11 @@ module.exports = ({ browserslist }) => {
                             flexbox: 'no-2009',
                         }),
                         require('postcss-color-functional-notation')(),
-                        require('postcss-logical')({
-                            dir: 'ltr',
-                        }),
-                    ],
+                        !logical &&
+                            require('postcss-logical')({
+                                dir: 'ltr',
+                            }),
+                    ].filter(Boolean),
                 },
             },
         },
