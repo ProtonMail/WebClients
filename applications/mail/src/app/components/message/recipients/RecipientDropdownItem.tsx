@@ -9,9 +9,10 @@ interface Props {
     label: string;
     recipient: Recipient;
     closeDropdown: () => void;
+    displaySenderImage: boolean;
 }
 
-const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
+const RecipientDropdownItem = ({ displaySenderImage, label, recipient, closeDropdown }: Props) => {
     const { createNotification } = useNotifications();
 
     // Label value can contain :
@@ -39,7 +40,11 @@ const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx0-5" aria-hidden="true">
                 <span className="mauto">
-                    <ContactImage email={recipient.Address} name={label} className="w100 h100 rounded" />
+                    <ContactImage
+                        email={displaySenderImage ? recipient.Address : ''}
+                        name={label}
+                        className="w100 h100 rounded"
+                    />
                 </span>
             </span>
             <div className="flex flex-column flex-item-fluid px0-5">
