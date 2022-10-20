@@ -9,6 +9,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
+const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
 const HtmlEditPlugin = require('./html-edit-plugin');
@@ -16,7 +17,17 @@ const HtmlEditPlugin = require('./html-edit-plugin');
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
 
-module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, warningLogs, errorLogs }) => {
+module.exports = ({
+    isProduction,
+    publicPath,
+    appMode,
+    buildData,
+    featureFlags,
+    writeSRI,
+    warningLogs,
+    errorLogs,
+    logical,
+}) => {
     return [
         ...(isProduction
             ? []
@@ -166,5 +177,7 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             WEBPACK_PUBLIC_PATH: JSON.stringify(publicPath),
             WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags),
         }),
+
+        logical && new PostCssLogicalWebpackPlugin(),
     ].filter(Boolean);
 };

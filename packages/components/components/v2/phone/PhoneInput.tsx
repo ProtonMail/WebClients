@@ -121,7 +121,7 @@ const PhoneInput = ({
     const selectedValue = countries.find((data) => data.countryCode === countryCode);
     const [isRTL] = useRightToLeft();
 
-    // we force dir="rtl" in all case, because otherwise phone number will be displayed
+    // we force dir="ltr" in all cases, because otherwise phone number will be displayed
     // in reverse in RTL languages, which is not recommended
     return (
         <InputTwo
@@ -131,6 +131,7 @@ const PhoneInput = ({
             ref={inputRef}
             placeholder={placeholder}
             dir="ltr"
+            containerProps={{ dir: 'ltr' }}
             className={classnames([isRTL ? 'text-right' : null])}
             prefix={
                 <CountrySelect
