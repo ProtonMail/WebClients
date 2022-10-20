@@ -76,7 +76,7 @@ const MainContainer = () => {
         return <CalendarSetupContainer calendars={calendarsToSetup} onDone={() => setCalendarsToSetup([])} />;
     }
 
-    if (welcomeFlags.isWelcomeFlow) {
+    if (!welcomeFlags.isDone) {
         return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
     }
 
