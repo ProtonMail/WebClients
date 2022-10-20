@@ -130,7 +130,11 @@ const List = (
     const onCompose = useOnCompose();
     const { createModal } = useModals();
     const goToSettings = useSettingsLink();
-    const elements = usePlaceholders(inputElements, loading, placeholderCount);
+
+    // We want to display placeholders only when we are currently loading elements AND we don't have elements already
+    const displayPlaceholders = loading && inputElements?.length === 0;
+
+    const elements = usePlaceholders(inputElements, displayPlaceholders, placeholderCount);
     const { dismissed: isGetStartedChecklistDismissed, handleDismiss: dismissGetStartedChecklist } =
         useGetStartedChecklist();
     const { dismissed: isPaidUserChecklistDismissed, handleDismiss: dismissPaidUserChecklist } = usePaidUserChecklist();
@@ -220,7 +224,7 @@ const List = (
                                             conversationMode={conversationMode}
                                             isCompactView={isCompactView}
                                             labelID={labelID}
-                                            loading={loading}
+                                            loading={displayPlaceholders}
                                             columnLayout={columnLayout}
                                             elementID={elementID}
                                             element={element}
