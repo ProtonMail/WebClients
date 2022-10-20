@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "tr_TR"
   },
   "contexts": {
@@ -97,7 +97,7 @@
         "Sağa hizala"
       ],
       "Alignment": [
-        "Hizala"
+        "Hizalama"
       ],
       "Apply": [
         "Uygula"
@@ -274,13 +274,13 @@
         "Kurtarma ifadesi devre dışı bırakılsın mı?"
       ],
       "Discard": [
-        "Vazgeç"
+        "Sil"
       ],
       "Don't show again": [
         "Bir daha gösterme"
       ],
       "Done": [
-        "Tamamlandı"
+        "Tamam"
       ],
       "Downgrade": [
         "Düşür"
@@ -334,7 +334,7 @@
         "Emoji"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştir"
+        "masaüstü bildirimlerini etkinleştirmek"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini etkinleştir"
@@ -376,7 +376,7 @@
         "${ vpnPlus } alın"
       ],
       "Get verification code": [
-        "Doğrulama kodu al"
+        "Doğrulama kodu alın"
       ],
       "Go to label": [
         "Etikete git"
@@ -475,7 +475,7 @@
         "Yardım gerekiyor mu?"
       ],
       "Next": [
-        "Sonraki"
+        "İleri"
       ],
       "Next month": [
         "Sonraki ay"
@@ -514,7 +514,7 @@
         "Lütfen aboneliğinizle ilgili işlemleri yapması için kuruluşunuzun yöneticisi ile görüşün"
       ],
       "Preview": [
-        "Ön izleme"
+        "Ön izle"
       ],
       "Previous": [
         "Önceki"
@@ -553,7 +553,7 @@
         "Yenile"
       ],
       "Remove": [
-        "Sil"
+        "Kaldır"
       ],
       "Remove Block": [
         "Engellemeyi kaldır"
@@ -736,7 +736,7 @@
         "Oturum açılıyor"
       ],
       "Signing out": [
-        "Oturumu kapatılıyor"
+        "Oturum kapatılıyor"
       ],
       "Size": [
         "Boyut"
@@ -760,7 +760,7 @@
         "Destek"
       ],
       "Switch account": [
-        "Hesabı değiştir"
+        "Hesap değiştir"
       ],
       "Top up": [
         "Doldur"
@@ -802,7 +802,7 @@
         "Fotoğraf yükle"
       ],
       "Use ${ label } theme": [
-        "“${ label }” temasını kullan"
+        "${ label } teması kullanılsın"
       ],
       "Use a different card": [
         "Başka bir kart kullanın"
@@ -1072,11 +1072,6 @@
         "Iki yıllık"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Takvimler"
@@ -1095,13 +1090,13 @@
         "Bridge sorunu"
       ],
       "Calendar problem": [
-        "Takvim sorunu"
+        "Calendar sorunu"
       ],
       "Connection problem": [
         "Bağlantı sorunu"
       ],
       "Contacts problem": [
-        "Kişiler sorunu"
+        "Contacts sorunu"
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
@@ -1155,7 +1150,7 @@
         "VPN sorunu"
       ],
       "Website access problem": [
-        "Web sitesine erişim sorunu"
+        "Web sitesi erişim sorunu"
       ]
     },
     "Button": {
@@ -1662,13 +1657,13 @@
         "Fotoğraf"
       ],
       "Role": [
-        "Rol/Meslek"
+        "Rol"
       ],
       "Timezone": [
         "Saat dilimi"
       ],
       "Title": [
-        "Unvan"
+        "Başlık"
       ],
       "URL": [
         "İnternet adresi"
@@ -1868,7 +1863,7 @@
         "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "Kongo Demokratik Cumhuriyeti"
+        "Kongo, Demokratik Cumhuriyeti"
       ],
       "Cook Islands": [
         "Cook Adaları"
@@ -2530,7 +2525,7 @@
         "Günlük"
       ],
       "Daily, ${ timesString }": [
-        "Günde bir ${ timesString }"
+        "Günde bir, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "Günde bir, ${ untilString }"
@@ -2607,6 +2602,10 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
+        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Kaç kişinin bağlantınıza tıkladığını, hesap açtığını ve ücretli abone olduğunu izleyin. Ne kadar ücretsiz aylık kullanım kazandığınızı görün."
       ],
@@ -2642,11 +2641,17 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } istenmeyen değil listesine eklenemedi"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
       ],
       "${ name } failed to move to your block list": [
         "${ name } engellenenler listenize eklenemedi"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } istenmeyen değil listesine eklendi"
       ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
@@ -2753,11 +2758,17 @@
       "${ name } deletion failed": [
         "${ name } silinemedi"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } istenmeyen değil listesine eklenemedi"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
       ],
       "${ name } failed to move to your block list": [
         "${ name } engellenenler listenize eklenemedi"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } istenmeyen değil listesine eklendi"
       ],
       "${ name } moved to spam list": [
         "${ name } istenmeyenler listesine eklendi"
@@ -3166,7 +3177,7 @@
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
       ],
       "This field is required": [
-        "Bu alan zorunludur"
+        "Bu alanın doldurulması zorunludur"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
@@ -3949,11 +3960,11 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } öneri bulundu. Gezinmek için klavyeyi kullanın.",
-        "${ items.length } öneri bulundu. Gezinmek için klavyeyi kullanın."
+        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın.",
+        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Oturum açtıktan sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
+        "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
       ]
     },
     "Human verification method": {
@@ -3987,7 +3998,7 @@
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Kişiler şifreleniyor ve ekleniyor: ${ totalImported }/${ totalToImport }"
+        "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
@@ -4064,7 +4075,7 @@
         "şimdilik"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow }: desteklemiyor:"
+        "ProtonContacts ${ forNow } şunu desteklemiyor:"
       ]
     },
     "Import error": {
@@ -4257,7 +4268,7 @@
         "Dışa aktar"
       ],
       "Export contacts": [
-        "Kişiler dışa aktar"
+        "Kişileri dışa aktar"
       ],
       "Export to CSV file": [
         "CSV olarak dışa aktar"
@@ -4376,8 +4387,8 @@
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntıları görmek için genişletin.",
-        "${ totalEventsDiscarded } / ${ totalEvents } etkinlik içe aktarılmayacak. Ayrıntıları görmek için genişletin."
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin."
       ],
       "No contact can be imported. Click for details": [
         "Herhangi bir kişi içe aktarılamadı. Ayrıntılar için tıklayın"
@@ -4718,7 +4729,7 @@
         "Arka plan rengi"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve işlemler, ayarlardaki klavyeyi kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
+        "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus veya Visionary aboneliği gerekli"
@@ -4894,7 +4905,7 @@
         "PGP anahtarlarınızı diğer PGP uyumlu hizmetlerle kullanmak için indirin."
       ],
       "Drop a file here to upload": [
-        "Yüklemek için bir dosyayı sürükleyip buraya bırakın"
+        "Dosyayı sürükleyip buraya bırakın"
       ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı sürükleyip buraya bırakın"
@@ -5247,7 +5258,7 @@
         "Birleştirilmiş"
       ],
       "Monthly ${ onDayString }": [
-        "Aylık ${ onDayString }"
+        "Ayda bir ${ onDayString }"
       ],
       "more": [
         "diğer"
@@ -5532,7 +5543,7 @@
         "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
+        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
@@ -5556,7 +5567,7 @@
         "Drive kurulumunuz yapılıyor"
       ],
       "Show original message": [
-        "Özgün iletiyi görüntüle"
+        "Özgün iletiyi göster"
       ],
       "Signed up": [
         "Hesap açtı"
@@ -5598,7 +5609,7 @@
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
       "Test link": [
-        "Deneme bağlantısı"
+        "Bağlantıyı sına"
       ],
       "Text color": [
         "Metin rengi"
@@ -5735,7 +5746,7 @@
         "Hesabınıza erişimi kaybetmemek için, bir hesap kurtarma yöntemi belirleyin"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Proton ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman blog sayfamıza bakabilirsiniz."
@@ -5807,10 +5818,10 @@
         "Parola yöneticinizdeki adresi güncelleyin"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } avantajlarını kaybetmemek için bugün yükseltin."
+        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
       ],
       "Upload picture": [
-        "Fotoğraf yükle"
+        "Görsel yükle"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Yüklenen dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
@@ -5967,6 +5978,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz",
+        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
       ],
       "You cannot refer ${ appName } users": [
         "${ appName } kullanıcılarını kaynak gösteremezsiniz"
@@ -6426,7 +6441,7 @@
         "Önceki iletiyi aç"
       ],
       "Open this modal": [
-        "Üste açılan pencerede aç"
+        "Bu pencereyi aç"
       ],
       "Reply": [
         "Yanıtla"
@@ -6456,10 +6471,10 @@
         "Özgün iletiyi göster"
       ],
       "Show unread emails": [
-        "Okunmamış e-postaları görüntüle"
+        "Okunmamış e-postaları göster"
       ],
       "Star": [
-        "Yıldız koy"
+        "Yıldız koy/kaldır"
       ]
     },
     "Keyboard shortcut section name": {
@@ -6587,7 +6602,7 @@
         "TÜMÜ"
       ],
       "All-day event notifications": [
-        "Tüm günlük etkinlik bildirimleri"
+        "Tüm gün etkinlik bildirimleri"
       ],
       "Allow recovery by email": [
         "E-posta ile hesap kurtarılabilsin"
@@ -6668,7 +6683,7 @@
         "ödül depolama alanı"
       ],
       "Browser": [
-        "Web tarayıcı"
+        "Tarayıcı"
       ],
       "Browser version": [
         "Tarayıcı sürümü"
@@ -6845,7 +6860,7 @@
         "Süre"
       ],
       "Email": [
-        "E-posta adresi"
+        "E-posta"
       ],
       "Email address": [
         "E-posta adresi"
@@ -6968,7 +6983,7 @@
         "Klavye kısayolları"
       ],
       "Label as": [
-        "Etiketle"
+        "Şöyle etiketlensin"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -7193,7 +7208,7 @@
         "İmza"
       ],
       "Spam": [
-        "İstenmeyen"
+        "İstenmeyen e-posta"
       ],
       "Starred": [
         "Yıldızlı"
@@ -7544,7 +7559,7 @@
         "Gizlilik ilkesi"
       ],
       "Request an invite": [
-        "Davet isteği yap"
+        "Davet iste"
       ],
       "Reset password": [
         "Parolayı sıfırla"
@@ -7556,7 +7571,7 @@
         "Oturum aç"
       ],
       "Terms": [
-        "Şartlar"
+        "Koşullar"
       ],
       "Terms and conditions": [
         "Hüküm ve koşullar"
@@ -7565,7 +7580,7 @@
         "Oturum açmakta sorun mu yaşıyorsunuz?"
       ],
       "Upgrade account": [
-        "Hesabınızı yükseltin"
+        "Hesabı yükselt"
       ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
@@ -7620,16 +7635,16 @@
         "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } zamanından sonraki tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment } öncesinden başlayarak ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ totalLabelsCount } etiketin ${ periodFragment } zamanından sonraki tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7749,7 +7764,7 @@
     },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. günü"
+        "${ dayOfMonth }. günde"
       ],
       "on the first Friday": [
         "ilk Cuma günü"
@@ -8619,7 +8634,7 @@
     },
     "Notification time input": {
       "at": [
-        "saat"
+        "tarih"
       ]
     },
     "Notification type": {
@@ -8891,7 +8906,7 @@
         "Varsayılan klasörler"
       ],
       "Move to...": [
-        "Şuraya taşı..."
+        "Taşı..."
       ]
     },
     "Option group label": {
@@ -8987,7 +9002,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Sizinle iletişim kurmanın bir yolu"
+        "Sizinle iletişim kurmak için bir yol"
       ],
       "Add a calendar description": [
         "Bir takvim açıklaması ekleyin"
@@ -9011,7 +9026,7 @@
         "Onayla"
       ],
       "Confirm password": [
-        "Parolayı onayla"
+        "Parola onayı"
       ],
       "domain.com": [
         "etkialani.com"
@@ -9439,7 +9454,7 @@
         "Ad"
       ],
       "Preview": [
-        "Ön izleme"
+        "Ön izle"
       ]
     },
     "Storage": {
@@ -9447,7 +9462,7 @@
         "Sürüm notları"
       ],
       "Upgrade storage": [
-        "Depolama alanını artırın"
+        "Depolama alanını artır"
       ],
       "Your current storage:": [
         "Geçerli depolama alanınız:"
@@ -9458,7 +9473,7 @@
         "Takvim adresi"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Bir dış ya da herkese açık takvime ve güncellemelerine abone olmak için adresi yazın. Abone olduğunuz takvimler arasına bu takvimin salt okunur sürümü eklenir.\n${ kbLink }"
+        "Takvime ve güncellemelerine abone olmak istediğiniz dış ya da herkese açık takvimin adresini yazın. Bu takvim salt okunur şekilde abone olduğunuz takvimler arasına eklenir.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9591,7 +9606,7 @@
         "Hata bildirildi"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Takvim eklendi. Eşlenmesi birkaç dakika sürebilir."
+        "Takvim eklendi. Eşitlenmesi birkaç dakika sürebilir."
       ],
       "Calendar created": [
         "Takvim eklendi"
@@ -9852,16 +9867,16 @@
     },
     "Time period": {
       "account creation date": [
-        "hesap açma tarihi"
+        "hesabın açılış tarihinden itibaren"
       ],
       "the last 12 months": [
-        "son 12 ay"
+        "son 12 aylık dönemdeki"
       ],
       "the last 3 months": [
-        "son 3 ay"
+        "son 3 aylık dönemdeki"
       ],
       "the last month": [
-        "son bir ay"
+        "son bir aylık dönemdeki"
       ]
     },
     "Time unit": {
@@ -9936,7 +9951,7 @@
         "Adres ekle"
       ],
       "Add another notification to remind you of this event": [
-        "Bu etkinliğin hatırlatılması için başka bir bildirim ekleyin"
+        "Bu etkinliği hatırlatacak başka bir bildirim ekleyin"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -10089,7 +10104,7 @@
         "Kişi şifreleme anahtarları"
       ],
       "Continue with partial import?": [
-        "Kısmi içe aktarmayla ilerlensin mi?"
+        "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
       "Couldn’t create accounts": [
         "Hesaplar eklenemedi"
@@ -10516,19 +10531,19 @@
         "Bir tarife seçin"
       ],
       "Select action to take on contact group": [
-        "Kişi grubunda yapılacak eylemi seçin"
+        "Kişi grubunda yapılacak işlemi seçin"
       ],
       "Select contact group": [
-        "Kişi grubunu seçin"
+        "Kişi grubunu seç"
       ],
       "Select the time to send this notification": [
         "Bu bildirimin gönderileceği zamanı seçin"
       ],
       "Select the way to send this notification": [
-        "Bu bildirimin gönderilme yöntemini seçin"
+        "Bu bildirimin iletilme yöntemini seçin"
       ],
       "Select when you want this notification to be sent": [
-        "Bu bildirimin ne zaman gönderilmesini istediğinizi seçin"
+        "Bu bildirimin gönderilmesini istediğiniz zamanı seçin"
       ],
       "Sender image": [
         "Gönderici görseli"
@@ -10699,7 +10714,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Bir numara seçin"
+        "Bir sayı seçin"
       ]
     },
     "Title for payment methods table": {
@@ -10872,6 +10887,9 @@
       "This key is encrypted with an old password": [
         "Bu anahtar, eski bir parola ile şifrelenmiş"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Bu anahtar ${ MAIL_APP_NAME } tarafından kişinin verilerinin korunması için kullanılıyor"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
       ],
@@ -10933,7 +10951,7 @@
         "Bugün e-posta yazmak için güzel bir gün"
       ],
       "Update default font and size": [
-        "Varsayılan yazı tipini ve boyutunu güncelleyin"
+        "Varsayılan yazı tipini ve boyutunu güncelle"
       ],
       "Your default font will look like following:": [
         "Varsayılan yazı tipi şu şekilde görünecek:"
@@ -11341,7 +11359,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

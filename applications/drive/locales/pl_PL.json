@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);",
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "pl_PL"
   },
   "contexts": {
@@ -466,6 +466,9 @@
       ],
       "Search drive": [
         "Szukaj"
+      ],
+      "See plan features": [
+        "Zobacz funkcje planu"
       ],
       "Select all": [
         "Zaznacz wszystkie"
@@ -1739,6 +1742,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
@@ -3091,7 +3100,7 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "It’s as easy as drag and drop or selecting files": [
-        "To łatwe jak przeciąganie i upuszczanie lub zaznaczanie plików"
+        "To jest łatwe jak przeciąganie i upuszczanie lub zaznaczanie plików"
       ],
       "It’s easy and secure": [
         "To łatwe i bezpieczne"
@@ -3749,7 +3758,7 @@
         "Kraj"
       ],
       "Create a share link": [
-        "Udostępnij link"
+        "Utwórz link"
       ],
       "Create Proton account": [
         "Utwórz konto Proton"
@@ -3779,7 +3788,7 @@
         "Pobierz mimo to"
       ],
       "Email": [
-        "Adres e-mail"
+        "E-mail"
       ],
       "Email address": [
         "Adres e-mail"
@@ -4708,11 +4717,11 @@
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Uzyskaj do 18 miesięcy planu ${ planName } za darmo"
+      "Get up to ${ credits } in credits.": [
+        "Uzyskaj do ${ credits }."
       ],
-      "Invite friends and earn rewards!": [
-        "Zaproś znajomych i zarabiaj nagrody!"
+      "Invite friends to Proton": [
+        "Zaproś znajomych do usługi Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Możesz łatwo wyszukiwać pliki, zachowując bezpieczeństwo danych."
@@ -4973,10 +4982,10 @@
         "Dostosuj i potwierdź"
       ],
       "Customize calendar import": [
-        "Dostosuj proces importowana kalendarza"
+        "Dostosuj proces importowania kalendarza"
       ],
       "Customize your mail import": [
-        "Dostosuj proces importowana poczty"
+        "Dostosuj proces importowania poczty"
       ],
       "Date": [
         "Data"
@@ -5180,7 +5189,7 @@
         "Podpisz ponownie wszystkie kontakty"
       ],
       "Re-signing contacts": [
-        "Podpisywanie ponowne kontaktów"
+        "Ponowne podpisywanie kontaktów"
       ],
       "Reconnect your account": [
         "Połącz ponownie ze swoim kontem"

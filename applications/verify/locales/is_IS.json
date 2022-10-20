@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n%10!=1 || n%100==11);",
     "language": "is_IS"
   },
   "contexts": {
@@ -945,7 +945,7 @@
         "CAPTCHA-mennskupróf"
       ],
       "Email": [
-        "Tölvupóstfang"
+        "Tölvupóstur"
       ],
       "Manual": [
         "Handvirkt"
@@ -1071,7 +1071,7 @@
         "Ógildur sannvottunarkóði"
       ],
       "Request new code": [
-        "Biðja um nýjan kóða"
+        "Óska eftir nýjum kóða"
       ],
       "Two-factor authentication": [
         "Tveggja-þrepa auðkenning"
