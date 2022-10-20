@@ -60,7 +60,7 @@ const ItemStar = ({ element, size }: Props) => {
                 ])}
                 onClick={handleClick}
             >
-                <Icon size={size} name={isStarred ? 'star-filled' : 'star'} className="starbutton-icon-star" />
+                <Icon size={size} name={isStarred ? 'star-filled' : 'star'} />
                 <span className="sr-only">{title}</span>
             </button>
         </Tooltip>
