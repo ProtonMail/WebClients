@@ -99,6 +99,7 @@ const RecipientItemSingle = ({
                             recipient={recipient}
                             label={label}
                             closeDropdown={close}
+                            bimiSelector={message?.data?.BimiSelector}
                         />
                         {customDropdownActions}
                     </DropdownMenu>
