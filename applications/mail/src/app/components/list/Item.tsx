@@ -100,6 +100,7 @@ const Item = ({
     const unread = isUnread(element, labelID);
     const displaySenderImage = !displayRecipients && !!element.DisplaySenderImage;
     const [firstSenderAddress] = sendersAddresses;
+    const [firstRecipientAddress] = recipientsAddresses;
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -154,7 +155,7 @@ const Item = ({
                 <ItemCheckbox
                     ID={element.ID}
                     name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
-                    email={displaySenderImage ? firstSenderAddress : ''}
+                    email={displaySenderImage ? (displayRecipients ? firstRecipientAddress : firstSenderAddress) : ''}
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr0-75 stop-propagation"
