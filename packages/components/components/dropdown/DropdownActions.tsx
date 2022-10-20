@@ -86,6 +86,7 @@ const DropdownActions = ({
                 className={classnames(['flex-item-noshrink', className])}
                 title={c('Title').t`Open actions dropdown`}
                 data-test-id="composer:scheduled-send-dropdown"
+                data-testid="dropdownActions:dropdown"
             >
                 <DropdownMenu>
                     {restList.map(({ text, tooltip, ...restProps }, index) => {
