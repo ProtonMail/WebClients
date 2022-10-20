@@ -119,8 +119,11 @@ export const sendModifications = (
     }
 };
 
-export const endUndo = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
-    const message = getMessage(state, ID);
+export const endUndo = (
+    state: Draft<MessagesState>,
+    { payload: { messageID } }: PayloadAction<{ messageID: string }>
+) => {
+    const message = getMessage(state, messageID);
 
     if (message && message.data) {
         message.loadRetry = 0;
@@ -161,5 +164,13 @@ export const cancelScheduled = (state: Draft<MessagesState>, { payload: ID }: Pa
         if (message.draftFlags) {
             message.draftFlags.scheduledAt = undefined;
         }
+    }
+};
+
+export const cancelSendSuccess = (state: Draft<MessagesState>, action: PayloadAction<Message>) => {
+    const stateMessage = getMessage(state, action.payload.ID);
+
+    if (stateMessage) {
+        stateMessage.data = action.payload;
     }
 };
