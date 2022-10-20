@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import { useApi, useEventManager, useMailSettings, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
@@ -19,7 +18,7 @@ import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
-const { ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
+const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 export const useCreateDraft = () => {
     const api = useApi();
@@ -120,13 +119,11 @@ export const useDeleteDraft = () => {
 
     return useCallback(
         async (message: MessageState) => {
-            const showMoved = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
-            const currentLabelID = showMoved ? ALL_DRAFTS : DRAFTS;
             const messageID = message.data?.ID;
             if (!messageID) {
                 return;
             }
-            const response: any = await api(deleteMessages([messageID], currentLabelID));
+            const response: any = await api(deleteMessages([messageID], ALL_DRAFTS));
 
             // For the "Please refresh your page, the message has moved."
             // Backend is not replying with an HTTP error but with an error inside the Response
