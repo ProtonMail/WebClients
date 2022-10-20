@@ -42,7 +42,11 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
         return (
             <li key={ID} className={listItemClassName}>
-                <span className="text-ellipsis block" title={Email}>
+                <span
+                    className="text-ellipsis block"
+                    title={Email}
+                    data-testid="users-and-addresses-table:memberAddress"
+                >
                     {Email}
                 </span>
             </li>

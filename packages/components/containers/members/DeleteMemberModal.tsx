@@ -69,6 +69,7 @@ const DeleteMemberModal = ({ member, onDelete, ...rest }: Props) => {
                     placeholder="Thomas A. Anderson"
                     error={validator([requiredValidator(username), !isValid ? c('Error').t`Name does not match` : ''])}
                     autoFocus
+                    data-testid="deleteMemberModal:username-input"
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
