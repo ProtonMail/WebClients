@@ -16,7 +16,7 @@ const useShouldOpenV5WelcomeModal = () => {
             // If the user has not been welcomed (and they didn't get welcomed now), we assume
             // they have never seen V4, and signed up with V5 and thus we set the FF to true
             // so that it doesn't show up on the next reload.
-            if (welcomeFlags.isWelcomeFlow === false && welcomeFlags.isDone === false) {
+            if (!welcomeFlags.isWelcomeFlow && !welcomeFlags.isDone) {
                 setOpen(true);
             } else {
                 update(true);
