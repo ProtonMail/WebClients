@@ -89,6 +89,7 @@ const Toolbar = ({
         <nav
             ref={toolbarRef}
             className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between"
+            data-shortcut-target="mailbox-toolbar"
         >
             <div className="flex toolbar-inner">
                 {listInView ? (

@@ -1,7 +1,15 @@
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { HotkeyTuple, useEventManager, useFolders, useHotkeys, useMailSettings } from '@proton/components';
+import {
+    FeatureCode,
+    HotkeyTuple,
+    useEventManager,
+    useFeature,
+    useFolders,
+    useHotkeys,
+    useMailSettings,
+} from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -75,6 +83,9 @@ export const useMessageHotkeys = (
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const { call } = useEventManager();
 
+    const { feature: conversationHeaderInScrollFeature } = useFeature(FeatureCode.ConversationHeaderInScroll);
+    const shouldShowConversationHeaderInScroll = conversationHeaderInScrollFeature?.Value;
+
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
     const filterDropdownToggleRef = useRef<() => void>(noop);
@@ -103,9 +114,11 @@ export const useMessageHotkeys = (
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
+        const dataShortcutTarget = shouldShowConversationHeaderInScroll
+            ? 'mailbox-toolbar'
+            : 'message-conversation-summary';
         const { bottom: topLimit } =
-            document.querySelector('[data-shortcut-target="message-conversation-summary"]')?.getBoundingClientRect() ||
-            {};
+            document.querySelector(`[data-shortcut-target="${dataShortcutTarget}"]`)?.getBoundingClientRect() || {};
         const bottomLimit = window.innerHeight;
 
         const { top: elementTop, bottom: elementBottom } = elementRef?.current?.getBoundingClientRect() || {};
