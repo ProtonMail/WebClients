@@ -29,7 +29,7 @@ const MessagesGeneralSection = () => {
         setMailShortcutsModalOpen(true);
     };
 
-    const nonPrivateSubUser = !userLoading && (!user.isPrivate || user.isSubUser);
+    const showRecoveryEmailInput = !user.isPrivate;
     const isDailyEmailEnabled = !!userSettings?.Email?.Notify && !!userSettings?.Email?.Value;
     const canEnableDailyEmail = !!userSettings?.Email?.Value;
 
@@ -66,7 +66,7 @@ const MessagesGeneralSection = () => {
                             />
                         </label>
 
-                        {!nonPrivateSubUser && (
+                        {!userLoading && !showRecoveryEmailInput && (
                             <div className="text-sm">
                                 <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
                                     {isDailyEmailEnabled && userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
@@ -77,7 +77,7 @@ const MessagesGeneralSection = () => {
                         )}
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-item-fluid">
-                        {nonPrivateSubUser && (
+                        {!userLoading && showRecoveryEmailInput && (
                             <RecoveryEmail
                                 className="mb0 on-mobile-mb1"
                                 email={userSettings.Email}
@@ -92,7 +92,7 @@ const MessagesGeneralSection = () => {
                                 isEnabled={isDailyEmailEnabled}
                                 canEnable={canEnableDailyEmail}
                             />
-                            {nonPrivateSubUser && (
+                            {!userLoading && showRecoveryEmailInput && (
                                 <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
                                     {c('Label').t`Allow notifications by email`}
                                 </label>
