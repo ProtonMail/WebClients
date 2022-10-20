@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Checkbox, InputFieldTwo, Label, useLoading } from '@proton/components';
+import { Checkbox, InputFieldTwo, useLoading } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { getTitle } from '../../helpers/title';
@@ -20,18 +20,22 @@ export const Basic = () => {
     return (
         <div>
             Whachu wanna eat?
-            <Label htmlFor="tofu" className="block mb1 mt1">
-                <Checkbox id="tofu" />
-                Tofu
-            </Label>
-            <Label htmlFor="spaghetti" className="block mb1">
-                <Checkbox id="spaghetti" />
-                Spaghetti
-            </Label>
-            <Label htmlFor="upsetti" className="block">
-                <Checkbox id="upsetti" />
-                Upsetti
-            </Label>
+            <div className="my1">
+                <Checkbox id="tofu">Tofu</Checkbox>
+            </div>
+            <div className="my1">
+                <Checkbox id="spaghetti">Spaghetti</Checkbox>
+            </div>
+            <div className="my1">
+                <Checkbox id="upsetti">Upsetti</Checkbox>
+            </div>
+            <div className="my1">
+                <Checkbox id="overflow">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
+                    obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
+                    blanditiis quos?
+                </Checkbox>
+            </div>
         </div>
     );
 };
@@ -58,22 +62,16 @@ export const Loading = () => {
                 };
                 void withLoading(run());
             }}
-        />
+        >
+            Tofu
+        </Checkbox>
     );
 };
 
 export const Colors = () => {
     return (
-        <div>
-            <Label htmlFor="red" className="block">
-                <Checkbox
-                    id="red"
-                    backgroundColor="rgb(255, 50, 50)"
-                    borderColor="rgb(200, 80, 80)"
-                    color="rgb(255, 255, 255)"
-                />
-                I'm red
-            </Label>
-        </div>
+        <Checkbox id="red" backgroundColor="rgb(255, 50, 50)" borderColor="rgb(200, 80, 80)" color="rgb(255, 255, 255)">
+            I'm red
+        </Checkbox>
     );
 };
