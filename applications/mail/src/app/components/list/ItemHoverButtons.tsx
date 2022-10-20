@@ -1,9 +1,12 @@
 import { MouseEvent } from 'react';
 
+
+
 import { c } from 'ttag';
 
-import { Button, ButtonGroup, Icon, Tooltip, classnames, useLoading } from '@proton/components';
+import { Button, Icon, Tooltip, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
@@ -31,7 +34,7 @@ const ItemHoverButtons = ({
     className,
     onBack,
     hasStar = true,
-    size = 'small',
+    size = 'medium',
 }: Props) => {
     const markAs = useMarkAs();
     const { moveToFolder, moveScheduledModal } = useMoveToFolder();
@@ -82,22 +85,38 @@ const ItemHoverButtons = ({
 
     return (
         <>
-            <ButtonGroup
-                size={size}
-                className={classnames(['relative item-hover-action-buttons no-mobile', className])}
+            <div
+                className={clsx(
+                    'flex-nowrap flex-justify-space-between relative item-hover-action-buttons no-mobile',
+                    className
+                )}
             >
                 <Tooltip title={unreadAlt}>
-                    <Button icon onClick={handleMarkAs}>
+                    <Button icon shape="ghost" size={size} className="color-inherit" onClick={handleMarkAs}>
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
                 <Tooltip title={c('Action').t`Move to archive`}>
-                    <Button icon onClick={handleArchive} disabled={labelID === ARCHIVE}>
+                    <Button
+                        icon
+                        shape="ghost"
+                        size={size}
+                        className="color-inherit"
+                        onClick={handleArchive}
+                        disabled={labelID === ARCHIVE}
+                    >
                         <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
                     </Button>
                 </Tooltip>
                 <Tooltip title={c('Action').t`Move to trash`}>
-                    <Button icon onClick={handleTrash} disabled={labelID === TRASH}>
+                    <Button
+                        icon
+                        shape="ghost"
+                        size={size}
+                        className="color-inherit"
+                        onClick={handleTrash}
+                        disabled={labelID === TRASH}
+                    >
                         <Icon name="trash" alt={c('Action').t`Move to trash`} />
                     </Button>
                 </Tooltip>
@@ -105,14 +124,19 @@ const ItemHoverButtons = ({
                     <Tooltip title={starAlt}>
                         <Button
                             icon
+                            shape="ghost"
+                            size={size}
                             onClick={handleStar}
-                            className={classnames(['starbutton item-star', isStarred && 'starbutton--is-starred'])}
+                            className={clsx(
+                                'color-inherit starbutton item-star',
+                                isStarred && 'starbutton--is-starred'
+                            )}
                         >
                             <Icon name={starIcon} alt={starAlt} />
                         </Button>
                     </Tooltip>
                 )}
-            </ButtonGroup>
+            </div>
             {moveScheduledModal}
         </>
     );

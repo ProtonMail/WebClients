@@ -129,10 +129,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 			background-color: var(--email-item-selected-icon-background-color);
 			color: var(--email-item-selected-icon-text-color);
 		}
-
-		.item-hover-action-buttons {
-			--button-group-border-color: var(--email-item-selected-background-color);
-		}
 	}
 
 	// Styling for contact items inside contact dropdown
@@ -226,21 +222,18 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-hover-action-buttons {
-	inline-size: 0;
-	transform: scale(0);
-	margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
-	opacity: 0;
-	visibility: hidden;
+	display: none;
 }
 
 @media (hover: hover) and (pointer: fine) and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)}) {
-	.item-container:hover,
+	.item-hover-action-buttons {
+		margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
+	}
+
+.item-container:hover,
 	.item-container-row:hover {
 		.item-hover-action-buttons {
-			inline-size: auto;
-			transform: scale(1);
-			opacity: 1;
-			visibility: visible;
+			display: inline-flex; // We don't want any transition, so we can use `display`.
 		}
 	}
 
@@ -331,17 +324,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		.item-container-inner {
 			padding-block: em(0);
 			padding-inline: em(12);
-		}
-	}
-
-	.item-container {
-		// center hover action vertically, did this to keep more space available for content
-		&:hover,
-		&:focus,
-		&:focus-within {
-			.item-hover-action-buttons {
-				margin-block-start: -1.5em;
-			}
 		}
 	}
 
