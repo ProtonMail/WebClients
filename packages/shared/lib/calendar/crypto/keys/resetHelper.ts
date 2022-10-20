@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys, useGetAddresses } from '@proton/components';
 
 import { Api } from '../../../interfaces';
-import { Calendar } from '../../../interfaces/calendar';
+import { VisualCalendar } from '../../../interfaces/calendar';
 import { CalendarsModel } from '../../../models';
 import { loadModels } from '../../../models/helper';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
@@ -14,8 +14,8 @@ interface ProcessArguments {
     cache: any;
     getAddresses: ReturnType<typeof useGetAddresses>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    calendarsToReset: Calendar[];
-    calendarsToReactivate: Calendar[];
+    calendarsToReset: VisualCalendar[];
+    calendarsToReactivate: VisualCalendar[];
 }
 
 export const process = async ({
@@ -33,9 +33,10 @@ export const process = async ({
 
     if (calendarsToReset.length > 0) {
         await resetCalendarKeys({
+            calendars: calendarsToReset,
+            addresses,
             api,
             getAddressKeys,
-            addresses,
         });
     }
 
