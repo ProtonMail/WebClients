@@ -72,7 +72,7 @@ $amount-size: 36;
 	&-modal:not(.offer-modal--one-deal) {
 		@include respond-to($breakpoint-small, 'min') {
 			.offer-close-button {
-				color: var(--text-invert);
+				color: white; // always above a banner, so hardcoded to white
 			}
 		}
 
