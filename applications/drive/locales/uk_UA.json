@@ -1,12 +1,12 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "uk_UA"
   },
   "contexts": {
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "Вступ ${ BRAND_NAME }"
+        "Знайомство з ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
@@ -90,13 +90,13 @@
         "Очистити дані браузера"
       ],
       "Clear data": [
-        "Очистити дані"
+        "Стерти дані"
       ],
       "Clear query": [
         "Очистити запит"
       ],
       "Click here.": [
-        "Натисніть тут."
+        "Клацніть тут."
       ],
       "Close": [
         "Закрити"
@@ -189,7 +189,7 @@
         "Видалити остаточно"
       ],
       "Deselect all": [
-        "Зняти вибір з усіх"
+        "Скасувати вибір"
       ],
       "Details": [
         "Подробиці"
@@ -219,7 +219,7 @@
         "Сховище заблоковано"
       ],
       "Edit": [
-        "Редагувати"
+        "Змінити"
       ],
       "Edit email address": [
         "Змінити адресу е-пошти"
@@ -234,7 +234,7 @@
         "Змінити дані входу"
       ],
       "Email settings": [
-        "Налаштування електронної пошти"
+        "Налаштування е-пошти"
       ],
       "Empty trash": [
         "Спорожнити смітник"
@@ -249,7 +249,7 @@
         "Розгорнути теку"
       ],
       "Export": [
-        "Експорт"
+        "Експортувати"
       ],
       "Export contact group": [
         "Експортувати групу контактів"
@@ -288,7 +288,7 @@
         "Зрозуміло"
       ],
       "Hide advanced PGP settings": [
-        "Сховати розширені налаштування PGP"
+        "Приховати розширені налаштування PGP"
       ],
       "Hide folders": [
         "Сховати теки"
@@ -303,7 +303,7 @@
         "Імпорт"
       ],
       "import": [
-        "імпорт"
+        "імпортувати"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -339,7 +339,7 @@
         "Докладніше: ${ safeTitle }"
       ],
       "More options": [
-        "Інші параметри"
+        "Додаткові параметри"
       ],
       "Move": [
         "Перемістити"
@@ -354,13 +354,13 @@
         "Нове вивантаження"
       ],
       "Next": [
-        "Наступна"
+        "Далі"
       ],
       "Next month": [
         "Наступний місяць"
       ],
       "OK": [
-        "Гаразд"
+        "Застосувати"
       ],
       "Open navigation": [
         "Відкрити панель навігації"
@@ -381,10 +381,10 @@
         "Перегляд контакту"
       ],
       "Previous": [
-        "Попередня"
+        "Попередній"
       ],
       "Previous month": [
-        "Попередній місяць"
+        "Минулий місяць"
       ],
       "Quit": [
         "Вийти"
@@ -423,7 +423,7 @@
         "Запит нової функції"
       ],
       "Request new code": [
-        "Запит нового коду"
+        "Запитати новий код"
       ],
       "Reset to default": [
         "Відновити типові"
@@ -466,6 +466,9 @@
       ],
       "Search drive": [
         "Пошук диска"
+      ],
+      "See plan features": [
+        "Переглянути можливості тарифного плану"
       ],
       "Select all": [
         "Вибрати все"
@@ -528,7 +531,7 @@
         "Зупинити передавання"
       ],
       "Submit": [
-        "Надіслати"
+        "Відправити"
       ],
       "Submit report": [
         "Надіслати звіт"
@@ -540,10 +543,10 @@
         "Довіряти"
       ],
       "Try another method": [
-        "Спробувати інший метод"
+        "Спробувати інший спосіб"
       ],
       "Undo": [
-        "Відновити"
+        "Скасувати"
       ],
       "Unlock data": [
         "Розблокувати дані"
@@ -600,16 +603,16 @@
         "Підтвердити електронну пошту"
       ],
       "View": [
-        "Вигляд"
+        "Переглянути"
       ],
       "View invoice": [
-        "Переглянути рахунок-фактуру"
+        "Переглянути рахунок"
       ],
       "Zoom in": [
-        "Збільшити масштаб"
+        "Збільшити"
       ],
       "Zoom out": [
-        "Зменшити масштаб"
+        "Зменшити"
       ]
     },
     "Actions message": {
@@ -636,7 +639,7 @@
     },
     "Apps dropdown": {
       "Proton applications": [
-        "Програми Proton"
+        "Додатки Proton"
       ]
     },
     "Beta access description": {
@@ -649,7 +652,7 @@
     },
     "blackfriday Info": {
       "Includes": [
-        "Включає в себе"
+        "Включає"
       ]
     },
     "blackfriday Title": {
@@ -665,7 +668,7 @@
         "Скористатися пропозицією"
       ],
       "Get the deal now": [
-        "Скористатися пропозицією зараз"
+        "Скористатися пропозицією"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -676,6 +679,11 @@
     "blackfriday: VPNspecialoffer info": {
       "per month": [
         "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Спеціальна пропозиція"
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
@@ -694,7 +702,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Проблема з програмою"
+        "Проблема з додатком"
       ],
       "Bridge problem": [
         "Проблема з Bridge"
@@ -721,7 +729,7 @@
         "Проблема з імпортом / експортом"
       ],
       "Installation problem": [
-        "Проблема зі встановленням"
+        "Проблема з встановленням"
       ],
       "Mail problem": [
         "Проблема з поштою"
@@ -745,13 +753,13 @@
         "Проблема з реєстрацією"
       ],
       "Slow speed problem": [
-        "Проблема з низькою швидкістю"
+        "Проблема повільної швидкості"
       ],
       "Speed problem": [
         "Проблема зі швидкістю"
       ],
       "Streaming problem": [
-        "Проблема потокового передавання"
+        "Проблема трансляції"
       ],
       "Update problem": [
         "Проблема з оновленням"
@@ -896,10 +904,10 @@
         "Часовий пояс"
       ],
       "Title": [
-        "Посада"
+        "Назва"
       ],
       "URL": [
-        "URL-адреса"
+        "URL"
       ]
     },
     "Contact type label": {
@@ -1110,7 +1118,7 @@
         "Чеська Республіка"
       ],
       "Côte d'Ivoire": [
-        "Кот-д'Івуар"
+        "Кот-дʼІвуар"
       ],
       "Denmark": [
         "Данія"
@@ -1389,7 +1397,7 @@
         "Мозамбік"
       ],
       "Myanmar": [
-        "М'янма"
+        "Мʼянма"
       ],
       "Namibia": [
         "Намібія"
@@ -1726,6 +1734,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -1771,10 +1785,10 @@
         "Не вдалося зберегти контакт"
       ],
       "Contact signature not verified": [
-        "Підпис контакту не перевірено"
+        "Підпис для контакту не перевірено"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або скористайтеся іншим браузером."
+        "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Приберіть принаймні ${ calendarToFixCount } календар",
@@ -1789,7 +1803,7 @@
         "Приберіть принаймні ${ calendarToFixCount } календаря або"
       ],
       "Domain not available, try again later": [
-        "Домен недоступний. Повторіть спробу пізніше"
+        "Домен недоступний, повторіть спробу пізніше"
       ],
       "Email address invalid": [
         "Недійсна адреса електронної пошти"
@@ -1831,10 +1845,10 @@
         "Хибний пароль. Повторіть спробу."
       ],
       "Invalid name": [
-        "Неприпустима назва"
+        "Неприпустиме ім'я"
       ],
       "Invalid public key file": [
-        "Недійсний файл публічного ключа"
+        "Недійсний файл відкритого ключа"
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
@@ -1915,7 +1929,7 @@
         "Підпис не перевірено"
       ],
       "Signature verification failed": [
-        "Не вдалося перевірити підпис"
+        "Неможливо перевірити підпис"
       ],
       "Some contacts could not be deleted": [
         "Не вдалося видалити деякі контакти"
@@ -1984,7 +1998,7 @@
         "При експортуванні vCards для контактів виникла помилка"
       ],
       "This field is required": [
-        "Це поле обов'язкове"
+        "Це поле є обов'язковим"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
@@ -2079,13 +2093,13 @@
         "Ой, щось пішло не так"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Будь ласка, ${ refresh } або перевірте ваше з'єднання."
+        "${ refresh } або перевірте своє з'єднання."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Щось пішло не так. Будь ласка, оновіть сторінку або повторіть спробу пізніше."
+        "Щось пішло не так. Оновіть сторінку і спробуйте знову пізніше."
       ],
       "There was a problem connecting to Proton.": [
-        "Виникла проблема під час з'єднання з Proton."
+        "Виникла проблема при з'єднанні з Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ви можете також ${ refresh }, або спробувати знову пізніше."
@@ -2101,7 +2115,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Не вибрано жодного зображення"
+        "Жодного зображення не вибрано"
       ]
     },
     "Error notification when score is missing in user feedback form modal": {
@@ -2143,7 +2157,7 @@
         "ГБ"
       ],
       "KB": [
-        "КБ"
+        "кБ"
       ],
       "MB": [
         "МБ"
@@ -2194,7 +2208,7 @@
         "Інша категорія"
       ],
       "Services": [
-        "Послуги"
+        "Служби"
       ]
     },
     "Header": {
@@ -2233,7 +2247,7 @@
         "Немає доступних способів перевірки"
       ],
       "SMS": [
-        "СМС"
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -2254,10 +2268,10 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Під час шифрування та додавання вашого контакту сталася помилка. Неможливо імпортувати контакт.",
-        "Під час шифрування та додавання ваших контактів сталася помилка. Неможливо імпортувати контакти.",
-        "Під час шифрування та додавання ваших контактів сталася помилка. Неможливо імпортувати контакти.",
-        "Під час шифрування та додавання ваших контактів сталася помилка. Неможливо імпортувати контакти."
+        "При шифруванні та додаванні вашого контакту сталася помилка. Неможливо імпортувати контакт.",
+        "При шифруванні та додаванні ваших контактів сталася помилка. Неможливо імпортувати контакти.",
+        "При шифруванні та додаванні ваших контактів сталася помилка. Неможливо імпортувати контакти.",
+        "При шифруванні та додаванні ваших контактів сталася помилка. Неможливо імпортувати контакти."
       ]
     },
     "Import contact error": {
@@ -2280,7 +2294,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано."
+        "При шифруванні та додаванні ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Контакт успішно імпортовано. Тепер він з'явиться у вашому списку контактів.",
@@ -2586,7 +2600,7 @@
         "${ calendarsToBeCreatedCount } новий календар",
         "${ calendarsToBeCreatedCount } нові календарі",
         "${ calendarsToBeCreatedCount } нових календарів",
-        "${ calendarsToBeCreatedCount } нові календарі"
+        "${ calendarsToBeCreatedCount } нових календарів"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } об'єднаний календар",
@@ -2598,7 +2612,7 @@
         "${ calendarsToBeMergedCount } об'єднаний календар",
         "${ calendarsToBeMergedCount } об'єднані календарі",
         "${ calendarsToBeMergedCount } об'єднаних календарів",
-        "${ calendarsToBeMergedCount } об'єднані календарі"
+        "${ calendarsToBeMergedCount } об'єднаних календарів"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } скасовано",
@@ -2661,7 +2675,7 @@
         "${ numContactGroups } група контактів",
         "${ numContactGroups } групи контактів",
         "${ numContactGroups } груп контактів",
-        "${ numContactGroups } групи контактів"
+        "${ numContactGroups } груп контактів"
       ],
       "${ numContacts } contact": [
         "${ numContacts } контакт",
@@ -2691,13 +2705,13 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів"
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
         "${ selectedFoldersCount } вибрані теки",
         "${ selectedFoldersCount } вибраних тек",
-        "${ selectedFoldersCount } вибрані теки"
+        "${ selectedFoldersCount } вибраних тек"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } вибрана мітка",
@@ -2734,7 +2748,7 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } учасник)",
-        "(${ memberCount } учасника)",
+        "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
@@ -2931,16 +2945,16 @@
         "Введіть власний пароль (як адміністратор організації)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Приблизно залишилося часу: ${ estimatedMinutes } хвилина",
-        "Приблизно залишилося часу: ${ estimatedMinutes } хвилини",
-        "Приблизно залишилося часу: ${ estimatedMinutes } хвилин",
-        "Приблизно залишилося часу: ${ estimatedMinutes } хвилини"
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилини",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилин",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилин"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Приблизно залишилося часу: менш як хвилина"
+        "Приблизний час до завершення: менше хвилини"
       ],
       "Estimating time remaining...": [
-        "Приблизно лишилося часу..."
+        "Приблизний залишок часу..."
       ],
       "Failed": [
         "Не вдалося"
@@ -3054,7 +3068,7 @@
         "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
       ],
       "Internet connection restored.": [
-        "З'єднання з інтернетом відновлено."
+        "З'єднання з Інтернетом відновлено."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Це так само просто, як перетягування або вибір файлів"
@@ -3087,7 +3101,7 @@
         "Завантаження"
       ],
       "Loading ${ appName }": [
-        "Завантаження ${ appName }"
+        "Завантажується ${ appName }"
       ],
       "Loading link": [
         "Завантаження посилання"
@@ -3111,7 +3125,7 @@
         "Мої посилання"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назвіть свою нову теку та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено текою вищого рівня."
+        "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
       "Network issue": [
         "Проблема з мережею"
@@ -3132,7 +3146,7 @@
         "Немає файлів чи тек у смітнику"
       ],
       "No group found": [
-        "Груп не знайдено"
+        "Групу не знайдено"
       ],
       "No preview available": [
         "Перегляд недоступний"
@@ -3270,7 +3284,7 @@
         "Виберіть те, що бажаєте імпортувати."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більше 20 календарів."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -3327,7 +3341,7 @@
         "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Для можливості експортування ваших контактів програмі необхідно розшифрувати їх на пристрої. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
+        "Програма повинна локально розшифрувати ваші контакти для можливості їх експортування. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо ці елементи було підроблено: ${ items }. Відкрийте лише якщо довіряєте їм."
@@ -3480,7 +3494,7 @@
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Ви зараз увійшли як ${ user.Name } (${ user.Email })."
+        "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
@@ -3613,7 +3627,7 @@
         "Додати адресу е-пошти"
       ],
       "Add image URL": [
-        "Додати URL-адресу зображення"
+        "Введіть URL-адресу зображення"
       ],
       "Add to group": [
         "Додати до групи"
@@ -3690,9 +3704,6 @@
       "Country": [
         "Країна"
       ],
-      "Create a share link": [
-        "Створіть спільне посилання"
-      ],
       "Created": [
         "Створено"
       ],
@@ -3721,10 +3732,10 @@
         "Е-пошта"
       ],
       "Email address": [
-        "Адрес електронної пошти"
+        "Адреса е-пошти"
       ],
       "Email format": [
-        "Формат електронної пошти"
+        "Формат повідомлень"
       ],
       "Emails": [
         "Адреси е-пошти"
@@ -3745,7 +3756,7 @@
         "Експортувати контакти"
       ],
       "Extended address": [
-        "Додаткова адреса"
+        "Розширена адреса"
       ],
       "File": [
         "Файл"
@@ -3775,7 +3786,7 @@
         "Добре"
       ],
       "Hide password": [
-        "Сховати пароль"
+        "Приховати пароль"
       ],
       "How would you describe your experience with the new Proton?": [
         "Як би ви описали свої враження від нового Proton?"
@@ -3937,7 +3948,7 @@
         "Вулиця"
       ],
       "System information": [
-        "Відомості про систему"
+        "Інформація про систему"
       ],
       "Text": [
         "Текст"
@@ -3979,7 +3990,7 @@
         "Вивантажити файл"
       ],
       "Upload picture": [
-        "Вивантажити зображення"
+        "Завантажити зображення"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Ім'я користувача або адреса ${ MAIL_APP_NAME }"
@@ -4445,7 +4456,7 @@
         "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
       ],
       "Discover all Proton services": [
-        "Ознайомтеся з усіма можливостями Proton"
+        "Ознайомтеся з усіма службами Proton"
       ],
       "Select a theme": [
         "Виберіть тему"
@@ -4476,7 +4487,7 @@
         "Створити нову групу"
       ],
       "Ignore group": [
-        "Нехтувати групою"
+        "Ігнорувати групу"
       ],
       "No parent folder": [
         "Немає теки вищого рівня"
@@ -4492,7 +4503,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "Ключ не можна застосовувати для шифрування"
+        "Ключ не можна використовувати для шифрування"
       ]
     },
     "PGP Key info": {
@@ -4508,7 +4519,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -4534,7 +4545,7 @@
         "Пароль поштової скриньки"
       ],
       "Name": [
-        "Ім'я"
+        "Назва"
       ],
       "New name": [
         "Нова назва"
@@ -4543,7 +4554,7 @@
         "Пароль"
       ],
       "Please describe the problem and include any error messages": [
-        "Опишіть проблему та додайте повідомлення про помилки"
+        "Опишіть проблему та додайте повідомлення про помилку"
       ],
       "Search for group name": [
         "Шукати назву групи"
@@ -4555,7 +4566,7 @@
         "Вибрати"
       ],
       "Start typing an email address": [
-        "Почніть вводити адресу електронної пошти"
+        "Почніть вводити адресу е-пошти"
       ]
     },
     "Placeholder for contact group name": {
@@ -4564,6 +4575,12 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } з ${ countContacts } контакт успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
         "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
@@ -4597,7 +4614,7 @@
         "Факс"
       ],
       "Home": [
-        "Дім"
+        "Домашня"
       ],
       "Main": [
         "Основний"
@@ -4606,7 +4623,7 @@
         "Мобільний"
       ],
       "Other": [
-        "Інше"
+        "Інша"
       ],
       "Pager": [
         "Пейджер"
@@ -4615,12 +4632,12 @@
         "Телефон"
       ],
       "Work": [
-        "Робочий"
+        "Робоча"
       ]
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "Примітка: Після натискання кнопки Застосувати сервіс перезавантажиться."
+        "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
       ]
     },
     "Select files": {
@@ -4630,16 +4647,16 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Зберігайте свої файли так само безпечно, як і електронні листи."
+        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
       ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Отримайте до 18 місяців ${ planName } безплатно"
+      "Get up to ${ credits } in credits.": [
+        "Отримайте до ${ credits } кредиту."
       ],
-      "Invite friends and earn rewards!": [
-        "Запрошуйте друзів та отримуйте винагороди!"
+      "Invite friends to Proton": [
+        "Запрошуйте друзів до Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
@@ -4664,7 +4681,7 @@
         "Адресу скопійовано до буфера обміну"
       ],
       "Bug reported": [
-        "Звіт про помилку було надіслано"
+        "Звіт про помилку надіслано"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
@@ -4709,7 +4726,7 @@
         "Посилання на ваш файл успішно скопійовано"
       ],
       "Verification successful": [
-        "Перевірку виконано успішно"
+        "Перевірка пройшла успішно"
       ]
     },
     "Success notification when user send feedback": {
@@ -4737,10 +4754,10 @@
         "Відбиток"
       ],
       "Name": [
-        "Ім'я"
+        "Назва"
       ],
       "Status": [
-        "Стан"
+        "Статус"
       ],
       "Type": [
         "Тип"
@@ -4760,7 +4777,7 @@
         "Імпорт"
       ],
       "Name": [
-        "Назва"
+        "Ім'я"
       ],
       "Values": [
         "Значення"
@@ -4965,6 +4982,9 @@
       "Edit contact group": [
         "Редагувати групу контактів"
       ],
+      "Edit email settings": [
+        "Змінити налаштування електронної пошти"
+      ],
       "Edit image": [
         "Змінити зображення"
       ],
@@ -4972,7 +4992,7 @@
         "Адреси е-пошти"
       ],
       "Email settings": [
-        "Налаштування електронної пошти"
+        "Налаштування е-пошти"
       ],
       "Empty trash": [
         "Спорожнити смітник"
@@ -5317,10 +5337,10 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Пароль має містити принаймні ${ length } символ",
-        "Пароль має містити принаймні ${ length } символи",
-        "Пароль має містити принаймні ${ length } символів",
-        "Пароль має містити принаймні ${ length } символів"
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
       ]
     },
     "Validation Error": {
@@ -5392,7 +5412,7 @@
         "Proton перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте будь-яку конфіденційну інформацію."
+        "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"

@@ -45,7 +45,7 @@
         "Promijeni lozinku sandučića e-pošte"
       ],
       "Change password": [
-        "Promijeni lozinku"
+        "Promjena lozinke"
       ],
       "Chat with us": [
         "Razgovarajte s nama"
@@ -77,9 +77,6 @@
       "Create": [
         "Stvori"
       ],
-      "Create account": [
-        "Stvori račun"
-      ],
       "Create address": [
         "Stvori adresu"
       ],
@@ -93,7 +90,7 @@
         "Izbriši"
       ],
       "Delete your account": [
-        "Izbrišite svoj račun"
+        "Izbrišite vaš račun"
       ],
       "Details": [
         "Pojedinosti"
@@ -328,7 +325,7 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } prilagođena domena",
         "+ ${ domains } prilagođene domene",
-        "+ ${ domains } prilagođenih domena"
+        "+ ${ domains } prilagođena domena"
       ]
     },
     "Addon unit for subscription": {
@@ -372,11 +369,6 @@
       ],
       "Two-year": [
         "2 godine"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Posebna ponuda"
       ]
     },
     "Bug category": {
@@ -472,11 +464,6 @@
         "${ monthsWithYears } mjeseci"
       ]
     },
-    "Country name": {
-      "Czech Republic": [
-        "Češka"
-      ]
-    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(putem ${ entryCountryName })"
@@ -533,9 +520,6 @@
       ],
       "Invalid expiration date": [
         "Nevažeći datum isteka"
-      ],
-      "Invalid invitation link": [
-        "Neispravna poveznica pozivnice"
       ],
       "Invalid postal code": [
         "Netočan poštanski broj"
@@ -717,7 +701,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } zahtjeva vaše dopuštenje za ${ enableDesktopNotifications }."
+        "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
       ],
       "${ number } city": [
         "${ number } grad",
@@ -787,13 +771,10 @@
         "Odaberite izgled i dojam aplikacije."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "Continue anyway?": [
         "Svejedno nastavi?"
-      ],
-      "Creating your account": [
-        "Izrada vašeg računa"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
@@ -1015,7 +996,7 @@
         "Tor"
       ],
       "Two-factor authentication disabled": [
-        "Onemogućena je dvofaktorska autentikacija"
+        "Onemogućena je provjera autentičnosti u dva koraka"
       ],
       "Two-factor authentication enabled": [
         "Omogućena je dvofaktorska autentikacija"
@@ -1247,9 +1228,6 @@
       "Confirm new password": [
         "Potvrdi novu lozinku"
       ],
-      "Confirm password": [
-        "Potvrdi lozinku"
-      ],
       "Copy": [
         "Kopiraj"
       ],
@@ -1330,6 +1308,9 @@
       ],
       "Operating system version": [
         "Verzija operativnog sustava"
+      ],
+      "Optional": [
+        "Neobavezno"
       ],
       "Other amount": [
         "Ostali iznos"
@@ -1445,9 +1426,6 @@
       "Learn more": [
         "Saznajte više"
       ],
-      "Not activated": [
-        "Nije aktivirano"
-      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -1487,9 +1465,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Continue with Free"
-      ],
       "Delete account": [
         "Ukloni račun"
       ],
@@ -1561,7 +1536,7 @@
         "Usmjerivač (Router)"
       ],
       "Secure Core configs": [
-        "Secure core postavke"
+        "Secure core konfiguracije"
       ],
       "Standard server configs": [
         "Postavke standardnog poslužitelja"
@@ -1618,12 +1593,6 @@
       "Postal code": [
         "Poštanski broj"
       ],
-      "Select": [
-        "Odaberi"
-      ],
-      "Select a reason": [
-        "Odaberite razlog"
-      ],
       "ZIP": [
         "Poštanski broj"
       ]
@@ -1635,7 +1604,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Besplatno"
       ]
     },
     "Recovery Email": {
@@ -1690,7 +1659,7 @@
     },
     "Success": {
       "Account deleted. Logging out...": [
-        "Račun je izbrisan. Odjava..."
+        "Račun je uklonjen. Odjavljivanje..."
       ],
       "Bug reported": [
         "Problem je prijavljen"
@@ -1844,7 +1813,7 @@
         "Potvrdite broj telefona"
       ],
       "Credits": [
-        "Krediti"
+        "Kredit"
       ],
       "Currency": [
         "Valuta"
@@ -1862,7 +1831,7 @@
         "Izbriši"
       ],
       "Delete account": [
-        "Brisanje računa"
+        "Ukloni račun"
       ],
       "Device connected!": [
         "Uređaj je povezan!"
@@ -2040,9 +2009,6 @@
       ],
       "What's new": [
         "Što je novo"
-      ],
-      "You already have a Proton account": [
-        "Već imate Proton račun"
       ],
       "Your current plan": [
         "Vaš trenutni plan"

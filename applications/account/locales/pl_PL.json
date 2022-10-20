@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);",
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "pl_PL"
   },
   "contexts": {
@@ -799,7 +799,7 @@
         "Ulepsz"
       ],
       "Upload picture": [
-        "Prześlij obraz"
+        "Prześlij zdjęcie"
       ],
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
@@ -1084,11 +1084,6 @@
       ],
       "Two-year": [
         "Co dwa lata"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta specjalna"
       ]
     },
     "breadcrumb": {
@@ -2637,7 +2632,13 @@
         "Uzyskaj do 3 miesięcy planu ${ mailPlus } za darmo, za każdego znajomego, który zostanie użytkownikiem płatnego planu poczty ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź jak te grupy powinny zostać zaimportowane."
+        "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Sprawdź, ile osób zarejestrowało się przez Twój link i zostało użytkownikami płatnych planów. Obserwuj, jak sumują się darmowe miesiące."
@@ -2646,7 +2647,7 @@
         "Możesz nadal zapraszać znajomych, ale nie będziesz mógł zdobyć więcej środków"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
+        "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2674,11 +2675,17 @@
       "${ name } deletion failed": [
         "Usunięcie domeny ${ name } nie powiodło się"
       ],
+      "${ name } failed to move to not spam List": [
+        "Usunięcie domeny ${ name } z listy spamu nie powiodło się"
+      ],
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
       ],
       "${ name } failed to move to your block list": [
         "Przenoszenie domeny ${ name } do listy odrzuconych nie powiodło się"
+      ],
+      "${ name } moved to not spam list": [
+        "Domena ${ name } została usunięta z listy spamu"
       ],
       "${ name } moved to spam list": [
         "Domena ${ name } została przeniesiona do listy spamu"
@@ -2785,11 +2792,17 @@
       "${ name } deletion failed": [
         "Usunięcie adresu ${ name } nie powiodło się"
       ],
+      "${ name } failed to move to not spam List": [
+        "Usunięcie adresu ${ name } z listy spamu nie powiodło się"
+      ],
       "${ name } failed to move to spam list": [
         "Przenoszenie adresu ${ name } do listy spamu nie powiodło się"
       ],
       "${ name } failed to move to your block list": [
         "Przenoszenie adresu ${ name } do listy odrzuconych nie powiodło się"
+      ],
+      "${ name } moved to not spam list": [
+        "Adres ${ name } został usunięty z listy spamu"
       ],
       "${ name } moved to spam list": [
         "Adres ${ name } został przeniesiony do listy spamu"
@@ -3845,7 +3858,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "Zaktualizowano \"${ Label.Name }\""
+        "Etykieta ${ Label.Name } została zaktualizowana"
       ],
       "Filter ${ Filter.Name } updated": [
         "Filtr ${ Filter.Name } został zaktualizowany"
@@ -4044,9 +4057,9 @@
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie zostało zaimportowane.",
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } wydarzeń.",
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } wydarzeń.",
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } wydarzeń."
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
@@ -4330,7 +4343,7 @@
         "Bezpieczeństwo konta"
       ],
       "app password": [
-        "hasło aplikacji"
+        "hasła aplikacji"
       ],
       "Can view all details": [
         "Może zobaczyć wszystkie szczegóły"
@@ -5375,7 +5388,7 @@
         "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ _switchButton }."
       ],
       "Member": [
-        "Członek"
+        "Użytkownik"
       ],
       "Merged": [
         "Scalony"
@@ -6112,6 +6125,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszenie w ciągu doby",
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszenia w ciągu doby",
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszeń w ciągu doby",
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszeń w ciągu doby"
+      ],
       "You cannot refer ${ appName } users": [
         "Nie możesz polecić użytkownika poczty ${ appName }"
       ],
@@ -6761,7 +6780,7 @@
         "ORAZ"
       ],
       "and": [
-        "oraz"
+        "i"
       ],
       "And": [
         "oraz"
@@ -6995,7 +7014,7 @@
         "Czas trwania"
       ],
       "Email": [
-        "Adres e-mail"
+        "E-mail"
       ],
       "Email address": [
         "Adres e-mail"
@@ -11130,6 +11149,9 @@
       "This key is encrypted with an old password": [
         "Ten klucz jest zaszyfrowany za pomocą starego hasła"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Ten klucz jest używany przez ${ MAIL_APP_NAME } do szyfrowania danych kontaktów"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Wykryliśmy problem z konfiguracją rekordów DNS. Upewnij się, że rekordy pasują do instrukcji. Jeśli ten problem będzie się powtarzał, wyłączymy podpisywanie DKIM."
       ],
@@ -11396,22 +11418,22 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Co tydzień w: ${ multipleDaysString }",
-        "Co ${ interval } tygodnie w: ${ multipleDaysString }",
-        "Co ${ interval } tygodni w: ${ multipleDaysString }",
-        "Co ${ interval } tygodnia w: ${ multipleDaysString }"
+        "Co tydzień w ${ multipleDaysString }",
+        "Co ${ interval } tygodnie w ${ multipleDaysString }",
+        "Co ${ interval } tygodni w ${ multipleDaysString }",
+        "Co ${ interval } tygodnia w ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w: ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodnie w: ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodni w: ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodnia w: ${ multipleDaysString }, ${ timesString }"
+        "Co tydzień w ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodnie w ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodni w ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodnia w ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w: ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodnie w: ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodni w: ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodnia w: ${ multipleDaysString }, ${ untilString }"
+        "Co tydzień w ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodnie w ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodni w ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodnia w ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Codziennie",
@@ -11558,13 +11580,13 @@
         "Co ${ interval } tygodnia w środę, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Co tydzień w: ${ multipleDaysString }"
+        "Co tydzień w ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w: ${ multipleDaysString }, ${ timesString }"
+        "Co tydzień w ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w: ${ multipleDaysString }, ${ untilString }"
+        "Co tydzień w ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Codziennie"
@@ -11641,31 +11663,33 @@
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "piątek"
+        "Piątek"
       ],
       "Monday": [
-        "poniedziałek"
+        "Poniedziałek"
       ],
       "Saturday": [
-        "sobota"
+        "Sobota"
       ],
       "Sunday": [
-        "niedziela"
+        "Niedziela"
       ],
       "Thursday": [
-        "czwartek"
+        "Czwartek"
       ],
       "Tuesday": [
-        "wtorek"
+        "Wtorek"
       ],
       "Wednesday": [
-        "środa"
+        "Środa"
       ]
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Co ${ interval } lat",
+        "Co ${ interval } roku"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Co rok, ${ timesString }",

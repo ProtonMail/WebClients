@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;",
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
     "language": "cs_CZ"
   },
   "contexts": {
@@ -76,7 +76,7 @@
         "Přidat štítek"
       ],
       "Add notification": [
-        "Přidat oznámení"
+        "Přidat upozornění"
       ],
       "Add PayPal": [
         "Přidat PayPal"
@@ -106,7 +106,7 @@
         "Použít na existující zprávy"
       ],
       "Attach screenshot(s)": [
-        "Přiložit snímek(ky) obrazovky"
+        "Přiložit sním(ek/ky) obrazovky"
       ],
       "Authenticate": [
         "Ověřit"
@@ -136,7 +136,7 @@
         "Změnit heslo"
       ],
       "Chat with us": [
-        "Komunikace s námi"
+        "Chatujte s námi"
       ],
       "Check import progress": [
         "Zkontrolovat průběh importu"
@@ -181,7 +181,7 @@
         "Pokračovat s ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
-        "Pokračovat pomocí účtu Google"
+        "Pokračovat skrze Google"
       ],
       "Copy": [
         "Kopírovat"
@@ -244,7 +244,7 @@
         "Odstranit odkaz"
       ],
       "Delete permanently": [
-        "Navždy smazat"
+        "Trvale smazat"
       ],
       "Delete record": [
         "Smazat záznam"
@@ -262,7 +262,7 @@
         "Nedostali jste kód?"
       ],
       "Didn't receive the code?": [
-        "Neobdrželi jste kód?"
+        "Nedostali jste kód?"
       ],
       "Disable": [
         "Vypnout"
@@ -325,7 +325,7 @@
         "Upravit filtr"
       ],
       "Edit sign-in details": [
-        "Úprava přihlašovacích údajů"
+        "Upravit přihlašovací údaje"
       ],
       "Edit subscription": [
         "Změnit předplatné"
@@ -334,7 +334,7 @@
         "Emoji"
       ],
       "enable desktop notifications": [
-        "povolit oznámení na ploše"
+        "povolit upozornění"
       ],
       "Enable multi-user support": [
         "Zapnout podporu pro více uživatelů"
@@ -346,7 +346,7 @@
         "Objevte další ${ BRAND_NAME } tarify"
       ],
       "Export": [
-        "Export"
+        "Exportovat"
       ],
       "Export key": [
         "Exportovat klíč"
@@ -394,13 +394,13 @@
         "Skrýt složky"
       ],
       "Hide labels": [
-        "Skrýt popisky"
+        "Skrýt štítky"
       ],
       "I have a question": [
         "Mám dotaz"
       ],
       "Import": [
-        "Import"
+        "Importovat"
       ],
       "Import calendars": [
         "Importovat kalendáře"
@@ -472,7 +472,7 @@
         "přesunout e-maily do"
       ],
       "Need help?": [
-        "Potřebujete poradit?"
+        "Potřebujete pomoc?"
       ],
       "Next": [
         "Další"
@@ -538,7 +538,7 @@
         "Obnovit data"
       ],
       "Refer a friend": [
-        "Doporučte příteli"
+        "Doporučit přátelům"
       ],
       "Refresh status": [
         "Obnovit stav"
@@ -583,7 +583,7 @@
         "Nahlásit problém"
       ],
       "Request a feature": [
-        "Požadavek na funkci"
+        "Požádat o funkci"
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -700,7 +700,7 @@
         "Sdílet přes odkaz"
       ],
       "Sharing options": [
-        "Nastavení sdílení"
+        "Možnosti sdílení"
       ],
       "Show": [
         "Zobrazit"
@@ -709,7 +709,7 @@
         "Zobrazit složky"
       ],
       "Show labels": [
-        "Zobrazit popisky"
+        "Zobrazit štítky"
       ],
       "Show less": [
         "Zobrazit méně"
@@ -766,7 +766,7 @@
         "Dobít"
       ],
       "Try again": [
-        "Zkusit znovu"
+        "Zkuste to znovu"
       ],
       "Try another method": [
         "Zkuste jinou metodu"
@@ -796,7 +796,7 @@
         "Aktualizovat obnovovací frázi"
       ],
       "Upgrade": [
-        "Vylepšit"
+        "Přejít na placený tarif"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -820,7 +820,7 @@
         "Místo toho použijte vaši aktuální e-mailovou adresu"
       ],
       "Use “${ label }” setting": [
-        "Použít nastavení “${ label }”"
+        "Použijte nastavení “${ label }”"
       ],
       "User": [
         "Uživatel"
@@ -985,7 +985,7 @@
         "Pokud teď odejdete, některé kontakty nebudou importovány"
       ],
       "By leaving now, some events may not be imported": [
-        "Pokud teď odejdete, některé události nebudou naimportovány"
+        "Pokud teď odejdete, některé události nebudou importovány"
       ]
     },
     "Alter": {
@@ -1000,7 +1000,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        "Prázdný ICS soubor"
+        "Prázdný soubor ICS"
       ],
       "Invalid event": [
         "Neplatná událost"
@@ -1086,11 +1086,6 @@
         "Dva roky"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Speciální nabídka"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Kalendáře"
@@ -1103,19 +1098,19 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problém aplikace"
+        "Problém s aplikací"
       ],
       "Bridge problem": [
         "Problém s aplikací Bridge"
       ],
       "Calendar problem": [
-        "Problém s kalendářem"
+        "Problém s aplikací Kalendář"
       ],
       "Connection problem": [
         "Problém s připojením"
       ],
       "Contacts problem": [
-        "Problém s kontakty"
+        "Problém s aplikací Kontaky"
       ],
       "Custom domain problem": [
         "Problém s vlastní doménou"
@@ -1133,7 +1128,7 @@
         "Problém s instalací"
       ],
       "Mail problem": [
-        "Problém e-mailu"
+        "Problém s aplikací Mail"
       ],
       "Manual setup problem": [
         "Problém s ručním nastavením"
@@ -1151,10 +1146,10 @@
         "Problém s registrací"
       ],
       "Signup problem": [
-        "Problém s přihlášením"
+        "Problém s registrací"
       ],
       "Slow speed problem": [
-        "Problém s pomalou rychlostí"
+        "Problém s nízkou rychlostí"
       ],
       "Speed problem": [
         "Problém s rychlostí"
@@ -1169,7 +1164,7 @@
         "Problém s VPN"
       ],
       "Website access problem": [
-        "Problém s přístupem ke stránce"
+        "Problém s přístupem k webové stránce"
       ]
     },
     "Button": {
@@ -1355,7 +1350,7 @@
         "Synchronizace kalendáře selhala"
       ],
       "More than 12 hours passed since last update": [
-        "Od poslední aktualizace uplynulo více než 12 hodin"
+        "Od poslední aktualizace uběhlo už více jak 12 hodin"
       ],
       "Unsupported calendar format": [
         "Nepodporovaný formát kalendáře"
@@ -1447,7 +1442,7 @@
         "měď"
       ],
       "cyan-blue azure": [
-        "azurově modrá"
+        "azurově-modrá azurová"
       ],
       "dandelion": [
         "pampeliška"
@@ -1646,7 +1641,7 @@
         "Výročí"
       ],
       "Birthday": [
-        "Datum narození"
+        "Narozeniny"
       ],
       "Email": [
         "E-mail"
@@ -1655,7 +1650,7 @@
         "Pohlaví"
       ],
       "Geo": [
-        "Souřadnice"
+        "Poloha"
       ],
       "Language": [
         "Jazyk"
@@ -1679,13 +1674,13 @@
         "Telefon"
       ],
       "Photo": [
-        "Fotografie"
+        "Fotka"
       ],
       "Role": [
         "Role"
       ],
       "Timezone": [
-        "Časová zóna"
+        "Časové pásmo"
       ],
       "Title": [
         "Titul"
@@ -1757,7 +1752,7 @@
         "Angola"
       ],
       "Anguilla": [
-        "Anquilla"
+        "Anguilla"
       ],
       "Antarctica": [
         "Antarktida"
@@ -1820,7 +1815,7 @@
         "Bolívie"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sint Eustatius a Saba"
+        "Bonaire, Svatý Eustach a Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosna a Hercegovina"
@@ -2027,7 +2022,7 @@
         "Guinea-Bissau"
       ],
       "Guyana": [
-        "Guayana"
+        "Guyana"
       ],
       "Haiti": [
         "Haiti"
@@ -2084,7 +2079,7 @@
         "Japonsko"
       ],
       "Jersey": [
-        "Ostrov Jersey"
+        "Jersey"
       ],
       "Jordan": [
         "Jordánsko"
@@ -2360,7 +2355,7 @@
         "Somálsko"
       ],
       "South Africa": [
-        "Jižní Afrika"
+        "Jihoafrická republika"
       ],
       "South Georgia and the South Sandwich Islands": [
         "Jižní Georgie a Jižní Sandwichovy ostrovy"
@@ -2387,7 +2382,7 @@
         "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard a Jan Mayen"
+        "Špicberky a Jan Mayen"
       ],
       "Sweden": [
         "Švédsko"
@@ -2438,7 +2433,7 @@
         "Turkmenistán"
       ],
       "Turks and Caicos Islands": [
-        "Turks a Caicos ostrovy"
+        "Ostrovy Turks a Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -2631,13 +2626,19 @@
         "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile bude proces ukončen, můžete zavřít tento modul."
+        "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         "Získejte až 3 měsíce ${ mailPlus } zdarma za každého přítele, který si předplatí ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Sledujte, kolik lidí klikne na váš odkaz, zaregistrujte se a stane se předplatiteli. Sledujte, jak vaše bezplatné měsíce přibývají."
@@ -2646,7 +2647,7 @@
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Události můžete importovat ve formátu iCal (ICS soubor). Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, rozdělte jej do menších souborů."
+        "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2654,7 +2655,7 @@
         "Také jsme automaticky porovnali pole CSV s poli vCard. Toto přiřazování můžete zkontrolovat a změnit ručně."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Zaznamenali jsme následující položky v CSV, které jste nahrály. Zkontrolujte ty, které chcete importovat."
+        "Ve vámi nahraném souboru CSV jsme zjistili následující pole. Zaškrtněte ta, která chcete importovat."
       ]
     },
     "Domain label": {
@@ -2672,7 +2673,10 @@
         "Doména ${ name } přidána"
       ],
       "${ name } deletion failed": [
-        "Smazání ${ name } selhalo"
+        "Smazání domény ${ name } selhalo"
+      ],
+      "${ name } failed to move to not spam List": [
+        "Doménu ${ name } se nepodařilo přesunout na seznam vyžádaných e-mailů"
       ],
       "${ name } failed to move to spam list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
@@ -2680,8 +2684,11 @@
       "${ name } failed to move to your block list": [
         "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
       ],
+      "${ name } moved to not spam list": [
+        "Doména ${ name } přesunuta na seznam vyžádaných e-mailů"
+      ],
       "${ name } moved to spam list": [
-        "Doména ${ name } byla přesunuta na Seznam spamů"
+        "Doména ${ name } byla přesunuta na seznam spamů"
       ],
       "${ name } moved to your block list": [
         "Doména ${ name } přesunuta na Seznam blokovaných"
@@ -2742,10 +2749,10 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        "${ eventTitle } bylo zrušeno."
+        "${ eventTitle } byla zrušena."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } bylo aktualizováno.\n${ eventDetailsText }"
+        "${ eventTitle } byla aktualizována.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Pozvání k ${ eventTitle }\n${ eventDetailsText }"
@@ -2769,41 +2776,47 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } přijal/a pozvánku na ${ eventTitle }"
+        "${ emailAddress } přijal(a) pozvání na ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
         "${ emailAddress } odmítl/a pozvání na ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } předběžně přijal/a pozvání na ${ eventTitle }"
+        "${ emailAddress } předběžně přijal(a) pozvání na ${ eventTitle }"
       ]
     },
     "Email spam notification": {
       "${ name } added": [
-        "Doména ${ name } přidána"
+        "E-mailová adresa ${ name } přidána"
       ],
       "${ name } deletion failed": [
-        "Smazání ${ name } selhalo"
+        "Smazání e-mailové adresy ${ name } selhalo"
+      ],
+      "${ name } failed to move to not spam List": [
+        "E-mailovou adresu ${ name } se nepodařilo přesunout na seznam vyžádaných e-mailů"
       ],
       "${ name } failed to move to spam list": [
-        "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
+        "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam spamů"
       ],
       "${ name } failed to move to your block list": [
-        "Doménu ${ name } se nepodařilo přesunout na Seznam blokovaných"
+        "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam blokovaných"
+      ],
+      "${ name } moved to not spam list": [
+        "E-mailová adresa ${ name } přesunuta na seznam vyžádaných e-mailů"
       ],
       "${ name } moved to spam list": [
-        "Doména ${ name } byla přesunuta na Seznam spamů"
+        "Emailová adresa ${ name } byla přesunuta na Seznam spamů"
       ],
       "${ name } moved to your block list": [
-        "Doména ${ name } přesunuta na Seznam blokovaných"
+        "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } successfully deleted": [
-        "Doména ${ name } úspěšně smazána"
+        "E-mailová adresa ${ name } úspěšně smazána"
       ]
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Zrušení události v ${ formattedStart }"
+        "Zrušení události na ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
         "Zrušení události začínající v ${ formattedStart }"
@@ -2815,10 +2828,10 @@
         "Pozvání na událost začínající v ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Doplnění k události ${ formattedStart }"
+        "Aktualizace události v ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Doplnění k události začínající v ${ formattedStart }"
+        "Aktualizace události začínající v ${ formattedStart }"
       ]
     },
     "Email Unsubscribe": {
@@ -2848,7 +2861,7 @@
         "Účet neexistuje"
       ],
       "Address primary private key not found": [
-        "Primární soukromý klíč adresy nebyl nalezen"
+        "Primární soukromý klíč adresy nenalezen"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
@@ -2863,10 +2876,10 @@
         "Hodnota je nižší než minimální částka."
       ],
       "Authentication canceled.": [
-        "Ověřování zrušeno."
+        "Ověření zrušeno."
       ],
       "Authentication error.": [
-        "Ověření selhalo."
+        "Chyba ověření."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatické odpovědi jsou placenou funkcí. Chcete-li tuto funkci používat, přejděte na placený účet."
@@ -2899,10 +2912,10 @@
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Zrušte výběr alespoň ${ calendarToFixCount } kalendáře nebo",
-        "Zrušte výběr alespoň ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr alespoň ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr alespoň ${ calendarToFixCount } kalendářů nebo"
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
       ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
@@ -2941,7 +2954,7 @@
         "Název složky nesmí být prázdný."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Nesprávné přihlašovací údaje. Zkuste to znovu."
+        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
@@ -2971,7 +2984,7 @@
         "Neplatný odkaz pozvánky"
       ],
       "Invalid name": [
-        "Neplatné jméno"
+        "Neplatný název"
       ],
       "Invalid postal code": [
         "Neplatné směrovací číslo"
@@ -3100,10 +3113,10 @@
         "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
       "Primary address key is not decrypted": [
-        "Klíč hlavní adresy není dešifrován"
+        "Klíč primární adresy nebyl dešifrován"
       ],
       "Primary address key is not decrypted.": [
-        "Klíč hlavní adresy není dešifrován."
+        "Klíč primární adresy není dešifrován."
       ],
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
@@ -3116,12 +3129,12 @@
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Odstraněn duplicitní příjemce: ${ joinedRecipients }",
-        "Odstraněno duplicitních příjemců: ${ joinedRecipients }",
-        "Odstraněno duplicitních příjemců: ${ joinedRecipients }",
-        "Odstraněno duplicitních příjemců: ${ joinedRecipients }"
+        "Odstraněni duplicitní příjemci: ${ joinedRecipients }",
+        "Odstraněni duplicitní příjemci: ${ joinedRecipients }",
+        "Odstraněni duplicitní příjemci: ${ joinedRecipients }"
       ],
       "Request timed out": [
-        "Vypršel časový limit požadavku"
+        "Vypršel časový limit žádosti"
       ],
       "Require at least one action": [
         "Vyžaduje alespoň jednu akci"
@@ -3154,7 +3167,7 @@
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
+        "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
       ],
       "Tab closed": [
         "Záložka zavřena"
@@ -3169,7 +3182,7 @@
         "Název složky je neplatný. Zvolte prosím jiný název."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Název složky je příliš dlouhý. Zvolte prosím jiný název."
+        "Název složky je příliš dlouhý. Zvolte jiný název."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
         "Klíče v souboru pro obnovení nelze ověřit. Kontaktujte prosím podporu."
@@ -3211,7 +3224,7 @@
         "Toto pole je povinné"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tento název složky není k dispozici. Zvolte prosím jiný název."
@@ -3277,7 +3290,7 @@
         "Než vytvoříte nové klíče pro organizaci, musíte privatizovat všechny uživatele"
       ],
       "You must set a name": [
-        "Musíte zadat jméno"
+        "Musíte nastavit jméno"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
@@ -3300,7 +3313,7 @@
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Jsou povoleny pouze formáty souborů ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Došlo k chybě při nahrávání vašeho souboru. Žádný soubor nebyl vybrán."
+        "Došlo k chybě při nahrávání souboru. Nebyl vybrán žádný soubor."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
@@ -3357,7 +3370,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Špatný formát. Komponenta nemůže být přečtena."
+        "Špatný formát. Komponent nešlo přečíst."
       ],
       "Calendar": [
         "Kalendář"
@@ -3375,7 +3388,7 @@
         "Upravená událost není podporována"
       ],
       "Element": [
-        "Element"
+        "Prvek"
       ],
       "Encryption failed": [
         "Šifrování selhalo"
@@ -3393,28 +3406,28 @@
         "Plovoucí časy nejsou podporovány"
       ],
       "Free-busy time information": [
-        "Volno-zaneprázdněn informace o čase"
+        "Informace o vytížení"
       ],
       "Invalid event": [
         "Neplatná událost"
       ],
       "Journal entry": [
-        "Položka v deníku"
+        "Záznamy deníku"
       ],
       "Malformed all-day event": [
-        "Špatně vytvořená celodenní událost"
+        "Špatný formát celodenní události"
       ],
       "Malformed end time": [
         "Špatný formát času ukončení"
       ],
       "Malformed recurring event": [
-        "Smazat poškozenou opakující se událost"
+        "Špatný formát opakující se události"
       ],
       "Malformed start time": [
         "Špatný formát času zahájení"
       ],
       "Missing start time": [
-        "Chybějící počáteční čas"
+        "Chybějící čas zahájení"
       ],
       "No UID, title or start time": [
         "Žádný UID, název nebo čas zahájení"
@@ -3444,7 +3457,7 @@
         "Časové pásmo"
       ],
       "To-do entry": [
-        "Zadání úkolu"
+        "Úkoly"
       ],
       "Unknown": [
         "Neznámé"
@@ -3493,7 +3506,7 @@
         "Příliš mnoho přidružených relací, prosím vymažte soubory cookie a znovu se přihlaste."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Můžete také ${ refresh } nebo to zkusit později."
+        "Můžete taky stránku ${ refresh } nebo to zkusit později."
       ]
     },
     "Error message, recovery": {
@@ -3523,7 +3536,7 @@
         "Certifikát ${ name } nebyl nalezen nebo byl již odvolán"
       ],
       "First name and last name cannot be unchecked at the same time": [
-        "Křestní jméno a příjmení nelze zrušit současně"
+        "Je potřeba vybrat křestní jméno a nebo příjmení"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3544,7 +3557,7 @@
         "Přiložený ICS soubor nelze dešifrovat"
       ],
       "Attached ICS file could not be read": [
-        "Přiložený soubor ICS nelze přečíst"
+        "Přiložený soubor ICS se nepodařilo přečíst"
       ],
       "Invalid invitation": [
         "Neplatná pozvánka"
@@ -3553,10 +3566,10 @@
         "Neplatná odpověď"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Událost nelze přidat do kalendáře. Nebyla odeslána žádná odpověď"
+        "Událost se nepodařilo přidat do kalendáře. Nebyla odeslána žádná odpověď"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Událost nelze v kalendáři aktualizovat. Nebyla odeslána žádná odpověď"
+        "Událost se nepodařilo aktualizovat ve vašem kalendáři. Nebyla odeslána žádná odpověď"
       ],
       "Unexpected error": [
         "Neočekávaná chyba"
@@ -3568,7 +3581,7 @@
         "Nepodporovaná odpověď"
       ],
       "We could not cancel the event in your calendar": [
-        "Událost v kalendáři se nám nepodařilo zrušit"
+        "Nepodařilo se nám zrušit událost ve vašem kalendáři"
       ],
       "We could not retrieve the event from your calendar": [
         "Nepodařilo se nám načíst událost z vašeho kalendáře"
@@ -3577,7 +3590,7 @@
         "Nepodařilo se nám aktualizovat událost ve vašem kalendáři"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Vaše odpověď byla odeslána, ale událost nemohla být přidána do kalendáře"
+        "Vaše odpověď byla odeslána, ale událost nemohla být přidána do vašeho kalendáře"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "Odpověď byla odeslána, ale událost nemohla být aktualizována ve vašem kalendáři"
@@ -3803,7 +3816,7 @@
         "Nepřesouvat"
       ],
       "Inbox": [
-        "Příchozí pošta"
+        "Doručená pošta"
       ],
       "Inbox - Default": [
         "Doručená pošta - výchozí"
@@ -3952,7 +3965,7 @@
         "Štítek"
       ],
       "Name": [
-        "Název"
+        "Jméno"
       ],
       "Notifications": [
         "Upozornění"
@@ -4010,12 +4023,12 @@
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Nalezen ${ items.length } návrh, použijte klávesnice pro navigaci.",
-        "Nalezeny ${ items.length } návrhy, pro navigaci použijte klávesnici.",
-        "Nalezeno ${ items.length } návrhů, pro navigaci použijte klávesnici.",
-        "Nalezeno ${ items.length } návrhů, pro navigaci použijte klávesnici."
+        "Nalezeny ${ items.length } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Pomocí kláves nahoru a dolů můžete po zadání přejít k návrhům a procházet je. Stisknutím klávesy Enter potvrďte volbu nebo klávesou Escape zavřete okno s návrhy."
+        "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
     },
     "Human verification method": {
@@ -4037,22 +4050,22 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } událost zašifrována a přidána do kalendáře",
-        "${ totalImported }/${ totalToImport } události zašifrovány a přidány do kalendáře",
+        "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Došlo k chybě při šifrování a přidávání vaší události. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
-        "Došlo k chybě při šifrování a přidávání vašich událostí. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
-        "Došlo k chybě při šifrování a přidávání vašich událostí. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
-        "Došlo k chybě při šifrování a přidávání vašich událostí. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Nastal problém při šifrování a editaci události. Událost nemůže být importována.",
-        "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány.",
-        "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány.",
-        "Nastal problém při šifrování a editaci událostí. Události nemůžou být importovány."
+        "Nastal problém při šifrování a přidávání vaší události. Událost nemohla být importována.",
+        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány.",
+        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány.",
+        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
@@ -4072,7 +4085,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy událostí, podrobností a formátů."
+        "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy, detaily a formáty událostí."
       ],
       "vCard versions < 3.0": [
         "vCard verze < 3.0"
@@ -4080,7 +4093,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Importované pozvánky se zobrazují v ${ CALENDAR_APP_NAME } jako jednoduché události bez podrobností o organizátorovi a účastníkovi. Chcete-li dostávat aktualizace událostí a vidět účastníky, požádejte organizátory, aby vás pozvali pomocí vaší Proton e-mailové adresy."
+        "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro aktualizace událostí a zobrazení účastníků požádejte organizátory o pozvánku pomocí své Proton e-mailové adresy."
       ],
       "This file contains an event invitation:": [
         "Tento soubor obsahuje pozvánku na událost:",
@@ -4090,9 +4103,9 @@
       ],
       "This file contains an invitation response:": [
         "Tento soubor obsahuje odpověď na pozvánku:",
-        "Tento soubor obsahuje odpověď na pozvánky:",
-        "Tento soubor obsahuje odpověď na pozvánky:",
-        "Tento soubor obsahuje odpověď na pozvánky:"
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:"
       ],
       "This file contains some data that we cannot import:": [
         "Tento soubor obsahuje některá data, která nemůžeme importovat:"
@@ -4100,16 +4113,16 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt zašifrován a přidán do seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do seznamu kontaktů"
+        "${ totalImported }/${ totalToImport } kontaktu šifrován a přidán do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Došlo k chybě při šifrování a editaci kontaktu. Kontakt nemůže být importován.",
-        "Došlo k chybě při šifrování a editaci kontaktů. Kontakty nemůžou být importovány.",
-        "Došlo k chybě při šifrování a editaci kontaktů. Kontakty nemůžou být importovány.",
-        "Došlo k chybě při šifrování a editaci kontaktů. Kontakty nemůžou být importovány."
+        "Objevila se chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován.",
+        "Objevila se chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány.",
+        "Objevila se chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány.",
+        "Objevila se chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány."
       ]
     },
     "Import contact error": {
@@ -4132,13 +4145,13 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno."
+        "Nastala chyba při šifrování a editaci kontaktů. ${ totalImported } mimo ${ totalToImport } kontakty úspěšně importovány."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt úspěšně importován. Importovaný kontakt se nyní zobrazí ve Vašem seznamu kontaktů.",
-        "Kontakty úspěšně importovány. Importované kontakty se nyní zobrazí ve Vašem seznamu kontaktů.",
-        "Kontakty úspěšně importovány. Importované kontakty se nyní zobrazí ve Vašem seznamu kontaktů.",
-        "Kontakty úspěšně importovány. Importované kontakty se nyní zobrazí ve Vašem seznamu kontaktů."
+        "Kontakt byl úspěšně importován. Importovaný kontakt se objeví ve vašem seznamu kontaktů.",
+        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů.",
+        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů.",
+        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů."
       ]
     },
     "Import contacts warning": {
@@ -4146,7 +4159,7 @@
         "prozatím"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Proton kontakty nepodporuje ${ forNow }:"
+        "ProtonContacts nepodporuje ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4455,27 +4468,27 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro podrobnosti"
+        "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "Nebyla importována ${ totalEventsDiscarded } událost z celkem ${ totalEvents }. Rozbalte pro více detailů.",
-        "Nebyly importovány ${ totalEventsDiscarded } události z celkem ${ totalEvents }. Rozbalte pro více detailů.",
-        "Nebylo importováno ${ totalEventsDiscarded } událostí z celkem ${ totalEvents }. Rozbalte pro více detailů.",
-        "Nebylo importováno ${ totalEventsDiscarded } událostí z celkem ${ totalEvents }. Rozbalte pro více detailů."
+        "${ totalEventsDiscarded } z ${ totalEvents } události nebude importována. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } ze ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily."
       ],
       "No contact can be imported. Click for details": [
-        "Kontakt nemůže být importován. Klikněte pro detaily"
+        "Žádný kontakt nemůže být importován. Klikněte pro více informací"
       ],
       "No event can be imported. Expand for details.": [
-        "Událost nemůže být importována. Klikněte pro detaily."
+        "Události nemohou být importovány. Klikněte pro detaily."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "Část obsahu kalendáře není podporována a nebude importována."
+        "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } potřebuje Vaše oprávnění k ${ enableDesktopNotifications }."
+        "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
@@ -4601,7 +4614,7 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
       "${ storageSize } storage": [
-        "${ storageSize } prostoru úložiště"
+        "${ storageSize } úložiště"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Tuto e-mailovou adresu použijete k přihlášení do všech služeb ${ BRAND_NAME }."
@@ -4670,7 +4683,7 @@
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce."
+        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
       ],
       "account recovery and data recovery method": [
         "metoda obnovení účtu a obnovení údajů"
@@ -4736,16 +4749,16 @@
         "Zarovnat doprava"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Vše (${ totalFoldersCount } složka)",
-        "Vše (${ totalFoldersCount } složky)",
-        "Vše (${ totalFoldersCount } složek)",
-        "Vše (${ totalFoldersCount } složek)"
+        "Všechna (${ totalFoldersCount } složka)",
+        "Všechny (${ totalFoldersCount } složky)",
+        "Všech (${ totalFoldersCount } složek)",
+        "Všech (${ totalFoldersCount } složek)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Vše (${ totalFoldersCount } štítek)",
-        "Vše (${ totalFoldersCount } štítky)",
-        "Vše (${ totalFoldersCount } štítků)",
-        "Vše (${ totalFoldersCount } štítků)"
+        "Všechen (${ totalFoldersCount } štítek)",
+        "Všechny (${ totalFoldersCount } štítky)",
+        "Všech (${ totalFoldersCount } štítků)",
+        "Všech (${ totalFoldersCount } štítků)"
       ],
       "All keys successfully reactivated": [
         "Všechny klíče byly úspěšně znovu aktivovány"
@@ -4844,7 +4857,7 @@
         "Barva pozadí"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní, nebo neaktivní klávesové zkratky v nastavení."
+        "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Basic, Plus nebo Visionary"
@@ -4925,7 +4938,7 @@
         "Vytvořit ${ calendarsToBeCreated } nových kalendářů"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Vytvořte štítek pro importované zprávy, vyberte období, za které chcete provést import a složky, které chcete importovat."
+        "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
@@ -4955,19 +4968,19 @@
         "Vlastní"
       ],
       "Custom daily": [
-        "Vlastní denně"
+        "Denní nastavení"
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
       ],
       "Custom monthly": [
-        "Vlastní měsíčně"
+        "Měsíční nastavení"
       ],
       "Custom weekly": [
-        "Vlastní týdně"
+        "Týdenní nastavení"
       ],
       "Custom yearly": [
-        "Vlastní ročně"
+        "Roční nastavení"
       ],
       "Daily": [
         "Denně"
@@ -5024,10 +5037,10 @@
         "Stáhněte si Vaše PGP klíče pro použití v jiných službách kompatibilních s PGP."
       ],
       "Drop a file here to upload": [
-        "Přetáhněte sem soubor pro nahrání"
+        "Přetažením sem, nahrajte soubor"
       ],
       "Drop the file here to upload": [
-        "Přetažením sem nahrajte soubor"
+        "Přetažením sem, nahrajte soubor"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
@@ -5171,7 +5184,7 @@
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Pokud se domníváte, že jde o chybu, kontaktujte nás prosím na ${ contactLink }."
+        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
@@ -5255,7 +5268,7 @@
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Inherited from parent folder": [
-        "Zděděno z nadřazené složky"
+        "Převzato z nadřazené složky"
       ],
       "Insert image": [
         "Vložit obrázek"
@@ -5279,7 +5292,7 @@
         "Připojení k Internetu bylo ztraceno"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Připojení k internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
+        "Připojení k Internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
       ],
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
@@ -5318,13 +5331,13 @@
         "Štítky:"
       ],
       "Large imports can take several days.": [
-        "Dokončení velkých importů může trvat i několik dní."
+        "Import velkého množství dat může trvat několik dní."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Naučte se, jak se přihlásit ke službě ${ VPN_APP_NAME } pomocí alternativních VPN aplikací."
       ],
       "Learn more": [
-        "Více informací"
+        "Zjistěte více"
       ],
       "learn more about Sieve programming language": [
         "další informace o programovacím jazyce Sieve"
@@ -5351,7 +5364,7 @@
         "Načítání"
       ],
       "Loading ${ appName }": [
-        "Načítám ${ appName }"
+        "Načítání aplikace ${ appName }"
       ],
       "Loading preview": [
         "Načítání náhledu"
@@ -5378,7 +5391,7 @@
         "Člen"
       ],
       "Merged": [
-        "Sloučeno"
+        "Sloučený"
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
@@ -5396,7 +5409,7 @@
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
       ],
       "New": [
-        "Nové"
+        "Nový"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Není nastavena žádná metoda obnovení účtu; riskujete ztrátu přístupu k Vašemu účtu"
@@ -5537,7 +5550,7 @@
         "Prosíme vyplňte toto pole."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Dbejte na bezpečnost. Budete ho potřebovat pro přístup ke svému účtu a dešifrování dat v případě obnovení hesla."
+        "Dbejte na její bezpečnost. Budete jí potřebovat pro přístup ke svému účtu a dešifrování dat v případě nutnosti resetovat heslo."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Vezměte prosím na vědomí, že pokud odstraníte tuto adresu, již nebudete moci odesílat ani přijímat e-maily pomocí této adresy."
@@ -5555,10 +5568,10 @@
         "Zadejte prosím e-mailovou adresu pro případ, že bychom Vás potřebovali kontaktovat."
       ],
       "Please select the folders you would like to import:": [
-        "Prosím vyberte složky, které chcete importovat:"
+        "Vyberte složky, které chcete importovat:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Vyberte typ odkazu, který chcete vložit a vyplňte všechna pole."
+        "Prosím vyberte druh odkazu, který chcete vložit a vyplňte všechna pole."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Zkuste to prosím znovu, použijte jinou platební metodu nebo kontaktujte svoji banku pro pomoc."
@@ -5624,7 +5637,7 @@
         "Obnovovací fráze byla zkopírovaná do schránky"
       ],
       "Recovery phrase downloaded": [
-        "Heslo pro obnovení bylo staženo"
+        "Obnovovací fráze byla stažena"
       ],
       "Recovery phrase has been disabled": [
         "Obnovovací fráze bude deaktivována"
@@ -5675,7 +5688,7 @@
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Odeslal <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> bezpečný e-mail."
+        "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
       "Server is currently down": [
         "Server je momentálně nefunkční"
@@ -5744,7 +5757,7 @@
         "Barva textu"
       ],
       "Text to display": [
-        "Text, který chcete zobrazit"
+        "Text k zobrazení"
       ],
       "Thank you for supporting our mission.": [
         "Děkujeme za podporu naší mise."
@@ -5792,7 +5805,7 @@
         "Tato 30denní bezplatná zkušební verze není k dispozici žádným jiným způsobem."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Tento účet byl pozastaven z důvodu možného porušení zásad."
+        "Tento účet byl zablokován kvůli možnému porušení pravidel."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
@@ -5855,7 +5868,7 @@
         "Toto nahradí vaše dočasné heslo. V budoucnu jej použijete pro přístup k vašemu ${ BRAND_NAME } Účtu."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Toto vás odhlásí ze všech aktivních relací a zakáže dvoufázové ověřování."
+        "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem Proton účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější Proton účet."
@@ -5879,7 +5892,7 @@
         "Chcete-li zajistit nepřetržitý přístup ke svému účtu, nastavte metodu obnovení účtu"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
+        "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Chcete-li držet krok s nejnovějším vývojem produktů Proton, můžete se přihlásit k odběru našich různých e-mailů a občas navštívit náš blog."
@@ -5936,7 +5949,7 @@
         "Neomezený počet složek, štítků a filtrů"
       ],
       "Unlimited messages": [
-        "Neomezené zprávy"
+        "Neomezený počet zpráv"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -5960,7 +5973,7 @@
         "Nahraný soubor není platným soukromým klíčem. Prosím ověřte a zkuste to znovu."
       ],
       "URL link": [
-        "Odkaz na URL"
+        "URL odkaz"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
@@ -6074,19 +6087,19 @@
         "Již máte bezplatný účet"
       ],
       "You are about to open another browser tab and visit:": [
-        "Chystáte se otevřít další záložku prohlížeče a navštívit odkaz:"
+        "Chystáte se otevřít v nové kartě prohlížeče:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
       "You are signed in to the account ${ memberAddress }.": [
-        "Jste přihlášeni k účtu ${ memberAddress }."
+        "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Můžete zkontrolovat průběh ${ importProgressLink }."
+        "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
@@ -6111,6 +6124,12 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Následující přihlašovací údaje můžete použít pro připojení k ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran s otevřeným zdrojovým kódem, jako je Tunnelblick pro macOS nebo OpenVPN pro GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailovou pozvánku",
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailové pozvánky",
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek",
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek"
       ],
       "You cannot refer ${ appName } users": [
         "Nelze odkazovat ${ appName } uživatele"
@@ -6152,10 +6171,10 @@
         "Před importováním vašich událostí musíte mít aktivní osobní kalendář."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste 100% kapacity Vašeho úložiště. Nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosáhli jste 100 % kapacity vašeho úložiště. Už nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Měli byste exportovat zálohu tohoto klíče pro případ, že budete potřebovat obnovit zašifrovaná data."
@@ -6471,7 +6490,7 @@
         "Zavřít koncept"
       ],
       "Delete permanently": [
-        "Navždy smazat"
+        "Trvale smazat"
       ],
       "Discard draft": [
         "Zahodit koncept"
@@ -6516,7 +6535,7 @@
         "Přejít na poslední"
       ],
       "Label as...": [
-        "Označit jako..."
+        "Přidat štítek..."
       ],
       "Load embedded images": [
         "Načíst vložené obrázky"
@@ -6546,7 +6565,7 @@
         "Přesunout do archivu"
       ],
       "Move to Inbox": [
-        "Přesunout do složky Doručená pošta"
+        "Přesunout do Doručené pošty"
       ],
       "Move to Spam": [
         "Přesunout do spamu"
@@ -6555,7 +6574,7 @@
         "Přesunout do koše"
       ],
       "Move to...": [
-        "Přesunout do..."
+        "Přesunout do…"
       ],
       "Move up": [
         "Přesunout nahoru"
@@ -6570,7 +6589,7 @@
         "Otevřít předchozí zprávu"
       ],
       "Open this modal": [
-        "Otevřete tuto modalitu"
+        "Otevřít tuto nápovědu"
       ],
       "Reply": [
         "Odpovědět"
@@ -6617,7 +6636,7 @@
         "Základní navigace"
       ],
       "Composer shortcuts": [
-        "Vytvoření zkratek"
+        "Zkratky editoru"
       ],
       "Folder shortcuts": [
         "Zkratky složek"
@@ -6713,7 +6732,7 @@
         "${ UsedAddresses } z ${ MaxAddresses } emailových adres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Dočasně nedostupné. Vraťte se prosím později.)"
+        "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
       "Account storage": [
         "Prostor pro účet"
@@ -6851,7 +6870,7 @@
         "Kód"
       ],
       "Code is 6 digits without spaces": [
-        "Kód je 6 číslic bez mezer"
+        "Kód má 6 číslic bez mezer"
       ],
       "Collect usage diagnostics": [
         "Sbírat diagnostická data o používání"
@@ -7037,7 +7056,7 @@
         "Konec platnosti"
       ],
       "Expires": [
-        "Expiruje"
+        "Vyprší"
       ],
       "extra storage": [
         "extra úložiště"
@@ -7121,7 +7140,7 @@
         "Označit jako"
       ],
       "Label messages as": [
-        "Označit zprávu jako"
+        "Označit zprávy jako"
       ],
       "Last 12 months only": [
         "Pouze posledních 12 měsíců"
@@ -7148,10 +7167,10 @@
         "Zpravovat kategorie"
       ],
       "Manage folders": [
-        "Spravovat složky"
+        "Správa složek"
       ],
       "Manage labels": [
-        "Spravovat štítky"
+        "Správa štítků"
       ],
       "Mark as": [
         "Označit jako"
@@ -7202,7 +7221,7 @@
         "Není spam"
       ],
       "Notification": [
-        "Upozornění"
+        "Oznámení"
       ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
@@ -7274,7 +7293,7 @@
         "Port"
       ],
       "Postal code": [
-        "Poštovní směrovací číslo"
+        "PSČ"
       ],
       "Previous password": [
         "Předchozí heslo"
@@ -7310,7 +7329,7 @@
         "Zopakujte heslo"
       ],
       "Reveal password": [
-        "Ukázat heslo"
+        "Zobrazit heslo"
       ],
       "Security code": [
         "Bezpečnostní kód"
@@ -7346,7 +7365,7 @@
         "Spam"
       ],
       "Starred": [
-        "Oblíbené"
+        "S hvězdičkou"
       ],
       "Start date": [
         "Datum zahájení"
@@ -7370,7 +7389,7 @@
         "Možnosti předplatného"
       ],
       "System information": [
-        "Systémové informace"
+        "Informace o systému"
       ],
       "The email was sent ${ attachment }": [
         "E-mail byl odeslán ${ attachment }"
@@ -7591,7 +7610,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Maximalizováno"
+        "Maximalizované"
       ],
       "Normal": [
         "Normální"
@@ -7599,7 +7618,7 @@
     },
     "Label to change density": {
       "Comfortable": [
-        "Komfortní"
+        "Pohodlné"
       ],
       "Compact": [
         "Kompaktní"
@@ -7646,7 +7665,7 @@
         "Kalendáře"
       ],
       "clearing your browser cache": [
-        "mazání mezipaměti prohlížeče"
+        "vyprazdňuji cache ve vašem prohlížeči"
       ],
       "click here": [
         "klikněte zde"
@@ -7676,7 +7695,7 @@
         "Import/export"
       ],
       "Learn more": [
-        "Více informací"
+        "Zjistit více"
       ],
       "Learn more about data recovery": [
         "Další informace o obnově dat"
@@ -7697,7 +7716,7 @@
         "Požádat o pozvánku"
       ],
       "Reset password": [
-        "Obnovit heslo"
+        "Resetovat heslo"
       ],
       "Set email address": [
         "Nastavit e-mailovou adresu"
@@ -7715,7 +7734,7 @@
         "Potíže s přihlášením?"
       ],
       "Upgrade account": [
-        "Rozšířit účet"
+        "Navýšit účet"
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
@@ -7750,7 +7769,7 @@
         "Shromažďování vašich dat"
       ],
       "We're gathering your data from your provider": [
-        "Vaše data shromažďujeme od vašeho poskytovatele"
+        "Shromažďujeme vaše údaje od vašeho poskytovatele"
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
@@ -7772,10 +7791,10 @@
         "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy z ${ selectedLabelsCount } z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importovat všechny zprávy z ${ totalLabelsCount } složky od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7784,10 +7803,10 @@
         "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ totalLabelsCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importovat všechny zprávy ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7888,36 +7907,36 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Každý ${ interval } měsíc ${ onDayString }",
+        "${ interval } ${ onDayString }",
         "Každé ${ interval } měsíce ${ onDayString }",
         "Každých ${ interval } měsíců ${ onDayString }",
         "Každých ${ interval } měsíců ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Každý ${ interval } měsíc ${ onDayString }, ${ timesString }",
+        "${ interval } ${ onDayString }, ${ timesString }",
         "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Každý ${ interval } měsíc ${ onDayString }, ${ untilString }",
+        "${ interval } ${ onDayString }, ${ untilString }",
         "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Každý měsíc ${ onDayString }"
+        "Měsíčně ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Každý měsíc ${ onDayString }, ${ timesString }"
+        "Měsíčně ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Každý měsíc ${ onDayString }, ${ untilString }"
+        "Měsíčně ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
-        "v ${ dayOfMonth }"
+        "den ${ dayOfMonth }"
       ],
       "on the first Friday": [
         "první pátek"
@@ -8354,7 +8373,7 @@
         "TOR skrze VPN"
       ],
       "Two-factor authentication": [
-        "Dvoufaktorová autentizace"
+        "Dvoufázové ověření"
       ],
       "Unlimited filters": [
         "Neomezeně filtrů"
@@ -8823,7 +8842,7 @@
     },
     "Notification time input": {
       "at": [
-        "v"
+        "v(ve)"
       ]
     },
     "Notification type": {
@@ -8836,34 +8855,34 @@
     },
     "Notification when": {
       "at time of event": [
-        "v čase události"
+        "v době události"
       ],
       "day before": [
-        "den předem",
+        "den před",
         "dny předem",
-        "dnů předem",
-        "dnů předem"
+        "dnů před",
+        "dnů před"
       ],
       "hour before": [
-        "hodinu předem",
-        "hodiny předem",
-        "hodin předem",
-        "hodin předem"
+        "hodinu před",
+        "hodiny před",
+        "hodin před",
+        "hodin před"
       ],
       "minute before": [
-        "minutu předem",
+        "minutu před",
         "minuty předem",
-        "minut předem",
-        "minut předem"
+        "minut před",
+        "minut před"
       ],
       "on the same day": [
         "ve stejný den"
       ],
       "week before": [
         "týden předem",
-        "týdny předem",
-        "týdnů předem",
-        "týdnů předem"
+        "týdny před",
+        "týdnů před",
+        "týdnů před"
       ]
     },
     "Oauth instructions": {
@@ -9265,7 +9284,7 @@
         "Telefonní číslo"
       ],
       "Please describe the problem and include any error messages": [
-        "Popište prosím problém a přiložte všechny chybové zprávy"
+        "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
       "Please insert link first": [
         "Nejdříve prosím vložte odkaz"
@@ -9680,7 +9699,7 @@
         "URL kalendáře"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Chcete-li se přihlásit k odběru externího nebo veřejného kalendáře a jeho aktualizací, zadejte adresu URL. Verze kalendáře pouze pro čtení bude přidána do Vašich odebíraných kalendářů.\n${ kbLink }"
+        "K odběru externího nebo veřejného kalendáře a jeho aktualizacím zadejte jeho URL adresu. Jeho verze ke čtení bude přidána do Odebíraných kalendářů.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9860,7 +9879,7 @@
         "Záchytná adresa aktualizována"
       ],
       "Code sent to ${ methodTo }": [
-        "Kód odeslán na ${ methodTo }"
+        "Kód zaslán na ${ methodTo }"
       ],
       "Credits added": [
         "Kredity byly přidány"
@@ -9926,7 +9945,7 @@
         "Telefonní číslo bylo aktualizováno"
       ],
       "Preference saved": [
-        "Nastavení bylo uloženo"
+        "Nastavení uloženo"
       ],
       "Premium address created": [
         "Prémiová adresa byla vytvořena"
@@ -10077,7 +10096,7 @@
         "E-mailové adresy"
       ],
       "Import": [
-        "Import"
+        "Importovat"
       ],
       "Marked as": [
         "Označeno jako"
@@ -10095,7 +10114,7 @@
         "Hodnoty"
       ],
       "vCard field": [
-        "Pole vCard"
+        "vCard položka"
       ]
     },
     "Time period": {
@@ -10190,7 +10209,7 @@
         "Přidat adresu"
       ],
       "Add another notification to remind you of this event": [
-        "Přidat další oznámení pro připomenutí této události"
+        "Přidat další upozornění pro připomenutí této události"
       ],
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
@@ -10343,7 +10362,7 @@
         "Šifrovací klíče kontaktu"
       ],
       "Continue with partial import?": [
-        "Pokračovat s neúplným importem?"
+        "Pokračovat s částečným importem?"
       ],
       "Couldn’t create accounts": [
         "Nepodařilo se vytvořit účty"
@@ -10484,7 +10503,7 @@
         "E-mail"
       ],
       "Email composer": [
-        "Editor emailu"
+        "E-mailový editor"
       ],
       "Email encryption keys": [
         "Šifrovací klíče e-mailu"
@@ -10559,7 +10578,7 @@
         "Jak funguje vaše zkušební verze"
       ],
       "Human verification": [
-        "CAPTCHA"
+        "Lidské ověření"
       ],
       "Identity and addresses": [
         "Identita a adresy"
@@ -10619,7 +10638,7 @@
         "Rozložení stránky"
       ],
       "Link confirmation": [
-        "Potvrzení odkazu"
+        "Potvrzení před otevřením odkazu"
       ],
       "Login password": [
         "Přihlašovací heslo"
@@ -10655,7 +10674,7 @@
         "Otevřít seznam akcí"
       ],
       "Open help menu": [
-        "Otevřít menu nápovědy"
+        "Otevřít nabídku nápovědy"
       ],
       "Open pagination": [
         "Otevřít stránkování"
@@ -10745,7 +10764,7 @@
         "Obnovit klíče organizace"
       ],
       "Reset password": [
-        "Obnovit heslo"
+        "Resetovat heslo"
       ],
       "Reset password?": [
         "Obnova hesla?"
@@ -10904,7 +10923,7 @@
         "VPN aplikace"
       ],
       "Warning": [
-        "Upozornění"
+        "Varování"
       ],
       "Warning!": [
         "Pozor!"
@@ -11110,7 +11129,7 @@
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
       "The import will start with the most recent messages.": [
-        "Import bude začínat s nejnovějšími zprávami."
+        "Import začne nejnovějšími zprávami."
       ],
       "This address has been disabled": [
         "Tato adresa byla zakázána"
@@ -11129,6 +11148,9 @@
       ],
       "This key is encrypted with an old password": [
         "Tento klíč je šifrován pomocí starého hesla"
+      ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Tento klíč používá ${ MAIL_APP_NAME } k šifrování dat vašeho kontaktu"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
@@ -11188,10 +11210,10 @@
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        "Dnes je dobrý den napsat e-mail"
+        "Dnes je dobrý den napsat email"
       ],
       "Update default font and size": [
-        "Obnovit výchozí font a velikost"
+        "Upravit výchozí font a velikost"
       ],
       "Your default font will look like following:": [
         "Váš výchozí font bude vypadat následovně:"
@@ -11333,7 +11355,7 @@
         "Pokud zrušíte tento import, nebudete jej moci obnovit. Proton uložil veškerý průběh na vašem účtu. Přesto zrušit?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } plány. Prosím otevřete běžný požadavek na podporu."
+        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Berte prosím na vědomí, že výběrem tohoto způsobu platby nemůže být váš účet navýšen okamžitě. Předplatné Vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
@@ -11342,13 +11364,13 @@
         "Uveďte alespoň jednoho příjemce"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Služba Proton sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
+        "Proto sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Hlášení nejsou end-to-end šifrována, neposílejte prosím žádné citlivé informace."
+        "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Nastavení data a času na vašem zařízení nejsou synchronizována. ${ learnMore }"
@@ -11366,7 +11388,7 @@
         "Musíte ${ activateLink } klíče organize předtím, než přidáte e-mailovou adresu veřejnému členovi."
       ],
       "You will lose any customization you made so far.": [
-        "Stávající přizpůsobení importu bude ztraceno."
+        "Přijdete o změny, které jste doposud provedli."
       ],
       "You will not see this import record in the list anymore.": [
         "Tento záznam o importu již v seznamu neuvidíte."
@@ -11408,26 +11430,26 @@
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Každý ${ interval } týden v ${ multipleDaysString }, ${ untilString }",
+        "${ interval } v ${ multipleDaysString }, ${ untilString }",
         "Každé ${ interval } týdny v ${ multipleDaysString }, ${ untilString }",
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
         "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Každý ${ interval } týden všechny dny",
-        "Každé ${ interval } týdny všechny dny",
-        "Každých ${ interval } týdnů všechny dny",
-        "Každých ${ interval } týdnů všechny dny"
+        "Každý ${ interval } týden a všechny dny",
+        "Každé ${ interval } týdny a všechny dny",
+        "Každých ${ interval } týdnů a všechny dny",
+        "Každých ${ interval } týdnů a všechny dny"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Každý ${ interval } týden všechny dny, ${ timesString }",
-        "Každé ${ interval } týdny všechny dny, ${ timesString }",
-        "Každých ${ interval } týdnů všechny dny, ${ timesString }",
-        "Každých ${ interval } týdnů všechny dny, ${ timesString }"
+        "Každé ${ interval } týdny a všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů a všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů a všechny dny, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Každý ${ interval } týden všechny dny, ${ untilString }",
-        "Každé ${ interval } týdny všechny dny, ${ untilString }",
+        "${ interval } po všechny dny v týdnu, ${ untilString }",
+        "Každé ${ interval } týdny a všechny dny, ${ untilString }",
         "Každých ${ interval } týdnů všechny dny, ${ untilString }",
         "Každých ${ interval } týdnů všechny dny, ${ untilString }"
       ],
@@ -11444,7 +11466,7 @@
         "Každých ${ interval } týdnů v pátek, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Každý ${ interval } týden v pátek, ${ untilString }",
+        "${ interval } v pátek, ${ untilString }",
         "Každé ${ interval } týdny v pátek, ${ untilString }",
         "Každých ${ interval } týdnů v pátek, ${ untilString }",
         "Každých ${ interval } týdnů v pátek, ${ untilString }"
@@ -11462,7 +11484,7 @@
         "Každých ${ interval } týdnů v pondělí, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Každý ${ interval } týden v pondělí, ${ untilString }",
+        "${ interval } v pondělí, ${ untilString }",
         "Každé ${ interval } týdny v pondělí, ${ untilString }",
         "Každých ${ interval } týdnů v pondělí, ${ untilString }",
         "Každých ${ interval } týdnů v pondělí, ${ untilString }"
@@ -11480,7 +11502,7 @@
         "Každých ${ interval } týdnů v sobotu, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Každý ${ interval } týden v sobotu, ${ untilString }",
+        "${ interval } v sobotu, ${ untilString }",
         "Každé ${ interval } týdny v sobotu, ${ untilString }",
         "Každých ${ interval } týdnů v sobotu, ${ untilString }",
         "Každých ${ interval } týdnů v sobotu, ${ untilString }"
@@ -11498,7 +11520,7 @@
         "Každých ${ interval } týdnů v neděli, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Každý ${ interval } týden v neděli, ${ untilString }",
+        "${ interval } v neděli, ${ untilString }",
         "Každé ${ interval } týdny v neděli, ${ untilString }",
         "Každých ${ interval } týdnů v neděli, ${ untilString }",
         "Každých ${ interval } týdnů v neděli, ${ untilString }"
@@ -11516,7 +11538,7 @@
         "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Každý ${ interval } týden ve čtvrtek, ${ untilString }",
+        "${ interval } ve čtvrtek, ${ untilString }",
         "Každé ${ interval } týdny ve čtvrtek, ${ untilString }",
         "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }",
         "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }"
@@ -11534,7 +11556,7 @@
         "Každých ${ interval } týdnů v úterý, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Každý ${ interval } týden v úterý, ${ untilString }",
+        "${ interval } v úterý, ${ untilString }",
         "Každé ${ interval } týdny v úterý, ${ untilString }",
         "Každých ${ interval } týdnů v úterý, ${ untilString }",
         "Každých ${ interval } týdnů v úterý, ${ untilString }"
@@ -11552,91 +11574,91 @@
         "Každých ${ interval } týdnů ve středu, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Každý ${ interval } týden ve středu, ${ untilString }",
+        "${ interval } ve středu, ${ untilString }",
         "Každé ${ interval } týdny ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Každý týden v ${ multipleDaysString }"
+        "Týdně v ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Každý týden v ${ multipleDaysString }, ${ timesString }"
+        "Týdně v ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Každý týden v ${ multipleDaysString }, ${ untilString }"
+        "Týdně v ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Každý týden denně"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Každý týden všechny dny, ${ timesString }"
+        "Týdně všechny dny, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Každý týden všechny dny, ${ untilString }"
+        "Týdně všechny dny, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Každý týden v pátek"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Každý týden v pátek, ${ timesString }"
+        "Týdně v pátek, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Každý týden v pátek, ${ untilString }"
+        "Týdně v pátek, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Každý týden v pondělí"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Každý týden v pondělí, ${ timesString }"
+        "Týdně v pondělí, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Každý týden v pondělí, ${ untilString }"
+        "Týdně v pondělí, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Každý týden v sobotu"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Každý týden v sobotu, ${ timesString }"
+        "Týdně v sobotu, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Každý týden v sobotu, ${ untilString }"
+        "Týdně v sobotu, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Každý týden v neděli"
+        "Každý týden v Neděli"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Každý týden v neděli, ${ timesString }"
+        "Týdně v neděli, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Každý týden v neděli, ${ untilString }"
+        "Týdně v neděli, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Každý týden ve čtvrtek"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Každý týden ve čtvrtek, ${ timesString }"
+        "Týdně ve čtvrtek, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Každý týden ve čtvrtek, ${ untilString }"
+        "Týdně ve čtvrtek, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Každý týden v úterý"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Každý týden v úterý, ${ timesString }"
+        "Týdně v úterý, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Každý týden v úterý, ${ untilString }"
+        "Týdně v úterý, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Každý týden ve středu"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Každý týden ve středu, ${ timesString }"
+        "Týdně ve středu, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Každý týden ve středu, ${ untilString }"
+        "Týdně ve středu, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -11665,28 +11687,30 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Každých ${ interval } roků",
+        "Každých ${ interval } roků"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Každý ${ interval } rok, ${ timesString }",
+        "${ interval }, ${ timesString }",
         "Každé ${ interval } roky, ${ timesString }",
-        "Každých ${ interval } let, ${ timesString }",
-        "Každých ${ interval } let, ${ timesString }"
+        "Každých ${ interval } roků, ${ timesString }",
+        "Každých ${ interval } roků, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Každý ${ interval } rok, ${ untilString }",
+        "${ interval }, ${ untilString }",
         "Každé ${ interval } roky, ${ untilString }",
-        "Každých ${ interval } let, ${ untilString }",
-        "Každých ${ interval } let, ${ untilString }"
+        "Každých ${ interval } roků, ${ untilString }",
+        "Každých ${ interval } roků, ${ untilString }"
       ],
       "Yearly": [
-        "Každý rok"
+        "Ročně"
       ],
       "Yearly, ${ timesString }": [
-        "Každý rok, ${ timesString }"
+        "Ročně, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Každý rok, ${ untilString }"
+        "Roční, ${ untilString }"
       ]
     }
   }

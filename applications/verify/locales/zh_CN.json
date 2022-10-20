@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "zh_CN"
   },
   "contexts": {
@@ -978,7 +978,7 @@
         "验证码"
       ],
       "Email": [
-        "邮箱"
+        "邮件"
       ],
       "Manual": [
         "人工验证"
@@ -1025,7 +1025,7 @@
         "加载中"
       ],
       "No results found": [
-        "搜索无结果"
+        "未找到结果"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -1119,14 +1119,14 @@
         "验证码无效"
       ],
       "Request new code": [
-        "重发验证码"
+        "请求新验证码"
       ],
       "Two-factor authentication": [
         "双重验证"
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
+      "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
       ]
     }
