@@ -61,5 +61,4 @@ export * from './support';
 export * from './themes';
 export * from './topBanners';
 export * from './verification';
-export * from './v5WelcomeModal';
 export * from './vpn';
