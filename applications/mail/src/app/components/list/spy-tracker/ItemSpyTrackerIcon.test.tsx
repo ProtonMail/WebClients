@@ -69,20 +69,20 @@ const messageWithoutTrackers: MessageState = {
 describe('ItemSpyTrackerIcon', () => {
     it.each`
         imageProxy                | showImage           | message                   | isIconDisplayed | isNumberDisplayed | expectedTooltip
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.ALL}  | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Email tracker protection is disabled'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'Email tracker protection is disabled'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.ALL}  | ${messageWithoutTrackers} | ${false}        | ${false}          | ${''}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.SHOW} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.SHOW} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.HIDE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.HIDE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.HIDE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Email tracker protection is disabled'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.HIDE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'Email tracker protection is disabled'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.SHOW} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'2 email trackers blocked'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.SHOW} | ${messageWithoutTrackers} | ${false}        | ${false}          | ${''}
     `(
         'should display the icon [$isIconDisplayed] with number [$isNumberDisplayed] and tooltip [$expectedTooltip]',
         async ({ imageProxy, showImage, message, isIconDisplayed, isNumberDisplayed, expectedTooltip }) => {
             minimalCache();
             setFeatureFlags('SpyTrackerProtection', true);
-            addToCache('MailSettings', { ImageProxy: imageProxy, ShowImages: showImage });
+            addToCache('MailSettings', { ImageProxy: imageProxy, HideRemoteImages: showImage });
 
             const { getByTestId, queryByTestId, getAllByText } = await render(
                 <ItemSpyTrackerIcon message={message} />,
@@ -118,7 +118,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open a modal with "No email trackers found" title', async () => {
         minimalCache();
         setFeatureFlags('SpyTrackerProtection', true);
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, ShowImages: SHOW_IMAGES.ALL });
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, HideRemoteImages: SHOW_IMAGES.SHOW });
 
         const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithoutTrackers} />, false);
 
@@ -132,7 +132,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open a modal to set trackers protection mode', async () => {
         minimalCache();
         setFeatureFlags('SpyTrackerProtection', true);
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.NONE, ShowImages: SHOW_IMAGES.NONE });
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.NONE, HideRemoteImages: SHOW_IMAGES.HIDE });
 
         const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithoutTrackers} />, false);
 
@@ -149,7 +149,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open a modal to list all trackers found', async () => {
         minimalCache();
         setFeatureFlags('SpyTrackerProtection', true);
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, ShowImages: SHOW_IMAGES.ALL });
+        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, HideRemoteImages: SHOW_IMAGES.SHOW });
 
         const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithTrackers} />, false);
 

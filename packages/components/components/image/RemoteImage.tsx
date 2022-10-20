@@ -2,9 +2,9 @@ import { DetailedHTMLProps, ImgHTMLAttributes, useEffect, useState } from 'react
 
 import { c } from 'ttag';
 
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { toImage } from '@proton/shared/lib/helpers/image';
 import { isURL } from '@proton/shared/lib/helpers/validators';
+import { hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { useLoading, useMailSettings } from '../../hooks';
 import Button from '../button/Button';
@@ -15,7 +15,7 @@ export interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElem
     text?: string;
 }
 const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }: Props) => {
-    const [{ ShowImages } = { ShowImages: SHOW_IMAGES.NONE }, loadingMailSettings] = useMailSettings();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
     const [loading, withLoading] = useLoading();
     const [showAnyways, setShowAnyways] = useState(false);
     const [image, setImage] = useState<HTMLImageElement>();
@@ -44,7 +44,7 @@ const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }: Props) 
         return <img alt={src} />;
     }
 
-    if (ShowImages & SHOW_IMAGES.REMOTE || showAnyways) {
+    if (hasShowRemote(mailSettings) || showAnyways) {
         return <img src={image?.src} referrerPolicy="no-referrer" {...rest} />;
     }
 
