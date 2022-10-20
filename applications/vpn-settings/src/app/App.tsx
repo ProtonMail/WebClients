@@ -11,6 +11,7 @@ import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
+import initLogicalProperties from '@proton/shared/lib/logical/logical';
 
 import PrivateApp from './PrivateApp';
 import PublicApp from './PublicApp';
@@ -22,6 +23,7 @@ const locales = initLocales(require.context('../../locales', true, /.json$/, 'la
 
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
+initLogicalProperties();
 
 const Setup = () => {
     const { UID, login, logout } = useAuthentication() as PublicAuthenticationStore & PrivateAuthenticationStore;

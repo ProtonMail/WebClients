@@ -26,6 +26,7 @@ const addGlobalOptions = (program) => {
         .option('--featureFlags <featureFlags>', '')
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
         .option('--no-api-proxy', '')
+        .option('--logical', '', false)
         .option(
             '--publicPath <publicPath>',
             '',
@@ -50,6 +51,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         errorLogs: options.errorLogs,
         overlayWarnings: options.overlayWarnings,
         overlayErrors: options.overlayErrors,
+        logical: Boolean(options.logical),
         ...buildData,
     };
     const extraWebpackArgs = env.args.join(' ');
