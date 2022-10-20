@@ -1231,6 +1231,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Melhor oferta"
+      ],
       "Most popular": [
         "Mais popular"
       ]
@@ -1240,7 +1243,7 @@
         "Obter oferta"
       ],
       "Get the deal now": [
-        "Obter oferta agora"
+        "Aproveite esta oferta agora"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2870,6 +2873,10 @@
       "No labels": [
         "Nenhum marcador"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contato. Se o seu arquivo for maior, divida-o em arquivos menores.",
+        "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
       ],
@@ -3762,13 +3769,13 @@
         "Ocultar mensagens movidas"
       ],
       "Read": [
-        "Lidas"
+        "Lido"
       ],
       "Show moved message": [
         "Mostrar mensagens movidas"
       ],
       "Unread": [
-        "Não lidas"
+        "Não lida"
       ]
     },
     "Filter preview": {
@@ -4312,8 +4319,8 @@
         "${ messagesNotAuthorizedToMove } mensagens não puderam ser movidas."
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } rastreador de e-mails bloqueado",
-        "${ numberOfTrackers } rastreadores de e-mails bloqueados"
+        "${ numberOfTrackers } rastreador de e-mails encontrado",
+        "${ numberOfTrackers } rastreadores de e-mails encontrados"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contatos",
@@ -4979,7 +4986,7 @@
         "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP/MIME envia automaticamente a mensagem usando o modo de composição atual. Por favor, note que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
+        "O PGP/MIME envia automaticamente a mensagem usando o modo compositor atual. Observe que ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
       "Phone number": [
         "Número do telefone"
@@ -6177,7 +6184,7 @@
         "Chaves públicas"
       ],
       "Read": [
-        "Lidas"
+        "Lido"
       ],
       "Recipient": [
         "Destinatário"
@@ -7093,6 +7100,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contato exportado com sucesso.",
+        "${ contactsExported.length } de ${ countContacts } contatos exportados com sucesso."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contato excluídos com sucesso.",
         "${ model.deleted.length } de ${ totalBeDeleted } contatos excluídos com sucesso."
@@ -7427,9 +7438,17 @@
         "${ elementsCount } conversa marcada como não lida.",
         "${ elementsCount } conversas marcadas como não lidas."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } conversa movida para ${ folderName } e o remetente adicionado à sua lista de não spam.",
+        "${ elementsCount } conversas movidas para ${ folderName } e os remetentes adicionados à sua lista de não spam."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversa movida para ${ folderName }.",
         "${ elementsCount } conversas movidas para ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversação movida para o spam e o remetente adicionado à sua lista de spam.",
+        "${ elementsCount } conversações movidas para o spam e os remetentes adicionados à sua lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -7451,9 +7470,17 @@
         "${ elementsCount } mensagem marcada como não lida.",
         "${ elementsCount } mensagens marcadas como não lidas."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } mensagem movida para o ${ folderName } e o remetente adicionado à sua lista de permitidos.",
+        "${ elementsCount } mensagens movidas para o ${ folderName } e os remetentes adicionados à sua lista de permitidos."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensagem movida para ${ folderName }.",
         "${ elementsCount } mensagens movidas para ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } mensagem movida para o spam e o remetente adicionado à sua lista de spam.",
+        "${ elementsCount } mensagens movidas para o spam e os remetentes adicionados à sua lista de spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -7500,8 +7527,14 @@
       "Conversation marked as unread.": [
         "Conversação marcada como não lida."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "A conversa foi movida para ${ folderName } e o remetente foi adicionado à sua lista de não spam."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversação movida para o spam e o remetente adicionado à sua lista de spam."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversa removida de ${ labelName }."
@@ -7557,8 +7590,14 @@
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "A mensagem foi movida para ${ folderName } e o remetente foi adicionado à sua lista de não spam."
+      ],
       "Message moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Mensagem movida para o spam e o remetente adicionado à sua lista de spam."
       ],
       "Message removed from ${ labelName }.": [
         "Mensagem removida de ${ labelName }."
@@ -8254,7 +8293,7 @@
         "A importação começará com as mensagens mais recentes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação fará o download de todas as mensagens para que possam ser pesquisadas localmente. Limpar os dados do seu navegador desativará esta opção."
+        "Esta ação baixará todas as mensagens para que elas possam ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
@@ -8593,7 +8632,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

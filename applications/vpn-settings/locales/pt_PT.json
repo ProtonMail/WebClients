@@ -18,13 +18,13 @@
         "Ativar recuperação"
       ],
       "Add credit / debit card": [
-        "Adicionar cartão de débito/crédito"
+        "Adicionar cartão de crédito/débito"
       ],
       "Add credits": [
         "Adicionar créditos"
       ],
       "Add PayPal": [
-        "Adicionar conta PayPal"
+        "Adicionar PayPal"
       ],
       "Apply": [
         "Aplicar"
@@ -77,14 +77,17 @@
       "Create": [
         "Criar"
       ],
-      "Create account": [
-        "Criar conta"
-      ],
       "Create address": [
         "Criar endereço"
       ],
+      "Current plan": [
+        "Plano actual"
+      ],
       "Customize": [
         "Personalizar"
+      ],
+      "Customize plan": [
+        "Personalizar plano"
       ],
       "Decrease": [
         "Diminuir"
@@ -108,10 +111,13 @@
         "Desactivar"
       ],
       "Done": [
-        "Feito"
+        "Concluído"
       ],
       "Downgrade": [
         "Regredir"
+      ],
+      "Downgrade account": [
+        "Regredir conta"
       ],
       "Download": [
         "Transferir"
@@ -122,14 +128,23 @@
       "Edit": [
         "Editar"
       ],
+      "Edit billing details": [
+        "Editar detalhes da faturação"
+      ],
       "Edit email address": [
         "Editar o endereço de email"
       ],
       "Edit phone number": [
-        "Editar número de telefone"
+        "Editar o número de telefone"
+      ],
+      "Edit subscription": [
+        "Editar subscrição"
       ],
       "enable desktop notifications": [
         "activar as notificações"
+      ],
+      "Explore other ${ BRAND_NAME } plans": [
+        "Explorar outros planos ${ BRAND_NAME }"
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -155,6 +170,9 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "Need help?": [
+        "Precisa de ajuda?"
+      ],
       "Next": [
         "Seguinte"
       ],
@@ -175,6 +193,9 @@
       ],
       "Pay": [
         "Pagar"
+      ],
+      "Pay ${ price }": [
+        "Pagar ${ price }"
       ],
       "Previous": [
         "Anterior"
@@ -207,7 +228,7 @@
         "Repor credenciais"
       ],
       "Reset password": [
-        "Repor senha"
+        "Repor palavra-passe"
       ],
       "Reset zoom": [
         "Repor ampliação"
@@ -218,8 +239,14 @@
       "Save": [
         "Gravar"
       ],
+      "Search countries": [
+        "Procurar países"
+      ],
       "See plan features": [
         "Veja as funcionalidades do plano"
+      ],
+      "Select ${ planTitle }": [
+        "Selecionar ${ planTitle }"
       ],
       "Send code": [
         "Enviar código"
@@ -238,6 +265,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show preview": [
+        "Mostrar pré-visualização"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -258,7 +288,7 @@
         "Recarregar"
       ],
       "Try again": [
-        "Tente de novo"
+        "Tentar novamente"
       ],
       "Try another method": [
         "Tentar outro método"
@@ -287,6 +317,9 @@
       "Use a different payment method": [
         "Utilizar um método de pagamento diferente"
       ],
+      "Use authentication code": [
+        "Usar código de autenticação"
+      ],
       "Use recovery code": [
         "Usar código de recuperação"
       ],
@@ -296,17 +329,26 @@
       "Verify": [
         "Verificar"
       ],
+      "Verify account": [
+        "Verificar conta"
+      ],
       "Verify code": [
         "Verificar código"
       ],
       "Verify code again": [
         "Verificar código novamente"
       ],
+      "Verify email": [
+        "Verificar correio eletrónico"
+      ],
       "View": [
         "Ver"
       ],
       "View invoice": [
         "Ver factura"
+      ],
+      "View plans details": [
+        "Ver detalhes do plano"
       ],
       "Zoom in": [
         "Ampliar"
@@ -316,6 +358,10 @@
       ]
     },
     "Addon": {
+      "+ ${ _users } user": [
+        "+ ${ _users } utilizador",
+        "+ ${ _users } utilizadores"
+      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
@@ -345,7 +391,7 @@
     },
     "Apps dropdown": {
       "Proton applications": [
-        "Aplicações Proton"
+        "Aplicações do Proton"
       ]
     },
     "Billing cycle option": {
@@ -356,12 +402,7 @@
         "Mensalmente"
       ],
       "Two-year": [
-        "Dois anos"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
+        "Bianual"
       ]
     },
     "Bug category": {
@@ -372,7 +413,7 @@
         "Problema na Bridge"
       ],
       "Calendar problem": [
-        "Problema no calendário"
+        "Problema na agenda"
       ],
       "Connection problem": [
         "Problema com a ligação"
@@ -429,10 +470,28 @@
         "Problema de actualização"
       ],
       "VPN problem": [
-        "Problema na VPN"
+        "Problema de VPN"
       ],
       "Website access problem": [
         "Problema de acesso à página web"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
+      ],
+      "Total for ${ n } month": [
+        "Total por ${ n } mês",
+        "Total por ${ n } meses"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fechar"
+      ],
+      "Expand": [
+        "Expandir"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -456,8 +515,770 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abecásia"
+      ],
+      "Afghanistan": [
+        "Afeganistão"
+      ],
+      "Albania": [
+        "Albânia"
+      ],
+      "Algeria": [
+        "Algéria"
+      ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antárctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antígua e Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Arménia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ilha de Ascensão"
+      ],
+      "Australia": [
+        "Austrália"
+      ],
+      "Austria": [
+        "Áustria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijão"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bielorrússia"
+      ],
+      "Belgium": [
+        "Bélgica"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butão"
+      ],
+      "Bolivia": [
+        "Bolívia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Santo Eustáquio e Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bósnia e Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Ilha Bouvet"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Território Britânico no Oceano Índico"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgária"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Camarões"
+      ],
+      "Canada": [
+        "Canadá"
+      ],
+      "Cape Verde": [
+        "Cabo Verde"
+      ],
+      "Cayman Islands": [
+        "Ilhas Cayman"
+      ],
+      "Central African Republic": [
+        "República Central Africana"
+      ],
+      "Chad": [
+        "Chade"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Ilha Natal"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Ilhas Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colômbia"
+      ],
+      "Comoros": [
+        "Comoros"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo (República Democrática)"
+      ],
+      "Cook Islands": [
+        "Ilhas Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croácia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Chipre"
+      ],
       "Czech Republic": [
         "República Checa"
+      ],
+      "Côte d'Ivoire": [
+        "Costa do Marfim"
+      ],
+      "Denmark": [
+        "Dinamarca"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Equador"
+      ],
+      "Egypt": [
+        "Egipto"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guiné Equatorial"
+      ],
+      "Eritrea": [
+        "Eritreia"
+      ],
+      "Estonia": [
+        "Estónia"
+      ],
+      "Eswatini": [
+        "Suazilândia"
+      ],
+      "Ethiopia": [
+        "Etiópia"
+      ],
+      "Falkland Islands": [
+        "Ilhas Falkland"
+      ],
+      "Faroe Islands": [
+        "Ilhas Faroé"
+      ],
+      "Federated States of Micronesia": [
+        "Estados Federados da Micronésia"
+      ],
+      "Fiji": [
+        "Ilhas Fiji"
+      ],
+      "Finland": [
+        "Finlândia"
+      ],
+      "France": [
+        "França"
+      ],
+      "French Guiana": [
+        "Guiana Francesa"
+      ],
+      "French Polynesia": [
+        "Polinésia Francesa"
+      ],
+      "French Southern Territories": [
+        "Territórios franceses do Sul"
+      ],
+      "Gabon": [
+        "Gabão"
+      ],
+      "Gambia": [
+        "Gâmbia"
+      ],
+      "Georgia": [
+        "Geórgia"
+      ],
+      "Germany": [
+        "Alemanha"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grécia"
+      ],
+      "Greenland": [
+        "Gronelândia"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guiné"
+      ],
+      "Guinea-Bissau": [
+        "Guiné-Bissau"
+      ],
+      "Guyana": [
+        "Guiana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Ilha Heard e Ilhas McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Santa Sé (Estado da Cidade do Vaticano)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hungria"
+      ],
+      "Iceland": [
+        "Islândia"
+      ],
+      "India": [
+        "Índia"
+      ],
+      "Indonesia": [
+        "Indonésia"
+      ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Irão"
+      ],
+      "Iraq": [
+        "Iraque"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Ilha de Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Itália"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japão"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordânia"
+      ],
+      "Kazakhstan": [
+        "Cazaquistão"
+      ],
+      "Kenya": [
+        "Quénia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Quirguistão"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Látvia"
+      ],
+      "Lebanon": [
+        "Líbano"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Libéria"
+      ],
+      "Libya": [
+        "Líbia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituânia"
+      ],
+      "Luxembourg": [
+        "Luxemburgo"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagáscar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malásia"
+      ],
+      "Maldives": [
+        "Maldivas"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Ilhas Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritânia"
+      ],
+      "Mauritius": [
+        "Maurícia"
+      ],
+      "Mayotte": [
+        "Maiote"
+      ],
+      "Mexico": [
+        "México"
+      ],
+      "Moldova": [
+        "Moldávia"
+      ],
+      "Monaco": [
+        "Mónaco"
+      ],
+      "Mongolia": [
+        "Mongólia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Monserrate"
+      ],
+      "Morocco": [
+        "Marrocos"
+      ],
+      "Mozambique": [
+        "Moçambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namíbia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Países Baixos"
+      ],
+      "New Caledonia": [
+        "Nova Caledónia"
+      ],
+      "New Zealand": [
+        "Nova Zelândia"
+      ],
+      "Nicaragua": [
+        "Nicarágua"
+      ],
+      "Niger": [
+        "Níger"
+      ],
+      "Nigeria": [
+        "Nigéria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Ilha Norfolk"
+      ],
+      "North Korea": [
+        "Coreia do Norte"
+      ],
+      "North Macedonia": [
+        "Macedónia do Norte"
+      ],
+      "Northern Mariana Islands": [
+        "Ilhas Marianas do Norte"
+      ],
+      "Norway": [
+        "Noruega"
+      ],
+      "Oman": [
+        "Omã"
+      ],
+      "Pakistan": [
+        "Paquistão"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panamá"
+      ],
+      "Papua New Guinea": [
+        "Papua Nova Guiné"
+      ],
+      "Paraguay": [
+        "Paraguai"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipinas"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polónia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunião"
+      ],
+      "Romania": [
+        "Roménia"
+      ],
+      "Russia": [
+        "Rússia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "São Bartolomeu"
+      ],
+      "Saint Helena": [
+        "Santa Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts e Nevis"
+      ],
+      "Saint Lucia": [
+        "Santa Lúcia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (parte francesa)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "São Pedro e Miquelão"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent e Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "São Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé e Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Arábia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sérvia"
+      ],
+      "Seychelles": [
+        "Seicheles"
+      ],
+      "Sierra Leone": [
+        "Serra Leoa"
+      ],
+      "Singapore": [
+        "Singapura"
+      ],
+      "Sint Maarten": [
+        "São Martinho (Países Baixos)"
+      ],
+      "Slovakia": [
+        "Eslováquia"
+      ],
+      "Slovenia": [
+        "Eslovénia"
+      ],
+      "Solomon Islands": [
+        "Ilhas Salomão"
+      ],
+      "Somalia": [
+        "Somália"
+      ],
+      "South Africa": [
+        "África do Sul"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Geórgia do Sul e Ilhas Sandwich do Sul"
+      ],
+      "South Korea": [
+        "Coreia do Sul"
+      ],
+      "South Ossetia": [
+        "Ossétia do Sul"
+      ],
+      "South Sudan": [
+        "Sudão Sul"
+      ],
+      "Spain": [
+        "Espanha"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudão"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard e Jan Mayen"
+      ],
+      "Sweden": [
+        "Suécia"
+      ],
+      "Switzerland": [
+        "Suíça"
+      ],
+      "Syria": [
+        "Síria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajiquistão"
+      ],
+      "Tanzania": [
+        "Tanzânia"
+      ],
+      "Thailand": [
+        "Tailândia"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad e Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristão da Cunha"
+      ],
+      "Tunisia": [
+        "Tunísia"
+      ],
+      "Turkey": [
+        "Turquia"
+      ],
+      "Turkmenistan": [
+        "Turquemenistão"
+      ],
+      "Turks and Caicos Islands": [
+        "Ilhas Turcas e Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucrânia"
+      ],
+      "United Arab Emirates": [
+        "Emirados Árabes Unidos"
+      ],
+      "United Kingdom": [
+        "Reino Unido"
+      ],
+      "United States": [
+        "Estados Unidos"
+      ],
+      "United States Minor Outlying Islands": [
+        "Ilhas Menores Distantes dos Estados Unidos"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbequistão"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietname"
+      ],
+      "Virgin Islands, British": [
+        "Ilhas Virgens, Inglesas"
+      ],
+      "Virgin Islands, U.S.": [
+        "Ilhas Virgens, Americanas"
+      ],
+      "Wallis and Futuna": [
+        "Wallis e Futuna"
+      ],
+      "Western Sahara": [
+        "Saará Ocidental"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zâmbia"
+      ],
+      "Zimbabwe": [
+        "Zimbabué"
+      ],
+      "Åland Islands": [
+        "Ilhas Åland"
       ]
     },
     "CountryInfo": {
@@ -509,7 +1330,7 @@
         "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e insira o seu código novamente."
       ],
       "Invalid ${ name } code": [
-        "Código de ${ name } inválido"
+        "Código ${ name } inválido"
       ],
       "Invalid card number": [
         "Número de cartão inválido"
@@ -518,10 +1339,7 @@
         "Código inválido"
       ],
       "Invalid expiration date": [
-        "Data de expiração inválida"
-      ],
-      "Invalid invitation link": [
-        "Hiperligação de convite inválida"
+        "Data de validade inválida"
       ],
       "Invalid postal code": [
         "Código postal inválido"
@@ -530,13 +1348,13 @@
         "Código de verificação inválido"
       ],
       "Name on card required": [
-        "Nome no cartão requerido"
+        "É necessário o nome no cartão"
       ],
       "Not a valid number": [
         "Número inválido"
       ],
       "Passwords do not match": [
-        "As senhas não correspondem"
+        "As senhas não coincidem"
       ],
       "Payment process cancelled": [
         "Processo de pagamento cancelado"
@@ -620,7 +1438,7 @@
     },
     "Feature": {
       "Access to all countries": [
-        "Aceda a todos os países"
+        "Acesso a todos os países"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Ligação para ${ plusVpnConnections } dispositivo",
@@ -640,6 +1458,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -648,6 +1470,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Frequency of news": {
@@ -702,7 +1542,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
+        "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } pode também ser usado com uma única palavra-passe que substitui ambas as palavras-passe de início de sessão e caixa de correio. Para mudar para o modo de uma única palavra-passe, digite a palavra-passe única que gostaria de usar e clique em salvar."
@@ -715,6 +1555,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } de armazenamento"
+      ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
       ],
@@ -723,6 +1566,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
+        "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
@@ -752,13 +1599,13 @@
         "Requerida subscrição Basic, Plus ou Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+        "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Facturado no termo do seu ciclo de facturação actual (renova a ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Transacções com BitCoin podem levar algum tempo a confirmar (até 24 horas). Uma vez confirmadas, adicionaremos os créditos à sua conta. Após confirmação da transacção, pode pagar a sua factura com os créditos."
+        "As transacções em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transacção, pode pagar a sua factura com os créditos."
       ],
       "Black Friday 2018 applied to your subscription": [
         "Foi aplicado um desconto de Sexta-feira negra 2018"
@@ -767,10 +1614,10 @@
         "Foi aplicado um desconto de Sexta-feira negra 2019"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
-        "Foi aplicado um desconto de boas-vindas da Sexta-feira negra 2020"
+        "Foi aplicado um desconto de boas vindas da Sexta-feira negra 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ao reverter para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
+        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
       ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
@@ -779,13 +1626,10 @@
         "Escolha a aparência da aplicação."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o número estiver incorrecto, clique em \"Editar\" para o corrigir."
+        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
       "Continue anyway?": [
         "Continuar mesmo assim?"
-      ],
-      "Creating your account": [
-        "A criar a sua conta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua assinatura"
@@ -845,7 +1689,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
+        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, insira-o abaixo para aplicar o desconto."
@@ -874,6 +1718,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um ficheiro de configuração do servidor para ligar a um servidor específico num país à sua escolha."
       ],
+      "Internet connection lost": [
+        "Ligação à Internet perdida"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ligação à Internet perdida. Verifique a ligação do seu dispositivo."
       ],
@@ -882,6 +1729,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Link copied to clipboard": [
+        "Ligação copiada para a área de transferência"
       ],
       "Loading": [
         "A carregar"
@@ -902,7 +1752,7 @@
         "Insira manualmente esta informação no seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ _switchButton }."
       ],
       "No payment is required at this time.": [
-        "Não será necessário pagamento neste momento."
+        "Nenhum pagamento é necessário neste momento."
       ],
       "No preview available": [
         "Antevisão indisponível"
@@ -923,13 +1773,13 @@
         "O pagamento pode levar alguns minutos até estar completo."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Os pagamentos são protegidos por encriptação TLS e pelas leis de privacidade suíças."
+        "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
       "Plan upgrade required": [
         "Requerida actualização do plano"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Ao clicar no botão Confirmar, a sua conta será creditada com ${ creditsRemaining }."
+        "Por favor, note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Por favor, forneça um endereço de email, caso necessitemos de o contactar."
@@ -952,6 +1802,9 @@
       "Preview": [
         "Antever"
       ],
+      "Priority support": [
+        "Suporte prioritário"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
@@ -967,11 +1820,14 @@
       "Server load": [
         "Carga do servidor"
       ],
+      "Session timed out": [
+        "A sessão expirou."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
       ],
       "support team": [
-        "equipa de suporte"
+        "equipa de assistência"
       ],
       "Thank you for supporting our mission.": [
         "Obrigado por apoiar a nossa missão."
@@ -983,7 +1839,7 @@
         "Este navegador não suporta a antevisão de documentos PDF. Por favor, transfira o ficheiro."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Pode levar alguns segundos ou alguns minutos, dependendo do seu dispositivo"
+        "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
         "Isto também desactivará qualquer método de autenticação em dois passos associado a esta conta."
@@ -1007,7 +1863,7 @@
         "para continuar para ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o spam e o abuso, por favor confirme que é um ser humano."
+        "Para combater o spam e abusos, confirme que é um ser humano."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para acompanhar o mais recente desenvolvimento dos produtos Proton, pode subscrever os nossos vários emails e visitar o nosso blogue de tempos a tempos."
@@ -1028,10 +1884,16 @@
         "O modo de senha dupla requer duas senhas: uma para iniciar a sessão e outra para desencriptar a caixa de correio (avançado)."
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "O modo de senha dupla usa senhas separadas para iniciar a sessão e desencriptar a caixa do correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de senha dupla, insira primeiro a senha de início de sessão e depois a da caixa de correio."
+        "O modo de duas senhas usa senhas separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de duas senhas, primeiro insira a senha para o início de sessão e depois para a caixa de correio."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Unlimited messages": [
+        "Mensagens ilimitadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
@@ -1103,7 +1965,7 @@
         "Será brevemente redireccionado para o seu banco para verificar o pagamento."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Será brevemente redireccionado ao PayPal para verificar o seu pagamento."
+        "Será brevemente redireccionado para o PayPal para verificar o pagamento."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso foi restringido. ${ payInvoiceLink }"
@@ -1136,7 +1998,7 @@
         "O seu email de recuperação:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "A sua subscrição é gerida pela Mozilla. Por favor, contacte o suporte da Mozilla."
+        "A sua subscrição é gerida pela Mozilla. Por favor contacte o suporte da Mozilla."
       ]
     },
     "Info for cash payment method": {
@@ -1151,7 +2013,7 @@
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "Adicione o seu nome (ou o da empresa) e morada às facturas."
+        "Adicione o seu nome (ou nome da empresa) e endereço para as suas facturas."
       ]
     },
     "Info when deleting payment method": {
@@ -1206,9 +2068,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } email or username": [
-        "E-mail ou nome de usuário do ${ BRAND_NAME }"
-      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
@@ -1230,9 +2089,6 @@
       ],
       "Amount due": [
         "Quantia devida"
-      ],
-      "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
       ],
       "bonus storage": [
         "bónus de armazenamento"
@@ -1265,16 +2121,13 @@
         "Código"
       ],
       "Confirm login password": [
-        "Confirmar senha de início de sessão"
+        "Confirme a nova senha"
       ],
       "Confirm mailbox password": [
-        "Confirmar senha da caixa de correio"
+        "Confirme a senha da caixa de correio"
       ],
       "Confirm new password": [
         "Confirmar a nova senha"
-      ],
-      "Confirm password": [
-        "Confirmar senha"
       ],
       "Copy": [
         "Copiar"
@@ -1357,6 +2210,9 @@
       "Operating system version": [
         "Versão do sistema operativo"
       ],
+      "Optional": [
+        "Opcional"
+      ],
       "Other amount": [
         "Outro valor"
       ],
@@ -1376,7 +2232,7 @@
         "Repartição"
       ],
       "Proton username": [
-        "Nome de utilizador Proton"
+        "Utilizador Proton"
       ],
       "Recovery phrase": [
         "Frase de recuperação"
@@ -1403,7 +2259,7 @@
         "Nova senha do utilizador"
       ],
       "Username": [
-        "Utilizador"
+        "Nome de utilizador"
       ],
       "Verification code": [
         "Código de verificação"
@@ -1469,25 +2325,28 @@
         "Problemas de registo comuns"
       ],
       "Forgot username?": [
-        "Esqueceu-se do nome de utilizador?"
+        "Esqueceu o nome de utilizador?"
       ],
       "Learn more": [
         "Saiba mais"
       ],
-      "Not activated": [
-        "Não activada"
-      ],
       "Pay invoice": [
         "Pagar factura"
+      ],
+      "Privacy policy": [
+        "Política de privacidade"
       ],
       "Request an invite": [
         "Pedir um convite"
       ],
       "Reset password": [
-        "Repor senha"
+        "Repor palavra-passe"
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Terms": [
+        "Termos"
       ],
       "Upgrade account": [
         "Actualizar conta"
@@ -1497,11 +2356,14 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
+      ],
+      "What’s this?": [
+        "O que é isto?"
       ]
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Uma nova versão de ${ appName } está disponível. ${ reloadButton }."
+        "Está disponível uma nova versão de ${ appName }. ${ reloadButton }."
       ]
     },
     "Monetary unit": {
@@ -1516,9 +2378,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Continue with Free"
-      ],
       "Delete account": [
         "Eliminar conta"
       ],
@@ -1527,6 +2386,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } email address": [
+        "${ n } endereço de e-mail",
+        "${ n } endereços de e-mail/aliases"
+      ],
       "${ n } label": [
         "${ n } etiqueta",
         "${ n } etiquetas"
@@ -1534,6 +2397,10 @@
       "${ n } message per day": [
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
+      ],
+      "${ n } personal calendar": [
+        "${ n } agenda pessoal",
+        "${ n } agendas pessoais"
       ],
       "${ n } VPN connection": [
         "${ n } ligação VPN",
@@ -1640,7 +2507,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Como contactar consigo"
+        "Uma forma de o contactar"
       ],
       "Add gift code": [
         "Adicionar código de oferta"
@@ -1670,10 +2537,7 @@
         "Código postal"
       ],
       "Select": [
-        "Seleccionar"
-      ],
-      "Select a reason": [
-        "Seleccione um motivo"
+        "Selecionar"
       ],
       "ZIP": [
         "CP"
@@ -1715,7 +2579,7 @@
         "Email"
       ],
       "Username": [
-        "Nome de utilizador"
+        "Utilizador"
       ]
     },
     "Spotlight": {
@@ -1740,13 +2604,37 @@
       ]
     },
     "Subscription attribute": {
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } ligação VPN de alta velocidade",
+        "${ maxVpn } ligações VPN de alta velocidade"
+      ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agendas"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } ligação VPN de alta velocidade",
+        "${ n } ligações VPN de alta velocidade"
+      ],
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } endereço",
+        "${ UsedAddresses } endereços"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } endereço electrónico",
         "${ UsedAddresses } de ${ MaxAddresses } endereços electrónicos"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } de ${ MaxDomains } domínio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } domínios personalizados"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } de ${ MaxMembers } utilizador",
+        "${ UsedMembers } de ${ MaxMembers } utilizadores"
       ]
     },
     "Subscription saving": {
@@ -1810,7 +2698,7 @@
         "Verificação com sucesso"
       ],
       "You have successfully unsubscribed": [
-        "Subscrição removida com sucesso"
+        "A sua subscrição foi cancelada com sucesso"
       ]
     },
     "TableHeader": {
@@ -1830,7 +2718,19 @@
         "Estado"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Temas"
+      ]
+    },
     "Title": {
+      "${ maxUsers } user": [
+        "${ maxUsers } utilizador",
+        "${ maxUsers } utilizadores"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "Clientes ${ VPN_APP_NAME }"
+      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
@@ -1841,7 +2741,7 @@
         "Falha na verificação 3-D Secure"
       ],
       "3. Select config file and download": [
-        "3. Seleccione a configuração e transfira"
+        "3. Seleccionar configuração e transferir"
       ],
       "Account": [
         "Conta"
@@ -1853,7 +2753,7 @@
         "Acção"
       ],
       "Add credit/debit card": [
-        "Adicionar cartão de débito/crédito"
+        "Adicionar cartão de crédito/débito"
       ],
       "Add credits": [
         "Adicionar créditos"
@@ -1871,7 +2771,7 @@
         "Quantia devida"
       ],
       "Apply gift code": [
-        "Adicionar código de oferta"
+        "Aplicar código de oferta"
       ],
       "Back": [
         "Recuar"
@@ -1892,16 +2792,16 @@
         "Alterar senha de início de sessão"
       ],
       "Change mailbox password": [
-        "Alterar a senha da caixa de correio"
+        "Alterar senha da caixa de correio"
       ],
       "Change password": [
         "Alterar senha"
       ],
       "Confirm address": [
-        "Confirme o endereço"
+        "Confirmar endereço"
       ],
       "Confirm downgrade": [
-        "Confirmar a regressão"
+        "Confirmar regressão"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmar perda de bónus Proton"
@@ -1910,7 +2810,7 @@
         "Confirmar número de telefone"
       ],
       "Credits": [
-        "Crédito"
+        "Créditos"
       ],
       "Currency": [
         "Moeda"
@@ -1940,7 +2840,7 @@
         "Transferências"
       ],
       "Edit credit/debit card": [
-        "Editar cartão de débito/crédito"
+        "Editar cartão de crédito/débito"
       ],
       "Email": [
         "Email"
@@ -2021,7 +2921,7 @@
         "Pagamentos"
       ],
       "PayPal verification failed": [
-        "A verificação PayPal falhou"
+        "Falha na verificação PayPal"
       ],
       "Phone": [
         "Telefone"
@@ -2107,9 +3007,6 @@
       "What's new": [
         "O que há de novo"
       ],
-      "You already have a Proton account": [
-        "Já tem uma conta Proton"
-      ],
       "Your current plan": [
         "O seu plano actual"
       ],
@@ -2117,7 +3014,7 @@
         "O seu plano"
       ],
       "ZIP / postal code": [
-        "Código postal"
+        "ZIP/Código postal"
       ]
     },
     "Title for payment methods table": {
@@ -2138,10 +3035,10 @@
     },
     "Tooltip": {
       "Discount applied for annual billing cycle": [
-        "Desconto aplicado a ciclos de facturação anual"
+        "Desconto aplicado para o ciclo de facturação anual"
       ],
       "Discount applied for two-year billing cycle": [
-        "Desconto aplicado ao ciclo de facturação bi-anual"
+        "Desconto aplicado para o ciclo de facturação bianual"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, insira-o aqui."
@@ -2150,7 +3047,7 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos $ ${ length } caracteres"
+        "A senha deve conter pelo menos ${ length } caracteres"
       ]
     },
     "VPN info": {

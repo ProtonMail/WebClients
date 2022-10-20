@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "tr_TR"
   },
   "contexts": {
@@ -87,10 +87,10 @@
         "Temizle"
       ],
       "Clear browser data": [
-        "Web tarayıcı verilerini temizle"
+        "Tarayıcı verilerini temizle"
       ],
       "Clear data": [
-        "Verileri temizle"
+        "Veriyi temizle"
       ],
       "Clear query": [
         "Sorguyu temizle"
@@ -236,7 +236,7 @@
         "Çöp kutusunu boşalt"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştir"
+        "masaüstü bildirimlerini etkinleştirmek"
       ],
       "Expand": [
         "Genişlet"
@@ -350,7 +350,7 @@
         "Yeni yükle"
       ],
       "Next": [
-        "Sonraki"
+        "İleri"
       ],
       "Next month": [
         "Sonraki ay"
@@ -371,7 +371,7 @@
         "Yüklemeyi duraklat"
       ],
       "Preview": [
-        "Ön izleme"
+        "Ön izle"
       ],
       "Preview contact": [
         "Kişiyi ön izle"
@@ -383,7 +383,7 @@
         "Önceki ay"
       ],
       "Quit": [
-        "Çık"
+        "Çıkış"
       ],
       "Re-sign": [
         "Yeniden imzala"
@@ -462,6 +462,9 @@
       ],
       "Search drive": [
         "Drive içinde ara"
+      ],
+      "See plan features": [
+        "Tarife özelliklerini görün"
       ],
       "Select all": [
         "Tümünü seç"
@@ -572,7 +575,7 @@
         "Klasör yükle"
       ],
       "Upload picture": [
-        "Görsel yükle"
+        "Fotoğraf yükle"
       ],
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
@@ -673,7 +676,7 @@
         "Tekliften yararlanın"
       ],
       "Get the deal now": [
-        "Tekliften şimdi yararlan"
+        "Tekliften yararlanın"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -803,7 +806,7 @@
         "bakır"
       ],
       "enzian": [
-        "enziyen"
+        "kantaron"
       ],
       "fern": [
         "eğrelti otu"
@@ -903,13 +906,13 @@
         "Fotoğraf"
       ],
       "Role": [
-        "Rol/Meslek"
+        "Rol"
       ],
       "Timezone": [
         "Saat dilimi"
       ],
       "Title": [
-        "Unvan"
+        "Başlık"
       ],
       "URL": [
         "İnternet adresi"
@@ -1066,7 +1069,7 @@
         "Kanada"
       ],
       "Cape Verde": [
-        "Cabo Verde"
+        "Yeşil Burun Adaları"
       ],
       "Cayman Islands": [
         "Cayman Adaları"
@@ -1099,7 +1102,7 @@
         "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "Kongo Demokratik Cumhuriyeti"
+        "Kongo, Demokratik Cumhuriyeti"
       ],
       "Cook Islands": [
         "Cook Adaları"
@@ -1739,11 +1742,15 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
+        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Birleştirmek veya saklamak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıklandıktan sonra yapılır"
+        "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -1778,7 +1785,7 @@
         "Kimlik doğrulama hatası."
       ],
       "Calendar limit reached": [
-        "Takvim sayısı sınırına ulaşıldı"
+        "Takvim sınırına ulaşıldı"
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -1913,7 +1920,7 @@
         "Arama yapılamadı"
       ],
       "Signature not verified": [
-        "İmza doğrulanmadı"
+        "İmza doğrulanamadı"
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
@@ -1985,7 +1992,7 @@
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
       ],
       "This field is required": [
-        "Bu alan zorunludur"
+        "Bu alanın doldurulması zorunludur"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
@@ -2210,7 +2217,7 @@
         "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Oturum açtıktan sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
+        "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
       ]
     },
     "Human verification method": {
@@ -2232,7 +2239,7 @@
     },
     "Import calendar": {
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Kişiler şifreleniyor ve ekleniyor: ${ totalImported }/${ totalToImport }"
+        "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ]
     },
     "Import calendar warning": {
@@ -2558,7 +2565,7 @@
         "${ addressCount } e-posta adresi"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName }, ${ enableDesktopNotifications } için izninize ihtiyaç duyuyor."
+        "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -2808,7 +2815,7 @@
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
       "double your storage": [
-        "depolama alanınızı iki katına çıkarın"
+        "depolama alanınızı ikiye katlayın"
       ],
       "Download canceled": [
         "İndirme iptal edildi"
@@ -3163,7 +3170,7 @@
         "Klasör bağlantısı hazırlanıyor"
       ],
       "Preview": [
-        "Ön izleme"
+        "Ön izle"
       ],
       "Primary": [
         "Birincil"
@@ -3211,7 +3218,7 @@
         "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
+        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -3326,7 +3333,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle kontrol etmemiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
+        "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan kişi şifreleme anahtarını yeniden etkinleştirmeniz gerekir. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
@@ -3365,7 +3372,7 @@
         "Drive araması güncelleniyor..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } faydalarını kaybetmemek için bugün yükseltin."
+        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
       ],
       "Uploaded": [
         "Yüklendi"
@@ -3488,7 +3495,7 @@
         "Önceki kurtarma ifadeniz"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda beklemede. Hesabınızı kullanmayı sürdürmek için, lütfen gecikmiş faturaları ödeyin."
+        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ]
     },
     "Info on errors": {
@@ -3591,7 +3598,7 @@
         "Kimlik doğrulama uygulaması"
       ],
       "Automatically save contacts": [
-        "Kişiler otomatik olarak kaydedilsin"
+        "Kişileri otomatik olarak kaydet"
       ],
       "Awful": [
         "Çok kötü"
@@ -3600,10 +3607,10 @@
         "Kötü"
       ],
       "Browser": [
-        "Web tarayıcı"
+        "Tarayıcı"
       ],
       "Browser version": [
-        "Web tarayıcı sürümü"
+        "Tarayıcı sürümü"
       ],
       "Calendars": [
         "Takvimler"
@@ -3642,7 +3649,7 @@
         "Ülke"
       ],
       "Create a share link": [
-        "Bir paylaşım bağlantısı ekleyin"
+        "Bir paylaşım bağlantısı oluşturun"
       ],
       "Create Proton account": [
         "Proton hesabı oluşturun"
@@ -3694,7 +3701,7 @@
         "Geçerlilik sonu"
       ],
       "Export contacts": [
-        "Kişiler dışa aktar"
+        "Kişileri dışa aktar"
       ],
       "Extended address": [
         "Açık adres"
@@ -3805,7 +3812,7 @@
         "Bildirim"
       ],
       "OK": [
-        "Tamam"
+        "İdare eder"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -3952,7 +3959,7 @@
         "Ne oldu?"
       ],
       "Wonderful": [
-        "Harika"
+        "Çok iyi"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Evet, eski dosyalarımı kalıcı olarak \nsilmek istiyorum"
@@ -4021,7 +4028,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Oluşturulan takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
+        "Eklenen takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
@@ -4045,16 +4052,16 @@
         "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ periodFragment } öncesinden başlayarak ${ selectedLabelsCount }/${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment } öncesinden başlayarak ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ periodFragment } öncesinden başlayarak ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ]
     },
     "Message": {
@@ -4482,6 +4489,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts } kişiden ${ contactsExported.length } kişi dışa aktarıldı.",
+        "${ countContacts } kişiden ${ contactsExported.length } kişi dışa aktarıldı."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi.",
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi."
@@ -4549,12 +4560,6 @@
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } kazanın"
-      ],
-      "Invite friends and earn rewards!": [
-        "Arkadaşlarınızı çağırarak ödül kazanın!"
-      ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
       ],
@@ -4585,11 +4590,11 @@
       ],
       "Contact deleted": [
         "Kişi silindi",
-        "Kişi silindi"
+        "Kişiler silindi"
       ],
       "Contact group deleted": [
         "Kişi grubu silindi",
-        "Kişi grubu silindi"
+        "Kişi grupları silindi"
       ],
       "Contact saved": [
         "Kişi kaydedildi"
@@ -4686,16 +4691,16 @@
     },
     "Time period": {
       "account creation date": [
-        "hesap açma tarihi"
+        "hesabın açılış tarihinden itibaren"
       ],
       "the last 12 months": [
-        "son 12 ay"
+        "son 12 aylık dönemdeki"
       ],
       "the last 3 months": [
-        "son 3 ay"
+        "son 3 aylık dönemdeki"
       ],
       "the last month": [
-        "son bir ay"
+        "son bir aylık dönemdeki"
       ]
     },
     "Time unit": {
@@ -4729,7 +4734,7 @@
         "${ numberOfFailedTransfer.total } yükleme tamamlanamadı"
       ],
       "Account suspended": [
-        "Hesap askıya alındı"
+        "Hesap askıya alınmış"
       ],
       "Active": [
         "Etkin"
@@ -4763,7 +4768,7 @@
         "Görünümü değiştir"
       ],
       "Clearing data": [
-        "Veri temizleniyor"
+        "Veriler temizleniyor"
       ],
       "Completed": [
         "Tamamlandı"
@@ -4816,13 +4821,13 @@
         "${ count } kişi grubunu sil"
       ],
       "Delete ${ Name }": [
-        "${ Name } sil"
+        "${ Name } kişisini sil"
       ],
       "Delete permanently": [
         "Kalıcı olarak sil"
       ],
       "Deleting contacts": [
-        "Kişileri silme"
+        "Kişileri sil"
       ],
       "Discard": [
         "Yok say"
@@ -5030,7 +5035,7 @@
         "Bir tema seçin"
       ],
       "Select action to take on contact group": [
-        "Kişi grubunda yapılacak eylemi seçin"
+        "Kişi grubunda yapılacak işlemi seçin"
       ],
       "Select contact group": [
         "Kişi grubunu seç"
@@ -5105,7 +5110,7 @@
         "Toplam boyut"
       ],
       "Trash": [
-        "Çöp kutusu"
+        "Çöpe at"
       ],
       "Two-factor authentication": [
         "İki aşamalı kimlik doğrulama"

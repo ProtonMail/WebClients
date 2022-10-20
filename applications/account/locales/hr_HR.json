@@ -27,7 +27,7 @@
         "Aktivirajte oporavak"
       ],
       "Add address": [
-        "Dodaj adresu"
+        "Dodajte adresu"
       ],
       "Add condition": [
         "Dodaj uvjet"
@@ -140,9 +140,6 @@
       "Continue": [
         "Nastavi"
       ],
-      "Continue import": [
-        "Nastavi uvoz"
-      ],
       "Continue with Google": [
         "Nastavi s Googleom"
       ],
@@ -186,7 +183,7 @@
         "Izbriši"
       ],
       "Delete permanently": [
-        "Trajno izbriši"
+        "Ukloni trajno"
       ],
       "Delete record": [
         "Izbriši zapis"
@@ -332,9 +329,6 @@
       "move emails to": [
         "premjesti e-poštu u"
       ],
-      "Need help?": [
-        "Trebate pomoć?"
-      ],
       "Next": [
         "Sljedeće"
       ],
@@ -375,7 +369,7 @@
         "Prethodni mjesec"
       ],
       "Quit": [
-        "Zatvori"
+        "Prestati"
       ],
       "Quote": [
         "Citat"
@@ -712,9 +706,6 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ako sada napustite, neki se kontakti možda neće uvesti"
-      ],
-      "By leaving now, some events may not be imported": [
-        "Ako sada napustite, neki se događaji možda neće uvesti"
       ]
     },
     "Apps dropdown": {
@@ -766,11 +757,6 @@
       ],
       "Two-year": [
         "2 godine"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Posebna ponuda"
       ]
     },
     "Bridge version load failed": {
@@ -865,9 +851,6 @@
     "Calendar status": {
       "Default": [
         "Zadano"
-      ],
-      "Not synced": [
-        "Nije sinkronizirano"
       ]
     },
     "Calendar view": {
@@ -921,9 +904,6 @@
     "Confirm modal title": {
       "Import is incomplete!": [
         "Uvoz nije dovršen!"
-      ],
-      "Quit import customization?": [
-        "Zatvori prilagođavanje uvoza?"
       ],
       "Quit import?": [
         "Zaustavi uvoz?"
@@ -1119,9 +1099,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
-      ],
-      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -1271,9 +1248,6 @@
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
       ],
-      "Domain not available, try again later": [
-        "Domena nije dostupna, pokušajte ponovo kasnije"
-      ],
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
       ],
@@ -1349,9 +1323,6 @@
       "No active sessions": [
         "Nema aktivnih sesija"
       ],
-      "No valid address found": [
-        "Nije pronađena važeća adresa"
-      ],
       "No WKD key retrieved for user is valid for sending": [
         "Nijedan WKD ključ dohvaćen za korisnika nije valjan za slanje"
       ],
@@ -1397,12 +1368,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
       ],
-      "Primary address key is not decrypted": [
-        "Primarni ključ adrese e-pošte nije dešifriran"
-      ],
-      "Primary address key is not decrypted.": [
-        "Primarni ključ adrese e-pošte nije dešifriran."
-      ],
       "Process aborted": [
         "Proces je prekinut"
       ],
@@ -1421,9 +1386,6 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Neki nazivi vaših oznaka nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
@@ -1435,12 +1397,6 @@
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "Naziv mape je predugačak. Odaberite drugi naziv."
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "Naziv oznake je predugačak. Odaberite drugi naziv."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Minimalni iznos kredita koji se može dodati je ${ _price }"
@@ -1459,9 +1415,6 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sesija je istekla. Prijavite se ponovo."
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Vaš vanjski račun ima previše mapa. Prilagodite uvoz kako biste izbrisali neke mape."
       ],
       "This field is required": [
         "Ovo polje je obavezno"
@@ -1513,14 +1466,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Samo datoteke ICS formata su dopuštene."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
@@ -1528,14 +1475,8 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
       ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Vaša datoteka ${ formattedFilename } nema događaje za uvoz."
-      ],
       "Your file ${ formattedFilename } is empty.": [
         "Vaša datoteka ${ formattedFilename } je prazna."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Vaša datoteka ${ formattedFilename } nije kalendar."
       ]
     },
     "Error importing contact": {
@@ -1570,12 +1511,6 @@
       ]
     },
     "Error importing event": {
-      "Bad format. Component cannot be read.": [
-        "Loš format. Komponenta se ne može pročitati."
-      ],
-      "Calendar": [
-        "Kalendar"
-      ],
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
       ],
@@ -1585,17 +1520,11 @@
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
       ],
-      "Element": [
-        "Element"
-      ],
       "Encryption failed": [
         "Neuspješno šifriranje"
       ],
       "End time out of bounds": [
         "Krajnje vrijeme je van granica"
-      ],
-      "Event": [
-        "Događaj"
       ],
       "Event validation failed": [
         "Neuspjela provjera valjanosti događaja"
@@ -1955,29 +1884,8 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } događaj šifriran i dodan u vaš kalendar",
-        "${ totalImported }/${ totalToImport } događaja šifrirana i dodana u vaš kalendar",
-        "${ totalImported }/${ totalToImport } događaja šifrirano i dodano u vaš kalendar"
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg događaja. Nije moguće uvesti nijedan događaj.",
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših događaja. Nije moguće uvesti nijedan događaj.",
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših događaja. Nije moguće uvesti nijedan događaj."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifriranje i dodavanje kontakata: ${ totalImported }/${ totalToImport }"
-      ],
-      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Šifriranje i dodavanje događaja u vaš kalendar: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Događaj je uspješno uvezen. Uvezeni događaj će se sada pojaviti u vašem kalendaru.",
-        "Događaji su uspješno uvezeni. Uvezeni događaji će se sada pojaviti u vašem kalendaru.",
-        "Događaji su uspješno uvezeni. Uvezeni događaji će se sada pojaviti u vašem kalendaru."
-      ],
-      "Please don't close the tab before the importing process is finished.": [
-        "Ne zatvarajte karticu prije završetka postupka uvoza."
       ]
     },
     "Import calendar warning": {
@@ -1989,7 +1897,7 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
-        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata"
+        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt.",
@@ -2020,8 +1928,8 @@
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata.",
-        "kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata.",
-        "kontakta je uspješno uvezeno. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
+        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata.",
+        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contacts warning": {
@@ -2108,9 +2016,6 @@
       "Account security": [
         "Sigurnost računa"
       ],
-      "app password": [
-        "lozinka aplikacije"
-      ],
       "Export": [
         "Izvoz"
       ],
@@ -2194,16 +2099,6 @@
         "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
         "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapa odabrana",
-        "${ selectedFoldersCount } mape odabrane",
-        "${ selectedFoldersCount } mapa odabrano"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } oznaka odabrana",
-        "${ selectedFoldersCount } oznake odabrane",
-        "${ selectedFoldersCount } oznaka odabrano"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapa odabrana",
         "${ selectedFoldersCountLocalized } mape odabrane",
@@ -2265,16 +2160,6 @@
       ],
       "Align right": [
         "Poravnaj desno"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Sve (${ totalFoldersCount } mapa)",
-        "Sve (${ totalFoldersCount } mape)",
-        "Sve (${ totalFoldersCount } mapa)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Sve (${ totalFoldersCount } oznaka)",
-        "Sve (${ totalFoldersCount } oznake)",
-        "Sve (${ totalFoldersCount } oznaka)"
       ],
       "All your changes will be lost.": [
         "Sve vaše promjene će biti izgubljene."
@@ -2377,12 +2262,6 @@
       ],
       "Continue anyway?": [
         "Svejedno nastavi?"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Stvorite oznaku za uvezene poruke, vremenski raspon za taj uvoz i mape koje želite uvesti."
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Stvorite oznaku za uvezene poruke, vremenski raspon za taj uvoz i oznake koje želite uvesti."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Stvaranje i upravljanje pod-računima te dodjeljivanje im adrese e-pošte vaše prilagođene domene."
@@ -2611,9 +2490,6 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
       ],
-      "Member": [
-        "Član"
-      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
@@ -2709,9 +2585,6 @@
       ],
       "Please provide an email address in case we need to contact you.": [
         "Navedite adresu e-pošte u slučaju da vas moramo kontaktirati."
-      ],
-      "Please select the folders you would like to import:": [
-        "Odaberite mape koje želite uvesti:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Odaberite vrstu poveznice koju želite umetnuti i popunite sva polja."
@@ -3476,9 +3349,6 @@
       "Confirm organization password": [
         "Potvrdite organizacijsku lozinku"
       ],
-      "Confirm password": [
-        "Potvrdi lozinku"
-      ],
       "Contacts": [
         "Kontakti"
       ],
@@ -3599,18 +3469,6 @@
       "If": [
         "Ako"
       ],
-      "Import all messages": [
-        "Uvoz svih poruka"
-      ],
-      "Import interval": [
-        "Interval uvoza"
-      ],
-      "Import to email address": [
-        "Uvoz na adresu e-pošte"
-      ],
-      "Import to:": [
-        "Uvezi u:"
-      ],
       "Inbox": [
         "Pristigla pošta"
       ],
@@ -3635,29 +3493,11 @@
       "Label as": [
         "Označi kao"
       ],
-      "Label messages as": [
-        "Označi poruku kao"
-      ],
-      "Last 12 months only": [
-        "Samo zadnjih 12 mjeseci"
-      ],
-      "Last 3 months only": [
-        "Samo zadnja 3 mjeseca"
-      ],
-      "Last month only": [
-        "Samo posljednji mjesec"
-      ],
       "Mail Server (IMAP)": [
         "Poslužitelj e-pošte (IMAP)"
       ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
-      ],
-      "Manage folders": [
-        "Upravljanje mapama"
-      ],
-      "Manage labels": [
-        "Upravljanje oznakama"
       ],
       "Mark as": [
         "Označi kao"
@@ -3693,7 +3533,7 @@
         "Nova lozinka"
       ],
       "No label found": [
-        "Nije pronađena oznaka"
+        "Nema pronađene oznake"
       ],
       "Notification": [
         "Obavijest"
@@ -3709,6 +3549,9 @@
       ],
       "Operating system version": [
         "Verzija operativnog sustava"
+      ],
+      "Optional": [
+        "Neobavezno"
       ],
       "OR": [
         "ILI"
@@ -3829,9 +3672,6 @@
       ],
       "Timezone": [
         "Vremenska zona"
-      ],
-      "To: ${ emailAddress }": [
-        "Za: ${ emailAddress }"
       ],
       "Total (${ countdown })": [
         "Ukupno (${ countdown })"
@@ -4048,9 +3888,6 @@
       "Pay invoice": [
         "Plati račun"
       ],
-      "Privacy policy": [
-        "Pravila o privatnosti"
-      ],
       "Request an invite": [
         "Zatraži pozivnicu"
       ],
@@ -4059,9 +3896,6 @@
       ],
       "Sign in": [
         "Prijavite se"
-      ],
-      "Terms": [
-        "Uvjeti"
       ],
       "Upgrade account": [
         "Nadogradi račun"
@@ -4638,9 +4472,6 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Confirm password": [
-        "Potvrdi lozinku"
-      ],
       "E.g., ": [
         "Npr. "
       ],
@@ -5153,9 +4984,6 @@
       "Add Sieve filter": [
         "Dodaj Sieve filtar"
       ],
-      "Add to not spam list": [
-        "Add to Not spam list"
-      ],
       "Add user": [
         "Dodaj korisnika"
       ],
@@ -5251,6 +5079,9 @@
       ],
       "Contact encryption keys": [
         "Šifrirani ključevi kontataka"
+      ],
+      "Create calendar": [
+        "Stvori kalendar"
       ],
       "Credentials": [
         "Vjerodajnice"
@@ -5366,9 +5197,6 @@
       "Import contacts": [
         "Uvezi kontakte"
       ],
-      "Import events": [
-        "Uvezi događaje"
-      ],
       "Import key": [
         "Uvezi ključ"
       ],
@@ -5481,7 +5309,7 @@
         "Prijavi problem"
       ],
       "Request new code": [
-        "Zatraži novi kȏd"
+        "Zatraži novi kôd"
       ],
       "Reset organization keys": [
         "Poništi organizacijske ključeve"
@@ -5712,9 +5540,6 @@
       "Discount applied for two-year billing cycle": [
         "Popust se primjenjuje za dvogodišnji ciklus naplate"
       ],
-      "Each imported email will have this label": [
-        "Svaka uvezena poruka će imat ovu oznaku"
-      ],
       "Edit folder names": [
         "Uredi nazive mapa"
       ],
@@ -5744,9 +5569,6 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Potpisi proizvedeni ovim ključem tretiraju se kao nevažeći i ovaj ključ se ne može koristiti za šifriranje"
-      ],
-      "The import will start with the most recent messages.": [
-        "Uvoz će započeti s najnovijim porukama."
       ],
       "This address has been disabled": [
         "Ova adresa e-pošte je onemogućena"
@@ -5875,9 +5697,6 @@
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton će spojiti sve mape s istim imenom. Da biste to izbjegli, promijenite imena prije uvoza."
-      ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton će prenijeti što više podataka, počevši od vaših najnovijih poruka."
       ],
@@ -5892,9 +5711,6 @@
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Morate ${ activateLink } ključeve organizacije prije dodavanja adrese e-pošte ne privatnom članu."
-      ],
-      "You will lose any customization you made so far.": [
-        "Izgubiti će te sve prilagodbe koje ste do sada napravili."
       ],
       "You will not see this import record in the list anymore.": [
         "Ovaj zapis o uvozu više nećete vidjeti na popisu."
@@ -6152,7 +5968,8 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Svakih ${ interval } godina"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Svaku ${ interval } godinu, ${ timesString }",

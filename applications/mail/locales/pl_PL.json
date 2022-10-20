@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);",
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "pl_PL"
   },
   "contexts": {
@@ -1241,6 +1241,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Najlepsza oferta"
+      ],
       "Most popular": [
         "Najpopularniejszy"
       ]
@@ -1255,7 +1258,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2889,6 +2892,12 @@
       ],
       "No labels": [
         "Brak etykiet"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
@@ -7660,11 +7669,23 @@
         "${ elementsCount } wątków zostało oznaczonych jako nieprzeczytane.",
         "${ elementsCount } wątków zostało oznaczonych jako nieprzeczytane."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Wątek został przeniesiony do folderu ${ folderName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątki zostały przeniesione do folderu ${ folderName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }, a nadawca został usunięty z listy spamu."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "Wątek został przeniesiony do folderu ${ folderName }.",
         "${ elementsCount } wątki zostały przeniesione do folderu ${ folderName }.",
         "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }.",
         "${ elementsCount } wątków zostało przeniesionych do folderu ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "Wątek został przeniesiony do Spamu, a nadawca został dodany do listy spamu.",
+        "${ elementsCount } wątki zostały przeniesione do Spamu, a nadawca został dodany do listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do Spamu, a nadawca został dodany do listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do Spamu, a nadawca został dodany do listy spamu."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }.",
@@ -7696,11 +7717,23 @@
         "${ elementsCount } wiadomości zostało oznaczonych jako nieprzeczytane.",
         "${ elementsCount } wiadomości zostało oznaczonych jako nieprzeczytane."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "Wiadomość została przeniesiona do folderu ${ folderName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostały przeniesione do folderu ${ folderName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }, a nadawca został usunięty z listy spamu."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "Wiadomość została przeniesiona do folderu ${ folderName }.",
         "${ elementsCount } wiadomości zostały przeniesione do folderu ${ folderName }.",
         "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }.",
         "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "Wiadomość została przeniesiona do Spamu, a nadawca został dodany do listy spamu.",
+        "${ elementsCount } wiadomości zostały przeniesione do Spamu, a nadawca został dodany do listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do Spamu, a nadawca został dodany do listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do Spamu, a nadawca został dodany do listy spamu."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }.",
@@ -7753,8 +7786,14 @@
       "Conversation marked as unread.": [
         "Wątek został oznaczony jako nieprzeczytany."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Wątek został przeniesiony do folderu ${ folderName }, a nadawca został usunięty z listy spamu."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Wątek został przeniesiony do folderu ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Wątek został przeniesiony do Spamu, a nadawca został dodany do listy spamu."
       ],
       "Conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }."
@@ -7810,8 +7849,14 @@
       "Message marked as unread.": [
         "Wiadomość została oznaczona jako nieprzeczytana."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Wiadomość została przeniesiona do folderu ${ folderName }, a nadawca został usunięty z listy spamu."
+      ],
       "Message moved to ${ folderName }.": [
         "Wiadomość została przeniesiona do folderu ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Wiadomość została przeniesiona do Spamu, a nadawca został dodany do listy spamu."
       ],
       "Message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }."
@@ -8940,7 +8985,9 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Co ${ interval } lat",
+        "Co ${ interval } roku"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Co rok, ${ timesString }",

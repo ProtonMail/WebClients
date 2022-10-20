@@ -14,10 +14,10 @@
     },
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduzione"
+        "Introduzione a ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } negozio"
+        "Negozio di ${ BRAND_NAME }"
       ],
       "Activate recovery": [
         "Attiva il ripristino"
@@ -26,7 +26,7 @@
         "Aggiungi"
       ],
       "Add address": [
-        "Aggiungi indirizzi"
+        "Aggiungi indirizzo"
       ],
       "Add contact": [
         "Aggiungi contatto"
@@ -50,7 +50,7 @@
         "Aggiungi numero di telefono"
       ],
       "Add to group": [
-        "Aggiungi al gruppo"
+        "Aggiungi ad un gruppo"
       ],
       "Apply": [
         "Applica"
@@ -172,7 +172,7 @@
         "Non hai ricevuto il codice?"
       ],
       "Discard": [
-        "Scarta"
+        "Elimina"
       ],
       "Done": [
         "Fatto"
@@ -196,7 +196,7 @@
         "Modifica dettagli di accesso"
       ],
       "Email settings": [
-        "Impostazioni dell'email"
+        "Impostazioni email"
       ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
@@ -229,7 +229,7 @@
         "Vai alle impostazioni"
       ],
       "Got it": [
-        "Ho capito"
+        "Capito"
       ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
@@ -262,7 +262,7 @@
         "Aderisci al calendario"
       ],
       "Load image": [
-        "Carica immagine"
+        "Carica Immagine"
       ],
       "Log in": [
         "Accedi"
@@ -361,7 +361,7 @@
         "Recupera dati"
       ],
       "Refer a friend": [
-        "Segnala un amico"
+        "Invita un amico"
       ],
       "refresh the page": [
         "aggiorna la pagina"
@@ -487,7 +487,7 @@
         "Aggiorna frase di recupero"
       ],
       "Upgrade": [
-        "Esecuzione dell'upgrade"
+        "Effettua l'upgrade"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -690,13 +690,16 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Miglior offerta"
+      ],
       "Most popular": [
         "Il più richiesto"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Approfitta dell'offerta"
+        "Ottieni l'offerta"
       ],
       "Get the deal now": [
         "Ottieni la promo ora"
@@ -704,7 +707,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -736,22 +739,22 @@
         "Problema con il Bridge"
       ],
       "Calendar problem": [
-        "Problema con Calendario"
+        "Problema con il calendario"
       ],
       "Connection problem": [
         "Problema di connessione"
       ],
       "Contacts problem": [
-        "Problema con Contatti"
+        "Problemi ai Contatti"
       ],
       "Custom domain problem": [
         "Problema del dominio personalizzato"
       ],
       "Drive problem": [
-        "Problema con Drive"
+        "Problema di memoria"
       ],
       "Feature request": [
-        "Richiesta di una funzionalità"
+        "Richiedi Funzionalità"
       ],
       "Import / export problem": [
         "Problema di importazione/esportazione"
@@ -760,7 +763,7 @@
         "Problema d'installazione"
       ],
       "Mail problem": [
-        "Problema con Mail"
+        "Problema con la Mail"
       ],
       "Manual setup problem": [
         "Problema di configurazione manuale"
@@ -775,10 +778,10 @@
         "Problema di accesso"
       ],
       "Sign up problem": [
-        "Problema di iscrizione"
+        "Problema di registrazione"
       ],
       "Signup problem": [
-        "Problema di iscrizione"
+        "Problema di registrazione"
       ],
       "Slow speed problem": [
         "Problema di bassa velocità"
@@ -793,7 +796,7 @@
         "Problema con l'aggiornamento"
       ],
       "VPN problem": [
-        "Problema con la VPN"
+        "Problema con il VPN"
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
@@ -1067,7 +1070,7 @@
         "Email"
       ],
       "Gender": [
-        "Genere"
+        "Sesso"
       ],
       "Geo": [
         "Geo"
@@ -1959,7 +1962,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Fattura in ritardo"
+        "Fattura scaduta"
       ]
     },
     "Description": {
@@ -1967,7 +1970,7 @@
         "Decodifica dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Eliminazione contatti... Potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa modalità."
+        "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
@@ -1977,6 +1980,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilizza il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
@@ -2286,7 +2293,7 @@
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno dei contatti non ha un indirizzo email: ${ noEmailsContactNamesList }",
-        "Alcuni contatti non hanno indirizzi email: ${ noEmailsContactNamesList } "
+        "Alcuni contatti non hanno indirizzo email: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
@@ -2522,7 +2529,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Criptaggio fallito"
+        "Crittografia fallita"
       ],
       "End time out of bounds": [
         "Ora di fine fuori dai limiti"
@@ -2710,7 +2717,7 @@
         "La tua risposta è stata inviata, ma l'evento non può essere aggiunto al tuo calendario"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "La tua risposta è stata inviata ma l'evento non può essere aggiornato nel tuo calendario"
+        "La tua risposta è stata inviata, ma non è stato possibile aggiornare l'evento nel tuo calendario"
       ]
     },
     "Event popover close button": {
@@ -2823,7 +2830,7 @@
         "Contatti, gruppi e impostazioni"
       ],
       "Get help": [
-        "Richiedi aiuto"
+        "Ottieni supporto"
       ],
       "Name": [
         "Nome"
@@ -3487,7 +3494,7 @@
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Inherited from parent folder": [
-        "Eredita dalla cartella principale"
+        "Ereditato dalla cartella superiore"
       ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
@@ -3544,7 +3551,7 @@
         "Mensile ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Dai un nome alla tua cartella e seleziona la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
+        "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
         "Nuovo"
@@ -3586,7 +3593,7 @@
         "Altre opzioni"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline è compatibile solo con il formato Plain Text. Si noti che ${ MAIL_APP_NAME } firma sempre i messaggi criptati."
+        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME invia automaticamente il messaggio utilizzando la modalità attuale di composizione. Si prega di notare che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
@@ -3620,7 +3627,7 @@
         "Le modifiche precedenti di questa serie andranno perse."
       ],
       "Primary": [
-        "Primario"
+        "Principale"
       ],
       "Priority support": [
         "Assistenza prioritaria"
@@ -3924,7 +3931,7 @@
         "Obsoleta"
       ],
       "Primary": [
-        "Primario"
+        "Primaria"
       ],
       "Revoked": [
         "Revocato"
@@ -3947,7 +3954,7 @@
         "Aggiungi URL immagine"
       ],
       "Add to group": [
-        "Aggiungi al gruppo"
+        "Aggiungi ad un gruppo"
       ],
       "All day": [
         "Tutto il giorno"
@@ -4079,7 +4086,7 @@
         "Buona"
       ],
       "Hide password": [
-        "Nascondi password"
+        "Nascondi la password"
       ],
       "How would you describe your experience with the new Proton?": [
         "Come descriveresti la tua esperienza con la nuova versione di Proton?"
@@ -4203,7 +4210,7 @@
         "Ripeti il"
       ],
       "Reveal password": [
-        "Mostra password"
+        "Mostra la password"
       ],
       "Sign emails": [
         "Firma email"
@@ -4358,10 +4365,10 @@
         "I:"
       ],
       "Re:": [
-        "R:"
+        "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "La tua prova gratuita è terminata. L'accesso al tuo account sarà presto disabilitato. ${ action }"
+        "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4783,7 +4790,7 @@
         "Prossimo"
       ],
       "Start using ${ appName }": [
-        "Inizia ad usare ${ appName }"
+        "Inizia a usare ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -4974,13 +4981,17 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } contatto su ${ countContacts } esportato con successo.",
+        "${ contactsExported.length } contatti su ${ countContacts } esportati con successo."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } su ${ totalBeDeleted } contatto cancellato con successo.",
-        "${ model.deleted.length } su ${ totalBeDeleted } contatti cancellati con successo."
+        "${ model.deleted.length } di ${ totalBeDeleted } contatto eliminato correttamente.",
+        "${ model.deleted.length } di ${ totalBeDeleted } contatti eliminati correttamente."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } su ${ totalBeMerged } contatto unito con successo.",
-        "${ model.submitted.length } contatti su ${ totalBeMerged } uniti con successo."
+        "${ model.submitted.length } di ${ totalBeMerged } contatto unito correttamente.",
+        "${ model.submitted.length } di ${ totalBeMerged } contatti uniti correttamente."
       ],
       "No contacts exported.": [
         "Nessun contatto esportato."
@@ -4997,7 +5008,7 @@
         "Indirizzo"
       ],
       "Email": [
-        "Email"
+        "Posta elettronica"
       ],
       "Fax": [
         "Fax"
@@ -5094,7 +5105,7 @@
         "Ricevi fino a 18 mesi di ${ planName } gratuitamente"
       ],
       "Invite friends and earn rewards!": [
-        "Invita gli amici e guadagna ricompense!"
+        "Invita gli amici e ottieni ricompense!"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ora gli inviti appaiono sul tuo calendario come eventi in attesa. Apri un evento per rispondere. ${ goToSettingsLink }"
@@ -5311,7 +5322,7 @@
         "Creata"
       ],
       "Expires": [
-        "Scadenza"
+        "Scade"
       ],
       "Fingerprint": [
         "Impronta digitale"
@@ -5500,7 +5511,7 @@
         "Elimina evento ricorrente"
       ],
       "Deleting contacts": [
-        "Eliminazione contatti"
+        "Eliminazione dei contatti"
       ],
       "Drop to upload": [
         "Trascina per caricare"
@@ -5512,7 +5523,7 @@
         "Modifica contatto"
       ],
       "Edit contact group": [
-        "Modifica gruppo di contatto"
+        "Modifica gruppo di contatti"
       ],
       "Edit email settings": [
         "Modifica le impostazioni dell'email"
@@ -5579,13 +5590,13 @@
         "Unisci contatti"
       ],
       "Merging contacts": [
-        "Unione dei contatti"
+        "Unendo i contatti"
       ],
       "Minicalendar": [
         "Mini calendario"
       ],
       "Open actions dropdown": [
-        "Apri menu delle azioni a cascata"
+        "Apri menu a discesa delle azioni"
       ],
       "Open help menu": [
         "Apri menu di aiuto"
@@ -5750,7 +5761,7 @@
         "Link del tuo calendario"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "La tua prova gratuita termina presto, il ${ formattedEndDate }"
+        "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5944,88 +5955,88 @@
         "Ogni ${ interval } settimane tutti i giorni, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Il Venerdì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Venerdì"
+        "Il venerdì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di venerdì"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Venerdì, ${ timesString }",
-        "Ogni ${ interval } settimane di Venerdì, ${ timesString }"
+        "Ogni ${ interval } settimana di venerdì, ${ timesString }",
+        "Ogni ${ interval } settimane di venerdì, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Venerdì, ${ untilString }",
-        "Ogni ${ interval } settimane di Venerdì, ${ untilString }"
+        "Ogni ${ interval } settimana di venerdì, ${ untilString }",
+        "Ogni ${ interval } settimane di venerdì, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Il lunedì di ogni ${ interval } settimana",
         "Ogni ${ interval } settimane di lunedì"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Lunedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Lunedì, ${ timesString }"
+        "Ogni ${ interval } settimana di lunedì, ${ timesString }",
+        "Ogni ${ interval } settimane di lunedì, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Lunedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Lunedì, ${ untilString }"
+        "Ogni ${ interval } settimana di lunedì, ${ untilString }",
+        "Ogni ${ interval } settimane di lunedì, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Il Sabato di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Sabato"
+        "Il sabato di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di sabato"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Sabato, ${ timesString }",
-        "Ogni ${ interval } settimane di Sabato, ${ timesString }"
+        "Ogni ${ interval } settimana di sabato, ${ timesString }",
+        "Ogni ${ interval } settimane di sabato, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Sabato, ${ untilString }",
-        "Ogni ${ interval } settimane di Sabato, ${ untilString }"
+        "Ogni ${ interval } settimana di sabato, ${ untilString }",
+        "Ogni ${ interval } settimane di sabato, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "La Domenica di ogni ${ interval } settimana",
+        "La domenica di ogni ${ interval } settimana",
         "Ogni ${ interval } settimane di domenica"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Domenica, ${ timesString }",
-        "Ogni ${ interval } settimane di Domenica, ${ timesString }"
+        "Ogni ${ interval } settimana di domenica, ${ timesString }",
+        "Ogni ${ interval } settimane di domenica, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Domenica, ${ untilString }",
-        "Ogni ${ interval } settimane di Domenica, ${ untilString }"
+        "Ogni ${ interval } settimana di domenica, ${ untilString }",
+        "Ogni ${ interval } settimane di domenica, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Il Giovedì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Giovedì"
+        "Il giovedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di giovedì"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Giovedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Giovedì, ${ timesString }"
+        "Ogni ${ interval } settimana di giovedì, ${ timesString }",
+        "Ogni ${ interval } settimane di giovedì, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Giovedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Giovedì, ${ untilString }"
+        "Ogni ${ interval } settimana di giovedì, ${ untilString }",
+        "Ogni ${ interval } settimane di giovedì, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Il Martedì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Martedì"
+        "Il martedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di martedì"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Martedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Martedì, ${ timesString }"
+        "Ogni ${ interval } settimana di martedì, ${ timesString }",
+        "Ogni ${ interval } settimane di martedì, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Martedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Martedì, ${ untilString }"
+        "Ogni ${ interval } settimana di martedì, ${ untilString }",
+        "Ogni ${ interval } settimane di martedì, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Il Mercoledì di ogni ${ interval } settimana",
-        "Ogni ${ interval } settimane di Mercoledì"
+        "Il mercoledì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di mercoledì"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Mercoledì, ${ timesString }",
-        "Ogni ${ interval } settimane di Mercoledì, ${ timesString }"
+        "Ogni ${ interval } settimana di mercoledì, ${ timesString }",
+        "Ogni ${ interval } settimane di mercoledì, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Mercoledì, ${ untilString }",
-        "Ogni ${ interval } settimane di Mercoledì, ${ untilString }"
+        "Ogni ${ interval } settimana di mercoledì, ${ untilString }",
+        "Ogni ${ interval } settimane di mercoledì, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Settimanale su ${ multipleDaysString }"
@@ -6135,7 +6146,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Ogni ${ interval } anno, ${ timesString }",
