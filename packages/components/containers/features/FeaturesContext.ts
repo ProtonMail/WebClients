@@ -98,6 +98,7 @@ export enum FeatureCode {
     ConversationHeaderInScroll = 'ConversationHeaderInScroll',
     MigrationModalLastShown = 'MigrationModalLastShown',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
+    ProtonBadge = 'ProtonBadge',
 }
 
 export interface FeaturesContextValue {
