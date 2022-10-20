@@ -11,7 +11,6 @@ import {
     minimalCache,
     onCompose,
     render,
-    setFeatureFlags,
     tick,
 } from '../helpers/test/helper';
 import { Breakpoints } from '../models/utils';
@@ -37,7 +36,6 @@ describe('PageContainer', () => {
 
         minimalCache();
         addToCache('MailSettings', { Shortcuts: 1 });
-        setFeatureFlags('SeenV5WelcomeModal', true);
 
         const renderResult = await render(<Component {...props} />, false);
         const { container } = renderResult;
