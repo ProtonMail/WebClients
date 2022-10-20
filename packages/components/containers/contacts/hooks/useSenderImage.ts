@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { FeatureCode, useTheme } from '@proton/components';
+import { FeatureCode, useIsDarkTheme } from '@proton/components';
 import { useApi, useFeature, useMailSettings } from '@proton/components/hooks';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import { getSenderLogo } from '../helpers/senderImage';
 
@@ -25,12 +24,11 @@ const getImageSize = () => {
  */
 const useSenderImage = (emailAddress?: string, bimiSelector?: string) => {
     const [mailSettings] = useMailSettings();
-    const [theme] = useTheme();
+    const isDarkTheme = useIsDarkTheme();
     const { feature } = useFeature(FeatureCode.ShowSenderImages);
     const [url, setUrl] = useState('');
     const imageSizeRef = useRef(getImageSize());
     const api = useApi();
-    const isDarkTheme = DARK_THEMES.includes(theme);
     const mode = isDarkTheme ? 'dark' : 'light';
 
     useEffect(() => {
