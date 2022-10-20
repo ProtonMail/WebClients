@@ -98,7 +98,7 @@ const Item = ({
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
-    const displaySenderImage = !displayRecipients && !!element.DisplaySenderImage;
+    const displaySenderImage = !!element.DisplaySenderImage;
     const [firstSenderAddress] = sendersAddresses;
     const [firstRecipientAddress] = recipientsAddresses;
 
