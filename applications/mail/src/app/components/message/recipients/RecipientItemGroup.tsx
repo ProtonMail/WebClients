@@ -30,9 +30,17 @@ interface Props {
     globalIcon?: StatusIcon;
     showDropdown?: boolean;
     isOutside?: boolean;
+    displaySenderImage: boolean;
 }
 
-const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, isOutside }: Props) => {
+const RecipientItemGroup = ({
+    displaySenderImage,
+    group,
+    mapStatusIcons,
+    globalIcon,
+    showDropdown,
+    isOutside,
+}: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -103,6 +111,7 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, i
                         {group.recipients.map((recipient) => {
                             return (
                                 <RecipientDropdownItem
+                                    displaySenderImage={displaySenderImage}
                                     recipient={recipient}
                                     label={getRecipientLabel(recipient)}
                                     closeDropdown={close}
