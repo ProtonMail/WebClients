@@ -60,6 +60,7 @@ const RecipientItem = ({
     if (recipientOrGroup.group) {
         return (
             <RecipientItemGroup
+                displaySenderImage={!!message?.data?.DisplaySenderImage}
                 group={recipientOrGroup.group}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}

@@ -94,7 +94,12 @@ const RecipientItemSingle = ({
                     onClose={close}
                 >
                     <DropdownMenu>
-                        <RecipientDropdownItem recipient={recipient} label={label} closeDropdown={close} />
+                        <RecipientDropdownItem
+                            displaySenderImage={!!message?.data?.DisplaySenderImage}
+                            recipient={recipient}
+                            label={label}
+                            closeDropdown={close}
+                        />
                         {customDropdownActions}
                     </DropdownMenu>
                 </Dropdown>
