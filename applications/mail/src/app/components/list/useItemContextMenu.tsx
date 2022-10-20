@@ -3,6 +3,8 @@ import { RefObject, useCallback, useState } from 'react';
 import { FeatureCode, useFeature } from '@proton/components';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import useBlockSender from '../../hooks/useBlockSender';
 import { Element } from '../../models/element';
 import ItemContextMenu from './ItemContextMenu';
 
@@ -27,12 +29,19 @@ export const useItemContextMenu = ({
     onMove,
     onDelete,
 }: Props) => {
+    const [selectedElement, setSelectedElement] = useState<Element>();
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { feature: mailContextMenuFeature } = useFeature<boolean>(FeatureCode.MailContextMenu);
 
     const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
     const openContextMenu = useCallback(() => setIsOpen(true), [setIsOpen]);
+
+    const getElementsFromIDs = useGetElementsFromIDs();
+    const { canShowBlockSender, handleClickBlockSender, blockSenderModal } = useBlockSender({
+        elements: [...(getElementsFromIDs([selectedElement?.ID || '']) || ({} as Element))],
+        onCloseDropdown: closeContextMenu,
+    });
 
     const handleContextMenu = useCallback(
         (e: React.MouseEvent<HTMLDivElement>, element: Element) => {
@@ -44,6 +53,7 @@ export const useItemContextMenu = ({
             }
 
             setContextMenuPosition({ top: e.clientY, left: e.clientX });
+            setSelectedElement(element);
             openContextMenu();
         },
         [checkedIDs]
@@ -62,11 +72,14 @@ export const useItemContextMenu = ({
             onMarkAs={onMarkAs}
             onMove={onMove}
             onDelete={onDelete}
+            canShowBlockSender={canShowBlockSender}
+            onBlockSender={handleClickBlockSender}
         />
     ) : null;
 
     return {
         contextMenu,
         onContextMenu: handleContextMenu,
+        blockSenderModal,
     };
 };
