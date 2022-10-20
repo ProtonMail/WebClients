@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "zh_CN"
   },
   "contexts": {
@@ -97,7 +97,7 @@
         "右对齐"
       ],
       "Alignment": [
-        "对齐"
+        "对齐方式"
       ],
       "Apply": [
         "应用"
@@ -160,7 +160,7 @@
         "颜色"
       ],
       "Confirm": [
-        "确认"
+        "确定"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "确认打开链接 ${ linkToShow }"
@@ -223,7 +223,7 @@
         "当前等级"
       ],
       "Customize": [
-        "自定义"
+        "定制"
       ],
       "Customize import": [
         "自定义导入"
@@ -256,7 +256,7 @@
         "删除您的账户"
       ],
       "Details": [
-        "详情"
+        "详细信息"
       ],
       "Didn't receive a code?": [
         "没收到验证码？"
@@ -313,13 +313,13 @@
         "更改计费方式"
       ],
       "Edit email address": [
-        "更换邮箱地址"
+        "编辑电子邮件地址"
       ],
       "Edit label": [
         "编辑标签"
       ],
       "Edit phone number": [
-        "更换电话号码"
+        "编辑手机号码"
       ],
       "Edit sieve": [
         "更改 Sieve 代码"
@@ -388,7 +388,7 @@
         "知道了"
       ],
       "Hide": [
-        "隱藏"
+        "隐藏"
       ],
       "Hide folders": [
         "隐藏文件夹"
@@ -475,7 +475,7 @@
         "需要帮助？"
       ],
       "Next": [
-        "下一步"
+        "继续"
       ],
       "Next month": [
         "下个月"
@@ -484,7 +484,7 @@
         "否"
       ],
       "OK": [
-        "好"
+        "确定"
       ],
       "Ok": [
         "确定"
@@ -580,10 +580,10 @@
         "反馈问题"
       ],
       "Request a feature": [
-        "请求功能"
+        "功能建议"
       ],
       "Request new code": [
-        "请求新验证码"
+        "重发验证码"
       ],
       "Requires a verified recovery email address": [
         "需要一个经过验证的恢复邮箱地址"
@@ -721,7 +721,7 @@
         "登录"
       ],
       "Sign out": [
-        "退出账户"
+        "退出"
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "从 ${ nameToDisplay } ${ maybeEmailInBrackets } 中退出登录"
@@ -781,7 +781,7 @@
         "取消订阅"
       ],
       "Update": [
-        "应用"
+        "更改"
       ],
       "Update recovery file": [
         "更新恢复文件"
@@ -892,27 +892,27 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
+      "+ ${ _users } users": [
         "+${ _users } 位用户"
       ],
-      "+ ${ domains } custom domain": [
+      "+ ${ domains } custom domains": [
         "+ ${ domains } 个自有域名"
       ]
     },
     "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
+      "${ addressAddon.MaxAddresses } addresses": [
         "${ addressAddon.MaxAddresses } 个地址"
       ],
-      "${ domainAddon.MaxDomains } domain": [
+      "${ domainAddon.MaxDomains } domains": [
         "${ domainAddon.MaxDomains } 个域名"
       ],
-      "${ memberAddon.MaxMembers } user": [
+      "${ memberAddon.MaxMembers } users": [
         "${ memberAddon.MaxMembers } 位用户"
       ],
-      "${ vpnAddon.MaxVPN } connection": [
+      "${ vpnAddon.MaxVPN } connections": [
         "${ vpnAddon.MaxVPN } 台设备可同时接入 VPN"
       ],
-      "${ vpnBonus } connection": [
+      "${ vpnBonus } connections": [
         "${ vpnBonus } 台设备可同时接入 VPN"
       ]
     },
@@ -968,7 +968,7 @@
     },
     "Apps dropdown": {
       "Proton applications": [
-        "Proton 应用"
+        "Proton 产品"
       ]
     },
     "Attached ics file error": {
@@ -976,7 +976,7 @@
         "ICS 文件为空"
       ],
       "Invalid event": [
-        "无效日程"
+        "无效的日程"
       ],
       "Invalid ICS file": [
         "无效的 ICS 文件"
@@ -1059,11 +1059,6 @@
         "两年付费"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "特价"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "日历"
@@ -1109,7 +1104,7 @@
         "邮件问题"
       ],
       "Manual setup problem": [
-        "手动配置问题"
+        "手动设置问题"
       ],
       "Other": [
         "其他"
@@ -1133,7 +1128,7 @@
         "速度问题"
       ],
       "Streaming problem": [
-        "串流问题"
+        "视频播放问题"
       ],
       "Update problem": [
         "更新问题"
@@ -1142,7 +1137,7 @@
         "VPN 问题"
       ],
       "Website access problem": [
-        "网站访问问题"
+        "网站连接问题"
       ]
     },
     "Button": {
@@ -1203,7 +1198,7 @@
       "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
         "您的共享日历数量已达上限，必须移除部分现有日历才能接受其他日历邀请。"
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
         "您已达到订阅日历的最大值 ${ MAX_SUBSCRIBED_CALENDARS } 个。"
       ]
     },
@@ -1364,10 +1359,10 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
+      "${ users } users": [
         "${ users } 位用户"
       ],
-      "Total for ${ n } month": [
+      "Total for ${ n } months": [
         "${ n } 月合计"
       ]
     },
@@ -1607,7 +1602,7 @@
         "地址"
       ],
       "Anniversary": [
-        "纪念日"
+        "周年纪念日"
       ],
       "Birthday": [
         "生日"
@@ -1619,13 +1614,13 @@
         "性别"
       ],
       "Geo": [
-        "坐标"
+        "地理位置"
       ],
       "Language": [
         "语言"
       ],
       "Logo": [
-        "标志"
+        "图标"
       ],
       "Member": [
         "成员"
@@ -1685,16 +1680,16 @@
       ]
     },
     "Countdown unit": {
-      "${ days } day": [
+      "${ days } days": [
         "${ days } 天"
       ],
-      "${ monthsWithYears } month": [
+      "${ monthsWithYears } months": [
         "${ monthsWithYears } 月"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "Abkhazia"
+        "阿布哈兹"
       ],
       "Afghanistan": [
         "阿富汗"
@@ -1733,7 +1728,7 @@
         "阿鲁巴"
       ],
       "Ascension Island": [
-        "Ascension Island"
+        "阿森松岛"
       ],
       "Australia": [
         "澳大利亚"
@@ -2000,7 +1995,7 @@
         "洪都拉斯"
       ],
       "Hong Kong": [
-        "中国香港"
+        "中国香港特别行政区"
       ],
       "Hungary": [
         "匈牙利"
@@ -2093,7 +2088,7 @@
         "卢森堡"
       ],
       "Macao": [
-        "中国澳门"
+        "澳门"
       ],
       "Madagascar": [
         "马达加斯加"
@@ -2498,7 +2493,7 @@
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
+      "${ count } times": [
         "${ count } 次"
       ],
       "Daily": [
@@ -2510,13 +2505,13 @@
       "Daily, ${ untilString }": [
         "每天, 直到${ untilString }"
       ],
-      "Every ${ interval } day": [
+      "Every ${ interval } days": [
         "每 ${ interval } 天"
       ],
-      "Every ${ interval } day, ${ timesString }": [
+      "Every ${ interval } days, ${ timesString }": [
         "每 ${ interval } 天，${ timesString }"
       ],
-      "Every ${ interval } day, ${ untilString }": [
+      "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
       ],
       "until ${ dateString }": [
@@ -2586,7 +2581,7 @@
         "您可以继续邀请朋友，但不能再赚取更多奖励。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "您可以导入 iCal 格式（.ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2682,7 +2677,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        "${ eventTitle } 已取消。"
+        "${ eventTitle } 已被取消。"
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已更新。\n${ eventDetailsText }"
@@ -2782,7 +2777,7 @@
         "您的用户名为 ${ Local }。要创建 ${ Local }@${ Domain }，请前往设置 > 邮件>写邮件 > 短域名（pm.me）"
       ],
       "A group with this name already exists": [
-        "此群组名已被使用"
+        "已存在同名群组"
       ],
       "Account does not exist": [
         "账户不存在"
@@ -2803,10 +2798,10 @@
         "金额太小。"
       ],
       "Authentication canceled.": [
-        "验证被取消。"
+        "验证已取消。"
       ],
       "Authentication error.": [
-        "验证错误。"
+        "验证出错。"
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "自动回复为付费功能，请升级到付费账户以使用此功能。"
@@ -2832,26 +2827,26 @@
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
+      "Deselect at least ${ calendarToFixCount } calendars": [
         "取消选择至少 ${ calendarToFixCount } 个日历"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
+      "Deselect at least ${ calendarToFixCount } calendars or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
       "Domain not available, try again later": [
-        "网站域名不可用，请稍后再试"
+        "域名不可用，请稍后再试"
       ],
       "Email address disabled": [
         "邮件地址已禁用"
       ],
       "Email is not valid": [
-        "电子邮箱地址无效"
+        "无效邮箱"
       ],
       "Empty condition": [
         "条件为空"
       ],
       "Enter 6 digits": [
-        "输入 6 位验证码"
+        "请输入 6 位验证码"
       ],
       "Error": [
         "错误"
@@ -2875,7 +2870,7 @@
         "文件夹名称不能为空。"
       ],
       "Incorrect login credentials. Please try again.": [
-        "账号或密码有误，请重试。"
+        "登录凭据不正确，请重试。"
       ],
       "Incorrect mailbox password. Please try again.": [
         "邮箱密码错误，请重试。"
@@ -2905,7 +2900,7 @@
         "无效的邀请链接"
       ],
       "Invalid name": [
-        "无效的名称"
+        "名称无效"
       ],
       "Invalid postal code": [
         "邮政编码不正确"
@@ -2922,7 +2917,7 @@
       "Label name cannot be empty.": [
         "标签名称不能为空。"
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
+      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Missing key packet": [
@@ -2977,7 +2972,7 @@
         "无法识别机构，请重试。"
       ],
       "Passwords do not match": [
-        "密码不一致"
+        "密码不匹配"
       ],
       "Payment process cancelled": [
         "支付已取消"
@@ -3003,7 +2998,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "添加用户前请先开启多用户功能。"
       ],
-      "Please fix the highlighted conflict to proceed.": [
+      "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
       "Please generate keys before you try to change your password": [
@@ -3028,7 +3023,7 @@
         "请升级到包含多个用户的商务版套餐以管理多用户。"
       ],
       "Primary address key is not decrypted": [
-        "主密钥尚未解密。"
+        "主密钥尚未解密"
       ],
       "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
@@ -3039,7 +3034,7 @@
       "Process aborted": [
         "操作已中止"
       ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
+      "Removed duplicate recipients: ${ joinedRecipients }": [
         "已删除重复收件人：${ joinedRecipients }"
       ],
       "Request timed out": [
@@ -3091,7 +3086,7 @@
         "文件夹名称无效，请更改。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        "文件夹名称过长，请更改。"
+        "文件夹名称过长，请重新填写。"
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
         "无法验证您恢复文件中的密钥，请联系支持人员。"
@@ -3103,7 +3098,7 @@
         "标签名称无效，请更改。"
       ],
       "The label name is too long. Please choose a different name.": [
-        "标签名称过长，请选择一个不同的名字"
+        "标签名称过长，请重新填写。"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "充值金额不能低于 ${ _price }"
@@ -3127,13 +3122,13 @@
         "登录状态已过期，请重新登录。"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "待导入账户的文件夹过多，请自定导入内容并删除部分文件夹。"
+        "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
       "This field is required": [
         "此项必须填写"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "此字段至少需要 ${ minimumLength } 个字符。"
+        "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "文件夹名称不可用，请重新填写。"
@@ -3199,13 +3194,13 @@
         "生成组织密钥前须将所有用户设为私密"
       ],
       "You must set a name": [
-        "必须填写名称"
+        "请输入名称（必填）"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的账户或机构有逾期未付的账单，请前往未付。"
       ],
       "Your import will not be processed.": [
-        "您的导入将不会被处理。"
+        "此次导入将不会进行。"
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
@@ -3216,7 +3211,7 @@
         "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "文件 ${ formattedFilename } 上传失败，文件大小不能超过 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+        "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "文件 ${ formattedFilename } 上传失败，我们只接受 ICS 文件格式。"
@@ -3227,17 +3222,17 @@
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "文件 ${ formattedFilename } 中没有可导入的日程。"
+        "文件 ${ formattedFilename } 中没有可导入的事件。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "文件 ${ formattedFilename } 是空的。"
+        "文件 ${ formattedFilename } 为空。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
         "文件 ${ formattedFilename } 不是日历文件。"
@@ -3303,7 +3298,7 @@
         "结束时间超出限制"
       ],
       "Event": [
-        "日程"
+        "事件"
       ],
       "Event validation failed": [
         "事件验证失败"
@@ -3312,7 +3307,7 @@
         "不支持浮动时间"
       ],
       "Free-busy time information": [
-        "忙碌/空闲时间信息"
+        "忙碌空闲时间信息"
       ],
       "Invalid event": [
         "无效的日程"
@@ -3321,7 +3316,7 @@
         "记录条目"
       ],
       "Malformed all-day event": [
-        "全天日程格式不正确"
+        "全天事件格式不正确"
       ],
       "Malformed end time": [
         "结束时间格式不正确"
@@ -3406,7 +3401,7 @@
         "出错了，请刷新页面或稍后重试。"
       ],
       "There was a problem connecting to Proton.": [
-        "连接 Proton 失败。"
+        "连接 Proton 服务器失败。"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "子会话过多，请清除 cookie 并重新登录。"
@@ -3442,12 +3437,12 @@
         "证书 ${ name } 不存在或已被吊销"
       ],
       "First name and last name cannot be unchecked at the same time": [
-        "姓氏和名字至少应勾选一个"
+        "姓和名字不能同时不选"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "未选择图像"
+        "没有选择图像"
       ]
     },
     "Error when exporting event from calendar": {
@@ -3478,7 +3473,7 @@
         "该事件无法在您的日历中更新。没有已发送的结果"
       ],
       "Unexpected error": [
-        "发生意外错误"
+        "意外错误"
       ],
       "Unsupported invitation": [
         "不支持的邀请"
@@ -3496,7 +3491,7 @@
         "我们无法更新您日历中的事件"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "您的答案已发送，但事件无法添加到您的日历"
+        "您的回复已发送，但活动无法添加到您的日历"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "您的回复已发送，但事件无法在您的日历中更新"
@@ -3508,7 +3503,7 @@
       ]
     },
     "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
+      "${ totalProcessed }/${ totalToProcess } events exported": [
         "${ totalProcessed }/${ totalToProcess } 事件已导出"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
@@ -3555,13 +3550,13 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
+      "${ MaxVPN } VPN connections": [
         "${ MaxVPN } 个 VPN 连接"
       ],
       "Access to all countries": [
         "解说全部线路"
       ],
-      "Connection for up to ${ plusVpnConnections } device": [
+      "Connection for up to ${ plusVpnConnections } devices": [
         "最多可连接 ${ plusVpnConnections } 台设备"
       ],
       "Fastest VPN servers": [
@@ -3575,11 +3570,6 @@
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
-      ]
-    },
-    "fido2: Action": {
-      "Delete key": [
-        "删除密钥"
       ]
     },
     "fido2: Error": {
@@ -3601,7 +3591,7 @@
       ]
     },
     "file size format": {
-      "byte": [
+      "bytes": [
         "B"
       ],
       "GB": [
@@ -3615,16 +3605,16 @@
       ]
     },
     "file size format, long": {
-      "Byte": [
+      "Bytes": [
         "字节"
       ],
-      "Gigabyte": [
+      "Gigabytes": [
         "GB"
       ],
-      "Kilobyte": [
+      "Kilobytes": [
         "KB"
       ],
-      "Megabyte": [
+      "Megabytes": [
         "MB"
       ]
     },
@@ -3653,10 +3643,10 @@
     },
     "Filter modal operators": {
       "All conditions must be fulfilled (AND)": [
-        "所有条件同时满足（且）"
+        "所有条件同时满足"
       ],
       "One condition must be fulfilled (OR)": [
-        "至少一个条件满足（或）"
+        "至少一个条件满足"
       ]
     },
     "Filter modal type": {
@@ -3823,11 +3813,11 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "有 ${ items.length } 项自动补全建议，请使用键盘选择。"
+      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+        "找到 ${ items.length } 建议，使用键盘导航。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "输入文本后使用上下键选择候选的补全内容，然后按 Enter 键确认补全，或按 Esc 键关闭候选框。"
+        "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
       ]
     },
     "Human verification method": {
@@ -3841,20 +3831,20 @@
         "人工验证"
       ],
       "No verification method available": [
-        "无可用的验证方法"
+        "没有可用的验证方法"
       ],
       "SMS": [
         "短信"
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
         "加密并添加日程时出错，未能导入任何日程。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
@@ -3863,7 +3853,7 @@
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
       ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
+      "Events successfully imported. The imported events will now appear in your calendar.": [
         "日程导入成功，已显示在您的日历中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
@@ -3882,10 +3872,10 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
         "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 Proton 邮箱地址邀请您。"
       ],
-      "This file contains an event invitation:": [
+      "This file contains event invitations:": [
         "此文件包含活动邀请："
       ],
-      "This file contains an invitation response:": [
+      "This file contains invitation responses:": [
         "此文件包含邀请回复："
       ],
       "This file contains some data that we cannot import:": [
@@ -3893,10 +3883,10 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
       ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "加密并添加联系人时出错，未能导入任何联系人。"
       ]
     },
@@ -3906,7 +3896,7 @@
       ]
     },
     "Import contact groups info": {
-      "${ totalContacts } contact": [
+      "${ totalContacts } contacts": [
         "${ totalContacts } 名联系人"
       ]
     },
@@ -3919,7 +3909,7 @@
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
         "联系人导入成功，已显示在您的通讯录中。"
       ]
     },
@@ -4237,9 +4227,9 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContacts } 位联系人中有 ${ totalContactsDiscarded } 位不会被导入，点击查看详情"
+        "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
         "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
       ],
       "No contact can be imported. Click for details": [
@@ -4249,12 +4239,12 @@
         "未能导入任何日程，展开查看详情。"
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "您的日程中有部分内容我们不支持，这些日程将不会被导入进来。"
+        "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } 需要您的权限来${ enableDesktopNotifications }."
+        "${ appName } 需要您的权限来${ enableDesktopNotifications }。"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
@@ -4262,13 +4252,13 @@
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } 将设置为默认日历。"
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
+      "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "将 ${ calendarsToBeMerged } 个日历与现有日历合并"
+      "${ calendarsToBeMerged } merged calendars": [
+        "将 ${ calendarsToBeMerged } 份日历与现有日历合并"
       ],
-      "${ calendarsToBeMergedCount } merged calendar": [
+      "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ emailAddress } is invalid": [
@@ -4283,52 +4273,52 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } 支持对自有域名予以 DKIM 数字签名。在您的域名 DNS 中加入下面的 CNAME 记录即可使用 DKIM，通常可以在域名注册商网站上设置。"
       ],
-      "${ n } address": [
+      "${ n } addresses": [
         "${ n } 个地址"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } 对邮件送达没有影响，但我们建议${ quarantine }以提高安全性。"
       ],
-      "${ number } city": [
+      "${ number } cities": [
         "${ number } 个城市"
       ],
-      "${ number } server": [
+      "${ number } servers": [
         "${ number } 个服务器"
       ],
-      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+      "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "上传的 ${ numberOfNonPrivateKeys } 个文件不是有效的私钥，请验证并重试。"
       ],
-      "${ numContactGroups } contact group": [
+      "${ numContactGroups } contact groups": [
         "${ numContactGroups } 个联系人群组"
       ],
-      "${ numContacts } contact": [
+      "${ numContacts } contacts": [
         "${ numContacts } 名联系人"
       ],
       "${ planName } credits earned": [
         "已赚取奖励 ${ planName }"
       ],
-      "${ providerFoldersNumLocalized } folder found": [
+      "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
+      "${ providerFoldersNumLocalized } labels found in Gmail": [
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
         "最长 ${ rewardsLimit } 个月，已获 ${ rewards } 个月"
       ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
-      "${ selectedFoldersCount } folder selected": [
+      "${ selectedFoldersCount } folders selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
       ],
-      "${ selectedFoldersCount } label selected": [
+      "${ selectedFoldersCount } labels selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
       ],
-      "${ selectedFoldersCountLocalized } folder selected": [
+      "${ selectedFoldersCountLocalized } folders selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
-      "${ selectedFoldersCountLocalized } label selected": [
+      "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
       "${ storageSize } storage": [
@@ -4343,7 +4333,7 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "安全核心功能需升级为 ${ vpnPlus } 或 ${ visionary }。"
       ],
-      "(${ memberCount } member)": [
+      "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
       ],
       "(Filter if ALL of the following conditions are met)": [
@@ -4361,14 +4351,14 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+      "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
       ],
       "1. Invite friends to Proton": [
         "1. 邀请好友注册 Proton"
       ],
       "10 email addresses": [
-        "10 个邮箱地址"
+        "10 个电子邮件地址"
       ],
       "2. They try ${ planName }": [
         "2. 体验 ${ planName }"
@@ -4395,7 +4385,7 @@
         "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "由于有未支付的账单，账户已受限。请联系您的账户管理员。"
+        "账户因欠费已被限制使用，请联系机构管理员。"
       ],
       "account recovery and data recovery method": [
         "账户恢复和数据恢复方式"
@@ -4425,7 +4415,7 @@
         "添加密保手机"
       ],
       "Add image URL": [
-        "添加图片链接"
+        "添加图片地址"
       ],
       "Add label": [
         "添加标签"
@@ -4436,11 +4426,11 @@
       "Additional options": [
         "其他选项"
       ],
-      "address": [
-        "地址"
-      ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
         "地址验证是一项高级的安全功能，除非您对其有所了解，否则不要打开此功能。"
+      ],
+      "addresses": [
+        "地址"
       ],
       "Admin account allocation": [
         "分配管理员账户"
@@ -4454,10 +4444,10 @@
       "Align right": [
         "右对齐"
       ],
-      "All (${ totalFoldersCount } folder)": [
+      "All (${ totalFoldersCount } folders)": [
         "全部（${ totalFoldersCount } 个文件夹）"
       ],
-      "All (${ totalFoldersCount } label)": [
+      "All (${ totalFoldersCount } labels)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
       "All keys successfully reactivated": [
@@ -4620,7 +4610,7 @@
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
       "Close this screen to exit.": [
-        "关闭此窗口以退出。"
+        "关闭这个窗口以退出"
       ],
       "Continue anyway?": [
         "确定要继续吗？"
@@ -4631,8 +4621,8 @@
       "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
         "点击继续将连接你的${ ACCOUNT_APP_NAME } 到 ${ name }。"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "新建 ${ calendarsToBeCreated } 个日历"
+      "Create ${ calendarsToBeCreated } new calendars": [
+        "新建 ${ calendarsToBeCreated } 份日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -4650,7 +4640,7 @@
         "为其他人创建电子邮件地址，为企业、学校或社会团体管理${ MAIL_APP_NAME } 。首先，请添加您的组织名称和自定义域名（例如@ yourcompany.com ）。 "
       ],
       "Create in": [
-        "在此创建"
+        "创建于"
       ],
       "Creating your account": [
         "创建账户"
@@ -4706,7 +4696,7 @@
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
       ],
-      "domain used": [
+      "domains used": [
         "域名用量"
       ],
       "Done": [
@@ -4731,10 +4721,10 @@
         "下载您的 PGP 密钥以用于其他 PGP 兼容服务。"
       ],
       "Drop a file here to upload": [
-        "将文件拖放到此处上传"
+        "将文件拖至此处上传"
       ],
       "Drop the file here to upload": [
-        "将文件拖至此处上传"
+        "请将文件拖拽至此处进行上传"
       ],
       "Each code can only be used once": [
         "每条恢复码只能使用一次"
@@ -4746,7 +4736,7 @@
         "更改标签"
       ],
       "Edit link": [
-        "编辑链接"
+        "修改链接"
       ],
       "Email address": [
         "邮箱地址"
@@ -4833,7 +4823,7 @@
         "免费版"
       ],
       "Free up some space or add more storage space.": [
-        "释放一些空间或添加更多存储空间。"
+        "释放一些存储空间或付费扩容。"
       ],
       "Free up some space or contact your administrator.": [
         "释放一些空间或联系您的管理员。"
@@ -4872,7 +4862,7 @@
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如果您认为这是一个错误，请联系${ contactLink } 。"
+        "如有异议，请点击${ contactLink }联系我们。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -4920,7 +4910,7 @@
         "图片描述"
       ],
       "Image URL": [
-        "图片链接"
+        "图片地址"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "自动回复内容不能包含图片，故图片已移除"
@@ -4928,14 +4918,14 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 个日历"
+      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
+        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 份日历"
       ],
       "Import from": [
         "导入自"
       ],
       "Import in progress": [
-        "导入进行中"
+        "导入中"
       ],
       "Import mailbox": [
         "导入收件箱"
@@ -4950,7 +4940,7 @@
         "注意：某些域名注册商不允许 CNAME 以句点结尾（但某些注册商又要求必须如此）。如果您的注册商不接受这种格式的 CNAME，请将末尾的句点全部删除后再试一次。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
+        "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -4980,9 +4970,9 @@
         "网络连接中断，请检查系统网络情况。"
       ],
       "Internet connection restored.": [
-        "互联网连接已恢复。"
+        "网络连接已恢复。"
       ],
-      "Invite successfully sent": [
+      "Invites successfully sent": [
         "已成功发送邀请"
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -4995,7 +4985,7 @@
         "我正在使用 ${ appName }，你们可能也会感兴趣。这是一个安全的邮箱服务，能够保护你的隐私。通过这个链接注册还能免费获得一个月的高级版功能使用期：${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "只需确认您的选择，剩下的交由我们！"
+        "只需确认您的选择，剩下的交给我们即可。"
       ],
       "Just send them your personal referral link.": [
         "只需将您的专属邀请链接发给他们即可。"
@@ -5063,9 +5053,6 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "在验证设备上手动输入下列信息完成账户设置，或${ _switchButton }。"
       ],
-      "Member": [
-        "成员"
-      ],
       "Merged": [
         "已合并"
       ],
@@ -5121,7 +5108,7 @@
         "目前不需要支付。"
       ],
       "No preview available": [
-        "没有可用的预览"
+        "无法预览此文件"
       ],
       "No results found": [
         "未找到结果"
@@ -5139,7 +5126,7 @@
         "用户数"
       ],
       "of": [
-        "/"
+        "，共"
       ],
       "One account for all ${ BRAND_NAME } services.": [
         "一个账户即可登录所有 ${ BRAND_NAME } 服务。"
@@ -5177,7 +5164,7 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a ${ rewardMonths } month plan": [
+      "Paid for a ${ rewardMonths } months plan": [
         "为 ${ rewardMonths } 个月的计划付费"
       ],
       "Paid for a monthly plan": [
@@ -5198,11 +5185,11 @@
       "Plan upgrade required": [
         "需升级账户"
       ],
-      "Please add a password for the user on row": [
-        "请按行添加用户密码"
-      ],
-      "Please add an email address for the user on row": [
+      "Please add email addresses for the users on rows": [
         "请按行添加用户电子邮件地址"
+      ],
+      "Please add passwords for the users on rows": [
+        "请按行添加用户密码"
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "请检查您的报错文件，或者联系客服了解详细信息。"
@@ -5217,7 +5204,7 @@
         "请填写此项。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "请妥善保管。如果遇到密码重置，您将需要通过它来访问您的账户以及解密您的数据。"
+        "请妥善保存，将来如需重置密码，只有通过它才能恢复账户并解密数据。"
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "请注意，如果删除此地址，您将无法再用其收发邮件。"
@@ -5316,7 +5303,7 @@
         "邀请链接已复制"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "大多数问题都能通过刷新页面或 ${ link } 来解决。"
+        "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
       "Remove one of your calendars to join this one": [
         "在加入此日历之前请先移除一个已有日历"
@@ -5421,7 +5408,7 @@
         "文本颜色"
       ],
       "Text to display": [
-        "显示的文字"
+        "要显示的文字"
       ],
       "Thank you for supporting our mission.": [
         "感谢您的支持。"
@@ -5435,10 +5422,10 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
       ],
-      "The following address is invalid.": [
+      "The following addresses are invalid.": [
         "下列地址无效。"
       ],
-      "The following address is unavailable.": [
+      "The following addresses are unavailable.": [
         "下列地址无效。"
       ],
       "The format of your CSV file is incorrect.": [
@@ -5487,13 +5474,13 @@
         "这是您在密码重置之前使用的密码。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "此链接所指向的网站可能会窃取您的密码、信用卡等信息。"
+        "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "此链接可能使用了欺骗性域名，请确认其可靠性后再打开。"
+        "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此用户负责为您的组织付款。降低其权限后，您将负责此组织的付款。"
@@ -5673,7 +5660,7 @@
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "We'll notify you when the import is done.": [
-        "导入完成时我们将通知您。"
+        "当导入完成时我们将通知您"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
@@ -5739,13 +5726,13 @@
         "您即将在新标签页中打开："
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前以 ${ user.Name } (${ user.Email }) 的身份登录"
+        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您也可以将导入日历与现有 Proton 日历合并。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "您可以在 ${ importProgressLink } 查看导入进度。"
+        "您可以在${ importProgressLink } 查看导入进度"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "您可以定制并下载账单用于记账。"
@@ -5760,7 +5747,7 @@
         "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "您可以开启通知功能，以便此文件夹有新邮件时收到提醒。"
+        "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
         "您可以通过 Outlook、Apple Mail、Thunderbird 等任何支持 IMAP/SMTP 的邮件客户端使用 ${ MAIL_APP_NAME }。"
@@ -5811,7 +5798,7 @@
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您已达到您的存储容量的100%。您不能收发新的电子邮件。${ freeUpMessage } ${ upgradeLink }"
+        "您的存储空间已用尽，不能继续收发邮件。${ freeUpMessage }${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您需要导出此密钥的备份，以供恢复其加密的数据。"
@@ -5847,7 +5834,7 @@
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户是绑定在一起的，前往 ${ loginLink } 登录后可将它们一并删除。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您的账户有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
+        "您有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
@@ -5865,13 +5852,13 @@
         "您的发卡银行要求您进行 3-D Secure 验证以确保安全。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
+        "数据随时可以从 ${ importedEmailAddressStrong } 导入至您的 Proton 账户。"
       ],
       "Your data recovery method is set": [
         "数据恢复方式已设置"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的电子邮件将仅用于此一次性验证。"
+        "您的邮箱将只会用于此一次性验证。"
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "您现有的 ${ BRAND_NAME } 账户即可使用所有 ${ BRAND_NAME } 服务。请使用账号 ${ email } 登录。"
@@ -5880,7 +5867,7 @@
         "您的 ${ delayedImport.Account } 导入被暂时推迟。"
       ],
       "Your import will not be processed.": [
-        "您的导入将不会被处理。"
+        "此次导入将不会进行。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
@@ -5895,10 +5882,10 @@
         "您的付款明细已通过 TLS 加密并由瑞士隐私法律保护。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的电话号码将仅用于此一次性验证。"
+        "您的电话号码将只会用于此一次性验证。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的Proton账户现已欠费停用。请付清逾期账单以继续使用您的账户。"
+        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
       ],
       "Your recovery email address:": [
         "您的密保邮箱："
@@ -5907,7 +5894,7 @@
         "您的恢复密语"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "恢复密语是按特定顺序排列的一系列 12 个单词。"
+        "恢复密语是按特定顺序排列的 12 个英文单词。"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
@@ -6350,13 +6337,13 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 标识"
       ],
-      "${ monthsRewarded } month credited": [
+      "${ monthsRewarded } months credited": [
         "已奖励 ${ monthsRewarded } 个月"
       ],
-      "${ n } month": [
+      "${ n } months": [
         "${ n } 个月"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
@@ -6408,7 +6395,7 @@
         "且"
       ],
       "and": [
-        "、"
+        "并"
       ],
       "And": [
         "且"
@@ -6684,7 +6671,7 @@
         "有效期至"
       ],
       "Expires": [
-        "到期"
+        "有效期至"
       ],
       "extra storage": [
         "新增存储空间"
@@ -6732,7 +6719,7 @@
         "导入间隔"
       ],
       "Import to email address": [
-        "导入到电子邮件地址"
+        "导入到邮箱地址"
       ],
       "Import to:": [
         "导入到："
@@ -6819,7 +6806,7 @@
         "移至收件箱"
       ],
       "Name": [
-        "名称"
+        "姓名"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -6984,7 +6971,7 @@
         "落款"
       ],
       "Spam": [
-        "垃圾邮件"
+        "垃圾"
       ],
       "Starred": [
         "星标邮件"
@@ -7284,7 +7271,7 @@
         "使用礼品码"
       ],
       "Calendars": [
-        "分类"
+        "日历"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -7297,9 +7284,6 @@
       ],
       "Common sign up issues": [
         "常见注册问题"
-      ],
-      "Create account": [
-        "创建账户"
       ],
       "Encryption and keys": [
         "加密与密钥"
@@ -7329,7 +7313,7 @@
         "尚未激活"
       ],
       "Pay invoice": [
-        "支付发票"
+        "前去支付"
       ],
       "Privacy policy": [
         "隐私协议"
@@ -7376,7 +7360,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "就快好了"
+        "即将准备就绪"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
@@ -7391,10 +7375,10 @@
         "正在收集您的数据"
       ],
       "We're gathering your data from your provider": [
-        "我们正在加紧从您的提供商那里收集您的数据"
+        "我们正在通过您原先的服务商调取您的数据"
       ],
       "Your import is starting": [
-        "您的导入正在开始"
+        "正在启动导入"
       ]
     },
     "Log preference": {
@@ -7406,26 +7390,26 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签中 ${ selectedLabelsCount } 个的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个标签中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入自 ${ periodFragment } 以来共计 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接。要对该日历新建链接，请先从下方列表中删除一个。"
       ]
     },
     "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
         "成员数量不能超过 ${ MAX_CALENDAR_MEMBERS } 人。"
       ]
     },
@@ -7456,7 +7440,7 @@
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "您的免费试用期已结束，账户即将停用。${ action }"
+        "您的免费体验期已结束，账户即将停用。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7510,13 +7494,13 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
+      "Every ${ interval } months ${ onDayString }": [
         "每 ${ interval } 个月的 ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
         "每 ${ interval } 月的 ${ onDayString }，${ timesString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
         "每 ${ interval } 月的 ${ onDayString }，直到 ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
@@ -7749,45 +7733,45 @@
       ]
     },
     "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
+      "Get ${ connections } high-speed VPN connections": [
         "${ connections } 台设备可同时接入高速 VPN"
       ],
-      "Get ${ connections } high-speed VPN connection per user": [
+      "Get ${ connections } high-speed VPN connections per user": [
         "每位用户可通过 ${ connections } 台设备同时接入高速 VPN"
       ]
     },
     "new_plans: feature": {
-      "${ n } custom email domain": [
+      "${ n } custom email domains": [
         "${ n } 个自有域名"
       ],
-      "${ n } email address": [
-        "${ n } 个邮箱地址"
-      ],
-      "${ n } email address per user": [
+      "${ n } email addresses per user": [
         "每位用户 ${ n } 个邮箱地址"
       ],
-      "${ n } filter": [
+      "${ n } email addresses/aliases": [
+        "${ n } 个邮箱地址"
+      ],
+      "${ n } filters": [
         "${ n } 条筛选规则"
       ],
-      "${ n } folder": [
+      "${ n } folders": [
         "${ n } 个文件夹"
       ],
-      "${ n } folder and label": [
+      "${ n } folders and labels": [
         "${ n } 个文件夹和标签"
       ],
-      "${ n } label": [
+      "${ n } labels": [
         "${ n } 个标签"
       ],
-      "${ n } message per day": [
+      "${ n } messages per day": [
         "每天可发 ${ n } 封邮件"
       ],
-      "${ n } personal calendar": [
+      "${ n } personal calendars": [
         "${ n } 份个人日历"
       ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } 台设备可同时接入 VPN"
       ],
-      "${ n } VPN connection per user": [
+      "${ n } VPN connections per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
       ],
       "${ size } attachment size": [
@@ -7859,7 +7843,7 @@
       "GDPR data processing agreement": [
         "GDPR 数据处理协议"
       ],
-      "High-speed VPN on ${ n } device": [
+      "High-speed VPN on ${ n } devices": [
         "${ n } 台设备可同时接入高速 VPN"
       ],
       "HTML signatures": [
@@ -8063,7 +8047,7 @@
       ]
     },
     "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
         "您的 ${ currentPlanName } 账户等级还有 ${ daysRemaining } 天的有效期。"
       ]
     },
@@ -8152,7 +8136,7 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@proton.me 用于注册购物网站，ChenXinwen@proton.me 用于收取时事新闻"
       ],
-      "Create up to ${ n } custom calendar.": [
+      "Create up to ${ n } custom calendars.": [
         "创建高达 ${ n } 个自定义日历。"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
@@ -8355,11 +8339,11 @@
       "Invitation revoked": [
         "邀请已撤销"
       ],
-      "Member added": [
-        "成员已添加"
-      ],
       "Member deleted": [
         "成员已删除"
+      ],
+      "Members added": [
+        "成员已添加"
       ]
     },
     "Notification in shared calendar modal": {
@@ -8392,25 +8376,25 @@
       "at time of event": [
         "日程时间"
       ],
-      "day before": [
+      "days before": [
         "天前"
       ],
-      "hour before": [
+      "hours before": [
         "小时前"
       ],
-      "minute before": [
+      "minutes before": [
         "分钟前"
       ],
       "on the same day": [
         "当天"
       ],
-      "week before": [
+      "weeks before": [
         "周前"
       ]
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "接下来您需要登录至您的 Google 账户并允许 Proton 访问您的数据。"
+        "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
       ]
     },
     "Oauth instructions video": {
@@ -8677,13 +8661,13 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "点击 ${ upgradeLink } 升级添加更多储存空间，或删除一些内容。"
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
+      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
         "您的套餐最多包含 ${ availableAddresses } 个邮箱地址。"
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
         "您的套餐最多包含 ${ availableNumberOfMembers } 个组用户。"
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
         "您的套餐最多包含 ${ availableVPNAccess } 个 VPN 账户。"
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
@@ -8709,7 +8693,7 @@
     },
     "Participant name": {
       "You": [
-        "您"
+        "你"
       ]
     },
     "Payment method option": {
@@ -8768,7 +8752,7 @@
         "域名.com"
       ],
       "E.g., ": [
-        "例如： "
+        "例如："
       ],
       "Email address": [
         "邮箱地址"
@@ -8798,7 +8782,7 @@
         "电话号码"
       ],
       "Please describe the problem and include any error messages": [
-        "请描述问题并包含任何错误信息"
+        "请说明您的问题，并附上看到的所有错误提示"
       ],
       "Please insert link first": [
         "请先输入链接内容"
@@ -8846,7 +8830,7 @@
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "选择包含在套餐中的用户数。 每位额外用户需支付 ${ price }。"
       ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+      "Should you need more than ${ maxUsers } user accounts, please ${ contact } our Sales team.": [
         "如果您需要超过 ${ maxUsers } 个用户账户，请 ${ contact } 我们的销售团队。"
       ]
     },
@@ -9045,7 +9029,7 @@
     },
     "Select search results": {
       "No results found": [
-        "搜索无结果"
+        "未找到结果"
       ]
     },
     "Settings description": {
@@ -9137,14 +9121,9 @@
         "用户名"
       ]
     },
-    "Signup step": {
-      "Verification": [
-        "验证"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 现已正式发布！您的文件也可以具备与邮件同等的安全性。"
+        "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "免费获得最长 18 个月的 ${ planName } 使用权"
@@ -9218,40 +9197,40 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
+      "${ _n } calendars per user": [
         "每位用户 ${ _n } 份日历"
       ],
-      "${ maxVpn } high-speed VPN connection": [
+      "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } 个高速 VPN 连接"
       ],
-      "${ n } calendar": [
+      "${ n } calendars": [
         "${ n } 份日历"
       ],
-      "${ n } high-speed VPN connection": [
+      "${ n } high-speed VPN connections": [
         "${ n } 台设备可同时接入高速 VPN"
       ],
-      "${ n } high-speed VPN connection per user": [
+      "${ n } high-speed VPN connections per user": [
         "每位用户可通过 ${ n } 台设备同时接入高速 VPN"
       ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } 台设备可同时接入 VPN"
       ],
-      "${ n } VPN connection per user": [
+      "${ n } VPN connections per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
       ],
-      "${ UsedAddresses } address": [
+      "${ UsedAddresses } addresses": [
         "${ UsedAddresses } 个地址"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
       ],
-      "${ UsedCalendars } calendar": [
+      "${ UsedCalendars } calendars": [
         "${ UsedCalendars } 个日历"
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+      "${ UsedDomains } of ${ MaxDomains } custom domains": [
         "自有域名数量：${ UsedDomains } / ${ MaxDomains }"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
+      "${ UsedMembers } of ${ MaxMembers } users": [
         "用户数量：${ UsedMembers } / ${ MaxMembers }"
       ],
       "1 email address": [
@@ -9266,7 +9245,7 @@
       "Built-in ad blocker (NetShield)": [
         "内置广告过滤器（NetShield）"
       ],
-      "High-speed VPN on ${ maxVpn } device": [
+      "High-speed VPN on ${ maxVpn } devices": [
         "${ maxVpn } 台设备可同时接入高速 VPN"
       ]
     },
@@ -9398,7 +9377,7 @@
         "电话号码已更改"
       ],
       "Preference saved": [
-        "设置已保存"
+        "设置已生效"
       ],
       "Premium address created": [
         "地址已激活"
@@ -9555,7 +9534,7 @@
         "标记为"
       ],
       "Name": [
-        "名称"
+        "姓名"
       ],
       "Status": [
         "状态"
@@ -9585,10 +9564,10 @@
       ]
     },
     "Time unit": {
-      "${ hours } hour": [
+      "${ hours } hours": [
         "${ hours } 小时"
       ],
-      "${ minutes } minute": [
+      "${ minutes } minutes": [
         "${ minutes } 分钟"
       ]
     },
@@ -9604,7 +9583,7 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } 桥接"
       ],
-      "${ maxUsers } user": [
+      "${ maxUsers } users": [
         "${ maxUsers } 位用户"
       ],
       "1. Give a name to the config to be generated": [
@@ -9638,7 +9617,7 @@
         "账户恢复"
       ],
       "Account suspended": [
-        "账户已封禁"
+        "账号已被停用"
       ],
       "Action": [
         "操作"
@@ -9668,7 +9647,7 @@
         "添加域名"
       ],
       "Add filter": [
-        "创建规则"
+        "创建筛选规则"
       ],
       "Add invoice details": [
         "完善账单信息"
@@ -9678,9 +9657,6 @@
       ],
       "Add Sieve filter": [
         "创建 Sieve 规则"
-      ],
-      "Add to not spam list": [
-        "Add to Not spam list"
       ],
       "Add to spam list": [
         "加入垃圾邮件名单"
@@ -9965,7 +9941,7 @@
         "输入密码"
       ],
       "Error": [
-        "错误"
+        "失败"
       ],
       "Export": [
         "导出"
@@ -10022,7 +9998,7 @@
         "您的免费试用版如何运作"
       ],
       "Human verification": [
-        "真人验证"
+        "身份验证"
       ],
       "Identity and addresses": [
         "身份和地址"
@@ -10036,7 +10012,7 @@
       "Import and export": [
         "导入与导出"
       ],
-      "Import as simple event?": [
+      "Import as simple events?": [
         "导入为简单活动？"
       ],
       "Import contacts": [
@@ -10058,7 +10034,7 @@
         "「导入/导出」应用程序"
       ],
       "Invalid verification code": [
-        "无效的验证码"
+        "验证码无效"
       ],
       "Invitations": [
         "邀请"
@@ -10089,9 +10065,6 @@
       ],
       "Messages and composing": [
         "邮件与编辑"
-      ],
-      "Minicalendar": [
-        "迷你日历"
       ],
       "Multi-user support": [
         "多用户功能"
@@ -10232,7 +10205,7 @@
         "选择账户等级"
       ],
       "Select action to take on contact group": [
-        "选择对联系人群组的操作"
+        "选择针对联系人群组的动作"
       ],
       "Select contact group": [
         "选择联系人群组"
@@ -10306,7 +10279,7 @@
       "Success": [
         "成功"
       ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "已成功创建 ${ successfullyCreatedUsers.length } 个账户"
       ],
       "Switch to one-password mode": [
@@ -10364,7 +10337,7 @@
         "警告：疑似虚假网站"
       ],
       "What would you like to import?": [
-        "您希望导入哪些信息？"
+        "您需要导入哪些信息？"
       ],
       "What's new": [
         "更新内容"
@@ -10388,7 +10361,7 @@
         "您的账户等级"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免费试用期即将于 ${ formattedEndDate } 结束"
+        "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ],
       "Your import history": [
         "您的导入历史"
@@ -10550,7 +10523,7 @@
         "此密钥不能再用于加密，并且其生成的数字签名都将被视为无效"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "系统子文件夹将在 ${ MAIL_APP_NAME } 中显示为单独的文件夹"
+        "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -10634,19 +10607,19 @@
         "今天是写邮件的好日子"
       ],
       "Update default font and size": [
-        "更改默认字体与字号"
+        "更新默认字体和大小"
       ],
       "Your default font will look like following:": [
         "您的默认字体将如下所示："
       ]
     },
     "Upgrade": {
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "升级到 ${ planName } ，即可立即将最多 ${ n } 台设备连接到VPN"
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "升级到付费套餐以创建至多 ${ MAX_CALENDARS_PAID } 个日历，让您工作、社交、生活全不误。"
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
@@ -10675,13 +10648,13 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
+      "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
       ]
     },
     "Video control": {
       "Click to replay the video": [
-        "点击以播放视频"
+        "点击回放视频"
       ],
       "Replay video": [
         "回放视频"
@@ -10693,13 +10666,13 @@
       ]
     },
     "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } 台服务器"
-      ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } 个VPN连接"
       ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
+      "${ n }+ servers": [
+        "${ n } 台服务器"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } 个国家的 ${ numberOfServers }"
       ]
     },
@@ -10767,7 +10740,7 @@
         "请至少添加一位收件人"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
+        "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton 将从最近的邮件开始导入尽可能多的数据。"
@@ -10797,7 +10770,7 @@
         "此处将不会再出现这条导入记录。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "您的免费试用期将于 ${ textDate } 结束。${ action }"
+        "您的免费体验期将于 ${ textDate } 结束。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "您的恢复文件已过时。如果您再次重置账户，该恢复文件将无法恢复新的数据。"
@@ -10820,85 +10793,85 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
+      "Every ${ interval } weeks on ${ multipleDaysString }": [
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
         "每${ interval } 周的${ multipleDaysString }，${ timesString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
         "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
       ],
-      "Every ${ interval } week on all days": [
+      "Every ${ interval } weeks on all days": [
         "每 ${ interval } 周整周"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
+      "Every ${ interval } weeks on all days, ${ timesString }": [
         "每 ${ interval } 周整周，${ timesString }"
       ],
-      "Every ${ interval } week on all days, ${ untilString }": [
+      "Every ${ interval } weeks on all days, ${ untilString }": [
         "每 ${ interval } 周所有天，${ untilString }"
       ],
-      "Every ${ interval } week on Friday": [
+      "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 周的星期五"
       ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
         "每 ${ interval } 周星期五，${ timesString }"
       ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
         "每 ${ interval } 周星期五，${ untilString }"
       ],
-      "Every ${ interval } week on Monday": [
+      "Every ${ interval } weeks on Monday": [
         "每 ${ interval } 周的星期一"
       ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
+      "Every ${ interval } weeks on Monday, ${ timesString }": [
         "每 ${ interval } 周星期一，${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
         "每 ${ interval } 周星期一，${ untilString }"
       ],
-      "Every ${ interval } week on Saturday": [
+      "Every ${ interval } weeks on Saturday": [
         "每 ${ interval } 周的星期六"
       ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
         "每 ${ interval } 周星期六，${ timesString }"
       ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
         "每 ${ interval } 周星期六，${ untilString }"
       ],
-      "Every ${ interval } week on Sunday": [
+      "Every ${ interval } weeks on Sunday": [
         "每 ${ interval } 周的星期日"
       ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
+      "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "每 ${ interval } 周星期日，${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
         "每 ${ interval } 周星期日，${ untilString }"
       ],
-      "Every ${ interval } week on Thursday": [
+      "Every ${ interval } weeks on Thursday": [
         "每 ${ interval } 周的星期四"
       ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
         "每 ${ interval } 周星期四，${ timesString }"
       ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
         "每 ${ interval } 周星期四，${ untilString }"
       ],
-      "Every ${ interval } week on Tuesday": [
+      "Every ${ interval } weeks on Tuesday": [
         "每 ${ interval } 周的星期二"
       ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
+      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "每 ${ interval } 周星期二，${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
         "每 ${ interval } 周星期二，${ untilString }"
       ],
-      "Every ${ interval } week on Wednesday": [
+      "Every ${ interval } weeks on Wednesday": [
         "每 ${ interval } 周的星期三"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
         "每 ${ interval } 周星期三，${ timesString }"
       ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
         "每 ${ interval } 周星期三，${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
@@ -11007,14 +10980,13 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Yearly",
-        ""
+      "Every ${ interval } years": [
+        "Yearly"
       ],
-      "Every ${ interval } year, ${ timesString }": [
+      "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],
-      "Every ${ interval } year, ${ untilString }": [
+      "Every ${ interval } years, ${ untilString }": [
         "每 ${ interval } 年，直到 ${ untilString }"
       ],
       "Yearly": [

@@ -11,7 +11,7 @@
     },
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introducción"
+        "Introducción a ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -26,28 +26,28 @@
         "Añadir dirección"
       ],
       "Add contact": [
-        "Agregar contacto"
+        "Añadir contacto"
       ],
       "Add email": [
         "Añadir correo electrónico"
       ],
       "Add group": [
-        "Agregar grupo"
+        "Añadir grupo"
       ],
       "Add new contact": [
-        "Agregar nuevo contacto"
+        "Añadir nuevo contacto"
       ],
       "Add new group": [
-        "Agregar nuevo grupo"
+        "Añadir nuevo grupo"
       ],
       "Add notification": [
         "Añadir notificación"
       ],
       "Add phone number": [
-        "Añadir número de teléfono"
+        "Añadir número telefónico"
       ],
       "Add to group": [
-        "Agregar al grupo"
+        "Añadir al grupo"
       ],
       "Apply": [
         "Aplicar"
@@ -89,7 +89,7 @@
         "Cerrar"
       ],
       "Close event popover": [
-        "Cerrar evento de ventana emergente"
+        "Cerrar ventana emergente del evento"
       ],
       "Close navigation": [
         "Cerrar la navegación"
@@ -104,7 +104,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        "Confirmar apertura del enlace ${ linkToShow }"
+        "Confirmar la apertura del enlace ${ linkToShow }"
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -166,7 +166,7 @@
         "Deseleccionar todo"
       ],
       "Didn't receive the code?": [
-        "¿No recibió el código?"
+        "¿No has recibido el código?"
       ],
       "Discard": [
         "Descartar"
@@ -193,7 +193,7 @@
         "Editar datos de inicio de sesión"
       ],
       "Email settings": [
-        "Ajustes de correo electrónico"
+        "Ajustes del correo electrónico"
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
@@ -217,7 +217,7 @@
         "Obtener código de verificación"
       ],
       "Go to label": [
-        "Vaya a la etiqueta"
+        "Ir a la etiqueta"
       ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
@@ -229,7 +229,7 @@
         "Entendido"
       ],
       "Hide advanced PGP settings": [
-        "Ocultar ajustes PGP avanzados"
+        "Ocultar ajustes avanzados PGP"
       ],
       "Hide folders": [
         "Ocultar carpetas"
@@ -361,7 +361,7 @@
         "Recomendar a un amigo"
       ],
       "refresh the page": [
-        "actualiza la página"
+        "actualizar la página"
       ],
       "Refresh the page": [
         "Actualizar la página"
@@ -409,13 +409,13 @@
         "Enviar comentarios"
       ],
       "Set recovery phrase": [
-        "Establecer frase de recuperación"
+        "Configura una frase de recuperación"
       ],
       "Share": [
         "Compartir"
       ],
       "Show advanced PGP settings": [
-        "Mostrar ajustes PGP avanzados"
+        "Mostrar ajustes avanzados PGP"
       ],
       "Show folders": [
         "Mostrar carpetas"
@@ -484,10 +484,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Mejorar"
       ],
       "Upload picture": [
-        "Cargar imagen"
+        "Subir imagen"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -508,7 +508,7 @@
         "Verificar cuenta"
       ],
       "Verify email": [
-        "Verificar correo"
+        "Verificar correo electrónico"
       ],
       "View": [
         "Visualizar"
@@ -524,11 +524,8 @@
       ]
     },
     "Action title": {
-      "Share with anyone": [
-        "Compartir con alguien"
-      ],
       "Share with Proton users": [
-        "Compartir con usuarios Proton"
+        "Compartir con usuarios de Proton"
       ]
     },
     "Actions message": {
@@ -679,21 +676,24 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Mejor oferta"
+      ],
       "Most popular": [
         "Más popular"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Obtener la oferta"
+        "Consigue la oferta"
       ],
       "Get the deal now": [
-        "Aprovecha la oferta ahora"
+        "Consigue la oferta ahora"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -728,7 +728,7 @@
         "Problema con el calendario"
       ],
       "Connection problem": [
-        "Problema de conexión"
+        "Problema con la conexión"
       ],
       "Contacts problem": [
         "Problema con los contactos"
@@ -740,7 +740,7 @@
         "Problema con Drive"
       ],
       "Feature request": [
-        "Solicitud de función"
+        "Solicitar funcionalidad"
       ],
       "Import / export problem": [
         "Problema de importación/exportación"
@@ -776,7 +776,7 @@
         "Problema de velocidad"
       ],
       "Streaming problem": [
-        "Problema de streaming"
+        "Problema de transmisión"
       ],
       "Update problem": [
         "Problema de actualización"
@@ -800,7 +800,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        "¿Asistirás?"
+        "¿Asistir?"
       ]
     },
     "Calendar invite info": {
@@ -844,7 +844,7 @@
     },
     "Calendar self sharing error": {
       "You already have access to this calendar": [
-        "Ya tenías acceso a este calendario"
+        "Ya tienes acceso a este calendario"
       ]
     },
     "Calendar share limit modal": {
@@ -901,13 +901,13 @@
         "El enlace del calendario no está accesible temporalmente"
       ],
       "Failed to sync calendar": [
-        "Error al sincronizar el calendario"
+        "Fallo al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
       ],
       "Unsupported calendar format": [
-        "Formato de calendario no soportado"
+        "Formato de calendario no compatible"
       ]
     },
     "Calendar subscription not synced error; long version": {
@@ -1028,10 +1028,10 @@
         "Aniversario"
       ],
       "Birthday": [
-        "Cumpleaños"
+        "Fecha de nacimiento"
       ],
       "Email": [
-        "Correo"
+        "Correo electrónico"
       ],
       "Gender": [
         "Sexo"
@@ -1064,7 +1064,7 @@
         "Foto"
       ],
       "Role": [
-        "Puesto"
+        "Rol"
       ],
       "Timezone": [
         "Zona horaria"
@@ -1158,7 +1158,7 @@
         "Bahamas"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahréin"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -1179,7 +1179,7 @@
         "Benín"
       ],
       "Bermuda": [
-        "Bermuda"
+        "Bermudas"
       ],
       "Bhutan": [
         "Bután"
@@ -1194,7 +1194,7 @@
         "Bosnia Herzegovina"
       ],
       "Botswana": [
-        "Botsuana"
+        "Bostwana"
       ],
       "Bouvet Island": [
         "Isla Bouvet"
@@ -1248,7 +1248,7 @@
         "Isla de Navidad"
       ],
       "Cocos (Keeling) Islands": [
-        "Islas Cocos (Keeling)"
+        "Islas Cocos"
       ],
       "Colombia": [
         "Colombia"
@@ -1260,7 +1260,7 @@
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "República Democrática del Congo"
+        "Congo, República Democrática del"
       ],
       "Cook Islands": [
         "Islas Cook"
@@ -1491,7 +1491,7 @@
         "Liberia"
       ],
       "Libya": [
-        "Libia"
+        "Líbia"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -1533,7 +1533,7 @@
         "Mauritania"
       ],
       "Mauritius": [
-        "Mauricio"
+        "Mauricio, islas"
       ],
       "Mayotte": [
         "Mayotte"
@@ -1563,7 +1563,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Birmania"
       ],
       "Namibia": [
         "Namibia"
@@ -1656,7 +1656,7 @@
         "Reunión"
       ],
       "Romania": [
-        "Rumania"
+        "Rumanía"
       ],
       "Russia": [
         "Rusia"
@@ -1848,7 +1848,7 @@
         "Islas Vírgenes Británicas"
       ],
       "Virgin Islands, U.S.": [
-        "Islas Vírgenes de EE.UU."
+        "Islas Vírgenes de los Estados Unidos."
       ],
       "Wallis and Futuna": [
         "Wallis y Futuna"
@@ -1944,6 +1944,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puedes cerrar esta ventana."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no deseas combinar."
@@ -2046,13 +2050,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha aceptado su invitación a ${ eventTitle }"
+        "${ emailAddress } ha aceptado tu invitación a ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha rechazado su invitación a ${ eventTitle }"
+        "${ emailAddress } ha rechazado tu invitación a ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } has aceptado provisionalmente tu invitación a ${ eventTitle }"
+        "${ emailAddress } ha aceptado provisionalmente tu invitación a ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -2060,13 +2064,13 @@
         "Cancelación de un evento el ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Cancelación de un evento que comienza el ${ formattedStart }"
+        "Cancelación de un evento a que comienza el ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invitación a un evento el ${ formattedStart }"
+        "Invitación de un evento el ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Invitación a un evento que comienza el ${ formattedStart }"
+        "Invitación de un evento que comienza el ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Actualización de un evento el ${ formattedStart }"
@@ -2099,10 +2103,10 @@
         "La cuenta no existe"
       ],
       "Address primary private key not found": [
-        "Clave privada principal de la dirección no encontrada"
+        "No se ha encontrado la clave primaria de la dirección"
       ],
       "Already a member of this calendar": [
-        "Ya es miembro de este calendario"
+        "Ya eres miembro de este calendario"
       ],
       "Answer failed to be sent": [
         "No se ha podido enviar la respuesta"
@@ -2140,13 +2144,13 @@
         "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
       ],
       "Domain not available, try again later": [
-        "Dominio no disponible, inténtalo de nuevo más tarde"
+        "Dominio no disponible, inténtelo de nuevo más tarde"
       ],
       "Email address disabled": [
         "Dirección de correo electrónico deshabilitada"
       ],
       "Email address invalid": [
-        "El correo electrónico no es válido"
+        "La dirección de correo electrónico no es válida"
       ],
       "Email is not valid": [
         "El correo no es válido"
@@ -2216,7 +2220,7 @@
         "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
       ],
       "Missing key packet": [
-        "Paquete de claves perdido"
+        "Falta el paquete de claves"
       ],
       "Missing signature": [
         "No se ha encontrado la firma"
@@ -2237,10 +2241,10 @@
         "No hay clave pública para esta dirección Proton"
       ],
       "No valid address found": [
-        "No se ha encontrado una dirección válida"
+        "No se encontró una dirección válida"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "Ninguna clave WKD recuperada para el usuario es válida para enviar"
+        "Ninguna clave WKD recuperada para el usuario es válida para el envío"
       ],
       "Not a Proton account": [
         "No es una cuenta Proton"
@@ -2301,7 +2305,7 @@
         "La verificación de la firma ha fallado"
       ],
       "Some contacts could not be deleted": [
-        "Algunos contactos no se han podido eliminar"
+        "Algunos contactos no se pudieron eliminar"
       ],
       "Some groups could not be deleted": [
         "Algunos grupos no pueden ser eliminados"
@@ -2316,16 +2320,16 @@
         "Algunos de los nombres de sus carpetas superan el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación para editar estos nombres."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Algunos de sus nombres de etiquetas están reservados. Por favor, personalice la importación para editar estos nombres."
+        "Algunos de tus nombres de etiquetas están reservados. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de sus nombres de etiquetas no están disponibles. Por favor, personalice la importación para editar estos nombres."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de sus nombres de carpeta exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Por favor, personalice la importación para editar estos nombres."
+        "Algunos de sus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifique la importación para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, póngase en contacto con nuestro ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final"
@@ -2370,7 +2374,7 @@
         "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
       ],
       "Trusted keys are not valid for sending": [
-        "Las claves confiadas no son válidas para enviar"
+        "Las claves de confianza no son válidas para el envío"
       ],
       "Unknown error": [
         "Error desconocido"
@@ -2474,7 +2478,7 @@
         "Calendario"
       ],
       "Calendar time zone not supported": [
-        "Zona horaria del calendario no admitida"
+        "No se admite la zona horaria del calendario"
       ],
       "Component with wrong format": [
         "Componente con formato incorrecto"
@@ -2501,7 +2505,7 @@
         "Falló la validación del evento"
       ],
       "Floating times not supported": [
-        "Tiempos flotantes no compatibles"
+        "Tiempos flotantes no admitidos"
       ],
       "Free-busy time information": [
         "Información de disponibilidad por Internet"
@@ -2578,7 +2582,7 @@
         "Por favor, ${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Algo ha ido mal. Por favor, actualiza la página o inténtalo más tarde."
+        "Algo ha ido mal. Por favor, actualice la página o inténtelo más tarde."
       ],
       "There was a problem connecting to Proton.": [
         "Ha ocurrido un problema al conectarse a Proton."
@@ -2641,7 +2645,7 @@
         "El archivo ICS adjunto no ha podido ser descifrado"
       ],
       "Attached ICS file could not be read": [
-        "No se ha podido leer el archivo ICS adjunto"
+        "El archivo ICS adjunto no se ha podido leer"
       ],
       "Invalid invitation": [
         "Invitación no válida"
@@ -2707,6 +2711,11 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Tus comentarios"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Algo salió mal al autenticar con tu clave de seguridad. Por favor, inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -2793,8 +2802,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se encontró ${ items.length } sugerencia, utiliza el teclado para navegar.",
-        "Se encontraron ${ items.length } sugerencias, utiliza el teclado para navegar."
+        "Se ha encontrado ${ items.length } sugerencia, utiliza el teclado para navegar.",
+        "Se han encontrado ${ items.length } sugerencias, utiliza el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Enter para confirmar tu elección, o Escape para cerrar el cuadro de sugerencias."
@@ -3192,11 +3201,11 @@
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } calendario combinado",
-        "${ calendarsToBeMerged } calendarios combinados"
+        "${ calendarsToBeMerged } calendarios cmbinados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } calendario fusionado",
-        "${ calendarsToBeMergedCount } calendarios fusionados"
+        "${ calendarsToBeMergedCount } calendario combinado",
+        "${ calendarsToBeMergedCount } calendarios combinados"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
@@ -3268,7 +3277,7 @@
         "10 direcciones de correo"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Se enviará un correo de cancelación a los participantes eliminados."
+        "Se enviará un correo eléctronico de cancelación a los participantes eliminados."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
         "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Quieres eliminar todos los eventos de esta serie?"
@@ -3277,7 +3286,7 @@
         "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Quieres eliminar este evento?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acceso restringido a la cuenta por falta de pago. Contacta con tu administrador."
+        "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Por favor, contacta con tu administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Los participantes agregados y eliminados serán notificados de todos los eventos de esta serie."
@@ -3315,7 +3324,7 @@
         "Se permiten hasta 100 participantes por invitación"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación, revisa tu carpeta de spam y comprueba que ${ strong } es la dirección correcta."
+        "Antes de solicitar un nuevo código de verificación revise su carpeta de spam y compruebe que ${ strong } la dirección es correcta."
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
         "Al compartir todos los detalles de los eventos de este calendario, aceptas conceder a Proton acceso a la información cifrada del calendario."
@@ -3381,8 +3390,11 @@
       "Duplicate key updated": [
         "Clave duplicada actualizada"
       ],
+      "Each code can only be used once": [
+        "Cada código únicamente puede ser usado una vez"
+      ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código desde la aplicación de autenticación"
+        "Introduce el código de tu aplicación de autenticación"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
@@ -3418,7 +3430,7 @@
         "aquí"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos dentro de un día hábil."
+        "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si crees que esto es un error, por favor contáctanos ${ contactLink }."
@@ -3443,13 +3455,13 @@
         "Importar buzón"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
+        "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
       "Internet connection lost": [
-        "Sin conexión a Internet"
+        "Se ha perdido la conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
@@ -3461,7 +3473,7 @@
         "Sólo tiene que confirmar su selección y nosotros haremos el resto."
       ],
       "Key fingerprint": [
-        "Huella digital de la clave"
+        "Huella digital de la llave"
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -3470,7 +3482,7 @@
         "Etiquetas:"
       ],
       "Large imports can take several days.": [
-        "Las importaciones grandes pueden tardar varios días."
+        "Las grandes importaciones pueden tardar varios días."
       ],
       "Learn more": [
         "Más información"
@@ -3500,16 +3512,16 @@
         "Fusionado"
       ],
       "Monthly ${ onDayString }": [
-        "Mensualmente ${ onDayString }"
+        "Mensual ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nombre su nueva carpeta y seleccione la carpeta principal en la que desea colocarla. Si no selecciona una carpeta principal, esta nueva carpeta se creará como una carpeta de nivel superior."
+        "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
       "New": [
         "Nuevo"
       ],
       "No contacts added yet": [
-        "Ningún contacto añadido aún"
+        "Todavía no se han añadido contactos"
       ],
       "No email address": [
         "No hay dirección de correo electrónico"
@@ -3518,7 +3530,7 @@
         "No se ha encontrado ningún grupo"
       ],
       "No results found": [
-        "No se encontraron resultados"
+        "No se han encontrado resultados"
       ],
       "None of the participants can be notified about your changes:": [
         "Ninguno de los participantes puede ser notificado de tus cambios:"
@@ -3539,7 +3551,7 @@
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Modifica esta configuración únicamente si estás usando PGP con destinatarios no-${ BRAND_NAME }."
+        "Cambia esta configuración solo si utilizas PGP con destinatarios que no sean de ${ BRAND_NAME }."
       ],
       "Other options": [
         "Otras opciones"
@@ -3548,7 +3560,7 @@
         "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envía automáticamente el mensaje usando el modo de composición actual. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
+        "PGP/MIME envía automáticamente el mensaje utilizando el modo de composición actual. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -3563,11 +3575,11 @@
         "Por favor, seleccione las carpetas que le gustaría importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selecciona qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
-        "Selecciona qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
+        "Seleccione qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
+        "Seleccione qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Selecciona qué dirección o direcciones de correo añadir a ${ groupName }."
+        "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
@@ -3609,7 +3621,7 @@
         "El tiempo de la sesión ha expirado"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "La configuración de PGP permite el envío de correos cifrados de extremo a extremo con un usuario no-${ BRAND_NAME } que use un servicio PGP compatible."
+        "La configuración de PGP le permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
@@ -3666,13 +3678,13 @@
         "Este evento ha sido actualizado. El organizador no será notificado de que rechazas la invitación ya que no puedes enviar correos electrónicos desde la dirección invitada. ¿Deseas eliminar este evento de todos modos?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Este enlace conduce a un sitio web que podría estar intentando robar tu información, como contraseñas y datos de tarjetas de crédito."
+        "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y no puede ser abierto por navegadores Edge. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homógrafo. Por favor, verifique que este es el enlace que quiere visitar o no lo abra."
+        "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
@@ -3684,7 +3696,7 @@
         "Para recuperar tus datos, necesitas volver a activar la llave de cifrado de contactos utilizada en el momento en que se crearon los datos. Esto requerirá recordar la contraseña utilizada cuando se generó la llave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para utilizar la verificación de dirección, debes confiar en una o más claves públicas disponibles, incluida la que deseas utilizar para el envío. Esto evita que las claves de cifrado sean falsificadas."
+        "Para usar la verificación de dirección, debe confiar en una o más de las claves públicas disponibles, incluyendo la clave que deseas utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
@@ -3699,7 +3711,7 @@
         "Actualice hoy para evitar perder los beneficios de ${ planName } $."
       ],
       "We'll notify you when the import is done.": [
-        "Te avisaremos cuando la importación haya terminado."
+        "Le avisaremos cuando la importación esté terminada."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
@@ -3709,6 +3721,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "Which event would you like to delete?": [
         "¿Qué evento quieres eliminar?"
@@ -3735,7 +3750,7 @@
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
-        "¿Desearía recibir un código de verificación nuevo?"
+        "¿Quiere recibir un código de verificación nuevo?"
       ],
       "Would you like to update all events in this series?": [
         "¿Quieres actualizar todos los eventos de esta serie?"
@@ -3744,16 +3759,16 @@
         "¿Quieres actualizar este evento?"
       ],
       "Yearly": [
-        "Anualmente"
+        "Anual"
       ],
       "You already joined this calendar": [
-        "Ya te habías unido a este calendario"
+        "Ya te has unido a este calendario"
       ],
       "You are about to open another browser tab and visit:": [
-        "Está a punto de abrir otra pestaña del navegador y visitar:"
+        "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Has iniciado sesión como ${ user.Name } (${ user.Email })."
+        "Actualmente está conectado como ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "También puede unir calendarios importados con calendarios Proton existentes."
@@ -3777,10 +3792,10 @@
         "Ya habías rechazado esta invitación. Solicita al dueño una nueva invitación"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Has alcanzado el${ spaceDisplayed }% de tu capacidad de almacenamiento. Libera algo de espacio o añade más espacio de almacenamiento.${ freeUpMessage } ${ upgradeLink }"
+        "Has alcanzado el ${ spaceDisplayed }% de tu capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. Libera algo de espacio o añade más espacio de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
+        "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
@@ -3865,13 +3880,13 @@
     },
     "Key badge": {
       "Compromised": [
-        "Comprometida"
+        "Comprometido"
       ],
       "Expired": [
-        "Caducada"
+        "Expirada"
       ],
       "Obsolete": [
-        "Obsoleta"
+        "Obsoleto"
       ],
       "Primary": [
         "Principal"
@@ -3880,7 +3895,7 @@
         "Revocada"
       ],
       "Trusted": [
-        "De confianza"
+        "Confiable"
       ],
       "WKD": [
         "WKD"
@@ -3891,13 +3906,13 @@
         "(No disponible temporalmente. Vuelva a comprobarlo más tarde.)"
       ],
       "Add email address": [
-        "Agregar dirección de correo electrónico"
+        "Añadir correo electrónico"
       ],
       "Add image URL": [
-        "Agregar URL de imagen"
+        "Añadir URL de imagen"
       ],
       "Add to group": [
-        "Agregar al grupo"
+        "Añadir al grupo"
       ],
       "All day": [
         "Todo el día"
@@ -3972,7 +3987,7 @@
         "Descripción"
       ],
       "Do not ask again": [
-        "No volver a preguntar"
+        "No preguntar de nuevo"
       ],
       "Email": [
         "Correo electrónico"
@@ -3981,7 +3996,7 @@
         "Dirección de correo electrónico"
       ],
       "Email format": [
-        "Formato de correo"
+        "Formato de correo electrónico"
       ],
       "Emails": [
         "Correos electrónicos"
@@ -4008,7 +4023,7 @@
         "Exportar contactos"
       ],
       "Extended address": [
-        "Dirección ampliada"
+        "Dirección extendida"
       ],
       "Folder location": [
         "Ubicación de la carpeta"
@@ -4074,7 +4089,7 @@
         "Contraseña del buzón"
       ],
       "Manage categories": [
-        "Gestionar categorías"
+        "Administrar categorías"
       ],
       "Manage folders": [
         "Gestionar carpetas"
@@ -4098,7 +4113,7 @@
         "Notificaciones"
       ],
       "OK": [
-        "OK"
+        "Está bien"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -4132,7 +4147,7 @@
         "Puerto"
       ],
       "Post office box": [
-        "Apartado postal"
+        "Apartado de correos"
       ],
       "Postal code": [
         "Código postal"
@@ -4144,7 +4159,7 @@
         "Claves públicas"
       ],
       "Region": [
-        "Estado"
+        "Región"
       ],
       "Repeat every": [
         "Repetir cada"
@@ -4180,7 +4195,7 @@
         "Subir archivo"
       ],
       "Upload picture": [
-        "Cargar imagen"
+        "Subir imagen"
       ],
       "URL": [
         "URL"
@@ -4196,6 +4211,9 @@
       ],
       "Wonderful": [
         "Maravilloso"
+      ],
+      "Your calendar URL": [
+        "URL de tu calendario"
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
@@ -4273,19 +4291,27 @@
         "Creando calendarios nuevos"
       ],
       "Gathering your data": [
-        "Obteniendo datos"
+        "Recogida de datos"
       ],
       "We're gathering your data from your provider": [
-        "Estamos obteniendo los datos desde tu proveedor"
+        "Recogemos los datos de su proveedor"
       ],
       "Your import is starting": [
-        "Tu importación está comenzando"
+        "Tu importación está empezando"
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todos los mensajes de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los mensajes de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4305,7 +4331,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Una nueva versión de ${ appName } está disponible. ${ reloadButton }."
+        "Hay una nueva versión de ${ appName } disponible. ${ reloadButton }."
       ]
     },
     "MIME type": {
@@ -4330,9 +4356,6 @@
       ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "No se pueden añadir más calendarios. Has alcanzado el número máximo de calendarios permitidos dentro de tu plan."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No se pueden crear más calendarios. Has alcanzado el número máximo de calendarios personales dentro de tu plan."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -4400,7 +4423,7 @@
         "Cada ${ interval } meses ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensualmente ${ onDayString }"
+        "Mensual ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Mensualmente ${ onDayString }, ${ timesString }"
@@ -4414,109 +4437,109 @@
         "el día ${ dayOfMonth }"
       ],
       "on the first Friday": [
-        "el primer Viernes"
+        "el primer viernes"
       ],
       "on the first Monday": [
-        "el primer Lunes"
+        "el primer lunes"
       ],
       "on the first Saturday": [
-        "el primer Sábado"
+        "el primer sábado"
       ],
       "on the first Sunday": [
-        "el primer Domingo"
+        "el primer domingo"
       ],
       "on the first Thursday": [
-        "el primer Jueves"
+        "el primer jueves"
       ],
       "on the first Tuesday": [
-        "el primer Martes"
+        "el primer martes"
       ],
       "on the first Wednesday": [
-        "el primer Miércoles"
+        "el primer miércoles"
       ],
       "on the fourth Friday": [
-        "el cuarto Viernes"
+        "el cuarto viernes"
       ],
       "on the fourth Monday": [
-        "el cuarto Lunes"
+        "el cuarto lunes"
       ],
       "on the fourth Saturday": [
-        "el cuarto Sábado"
+        "el cuarto sábado"
       ],
       "on the fourth Sunday": [
-        "el cuarto Domingo"
+        "el cuarto domingo"
       ],
       "on the fourth Thursday": [
-        "el cuarto Jueves"
+        "el cuarto jueves"
       ],
       "on the fourth Tuesday": [
-        "el cuarto Martes"
+        "el cuarto martes"
       ],
       "on the fourth Wednesday": [
-        "el cuarto Miércoles"
+        "el cuarto miércoles"
       ],
       "on the last Friday": [
-        "el último Viernes"
+        "el último viernes"
       ],
       "on the last Monday": [
-        "el último Lunes"
+        "el último lunes"
       ],
       "on the last Saturday": [
-        "el último Sábado"
+        "el último sábado"
       ],
       "on the last Sunday": [
-        "el último Domingo"
+        "el último domingo"
       ],
       "on the last Thursday": [
-        "el último Jueves"
+        "el último jueves"
       ],
       "on the last Tuesday": [
-        "el último Martes"
+        "el último martes"
       ],
       "on the last Wednesday": [
-        "el último Miércoles"
+        "el último miércoles"
       ],
       "on the second Friday": [
-        "el segundo Viernes"
+        "el segundo viernes"
       ],
       "on the second Monday": [
-        "el segundo Lunes"
+        "el segundo lunes"
       ],
       "on the second Saturday": [
-        "el segundo Sábado"
+        "el segundo sábado"
       ],
       "on the second Sunday": [
-        "el segundo Domingo"
+        "el segundo domingo"
       ],
       "on the second Thursday": [
-        "el segundo Jueves"
+        "el segundo jueves"
       ],
       "on the second Tuesday": [
-        "el segundo Martes"
+        "el segundo martes"
       ],
       "on the second Wednesday": [
-        "el segundo Miércoles"
+        "el segundo miércoles"
       ],
       "on the third Friday": [
-        "el tercer Viernes"
+        "el tercer viernes"
       ],
       "on the third Monday": [
-        "el tercer Lunes"
+        "el tercer lunes"
       ],
       "on the third Saturday": [
-        "el tercer Sábado"
+        "el tercer sábado"
       ],
       "on the third Sunday": [
-        "el tercer Domingo"
+        "el tercer domingo"
       ],
       "on the third Thursday": [
-        "el tercer Jueves"
+        "el tercer jueves"
       ],
       "on the third Tuesday": [
-        "el tercer Jueves"
+        "el tercer martes"
       ],
       "on the third Wednesday": [
-        "el tercer Miércoles"
+        "el tercer miércoles"
       ]
     },
     "New Label form": {
@@ -4537,7 +4560,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a una Internet en la que la privacidad es la norma."
+        "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a un Internet en el que la privacidad es la norma."
       ]
     },
     "new_plans: label": {
@@ -4698,7 +4721,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Bienvenido/a a ${ appName }"
+        "Bienvenido a ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
         "Donde puedes tomar el control de tu tiempo y de tus datos."
@@ -4814,7 +4837,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "Esta clave no puede utilizarse para cifrado"
+        "Esta clave no se puede utilizar para el cifrado"
       ]
     },
     "PGP Key info": {
@@ -4830,7 +4853,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
+        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -4856,7 +4879,7 @@
         "Añadir título"
       ],
       "E.g., ": [
-        "P. ej., "
+        "Ej., "
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -4886,7 +4909,7 @@
         "Seleccionar"
       ],
       "Start typing an email address": [
-        "Empieza a escribir una dirección de correo electrónico"
+        "Comienza a escribir una dirección de correo electrónico"
       ]
     },
     "Placeholder for contact group name": {
@@ -4900,6 +4923,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contacto exportado con éxito.",
+        "${ contactsExported.length } de ${ countContacts } contactos exportados con éxito."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -4923,7 +4950,7 @@
         "Dirección"
       ],
       "Email": [
-        "Correo"
+        "Correo electrónico"
       ],
       "Fax": [
         "Fax"
@@ -4957,7 +4984,7 @@
     },
     "Select files": {
       "Upload": [
-        "Cargar"
+        "Subir"
       ]
     },
     "Select search results": {
@@ -4970,6 +4997,12 @@
         "Fallo en la actualización de la configuración"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
+        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Añadir personas o grupos"
@@ -4977,7 +5010,7 @@
     },
     "Share calendar modal title": {
       "Share with Proton users": [
-        "Compartir con usuarios Proton"
+        "Compartir con usuarios de Proton"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4996,10 +5029,10 @@
         "Acepta invitaciones fácilmente"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        "Obtén hasta 18 meses gratis de ${ planName }"
+        "Consigue gratis hasta 18 meses de ${ planName } $"
       ],
       "Invite friends and earn rewards!": [
-        "¡Invita a tus amigos y gana recompensas!"
+        "¡Invita amigos y gana recompensas!"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ahora las invitaciones aparecen en tu calendario como eventos pendientes. Solo abre un evento para responder. ${ goToSettingsLink }"
@@ -5087,7 +5120,7 @@
         "Respuesta enviada y evento eliminado"
       ],
       "Bug reported": [
-        "Error notificado"
+        "Fallo reportado"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario añadido. La sincronización puede tardar unos minutos."
@@ -5194,7 +5227,7 @@
         "Preferencias guardadas"
       ],
       "Verification successful": [
-        "Verificación exitosa"
+        "Verificación completada con éxito"
       ]
     },
     "Success notification when user send feedback": {
@@ -5216,7 +5249,7 @@
         "Creada"
       ],
       "Expires": [
-        "Caduca"
+        "Expira"
       ],
       "Fingerprint": [
         "Huella digital"
@@ -5319,7 +5352,7 @@
         "Agregar a ${ groupCount } grupos"
       ],
       "Add to ${ groupName }": [
-        "Agregar a ${ groupName }"
+        "Añadir a ${ groupName }"
       ],
       "Addresses": [
         "Direcciones"
@@ -5349,7 +5382,7 @@
         "Limpiando datos"
       ],
       "Contact details": [
-        "Detalles de contacto"
+        "Detalles del contacto"
       ],
       "Contact Details": [
         "Datos del contacto"
@@ -5361,7 +5394,7 @@
         "Contactos"
       ],
       "Continue with partial import?": [
-        "¿Continuar con la importación parcial?"
+        "¿Continuar con una importación parcial?"
       ],
       "Create calendar": [
         "Crear calendario"
@@ -5370,7 +5403,7 @@
         "Crear contacto"
       ],
       "Create new group": [
-        "Crear nuevo grupo"
+        "Crear un nuevo grupo"
       ],
       "Create public link": [
         "Crear enlace público"
@@ -5429,13 +5462,13 @@
         "Direcciones de correo electrónico"
       ],
       "Email settings": [
-        "Ajustes de correo electrónico"
+        "Ajustes del correo electrónico"
       ],
       "Enter your password": [
         "Introduce tu contraseña"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Ingresa tu nombre de usuario o tu dirección de correo de ${ MAIL_APP_NAME }"
+        "Ingrese su nombre de usuario o su dirección de correo de ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Error"
@@ -5450,7 +5483,7 @@
         "Exportando contactos"
       ],
       "Feedback": [
-        "Feedback"
+        "Comentarios"
       ],
       "Groups": [
         "Grupos"
@@ -5472,7 +5505,7 @@
         "Importar eventos"
       ],
       "Import failed": [
-        "Fallo en la importación"
+        "Error en la importación"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
@@ -5493,7 +5526,7 @@
         "Abrir acciones desplegables"
       ],
       "Open help menu": [
-        "Abrir menú de ayuda"
+        "Abrir el menú de ayuda"
       ],
       "Open settings menu": [
         "Abrir menú de configuración"
@@ -5535,7 +5568,7 @@
         "Notificar un problema"
       ],
       "Request new code": [
-        "Solicitar nuevo código"
+        "Solicitar un nuevo código"
       ],
       "Reset calendar keys": [
         "Restablecer las claves del calendario"
@@ -5547,7 +5580,7 @@
         "Selecciona un día del mes"
       ],
       "Select a theme": [
-        "Seleccionar un tema"
+        "Selecciona un tema"
       ],
       "Select action to take on contact group": [
         "Selecciona la acción a realizar en el grupo de contactos"
@@ -5640,7 +5673,7 @@
         "Advertencia"
       ],
       "Warning: suspected fake website": [
-        "Atención: sospecha de sitio web falso"
+        "Advertencia: sospecha de sitio web falso"
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
@@ -5655,12 +5688,17 @@
         "Enlace a tu calendario"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Tu periodo de prueba gratuita termina pronto, el ${ formattedEndDate }"
+        "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Elige un número"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Editar información"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5670,7 +5708,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Customize import to reduce the number of folders": [
         "Personaliza la importación para reducir el número de carpetas"
@@ -5726,10 +5764,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        "Haz click para volver a reproducir el vídeo"
+        "Haga clic para reproducir el vídeo"
       ],
       "Replay video": [
-        "Volver a reproducir el vídeo"
+        "Repetición del vídeo"
       ]
     },
     "View event button tooltip": {
@@ -5742,18 +5780,18 @@
         "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "¿Está seguro que quiere eliminar permanentemente ${ count } grupo de contactos?",
-        "¿Está seguro que quiere eliminar permanentemente ${ count } grupos de contactos?"
+        "¿Estás seguro que quieres eliminar permanentemente ${ count } grupo de contactos?",
+        "¿Estás seguro que quieres eliminar permanentemente ${ count } grupos de contactos?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } contacto?",
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "¿Está seguro de que quiere eliminar permanentemente este grupo de contactos?"
+        "¿Estás seguro de que quieres eliminar permanentemente este grupo de contactos?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "¿Estás seguro de que deseas eliminar permanentemente este contacto?"
+        "¿Estás seguro de que quieres eliminar permanentemente este contacto?"
       ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
@@ -5789,7 +5827,7 @@
         "El descifrado del contenido cifrado ha fallado."
       ],
       "The verification of the contact details' signature failed.": [
-        "La verificación de la firma de los datos del contacto ha fallado."
+        "La verificación de la firma de los detalles del contacto ha fallado."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Por favor, introduce la palabra ${ boldDanger } en el campo para continuar."
@@ -5935,7 +5973,7 @@
         "Semanalmente todos los días, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Semanal todos los días, ${ untilString }"
+        "Semanalmente todos los días, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Semanalmente los viernes"
@@ -5968,10 +6006,10 @@
         "Semanalmente los domingos"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Semanal los Domingos, ${ timesString }"
+        "Semanalmente los domingos, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Semanal los domingos, ${ untilString }"
+        "Semanalmente los domingos, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "Semanalmente los jueves"
@@ -6027,7 +6065,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",
@@ -6038,7 +6076,7 @@
         "Cada ${ interval } años, ${ untilString }"
       ],
       "Yearly": [
-        "Anualmente"
+        "Anual"
       ],
       "Yearly, ${ timesString }": [
         "Anualmente, ${ timesString }"

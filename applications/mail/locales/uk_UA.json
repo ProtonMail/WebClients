@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "uk_UA"
   },
   "contexts": {
@@ -1232,6 +1232,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Найкраща пропозиція"
+      ],
       "Most popular": [
         "Найпопулярніша"
       ]
@@ -1254,6 +1257,11 @@
         "на місяць"
       ]
     },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
     "blackfriday: VPNspecialoffer Title": {
       "1 month": [
         "1 місяць"
@@ -1263,6 +1271,9 @@
       ],
       "24 months": [
         "24 місяці"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Отримайте спеціальну пропозицію наприкінці року на наш платний тариф Proton VPN PLUS прямо зараз"
       ]
     },
     "Bug category": {
@@ -2876,6 +2887,12 @@
       "No labels": [
         "Немає міток"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -3244,6 +3261,9 @@
       ],
       "Primary key is not valid for sending": [
         "Основний ключ недійсний для надсилання"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Для користувача ${ BRAND_NAME } отримано недійсний основний ключ для надсилання"
       ],
       "Public key could not be trusted": [
         "Відкритий ключ не може бути довіреним"
@@ -4735,7 +4755,7 @@
         "Пам'ятайте про надання пароля отримувачу"
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Завантаження повідомлень ${ esProgress } з ${ totalProgressToShow }"
+        "Завантаження повідомлення ${ esProgress } з ${ totalProgressToShow }"
       ],
       "Draft": [
         "Чернетка"
@@ -7274,6 +7294,12 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } з ${ countContacts } контакт успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
         "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
@@ -7638,11 +7664,23 @@
         "${ elementsCount } розмов позначено непрочитаними.",
         "${ elementsCount } розмови позначено непрочитаною."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } розмову переміщено до теки ${ folderName }, а відправника додано до списку не спаму.",
+        "${ elementsCount } розмови переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправників додано до списку не спаму."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } розмову переміщено до теки ${ folderName }.",
         "${ elementsCount } розмови переміщено до теки ${ folderName }.",
         "${ elementsCount } розмов переміщено до теки ${ folderName }.",
         "${ elementsCount } розмов переміщено до теки ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } розмову переміщено до спаму, а відправника додано до вашого списку спаму.",
+        "${ elementsCount } розмови переміщено до спаму, а відправників додано до вашого списку спаму.",
+        "${ elementsCount } розмов переміщено до спаму, а відправників додано вашого списку спаму.",
+        "${ elementsCount } розмов переміщено до спаму, а відправників додано вашого списку спаму."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } розмову вилучено з ${ labelName }.",
@@ -7674,11 +7712,23 @@
         "${ elementsCount } повідомлень позначено непрочитаними.",
         "${ elementsCount } повідомлення позначено непрочитаними."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправника додано до списку не спаму.",
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправників додано до списку не спаму."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
         "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
         "${ elementsCount } повідомлень переміщено до теки ${ folderName }.",
         "${ elementsCount } повідомлень переміщено до теки ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до вашого списку спаму.",
+        "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до вашого списку спаму.",
+        "${ elementsCount } повідомлень додано до спаму, а відправників додано вашого списку спаму.",
+        "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до вашого списку спаму."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } повідомлення вилучено з ${ labelName }.",
@@ -7731,8 +7781,14 @@
       "Conversation marked as unread.": [
         "Розмову позначено непрочитаною."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Розмову переміщено у ${ folderName }, а відправника додано до вашого списку не спаму."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Розмову переміщено до теки ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Розмову переміщено до спаму, а відправника додано до вашого списку спаму."
       ],
       "Conversation removed from ${ labelName }.": [
         "Розмову вилучено з ${ labelName }."
@@ -7788,8 +7844,14 @@
       "Message marked as unread.": [
         "Повідомлення позначено непрочитаним."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Повідомлення переміщено у ${ folderName }, а відправника додано до вашого списку не спаму."
+      ],
       "Message moved to ${ folderName }.": [
         "Повідомлення переміщено до теки ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Повідомлення переміщено до спаму, а відправника додано до вашого списку спаму."
       ],
       "Message removed from ${ labelName }.": [
         "Повідомлення вилучено з ${ labelName }."
@@ -8127,6 +8189,9 @@
       ],
       "Edit contact group": [
         "Редагувати групу контактів"
+      ],
+      "Edit email settings": [
+        "Змінити налаштування електронної пошти"
       ],
       "Edit filter": [
         "Змінити фільтр"
@@ -8514,7 +8579,7 @@
         "Імпортування розпочнеться з найновіших повідомлень."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
+        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю опцію."
       ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"
@@ -8915,7 +8980,9 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Кожні ${ interval } років",
+        "Кожні ${ interval } років"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Кожен ${ interval } рік, ${ timesString }",

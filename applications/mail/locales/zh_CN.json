@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "zh_CN"
   },
   "contexts": {
@@ -106,9 +106,6 @@
       ],
       "Block messages from this sender": [
         "屏蔽来自此发件人的所有邮件"
-      ],
-      "Block senders": [
-        "屏蔽发件人"
       ],
       "Bold": [
         "粗体"
@@ -245,11 +242,11 @@
       "Delete": [
         "删除"
       ],
-      "Delete ${ selectedCount } contact": [
-        "删除 ${ selectedCount } 个联系人"
-      ],
-      "Delete ${ selectedCount } contact group": [
+      "Delete ${ selectedCount } contact groups": [
         "删除 ${ selectedCount } 个联系人组"
+      ],
+      "Delete ${ selectedCount } contacts": [
+        "删除 ${ selectedCount } 个联系人"
       ],
       "Delete all": [
         "全部删除"
@@ -461,7 +458,7 @@
       "Insert": [
         "插入"
       ],
-      "Insert ${ totalChecked } contact": [
+      "Insert ${ totalChecked } contacts": [
         "插入 ${ totalChecked } 联系人"
       ],
       "Insert contact": [
@@ -932,7 +929,7 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
+      "Trust keys": [
         "信任此密钥"
       ],
       "Trust public key": [
@@ -1224,7 +1221,7 @@
     },
     "blackfriday Title": {
       "Most popular": [
-        "人气最高"
+        "最受欢迎"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1232,7 +1229,7 @@
         "立即享受优惠"
       ],
       "Get the deal now": [
-        "立即享受优惠"
+        "立即享受优惠活动"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2770,7 +2767,7 @@
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
+      "${ count } times": [
         "${ count } 次"
       ],
       "Daily": [
@@ -2782,13 +2779,13 @@
       "Daily, ${ untilString }": [
         "每天, 直到${ untilString }"
       ],
-      "Every ${ interval } day": [
+      "Every ${ interval } days": [
         "每 ${ interval } 天"
       ],
-      "Every ${ interval } day, ${ timesString }": [
+      "Every ${ interval } days, ${ timesString }": [
         "每 ${ interval } 天，${ timesString }"
       ],
-      "Every ${ interval } day, ${ untilString }": [
+      "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
       ],
       "until ${ dateString }": [
@@ -2828,7 +2825,7 @@
     },
     "Description": {
       "${ manageBlockedAddressesSettingsLink } in settings.": [
-        "设置中的 ${ manageBlockedAddressesSettingsLink } 。"
+        "在设置中${ manageBlockedAddressesSettingsLink }。"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
@@ -2844,12 +2841,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
-      ],
-      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "来自 ${ senderEmailAddress } 与另外 ${ otherSendersCount } 个邮箱的新邮件将被直接删除，不再送达。"
-      ],
-      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "来自 ${ senderEmailAddress } 的新邮件将被直接删除，不再送达。"
       ],
       "No folders": [
         "无文件夹"
@@ -2947,7 +2938,7 @@
       "Event starting now": [
         "活动现在开始"
       ],
-      "Event starts in ${ minutesUntilEvent } minute": [
+      "Event starts in ${ minutesUntilEvent } minutes": [
         "活动将在 ${ minutesUntilEvent } 分钟后开始"
       ],
       "Event starts tomorrow": [
@@ -3007,9 +2998,6 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again": [
-        "出错了，请重试"
-      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -3028,7 +3016,7 @@
       "Choose a date in the future.": [
         "选择未来的日期。"
       ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
         "请在接下来的 ${ SCHEDULED_MAX_DATE_DAYS } 天内选择一个日期。"
       ],
       "Condition incomplete": [
@@ -3052,10 +3040,10 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
+      "Deselect at least ${ calendarToFixCount } calendars": [
         "取消选择至少 ${ calendarToFixCount } 个日历"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
+      "Deselect at least ${ calendarToFixCount } calendars or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
       "Domain not available, try again later": [
@@ -3130,7 +3118,7 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
+      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Message needs to be sent first": [
@@ -3169,19 +3157,10 @@
       "Not a valid number": [
         "无效号码"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "某个/些群组没有联系人：${ noContactGroupList } "
-      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
-      "Please activate your content search again": [
-        "请重新开启全文搜索"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
+      "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
       "Please repeat the password": [
@@ -3208,7 +3187,7 @@
       "re-activate the previous key": [
         "重新激活之前的密钥"
       ],
-      "Removed duplicate recipient: ${ recipents }": [
+      "Removed duplicate recipients: ${ recipents }": [
         "删除的重复收件人：${ recipents }"
       ],
       "Request timed out": [
@@ -3232,8 +3211,17 @@
       "Some contacts could not be deleted": [
         "无法删除部分联系人"
       ],
+      "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
+      ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
+      ],
+      "Some groups have no contacts: ${ noContactGroupList } ": [
+        "某个/些群组没有联系人：${ noContactGroupList } "
+      ],
+      "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
+        "该附件无法解密。\n如果你有相应的私钥，你仍然能够解密\n用GnuPG等程序来处理该文件。"
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
         "部分文件夹名称与系统内部名称冲突，请在导入内容中予以更改。"
@@ -3258,9 +3246,6 @@
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "对不起，Proton 无法解密您的邮件。请确认您的密钥是否已全部启用。"
-      ],
-      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "该附件无法解密。\n如果你有相应的私钥，你仍然能够解密\n用GnuPG等程序来处理该文件。"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
@@ -3337,7 +3322,7 @@
       "You can't send vCards of more than 10 contacts": [
         "您不能发送超过 10 个联系人的 vCard"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+      "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口"
       ],
       "You did not provide a file.": [
@@ -3622,7 +3607,7 @@
       ]
     },
     "file size format": {
-      "byte": [
+      "bytes": [
         "B"
       ],
       "GB": [
@@ -3636,16 +3621,16 @@
       ]
     },
     "file size format, long": {
-      "Byte": [
+      "Bytes": [
         "字节"
       ],
-      "Gigabyte": [
+      "Gigabytes": [
         "GB"
       ],
-      "Kilobyte": [
+      "Kilobytes": [
         "KB"
       ],
-      "Megabyte": [
+      "Megabytes": [
         "MB"
       ]
     },
@@ -3775,7 +3760,7 @@
       "Expires today": [
         "今天过期"
       ],
-      "Only ${ days } day left": [
+      "Only ${ days } days left": [
         "仅剩 ${ days } 天"
       ]
     },
@@ -3867,7 +3852,7 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+      "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "找到 ${ items.length } 建议，使用键盘导航。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
@@ -3892,7 +3877,7 @@
       ]
     },
     "ICS widget label for event details": {
-      "${ totalAttendees } participant": [
+      "${ totalAttendees } participants": [
         "${ totalAttendees } 个参与者"
       ],
       "Organizer:": [
@@ -3910,10 +3895,10 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
       ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "加密并添加联系人时出错，未能导入任何联系人。"
       ]
     },
@@ -3923,7 +3908,7 @@
       ]
     },
     "Import contact groups info": {
-      "${ totalContacts } contact": [
+      "${ totalContacts } contacts": [
         "${ totalContacts } 名联系人"
       ]
     },
@@ -3936,7 +3921,7 @@
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
         "联系人导入成功，已显示在您的通讯录中。"
       ]
     },
@@ -4214,115 +4199,115 @@
       ]
     },
     "Info": {
-      "${ addressCount } email address": [
+      "${ addressCount } email addresses": [
         "${ addressCount } 个邮箱地址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }。"
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
+      "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
+      "${ calendarsToBeMerged } merged calendars": [
         "将 ${ calendarsToBeMerged } 份日历与现有日历合并"
       ],
-      "${ calendarsToBeMergedCount } merged calendar": [
+      "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
+      "${ contactCount } contacts contain multiple email addresses.": [
         "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
-      "${ contactEmailsLength } Member": [
+      "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } 会员"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 有多个邮箱地址。"
       ],
-      "${ contactsCount } contact found": [
+      "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位联系人"
       ],
-      "${ count } unread message": [
+      "${ count } unread messages": [
         "${ count } 封未读邮件"
       ],
-      "${ embeddedAttachmentsCount } embedded image": [
+      "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 张图片已嵌入。"
       ],
-      "${ groupCounts } group found": [
+      "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 个群组"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+      "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
-      "${ numberOfTrackers } email tracker blocked": [
+      "${ numberOfTrackers } email trackers blocked": [
         "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
       ],
-      "${ numContactGroups } contact group": [
+      "${ numContactGroups } contact groups": [
         "${ numContactGroups } 个联系人群组"
       ],
-      "${ numContacts } contact": [
+      "${ numContacts } contacts": [
         "${ numContacts } 名联系人"
       ],
-      "${ numOccurrences } occurrence found": [
+      "${ numOccurrences } occurrences found": [
         "找到 ${ numOccurrences } 条结果"
       ],
-      "${ numOccurrences } occurrence found in the mail content": [
+      "${ numOccurrences } occurrences found in the mail content": [
         "在邮件正文中找到 ${ numOccurrences } 条结果"
       ],
-      "${ providerFoldersNumLocalized } folder found": [
+      "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
+      "${ providerFoldersNumLocalized } labels found in Gmail": [
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
-      "${ pureAttachmentsCount } file attached": [
+      "${ pureAttachmentsCount } files attached": [
         "${ pureAttachmentsCount } 个文件已添加到附件。"
       ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
-      "${ selectedFoldersCount } folder selected": [
+      "${ selectedFoldersCount } folders selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
       ],
-      "${ selectedFoldersCount } label selected": [
+      "${ selectedFoldersCount } labels selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
       ],
-      "${ selectedFoldersCountLocalized } folder selected": [
+      "${ selectedFoldersCountLocalized } folders selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
-      "${ selectedFoldersCountLocalized } label selected": [
+      "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
-      "${ total } conversation": [
+      "${ total } conversations": [
         "${ total } 条会话"
       ],
-      "${ total } message": [
+      "${ total } messages": [
         "${ total } 封邮件"
       ],
-      "${ totalMessagesCount } scheduled message": [
+      "${ totalMessagesCount } scheduled messages": [
         "${ totalMessagesCount } 封定时发送邮件"
       ],
-      "${ unread } unread conversation": [
+      "${ unread } unread conversations": [
         "${ unread } 条未读会话"
       ],
-      "${ unread } unread message": [
+      "${ unread } unread messages": [
         "${ unread } 封未读邮件"
       ],
-      "${ unreadCount } unread conversation": [
+      "${ unreadCount } unread conversations": [
         "${ unreadCount } 条未读会话"
       ],
-      "${ unreadCount } unread message": [
+      "${ unreadCount } unread messages": [
         "${ unreadCount } 封未读邮件"
       ],
-      "${ updated } contact updated successfully.": [
+      "${ updated } contacts updated successfully.": [
         "${ updated } 联系人更新成功。"
       ],
-      "(${ memberCount } member)": [
+      "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
       ],
       "(Filter if ALL of the following conditions are met)": [
@@ -4361,10 +4346,10 @@
       "Align right": [
         "右对齐"
       ],
-      "All (${ totalFoldersCount } folder)": [
+      "All (${ totalFoldersCount } folders)": [
         "全部（${ totalFoldersCount } 个文件夹）"
       ],
-      "All (${ totalFoldersCount } label)": [
+      "All (${ totalFoldersCount } labels)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
       "All messages stored in this folder will be permanently deleted.": [
@@ -4397,13 +4382,13 @@
       "Are you sure you want to move all messages in this location to Trash?": [
         "确定要将此处所有邮件移至废件箱吗？"
       ],
-      "Are you sure you want to permanently delete ${ count } conversation?": [
+      "Are you sure you want to permanently delete ${ count } conversations?": [
         "确定要永久删除 ${ count } 条会话吗？"
       ],
-      "Are you sure you want to permanently delete ${ count } draft?": [
+      "Are you sure you want to permanently delete ${ count } drafts?": [
         "确定要永久删除 ${ count } 份草稿吗？"
       ],
-      "Are you sure you want to permanently delete ${ count } message?": [
+      "Are you sure you want to permanently delete ${ count } messages?": [
         "确定要永久删除 ${ count } 封邮件吗？"
       ],
       "Are you sure you want to permanently delete this conversation?": [
@@ -4466,7 +4451,7 @@
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
+      "Create ${ calendarsToBeCreated } new calendars": [
         "新建 ${ calendarsToBeCreated } 份日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
@@ -4502,7 +4487,7 @@
       "Daily": [
         "每天"
       ],
-      "Day": [
+      "Days": [
         "天"
       ],
       "Default email application": [
@@ -4511,7 +4496,7 @@
       "Disable message content search": [
         "禁用邮件全文搜索"
       ],
-      "Do you want to download this attachment anyway?": [
+      "Do you want to download these attachments anyway?": [
         "您仍然想要下载这些附件吗？"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
@@ -4522,9 +4507,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "正在下载邮件：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
       ],
       "Draft": [
         "草稿"
@@ -4568,13 +4550,13 @@
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         "邮件跟踪器会威胁到您的隐私，Proton暂未在此邮件中发现任何跟踪器。"
       ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } trackers.": [
         "邮件跟踪器会威胁到您的隐私，Proton找到并阻止了 ${ numberOfTrackers } 个跟踪器。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
       ],
-      "embedded image": [
+      "embedded images": [
         "张嵌入图像"
       ],
       "Encrypt message": [
@@ -4592,7 +4574,7 @@
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
+      "Estimated time remaining: ${ estimatedMinutes } minutes": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
       ],
       "Estimated time remaining: Less than a minute": [
@@ -4619,7 +4601,7 @@
       "Expires soon": [
         "即将过期"
       ],
-      "file attached": [
+      "files attached": [
         "个附件"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
@@ -4649,7 +4631,7 @@
       "Group assignment applied": [
         "已应用群组分配"
       ],
-      "Has ${ numAttachments } attachment": [
+      "Has ${ numAttachments } attachments": [
         "含 ${ numAttachments } 个附件"
       ],
       "here": [
@@ -4658,7 +4640,7 @@
       "Hide original message": [
         "隐藏原始邮件"
       ],
-      "Hour": [
+      "Hours": [
         "小时"
       ],
       "How Hide My Email works": [
@@ -4691,7 +4673,7 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
+      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
         "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 份日历"
       ],
       "Import from": [
@@ -4913,7 +4895,7 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
       ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
+      "Please select which email address or addresses to add to ${ groupCount } groups.": [
         "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
@@ -5105,7 +5087,7 @@
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "${ contactName } 验证失败：联系人签名不正确。\n这可能是密码重置的结果。\n您必须重新签名联系人才能发送一条消息到 ${ contactAddress } 或编辑联系人。"
       ],
-      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+      "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
         "${ contactNames } 验证失败：联系人签名不正确。\n这可能是密码重置的结果。\n您必须重新签名联系人才能发送一条消息到 ${ contactAddresses } 或编辑联系人。"
       ],
       "Themes can give your inbox a new look.": [
@@ -5113,6 +5095,12 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "用于验证联系信息的签名有误，可能是密码重置的结果。"
+      ],
+      "These conversations will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "标为垃圾邮件后，是否要退订此类邮件？"
+      ],
+      "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "标为垃圾邮件后，是否要退订此类邮件？"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
         "只要不知道您的邮箱地址就无法发送垃圾邮件。使用隐藏邮箱地址功能将垃圾邮件拒之门外。"
@@ -5137,9 +5125,6 @@
       ],
       "This conversation contains trashed messages.": [
         "此会话包含废件箱中的邮件。"
-      ],
-      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "标为垃圾邮件后，是否要退订此类邮件？"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "不能确定此邮件是否来自该域名，这可能是欺诈邮件，也可能是投递过程出现了问题。"
@@ -5173,9 +5158,6 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "这条消息是由所附的密钥签署的，还没有被信任。"
-      ],
-      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "标为垃圾邮件后，是否要退订此类邮件？"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此邮件将移至草稿箱，以便您进行编辑。您需要为其重新安排发送时间。"
@@ -5387,16 +5369,16 @@
       "You have ${ unreadsLabel } in your inbox.": [
         "您的收件箱有 ${ unreadsLabel }。"
       ],
-      "You have **${ count } conversation** stored in this folder": [
+      "You have **${ count } conversations** stored in this folder": [
         "此文件夹中有 **${ count } 个会话**"
       ],
-      "You have **${ count } conversation** tagged with this label": [
+      "You have **${ count } conversations** tagged with this label": [
         "您有 **${ count } 个会话** 标有此标签"
       ],
-      "You have **${ count } message** stored in this folder": [
+      "You have **${ count } messages** stored in this folder": [
         "此文件夹中有 **${ count } 封邮件**"
       ],
-      "You have **${ count } message** tagged with this label": [
+      "You have **${ count } messages** tagged with this label": [
         "您有 **${ count } 封邮件** 标有此标签"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
@@ -5414,16 +5396,16 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "您的存储空间已用尽，不能继续收发邮件。${ freeUpMessage }${ upgradeLink }"
       ],
-      "You selected **${ count } conversation** from this folder": [
+      "You selected **${ count } conversations** from this folder": [
         "您在此文件夹中选择了 **${ count } 个会话**"
       ],
-      "You selected **${ count } conversation** with this label": [
+      "You selected **${ count } conversations** with this label": [
         "您选择了带有此标签的 **${ count } 个会话**"
       ],
-      "You selected **${ count } message** from this folder": [
+      "You selected **${ count } messages** from this folder": [
         "您在此文件夹中选择了 **${ count } 封邮件**"
       ],
-      "You selected **${ count } message** with this label": [
+      "You selected **${ count } messages** with this label": [
         "您选择了带有此标签的 **${ count } 封邮件**"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
@@ -5456,7 +5438,7 @@
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
         "您发送的消息将在明天 ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
       ],
-      "Your message will expire in ${ numberOfDays } day.": [
+      "Your message will expire in ${ numberOfDays } days.": [
         "您的消息将在 ${ numberOfDays } 天后过期。"
       ],
       "Your message will expire today.": [
@@ -5526,10 +5508,10 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "点击 \"信任密钥 \"将创建一个新的联系人，并将此公钥与\n这个发件人。从这个地址发出的电子邮件将自动进行加密验证。"
       ],
-      "Do you want to trust the primary public key with the following fingerprint?": [
+      "Do you want to trust the primary public keys with the following fingerprints?": [
         "你想用以下指纹信任主公钥吗？"
       ],
-      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+      "You have enabled Address Verification with Trusted Keys for these email addresses,\nbut no active encryption keys have been trusted.\nYou must trust keys valid for sending in order to send a message to these email addresses.": [
         "您已经为这个电子邮件地址启用了可信密钥的地址验证。\n但没有信任任何有效的加密密钥。\n你必须信任一个有效的发送密钥，才能向这个电子邮件地址发送信息。"
       ]
     },
@@ -5994,9 +5976,6 @@
       "Mark as": [
         "标为"
       ],
-      "Move ${ sidebarElementName }": [
-        "移动 ${ sidebarElementName }"
-      ],
       "Move to": [
         "移至"
       ],
@@ -6318,7 +6297,7 @@
         "收起"
       ],
       "Manage blocked email addresses": [
-        "管理屏蔽的电子邮件地址"
+        "管理屏蔽的邮箱地址"
       ],
       "Manage your folders": [
         "管理文件夹"
@@ -6443,16 +6422,16 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个标签中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自 ${ periodFragment } 以来共计 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
@@ -6563,13 +6542,13 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
+      "Every ${ interval } months ${ onDayString }": [
         "每 ${ interval } 个月的 ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
         "每 ${ interval } 月的 ${ onDayString }，${ timesString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
         "每 ${ interval } 月的 ${ onDayString }，直到 ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
@@ -6743,12 +6722,6 @@
       ],
       "Password has been set successfully": [
         "密码已设置成功"
-      ],
-      "Sender ${ firstSenderAddress } blocked": [
-        "发件人 ${ firstSenderAddress } 已屏蔽"
-      ],
-      "Senders blocked": [
-        "发件人已屏蔽"
       ]
     },
     "Oauth instructions": {
@@ -6973,10 +6946,10 @@
       ]
     },
     "Progress bar description": {
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+      "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+      "${ model.submitted.length } out of ${ totalBeMerged } contacts successfully merged.": [
         "共 ${ totalBeMerged } 名联系人，成功合并 ${ model.submitted.length } 名联系人。"
       ],
       "No contacts exported.": [
@@ -7109,7 +7082,7 @@
       "Do you want to send the email anyway?": [
         "确定要继续发送邮件吗？"
       ],
-      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+      "We have detected errors. Your email cannot be sent to any of the email addresses entered due to the following reasons:": [
         "发生错误，您的邮件未能发送给任何人，原因如下："
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
@@ -7120,13 +7093,13 @@
       "Do you want to send the email anyway?": [
         "确定要继续发送邮件吗？"
       ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
+      "If you decide to send the message anyway, the following recipients will receive the email without expiration:": [
         "如果您决定发送邮件，下列收件人将收到此邮件而不会过期："
       ],
-      "The following address is not valid: ${ invalidAddresses }": [
+      "The following addresses are not valid: ${ invalidAddresses }": [
         "下列地址无效：${ invalidAddresses }"
       ],
-      "We have detected some warnings. The following email address may not receive emails:": [
+      "We have detected some warnings. The following email addresses may not receive emails:": [
         "请注意，下列邮箱地址可能收不到邮件："
       ]
     },
@@ -7161,13 +7134,13 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "由 ${ MAIL_APP_NAME } 通过全封闭加密发送"
       ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipients": [
         "由 ${ MAIL_APP_NAME } 通过全封闭加密发往已验证的收件人"
       ],
       "Sent by you with end-to-end encryption": [
         "由您通过端到端加密发送"
       ],
-      "Sent by you with end-to-end encryption to verified recipient": [
+      "Sent by you with end-to-end encryption to verified recipients": [
         "由您通过端到端加密发往已验证的收件人"
       ],
       "Stored with zero-access encryption": [
@@ -7271,49 +7244,49 @@
       ]
     },
     "Success": {
-      "${ count } conversation deleted": [
+      "${ count } conversations deleted": [
         "${ count } 条会话已删除"
       ],
-      "${ count } draft deleted": [
+      "${ count } drafts deleted": [
         "${ count } 份草稿已删除"
       ],
-      "${ count } message deleted": [
+      "${ count } messages deleted": [
         "${ count } 封邮件已删除"
       ],
-      "${ elementsCount } conversation added to ${ labelName }.": [
+      "${ elementsCount } conversations added to ${ labelName }.": [
         "${ elementsCount } 条会话已添加 ${ labelName } 标签。"
       ],
-      "${ elementsCount } conversation marked as read.": [
+      "${ elementsCount } conversations marked as read.": [
         "${ elementsCount } 条会话已标记为已读。"
       ],
-      "${ elementsCount } conversation marked as Starred.": [
+      "${ elementsCount } conversations marked as Starred.": [
         "${ elementsCount } 条会话已加星标。"
       ],
-      "${ elementsCount } conversation marked as unread.": [
+      "${ elementsCount } conversations marked as unread.": [
         "${ elementsCount } 条会话已标记为未读。"
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
+      "${ elementsCount } conversations moved to ${ folderName }.": [
         "${ elementsCount } 条会话已移至${ folderName }。"
       ],
-      "${ elementsCount } conversation removed from ${ labelName }.": [
+      "${ elementsCount } conversations removed from ${ labelName }.": [
         "${ elementsCount } 条会话已移除 ${ labelName } 标签。"
       ],
-      "${ elementsCount } message added to ${ labelName }.": [
+      "${ elementsCount } messages added to ${ labelName }.": [
         "${ elementsCount } 封邮件已添加 ${ labelName } 标签。"
       ],
-      "${ elementsCount } message marked as read.": [
+      "${ elementsCount } messages marked as read.": [
         "${ elementsCount } 封邮件已标记为已读。"
       ],
-      "${ elementsCount } message marked as Starred.": [
+      "${ elementsCount } messages marked as Starred.": [
         "${ elementsCount } 封邮件已加星标。"
       ],
-      "${ elementsCount } message marked as unread.": [
+      "${ elementsCount } messages marked as unread.": [
         "${ elementsCount } 封邮件已标记为未读。"
       ],
-      "${ elementsCount } message moved to ${ folderName }.": [
+      "${ elementsCount } messages moved to ${ folderName }.": [
         "${ elementsCount } 封邮件已移至${ folderName }。"
       ],
-      "${ elementsCount } message removed from ${ labelName }.": [
+      "${ elementsCount } messages removed from ${ labelName }.": [
         "${ elementsCount } 封邮件已移除 ${ labelName } 标签。"
       ],
       "Address copied to clipboard": [
@@ -7328,17 +7301,14 @@
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
-      "Contact deleted": [
-        "已删除联系人"
-      ],
-      "Contact group deleted": [
+      "Contact groups deleted": [
         "联系人群组已删除"
       ],
       "Contact saved": [
         "联系人已保存"
       ],
       "Contacts deleted": [
-        "联系人已删除"
+        "已删除联系人"
       ],
       "Conversation added to ${ labelName }.": [
         "会话已添加 ${ labelName } 标签。"
@@ -7424,10 +7394,10 @@
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "来自 ${ sendersList } 的邮件将被移动到 ${ folder }"
       ],
-      "Move ${ selectionCount } conversation": [
+      "Move ${ selectionCount } conversations": [
         "移动 ${ selectionCount } 条会话"
       ],
-      "Move ${ selectionCount } message": [
+      "Move ${ selectionCount } messages": [
         "移动 ${ selectionCount } 封邮件"
       ],
       "Password copied to clipboard": [
@@ -7537,22 +7507,22 @@
       ]
     },
     "Time unit": {
-      "${ daysCountLeft } day": [
+      "${ daysCountLeft } days": [
         "${ daysCountLeft } 天"
       ],
-      "${ hours } hour": [
+      "${ hours } hours": [
         "${ hours } 小时"
       ],
-      "${ hoursCountLeft } hour": [
+      "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } 小时"
       ],
-      "${ minutes } minute": [
+      "${ minutes } minutes": [
         "${ minutes } 分钟"
       ],
-      "${ minutesCountLeft } minute": [
+      "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } 分钟"
       ],
-      "${ secondsCountLeft } second": [
+      "${ secondsCountLeft } seconds": [
         "${ secondsCountLeft } 秒"
       ]
     },
@@ -7560,7 +7530,7 @@
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
       ],
-      "${ emailsCount } member": [
+      "${ emailsCount } members": [
         "${ emailsCount } 位成員"
       ],
       "Account suspended": [
@@ -7572,7 +7542,7 @@
       "Add filter": [
         "创建筛选规则"
       ],
-      "Add to ${ groupCount } group": [
+      "Add to ${ groupCount } groups": [
         "添加到 ${ groupCount } 个群组"
       ],
       "Add to ${ groupName }": [
@@ -7665,19 +7635,19 @@
       "Decryption error": [
         "解密失败"
       ],
-      "Delete ${ count } contact": [
-        "删除 ${ count } 联系人"
-      ],
-      "Delete ${ count } contact group": [
+      "Delete ${ count } contact groups": [
         "删除 ${ count } 个联系人组"
       ],
-      "Delete ${ count } conversation": [
+      "Delete ${ count } contacts": [
+        "删除 ${ count } 联系人"
+      ],
+      "Delete ${ count } conversations": [
         "删除 ${ count } 条会话"
       ],
-      "Delete ${ count } draft": [
+      "Delete ${ count } drafts": [
         "删除 ${ count } 份草稿"
       ],
-      "Delete ${ count } message": [
+      "Delete ${ count } messages": [
         "删除 ${ count } 封邮件"
       ],
       "Delete ${ Name }": [
@@ -7815,14 +7785,8 @@
       "Message will expire": [
         "此邮件已设置有效期"
       ],
-      "Minicalendar": [
-        "迷你日历"
-      ],
       "More": [
         "更多"
-      ],
-      "More actions": [
-        "更多动作"
       ],
       "More options": [
         "更多选项"
@@ -7992,7 +7956,7 @@
       "Trash": [
         "废件箱"
       ],
-      "Trust new key?": [
+      "Trust new keys?": [
         "信任新密钥？"
       ],
       "Trust pinned keys?": [
@@ -8089,9 +8053,6 @@
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
-      ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"
       ],
@@ -8122,7 +8083,7 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
+      "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
       ]
     },
@@ -8138,10 +8099,10 @@
       "Are you sure you want to discard your import?": [
         "您确定要放弃导入吗？"
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
+      "Are you sure you want to permanently delete ${ count } contact groups?": [
         "您确定要永久删除 ${ count } 联系人群组吗？"
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
+      "Are you sure you want to permanently delete ${ count } contacts?": [
         "您确定要永久删除 ${ count } 联系人吗？"
       ],
       "Are you sure you want to permanently delete this contact group?": [
@@ -8168,11 +8129,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
+      "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
+        "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合并的联系人无法显示，请单独查看。"
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "联系人数据损坏，无法显示。"
@@ -8209,85 +8170,85 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
+      "Every ${ interval } weeks on ${ multipleDaysString }": [
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
         "每${ interval } 周的${ multipleDaysString }，${ timesString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
         "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
       ],
-      "Every ${ interval } week on all days": [
+      "Every ${ interval } weeks on all days": [
         "每 ${ interval } 周整周"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
+      "Every ${ interval } weeks on all days, ${ timesString }": [
         "每 ${ interval } 周整周，${ timesString }"
       ],
-      "Every ${ interval } week on all days, ${ untilString }": [
+      "Every ${ interval } weeks on all days, ${ untilString }": [
         "每 ${ interval } 周所有天，${ untilString }"
       ],
-      "Every ${ interval } week on Friday": [
+      "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 周的星期五"
       ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
         "每 ${ interval } 周星期五，${ timesString }"
       ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
         "每 ${ interval } 周星期五，${ untilString }"
       ],
-      "Every ${ interval } week on Monday": [
+      "Every ${ interval } weeks on Monday": [
         "每 ${ interval } 周的星期一"
       ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
+      "Every ${ interval } weeks on Monday, ${ timesString }": [
         "每 ${ interval } 周星期一，${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
         "每 ${ interval } 周星期一，${ untilString }"
       ],
-      "Every ${ interval } week on Saturday": [
+      "Every ${ interval } weeks on Saturday": [
         "每 ${ interval } 周的星期六"
       ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
         "每 ${ interval } 周星期六，${ timesString }"
       ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
         "每 ${ interval } 周星期六，${ untilString }"
       ],
-      "Every ${ interval } week on Sunday": [
+      "Every ${ interval } weeks on Sunday": [
         "每 ${ interval } 周的星期日"
       ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
+      "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "每 ${ interval } 周星期日，${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
         "每 ${ interval } 周星期日，${ untilString }"
       ],
-      "Every ${ interval } week on Thursday": [
+      "Every ${ interval } weeks on Thursday": [
         "每 ${ interval } 周的星期四"
       ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
         "每 ${ interval } 周星期四，${ timesString }"
       ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
         "每 ${ interval } 周星期四，${ untilString }"
       ],
-      "Every ${ interval } week on Tuesday": [
+      "Every ${ interval } weeks on Tuesday": [
         "每 ${ interval } 周的星期二"
       ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
+      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "每 ${ interval } 周星期二，${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
         "每 ${ interval } 周星期二，${ untilString }"
       ],
-      "Every ${ interval } week on Wednesday": [
+      "Every ${ interval } weeks on Wednesday": [
         "每 ${ interval } 周的星期三"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
         "每 ${ interval } 周星期三，${ timesString }"
       ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
         "每 ${ interval } 周星期三，${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
@@ -8396,14 +8357,13 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Yearly",
-        ""
+      "Every ${ interval } years": [
+        "Yearly"
       ],
-      "Every ${ interval } year, ${ timesString }": [
+      "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],
-      "Every ${ interval } year, ${ untilString }": [
+      "Every ${ interval } years, ${ untilString }": [
         "每 ${ interval } 年，直到 ${ untilString }"
       ],
       "Yearly": [

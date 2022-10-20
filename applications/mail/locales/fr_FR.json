@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n >= 2);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "fr_FR"
   },
   "contexts": {
@@ -365,7 +365,7 @@
         "Moins d'options de recherche"
       ],
       "Filter on...": [
-        "Filtrer par..."
+        "Filtrer sur..."
       ],
       "Font": [
         "Police"
@@ -1248,7 +1248,7 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Profitez de l'offre"
+        "Profiter de l'offre"
       ],
       "Get the deal now": [
         "Profitez de l'offre maintenant"
@@ -1259,7 +1259,7 @@
         "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "- ${ percentage } %"
+        "-${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         "Conditions générales des offres spéciales"
@@ -1304,7 +1304,7 @@
         "Facturé ${ amount } pour la première année.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
+        "Profitez maintenant de l'offre spéciale de fin d'année sur notre abonnement haut de gamme Proton VPN Plus"
       ]
     },
     "Bug category": {
@@ -2908,6 +2908,10 @@
       "No labels": [
         "Aucun label"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
+        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
@@ -3060,7 +3064,7 @@
         "Un groupe portant ce nom existe déjà."
       ],
       "A problem occurred, please try again": [
-        "Une erreur est survenue, veuillez réessayer."
+        "Une erreur s'est produite, nous vous invitons à réessayer."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée."
@@ -3237,7 +3241,7 @@
         "Les mots de passe ne correspondent pas."
       ],
       "Please activate your content search again": [
-        "Veuillez réactiver la recherche de contenu."
+        "Veuillez réactiver votre recherche de contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -5730,7 +5734,7 @@
         "Accéder à Brouillons"
       ],
       "Go to Inbox": [
-        "Accéder à Boite de réception"
+        "Aller à la Boite de réception"
       ],
       "Go to Sent": [
         "Accéder à Envoyés"
@@ -5769,7 +5773,7 @@
         "Marquer comme non lu"
       ],
       "Minimize / maximize composer": [
-        "Réduire/Agrandir le composeur"
+        "Minimiser/Maximiser le composeur"
       ],
       "Move down": [
         "Déplacer vers le bas"
@@ -7131,6 +7135,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } sur ${ countContacts } contact exporté avec succès.",
+        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -7465,9 +7473,17 @@
         "${ elementsCount } conversation marquée comme non lue.",
         "${ elementsCount } conversations marquées comme non lues."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables/spam.",
+        "${ elementsCount } conversations déplacées dans le dossier ${ folderName } et expéditeurs ajoutés à votre liste des non indésirables/spam."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversation déplacée dans le dossier ${ folderName }.",
         "${ elementsCount } conversations déplacées dans le dossier ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à votre liste d'indésirables/spam.",
+        "${ elementsCount } conversations déplacées dans le dossier Indésirables/spam et expéditeurs ajoutés à votre liste d'indésirables/spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation retirée de ${ labelName }.",
@@ -7489,9 +7505,17 @@
         "${ elementsCount } message marqué comme non lu.",
         "${ elementsCount } messages marqués comme non lus."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } message déplacé dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables/spam.",
+        "${ elementsCount } messages déplacés dans le dossier ${ folderName } et expéditeurs ajoutés à votre liste des non indésirables/spam."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } message déplacé dans le dossier ${ folderName }.",
         "${ elementsCount } messages déplacés dans le dossier ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à votre liste d'indésirables/spam.",
+        "${ elementsCount } messages déplacés dans le dossier Indésirables/spam et expéditeurs ajoutés à votre liste d'indésirables/spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
@@ -7538,8 +7562,14 @@
       "Conversation marked as unread.": [
         "Conversation marquée comme non lue."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables/spam."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversation déplacée dans le dossier ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à votre liste d'indésirables/spam."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -7595,8 +7625,14 @@
       "Message marked as unread.": [
         "Message marqué comme non lu."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Message déplacé dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables/spam."
+      ],
       "Message moved to ${ folderName }.": [
         "Message déplacé dans le dossier ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à votre liste d'indésirables/spam."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."
@@ -7948,7 +7984,7 @@
         "Votre avis"
       ],
       "Filter on...": [
-        "Filtrer par..."
+        "Filtrer sur..."
       ],
       "Forward": [
         "Transférer"
@@ -8292,7 +8328,7 @@
         "L'importation commencera par les messages les plus récents."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
+        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur désactivera cette option."
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est exclusivement disponible pour les utilisateurs ayant un abonnement payant."
@@ -8631,7 +8667,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } année, à ${ timesString }",

@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;",
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
     "language": "cs_CZ"
   },
   "contexts": {
@@ -1089,7 +1089,7 @@
     },
     "Link": {
       "Learn more": [
-        "Zjistěte více"
+        "Zjistit více"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
@@ -1119,7 +1119,7 @@
         "Neplatný ověřovací kód"
       ],
       "Request new code": [
-        "Vyžádejte si nový kód"
+        "Poslat nový kód"
       ],
       "Two-factor authentication": [
         "Dvoufázové ověření"

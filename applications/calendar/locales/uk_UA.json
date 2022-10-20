@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "uk_UA"
   },
   "contexts": {
@@ -72,7 +72,7 @@
         "Виберіть файл або перетягніть його сюди"
       ],
       "Clear data": [
-        "Очистити дані"
+        "Стерти дані"
       ],
       "Clear query": [
         "Очистити запит"
@@ -162,7 +162,7 @@
         "Видалити групу контактів"
       ],
       "Deselect all": [
-        "Зняти вибір з усіх"
+        "Скасувати вибір"
       ],
       "Didn't receive the code?": [
         "Не отримали код?"
@@ -171,16 +171,16 @@
         "Відхилити"
       ],
       "Done": [
-        "Виконано"
+        "Готово"
       ],
       "Download": [
         "Завантажити"
       ],
       "Edit": [
-        "Редагувати"
+        "Змінити"
       ],
       "Edit email address": [
-        "Змінити електронну адресу"
+        "Змінити адресу е-пошти"
       ],
       "Edit label": [
         "Редагувати мітку"
@@ -192,13 +192,13 @@
         "Змінити дані входу"
       ],
       "Email settings": [
-        "Налаштування електронної пошти"
+        "Налаштування е-пошти"
       ],
       "enable desktop notifications": [
-        "увімкнути сповіщення стільниці"
+        "увімкнути сповіщення на робочому столі"
       ],
       "Export": [
-        "Експорт"
+        "Експортувати"
       ],
       "Export contact group": [
         "Експортувати групу контактів"
@@ -246,7 +246,7 @@
         "Імпорт"
       ],
       "import": [
-        "імпорт"
+        "імпортувати"
       ],
       "Import events": [
         "Імпорт подій"
@@ -279,7 +279,7 @@
         "Можливо"
       ],
       "Maybe I'll attend": [
-        "Можливо, долучуся"
+        "Присутність під сумнівом"
       ],
       "Merge": [
         "Об'єднати"
@@ -315,13 +315,13 @@
         "Ні"
       ],
       "No, I won't attend": [
-        "Ні, я не долучатимусь"
+        "Не підтверджую присутність"
       ],
       "No, thanks": [
         "Ні, дякую"
       ],
       "OK": [
-        "Гаразд"
+        "Застосувати"
       ],
       "Open in a new tab": [
         "Відкрити в новій вкладці"
@@ -330,13 +330,13 @@
         "Відкрити панель навігації"
       ],
       "Preview contact": [
-        "Попередній перегляд контакту"
+        "Перегляд контакту"
       ],
       "Previous day": [
         "Попередній день"
       ],
       "Previous month": [
-        "Попередній місяць"
+        "Минулий місяць"
       ],
       "Previous week": [
         "Минулий тиждень"
@@ -384,7 +384,7 @@
         "Запит нової функції"
       ],
       "Request new code": [
-        "Отримати новий код"
+        "Запитати новий код"
       ],
       "Reset to default": [
         "Відновити типові"
@@ -450,7 +450,7 @@
         "Залишитися"
       ],
       "Submit": [
-        "Надіслати"
+        "Відправити"
       ],
       "Theme": [
         "Тема"
@@ -495,7 +495,7 @@
         "Використати код підтвердження"
       ],
       "Use for sending": [
-        "Застосувати для надсилання"
+        "Використовувати для надсилання"
       ],
       "Use recovery code": [
         "Використати код відновлення"
@@ -510,7 +510,7 @@
         "Підтвердити електронну пошту"
       ],
       "View": [
-        "Вигляд"
+        "Переглянути"
       ],
       "View invoice": [
         "Переглянути рахунок"
@@ -519,12 +519,20 @@
         "Так"
       ],
       "Yes, I'll attend": [
-        "Так, я долучуся"
+        "Підтверджую присутність"
       ]
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Будь-хто може переглянути ваш календар за посиланням"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "Поділіться з будь-ким"
+      ],
+      "Share with Proton users": [
+        "Поділіться з користувачами Proton"
       ]
     },
     "Actions message": {
@@ -535,7 +543,7 @@
         "Результатів не знайдено."
       ],
       "Please try another search term.": [
-        "Спробуйте інший пошуковий термін."
+        "Спробуйте інший термін пошуку."
       ],
       "You don't have any contacts.": [
         "У вас немає контактів."
@@ -619,7 +627,7 @@
     },
     "Apps dropdown": {
       "Proton applications": [
-        "Програми Proton"
+        "Додатки Proton"
       ]
     },
     "Attached ics file error": {
@@ -666,6 +674,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Найкраща пропозиція"
+      ],
       "Most popular": [
         "Найпопулярніша"
       ]
@@ -688,6 +699,11 @@
         "на місяць"
       ]
     },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
     "blackfriday: VPNspecialoffer Title": {
       "1 month": [
         "1 місяць"
@@ -697,11 +713,14 @@
       ],
       "24 months": [
         "24 місяці"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Отримайте спеціальну пропозицію наприкінці року на наш платний тариф Proton VPN PLUS прямо зараз"
       ]
     },
     "Bug category": {
       "Application problem": [
-        "Проблема з програмою"
+        "Проблема з додатком"
       ],
       "Bridge problem": [
         "Проблема з Bridge"
@@ -728,7 +747,7 @@
         "Проблема з імпортом / експортом"
       ],
       "Installation problem": [
-        "Проблема зі встановленням"
+        "Проблема з встановленням"
       ],
       "Mail problem": [
         "Проблема з поштою"
@@ -752,13 +771,13 @@
         "Проблема з реєстрацією"
       ],
       "Slow speed problem": [
-        "Проблема з низькою швидкістю"
+        "Проблема повільної швидкості"
       ],
       "Speed problem": [
         "Проблема зі швидкістю"
       ],
       "Streaming problem": [
-        "Проблема потокового передавання"
+        "Проблема трансляції"
       ],
       "Update problem": [
         "Проблема з оновленням"
@@ -840,6 +859,12 @@
       ],
       "Manage members": [
         "Керувати учасниками"
+      ],
+      "Unable to create more calendar links": [
+        "Неможливо створити більше посилань календаря"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Неможливо поділитися цим календарем з іншими користувачами Proton"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -865,7 +890,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Календар неможливо розшифрувати"
+        "Не вдалося розшифрувати календар"
       ],
       "Calendar is syncing": [
         "Календар синхронізується"
@@ -985,7 +1010,7 @@
         "сахара"
       ],
       "slateblue": [
-        "сизий"
+        "сивий"
       ],
       "soil": [
         "земляний"
@@ -1052,10 +1077,10 @@
         "Часовий пояс"
       ],
       "Title": [
-        "Посада"
+        "Назва"
       ],
       "URL": [
-        "URL-адреса"
+        "URL"
       ]
     },
     "Contact type label": {
@@ -1078,10 +1103,10 @@
         "Особистий"
       ],
       "Work": [
-        "Робота"
+        "Робочий"
       ],
       "Yomi": [
-        "Йомі"
+        "Yomi"
       ]
     },
     "Country name": {
@@ -1873,16 +1898,16 @@
         "${ count } раз",
         "${ count } рази",
         "${ count } разів",
-        "${ count } раза"
+        "${ count } разів"
       ],
       "Daily": [
-        "Щоденно"
+        "Щодня"
       ],
       "Daily, ${ timesString }": [
-        "Щоденно, ${ timesString }"
+        "Щодня, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Щоденно, ${ untilString }"
+        "Щодня, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Щодня",
@@ -1929,13 +1954,19 @@
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Об'єднання та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+        "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
+        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -2052,7 +2083,7 @@
         "Скасування події ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Скасування події, що розпочинається ${ formattedStart }"
+        "Скасування події, що починається ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
         "Запрошення на подію ${ formattedStart }"
@@ -2123,10 +2154,10 @@
         "Не вдалося зберегти контакт"
       ],
       "Contact signature could not be verified": [
-        "Не вдалося перевірити підпис контакту"
+        "Не вдається перевірити підпис контакту"
       ],
       "Contact signature not verified": [
-        "Підпис контакту не перевірено"
+        "Підпис для контакту не перевірено"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Помилка розшифрування: Не вдалося розшифрувати вміст цієї події."
@@ -2177,7 +2208,7 @@
         "Тека не може бути без назви."
       ],
       "Image upload failed": [
-        "Не вдалося вивантажити зображення"
+        "Не вдалося завантажити зображення"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -2195,7 +2226,7 @@
         "Недійсне посилання на подію"
       ],
       "Invalid name": [
-        "Неприпустима назва"
+        "Неприпустиме ім'я"
       ],
       "Invalid public key file": [
         "Недійсний файл відкритого ключа"
@@ -2219,7 +2250,7 @@
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
         "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями Proton",
         "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями Proton"
+        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton"
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
@@ -2286,6 +2317,9 @@
       ],
       "Primary key is not valid for sending": [
         "Основний ключ недійсний для надсилання"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Для користувача ${ BRAND_NAME } отримано недійсний основний ключ для надсилання"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Вилучено дублікат отримувача: ${ joinedRecipients }",
@@ -2360,7 +2394,7 @@
         "При експортуванні vCards для контактів виникла помилка"
       ],
       "This field is required": [
-        "Це поле обов'язкове"
+        "Це поле є обов'язковим"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
@@ -2400,6 +2434,11 @@
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Запрошена адреса не існує"
       ]
     },
     "Error importing calendar": {
@@ -2506,7 +2545,7 @@
         "Гнучкий час не підтримується"
       ],
       "Free-busy time information": [
-        "Відомості про доступність та зайнятість"
+        "Інформація про доступність та зайнятість"
       ],
       "Invalid event": [
         "Недійсна подія"
@@ -2539,7 +2578,7 @@
         "Сповіщення поза межами"
       ],
       "Original recurring event could not be found": [
-        "Не вдалося знайти оригінальну повторювану подію"
+        "Не вдається знайти оригінальну повторювану подію"
       ],
       "Recurring event has no occurrences": [
         "Повторювана подія не має випадків"
@@ -2583,7 +2622,7 @@
         "Щось пішло не так. Оновіть сторінку і спробуйте знову пізніше."
       ],
       "There was a problem connecting to Proton.": [
-        "Виникла проблема під час з'єднання з Proton."
+        "Виникла проблема при з'єднанні з Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ви можете також ${ refresh }, або спробувати знову пізніше."
@@ -2599,7 +2638,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Не вибрано жодного зображення"
+        "Жодного зображення не вибрано"
       ]
     },
     "Error notification when score is missing in user feedback form modal": {
@@ -2642,7 +2681,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Не вдалося розшифрувати вкладений ICS-файл"
+        "Не вдається розшифрувати вкладений ICS-файл"
       ],
       "Attached ICS file could not be read": [
         "Не вдалося прочитати вкладений файл ICS"
@@ -2669,16 +2708,16 @@
         "Непідтримувана відповідь"
       ],
       "We could not cancel the event in your calendar": [
-        "Не вдалося скасувати подію у вашому календарі"
+        "Не вдається скасувати подію у вашому календарі"
       ],
       "We could not retrieve the event from your calendar": [
-        "Не вдалося видобути подію з вашого календаря"
+        "Не вдається видобути подію з вашого календаря"
       ],
       "We could not update the event in your calendar": [
-        "Не вдалося оновити подію у вашому календарі"
+        "Не вдається оновити подію у вашому календарі"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Вашу відповідь надіслано, але подію не вдалося додати до вашого календаря"
+        "Вашу відповідь надіслано, але подію не вдається додати до вашого календаря"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "Вашу відповідь надіслано, але подію не вдалося оновити у вашому календарі"
@@ -2742,7 +2781,7 @@
         "ГБ"
       ],
       "KB": [
-        "КБ"
+        "кБ"
       ],
       "MB": [
         "МБ"
@@ -2793,7 +2832,7 @@
         "Інша категорія"
       ],
       "Services": [
-        "Послуги"
+        "Служби"
       ]
     },
     "Header": {
@@ -2826,7 +2865,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Електронна пошта"
+        "Е-пошта"
       ],
       "Manual": [
         "Вручну"
@@ -2835,7 +2874,7 @@
         "Немає доступних способів перевірки"
       ],
       "SMS": [
-        "СМС"
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -3235,7 +3274,7 @@
         "${ calendarsToBeCreatedCount } новий календар",
         "${ calendarsToBeCreatedCount } нові календарі",
         "${ calendarsToBeCreatedCount } нових календарів",
-        "${ calendarsToBeCreatedCount } нові календаря"
+        "${ calendarsToBeCreatedCount } нових календарів"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } об'єднаний календар",
@@ -3247,13 +3286,13 @@
         "${ calendarsToBeMergedCount } об'єднаний календар",
         "${ calendarsToBeMergedCount } об'єднані календарі",
         "${ calendarsToBeMergedCount } об'єднаних календарів",
-        "${ calendarsToBeMergedCount } об'єднані календарі"
+        "${ calendarsToBeMergedCount } об'єднаних календарів"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } контакт містить кілька адрес е-пошти.",
         "${ contactCount } контакти містять кілька адрес е-пошти.",
         "${ contactCount } контактів містять кілька адрес е-пошти.",
-        "${ contactCount } контакти містять кілька адрес е-пошти."
+        "${ contactCount } контактів містять кілька адрес е-пошти."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } учасник",
@@ -3280,13 +3319,13 @@
         "${ numContactGroups } група контактів",
         "${ numContactGroups } групи контактів",
         "${ numContactGroups } груп контактів",
-        "${ numContactGroups } групи контактів"
+        "${ numContactGroups } груп контактів"
       ],
       "${ numContacts } contact": [
         "${ numContacts } контакт",
         "${ numContacts } контакти",
         "${ numContacts } контактів",
-        "${ numContacts } контакти"
+        "${ numContacts } контакта"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -3310,13 +3349,13 @@
         "${ selectedFoldersCount } вибрана тека",
         "${ selectedFoldersCount } вибрані теки",
         "${ selectedFoldersCount } вибраних тек",
-        "${ selectedFoldersCount } вибрані теки"
+        "${ selectedFoldersCount } вибраних тек"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } вибрана мітка",
         "${ selectedFoldersCount } вибрані мітки",
         "${ selectedFoldersCount } вибраних міток",
-        "${ selectedFoldersCount } вибрані мітки"
+        "${ selectedFoldersCount } вибраних міток"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Вибрано ${ selectedFoldersCountLocalized } теку",
@@ -3439,10 +3478,10 @@
         "Створити у"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших застосунків, а також формати vCard 3.1 і 4.0 (кодування UTF-8)."
+        "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
       "Custom": [
-        "Власне"
+        "Власний"
       ],
       "Custom daily": [
         "Власне щодня"
@@ -3574,7 +3613,7 @@
         "Завантаження"
       ],
       "Loading ${ appName }": [
-        "Завантаження ${ appName }"
+        "Завантажується ${ appName }"
       ],
       "Loading event": [
         "Завантаження події"
@@ -3592,7 +3631,7 @@
         "Щомісяця ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назвіть свою нову теку та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено текою вищого рівня."
+        "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
       "New": [
         "Нове"
@@ -3604,7 +3643,7 @@
         "Немає адреси е-пошти"
       ],
       "No group found": [
-        "Груп не знайдено"
+        "Групу не знайдено"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -3670,7 +3709,7 @@
         "Попередні зміни в цій серії будуть втрачені."
       ],
       "Primary": [
-        "Головний"
+        "Основний"
       ],
       "Priority support": [
         "Пріоритетна підтримка"
@@ -3691,7 +3730,7 @@
         "Виберіть те, що бажаєте імпортувати."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більше 20 календарів."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -3853,7 +3892,7 @@
         "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Ви зараз увійшли як ${ user.Name } (${ user.Email })."
+        "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
@@ -3934,7 +3973,7 @@
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Робота вашого облікового запису Proton тимчасово призупинена. Щоб відновити роботу, будь ласка, сплатіть протерміновані рахунки."
+        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
@@ -3968,7 +4007,7 @@
         "Скомпрометований"
       ],
       "Expired": [
-        "Термін дії минув"
+        "Протермінований"
       ],
       "Obsolete": [
         "Застарілий"
@@ -3983,7 +4022,7 @@
         "Надійний"
       ],
       "WKD": [
-        "Каталог вебключів (WKD)"
+        "WKD"
       ]
     },
     "Label": {
@@ -3991,10 +4030,10 @@
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
       "Add email address": [
-        "Додати адресу електронної пошти"
+        "Додати адресу е-пошти"
       ],
       "Add image URL": [
-        "Додати URL-адресу зображення"
+        "Введіть URL-адресу зображення"
       ],
       "Add to group": [
         "Додати до групи"
@@ -4108,7 +4147,7 @@
         "Експортувати контакти"
       ],
       "Extended address": [
-        "Додаткова адреса"
+        "Розширена адреса"
       ],
       "Folder location": [
         "Розташування теки"
@@ -4129,7 +4168,7 @@
         "Добре"
       ],
       "Hide password": [
-        "Сховати пароль"
+        "Приховати пароль"
       ],
       "How would you describe your experience with the new Proton?": [
         "Як би ви описали свої враження від нового Proton?"
@@ -4237,7 +4276,7 @@
         "Поштова скринька"
       ],
       "Postal code": [
-        "Поштовий код"
+        "Поштовий індекс"
       ],
       "Proton username": [
         "Ім'я користувача Proton"
@@ -4264,7 +4303,7 @@
         "Вулиця"
       ],
       "System information": [
-        "Відомості про систему"
+        "Інформація про систему"
       ],
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
@@ -4282,7 +4321,7 @@
         "Вивантажити файл"
       ],
       "Upload picture": [
-        "Вивантажити зображення"
+        "Завантажити зображення"
       ],
       "URL": [
         "URL-адреса"
@@ -4294,7 +4333,7 @@
         "Код підтвердження"
       ],
       "What happened?": [
-        "Що трапилось?"
+        "Що сталося?"
       ],
       "Wonderful": [
         "Дивовижно"
@@ -4451,11 +4490,17 @@
       ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Не вдалося додати інші календарі. Ви досягли обмеження підписних календарів для свого тарифного плану."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Не вдається створити інші календарі. Ви досягли обмеження особистих календарів для свого тарифного плану."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "Приєднатися до календаря"
+      ],
+      "Unable to join more calendars": [
+        "Не вдалося приєднатися до більшої кількості календарів"
       ]
     },
     "Modal title": {
@@ -4503,19 +4548,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Щомісяця ${ onDayString }",
+        "Кожен ${ interval } місяць ${ onDayString }",
         "Кожні ${ interval } місяці ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Щомісяця ${ onDayString }, ${ timesString }",
+        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Щомісяця ${ onDayString }, ${ untilString }",
+        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
@@ -4663,7 +4708,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        "Розкажіть нам своє враження. (Необов'язково)"
+        "Розкажіть нам про своє враження. (Необов'язково)"
       ]
     },
     "new_plans: placeholder": {
@@ -4699,7 +4744,7 @@
     },
     "Notification time input": {
       "at": [
-        " "
+        "о"
       ]
     },
     "Notification type": {
@@ -4872,7 +4917,7 @@
         "Далі"
       ],
       "Start using ${ appName }": [
-        "Розпочніть користування ${ appName }"
+        "Розпочніть користуватися ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -4880,7 +4925,7 @@
         "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
       ],
       "Discover all Proton services": [
-        "Ознайомтеся з усіма можливостями Proton"
+        "Ознайомтеся з усіма службами Proton"
       ],
       "Select a theme": [
         "Виберіть тему"
@@ -4930,7 +4975,7 @@
         "Щороку"
       ],
       "Ignore group": [
-        "Нехтувати групою"
+        "Ігнорувати групу"
       ],
       "Month": [
         "Місяць",
@@ -4985,7 +5030,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "Ключ не можна застосовувати для шифрування"
+        "Ключ не можна використовувати для шифрування"
       ]
     },
     "PGP Key info": {
@@ -5001,7 +5046,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -5045,7 +5090,7 @@
         "Пароль"
       ],
       "Please describe the problem and include any error messages": [
-        "Опишіть проблему та додайте повідомлення про помилки"
+        "Опишіть проблему та додайте повідомлення про помилку"
       ],
       "Search for group name": [
         "Шукати назву групи"
@@ -5057,7 +5102,7 @@
         "Вибрати"
       ],
       "Start typing an email address": [
-        "Почніть вводити адресу електронної пошти"
+        "Почніть вводити адресу е-пошти"
       ]
     },
     "Placeholder for contact group name": {
@@ -5071,6 +5116,12 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } з ${ countContacts } контакт успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
         "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
@@ -5104,7 +5155,7 @@
         "Факс"
       ],
       "Home": [
-        "Дім"
+        "Домашня"
       ],
       "Main": [
         "Основний"
@@ -5113,7 +5164,7 @@
         "Мобільний"
       ],
       "Other": [
-        "Інше"
+        "Інша"
       ],
       "Pager": [
         "Пейджер"
@@ -5122,7 +5173,7 @@
         "Телефон"
       ],
       "Work": [
-        "Робота"
+        "Робоча"
       ]
     },
     "Refresh on apply warning": {
@@ -5368,7 +5419,7 @@
         "Налаштування збережено"
       ],
       "Verification successful": [
-        "Перевірку виконано успішно"
+        "Перевірка пройшла успішно"
       ]
     },
     "Success notification when user send feedback": {
@@ -5399,7 +5450,7 @@
         "Назва"
       ],
       "Status": [
-        "Стан"
+        "Статус"
       ],
       "Type": [
         "Тип"
@@ -5419,7 +5470,7 @@
         "Імпорт"
       ],
       "Name": [
-        "Назва"
+        "Ім'я"
       ],
       "Values": [
         "Значення"
@@ -5600,10 +5651,13 @@
         "Редагувати календар"
       ],
       "Edit contact": [
-        "Редагувати контакт"
+        "Змінити контакт"
       ],
       "Edit contact group": [
         "Редагувати групу контактів"
+      ],
+      "Edit email settings": [
+        "Змінити налаштування електронної пошти"
       ],
       "Edit image": [
         "Змінити зображення"
@@ -5612,7 +5666,7 @@
         "Адреси е-пошти"
       ],
       "Email settings": [
-        "Налаштування електронної пошти"
+        "Налаштування е-пошти"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -5932,7 +5986,7 @@
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",
         "Ви дійсно хочете остаточно видалити ${ count } групи контактів?",
         "Ви дійсно хочете остаточно видалити ${ count } груп контактів?",
-        "Ви дійсно хочете остаточно видалити ${ count } групи контактів?"
+        "Ви дійсно хочете остаточно видалити ${ count } груп контактів?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Ви дійсно хочете остаточно видалити ${ count } контакт?",
@@ -5956,7 +6010,7 @@
         "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ${ VPN_APP_NAME }. Будь ласка, створіть запит натомість."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton об'єднає усі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
+        "Proton об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
@@ -5974,7 +6028,7 @@
         "Не вдалося завантажити контакт."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Налаштування дати та часу на вашому пристрої не синхронізовані ${ learnMore }"
+        "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Не вдалося розшифрувати зашифрований вміст."
@@ -6001,174 +6055,182 @@
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
       ]
     },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Щоб отримати доступ до цього спільного календаря, увімкніть цю адресу або зверніться до ${ boldCalendarOwnerEmail } для надсилання запрошення на активну адресу."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Ви не можете приєднатися до цього календаря, оскільки ваша запрошена електронна адреса (${ boldInvitedAddress }) вимкнена."
+      ]
+    },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Щотижня у ${ multipleDaysString }",
-        "Кожні ${ interval } тижні у ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }"
+        "Кожен ${ interval } тиждень ${ multipleDaysString }",
+        "Кожні ${ interval } тижні ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
+        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Щотижня у ${ multipleDaysString }, ${ untilString }",
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Щоденно впродовж ${ interval } тижня",
-        "Щоденно впродовж ${ interval } тижнів",
-        "Щоденно впродовж ${ interval } тижнів",
-        "Щоденно впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень в усі дні",
+        "Кожні ${ interval } тижні в усі дні",
+        "Кожні ${ interval } тижнів в усі дні",
+        "Кожні ${ interval } тижнів в усі дні"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Щотижня кожен день, ${ timesString }",
+        "Кожен ${ interval } тиждень щодня, ${ timesString }",
         "Кожні ${ interval } тижні щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Щотижня, щодня, ${ untilString }",
+        "Кожен ${ interval } тиждень щодня, ${ untilString }",
         "Кожні ${ interval } тижні щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Щоп'ятниці впродовж ${ interval } тижня",
-        "Щоп'ятниці впродовж ${ interval } тижнів",
-        "Щоп'ятниці впродовж ${ interval } тижнів",
-        "Щоп'ятниці впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у п'ятницю",
+        "Кожні ${ interval } тижні у п'ятницю",
+        "Кожні ${ interval } тижнів у п'ятницю",
+        "Кожні ${ interval } тижнів у п'ятницю"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Щотижня у п'ятницю, ${ timesString }",
+        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Щотижня у п'ятницю, ${ untilString }",
+        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Щопонеділка впродовж ${ interval } тижня",
-        "Щопонеділка впродовж ${ interval } тижнів",
-        "Щопонеділка впродовж ${ interval } тижнів",
-        "Щопонеділка впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у понеділок",
+        "Кожні ${ interval } тижні у понеділок",
+        "Кожні ${ interval } тижнів у понеділок",
+        "Кожні ${ interval } тижнів у понеділок"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Щотижня у понеділок, ${ timesString }",
+        "Кожен ${ interval } тиждень у понеділок, ${ timesString }",
         "Кожні ${ interval } тижні у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Щотижня у понеділок, ${ untilString }",
+        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
         "Кожні ${ interval } тижні у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Щосуботи впродовж ${ interval } тижня",
-        "Щосуботи впродовж ${ interval } тижнів",
-        "Щосуботи впродовж ${ interval } тижнів",
-        "Щосуботи впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у суботу",
+        "Кожні ${ interval } тижні у суботу",
+        "Кожні ${ interval } тижнів у суботу",
+        "Кожні ${ interval } тижнів у суботу"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Щотижня у суботу, ${ timesString }",
+        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
         "Кожні ${ interval } тижні у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Щотижня у суботу, ${ untilString }",
+        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
         "Кожні ${ interval } тижні у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Щонеділі впродовж ${ interval } тижня",
-        "Щонеділі впродовж ${ interval } тижнів",
-        "Щонеділі впродовж ${ interval } тижнів",
-        "Щонеділі впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у неділю",
+        "Кожні ${ interval } тижні у неділю",
+        "Кожні ${ interval } тижнів у неділю",
+        "Кожні ${ interval } тижнів у неділю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Щотижня у неділю, ${ timesString }",
+        "Кожен ${ interval } тиждень у неділю, ${ timesString }",
         "Кожні ${ interval } тижні у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Щотижня у неділю, ${ untilString }",
+        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
         "Кожні ${ interval } тижні у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Щочетверга впродовж ${ interval } тижня",
-        "Щочетверга впродовж ${ interval } тижнів",
-        "Щочетверга впродовж ${ interval } тижнів",
-        "Щочетверга впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у четвер",
+        "Кожні ${ interval } тижні у четвер",
+        "Кожні ${ interval } тижнів у четвер",
+        "Кожні ${ interval } тижнів у четвер"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Щотижня у четвер, ${ timesString }",
+        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
         "Кожні ${ interval } тижні у четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Щотижня у четвер, ${ untilString }",
+        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
         "Кожні ${ interval } тижні у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Щовівторка впродовж ${ interval } тижня",
-        "Щовівторка впродовж ${ interval } тижнів",
-        "Щовівторка впродовж ${ interval } тижнів",
-        "Щовівторка впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у вівторок",
+        "Кожні ${ interval } тижні у вівторок",
+        "Кожні ${ interval } тижнів у вівторок",
+        "Кожні ${ interval } тижнів у вівторок"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Щотижня у вівторок, ${ timesString }",
+        "Кожен ${ interval } тиждень у вівторок, ${ timesString }",
         "Кожні ${ interval } тижні у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Щотижня у вівторок, ${ untilString }",
+        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
         "Кожні ${ interval } тижні у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Щосереди впродовж ${ interval } тижня",
-        "Щосереди впродовж ${ interval } тижнів",
-        "Щосереди впродовж ${ interval } тижнів",
-        "Щосереди впродовж ${ interval } тижнів"
+        "Кожен ${ interval } тиждень у середу",
+        "Кожні ${ interval } тижні у середу",
+        "Кожні ${ interval } тижнів у середу",
+        "Кожні ${ interval } тижнів у середу"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Щотижня у середу, ${ timesString }",
+        "Кожен ${ interval } тиждень у середу, ${ timesString }",
         "Кожні ${ interval } тижні у середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Щотижня у середу, ${ untilString }",
+        "Кожен ${ interval } тиждень у середу, ${ untilString }",
         "Кожні ${ interval } тижні у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Щотижня в ${ multipleDaysString }"
+        "Щотижня ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Щотижня у ${ multipleDaysString }, ${ timesString }"
+        "Щотижня ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Щотижня в ${ multipleDaysString }, ${ untilString }"
@@ -6183,7 +6245,7 @@
         "Щотижня кожен день, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Щоп'ятниці"
+        "Щотижня у п'ятницю"
       ],
       "Weekly on Friday, ${ timesString }": [
         "Щотижня у п'ятницю, ${ timesString }"
@@ -6192,7 +6254,7 @@
         "Щотижня в п'ятницю, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Щопонеділка"
+        "Щотижня в понеділок"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Щотижня у понеділок, ${ timesString }"
@@ -6201,7 +6263,7 @@
         "Щотижня в понеділок, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Щосуботи"
+        "Щотижня в суботу"
       ],
       "Weekly on Saturday, ${ timesString }": [
         "Щотижня у суботу, ${ timesString }"
@@ -6219,7 +6281,7 @@
         "Щотижня в неділю, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Щочетверга"
+        "Щотижня у четвер"
       ],
       "Weekly on Thursday, ${ timesString }": [
         "Щотижня у четвер, ${ timesString }"
@@ -6228,7 +6290,7 @@
         "Щотижня у четвер, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Щовівторка"
+        "Щотижня у вівторок"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Щотижня у вівторок, ${ timesString }"
@@ -6237,7 +6299,7 @@
         "Щотижня у вівторок, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Щосереди"
+        "Щотижня в середу"
       ],
       "Weekly on Wednesday, ${ timesString }": [
         "Щотижня у середу, ${ timesString }"
@@ -6272,16 +6334,18 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Кожні ${ interval } років",
+        "Кожні ${ interval } років"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Щороку, ${ timesString }",
+        "Кожен ${ interval } рік, ${ timesString }",
         "Кожні ${ interval } роки, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Щороку, ${ untilString }",
+        "Кожен ${ interval } рік, ${ untilString }",
         "Кожні ${ interval } роки, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }"

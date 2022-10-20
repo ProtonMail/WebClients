@@ -41,9 +41,6 @@
       "Add new group": [
         "Adicionar novo grupo"
       ],
-      "Add participant": [
-        "Adicionar participante"
-      ],
       "Add phone number": [
         "Adicionar número de telefone"
       ],
@@ -125,6 +122,9 @@
       "Chat with us": [
         "Converse connosco"
       ],
+      "Check import progress": [
+        "Verifique o progresso da importação"
+      ],
       "Choose a file or drag it here": [
         "Escolha um ficheiro ou arraste-o para aqui"
       ],
@@ -133,6 +133,9 @@
       ],
       "Clear all formatting": [
         "Limpar toda a formatação"
+      ],
+      "Clear browser data": [
+        "Limpar dados do navegador"
       ],
       "Clear data": [
         "Limpar dados"
@@ -170,6 +173,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmar a abertura da ligação ${ linkToShow }"
+      ],
       "Contact group": [
         "Grupo de contactos"
       ],
@@ -203,6 +209,9 @@
       "Create a new folder": [
         "Criar uma nova pasta"
       ],
+      "Create a new label": [
+        "Criar uma nova etiqueta"
+      ],
       "Create folder": [
         "Criar pasta"
       ],
@@ -211,6 +220,9 @@
       ],
       "Create new contact": [
         "Criar novo contacto"
+      ],
+      "Create new message": [
+        "Criar nova mensagem"
       ],
       "Customize": [
         "Personalizar"
@@ -295,6 +307,9 @@
       "Email settings": [
         "Definições de email"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable": [
         "Activar"
       ],
@@ -306,6 +321,12 @@
       ],
       "Expand composer": [
         "Expandir compositor"
+      ],
+      "Expand URL": [
+        "Expandir URL"
+      ],
+      "Expiration time": [
+        "Tempo para expiração"
       ],
       "Export": [
         "Exportar"
@@ -319,6 +340,9 @@
       "External encryption": [
         "Encriptação externa"
       ],
+      "Fewer search options": [
+        "Menos opções de procura"
+      ],
       "Filter on...": [
         "Filtrar por..."
       ],
@@ -331,6 +355,9 @@
       "Generate recovery phrase": [
         "Gerar frase de recuperação"
       ],
+      "Get SimpleLogin extension": [
+        "Obter a extensão SimpleLogin"
+      ],
       "Get started": [
         "Começar"
       ],
@@ -339,6 +366,9 @@
       ],
       "Go to first page": [
         "Ir para a primeira página"
+      ],
+      "Go to label": [
+        "Ir para a etiqueta"
       ],
       "Go to last page": [
         "Ir para a última página"
@@ -357,6 +387,9 @@
       ],
       "Go to settings": [
         "Ir para as definições"
+      ],
+      "Go to SimpleLogin": [
+        "Ir para o SimpleLogin"
       ],
       "Got it": [
         "Percebi"
@@ -381,9 +414,6 @@
       ],
       "Hide messages": [
         "Ocultar mensagens"
-      ],
-      "Hide My Email": [
-        "Esconder meu e-mail"
       ],
       "I have a question": [
         "Tenho uma dúvida"
@@ -506,6 +536,9 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "More search options": [
+        "Mais opções de procura"
+      ],
       "Move": [
         "Mover"
       ],
@@ -532,6 +565,9 @@
       ],
       "Move to...": [
         "Mover para..."
+      ],
+      "Need help?": [
+        "Precisa de ajuda?"
       ],
       "Never show": [
         "Nunca mostrar"
@@ -568,6 +604,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
+      ],
+      "Open calendar": [
+        "Abrir agenda"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -653,6 +692,9 @@
       "Rename": [
         "Renomear"
       ],
+      "Reply securely": [
+        "Responder de forma segura"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -664,6 +706,9 @@
       ],
       "Request new code": [
         "Pedir novo código"
+      ],
+      "Reset": [
+        "Redefinir"
       ],
       "Reset to default": [
         "Repor predefinição"
@@ -683,8 +728,17 @@
       "Schedule message": [
         "Agendar mensagem"
       ],
+      "Schedule send": [
+        "Agendar envio "
+      ],
       "Search": [
         "Procurar"
+      ],
+      "Search countries": [
+        "Procurar países"
+      ],
+      "Search in ${ option.text }": [
+        "Procurar em ${ option.text }"
       ],
       "Search message content": [
         "Procurar no conteúdo da mensagem"
@@ -707,11 +761,17 @@
       "send auto-reply email": [
         "enviar resposta automática"
       ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
       "Send read receipt": [
         "Enviar recibo de leitura"
       ],
       "Set": [
         "Definir"
+      ],
+      "Set as default": [
+        "Predefinir"
       ],
       "Set encryption": [
         "Definir encriptação"
@@ -740,20 +800,23 @@
       "Show details": [
         "Mostrar detalhes"
       ],
+      "Show fewer search options": [
+        "Mostrar menos opções de procura"
+      ],
       "Show folders": [
         "Mostrar pastas"
       ],
       "Show labels": [
         "Mostrar etiquetas"
       ],
-      "Show less": [
-        "Mostrar menos"
-      ],
       "Show messages": [
         "Mostrar mensagens"
       ],
       "Show more search options": [
         "Mostrar mais opções de procura"
+      ],
+      "Show preview": [
+        "Mostrar pré-visualização"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -798,6 +861,9 @@
         "Confiar na chave",
         "Confiar nas chaves"
       ],
+      "Trust public key": [
+        "Confiar na chave pública"
+      ],
       "Try again": [
         "Tentar novamente"
       ],
@@ -831,6 +897,9 @@
       "Untrust": [
         "Não confiar"
       ],
+      "Update": [
+        "Actualizar"
+      ],
       "Update recovery file": [
         "Atualizar ficheiro de recuperação"
       ],
@@ -840,11 +909,17 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
+      ],
+      "Use authentication code": [
+        "Usar código de autenticação"
       ],
       "Use for sending": [
         "Usar para envio"
@@ -857,6 +932,12 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Verify account": [
+        "Verificar conta"
+      ],
+      "Verify email": [
+        "Verificar correio eletrónico"
       ],
       "View": [
         "Ver"
@@ -877,7 +958,7 @@
         "Ver chaves"
       ],
       "View message": [
-        "Visualizar mensagem"
+        "Ver mensagem"
       ],
       "View message details": [
         "Ver detalhes da mensagem"
@@ -1016,15 +1097,15 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Obtenha o lidar"
+        "Obtenha a promoção"
       ],
       "Get the deal now": [
-        "Obtenha a promoção já"
+        "Obter a promoção já"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1246,6 +1327,14 @@
         "A sincronizar agenda: a exibição de todos os eventos, poderá demorar vários minutos."
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fechar"
+      ],
+      "Expand": [
+        "Expandir"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Encriptado de ponta-a-ponta"
@@ -1399,6 +1488,773 @@
         "Yomi"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Abecásia"
+      ],
+      "Afghanistan": [
+        "Afeganistão"
+      ],
+      "Albania": [
+        "Albânia"
+      ],
+      "Algeria": [
+        "Algéria"
+      ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antárctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antígua e Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Arménia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ilha de Ascensão"
+      ],
+      "Australia": [
+        "Austrália"
+      ],
+      "Austria": [
+        "Áustria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijão"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bielorrússia"
+      ],
+      "Belgium": [
+        "Bélgica"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butão"
+      ],
+      "Bolivia": [
+        "Bolívia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Santo Eustáquio e Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bósnia e Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Ilha Bouvet"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Território Britânico no Oceano Índico"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgária"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Camarões"
+      ],
+      "Canada": [
+        "Canadá"
+      ],
+      "Cape Verde": [
+        "Cabo Verde"
+      ],
+      "Cayman Islands": [
+        "Ilhas Cayman"
+      ],
+      "Central African Republic": [
+        "República Central Africana"
+      ],
+      "Chad": [
+        "Chade"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Ilha Natal"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Ilhas Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colômbia"
+      ],
+      "Comoros": [
+        "Comoros"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo (República Democrática)"
+      ],
+      "Cook Islands": [
+        "Ilhas Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croácia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Chipre"
+      ],
+      "Czech Republic": [
+        "República Checa"
+      ],
+      "Côte d'Ivoire": [
+        "Costa do Marfim"
+      ],
+      "Denmark": [
+        "Dinamarca"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Equador"
+      ],
+      "Egypt": [
+        "Egipto"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guiné Equatorial"
+      ],
+      "Eritrea": [
+        "Eritreia"
+      ],
+      "Estonia": [
+        "Estónia"
+      ],
+      "Eswatini": [
+        "Suazilândia"
+      ],
+      "Ethiopia": [
+        "Etiópia"
+      ],
+      "Falkland Islands": [
+        "Ilhas Falkland"
+      ],
+      "Faroe Islands": [
+        "Ilhas Faroé"
+      ],
+      "Federated States of Micronesia": [
+        "Estados Federados da Micronésia"
+      ],
+      "Fiji": [
+        "Ilhas Fiji"
+      ],
+      "Finland": [
+        "Finlândia"
+      ],
+      "France": [
+        "França"
+      ],
+      "French Guiana": [
+        "Guiana Francesa"
+      ],
+      "French Polynesia": [
+        "Polinésia Francesa"
+      ],
+      "French Southern Territories": [
+        "Territórios franceses do Sul"
+      ],
+      "Gabon": [
+        "Gabão"
+      ],
+      "Gambia": [
+        "Gâmbia"
+      ],
+      "Georgia": [
+        "Geórgia"
+      ],
+      "Germany": [
+        "Alemanha"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grécia"
+      ],
+      "Greenland": [
+        "Gronelândia"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guiné"
+      ],
+      "Guinea-Bissau": [
+        "Guiné-Bissau"
+      ],
+      "Guyana": [
+        "Guiana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Ilha Heard e Ilhas McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Santa Sé (Estado da Cidade do Vaticano)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hungria"
+      ],
+      "Iceland": [
+        "Islândia"
+      ],
+      "India": [
+        "Índia"
+      ],
+      "Indonesia": [
+        "Indonésia"
+      ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Irão"
+      ],
+      "Iraq": [
+        "Iraque"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Ilha de Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Itália"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japão"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordânia"
+      ],
+      "Kazakhstan": [
+        "Cazaquistão"
+      ],
+      "Kenya": [
+        "Quénia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Quirguistão"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Látvia"
+      ],
+      "Lebanon": [
+        "Líbano"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Libéria"
+      ],
+      "Libya": [
+        "Líbia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituânia"
+      ],
+      "Luxembourg": [
+        "Luxemburgo"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagáscar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malásia"
+      ],
+      "Maldives": [
+        "Maldivas"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Ilhas Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritânia"
+      ],
+      "Mauritius": [
+        "Maurícia"
+      ],
+      "Mayotte": [
+        "Maiote"
+      ],
+      "Mexico": [
+        "México"
+      ],
+      "Moldova": [
+        "Moldávia"
+      ],
+      "Monaco": [
+        "Mónaco"
+      ],
+      "Mongolia": [
+        "Mongólia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Monserrate"
+      ],
+      "Morocco": [
+        "Marrocos"
+      ],
+      "Mozambique": [
+        "Moçambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namíbia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Países Baixos"
+      ],
+      "New Caledonia": [
+        "Nova Caledónia"
+      ],
+      "New Zealand": [
+        "Nova Zelândia"
+      ],
+      "Nicaragua": [
+        "Nicarágua"
+      ],
+      "Niger": [
+        "Níger"
+      ],
+      "Nigeria": [
+        "Nigéria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Ilha Norfolk"
+      ],
+      "North Korea": [
+        "Coreia do Norte"
+      ],
+      "North Macedonia": [
+        "Macedónia do Norte"
+      ],
+      "Northern Mariana Islands": [
+        "Ilhas Marianas do Norte"
+      ],
+      "Norway": [
+        "Noruega"
+      ],
+      "Oman": [
+        "Omã"
+      ],
+      "Pakistan": [
+        "Paquistão"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panamá"
+      ],
+      "Papua New Guinea": [
+        "Papua Nova Guiné"
+      ],
+      "Paraguay": [
+        "Paraguai"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipinas"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polónia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunião"
+      ],
+      "Romania": [
+        "Roménia"
+      ],
+      "Russia": [
+        "Rússia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "São Bartolomeu"
+      ],
+      "Saint Helena": [
+        "Santa Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts e Nevis"
+      ],
+      "Saint Lucia": [
+        "Santa Lúcia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (parte francesa)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "São Pedro e Miquelão"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent e Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "São Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé e Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Arábia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sérvia"
+      ],
+      "Seychelles": [
+        "Seicheles"
+      ],
+      "Sierra Leone": [
+        "Serra Leoa"
+      ],
+      "Singapore": [
+        "Singapura"
+      ],
+      "Sint Maarten": [
+        "São Martinho (Países Baixos)"
+      ],
+      "Slovakia": [
+        "Eslováquia"
+      ],
+      "Slovenia": [
+        "Eslovénia"
+      ],
+      "Solomon Islands": [
+        "Ilhas Salomão"
+      ],
+      "Somalia": [
+        "Somália"
+      ],
+      "South Africa": [
+        "África do Sul"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Geórgia do Sul e Ilhas Sandwich do Sul"
+      ],
+      "South Korea": [
+        "Coreia do Sul"
+      ],
+      "South Ossetia": [
+        "Ossétia do Sul"
+      ],
+      "South Sudan": [
+        "Sudão Sul"
+      ],
+      "Spain": [
+        "Espanha"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudão"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard e Jan Mayen"
+      ],
+      "Sweden": [
+        "Suécia"
+      ],
+      "Switzerland": [
+        "Suíça"
+      ],
+      "Syria": [
+        "Síria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajiquistão"
+      ],
+      "Tanzania": [
+        "Tanzânia"
+      ],
+      "Thailand": [
+        "Tailândia"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad e Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristão da Cunha"
+      ],
+      "Tunisia": [
+        "Tunísia"
+      ],
+      "Turkey": [
+        "Turquia"
+      ],
+      "Turkmenistan": [
+        "Turquemenistão"
+      ],
+      "Turks and Caicos Islands": [
+        "Ilhas Turcas e Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucrânia"
+      ],
+      "United Arab Emirates": [
+        "Emirados Árabes Unidos"
+      ],
+      "United Kingdom": [
+        "Reino Unido"
+      ],
+      "United States": [
+        "Estados Unidos"
+      ],
+      "United States Minor Outlying Islands": [
+        "Ilhas Menores Distantes dos Estados Unidos"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbequistão"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietname"
+      ],
+      "Virgin Islands, British": [
+        "Ilhas Virgens, Inglesas"
+      ],
+      "Virgin Islands, U.S.": [
+        "Ilhas Virgens, Americanas"
+      ],
+      "Wallis and Futuna": [
+        "Wallis e Futuna"
+      ],
+      "Western Sahara": [
+        "Saará Ocidental"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zâmbia"
+      ],
+      "Zimbabwe": [
+        "Zimbabué"
+      ],
+      "Åland Islands": [
+        "Ilhas Åland"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Anexo"
@@ -1489,6 +2345,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
+      ],
+      "No folders": [
+        "Nenhuma pasta"
+      ],
+      "No labels": [
+        "Sem etiquetas"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
@@ -1647,6 +2509,9 @@
       "Enter 6 digits": [
         "Insira 6 algarismos"
       ],
+      "Enter a password": [
+        "Insira uma senha"
+      ],
       "Error in one of the conditions": [
         "Erro numa das condições"
       ],
@@ -1658,6 +2523,9 @@
       ],
       "Image upload failed": [
         "Falha ao enviar a imagem"
+      ],
+      "Invalid expiration time": [
+        "Tempo de validade inválido"
       ],
       "Invalid name": [
         "Nome inválido"
@@ -1750,6 +2618,9 @@
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta é inválido. Por favor, escolha um nome diferente."
       ],
+      "The maximum expiration is 4 weeks": [
+        "O tempo máximo de expiração é 4 semanas"
+      ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
       ],
@@ -1761,6 +2632,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Demasiados filtros activos. Por favor, actualize para um plano pago para activar mais filtros."
       ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
@@ -1788,6 +2662,9 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "Your search matched too many results. Please limit your search and try again.": [
+        "A sua procura obteve demasiadas correspondências. Limite a procura e tente de novo."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -1970,6 +2847,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1978,6 +2859,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter": {
@@ -2011,6 +2910,12 @@
       ]
     },
     "Filter modal type": {
+      "If the sender": [
+        "Se o remetente"
+      ],
+      "If the subject": [
+        "Se o assunto"
+      ],
       "Select…": [
         "Seleccionar…"
       ],
@@ -2141,6 +3046,12 @@
         "SMS"
       ]
     },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } participante",
+        "${ totalAttendees } participantes"
+      ]
+    },
     "Import calendar": {
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "A encriptar e adicionar contactos: ${ totalImported }/${ totalToImport }"
@@ -2198,6 +3109,9 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Acesso a aplicações menos seguras\" está ativado nas definições de segurança da sua conta Google."
       ],
+      "2-step verification is enabled in your external account.": [
+        "A verificação em 2 passos está ativada na sua conta externa."
+      ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
       ],
@@ -2242,6 +3156,12 @@
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Também pode tentar terminar a sessão em ${ boldGoogleAccounts } no navegador e desbloquear ${ linkCAPTCHA }."
+      ],
+      "Your email account requires one to export your data.": [
+        "A sua conta de e-mail requer uma para exportar os seus dados."
+      ],
+      "Your password is correct.": [
+        "A sua senha está correta."
       ]
     },
     "Import error emphasis": {
@@ -2286,6 +3206,26 @@
         "Gerir"
       ]
     },
+    "Import instructions link": {
+      "app password": [
+        "senha da aplicação"
+      ],
+      "contacts": [
+        "contactos"
+      ],
+      "ICS file": [
+        "Ficheiro ICS"
+      ],
+      "security settings": [
+        "definições de segurança"
+      ],
+      "shared calendars": [
+        "agendas partilhadas"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -2302,12 +3242,28 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nova agenda",
+        "${ calendarsToBeCreatedCount } novas agendas"
+      ],
+      "${ calendarsToBeMerged } merged calendar": [
+        "${ calendarsToBeMerged } agenda unida",
+        "${ calendarsToBeMerged } agendas unidas"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeCreatedCount } agenda unida",
+        "${ calendarsToBeCreatedCount } agendas unidas"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacto contém vários endereços de e-mail.",
+        "${ contactCount } contactos contêm vários endereços de e-mail."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } contém vários endereços de e-mail."
+        "${ contactName } contém vários endereços de correio eletrónico."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
@@ -2326,11 +3282,23 @@
         "${ groupCounts } grupos encontrados"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
+        "${ MAIL_APP_NAME } também pode proteger a sua empresa."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Impossível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Impossível mover ${ messagesNotAuthorizedToMove } mensagens."
+      ],
+      "${ numberOfTrackers } email tracker blocked": [
+        "${ numberOfTrackers } rastreador de e-mails encontrado",
+        "${ numberOfTrackers } rastreadores de e-mails encontrados"
+      ],
+      "${ numContactGroups } contact group": [
+        "${ numContactGroups } grupo de contatos",
+        "${ numContactGroups } grupos de contatos"
+      ],
+      "${ numContacts } contact": [
+        "${ numContacts } contacto",
+        "${ numContacts } contactos"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
@@ -2344,13 +3312,17 @@
         "${ pureAttachmentsCount } ficheiro anexado",
         "${ pureAttachmentsCount } ficheiros anexados"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } agendas"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
         "${ selectedFoldersCount } pastas selecionadas"
       ],
       "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta seleccionada",
-        "${ selectedFoldersCount } etiquetas seleccionadas"
+        "${ selectedFoldersCount } etiqueta selecionada",
+        "${ selectedFoldersCount } etiquetas selecionadas"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta seleccionada",
@@ -2359,6 +3331,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } de armazenamento"
       ],
       "${ total } conversation": [
         "${ total } conversa",
@@ -2469,6 +3444,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Tem a certeza de que pretende eliminar permanentemente esta mensagem?"
       ],
+      "Attach public key": [
+        "Anexar chave pública"
+      ],
       "Background color": [
         "Cor de fundo"
       ],
@@ -2476,7 +3454,7 @@
         "Navegação básica e acções permanecem disponíveis, independentemente de os atalhos de teclado estarem ou não activos nas definições."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+        "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
       ],
       "Body: ": [
         "Corpo: "
@@ -2502,8 +3480,15 @@
       "Confirm phishing report": [
         "Confirmar o relatório de phishing"
       ],
+      "Continue with ${ planName }": [
+        "Continuar com ${ planName }"
+      ],
       "Copied to clipboard": [
         "Copiado para a área de transferencia"
+      ],
+      "Create ${ calendarsToBeCreated } new calendar": [
+        "Criar ${ calendarsToBeCreated } nova agenda",
+        "Criar ${ calendarsToBeCreated } novas agendas"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -2536,6 +3521,9 @@
         "Dia",
         "Dias"
       ],
+      "Disable message content search": [
+        "Desactivarr procura do conteúdo da mensagem"
+      ],
       "Do you want to download this attachment anyway?": [
         "Deseja transferir este anexo mesmo assim?",
         "Deseja transferir estes anexos mesmo assim?"
@@ -2545,6 +3533,9 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Deseja assinar novamente os detalhes do contacto?"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "A transferir mensagem ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Rascunho"
@@ -2567,12 +3558,18 @@
       "Edit encryption": [
         "Editar encriptação"
       ],
+      "Edit expiration time": [
+        "Editar data de validade"
+      ],
       "Email address": [
         "Endereço de email"
       ],
       "embedded image": [
         "imagem incorporada",
         "imagens incorporadas"
+      ],
+      "Encrypt message": [
+        "Encriptar mensagem"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Insira as credenciais da conta de email da qual deseja importar."
@@ -2593,6 +3590,9 @@
       "Estimating time remaining...": [
         "A estimar o tempo restante..."
       ],
+      "Expiration time": [
+        "Data de validade"
+      ],
       "Expires": [
         "Expira"
       ],
@@ -2602,6 +3602,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os emails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
+      ],
+      "Folder": [
+        "Pasta"
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais recentes que ${ oldestDate }"
@@ -2644,6 +3647,13 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agenda",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agendas"
+      ],
+      "Import from": [
+        "Importar de"
+      ],
       "Import in progress": [
         "Importação em curso"
       ],
@@ -2651,7 +3661,7 @@
         "Importar caixa de correio"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
+        "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Indexing paused": [
         "Indexação em pausa"
@@ -2665,6 +3675,9 @@
       "Insert link": [
         "Inserir hiperligação"
       ],
+      "Internet connection lost": [
+        "Ligação à Internet perdida"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ligação à Internet perdida. Verifique a ligação do seu dispositivo."
       ],
@@ -2676,6 +3689,9 @@
       ],
       "Label all imported messages as": [
         "Etiquetar todas as mensagens importadas como"
+      ],
+      "Large imports can take several days.": [
+        "As importações grandes podem demorar vários dias."
       ],
       "Learn more": [
         "Saiba mais"
@@ -2704,14 +3720,23 @@
       "Manage your labels": [
         "Gerir as suas etiquetas"
       ],
+      "members": [
+        "membros"
+      ],
       "Members": [
         "Membros"
+      ],
+      "Merged": [
+        "Unido"
       ],
       "Message headers": [
         "Cabeçalhos da mensagem"
       ],
       "Message sent": [
         "Mensagem enviada"
+      ],
+      "Message sent.": [
+        "Mensagem enviada."
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
@@ -2727,6 +3752,9 @@
       ],
       "No email address": [
         "Sem endereço de email"
+      ],
+      "No email trackers found": [
+        "Nenhum rastreador de endereço eletrónico encontrado"
       ],
       "No folder found": [
         "Nenhuma pasta encontrada"
@@ -2764,17 +3792,29 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere estas configurações só se estiver a usar PGP com destinatários não-${ BRAND_NAME }."
       ],
+      "Other options": [
+        "Outras opções"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítima."
       ],
+      "per month.": [
+        "por mês."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "O PGP incorporado só é compatível com o formato Texto simples. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "O PGP/MIME envia automaticamente a mensagem usando o modo de compositor atual. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
       ],
       "Phone number": [
         "Número de telefone"
       ],
       "Plain text": [
         "Texto simples"
+      ],
+      "Please add at least one recipient.": [
+        "Por favor, adicione pelo menos um destinatário."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Por favor, note que os endereços atribuídos a este grupo NÃO serão eliminados."
@@ -2787,6 +3827,10 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Por favor, seleccione o tipo de ligação que deseja inserir e preencha todos os campos."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Por favor, selecione os endereços eletrónicos a adicionar ao grupo ${ groupCount }.",
+        "Por favor, selecione os endereços eletrónicos a adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Por favor, selecione os endereços eletrónicos a adicionar a ${ groupName }."
@@ -2806,17 +3850,29 @@
       "Print email": [
         "Imprimir email"
       ],
+      "Priority support": [
+        "Suporte prioritário"
+      ],
       "Recipient: ": [
         "Destinatário: "
       ],
       "Recovery phrase copied to clipboard": [
         "Frase recuperação copiada para a memória"
       ],
+      "Recovery phrase downloaded": [
+        "Frase de recuperação descarregada"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing, enviará a mensagem para nós, para que possamos analisá-la e melhorar os nossos filtros. Isto significa que poderemos ver o conteúdo da mensagem na íntegra."
+      ],
+      "Request read receipt": [
+        "Pedir recibo de leitura"
+      ],
+      "Rich text": [
+        "Texto formatado"
       ],
       "Right to Left": [
         "Da direita para a esquerda"
@@ -2833,6 +3889,9 @@
       "Saving draft…": [
         "A gravar o rascunho…"
       ],
+      "Scheduling message...": [
+        "Agendando mensagem..."
+      ],
       "Seems like you are all caught up for now": [
         "Parece que está ocupado de momento"
       ],
@@ -2848,11 +3907,20 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é uma funcionalidade paga. A sua mensagem será enviada do seu endereço predefinido ${ email }"
       ],
+      "Session timed out": [
+        "A sessão expirou."
+      ],
+      "Set a recovery phrase": [
+        "Definir uma frase de recuperação"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "A configuração do PGP permite o envio de e-mails encriptados de ponta-a-ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
+        "A configuração do PGP permite o envio de correios eletrónicos encriptados de ponta-a-ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
       "Show original message": [
         "Mostrar mensagem original"
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Desculpe. Esta mensagem não existe ou já expirou."
       ],
       "Subject": [
         "Assunto"
@@ -2975,6 +4043,15 @@
       "Turn off content search. Activation progress won't be lost.": [
         "Desactivar a pesquisa de conteúdo. O progresso de activação não será perdido."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Unlimited messages": [
+        "Mensagens ilimitadas"
+      ],
+      "Unlock message": [
+        "Desbloquear mensagem"
+      ],
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
@@ -2989,6 +4066,9 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Version ${ appVersion }": [
+        "Versão ${ appVersion }"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Lamentamos, pode ter ocorrido um erro do nosso lado. Pode confirmar que deseja marcar este e-mail como legítimo?"
@@ -3092,8 +4172,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Comprometida"
+      ],
       "Expired": [
         "Expirada"
+      ],
+      "Obsolete": [
+        "Obsoleta"
       ],
       "Primary": [
         "Primária"
@@ -3360,14 +4446,17 @@
       "App password": [
         "Senha da aplicação"
       ],
-      "Attach screenshot(s)": [
-        "Anexar captura(s) de ecrã"
-      ],
       "Attachments": [
         "Anexos"
       ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
+      ],
+      "Awful": [
+        "Horrível"
+      ],
+      "Bad": [
+        "Mau"
       ],
       "BCC": [
         "BCC"
@@ -3380,6 +4469,9 @@
       ],
       "Browser version": [
         "Versão do navegador"
+      ],
+      "Calendar": [
+        "Agenda"
       ],
       "Carbon Copy": [
         "Cópias de mensagem (CC)"
@@ -3444,11 +4536,20 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Frequency": [
+        "Frequência"
+      ],
       "From": [
         "De"
       ],
       "From:": [
         "De:"
+      ],
+      "From: ${ importedEmail }": [
+        "De: ${ importedEmail }"
+      ],
+      "Good": [
+        "Bom"
       ],
       "Group": [
         "Grupo"
@@ -3465,6 +4566,9 @@
       "Import contacts": [
         "Importar contactos"
       ],
+      "Import to email address": [
+        "Importar para endereço de email"
+      ],
       "Keyboard shortcuts": [
         "Atalhos de teclado"
       ],
@@ -3473,6 +4577,12 @@
       ],
       "Label as": [
         "Etiquetar como"
+      ],
+      "Label messages as": [
+        "Etiquetar mensagens como"
+      ],
+      "Location": [
+        "Localização"
       ],
       "Mail Server (IMAP)": [
         "Servidor de email (IMAP)"
@@ -3485,6 +4595,9 @@
       ],
       "Mark as": [
         "Marcar como"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Mover ${ sidebarElementName }"
       ],
       "Move to": [
         "Mover para"
@@ -3521,6 +4634,9 @@
       ],
       "Or": [
         "Ou"
+      ],
+      "Participants": [
+        "Participantes"
       ],
       "Password": [
         "Senha"
@@ -3614,6 +4730,9 @@
       ],
       "To:": [
         "Para:"
+      ],
+      "To: ${ emailAddress }": [
+        "Para: ${ emailAddress }"
       ],
       "Two-factor authentication code": [
         "Código de autenticação em dois passos"
@@ -3797,6 +4916,9 @@
       "Pay invoice": [
         "Pagar factura"
       ],
+      "Privacy policy": [
+        "Política de privacidade"
+      ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "Reactive o endereço vinculado a esta agenda para gerir o seu convite."
       ],
@@ -3812,11 +4934,17 @@
       "Sent": [
         "Enviado"
       ],
+      "Sign up for free": [
+        "Registe-se gratuitamente"
+      ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
         "Com estrela"
+      ],
+      "Terms": [
+        "Termos"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Este ficheiro ICS contém mais de um evento. Por favor, transfira-o e importe os eventos para ${ calendarAppName }"
@@ -3826,6 +4954,9 @@
       ],
       "Upgrade account": [
         "Actualizar conta"
+      ],
+      "What’s this?": [
+        "O que é isto?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Tem de activar as chaves da agenda para adicionar este evento"
@@ -3855,6 +4986,9 @@
     "Loading info": {
       "Connecting to your email provider": [
         "A ligar ao seu fornecedor de correio electrónico"
+      ],
+      "Creating new calendars": [
+        "A criar as novas agendas"
       ]
     },
     "Mailbox": {
@@ -3907,6 +5041,35 @@
       ],
       "Plain text": [
         "Texto simples"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Como importar agendas de outro serviço"
+      ],
+      "How to import calendars from Outlook": [
+        "Como importar agendas do Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Como importar agendas do Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Como importar contatos de outro serviço"
+      ],
+      "How to import contacts from Outlook": [
+        "Como importar contatos do Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Como importar contatos do Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Como importar e-mails de outro serviço"
+      ],
+      "How to import emails from Outlook": [
+        "Como importar e-mails do Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Como importar e-mails do Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4117,6 +5280,14 @@
         "Mover para..."
       ]
     },
+    "Option group label": {
+      "Create new calendar": [
+        "Criar nova agenda"
+      ],
+      "Merge with calendar": [
+        "Unir com agenda"
+      ]
+    },
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } de ${ totalText }"
@@ -4140,6 +5311,9 @@
     "Placeholder": {
       "A way to contact you": [
         "Uma forma de o contactar"
+      ],
+      "Confirm password": [
+        "Confirmar senha"
       ],
       "E.g., ": [
         "E.g., "
@@ -4198,6 +5372,9 @@
       "Search name, email or group": [
         "Procurar nome, email ou grupo"
       ],
+      "Select": [
+        "Selecionar"
+      ],
       "Start date": [
         "Data de início"
       ],
@@ -4223,6 +5400,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contacto exportado.",
+        "${ contactsExported.length } de ${ countContacts } contactos exportados."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado com sucesso.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados com sucesso."
@@ -4390,6 +5571,10 @@
       "PGP-signed": [
         "Assinado com PGP"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Enviado pelo ${ MAIL_APP_NAME } com encriptação de acesso zero para destinatário verificado",
+        "Enviado pelo ${ MAIL_APP_NAME } com encriptação de acesso zero para destinatários verificados"
+      ],
       "Sent by you with end-to-end encryption": [
         "Enviado por si com encriptação ponta-a-ponta"
       ],
@@ -4541,11 +5726,29 @@
       "Contacts deleted": [
         "Contactos eliminados"
       ],
+      "Conversation added to ${ labelName }.": [
+        "Conversa adicionada a ${ labelName }."
+      ],
       "Conversation deleted": [
         "Conversa eliminada"
       ],
+      "Conversation marked as read.": [
+        "Conversa marcada como lida."
+      ],
+      "Conversation marked as Starred.": [
+        "Conversa marcada com estrela."
+      ],
+      "Conversation marked as unread.": [
+        "Conversa marcada como não lida."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversa movida para ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversa movida para Assédio e remetente adicionado à lista de spam."
+      ],
+      "Conversation removed from ${ labelName }.": [
+        "Conversa removida de ${ labelName }."
       ],
       "Draft deleted": [
         "Rascunho eliminado"
@@ -4571,6 +5774,9 @@
       "Mail list unsubscribed": [
         "Lista de correio não subscrita"
       ],
+      "Message added to ${ labelName }.": [
+        "Mensagem adicionada a ${ labelName }."
+      ],
       "Message content search activated": [
         "Procura de conteúdo da mensagem activada"
       ],
@@ -4580,8 +5786,23 @@
       "Message marked as legitimate": [
         "Mensagem marcada como legítima"
       ],
+      "Message marked as read.": [
+        "Mensagem marcada como lida."
+      ],
+      "Message marked as Starred.": [
+        "Mensagem marcada com estrela."
+      ],
+      "Message marked as unread.": [
+        "Mensagem marcada como não lida."
+      ],
       "Message moved to ${ folderName }.": [
         "Mensagem movida para ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Mensagem movida para Assédio e remetente adicionado à lista de spam."
+      ],
+      "Message removed from ${ labelName }.": [
+        "Mensagem removida de ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversa",
@@ -4590,6 +5811,9 @@
       "Move ${ selectionCount } message": [
         "Mover ${ selectionCount } mensagem",
         "Mover ${ selectionCount } mensagens"
+      ],
+      "Password copied to clipboard": [
+        "Senha copiada para a área de transferência"
       ],
       "Phishing reported": [
         "Reportado como phishing"
@@ -4673,6 +5897,20 @@
     "Time": {
       "Yesterday": [
         "Ontem"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "data de criação da conta"
+      ],
+      "the last 12 months": [
+        "os últimos 12 meses"
+      ],
+      "the last 3 months": [
+        "os últimos 3 meses"
+      ],
+      "the last month": [
+        "o último mês"
       ]
     },
     "Time unit": {
@@ -4767,6 +6005,9 @@
       "Confirm recipient address?": [
         "Confirmar endereço do destinatário?"
       ],
+      "Contact details": [
+        "Detalhes do contacto"
+      ],
       "Contact Details": [
         "Detalhes do contacto"
       ],
@@ -4841,6 +6082,9 @@
       "Edit contact group": [
         "Editar grupo de contactos"
       ],
+      "Edit email settings": [
+        "Editar definições de correio"
+      ],
       "Edit filter": [
         "Editar filtro"
       ],
@@ -4856,6 +6100,9 @@
       "Enter your password": [
         "Insira a sua senha"
       ],
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Insira o seu nome de utilizador ou endereço ${ MAIL_APP_NAME }"
+      ],
       "Error": [
         "Erro"
       ],
@@ -4865,8 +6112,8 @@
       "External encryption": [
         "Encriptação externa"
       ],
-      "Filter on...": [
-        "Filtrar por..."
+      "Feedback": [
+        "Comentários"
       ],
       "Forward": [
         "Reencaminhar"
@@ -4934,6 +6181,9 @@
       "More selections": [
         "Mais selecções"
       ],
+      "Move all messages to Trash": [
+        "Mover todas as mensagens para o Lixo"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -4991,6 +6241,9 @@
       "Re-signing contacts": [
         "A re-assinar contactos"
       ],
+      "Recipient missing": [
+        "Destinatário em falta"
+      ],
       "Reconnect your account": [
         "Religue a sua conta"
       ],
@@ -5021,6 +6274,9 @@
       "Send email": [
         "Enviar email"
       ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
       "Send with changed preferences?": [
         "Enviar com preferências alteradas?"
       ],
@@ -5029,6 +6285,9 @@
       ],
       "Sender": [
         "Remetente"
+      ],
+      "Sending error": [
+        "A enviar erro"
       ],
       "Sending notice": [
         "Aviso de envio"
@@ -5091,6 +6350,9 @@
       "Warning": [
         "Aviso"
       ],
+      "Warning: suspected fake website": [
+        "Aviso: suspeita de sítio web falso"
+      ],
       "Welcome": [
         "Boas vindas"
       ],
@@ -5134,8 +6396,8 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acção transfere todas as mensagens para que possam ser procuradas localmente. Limpar os dados do navegador desactiva esta opção."
+      "The import will start with the most recent messages.": [
+        "A importação começará com as mensagens mais recentes."
       ],
       "This feature is only available for paid users": [
         "Esta funcionalidade só está disponível para utilizadores pagantes"
@@ -5426,7 +6688,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

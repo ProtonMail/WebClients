@@ -1228,6 +1228,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Mejor oferta"
+      ],
       "Most popular": [
         "Más popular"
       ]
@@ -1242,7 +1245,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2869,6 +2872,10 @@
       ],
       "No labels": [
         "Sin etiquetas"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
@@ -7093,6 +7100,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contacto fue exportado con éxito.",
+        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -7427,9 +7438,17 @@
         "${ elementsCount } conversación marcada como no leída.",
         "${ elementsCount } conversaciones marcadas como no leídas."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } conversación movida a ${ folderName } y el remitente añadido a la lista de no spam.",
+        "${ elementsCount } conversaciones movidas a ${ folderName } y los remitentes añadidos a la lista de no spam."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversación movida a ${ folderName }.",
         "${ elementsCount } conversaciones movidas a ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversación movida a spam y el remitente añadido a la lista de spam.",
+        "${ elementsCount } conversaciones movidas a spam y los remitentes añadidos a la lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversación eliminada de ${ labelName }.",
@@ -7451,9 +7470,17 @@
         "${ elementsCount } mensaje marcado como no leído.",
         "${ elementsCount } mensajes marcados como no leídos."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } mensaje movido a ${ folderName } y el remitente añadido a la lista de no spam.",
+        "${ elementsCount } mensajes movidos a ${ folderName } y los remitentes añadidos a la lista de no spam."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensaje movido a ${ folderName }.",
         "${ elementsCount } mensajes movidos to ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } mensaje movido a spam y el remitente añadido a la lista de spam.",
+        "${ elementsCount } mensajes movidos a spam y los remitentes añadidos a la lista de spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensaje eliminado de ${ labelName }.",
@@ -7500,8 +7527,14 @@
       "Conversation marked as unread.": [
         "Conversación marcada como no leída."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversación movida a ${ folderName } y el remitente añadido a la lista de no spam."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversación movida a ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversación movida a spam y el remitente añadido a la lista de spam."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversación eliminada de ${ labelName }."
@@ -7557,8 +7590,14 @@
       "Message marked as unread.": [
         "Mensaje marcado como no leído."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Mensaje movido a ${ folderName } y el remitente añadido a la lista de no spam."
+      ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Mensaje movido a spam y el remitente añadido a la lista de spam."
       ],
       "Message removed from ${ labelName }.": [
         "Mensaje eliminado de ${ labelName }."
@@ -7985,7 +8024,7 @@
         "Más"
       ],
       "More actions": [
-        "Más opciones"
+        "Más acciones"
       ],
       "More options": [
         "Más opciones"
@@ -8254,7 +8293,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que se puedan buscar localmente. Limpiar los datos de su navegador desactivará esta opción."
+        "Esta acción descargará todos los mensajes para que puedan ser buscados localmente. Limpiar los datos de su navegador desactivará está opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"
@@ -8593,7 +8632,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

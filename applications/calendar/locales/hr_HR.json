@@ -117,7 +117,7 @@
         "Stvori"
       ],
       "Create a new contact group": [
-        "Stvori novu grupu kontakata"
+        "Kreiraj novu grupu kontakata"
       ],
       "Create event": [
         "Stvori događaj"
@@ -190,7 +190,7 @@
         "Izvezi grupu kontakata"
       ],
       "Export contacts": [
-        "Izvezi kontakte"
+        "Uvezi kontakte"
       ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
@@ -389,9 +389,6 @@
       ],
       "Show labels": [
         "Prikaži oznake"
-      ],
-      "Show less": [
-        "Prikaži manje"
       ],
       "Show more": [
         "Prikaži više"
@@ -600,7 +597,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "- ${ percentage }%"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -867,12 +864,12 @@
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Svaki ${ interval } dan, ${ timesString }",
-        "Svakih ${ interval } dana, ${ timesString }",
+        "Svaka ${ interval } dana, ${ timesString }",
         "Svakih ${ interval } dana, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Svaki ${ interval } dan, ${ untilString }",
-        "Svakih ${ interval } dana, ${ untilString }",
+        "Svaka ${ interval } dana, ${ untilString }",
         "Svakih ${ interval } dana, ${ untilString }"
       ],
       "until ${ dateString }": [
@@ -1048,7 +1045,7 @@
         "Neuspješno slanje otkazivanja"
       ],
       "Contact could not be saved": [
-        "Nije moguće spremanje kontakata"
+        "Nije bilo moguće spremanje kontakata"
       ],
       "Contact signature could not be verified": [
         "Nije moguće provjeriti potpis kontakta"
@@ -1122,9 +1119,6 @@
       "Name required": [
         "Naziv je obavezan"
       ],
-      "No valid address found": [
-        "Nije pronađena važeća adresa"
-      ],
       "No WKD key retrieved for user is valid for sending": [
         "Nijedan WKD ključ dohvaćen za korisnika nije valjan za slanje"
       ],
@@ -1136,8 +1130,8 @@
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jedan od kontakata nema adresu e-pošte: ${ noEmailsContactNamesList }",
-        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } ",
-        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } "
+        "Nekoliko kontakata nema adresu e-pošte: ${ noEmailsContactNamesList } ",
+        "Nekoliko kontakata nema adresu e-pošte: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Jedna od grupa nema kontakata: ${ noContactGroupList }",
@@ -1152,12 +1146,6 @@
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
-      ],
-      "Primary address key is not decrypted": [
-        "Primarni ključ adrese e-pošte nije dešifriran"
-      ],
-      "Primary address key is not decrypted.": [
-        "Primarni ključ adrese e-pošte nije dešifriran."
       ],
       "Self invitation not allowed": [
         "Nije dopušteno pozivanje samog sebe"
@@ -1367,11 +1355,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Ocjena je zabilježena"
       ]
     },
     "Event delete button tooltip": {
@@ -1733,7 +1716,7 @@
         "Provjera kontakta ${ progress } od ${ max }..."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "Create a new contact group": [
         "Stvori novu grupu kontakata"
@@ -2230,9 +2213,6 @@
       ],
       "Organizer": [
         "Organizator"
-      ],
-      "Participants": [
-        "Sudionici"
       ],
       "Password": [
         "Lozinka"
@@ -2839,7 +2819,6 @@
     },
     "Progress bar description": {
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
         "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
         "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno."
       ],
@@ -2939,7 +2918,7 @@
         "Odgovor je poslan, a događaj je izbrisan"
       ],
       "Bug reported": [
-        "Pogreška je prijavljena"
+        "Problem je prijavljen"
       ],
       "Calendar created": [
         "Kalendar je stvoren"
@@ -2963,9 +2942,9 @@
         "Kôd je poslan na ${ methodTo }"
       ],
       "Contact deleted": [
-        "Kontakt je izbrisan",
-        "Kontakti su izbrisani",
-        "Kontakti su izbrisani"
+        "Kontakt je uklonjen",
+        "Kontakti su uklonjeni",
+        "Kontakti su uklonjeni"
       ],
       "Contact group deleted": [
         "Kontaktna grupa je izbrisana",
@@ -2973,10 +2952,10 @@
         "Kontaktne grupe su izbrisane"
       ],
       "Contact saved": [
-        "Kontakt je spremljen"
+        "Kontakt je dodan"
       ],
       "Contacts deleted": [
-        "Kontakti su izbrisani"
+        "Kontakti su uklonjeni"
       ],
       "Email address copied to clipboard": [
         "Adresa e-pošte je kopirana u međuspremnik"
@@ -3043,11 +3022,6 @@
       ],
       "Verification successful": [
         "Uspješna provjera"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Povratna informacija je poslana"
       ]
     },
     "Table header": {
@@ -3259,9 +3233,6 @@
       "Exporting contacts": [
         "Izvoz kontakata"
       ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
       "Groups": [
         "Grupe"
       ],
@@ -3393,9 +3364,6 @@
       ],
       "Select which calendar to add this event to": [
         "Odaberite u koji kalendar će se dodati ovaj događaj"
-      ],
-      "Send feedback": [
-        "Pošalji povratne informacije"
       ],
       "Send invitation": [
         "Pošalji pozivnicu"
@@ -3790,7 +3758,8 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Svakih ${ interval } godina"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Svaku ${ interval } godinu, ${ timesString }",

@@ -50,6 +50,9 @@
       "Try another method": [
         "Másik módszer"
       ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
       "Use recovery code": [
         "Helyreállító kód használata"
       ],
@@ -961,8 +964,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
+      "Each code can only be used once": [
+        "Minden kódot csak egyszer lehet felhasználni"
+      ],
+      "Enter the code from your authenticator app": [
+        "Adja meg a hitelesítő alkalmazása által generált kódot"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -994,6 +1006,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk visszaállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
@@ -1011,6 +1026,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],

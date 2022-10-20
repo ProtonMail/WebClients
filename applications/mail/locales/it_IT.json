@@ -108,7 +108,7 @@
         "Blocca i messaggi da questo mittente"
       ],
       "Block senders": [
-        "Blocca mittenti"
+        "Blocca il mittente"
       ],
       "Bold": [
         "Grassetto"
@@ -1231,13 +1231,16 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Miglior offerta"
+      ],
       "Most popular": [
         "Il più richiesto"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Approfitta dell'offerta"
+        "Ottieni l'offerta"
       ],
       "Get the deal now": [
         "Ottieni la promo ora"
@@ -1245,7 +1248,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2869,6 +2872,10 @@
       ],
       "No labels": [
         "Nessuna etichetta"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilizza il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
@@ -4609,7 +4616,7 @@
         "Non dimenticare di condividere la tua password con il destinatario"
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Scaricamento del messaggio ${ esProgress } di ${ totalProgressToShow }"
+        "Scaricamento messaggio ${ esProgress } di ${ totalProgressToShow }"
       ],
       "Draft": [
         "Bozza"
@@ -6108,7 +6115,7 @@
         "Segna come"
       ],
       "Move ${ sidebarElementName }": [
-        "Muovi ${ sidebarElementName }"
+        "Sposta ${ sidebarElementName }"
       ],
       "Move to": [
         "Sposta in"
@@ -6865,7 +6872,7 @@
         "La password è stata impostata con successo"
       ],
       "Sender ${ firstSenderAddress } blocked": [
-        "Il mittente ${ firstSenderAddress } è stato bloccato"
+        "Mittente ${ firstSenderAddress } bloccato"
       ],
       "Senders blocked": [
         "Mittenti bloccati"
@@ -7093,6 +7100,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } contatto su ${ countContacts } esportato con successo.",
+        "${ contactsExported.length } contatti su ${ countContacts } esportati con successo."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } di ${ totalBeDeleted } contatto eliminato correttamente.",
         "${ model.deleted.length } di ${ totalBeDeleted } contatti eliminati correttamente."
@@ -7427,9 +7438,17 @@
         "${ elementsCount } conversazione segnata come non letta.",
         "${ elementsCount } conversazioni segnate come non lette."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } conversazione è stata spostata in ${ folderName } e il mittente è stato aggiunto alla tua lista non spam.",
+        "${ elementsCount } conversazioni spostate in ${ folderName } e mittenti aggiunti alla tua lista non spam."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversazione spostata in ${ folderName }.",
         "${ elementsCount } conversazioni spostate in ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversazione spostata in spam e mittente aggiunto alla tua lista spam.",
+        "${ elementsCount } conversazioni spostate in spam e mittenti aggiunti alla tua lista spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversazione rimossa da ${ labelName }.",
@@ -7451,9 +7470,17 @@
         "${ elementsCount } messaggio segnato come non letto.",
         "${ elementsCount } messaggi segnati come non letti."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } messaggio è stato spostato in ${ folderName } e il mittente è stato aggiunto alla tua lista non spam.",
+        "${ elementsCount } messaggi spostati in ${ folderName } e mittenti aggiunti alla tua lista non spam."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } messaggio spostato in ${ folderName }.",
         "${ elementsCount } messaggi spostati in ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } messaggio spostato in spam e mittente aggiunto alla lista degli spam.",
+        "${ elementsCount } messaggi spostati in spam e mittenti aggiunti alla lista degli spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } messaggio rimosso da ${ labelName }.",
@@ -7500,8 +7527,14 @@
       "Conversation marked as unread.": [
         "Conversazione contrassegnata come non letta."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversazione spostata in ${ folderName } e mittente aggiunto alla tua lista non spam."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversazione spostata in ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversazione spostata in spam e mittente aggiunto alla tua lista spam."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversazione rimossa da ${ labelName }."
@@ -7557,8 +7590,14 @@
       "Message marked as unread.": [
         "Messaggio segnato come non letto."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Il messaggio è stato spostato in ${ folderName } e il mittente è stato aggiunto alla tua lista non spam."
+      ],
       "Message moved to ${ folderName }.": [
         "Messaggio spostato in ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Il messaggio è stato spostato in spam e il mittente è stato aggiunto alla lista degli spam."
       ],
       "Message removed from ${ labelName }.": [
         "Messaggio rimosso da ${ labelName }."
@@ -8254,7 +8293,7 @@
         "L'importazione inizierà con i messaggi più recenti."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
+        "Questa azione scaricherà tutti i messaggi, così che possano essere sottoposti localmente a ricerca. Cancellare i dati del browser disabiliterà questa opzione."
       ],
       "This feature is only available for paid users": [
         "Questa funzionalità è disponibile solo per utenti paganti"
@@ -8593,7 +8632,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Ogni ${ interval } anno, ${ timesString }",

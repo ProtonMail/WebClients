@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;",
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
     "language": "cs_CZ"
   },
   "contexts": {
@@ -1241,6 +1241,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Nejlepší nabídka"
+      ],
       "Most popular": [
         "Nejoblíbenější"
       ]
@@ -1250,12 +1253,12 @@
         "Využít nabídku"
       ],
       "Get the deal now": [
-        "Objednat nyní"
+        "Využít akce"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2889,6 +2892,12 @@
       ],
       "No labels": [
         "Bez štítků"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
@@ -7299,6 +7308,12 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } z ${ countContacts } kontaktu byl úspěšně exportován.",
+        "${ contactsExported.length } ze ${ countContacts } kontaktů bylo úspěšně exportováno.",
+        "${ contactsExported.length } z ${ countContacts } kontaktů bylo úspěšně exportováno.",
+        "${ contactsExported.length } z ${ countContacts } kontaktů bylo úspěšně exportováno."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů byl úspěšně smazán.",
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů byly úspěšně smazány.",
@@ -7646,8 +7661,8 @@
         "${ elementsCount } konverzací přidáno do ${ labelName }."
       ],
       "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } konverzace označená jako přečtená.",
-        "${ elementsCount } konverzace označené jako přečtené.",
+        "${ elementsCount } konverzace označena jako přečtená.",
+        "${ elementsCount } konverzace označeny jako přečtené.",
         "${ elementsCount } konverzací označených jako přečtené.",
         "${ elementsCount } konverzací označených jako přečtené."
       ],
@@ -7658,16 +7673,28 @@
         "${ elementsCount } konverzací označeno hvězdičkou."
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } konverzace označená jako nepřečtená.",
-        "${ elementsCount } konverzace označené jako nepřečtené.",
+        "${ elementsCount } konverzace označena jako nepřečtená.",
+        "${ elementsCount } konverzace označeny jako nepřečtené.",
         "${ elementsCount } konverzací označeno jako nepřečtené.",
         "${ elementsCount } konverzací označeno jako nepřečtené."
+      ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } konverzace byla přesunuta do ${ folderName } a odesílatel byl přidán na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } konverzace byly přesunuty do ${ folderName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } konverzací bylo přesunuto do ${ folderName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } konverzací bylo přesunuto do ${ folderName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } konverzace přesunuta do ${ folderName }.",
         "${ elementsCount } konverzace přesunuty do ${ folderName }.",
         "${ elementsCount } konverzací přesunuto do ${ folderName }.",
         "${ elementsCount } konverzací přesunuto do ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } konverzace byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů.",
+        "${ elementsCount } konverzace byly přesunuty do spamu a odesílatelé byli přidáni do vašeho seznamu spamů.",
+        "${ elementsCount } konverzací bylo přesunuto do spamu a odesílatelé byli přidáni do vašeho seznamu spamů.",
+        "${ elementsCount } konverzací bylo přesunuto do spamu a odesílatelé byli přidáni do vašeho seznamu spamů."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } konverzace odstraněna z ${ labelName }.",
@@ -7682,8 +7709,8 @@
         "${ elementsCount } zpráv přidáno do ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
-        "${ elementsCount } zpráva označená jako přečtená.",
-        "${ elementsCount } zprávy označené jako přečtené.",
+        "${ elementsCount } zpráva označena jako přečtená.",
+        "${ elementsCount } zprávy označeny jako přečtené.",
         "${ elementsCount } zpráv označených jako přečtené.",
         "${ elementsCount } zpráv označených jako přečtené."
       ],
@@ -7694,16 +7721,28 @@
         "${ elementsCount } zprávy označené hvězdičkou."
       ],
       "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } zpráva označená jako nepřečtená.",
+        "${ elementsCount } zpráva označena jako nepřečtená.",
         "${ elementsCount } zprávy označené jako nepřečtené.",
         "${ elementsCount } zpráv označených jako nepřečtené.",
         "${ elementsCount } zpráv označených jako nepřečtené."
+      ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } zpráva byla přesunuta do ${ folderName } a odesílatel byl přidán na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zprávy byly přesunuty do ${ folderName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zpráv bylo přesunuto do ${ folderName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zpráv bylo přesunuto do ${ folderName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } zpráva přesunuta do ${ folderName }.",
         "${ elementsCount } zprávy přesunuty do ${ folderName }.",
         "${ elementsCount } zpráv přesunuto do ${ folderName }.",
         "${ elementsCount } zpráv přesunuto do ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } zpráva byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů.",
+        "${ elementsCount } zprávy byly přesunuty do spamu a odesílatelé byli přidáni do vašeho seznamu spamů.",
+        "${ elementsCount } zpráv bylo přesunuto do spamu a odesílatelé byli přidáni do vašeho seznamu spamů.",
+        "${ elementsCount } zpráv bylo přesunuto do spamu a odesílatelé byli přidáni do vašeho seznamu spamů."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } zpráva odstraněna z ${ labelName }.",
@@ -7756,8 +7795,14 @@
       "Conversation marked as unread.": [
         "Konverzace označena jako nepřečtená."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Konverzace přesunuta do ${ folderName } a odesílatel přidán na váš seznam vyžádaných e-mailů."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Konverzace přesunuta do ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Konverzace byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů."
       ],
       "Conversation removed from ${ labelName }.": [
         "Konverzace odstraněna z ${ labelName }."
@@ -7813,8 +7858,14 @@
       "Message marked as unread.": [
         "Zpráva označena jako nepřečtená."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Zpráva přesunuta do ${ folderName } a odesílatel přidán na váš seznam vyžádaných e-mailů."
+      ],
       "Message moved to ${ folderName }.": [
         "Zpráva byla přesunuta do složky ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Zpráva byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů."
       ],
       "Message removed from ${ labelName }.": [
         "Zpráva odstraněna z ${ labelName }."
@@ -8943,7 +8994,9 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "Každých ${ interval } roků",
+        "Každých ${ interval } roků"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval }, ${ timesString }",
