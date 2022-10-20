@@ -106,7 +106,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 <Alert className="mb1" type="warning">{c('Info')
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
-            {hasApiKeys && (
+            {hasApiKeys && !hasPinnedKeys && (
                 <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
                     .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
             )}
