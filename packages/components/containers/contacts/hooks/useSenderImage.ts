@@ -37,7 +37,7 @@ const useSenderImage = (emailAddress?: string, bimiSelector?: string) => {
         }
 
         void getSenderLogo(api, emailAddress, imageSizeRef.current, bimiSelector, mode).then(setUrl);
-    }, [mailSettings?.HideSenderImages, feature?.Value, emailAddress]);
+    }, [mailSettings?.HideSenderImages, feature?.Value, emailAddress, bimiSelector, mode]);
 
     return url;
 };
