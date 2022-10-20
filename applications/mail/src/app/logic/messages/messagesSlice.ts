@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { globalReset } from '../actions';
 import {
     cancelScheduled,
+    cancelSendMessage,
     createDraft,
     deleteDraft,
     draftSaved,
@@ -18,6 +19,7 @@ import {
 } from './draft/messagesDraftActions';
 import {
     cancelScheduled as cancelScheduledReducer,
+    cancelSendSuccess as cancelSendSuccessReducer,
     createDraft as createDraftReducer,
     deleteDraft as deleteDraftReducer,
     draftSaved as draftSavedSelector,
@@ -134,6 +136,7 @@ const messagesSlice = createSlice({
         builder.addCase(endSending, endSendingReducer);
         builder.addCase(deleteDraft, deleteDraftReducer);
         builder.addCase(cancelScheduled, cancelScheduledReducer);
+        builder.addCase(cancelSendMessage.fulfilled, cancelSendSuccessReducer);
     },
 });
 

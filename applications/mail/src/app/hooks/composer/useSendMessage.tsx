@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
-import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -25,7 +24,13 @@ import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { cancelScheduled, endUndo, sent, updateExpires } from '../../logic/messages/draft/messagesDraftActions';
+import {
+    cancelScheduled,
+    cancelSendMessage,
+    endUndo,
+    sent,
+    updateExpires,
+} from '../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
 import { useAppDispatch } from '../../logic/store';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
@@ -72,8 +77,10 @@ export const useSendMessage = () => {
         }: UseSendMessageParameters) => {
             const { localID, data } = inputMessage;
             const hasUndo = !!delaySendSeconds;
+            let hasClickedUndoSend = false;
 
             const handleUndo = async () => {
+                hasClickedUndoSend = true;
                 if (sendingMessageNotificationManager) {
                     hideNotification(sendingMessageNotificationManager.ID);
                 }
@@ -82,9 +89,9 @@ export const useSendMessage = () => {
                 const request = async () => {
                     if (isScheduledMessage) {
                         await dispatch(cancelScheduled(savedMessage.localID));
-                        await api(cancelSend(savedMessage.data.ID));
+                        await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID, api })).unwrap();
                     } else {
-                        await api(cancelSend(savedMessage.data.ID));
+                        await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID, api })).unwrap();
                     }
                     await call();
                 };
@@ -205,7 +212,7 @@ export const useSendMessage = () => {
                         // It's a bit more complicated in reality, the server will take a few more seconds to actually send the message
                         // It creates a small window of time during which the UI allow to reply to message in the outbox
                         // This should be handled by the backend
-                        dispatch(endUndo(localID));
+                        dispatch(endUndo({ messageID: localID, hasClickedUndo: hasClickedUndoSend }));
                     }
                 };
 
