@@ -14,7 +14,7 @@ const MemberFeatures = ({ member }) => {
                 <span className="flex-item-noshrink flex mt0-1">
                     <Icon name="filing-cabinet" />
                 </span>
-                <span className="flex-item-fluid pl0-25">
+                <span className="flex-item-fluid pl0-25" data-testid="users-and-addresses-table:storage">
                     {humanSize(UsedSpace, 'GB')} / {humanSize(MaxSpace, 'GB')}
                 </span>
             </span>
@@ -22,7 +22,7 @@ const MemberFeatures = ({ member }) => {
                 <span className="flex-item-noshrink flex mt0-1">
                     <Icon name="brand-proton-vpn" />
                 </span>
-                <span className="flex-item-fluid pl0-25">
+                <span className="flex-item-fluid pl0-25" data-testid="users-and-addresses-table:vpnConnections">
                     {c('Feature').ngettext(msgid`${MaxVPN} VPN connection`, `${MaxVPN} VPN connections`, MaxVPN)}
                 </span>
             </span>
