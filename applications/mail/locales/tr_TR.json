@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "tr_TR"
   },
   "contexts": {
@@ -1231,21 +1231,24 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "En iyi teklif"
+      ],
       "Most popular": [
         "En popüler olanlar"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Tekliften yararlan"
+        "Tekliften yararlanın"
       ],
       "Get the deal now": [
-        "Tekliften şimdi yararlan"
+        "Tekliften yararlanın"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "- %${ percentage }"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1267,6 +1270,9 @@
       ],
       "24 months": [
         "24 ay"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Ücretli Proton VPN Plus tarifemizi özel yıl sonu teklifi ile alın"
       ]
     },
     "Bug category": {
@@ -2869,6 +2875,10 @@
       ],
       "No labels": [
         "Henüz bir etiket yok"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
+        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
@@ -7093,6 +7103,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts } kişiden ${ contactsExported.length } kişi dışa aktarıldı.",
+        "${ countContacts } kişiden ${ contactsExported.length } kişi dışa aktarıldı."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi.",
         "${ totalBeDeleted } / ${ model.deleted.length } kişi silindi."
@@ -7427,9 +7441,17 @@
         "${ elementsCount } yazışma okunmamış olarak işaretlendi.",
         "${ elementsCount } yazışma okunmamış olarak işaretlendi."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } yazışma ${ folderName } klasörüne taşındı ve gönderici istenmeyen değil listenize eklendi.",
+        "${ elementsCount } yazışma ${ folderName } klasörüne taşındı ve göndericiler istenmeyen değil listenize eklendi."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı.",
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi.",
+        "${ elementsCount } istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
@@ -7451,9 +7473,17 @@
         "${ elementsCount } ileti okunmamış olarak işaretlendi.",
         "${ elementsCount } ileti okunmamış olarak işaretlendi."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } ileti ${ folderName } klasörüne taşındı ve gönderici istenmeyen değil listenize eklendi.",
+        "${ elementsCount } ileti ${ folderName } klasörüne taşındı ve göndericiler istenmeyen değil listenize eklendi."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı.",
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } ileti istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi.",
+        "${ elementsCount } ileti istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
@@ -7500,8 +7530,14 @@
       "Conversation marked as unread.": [
         "Yazışma okunmamış olarak işaretlendi."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Yazışma ${ folderName } klasörüne taşındı ve gönderici istenmeyen değil listenize eklendi."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Yazışma ${ folderName } klasörüne taşındı."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Yazışma İstenmeyen klasörüne taşındı ve gönderici istenmeyenler listenize eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
@@ -7557,8 +7593,14 @@
       "Message marked as unread.": [
         "İletiyi okunmamış olarak işaretlendi."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "İleti ${ folderName } klasörüne taşındı ve gönderici istenmeyen değil listenize eklendi."
+      ],
       "Message moved to ${ folderName }.": [
         "İleti ${ folderName } klasörüne taşındı."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Ileti İstenmeyen kutusuna taşındı ve gönderici istenmeyenler listenize eklendi."
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."
@@ -8593,7 +8635,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

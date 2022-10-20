@@ -39,7 +39,7 @@
         "Aggiungi numero di telefono"
       ],
       "Add to group": [
-        "Aggiungi al gruppo"
+        "Aggiungi ad un gruppo"
       ],
       "Apply": [
         "Applica"
@@ -182,7 +182,7 @@
         "Elimina gruppo di contatti"
       ],
       "Delete permanently": [
-        "Elimina definitivamente"
+        "Elimina permanentemente"
       ],
       "Deselect all": [
         "Deseleziona tutto"
@@ -230,7 +230,7 @@
         "Modifica dettagli di accesso"
       ],
       "Email settings": [
-        "Impostazioni dell'email"
+        "Impostazioni email"
       ],
       "Empty trash": [
         "Svuota il cestino"
@@ -281,7 +281,7 @@
         "Vai alle impostazioni"
       ],
       "Got it": [
-        "Va bene"
+        "Capito"
       ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
@@ -305,10 +305,10 @@
         "Importa da .csv o vCard"
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "Load image": [
-        "Carica immagine"
+        "Carica Immagine"
       ],
       "Log in": [
         "Accedi"
@@ -335,7 +335,7 @@
         "Maggiori informazioni: ${ safeTitle }"
       ],
       "More options": [
-        "Altre opzioni"
+        "Più opzioni"
       ],
       "Move": [
         "Sposta"
@@ -350,7 +350,7 @@
         "Nuovo caricamento"
       ],
       "Next": [
-        "Successivo"
+        "Successiva"
       ],
       "Next month": [
         "Mese successivo"
@@ -395,7 +395,7 @@
         "Recupera dati"
       ],
       "Refer a friend": [
-        "Segnala un amico"
+        "Invita un amico"
       ],
       "Refresh the page": [
         "Aggiorna la pagina"
@@ -458,10 +458,13 @@
         "Cerca"
       ],
       "Search countries": [
-        "Cerca paesi"
+        "Cerca tra i paesi"
       ],
       "Search drive": [
         "Cerca unità"
+      ],
+      "See plan features": [
+        "Visualizzare le funzionalità del piano"
       ],
       "Select all": [
         "Seleziona tutti"
@@ -479,7 +482,7 @@
         "Condividi elemento"
       ],
       "Share via link": [
-        "Condividi via link"
+        "Condividi con link"
       ],
       "Sharing options": [
         "Opzioni di condivisione"
@@ -557,7 +560,7 @@
         "Aggiorna frase di recupero"
       ],
       "Upgrade": [
-        "Esecuzione dell'upgrade"
+        "Effettua l'upgrade"
       ],
       "Upload anyway": [
         "Carica comunque"
@@ -670,7 +673,7 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Ottieni l'offerta"
+        "Approfitta dell'offerta"
       ],
       "Get the deal now": [
         "Ottieni la promo ora"
@@ -722,7 +725,7 @@
         "Problema del dominio personalizzato"
       ],
       "Drive problem": [
-        "Problema al Drive"
+        "Problema di memoria"
       ],
       "Feature request": [
         "Richiedi Funzionalità"
@@ -752,7 +755,7 @@
         "Problema di registrazione"
       ],
       "Signup problem": [
-        "Problema di iscrizione"
+        "Problema di registrazione"
       ],
       "Slow speed problem": [
         "Problema di bassa velocità"
@@ -870,7 +873,7 @@
         "Email"
       ],
       "Gender": [
-        "Genere"
+        "Sesso"
       ],
       "Geo": [
         "Geo"
@@ -1153,7 +1156,7 @@
         "Estonia"
       ],
       "Eswatini": [
-        "Eswatini"
+        "eSwatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -1725,7 +1728,7 @@
         "Decodifica dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Eliminazione contatti... Potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa modalità."
+        "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
@@ -1735,6 +1738,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilizza il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
@@ -2198,7 +2205,7 @@
         "Contatti, gruppi e impostazioni"
       ],
       "Get help": [
-        "Ottieni aiuto"
+        "Ottieni supporto"
       ]
     },
     "Hint": {
@@ -2862,11 +2869,11 @@
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Tempo rimanente stimato: ${ estimatedMinutes } minuto",
-        "Tempo rimanente stimato: ${ estimatedMinutes } minuti"
+        "Tempo stimato rimanente: ${ estimatedMinutes } minuto",
+        "Tempo stimato rimanente: ${ estimatedMinutes } minuti"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Tempo rimanente stimato: Meno di un minuto"
+        "Tempo stimato rimanente: meno di un minuto"
       ],
       "Estimating time remaining...": [
         "Stimando il tempo rimanente..."
@@ -2972,7 +2979,7 @@
         "Indicizzazione dei risultati di ricerca…"
       ],
       "Inherited from parent folder": [
-        "Eredita dalla cartella principale"
+        "Ereditato dalla cartella superiore"
       ],
       "Initializing": [
         "Inizializzazione"
@@ -3050,7 +3057,7 @@
         "I miei link"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Dai un nome alla tua cartella e seleziona la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
+        "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
       ],
       "Network issue": [
         "Problema di rete"
@@ -3126,7 +3133,7 @@
         "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente di composizione. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
+        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità attuale di composizione. Si prega di notare che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
       ],
       "Please enter the password to decrypt and view content.": [
         "Prego immettere la password per decrittare e vedere il contenuto."
@@ -3163,7 +3170,7 @@
         "Anteprima"
       ],
       "Primary": [
-        "Primaria"
+        "Principale"
       ],
       "Priority support": [
         "Assistenza prioritaria"
@@ -3449,7 +3456,7 @@
         "Perderai tutte le modifiche non salvate."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Il tuo account ha una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
+        "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -3564,7 +3571,7 @@
         "Aggiungi URL immagine"
       ],
       "Add to group": [
-        "Aggiungi al gruppo"
+        "Aggiungi ad un gruppo"
       ],
       "App password": [
         "Password app"
@@ -3856,7 +3863,7 @@
         "Segnala abuso"
       ],
       "Reveal password": [
-        "Rivela la password"
+        "Mostra la password"
       ],
       "Select type of abuse": [
         "Selezione tipo di abuso"
@@ -4056,7 +4063,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "La tua prova gratuita è terminata. L'accesso al tuo account sarà presto disabilitato. ${ action }"
+        "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4119,7 +4126,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ti presentiamo il nuovo look di Proton.${ br }Molti servizi, una sola missione: una nuova versione di internet, dove la privacy è la regola."
+        "Ti presentiamo il nuovo look di Proton.${ br }Molti servizi, una missione. Benvenuti in un internet dove la privacy è la regola."
       ]
     },
     "new_plans: label": {
@@ -4129,7 +4136,7 @@
     },
     "new_plans: placeholder": {
       "Feedback": [
-        "Commento"
+        "Suggerimenti"
       ]
     },
     "new_plans: title": {
@@ -4431,7 +4438,7 @@
         "Un modo per contattarti"
       ],
       "E.g., ": [
-        "Ad es., "
+        "Ad es "
       ],
       "Enter a new folder name": [
         "Inserisci un nuovo nome del file"
@@ -4479,13 +4486,17 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } contatto su ${ countContacts } esportato con successo.",
+        "${ contactsExported.length } contatti su ${ countContacts } esportati con successo."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } su ${ totalBeDeleted } contatto cancellato con successo.",
-        "${ model.deleted.length } su ${ totalBeDeleted } contatti cancellati con successo."
+        "${ model.deleted.length } di ${ totalBeDeleted } contatto eliminato correttamente.",
+        "${ model.deleted.length } di ${ totalBeDeleted } contatti eliminati correttamente."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } su ${ totalBeMerged } contatto unito con successo.",
-        "${ model.submitted.length } contatti su ${ totalBeMerged } uniti con successo."
+        "${ model.submitted.length } di ${ totalBeMerged } contatto unito correttamente.",
+        "${ model.submitted.length } di ${ totalBeMerged } contatti uniti correttamente."
       ],
       "No contacts exported.": [
         "Nessun contatto esportato."
@@ -4502,7 +4513,7 @@
         "Indirizzo"
       ],
       "Email": [
-        "Email"
+        "Posta elettronica"
       ],
       "Fax": [
         "Fax"
@@ -4545,12 +4556,6 @@
       ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Ricevi fino a 18 mesi di ${ planName } gratuitamente"
-      ],
-      "Invite friends and earn rewards!": [
-        "Invita gli amici e guadagna ricompense!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
@@ -4621,7 +4626,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        "Commento inviato"
+        "Feedback inviato"
       ]
     },
     "Table header": {
@@ -4638,7 +4643,7 @@
         "Creata"
       ],
       "Expires": [
-        "Scadenza"
+        "Scade"
       ],
       "Fingerprint": [
         "Impronta digitale"
@@ -4819,7 +4824,7 @@
         "Elimina definitivamente"
       ],
       "Deleting contacts": [
-        "Eliminazione contatti"
+        "Eliminazione dei contatti"
       ],
       "Discard": [
         "Scarta"
@@ -4840,7 +4845,7 @@
         "Drive"
       ],
       "Drop to upload": [
-        "Trascina il documento per caricarlo"
+        "Trascina per caricare"
       ],
       "Duplicate file found": [
         "File duplicato trovato"
@@ -4852,7 +4857,7 @@
         "Modifica contatto"
       ],
       "Edit contact group": [
-        "Modifica gruppo di contatto"
+        "Modifica gruppo di contatti"
       ],
       "Edit email settings": [
         "Modifica le impostazioni dell'email"
@@ -4864,7 +4869,7 @@
         "Indirizzi email"
       ],
       "Email settings": [
-        "Impostazioni email"
+        "Impostazioni dell'email"
       ],
       "Empty trash": [
         "Svuota il cestino"
@@ -4937,7 +4942,7 @@
         "Unisci contatti"
       ],
       "Merging contacts": [
-        "Unione dei contatti"
+        "Unendo i contatti"
       ],
       "MIME type": [
         "Tipo MIME"
@@ -5150,7 +5155,7 @@
         "Il tuo bonus di 500 MB"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "La tua prova gratuita termina presto, il ${ formattedEndDate }"
+        "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"
       ],
       "Your welcome actions": [
         "Le tue azioni di benvenuto"

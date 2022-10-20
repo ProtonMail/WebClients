@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);",
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
     "language": "pl_PL"
   },
   "contexts": {
@@ -249,7 +249,7 @@
         "Zresetuj dane logowania"
       ],
       "Reset password": [
-        "Zresetuj hasło"
+        "Resetowanie hasła"
       ],
       "Reset zoom": [
         "Dopasuj do strony"
@@ -506,11 +506,6 @@
       ],
       "Two-year": [
         "Co dwa lata"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta specjalna"
       ]
     },
     "Bug category": {
@@ -1642,7 +1637,7 @@
         "Minimalna kwota darowizny wynosi ${ price }"
       ],
       "The minimum payment we accept is ${ _price2 }": [
-        "Minimalna kwota płatności wynosi ${ _price2 }"
+        "Minimalna kwota akceptowanej płatności wynosi ${ _price2 }"
       ],
       "This field is required": [
         "Pole jest wymagane"
@@ -2379,7 +2374,7 @@
         "Ta czynność spowoduje również wyłączenie uwierzytelniania dwustopniowego skojarzonego z tym kontem."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgormadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
+        "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję Proton. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
@@ -2496,7 +2491,7 @@
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Zostaniesz przekierowany na stronę PayPal w celu dokończenia transakcji. Jeśli używasz opcji blokowania wyskakujących okienek, wyłącz ją, aby kontynuować."
+        "Zostaniesz przekierowany na stronę PayPal w celu dokończenia transakcji. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
@@ -2574,10 +2569,10 @@
         "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano ${ spaceDisplayed }% dostępnego miejsca w przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano 100% dostępnego miejsca w przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
+        "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ loseAllData } na koncie ${ BRAND_NAME }. Aby je przywrócić, wpisz stare hasło."
@@ -2625,7 +2620,7 @@
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Twoje konto jest obecnie zawieszone. Ureguluj zobowiązania."
+        "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
       ],
       "Your recovery email address:": [
         "Twój adres pomocniczy:"
@@ -2893,7 +2888,7 @@
         "Ukryj hasło"
       ],
       "Interval": [
-        "Przedział"
+        "Częstotliwość"
       ],
       "Keep me signed in": [
         "Zapamiętaj mnie"
@@ -3183,7 +3178,7 @@
         "Przejdź do przeglądu"
       ],
       "Continue with Free": [
-        "Continue with Free"
+        "Kontynuuj bezpłatnie"
       ],
       "Delete account": [
         "Usuń konto"
@@ -3265,9 +3260,9 @@
       ],
       "${ n } email address": [
         "${ n } adres e-mail",
-        "${ n } adresy e-mail",
-        "${ n } adresów e-mail",
-        "${ n } adresów e-mail"
+        "${ n } adresy e-mail / aliasy",
+        "${ n } adresów e-mail / aliasów",
+        "${ n } adresów e-mail / aliasów"
       ],
       "${ n } email address per user": [
         "${ n } adres e-mail na użytkownika",
@@ -3297,7 +3292,7 @@
         "${ n } etykieta",
         "${ n } etykiety",
         "${ n } etykiet",
-        "${ n } etykiet"
+        "${ n } etykiety"
       ],
       "${ n } message per day": [
         "${ n } wiadomość dziennie",
@@ -3333,7 +3328,7 @@
         "${ size } przestrzeni dyskowej na użytkownika"
       ],
       "1 free VPN connection in total": [
-        "1 darmowe połączenie VPN"
+        "Łącznie 1 darmowe połączenie VPN"
       ],
       "99.95% SLA": [
         "Umowa SLA 99,95%"
@@ -3776,7 +3771,7 @@
         "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, datę urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet Proton nie ma do nich dostępu."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        "Wysyłaj wiadomości e-mail do dużych grup szybko i łatwo, tworząc tyle grup kontaktów, ile potrzebujesz (do 100 kontaktów na grupę)"
+        "Wysyłaj wiadomości do dużych grup szybko i łatwo, tworząc tyle grup kontaktów, ile potrzebujesz (do 100 kontaktów na grupę)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
         "Skonfiguruj filtry, aby automatycznie odpowiadać, sortować i oznaczać wiadomości etykietami"
@@ -4018,7 +4013,7 @@
         "Adres e-mail nie został zweryfikowany."
       ],
       "Verification email sent to ${ email.Value }": [
-        "E-mail weryfikacyjny został wysłany do ${ email.Value }"
+        "Wiadomość weryfikacyjna została wysłana do ${ email.Value }"
       ],
       "Verify now": [
         "Zweryfikuj"
@@ -4127,8 +4122,8 @@
         "${ _n } kalendarzy na użytkownika"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } szybkie połącznie VPN",
-        "${ maxVpn } szybkie połącznia VPN",
+        "${ maxVpn } szybkie połączenie VPN",
+        "${ maxVpn } szybkie połączenia VPN",
         "${ maxVpn } szybkich połączeń VPN",
         "${ maxVpn } szybkich połączeń VPN"
       ],
@@ -4139,8 +4134,8 @@
         "${ n } kalendarzy"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } szybkie połącznie VPN",
-        "${ n } szybkie połącznia VPN",
+        "${ n } szybkie połączenie VPN",
+        "${ n } szybkie połączenia VPN",
         "${ n } szybkich połączeń VPN",
         "${ n } szybkich połączeń VPN"
       ],
@@ -4154,7 +4149,7 @@
         "${ n } połączenie VPN",
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
-        "${ n } połączenia VPN"
+        "${ n } połączeń VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } połączenie VPN na użytkownika",
@@ -4818,7 +4813,7 @@
         "Usuwając ten adres, stracisz możliwość otrzymywania codziennych powiadomień e-mail."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Usuwając ten adres, stracisz możliwość odzyskiwania swojego konta lub otrzymywania codziennych powiadomień e-mail."
+        "Usuwając ten adres, stracisz możliwość odzyskiwania swojego konta i otrzymywania codziennych powiadomień e-mail."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Usuwając ten adres, stracisz możliwość odzyskiwania swojego konta."

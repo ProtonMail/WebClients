@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n >= 2);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "fr_FR"
   },
   "contexts": {
@@ -946,7 +946,7 @@
         "Nous vous invitons à ${ refresh } ou à vérifier votre connexion."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Une erreur s'est produite. Rafraîchissez la page ou réessayez plus tard."
+        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
       ],
       "There was a problem connecting to Proton.": [
         "Il y a eu un problème lors de la connexion à Proton."

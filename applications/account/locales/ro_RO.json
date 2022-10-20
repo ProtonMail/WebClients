@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);",
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);",
     "language": "ro_RO"
   },
   "contexts": {
@@ -313,7 +313,7 @@
         "Editare detalii de facturare"
       ],
       "Edit email address": [
-        "Editare adresă de e-mail"
+        "Editare adresa de e-mail"
       ],
       "Edit label": [
         "Editare etichetă"
@@ -472,7 +472,7 @@
         "mutare mesaje în"
       ],
       "Need help?": [
-        "Aveţi nevoie de ajutor?"
+        "Doriți ajutor?"
       ],
       "Next": [
         "Înainte"
@@ -751,10 +751,10 @@
         "Pornire importare"
       ],
       "Stay": [
-        "Rămâne"
+        "Nu închide"
       ],
       "Submit": [
-        "Trimitere"
+        "Trimite"
       ],
       "Support": [
         "Asistenţă"
@@ -766,7 +766,7 @@
         "Alimentare"
       ],
       "Try again": [
-        "Reîncercare"
+        "Reîncercați"
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
@@ -826,7 +826,7 @@
         "Utilizator"
       ],
       "Verify": [
-        "Verificare"
+        "Verifică"
       ],
       "Verify account": [
         "Verificare cont"
@@ -999,7 +999,7 @@
         "Eveniment nevalid"
       ],
       "Invalid ICS file": [
-        "Fisier ICS nevalid"
+        "Fisier ICS nevalid."
       ],
       "Invalid method": [
         "Metodă nevalidă"
@@ -1077,11 +1077,6 @@
       ],
       "Two-year": [
         "Bianual"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Ofertă specială"
       ]
     },
     "breadcrumb": {
@@ -1371,13 +1366,13 @@
     },
     "Calendar view": {
       "Day": [
-        "Zi"
+        "zi"
       ],
       "Month": [
-        "Lună"
+        "lună"
       ],
       "Week": [
-        "Săptămână"
+        "săptămână"
       ]
     },
     "Checkbox label": {
@@ -1440,16 +1435,16 @@
         "azur cian-albastru"
       ],
       "dandelion": [
-        "alb păpădie"
+        "galben păpădie"
       ],
       "dark cerulean": [
-        "cerulean întunecat"
+        "albastru cenușiu închis"
       ],
       "dark midnight blue": [
         "albastru închis nocturn"
       ],
       "dim gray": [
-        "gri deschis"
+        "gri închis"
       ],
       "enzian": [
         "gențiană"
@@ -1458,7 +1453,7 @@
         "ferigă"
       ],
       "field drab": [
-        "câmp cafeniu deschis"
+        "cafeniu închis"
       ],
       "forest": [
         "pădure"
@@ -1470,7 +1465,7 @@
         "laur japonez"
       ],
       "kiwi": [
-        "kiwi"
+        "verde kiwi"
       ],
       "lemon yellow": [
         "galben lămâie"
@@ -1479,7 +1474,7 @@
         "roz carmin deschis"
       ],
       "light moss green": [
-        "verde mușchi deschis"
+        "verzui cenușiu deschis"
       ],
       "light red": [
         "roșu deschis"
@@ -1488,7 +1483,7 @@
         "porumb"
       ],
       "mughal green": [
-        "verde mughal"
+        "verde închis"
       ],
       "ocean": [
         "ocean"
@@ -1500,16 +1495,16 @@
         "spațiu cosmic"
       ],
       "pacific": [
-        "Pacific"
+        "pacific"
       ],
       "palatinate blue": [
         "albastru palatinat"
       ],
       "pale cerulean": [
-        "cerulean palid"
+        "albastru cenusiu"
       ],
       "pastel gray": [
-        "gri pastel"
+        "verzui deschis"
       ],
       "persian plum": [
         "prune persane"
@@ -1533,7 +1528,7 @@
         "roz"
       ],
       "pistachio": [
-        "fistic"
+        "verde fistic"
       ],
       "plum": [
         "prună"
@@ -1554,7 +1549,7 @@
         "Sahara"
       ],
       "satin sheen gold": [
-        "aur lucios satinat"
+        "maroniu deschis"
       ],
       "slateblue": [
         "ardezie albastră"
@@ -1636,7 +1631,7 @@
         "Aniversare"
       ],
       "Birthday": [
-        "Data nașterii"
+        "Data naşterii"
       ],
       "Email": [
         "E-mail"
@@ -1651,7 +1646,7 @@
         "Limba"
       ],
       "Logo": [
-        "Logo"
+        "Siglă"
       ],
       "Member": [
         "Membru"
@@ -1678,10 +1673,10 @@
         "Fus orar"
       ],
       "Title": [
-        "Adresare"
+        "Titlu"
       ],
       "URL": [
-        "URL"
+        "Adresa URL"
       ]
     },
     "Contact type label": {
@@ -1695,7 +1690,7 @@
         "Mobil"
       ],
       "Other": [
-        "Altul"
+        "Altele"
       ],
       "Pager": [
         "Pager"
@@ -2183,7 +2178,7 @@
         "Mozambic"
       ],
       "Myanmar": [
-        "Burma"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -2240,7 +2235,7 @@
         "Palau"
       ],
       "Palestine": [
-        "Palestine"
+        "Palestina"
       ],
       "Panama": [
         "Panama"
@@ -2535,7 +2530,7 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "o dată",
+        "O dată",
         "de ${ count } ori",
         "de ${ count } de ori"
       ],
@@ -2623,6 +2618,11 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
+        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
+        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Urmăriți câte persoane v-au accesat legătura, s-au înscris și au devenit abonați. Priviți cum vi se adună lunile gratuite."
       ],
@@ -2658,11 +2658,17 @@
       "${ name } deletion failed": [
         "Ștergerea lui ${ name } a eșuat."
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } nu s-a putut muta în lista de adrese acceptate."
+      ],
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
       ],
       "${ name } failed to move to your block list": [
         "${ name } nu s-a putut muta în lista de blocare."
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } s-a mutat în lista de adrese acceptate."
       ],
       "${ name } moved to spam list": [
         "${ name } s-a mutat în lista de nedorite."
@@ -2732,7 +2738,7 @@
         "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Aveți o invitație la ${ eventTitle }\n${ eventDetailsText }"
+        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2769,11 +2775,17 @@
       "${ name } deletion failed": [
         "Ștergerea lui ${ name } a eșuat."
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } nu s-a putut muta în lista de adrese acceptate."
+      ],
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
       ],
       "${ name } failed to move to your block list": [
         "${ name } nu s-a putut muta în lista de blocare."
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } s-a mutat în lista de adrese acceptate."
       ],
       "${ name } moved to spam list": [
         "${ name } s-a mutat în lista de nedorite."
@@ -2787,19 +2799,19 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Anulare eveniment care are loc ${ formattedStart }"
+        "Anulare eveniment ce are loc ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
         "Anulare eveniment care începe ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invitație la un eveniment care are loc ${ formattedStart }"
+        "Invitație la un eveniment ce are loc ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Invitație la un eveniment care începe ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Actualizarea unui eveniment care are loc ${ formattedStart }"
+        "Actualizarea unui eveniment ce are loc ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Actualizarea unui eveniment care începe ${ formattedStart }"
@@ -2965,7 +2977,7 @@
         "Cod Sieve nevalid"
       ],
       "Invalid verification code": [
-        "Cod de verificare nevalid."
+        "Cod de verificare nevalid"
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
@@ -2988,7 +3000,7 @@
         "Numele de pe card este obligatoriu."
       ],
       "Name required": [
-        "Numele este obligatoriu."
+        "Numele este obligatoriu"
       ],
       "No active sessions": [
         "Nu sunt sesiuni active."
@@ -3027,7 +3039,7 @@
         "Organizația nu e recunoscută. Mai încercaţi."
       ],
       "Passwords do not match": [
-        "Parolele nu coincid."
+        "Parolele nu coincid"
       ],
       "Payment process cancelled": [
         "Operația de plată a fost anulată."
@@ -3133,7 +3145,7 @@
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ceva nu a funcționat, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Tab closed": [
         "Filă închisă."
@@ -3196,7 +3208,7 @@
         "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Acest nume de etichetă nu este disponibil. Alegeți un nume diferit."
+        "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
@@ -3205,7 +3217,7 @@
         "Cheile de încredere nu sunt valide pentru trimitere"
       ],
       "Unknown error": [
-        "Eroare necunoscută."
+        "Eroare necunoscută"
       ],
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
@@ -3273,13 +3285,13 @@
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "A aparut o eroare la incarcarea fișierului ${ formattedFilename }. Sunt permise numai fișiere în format ICS."
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Sunt permise doar fișiere în format ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+        "A apărut o eroare la încărcarea fișierului. Nu s-a selectat niciun fișier."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
@@ -3290,7 +3302,7 @@
         "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } de evenimente."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poate fi importat."
+        "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Fișierul ${ formattedFilename } nu are evenimente de importat."
@@ -3341,7 +3353,7 @@
         "Calendar"
       ],
       "Calendar time zone not supported": [
-        "Fus orar calendar nesuportat"
+        "Fusul orar al calendarului nu este suportat."
       ],
       "Component with wrong format": [
         "Componentă cu format greșit"
@@ -3359,7 +3371,7 @@
         "Criptare eșuată"
       ],
       "End time out of bounds": [
-        "Timpul final în afara limitelor"
+        "Timp final în afara limitelor"
       ],
       "Event": [
         "Eveniment"
@@ -3380,25 +3392,25 @@
         "Intrare în jurnal"
       ],
       "Malformed all-day event": [
-        "Eveniment toată ziua eronat."
+        "Eveniment întreaga zi eronat"
       ],
       "Malformed end time": [
-        "Timp final incorect"
+        "Timp final malformat"
       ],
       "Malformed recurring event": [
         "Eveniment repetitiv malformat"
       ],
       "Malformed start time": [
-        "Ora de începere eronată"
+        "Timp de pornire malformat"
       ],
       "Missing start time": [
-        "Ora de începere lipsă"
+        "Lipsește ora de pornire"
       ],
       "No UID, title or start time": [
         "Lipseşte UID, titlu sau ora de începere."
       ],
       "Non-Gregorian": [
-        "Nu este Gregorian"
+        "Non-Gregorian"
       ],
       "Notification out of bounds": [
         "Notificare în afara limitelor"
@@ -3413,10 +3425,10 @@
         "Regula recurentă nesuportată"
       ],
       "Start time out of bounds": [
-        "Timpul de start în afara limitelor"
+        "Timp de start în afara limitelor"
       ],
       "Time zone not supported": [
-        "Fus orar nesuportat"
+        "Fus orar nesuportat."
       ],
       "Timezone": [
         "Fus orar"
@@ -3425,7 +3437,7 @@
         "Intrare de făcut"
       ],
       "Unknown": [
-        "Necunoscută"
+        "Necunoscut"
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
@@ -3558,7 +3570,7 @@
         "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar"
       ]
     },
     "Event title": {
@@ -3724,7 +3736,7 @@
         "Chei de securitate înregistrate"
       ],
       "Security key registered": [
-        "Cheie de securitate înregistrată"
+        "Cheia de securitate înregistrată"
       ]
     },
     "file size format": {
@@ -3785,7 +3797,7 @@
         "Nedorite"
       ],
       "Trash": [
-        "Gunoi"
+        "Șterse"
       ]
     },
     "Filter modal operators": {
@@ -3815,7 +3827,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } a fost actualizată"
+        "${ Label.Name } actualizată"
       ],
       "Filter ${ Filter.Name } updated": [
         "Filtrul ${ Filter.Name } a fost actualizat"
@@ -3984,7 +3996,7 @@
         "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilizați tastele «Săgeată sus» și «Săgeată jos» pentru a accesa și răsfoi sugestiile după introducere. Apăsați tasta «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
+        "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ]
     },
     "Human verification method": {
@@ -4006,14 +4018,14 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar",
-        "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar",
-        "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar"
+        "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
+        "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
+        "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes."
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat.",
@@ -4024,7 +4036,7 @@
         "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Criptare și adăugare evenimente în calendar: ${ totalImported }}/${ totalToImport }"
+        "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "Eveniment importat cu succes. Evenimentul importat va apărea acum în calendar.",
@@ -4063,9 +4075,9 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contact criptat și adăugat în lista de contacte",
-        "${ totalImported }/${ totalToImport } contacte criptate și adăugate în lista de contacte",
-        "${ totalImported }/${ totalToImport } de contacte criptate și adăugate în lista de contacte"
+        "S-a criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contact.",
+        "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contacte.",
+        "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "A apărut o eroare la criptarea și adăugarea contactului. Nu s-a importat niciun contact.",
@@ -4092,7 +4104,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "A apărut o eroare la criptarea și adăugarea contactelor. ${ totalImported } din ${ totalToImport } contacte importate cu succes."
+        "A apărut o eroare la criptarea și adăugarea contactelor. ${ totalImported } din ${ totalToImport } contacte au fost importate cu succes."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contactul a fost importat. Contactul importat va apărea acum în lista de contacte.",
@@ -4417,9 +4429,9 @@
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } eveniment din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
         "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii.",
-        "${ totalEventsDiscarded } din ${ totalEvents } de evenimente nu vor fi importate. Extindeți pentru detalii."
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
       ],
       "No contact can be imported. Click for details": [
         "Nu se pot importa contacte. Faceți clic pentru detalii."
@@ -4428,7 +4440,7 @@
         "Nu poate fi importat niciun eveniment. Extindeți pentru detalii."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "O parte din conținutul calendarului nu este acceptat și nu va fi importat."
+        "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
     "Info": {
@@ -4493,7 +4505,7 @@
       ],
       "${ numContactGroups } contact group": [
         "Un grup de contacte",
-        "${ numContactGroups } grupuri de contacte",
+        "${ numContactGroups } grupuri de contact",
         "${ numContactGroups } de grupuri de contacte"
       ],
       "${ numContacts } contact": [
@@ -4523,9 +4535,9 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "Este selectat un folder",
-        "Sunt selectate ${ selectedFoldersCount } foldere",
-        "Sunt selectate ${ selectedFoldersCount } de foldere"
+        "S-a selectat un folder",
+        "S-au selectat ${ selectedFoldersCount } foldere",
+        "S-au selectat ${ selectedFoldersCount } de foldere"
       ],
       "${ selectedFoldersCount } label selected": [
         "S-a selectat o etichetă",
@@ -4610,7 +4622,7 @@
         "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accesul la cont a fost restricționat datorită facturilor neplătite. Vă rugăm contactați administratorul."
+        "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
       ],
       "account recovery and data recovery method": [
         "metodă de recuperare a contului cât şi a datelor"
@@ -4675,12 +4687,12 @@
         "Aliniere la dreapta"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Toate (${ totalFoldersCount } folder)",
+        "Toate (Un folder)",
         "Toate (${ totalFoldersCount } foldere)",
         "Toate (${ totalFoldersCount } de foldere)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Toate (${ totalFoldersCount } etichetă)",
+        "Toate (o etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
@@ -4962,7 +4974,7 @@
         "Plasați aici un fișier pentru a fi încărcat"
       ],
       "Drop the file here to upload": [
-        "Plasați fișierul aici pentru a fi încărcat."
+        "Plasați fișierul aici pentru a fi încărcat"
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
@@ -5464,7 +5476,7 @@
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
       "Please fill out this field.": [
-        "Vă rugăm să completați acest câmp."
+        "Trebuie să completați acest câmp."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
@@ -5602,7 +5614,7 @@
         "Selectați ce doriți să importați."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selectați calendarul dorit pentru importare. Va fi creat un calendar nou pentru fiecare calendar importat până la limita de 20 de calendare."
+        "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
@@ -5650,7 +5662,7 @@
         "Spațiu pentru utilizatori"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, și ${ DRIVE_APP_NAME }."
+        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
         "Spațiu folosit de utilizator"
@@ -6039,6 +6051,11 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Nu puteți trimite mai mult de o invitație în următoarele 24 de ore.",
+        "Nu puteți trimite mai mult de ${ emailSendLimitNumber } invitații în următoarele 24 de ore.",
+        "Nu puteți trimite mai mult de ${ emailSendLimitNumber } de invitații în următoarele 24 de ore."
       ],
       "You cannot refer ${ appName } users": [
         "Nu puteți recomanda utilizatori ai ${ appName }."
@@ -6432,7 +6449,7 @@
         "Accesare «Cu stea»"
       ],
       "Go to Trash": [
-        "Accesare «Gunoi»"
+        "Accesare folder «Gunoi»"
       ],
       "Insert link": [
         "Inserare legătură"
@@ -6923,13 +6940,13 @@
         "E-mail"
       ],
       "Email address": [
-        "Adresa de e-mail"
+        "Adresă e-mail"
       ],
       "Email or username": [
         "E-mail sau utilizator"
       ],
       "Emails": [
-        "E-mailuri"
+        "Mesaje"
       ],
       "End date": [
         "Data sfârșit"
@@ -7004,13 +7021,13 @@
         "Dacă"
       ],
       "Import all messages": [
-        "Importă toate mesajele"
+        "Importare toate mesajele"
       ],
       "Import interval": [
         "Interval de importare"
       ],
       "Import to email address": [
-        "Importare la adresa de e-mail"
+        "Importare în adresa de e-mail"
       ],
       "Import to:": [
         "Importare în:"
@@ -7118,7 +7135,7 @@
         "Fără filtru"
       ],
       "No label found": [
-        "Nicio etichetă găsită"
+        "Nu există etichete"
       ],
       "Non-standard ports": [
         "Porturi nonstandard"
@@ -7199,7 +7216,7 @@
         "Port"
       ],
       "Postal code": [
-        "Cod poştal"
+        "Cod poștal"
       ],
       "Previous password": [
         "Parola anterioară"
@@ -7217,7 +7234,7 @@
         "Utilizator Proton"
       ],
       "Read": [
-        "Ca citit"
+        "Citite"
       ],
       "Recovery email address": [
         "Adresa de e-mail de recuperare"
@@ -7268,7 +7285,7 @@
         "Semnătura"
       ],
       "Spam": [
-        "Nedorite"
+        "Spam"
       ],
       "Starred": [
         "Cu stea"
@@ -7516,7 +7533,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Mărire"
+        "Maximizat"
       ],
       "Normal": [
         "Normal"
@@ -7554,7 +7571,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "S-a creat ${ Label.Name }"
+        "${ Label.Name } creată"
       ],
       "${ label.Name } updated": [
         "S-a actualizat ${ label.Name }"
@@ -7616,7 +7633,7 @@
         "Plată factură"
       ],
       "Privacy policy": [
-        "Politica de confidenţialitate"
+        "Politica de confidențialitate"
       ],
       "Request an invite": [
         "Solicitați o invitație"
@@ -7752,7 +7769,7 @@
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de încercare gratuită a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de încercare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7807,19 +7824,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Lunar, ${ onDayString }",
-        "La fiecare ${ interval } luni, ${ onDayString }",
-        "La fiecare ${ interval } de luni, ${ onDayString }"
+        "${ onDayString }, lunar",
+        "${ onDayString }, la fiecare ${ interval } luni",
+        "${ onDayString }, la fiecare ${ interval } de luni"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Lunar, ${ onDayString }, ${ timesString }",
-        "La fiecare ${ interval } luni, ${ onDayString }, ${ timesString }",
-        "La fiecare ${ interval } de luni, ${ onDayString }, ${ timesString }"
+        "${ onDayString }, lunar, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Lunar, ${ onDayString }, ${ untilString }",
-        "La fiecare ${ interval } luni, ${ onDayString }, ${ untilString }",
-        "La fiecare ${ interval } de luni, ${ onDayString }, ${ untilString }"
+        "${ onDayString }, lunar, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
@@ -8734,30 +8751,30 @@
     },
     "Notification when": {
       "at time of event": [
-        "la momentul evenimentului"
+        "la ora evenimentului"
       ],
       "day before": [
-        "o zi în avans",
+        "zi în avans",
         "zile în avans",
         "de zile în avans"
       ],
       "hour before": [
-        "o oră înainte",
-        "ore înainte",
-        "de ore înainte"
+        "oră în avans",
+        "ore în avans",
+        "de ore în avans"
       ],
       "minute before": [
-        "un minut înainte",
-        "minute înainte",
-        "de minute înainte"
+        "minut în avans",
+        "minute în avans",
+        "de minute în avans"
       ],
       "on the same day": [
         "în aceeași zi"
       ],
       "week before": [
-        "o săptămână înainte",
-        "săptămâni înainte",
-        "de săptămâni înainte"
+        "săptămână în avans",
+        "săptămâni în avans",
+        "de săptămâni în avans"
       ]
     },
     "Oauth instructions": {
@@ -9129,7 +9146,7 @@
         "Ex.: "
       ],
       "Email address": [
-        "Adresa de e-mail"
+        "Adresă e-mail"
       ],
       "example@domain.com": [
         "exemplu@domeniu.com"
@@ -9248,7 +9265,7 @@
         "Mobil"
       ],
       "Other": [
-        "Alta"
+        "Altele"
       ],
       "Pager": [
         "Pager"
@@ -9405,7 +9422,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Nu s-au găsit rezultate."
+        "Nu s-au găsit rezultate"
       ]
     },
     "Settings description": {
@@ -9426,7 +9443,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Nu s-a reușit actualizarea setărilor."
+        "Nu s-a reușit actualizarea setărilor"
       ]
     },
     "Settings/filters": {
@@ -9569,7 +9586,7 @@
         "URL calendar"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la Calendarele abonate.\n${ kbLink }"
+        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la «Abonări calendare».\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9582,7 +9599,7 @@
         "Utilizând această legătură, Google va face public calendarul la care vă abonați."
       ],
       "This link might be wrong": [
-        "Această legătură ar putea fi greșită."
+        "Această legătură ar putea fi greșită"
       ]
     },
     "Subscribed calendar section description": {
@@ -9592,7 +9609,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "Adresa URL este prea lungă."
+        "Adresa URL este prea lungă"
       ]
     },
     "Subscription attribute": {
@@ -9718,7 +9735,7 @@
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
       ],
       "Calendar created": [
-        "Calendarul a fost creat."
+        "Calendar creat"
       ],
       "Calendar information updated": [
         "Informațiile calendarului s-au actualizat."
@@ -9727,7 +9744,7 @@
         "Calendar a fost eliminat."
       ],
       "Calendar updated": [
-        "Calendarul a fost actualizat."
+        "Calendar actualizat"
       ],
       "Canceling import": [
         "Anulare importare"
@@ -9997,7 +10014,7 @@
       "${ minutes } minute": [
         "Un minut",
         "${ minutes } minute",
-        "${ minutes } minute"
+        "${ minutes } de minute"
       ]
     },
     "Timezone search placeholder": {
@@ -10249,7 +10266,7 @@
         "Credite"
       ],
       "Currency": [
-        "Moneda"
+        "Monedă"
       ],
       "Custom filters": [
         "Filtre proprii"
@@ -11001,6 +11018,9 @@
       "This key is encrypted with an old password": [
         "Această cheie este criptată cu o parolă veche."
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Cheia este folosită de către ${ MAIL_APP_NAME } pentru a vă cripta datele contactelor."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
       ],
@@ -11051,15 +11071,15 @@
     },
     "Tor out of date": {
       "stable release": [
-        "versiunea stabilă"
+        "versiune stabilă"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Această versiune a Tor Browser nu este suportată. Vă rugăm să actualizați la cea mai recentă ${ stableRelease }"
+        "Această versiune a Tor Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        "Astăzi este o zi bună pentru a scrie un e-mail."
+        "Astăzi este o zi bună pentru a scrie un e-mail"
       ],
       "Update default font and size": [
         "Actualizare font implicit și mărime"
@@ -11207,7 +11227,7 @@
         "Furnizați cel puțin un destinatar"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați-le numele înainte de importare."
+        "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
@@ -11237,7 +11257,7 @@
         "Nu veți mai vedea această înregistrare importată în listă."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de încercare gratuită se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de încercare se încheie în curând la ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Fișierul de recuperare este vechi. Nu vă poate recupera datele dacă vă veți reseta contul."
@@ -11331,9 +11351,9 @@
         "La fiecare ${ interval } săptămâni, sâmbătă, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Săptămânal, sâmbătă, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, sâmbătă, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, sâmbătă, ${ untilString }"
+        "Sâmbătă, săptămânal, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Săptămânal, duminică",
@@ -11361,9 +11381,9 @@
         "La fiecare ${ interval } de săptămâni, joi, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Săptămânal, joi, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, joi, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, joi, ${ untilString }"
+        "Joi, săptămânal, ${ untilString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Săptămânal, marți",
@@ -11376,9 +11396,9 @@
         "La fiecare ${ interval } de săptămâni, marți, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Săptămânal, marți, ${ untilString }",
+        "Marți, săptâmânal, ${ untilString }",
         "La fiecare ${ interval } săptămâni, marți, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, marți, ${ untilString }"
+        "La fiecare ${ interval } de săptămâni, marți, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Săptămânal, miercuri",
@@ -11386,9 +11406,9 @@
         "La fiecare ${ interval } de săptămâni, miercuri"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Săptămânal, miercuri, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, miercuri, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, miercuri, ${ timesString }"
+        "Miercuri, săptămânal, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Săptămânal, miercuri, ${ untilString }",
@@ -11408,7 +11428,7 @@
         "Săptămânal, toate zilele"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Săptămânal, zilnic, ${ timesString }"
+        "Săptămânal, toate zilele, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
         "Săptămânal, toate zilele, ${ untilString }"
@@ -11503,7 +11523,8 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly",
+        "La fiecare ${ interval } de ani"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Anual, ${ timesString }",

@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "tr_TR"
   },
   "contexts": {
@@ -75,13 +75,13 @@
         "E-postayı panoya kopyala"
       ],
       "Create": [
-        "Oluştur"
+        "Ekle"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Bunun yerine güvenli bir ${ MAIL_APP_NAME } adresi oluşturun"
       ],
       "Create account": [
-        "Hesap aç"
+        "Hesap ekle"
       ],
       "Create address": [
         "Adres oluştur"
@@ -111,7 +111,7 @@
         "Bir kod almadınız mı?"
       ],
       "Didn't receive the code?": [
-        "Doğrulama kodunu almadınız mı?"
+        "Kodu almadınız mı?"
       ],
       "Disable": [
         "Devre dışı bırak"
@@ -150,7 +150,7 @@
         "Aboneliği düzenle"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştir"
+        "masaüstü bildirimlerini etkinleştirmek"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Diğer ${ BRAND_NAME } tarifelerine bakın"
@@ -162,7 +162,7 @@
         "${ vpnPlus } alın"
       ],
       "Get verification code": [
-        "Doğrulama kodu al"
+        "Doğrulama kodu alın"
       ],
       "Go to sign in": [
         "Oturum açmaya git"
@@ -204,7 +204,7 @@
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME } ayarlarını açın"
+        "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -237,10 +237,10 @@
         "Hediye kodunu kaldır"
       ],
       "Report a problem": [
-        "Bir sorun bildir"
+        "Bir sorun bildireceğim"
       ],
       "Request a feature": [
-        "Bir özellik iste"
+        "Bir özellik istiyorum"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -279,7 +279,7 @@
         "Tarife özelliklerini görün"
       ],
       "Select ${ planTitle }": [
-        "${ planTitle } seçin"
+        "${ planTitle } tarifesini seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -303,7 +303,7 @@
         "Ön izlemeyi göster"
       ],
       "Sign in": [
-        "Giriş yapın"
+        "Oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -327,7 +327,7 @@
         "Yeniden dene"
       ],
       "Try another method": [
-        "Başka bir yöntem dene"
+        "Başka bir yöntem deneyin"
       ],
       "Unlock": [
         "Kilidi aç"
@@ -357,7 +357,7 @@
         "Kimlik doğrulama kodu kullan"
       ],
       "Use recovery code": [
-        "Kurtarma kodu kullanılsın"
+        "Kurtarma kodunu kullan"
       ],
       "Use your current email address instead": [
         "Bunun yerine var olan e-posta adresinizi kullanın"
@@ -491,12 +491,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "İki yıllık"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
+        "Iki yıllık"
       ]
     },
     "Bug category": {
@@ -1454,7 +1449,7 @@
     },
     "Credits": {
       "Unused credits": [
-        "Kullanılmamış kredi"
+        "Kalan kredi"
       ]
     },
     "Cycle": {
@@ -1475,7 +1470,7 @@
         "Hatalar veya kalite sorunları"
       ],
       "I use a different Proton account": [
-        "Başka bir Proton hesabı kullanıyorum"
+        "Farklı bir Proton hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
         "Özellikler eksik"
@@ -1590,7 +1585,7 @@
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please set a recovery email first": [
-        "Lütfen önce bir kurtarma e-posta adresi ayarlayın"
+        "Lütfen önce bir kurtarma e-postası adresi ayarlayın"
       ],
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefonu numarası ayarlayın"
@@ -1605,13 +1600,13 @@
         "İmza doğrulanamadı"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
       "Tab closed": [
         "Sekme kapatıldı"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da başka bir bilgisayarla oturum açın."
+        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Eklenebilecek en az kredi tutarı: ${ _price }"
@@ -1623,7 +1618,7 @@
         "Kabul ettiğimiz en az ödeme: ${ _price2 }"
       ],
       "This field is required": [
-        "Bu alan zorunludur"
+        "Bu alanın doldurulması zorunludur"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
@@ -1652,7 +1647,7 @@
         "Bir şeyler ters gitti"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Lütfen ${ refresh } ya da bağlantınızı denetleyin."
+        "Lütfen ${ refresh }yin ya da bağlantınızı denetleyin."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
@@ -1661,7 +1656,7 @@
         "Proton bağlantısı kurulurken bir sorun çıktı."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Ayrıca sayfayı ${ refresh } ya da bir süre sonra yeniden deneyin."
+        "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
       ]
     },
     "Error notification": {
@@ -1909,13 +1904,13 @@
         "Secure Core özelliği için ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
       ],
       "(Mail + VPN)": [
-        "(Mail + VPN)"
+        "(Posta + VPN)"
       ],
       "* No credit card required.": [
         "* Kredi kartı gerekmez."
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } ödül depolama alanı"
+        "+${ bonusSpace } ek depolama alanı"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
@@ -2060,7 +2055,7 @@
         "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } adresine gönderilen doğrulama kodunu yazın."
+        "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
@@ -2087,7 +2082,7 @@
         "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
       ],
       "Free": [
-        "Free"
+        "Ücretsiz"
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -2096,7 +2091,7 @@
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google, reklam verenlere ve üçüncü taraflara bilgi sağlamak için çevrimiçi etkinliğinizi ve kişisel bilgilerinizi kayıt eder. Daha iyi bir kişisel gizlilik elde etmek için, güvenli bir e-posta adresi oluşturun."
+        "Google, reklam verenlere ve üçüncü taraflara bilgi sağlamak için çevrimiçi etkinliğinizi ve kişisel bilgilerinizi kayıt eder. Daha iyi bir kişisel gizlilik elde etmek için, güvenli bir eposta adresi oluşturun."
       ],
       "here": [
         "buraya"
@@ -2132,7 +2127,7 @@
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Yoksa, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesap erişiminizi kalıcı olarak kaybedebilirsiniz."
+        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
@@ -2192,7 +2187,7 @@
         "Kredi kartı gerekmez"
       ],
       "No payment is required at this time.": [
-        "Şu anda yapılacak herhangi bir ödeme yok."
+        "Şu anda herhangi bir ödeme gerekmiyor."
       ],
       "No preview available": [
         "Ön izleme yok"
@@ -2246,7 +2241,7 @@
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmeden ödemeyi doğrulayın."
+        "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
       ],
       "Please verify the card in the new tab which was opened.": [
         "Lütfen açılan yeni sekmede kartı doğrulayın."
@@ -2339,7 +2334,7 @@
         "Bu işlem ayrıca, bu hesapla ilişkili iki aşamalı kimlik doğrulama yöntemlerini de devre dışı bırakır."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı özelliklerini kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
+        "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı avantajlarını kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
@@ -2360,7 +2355,7 @@
         "${ toAppName } uygulamasına ilerlemek için"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Proton ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman blog sayfamıza bakabilirsiniz."
@@ -2399,7 +2394,7 @@
         "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözemek için ayrı parolalar kullanır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
@@ -2444,7 +2439,7 @@
         "Uyarı:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Uyarı: Silme işlemi kalıcıdır. Bu işlem ayrıca, tüm bağlı hizmetlere erişimi keser ve tüm kişilerinizi siler."
+        "Uyarı: Silme işlemi geri alınamaz. Bu işlem, tüm ilgili hizmetlere erişiminizi keser ve tüm kişilerinizi siler."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
@@ -2704,10 +2699,10 @@
         "${ n } ay"
       ],
       "Allow recovery by email": [
-        "E-posta ile kurtarma yapılabilsin"
+        "E-posta ile hesap kurtarılabilsin"
       ],
       "Allow recovery by phone": [
-        "Telefon ile kurtarma yapılabilsin"
+        "Telefon ile hesap kurtarılabilsin"
       ],
       "Amount": [
         "Tutar"
@@ -2734,10 +2729,10 @@
         "ödül depolama alanı"
       ],
       "Browser": [
-        "Web tarayıcı"
+        "Tarayıcı"
       ],
       "Browser version": [
-        "Web tarayıcı sürümü"
+        "Tarayıcı sürümü"
       ],
       "BTC address:": [
         "BTC adresi:"
@@ -2779,7 +2774,7 @@
         "Yeni parola onayı"
       ],
       "Confirm password": [
-        "Parola onayı"
+        "Parolayı onayla"
       ],
       "Copy": [
         "Kopyala"
@@ -2791,7 +2786,7 @@
         "Hangi yayın akışı hizmeti olduğunu belirtebilir misiniz?"
       ],
       "Could you please specify?": [
-        "Lütfen daha açık belirtir misiniz?"
+        "Daha açık yazabilir misiniz?"
       ],
       "Country": [
         "Ülke"
@@ -2827,7 +2822,7 @@
         "E-posta adresi"
       ],
       "Email or username": [
-        "E-posta veya kullanıcı adı"
+        "E-posta adresi ya da kullanıcı adı"
       ],
       "Enter organization name to confirm": [
         "Onaylamak için kuruluş adını yazın"
@@ -2938,7 +2933,7 @@
         "Kurtarma e-posta adresi"
       ],
       "Recovery phone number": [
-        "Kurtarma telefonu numarası"
+        "Kurtarma telefon numarası"
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
@@ -3003,7 +2998,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Kurtarma telefon numarası"
+        "Kurtarma telefonu numarası"
       ]
     },
     "Label for news": {
@@ -3066,13 +3061,13 @@
         "Etkinleştirilmemiş"
       ],
       "Pay invoice": [
-        "Faturayı ödeyin"
+        "Faturayı öde"
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
       ],
       "Request an invite": [
-        "Davet isteği yap"
+        "Davet iste"
       ],
       "Reset password": [
         "Parolayı sıfırla"
@@ -3087,7 +3082,7 @@
         "Oturum açmakta sorun mu yaşıyorsunuz?"
       ],
       "Upgrade account": [
-        "Hesabınızı yükseltin"
+        "Hesabı yükselt"
       ],
       "View guide": [
         "Rehberi görüntüle"
@@ -3141,7 +3136,7 @@
         "Gözden geçirmeyi sürdür"
       ],
       "Continue with Free": [
-        "Continue with Free"
+        "Free tarifesini kullanmayı sürdür"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -3217,7 +3212,7 @@
       ],
       "${ n } email address": [
         "${ n } e-posta adresi",
-        "${ n } e-posta adresi/takma ad"
+        "${ n } e-posta adresi"
       ],
       "${ n } email address per user": [
         "Her kullanıcı için ${ n } e-posta adresi",
@@ -3791,7 +3786,7 @@
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 kimlik doğrulama bilgileri güncellendi"
+        "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ]
     },
     "Onboarding": {
@@ -3813,10 +3808,10 @@
         "GNU/Linux"
       ],
       "I found another service that I like better": [
-        "Daha çok beğendiğim başka bir hizmet buldum"
+        "Daha çok sevdiğim başka bir hizmet buldum"
       ],
       "I use a different Proton account": [
-        "Başka bir Proton hesabı kullanıyorum"
+        "Farklı bir Proton hesabı kullanıyorum"
       ],
       "iOS": [
         "iOS"
@@ -3952,7 +3947,7 @@
         "E-posta ile doğrula"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "E-posta adresinizi doğrulamak hesabınızın güvenliğini artırır ve yeni bir kurtarma seçeneği ekler."
+        "E-posta adresinizi doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
     "Recovery method": {
@@ -4035,7 +4030,7 @@
         "Sürüm notları"
       ],
       "Upgrade storage": [
-        "Depolama alanını artırın"
+        "Depolama alanını artır"
       ],
       "Your current storage:": [
         "Geçerli depolama alanınız:"
@@ -4145,7 +4140,7 @@
         "E-posta adresi panoya kopyalandı"
       ],
       "Email updated": [
-        "E-posta güncellendi"
+        "E-posta adresi güncellendi"
       ],
       "Gift code applied": [
         "Hediye kodu uygulandı"
@@ -4322,7 +4317,7 @@
         "Kart doğrulama"
       ],
       "Card verification in progress": [
-        "Kart doğrulanıyor"
+        "Kart doğrulama işlemi sürüyor"
       ],
       "Change login password": [
         "Oturum açma parolasını değiştir"
@@ -4334,7 +4329,7 @@
         "Parolayı değiştir"
       ],
       "Confirm address": [
-        "Adresi onaylayın"
+        "E-posta adresini onaylayın"
       ],
       "Confirm downgrade": [
         "Düşürmeyi onayla"
@@ -4355,7 +4350,7 @@
         "${ BRAND_NAME } hesabınızı açın"
       ],
       "Credits": [
-        "Kredi"
+        "Krediler"
       ],
       "Currency": [
         "Para birimi"
@@ -4397,10 +4392,10 @@
         "Kredi/banka kartını düzenle"
       ],
       "Email": [
-        "E-posta adresi"
+        "E-posta"
       ],
       "Email subscriptions": [
-        "E-posta abonelikleri"
+        "Eposta abonelikleri"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -4436,7 +4431,7 @@
         "Dil"
       ],
       "Login password": [
-        "Outurum açma parolası"
+        "Oturum açma parolası"
       ],
       "Network error": [
         "Ağ sorunu"
@@ -4472,10 +4467,10 @@
         "Ödeme yöntemleri"
       ],
       "Payment verification": [
-        "Ödemeyi doğrulayın"
+        "Ödeme doğrulama"
       ],
       "Payment verification in progress": [
-        "Ödeme doğrulanıyor"
+        "Ödeme doğrulama işlemi sürüyor"
       ],
       "Payments": [
         "Ödemeler"
@@ -4508,7 +4503,7 @@
         "Kurtarma"
       ],
       "Report a problem": [
-        "Bir sorun bildir"
+        "Bir sorun bildirin"
       ],
       "Request new code": [
         "Yeni kod iste"
@@ -4532,7 +4527,7 @@
         "Bir tarife seçin"
       ],
       "Set new password": [
-        "Yeni parola belirle"
+        "Yeni parola ayarla"
       ],
       "Set up two-factor authentication": [
         "İki aşamalı kimlik doğrulamayı ayarla"
@@ -4574,7 +4569,7 @@
         "Posta kutunuzun kilidini açın"
       ],
       "Unsupported browser": [
-        "Web tarayıcı desteklenmiyor"
+        "Tarayıcı desteklenmiyor"
       ],
       "Verification": [
         "Doğrulama"
@@ -4659,7 +4654,7 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } sunucu",
-        "${ n }+ sunucu"
+        "${ n } sunucu"
       ],
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
@@ -4695,22 +4690,22 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Adresi silmek istediğinize emin misiniz?"
+        "E-posta adresini silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Bu adresi sildikten sonra günlük e-posta bildirimlerini alamazsınız."
+        "Bu adresi sildikten sonra günlük gönderilen e-posta bildirimlerini alamazsınız."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Bu adresi sildikten sonra, hesabınızı kurtaramaz ya da günlük e-posta bildirimlerini alamazsınız."
+        "Bu adresi sildikten sonra, hesabınızı kurtaramaz ya da günlük gönderilen e-posta bildirimlerini alamazsınız."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Bu adresi sildikten sonra hesabınızı kurtaramazsınız."
+        "Bu adresi silerseniz, hesabınızı kurtaramazsınız."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Bu telefon numarasını sildikten sonra hesabınızı kurtaramazsınız."
+        "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."

@@ -1,12 +1,12 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "fa_IR"
   },
   "contexts": {
     "Action": {
       "${ address } is available.": [
-        "${ address } قابل استفاده است."
+        "${ address } در دسترس است."
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } مقدمه"
@@ -15,10 +15,10 @@
         "فروشگاه ${ BRAND_NAME }"
       ],
       "Activate recovery": [
-        "فعال سازی بازیابی"
+        "فعال‌سازی بازیابی"
       ],
       "Add credit / debit card": [
-        "افزودن کارت اعتباری / دبیت"
+        "افزودن کارت اعتباری / نقدی"
       ],
       "Add credits": [
         "افزودن اعتبار"
@@ -30,7 +30,7 @@
         "اعمال"
       ],
       "Attach screenshot(s)": [
-        "پیوست ‌عکس‌صفحه(ها)"
+        "پیوست اسکرین شات(ها)"
       ],
       "Authenticate": [
         "احراز هویت"
@@ -39,13 +39,13 @@
         "بازگشت"
       ],
       "Cancel": [
-        "لغو"
+        "انصراف"
       ],
       "Change mailbox password": [
-        "تغییر رمزعبور صندوق پستی [Mailbox]"
+        "تغییر گذرواژه نامه‌دان"
       ],
       "Change password": [
-        "تغییر رمز عبور"
+        "تغییر گذرواژه"
       ],
       "Chat with us": [
         "با ما گفتگو کنید"
@@ -57,7 +57,7 @@
         "بستن پیمایش"
       ],
       "Close this banner": [
-        "این بنر را ببندید"
+        "این بنر بسته شود"
       ],
       "Confirm": [
         "تایید"
@@ -69,46 +69,46 @@
         "ادامه"
       ],
       "Copy": [
-        "کپی"
+        "روگرفت"
       ],
       "Copy email to clipboard": [
-        "کپی ایمیل به کلیپ‌بورد"
+        "روگرفت رایانامه به حافظه موقت"
       ],
       "Create": [
         "ایجاد"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "در عوض یک نشانی ${ MAIL_APP_NAME } امن ایجاد کنید"
+        "درعوض یک آدرس امن ${ MAIL_APP_NAME } ایجاد کنید"
       ],
       "Create account": [
-        "ایجاد حساب‌کاربری"
+        "ایجاد حساب کاربری"
       ],
       "Create address": [
-        "ایجاد آدرس"
+        "ایجاد نشانی"
       ],
       "Current plan": [
         "طرح فعلی"
       ],
       "Customize": [
-        "سفارشی"
+        "شخصی‌سازی"
       ],
       "Customize plan": [
         "طرح خود را شخصی سازی کنید"
       ],
       "Decrease": [
-        "کاستن"
+        "کاهش"
       ],
       "Delete": [
         "حذف"
       ],
       "Delete your account": [
-        "حذف حساب کاربری"
+        "حذف حساب کاربری شما"
       ],
       "Details": [
         "جزئیات"
       ],
       "Didn't receive a code?": [
-        "کدی دریافت نکردید؟"
+        "کد را دریافت نکردید؟"
       ],
       "Didn't receive the code?": [
         "کد را دریافت نکردید؟"
@@ -120,16 +120,16 @@
         "انجام شد"
       ],
       "Downgrade": [
-        "پایین آوردن"
+        "تنزل"
       ],
       "Downgrade account": [
-        "تنزیل حساب کاربری"
+        "اکانت را تنزل دهید"
       ],
       "Download": [
         "بارگیری"
       ],
       "Download all configurations": [
-        "دانلود تمام پیکربندی‌ها"
+        "بارگیری همه پیکربندی‌ها"
       ],
       "Edit": [
         "ویرایش"
@@ -138,22 +138,22 @@
         "ویرایش جزئیات صورتحساب"
       ],
       "Edit email address": [
-        "ویرایش نشانی ایمیل"
+        "ویرایش رایانشانی"
       ],
       "Edit phone number": [
-        "ویرایش شماره‌تلفن"
+        "ویرایش شماره تلفن"
       ],
       "Edit sign-in details": [
         "ویرایش جزئیات ورود"
       ],
       "Edit subscription": [
-        "ویرایش اشتراک ایمیل"
+        "ویرایش اشتراک"
       ],
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "طرح‌های ${ BRAND_NAME } دیگر را کاوش کنید"
+        "طرح‌های ${ BRAND_NAME } دیگر را بررسی کنید"
       ],
       "Extend": [
         "تمدید"
@@ -162,10 +162,10 @@
         "دریافت ${ vpnPlus }"
       ],
       "Get verification code": [
-        "دریافت کد تأیید"
+        "دریافت کد تایید"
       ],
       "Go to sign in": [
-        "به ورود بروید"
+        "به قسمت ورود به حساب بروید"
       ],
       "Hide": [
         "پنهان کردن"
@@ -174,19 +174,19 @@
         "من یک سوال دارم"
       ],
       "Increase": [
-        "افزودن"
+        "افزایش"
       ],
       "Load more": [
         "بارگذاری بیشتر"
       ],
       "Loading verification": [
-        "در حال بارگیری تأیید"
+        "در حال بارگیری تایید"
       ],
       "Mark as default": [
-        "انتخاب به عنوان پیش‌فرض"
+        "علامت‌گذاری به‌عنوان پیش‌فرض"
       ],
       "Maybe later": [
-        "شاید بعداً"
+        "شاید بعدا"
       ],
       "More info: ${ safeTitle }": [
         "اطلاعات بیشتر: ${ safeTitle }"
@@ -204,10 +204,10 @@
         "تایید"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        "باز کردن تنظیمات ${ CALENDAR_APP_NAME }"
+        "بازگشایی تنظیمات ${ CALENDAR_APP_NAME }"
       ],
       "Open navigation": [
-        "باز کردن پیمایش"
+        "بازگشایی پیمایش"
       ],
       "Organization": [
         "سازمان"
@@ -219,19 +219,19 @@
         "پرداخت ${ price }"
       ],
       "Previous": [
-        "قبلی"
+        "پیشین"
       ],
       "Refer a friend": [
         "معرفی به یک دوست"
       ],
       "Refresh the page": [
-        "نوسازی صفحه"
+        "بازخوانی صفحه"
       ],
       "refresh the page": [
-        "نوسازی صفحه"
+        "بازخوانی صفحه"
       ],
       "Remove bonuses": [
-        "حذف پاداشها"
+        "حذف پاداش‌ها"
       ],
       "Remove gift code": [
         "حذف کد هدیه"
@@ -246,16 +246,16 @@
         "درخواست کد جدید"
       ],
       "Reset credentials": [
-        "تنظیم مجدد مجوزها"
+        "بازنشانی اعتبارنامه‌ها"
       ],
       "Reset password": [
-        "بازنشانی رمز عبور"
+        "بازنشانی گذرواژه"
       ],
       "Reset zoom": [
         "بازنشانی بزرگ‌نمایی"
       ],
       "Retry": [
-        "تلاش مجدد"
+        "تلاش دوباره"
       ],
       "Return to sign in": [
         "بازگشت به فرم ورود"
@@ -270,7 +270,7 @@
         "ذخیره"
       ],
       "Save selected": [
-        "ذخیره کردن انتخاب‌شده‌ها"
+        "ذخیره کردن انتخاب ‌شده ‌ها"
       ],
       "Search countries": [
         "جستجوی کشورها"
@@ -312,7 +312,7 @@
         "در حال ورود به حساب"
       ],
       "Signing out": [
-        "در حال خارج شدن"
+        "در حال خروج"
       ],
       "Submit": [
         "ثبت"
@@ -321,31 +321,31 @@
         "پشتیبانی"
       ],
       "Top up": [
-        "بالا بردن"
+        "شارژ مجدد"
       ],
       "Try again": [
-        "تلاش دوباره"
+        "دوباره امتحان کنید"
       ],
       "Try another method": [
-        "روش دیگری را امتحان کنید"
+        "روش دیگری بیازمایید"
       ],
       "Unlock": [
         "بازکردن"
       ],
       "Unlock data": [
-        "بازگشایی داده‌ها"
+        "بازگشایی داده"
       ],
       "Update recovery file": [
         "به‌روزرسانی فایل بازیابی"
       ],
       "Update recovery phrase": [
-        "به‌روزرسانی عبارت بازیابی"
+        "به‌ روزرسانی عبارت بازیابی"
       ],
       "Upgrade": [
         "ارتقا"
       ],
       "Use ${ label } theme": [
-        "از طرح زمینهٔ ${ label } استفاده کنید"
+        "استفاده از پوسته ${ label }"
       ],
       "Use a different card": [
         "از کارت دیگری استفاده کنید"
@@ -353,14 +353,11 @@
       "Use a different payment method": [
         "از روش پرداخت دیگری استفاده کنید"
       ],
-      "Use authentication code": [
-        "از کد تایید استفاده نمایید"
-      ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
       "Use your current email address instead": [
-        "در عوض از نشانی ایمیل فعلی خود استفاده کنید"
+        "در عوض از آدرس ایمیل فعلی خود استفاده کنید"
       ],
       "User": [
         "کاربر"
@@ -381,10 +378,10 @@
         "تأييد آدرس ایمیل"
       ],
       "View": [
-        "نمایش"
+        "مشاهده"
       ],
       "View invoice": [
-        "مشاهده صورتحساب"
+        "مشاهده صورت‌حساب"
       ],
       "View plans details": [
         "مشاهدهٔ جزئیات طرح‌ها"
@@ -393,7 +390,7 @@
         "چه چیزی دیافت میکنم?"
       ],
       "Zoom in": [
-        "بزرگنمایی"
+        "بزرگ‌نمایی"
       ],
       "Zoom out": [
         "کوچک‌نمایی"
@@ -425,8 +422,8 @@
     },
     "Addon unit for subscription": {
       "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } آدرس",
-        "${ addressAddon.MaxAddresses } آدرس"
+        "${ addressAddon.MaxAddresses } نشانی",
+        "${ addressAddon.MaxAddresses } نشانی"
       ],
       "${ domainAddon.MaxDomains } domain": [
         "${ domainAddon.MaxDomains } دامنه",
@@ -452,7 +449,7 @@
     },
     "Apps dropdown": {
       "Proton applications": [
-        "برنامه های Proton"
+        "برنامه‌های Proton"
       ]
     },
     "Badge": {
@@ -494,11 +491,6 @@
         "دو ساله"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "پیشنهاد ویژه"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "مشکل برنامه"
@@ -516,7 +508,7 @@
         "مشکل مخاطبین"
       ],
       "Custom domain problem": [
-        "مشکل دامنهٔ سفارشی"
+        "مشکل دامنه سفارشی"
       ],
       "Drive problem": [
         "مشکل Drive"
@@ -525,19 +517,19 @@
         "درخواست ویژگی"
       ],
       "Import / export problem": [
-        "مشکل ورود / صدور"
+        "مشکل درون‌برد / برون‌برد"
       ],
       "Installation problem": [
         "مشکل در نصب"
       ],
       "Mail problem": [
-        "مشکل ایمیل"
+        "مشکل نامه"
       ],
       "Manual setup problem": [
         "مشکل در تنظیم دستی"
       ],
       "Other": [
-        "ساير"
+        "سایر موارد"
       ],
       "Payments problem": [
         "مشکل پرداخت"
@@ -549,25 +541,25 @@
         "مشکل ثبت‌نام"
       ],
       "Signup problem": [
-        "مشکل ثبت نام"
+        "مشکل ثبت‌نام"
       ],
       "Slow speed problem": [
-        "مشکل سرعت آهسته"
+        "مشکل سرعت پایین"
       ],
       "Speed problem": [
         "مشکل سرعت"
       ],
       "Streaming problem": [
-        "مشکل جریان پخش"
+        "مشکل استریم"
       ],
       "Update problem": [
-        "مشکل به‌روزرسانی"
+        "مشکل بروزرسانی"
       ],
       "VPN problem": [
         "مشکل VPN"
       ],
       "Website access problem": [
-        "مشکل دسترسی به وب‌سایت"
+        "مشکل دسترسی به تارنما"
       ]
     },
     "Button": {
@@ -657,12 +649,12 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "مطمئن هستید که می خواهید این نحوه پرداخت را حذف کنید؟"
+        "آیا مطمئن هستید که می‌خواهید این شیوه پرداخت را حذف کنید؟"
       ]
     },
     "Confirmation title": {
       "Delete payment method": [
-        "حذف نحوه پرداخت"
+        "حذف شیوه پرداخت"
       ]
     },
     "Countdown unit": {
@@ -677,7 +669,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        "آبخازستان"
+        "آبخازیا"
       ],
       "Afghanistan": [
         "افغانستان"
@@ -1467,7 +1459,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "صورتحساب‌ عقب افتاده"
+        "صورت‌حساب‌ واگذاشته"
       ]
     },
     "Downgrade account reason": {
@@ -1503,13 +1495,13 @@
     },
     "Error": {
       "Amount above the maximum.": [
-        "مقدار بیش از اندازه می باشد."
+        "مبلغ بالاتر از حداکثر است."
       ],
       "Amount below minimum.": [
-        "مقدار کمتر از حداقل."
+        "مبلغ کمتر از حداقل است."
       ],
       "Can't check username, try again later": [
-        "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
+        "نمی‌توان نام کاربری را چک کرد، دوباره بعداً امتحان کنید"
       ],
       "Checkout expired, please try again": [
         "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید"
@@ -1521,13 +1513,13 @@
         "دامنه در دسترس نیست، بعداً دوباره امتحان کنید"
       ],
       "Email is not valid": [
-        "ایمیل معتبر نیست"
+        "رایانامه معتبر نیست"
       ],
       "Enter 6 digits": [
-        "۶ رقم را وارد کنید"
+        "6 رقم وارد کنید"
       ],
       "Error connecting to the Bitcoin API.": [
-        "خطا در اتصال به API Bitcoin."
+        "در اتصال به Bitcoin API خطایی رخ داد."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
@@ -1539,52 +1531,52 @@
         "رمزعبور صندوق پیام نادرست است. لطفا دوباره امتحان کنید."
       ],
       "Invalid ${ name } code": [
-        "کد ${ name } نامعتبر"
+        "کد ${ name } نامعتبر است"
       ],
       "Invalid card number": [
-        "شماره کارت نامعتبر"
+        "شماره کارت نامعتبر است"
       ],
       "Invalid code": [
-        "کد نامعتبر"
+        "کد نامعتبر است"
       ],
       "Invalid expiration date": [
-        "تاریخ انقضا نامعتبر"
+        "تاریخ انقضا نامعتبر است"
       ],
       "Invalid invitation link": [
-        "پیوند دعوت نامعتبر است"
+        "لینک دعوتنامه نامعتبر است"
       ],
       "Invalid postal code": [
-        "کد پستی نامعتبر"
+        "کد پستی نامعتبر است"
       ],
       "Invalid verification code": [
-        "کد تایید نامعتبر"
+        "کد تایید نامعتبر است"
       ],
       "Name on card required": [
         "نام روی کارت الزامی است"
       ],
       "Not a valid number": [
-        "شماره معتبر نیست"
+        "عدد معتبری نیست"
       ],
       "Organization not recognized. Try again.": [
         "شازمان شناسایی نشد. دوباره تلاش کنید."
       ],
       "Passwords do not match": [
-        "رمزهای عبور مطابقت ندارند"
+        "گذرواژه‌ها مطابقت ندارند"
       ],
       "Payment process cancelled": [
-        "روند پرداخت لغو شد"
+        "فرایند پرداخت لغو شد"
       ],
       "Payment process consumed": [
         "عملیات پرداخت انجام شد"
       ],
       "Payment process failed": [
-        "روند پرداخت انجام نشد"
+        "فرایند پرداخت ناموفق بود"
       ],
       "Payment process not supported": [
-        "روند پرداخت پشتیبانی نمی شود"
+        "فرایند پرداخت پشتیبانی نمی‌شود"
       ],
       "Payments are currently not available, please try again later": [
-        "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
+        "در حال حاضر امکان پرداخت فراهم نیست، لطفا بعدا دوباره امتحان کنید"
       ],
       "Please generate keys before you try to change your password": [
         "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
@@ -1593,52 +1585,52 @@
         "لطفا ابتدا یک ایمیل بازیابی تنظیم کنید"
       ],
       "Please set a recovery phone number first": [
-        "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
+        "لطفا ابتدا یک شماره تماس بازیابی تنظیم کنید"
       ],
       "Process aborted": [
-        "فرآیند قطع شد"
+        "فرایند قطع شد"
       ],
       "Request timed out": [
         "مهلت درخواست تمام شد"
       ],
       "Signature verification failed": [
-        "تصدیق امضا ناموفق بود"
+        "تایید امضا ناموفق بود"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "خطایی رخ داد، لطفاً برای ادامه ${ refresh } کنید. اگر این پیغام خطا را هنوز می‌بینید لطفاً با ${ supportTeam }. ما تماس بگیرید."
       ],
       "Tab closed": [
-        "بستن زبانه"
+        "زبانه بسته شد"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "مرورگری که شما استفاده میکنید اجازه پرداخت کامل معامله را نمیدهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
+        "مرورگری که شما استفاده می‌کنید اجازه پرداخت کامل را نمی‌دهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "حداقل مقدار اعتباری که می‌توان اضافه کرد ${ _price } است"
+        "حداقل مبلغ اعتباری که می‌توان اضافه کرد ${ _price } است"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "حداقل مبلغ قابل اهدا هست ${ price }"
+        "حداقل مبلغی که می‌توان اهدا کرد ${ price } است"
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "حداقل پرداختی که می‌پذیریم ${ _price2 } است"
       ],
       "This field is required": [
-        "این بخش الزامی است"
+        "این قسمت الزامی است"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "حداقل ${ minimumLength } کاراکتر برای این قسمت الزامی است."
+        "این قسمت حداقل به ${ minimumLength } نویسه نیاز دارد."
       ],
       "Unknown error": [
         "خطای ناشناخته"
       ],
       "Unknown payment token status": [
-        "وضعیت نشانه پرداخت ناشناخته"
+        "وضعیت نمودافزار پرداخت ناشناخته است"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "عبارت بازیابی اشتباه است. دوباره امتحان کنید یا از شیوه دیگری برای بازیابی استفاده کنید."
       ],
       "You have no invoices.": [
-        "هیچ صورت‌حسابی ندارید."
+        "شما هیچ صورت‌حسابی ندارید."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "حساب یا سازمان شما دارای یک صورت‌ حساب به تعویق افتاده است. لطفا تمام صورت‌ حساب‌های پرداخت نشده را پرداخت کنید."
@@ -1649,16 +1641,16 @@
         "خطا: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "اوه، اشتباهی رخ داد"
+        "آه، مشکلی پیش آمد"
       ],
       "Please ${ refresh } or check your connection.": [
-        "لطفاً ${ refresh } یا اتصالتان را بررسی کنید."
+        "لطفا ${ refresh } کرده یا اتصال‌تان را بررسی کنید."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "مشکلی پیش آمد. لطفا صفحه را تازه سازی کنید یا بعدا تلاش کنید."
       ],
       "There was a problem connecting to Proton.": [
-        "مشکلی در متصل شدن به Proton وجود داشت."
+        "مشکلی در اتصال به Proton وجود داشت."
       ],
       "You may also ${ refresh } or try again later.": [
         "همچنین می‌توانید ${ refresh } کرده یا بعدا دوباره امتحان کنید."
@@ -1671,28 +1663,28 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "هیچ تصویری انتخاب نشده"
+        "هیچ تصویری انتخاب نشده است"
       ]
     },
     "Feature": {
       "Access to all countries": [
-        "دسترسی به همهٔ کشورها"
+        "دسترسی به همه کشورها"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "اتصال حداکثر تا ${ plusVpnConnections } دستگاه",
         "اتصال حداکثر تا ${ plusVpnConnections } دستگاه"
       ],
       "Fastest VPN servers": [
-        "سریع‌ترین سرورهای VPN"
+        "سریع‌ترین سرورهای وی‌پی‌ان"
       ],
       "Secure Core servers": [
-        "سرورهای Secure Core"
+        "سرورهای هسته امن"
       ],
       "Secure streaming support": [
-        "پشتیبانی از پخش آنلاین امن"
+        "پشتیبانی استریم امن"
       ],
       "Torrenting support (P2P)": [
-        "پشتیبانی از تورنت (P2P)"
+        "پشتیبانی تورنت (P2P)"
       ]
     },
     "file size format": {
@@ -1741,7 +1733,7 @@
     },
     "Group": {
       "Account": [
-        "حساب کاربری"
+        "حساب"
       ],
       "Apps": [
         "برنامه‌ها"
@@ -1753,7 +1745,7 @@
         "دسته‌بندی دیگر"
       ],
       "Services": [
-        "سرویس‌ها"
+        "خدمات"
       ]
     },
     "Header": {
@@ -1763,10 +1755,10 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "کپچا"
       ],
       "Email": [
-        "ایمیل"
+        "رایانامه"
       ],
       "Manual": [
         "دستی"
@@ -1780,7 +1772,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } به اجازهٔ شما برای ${ enableDesktopNotifications } نیاز دارد."
+        "${ appName } به اجازه شما برای ${ enableDesktopNotifications } نیاز دارد."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } اگر ادامه دهید تمام داده های رمزگذاری شده موجود در حساب خود را از دست میدهید."
@@ -1809,13 +1801,13 @@
         "${ vpnPlus } یا ${ visionary } میاز است تا از ویژگی Secure Core استفاده کنید."
       ],
       "(Mail + VPN)": [
-        "(ایمیل + VPN)"
+        "(رایانامه + وی‌پی‌ان)"
       ],
       "* No credit card required.": [
         "* نیازی به کارت اعتباری نیست."
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } حافظه هدیه"
+        "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
@@ -1837,22 +1829,22 @@
         "یک کاربر، یک حساب کاربری مرتبط با نام کاربری، صندوق نامه و شخص واحد است"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "دسترسی به حساب به دلیل صورتحساب‌های پرداخت نشده محدود شده است. لطفا با مدیرتان تماس بگیرید."
+        "دسترسی به حساب به دلیل صورت‌حساب‌های پرداخت نشده محدود شده است. لطفا با مدیرتان تماس بگیرید."
       ],
       "Account size": [
         "اندازه حساب کاربری"
       ],
       "Account successfully updated": [
-        "حساب کاربری با موفقیت به‌روزرسانی شد"
+        "حساب کاربری با موفقیت بروز شد"
       ],
       "Additional options": [
         "امکانات اضافی"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "بعد از پرداخت Bitcoin، لطفا دستورالعمل زیر را دنبال کنید تا ارتقا پیدا کنید."
+        "پس از پرداخت Bitcoin، لطفا برای ارتقا دستورالعمل‌های زیر را دنبال کنید."
       ],
       "Amount below minimum (${ amount }).": [
-        "مقدار کمتر از حداقل (${ amount })."
+        "مبلغ کمتر از حداقل است (${ amount })."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
@@ -1867,10 +1859,10 @@
         "قبل از درخواست کد تایید جدید، لطفا پوشه هرزنامه خود را برسسی کنید و مطمئن شوید آدرس ${ strong } صحیح است."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "صورت‌حساب در پایان دورهٔ صورت‌حساب کنونی شما (در ${ renewalDate } تمدید می‌شود)"
+        "صورت‌حساب در پایان دوره صورت‌حساب کنونی شما ( در ${ renewalDate } تمدید می‌شود)"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "تأیید تراکنش‌های Bitcoin می‌تواند مدتی زمان ببرد (تا ۲۴ ساعت). زمانی که تأیید صورت گرفت، اعتبارها را به حساب‌تان اضافه خواهیم کرد. پس از تأیید تراکنش، می‌توانید صورت‌حساب‌تان را با اعتبارها پرداخت کنید."
+        "تایید تراکنش‌های بیت کوین ممکن است مدتی طول بکشد (حداکثر تا 24 ساعت). پس از تایید، اعتبارات را به حساب شما اضافه خواهیم کرد. پس از تایید معامله، می‌توانید صورت‌حساب خود را با اعتبار پرداخت کنید."
       ],
       "Black Friday 2018 applied to your subscription": [
         "جمعه سیاه ۲۰۱۸ به اشتراک شما اعمال شد"
@@ -1882,25 +1874,25 @@
         "تخفیف تازه واردین جمعه سیاه ۲۰۲۰ اعمال شده است"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "با تنزل طرح به یک طرح رایگان، شما برای همیشه این مزایا را از دست خواهید داد، حتی اگر مجدداً در آینده طرح را ارتقاء دهید."
+        "با تنزیل طرح به یک طرح رایگان، شما برای همیشه این مزایا را از دست خواهید داد، حتی اگر دوباره در آینده طرح را ارتقا دهید."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "با تنزیل دادن شما مزایای زیر را از دست خواهید داد. آیا مایل به ادامه هستید؟"
+        "با تنزیل درجه منافع زیر را از دست خواهید داد. آیا مایل به ادامه هستید؟"
       ],
       "By leaving now, changes may not be saved": [
-        "با خارج شدن، تغییرات ممکن است که ذخیره نشوند"
+        "اگر حال ترک کنید، تغییرات ممکن است ذخیره نشوند"
       ],
       "Choose the look and feel of the application.": [
         "ظاهر و حس برنامه را انتخاب کنید."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره‌تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
+        "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
       "Continue anyway?": [
         "با این وجود ادامه می‌دهید؟"
       ],
       "Creating your account": [
-        "ایجاد حساب کاربری خود"
+        "درحال ایجاد حساب کاربری شما"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "اعتبار برای قسمت استفاده نشدهٔ طرح اشتراک قبلی شما"
@@ -1921,10 +1913,7 @@
         "تنزیل طرح به هر گونه اتصال به سرورهای خریدنی ${ VPN_APP_NAME } پایان می‌دهد."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "اپ مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که میروید ببرید."
-      ],
-      "Each code can only be used once": [
-        "هر کد را تنها یک بار می توانید استفاده نمایید"
+        "برنامه مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که می‌روید ببرید."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "میزبانی ایمیل برای 10 نام دامنه ایمیل سفارشی بطور رایگان شامل شده است. افزودن دامنه های اضافی با پرداخت ${ price } ممکن است."
@@ -1933,13 +1922,10 @@
         "میزبانی ایمیل فقط برای دامنه هایی که هم اکنون دارید ممکن است. ثبت دامنه فعلا از طریق Proton ممکن نیست. میتوانید از ایمیل برای دامنه های ثبت شده بر روی هر ثبت کننده دامنه میزبانی کنید."
       ],
       "Emailing preference saved": [
-        "تنظیمات ایمیل‌دهی ذخیره شد"
+        "تنظیمات رایانامه‌نگاری بروز شد"
       ],
       "Enter key manually instead": [
         "در عوض کلید را به صورت دستی وارد کنید"
-      ],
-      "Enter the code from your authenticator app": [
-        "کد سامانه تایید کننده را وارد نمایید"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "کدی که به شماره تلفن ${ phone } شما فرستاده شد را وارد کنید."
@@ -1948,16 +1934,13 @@
         "کدی که به ${ email } فرستاده شد را وارد کنید. اگر نمی‌توانید پیام را در صندوق ورودی پیدا کنید، لطفا پوشه هرزنامه خود را بررسی کنید."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "کد تاییدی که برای ${ destinationText } ارسال شد را وارد نمایید."
+        "کد تاییدی که به ${ destinationText } ارسال شد را وارد نمایید."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "اطلاعات حساب ${ BRAND_NAME } خود را وارد کنید."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "آدرس ایمیل یا نام کاربری حساب ${ BRAND_NAME } خودرا وارد کنید."
-      ],
-      "Enter your own password (as organization admin).": [
-        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
@@ -1966,7 +1949,7 @@
         "شماره تلفن بازیابی خود را وارد کنید و ما نام کاربری یا رایانشانی شما را برایتان ارسال خواهیم کرد."
       ],
       "Expired": [
-        "منقضی شده"
+        "منقضی شد"
       ],
       "expires ${ expirationDate }": [
         "در ${ expirationDate } منقضی میشود"
@@ -1978,7 +1961,7 @@
         "رایگان"
       ],
       "Free up some space or add more storage space.": [
-        "مقداری فضای آزاد ایجاد کنید یا فضای حافظه بیشتری بیفزایید."
+        "مقداری فضا آزاد کنید یا فضای ذخیره سازی بیشتری اضافه کنید."
       ],
       "Free up some space or contact your administrator.": [
         "مقداری فضای آزاد ایجاد کنید یا با مدیر خود تماس بگیرید."
@@ -1990,22 +1973,22 @@
         "اینجا"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "اگر شما در ساختن حسابتان مشکل دارید، لطفاً درخواست یک دعوتنامه داده و ما در طی یک روز کاری به شما پاسخ خواهیم داد."
+        "اگر در ایجاد حساب کاربری خود مشکلی دارید، لطفا یک دعوت‌ نامه درخواست کنید و ما ظرف یک روز کاری پاسخ خواهیم داد."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "اگر فکر می‌کنید این یک خطاست، لطفاً با ما در ${ contactLink } تماس بگیرید."
+        "اگر فکر می‌کنید این یک خطا است، لطفا با ما در ${ contactLink } تماس بگیرید."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "اگر ایمیلی در صندوق دریافت نمی بینید، لطفا پوشه اسپم را بررسی کنید."
+        "اگر رایانامه در صندوق ورودی نمی‌بینید، لطفا پوشه هرزنامه را بررسی کنید."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "اگر کد هدیه دارید، آن را در پایین وارد کنید تا تخفیف شما اعمال شود."
+        "اگر کد هدیه دارید، آن را در زیر وارد کنید تا تخفیف شما اعمال شود."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "اگر شما هرگز تأیید هویت دو-مرحله ای را قبلاً استفاده نکرده‌اید، ما به شدت توصیه می‌کنیم شما ${ guideButton }."
+        "اگر پیشتر هرگز از احراز هویت دو مرحله‌ای استفاده نکرده‌اید، اکیدا ${ guideButton } توصیه می‌کنیم."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "اگر شما دستگاه دو-مرحله ای فعال شده خود را از دست دهید، این کدها می‌توانند بجای کد تأیید هویت دو-مرحله ای ۶ رقمی استفاده شوند تا به حساب خود وارد شوید. هر کد می‌تواند تنها یک بار استفاده شود."
+        "اگر دستگاه دو مرحله‌ای فعال‌شده‌ی خود را گم کنید، می‌توانید از این کدها به جای کد 6 رقمی 2FA برای ورود به حساب خود استفاده کنید. هر کد فقط یک‌بار قابل استفاده است."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ MAIL_APP_NAME } و ${ VPN_APP_NAME } را از دست خواهید داد."
@@ -2020,25 +2003,25 @@
         "اگر شما مایل به ادغام این حساب کاربری با یکی دیگر هستید، حذفش نکنید."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "مهم: لطفاً مطمئن شوید که کدهای بازیابی را ذخیره می‌کنید. در غیر اینصورت شما می‌توانید برای همیشه دسترسی به حساب خود را اگر که دستگاه تأیید هویت دو-مرحله ای خود را گم کنید، از دست دهید."
+        "مهم: لطفا اطمینان حاصل کنید که کدهای بازیابی را ذخیره کرده‌اید. در غیر این صورت اگر دستگاه 2FA خود را گم کنید برای همیشه دسترسی به حساب خود را از دست می‌دهید."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "نصب یک پرونده تنظیمات کشور برای وصل شدن به یک سرور تصادفی در کشور انتخابی شما."
+        "یک فایل پیکربندی کشور نصب کنید تا به یک سرور تصادفی در کشور مورد نظر خود متصل شوید."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "یک فایل رایگان پیکربندی سرور نصب کنید تا به یک سرور مشخص در یکی از سه مکان رایگان متصل شوید."
+        "یک فایل پیکربندی سرور رایگان نصب کنید تا در یکی از سه مکان رایگان به یک سرور خاص متصل شوید."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "نصب یک پرونده تنظیمات هسته‌ی امن برای سود بردن از یک حفاظت افزوده در برابر سازش گره نهایی VPN."
+        "یک فایل پیکربندی هسته امن نصب کنید تا در برابر مخاطره نقطه پایانی وی‌پی‌ان از یک محافظت اضافی بهره‌مند شوید."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "نصب یک پرونده تنظیمات سرور برای اتصال به یک سرور در کشور انتخابی شما."
+        "یک فایل پیکربندی سرور نصب کنید تا به یک سرور خاص در کشور مورد نظر خود متصل شوید."
       ],
       "Internet connection lost": [
         "اتصال اینترنت قطع شد"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "اتصال اینترنت از دست رفت. لطفا اتصال دستگاه خود را بررسی کنید."
+        "اتصال اینترنت قطع شد. لطفا اتصال دستگاه خود را بررسی کنید."
       ],
       "Internet connection restored.": [
         "اتصال اینترنت برقرار شد."
@@ -2056,7 +2039,7 @@
         "در حال بارگذاری"
       ],
       "Loading ${ appName }": [
-        "بارگذاری ${ appName }"
+        "در حال بارگذاری ${ appName }"
       ],
       "Loading preview": [
         "در حال بارگذاری پیش‌نمایش"
@@ -2071,7 +2054,7 @@
         "Mail.ru اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های دولتی روسیه و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "برای تنظیم حساب خود ، این اطلاعات را به صورت دستی در دستگاه تأیید اعتبار 2 عامل وارد کنید. ${ _switchButton }."
+        "برای تنظیم حساب خود، این اطلاعات را به‌صورت دستی در دستگاه تایید هویت دو مرحله‌ای خود وارد کنید.${ _switchButton }."
       ],
       "No credit card required": [
         "نیازی به کارت اعتباری نیست"
@@ -2083,7 +2066,7 @@
         "پیش‌نمایشی در دسترس نیست"
       ],
       "No results found": [
-        "هیچ نتیجه‌ای یافت نشد"
+        "نتیجه‌ای یافت نشد"
       ],
       "Not set": [
         "تنظیم نشده"
@@ -2107,28 +2090,28 @@
         "P2P"
       ],
       "Payment can take a few minutes to fully verify.": [
-        "تأییدن شدن پرداخت چند دقیقه زمان می‌برد."
+        "تایید کامل پرداخت ممکن است چند دقیقه طول بکشد."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "پرداخت‌ها با رمزگذاری TLS و قوانین حریم خصوصی سوئیس محافظت می‌شوند."
+        "پرداخت‌ها با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
       ],
       "Plan upgrade required": [
-        "ارتقا برنامه مورد نیاز است"
+        "ارتقا طرح ضروری است"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "لطفاً توجه کنید که با فشردن دکمهٔ تایید، حساب شما ${ creditsRemaining } اعتبار باقیمانده خواهد داشت."
+        "لطفا توجه کنید که با فشار دکمه تایید، حساب شما ${ creditsRemaining } اعتبار باقیمانده خواهد داشت."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "لطفاً در صورت نیاز به تماس با شما، آدرس ایمیل خود را ارائه دهید."
+        "لطفا در صورت نیاز به تماس با شما یک رایانشانی ارائه دهید."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "لطفا دوباره امتحان کنید، از روش پرداخت متفاوتی استفاده کنید، یا از بانک‌تان درخواست کمک کنید."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "لطفا دوباره سعی کنید، روش پرداخت دیگری استفاده کنید، یا برای کمک با پی‌پال تماس بگیرید."
+        "لطفا دوباره امتحان کنید، از روش پرداخت دیگری استفاده کنید یا برای دریافت کمک با پی‌پال تماس بگیرید."
       ],
       "Please verify payment at the new tab which was opened.": [
         "لطفا پرداخت را در زبانه جدیدی که باز شد تایید کنید."
@@ -2155,25 +2138,25 @@
         "اطلاعات بازیابی بر روی این دستگاه باقی خواهد ماند مگر اینکه شما آن را برای حذف انتخاب کنید."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
+        "بازخوانی صفحه یا ${ link } بطور خودکار بیشتر مسائل را حل خواهد کرد."
       ],
       "Revoke certificate ${ name }": [
         "لغو کردن گواهی ${ name }"
       ],
       "Scan QR code instead": [
-        "به جای آن ، کد QR را اسکن کنید"
+        "در عوض کد QR را پویش کنید"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "برای تنظیم حساب کاربری خود، این دستگاه را با کد تأیید اعتبار دو عامل خود اسکن کنید. ${ switchButton }."
+        "برای تنظیم حساب کاربری خود، این کد را با دستگاه تایید هویت دو مرحله‌ای خود پویش کنید. ${ switchButton }."
       ],
       "Securing your account": [
         "درحال امن کردن حساب شما"
       ],
       "Server is currently down": [
-        "سرور اکنون کار نمی‌کند"
+        "سرور در حال حاضر خاموش است"
       ],
       "Server load": [
-        "بار سرور"
+        "بارگذاری سرور"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "دسترسی به سرورها امکان‌پذیر نیست. لطفاً چند دقیقهٔ دیگر دوباره تلاش کنید"
@@ -2182,7 +2165,7 @@
         "زمان نشست پایان یافت"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "از آنجایی که شما یک کاربر وفادار هستید، حساب کاربری شما امکانات فعال شدهٔ اضافی است."
+        "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "فضای ذخیره‌سازی بین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته است."
@@ -2194,7 +2177,7 @@
         "تیم پشتیبانی"
       ],
       "Thank you for supporting our mission.": [
-        "برای پشتیبانی از آرمان ما سپاسگزاریم."
+        "از شما برای حمایت از آرمان‌مان سپاسگزاریم."
       ],
       "The securest way to browse, stream, and be online.": [
         "امن ترین راه برای وبگردی، استریم و آنلاین بودن."
@@ -2206,13 +2189,13 @@
         "این تنظیمات ارائه شده اند تا با روترهای WireGuard و سرویس گیرندگان رسمی کار کنند."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "این حساب به دلیل یک تخطی احتمالی از سیاست‌ها به تعلیق درآمده است."
+        "این حساب به دلیل نقض احتمالی خط مشی به حالت تعلیق درآمده است."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "این مرورگر از پیش‌نمایش پرونده‌های PDF را پشتیبانی نمی‌کند. لطفاً فایل را بارگیری کنید."
+        "این مرورگر از پیش‌نمایش پرونده‌های PDF پشتیبانی نمی‌کند. لطفاً فایل را بارگیری کنید."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد"
+        "بسته به دستگاه شما می‌تواند چند ثانیه یا چند دقیقه طول بکشد"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
         "این همچنین هر گونه روش احراز هویت دو مرحله‌ای مربوط به این حساب را غیر فعال خواهد کرد."
@@ -2221,10 +2204,10 @@
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "این گزینه امکان استفاده از پی‌پل را برای پرداخت اشتراک پروتون‌وی‌پی‌ان را فراهم می‌کند. ما از طریق یک تب جدید در مرورگر شما را به پی‌پال منتقل می‌کنیم. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
+        "این گزینه امکان استفاده از PayPal را برای پرداخت اشتراک Proton شما فراهم می‌کند. شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "این گزینه به طور دائم حساب کاربری شما و تمام داده‌های آن را حذف می‌کند. شما قادر به فعال‌سازی دوبارهٔ این حساب کاربری نخواهید بود."
+        "با این کار حساب شما و همه داده‌های آن برای همیشه حذف می‌شود. شما نمی‌توانید این حساب را مجدد فعال کنید."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "این جایگزین گذرواژه موقت شما خواهد شد. از آن برای دسترسی به حساب ${ BRAND_NAME } خود در آینده استفاده خواهید کرد."
@@ -2233,25 +2216,25 @@
         "این کنش شما را از تمامی نشست‌های فعال خارج می‌کند و احراز هویت دو عاملی نیز غیرفعال می‌شود."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "این پرسشنامه تایید هویت دو-مرحله ای (2FA) را در حساب پروتن شما فعال می‌کند. تایید هویت دو-مرحله ای حساب پروتن شما را امن‌تر خواهد کرد بنابراین ما فعال کردن آن را توصیه می‌کنیم."
+        "این راهنما احراز هویت دو مرحله‌ای (2FA) را در حساب پروتون شما فعال می‌کند. احراز هویت دو مرحله‌ای باعث می‌شود حساب پروتون شما ایمن‌تر شود، بنابراین توصیه می‌کنیم آن را فعال کنید."
       ],
       "to continue to ${ toAppName }": [
         "برای ادامه به ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
+        "برای نبرد با هرزنامه و سوء استفاده، لطفا تایید کنید که شما انسان هستید."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "برای پیگیری آخرین پیشرفت در محصولات پروتن، می‌توانید در ایمیل‌های مختلف ما مشترک شوید و هر از گاهی به وبلاگ ما مراجعه کنید."
+        "برای آگاهی از آخرین پیشرفت محصولات Proton، می‌توانید در رایانامه‌های مختلف ما مشترک شوید و گاه گداری از تارنگار ما دیدن کنید."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "برای ادامه، لطفاً یک روش بازیابی حساب را انتخاب نمایید تا بتوانیم درخواست شما را تأیید کنیم."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "حساب‌تان را با اعتباری که می‌توانید برای اشتراک در یک طرح جدید یا تمدید طرح فعلی استفاده کنید شارژ کنید. شما برای هر ${ i18nCurrency } که هزینه می‌کنید یک واحد اعتبار دریافت می‌کنید."
+        "حساب خود را با اعتباراتی که می‌توانید جهت اشتراک در یک طرح جدید یا تمدید طرح کنونی خود استفاده کنید، پر نمایید. شما به ازای هر ${ i18nCurrency } هزینه شده یک اعتبار می‌گیرید."
       ],
       "Tor": [
-        "Tor"
+        "شبکه تور"
       ],
       "Total email addresses": [
         "مجموع آدرس های ایمیل"
@@ -2266,16 +2249,16 @@
         "مجموع اتصالات VPN"
       ],
       "Two-factor authentication disabled": [
-        "تأیید هویت دو عاملی غیرفعال است"
+        "احراز هویت دو مرحله‌ای غیرفعال شد"
       ],
       "Two-factor authentication enabled": [
-        "تأیید هویت دو عاملی فعال شده است"
+        "تایید هویت دو مرحله‌ای فعال است"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "حالت دو-گذرواژه‌ای، دو گذرواژه لازم دارد: یکی برای ورود به حساب کاربری شما و یکی برای رمزگشایی صندوق ایمیل شما. (پشرفته)"
+        "حالت دوگذرواژه به دو گذرواژه نیاز دارد: یکی برای ورود به حساب کاربری و دیگری برای رمزگشایی نامه‌دان. (پیشرفته)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "حالت دو-رمزه رمزهای عبور جداگانه برای رمزگشایی ورود و صندوق پستی استفاده میکند. این یک مزیت امنیتی کوچک در بعضی مواقع ارائه میکند، با این حال ما برای بیشتر کاربران حالت تک-رمزه توصیه میکنیم. برای تغییر به حالت دو-رمزه، ابتدا یک-رمزعبور ورودی و سپس یک-رمزعبور صندوق پستی تنظیم کنید."
+        "حالت دو گذرواژه از گذرواژه‌های عبور جداگانه برای رمزگشایی ورود به سیستم و نامه‌دان استفاده می‌کند. این در برخی شرایط یک مزیت امنیتی جزئی فراهم می‌کند، با این حال حالت تک گذرواژه را برای اکثر کاربران پیشنهاد می‌کنیم. برای تغییر حالت دو گذرواژه، ابتدا یک گذرواژه ورود به سیستم تنظیم کنید و سپس یک گذرواژه نامه‌دان تنظیم کنید."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
@@ -2302,10 +2285,10 @@
         "تایید ممکن است چند دقیقه طول بکشد."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "تایید یک زبانه جدید باز خواهد کرد، لطفا هر گونه مسدودکننده پنجره‌های Pop-up را غیرفعال کنید."
+        "تایید یک زبانه جدید باز می‌کند، لطفا هر مسدودکننده پیش‌آ را غیرفعال کنید."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "تایید، یک زبانه جدید باز خواهد کرد، لطفا مسدودکننده پنجره‌های Pop-up را غیرفعال کنید. هیچ هزینه‌ای از شما دریافت نخواهد شد. هر مبلغی که بابت تایید از کارت شما کم شود، بلافاصله بازپرداخت می‌شود."
+        "تایید یک زبانه جدید باز می‌کند، لطفا هر مسدودکننده پیش‌آ را غیرفعال کنید. هزینه‌ای از شما دریافت نمی‌شود. هر مبلغی که برای تایید کارت استفاده شود، بلافاصله بازپرداخت می‌شود."
       ],
       "Verifying your payment": [
         "درحال تایید پرداخت شما"
@@ -2326,10 +2309,10 @@
         "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
+        "ما برای محافظت از پرداخت‌های شما از امنیت 3 بعدی استفاده می‌کنیم."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "برای تکمیل این تراکنش از طریق یک تب جدید در مرورگر به پی‌پال منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
+        "برای تکمیل این تراکنش شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
       ],
       "We'll send a new verification code to ${ strong }": [
         "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
@@ -2368,7 +2351,7 @@
         "شما در حال حاضر به عنوان ${ user.Name } (${ user.Email }) وارد شده‌اید."
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
+        "شما می‌توانید صورت‌حساب‌های خود را برای اهداف حسابداری شخصی‌سازی و بارگیری کنید."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "شما فقط میتوانید یک گفت و گو باز داشته باشید. لطفا قبل شروع گفت و گو جدید، قبلی را ببندید."
@@ -2389,22 +2372,22 @@
         "قبل از تنزیل طرح خود باید کاربران ${ MAIL_APP_NAME }، آدرس ها و دامنه های سفارشی اضافی را حذف یا غیرفعال کنید."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "شما باید یک کارت اعتباری یا حساب بانکی به حساب پی‌پل خود متصل کنید تا امکان استفاده از این روش پرداخت را داشته باشید."
+        "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید تا بتوان آن را به‌عنوان یک روش پرداخت اضافه کنید."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمهٔ زیر کلیک کنید."
+        "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمه زیر کلیک کنید."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "شما باید هر تقویم شخصی دیگر و هر پیوند تقویم به اشتراک گذشتهٔ دیگر را پیش از اینکه بتوانید اشتراک‌تان را لغو کنید حذف کنید."
+        "شما باید هر تقویم شخصی دیگر و هر لینک تقویم به اشتراک گذشته دیگر را پیش از اینکه بتوانید اشتراک ایمیل خود را لغو کنید حذف کنید."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "شما باید هر تقویم شخصی دیگر و هر پیوند تقویم به اشتراک گذشتهٔ دیگر را پیش از اینکه بتوانید اشتراک‌تان را لغو کنید حذف کنید."
+        "شما باید هر تقویم شخصی دیگر و هر لینک تقویم به اشتراک گذشته دیگر را پیش از اینکه بتوانید اشتراکتان را لغو کنید حذف کنید."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "شما به ${ spaceDisplayed }% ظرفیت حافظه خود رسیدید. ${ freeUpMessage } ${ upgradeLink }"
+        "شما به ${ spaceDisplayed }% ظرفیت ذخیره‌سازی خود رسیده‌اید. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "شما به ۱۰۰٪ ظرفیت حافظه خود رسیدید. شما نمیتوانید ایمیلهای جدید دریافت کرده یا بفرستید. ${ freeUpMessage } ${ upgradeLink }"
+        "شما به 100٪ ظرفیت ذخیره‌سازی خود رسیده‌اید. شما نمی‌توانید رایانامه‌های جدیدی ارسال یا دریافت کنید. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "شما در حساب ${ BRAND_NAME } خود ${ loseAllData } خواهید داد. برای بازیابی آن، شما لازم است که گذرواژه قدیمی خود را وارد کنید."
@@ -2413,7 +2396,7 @@
         "به زودی برای تایید پرداخت به بانک خود هدایت می‌شوید."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "شما به زودی جهت تأیید پرداخت خود به پی‌پال منتقل می‌شوید."
+        "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
       ],
       "You'll stay signed in even after you close the browser.": [
         "حتی پس از بستن مرورگر نیز در سیستم باقی خواهید ماند."
@@ -2425,40 +2408,40 @@
         "حساب‌های کاربری ${ VPN_APP_NAME } و ${ MAIL_APP_NAME } شما به یکدیگر متصلند. برای حذف هردوی آنها، لطفا به ${ loginLink } وارد شوید و حساب‌تان را از آنجا حذف کنید."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "حساب شما حداقل یک صورتحساب تاریخ گذشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
+        "حساب شما حداقل یک صورت‌حساب واگذاشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "حساب شما حداقل یک قبض تاریخ گذشته دارد. دسترسی شما به زودی محدود خواهد شد. ${ payInvoiceLink }"
+        "حساب شما حداقل یک صورت‌حساب به تعویق افتاده دارد. دسترسی شما به زودی محدود خواهد شد. ${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "حساب کاربری شما ارتقا یافته است، این ممکن است ۳۰ ثانیه طول بکشد."
+        "حساب شما در حال ارتقا است، ممکن است این کار تا 30 ثانیه طول بکشد."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "حساب شما هنگامیکه پرداخت انجام شد بروزرسانی خواهد شد."
+        "به محض تصفیه حساب، حساب شما بروز می‌شود."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "بانک شما به دلایل امنیتی به تایید امن 3-D نیاز دارد."
+        "بانک شما برای اهداف امنیتی به تایید امن 3 بعدی نیاز دارد."
       ],
       "Your email will only be used for this one-time verification.": [
-        "ایمیل شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
+        "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "از حساب ${ BRAND_NAME } فعلی شما میتوان به تمام سرویس های ${ BRAND_NAME } دسترسی یافت. لطفا با ${ email } وارد شوید."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "اطلاعات پرداخت شما با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت می‌شود."
+        "جزئیات پرداخت‌ شما با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "شماره‌تلفن شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
+        "از شماره تلفن شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
+        "حساب پروتون شما تعلیق شده است. برای ادامه استفاده از حساب خود، لطفا صورت‌حساب‌های معوقه را پرداخت کنید."
       ],
       "Your recovery email address:": [
         "رایانشانی بازیابی شما:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "اشتراک شما توسط Mozilla اداره می شود. لطفا با پشتیبانی Mozilla تماس بگیرید."
+        "اشتراک شما توسط موزیلا مدیریت می‌شود. لطفا با پشتیبانی موزیلا تماس بگیرید."
       ]
     },
     "info": {
@@ -2489,33 +2472,33 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "لطفا برای دریافت دستورالعمل نحوه پرداخت ما به صورت نقدی، با ما از طریق ${ email } تماس بگیرید."
+        "لطفا برای راهنمایی در مورد نحوه پرداخت نقدی از طریق ${ email } با ما تماس بگیرید."
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "شما می‌توانید یک روش پرداخت اضافه کنید تا اشتراک‌تان به طور خودکار تمدید شود. سایر روش‌های پرداخت نیز موجود هستند."
+        "شما می‌توانید یک روش پرداخت اضافه کنید تا اشتراک‌تان به طور خودکار تمدید شود. سایر روش‌های پرداخت نیز موجود است."
       ]
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "نام (یا نام شرکت) و آدرس خود را به صورتحساب‌ها اضافه کنید."
+        "نام (یا نام شرکت) و نشانی خود را به صورت‌حساب‌ها اضافه کنید."
       ]
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "به منظور جلوگیری از هر گونه وقفه در خدمات به دلیل صورتحساب‌های پرداخت‌نشده، لطفا مطمئن شوید که حداقل ۱ شیوه پرداخت معتبر در هر مقطع از زمان ذخیره دارید."
+        "به منظور جلوگیری از هر گونه وقفه در خدمات به دلیل صورت‌حساب‌های پرداخت‌ نشده، لطفا مطمئن شوید که حداقل ۱ شیوه پرداخت معتبر در هر مقطع از زمان ذخیره دارید."
       ]
     },
     "Invoice state display as badge": {
       "Billed": [
-        "قبض"
+        "صورت‌حساب"
       ],
       "Gifted": [
         "هدیه داده شده"
       ],
       "Paid": [
-        "پرداخت شده"
+        "پرداختی"
       ],
       "Unpaid": [
         "پرداخت نشده"
@@ -2526,7 +2509,7 @@
     },
     "Invoice type display as badge": {
       "Addition": [
-        "اضافه‌شده‌ها"
+        "به علاوه"
       ],
       "Cancellation": [
         "لغو"
@@ -2547,7 +2530,7 @@
         "سایر موارد"
       ],
       "Refund": [
-        "بازگشت وجه"
+        "باز پرداخت"
       ],
       "Renewal": [
         "تمدید"
@@ -2568,16 +2551,16 @@
         "${ n } ماه"
       ],
       "Allow recovery by email": [
-        "اجازهٔ بازیابی از طریق ایمیل"
+        "اجازه بازیابی از طریق رایانامه"
       ],
       "Allow recovery by phone": [
-        "اجازهٔ بازیابی از طریق تلفن"
+        "اجازه بازیابی از طریق تلفن"
       ],
       "Amount": [
-        "مقدار"
+        "مبلغ"
       ],
       "Amount due": [
-        "مبلغ پرداختی"
+        "مبلغ قابل پرداخت"
       ],
       "Attach screenshot(s)": [
         "پیوست اسکرین شات(ها)"
@@ -2592,19 +2575,19 @@
         "مسدود کردن بدافزار، تبلیغات و ردیابها"
       ],
       "bonus storage": [
-        "فضای هدیه"
+        "فضای ذخیره‌سازی هدیه"
       ],
       "Browser": [
         "مرورگر"
       ],
       "Browser version": [
-        "نگارش مرورگر"
+        "نسخه مرورگر"
       ],
       "BTC address:": [
-        "آدرس BTC:"
+        "نشانی بیت‌کوین:"
       ],
       "BTC amount:": [
-        "مقدار BTC:"
+        "مبلغ بیت‌کوین:"
       ],
       "Card holder": [
         "صاحب کارت"
@@ -2631,19 +2614,19 @@
         "پیکربندی برای اتصال به ${ serverName }"
       ],
       "Confirm login password": [
-        "تایید گذرواژه ورود"
+        "تایید گذرواژه"
       ],
       "Confirm mailbox password": [
-        "تایید گذرواژه صندوق پستی"
+        "تایید گذرواژه نامه‌دان"
       ],
       "Confirm new password": [
-        "تکرار رمز عبور جدید"
+        "تایید گذرواژه جدید"
       ],
       "Confirm password": [
-        "تکرار رمز عبور"
+        "تایید رمزعبور"
       ],
       "Copy": [
-        "کپی"
+        "روگرفت"
       ],
       "Could you please let us know which provider?": [
         "می‌توانید ارائه دهنده را برای ما تعيين کنید؟"
@@ -2685,7 +2668,7 @@
         "آیا برای تیم ما پیشنهادی دارید؟"
       ],
       "Email address": [
-        "آدرس ایمیل"
+        "رایانشانی"
       ],
       "Email or username": [
         "رایانامه یا نام‌کاربری"
@@ -2700,19 +2683,19 @@
         "تاریخ انقضا"
       ],
       "Expires": [
-        "انقضا"
+        "تاریخ انقضا"
       ],
       "extra storage": [
-        "فضای اضافی"
+        "فضای ذخیره‌سازی اضافی"
       ],
       "Gift code": [
         "کد هدیه"
       ],
       "Hide password": [
-        "پنهان کردن رمز عبور"
+        "پنهان‌سازی گذرواژه"
       ],
       "Interval": [
-        "وقفه"
+        "بازه"
       ],
       "Keep me signed in": [
         "مرا در سیستم نگهدار"
@@ -2724,10 +2707,10 @@
         "سطح فیلتر کردن مسدود کننده NetShield"
       ],
       "Mailbox password": [
-        "رمزعبور صندوق پست"
+        "گذرواژه نامه‌دان"
       ],
       "Moderate NAT": [
-        "تنظیم NAT متوسط"
+        "Moderate NAT"
       ],
       "Name": [
         "نام"
@@ -2736,13 +2719,13 @@
         "نام روی کارت"
       ],
       "New login password": [
-        "رمز عبور جدید"
+        "گذرواژه ورود جدید"
       ],
       "New mailbox password": [
-        "گذرواژه جدید صندوق پستی"
+        "گذرواژه جدید نامه‌دان"
       ],
       "New password": [
-        "رمز عبور جدید"
+        "گذرواژه‌ جدید"
       ],
       "No filter": [
         "بدون فیلتر"
@@ -2751,7 +2734,7 @@
         "درگاه‌های غیر استاندارد"
       ],
       "OpenVPN / IKEv2 password": [
-        "رمز عبور OpenVPN / IKEv2"
+        "گذرواژه OpenVPN / IKEv2"
       ],
       "OpenVPN / IKEv2 username": [
         "نام کاربری OpenVPN / IKEv2"
@@ -2760,16 +2743,16 @@
         "سیستم عامل"
       ],
       "Operating system version": [
-        "نگارش سیستم عامل"
+        "نسخه سیستم عامل"
       ],
       "Optional": [
         "اختیاری"
       ],
       "Other amount": [
-        "سایر مبالغ"
+        "مبلغ دیگر"
       ],
       "Password": [
-        "رمزعبور"
+        "گذرواژه"
       ],
       "Payer": [
         "پرداخت کننده"
@@ -2790,10 +2773,10 @@
         "کد پستی"
       ],
       "Proration": [
-        "آموزش"
+        "کسر"
       ],
       "Proton username": [
-        "نام کاربری پروتن"
+        "نام کاربری پروتون"
       ],
       "Recovery email address": [
         "نشانی ایمیل بازیابی"
@@ -2808,7 +2791,7 @@
         "تکرار گذرواژه"
       ],
       "Reveal password": [
-        "نمایش رمز عبور"
+        "افشای گذرواژه"
       ],
       "Security code": [
         "کد امنیتی"
@@ -2823,40 +2806,40 @@
         "اطلاعات سیستم"
       ],
       "Total (${ countdown })": [
-        "کل (${ countdown })"
+        "مجموع (${ countdown })"
       ],
       "Two-password mode": [
-        "حالت دو-گذرواژه‌ای"
+        "حالت دوگذرواژه"
       ],
       "User's new password": [
-        "رمزعبور جدید کاربر"
+        "گذرواژه جدید کاربر"
       ],
       "Username": [
         "نام کاربری"
       ],
       "Verification code": [
-        "کد تأیید"
+        "کد تایید"
       ],
       "VPN Accelerator": [
         "شتاب دهنده VPN"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "ما از رفتن شما متاسف هستیم. لطفا توضیح دهید که چرا ترک می‌کنید تا به ما در بهتر شدن کمک کنید."
+        "ما متاسفیم که میبینیم شما میروید. لطفاً شرح دهید که چرا ترک میکنید تا به ما در بهتر کردن کمک کنید."
       ],
       "What happened?": [
-        "چی شد؟"
+        "چه اتفاقی افتاد؟"
       ],
       "What is the main reason you are cancelling?": [
-        "دلیل اصلی انصراف دادن شما چیست؟"
+        "دلیل اصلی انصراف شما چیست؟"
       ],
       "What is the main reason you are deleting your account?": [
-        "دلیل اصلی که حساب کاربری‌تان را حذف می‌کنید چیست؟"
+        "دلیل اصلی حذف حساب شما چیست؟"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
-        "بله، من می‌خواهم برای همیشه این حساب کاربری و همه داده‌هایش را حذف کنم."
+        "بلی، من می‌خواهم که برای همیشه این حساب و همه داده‌هایش را حذف کنم."
       ],
       "Your password (admin)": [
-        "رمزعبور شما (مدیر)"
+        "گذرواژه شما (مدیر)"
       ],
       "ZIP code": [
         "کد پستی"
@@ -2869,22 +2852,22 @@
     },
     "Label for news": {
       "Proton beta announcements": [
-        "اطلاعیه‌های بتا پروتون"
+        "اطلاعیه‌های بتا Proton"
       ],
       "Proton company announcements": [
-        "اطلاعیه‌های شرکت پروتون"
+        "اطلاعیه‌های شرکت Proton"
       ],
       "Proton for Business newsletter": [
-        "پروتون برای خبرنامه تجاری"
+        "Proton برای خبرنامه تجاری"
       ],
       "Proton newsletter": [
-        "خبرنامه پروتون"
+        "خبرنامه Proton"
       ],
       "Proton offers and promotions": [
         "پیشنهادات و تبلیغات Proton"
       ],
       "Proton product announcements": [
-        "اطلاعیه‌های محصولات پروتون"
+        "اطلاعیه‌های محصولات Proton"
       ]
     },
     "Label on payment method": {
@@ -2892,15 +2875,15 @@
         "پیش‌فرض"
       ],
       "Expired": [
-        "منقضی شده"
+        "منقضی شد"
       ]
     },
     "Link": {
       "Add a gift code": [
-        "افزودن کد هدیه"
+        "افزودن یک کد هدیه"
       ],
       "clearing your browser cache": [
-        "در حال پاک کردن حافظهٔ نهان مرورگرتان"
+        "در حال پاک‌سازی حافظه نهان مرورگر"
       ],
       "click here": [
         "اینجا کلیک کنید"
@@ -2910,9 +2893,6 @@
       ],
       "Common sign up issues": [
         "مشکلات ثبت‌نام متداول"
-      ],
-      "Create account": [
-        "ایجاد حساب کاربری"
       ],
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
@@ -2924,16 +2904,16 @@
         "کمک می‌خواهید؟"
       ],
       "Not activated": [
-        "فعال نشده"
+        "فعال نیست"
       ],
       "Pay invoice": [
-        "پرداخت صورتحساب"
+        "پرداخت صورت‌حساب"
       ],
       "Privacy policy": [
         "سیاست حفظ حریم خصوصی"
       ],
       "Request an invite": [
-        "درخواست دعوت‌نامه بدهید"
+        "درخواست دعوت‌نامه"
       ],
       "Reset password": [
         "بازنشانی گذرواژه"
@@ -2948,13 +2928,13 @@
         "با وارد شدن مشکلی دارید؟"
       ],
       "Upgrade account": [
-        "ارتقای حساب کاربری"
+        "ارتقای حساب"
       ],
       "View guide": [
         "مشاهده راهنما"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        "تفاوت بین پروتکلهای UDP و TCP چیست؟"
+        "تفاوت پروتکل‌های UDP و TCP در چیست؟"
       ],
       "What’s this?": [
         "این چیست؟"
@@ -3002,7 +2982,7 @@
         "ادامه دادن به بازبینی"
       ],
       "Continue with Free": [
-        "Continue with Free"
+        "ادامه دادن با رایگان"
       ],
       "Delete account": [
         "حذف حساب کاربری"
@@ -3645,7 +3625,7 @@
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
-        "جزئیات ورودی OpenVPN / IKEv2 دوباره تولید شد"
+        "اعتبارنامه‌های OpenVPN / IKEv2 دوباره تولید شد"
       ]
     },
     "Onboarding": {
@@ -3658,7 +3638,7 @@
         "اندروید"
       ],
       "Country configs": [
-        "پیکربندی‌های کشورها"
+        "پیکربندی کشور"
       ],
       "Free server configs": [
         "پیکربندی‌های سرور رایگان"
@@ -3667,22 +3647,22 @@
         "گنو/لینوکس"
       ],
       "I found another service that I like better": [
-        "سرویس دیگری پیدا کردم که آن را ترجیح می‌دهم"
+        "سرویس دیگری پیدا کردم که بهتر می پسندم"
       ],
       "I use a different Proton account": [
-        "من از یک حساب پروتن دیگر استفاده می‌کنم"
+        "من یک حساب Proton دیگر استفاده می‌کنم"
       ],
       "iOS": [
-        "iOS"
+        "آی‌اواس"
       ],
       "It's missing a key feature that I need": [
-        "فاقد یک قابلیت کلیدی که به آن نیاز دارم"
+        "عدم وجود یک ویژگی کلیدی که نیاز دارم"
       ],
       "It's too expensive": [
         "خیلی گران است"
       ],
       "macOS": [
-        "macOS"
+        "سیستم عامل مک"
       ],
       "My reason isn't listed": [
         "دلیل من فهرست نشده است"
@@ -3691,7 +3671,7 @@
         "روتر"
       ],
       "Secure Core configs": [
-        "پیکربندی‌های Secure Core"
+        "پیکربندی‌های هسته امن"
       ],
       "Standard server configs": [
         "پیکربندی‌های سرور استاندارد"
@@ -3731,7 +3711,7 @@
         "تایید"
       ],
       "Email address": [
-        "آدرس ایمیل"
+        "رایانشانی"
       ],
       "Feedback": [
         "بازخورد"
@@ -3743,10 +3723,10 @@
         "سایر موارد"
       ],
       "Password": [
-        "رمزعبور"
+        "گذرواژه"
       ],
       "Please describe the problem and include any error messages": [
-        "لطفاً مشکل را شرح دهید و هر گونه پیغام خطا را ذکر کنید"
+        "لطفا مشکل را شرح دهید و هر گونه پیغام خطا را ذکر کنید"
       ],
       "Postal code": [
         "کد پستی"
@@ -3755,15 +3735,15 @@
         "انتخاب"
       ],
       "Select a reason": [
-        "یک دلیل انتخاب کنید"
+        "دلیلی انتخاب کنید"
       ],
       "ZIP": [
-        "ZIP"
+        "کدپستی"
       ]
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "نام (یا نام شرکت) و آدرس خود را به صورتحساب‌ها اضافه کنید"
+        "نام (یا نام شرکت) و نشانی خود را به صورت‌حساب‌ها اضافه کنید"
       ]
     },
     "plan customizer, users": {
@@ -3811,7 +3791,7 @@
     },
     "Recovery method": {
       "Email": [
-        "رایانامه"
+        "ایمیل"
       ],
       "Phone number": [
         "شماره تلفن"
@@ -3848,15 +3828,10 @@
         "نام نمایشی"
       ],
       "Email": [
-        "رایانامه"
+        "ایمیل"
       ],
       "Username": [
         "نام کاربری"
-      ]
-    },
-    "Signup step": {
-      "Verification": [
-        "تایید"
       ]
     },
     "Spotlight": {
@@ -3875,18 +3850,18 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "در حال تنزیل حساب کاربری شما، لطفاً صبر کنید"
+        "در حال تنزیل حساب شما، لطفاً منتظر بمانید"
       ]
     },
     "Storage": {
       "Release notes": [
-        "تازه‌ها"
+        "یادداشت‌های عرضه"
       ],
       "Upgrade storage": [
-        "ارتقا حافظه"
+        "ارتقا فضای ذخیره‌سازی"
       ],
       "Your current storage:": [
-        "فضای ذخیره‌سازی فعلی شما:"
+        "فضای ذخیره‌سازی کنونی شما:"
       ]
     },
     "Subscription attribute": {
@@ -3984,16 +3959,16 @@
         "اشکال گزارش شد"
       ],
       "Code sent to ${ methodTo }": [
-        "کد ارسال شد به ${ methodTo }"
+        "کد به ${ methodTo } ارسال شد"
       ],
       "Credits added": [
-        "اعتبار اضافه شد"
+        "اعتبارها اضافه شدند"
       ],
       "Email address copied to clipboard": [
-        "رایانامه به حافظه موقت روگرفت شد"
+        "رایانشانی به حافظه موقت روگرفت شد"
       ],
       "Email updated": [
-        "ایمیل تغییر کرد"
+        "رایانامه بروز شد"
       ],
       "Gift code applied": [
         "کد هدیه اعمال شد"
@@ -4005,28 +3980,28 @@
         "اگر یک شماره تلفن بازیابی معتبر وارد کرده‌اید، تا دقایقی دیگر نام کاربری های شما را با پیامکی برای شما ارسال می‌کنیم."
       ],
       "Invoice customized": [
-        "صورتحساب سفارشی شد"
+        "صورت‌حساب سفارشی شد"
       ],
       "Invoice paid": [
-        "صورتحساب پرداخت شد"
+        "صورت‌حساب پرداخت شد"
       ],
       "Locale updated": [
-        "زبان به‌روزرسانی شد"
+        "محلی بروز شد"
       ],
       "Password updated": [
-        "گذرواژه به‌روز شد"
+        "گذرواژه بروز شد"
       ],
       "Payment method added": [
-        "نحوه پرداخت اضافه شد"
+        "شیوه پرداخت اضافه شد"
       ],
       "Payment method deleted": [
-        "نحوه پرداخت حذف شد"
+        "شیوه پرداخت حذف شد"
       ],
       "Payment method updated": [
-        "نحوه پرداخت تغییر کرد"
+        "شیوه پرداخت بروز شد"
       ],
       "Phone number updated": [
-        "شماره تماس به روز شد"
+        "شماره تلفن بروز شد"
       ],
       "Verification successful": [
         "تایید با موفقیت بود"
@@ -4072,7 +4047,7 @@
     },
     "TableHeader": {
       "Action": [
-        "عمل"
+        "اقدام"
       ],
       "City": [
         "شهر"
@@ -4104,19 +4079,19 @@
         "1. نامی به پیکربندی بدهید تا تولید شود"
       ],
       "1. Select platform": [
-        "1. انتخاب پلتفرم"
+        "1. پلت‌فرم را انتخاب کنید"
       ],
       "2. Select platform": [
         "2. پلتفرم را انتخاب کنید"
       ],
       "2. Select protocol": [
-        "2. انتخاب پروتکل"
+        "2. پروتکل را انتخاب کنید"
       ],
       "3-D Secure verification failed": [
-        "تایید امنیت 3-D انجام نشد"
+        "تایید امنیت 3 بعدی انجام نشد"
       ],
       "3. Select config file and download": [
-        "۳. فایل پیکربندی را انتخاب و بارگیری کنید"
+        "3. فایل پیکربندی را انتخاب کرده و بارگیری کنید"
       ],
       "3. Select VPN options": [
         "3. تنظیمات VPN را انتخاب کنید"
@@ -4128,70 +4103,70 @@
         "حساب"
       ],
       "Account suspended": [
-        "حساب تعلیق شده است"
+        "حساب کاربری معلق شده است"
       ],
       "Action": [
         "اقدام"
       ],
       "Add credit/debit card": [
-        "افزودن کارت اعتباری/دبیت"
+        "افزودن کارت اعتباری / نقدی"
       ],
       "Add credits": [
         "افزودن اعتبار"
       ],
       "Add invoice details": [
-        "افزودن جزئیات صورتحساب"
+        "افزودن جزئیات صورت‌حساب"
       ],
       "Add PayPal payment method": [
-        "روش پرداخت PayPal را اضافه کنید"
+        "افزودن روش پرداخت با PayPal"
       ],
       "Amount": [
-        "مقدار"
+        "مبلغ"
       ],
       "Amount due": [
-        "مبلغ پرداختی"
+        "مبلغ قابل پرداخت"
       ],
       "Apply gift code": [
         "اعمال کد هدیه"
       ],
       "Back": [
-        "برگشت"
+        "بازگشت"
       ],
       "Billing": [
         "صورت‌حساب"
       ],
       "Billing cycle": [
-        "دوره صورتحساب"
+        "دوره صورت‌حساب"
       ],
       "Cancel Mail subscription": [
         "لغو اشتراک ایمیل"
       ],
       "Card verification": [
-        "تأیید کارت"
+        "تایید کارت"
       ],
       "Card verification in progress": [
-        "تأیید کارت در حال انجام است"
+        "تایید کارت در حال انجام است"
       ],
       "Change login password": [
-        "تغییر رمز ورود"
+        "گذرواژه ورود را تغییر دهید"
       ],
       "Change mailbox password": [
-        "تغییر رمزعبور صندوق پستی"
+        "تغییر گذرواژه نامه‌دان"
       ],
       "Change password": [
-        "تغییر رمز عبور"
+        "تغییر گذرواژه"
       ],
       "Confirm address": [
-        "تایید آدرس"
+        "تایید نشانی"
       ],
       "Confirm downgrade": [
-        "تأیید تنزیل درجه"
+        "تایید تنزل"
       ],
       "Confirm loss of Proton bonuses": [
-        "فقدان پاداش‌های Proton را تایید کنید"
+        "تایید کاهش پاداش‌های Proton"
       ],
       "Confirm phone number": [
-        "تأیید شماره تلفن"
+        "تایید شماره تلفن"
       ],
       "Congratulations on choosing privacy!": [
         "برای انتخاب حریم خصوصی به شما تبریک میگوییم!"
@@ -4206,13 +4181,13 @@
         "اعتبار"
       ],
       "Currency": [
-        "ارز"
+        "واحد پول"
       ],
       "Customize your plan": [
-        "سفارشی‌سازی طرح خود"
+        "طرح خود را شخصی‌سازی کنید"
       ],
       "Dashboard": [
-        "داشبورد"
+        "پیشخوان"
       ],
       "Date": [
         "تاریخ"
@@ -4233,7 +4208,7 @@
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
       ],
       "Downgrade account": [
-        "اکانت را تنزل دهید"
+        "تنزیل درجه حساب کاربری"
       ],
       "Download ${ VPN_APP_NAME }": [
         "دانلود ${ VPN_APP_NAME }"
@@ -4242,13 +4217,13 @@
         "دانلودها"
       ],
       "Edit credit/debit card": [
-        "ویرایش کارت اعتباری/دبیت"
+        "ویرایش کارت اعتباری/نقدی"
       ],
       "Email": [
-        "رایانامه"
+        "ایمیل"
       ],
       "Email subscriptions": [
-        "اشتراک ایمیل"
+        "اشتراک‌های رایانامه"
       ],
       "Enter your password": [
         "گذرواژه خود را وارد کنید"
@@ -4272,10 +4247,10 @@
         "طرح آزمایشی شما چگونه کار میکند"
       ],
       "Human verification": [
-        "تأیید ربات نبودن"
+        "تشخیص انسان"
       ],
       "Invalid verification code": [
-        "کد تایید نامعتبر"
+        "کد تایید نامعتبر است"
       ],
       "Invoices": [
         "صورت‌حساب‌ها"
@@ -4284,7 +4259,7 @@
         "زبان"
       ],
       "Login password": [
-        "رمز عبور ورود"
+        "گذرواژه ورود"
       ],
       "Network error": [
         "خطای شبکه"
@@ -4296,13 +4271,13 @@
         "هیچ روش بازیابی"
       ],
       "Open actions dropdown": [
-        "باز کردن منوی اقدامات"
+        "بازگشایی منوی اقدامات"
       ],
       "Open help menu": [
-        "باز کردن منوی راهنمایی"
+        "بازگشایی منوی راهنمایی"
       ],
       "Open pagination": [
-        "بازکردن صفحه بندی"
+        "بازگشایی صفحه‌بندی"
       ],
       "OpenVPN / IKEv2 username": [
         "نام کاربری OpenVPN / IKEv2"
@@ -4311,19 +4286,19 @@
         "فایل‌های پیکربندی OpenVPN"
       ],
       "Password": [
-        "رمز عبور"
+        "گذرواژه"
       ],
       "Pay invoice": [
-        "پرداخت صورتحساب"
+        "پرداخت صورت‌حساب"
       ],
       "Payment methods": [
-        "روش‌های پرداخت"
+        "شیوه های پرداخت"
       ],
       "Payment verification": [
-        "تأیید پرداخت"
+        "تایید پرداخت"
       ],
       "Payment verification in progress": [
-        "تأیید پرداخت در حال انجام است"
+        "تایید پرداخت در حال انجام است"
       ],
       "Payments": [
         "پرداخت‌ها"
@@ -4335,13 +4310,13 @@
         "تلفن"
       ],
       "Plan summary": [
-        "خلاصه طرح‌ها"
+        "خلاصه طرح‌"
       ],
       "Plans": [
         "طرح ها"
       ],
       "Previous": [
-        "قبلی"
+        "پیشین"
       ],
       "Processing": [
         "در حال پردازش"
@@ -4377,13 +4352,13 @@
         "ایمیل امن مستقر در سوئیس"
       ],
       "Select a plan": [
-        "انتخاب طرح"
+        "یک طرح انتخاب کنید"
       ],
       "Set new password": [
         "تنظیم گذرواژه جدید"
       ],
       "Set up two-factor authentication": [
-        "فعال‌کردن احراز هویت دو مرحله‌ای"
+        "تنظیم احراز هویت دو مرحله‌ای"
       ],
       "Settings": [
         "تنظیمات"
@@ -4398,10 +4373,10 @@
         "وضعیت"
       ],
       "Switch to one-password mode": [
-        "تغییر به حالت تک-رمزه"
+        "گذر به حالت تک‌گذرواژه"
       ],
       "Switch to two-password mode": [
-        "تغییر به حالت دو-رمزه"
+        "گذر به حالت دوگذرواژه"
       ],
       "This address might compromise your privacy.": [
         "این نشانی ممکن است حریم شما را تهدید کند."
@@ -4434,7 +4409,7 @@
         "هشدار!"
       ],
       "What's new": [
-        "تازه ها چیست"
+        "تغییرات جدید"
       ],
       "WireGuard configuration": [
         "تنظیمات WireGuard"
@@ -4446,7 +4421,7 @@
         "آدرس ${ MAIL_APP_NAME } شما"
       ],
       "Your current plan": [
-        "طرح جاری شما"
+        "طرح کنونی شما"
       ],
       "Your plan": [
         "طرح شما"
@@ -4460,7 +4435,7 @@
     },
     "Title for payment methods table": {
       "Actions": [
-        "عملیات"
+        "اقدامات"
       ],
       "Method": [
         "روش"
@@ -4495,13 +4470,13 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
-        "گذرواژه باید حداقل شامل ${ length } نویسه باشد"
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد"
       ]
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HB0 Now, و موارد بیشتر."
+        "نت فلیکس، آمازون پرایم ویدئو، BBC iPlayer, ESPN+، Disney+، HBO Now و بیشتر."
       ]
     },
     "VPN Plan Feature": {
@@ -4523,19 +4498,19 @@
         "اندروید"
       ],
       "Android TV": [
-        "Android TV"
+        "اندروید تی وی"
       ],
       "Chromebook": [
-        "ChromeBook"
+        "کروم بوک"
       ],
       "GNU/Linux": [
         "گنو/لینوکس"
       ],
       "iOS": [
-        "iOS"
+        "آی‌اواس"
       ],
       "macOS": [
-        "macOS"
+        "سیستم عامل مک"
       ],
       "Windows": [
         "ویندوز"
@@ -4543,31 +4518,31 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "مطمئن هستید که می‌خواهید آدرس را حذف کنید؟"
+        "آیا مطمئن هستید که می‌خواهید نشانی را حذف کنید؟"
       ],
       "Are you sure you want to delete the phone number?": [
         "آیا مطمئن هستید که می‌خواهید شماره تماس را حذف کنید؟"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "با حذف این آدرس، دیگر نمی‌توانید اعلان‌های ایمیل روزانه را دریافت کنید."
+        "با حذف این نشانی، دیگر نمی‌توانید اعلان‌های رایانامه روزانه را دریافت کنید."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "با حذف این آدرس، دیگر نمی‌توانید حساب خود را بازیابی کنید یا اعلان‌های ایمیل روزانه را دریافت کنید."
+        "با حذف این نشانی، دیگر قادر به بازیابی حساب خود یا دریافت اعلان‌های رایانامه روزانه نخواهید بود."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "با حذف این آدرس، دیگر نمی‌توانید حساب خود را بازیابی کنید."
+        "با حذف این نشانی، دیگر قادر به بازیابی حساب خود نخواهید بود."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "با پاک کردن این شماره همراه، شما دیگر قادر به بازیابی حساب خود نخواهید بود."
+        "با حذف این شماره تلفن، شما دیگر قادر به بازیابی حساب خود نخواهید بود."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "گفتگو زنده یک ویژگی پریمیوم است که فقط دراختیار کسانی که طرح خریدنی ${ VPN_APP_NAME } را دارند است. لطفا در عوض یک تیکت ایجاد کنید."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "لطفا توجه کنید که با انتخاب این روش پرداخت، حساب شما نمیتواند بلافاصله ارتقا یابد. ما حساب شما را زمانیکه پرداخت شما صاف شد، به روز خواهیم کرد."
+        "لطفا توجه داشته باشید که با انتخاب این روش پرداخت، حساب شما نمی‌‌توانید بلافاصله ارتقا داده شود. زمانی که پرداخت وصول شد، حساب شما را بروز رسانی می‌کنیم."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "گزارش‌ها سرتاسر رمزگذاری شده نیستند، لطفاً هیچ اطلاعات حساسی ارسال نکنید."
+        "گزارش‌ها رمزنگاری سرتاسری نیستند، لطفا هیچ اطلاعات حساسی ارسال نکنید."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "تنظیمات تاریخ و ساعت دستگاه شما همگام سازی نشده است. ${ learnMore }"

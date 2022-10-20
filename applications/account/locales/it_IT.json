@@ -49,7 +49,7 @@
         "Aggiungi un Account ${ BRAND_NAME }"
       ],
       "Add address": [
-        "Aggiungi indirizzi"
+        "Aggiungi indirizzo"
       ],
       "Add calendar": [
         "Aggiungi calendario"
@@ -244,7 +244,7 @@
         "Elimina collegamento"
       ],
       "Delete permanently": [
-        "Elimina definitivamente"
+        "Elimina permanentemente"
       ],
       "Delete record": [
         "Elimina record"
@@ -274,7 +274,7 @@
         "Disabilitare frase di recupero?"
       ],
       "Discard": [
-        "Scarta"
+        "Elimina"
       ],
       "Don't show again": [
         "Non mostrare nuovamente"
@@ -472,7 +472,7 @@
         "sposta l'email in"
       ],
       "Need help?": [
-        "Ha bisogno di aiuto?"
+        "Hai bisogno di aiuto?"
       ],
       "Next": [
         "Successiva"
@@ -538,7 +538,7 @@
         "Recupera dati"
       ],
       "Refer a friend": [
-        "Segnala un amico"
+        "Invita un amico"
       ],
       "Refresh status": [
         "Aggiorna stato"
@@ -655,7 +655,7 @@
         "Cerca"
       ],
       "Search countries": [
-        "Cerca paesi"
+        "Cerca tra i paesi"
       ],
       "Search settings": [
         "Impostazioni di ricerca"
@@ -835,7 +835,7 @@
         "Verifica email"
       ],
       "View": [
-        "Vedi"
+        "Visualizza"
       ],
       "View invoice": [
         "Visualizza fattura"
@@ -1072,11 +1072,6 @@
         "Due anni"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offerta Speciale"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Calendari"
@@ -1134,10 +1129,10 @@
         "Problema di accesso"
       ],
       "Sign up problem": [
-        "Problema di iscrizione"
+        "Problema di registrazione"
       ],
       "Signup problem": [
-        "Problema di iscrizione"
+        "Problema di registrazione"
       ],
       "Slow speed problem": [
         "Problema di bassa velocità"
@@ -1632,7 +1627,7 @@
         "Email"
       ],
       "Gender": [
-        "Genere"
+        "Sesso"
       ],
       "Geo": [
         "Geo"
@@ -1925,7 +1920,7 @@
         "Estonia"
       ],
       "Eswatini": [
-        "Eswatini"
+        "eSwatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -2530,7 +2525,7 @@
         "Giornalmente"
       ],
       "Daily, ${ timesString }": [
-        "Giornalmente, ${ timesString }"
+        "Giornaliero, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "Giornaliero, ${ untilString }"
@@ -2548,7 +2543,7 @@
         "Ogni ${ interval } giorni, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "fino al ${ dateString }"
+        "fino a ${ dateString }"
       ]
     },
     "Day": {
@@ -2607,6 +2602,10 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
+        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
+      ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Tieni traccia di quante persone fanno clic sul tuo link, si iscrivono e diventano abbonati a pagamento. Guarda i tuoi mesi gratuiti sommarsi."
       ],
@@ -2642,11 +2641,17 @@
       "${ name } deletion failed": [
         "eliminazione di ${ name } non riuscita"
       ],
+      "${ name } failed to move to not spam List": [
+        "spostamento di ${ name } nella lista dei non spam non riuscito"
+      ],
       "${ name } failed to move to spam list": [
         "Spostamento di ${ name } nella lista di mittenti spam fallito"
       ],
       "${ name } failed to move to your block list": [
         "Spostamento di ${ name } nella lista mittenti bloccati fallito"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } spostato nella lista dei non spam"
       ],
       "${ name } moved to spam list": [
         "Spostamento di ${ name } nella lista spam effettuato"
@@ -2753,11 +2758,17 @@
       "${ name } deletion failed": [
         "eliminazione di ${ name } non riuscita"
       ],
+      "${ name } failed to move to not spam List": [
+        "spostamento di ${ name } nella lista dei non spam non riuscito"
+      ],
       "${ name } failed to move to spam list": [
         "Spostamento di ${ name } nella lista di mittenti spam fallito"
       ],
       "${ name } failed to move to your block list": [
         "Spostamento di ${ name } nella lista mittenti bloccati fallito"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } spostato nella lista dei non spam"
       ],
       "${ name } moved to spam list": [
         "Spostamento di ${ name } nella lista spam effettuato"
@@ -2869,7 +2880,7 @@
         "Deseleziona almeno ${ calendarToFixCount } calendari o"
       ],
       "Domain not available, try again later": [
-        "Dominio non disponibile, riprova più tardi"
+        "Dominio non disponibile, riprovare più tardi"
       ],
       "Email address disabled": [
         "Indirizzo email disabilitato"
@@ -3091,7 +3102,7 @@
         "Firma non verificata"
       ],
       "Signature verification failed": [
-        "Verifica della firma non riuscita"
+        "Verifica della firma fallita"
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue cartelle sono riservati. Si prega di personalizzare l'importazione per evitare questi nomi."
@@ -3334,7 +3345,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Criptaggio fallito"
+        "Crittografia fallita"
       ],
       "End time out of bounds": [
         "Ora di fine fuori dai limiti"
@@ -3440,7 +3451,7 @@
         "Per favore ${ refresh } o controlla la tua connessione."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Tieniti forte finché non risolviamo l'errore."
+        "Qualcosa è andato storto. Aggiorna la pagina o riprova più tardi."
       ],
       "There was a problem connecting to Proton.": [
         "Si è verificato un problema di connessione a Proton."
@@ -3536,7 +3547,7 @@
         "La tua risposta è stata inviata, ma l'evento non può essere aggiunto al tuo calendario"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "La tua risposta è stata inviata ma l'evento non può essere aggiornato nel tuo calendario"
+        "La tua risposta è stata inviata, ma non è stato possibile aggiornare l'evento nel tuo calendario"
       ]
     },
     "Event title": {
@@ -3961,7 +3972,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Posta elettronica"
+        "Email"
       ],
       "Manual": [
         "Manuale"
@@ -4842,7 +4853,7 @@
         "Personalizzato annuale"
       ],
       "Daily": [
-        "Giornaliero"
+        "Giornalmente"
       ],
       "Data locked": [
         "Dati bloccati"
@@ -4894,10 +4905,10 @@
         "Scarica le chiavi PGP da usare con altri servizi compatibili con PGP."
       ],
       "Drop a file here to upload": [
-        "Trascina un file qui per caricarlo"
+        "Trascini un file qui per caricarlo"
       ],
       "Drop the file here to upload": [
-        "Trascina il file qui per caricarlo"
+        "Trascina qui il file per caricare"
       ],
       "Each code can only be used once": [
         "Ogni codice può essere utilizzato una sola volta"
@@ -5394,7 +5405,7 @@
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
       ],
       "Please fill out this field.": [
-        "Compila questo campo."
+        "Prego, compilare questo campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Per favore, tienilo al sicuro. Ti servirà per accedere al tuo account e decrittografare i tuoi dati in caso di reimpostazione della password."
@@ -5535,7 +5546,7 @@
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Inviato con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> email sicura."
+        "Inviato con l'email sicura di <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Il server è attualmente offline"
@@ -5968,6 +5979,10 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "È possibile utilizzare le seguenti credenziali per connettersi a un server ${ VPN_APP_NAME } utilizzando un'app VPN open source di terze parti, come Tunnelblick per macOS o OpenVPN per GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Non puoi inviare più di ${ emailSendLimitNumber } invito email per le prossime 24 ore",
+        "Non puoi inviare più di ${ emailSendLimitNumber } inviti email per le prossime 24 ore"
+      ],
       "You cannot refer ${ appName } users": [
         "Non puoi fare riferimento a utenti ${ appName }"
       ],
@@ -6047,7 +6062,7 @@
         "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Il tuo account ha al meno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
+        "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -6438,7 +6453,7 @@
         "Salva la bozza"
       ],
       "Search": [
-        "Ricerca"
+        "Cerca"
       ],
       "Select / unselect": [
         "Seleziona / deseleziona"
@@ -6746,7 +6761,7 @@
         "Conferma la password dell'organizzazione"
       ],
       "Confirm password": [
-        "Confermare password"
+        "Conferma password"
       ],
       "Contacts": [
         "Contatti"
@@ -6917,7 +6932,7 @@
         "Ecco un record DMARC di base che non fa nulla tranne che inviarti per email i report."
       ],
       "Hide password": [
-        "Nascondi password"
+        "Nascondi la password"
       ],
       "I understand the risk": [
         "Comprendo i rischi"
@@ -6998,7 +7013,7 @@
         "Gestione delle categorie"
       ],
       "Manage folders": [
-        "Gestisci le cartelle"
+        "Gestisci cartelle"
       ],
       "Manage labels": [
         "Gestisci le etichette"
@@ -7160,7 +7175,7 @@
         "Ripeti la password"
       ],
       "Reveal password": [
-        "Mostra password"
+        "Mostra la password"
       ],
       "Security code": [
         "Codice di sicurezza"
@@ -7196,7 +7211,7 @@
         "Spam"
       ],
       "Starred": [
-        "Preferito"
+        "Preferiti"
       ],
       "Start date": [
         "Data d'inizio"
@@ -7496,7 +7511,7 @@
         "Calendari"
       ],
       "clearing your browser cache": [
-        "cancellare la cache del browser"
+        "pulendo la cache del browser"
       ],
       "click here": [
         "clicca qui"
@@ -7538,10 +7553,10 @@
         "Non attivato"
       ],
       "Pay invoice": [
-        "Paga fattura"
+        "Pagamento della fattura"
       ],
       "Privacy policy": [
-        "Politica sulla riservatezza"
+        "Informativa sulla privacy"
       ],
       "Request an invite": [
         "Richiedi un invito"
@@ -7671,7 +7686,7 @@
         "Collega il tuo dominio personalizzato a ${ BRAND_NAME } per impostare indirizzi email personalizzati (ad es. tu@tuaazienda.com). La nostra procedura guidata ti guiderà attraverso il processo."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "La tua prova gratuita è terminata. L'accesso al tuo account sarà presto disabilitato. ${ action }"
+        "La tua prova gratuita è terminata. L'accesso al tuo profilo sarà presto disabilitato. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7741,15 +7756,15 @@
         "Mensile ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensilmente ${ onDayString }, ${ timesString }"
+        "Mensile ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensilmente ${ onDayString }, ${ untilString }"
+        "Mensile ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
-        "il giorno ${ dayOfMonth }"
+        "al giorno ${ dayOfMonth }"
       ],
       "on the first Friday": [
         "il primo Venerdì"
@@ -9011,7 +9026,7 @@
         "Conferma"
       ],
       "Confirm password": [
-        "Conferma password"
+        "Confermare password"
       ],
       "domain.com": [
         "dominio.com"
@@ -9020,7 +9035,7 @@
         "Ad es "
       ],
       "Email address": [
-        "Indirizzo di posta elettronica"
+        "Indirizzo email"
       ],
       "example@domain.com": [
         "esempio@dominio.com"
@@ -9123,7 +9138,7 @@
         "Indirizzo"
       ],
       "Email": [
-        "Email"
+        "Posta elettronica"
       ],
       "Fax": [
         "Fax"
@@ -9417,7 +9432,7 @@
         "Ricevi fino a 18 mesi di ${ planName } gratuitamente"
       ],
       "Invite friends and earn rewards!": [
-        "Invita gli amici e guadagna ricompense!"
+        "Invita gli amici e ottieni ricompense!"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
@@ -9881,7 +9896,7 @@
     },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
-        "${ appName } Tasti scorciatoie"
+        "${ appName } Scorciatoie da tastiera"
       ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
@@ -10396,7 +10411,7 @@
         "Nessun metodo di recupero"
       ],
       "Open actions dropdown": [
-        "Apri menu delle azioni a cascata"
+        "Apri menu a discesa delle azioni"
       ],
       "Open help menu": [
         "Apri menu di aiuto"
@@ -10679,7 +10694,7 @@
         "Il tuo piano attuale"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "La tua prova gratuita termina presto, il ${ formattedEndDate }"
+        "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"
       ],
       "Your import history": [
         "Storico delle tue importazioni"
@@ -10871,6 +10886,9 @@
       ],
       "This key is encrypted with an old password": [
         "Questa chiave è stata crittografata con una vecchia password"
+      ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Questa chiave viene utilizzata da ${ MAIL_APP_NAME } per crittografare i dati del tuo contatto"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Abbiamo rilevato un problema con la tua configurazione DNS. Assicurati che i tuoi record corrispondano alle istruzioni qui sotto. Se il problema persiste, dovremo cambiare la firma della DKIM."
@@ -11126,193 +11144,193 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Ogni ${ interval } settimana il ${ multipleDaysString }",
-        "Ogni ${ interval } settimane il ${ multipleDaysString }"
+        "Ogni ${ interval } settimana di ${ multipleDaysString }",
+        "Ogni ${ interval } settimane di ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Ogni ${ interval } settimana il ${ multipleDaysString }, ${ timesString }",
-        "Ogni ${ interval } settimane il ${ multipleDaysString }, ${ timesString }"
+        "Ogni ${ interval } settimana di ${ multipleDaysString }, ${ timesString }",
+        "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Ogni ${ interval } settimana il ${ multipleDaysString }, ${ untilString }",
+        "Ogni ${ interval } settimana di ${ multipleDaysString }, ${ untilString }",
         "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Ogni ${ interval } settimana tutti i giorni",
+        "Ogni ${ interval } settimana, tutti i giorni",
         "Ogni ${ interval } settimane, tutti i giorni"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Ogni ${ interval } settimana tutti i giorni, ${ timesString }",
-        "Ogni ${ interval } settimane tutti i giorni, ${ timesString }"
+        "Ogni ${ interval } settimana, tutti i giorni, ${ timesString }",
+        "Ogni ${ interval } settimane, tutti i giorni, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Ogni ${ interval } settimana, tutti i giorni, ${ untilString }",
         "Ogni ${ interval } settimane tutti i giorni, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Ogni ${ interval } settimana il Venerdì",
-        "Ogni ${ interval } settimane di Venerdì"
+        "Il venerdì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di venerdì"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Venerdì, ${ timesString }",
-        "Ogni ${ interval } settimane di Venerdì, ${ timesString }"
+        "Ogni ${ interval } settimana di venerdì, ${ timesString }",
+        "Ogni ${ interval } settimane di venerdì, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Venerdì, ${ untilString }",
-        "Ogni ${ interval } settimane di Venerdì, ${ untilString }"
+        "Ogni ${ interval } settimana di venerdì, ${ untilString }",
+        "Ogni ${ interval } settimane di venerdì, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Ogni ${ interval } settimana il Lunedì",
-        "Ogni ${ interval } settimane di Lunedì"
+        "Il lunedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di lunedì"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Lunedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Lunedì, ${ timesString }"
+        "Ogni ${ interval } settimana di lunedì, ${ timesString }",
+        "Ogni ${ interval } settimane di lunedì, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Lunedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Lunedì, ${ untilString }"
+        "Ogni ${ interval } settimana di lunedì, ${ untilString }",
+        "Ogni ${ interval } settimane di lunedì, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Ogni ${ interval } settimana il Sabato",
-        "Ogni ${ interval } settimane di Sabato"
+        "Il sabato di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di sabato"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Sabato, ${ timesString }",
-        "Ogni ${ interval } settimane di Sabato, ${ timesString }"
+        "Ogni ${ interval } settimana di sabato, ${ timesString }",
+        "Ogni ${ interval } settimane di sabato, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Sabato, ${ untilString }",
-        "Ogni ${ interval } settimane di Sabato, ${ untilString }"
+        "Ogni ${ interval } settimana di sabato, ${ untilString }",
+        "Ogni ${ interval } settimane di sabato, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Ogni ${ interval } settimana la Domenica",
-        "Ogni ${ interval } settimane di Domenica"
+        "La domenica di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di domenica"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Domenica, ${ timesString }",
-        "Ogni ${ interval } settimane di Domenica, ${ timesString }"
+        "Ogni ${ interval } settimana di domenica, ${ timesString }",
+        "Ogni ${ interval } settimane di domenica, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Ogni ${ interval } settimana la Domenica, ${ untilString }",
-        "Ogni ${ interval } settimane la Domenica, ${ untilString }"
+        "Ogni ${ interval } settimana di domenica, ${ untilString }",
+        "Ogni ${ interval } settimane di domenica, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Ogni ${ interval } settimana il Giovedì",
-        "Ogni ${ interval } settimane il Giovedì"
+        "Il giovedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di giovedì"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Giovedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Giovedì, ${ timesString }"
+        "Ogni ${ interval } settimana di giovedì, ${ timesString }",
+        "Ogni ${ interval } settimane di giovedì, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Giovedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Giovedì, ${ untilString }"
+        "Ogni ${ interval } settimana di giovedì, ${ untilString }",
+        "Ogni ${ interval } settimane di giovedì, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Ogni ${ interval } settimana il Martedì",
-        "Ogni ${ interval } settimane il Martedì"
+        "Il martedì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di martedì"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Martedì, ${ timesString }",
-        "Ogni ${ interval } settimane di Martedì, ${ timesString }"
+        "Ogni ${ interval } settimana di martedì, ${ timesString }",
+        "Ogni ${ interval } settimane di martedì, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Martedì, ${ untilString }",
-        "Ogni ${ interval } settimane di Martedì, ${ untilString }"
+        "Ogni ${ interval } settimana di martedì, ${ untilString }",
+        "Ogni ${ interval } settimane di martedì, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Ogni ${ interval } settimana il Mercoledì",
-        "Ogni ${ interval } settimane il Mercoledì"
+        "Il mercoledì di ogni ${ interval } settimana",
+        "Ogni ${ interval } settimane di mercoledì"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Ogni ${ interval } settimana di Mercoledì, ${ timesString }",
-        "Ogni ${ interval } settimane di Mercoledì, ${ timesString }"
+        "Ogni ${ interval } settimana di mercoledì, ${ timesString }",
+        "Ogni ${ interval } settimane di mercoledì, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Ogni ${ interval } settimana di Mercoledì, ${ untilString }",
-        "Ogni ${ interval } settimane di Mercoledì, ${ untilString }"
+        "Ogni ${ interval } settimana di mercoledì, ${ untilString }",
+        "Ogni ${ interval } settimane di mercoledì, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Settimanalmente il ${ multipleDaysString }"
+        "Settimanale su ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Settimanalmente il ${ multipleDaysString }, ${ timesString }"
+        "Settimanale su ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Settimanalmente il ${ multipleDaysString }, ${ untilString }"
+        "Settimanale su ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Settimanale su tutti i giorni"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Settimanalmente tutti i giorni, ${ timesString }"
+        "Settimanale su tutti i giorni, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Settimanalmente tutti i giorni, ${ untilString }"
+        "Settimanale in tutti i giorni, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Settimanalmente il Venerdì"
+        "Settimanale il Venerdì"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Settimanalmente il Venerdì, ${ timesString }"
+        "Settimanale il venerdì, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Settimanalmente il Venerdì, ${ untilString }"
+        "Settimanale il venerdì, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Settimanale il lunedì"
+        "Settimanale il Lunedì"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Settimanalmente il Lunedì, ${ timesString }"
+        "Settimanale il lunedì, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Settimanalmente il Lunedì, ${ untilString }"
+        "Settimanale il lunedì, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Settimanalmente il Sabato"
+        "Settimanale il Sabato"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Settimanalmente il Sabato, ${ timesString }"
+        "Settimanale il sabato, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Settimanalmente il Sabato, ${ untilString }"
+        "Settimanale il sabato, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Settimanale la domenica"
+        "Settimanale la Domenica"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Settimanalmente la Domenica, ${ timesString }"
+        "Settimanale di domenica, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Settimanalmente la Domenica, ${ untilString }"
+        "Settimanale la domenica, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Settimanalmente il Giovedì"
+        "Settimanale il Giovedì"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Settimanalmente il Giovedì, ${ timesString }"
+        "Settimanale il giovedì, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Settimanalmente il Giovedì, ${ untilString }"
+        "Settimanale il giovedì, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Settimanalmente il Martedì"
+        "Settimanale il Martedì"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Settimanalmente il Martedì, ${ timesString }"
+        "Settimanale il martedì, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Settimanalmente il Martedì, ${ untilString }"
+        "Settimanale il martedì, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Settimanalmente il Mercoledì"
+        "Settimanale il Mercoledì"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Settimanalmente il Mercoledì, ${ timesString }"
+        "Settimanale il mercoledì, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Settimanalmente il Mercoledì, ${ untilString }"
+        "Settimanale il mercoledì, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -11341,7 +11359,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Ogni ${ interval } anno, ${ timesString }",

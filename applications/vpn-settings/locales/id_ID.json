@@ -18,10 +18,10 @@
         "Aktifkan metode pemulihan"
       ],
       "Add credit / debit card": [
-        "Tambah kartu kredit / debit"
+        "Tambahkan kartu kredit / debit"
       ],
       "Add credits": [
-        "Tambahkan kredit"
+        "Tambah saldo"
       ],
       "Add PayPal": [
         "Tambahkan PayPal"
@@ -90,10 +90,10 @@
         "Paket saat ini"
       ],
       "Customize": [
-        "Sesuaikan"
+        "Atur"
       ],
       "Customize plan": [
-        "Sesuaikan paket"
+        "Atur paket"
       ],
       "Decrease": [
         "Kurangi"
@@ -129,7 +129,7 @@
         "Unduh"
       ],
       "Download all configurations": [
-        "Unduh semua konfigurasi"
+        "Unduh seluruh konfigurasi"
       ],
       "Edit": [
         "Sunting"
@@ -138,10 +138,10 @@
         "Sunting rincian tagihan"
       ],
       "Edit email address": [
-        "Edit alamat surel"
+        "Ubah alamat email"
       ],
       "Edit phone number": [
-        "Edit nomor telepon"
+        "Ubah nomor telepon"
       ],
       "Edit sign-in details": [
         "Sunting rincian masuk"
@@ -150,7 +150,7 @@
         "Sunting jenis langganan"
       ],
       "enable desktop notifications": [
-        "mengaktifkan pemberitahuan desktop"
+        "mengaktifkan notifikasi desktop"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Telusuri paket ${ BRAND_NAME } lainnya"
@@ -165,13 +165,13 @@
         "Dapatkan kode verifikasi"
       ],
       "Go to sign in": [
-        "Tuju halaman masuk"
+        "Tuju layar masuk"
       ],
       "Hide": [
         "Sembunyikan"
       ],
       "I have a question": [
-        "Saya punya pertanyaan"
+        "Saya memiliki pertanyaan"
       ],
       "Increase": [
         "Tingkatkan"
@@ -225,10 +225,10 @@
         "Rujuk teman"
       ],
       "Refresh the page": [
-        "Segarkan halaman"
+        "Muat ulang halaman"
       ],
       "refresh the page": [
-        "segarkan halaman"
+        "muat ulang halaman"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -291,10 +291,10 @@
         "Tentukan frasa pemulihan"
       ],
       "Share via link": [
-        "Bagikan via tautan"
+        "Bagikan melalui tautan"
       ],
       "Sharing options": [
-        "Pilihan berbagi"
+        "Opsi berbagi"
       ],
       "Show": [
         "Tampilkan"
@@ -309,7 +309,7 @@
         "Keluar"
       ],
       "Signing in": [
-        "Mencoba masuk"
+        "Masuk"
       ],
       "Signing out": [
         "Keluar"
@@ -330,7 +330,7 @@
         "Coba metode lain"
       ],
       "Unlock": [
-        "Buka kunci"
+        "Membuka"
       ],
       "Unlock data": [
         "Buka kunci data"
@@ -366,7 +366,7 @@
         "Pengguna"
       ],
       "Verify": [
-        "Verifikasikan"
+        "Verifikasi"
       ],
       "Verify account": [
         "Verifikasi akun"
@@ -414,33 +414,33 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
+      "+ ${ _users } users": [
         "+ ${ _users } pengguna"
       ],
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } domain kustom"
+      "+ ${ domains } custom domains": [
+        "+ ${ domains } domain khusus"
       ]
     },
     "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
+      "${ addressAddon.MaxAddresses } addresses": [
         "${ addressAddon.MaxAddresses } alamat"
       ],
-      "${ domainAddon.MaxDomains } domain": [
+      "${ domainAddon.MaxDomains } domains": [
         "${ domainAddon.MaxDomains } domain"
       ],
-      "${ memberAddon.MaxMembers } user": [
+      "${ memberAddon.MaxMembers } users": [
         "${ memberAddon.MaxMembers } pengguna"
       ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } sambungan"
+      "${ vpnAddon.MaxVPN } connections": [
+        "${ vpnAddon.MaxVPN } koneksi"
       ],
-      "${ vpnBonus } connection": [
+      "${ vpnBonus } connections": [
         "${ vpnBonus } koneksi"
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "Ini akan memutuskan semua sambungan router dan klien yang menggunakan sertifikat ini."
+        "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
       ]
     },
     "Apps dropdown": {
@@ -485,11 +485,6 @@
       ],
       "Two-year": [
         "Dua tahun"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Penawaran Spesial"
       ]
     },
     "Bug category": {
@@ -545,16 +540,16 @@
         "Masalah pendaftaran"
       ],
       "Slow speed problem": [
-        "Masalah kecepatan lambat"
+        "Masalah kecepatan"
       ],
       "Speed problem": [
         "Masalah kecepatan"
       ],
       "Streaming problem": [
-        "Masalah pengaliran"
+        "Masalah pemutaran konten"
       ],
       "Update problem": [
-        "Masalah pemutakhiran"
+        "Masalah pembaruan aplikasi"
       ],
       "VPN problem": [
         "Masalah VPN"
@@ -569,10 +564,10 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
+      "${ users } users": [
         "${ users } pengguna"
       ],
-      "Total for ${ n } month": [
+      "Total for ${ n } months": [
         "Total untuk ${ n } bulan"
       ]
     },
@@ -648,7 +643,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Anda yakin menghapus metode pembayaran ini?"
+        "Apakah Anda yakin untuk menghapus metode pembayaran ini?"
       ]
     },
     "Confirmation title": {
@@ -657,10 +652,10 @@
       ]
     },
     "Countdown unit": {
-      "${ days } day": [
+      "${ days } days": [
         "${ days } hari"
       ],
-      "${ monthsWithYears } month": [
+      "${ monthsWithYears } months": [
         "${ monthsWithYears } bulan"
       ]
     },
@@ -1443,7 +1438,7 @@
     },
     "Credits": {
       "Unused credits": [
-        "Kredit yang tidak digunakan"
+        "Saldo yang belum digunakan"
       ]
     },
     "Cycle": {
@@ -1467,10 +1462,10 @@
         "Saya menggunakan akun Proton lain"
       ],
       "Missing feature(s)": [
-        "Terdapat fitur-fitur yang hilang"
+        "Terdapat fitur yang hilang"
       ],
       "My reason isn't listed, please comment": [
-        "Lainnya (harap jelaskan)"
+        "Lainnya (harap berikan komentar)"
       ],
       "Streaming service unsupported": [
         "Layanan streaming yang saya gunakan tidak didukung"
@@ -1492,10 +1487,10 @@
     },
     "Error": {
       "Amount above the maximum.": [
-        "Jumlah di atas maksimal."
+        "Jumlah di atas maksimum."
       ],
       "Amount below minimum.": [
-        "Jumlah di bawah minimal."
+        "Jumlah di bawah minimum."
       ],
       "Can't check username, try again later": [
         "Tidak dapat memeriksa nama pengguna, coba lagi nanti"
@@ -1510,10 +1505,10 @@
         "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email is not valid": [
-        "Surel tidak valid"
+        "Email tidak valid"
       ],
       "Enter 6 digits": [
-        "Masukan 6 digit"
+        "Masukkan 6 digit"
       ],
       "Error connecting to the Bitcoin API.": [
         "Gagal sambung ke API Bitcoin."
@@ -1525,7 +1520,7 @@
         "Kredensial masuk salah. Silakan coba lagi."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Kata sandi kotak surat salah. Silakan coba lagi."
+        "Kata sandi kotak pesan salah. Silakan coba lagi."
       ],
       "Invalid ${ name } code": [
         "Kode ${ name } tidak valid"
@@ -1552,13 +1547,13 @@
         "Wajib isi nama di kartu"
       ],
       "Not a valid number": [
-        "Bukan nomor yang valid"
+        "Nomor telepon tidak valid"
       ],
       "Organization not recognized. Try again.": [
         "Organisasi tidak dikenal. Silakan coba lagi."
       ],
       "Passwords do not match": [
-        "Sandi tidak sama"
+        "Kata sandi tidak cocok"
       ],
       "Payment process cancelled": [
         "Proses pembayaran dibatalkan"
@@ -1582,7 +1577,7 @@
         "Harap tentukan alamat email pemulihan terlebih dahulu"
       ],
       "Please set a recovery phone number first": [
-        "Harap setel nomor telepon pemulihan terlebih dahulu"
+        "Harap atur nomor telepon pemulihan terlebih dahulu"
       ],
       "Process aborted": [
         "Proses dibatalkan"
@@ -1594,16 +1589,16 @@
         "Verifikasi tanda tangan gagal"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ada yang salah, mohon ${ refresh } untuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini silahkan hubungi ${ supportTeam } kami."
+        "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
       ],
       "Tab closed": [
         "Tab ditutup"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
+        "Browser Anda tidak mengizinkan pembayaran yang ada untuk dapat diotorisir sepenuhnya. Mohon gunakan browser lain atau masuk via komputer."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "Tambahan kredit minimal ${ _price }"
+        "Jumlah saldo minimal yang dapat ditambahkan adalah ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Sumbangan minimal ${ price }"
@@ -1612,13 +1607,13 @@
         "Pembayaran minimal ${ _price2 }"
       ],
       "This field is required": [
-        "Bagian ini wajib isi"
+        "Kolom ini wajib diisi"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini membutuhkan minimal ${ minimumLength } karakter."
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "Unknown error": [
-        "Galat tak diketahui"
+        "Kesalahan yang tidak diketahui"
       ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
@@ -1627,10 +1622,10 @@
         "Frasa pemulihan salah. Mohon coba lagi atau gunakan metode pemulihan lain."
       ],
       "You have no invoices.": [
-        "Tidak ada tagihan."
+        "Anda tidak memiliki tagihan apapun."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi semua tagihan yang belum dibayar."
+        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
       ]
     },
     "Error message": {
@@ -1638,7 +1633,7 @@
         "Kesalahan: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Oops, terjadi kesalahan"
+        "Aduh, ada yang tidak beres"
       ],
       "Please ${ refresh } or check your connection.": [
         "Mohon ${ refresh } atau cek koneksi Anda."
@@ -1655,19 +1650,19 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        "Sertifikat ${ name } tidak ditemukan atau telah dicabut"
+        "Sertifikat ${ name } tidak ditemukan atau sudah dicabut"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Tidak ada gambar yang dipilih"
+        "Gambar belum dipilih"
       ]
     },
     "Feature": {
       "Access to all countries": [
         "Akses ke semua negara"
       ],
-      "Connection for up to ${ plusVpnConnections } device": [
+      "Connection for up to ${ plusVpnConnections } devices": [
         "Koneksi hingga ${ plusVpnConnections } perangkat"
       ],
       "Fastest VPN servers": [
@@ -1677,10 +1672,10 @@
         "Server Secure Core"
       ],
       "Secure streaming support": [
-        "Mendukung pengaliran aman"
+        "Dukungan streaming aman"
       ],
       "Torrenting support (P2P)": [
-        "Mendukung torrent (P2P)"
+        "Dukungan torrent (P2P)"
       ]
     },
     "fido2: Action": {
@@ -1753,7 +1748,7 @@
         "Hapus kunci keamanan?"
       ],
       "Disable 2FA via security key?": [
-        "Hapus 2FA via kunci keamanan?"
+        "Nonaktifkan 2FA via kunci keamanan?"
       ],
       "Name your security key": [
         "Beri nama kunci keamanan Anda"
@@ -1769,7 +1764,7 @@
       ]
     },
     "file size format": {
-      "byte": [
+      "bytes": [
         "byte"
       ],
       "GB": [
@@ -1783,16 +1778,16 @@
       ]
     },
     "file size format, long": {
-      "Byte": [
+      "Bytes": [
         "Byte"
       ],
-      "Gigabyte": [
+      "Gigabytes": [
         "Gigabyte"
       ],
-      "Kilobyte": [
+      "Kilobytes": [
         "Kilobyte"
       ],
-      "Megabyte": [
+      "Megabytes": [
         "Megabyte"
       ]
     },
@@ -1803,13 +1798,13 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "(1 surel per bulan)"
+        "(1 email per bulan)"
       ],
       "(1 email per quarter)": [
-        "(1 surel per kuartal)"
+        "(1 email per kuartal)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 surel per bulan)"
+        "(1-2 email per bulan)"
       ]
     },
     "Go to sign in": {
@@ -1833,7 +1828,7 @@
         "Jaringan"
       ],
       "Other category": [
-        "Kategori lain"
+        "Kategori lainnya"
       ],
       "Services": [
         "Layanan"
@@ -1849,7 +1844,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Manual": [
         "Manual"
@@ -1866,28 +1861,28 @@
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Apabila Anda melanjutkan, Anda akan tidak lagi dapat mengakses seluruh data yang terenkripsi pada akun Anda."
+        "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak pesan Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
       ],
-      "${ number } city": [
+      "${ number } cities": [
         "${ number } kota"
       ],
-      "${ number } server": [
+      "${ number } servers": [
         "${ number } server"
       ],
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Anda akan menggunakan alamat email ini untuk masuk ke seluruh layanan ${ BRAND_NAME }."
+        "${ strongAddressAvailable } Anda akan menggunakan alamat email ini untuk masuk ke layanan ${ BRAND_NAME }."
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Paket ${ vpnBasic }, ${ vpnPlus }, atau ${ visionary } dibutuhkan untuk dapat membuka sambungan tingkat negara."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "${ vpnPlus } atau ${ visionary } diperlukan untuk fitur Secure Core."
+        "Paket ${ vpnPlus } atau ${ visionary } dibutuhkan untuk dapat mengakses fitur Secure Core."
       ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
@@ -1896,9 +1891,9 @@
         "* Tanpa perlu kartu kredit."
       ],
       "+${ bonusSpace } bonus storage": [
-        "Bonus penyimpanan +${ bonusSpace }"
+        "+${ bonusSpace } kuota penyimpanan tambahan"
       ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+      "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
       ],
       "10 email addresses": [
@@ -1911,13 +1906,13 @@
         "Jaminan 30 hari uang kembali."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        "Nama yang membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
+        "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna di sini didefiniskan sebagai akun yang terkait dengan nama pengguna, kotak surat, serta oknum tunggal"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi Administrator Anda."
+        "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
       ],
       "Account size": [
         "Ukuran akun"
@@ -1953,34 +1948,34 @@
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Ditagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
+        "Tertagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Transaksi bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
+        "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
       ],
       "Black Friday 2018 applied to your subscription": [
         "Black Friday 2018 berlaku untuk langganan anda"
       ],
       "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 berlaku untuk langganan Anda"
+        "Black Friday 2019 berlaku untuk langganan anda"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
         "Diskon Black Friday 2020 untuk pengguna baru telah diterapkan"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Dengan menurunkan versi ke paket Free, Anda akan kehilangan manfaat ini secara permanen, bahkan jika Anda meningkatkan lagi di masa depan."
+        "Dengan beralih ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati keutamaan-keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
+        "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati berbagai keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
       ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
       "Choose the look and feel of the application.": [
-        "Sesuaikan tema dan tampilan aplikasi Anda."
+        "Pilih tampilan aplikasi."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
       "Continue anyway?": [
         "Tetap lanjut?"
@@ -2004,10 +1999,10 @@
         "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Proses penurunan akun akan memutus seluruh sambungan dengan server ${ VPN_APP_NAME } berbayar."
+        "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Unduh aplikasi favorit anda hari ini dan bawa privasi kemana pun anda pergi."
+        "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke manapun Anda pergi."
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
@@ -2058,7 +2053,7 @@
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
       "Expired": [
-        "Kedaluarsa"
+        "Kedaluwarsa"
       ],
       "expires ${ expirationDate }": [
         "kedaluwarsa ${ expirationDate }"
@@ -2082,22 +2077,22 @@
         "di sini"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan merespon dalam satu hari kerja."
+        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami melalui ${ contactLink }."
+        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Jika Anda punya kode hadiah, masukkan kode tersebut untuk menggunakan diskon Anda."
+        "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk mendapatkan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Apabila Anda belum pernah menggunakan otentikasi dua faktor sebelumnya, kami sangat menganjurkan Anda untuk ${ guideButton }."
+        "Apabila Anda belum pernah menggunakan otentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Apabila Anda kehilangan perangkat yang Anda daftarkan sebagai perangkat penerima kode otentikasi dua faktor, Anda dapat menggunakan kode-kode berikut untuk masuk ke akun Anda. Masing-masing kode hanya dapat digunakan satu kali."
+        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses otentikasi dua faktor, kode-kode berikut akan dapat digunakan sebagai pengganti kode otentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
@@ -2112,7 +2107,7 @@
         "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Penting: Pastikan Anda menyimpan kode-kodea pemulihan yang ada. Apabila tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika di kala Anda kehilangan daftarkan sebagai perangkat penerima kode otentikasi dua faktor."
+        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat otentikasi dua faktor Anda."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
@@ -2124,16 +2119,16 @@
         "Pasang konfigurasi Secure Core untuk mendapat manfaat perlindungan tambahan terhadap ancaman titik akhir VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Pasang berkas Konfigurasi server untuk menyambung ke server khusus di negara pilihan Anda."
+        "Instal berkas konfigurasi Server untuk dapat tersambung ke server tertentu di negara yang Anda pilih."
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
+        "Koneksi internet terputus. Mohon periksa koneksi perangkat Anda."
       ],
       "Internet connection restored.": [
-        "Koneksi internet dipulihkan."
+        "Koneksi internet telah kembali pulih."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } dengan aplikasi VPN milik pihak ketiga."
@@ -2157,7 +2152,7 @@
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
       ],
       "lose access to all current encrypted data": [
-        "kehilangan akses ke seluruh data yang terenkripsi"
+        "kehilangan akses ke semua data yang terenkripsi"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru membaca data pribadi Anda untuk disampaikan kepada para pengiklan, lembaga pemerintahan Rusia, dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
@@ -2166,25 +2161,25 @@
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
+        "Masukkan informasi berikut secara manual ke perangkat otentikasi dua faktor yang Anda miliki untuk menyiapkan akun Anda. ${ _switchButton }."
       ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
       ],
       "No payment is required at this time.": [
-        "Tidak diperlukan pembayaran untuk saat ini."
+        "Tidak ada pembayaran yang diperlukan untuk saat ini."
       ],
       "No preview available": [
         "Pratinjau tidak tersedia"
       ],
       "No results found": [
-        "Tidak ada hasil ditemukan"
+        "Tidak ada hasil yang ditemukan"
       ],
       "Not set": [
-        "Tidak diatur"
+        "Belum ditentukan"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Sedang tidak berada pada perangkat milik Anda? Masuklah dengan mode penjelajahan privat dan tutup browser setelah selesai. ${ learnMore }"
+        "Sedang tidak berada pada perangkat Anda? Masuklah dengan mode penjelajahan privat dan tutup browser Anda setelah selesai. ${ learnMore }"
       ],
       "Number of users": [
         "Jumlah pengguna"
@@ -2208,28 +2203,28 @@
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
       "Plan upgrade required": [
-        "Memerlukan peningkatan paket berlangganan"
+        "Diperlukan peningkatan paket"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan dengan mengklik tombol Konfirmasi, akun anda akan memiliki kredit ${ creditsRemaining } yang tersisa."
+        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Harap berikan alamat surel seandainya kami perlu menghubungi Anda."
+        "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Mohon ulangi kembali, menggunakan metode pembayaran berbeda, atau menghubungi bank Anda untuk mendapatkan bantuan."
+        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi bank Anda untuk mendapatkan bantuan."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Silahkan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
+        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Mohon verifikasi pembayaran pada tab baru yang telah dibuka."
+        "Mohon verifikasi pembayaran di tab baru yang terbuka."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Mohon verifikasi kartu pada tab baru yang telah dibuka."
+        "Mohon verifikasi kartu di tab baru yang telah dibuka."
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
@@ -2253,7 +2248,7 @@
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
+        "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
@@ -2262,7 +2257,7 @@
         "Pindai kode QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Pindai kode QR ini dengan perangkat otentikasi dua faktor untuk mengatur akun Anda. ${ switchButton }."
+        "Pindai kode berikut dengan perangkat otentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
       ],
       "Securing your account": [
         "Mengamankan akun Anda"
@@ -2274,7 +2269,7 @@
         "Beban server"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
@@ -2283,7 +2278,7 @@
         "Menyiapkan Drive Anda"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Karena Anda pengguna setia, akun Anda memiliki fitur tambahan yang diaktifkan."
+        "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
@@ -2301,40 +2296,40 @@
         "Cara teraman untuk menjelajah, menonton, dan beraktivitas di internet."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Berkas konfigurasi berikut memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
+        "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien-klien resmi."
+        "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien resmi."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Peramban ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas tersebut."
+        "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Hal ini bisa memakan waktu beberapa detik atau beberapa menit tergantung perangkat Anda"
+        "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Dengan ini, seluruh metode otentikasi dua langkah yang terhubung dengan akun ini akan dinonaktifkan."
+        "Dengan ini, otentikasi dua faktor untuk akun ini akan dinonaktifkan."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Ada akan dikembalikan sebagai kredit akun."
+        "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Hal ini akan mengaktifkan PayPal guna membayar langganan Proton Anda. Kami akan mengalihkan Anda di tab baru peramban. Jika Anda memakai pemblokir pop-up, harap menonaktifkannya untuk melanjutkan."
+        "Dengan ini, PayPal dapat dipakai untuk membayar langganan Proton Anda. Kami akan membuka PayPal di tab baru. Jika Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Ini akan menghapus semua akun Anda dengan semua datanya secara permanen. Anda tidak akan dapat mengaktifkan ulang akun ini."
+        "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Kode berikut akan menggantikan kata sandi sementara Anda. Anda akan menggunakannya untuk mengakses akun ${ BRAND_NAME } Anda di masa mendatang."
+        "Ini akan mengganti kata sandi sementara Anda. Anda akan menggunakannya untuk mengakses akun ${ BRAND_NAME } di masa mendatang."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan otentikasi dua faktor."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun Proton Anda. Kami sangat menyarankan Anda untuk mengaktifkan otentikasi dua faktor karena metode otentikasi ini akan membuat akun Proton Anda lebih aman."
+        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun Proton Anda. Kami menyarankan Anda untuk mengaktifkan otentikasi dua faktor mengingat hal ini akan membuat akun Proton Anda lebih aman."
       ],
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
@@ -2343,7 +2338,7 @@
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Untuk terus mendapat perkembangan baru produk-produk Proton, Anda dapat berlangganan pada beragam surel kami dan mengunjungi blog kami dari waktu ke waktu."
+        "Untuk dapat mengikuti perkembangan terbaru seputar berbagai produk Proton, Anda dapat berlangganan ke buletin email kami serta mengunjungi blog kami dari waktu ke waktu."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
@@ -2370,10 +2365,10 @@
         "Total koneksi VPN"
       ],
       "Two-factor authentication disabled": [
-        "Otentikasi dua-faktor dinonaktifkan"
+        "Oentikasi dua faktor dinonaktifkan"
       ],
       "Two-factor authentication enabled": [
-        "Otentikasi dua-faktor diaktifkan"
+        "Otentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
         "Mode dua kata sandi membutuhkan dua kata sandi: satu untuk masuk ke akun Anda dan satu untuk mendekripsi kotak surat Anda. (Lanjutan)"
@@ -2397,19 +2392,19 @@
         "Perbarui URL pada aplikasi pengelola kata sandi Anda"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Gunakan server terbaik berdasarkan muatan dan posisi sekarang: ${ formattedBestServerName }"
+        "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa melalui aplikasi resmi kami, semisal dengan menggunakan Tunnelblick di macOS atau OpenVPN di GNU/Linux."
+        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } di luar aplikasi resmi kami, semisal melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
       ],
       "Verification can take a few minutes.": [
-        "Verifikasi dapat berlangsung dalam beberapa menit."
+        "Proses verifikasi dapat memakan waktu hingga beberapa menit."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Verifikasi akan membuka tab baru, mohon menonaktifkan pemblokir popup."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verifikasi akan membuka tab baru, mohon menonaktifkan pemblokir popup. Anda tidak akan dikenakan biaya. Berapapun jumlah yang digunakan untuk verifikasi akan segera dikembalikan."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi otentikator"
@@ -2436,7 +2431,7 @@
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Kami akan mengalihkan Anda ke PayPal di tab baru peramban guna menyelesaikan transaksi ini. Jika Anda memakai pemblokir pop-up, harap menonaktifkannya untuk melanjutkan."
+        "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
@@ -2457,7 +2452,7 @@
         "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Saat langganan Anda diperbarui, kami akan menagih kredit yang tersedia sebelum kami menagih metode pembayaran di atas."
+        "Pada saat paket langganan Anda diperbarui, kami akan terlebih dahulu menerapkan segala saldo yang tersimpan sebelum kami menagih Anda melalui metode pembayaran di atas."
       ],
       "Why?": [
         "Mengapa?"
@@ -2475,13 +2470,13 @@
         "Yandex merekam aktivitas online dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
       "You already have a free account": [
-        "Anda sudah memiliki akun gratis"
+        "Anda telah memiliki akun gratis"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
+        "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Anda dapat menyesuaikan dan mengunduh faktur tagihan Anda untuk keperluan akuntansi."
+        "Anda dapat menyesuaikan dan mengunduh tagihan Anda untuk keperluan akuntansi."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela percakapan lainnya yang terbuka sebelum memulai percakapan baru."
@@ -2502,7 +2497,7 @@
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun PayPal Anda agar dapat menambahkannya sebagai metode pembayaran."
+        "Akun PayPal Anda harus terhubung ke kartu kredit atau rekening bank agar bisa ditambahkan sebagai metode pembayaran."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memilikinya, silakan klik tombol di bawah."
@@ -2514,16 +2509,16 @@
         "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Anda telah menggunakan ${ spaceDisplayed }% dari kapasitas penyimpanan yang Anda miliki. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Anda akan ${ loseAllData } yang ada pada akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
+        "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "Anda akan segera dialihkan menuju bank Anda untuk memverifikasi pembayaran Anda."
+        "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -2547,22 +2542,22 @@
         "Akun Anda sedang ditingkatkan, ini perlu waktu hingga 30 detik."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Akun anda akan diperbarui setelah pembayaran sah."
+        "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
-        "Bank Anda memerlukan verifikasi 3-D Secure demi keamanan."
+        "Bank Anda mewajibkan verifikasi 3-D Secure demi keamanan."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Surel Anda hanya dipakai untuk verifikasi sekali saja."
+        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Akun ${ BRAND_NAME } Anda dapat digunakan untuk mengakses seluruh layanan ${ BRAND_NAME }. Silakan masuk dengan ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Rincian pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
+        "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saja."
+        "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
@@ -2602,12 +2597,12 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silahkan hubungi kami di ${ email } untuk intruksi cara membayar kami dengan tunai."
+        "Silahkan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Anda dapat menambahkan metode pembayaran agar langganan anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
+        "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
       ]
     },
     "Info message for custom invoice modal": {
@@ -2645,10 +2640,10 @@
         "Pembatalan"
       ],
       "Chargeback": [
-        "Tolak bayar"
+        "Uang kembali"
       ],
       "Credit": [
-        "Kredit"
+        "Saldo"
       ],
       "Donation": [
         "Sumbangan"
@@ -2657,7 +2652,7 @@
         "Penyesuaian"
       ],
       "Other": [
-        "Lain-lain"
+        "Lainnya"
       ],
       "Refund": [
         "Pengembalian dana"
@@ -2679,14 +2674,14 @@
       "${ MAIL_APP_NAME } address": [
         "Alamat ${ MAIL_APP_NAME }"
       ],
-      "${ n } month": [
+      "${ n } months": [
         "${ n } bulan"
       ],
       "Allow recovery by email": [
-        "Izinkan pemulihan dengan surel"
+        "Izinkan pemulihan akun melalui email"
       ],
       "Allow recovery by phone": [
-        "Izinkan pemulihan dengan nomor ponsel"
+        "Izinkan pemulihan akun melalui nomor ponsel"
       ],
       "Amount": [
         "Jumlah"
@@ -2737,7 +2732,7 @@
         "Kategori"
       ],
       "Choose a name for the generated certificate file": [
-        "Pilih sebuah nama untuk membuat file sertifikat"
+        "Pilih sebuah nama untuk file sertifikat yang dibuat"
       ],
       "Code": [
         "Kode"
@@ -2746,19 +2741,19 @@
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Config to connect to ${ serverName }": [
-        "Konfigurasi untuk menghubungkan ke ${ serverName }"
+        "Konfigurasi untuk tersambung ke ${ serverName }"
       ],
       "Confirm login password": [
-        "Konfirmasi sandi masuk"
+        "Konfirmasi kata sandi untuk masuk"
       ],
       "Confirm mailbox password": [
-        "Konfirmasi sandi kotak pesan"
+        "Konfirmasi kata sandi kotak pesan"
       ],
       "Confirm new password": [
         "Konfirmasi kata sandi baru"
       ],
       "Confirm password": [
-        "Konfirmasi sandi"
+        "Konfirmasi kata sandi"
       ],
       "Copy": [
         "Salin"
@@ -2776,10 +2771,10 @@
         "Negara"
       ],
       "Credits used": [
-        "Kredit terpakai"
+        "Saldo digunakan"
       ],
       "Customize invoices": [
-        "Sesuaikan tagihan"
+        "Sesuaikan faktur"
       ],
       "Default language": [
         "Bahasa bawaan"
@@ -2803,7 +2798,7 @@
         "Apakah Anda memiliki saran untuk tim kami?"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email or username": [
         "Email atau nama pengguna"
@@ -2812,7 +2807,7 @@
         "Masukkan nama organisasi untuk dapat melanjutkan"
       ],
       "Enter the code displayed on your TV": [
-        "Masukkan kode yang tertera pada TV Anda"
+        "Masukkan kode yang ditampilkan di TV Anda"
       ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
@@ -2827,7 +2822,7 @@
         "Kode hadiah"
       ],
       "Hide password": [
-        "Sembunyikan sandi"
+        "Sembunyikan kata sandi"
       ],
       "Interval": [
         "Interval"
@@ -2842,7 +2837,7 @@
         "Level pemfilteran pemblokir NetShield"
       ],
       "Mailbox password": [
-        "Kata sandi kotak masuk"
+        "Kata sandi kotak pesan"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -2854,10 +2849,10 @@
         "Nama di kartu"
       ],
       "New login password": [
-        "Kata sandi baru untuk masuk"
+        "Kata sandi masuk baru"
       ],
       "New mailbox password": [
-        "Sandi kotak pesan baru"
+        "Kata sandi kotak pesan baru"
       ],
       "New password": [
         "Kata sandi baru"
@@ -2902,7 +2897,7 @@
         "Nomor telepon"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        "Frasa pemulihan tersusun atas 12 kata berbeda yang terangkai dalam urutan yang spesifik"
+        "Frasa tersusun atas 12 kata berbeda yang terangkai dalam urutan yang spesifik"
       ],
       "Postal code": [
         "Kode pos"
@@ -2926,13 +2921,13 @@
         "Ulangi kata sandi"
       ],
       "Reveal password": [
-        "Perlihatkan sandi"
+        "Perlihatkan kata sandi"
       ],
       "Security code": [
         "Kode keamanan"
       ],
       "Select your country": [
-        "Pilih negara anda"
+        "Pilih negara Anda"
       ],
       "Subscription options": [
         "Pilihan langganan"
@@ -2959,7 +2954,7 @@
         "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Kami sedih tahu kamu pergi. Tolong jelaskan mengapa kamu pergi untuk membantu kami berbenah."
+        "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -2971,7 +2966,7 @@
         "Apa alasan utama Anda menghapus akun?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
-        "Ya, saya ingin menghapus akun ini dan semua datanya secara permanen."
+        "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
@@ -2987,16 +2982,16 @@
     },
     "Label for news": {
       "Proton beta announcements": [
-        "Pengumuman beta Proton"
+        "Pengumuman akses beta Proton"
       ],
       "Proton company announcements": [
         "Pengumuman perusahaan Proton"
       ],
       "Proton for Business newsletter": [
-        "Buletin Proton untuk Bisnis"
+        "Buletin Proton for Business"
       ],
       "Proton newsletter": [
-        "Newsletter Proton"
+        "Buletin Proton"
       ],
       "Proton offers and promotions": [
         "Penawaran dan promosi Proton"
@@ -3015,10 +3010,10 @@
     },
     "Link": {
       "Add a gift code": [
-        "Tambah kode hadiah"
+        "Tambahkan kode hadiah"
       ],
       "clearing your browser cache": [
-        "membersihkan tembolok peramban Anda"
+        "membersihkan cache browser Anda"
       ],
       "click here": [
         "klik di sini"
@@ -3027,7 +3022,7 @@
         "Masalah umum proses masuk"
       ],
       "Common sign up issues": [
-        "Masalah pendaftaran umum"
+        "Masalah umum proses daftar"
       ],
       "Create account": [
         "Buat akun"
@@ -3036,7 +3031,7 @@
         "Lupa nama pengguna?"
       ],
       "Learn more": [
-        "Pelajari lebih lanjut"
+        "Lebih lanjut"
       ],
       "Need help?": [
         "Butuh bantuan?"
@@ -3080,7 +3075,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tindakan ini akan menghapus seluruh akun, sub-akun, dan data yang terhubung dengan organisasi Anda secara permanen."
+        "Tindakan ini akan menghapus seluruh akun, sub-pengguna, dan data yang terhubung dengan organisasi Anda secara permanen."
       ]
     },
     "Message": {
@@ -3090,7 +3085,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Versi baru ${ appName } tersedia. ${ reloadButton }."
+        "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
       ]
     },
     "Monetary unit": {
@@ -3112,7 +3107,7 @@
         "Kelola kotak masuk Anda dengan folder yang tertata rapi"
       ],
       "Medium VPN speed": [
-        "Kecepatan VPN menengah"
+        "Kecepatan VPN sedang"
       ]
     },
     "new_plans: action": {
@@ -3120,7 +3115,7 @@
         "Lanjut ke proses peninjauan"
       ],
       "Continue with Free": [
-        "Continue with Free"
+        "Lanjut dengan akun Free"
       ],
       "Delete account": [
         "Hapus akun"
@@ -3138,7 +3133,7 @@
         "Dapatkan ${ upsellShortPlan.title }"
       ],
       "Got it": [
-        "Dimengerti"
+        "Mengerti"
       ],
       "Keep ${ plan }": [
         "Pertahankan ${ plan }"
@@ -3173,52 +3168,52 @@
         "Dari ${ price }"
       ],
       "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } $ yang saya miliki saat ini"
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ]
     },
     "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
+      "Get ${ connections } high-speed VPN connections": [
         "Dapatkan ${ connections } koneksi VPN berkecepatan tinggi"
       ],
-      "Get ${ connections } high-speed VPN connection per user": [
+      "Get ${ connections } high-speed VPN connections per user": [
         "Dapatkan ${ connections } koneksi VPN berkecepatan tinggi per pengguna"
       ]
     },
     "new_plans: feature": {
-      "${ n } custom email domain": [
+      "${ n } custom email domains": [
         "${ n } domain email khusus"
       ],
-      "${ n } email address": [
-        "${ n } alamat email"
-      ],
-      "${ n } email address per user": [
+      "${ n } email addresses per user": [
         "${ n } alamat email per pengguna"
       ],
-      "${ n } filter": [
+      "${ n } email addresses/aliases": [
+        "${ n } alamat email"
+      ],
+      "${ n } filters": [
         "${ n } filter"
       ],
-      "${ n } folder": [
+      "${ n } folders": [
         "${ n } folder"
       ],
-      "${ n } folder and label": [
+      "${ n } folders and labels": [
         "${ n } folder and label"
       ],
-      "${ n } label": [
+      "${ n } labels": [
         "${ n } label"
       ],
-      "${ n } message per day": [
+      "${ n } messages per day": [
         "${ n } pesan per hari"
       ],
-      "${ n } personal calendar": [
+      "${ n } personal calendars": [
         "${ n } kalender personal"
       ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } koneksi VPN"
       ],
-      "${ n } VPN connection per user": [
+      "${ n } VPN connections per user": [
         "${ n } koneksi VPN per pengguna"
       ],
       "${ size } attachment size": [
@@ -3290,7 +3285,7 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
-      "High-speed VPN on ${ n } device": [
+      "High-speed VPN on ${ n } devices": [
         "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
       "HTML signatures": [
@@ -3389,7 +3384,7 @@
     },
     "new_plans: heading": {
       "Support": [
-        "Dukung"
+        "Layanan Dukungan"
       ],
       "Team management": [
         "Manajemen tim"
@@ -3400,7 +3395,7 @@
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 1 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
+        "* Dengan berlangganan selama 1 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* Dengan berlangganan selama 12 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
@@ -3442,7 +3437,7 @@
         "Layanan email dan kalender yang aman untuk para profesional dan pelaku usaha."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Email aman dengan berbagai fitur mutakhir untuk komunikasi Anda sehari-hari."
+        "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Solusi VPN yang memberikan Anda akses internet yang aman, tanpa batas, dan berkecepatan tinggi."
@@ -3465,7 +3460,7 @@
         "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dan berbagai premium yang ada, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
       ],
       "Upgrade to the business pack with access to all premium Proton services.": [
         "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
@@ -3488,7 +3483,7 @@
       ]
     },
     "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
         "Anda masih memiliki ${ daysRemaining } hari tersisa pada langganan ${ currentPlanName } Anda."
       ]
     },
@@ -3529,7 +3524,7 @@
         "Paket lainnya yang menawarkan lebih akan segera hadir!"
       ],
       "Review subscription and pay": [
-        "Tinjau jenis langganan dan bayar"
+        "Peninjauan dan pembayaran langganan"
       ],
       "Start exploring the Proton universe": [
         "Mulai jelajahi semesta Proton"
@@ -3574,7 +3569,7 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, cth. JohnShopper@proton.me untuk akun berbelanja Anda dan JohnNews@proton.me untuk akun berita Anda"
       ],
-      "Create up to ${ n } custom calendar.": [
+      "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
@@ -3614,10 +3609,10 @@
         "Dapatkan dukungan dari tim Layanan Dukungan Proton dalam rentang waktu 1 x 24 jam pada hari kerja"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Di samping itu, Anda juga dapat menambahkan hingga 5 kalender dari rekan kerja, organisasi, keluarga, dan teman Anda."
+        "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari rekan kerja, organisasi, keluarga, dan teman Anda."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Di samping itu, Anda juga dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
+        "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
         "Satu koneksi VPN hanya memungkinkan Anda untuk menghubungkan satu perangkat ke Proton VPN dalam satu waktu. Semisal Anda ingin menyambungkan ponsel dan laptop Anda ke Proton VPN secara bersamaan, Anda akan butuh dua koneksi VPN."
@@ -3729,7 +3724,7 @@
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
+      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
         "Buat hingga ${ numberOfPersonalCalendars } kalender personal"
       ],
       "Everything in ${ vpnPlanName }": [
@@ -3796,7 +3791,7 @@
         "Alasan saya tidak ada di daftar"
       ],
       "Router": [
-        "Perute"
+        "Router"
       ],
       "Secure Core configs": [
         "Konfigurasi Secure Core"
@@ -3833,16 +3828,16 @@
         "Cara menghubungi Anda"
       ],
       "Add gift code": [
-        "Tambah kode hadiah"
+        "Tambahkan kode hadiah"
       ],
       "Confirm": [
         "Konfirmasi"
       ],
       "Email address": [
-        "Alamat Surel"
+        "Alamat email"
       ],
       "Feedback": [
-        "Umpan balik"
+        "Kritik dan Saran"
       ],
       "Gift code": [
         "Kode hadiah"
@@ -3851,13 +3846,13 @@
         "Lainnya"
       ],
       "Password": [
-        "Kata Sandi"
+        "Kata sandi"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan galat apapun"
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
       ],
       "Postal code": [
-        "Kode Pos"
+        "Kode pos"
       ],
       "Select": [
         "Pilih"
@@ -3866,7 +3861,7 @@
         "Pilih alasan"
       ],
       "ZIP": [
-        "ZIP"
+        "Kode pos"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -3881,7 +3876,7 @@
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Tentukan jumlah pengguna untuk diikutsertakan dalam paket Anda. Per penggunanya, Anda akan dikenakan biaya sebesar ${ price }."
       ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+      "Should you need more than ${ maxUsers } user accounts, please ${ contact } our Sales team.": [
         "Apabila Anda memerlukan lebih dari ${ maxUsers } pengguna, silakan ${ contact } tim Sales kami."
       ]
     },
@@ -3901,7 +3896,7 @@
         "Alamat email belum diverifikasi."
       ],
       "Verification email sent to ${ email.Value }": [
-        "Email verifikasi terkirim ke ${ email.Value }"
+        "Email verifikasi telah dikirim ke ${ email.Value }"
       ],
       "Verify now": [
         "Verifikasi"
@@ -3913,7 +3908,7 @@
         "Verifikasi melalui email"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Dengan memverifikasi alamat email, Anda akan dapat meningkatkan keamanan dan menambah metode pemulihan bagi akun Anda."
+        "Memverifikasi alamat email akan memungkinkan Anda untuk meningkatkan keamanan akun dan menambah metode pemulihan akun."
       ]
     },
     "Recovery method": {
@@ -3947,7 +3942,7 @@
         "Verifikasi nomor telepon pemulihan?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Dengan memverifikasi nomor telepon, Anda akan dapat meningkatkan keamanan serta menambah metode pemulihan bagi akun Anda."
+        "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
     "Signup label": {
@@ -3958,7 +3953,7 @@
         "Email"
       ],
       "Username": [
-        "Nama Pengguna"
+        "Nama pengguna"
       ]
     },
     "Signup step": {
@@ -3974,7 +3969,7 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } sudah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
+        "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
@@ -3988,7 +3983,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Menurunkan akun Anda, harap tunggu"
+        "Menurunkan akun anda, harap tunggu"
       ]
     },
     "Storage": {
@@ -3996,47 +3991,47 @@
         "Catatan rilis"
       ],
       "Upgrade storage": [
-        "Tingkatkan penyimpanan"
+        "Perbesar kuota penyimpanan"
       ],
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
+      "${ _n } calendars per user": [
         "${ _n } kalender per pengguna"
       ],
-      "${ maxVpn } high-speed VPN connection": [
+      "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } koneksi VPN berkecepatan tinggi"
       ],
-      "${ n } calendar": [
+      "${ n } calendars": [
         "${ n } kalender"
       ],
-      "${ n } high-speed VPN connection": [
+      "${ n } high-speed VPN connections": [
         "${ n } koneksi VPN berkecepatan tinggi"
       ],
-      "${ n } high-speed VPN connection per user": [
+      "${ n } high-speed VPN connections per user": [
         "${ n } koneksi VPN berkecepatan tinggi per pengguna"
       ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } koneksi VPN"
       ],
-      "${ n } VPN connection per user": [
+      "${ n } VPN connections per user": [
         "${ n } koneksi VPN per pengguna"
       ],
-      "${ UsedAddresses } address": [
+      "${ UsedAddresses } addresses": [
         "${ UsedAddresses } alamat"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "${ UsedAddresses } dari ${ MaxAddresses } alamat email"
       ],
-      "${ UsedCalendars } calendar": [
+      "${ UsedCalendars } calendars": [
         "${ UsedCalendars } kalender"
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+      "${ UsedDomains } of ${ MaxDomains } custom domains": [
         "${ UsedDomains } of ${ MaxDomains } domain khusus"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
+      "${ UsedMembers } of ${ MaxMembers } users": [
         "${ UsedMembers } dari ${ MaxMembers } pengguna"
       ],
       "1 email address": [
@@ -4051,7 +4046,7 @@
       "Built-in ad blocker (NetShield)": [
         "Pemblokir iklan bawaan (NetShield)"
       ],
-      "High-speed VPN on ${ maxVpn } device": [
+      "High-speed VPN on ${ maxVpn } devices": [
         "VPN berkecepatan tinggi pada ${ maxVpn } perangkat"
       ]
     },
@@ -4062,12 +4057,12 @@
     },
     "Subscription saving": {
       "Save": [
-        "Simpan"
+        "Hemat"
       ]
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Solusi Mail dan Calendar yang mengedepankan privasi untuk berbagai keperluan komunikasi Anda sehari-hari."
+        "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
       ],
       "This offer is for those new to Proton only. No credit card required.": [
         "Penawaran ini hanya berlaku bagi para pengguna baru Proton. Tidak ada kartu kredit yang diperlukan."
@@ -4078,52 +4073,52 @@
         "${ server.Domain } disalin ke clipboard Anda"
       ],
       "Account deleted. Logging out...": [
-        "Akun dihapus. Keluar akun..."
+        "Akun dihapus. Mengeluarkan Anda dari akun..."
       ],
       "Bug reported": [
-        "Bug dilaporkan"
+        "Bug berhasil dilaporkan"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
       "Credits added": [
-        "Kredit ditambahkan"
+        "Saldo ditambahkan"
       ],
       "Email address copied to clipboard": [
         "Alamat email disalin ke clipboard"
       ],
       "Email updated": [
-        "Surel berhasil diperbarui"
+        "Email diperbarui"
       ],
       "Gift code applied": [
         "Kode hadiah berhasil digunakan"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Apabila Anda memasukkan alamat email pemulihan yang valid, kami akan mengirimkan email yang berisi nama pengguna Anda dengan segera."
+        "Jika Anda memasukkan email pemulihan yang valid, kami akan mengirimkan email dengan nama pengguna Anda di menit berikutnya."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Apabila Anda memasukkan nomor telepon pemulihan yang valid, kami akan mengirimkan SMS yang berisi nama pengguna Anda dengan segera."
+        "Jika Anda memasukkan nomor telepon pemulihan yang valid, kami akan mengirimkan Anda sms dengan nama pengguna Anda di menit berikutnya."
       ],
       "Invoice customized": [
         "Tagihan berhasil disesuaikan"
       ],
       "Invoice paid": [
-        "Faktur dibayar"
+        "Tagihan dibayar"
       ],
       "Locale updated": [
         "Bahasa diperbarui"
       ],
       "Password updated": [
-        "Kata sandi diperbarui"
+        "Kata sandi berhasil diperbarui"
       ],
       "Payment method added": [
-        "Metode pembayaran berhasil ditambahkan"
+        "Metode pembayaran ditambahkan"
       ],
       "Payment method deleted": [
-        "Metode pembayaran berhasil dihapus"
+        "Metode pembayaran dihapus"
       ],
       "Payment method updated": [
-        "Metode pembayaran berhasil diperbarui"
+        "Metode pembayaran diperbarui"
       ],
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
@@ -4132,7 +4127,7 @@
         "Verifikasi berhasil"
       ],
       "You have successfully unsubscribed": [
-        "Anda telah berhenti berlangganan"
+        "Anda berhasil berhenti berlangganan"
       ]
     },
     "Success notification": {
@@ -4143,7 +4138,7 @@
         "Sertifikat diperpanjang hingga ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Konfigurasi \"${ name }\" telah dibuat, ingatlah bahwa kunci pribadi tidak disimpan dan tidak akan ditampilkan lagi, Anda harus menyalin atau mengunduh konfigurasi ini."
+        "Konfigurasi \"${ name }\" telah dibuat, ingatlah bahwa kunci privat tidak disimpan dan tidak akan ditampilkan lagi, Anda harus menyalin atau mengunduh konfigurasi ini."
       ],
       "Creating config file for ${ serverName }": [
         "Membuat file konfigurasi untuk ${ serverName }"
@@ -4193,14 +4188,14 @@
       ]
     },
     "Title": {
-      "${ maxUsers } user": [
+      "${ maxUsers } users": [
         "${ maxUsers } pengguna"
       ],
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Beri nama untuk konfigurasi yang akan dibuat"
+        "1. Beri nama konfigurasi yang akan dibuat"
       ],
       "1. Select platform": [
         "1. Pilih platform"
@@ -4233,13 +4228,13 @@
         "Tindakan"
       ],
       "Add credit/debit card": [
-        "Tambah kartu kredit/debit"
+        "Tambahkan kartu kredit/debit"
       ],
       "Add credits": [
         "Tambahkan saldo"
       ],
       "Add invoice details": [
-        "Isi rincian tagihan"
+        "Tambahkan rincian tagihan"
       ],
       "Add PayPal payment method": [
         "Tambahkan metode pembayaran PayPal"
@@ -4251,7 +4246,7 @@
         "Jumlah tagihan"
       ],
       "Apply gift code": [
-        "Tambah kode hadiah"
+        "Gunakan kode hadiah"
       ],
       "Back": [
         "Kembali"
@@ -4275,16 +4270,16 @@
         "Ubah kata sandi masuk"
       ],
       "Change mailbox password": [
-        "Ubah sandi kotak pesan"
+        "Ubah kata sandi kotak pesan"
       ],
       "Change password": [
-        "Ubah sandi"
+        "Ubah kata sandi"
       ],
       "Confirm address": [
         "Konfirmasi alamat"
       ],
       "Confirm downgrade": [
-        "Konfirmasi penurunan"
+        "Konfirmasi penurunan jenis akun"
       ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi hilangnya bonus Proton"
@@ -4302,19 +4297,19 @@
         "Buat Akun ${ BRAND_NAME } Anda"
       ],
       "Credits": [
-        "Kredit"
+        "Saldo"
       ],
       "Currency": [
         "Mata uang"
       ],
       "Customize your plan": [
-        "Menyesuaikan paket Anda"
+        "Sesuaikan paket Anda"
       ],
       "Dashboard": [
         "Dasbor"
       ],
       "Date": [
-        "Tanggal"
+        "Pasangan"
       ],
       "Delete": [
         "Hapus"
@@ -4329,7 +4324,7 @@
         "Perangkat tersambung!"
       ],
       "Disable two-factor authentication": [
-        "Nonaktifkan otentikasi dua-faktor"
+        "Nonaktifkan otentikasi dua faktor"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
@@ -4341,19 +4336,19 @@
         "Unduhan"
       ],
       "Edit credit/debit card": [
-        "Ubah kartu kredit/debit"
+        "Sunting rincian kartu kredit/debit"
       ],
       "Email": [
         "Email"
       ],
       "Email subscriptions": [
-        "Langganan email"
+        "Email berlangganan"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
       "Error": [
-        "Galat"
+        "Kesalahan"
       ],
       "Find email or username": [
         "Cari email atau nama pengguna"
@@ -4371,7 +4366,7 @@
         "Bagaimana masa uji coba gratis Anda bekerja"
       ],
       "Human verification": [
-        "Pembuktian manusia"
+        "Verifikasi manusia"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -4479,10 +4474,10 @@
         "Pilih paket"
       ],
       "Set new password": [
-        "Tentukan kata sandi baru"
+        "Atur kata sandi baru"
       ],
       "Set up two-factor authentication": [
-        "Aktifkan pemeriksaan dua-faktor"
+        "Aktifkan otentikasi dua faktor"
       ],
       "Settings": [
         "Pengaturan"
@@ -4497,13 +4492,13 @@
         "Status"
       ],
       "Switch to one-password mode": [
-        "Beralih ke mode satu sandi"
+        "Beralih ke mode satu kata sandi"
       ],
       "Switch to two-password mode": [
-        "Beralih ke mode dua sandi"
+        "Beralih ke mode dua kata sandi"
       ],
       "This address might compromise your privacy.": [
-        "Alamat ini dapat membahayakan privasi Anda."
+        "Alamat ini mungkin menembus privasi Anda."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
@@ -4515,13 +4510,13 @@
         "Otentikasi dua faktor"
       ],
       "Type": [
-        "Jenis"
+        "Tipe"
       ],
       "Unlock your mailbox": [
         "Buka kunci kotak pesan Anda"
       ],
       "Unsupported browser": [
-        "Peramban tidak didukung"
+        "Browser tidak didukung"
       ],
       "Verification": [
         "Verifikasi"
@@ -4533,13 +4528,13 @@
         "Peringatan!"
       ],
       "What's new": [
-        "Apa yang baru"
+        "Apa-apa saja yang baru"
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
       ],
       "You already have a Proton account": [
-        "Anda sudah memiliki akun Proton"
+        "Anda telah memiliki akun Proton"
       ],
       "Your ${ MAIL_APP_NAME } address": [
         "Alamat ${ MAIL_APP_NAME } Anda"
@@ -4578,10 +4573,10 @@
         "Diskon diaktifkan untuk penagihan tahunan"
       ],
       "Discount applied for two-year billing cycle": [
-        "Diskon diaktifkan untuk penagihan dwitahunan"
+        "Diskon diaktifkan untuk penagihan dua tahunan"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
+        "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ]
     },
     "Tor out of date": {
@@ -4593,8 +4588,8 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
+      "Password must contain at least ${ length } characters": [
+        "Kata sandi harus mengandung minimal ${ length } karakter"
       ]
     },
     "VPN info": {
@@ -4603,13 +4598,13 @@
       ]
     },
     "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } koneksi VPN"
       ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
+      "${ n }+ servers": [
+        "${ n } server"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
       ]
     },
@@ -4638,37 +4633,37 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Anda yakin ingin menghapus alamat ini?"
+        "Apakah Anda yakin ingin menghapus alamat ini?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "Apakah Anda yakin mau menghapus nomor telepon?"
+        "Apakah Anda yakin untuk menghapus nomor telepon ini?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Apabila dihapus, Anda berhenti menerima surel pemberitahuan harian."
+        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat menerima notifikasi email harian."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Apabila dihapus, Anda tidak bisa memulihkan akun lagi / berhenti menerima surel pemberitahuan harian."
+        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat memulihkan akun Anda atau menerima notifikasi email harian."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "Apabila dihapus, Anda tidak bisa memulihkan akun lagi."
+        "Dengan menghapus alamat ini, Anda tidak akan lagi dapat memulihkan akun Anda."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Dengan menghapus nomor telepon ini, Anda tidak akan bisa lagi memulihkan akun Anda."
+        "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
+        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
+        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
+        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami sedang berada di luar jaringan. Harap jelaskan permasalahan Anda melalui formulir di bawah ini, dan kami akan memeriksanya di kemudian waktu."
+        "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"

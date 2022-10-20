@@ -1259,7 +1259,7 @@
         "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "Spare ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         "Allgemeine Geschäftsbedingungen des Sonderangebots"
@@ -3606,7 +3606,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME } Konto verknüpft ist."
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Security key": [
         "Sicherheitsschlüssel"
@@ -4594,7 +4594,7 @@
         "Zweitschlüssel aktualisiert"
       ],
       "Each code can only be used once": [
-        "Jeder Code kann nur einmal benutzt werden"
+        "Jeder Code kann nur einmal verwendet werden"
       ],
       "Edit encryption": [
         "Verschlüsselung bearbeiten"
@@ -6827,9 +6827,6 @@
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Absender ${ firstSenderAddress } gesperrt"
-      ],
-      "Senders blocked": [
-        "Absender gesperrt"
       ]
     },
     "Oauth instructions": {
@@ -7054,6 +7051,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } von ${ countContacts } Kontakt wurden erfolgreich exportiert.",
+        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakt(en) erfolgreich gelöscht.",
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
@@ -7388,9 +7389,17 @@
         "${ elementsCount } Unterhaltung als ungelesen markieren.",
         "${ elementsCount } Unterhaltungen als ungelesen markieren."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } Thema in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt.",
+        "${ elementsCount } Themen in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } Unterhaltung in „${ folderName }” verschoben.",
         "${ elementsCount } Unterhaltungen in „${ folderName }” verschoben."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Thema nach Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Themen nach Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } Unterhaltung aus „${ labelName }” entfernt.",
@@ -7412,9 +7421,17 @@
         "${ elementsCount } Nachricht als ungelesen gekennzeichnet.",
         "${ elementsCount } Nachrichten als ungelesen gekennzeichnet."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } Nachricht in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt.",
+        "${ elementsCount } Nachrichten in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } Nachricht nach „${ folderName }” verschoben.",
         "${ elementsCount } Nachrichten nach „${ folderName }” verschoben."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Nachricht nach Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Nachrichten nach Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } Nachricht aus „${ labelName }” entfernt.",
@@ -7461,8 +7478,14 @@
       "Conversation marked as unread.": [
         "Unterhaltung als ungelesen markieren."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Thema in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Unterhaltung in „${ folderName }” verschoben."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Thema in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
@@ -7518,8 +7541,14 @@
       "Message marked as unread.": [
         "Nachricht als ungelesen gekennzeichnet."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Nachricht in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
+      ],
       "Message moved to ${ folderName }.": [
         "Nachricht nach „${ folderName }” verschoben."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }” entfernt."
@@ -8360,7 +8389,7 @@
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Wöchentlich an allen Tagen, ${ untilString }",
-        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
+        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Alle ${ interval } Wochen am Freitag",
@@ -8554,7 +8583,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Alle ${ interval } Jahre, ${ timesString }",

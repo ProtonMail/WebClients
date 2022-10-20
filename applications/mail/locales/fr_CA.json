@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n >= 2);",
+    "plural-forms": "nplurals=2; plural=(n > 1);",
     "language": "fr_CA"
   },
   "contexts": {
@@ -1225,6 +1225,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Meilleure offre"
+      ],
       "Most popular": [
         "La plus populaire"
       ]
@@ -1234,7 +1237,12 @@
         "Profitez de l'offre"
       ],
       "Get the deal now": [
-        "Obtenez l'offre maintenant"
+        "Profitez de l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Save ${ percentage }%": [
+        "Économisez ${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2846,10 +2854,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
-      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Les nouveaux courriels de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas distribués et seront définitivement supprimés.",
-        "Les nouveaux courriels de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas distribués et seront définitivement supprimés."
-      ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés."
       ],
@@ -3011,7 +3015,7 @@
         "Un groupe portant ce nom existe déjà"
       ],
       "A problem occurred, please try again": [
-        "Une erreur est survenue, veuillez réessayer"
+        "Une erreur s'est produite, nous vous invitons à réessayer"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée"
@@ -3188,7 +3192,7 @@
         "Les mots de passe ne correspondent pas"
       ],
       "Please activate your content search again": [
-        "Veuillez réactiver la recherche de contenu"
+        "Veuillez réactiver votre recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -8238,7 +8242,7 @@
         "L'importation commencera par les messages les plus récents."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
+        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur désactivera cette option."
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est uniquement disponible pour les utilisateurs payants"
@@ -8577,7 +8581,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } année, à ${ timesString }",
