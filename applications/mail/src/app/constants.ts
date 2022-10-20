@@ -236,8 +236,4 @@ export const WHITE_LISTED_ADDRESSES = [
     'no-reply@recovery.proton.me',
     'no-reply@partners.proton.me',
     'no-reply@referrals.proton.me',
-
-    'notify@protonmail.ch',
-    'userinsights@protonmail.com',
-    'contact@protonmail.com',
 ];

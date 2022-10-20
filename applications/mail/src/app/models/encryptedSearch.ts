@@ -28,6 +28,7 @@ export type ESBaseMessage = Pick<
     | 'LabelIDs'
     | 'AttachmentInfo'
     | 'BimiSelector'
+    | 'IsProton'
 >;
 
 export interface ESDBStatusMail {

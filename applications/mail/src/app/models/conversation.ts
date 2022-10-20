@@ -22,6 +22,7 @@ export interface Conversation {
     ExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     BimiSelector?: string | null;
+    IsProton?: number;
 }
 
 export interface ConversationLabel {
