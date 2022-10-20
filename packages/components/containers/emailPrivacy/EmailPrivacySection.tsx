@@ -15,11 +15,9 @@ import PreventTrackingToggle from './PreventTrackingToggle';
 import ProtectionModeSelect from './ProtectionModeSelect';
 import RemoteToggle from './RemoteToggle';
 
-const { REMOTE } = SHOW_IMAGES;
-
 const EmailPrivacySection = () => {
-    const [{ ShowImages = REMOTE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
-    const [showImages, setShowImages] = useState(ShowImages);
+    const [{ HideRemoteImages = SHOW_IMAGES.HIDE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
+    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [, setImageProxy] = useState(ImageProxy);
     const [{ feature: featureSpyTracker }, { feature: featureSpyTrackerIncorporator }] = useFeatures([
         FeatureCode.SpyTrackerProtection,
@@ -31,7 +29,7 @@ const EmailPrivacySection = () => {
         setImageProxy(ImageProxy);
     }, [ImageProxy]);
 
-    const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
+    const handleChangeShowImage = (newValue: number) => setHideRemoteImages(newValue);
 
     const showSpyTracker = featureSpyTracker?.Value;
     const showProtectionMode = ImageProxy !== IMAGE_PROXY_FLAGS.NONE && featureSpyTrackerIncorporator?.Value;
@@ -41,18 +39,18 @@ const EmailPrivacySection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="remoteToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
+                        <span className="mr0-5">{c('Label').t`Auto show remote images`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/images-by-default')}
                             title={c('Info')
-                                .t`Prevents content from the sender's server from loading without your permission.`}
+                                .t`Loaded content is being protected by our proxy when the block tracker is activated.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">
                     <RemoteToggle
                         id="remoteToggle"
-                        showImages={showImages}
+                        hideRemoteImages={hideRemoteImages}
                         onChange={handleChangeShowImage}
                         data-testid="privacy:remote-content-toggle"
                     />

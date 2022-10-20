@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Button, Icon, Tooltip } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 
-import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
 import { MessageImages } from '../../../logic/messages/messagesTypes';
 
@@ -39,7 +39,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     }
 
     const remoteText = couldLoadDirect
-        ? c('Action').t`No trackers found, but some images could not be loaded with tracking protection.`
+        ? c('Action').t`Some images failed to load with tracking protection.`
         : c('Action').t`This message contains remote content.`;
 
     const embeddedText = c('Action').t`This message contains embedded images.`;
@@ -47,7 +47,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     const text = type === 'remote' ? remoteText : embeddedText;
 
     const actionText = couldLoadDirect
-        ? c('Action').t`Load unprotected`
+        ? c('Action').t`Load anyway`
         : type === 'embedded'
         ? c('Action').t`Load embedded images`
         : c('Action').t`Load`;

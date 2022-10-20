@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode } from 'react';
 
 import { RenderResult, render as originalRender } from '@testing-library/react';
+import { resolvedRequest } from 'proton-mail/src/app/helpers/test/cache';
 
 import { CryptoApiInterface, CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
@@ -94,6 +95,11 @@ const TestProvider = ({ children }: { children: ReactNode }) => (
         </CacheProvider>
     </ApiContext.Provider>
 );
+
+export const addToCache = (key: string, value: any) => {
+    cache.set(key, resolvedRequest(value));
+};
+
 export const minimalCache = () => {
     cache.set('User', { status: STATUS.RESOLVED, value: {} });
     cache.set('MailSettings', { status: STATUS.RESOLVED, value: {} });

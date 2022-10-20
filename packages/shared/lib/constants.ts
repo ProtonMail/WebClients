@@ -419,10 +419,8 @@ export enum RECIPIENT_TYPES {
 }
 
 export enum SHOW_IMAGES {
-    NONE = 0,
-    REMOTE = 1,
-    EMBEDDED = 2,
-    ALL = 3,
+    SHOW = 0,
+    HIDE = 1,
 }
 
 export enum IMAGE_PROXY_FLAGS {

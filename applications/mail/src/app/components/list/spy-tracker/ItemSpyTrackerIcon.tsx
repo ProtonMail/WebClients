@@ -1,21 +1,13 @@
 import React, { useRef } from 'react';
 
-import { c } from 'ttag';
-
-import {
-    FeatureCode,
-    Href,
-    Spotlight,
-    Tooltip,
-    classnames,
-    useSpotlightOnFeature,
-    useSpotlightShow,
-} from '@proton/components';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { FeatureCode, Tooltip, classnames, useSpotlightOnFeature } from '@proton/components';
+import useUser from '@proton/components/hooks/useUser';
+import { MONTH } from '@proton/shared/lib/constants';
 import { isSent } from '@proton/shared/lib/mail/messages';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import LoadContentSpotlight from '../../message/LoadContentSpotlight';
 import SpyTrackerIcon from './SpyTrackerIcon';
 
 interface Props {
@@ -30,30 +22,33 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
     //     FeatureCode.SLIntegration
     // );
 
+    const [user] = useUser();
+
     const anchorRef = useRef(null);
 
     const sent = isSent(message.data);
 
     const isSimpleLoginIntegration = false; //TODO replace with when we will need simpleLoginIntegration?.Value;
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
+    const { hasProtection, hasShowRemoteImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
     });
 
-    // Display the spotlight only once, if trackers have been found inside the email
-    const { show: showSpotlight, onDisplayed } = useSpotlightOnFeature(
-        FeatureCode.SpotlightSpyTrackerProtection,
-        numberOfTrackers > 0
-    );
+    // Load content spotlight needs to be displayed if account is older than one month
+    const userCreateTime = user.CreateTime || 0;
+    const isAccountOlderThanOneMonth = Date.now() > userCreateTime * 1000 + MONTH;
 
-    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
+    const { show: showLoadContentSpotlight, onDisplayed: onLoadContentSpotlightDisplayed } = useSpotlightOnFeature(
+        FeatureCode.SpotlightLoadContent,
+        isAccountOlderThanOneMonth
+    );
 
     /*
      * Don't display the tracker icon on sent mails or when :
      * Loading remote images is automatic and email protection is OFF : We consider that the user don't want any protection at all.
      * But the user might have set recently the protection to OFF, so if we find trackers in previous emails, we still display the icon.
      */
-    if (sent || (!hasProtection && hasShowImage && numberOfTrackers === 0)) {
+    if (sent || (!hasProtection && hasShowRemoteImage && numberOfTrackers === 0)) {
         // TODO check also loadingSimpleLoginIntegrationFeature
         return null;
     }
@@ -71,20 +66,10 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
     );
 
     return (
-        <Spotlight
-            originalPlacement="top-right"
-            show={shouldShowSpotlight}
-            onDisplayed={onDisplayed}
+        <LoadContentSpotlight
+            show={showLoadContentSpotlight}
+            onDisplayed={onLoadContentSpotlightDisplayed}
             anchorRef={anchorRef}
-            content={
-                <>
-                    {c('Spotlight').t`To protect your privacy, Proton blocked email trackers in this message`}
-                    <br />
-                    <Href url={getKnowledgeBaseUrl('/email-tracker-protection')} title="Tracker protection">
-                        {c('Info').t`Learn more`}
-                    </Href>
-                </>
-            }
         >
             {isSimpleLoginIntegration ? (
                 <div className="flex flex-nowrap flex-align-items-center">
@@ -103,7 +88,7 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
                     </Tooltip>
                 </div>
             )}
-        </Spotlight>
+        </LoadContentSpotlight>
     );
 };
 

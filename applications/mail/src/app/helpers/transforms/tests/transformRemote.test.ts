@@ -43,7 +43,7 @@ describe('transformRemote', () => {
         };
 
         const mailSettings = {
-            ShowImages: SHOW_IMAGES.REMOTE,
+            HideRemoteImages: SHOW_IMAGES.SHOW,
         } as MailSettings;
 
         const { showRemoteImages, remoteImages, hasRemoteImages } = setup(message, mailSettings);
@@ -74,7 +74,7 @@ describe('transformRemote', () => {
         };
 
         const mailSettings = {
-            ShowImages: SHOW_IMAGES.REMOTE,
+            HideRemoteImages: SHOW_IMAGES.SHOW,
             ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
         } as MailSettings;
 
