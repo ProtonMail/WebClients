@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { getFirstSenderAddress, isMessage, isUnread } from '../../helpers/elements';
+import { isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { Element } from '../../models/element';
@@ -87,7 +87,7 @@ const Item = ({
         : [];
     const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = useMemo(() => senders.map((sender) => getRecipientLabel(sender, true)), [senders]);
-    const sendersAddresses = senders.map((sender) => sender?.Address);
+    const sendersAddresses = useMemo(() => senders.map((sender) => sender?.Address), [senders]);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
     const recipientsLabels = getRecipientsOrGroupsLabels(recipientsOrGroup);
     const recipientsAddresses = recipientsOrGroup
@@ -98,8 +98,8 @@ const Item = ({
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
-    const firstSenderAddress = getFirstSenderAddress(element);
     const displaySenderImage = !displayRecipients && !!element.DisplaySenderImage;
+    const [firstSenderAddress] = sendersAddresses;
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
