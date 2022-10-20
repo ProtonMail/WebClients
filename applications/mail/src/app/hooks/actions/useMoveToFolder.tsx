@@ -21,7 +21,7 @@ import MoveAllButton from '../../components/notifications/MoveAllButton';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
-import { isLabel } from '../../helpers/labels';
+import { isCustomLabel, isLabel } from '../../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { Conversation } from '../../models/conversation';
@@ -239,8 +239,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             }
 
             let undoing = false;
-
             const isMessage = testIsMessage(elements[0]);
+            const destinationLabelID = isCustomLabel(fromLabelID, labels) ? MAILBOX_LABEL_IDS.INBOX : fromLabelID;
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(folderID, isMessage, elements);
@@ -260,7 +260,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             if (!authorizedToMove.length) {
                 createNotification({
-                    text: getNotificationTextUnauthorized(folderID, fromLabelID),
+                    text: getNotificationTextUnauthorized(folderID, destinationLabelID),
                     type: 'error',
                 });
                 return;
@@ -276,7 +276,13 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     // Stop the event manager to prevent race conditions
                     stop();
                     dispatch(backendActionStarted());
-                    rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
+                    rollback = optimisticApplyLabels(
+                        authorizedToMove,
+                        { [folderID]: true },
+                        true,
+                        [],
+                        destinationLabelID
+                    );
 
                     const [{ UndoToken }] = await Promise.all([
                         api<{ UndoToken: { Token: string } }>(
@@ -309,7 +315,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     elements.length - authorizedToMove.length,
                     folderName,
                     folderID,
-                    fromLabelID
+                    destinationLabelID
                 );
 
                 const handleUndo = async () => {
@@ -330,7 +336,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     }
                 };
 
-                const suggestMoveAll = elements.length === PAGE_SIZE && folderID === TRASH;
+                const suggestMoveAll =
+                    elements.length === PAGE_SIZE && folderID === TRASH && !isCustomLabel(fromLabelID, labels);
 
                 const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID) : undefined;
 
