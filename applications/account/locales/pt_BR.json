@@ -49,7 +49,7 @@
         "Adicionar conta ${ BRAND_NAME }"
       ],
       "Add address": [
-        "Adicionar Endereço"
+        "Adicionar endereço"
       ],
       "Add calendar": [
         "Adicionar calendário"
@@ -142,10 +142,10 @@
         "Conferir o progresso da importação"
       ],
       "Choose a file or drag it here": [
-        "Escolha um arquivo ou arraste-o para cá"
+        "Escolha um arquivo ou arraste-o aqui"
       ],
       "Clear all formatting": [
-        "Limpar toda formatação"
+        "Limpar toda a formatação"
       ],
       "Close": [
         "Fechar"
@@ -499,7 +499,7 @@
         "Abrir navegação"
       ],
       "Ordered list": [
-        "Lista numerada"
+        "Lista ordenada"
       ],
       "Organization": [
         "Organização"
@@ -514,7 +514,7 @@
         "Entre em contato com o administrador da organização para gerenciar a assinatura"
       ],
       "Preview": [
-        "Pré-visualizar"
+        "Pré-visualização"
       ],
       "Previous": [
         "Anterior"
@@ -706,7 +706,7 @@
         "Mostrar"
       ],
       "Show folders": [
-        "Exibir pastas"
+        "Mostrar pastas"
       ],
       "Show labels": [
         "Mostrar marcadores"
@@ -760,7 +760,7 @@
         "Suporte"
       ],
       "Switch account": [
-        "Alternar de conta"
+        "Trocar de conta"
       ],
       "Top up": [
         "Recarregar"
@@ -772,7 +772,7 @@
         "Tentar outro método"
       ],
       "Underline": [
-        "Sublinhar"
+        "Sublinhado"
       ],
       "Unlock": [
         "Desbloquear"
@@ -781,7 +781,7 @@
         "Desbloquear dados"
       ],
       "Unordered list": [
-        "Lista com marcadores"
+        "Lista não ordenada"
       ],
       "Unsubscribe": [
         "Cancelar inscrição"
@@ -793,13 +793,13 @@
         "Atualizar o arquivo de recuperação"
       ],
       "Update recovery phrase": [
-        "Atualizar a frase de recuperação"
+        "Atualizar frase de recuperação"
       ],
       "Upgrade": [
         "Upgrade"
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Carregar imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -1072,11 +1072,6 @@
         "Dois anos"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Calendários"
@@ -1333,7 +1328,7 @@
         "Link do calendário está inacessível"
       ],
       "Calendar link is temporarily inaccessible": [
-        "Link do calendário está temporariamente inacessível"
+        "O link do calendário está temporariamente inacessível"
       ],
       "Failed to sync calendar": [
         "Falha ao sincronizar calendário"
@@ -1397,7 +1392,7 @@
     },
     "color": {
       "apple": [
-        "apple"
+        "maçã"
       ],
       "azureish white": [
         "branco azul-celeste"
@@ -1632,7 +1627,7 @@
         "E-mail"
       ],
       "Gender": [
-        "Sexo"
+        "Gênero"
       ],
       "Geo": [
         "Geolocalização"
@@ -1665,7 +1660,7 @@
         "Função"
       ],
       "Timezone": [
-        "Fuso Horário"
+        "Fuso horário"
       ],
       "Title": [
         "Título"
@@ -1682,10 +1677,10 @@
         "Principal"
       ],
       "Mobile": [
-        "Dispositivo móvel"
+        "Celular"
       ],
       "Other": [
-        "Outros"
+        "Outro"
       ],
       "Pager": [
         "Pager"
@@ -1892,7 +1887,7 @@
         "República Tcheca"
       ],
       "Côte d'Ivoire": [
-        "Costa do Marfim"
+        "A Costa do Marfim"
       ],
       "Denmark": [
         "Dinamarca"
@@ -2171,7 +2166,7 @@
         "Moçambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Birmânia"
       ],
       "Namibia": [
         "Namíbia"
@@ -2207,7 +2202,7 @@
         "Ilha Norfolk"
       ],
       "North Korea": [
-        "Coréia do Norte"
+        "Coreia do Norte"
       ],
       "North Macedonia": [
         "Macedônia do Norte"
@@ -2605,7 +2600,11 @@
         "Receba até 3 meses de ${ mailPlus } gratuitamente para cada amigo que se inscrever no ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Parece que a lista de contatos que você está importando contém alguns grupos. Por favor, verifique como esses grupos devem ser importados."
+        "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contato. Se o seu arquivo for maior, divida-o em arquivos menores.",
+        "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Acompanhe quantas pessoas clicam no seu link, se inscrevem e se tornam assinantes pagos. Assista seus meses grátis se somarem."
@@ -2642,11 +2641,17 @@
       "${ name } deletion failed": [
         "Falha na exclusão de ${ name }"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } falhou ao mover para a lista de não spam"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } falhou ao mover para a lista de spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } falhou ao mover para a sua lista de bloqueio"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } movido para a lista de não spam"
       ],
       "${ name } moved to spam list": [
         "${ name } movido para a lista de Spam"
@@ -2716,7 +2721,7 @@
         "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Você foi convidado(a) para ${ eventTitle } ${ eventDetailsText }"
+        "Você foi convidado para ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2724,7 +2729,7 @@
         "Quando: ${ formattedStart }"
       ],
       "When: ${ formattedStart } (all day)": [
-        "Quando: ${ formattedStart } (o dia todo)"
+        "Quando: ${ formattedStart } (o dia inteiro)"
       ],
       "When: ${ formattedStart } - ${ formattedEnd }": [
         "Quando: ${ formattedStart } - ${ formattedEnd }"
@@ -2737,10 +2742,10 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } aceitou o seu convite para ${ eventTitle }"
+        "${ emailAddress } aceitou seu convite para ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } recusou o seu convite para ${ eventTitle }"
+        "${ emailAddress } recusou seu convite para ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou provisoriamente seu convite para ${ eventTitle }"
@@ -2753,11 +2758,17 @@
       "${ name } deletion failed": [
         "Falha na exclusão de ${ name }"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } falhou ao mover para a lista de não spam"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } falhou ao mover para a lista de spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } falhou ao mover para a sua lista de bloqueio"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } movido para a lista de não spam"
       ],
       "${ name } moved to spam list": [
         "${ name } movido para a lista de Spam"
@@ -2810,13 +2821,13 @@
         "${ Local } é o seu nome de usuário. Para criar ${ Local }@${ Domain }, vá para Configurações> Mensagens e composição > Domínio curto (pm.me)"
       ],
       "A group with this name already exists": [
-        "Um grupo com esse nome já existe"
+        "Já existe um grupo com esse"
       ],
       "Account does not exist": [
         "A conta não existe"
       ],
       "Address primary private key not found": [
-        "Endereço da chave primária privada não encontrada"
+        "Chave privada primária do endereço não encontrada"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Todo o espaço de armazenamento foi alocado. Por favor, reduza o armazenamento alocado para outros usuários."
@@ -2875,7 +2886,7 @@
         "Endereço de e-mail desativado"
       ],
       "Email is not valid": [
-        "E-mail inválido"
+        "O e-mail é inválido"
       ],
       "Empty condition": [
         "Condição vazia"
@@ -2993,7 +3004,7 @@
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
       ],
       "Not a Proton account": [
-        "Não é uma conta Proton"
+        "Não é um conta Proton"
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -3008,7 +3019,7 @@
         "Organização não reconhecida. Tente novamente."
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As senhas não correspondem"
       ],
       "Payment process cancelled": [
         "Processo de pagamento cancelado"
@@ -3060,10 +3071,10 @@
         "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
       "Primary address key is not decrypted": [
-        "O endereço da chave primária não foi descriptografado"
+        "A chave do endereço primário não está descriptografada"
       ],
       "Primary address key is not decrypted.": [
-        "O endereço da chave primária não foi descriptografada."
+        "A chave do endereço primário não está descriptografada."
       ],
       "Primary key is not valid for sending": [
         "A chave primária não é valida para o envio"
@@ -3106,13 +3117,13 @@
         "Alguns nomes de marcadores estão reservados. Por favor, personalize a importação para editar esses nomes."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Alguns dos nomes dos seus marcadores estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
+        "Alguns nomes de marcadores estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Por favor, personalize a importação para editar esses nomes."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo deu errado. Por favor, ${ refresh } a página para tentar novamente. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+        "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "Tab closed": [
         "Guia fechada"
@@ -3139,7 +3150,7 @@
         "O nome do marcador é inválido. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Este nome de marcador é muito longo. Por favor, escolha um nome diferente."
+        "O nome do marcador é muito longo. Por favor, escolha um nome diferente."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "A quantidade mínima de crédito que pode ser adicionada é ${ _price }"
@@ -3249,19 +3260,19 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
+        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não está no formato correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. Somente formatos de arquivo ICS são permitidos."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ocorreu um erro ao fazer o upload do arquivo. Nenhum arquivo foi selecionado."
+        "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Ocorreu um erro inesperado. A importação precisa ser reiniciada."
+        "Ocorreu um erro inesperado. A importação deve ser reiniciada."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } evento.",
@@ -3271,10 +3282,10 @@
         "Seu arquivo ${ formattedFilename } tem um método inválido e não pode ser importado."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "O arquivo ${ formattedFilename } não tem eventos para serem importados."
+        "O arquivo ${ formattedFilename } não tem eventos a serem importados."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "O arquivo ${ formattedFilename } está vazio."
+        "O seu arquivo ${ formattedFilename } está vazio."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
         "O arquivo ${ formattedFilename } não é um calendário."
@@ -3293,7 +3304,7 @@
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao carregar o arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
         "Ocorreu um erro ao carregar seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
@@ -3305,10 +3316,10 @@
         "Seu arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_CONTACTS_STRING } contatos."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "O arquivo ${ formattedFilename } não tem eventos para serem importados."
+        "O arquivo ${ formattedFilename } não tem contatos para serem importados."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "O seu arquivo ${ formattedFilename } está vazio."
+        "O arquivo ${ formattedFilename } está vazio."
       ]
     },
     "Error importing event": {
@@ -3319,10 +3330,10 @@
         "Calendário"
       ],
       "Calendar time zone not supported": [
-        "Fuso horário do calendário não suportado"
+        "O fuso horário do calendário não é compatível"
       ],
       "Component with wrong format": [
-        "Componente com formato inválido"
+        "Componente com formato errado"
       ],
       "Custom timezone": [
         "Fuso horário personalizado"
@@ -3346,31 +3357,31 @@
         "Falha na validação do evento"
       ],
       "Floating times not supported": [
-        "Tempos alternados não são suportados"
+        "Tempos flutuantes não suportados"
       ],
       "Free-busy time information": [
-        "Informações de horários disponíveis"
+        "Informação de horário disponível/ocupado"
       ],
       "Invalid event": [
         "Evento inválido"
       ],
       "Journal entry": [
-        "Entrada de diário"
+        "Entradas periódicas"
       ],
       "Malformed all-day event": [
-        "Evento do dia inteiro inválido"
+        "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "Hora de término inválida"
+        "Hora de término inválido"
       ],
       "Malformed recurring event": [
-        "Evento recorrente com problema"
+        "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "Hora de início inválida"
+        "Hora de início inválido"
       ],
       "Missing start time": [
-        "Horário de início ausente"
+        "Falta o horário de início"
       ],
       "No UID, title or start time": [
         "Sem UID, título ou hora de início"
@@ -3400,7 +3411,7 @@
         "Fuso horário"
       ],
       "To-do entry": [
-        "Entrada de tarefas"
+        "Tarefas"
       ],
       "Unknown": [
         "Desconhecido"
@@ -3440,7 +3451,7 @@
         "Por favor, ${ refresh } ou verifique sua conexão."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Fique tranquilo, logo iremos corrigir este erro."
+        "Algo deu errado. Por favor, atualize a página ou tente novamente mais tarde."
       ],
       "There was a problem connecting to Proton.": [
         "Houve um problema de conexão com o Proton."
@@ -3449,7 +3460,7 @@
         "Muitas sessões infantis, limpe seus cookies e faça login novamente."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Você pode ${ refresh } ou tentar novamente mais tarde."
+        "Você também pode ${ refresh } ou tentar novamente mais tarde."
       ]
     },
     "Error message, recovery": {
@@ -3521,16 +3532,16 @@
         "Convite não suportado"
       ],
       "Unsupported response": [
-        "Resposta não suportada"
+        "Tipo de resposta não suportado"
       ],
       "We could not cancel the event in your calendar": [
-        "Não pudemos cancelar o evento em seu calendário"
+        "Não foi possível cancelar o evento no seu calendário"
       ],
       "We could not retrieve the event from your calendar": [
         "Não pudemos recuperar o evento de seu calendário"
       ],
       "We could not update the event in your calendar": [
-        "Não pudemos atualizar o evento em seu calendário"
+        "Não foi possível atualizar o evento no seu calendário"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Sua resposta foi enviada, mas o evento não pôde ser adicionado ao seu calendário"
@@ -3743,7 +3754,7 @@
         "Não mover"
       ],
       "Inbox": [
-        "Caixa de Entrada"
+        "Caixa de entrada"
       ],
       "Inbox - Default": [
         "Caixa de entrada - padrão"
@@ -3808,6 +3819,9 @@
       ],
       "Emails from blocked addresses won't be delivered.": [
         "E-mails de endereços bloqueados não serão entregues."
+      ],
+      "Search list": [
+        "Procurar lista"
       ]
     },
     "Font Face Default": {
@@ -3950,7 +3964,7 @@
         "Encontradas ${ items.length } sugestões, use o teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Use as teclas Cima e Baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
+        "Use as teclas Para cima e Para baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
       ]
     },
     "Human verification method": {
@@ -3976,8 +3990,8 @@
         "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Ocorreu um erro ao criptografar e adicionar seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
-        "Ocorreu um erro ao criptografar e adicionar seus eventos. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado.",
@@ -3990,11 +4004,11 @@
         "Criptografando e adicionando eventos ao seu calendário: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado com sucesso. O evento importado aparecerá agora em seu calendário.",
-        "Eventos importados com sucesso. Os eventos importados aparecerá agora em seu calendário."
+        "Evento importado com sucesso. O evento importado agora aparecerá em sua agenda.",
+        "Eventos importados com sucesso. Os eventos importados agora aparecerão em sua agenda."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Por favor, não feche a guia antes que o processo de importação termine."
+        "Por favor, não feche a aba antes que o processo de importação termine."
       ]
     },
     "Import calendar warning": {
@@ -4007,15 +4021,15 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Os convites importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem detalhes do organizador e de participantes. Para obter atualizações sobre os eventos e ver quem são os participantes, peça aos organizadores para convidá-lo através do seu endereço de e-mail Proton."
+        "Eventos importados aparecem em ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail Proton."
       ],
       "This file contains an event invitation:": [
         "Este arquivo contém um convite para um evento:",
-        "Este arquivo contém convites para eventos:"
+        "Este arquivo contém convites eventos:"
       ],
       "This file contains an invitation response:": [
-        "Este arquivo contém uma resposta a um convite:",
-        "Este arquivo contém respostas a um convite:"
+        "Este arquivo contém uma resposta de convite:",
+        "Este arquivo contém respostas a convites:"
       ],
       "This file contains some data that we cannot import:": [
         "Este arquivo contém alguns dados que não pudemos importar:"
@@ -4053,7 +4067,7 @@
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contato importado com sucesso. O contato importado aparecerá em sua lista de contatos.",
-        "contatos importados com sucesso. Os contatos importados aparecerão em sua lista de contatos."
+        "Contatos importados com sucesso. Os contatos importados aparecerão em sua lista de contatos."
       ]
     },
     "Import contacts warning": {
@@ -4061,7 +4075,7 @@
         "por enquanto"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "O ProtonCalendar não suporta ${ forNow }:"
+        "O ProtonContacts não suporta ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4373,11 +4387,11 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } evento não será importado. Expanda para ver os detalhes.",
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos não será importados. Expanda para ver os detalhes."
+        "${ totalEventsDiscarded } de ${ totalEvents } evento não será importado. Expanda para mais detalhes.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para mais detalhes."
       ],
       "No contact can be imported. Click for details": [
-        "Nenhum contato pôde ser importado. Clique para maiores detalhes"
+        "Nenhum contato pôde ser importado. Clique para mais detalhes"
       ],
       "No event can be imported. Expand for details.": [
         "Nenhum evento pôde ser importado. Clique para detalhes."
@@ -4611,11 +4625,11 @@
         "Alinhar à direita"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Uma (${ totalFoldersCount } pasta)",
-        "Toda as (${ totalFoldersCount } pastas)"
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Todas (${ totalFoldersCount } pastas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Um (${ totalFoldersCount } marcador)",
+        "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
       ],
       "All keys successfully reactivated": [
@@ -4775,7 +4789,7 @@
         "Escolha a aparência do aplicativo."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se este número de telefone estiver incorreto, clique em \"Editar\" para corrigi-lo."
+        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
       "Close this screen to exit.": [
         "Feche esta tela para sair."
@@ -4794,10 +4808,10 @@
         "Criar ${ calendarsToBeCreated } novos calendários"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que você gostaria de importar."
+        "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Crie um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
+        "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new account and share the email address and password with the user.": [
         "Crie uma conta e compartilhe o endereço de e-mail e a senha com o usuário."
@@ -4824,19 +4838,19 @@
         "Personalizado"
       ],
       "Custom daily": [
-        "Personalização diária"
+        "Personalizar diariamente"
       ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
       ],
       "Custom monthly": [
-        "Personalização mensal"
+        "Personalizar mensalmente"
       ],
       "Custom weekly": [
-        "Personalização mensal"
+        "Personalizar semanalmente"
       ],
       "Custom yearly": [
-        "Personalização anaul"
+        "Personalizar anualmente"
       ],
       "Daily": [
         "Diariamente"
@@ -5038,7 +5052,7 @@
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se você acredita que seja um erro, por favor entre em contato conosco ${ contactLink }."
+        "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
@@ -5086,7 +5100,7 @@
         "Descrição da imagem"
       ],
       "Image URL": [
-        "Imagem URL"
+        "URL da imagem"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "As imagens foram removidas porque não são permitidas na resposta automática"
@@ -5102,7 +5116,7 @@
         "Importar de"
       ],
       "Import in progress": [
-        "Importação em progresso"
+        "Importação em andamento"
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
@@ -5120,7 +5134,7 @@
         "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Inherited from parent folder": [
-        "Herdado da pasta pai"
+        "Herdado da pasta acima"
       ],
       "Insert image": [
         "Inserir imagem"
@@ -5181,7 +5195,7 @@
         "Marcadores:"
       ],
       "Large imports can take several days.": [
-        "Importações grandes podem demorar vários dias."
+        "Grandes importações podem levar vários dias."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como fazer login no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
@@ -5217,7 +5231,7 @@
         "Carregando ${ appName }"
       ],
       "Loading preview": [
-        "Carregamento de visualização"
+        "Carregando visualização"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Faça login no ${ MAIL_APP_NAME } para ativar seu endereço"
@@ -5244,7 +5258,7 @@
         "Mesclado"
       ],
       "Monthly ${ onDayString }": [
-        "Mensalmente, ${ onDayString }"
+        "Mensal ${ onDayString }"
       ],
       "more": [
         "mais"
@@ -5256,7 +5270,7 @@
         "Suporte a múltiplos usuários desativado."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nomeie sua nova pasta e selecione a pasta pai que deseja colocá-la. Se você não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
+        "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "New": [
         "Novo"
@@ -5368,7 +5382,7 @@
         "É mais provável que clientes PGP detectem automaticamente suas chaves PGP se as mensagens de saída forem assinadas."
       ],
       "Phone number": [
-        "Número de telefone"
+        "Número do telefone"
       ],
       "Plan upgrade required": [
         "Upgrade de plano necessário"
@@ -5412,10 +5426,10 @@
         "Por favor, forneça um endereço de e-mail para entrar em contato com você."
       ],
       "Please select the folders you would like to import:": [
-        "Por favor, selecione as pastas que você deseja importar:"
+        "Por favor, selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Por favor, selecione o tipo de link que deseja inserir e preencha todos os campos."
+        "Por favor, selecione o tipo de link que você deseja inserir e preencha em todos os campos."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Por favor, tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
@@ -5436,7 +5450,7 @@
         "Previne que o conteúdo do servidor de origem seja carregado sem sua permissão."
       ],
       "Preview": [
-        "Pré-visualizar"
+        "Pré-visualização"
       ],
       "Priority support": [
         "Suporte prioritário"
@@ -5532,7 +5546,7 @@
         "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviado via e-mail seguro <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Enviado via e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
@@ -5598,7 +5612,7 @@
         "Link de teste"
       ],
       "Text color": [
-        "Cor de texto"
+        "Cor do texto"
       ],
       "Text to display": [
         "Texto a ser exibido"
@@ -5645,7 +5659,7 @@
         "Esta avaliação gratuita de 30 dias não está disponível de outra forma."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Esta conta foi suspensa devido a uma potencial violação da política."
+        "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta pré-visualização de documentos PDF. Por favor, baixe o arquivo."
@@ -5732,7 +5746,7 @@
         "Para garantir acesso permanente à sua conta, defina um método de recuperação de conta"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o spam, verifique se você é humano."
+        "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para acompanhar o desenvolvimento dos produtos da Proton, você poderá se inscrever em nossos e-mails e/ou visitar nosso blog periodicamente."
@@ -5804,10 +5818,10 @@
         "Atualize a URL no seu gerenciador de senhas"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faça upgrade hoje para não perder os seguintes benefícios ${ planName }."
+        "Faça upgrade hoje para não perder os benefícios ${ planName }."
       ],
       "Upload picture": [
-        "Enviar imagem"
+        "Carregar imagem"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O arquivo enviado não é uma chave privada válida. Por favor verifique e tente novamente."
@@ -5921,7 +5935,7 @@
         "O Yandex analisa seus dados pessoais a fim de fornecer acesso aos anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
       ],
       "Yearly": [
-        "Anualmente"
+        "Anualmemnte"
       ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
@@ -5933,13 +5947,13 @@
         "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
       "You are signed in to the account ${ memberAddress }.": [
-        "Você iniciou sessão à conta ${ memberAddress }."
+        "Você está conectado à conta ${ memberAddress }."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Você pode mesclar calendários importados com calendários Proton existentes."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Você pode acompanhar o progresso em ${ importProgressLink }."
+        "Você pode verificar o progresso ${ importProgressLink }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Você pode personalizar e baixar suas faturas para fins contábeis."
@@ -5951,7 +5965,7 @@
         "Você pode importar um tipo de dado por vez."
       ],
       "You can now access and manage the account as an administrator.": [
-        "Você agora pode acessar e gerenciar a conta como um administrador."
+        "You can now access and manage the account as an administrator."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Agora você pode receber mensagens no seu endereço @pm.me. Atualize para um plano pago para também enviar e-mails usando seu endereço @pm.me e criar endereços @pm.me adicionais."
@@ -5964,6 +5978,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Você pode usar as seguintes credenciais para se conectar a um servidor do ${ VPN_APP_NAME } usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Você não pode enviar mais de ${ emailSendLimitNumber } convite por e-mail nas próximas 24 horas",
+        "Você não pode enviar mais de ${ emailSendLimitNumber } convites por e-mail nas próximas 24 horas"
       ],
       "You cannot refer ${ appName } users": [
         "Você não pode indicar usuários de ${ appName }"
@@ -6044,7 +6062,7 @@
         "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor acesse sua conta em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Sua conta tem pelo menos uma fatura em atraso. Seu acesso foi restringido. ${ payInvoiceLink }"
+        "Sua conta tem pelo menos uma fatura vencida. Seu acesso foi restringido. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -6068,7 +6086,7 @@
         "Seu método para recuperação de dados está definido"
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu e-mail será utilizado somente nesta verificação única."
+        "Seu e-mail só será utilizado para essa verificação única."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços da ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
@@ -6092,7 +6110,7 @@
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "O seu número de telefone será utilizado somente nesta verificação única."
+        "Seu número de telefone somente será utilizado nessa verificação única."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Sua conta Proton está atualmente suspensa. Para continuar usando sua conta, pague as faturas pendentes."
@@ -6183,7 +6201,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Clique aqui para detalhes"
+        "Clique para ver detalhes"
       ]
     },
     "Info when deleting payment method": {
@@ -6306,10 +6324,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "Adicionar encriptação"
+        "Adicionar criptografia"
       ],
       "Add expiration time": [
-        "Adicionar tempo para expirar"
+        "Adicionar tempo de expiração"
       ],
       "Apply / open": [
         "Aplicar / abrir"
@@ -6330,7 +6348,7 @@
         "Descartar rascunho"
       ],
       "Expand / contract composer": [
-        "Expandir / reduzir compositor"
+        "Expandir / reduzir editor"
       ],
       "Forward": [
         "Encaminhar"
@@ -6357,7 +6375,7 @@
         "Ir para com estrela"
       ],
       "Go to Trash": [
-        "Ir para a Lixeira"
+        "Ir para Lixeira"
       ],
       "Insert link": [
         "Inserir link"
@@ -6381,10 +6399,10 @@
         "Marcar como lido"
       ],
       "Mark as unread": [
-        "Marcar como não lida"
+        "Marcar como não lido"
       ],
       "Minimize / maximize composer": [
-        "Minimizar / maximizar o compositor"
+        "Minimizar / maximizar o editor"
       ],
       "Move down": [
         "Mover para baixo"
@@ -6435,7 +6453,7 @@
         "Salvar rascunho"
       ],
       "Search": [
-        "Buscar"
+        "Pesquisar"
       ],
       "Select / unselect": [
         "Marcar / desmarcar"
@@ -6444,10 +6462,10 @@
         "Selecionar / Desmarcar todos"
       ],
       "Send email": [
-        "Enviar email"
+        "Enviar e-mail"
       ],
       "Show all emails": [
-        "Visualizar todos e-mails"
+        "Visualizar todos os e-mails"
       ],
       "Show original message": [
         "Exibir mensagem original"
@@ -6470,7 +6488,7 @@
         "Navegação básica"
       ],
       "Composer shortcuts": [
-        "Atalhos do escritor"
+        "Atalhos do editor"
       ],
       "Folder shortcuts": [
         "Atalhos da pasta"
@@ -6827,7 +6845,7 @@
         "Nome de exibição"
       ],
       "Do not ask again": [
-        "Não pergunte novamente"
+        "Não perguntar novamente"
       ],
       "Do you have any suggestions for our team?": [
         "Você tem alguma sugestão para nossa equipe?"
@@ -7449,7 +7467,7 @@
         "Confortável"
       ],
       "Compact": [
-        "Compacto"
+        "Compacta"
       ]
     },
     "Label to change view layout": {
@@ -7723,22 +7741,22 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "A cada ${ interval } mês, ${ onDayString }",
-        "A cada ${ interval } meses, ${ onDayString }"
+        "A cada ${ interval } mês ${ onDayString }",
+        "A cada ${ interval } meses ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "A cada ${ interval } mês ${ onDayString }, ${ timesString }",
-        "A cada ${ interval } meses, ${ onDayString }, ${ timesString }"
+        "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
         "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensalmente ${ onDayString }"
+        "Mensal ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensalmente ${ onDayString }, ${ timesString }"
+        "Mensal ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Mensalmente ${ onDayString }, ${ untilString }"
@@ -8616,7 +8634,7 @@
     },
     "Notification time input": {
       "at": [
-        "em"
+        "às"
       ]
     },
     "Notification type": {
@@ -8885,7 +8903,7 @@
         "Pastas personalizadas"
       ],
       "Default folders": [
-        "Pastas padrões"
+        "Pastas padrão"
       ],
       "Move to...": [
         "Mover para..."
@@ -8990,7 +9008,7 @@
         "Adicione a descrição do calendário"
       ],
       "Add a calendar name": [
-        "Digite um nome para o calendário"
+        "Adicione o nome do calendário"
       ],
       "Add gift code": [
         "Adicione um Código de Vale-Presente"
@@ -9008,13 +9026,13 @@
         "Confirmar"
       ],
       "Confirm password": [
-        "Confirmar senha"
+        "Confirme a senha"
       ],
       "domain.com": [
         "dominio.com"
       ],
       "E.g., ": [
-        "Ex "
+        "Ex., "
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -9041,7 +9059,7 @@
         "Senha"
       ],
       "Phone number": [
-        "Número de telefone"
+        "Número do telefone"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
@@ -9135,7 +9153,7 @@
         "Celular"
       ],
       "Other": [
-        "Outros"
+        "Outro"
       ],
       "Pager": [
         "Pager"
@@ -9436,7 +9454,7 @@
         "Nome"
       ],
       "Preview": [
-        "Visualizar"
+        "Pré-visualização"
       ]
     },
     "Storage": {
@@ -9675,7 +9693,7 @@
         "Número de telefone atualizado"
       ],
       "Preference saved": [
-        "Preferências salvas"
+        "Preferência salva"
       ],
       "Premium address created": [
         "Endereço premium criado"
@@ -9844,7 +9862,7 @@
         "Valores"
       ],
       "vCard field": [
-        "campo vCard"
+        "Campo vCard"
       ]
     },
     "Time period": {
@@ -10128,10 +10146,10 @@
         "Personalize e confirme"
       ],
       "Customize calendar import": [
-        "Personalizar a importação de calendário"
+        "Personalizar importação de calendário"
       ],
       "Customize your mail import": [
-        "Personalize a importação de e-mail"
+        "Personalize sua importação de e-mail"
       ],
       "Customize your plan": [
         "Personalize o seu plano"
@@ -10146,7 +10164,7 @@
         "Recuperação de dados"
       ],
       "Date": [
-        "Data"
+        "Encontro"
       ],
       "Decrypt key": [
         "Descriptografar chave"
@@ -10317,8 +10335,8 @@
         "Importar e exportar"
       ],
       "Import as simple event?": [
-        "Importar como um evento simples?",
-        "Importar como eventos simples?"
+        "Importar com um evento simples?",
+        "Importar com eventos simples?"
       ],
       "Import contacts": [
         "Importar contatos"
@@ -10360,7 +10378,7 @@
         "Layout"
       ],
       "Link confirmation": [
-        "Link de confirmação"
+        "Confirmar redirecionamento"
       ],
       "Login password": [
         "Senha de acesso"
@@ -10480,7 +10498,7 @@
         "Relatar um problema"
       ],
       "Request new code": [
-        "Solicitar novo código"
+        "Solicitar um novo código"
       ],
       "Reset organization keys": [
         "Redefinir as chaves da organização"
@@ -10558,13 +10576,13 @@
         "Iniciar sessão"
       ],
       "Sign in and grant access": [
-        "Inicie sessão e conceda acesso"
+        "Iniciar sessão e conceder acesso"
       ],
       "Sign out": [
         "Encerrar sessão"
       ],
       "Signed in to member account": [
-        "Iniciado sessão à conta de membro"
+        "Conectado à conta de membro"
       ],
       "Sort folders alphabetically": [
         "Ordenar pastas por ordem alfabética"
@@ -10869,6 +10887,9 @@
       "This key is encrypted with an old password": [
         "Esta chave está criptografada com uma senha antiga"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Esta chave é utilizada por ${ MAIL_APP_NAME } para criptografar os dados dos seus contatos"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos um problema com a configuração do seu DNS. Por favor, certifique-se de que seus registros estejam de acordo com as instruções abaixo. Se o problema persistir, teremos que desativar o DKIM."
       ],
@@ -10974,7 +10995,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A senha deve conter ao menos ${ length } caracteres",
+        "A senha deve conter ao menos ${ length } caractere",
         "A senha deve conter ao menos ${ length } caracteres"
       ]
     },
@@ -11069,16 +11090,16 @@
         "Por favor, forneça pelo menos um destinatário"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "O Proton irá mesclar todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
+        "O Proton mesclará todas as pastas com o mesmo nome. Para evitar isso, altere os nomes antes da importação."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "O Proton irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Os relatórios não são criptografados de ponta a ponta, por favor não envie nenhuma informação sensível."
+        "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "As configurações de data e hora em seu dispositivo não estão sincronizadas. ${ learnMore }"
+        "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta Proton. Por favor, considere realizar sua importação de forma personalizada."
@@ -11123,8 +11144,8 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "",
-        "A cada ${ interval } semanas, ${ multipleDaysString }"
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
@@ -11135,106 +11156,106 @@
         "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "A cada ${ interval } das semanas, todos os dias",
-        "A cada ${ interval } das semanas, todos os dias"
+        "A cada ${ interval } semana, todos os dias",
+        "A cada ${ interval } semanas, todos os dias"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semana, todos os dias, às ${ timesString }",
         "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "A cada ${ interval } semana, todos os dias, ${ untilString }",
-        "A cada ${ interval } semanas em todos os dias, ${ untilString }"
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "A cada ${ interval } semana, na Sexta-feira",
-        "A cada ${ interval } semanas na Sexta-feira"
+        "A cada ${ interval } semana, na sexta-feira",
+        "A cada ${ interval } semanas, na sexta-feira"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "A cada ${ interval } semana, na Sexta-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na Sexta-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na sexta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na sexta-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "A cada ${ interval } semana, na Sexta-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na Sexta-feira, ${ untilString }"
+        "A cada ${ interval } semana, na sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na sexta-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "A cada ${ interval } semana, à Segunda-feira",
-        "A cada ${ interval } semanas na Segunda-feira"
+        "A cada ${ interval } semana, na segunda-feira",
+        "A cada ${ interval } semanas, na segunda-feira"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
-        "A cada ${ interval } semanas, na Segunda-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na segunda-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na segunda-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "A cada ${ interval } semana, na Segunda-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na Segunda-feira, ${ untilString }"
+        "A cada ${ interval } semana, na segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na segunda-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "A cada ${ interval } semana, no Sábado",
-        "A cada ${ interval } semanas, no Sábado"
+        "A cada ${ interval } semana, no sábado",
+        "A cada ${ interval } semanas, no sábado"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "A cada ${ interval } semana, no Sábado, às ${ timesString }",
-        "A cada ${ interval } semanas, no Sábado, ${ timesString }"
+        "A cada ${ interval } semana, no sábado, às ${ timesString }",
+        "A cada ${ interval } semanas, no sábado, às ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "A cada ${ interval } semana, no Sábado, ${ untilString }",
-        "A cada ${ interval } semanas, no Sábado, ${ untilString }"
+        "A cada ${ interval } semana, no sábado, ${ untilString }",
+        "A cada ${ interval } semanas, no sábado, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "A cada ${ interval } semana ao Domingo",
-        "A cada ${ interval } semanas, ao Domingo"
+        "A cada ${ interval } semana, no domingo",
+        "A cada ${ interval } semanas, no domingo"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
-        "A cada ${ interval } semanas, todos os dias, até ${ timesString }"
+        "A cada ${ interval } semana, no domingo, às ${ timesString }",
+        "A cada ${ interval } semanas, no domingo, às ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "A cada ${ interval } semana, no Domingo, ${ untilString }",
-        "A cada ${ interval } semanas, no Domingo, ${ untilString }"
+        "A cada ${ interval } semana, no domingo, ${ untilString }",
+        "A cada ${ interval } semanas, no domingo, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "A cada ${ interval } semana, na Quinta-feira",
-        "A cada ${ interval } semanas na Quinta-feira"
+        "A cada ${ interval } semana, na quinta-feira",
+        "A cada ${ interval } semanas, na quinta-feira"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "A cada ${ interval } semana, na Quinta-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na Quinta-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na quinta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na quinta-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "A cada ${ interval } semana, na Quinta-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na Quinta-feira, ${ untilString }"
+        "A cada ${ interval } semana, na quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na quinta-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "A cada ${ interval } semana, na Terça-feira",
-        "A cada ${ interval } semanas na Terça-feira"
+        "A cada ${ interval } semana, na terça-feira",
+        "A cada ${ interval } semanas, na terça-feira"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "A cada ${ interval } semana, na Terça-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na Terça-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na terça-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na terça-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "A cada ${ interval } semana, na Terça-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na Terça-feira, ${ untilString }"
+        "A cada ${ interval } semana, na terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na terça-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "A cada ${ interval } semana, na Quarta-feira",
-        "A cada ${ interval } semanas, na Quarta-feira"
+        "A cada ${ interval } semana, na quarta-feira",
+        "A cada ${ interval } semanas, na quarta-feira"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "A cada ${ interval } semana, na Quarta-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na Quarta-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na quarta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na quarta-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "A cada ${ interval } semana, na Quarta-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na Quarta-feira, ${ untilString }"
+        "A cada ${ interval } semana, na quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na quarta-feira, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Semanalmente em ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalmente, ${ multipleDaysString }, até ${ timesString }"
+        "Semanalmente em ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Semanalmente em ${ multipleDaysString }, ${ untilString }"
@@ -11252,10 +11273,10 @@
         "Semanalmente na Sexta-feira"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Semanalmente no Domingo, ${ timesString }"
+        "Semanalmente na Sexta-feira, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Semanalmente na Sexta-feira, ${ untilString }"
+        "Semanalmente na sexta-feira, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Semanalmente na Segunda-feira"
@@ -11264,19 +11285,19 @@
         "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Semanalmente na Segunda-feira, ${ untilString }"
+        "Semanalmente na segunda-feira, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Semanalmente no Sábado"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Semanalmente no Domingo, ${ timesString }"
+        "Semanalmente no sábado, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Semanalmente no Sábado, ${ untilString }"
+        "Semanalmente no sábado, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Semanalmente, ao Domingo"
+        "Semanalmente no Domingo"
       ],
       "Weekly on Sunday, ${ timesString }": [
         "Semanalmente no Domingo, ${ timesString }"
@@ -11288,19 +11309,19 @@
         "Semanalmente na Quinta-feira"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Semanalmente no Domingo, ${ timesString }"
+        "Semanalmente na quinta-feira, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Semanalmente na Quinta-feira, ${ untilString }"
+        "Semanalmente na quinta-feira, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Semanalmente, à Terça-feira"
+        "Semanalmente na Terça-feira"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Semanalmente na Terça-feira, ${ untilString }"
+        "Semanalmente na terça-feira, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Semanalmente na Quarta-feira"
@@ -11309,7 +11330,7 @@
         "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Semanalmente na Quarta-feira, ${ untilString }"
+        "Semanalmente na quarta-feira, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -11338,7 +11359,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

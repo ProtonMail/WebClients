@@ -975,7 +975,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "メールアドレス"
+        "メール"
       ],
       "Manual": [
         "マニュアル"
@@ -1019,7 +1019,7 @@
         "読み込み中"
       ],
       "No results found": [
-        "該当する結果が見つかりませんでした"
+        "該当する項目がありません"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -1110,17 +1110,17 @@
         "人間であることの検証"
       ],
       "Invalid verification code": [
-        "無効な検証コード"
+        "無効な検証コードです"
       ],
       "Request new code": [
-        "新しいコードのリクエスト"
+        "新しいコードを発行"
       ],
       "Two-factor authentication": [
         "2 要素認証"
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
+      "Password must contain at least ${ length } characters": [
         "パスワードは ${ length } 文字以上必要です"
       ]
     }

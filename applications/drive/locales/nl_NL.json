@@ -15,7 +15,7 @@
         "Herstel activeren"
       ],
       "Add": [
-        "Toevoegen"
+        "Voeg toe"
       ],
       "Add address": [
         "Adres toevoegen"
@@ -39,13 +39,13 @@
         "Telefoonnummer toevoegen"
       ],
       "Add to group": [
-        "Toevoegen aan groep"
+        "Aan groep toevoegen"
       ],
       "Apply": [
         "Toepassen"
       ],
       "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
+        "Schermafdruk(ken) toevoegen"
       ],
       "Authenticate": [
         "Authenticeren"
@@ -81,7 +81,7 @@
         "Import-voortgang checken"
       ],
       "Choose a file or drag it here": [
-        "Kies een bestand of sleep deze hier"
+        "Kies een bestand of sleep het hierheen"
       ],
       "Clear": [
         "Wissen"
@@ -102,7 +102,7 @@
         "Sluiten"
       ],
       "Close navigation": [
-        "Sluit navigatie"
+        "Navigatie sluiten"
       ],
       "Close this banner": [
         "Sluit deze banner"
@@ -168,8 +168,8 @@
         "Verwijderen"
       ],
       "Delete ${ selectedCount } contact": [
-        "${ selectedCount } contactpersoon verwijderen",
-        "${ selectedCount } contactpersonen verwijderen"
+        "Verwijder ${ selectedCount } contact",
+        "Verwijder ${ selectedCount } contacten"
       ],
       "Delete ${ selectedCount } contact group": [
         "${ selectedCount } contactgroep verwijderen",
@@ -251,7 +251,7 @@
         "Exporteer contactgroep"
       ],
       "Export contacts": [
-        "Contactgegevens exporteren"
+        "Contactpersonen exporteren"
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
@@ -326,7 +326,7 @@
         "Samenvoegen"
       ],
       "Merge contacts": [
-        "Contactpersonen samenvoegen"
+        "Contacten samenvoegen"
       ],
       "Minimize transfers": [
         "Minimaliseer overdrachten"
@@ -359,7 +359,7 @@
         "OK"
       ],
       "Open navigation": [
-        "Open navigatie"
+        "Navigatie openen"
       ],
       "Pause all": [
         "Pauzeer alle"
@@ -374,7 +374,7 @@
         "Voorbeeld"
       ],
       "Preview contact": [
-        "Contactpersoon voorvertonen"
+        "Contact tonen"
       ],
       "Previous": [
         "Vorige"
@@ -401,7 +401,7 @@
         "Pagina vernieuwen"
       ],
       "refresh the page": [
-        "vernieuw de pagina"
+        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -462,6 +462,9 @@
       ],
       "Search drive": [
         "Drive doorzoeken"
+      ],
+      "See plan features": [
+        "Bekijk de abonnementskenmerken"
       ],
       "Select all": [
         "Alles selecteren"
@@ -545,7 +548,7 @@
         "Ontgrendel gegevens"
       ],
       "Unmark for deletion": [
-        "Niet markeren voor verwijderen"
+        "Niet markeren voor verwijdering"
       ],
       "Untrust": [
         "Niet meer vertrouwen"
@@ -572,19 +575,16 @@
         "Afbeelding uploaden"
       ],
       "Use ${ label } theme": [
-        "Gebruik thema ${ label }"
-      ],
-      "Use authentication code": [
-        "Verificatiecode gebruiken"
+        "Gebruik ${ label } thema"
       ],
       "Use for sending": [
-        "Gebruik voor verzenden"
+        "Gebruiken om te versturen"
       ],
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
       "Verify": [
-        "Verifiëer"
+        "Verifiëren"
       ],
       "Verify account": [
         "Verifieer account"
@@ -662,7 +662,7 @@
         "Beste deal"
       ],
       "Most popular": [
-        "Populairste keuze"
+        "Meest populair"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -701,10 +701,10 @@
     },
     "Bug category": {
       "Application problem": [
-        "Applicatie probleem"
+        "Applicatieprobleem"
       ],
       "Bridge problem": [
-        "Bridge probleem"
+        "Probleem met Bridge"
       ],
       "Calendar problem": [
         "Probleem met agenda"
@@ -722,10 +722,10 @@
         "Probleem met Drive"
       ],
       "Feature request": [
-        "Functie-aanvraag"
+        "Feature-verzoek"
       ],
       "Import / export problem": [
-        "Importeer / exporteer probleem"
+        "Probleem met importeren / exporteren"
       ],
       "Installation problem": [
         "Installatieprobleem"
@@ -734,7 +734,7 @@
         "E-mailproblemen"
       ],
       "Manual setup problem": [
-        "Handmatige setup probleem"
+        "Probleem met eigen setup"
       ],
       "Other": [
         "Anders"
@@ -743,28 +743,28 @@
         "Probleem met betalingen"
       ],
       "Sign in problem": [
-        "Probleem met inloggen"
+        "Inlogprobleem"
       ],
       "Sign up problem": [
-        "Probleem met aanmelden voor Proton"
+        "Aanmeldprobleem"
       ],
       "Signup problem": [
-        "Probleem met aanmelden voor Proton"
+        "Aanmeldprobleem"
       ],
       "Slow speed problem": [
-        "Trage snelheid probleem"
+        "Snelheidsprobleem"
       ],
       "Speed problem": [
         "Snelheidsprobleem"
       ],
       "Streaming problem": [
-        "Probleem met mediastreaming"
+        "Streamingproblemen"
       ],
       "Update problem": [
         "Updateprobleem"
       ],
       "VPN problem": [
-        "VPN probleem"
+        "VPN-probleem"
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
@@ -858,19 +858,19 @@
         "Adres"
       ],
       "Anniversary": [
-        "Jubileum"
+        "Feestdag"
       ],
       "Birthday": [
         "Verjaardag"
       ],
       "Email": [
-        "E-mail"
+        "E-mailadres"
       ],
       "Gender": [
         "Geslacht"
       ],
       "Geo": [
-        "Geo"
+        "Plaats"
       ],
       "Language": [
         "Taal"
@@ -891,7 +891,7 @@
         "Organisatie"
       ],
       "Phone": [
-        "Telefoon"
+        "Telefoonnummer"
       ],
       "Photo": [
         "Foto"
@@ -914,7 +914,7 @@
         "Fax"
       ],
       "Main": [
-        "Algemeen"
+        "Primair"
       ],
       "Mobile": [
         "Mobiel"
@@ -926,7 +926,7 @@
         "Pager"
       ],
       "Personal": [
-        "Privé"
+        "Persoonlijk"
       ],
       "Work": [
         "Werk"
@@ -1731,18 +1731,18 @@
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Contacten samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+        "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Gebruik Sleep en Drop om prioriteit te ranken tussen samenvoegende contacten. Vink de contacten die u niet wilt samenvoegen."
+        "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Contactpersonen worden pas verwijderd na het klikken op 'samenvoegen'"
+        "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
       ]
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Ook hebben we automatisch de CSV velden geëvenaard met vCard velden. U kunt deze overeenkomende overeenkomstigheid handmatig bekijken en wijzigen."
+        "Ook hebben we de CSV-velden automatisch vergeleken met vergelijkbare vCard-velden. U kunt de overeenkomsten bekijken en handmatig wijzigen."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
@@ -1775,7 +1775,7 @@
         "Agendalimiet bereikt"
       ],
       "Contact could not be saved": [
-        "Contact kon niet worden opgeslagen"
+        "Contact kan niet opgeslagen worden"
       ],
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
@@ -1795,7 +1795,7 @@
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
       "Email address invalid": [
-        "E-mailadres ongeldig"
+        "E-mailadres is ongeldig"
       ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
@@ -1837,17 +1837,17 @@
         "Ongeldige naam"
       ],
       "Invalid public key file": [
-        "Ongeldig publieke-sleutelbestand"
+        "Ongeldige openbare sleutel"
       ],
       "Invalid verification code": [
-        "Ongeldige verificatiecode"
+        "De ingevoerde code is ongeldig"
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton-agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton-agenda's"
+        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
+        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -1871,7 +1871,7 @@
         "Geen geldig getal"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Eén van de contacten heeft geen e-mailadres: ${ noEmailsContactNamesList }",
+        "Een van de contacten heeft geen e-mailadres: ${ noEmailsContactNamesList }",
         "Sommige contactpersonen hebben geen e-mailadres: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
@@ -1895,7 +1895,7 @@
         "Primaire adressleutel is niet ontsleuteld"
       ],
       "Primary address key is not decrypted.": [
-        "Primaire adressleutel is niet gedecodeerd."
+        "Primaire adressleutel is niet ontsleuteld."
       ],
       "Report failed to be sent": [
         "Rapport kon niet verzonden worden"
@@ -1913,7 +1913,7 @@
         "Controle van handtekening mislukt"
       ],
       "Some contacts could not be deleted": [
-        "Sommige contacten konden niet gewist worden"
+        "Enkele contacten konden niet verwijderd worden"
       ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
@@ -1937,7 +1937,7 @@
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
@@ -1979,7 +1979,7 @@
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
       ],
       "This field is required": [
-        "Dit veld is verplicht"
+        "Dit veld is vereist"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
@@ -2039,7 +2039,7 @@
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv of .vcf bestand geselecteerd"
+        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv- of .vcf-bestand geselecteerd"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
@@ -2077,10 +2077,10 @@
         "${ refresh } alstublieft of controleer uw verbinding."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Er ging iets mis. Vernieuw de pagina of probeer later opnieuw."
+        "Er is iets misgegaan. Vernieuw de pagina of probeer het later opnieuw."
       ],
       "There was a problem connecting to Proton.": [
-        "Fout tijdens het verbinden met Proton."
+        "Fout bij het verbinden met Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "U kunt ook ${ refresh } of probeer het later opnieuw."
@@ -2138,7 +2138,7 @@
         "Kilobytes"
       ],
       "Megabyte": [
-        "Megabyte",
+        "Megabyt",
         "Megabytes"
       ]
     },
@@ -2163,7 +2163,7 @@
         "Netwerk"
       ],
       "Other category": [
-        "Categorie"
+        "Andere categorie"
       ],
       "Services": [
         "Diensten"
@@ -2171,7 +2171,7 @@
     },
     "Header": {
       "Contacts": [
-        "Contactpersonen"
+        "Contacten"
       ],
       "Contacts, groups and settings": [
         "Contacten, groepen en instellingen"
@@ -2194,7 +2194,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "E-mail"
+        "E-mailadres"
       ],
       "Manual": [
         "Handmatig"
@@ -2218,11 +2218,11 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contactpersoon versleuteld en toegevoegd aan uw contactenlijst",
-        "${ totalImported }/${ totalToImport } contactpersonen versleuteld en toegevoegd aan uw contactenlijst"
+        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
+        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. Er konden geen contacten worden geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. Er kon geen contact worden geïmporteerd."
       ]
     },
@@ -2248,7 +2248,7 @@
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contact succesvol geïmporteerd. Het geïmporteerde contact zal nu in uw adresboek verschijnen.",
-        "Contactpersonen succesvol geïmporteerd. De geïmporteerde contacten verschijnen nu in uw contactlijst."
+        "Contacten succesvol geïmporteerd. De geïmporteerde contacten zullen nu in uw adresboek verschijnen."
       ]
     },
     "Import contacts warning": {
@@ -2256,7 +2256,7 @@
         "momenteel"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacten ondersteunt geen ${ forNow }:"
+        "ProtonContacts ondersteunt geen ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2654,10 +2654,10 @@
         "Een nummer wordt toegevoegd aan de foldernaam"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accounttoegang beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
+        "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels om berichten te kunnen versturen naar deze ontvanger."
+        "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
@@ -2750,7 +2750,7 @@
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die je wilt importeren."
       ],
       "Create a new contact group": [
-        "Nieuwe contactgroep maken"
+        "Maak een nieuwe contactengroep"
       ],
       "Create in": [
         "Maak in"
@@ -2780,7 +2780,7 @@
         "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
       ],
       "double your storage": [
-        "uw opslag te verdubbelen"
+        "uw opslag verdubbelen"
       ],
       "Download canceled": [
         "Download geannuleerd"
@@ -2807,13 +2807,10 @@
         "Downloaden"
       ],
       "Drop the file here to upload": [
-        "Sleep het bestand om te uploaden"
+        "Sleep het bestand hierheen om te uploaden"
       ],
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
-      ],
-      "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
       ],
       "Enabling drive search": [
         "Drive doorzoeken wordt ingeschakeld"
@@ -2824,17 +2821,11 @@
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
-      "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+        "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -2844,7 +2835,7 @@
         "Geschatte resterende tijd: minder dan een minuut"
       ],
       "Estimating time remaining...": [
-        "Resterende tijd inschatten..."
+        "Geschatte resterende tijd..."
       ],
       "Failed": [
         "Mislukt"
@@ -2898,7 +2889,7 @@
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
       ],
       "Group assignment applied": [
-        "Groepstoewijzing toegepast"
+        "Groep toewijzing toegepast"
       ],
       "here": [
         "hier"
@@ -2913,7 +2904,7 @@
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
+        "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Als u een van deze heeft, ga dan verder naar Proton account instelling om\nhet deblokkeerproces voort te zetten."
@@ -2965,7 +2956,7 @@
         "Bevestig uw keuze en wij doen de rest."
       ],
       "Key fingerprint": [
-        "Vingerafdruk van sleutel"
+        "Digitale vingerafdruk"
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
@@ -2992,7 +2983,7 @@
         "Laden"
       ],
       "Loading ${ appName }": [
-        "${ appName } aan het laden"
+        "${ appName } laden"
       ],
       "Loading link": [
         "Koppeling laden"
@@ -3031,7 +3022,7 @@
         "Nee"
       ],
       "No contacts added yet": [
-        "Nog geen contacten toegevoegd"
+        "Nog geen contactpersonen toegevoegd"
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -3052,7 +3043,7 @@
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
       "Not a valid URL": [
-        "Geen geldige URL"
+        "Ongeldige link"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Niet alle bestanden zijn overgeplaatst. Probeer de bestanden opnieuw te up- of downloaden."
@@ -3150,7 +3141,7 @@
         "Het herstelproces kan enige tijd in beslag nemen."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
+        "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
       "Report has been sent": [
         "Rapport werd verzonden"
@@ -3168,7 +3159,7 @@
         "Selecteer een geüpload bestand of map en maak er een link naartoe."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
+        "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
@@ -3246,19 +3237,19 @@
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Dit adres is uitgeschakeld. Om naar dit adres te kunnen verzenden, moet de eigenaar het adres eerst inschakelen."
+        "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
+        "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
+        "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Deze koppeling is gemaakt met een oude versie van Drive en kan niet worden aangepast. Verwijder deze link en creeër een nieuwe om de instellingen te wijzigen."
@@ -3286,13 +3277,13 @@
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleutels die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
+        "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Om uw gegevens terug te krijgen, moet u de contactsleutel die wordt gebruikt op het moment dat de gegevens werden aangemaakt opnieuw activeren. Dit vereist dat u het wachtwoord weet die u gebruikte toen de sleutel werd gegenereerd."
+        "Om uw gegevens terug te krijgen, moet u de contactsleutel die wordt gebruikt op het moment dat de gegevens werden aangemaakt opnieuw activeren. Dit vereist dat u het wachtwoord onthoudt dat wordt gebruikt toen de sleutel werd gegenereerd."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Om adresverificatie te gebruiken, moet u één of meer beschikbare openbare sleutels vertrouwen, inclusief de openbare sleutel die u wilt gebruiken voor het verzenden. Dit voorkomt dat de versleutelingssleutels worden vervalst."
+        "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Overdracht geannuleerd voor bestand \"${ name }\""
@@ -3366,11 +3357,8 @@
       "What would you like to do?": [
         "Wat zou u willen doen?"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
@@ -3388,7 +3376,7 @@
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        "U kunt geïmporteerde agenda's ook samenvoegen met bestaande Proton-agenda's."
+        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
@@ -3458,7 +3446,7 @@
     },
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
-        "Meerdere contacten zien er identiek uit. ${ mergeAction }"
+        "Meerdere contactpersonen zien er identiek uit. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -3504,7 +3492,7 @@
         "Vertrouwd"
       ],
       "WKD": [
-        "WKD"
+        "WLD"
       ]
     },
     "Label": {
@@ -3521,7 +3509,7 @@
         "E-mailadres toevoegen"
       ],
       "Add image URL": [
-        "Voeg URL van afbeelding toe"
+        "Afbeeldings-URL toevoegen"
       ],
       "Add to group": [
         "Toevoegen aan groep"
@@ -3572,7 +3560,7 @@
         "Kinderpornografisch materiaal"
       ],
       "City": [
-        "Plaats"
+        "Stad"
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
@@ -3584,16 +3572,19 @@
         "Reactie"
       ],
       "Contacts": [
-        "Contactpersonen"
+        "Contacten"
       ],
       "Copy": [
-        "Kopieer"
+        "Kopiëren"
       ],
       "Copyright infringement": [
         "Copyrightschending"
       ],
       "Country": [
         "Land"
+      ],
+      "Create a share link": [
+        "Maak een link om te delen"
       ],
       "Create Proton account": [
         "Maak Proton-account aan"
@@ -3615,7 +3606,7 @@
         "Verwijderd"
       ],
       "Do not ask again": [
-        "Vraag niet opnieuw"
+        "Niet opnieuw vragen"
       ],
       "Download anyway": [
         "Toch downloaden"
@@ -3627,7 +3618,7 @@
         "E-mailadres"
       ],
       "Email format": [
-        "E-mailindeling"
+        "E-mailformaat"
       ],
       "Emails": [
         "E-mails"
@@ -3645,7 +3636,7 @@
         "Verloopt"
       ],
       "Export contacts": [
-        "Contactgegevens exporteren"
+        "Contacten exporteren"
       ],
       "Extended address": [
         "Adrestoevoeging"
@@ -3705,7 +3696,7 @@
         "Berichten labelen als"
       ],
       "Last 12 months only": [
-        "Alleen laatste 12 maanden"
+        "Alleen afgelopen 12 maanden"
       ],
       "Last 3 months only": [
         "Alleen de laatste 3 maanden"
@@ -3753,7 +3744,7 @@
         "Nooit"
       ],
       "Notification": [
-        "Melding"
+        "Notificatie"
       ],
       "OK": [
         "OK"
@@ -3795,10 +3786,10 @@
         "Proton gebruikersnaam"
       ],
       "Public keys": [
-        "Publieke sleutels"
+        "Openbare sleutels"
       ],
       "Region": [
-        "Regio"
+        "Regio/Provincie"
       ],
       "Replace file": [
         "Bestand vervangen"
@@ -3840,7 +3831,7 @@
         "Gestolen gegevens"
       ],
       "Street address": [
-        "Straatnaam"
+        "Adres"
       ],
       "System information": [
         "Systeeminformatie"
@@ -3927,7 +3918,7 @@
         "Map maken"
       ],
       "Create label": [
-        "Label aanmaken"
+        "Label maken"
       ],
       "Edit folder": [
         "Map bewerken"
@@ -3943,7 +3934,7 @@
     },
     "Link": {
       "clearing your browser cache": [
-        "uw browser cache wissen"
+        "browsercache legen"
       ],
       "Learn more": [
         "Meer informatie"
@@ -4060,7 +4051,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "Van account wisselen of account toevoegen"
+        "Account toevoegen of wisselen"
       ]
     },
     "new_plans: info": {
@@ -4300,16 +4291,16 @@
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ],
       "Discover all Proton services": [
-        "Ontdek alle Proton-diensten"
+        "Ontdek alle Proton services"
       ],
       "Select a theme": [
-        "Kies een thema"
+        "Selecteer een thema"
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Gebruik het app-menu linksboven om toegang te krijgen tot andere Proton-diensten, waaronder VPN, Calendar en Drive."
+        "Gebruik de app-selector in de linkerbovenhoek om toegang te krijgen tot andere Proton diensten, waaronder VPN, Calendar en Drive."
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
@@ -4365,7 +4356,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Een manier om contact met u op te nemen"
+        "Een manier om u te contacteren"
       ],
       "E.g., ": [
         "Bijv., "
@@ -4377,7 +4368,7 @@
         "Voer uw e-mailadres in"
       ],
       "Filter groups": [
-        "Groepen filteren"
+        "Filter groepen"
       ],
       "Image URL": [
         "Afbeeldings-URL"
@@ -4395,16 +4386,16 @@
         "Wachtwoord"
       ],
       "Please describe the problem and include any error messages": [
-        "Beschrijf het probleem en voeg alle foutmeldingen toe"
+        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
       ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
       ],
       "Search for name or email": [
-        "Naam of e-mail zoeken"
+        "Naam of e-mailadres zoeken"
       ],
       "Select": [
-        "Selecteren"
+        "Selecteer"
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
@@ -4428,7 +4419,7 @@
         "Geen contactpersonen geëxporteerd."
       ],
       "No contacts merged.": [
-        "Geen contacten samengevoegd."
+        "Geen contactpersonen samengevoegd."
       ],
       "Progress: ${ combinedProgress }%": [
         "Voortgang: ${ combinedProgress }%"
@@ -4439,7 +4430,7 @@
         "Adres"
       ],
       "Email": [
-        "E-mail"
+        "E-mailadres"
       ],
       "Fax": [
         "Fax"
@@ -4448,7 +4439,7 @@
         "Thuis"
       ],
       "Main": [
-        "Algemeen"
+        "Primair"
       ],
       "Mobile": [
         "Mobiel"
@@ -4483,12 +4474,6 @@
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Krijg tot 18 maanden ${ planName } gratis"
-      ],
-      "Invite friends and earn rewards!": [
-        "Nodig vrienden uit en verdien bonussen!"
-      ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
       ],
@@ -4509,7 +4494,7 @@
     },
     "Success": {
       "Address copied to clipboard": [
-        "Adres naar klembord gekopieerd"
+        "Adres gekopieerd naar het klembord"
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -4522,23 +4507,23 @@
         "Contactpersonen verwijderd"
       ],
       "Contact group deleted": [
-        "Contactpersonen groep verwijderd",
+        "Contactgroep verwijderd",
         "Contactgroepen verwijderd"
       ],
       "Contact saved": [
-        "Contact opgeslagen"
+        "Contactpersoon opgeslagen"
       ],
       "Contacts deleted": [
-        "Contactpersoon verwijderd"
+        "Contactpersonen verwijderd"
       ],
       "Email address copied to clipboard": [
-        "E-mailadres naar klembord gekopieerd"
+        "E-mailadres gekopieerd naar het klembord"
       ],
       "Fingerprint copied to clipboard": [
         "Vingerafdruk gekopieerd naar klembord"
       ],
       "Phone number copied to clipboard": [
-        "Telefoonnummer naar klembord gekopieerd"
+        "Telefoonnummer gekopieerd naar het klembord"
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
@@ -4587,7 +4572,7 @@
         "Status"
       ],
       "Type": [
-        "Type"
+        "Soort"
       ]
     },
     "TableHeader": {
@@ -4669,7 +4654,7 @@
         "Actief"
       ],
       "Add contact group name": [
-        "Naam toevoegen aan contactgroep"
+        "Naam contactgroep toevoegen"
       ],
       "Add to ${ groupCount } group": [
         "Toevoegen aan ${ groupCount } groep",
@@ -4685,7 +4670,7 @@
         "Alle"
       ],
       "Back": [
-        "Vorige"
+        "Terug"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -4697,7 +4682,7 @@
         "Layout aanpassen"
       ],
       "Clearing data": [
-        "Gegevens aan het wissen"
+        "Data aan het wissen"
       ],
       "Completed": [
         "Voltooid"
@@ -4721,7 +4706,7 @@
         "Contact aanmaken"
       ],
       "Create new group": [
-        "Nieuwe groep maken"
+        "Nieuwe groep aanmaken"
       ],
       "Currency": [
         "Valuta"
@@ -4801,7 +4786,7 @@
         "E-mailadressen"
       ],
       "Email settings": [
-        "E-mail instellingen"
+        "E-mailinstellingen"
       ],
       "Empty trash": [
         "Prullenbak leegmaken"
@@ -4813,7 +4798,7 @@
         "Voer uw gebruikersnaam in of uw ${ MAIL_APP_NAME } e-mailadres"
       ],
       "Exporting contacts": [
-        "Contactpersonen exporteren"
+        "Contacten worden geëxporteerd"
       ],
       "Failed": [
         "Mislukt"
@@ -4874,7 +4859,7 @@
         "Contacten samenvoegen"
       ],
       "Merging contacts": [
-        "Contactpersonen samenvoegen"
+        "Contacten worden samengevoegd"
       ],
       "MIME type": [
         "MIME type"
@@ -4904,16 +4889,16 @@
         "Aantal items"
       ],
       "Open actions dropdown": [
-        "Open acties dropdownmenu"
+        "Open dropdown-menu voor acties"
       ],
       "Open help menu": [
-        "Open help-menu"
+        "Open helpmenu"
       ],
       "Open settings menu": [
-        "Open instellingen-menu"
+        "Open instellingenmenu"
       ],
       "Other information": [
-        "Overige informatie"
+        "Andere informatie"
       ],
       "Other names": [
         "Andere namen"
@@ -4961,7 +4946,7 @@
         "Zoeken…"
       ],
       "Select a theme": [
-        "Kies een thema"
+        "Selecteer een thema"
       ],
       "Select action to take on contact group": [
         "Selecteer actie voor de contactgroep"
@@ -5057,7 +5042,7 @@
         "Geüpload door"
       ],
       "View contacts": [
-        "Contactpersonen weergeven"
+        "Contacten weergeven"
       ],
       "Warning": [
         "Waarschuwing"
@@ -5112,7 +5097,7 @@
         "Import aanpassen om het aantal labels te verminderen"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u worden verzonden"
+        "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u zijn verzonden"
       ],
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"
@@ -5124,7 +5109,7 @@
         "Labelnamen bewerken"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-mail encryptie dwingt e-mail handtekening om uw verzonden berichten te verifiëren"
+        "E-mailberichten versleutelen zorgt dat ze ook ondertekend worden, om anderen te helpen om uw verzonden berichten te verifiëren"
       ],
       "Encrypted data": [
         "Versleutelde gegevens"
@@ -5145,7 +5130,7 @@
         "Het importeren begint met de meest recente berichten."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Upload een publieke sleutel om het verzenden van versleutelde end-to-end e-mails naar dit e-mailadres mogelijk te maken"
+        "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"
@@ -5195,8 +5180,8 @@
         "Weet u zeker dat u ${ count } contactgroepen permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Weet u zeker dat u ${ count } contactpersoon permanent wil verwijderen?",
-        "Weet u zeker dat u ${ count } contactpersonen permanent wil verwijderen?"
+        "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Weet u zeker dat u deze contactgroep permanent wilt verwijderen?"
@@ -5205,7 +5190,7 @@
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
       ],
       "Contacts could not be merged": [
-        "Contacten konden niet samengevoegd worden"
+        "Contactpersonen konden niet samengevoegd worden"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
@@ -5223,7 +5208,7 @@
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Sommige van de contacten die moeten worden samengevoegd tonen fouten. Controleer ze individueel"
+        "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."

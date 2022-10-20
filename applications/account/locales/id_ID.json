@@ -97,7 +97,7 @@
         "Rata kanan"
       ],
       "Alignment": [
-        "Perataan"
+        "Penjajaran"
       ],
       "Apply": [
         "Terapkan"
@@ -169,7 +169,7 @@
         "Hubungi layanan dukungan"
       ],
       "Continue": [
-        "Lanjutkan"
+        "Lanjut"
       ],
       "Continue import": [
         "Lanjutkan impor"
@@ -223,7 +223,7 @@
         "Paket saat ini"
       ],
       "Customize": [
-        "Sesuaikan"
+        "Atur"
       ],
       "Customize import": [
         "Sesuaikan impor"
@@ -307,19 +307,19 @@
         "Unduh aplikasi Impor-Ekspor"
       ],
       "Edit": [
-        "Edit"
+        "Sunting"
       ],
       "Edit billing details": [
         "Sunting rincian tagihan"
       ],
       "Edit email address": [
-        "Sunting alamat email"
+        "Ubah alamat email"
       ],
       "Edit label": [
         "Sunting label"
       ],
       "Edit phone number": [
-        "Edit nomor telepon"
+        "Ubah nomor telepon"
       ],
       "Edit sieve": [
         "Edit sieve"
@@ -334,7 +334,7 @@
         "Emoji"
       ],
       "enable desktop notifications": [
-        "mengaktifkan pemberitahuan desktop"
+        "mengaktifkan notifikasi desktop"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -379,7 +379,7 @@
         "Dapatkan kode verifikasi"
       ],
       "Go to label": [
-        "Ke label"
+        "Tuju label"
       ],
       "Go to sign in": [
         "Tuju layar masuk"
@@ -520,7 +520,7 @@
         "Sebelumnya"
       ],
       "Previous month": [
-        "Bulan lalu"
+        "Bulan sebelumnya"
       ],
       "Quit": [
         "Keluar"
@@ -772,7 +772,7 @@
         "Coba metode lain"
       ],
       "Underline": [
-        "Garis Bawah"
+        "Garis bawah"
       ],
       "Unlock": [
         "Membuka"
@@ -781,7 +781,7 @@
         "Buka kunci data"
       ],
       "Unordered list": [
-        "Daftar tak urut"
+        "Daftar tak berurut"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
@@ -898,27 +898,27 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
+      "+ ${ _users } users": [
         "+ ${ _users } pengguna"
       ],
-      "+ ${ domains } custom domain": [
+      "+ ${ domains } custom domains": [
         "+ ${ domains } domain khusus"
       ]
     },
     "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
+      "${ addressAddon.MaxAddresses } addresses": [
         "${ addressAddon.MaxAddresses } alamat"
       ],
-      "${ domainAddon.MaxDomains } domain": [
+      "${ domainAddon.MaxDomains } domains": [
         "${ domainAddon.MaxDomains } domain"
       ],
-      "${ memberAddon.MaxMembers } user": [
+      "${ memberAddon.MaxMembers } users": [
         "${ memberAddon.MaxMembers } pengguna"
       ],
-      "${ vpnAddon.MaxVPN } connection": [
+      "${ vpnAddon.MaxVPN } connections": [
         "${ vpnAddon.MaxVPN } koneksi"
       ],
-      "${ vpnBonus } connection": [
+      "${ vpnBonus } connections": [
         "${ vpnBonus } koneksi"
       ]
     },
@@ -964,7 +964,7 @@
         "Dengan keluar sekarang, beberapa kontak mungkin tidak diimpor"
       ],
       "By leaving now, some events may not be imported": [
-        "Beberapa acara tidak akan diimpor jika Anda keluar"
+        "Abaila Anda keluar sekarang, sebagian acara kemungkinan tidak akan terimpor"
       ]
     },
     "Alter": {
@@ -1065,11 +1065,6 @@
         "Dua tahun"
       ]
     },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Penawaran Spesial"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Kalender"
@@ -1133,16 +1128,16 @@
         "Masalah pendaftaran"
       ],
       "Slow speed problem": [
-        "Masalah kecepatan lambat"
+        "Masalah kecepatan"
       ],
       "Speed problem": [
         "Masalah kecepatan"
       ],
       "Streaming problem": [
-        "Masalah streaming"
+        "Masalah pemutaran konten"
       ],
       "Update problem": [
-        "Masalah pemutakhiran"
+        "Masalah pembaruan aplikasi"
       ],
       "VPN problem": [
         "Masalah VPN"
@@ -1209,7 +1204,7 @@
       "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
         "Anda telah mencapai batas jumlah kalender bersama yang dapat Anda miliki. Untuk dapat menerima undangan kalender baru, Anda harus terlebih dahulu menghapus sebagian kalender Anda."
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
         "Anda telah mencapai batas ${ MAX_SUBSCRIBED_CALENDARS } langganan kalender yang diperkenankan."
       ]
     },
@@ -1313,13 +1308,13 @@
         "Kalender tidak dapat didekripsi"
       ],
       "Calendar is syncing": [
-        "Sedang sinkronisasi kalender"
+        "Kalender sedang menyinkronkan data"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
       ],
       "Calendar is too big": [
-        "Kalender terlalu besar"
+        "Ukuran kalender terlalu besar"
       ],
       "Calendar link is not accessible": [
         "Tautan kalender tidak dapat diakses"
@@ -1331,7 +1326,7 @@
         "Gagal menyinkronkan kalender"
       ],
       "More than 12 hours passed since last update": [
-        "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir"
       ],
       "Unsupported calendar format": [
         "Format kalender tidak didukung"
@@ -1370,10 +1365,10 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
+      "${ users } users": [
         "${ users } pengguna"
       ],
-      "Total for ${ n } month": [
+      "Total for ${ n } months": [
         "Total untuk ${ n } bulan"
       ]
     },
@@ -1613,7 +1608,7 @@
         "Alamat"
       ],
       "Anniversary": [
-        "Ulang tahun"
+        "Hari Pernikahan"
       ],
       "Birthday": [
         "Tanggal lahir"
@@ -1622,7 +1617,7 @@
         "Email"
       ],
       "Gender": [
-        "Gender"
+        "Jenis kelamin"
       ],
       "Geo": [
         "Koordinat"
@@ -1658,7 +1653,7 @@
         "Zona waktu"
       ],
       "Title": [
-        "Judul"
+        "Gelar"
       ],
       "URL": [
         "URL"
@@ -1684,17 +1679,17 @@
         "Pribadi"
       ],
       "Work": [
-        "Pekerjaan"
+        "Kantor"
       ],
       "Yomi": [
         "Yomi"
       ]
     },
     "Countdown unit": {
-      "${ days } day": [
+      "${ days } days": [
         "${ days } hari"
       ],
-      "${ monthsWithYears } month": [
+      "${ monthsWithYears } months": [
         "${ monthsWithYears } bulan"
       ]
     },
@@ -1796,7 +1791,7 @@
         "Pulau Bouvet"
       ],
       "Brazil": [
-        "Brazil"
+        "Brasil"
       ],
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
@@ -2510,7 +2505,7 @@
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
+      "${ count } times": [
         "${ count } kali"
       ],
       "Daily": [
@@ -2522,17 +2517,17 @@
       "Daily, ${ untilString }": [
         "Harian, ${ untilString }"
       ],
-      "Every ${ interval } day": [
+      "Every ${ interval } days": [
         "Setiap ${ interval } hari"
       ],
-      "Every ${ interval } day, ${ timesString }": [
+      "Every ${ interval } days, ${ timesString }": [
         "Setiap ${ interval } hari, ${ timesString }"
       ],
-      "Every ${ interval } day, ${ untilString }": [
+      "Every ${ interval } days, ${ untilString }": [
         "Setiap ${ interval } hari, ${ untilString }"
       ],
       "until ${ dateString }": [
-        "hingga ${ dateString }"
+        "sampai ${ dateString }"
       ]
     },
     "Day": {
@@ -2565,7 +2560,7 @@
     },
     "Default display name vcard": {
       "Unknown": [
-        "Tidak dikenal"
+        "Tidak diketahui"
       ]
     },
     "Delete calendar section description": {
@@ -2583,13 +2578,16 @@
         "Selamat! Anda telah memperoleh langganan ${ plusPlanName } gratis selama ${ rewardsLimit } bulan."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Mengenkripsi dan mengimpor kontak... Ini perlu beberapa menit. Jika proses sudah selesai, Anda dapat menutup jendela ini."
+        "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
         "Dapatkan hingga 3 bulan ${ mailPlus } secara cuma-cuma untuk setiap teman Anda yang berlangganan ke ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Sepertinya daftar kontak yang Anda impor berisi beberapa grup. Mohon tinjau ulang bagaimana grup ini harus diimpor."
+        "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
+        "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "Lacak berapa jumlah orang yang telah mengklik tautan Anda, mendaftar, dan menjadi pengguna berbayar. Saksikan jumlah bulan gratis yang Anda miliki bertambah seiring waktu."
@@ -2598,12 +2596,12 @@
         "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh saldo tambahan"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_EVENTS_STRING } acara. Jika berkas Anda lebih besar, mohon pisahkan menjadi berkas yang lebih kecil."
+        "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
       ]
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Kami juga menyamakan kotak CSV dengan kotak vCard secara otomatis. Anda bisa memeriksa dan mengubahnya secara manual."
+        "Di samping itu, kami telah menyamakan isi kolom CSV dengan isi kolom vCard milik Anda secara otomatis. Anda dapat memeriksa dan mengubah isi kedua kolom tersebut secara manual."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
@@ -2626,11 +2624,17 @@
       "${ name } deletion failed": [
         "${ name } gagal dihapus"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } gagal dipindahkan ke Daftar Bukan Spam"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } gagal dipindahkan ke daftar blokir"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } dipindahkan ke daftar Bukan Spam"
       ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
@@ -2721,13 +2725,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menerima undangan Anda pada ${ eventTitle }"
+        "${ emailAddress } telah menerima undangan Anda ke ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah menolak undangan Anda pada ${ eventTitle }"
+        "${ emailAddress } telah menolak undangan Anda ke ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } telah sementara menerima undangan Anda pada ${ eventTitle }"
+        "${ emailAddress } telah secara tentatif menerima undangan Anda ke ${ eventTitle }"
       ]
     },
     "Email spam notification": {
@@ -2737,11 +2741,17 @@
       "${ name } deletion failed": [
         "${ name } gagal dihapus"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } gagal dipindahkan ke Daftar Bukan Spam"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } gagal dipindahkan ke daftar blokir"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } dipindahkan ke daftar Bukan Spam"
       ],
       "${ name } moved to spam list": [
         "${ name } dipindahkan ke daftar spam"
@@ -2755,22 +2765,22 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Pembatalan sebuah acara pada ${ formattedStart }"
+        "Pembatalan acara pada ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Pembatalan dari sebuah acara yang mulai pada ${ formattedStart }"
+        "Pembatalan acara mulai pada ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Undangan untuk sebuah acara pada ${ formattedStart }"
+        "Undangan acara pada ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Undangan untuk sebuah acara mulai pada ${ formattedStart }"
+        "Undangan acara mulai pada ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Pembaruan untuk sebuah acara pada ${ formattedStart }"
+        "Pembaruan acara pada ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Pembaruan untuk sebuah acara mulai pada ${ formattedStart }"
+        "Pembaruan acara mulai pada ${ formattedStart }"
       ]
     },
     "Email Unsubscribe": {
@@ -2844,10 +2854,10 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
+      "Deselect at least ${ calendarToFixCount } calendars": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
+      "Deselect at least ${ calendarToFixCount } calendars or": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
       ],
       "Domain not available, try again later": [
@@ -2866,7 +2876,7 @@
         "Masukkan 6 digit"
       ],
       "Error": [
-        "Kesalahan"
+        "Galat"
       ],
       "Error connecting to the Bitcoin API.": [
         "Gagal sambung ke API Bitcoin."
@@ -2934,7 +2944,7 @@
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
+      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
       ],
       "Missing key packet": [
@@ -2968,7 +2978,7 @@
         "Tidak ada kunci publik untuk alamat Proton"
       ],
       "No valid address found": [
-        "Tidak ditemukan alamat valid"
+        "Tidak ada alamat valid yang ditemukan"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
@@ -2977,7 +2987,7 @@
         "Bukan akun Proton"
       ],
       "Not a valid number": [
-        "Bukan nomor yang valid"
+        "Nomor telepon tidak valid"
       ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
@@ -3015,8 +3025,8 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Harap selesaikan permasalahan yang ada sebelum melanjutkan."
+      "Please fix the highlighted conflicts to proceed.": [
+        "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
       "Please generate keys before you try to change your password": [
         "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
@@ -3054,7 +3064,7 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
+      "Removed duplicate recipients: ${ joinedRecipients }": [
         "Penerima duplikat dihapus: ${ joinedRecipients }"
       ],
       "Request timed out": [
@@ -3091,7 +3101,7 @@
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi suatu kesalahan, silakan ${ refresh } untuk melanjutkan. Apabila Anda menjumpai pesan ini secara terus-menerus, harap hubungi ${ supportTeam } kami."
+        "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
       ],
       "Tab closed": [
         "Tab ditutup"
@@ -3142,13 +3152,13 @@
         "Masa berlaku sesi telah habis. Silakan masuk lagi."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Akun eksternal Anda memiliki terlalu banyak folder. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat dihapus."
+        "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
       "This field is required": [
         "Kolom ini wajib diisi"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini wajib diisi dengan minimal ${ minimumLength } karakter."
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain."
@@ -3163,7 +3173,7 @@
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
       "Unknown error": [
-        "Galat tak diketahui"
+        "Kesalahan yang tidak diketahui"
       ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
@@ -3214,7 +3224,7 @@
         "Anda harus membuat status semua pengguna menjadi privat sebelum Anda dapat membuat kunci organisasi baru"
       ],
       "You must set a name": [
-        "Anda harus menyetel nama"
+        "Anda harus mengatur nama"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
@@ -3228,25 +3238,25 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Terjadi galat saat membaca berkas ${ formattedFilename }. Format berkas salah."
+        "Terjadi kesalahan pada saat membaca berkas ${ formattedFilename }. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
+        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
+        "Terjadi kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Berkas ${ formattedFilename } milik Anda tidak dapat diimpor karena mengandung metode yang tidak valid."
+        "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Berkas ${ formattedFilename } tidak memiliki acara untuk diimpor."
@@ -3255,7 +3265,7 @@
         "Berkas ${ formattedFilename } Anda kosong."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "Berkas ${ formattedFilename } bukan kalender."
+        "Berkas ${ formattedFilename } bukan merupakan kalender."
       ]
     },
     "Error importing contact": {
@@ -3263,27 +3273,27 @@
         "Enkripsi gagal"
       ],
       "vCard versions < 3.0 not supported": [
-        "versi vCard < 3.0 tidak didukung"
+        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+        "Terdapat kesalahan dalam membaca berkas ${ formattedFilename } milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas adalah ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename } Anda. Tidak ada berkas .csv atau .vcf yang dipilih"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Terjadi sebuah kesalahan saat mengunggah berkas Anda. Tidak ada berkas yang telah dipilih."
+        "Ada kesalahan saat mengunggah berkas. Tidak ada berkas yang dipilih."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Berkas ${ formattedFilename } Ana berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
+        "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_CONTACTS_STRING } kontak."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Berkas ${ formattedFilename } tidak memiliki kontak untuk diimpor."
+        "Berkas ${ formattedFilename } Anda tidak memiliki kontak untuk diimpor."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Berkas ${ formattedFilename } Anda kosong."
@@ -3291,7 +3301,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Format buruk. Komponen tidak dapat dibaca."
+        "Format tidak valid. Komponen tidak dapat dibaca."
       ],
       "Calendar": [
         "Kalender"
@@ -3300,13 +3310,13 @@
         "Zona waktu kalender tidak didukung"
       ],
       "Component with wrong format": [
-        "Format komponen salah"
+        "Komponen dengan format yang salah"
       ],
       "Custom timezone": [
         "Zona waktu khusus"
       ],
       "Edited event not supported": [
-        "Tidak mendukung edit acara"
+        "Acara yang telah diedit tidak didukung"
       ],
       "Element": [
         "Elemen"
@@ -3315,25 +3325,25 @@
         "Enkripsi gagal"
       ],
       "End time out of bounds": [
-        "Waktu akhif di luar batas"
+        "Waktu akhir di luar batas"
       ],
       "Event": [
-        "Peristiwa"
+        "Acara"
       ],
       "Event validation failed": [
         "Validasi acara gagal"
       ],
       "Floating times not supported": [
-        "Waktu mengapung tidak didukung"
+        "Waktu desimal tidak didukung"
       ],
       "Free-busy time information": [
-        "Informasi waktu bebas/sibuk"
+        "Informasi waktu luang dan waktu sibuk"
       ],
       "Invalid event": [
         "Acara tidak valid"
       ],
       "Journal entry": [
-        "Entri Jurnal"
+        "Entri jurnal"
       ],
       "Malformed all-day event": [
         "Acara sepanjang hari tidak diformat dengan benar"
@@ -3351,7 +3361,7 @@
         "Waktu mulai hilang"
       ],
       "No UID, title or start time": [
-        "Tidak ada UID, judul atau waktu mulai"
+        "Tidak ada UID, judul, atau waktu mulai"
       ],
       "Non-Gregorian": [
         "Non-Gregorian"
@@ -3381,7 +3391,7 @@
         "Entri to-do"
       ],
       "Unknown": [
-        "Tidak dikenal"
+        "Tidak diketahui"
       ],
       "Unsupported event": [
         "Acara tidak didukung"
@@ -3412,7 +3422,7 @@
         "URL tidak valid"
       ],
       "Oops, something went wrong": [
-        "Oops, terjadi kesalahan"
+        "Aduh, ada yang tidak beres"
       ],
       "Please ${ refresh } or check your connection.": [
         "Mohon ${ refresh } atau cek koneksi Anda."
@@ -3462,7 +3472,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Tidak ada gambar yang dipilih"
+        "Gambar belum dipilih"
       ]
     },
     "Error when exporting event from calendar": {
@@ -3478,7 +3488,7 @@
         "Berkas ICS terlampir tidak dapat didekripsi"
       ],
       "Attached ICS file could not be read": [
-        "Berkas ICS yang terlampir tidak dapat dibaca"
+        "Berkas ICS terlampir tidak dapat dibaca"
       ],
       "Invalid invitation": [
         "Undangan tidak valid"
@@ -3505,7 +3515,7 @@
         "Kami tidak dapat membatalkan acara di kalender Anda"
       ],
       "We could not retrieve the event from your calendar": [
-        "Kami tidak dapat mengambil kegiatan dari kalender Anda"
+        "Kami tidak dapat mengambil acara dari kalender Anda"
       ],
       "We could not update the event in your calendar": [
         "Kami tidak dapat memperbarui acara di kalender Anda"
@@ -3523,7 +3533,7 @@
       ]
     },
     "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
+      "${ totalProcessed }/${ totalToProcess } events exported": [
         "${ totalProcessed }/${ totalToProcess } acara diekspor"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
@@ -3570,13 +3580,13 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
+      "${ MaxVPN } VPN connections": [
         "${ MaxVPN } koneksi VPN"
       ],
       "Access to all countries": [
         "Akses ke semua negara"
       ],
-      "Connection for up to ${ plusVpnConnections } device": [
+      "Connection for up to ${ plusVpnConnections } devices": [
         "Koneksi hingga ${ plusVpnConnections } perangkat"
       ],
       "Fastest VPN servers": [
@@ -3662,7 +3672,7 @@
         "Hapus kunci keamanan?"
       ],
       "Disable 2FA via security key?": [
-        "Hapus 2FA via kunci keamanan?"
+        "Nonaktifkan 2FA via kunci keamanan?"
       ],
       "Name your security key": [
         "Beri nama kunci keamanan Anda"
@@ -3678,7 +3688,7 @@
       ]
     },
     "file size format": {
-      "byte": [
+      "bytes": [
         "byte"
       ],
       "GB": [
@@ -3692,16 +3702,16 @@
       ]
     },
     "file size format, long": {
-      "Byte": [
+      "Bytes": [
         "Byte"
       ],
-      "Gigabyte": [
+      "Gigabytes": [
         "Gigabyte"
       ],
-      "Kilobyte": [
+      "Kilobytes": [
         "Kilobyte"
       ],
-      "Megabyte": [
+      "Megabytes": [
         "Megabyte"
       ]
     },
@@ -3713,7 +3723,7 @@
         "Jangan pindahkan"
       ],
       "Inbox": [
-        "Kotak Masuk"
+        "Kotak masuk"
       ],
       "Inbox - Default": [
         "Kotak Masuk - Default"
@@ -3830,7 +3840,7 @@
         "Jaringan"
       ],
       "Other category": [
-        "Kategori lain"
+        "Kategori lainnya"
       ],
       "Services": [
         "Layanan"
@@ -3918,11 +3928,11 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } saran ditemukan, silakan gunakan keyboard untuk menelaah saran-saran yang muncul."
+      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+        "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Gunakan anak panah Atas dan Bawah untuk mengakses dan menjelajah saran-saran yang muncul dari hasil ketikan Anda. Tekan Enter untuk menentukan pilihan Anda, atau Escape untuk menutup kotak saran."
+        "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
     },
     "Human verification method": {
@@ -3943,26 +3953,26 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } acara dienkripsi dan ditambahkan ke kalender"
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
       ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambah acara. Acara tidak dapat diimpor."
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Mengenkripsi dan menambah acara ke kalender: ${ totalImported }/${ totalToImport }"
+        "Mengenkripsi dan menambahkan acara ke kalender: ${ totalImported }/${ totalToImport }"
       ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Acara berhasil diimpor. Acara tersebut akan muncul di kalender."
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Acara berhasil diimpor. Acara tersebut akan muncul pada kalender Anda."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Jangan tutup tab sebelum proses impor selesai."
+        "Mohon untuk tidak menutup tab ini sebelum proses impor selesai."
       ]
     },
     "Import calendar warning": {
@@ -3975,23 +3985,23 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Undangan-undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk acara-acara sederhana (simple events) tanpa rincian nama penyelenggara dan peserta. Untuk dapat memperoleh daftar peserta dan informasi terkini seputar acara-acara ini, mintalah penyelenggara acara untuk mengundang Anda dengan menggunakan alamat email Proton Anda."
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian nama penyelenggara dan peserta. Untuk dapat memperoleh daftar peserta dan informasi terkini, mintalah penyelenggara acara untuk mengundang Anda dengan menggunakan alamat email Proton Anda."
       ],
-      "This file contains an event invitation:": [
-        "Berkas ini mengandung undangan acara berikut:"
+      "This file contains event invitations:": [
+        "Berkas ini mengandung undangan acara:"
       ],
-      "This file contains an invitation response:": [
-        "Berkas ini mengandung balasan atas undangan acara yang terkirim sebagai berikut:"
+      "This file contains invitation responses:": [
+        "Berkas ini mengandung balasan atas undangan yang dikirim:"
       ],
       "This file contains some data that we cannot import:": [
-        "Berkas ini mengandung data-data yang tidak dapat kami impor sebagai berikut:"
+        "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Ada kesalahan saat mengenkripsi dan menambah kontak. Kontak tidak dapat diimpor."
       ]
     },
@@ -4001,20 +4011,20 @@
       ]
     },
     "Import contact groups info": {
-      "${ totalContacts } contact": [
+      "${ totalContacts } contacts": [
         "${ totalContacts } kontak"
       ]
     },
     "Import contact. Contact identifier": {
       "unknown": [
-        "tidak diketahui"
+        "tidak dikenal"
       ]
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "Ada kesalahan saat mengenkripsi dan menambah kontak. ${ totalImported } dari ${ totalToImport } kontak berhasil diimpor."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
         "Kontak berhasil diimpor. Kontak yang diimpor akan muncul di daftar kontak Anda."
       ]
     },
@@ -4023,7 +4033,7 @@
         "untuk sekarang"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } tidak mendukung:"
+        "ProtonContacts tidak mendukung ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4334,8 +4344,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } acara dari total ${ totalEvents } acara tidak akan terimpor. Klik untuk keterangan lebih lanjut."
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } acara dari total ${ totalEvents } acara tidak akan diimpor. Klik untuk keterangan lebih lanjut."
       ],
       "No contact can be imported. Click for details": [
         "Tidak ada kontak yang dapat diimpor. Klik untuk melihat rincian"
@@ -4357,13 +4367,13 @@
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } akan diatur sebagai kalendar default."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
+      "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
+      "${ calendarsToBeMerged } merged calendars": [
         "${ calendarsToBeMerged } kalender yang tergabung"
       ],
-      "${ calendarsToBeMergedCount } merged calendar": [
+      "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
       "${ emailAddress } is invalid": [
@@ -4378,52 +4388,52 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, mohon tambahkan data CNAME berikut ke pengaturan DNS Anda pada domain ini. Tindakan ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
       ],
-      "${ n } address": [
+      "${ n } addresses": [
         "${ n } alamat"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } tidak berpengaruh pada pengiriman email, tetapi kami merekomendasikan ${ quarantine } untuk keamanan yang lebih baik."
       ],
-      "${ number } city": [
+      "${ number } cities": [
         "${ number } kota"
       ],
-      "${ number } server": [
+      "${ number } servers": [
         "${ number } server"
       ],
-      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+      "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
       ],
-      "${ numContactGroups } contact group": [
+      "${ numContactGroups } contact groups": [
         "${ numContactGroups } grup kontak"
       ],
-      "${ numContacts } contact": [
+      "${ numContacts } contacts": [
         "${ numContacts } kontak"
       ],
       "${ planName } credits earned": [
         "Saldo ${ planName } $ yang diperoleh"
       ],
-      "${ providerFoldersNumLocalized } folder found": [
+      "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
+      "${ providerFoldersNumLocalized } labels found in Gmail": [
         "${ providerFoldersNumLocalized } label ditemukan di Gmail"
       ],
       "${ rewards } of ${ rewardsLimit } months": [
         "${ rewards } dari ${ rewardsLimit } bulan"
       ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } folder dipilih"
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } folder terpilih"
       ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label dipilih"
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } label terpilih"
       ],
-      "${ selectedFoldersCountLocalized } folder selected": [
+      "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
-      "${ selectedFoldersCountLocalized } label selected": [
+      "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
       "${ storageSize } storage": [
@@ -4438,7 +4448,7 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Paket ${ vpnPlus } atau ${ visionary } dibutuhkan untuk dapat mengakses fitur Secure Core."
       ],
-      "(${ memberCount } member)": [
+      "(${ memberCount } members)": [
         "(${ memberCount } anggota)"
       ],
       "(Filter if ALL of the following conditions are met)": [
@@ -4456,7 +4466,7 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } kuota penyimpanan tambahan"
       ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+      "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
       ],
       "1. Invite friends to Proton": [
@@ -4523,7 +4533,7 @@
         "Berikan akun Anda lapisan keamanan tambahan. Anda akan perlu untuk memverifikasi diri Anda dengan 2FA setiap kali Anda masuk."
       ],
       "Add image URL": [
-        "Tambah URL gambar"
+        "Sisipkan gambar melalui URL"
       ],
       "Add label": [
         "Tambah label"
@@ -4534,11 +4544,11 @@
       "Additional options": [
         "Pengaturan tambahan"
       ],
-      "address": [
-        "alamat"
-      ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
         "Verifikasi alamat merupakan fitur keamanan tingkat lanjut. Kami menyarankan Anda untuk mengaktifkan fitur ini hanya apabila Anda benar-benar tahu fungsinya."
+      ],
+      "addresses": [
+        "alamat"
       ],
       "Admin account allocation": [
         "Alokasi akun admin"
@@ -4552,10 +4562,10 @@
       "Align right": [
         "Rata kanan"
       ],
-      "All (${ totalFoldersCount } folder)": [
+      "All (${ totalFoldersCount } folders)": [
         "Semua (${ totalFoldersCount } folder)"
       ],
-      "All (${ totalFoldersCount } label)": [
+      "All (${ totalFoldersCount } labels)": [
         "Semua (${ totalFoldersCount } label)"
       ],
       "All keys successfully reactivated": [
@@ -4706,7 +4716,7 @@
         "Dengan membagikan detail acara milik kalender ini secara menyeluruh, Anda mengizinkan Proton untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
       ],
       "Center": [
-        "Tengah"
+        "Rata tengah"
       ],
       "Check the status of current and previous imports.": [
         "Periksa status impor sekarang dan sebelumnya."
@@ -4715,7 +4725,7 @@
         "Pilih tampilan aplikasi."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru di ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaiki."
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
@@ -4729,7 +4739,7 @@
       "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
         "Dengan melanjutkan, akun ${ ACCOUNT_APP_NAME } Anda akan terhubung ke ${ name }."
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
+      "Create ${ calendarsToBeCreated } new calendars": [
         "Buat ${ calendarsToBeCreated } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
@@ -4804,7 +4814,7 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
       ],
-      "domain used": [
+      "domains used": [
         "domain dipakai"
       ],
       "Done": [
@@ -4832,7 +4842,7 @@
         "Letakkan berkas yang hendak Anda unggah di sini"
       ],
       "Drop the file here to upload": [
-        "Taruh berkas di sini untuk mengunggah"
+        "Letakkan berkas yang hendak Anda unggah di sini"
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
@@ -4976,7 +4986,7 @@
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika Anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
+        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -5032,7 +5042,7 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
+      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
         "Impor ${ selectedCalendarsCount } dari ${ totalCalendarsCount } kalender yang tersedia"
       ],
       "Import from": [
@@ -5054,7 +5064,7 @@
         "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Mengimpor data-data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
+        "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -5081,12 +5091,12 @@
         "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
+        "Koneksi internet terputus. Mohon periksa koneksi perangkat Anda."
       ],
       "Internet connection restored.": [
-        "Koneksi internet telah pulih."
+        "Koneksi internet telah kembali pulih."
       ],
-      "Invite successfully sent": [
+      "Invites successfully sent": [
         "Undangan berhasil dikirimkan"
       ],
       "It appears some of your data is encrypted and locked.": [
@@ -5192,7 +5202,7 @@
         "Dukungan multi-pengguna tidak diaktifkan."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder tingkat paling atas."
+        "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
       "New": [
         "Baru"
@@ -5237,7 +5247,7 @@
         "Tidak ada hasil yang ditemukan"
       ],
       "Not a valid URL": [
-        "Bukan URL yang valid"
+        "URL tidak valid"
       ],
       "Not set": [
         "Belum ditentukan"
@@ -5287,14 +5297,14 @@
       "P2P": [
         "P2P"
       ],
-      "Paid for a ${ rewardMonths } month plan": [
+      "Paid for a ${ rewardMonths } months plan": [
         "Telah dibayar untuk paket ${ rewardMonths } bulan"
       ],
       "Paid for a monthly plan": [
         "Terbayar dalam bentuk paket berlangganan bulanan"
       ],
       "Payment can take a few minutes to fully verify.": [
-        "Pembayaran perlu beberapa menit untuk diverifikasi secara penuh."
+        "Pembayaran dapat memakan waktu beberapa menit untuk terverifikasi sepenuhnya."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
@@ -5308,11 +5318,11 @@
       "Plan upgrade required": [
         "Diperlukan peningkatan paket"
       ],
-      "Please add a password for the user on row": [
-        "Silakan tambahkan kata sandi pengguna pada baris berikut"
-      ],
-      "Please add an email address for the user on row": [
+      "Please add email addresses for the users on rows": [
         "Silakan tambahkan alamat email pengguna pada baris berikut"
+      ],
+      "Please add passwords for the users on rows": [
+        "Silakan tambahkan kata sandi pengguna pada baris berikut"
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Silakan periksa kembali berkas Anda atau hubungi layanan dukungan untuk informasi lebih lanjut."
@@ -5345,10 +5355,10 @@
         "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
       ],
       "Please select the folders you would like to import:": [
-        "Silakan pilih folder yang ingin Anda impor:"
+        "Harap pilih folder-folder yang hendak Anda impor:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi seluruh kolom yang tertera."
+        "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi bank Anda untuk mendapatkan bantuan."
@@ -5393,7 +5403,7 @@
         "membeli kuota penyimpanan tambahan"
       ],
       "Queued": [
-        "Diantrikan"
+        "Ditempatkan dalam antrian"
       ],
       "read our two-factor authentication guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
@@ -5405,7 +5415,7 @@
         "Berkas pemulihan diunduh"
       ],
       "Recovery files have been voided": [
-        "Berkas pemulihan telah dianulir"
+        "Berkas-berkas pemulihan telah dianulir"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
@@ -5522,19 +5532,19 @@
         "Dukungan 1 alamat email dengan domain khusus"
       ],
       "support team": [
-        "tim layanan dukungan"
+        "tim dukungan"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
       "Test link": [
-        "Contoh tautan"
+        "Uji tautan"
       ],
       "Text color": [
         "Warna teks"
       ],
       "Text to display": [
-        "Teks untuk ditampilkan"
+        "Teks yang akan ditampilkan"
       ],
       "Thank you for supporting our mission.": [
         "Terima kasih telah mendukung misi kami."
@@ -5548,10 +5558,10 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
       ],
-      "The following address is invalid.": [
+      "The following addresses are invalid.": [
         "Alamat berikut tidak valid."
       ],
-      "The following address is unavailable.": [
+      "The following addresses are unavailable.": [
         "Alamat berikut tidak tersedia."
       ],
       "The format of your CSV file is incorrect.": [
@@ -5576,10 +5586,10 @@
         "Masa uji coba gratis 30 hari ini tidak dapat diperoleh dengan cara lainnya."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena potensi pelanggaran kebijakan."
+        "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Peramban web ini tidak mendukung untuk melakukan pratinjau dokumen PDF. Silahkan unduh berkas tersebut."
+        "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
@@ -5606,7 +5616,7 @@
         "Tautan ini mungkin merupakan sebuah serangan homograf dan tidak dapat dibuka oleh Internet Explorer dan Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Tautan ini mungkin adalah sebuah serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
+        "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
@@ -5663,7 +5673,7 @@
         "Agar akun Anda dapat selalu diakses sepanjang waktu, tentukan metode pemulihan akun"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk mencegah spam dan penyalahgunaan, mohon buktikan bahwa Anda adalah seorang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Untuk dapat mengikuti perkembangan terbaru seputar berbagai produk Proton, Anda dapat berlangganan ke buletin email kami serta mengunjungi blog kami dari waktu ke waktu."
@@ -5756,10 +5766,10 @@
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Verifikasi akan berjalan di tab baru. Mohon nonaktifkan pemblokir popup."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup Anda. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
+        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi otentikator"
@@ -5792,7 +5802,7 @@
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
       "We'll notify you when the import is done.": [
-        "Kami akan memberitahukan Anda ketika proses impor telah selesai."
+        "Kami akan memberitahukan Anda apabila proses impor telah selesai."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
@@ -5858,10 +5868,10 @@
         "Anda telah memiliki akun gratis"
       ],
       "You are about to open another browser tab and visit:": [
-        "Anda akan membuka tab peramban lain dan mengunjungi:"
+        "Anda akan membuka tab browser lain dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
+        "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
@@ -5888,13 +5898,16 @@
         "Kini Anda dapat menerima pesan melalui alamat @pm.me. Aktifkan paket berbayar supaya bisa mengirim email dari alamat @pm.me dan membuat alamat @pm.me tambahan."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan pada saat ada email baru yang masuk ke folder ini."
+        "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
         "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop manapun yang mendukung IMAP/SMTP termasuk Outlook, Apple Mail, dan Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan dalam 24 jam ke depan"
       ],
       "You cannot refer ${ appName } users": [
         "Anda tidak dapat mengirim rujukan kepada para pengguna ${ appName }"
@@ -5975,7 +5988,7 @@
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang telah jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
@@ -5999,7 +6012,7 @@
         "Metode pemulihan data Anda telah ditentukan"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan digunakan untuk verifikasi satu kali ini."
+        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Akun ${ BRAND_NAME } Anda dapat digunakan untuk mengakses seluruh layanan ${ BRAND_NAME }. Silakan masuk dengan ${ email }."
@@ -6023,7 +6036,7 @@
         "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
+        "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
@@ -6114,7 +6127,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Klik untuk info lebih lanjut"
+        "Klik untuk rincian"
       ]
     },
     "Info when deleting payment method": {
@@ -6276,7 +6289,7 @@
         "Ke Draf"
       ],
       "Go to Inbox": [
-        "Ke Kotak Masuk"
+        "Ke Kotak masuk"
       ],
       "Go to Sent": [
         "Ke Terkirim"
@@ -6288,7 +6301,7 @@
         "Ke Dibintangi"
       ],
       "Go to Trash": [
-        "Ke Sampah"
+        "Ke Tempat Sampah"
       ],
       "Insert link": [
         "Sisipkan tautan"
@@ -6366,7 +6379,7 @@
         "Simpan draf"
       ],
       "Search": [
-        "Pencarian"
+        "Cari"
       ],
       "Select / unselect": [
         "Pilih / batal pilih"
@@ -6478,13 +6491,13 @@
       "${ MAIL_APP_NAME } footer": [
         "Footer ${ MAIL_APP_NAME }"
       ],
-      "${ monthsRewarded } month credited": [
+      "${ monthsRewarded } months credited": [
         "${ monthsRewarded } bulan tersedia dalam bentuk saldo"
       ],
-      "${ n } month": [
+      "${ n } months": [
         "${ n } bulan"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "${ UsedAddresses } dari ${ MaxAddresses } alamat email"
       ],
       "(Temporarily unavailable. Please check back later.)": [
@@ -6854,7 +6867,7 @@
         "Jika"
       ],
       "Import all messages": [
-        "Import all messages"
+        "Impor seluruh pesan"
       ],
       "Import interval": [
         "Interval impor"
@@ -6896,7 +6909,7 @@
         "Labeli sebagai"
       ],
       "Label messages as": [
-        "Label pesan sebagai"
+        "Labeli pesan-pesan ini dengan"
       ],
       "Last 12 months only": [
         "Hanya 12 bulan terakhir"
@@ -7064,7 +7077,7 @@
         "Mode proteksi"
       ],
       "Proton username": [
-        "Nama pengguna Proton"
+        "Nama Pengguna Proton"
       ],
       "Read": [
         "Telah dibaca"
@@ -7169,7 +7182,7 @@
         "Zona waktu"
       ],
       "To: ${ emailAddress }": [
-        "Untuk: ${ emailAddress }"
+        "Ke: ${ emailAddress }"
       ],
       "To: ${ emailTo }": [
         "Kepada: ${ emailTo }"
@@ -7396,10 +7409,10 @@
         "Buat label"
       ],
       "Edit folder": [
-        "Edit folder"
+        "Sunting folder"
       ],
       "Edit label": [
-        "Edit label"
+        "Sunting label"
       ]
     },
     "label/folder notification": {
@@ -7421,7 +7434,7 @@
         "Kalender"
       ],
       "clearing your browser cache": [
-        "membersihkan singgahan peramban Anda"
+        "membersihkan cache browser Anda"
       ],
       "click here": [
         "klik di sini"
@@ -7451,7 +7464,7 @@
         "Impor/ekspor"
       ],
       "Learn more": [
-        "Pelajari lebih lanjut"
+        "Lebih lanjut"
       ],
       "Learn more about data recovery": [
         "Pelajari lebih lanjut mengenai pemulihan data"
@@ -7522,10 +7535,10 @@
         "Membuat kalender-kalender baru"
       ],
       "Gathering your data": [
-        "Mengumpulkan data-data Anda"
+        "Mengumpulkan data Anda"
       ],
       "We're gathering your data from your provider": [
-        "Kami tengah mengumpulkan data-data dari penyedia layanan email Anda"
+        "Kami tengah mengumpulkan data dari penyedia layanan email Anda"
       ],
       "Your import is starting": [
         "Proses impor Anda akan segera dimulai"
@@ -7540,26 +7553,26 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan dari ${ totalLabelsCount } folder yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan di bawah ini."
       ]
     },
     "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
         "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } pengguna."
       ]
     },
@@ -7595,7 +7608,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Versi baru ${ appName } tersedia. ${ reloadButton }."
+        "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
       ]
     },
     "Modal title": {
@@ -7644,13 +7657,13 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
+      "Every ${ interval } months ${ onDayString }": [
         "Setiap ${ interval } bulan ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
         "Setiap ${ interval } bulan ${ onDayString }, ${ timesString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
         "Setiap ${ interval } bulan ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
@@ -7886,45 +7899,45 @@
       ]
     },
     "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
+      "Get ${ connections } high-speed VPN connections": [
         "Dapatkan ${ connections } koneksi VPN berkecepatan tinggi"
       ],
-      "Get ${ connections } high-speed VPN connection per user": [
+      "Get ${ connections } high-speed VPN connections per user": [
         "Dapatkan ${ connections } koneksi VPN berkecepatan tinggi per pengguna"
       ]
     },
     "new_plans: feature": {
-      "${ n } custom email domain": [
+      "${ n } custom email domains": [
         "${ n } domain email khusus"
       ],
-      "${ n } email address": [
-        "${ n } alamat email"
-      ],
-      "${ n } email address per user": [
+      "${ n } email addresses per user": [
         "${ n } alamat email per pengguna"
       ],
-      "${ n } filter": [
+      "${ n } email addresses/aliases": [
+        "${ n } alamat email"
+      ],
+      "${ n } filters": [
         "${ n } filter"
       ],
-      "${ n } folder": [
+      "${ n } folders": [
         "${ n } folder"
       ],
-      "${ n } folder and label": [
+      "${ n } folders and labels": [
         "${ n } folder and label"
       ],
-      "${ n } label": [
+      "${ n } labels": [
         "${ n } label"
       ],
-      "${ n } message per day": [
+      "${ n } messages per day": [
         "${ n } pesan per hari"
       ],
-      "${ n } personal calendar": [
+      "${ n } personal calendars": [
         "${ n } kalender personal"
       ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } koneksi VPN"
       ],
-      "${ n } VPN connection per user": [
+      "${ n } VPN connections per user": [
         "${ n } koneksi VPN per pengguna"
       ],
       "${ size } attachment size": [
@@ -7996,7 +8009,7 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
-      "High-speed VPN on ${ n } device": [
+      "High-speed VPN on ${ n } devices": [
         "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
       "HTML signatures": [
@@ -8200,7 +8213,7 @@
       ]
     },
     "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
         "Anda masih memiliki ${ daysRemaining } hari tersisa pada langganan ${ currentPlanName } Anda."
       ]
     },
@@ -8289,7 +8302,7 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, cth. JohnShopper@proton.me untuk akun berbelanja Anda dan JohnNews@proton.me untuk akun berita Anda"
       ],
-      "Create up to ${ n } custom calendar.": [
+      "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
@@ -8452,7 +8465,7 @@
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
+      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
         "Buat hingga ${ numberOfPersonalCalendars } kalender personal"
       ],
       "Everything in ${ vpnPlanName }": [
@@ -8495,11 +8508,11 @@
       "Invitation revoked": [
         "Undangan dianulir"
       ],
-      "Member added": [
-        "Anggota ditambahkan"
-      ],
       "Member deleted": [
         "Pengguna dihapus"
+      ],
+      "Members added": [
+        "Anggota ditambahkan"
       ]
     },
     "Notification in shared calendar modal": {
@@ -8532,20 +8545,20 @@
       "at time of event": [
         "pada saat acara"
       ],
-      "day before": [
-        "hari sebelum"
+      "days before": [
+        "hari sebelumnya"
       ],
-      "hour before": [
-        "jam sebelum"
+      "hours before": [
+        "jam sebelumnya"
       ],
-      "minute before": [
-        "menit sebelum"
+      "minutes before": [
+        "menit sebelumnya"
       ],
       "on the same day": [
-        "pada hari yang sama"
+        "hari yang sama"
       ],
-      "week before": [
-        "minggu sebelum"
+      "weeks before": [
+        "pekan sebelumnya"
       ]
     },
     "Oauth instructions": {
@@ -8779,13 +8792,13 @@
     },
     "Option group": {
       "Custom folders": [
-        "Folder khusus"
+        "Folder kustom"
       ],
       "Default folders": [
         "Folder default"
       ],
       "Move to...": [
-        "Pindah ke..."
+        "Pindahkan ke..."
       ]
     },
     "Option group label": {
@@ -8817,13 +8830,13 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } untuk menambahkan lebih banyak ruang penyimpanan, atau hapus sebagian data untuk mengosongkannya."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
+      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
         "Paket Anda meliputi hingga ${ availableAddresses } alamat."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
         "Paket Anda meliputi hingga ${ availableNumberOfMembers } pengguna organisasi."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
         "Paket Anda meliputi hingga ${ availableVPNAccess } akun VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
@@ -8881,10 +8894,10 @@
         "Cara menghubungi Anda"
       ],
       "Add a calendar description": [
-        "Tambahkan keterangan kalender"
+        "Masukkan keterangan kalender"
       ],
       "Add a calendar name": [
-        "Tambahkan nama kalender"
+        "Masukkan nama kalender"
       ],
       "Add gift code": [
         "Tambahkan kode hadiah"
@@ -8908,7 +8921,7 @@
         "domain.com"
       ],
       "E.g., ": [
-        "Mis., "
+        "Misalnya "
       ],
       "Email address": [
         "Alamat email"
@@ -8938,7 +8951,7 @@
         "Nomor telepon"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan apapun yang Anda jumpai"
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
       ],
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
@@ -8986,7 +8999,7 @@
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Tentukan jumlah pengguna untuk diikutsertakan dalam paket Anda. Per penggunanya, Anda akan dikenakan biaya sebesar ${ price }."
       ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+      "Should you need more than ${ maxUsers } user accounts, please ${ contact } our Sales team.": [
         "Apabila Anda memerlukan lebih dari ${ maxUsers } pengguna, silakan ${ contact } tim Sales kami."
       ]
     },
@@ -9025,13 +9038,13 @@
         "Utama"
       ],
       "Mobile": [
-        "Ponsel"
+        "Seluler"
       ],
       "Other": [
         "Lainnya"
       ],
       "Pager": [
-        "Penyeranta"
+        "Pager"
       ],
       "Phone": [
         "Telepon"
@@ -9185,7 +9198,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Tidak ada hasil yang ditemukan"
+        "Hasil tidak ditemukan"
       ]
     },
     "Settings description": {
@@ -9247,7 +9260,7 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "Anda telah mencapai batas maksimal ${ MAX_CALENDAR_MEMBERS } anggota per kalender"
       ]
     },
@@ -9336,7 +9349,7 @@
         "Catatan rilis"
       ],
       "Upgrade storage": [
-        "Tingkatkan penyimpanan"
+        "Perbesar kuota penyimpanan"
       ],
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
@@ -9374,40 +9387,40 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
+      "${ _n } calendars per user": [
         "${ _n } kalender per pengguna"
       ],
-      "${ maxVpn } high-speed VPN connection": [
+      "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } koneksi VPN berkecepatan tinggi"
       ],
-      "${ n } calendar": [
+      "${ n } calendars": [
         "${ n } kalender"
       ],
-      "${ n } high-speed VPN connection": [
+      "${ n } high-speed VPN connections": [
         "${ n } koneksi VPN berkecepatan tinggi"
       ],
-      "${ n } high-speed VPN connection per user": [
+      "${ n } high-speed VPN connections per user": [
         "${ n } koneksi VPN berkecepatan tinggi per pengguna"
       ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } koneksi VPN"
       ],
-      "${ n } VPN connection per user": [
+      "${ n } VPN connections per user": [
         "${ n } koneksi VPN per pengguna"
       ],
-      "${ UsedAddresses } address": [
+      "${ UsedAddresses } addresses": [
         "${ UsedAddresses } alamat"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "${ UsedAddresses } dari ${ MaxAddresses } alamat email"
       ],
-      "${ UsedCalendars } calendar": [
+      "${ UsedCalendars } calendars": [
         "${ UsedCalendars } kalender"
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+      "${ UsedDomains } of ${ MaxDomains } custom domains": [
         "${ UsedDomains } of ${ MaxDomains } domain khusus"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
+      "${ UsedMembers } of ${ MaxMembers } users": [
         "${ UsedMembers } dari ${ MaxMembers } pengguna"
       ],
       "1 email address": [
@@ -9422,7 +9435,7 @@
       "Built-in ad blocker (NetShield)": [
         "Pemblokir iklan bawaan (NetShield)"
       ],
-      "High-speed VPN on ${ maxVpn } device": [
+      "High-speed VPN on ${ maxVpn } devices": [
         "VPN berkecepatan tinggi pada ${ maxVpn } perangkat"
       ]
     },
@@ -9470,7 +9483,7 @@
         "Kalender ditambahkan. Proses sinkronisasi dapat memakan waktu hingga beberapa menit."
       ],
       "Calendar created": [
-        "Kalender dibuat"
+        "Kalender berhasil dibuat"
       ],
       "Calendar information updated": [
         "Informasi kalender diperbarui"
@@ -9479,7 +9492,7 @@
         "Kalender dihapus"
       ],
       "Calendar updated": [
-        "Kalender diperbarui"
+        "Kalender berhasil diperbarui"
       ],
       "Canceling import": [
         "Membatalkan proses impor"
@@ -9723,7 +9736,7 @@
         "Nilai"
       ],
       "vCard field": [
-        "Bidang vCard"
+        "Kolom vCard"
       ]
     },
     "Time period": {
@@ -9741,10 +9754,10 @@
       ]
     },
     "Time unit": {
-      "${ hours } hour": [
+      "${ hours } hours": [
         "${ hours } jam"
       ],
-      "${ minutes } minute": [
+      "${ minutes } minutes": [
         "${ minutes } menit"
       ]
     },
@@ -9760,7 +9773,7 @@
       "${ MAIL_APP_NAME } Bridge": [
         "Bridge ${ MAIL_APP_NAME }"
       ],
-      "${ maxUsers } user": [
+      "${ maxUsers } users": [
         "${ maxUsers } pengguna"
       ],
       "1. Give a name to the config to be generated": [
@@ -9809,7 +9822,7 @@
         "Tambah alamat"
       ],
       "Add another notification to remind you of this event": [
-        "Tambah notifikasi lain untuk mengingatkan Anda pada acara ini"
+        "Tambah pemberitahuan lain untuk mengingatkan Anda pada acara ini"
       ],
       "Add contact group name": [
         "Tambah nama grup kontak"
@@ -10007,7 +10020,7 @@
         "Sesuaikan proses impor kalender"
       ],
       "Customize your mail import": [
-        "Sesuaikan impor email Anda"
+        "Sesuaikan proses impor email"
       ],
       "Customize your plan": [
         "Sesuaikan paket Anda"
@@ -10022,7 +10035,7 @@
         "Pemulihan data"
       ],
       "Date": [
-        "Tanggal"
+        "Pasangan"
       ],
       "Decrypt key": [
         "Dekripsi kunci"
@@ -10192,7 +10205,7 @@
       "Import and export": [
         "Impor dan ekspor"
       ],
-      "Import as simple event?": [
+      "Import as simple events?": [
         "Impor sebagai acara sederhana?"
       ],
       "Import contacts": [
@@ -10400,7 +10413,7 @@
         "Pilih cara untuk mengirim notifikasi ini"
       ],
       "Select when you want this notification to be sent": [
-        "Tentukan kapan Anda ingin notifikasi ini dikirim"
+        "Pilih saat Anda ingin notifikasi ini dikirim"
       ],
       "Sender image": [
         "Gambar pengirim"
@@ -10468,7 +10481,7 @@
       "Success": [
         "Berhasil"
       ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "Akun pengguna ${ successfullyCreatedUsers.length } berhasil dibuat"
       ],
       "Switch to one-password mode": [
@@ -10723,7 +10736,7 @@
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
-        "Import akan dimulai dengan pesan terbaru."
+        "Proses impor akan dimulai dari pesan Anda yang paling baru."
       ],
       "This address has been disabled": [
         "Alamat ini telah dinonaktifkan"
@@ -10742,6 +10755,9 @@
       ],
       "This key is encrypted with an old password": [
         "Kunci ini dienkripsi dengan kata sandi lama"
+      ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Kunci ini digunakan oleh ${ MAIL_APP_NAME } untuk mengenkripsi data kontak Anda"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
@@ -10811,12 +10827,12 @@
       ]
     },
     "Upgrade": {
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "Tingkatkan akun Anda ke ${ planName } untuk dapat menghubungkan ${ n } perangkat ke jaringan VPN secara bersamaan"
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membuat hingga ${ MAX_CALENDARS_PAID } kalender untuk segala jenis keperluan mulai dari kerja, dibagikan kepada teman, hingga diri Anda sendiri."
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
@@ -10845,8 +10861,8 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi minimal ${ length } karakter"
+      "Password must contain at least ${ length } characters": [
+        "Kata sandi harus mengandung minimal ${ length } karakter"
       ]
     },
     "Video control": {
@@ -10863,13 +10879,13 @@
       ]
     },
     "VPN Plan Feature": {
-      "${ n } server": [
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
+      "${ n } VPN connections": [
         "${ n } koneksi VPN"
       ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
+      "${ n }+ servers": [
+        "${ n } server"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
       ]
     },
@@ -10937,22 +10953,22 @@
         "Harap tulis setidaknya satu nama penerima"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton akan menggabungkan semua folder dengan nama sama. Untuk menghindari ini, silakan ubah nama sebelum impor."
+        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama folder sebelum Anda mengimpor."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
+        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
+        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami sedang di luar jaringan. Jelaskan permasalahan Anda melalui formulir di bawah ini. Kami akan memeriksanya bila sudah tersambung ke Internet."
+        "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
@@ -10990,86 +11006,86 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Setiap ${ interval } pekan pada hari ${ multipleDaysString }"
+      "Every ${ interval } weeks on ${ multipleDaysString }": [
+        "Setiap ${ interval } minggu pada hari ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ timesString }"
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+        "Setiap ${ interval } minggu pada ${ multipleDaysString }, ${ timesString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ untilString }"
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+        "Setiap ${ interval } minggu pada ${ multipleDaysString }, ${ untilString }"
       ],
-      "Every ${ interval } week on all days": [
-        "Setiap ${ interval } pekan pada seluruh hari"
+      "Every ${ interval } weeks on all days": [
+        "Setiap ${ interval } minggu pada semua hari"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Setiap ${ interval } pekan pada seluruh hari, ${ timesString }"
+      "Every ${ interval } weeks on all days, ${ timesString }": [
+        "Setiap ${ interval } minggu pada semua hari, ${ timesString }"
       ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Setiap ${ interval } pekan setiap harinya, ${ untilString }"
+      "Every ${ interval } weeks on all days, ${ untilString }": [
+        "Setiap ${ interval } minggu pada semua hari, ${ untilString }"
       ],
-      "Every ${ interval } week on Friday": [
-        "Setiap ${ interval } pekan pada hari Jumat"
+      "Every ${ interval } weeks on Friday": [
+        "Setiap ${ interval } minggu pada hari Jumat"
       ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Jumat, ${ timesString }"
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Jumat, ${ timesString }"
       ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Setiap ${ interval } pekan pada hari Jumat, ${ untilString }"
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Jumat, ${ untilString }"
       ],
-      "Every ${ interval } week on Monday": [
-        "Setiap ${ interval } pekan pada hari Senin"
+      "Every ${ interval } weeks on Monday": [
+        "Setiap ${ interval } minggu pada hari Senin"
       ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Senin, ${ timesString }"
+      "Every ${ interval } weeks on Monday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Senin, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
         "Setiap ${ interval } minggu pada hari Senin, ${ untilString }"
       ],
-      "Every ${ interval } week on Saturday": [
+      "Every ${ interval } weeks on Saturday": [
         "Setiap ${ interval } minggu pada hari Sabtu"
       ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Sabtu, ${ timesString }"
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Sabtu, ${ timesString }"
       ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Setiap ${ interval } pekan pada hari Sabtu, ${ untilString }"
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Sabtu, ${ untilString }"
       ],
-      "Every ${ interval } week on Sunday": [
-        "Setiap ${ interval } pekan pada hari Minggu"
+      "Every ${ interval } weeks on Sunday": [
+        "Setiap ${ interval } minggu pada hari Minggu"
       ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Minggu, ${ timesString }"
+      "Every ${ interval } weeks on Sunday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Minggu, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Setiap ${ interval } pekan pada hari Minggu, ${ untilString }"
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Minggu, ${ untilString }"
       ],
-      "Every ${ interval } week on Thursday": [
-        "Setiap ${ interval } pekan pada hari Kamis"
+      "Every ${ interval } weeks on Thursday": [
+        "Setiap ${ interval } minggu pada hari Kamis"
       ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Kamis, ${ timesString }"
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Kamis, ${ timesString }"
       ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Setiap ${ interval } pekan pada hari Kamis, ${ untilString }"
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Kamis, ${ untilString }"
       ],
-      "Every ${ interval } week on Tuesday": [
-        "Setiap ${ interval } pekan pada hari Selasa"
+      "Every ${ interval } weeks on Tuesday": [
+        "Setiap ${ interval } minggu pada hari Selasa"
       ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Selasa, ${ timesString }"
+      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Selasa, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Setiap ${ interval } pekan pada hari Selasa, ${ untilString }"
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Selasa, ${ untilString }"
       ],
-      "Every ${ interval } week on Wednesday": [
-        "Setiap ${ interval } pekan pada hari Rabu"
+      "Every ${ interval } weeks on Wednesday": [
+        "Setiap ${ interval } minggu pada hari Rabu"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Setiap ${ interval } pekan pada hari Rabu, ${ timesString }"
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+        "Setiap ${ interval } minggu pada hari Rabu, ${ timesString }"
       ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Setiap ${ interval } pekan pada hari Rabu, ${ untilString }"
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+        "Setiap ${ interval } minggu pada hari Rabu, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Mingguan pada ${ multipleDaysString }"
@@ -11081,13 +11097,13 @@
         "Mingguan pada ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Mingguan pada seluruh hari"
+        "Mingguan pada semua hari"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Mingguan pada seluruh hari, ${ timesString }"
+        "Mingguan pada semua hari, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Mingguan setiap harinya, ${ untilString }"
+        "Mingguan pada semua hari, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Mingguan pada hari Jumat"
@@ -11177,14 +11193,13 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Yearly",
-        ""
+      "Every ${ interval } years": [
+        "Yearly"
       ],
-      "Every ${ interval } year, ${ timesString }": [
+      "Every ${ interval } years, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],
-      "Every ${ interval } year, ${ untilString }": [
+      "Every ${ interval } years, ${ untilString }": [
         "Setiap ${ interval } tahun, ${ untilString }"
       ],
       "Yearly": [

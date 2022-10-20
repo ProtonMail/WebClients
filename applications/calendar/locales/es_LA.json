@@ -131,7 +131,7 @@
         "Crear"
       ],
       "Create a new contact group": [
-        "Crear un nuevo grupo de contactos"
+        "Crear un grupo de contactos nuevo"
       ],
       "Create calendar": [
         "Crear calendario"
@@ -687,6 +687,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Mejor oferta"
+      ],
       "Most popular": [
         "Más popular"
       ]
@@ -701,7 +704,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1097,7 +1100,7 @@
         "Foto"
       ],
       "Role": [
-        "Puesto"
+        "Profesión"
       ],
       "Timezone": [
         "Zona horaria"
@@ -1117,7 +1120,7 @@
         "Principal"
       ],
       "Mobile": [
-        "Móvil"
+        "Celular"
       ],
       "Other": [
         "Otro"
@@ -1954,7 +1957,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Usar global por defecto (${ defaultValueText })"
+        "Uar global por defecto (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -1977,6 +1980,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
@@ -2058,7 +2065,7 @@
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Tiene una invitación a ${ eventTitle }\n${ eventDetailsText }"
+        "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2206,7 +2213,7 @@
         "El nombre de la carpeta no puede estar vacío."
       ],
       "Image upload failed": [
-        "Error al cargar la imagen"
+        "Error al subir la imagen"
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenciales de acceso incorrectas. Por favor, intente de nuevo."
@@ -2290,7 +2297,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
-        "Uno de los grupos no tiene contactos: ${ noContactGroupList } "
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -2337,7 +2344,7 @@
         "Algunos contactos no se pudieron eliminar"
       ],
       "Some groups could not be deleted": [
-        "Algunos grupos no pudieron ser eliminados"
+        "Algunos grupos no se pudieron eliminar"
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
         "Algunos nombres de sus carpetas están reservados. Personalice la importación para editar estos nombres."
@@ -2427,7 +2434,7 @@
         "Debe establecer un nombre"
       ],
       "Your import will not be processed.": [
-        "Su importación no se procesará."
+        "Su importación no será procesada."
       ]
     },
     "Error accepting calendar invitation": {
@@ -2484,7 +2491,7 @@
         "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocurrió un error al cargar el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
+        "Ocurrió un error al subir el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
@@ -2576,7 +2583,7 @@
         "El evento recurrente no contiene ocurrencias"
       ],
       "Recurring rule not supported": [
-        "Regla recurrente no admitida"
+        "Regla recurrente no compatible"
       ],
       "Start time out of bounds": [
         "Hora inicial fuera de límites"
@@ -2692,10 +2699,10 @@
         "Error inesperado"
       ],
       "Unsupported invitation": [
-        "Invitación no compatible"
+        "Invitación no soportada"
       ],
       "Unsupported response": [
-        "Respuesta no compatible"
+        "Respuesta no soportada"
       ],
       "We could not cancel the event in your calendar": [
         "No pudimos cancelar el evento en su calendario"
@@ -3315,7 +3322,7 @@
         "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Desea eliminar este evento?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acceso restringido a la cuenta por falta de pago. Contacte con su administración."
+        "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Los participantes añadidos y eliminados serán notificados de todos los eventos de esta serie."
@@ -3408,13 +3415,13 @@
         "Personalización anual"
       ],
       "Daily": [
-        "Diariamente"
+        "Diario"
       ],
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
       "Drop the file here to upload": [
-        "Arrastre el archivo aquí para cargar"
+        "Arrastre el archivo aquí para subir"
       ],
       "Duplicate key updated": [
         "Clave duplicada actualizada"
@@ -3447,7 +3454,7 @@
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
       "Free up some space or contact your administrator.": [
-        "Libere algo de espacio o contacte con su administración."
+        "Libere algo de espacio o contacte con la administración."
       ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
@@ -3541,7 +3548,7 @@
         "Fusionado"
       ],
       "Monthly ${ onDayString }": [
-        "Mensual ${ onDayString }"
+        "Mensual los ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre su carpeta nueva y seleccione la carpeta padre en la que desea colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
@@ -3553,7 +3560,7 @@
         "Ningún contacto añadido aún"
       ],
       "No email address": [
-        "No hay correo electrónico"
+        "No hay dirección de correo"
       ],
       "No group found": [
         "Ningún grupo encontrado"
@@ -3611,7 +3618,7 @@
         "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Espere mientras buscamos contactos que puedan volver a ser firmados con la clave de cifrado principal."
+        "Espere mientras buscamos contactos que puedan ser refirmados con la clave de cifrado principal."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
@@ -3635,7 +3642,7 @@
         "Se notificarán a los participantes eliminados."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccione el formato de correo electrónico que desea utilizar por defecto al enviar un correo a esta dirección."
+        "Seleccione el formato de correo que desea usar por defecto al enviar un correo a esta dirección."
       ],
       "Select what you want to import.": [
         "Seleccione lo que desea importar."
@@ -3719,7 +3726,7 @@
         "Este enlace puede ser un ataque homógrafo y los navegadores Edge no pueden abrirlo. Si cree que el enlace es legítimo, use un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homógrafo. Verifique que este es el enlace que desea visitar o no lo abra."
+        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -3731,7 +3738,7 @@
         "Para recuperar sus datos, debe volver a activar la clave de cifrado de contacto usada en el momento en que se crearon los datos. Esto requerirá que recuerde la contraseña usada cuando se generó la clave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para utilizar la verificación de dirección, debe confiar en una o más claves públicas disponibles, incluida la que desea utilizar para el envío. Esto evita que las claves de cifrado sean falsificadas."
+        "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que desea usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
@@ -3930,7 +3937,7 @@
         "Revocada"
       ],
       "Trusted": [
-        "De confianza"
+        "Confiada"
       ],
       "WKD": [
         "WKD"
@@ -4040,7 +4047,7 @@
         "Habilitar acceso beta"
       ],
       "Encrypt emails": [
-        "Cifrar correos"
+        "Cifrar correos electrónicos"
       ],
       "Ends": [
         "Termina"
@@ -4206,10 +4213,10 @@
         "Mostrar contraseña"
       ],
       "Sign emails": [
-        "Firmar correos"
+        "Firmar correos electrónicos"
       ],
       "Street address": [
-        "Nombre de calle"
+        "Dirección de calle"
       ],
       "System information": [
         "Información del sistema"
@@ -4230,7 +4237,7 @@
         "Cargar archivo"
       ],
       "Upload picture": [
-        "Cargar imagen"
+        "Subir imagen"
       ],
       "URL": [
         "URL"
@@ -4623,7 +4630,7 @@
     },
     "Notification": {
       "Contact group created": [
-        "Grupo de contacto creado"
+        "Grupo de contactos creado"
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
@@ -4904,7 +4911,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
+        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -4974,6 +4981,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contacto fue exportado con éxito.",
+        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -5009,7 +5020,7 @@
         "Principal"
       ],
       "Mobile": [
-        "Móvil"
+        "Celular"
       ],
       "Other": [
         "Otro"
@@ -5031,7 +5042,7 @@
     },
     "Select files": {
       "Upload": [
-        "Cargar"
+        "Subir"
       ]
     },
     "Select search results": {
@@ -5693,7 +5704,7 @@
         "Seleccione a cuál calendario añadir este evento"
       ],
       "Send feedback": [
-        "Enviar comentario"
+        "Enviar comentarios"
       ],
       "Send invitation": [
         "Enviar invitación"
@@ -5726,7 +5737,7 @@
         "Actualizar evento recurrente"
       ],
       "Upgrade required": [
-        "Actualización necesaria"
+        "Mejora necesaria"
       ],
       "View contacts": [
         "Ver contactos"
@@ -5770,7 +5781,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica qué formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
@@ -5803,7 +5814,7 @@
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/en línea obliga a mensajes de texto plano."
+        "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
@@ -5812,7 +5823,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extemo a este correo electrónico"
+        "Subir una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extemo a este correo electrónico"
       ],
       "You do not have any contacts to export": [
         "No tiene ningún contacto para exportar"
@@ -6135,7 +6146,7 @@
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
         "Yearly",
-        ""
+        "Yearly"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

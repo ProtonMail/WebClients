@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);",
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);",
     "language": "ro_RO"
   },
   "contexts": {
@@ -84,7 +84,7 @@
         "Alegeți un fișier sau trageți-l aici"
       ],
       "Clear": [
-        "Golire"
+        "Eliminare"
       ],
       "Clear browser data": [
         "Ștergere date din navigator"
@@ -174,8 +174,8 @@
       ],
       "Delete ${ selectedCount } contact group": [
         "Ștergere grup de contacte",
-        "Ștergere ${ selectedCount } grupuri de contacte",
-        "Ștergere ${ selectedCount } de grupuri de contacte"
+        "Ștergere ${ selectedCount } contacte",
+        "Ștergere ${ selectedCount } de contacte"
       ],
       "Delete contact": [
         "Ștergere contact"
@@ -184,7 +184,7 @@
         "Ștergere grup de contacte"
       ],
       "Delete permanently": [
-        "Șterge permanentă"
+        "Ștergere permanentă"
       ],
       "Deselect all": [
         "Deselectare toate"
@@ -220,7 +220,7 @@
         "Editare"
       ],
       "Edit email address": [
-        "Editare adresă de e-mail"
+        "Editare adresa de e-mail"
       ],
       "Edit label": [
         "Editare etichetă"
@@ -346,7 +346,7 @@
         "Mutare în folder"
       ],
       "Move to trash": [
-        "Mutare în gunoi"
+        "Mutare în «Gunoi»"
       ],
       "New upload": [
         "Încărcare nouă"
@@ -379,7 +379,7 @@
         "Examinare contact"
       ],
       "Previous": [
-        "Anterior"
+        "Anteriorul"
       ],
       "Previous month": [
         "Luna trecută"
@@ -464,6 +464,9 @@
       ],
       "Search drive": [
         "Căutare"
+      ],
+      "See plan features": [
+        "Afișare caracteristici plan"
       ],
       "Select all": [
         "Selectare toate"
@@ -589,7 +592,7 @@
         "Folosire cod de recuperare"
       ],
       "Verify": [
-        "Verificare"
+        "Verifică"
       ],
       "Verify account": [
         "Verificare cont"
@@ -672,10 +675,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Obțineți oferta"
+        "Luați oferta"
       ],
       "Get the deal now": [
-        "Obțineți oferta"
+        "Luați oferta"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -695,13 +698,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "1 month": [
-        "1 lună"
+        "O lună"
       ],
       "12 months": [
         "12 luni"
       ],
       "24 months": [
-        "24 luni"
+        "24 de luni"
       ]
     },
     "Bug category": {
@@ -817,7 +820,7 @@
         "măsliniu"
       ],
       "pacific": [
-        "Pacific"
+        "pacific"
       ],
       "pickle": [
         "murături"
@@ -852,7 +855,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        "Părăsiți personalizarea importării?"
+        "Părăsiți modificarea importării?"
       ],
       "Quit import?": [
         "Anulați importarea?"
@@ -881,7 +884,7 @@
         "Limba"
       ],
       "Logo": [
-        "Sigla"
+        "Siglă"
       ],
       "Member": [
         "Membru"
@@ -908,10 +911,10 @@
         "Fus orar"
       ],
       "Title": [
-        "Adresare"
+        "Titlu"
       ],
       "URL": [
-        "URL"
+        "Adresa URL"
       ]
     },
     "Contact type label": {
@@ -925,7 +928,7 @@
         "Mobil"
       ],
       "Other": [
-        "Altul"
+        "Altele"
       ],
       "Pager": [
         "Pager"
@@ -1401,7 +1404,7 @@
         "Mozambic"
       ],
       "Myanmar": [
-        "Burma"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -1458,7 +1461,7 @@
         "Palau"
       ],
       "Palestine": [
-        "Palestine"
+        "Palestina"
       ],
       "Panama": [
         "Panama"
@@ -1736,7 +1739,12 @@
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Se îmbină contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+        "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
+        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
+        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
@@ -1765,7 +1773,7 @@
     },
     "Error": {
       "A group with this name already exists": [
-        "Un grup cu acest nume există deja."
+        "Un grup cu acest nume există deja"
       ],
       "A problem occurred, please try again": [
         "A apărut o eroare. Mai reîncercați."
@@ -1841,7 +1849,7 @@
         "Parolă incorectă. Reîncercați."
       ],
       "Invalid name": [
-        "Nume nevalid."
+        "Nume nevalid"
       ],
       "Invalid public key file": [
         "Cheie publică nevalidă."
@@ -1921,10 +1929,10 @@
         "Semnătură neverificată"
       ],
       "Signature verification failed": [
-        "Verificare semnătură eșuată"
+        "Eșuare verificare semnătură"
       ],
       "Some contacts could not be deleted": [
-        "Unele contacte nu s-au putut șterge"
+        "Unele contacte nu s-au putut șterge."
       ],
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
@@ -1993,25 +2001,25 @@
         "Acest câmp este obligatoriu"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minim de ${ minimumLength } caractere."
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Acest nume de etichetă nu este disponibil. Alegeți un nume diferit."
+        "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
       ],
       "Unknown error": [
-        "Eroare necunoscută."
+        "Eroare necunoscută"
       ],
       "We were unable to connect to your service provider.": [
         "Nu am reușit să ne conectăm la furnizorul dvs. de servicii."
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Nu puteți trimite un e-mail la mai mult de 100 de destinatari."
+        "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
       "You can't send vCards of more than 10 contacts": [
         "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
@@ -2020,7 +2028,7 @@
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
       "You must set a name": [
-        "Trebuie specificat un nume."
+        "Trebuie specificat un nume"
       ],
       "Your browser does not support uploading folders": [
         "Navigatorul curent nu acceptă încărcarea de foldere."
@@ -2178,7 +2186,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } a fost actualizată"
+        "${ Label.Name } actualizată"
       ]
     },
     "Footer": {
@@ -2221,7 +2229,7 @@
         "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilizați tastele «Săgeată sus» și «Săgeată jos» pentru a accesa și răsfoi sugestiile după introducere. Apăsați tasta «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
+        "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ]
     },
     "Human verification method": {
@@ -2286,8 +2294,8 @@
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contactul a fost importat. Contactul importat va apărea acum în lista de contacte.",
-        "contacte importate. Contactele importate vor apărea acum în lista de contacte.",
-        "de contacte importate. Contactele importate vor apărea acum în lista de contacte."
+        "Contactele au fost importate. Contactele importate vor apărea acum în lista de contacte.",
+        "Contactele au fost importate. Contactele importate vor apărea acum în lista de contacte."
       ]
     },
     "Import contacts warning": {
@@ -2644,7 +2652,7 @@
       ],
       "${ numContactGroups } contact group": [
         "Un grup de contacte",
-        "${ numContactGroups } grupuri de contacte",
+        "${ numContactGroups } grupuri de contact",
         "${ numContactGroups } de grupuri de contacte"
       ],
       "${ numContacts } contact": [
@@ -2820,7 +2828,7 @@
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și etichetele care trebuie importate."
       ],
       "Create a new contact group": [
-        "Creare grup contacte"
+        "Creare grup de contacte"
       ],
       "Create in": [
         "Creare în"
@@ -2912,7 +2920,7 @@
         "Introduceți parola (ca administrator al organizației)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Timp estimat rămas: un minut",
+        "Timp estimat rămas: ${ estimatedMinutes } minut",
         "Timp estimat rămas: ${ estimatedMinutes } minute",
         "Timp estimat rămas: ${ estimatedMinutes } de minute"
       ],
@@ -3001,7 +3009,7 @@
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importă ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendar",
+        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendare",
         "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } de calendare"
       ],
@@ -3135,7 +3143,7 @@
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
       "Not a valid URL": [
-        "Adresă URL nevalidă"
+        "URL nevalid"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nu au fost transferate toate fișierele. Încercați să încărcați sau să descărcați din nou fișierele."
@@ -3173,7 +3181,7 @@
         "Suspendat"
       ],
       "Permanently delete all files in your locked drive": [
-        "Ștergere permanentă a tuturor fișierelor din unitatea blocată"
+        "Ștergere permanentă a tuturor fișierelor din unitatea blocată."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
@@ -3238,7 +3246,7 @@
         "Procesul de recuperare ar putea dura ceva timp."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Reîmprospătați pagina sau ${ link } pentru a rezolva majoritatea problemelor."
+        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
       "Report has been sent": [
         "Raportul a fost trimis."
@@ -3301,7 +3309,7 @@
         "A apărut o problemă. Reîncercați mai târziu."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, și ${ DRIVE_APP_NAME }."
+        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Suport pentru un domeniu de e-mail personal"
@@ -3613,7 +3621,7 @@
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
       "Add email address": [
-        "Adăugare adresă de e-mail"
+        "Adăugare e-mail"
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -3762,7 +3770,7 @@
         "Folder"
       ],
       "Folder location": [
-        "Folder"
+        "Amplasare folder"
       ],
       "Folder name": [
         "Nume folder"
@@ -3816,7 +3824,7 @@
         "Doar luna trecută"
       ],
       "Location": [
-        "Cale"
+        "Loc"
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
@@ -4040,7 +4048,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } a fost creată"
+        "${ Label.Name } creată"
       ]
     },
     "Link": {
@@ -4080,7 +4088,7 @@
         "Se conectează la furnizorul de e-mail"
       ],
       "Creating new calendars": [
-        "Se crează calendarele"
+        "Se crează calendare noi"
       ],
       "Gathering your data": [
         "Vi se preiau datele"
@@ -4116,7 +4124,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de încercare gratuită a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de încercare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4409,7 +4417,7 @@
         "Înainte"
       ],
       "Start using ${ appName }": [
-        "Începere utilizare ${ appName }"
+        "Începeți să utilizați ${ appName }"
       ]
     },
     "Onboarding Info": {
@@ -4560,8 +4568,8 @@
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "S-a exportat ${ contactsExported.length } din ${ countContacts } contact cu succes.",
-        "",
-        ""
+        "S-au exportat ${ contactsExported.length } din ${ countContacts } de contacte cu succes.",
+        "S-au exportat ${ contactsExported.length } din ${ countContacts } de contacte cu succes."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "S-a șters un contact.",
@@ -4603,7 +4611,7 @@
         "Mobil"
       ],
       "Other": [
-        "Altul"
+        "Altele"
       ],
       "Pager": [
         "Pager"
@@ -4631,12 +4639,6 @@
       ],
       "Encrypted search is here": [
         "Căutarea criptată este aici"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obțineți gratuit până la 18 luni de ${ planName }"
-      ],
-      "Invite friends and earn rewards!": [
-        "Invitați pe alții și câștigați recompense!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
@@ -4723,13 +4725,13 @@
         "Adresa"
       ],
       "Created": [
-        "Creat"
+        "Creat la"
       ],
       "Expires": [
         "Expirare"
       ],
       "Fingerprint": [
-        "Amprentă"
+        "Amprenta"
       ],
       "Name": [
         "Nume"
@@ -4882,7 +4884,7 @@
         "Creare grup"
       ],
       "Currency": [
-        "Moneda"
+        "Monedă"
       ],
       "Customize and confirm": [
         "Personalizare și confirmare"
@@ -4937,7 +4939,7 @@
         "Unitate"
       ],
       "Drop to upload": [
-        "Plasare pentru încărcare"
+        "Plasați aici pentru încărcare"
       ],
       "Duplicate file found": [
         "S-au găsit fișiere duplicate"
@@ -5035,7 +5037,7 @@
         "Îmbinare contacte"
       ],
       "Merging contacts": [
-        "Se îmbină contactele"
+        "Îmbinare contacte"
       ],
       "MIME type": [
         "Tip MIME"
@@ -5065,7 +5067,7 @@
         "Număr de articole"
       ],
       "Open actions dropdown": [
-        "Meniu acțiuni deschidere"
+        "Deschidere meniu acțiuni"
       ],
       "Open help menu": [
         "Deschidere meniu ajutor"
@@ -5285,7 +5287,7 @@
         "Editare nume etichete"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise."
+        "Criptarea mesajelor forțează semnătura mesajului să ajute la autentificarea mesajelor trimise"
       ],
       "Encrypted data": [
         "Date criptate"
@@ -5421,7 +5423,7 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de încercare gratuită se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de încercare se încheie în curând la ${ textDate }. ${ action }"
       ]
     }
   }

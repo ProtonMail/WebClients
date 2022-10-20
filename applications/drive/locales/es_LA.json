@@ -278,7 +278,7 @@
         "Ir a la principal"
       ],
       "Go to settings": [
-        "Ir a ajustes"
+        "Ir a los ajustes"
       ],
       "Got it": [
         "Entendido"
@@ -462,6 +462,9 @@
       ],
       "Search drive": [
         "Buscar en unidad"
+      ],
+      "See plan features": [
+        "Ver funcionalidades del plan"
       ],
       "Select all": [
         "Seleccionar todo"
@@ -675,7 +678,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -900,7 +903,7 @@
         "Foto"
       ],
       "Role": [
-        "Puesto"
+        "Profesión"
       ],
       "Timezone": [
         "Zona horaria"
@@ -920,7 +923,7 @@
         "Principal"
       ],
       "Mobile": [
-        "Móvil"
+        "Celular"
       ],
       "Other": [
         "Otro"
@@ -1712,7 +1715,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Usar global por defecto (${ defaultValueText })"
+        "Uar global por defecto (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -1735,6 +1738,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
+        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
@@ -1825,7 +1832,7 @@
         "El nombre de la carpeta no puede estar vacío."
       ],
       "Image upload failed": [
-        "Error al cargar la imagen"
+        "Error al subir la imagen"
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenciales de acceso incorrectas. Por favor, intente de nuevo."
@@ -1879,7 +1886,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
-        "Uno de los grupos no tiene contactos: ${ noContactGroupList } "
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -1919,7 +1926,7 @@
         "Algunos contactos no se pudieron eliminar"
       ],
       "Some groups could not be deleted": [
-        "Algunos grupos no pudieron ser eliminados"
+        "Algunos grupos no se pudieron eliminar"
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
         "Algunos nombres de sus carpetas están reservados. Personalice la importación para editar estos nombres."
@@ -1940,7 +1947,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elija un nombre diferente."
@@ -2663,7 +2670,7 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
-        "(${ memberCount } miembros)"
+        "(${ memberCount } miembro)"
       ],
       "10 email addresses": [
         "10 direcciones de correo"
@@ -2675,7 +2682,7 @@
         "Se añadirá un número al nombre de la carpeta"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acceso restringido a la cuenta por falta de pago. Contacte con su administrador."
+        "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
@@ -2734,7 +2741,7 @@
         "Verificando firmas"
       ],
       "Clear data": [
-        "Borrar datos"
+        "Limpiar datos"
       ],
       "Clear encrypted search data": [
         "Borrar datos de búsqueda cifrados"
@@ -2869,7 +2876,7 @@
         "Tiempo restante estimado: menos de un minuto"
       ],
       "Estimating time remaining...": [
-        "Estimando tiempo restante..."
+        "Tiempo restante estimado..."
       ],
       "Failed": [
         "Fallido"
@@ -2914,7 +2921,7 @@
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
       "Free up some space or contact your administrator.": [
-        "Libere algo de espacio o contacte con su administrador."
+        "Libere algo de espacio o contacte con la administración."
       ],
       "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
         "¡Conozca Proton Drive y gane su bono de almacenamiento de 500 MB! Tome acción hoy."
@@ -3065,7 +3072,7 @@
         "Ningún contacto añadido aún"
       ],
       "No email address": [
-        "No hay correo electrónico"
+        "No hay dirección de correo"
       ],
       "No files or folders in trash": [
         "No hay archivos o carpetas en la papelera"
@@ -3202,7 +3209,7 @@
         "Seleccione un archivo cargado o carpeta y cree un enlace."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccione el formato de correo electrónico que desea utilizar por defecto al enviar un correo a esta dirección."
+        "Seleccione el formato de correo que desea usar por defecto al enviar un correo a esta dirección."
       ],
       "Select what you want to import.": [
         "Seleccione lo que desea importar."
@@ -3295,7 +3302,7 @@
         "Este enlace puede ser un ataque homógrafo y los navegadores Edge no pueden abrirlo. Si cree que el enlace es legítimo, use un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homógrafo. Verifique que este es el enlace que desea visitar o no lo abra."
+        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Este enlace se creó con una versión anterior de Drive y no se puede modificar. Elimine este enlace y cree uno nuevo para cambiar los ajustes."
@@ -3329,7 +3336,7 @@
         "Para recuperar sus datos, debe volver a activar la clave de cifrado de contacto usada en el momento en que se crearon los datos. Esto requerirá que recuerde la contraseña usada cuando se generó la clave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para utilizar la verificación de dirección, debe confiar en una o más claves públicas disponibles, incluida la que desea utilizar para el envío. Esto evita que las claves de cifrado sean falsificadas."
+        "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que desea usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Transferencia cancelada para el archivo \"${ name }\""
@@ -3541,7 +3548,7 @@
         "Revocada"
       ],
       "Trusted": [
-        "De confianza"
+        "Confiada"
       ],
       "WKD": [
         "WKD"
@@ -3868,7 +3875,7 @@
         "Establecer método de recuperación"
       ],
       "Sign emails": [
-        "Firmar correos"
+        "Firmar correos electrónicos"
       ],
       "Size": [
         "Tamaño"
@@ -3886,7 +3893,7 @@
         "Datos robados"
       ],
       "Street address": [
-        "Nombre de calle"
+        "Dirección de calle"
       ],
       "System information": [
         "Información del sistema"
@@ -3931,7 +3938,7 @@
         "Cargar archivo"
       ],
       "Upload picture": [
-        "Cargar imagen"
+        "Subir imagen"
       ],
       "Upload your first file": [
         "Cargue su primer archivo"
@@ -4119,7 +4126,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentamos el nuevo aspecto de Proton.${ br }Muchos servicios, una misión. Ingrese a una Internet donde la privacidad es lo primero."
+        "Presentamos el nuevo aspecto de Proton.${ br }Muchos servicios, una misión. Bienvenido a una Internet donde la privacidad es lo primero."
       ]
     },
     "new_plans: label": {
@@ -4423,7 +4430,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
+        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -4431,7 +4438,7 @@
         "Una forma de contactarle"
       ],
       "E.g., ": [
-        "P. ej., "
+        "Ej., "
       ],
       "Enter a new folder name": [
         "Ingrese un nombre nuevo para la carpeta"
@@ -4479,6 +4486,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contacto fue exportado con éxito.",
+        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
@@ -4514,7 +4525,7 @@
         "Principal"
       ],
       "Mobile": [
-        "Móvil"
+        "Celular"
       ],
       "Other": [
         "Otro"
@@ -4536,7 +4547,7 @@
     },
     "Select files": {
       "Upload": [
-        "Cargar"
+        "Subir"
       ]
     },
     "Spotlight": {
@@ -4546,11 +4557,11 @@
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenga hasta 18 meses de ${ planName } gratis"
+      "Get up to ${ credits } in credits.": [
+        "Obtenga hasta ${ credits } en créditos."
       ],
-      "Invite friends and earn rewards!": [
-        "¡Invite a sus amigos y gane recompensas!"
+      "Invite friends to Proton": [
+        "Invite amigos a Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puede buscar fácilmente archivos de Drive mientras mantiene sus datos seguros."
@@ -4991,10 +5002,10 @@
         "Ajustes de privacidad"
       ],
       "Re-sign all contacts": [
-        "Refirmando todos los contactos"
+        "Volver a firmar todos los contactos"
       ],
       "Re-signing contacts": [
-        "Refirmando contactos"
+        "Volviendo a firmar los contactos"
       ],
       "Reconnect your account": [
         "Reconectar su cuenta"
@@ -5111,7 +5122,7 @@
         "Tipo"
       ],
       "Upgrade required": [
-        "Actualización necesaria"
+        "Mejora necesaria"
       ],
       "Uploaded": [
         "Cargado"
@@ -5166,7 +5177,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica qué formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
@@ -5199,7 +5210,7 @@
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/en línea obliga a mensajes de texto plano."
+        "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
@@ -5208,7 +5219,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extemo a este correo electrónico"
+        "Subir una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extemo a este correo electrónico"
       ],
       "You do not have any contacts to export": [
         "No tiene ningún contacto para exportar"
@@ -5254,18 +5265,18 @@
         "¿En verdad desea descartar su importación?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupo de contactos?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupos de contactos?"
+        "¿En verdad desea eliminar permanentemente ${ count } grupo de contactos?",
+        "¿En verdad desea eliminar permanentemente ${ count } grupos de contactos?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } contacto?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } contactos?"
+        "¿En verdad desea eliminar permanentemente ${ count } contacto?",
+        "¿En verdad desea eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "¿Está seguro que desea eliminar permanentemente este grupo de contactos?"
+        "¿En verdad desea eliminar permanentemente este grupo de contactos?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "¿Seguro que desea eliminar permanentemente este contacto?"
+        "¿En verdad desea eliminar permanentemente este contacto?"
       ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"

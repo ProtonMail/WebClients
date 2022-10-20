@@ -45,7 +45,7 @@
         "Anvend"
       ],
       "Attach screenshot(s)": [
-        "Vedhæft skærmbillede(r)"
+        "Vedhæft skærmfoto(s)"
       ],
       "Authenticate": [
         "Godkend"
@@ -93,7 +93,7 @@
         "Ryd data"
       ],
       "Clear query": [
-        "Ryd forespørgsel"
+        "Ryd forespørgslen"
       ],
       "Click here.": [
         "Klik her."
@@ -105,7 +105,7 @@
         "Luk navigation"
       ],
       "Close this banner": [
-        "Luk denne banner"
+        "Luk dette banner"
       ],
       "Close transfers": [
         "Luk overførsel"
@@ -197,10 +197,10 @@
         "Kassér"
       ],
       "Done": [
-        "Færdig"
+        "Udført"
       ],
       "Download": [
-        "Hent"
+        "Download"
       ],
       "Download (${ count })": [
         "Hent (${ count })"
@@ -332,7 +332,7 @@
         "Minimer overførsler"
       ],
       "More info: ${ safeTitle }": [
-        "Mere information: ${ safeTitle }"
+        "Yderligere information: ${ safeTitle }"
       ],
       "More options": [
         "Flere muligheder"
@@ -377,7 +377,7 @@
         "Forhåndsvis kontakt"
       ],
       "Previous": [
-        "Foregående"
+        "Forrige"
       ],
       "Previous month": [
         "Forrige måned"
@@ -386,7 +386,7 @@
         "Afslut"
       ],
       "Re-sign": [
-        "Gensignér"
+        "Signér igen"
       ],
       "Reconnect": [
         "Tilslut igen"
@@ -416,7 +416,7 @@
         "Anmeld et problem"
       ],
       "Request a feature": [
-        "Anmod om funktion"
+        "Anmod om en funktion"
       ],
       "Request new code": [
         "Anmod om ny kode"
@@ -463,6 +463,9 @@
       "Search drive": [
         "Søg på drev"
       ],
+      "See plan features": [
+        "Se abonnementfunktioner"
+      ],
       "Select all": [
         "Vælg alle"
       ],
@@ -482,7 +485,7 @@
         "Del via link"
       ],
       "Sharing options": [
-        "Indstillinger for deling"
+        "Delemuligheder"
       ],
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
@@ -494,7 +497,7 @@
         "Vis etiketter"
       ],
       "Show preview": [
-        "Vis forhåndsvisning"
+        "Vis en forhåndsvisning"
       ],
       "Sign out": [
         "Log ud"
@@ -533,7 +536,7 @@
         "Tema"
       ],
       "Trust": [
-        "Gør betroet"
+        "Hav tillid til"
       ],
       "Try another method": [
         "Prøv en anden metode"
@@ -548,7 +551,7 @@
         "Afmarkér fra sletning"
       ],
       "Untrust": [
-        "Ikke længere betroet"
+        "Ikke-betroet"
       ],
       "Update recovery file": [
         "Opdater gendannelsesfil"
@@ -572,22 +575,22 @@
         "Upload mappe"
       ],
       "Upload picture": [
-        "Overfør billede"
+        "Upload billede"
       ],
       "Use ${ label } theme": [
-        "Brug temaet “${ label }”"
+        "Brug ${ label } tema"
       ],
       "Use authentication code": [
         "Brug godkendelseskode"
       ],
       "Use for sending": [
-        "Brug til afsendelse"
+        "Benyt til afsendelse"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
       ],
       "Verify": [
-        "Verificer"
+        "Bekræft"
       ],
       "Verify account": [
         "Verificer konto"
@@ -653,7 +656,7 @@
     },
     "blackfriday Title": {
       "Most popular": [
-        "Mest populært"
+        "Mest populære"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -661,7 +664,7 @@
         "Gør brug af tilbuddet"
       ],
       "Get the deal now": [
-        "Gør brug af tilduddet nu"
+        "Gør brug af tilbuddet nu"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -704,7 +707,7 @@
         "Forbindelsesproblem"
       ],
       "Contacts problem": [
-        "Kontakter-problem"
+        "Kontakt-problem"
       ],
       "Custom domain problem": [
         "Brugerdomæne-problem"
@@ -713,10 +716,10 @@
         "Drive-problem"
       ],
       "Feature request": [
-        "Funktionsanmodning"
+        "Anmodning om funktionalitet"
       ],
       "Import / export problem": [
-        "Problem med import / eksport"
+        "Import-/eksportproblem"
       ],
       "Installation problem": [
         "Installationsproblem"
@@ -743,7 +746,7 @@
         "Tilmeldingsproblem"
       ],
       "Slow speed problem": [
-        "Problem med lav hastighed"
+        "Lav hastighed problem"
       ],
       "Speed problem": [
         "Hastighedsproblem"
@@ -758,7 +761,7 @@
         "VPN-problem"
       ],
       "Website access problem": [
-        "Problemer med adgang til hjemmesiden"
+        "Adgangsproblem på websted"
       ]
     },
     "Button": {
@@ -775,29 +778,14 @@
       ]
     },
     "color": {
-      "carrot": [
-        "gulerod"
-      ],
-      "cerise": [
-        "kirsebærrød"
-      ],
       "cobalt": [
         "kobolt"
       ],
       "copper": [
         "kobber"
       ],
-      "enzian": [
-        "ensian"
-      ],
       "fern": [
         "bregne"
-      ],
-      "forest": [
-        "skov"
-      ],
-      "ocean": [
-        "hav"
       ],
       "olive": [
         "oliven"
@@ -805,35 +793,14 @@
       "pacific": [
         "stillehav"
       ],
-      "pickle": [
-        "syltet agurk"
-      ],
-      "pine": [
-        "fyr"
-      ],
-      "pink": [
-        "pink"
-      ],
-      "plum": [
-        "blomme"
-      ],
-      "purple": [
-        "lilla"
-      ],
       "reef": [
         "rev"
-      ],
-      "sahara": [
-        "sahara"
       ],
       "slateblue": [
         "skiferblå"
       ],
       "soil": [
         "jord"
-      ],
-      "strawberry": [
-        "jordbær"
       ]
     },
     "Confirm modal title": {
@@ -876,7 +843,7 @@
         "Navn"
       ],
       "Note": [
-        "Notat"
+        "Note"
       ],
       "Organization": [
         "Organisation"
@@ -911,13 +878,13 @@
         "Mobil"
       ],
       "Other": [
-        "Andet"
+        "Andre"
       ],
       "Pager": [
         "Personsøger"
       ],
       "Personal": [
-        "Personlig"
+        "Privat"
       ],
       "Work": [
         "Arbejde"
@@ -1728,7 +1695,7 @@
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil først ske efter der er klikket på fletningsknappen"
+        "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -1752,9 +1719,6 @@
     "Error": {
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
-      ],
-      "A problem occurred, please try again": [
-        "Der opstod et problem. Prøv venligst igen"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -1786,7 +1750,7 @@
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Email address invalid": [
-        "E-mailadresse ugyldig"
+        "Ugyldig e-mailadresse"
       ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
@@ -1831,7 +1795,7 @@
         "Ugyldig offentlig nøglefil"
       ],
       "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
+        "Ugyldig verifikationskode"
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
@@ -1872,9 +1836,6 @@
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
-      "Please activate your content search again": [
-        "Aktiver venligst din indholdssøgning igen"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
@@ -1901,7 +1862,7 @@
         "Signatur ikke bekræftet"
       ],
       "Signature verification failed": [
-        "Signaturbekræftelse mislykkedes"
+        "Bekræftelse af signatur mislykkedes"
       ],
       "Some contacts could not be deleted": [
         "Nogle kontakter kunne ikke slettes"
@@ -1909,17 +1870,11 @@
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
-      ],
-      "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -1928,7 +1883,7 @@
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
@@ -1970,7 +1925,7 @@
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
       "This field is required": [
-        "Dette felt skal udfyldes"
+        "Feltet er påkrævet"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
@@ -1995,9 +1950,6 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Du kan ikke sende vCards med mere end 10 kontakter"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -2065,7 +2017,7 @@
         "Ups, noget gik galt"
       ],
       "Please ${ refresh } or check your connection.": [
-        "${ refresh } eller tjek din forbindelse."
+        "Du bedes venligst ${ refresh } eller tjekke din forbindelse."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Noget gik galt. Genopfrisk siden eller prøv igen senere."
@@ -2098,24 +2050,6 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Din feedback"
-      ]
-    },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
-      ],
-      "Security key": [
-        "Sikkerhedsnøgle"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sikkerhedsnøgle"
       ]
     },
     "file size format": {
@@ -2186,8 +2120,8 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Fandt ${ items.length } forslag, brug tastatur til navigation.",
-        "Fandt ${ items.length } forslag, brug tastatur til navigation."
+        "Fandt ${ items.length } forslag, brug tastaturet til at navigere.",
+        "Fandt ${ items.length } forslag, brug tastaturet til at navigere."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
@@ -2428,9 +2362,6 @@
       "contacts": [
         "kontakter"
       ],
-      "CSV or a VCF (vCard) file": [
-        "CSV eller en VCF-fil (vCard)"
-      ],
       "full calendar view": [
         "fuld kalendervisning"
       ],
@@ -2496,8 +2427,8 @@
         "${ contactCount } indeholder adskillige e-mailadresser."
       ],
       "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } medlem",
-        "${ contactEmailsLength } medlemmer"
+        "${ contactEmailsLength } Medlem",
+        "${ contactEmailsLength } Medlemmer"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } indeholder adskillige e-mailadresser."
@@ -2640,7 +2571,7 @@
         "Annulleret"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og samtidig afmelde advarslen."
+        "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
@@ -2686,7 +2617,7 @@
         "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
       ],
       "Create a new contact group": [
-        "Opret ny kontaktgruppe"
+        "Opret en ny kontaktgruppe"
       ],
       "Create in": [
         "Opret i"
@@ -2708,6 +2639,10 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
+      "Delete locked drive": [
+        "Slet låst drev",
+        "Slet låste drev"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne fil blev uploaded sikkert af ${ emailAddress }."
@@ -2745,9 +2680,6 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
-      "Each code can only be used once": [
-        "Hver kode kan kun bruges én gang"
-      ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
       ],
@@ -2758,16 +2690,13 @@
         "Nu med krypteret søgning"
       ],
       "Enter the code from your authenticator app": [
-        "Indtast koden fra din autentificeringsapp"
+        "Indtast koden fra din godkendelsesapp"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Anslået resterende tid: ${ estimatedMinutes } minut",
@@ -2819,10 +2748,13 @@
         "Mappen vil ikke blive uploadet"
       ],
       "Free up some space or add more storage space.": [
-        "Frigør noget plads eller tilføj mere lagerplads."
+        "Frigør plads eller tilføj mere lagerplads."
       ],
       "Free up some space or contact your administrator.": [
-        "Frigør noget plads eller kontakt din administrator."
+        "Frigør lidt plads eller kontakt din administrator."
+      ],
+      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
+        "Lær Proton Drive at kende og optjen din bonus på 500 MB lagerplads! Gør noget i dag."
       ],
       "Go ahead, upload a file": [
         "Værsgo, upload en fil"
@@ -2834,7 +2766,7 @@
         "Gruppetildeling anvendt"
       ],
       "here": [
-        "her"
+        "hér"
       ],
       "How does encrypted search work?": [
         "Hvordan fungerer krypteret søgning?"
@@ -2846,7 +2778,7 @@
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Hvis du ikke kan se e-mailen i din indbakke, bedes du tjekke din spammappe."
+        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Hvis du har en af disse, skal du fortsætte til Proton-kontoindstillingerne for at\nfortsætte processen med at fjerne spærringen."
@@ -2946,7 +2878,7 @@
         "Mine Links"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveau-mappe."
+        "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
       "Network issue": [
         "Netværksproblem"
@@ -2961,7 +2893,7 @@
         "Ingen kontakter tilføjet endnu"
       ],
       "No email address": [
-        "Ingen e-mailaddresse"
+        "Ingen e-mailadresse"
       ],
       "No files or folders in trash": [
         "Ingen filer eller mapper i papirkurven"
@@ -2979,7 +2911,7 @@
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
       ],
       "Not a valid URL": [
-        "Ikke en gyldig URL"
+        "Ugyldig URL"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nogle filer blev ikke overført. Prøv at overføre eller hente filerne igen."
@@ -3014,6 +2946,9 @@
       ],
       "Paused": [
         "Sat på pause"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Slet alle filer på dit låste drev permanent"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
@@ -3140,7 +3075,7 @@
         "Noget gik galt. Prøv igen senere."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
+        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
@@ -3176,7 +3111,7 @@
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Denne adresse er deaktiveret. Vil du kunne sende til denne adresse, skal ejeren først aktivere den."
+        "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
@@ -3185,7 +3120,7 @@
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Tjek at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+        "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linket blev oprettet i en ældre Drive-version og kan ikke ændres. Slet linket og opret et nyt for at ændre indstillingerne."
@@ -3216,7 +3151,7 @@
         "For at gendanne dine data skal du genaktivere den kontakt-krypteringsnøgle, der anvendtes på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "For at bruge adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
+        "For at bruge Adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Overførsel annulleret for fil \"${ name }\""
@@ -3234,7 +3169,7 @@
         "Papirkurv"
       ],
       "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
+        "Ubegrænsede mapper / etiketter / filtre"
       ],
       "Unlimited messages": [
         "Ubegrænset antal beskeder"
@@ -3262,6 +3197,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Godt gået, du har lige fordoblet din gratis lagerplads!"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
@@ -3300,7 +3238,7 @@
         "Ja"
       ],
       "You are about to open another browser tab and visit:": [
-        "Du er ved at åbne en ny browserfane og besøge:"
+        "Du er ved at åbne en anden browserfane og besøge:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
@@ -3312,13 +3250,13 @@
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Du kan aktivere notifikationer for at blive underrettet, når nye e-mails ankommer i denne mappe."
+        "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du nåede ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
+        "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
@@ -3363,7 +3301,7 @@
         "Din tidligere gendannelsessætning"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
+        "Din Proton-konto er suspenderet. For at fortsætte med at bruge din konto skal du betale eventuelle forfaldne fakturaer."
       ]
     },
     "Info on errors": {
@@ -3454,7 +3392,7 @@
         "Anvend på alle uverificerede elementer"
       ],
       "Attach screenshot(s)": [
-        "Vedhæft skærmbillede(r)"
+        "Vedhæft skærmfoto(s)"
       ],
       "Audio file": [
         "Lydfil"
@@ -3493,10 +3431,7 @@
         "By"
       ],
       "Code is 6 digits without spaces": [
-        "Kode er på 6 cifre uden mellemrum"
-      ],
-      "Coming soon": [
-        "Kommer snart"
+        "Koden er på 6 cifre uden mellemrum"
       ],
       "Comment": [
         "Kommentar"
@@ -3512,9 +3447,6 @@
       ],
       "Country": [
         "Land"
-      ],
-      "Create Proton account": [
-        "Opret Proton-konto"
       ],
       "Created": [
         "Oprettet"
@@ -3542,7 +3474,7 @@
         "E-mail"
       ],
       "Email address": [
-        "E-mailadresse"
+        "E-mail"
       ],
       "Email format": [
         "E-mailformattering"
@@ -3674,7 +3606,7 @@
         "Notifikation"
       ],
       "OK": [
-        "Nogenlunde"
+        "OK"
       ],
       "Operating system": [
         "Operativsystem"
@@ -3728,16 +3660,13 @@
         "Anmeld misbrug"
       ],
       "Reveal password": [
-        "Afslør adgangskode"
+        "Vis adgangskode"
       ],
       "Select type of abuse": [
         "Vælg type af misbrug"
       ],
       "Set expiration date": [
         "Angiv en udløbsdato"
-      ],
-      "Set recovery method": [
-        "Indstil gendannelsesmetode"
       ],
       "Sign emails": [
         "Signér e-mails"
@@ -3803,13 +3732,13 @@
         "Upload fil"
       ],
       "Upload picture": [
-        "Upload billed"
+        "Upload billede"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        "Brugernavn eller ${ MAIL_APP_NAME } adresse"
+        "Brugernavn eller ${ MAIL_APP_NAME }-adresse"
       ],
       "Verification code": [
-        "Bekræftelseskode"
+        "Verifikationskode"
       ],
       "Video file": [
         "Videofil"
@@ -3842,13 +3771,13 @@
         "Opret mappe"
       ],
       "Create label": [
-        "Opret etikette"
+        "Opret etiket"
       ],
       "Edit folder": [
         "Redigér mappe"
       ],
       "Edit label": [
-        "Redigér etikette"
+        "Redigér etiket"
       ]
     },
     "label/folder notification": {
@@ -3861,13 +3790,13 @@
         "rydder din browser-cache"
       ],
       "Learn more": [
-        "Få mere at vide"
+        "Få yderligere information"
       ],
       "Pay invoice": [
         "Betal faktura"
       ],
       "Request an invite": [
-        "Anmod om en invitation"
+        "Anmod om invitation"
       ],
       "Shared": [
         "Delt"
@@ -3906,17 +3835,9 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -3978,7 +3899,7 @@
         "Mappenavn"
       ],
       "Label name": [
-        "Etikettenavn"
+        "Etiketnavn"
       ]
     },
     "new_plans: action": {
@@ -3993,7 +3914,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        "Fortæl os om din oplevelse. (Valgfrit)"
+        "Fortæl os om dine indtryk. (Valgfrit)"
       ]
     },
     "new_plans: placeholder": {
@@ -4204,6 +4125,15 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Opret et delingslink"
+      ],
+      "Set a recovery method": [
+        "Indstil en gendannelsesmetode"
+      ],
+      "Upload a file": [
+        "Upload en fil"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Din pålidelige online boks til vigtige dokumenter og dyrebare minder."
       ]
@@ -4361,7 +4291,7 @@
         "Fax"
       ],
       "Home": [
-        "Privat"
+        "Hjem"
       ],
       "Main": [
         "Primær"
@@ -4370,7 +4300,7 @@
         "Mobil"
       ],
       "Other": [
-        "Andet"
+        "Andre"
       ],
       "Pager": [
         "Personsøger"
@@ -4389,7 +4319,7 @@
     },
     "Select files": {
       "Upload": [
-        "Upload"
+        "Overfør"
       ]
     },
     "Spotlight": {
@@ -4398,12 +4328,6 @@
       ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Få op til 18 måneder med ${ planName } gratis"
-      ],
-      "Invite friends and earn rewards!": [
-        "Inviter venner, og optjen belønninger!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du nemt søge i Drive-filer, mens dine data forbliver sikre."
@@ -4442,7 +4366,7 @@
         "Kontaktgrupper slettet"
       ],
       "Contact saved": [
-        "Kontakt er gemt"
+        "Kontakt gemt"
       ],
       "Contacts deleted": [
         "Kontakter slettet"
@@ -4511,7 +4435,7 @@
         "Handlinger"
       ],
       "Address": [
-        "E-mail"
+        "Adresse"
       ],
       "CSV field": [
         "CSV-felt"
@@ -4592,7 +4516,7 @@
         "Føj til ${ groupCount } grupper"
       ],
       "Add to ${ groupName }": [
-        "Føj til ${ groupName }"
+        "Tilføj til ${ groupName }"
       ],
       "Addresses": [
         "Adresser"
@@ -4622,7 +4546,7 @@
         "Kontaktdetaljer"
       ],
       "Contact Details": [
-        "Kontaktoplysninger"
+        "Kundeoplysninger"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -4702,7 +4626,7 @@
         "Dublet af mappe fundet"
       ],
       "Edit contact": [
-        "Redigér kontakt"
+        "Rediger kontakt"
       ],
       "Edit contact group": [
         "Redigér kontaktgruppe"
@@ -4714,7 +4638,7 @@
         "E-mailadresser"
       ],
       "Email settings": [
-        "E-mailindstillinger"
+        "E-mail indstillinger"
       ],
       "Empty trash": [
         "Tøm Papirkurv"
@@ -4766,7 +4690,7 @@
         "Importér kontakter"
       ],
       "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
+        "Ugyldig verifikationskode"
       ],
       "Item details": [
         "Elementdetaljer"
@@ -4952,7 +4876,7 @@
         "Samlet størrelse"
       ],
       "Trash": [
-        "Papirkurv"
+        "Flyt til papirkurv"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -5007,7 +4931,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatisk betyder, at formatet i skrivevinduet benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelsen."
+        "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpas import for at reducere antallet af mapper"
@@ -5034,13 +4958,13 @@
         "Krypterede data"
       ],
       "Encrypted data with verified digital signature": [
-        "Krypterede data med bekræftet digital underskrift"
+        "Krypterede data med verificeret digital signatur"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"
+        "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
@@ -5084,10 +5008,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        "Klik for at afspille videoen"
+        "Klik for at afspille videoen igen"
       ],
       "Replay video": [
-        "Afspil video"
+        "Afspil video igen"
       ]
     },
     "Warning": {
@@ -5139,7 +5063,7 @@
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Dekrypteringen af det krypterede indhold mislykkedes."
+        "Dekryptering af det krypterede indhold mislykkedes."
       ],
       "The verification of the contact details' signature failed.": [
         "Verifikationen af kontaktdetaljernes signatur mislykkedes."

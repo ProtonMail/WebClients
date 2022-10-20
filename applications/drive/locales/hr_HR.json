@@ -129,7 +129,7 @@
         "Stvori"
       ],
       "Create a new contact group": [
-        "Stvori novu grupu kontakata"
+        "Kreiraj novu grupu kontakata"
       ],
       "Create link": [
         "Stvori poveznicu"
@@ -290,9 +290,6 @@
       ],
       "More options": [
         "Više opcija"
-      ],
-      "Move": [
-        "Premjesti"
       ],
       "Move to folder": [
         "Premjesti u mapu"
@@ -830,7 +827,7 @@
         "Pogreška autentikacije."
       ],
       "Contact could not be saved": [
-        "Nije moguće spremanje kontakata"
+        "Nije bilo moguće spremanje kontakata"
       ],
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
@@ -862,16 +859,13 @@
       "Missing signature": [
         "Nedostaje potpis"
       ],
-      "No valid address found": [
-        "Nije pronađena važeća adresa"
-      ],
       "Not a valid number": [
         "Broj telefona nije važeći"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jedan od kontakata nema adresu e-pošte: ${ noEmailsContactNamesList }",
-        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } ",
-        "Nekoliko kontakata nema adrese e-pošte: ${ noEmailsContactNamesList } "
+        "Nekoliko kontakata nema adresu e-pošte: ${ noEmailsContactNamesList } ",
+        "Nekoliko kontakata nema adresu e-pošte: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Jedna od grupa nema kontakata: ${ noContactGroupList }",
@@ -1092,7 +1086,7 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
-        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
@@ -1743,7 +1737,7 @@
         "Ističe"
       ],
       "Export contacts": [
-        "Uvezi kontakte"
+        "Izvezi kontakte"
       ],
       "Extended address": [
         "Produžena adresa"
@@ -2127,7 +2121,6 @@
     },
     "Progress bar description": {
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
         "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
         "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno."
       ],
@@ -2205,9 +2198,9 @@
         "Kôd je poslan na ${ methodTo }"
       ],
       "Contact deleted": [
-        "Kontakt je izbrisan",
-        "Kontakti su izbrisani",
-        "Kontakti su izbrisani"
+        "Kontakt je uklonjen",
+        "Kontakti su uklonjeni",
+        "Kontakti su uklonjeni"
       ],
       "Contact group deleted": [
         "Kontaktna grupa je izbrisana",
@@ -2218,7 +2211,7 @@
         "Kontakt je dodan"
       ],
       "Contacts deleted": [
-        "Kontakti su izbrisani"
+        "Kontakti su uklonjeni"
       ],
       "Email address copied to clipboard": [
         "Adresa e-pošte je kopirana u međuspremnik"
@@ -2400,9 +2393,6 @@
       ],
       "Drive": [
         "Drive"
-      ],
-      "Drop to upload": [
-        "Ispustite za učitati"
       ],
       "Duplicate file found": [
         "Pronađen je duplikat datoteke"
