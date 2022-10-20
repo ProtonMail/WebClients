@@ -65,7 +65,7 @@ const InitContainer = () => {
         );
     }
 
-    if (welcomeFlags.isWelcomeFlow) {
+    if (!welcomeFlags.isDone) {
         return (
             <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
                 <OnboardingContainer onDone={setWelcomeFlagsDone} />

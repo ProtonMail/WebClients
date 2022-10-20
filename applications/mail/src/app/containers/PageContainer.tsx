@@ -62,19 +62,18 @@ const PageContainer = (
         return <Redirect to="/inbox" />;
     }
 
+    const onboardingOpen = !welcomeFlags.isDone;
+
     return (
         <PrivateLayout
             ref={ref}
-            isBlurred={welcomeFlags.isWelcomeFlow}
+            isBlurred={onboardingOpen}
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}
             rightSidebarContent={rightSidebarContent}
         >
-            <MailStartupModals
-                onboardingOpen={!!welcomeFlags.isWelcomeFlow}
-                onOnboardingDone={() => setWelcomeFlagsDone()}
-            />
+            <MailStartupModals onboardingOpen={onboardingOpen} onOnboardingDone={() => setWelcomeFlagsDone()} />
             <LocationErrorBoundary>
                 <MailboxContainer
                     labelID={labelID}
