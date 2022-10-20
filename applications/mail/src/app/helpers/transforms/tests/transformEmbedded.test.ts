@@ -7,7 +7,7 @@ import { createDocument } from '../../test/message';
 import { transformEmbedded } from '../transformEmbedded';
 
 const mailSettings = {
-    ShowImages: SHOW_IMAGES.EMBEDDED,
+    HideEmbeddedImages: SHOW_IMAGES.SHOW,
 } as MailSettings;
 
 describe('transformEmbedded', () => {

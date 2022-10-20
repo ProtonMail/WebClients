@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
+import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 
-import { api, clearAll, mockedCryptoApi, prepareContact, render } from '../tests/render';
+import { addToCache, api, clearAll, minimalCache, mockedCryptoApi, prepareContact, render } from '../tests/render';
 import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';
 
 describe('ContactDetailsModal', () => {
@@ -48,8 +49,10 @@ END:VCARD`;
                 return { Contact: { ID: 'ID', ContactID: 'ContactID', Cards } };
             }
         });
+        minimalCache();
+        addToCache('MailSettings', { HideRemoteImages: SHOW_IMAGES.HIDE });
 
-        const { findByText } = render(<ContactDetailsModal open={true} {...props} />);
+        const { findByText } = render(<ContactDetailsModal open={true} {...props} />, false);
 
         await findByText('J. Doe');
         await findByText('Load image');
