@@ -4,15 +4,12 @@ import {
     FeatureCode,
     RebrandingFeedbackModal,
     ReferralModal,
-    V5WelcomeModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
-    useShouldOpenV5WelcomeModal,
     useSubscription,
 } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
 
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 
@@ -22,8 +19,6 @@ interface Props {
 }
 
 const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
-    const app = APPS.PROTONMAIL;
-
     // Onboarding modal
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
@@ -32,10 +27,6 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const [referralModal, setReferralModal, renderReferralModal] = useModalState();
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
-
-    // V5 welcome modal
-    const [v5WelcomeModal, setV5WelcomeModal, renderV5WelcomeModal] = useModalState();
-    const shouldOpenV5WelcomeModal = useShouldOpenV5WelcomeModal();
 
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
@@ -55,12 +46,10 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
             openModal(setOnboardingModal);
         } else if (shouldOpenReferralModal.open) {
             openModal(setReferralModal);
-        } else if (shouldOpenV5WelcomeModal) {
-            openModal(setV5WelcomeModal);
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal, handleRebrandingFeedbackModalDisplay]);
+    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
@@ -75,7 +64,6 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
                 />
             )}
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
-            {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
             )}
