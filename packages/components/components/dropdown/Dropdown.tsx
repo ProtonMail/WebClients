@@ -42,6 +42,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     noMaxHeight?: boolean;
     noMaxSize?: boolean;
     noCaret?: boolean;
+    adaptiveForTouchScreens?: boolean;
     availablePlacements?: PopperPlacement[];
     sameAnchorWidth?: boolean;
     offset?: number;
@@ -70,6 +71,7 @@ const Dropdown = ({
     noMaxHeight = false,
     noMaxSize = false,
     noCaret = false,
+    adaptiveForTouchScreens = true,
     disableFocusTrap = false,
     sameAnchorWidth = false,
     autoClose = true,
@@ -212,6 +214,7 @@ const Dropdown = ({
         `dropdown--${placement}`,
         isClosing && `is-dropdown-out`,
         noCaret && 'dropdown--no-caret',
+        adaptiveForTouchScreens && 'adaptive-for-touch-screens',
         className,
         'outline-none',
     ]);
