@@ -1,3 +1,17 @@
+# Release 5.0.7.0 — November 2, 2022
+
+## Improved
+
+-   Preview of audio files
+-   Validation of file data order after download
+-   Small adjustments to texts
+
+## Fixed
+
+-   Fix crash during loading of a folder with many items
+-   Fix move operation by drag & drop
+-   Missing upload button on tablets
+
 # Proton Drive is live!
 
 # Release 5.0.6.0 — September 22, 2022
