@@ -35,6 +35,7 @@ import {
     SubscriptionModalProvider,
     ThemesSection,
     TopBanners,
+    TopNavbarUpsell,
     Unauthenticated,
     UserDropdown,
     UsernameSection,
@@ -57,8 +58,10 @@ import LiveChatZendesk, {
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { APPS } from '@proton/shared/lib/constants';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import { getLiteRedirect } from '@proton/shared/lib/subscription/redirect';
 
 import TVContainer from './containers/TVContainer';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
@@ -84,6 +87,12 @@ const MainContainer = () => {
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
+    const [{ liteRedirect, ignoreOnboarding }] = useState(() => {
+        return {
+            liteRedirect: getLiteRedirect(),
+            ignoreOnboarding: location.pathname !== '/downloads',
+        };
+    });
 
     const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
         setAuthenticatedBugReportMode(mode);
@@ -138,6 +147,7 @@ const MainContainer = () => {
                     }
                 />
             }
+            upsellButton={<TopNavbarUpsell offerProps={{ ignoreVisited: !!liteRedirect, ignoreOnboarding }} />}
             logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
@@ -180,7 +190,14 @@ const MainContainer = () => {
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
-                                    <SubscriptionModalProvider app={APPS.PROTONVPN_SETTINGS}>
+                                    <SubscriptionModalProvider
+                                        app={APPS.PROTONVPN_SETTINGS}
+                                        onClose={() => {
+                                            if (liteRedirect) {
+                                                replaceUrl(liteRedirect);
+                                            }
+                                        }}
+                                    >
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea
                                             setActiveSection={setActiveSection}

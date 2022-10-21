@@ -6,6 +6,7 @@ import {
     useConfig,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 
 import DeleteAccount from './DeleteAccount';
 import SubscribeAccount from './SubscribeAccount';
@@ -39,10 +40,6 @@ const getApp = (appQueryParam: string | null, redirect: string | undefined) => {
         }
     }
     return APPS.PROTONVPN_SETTINGS;
-};
-
-const getRedirect = (redirect?: string) => {
-    return redirect && /^(\/$|\/[^/]|proton(vpn|mail|drive)?:\/\/)/.test(redirect) ? redirect : undefined;
 };
 
 enum FullscreenOption {
