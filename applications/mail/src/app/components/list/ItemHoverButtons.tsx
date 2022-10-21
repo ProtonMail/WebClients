@@ -1,7 +1,5 @@
 import { MouseEvent } from 'react';
 
-
-
 import { c } from 'ttag';
 
 import { Button, Icon, Tooltip, useLoading } from '@proton/components';
@@ -96,18 +94,6 @@ const ItemHoverButtons = ({
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Move to archive`}>
-                    <Button
-                        icon
-                        shape="ghost"
-                        size={size}
-                        className="color-inherit"
-                        onClick={handleArchive}
-                        disabled={labelID === ARCHIVE}
-                    >
-                        <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
-                    </Button>
-                </Tooltip>
                 <Tooltip title={c('Action').t`Move to trash`}>
                     <Button
                         icon
@@ -118,6 +104,18 @@ const ItemHoverButtons = ({
                         disabled={labelID === TRASH}
                     >
                         <Icon name="trash" alt={c('Action').t`Move to trash`} />
+                    </Button>
+                </Tooltip>
+                <Tooltip title={c('Action').t`Move to archive`}>
+                    <Button
+                        icon
+                        shape="ghost"
+                        size={size}
+                        className="color-inherit"
+                        onClick={handleArchive}
+                        disabled={labelID === ARCHIVE}
+                    >
+                        <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
                     </Button>
                 </Tooltip>
                 {hasStar && (
