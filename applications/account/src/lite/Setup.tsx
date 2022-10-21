@@ -17,6 +17,7 @@ import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/aut
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
@@ -50,6 +51,8 @@ const Setup = ({ onLogin, UID }: Props) => {
     useThemeQueryParameter();
 
     useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+
         const setupFork = async (selector: string) => {
             const { UID, RefreshToken } = await silentApi<PullForkResponse>(pullForkSession(selector));
             const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } =
@@ -84,7 +87,6 @@ const Setup = ({ onLogin, UID }: Props) => {
                 cache,
             }).then((result: any) => {
                 const [userSettings] = result as [UserSettings, User];
-                const searchParams = new URLSearchParams(location.search);
                 const languageParams = searchParams.get('language');
                 const browserLocale = getBrowserLocale();
                 const localeCode =
@@ -126,6 +128,15 @@ const Setup = ({ onLogin, UID }: Props) => {
         } else if (UID) {
             setupApp(UID).catch(handleSetupError);
         } else {
+            // Old clients not supprting auto-sign in receive upgrade notifications to the lite app.
+            const fallbackUrl = searchParams.get('fallback_url');
+            if (fallbackUrl) {
+                replaceUrl(fallbackUrl);
+                return;
+            }
+            setError({
+                message: 'No selector found',
+            });
             broadcast({ type: MessageType.ERROR, payload: { message: 'No selector found' } });
         }
     }, []);
