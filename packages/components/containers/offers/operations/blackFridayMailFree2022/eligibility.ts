@@ -14,13 +14,16 @@ interface Props {
 }
 
 const isEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
-    const isVpnApp = protonConfig?.APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const isValidApp =
+        protonConfig?.APP_NAME === APPS.PROTONMAIL ||
+        protonConfig?.APP_NAME === APPS.PROTONACCOUNT ||
+        protonConfig?.APP_NAME === APPS.PROTONACCOUNTLITE;
     return (
         ((user?.isFree && isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)) ||
             isTrial(subscription)) &&
         user?.canPay &&
         !user?.isDelinquent &&
-        !isVpnApp
+        isValidApp
     );
 };
 
