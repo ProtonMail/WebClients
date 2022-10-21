@@ -7,11 +7,10 @@ import useOpenModal from '../../useOpenModal';
 import { isMultiSelect, noSelection } from './utils';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }
 
-const RenameButton = ({ shareId, selectedLinks }: Props) => {
+const RenameButton = ({ selectedLinks }: Props) => {
     const { openRename } = useOpenModal();
 
     if (noSelection(selectedLinks) || isMultiSelect(selectedLinks)) {
@@ -22,7 +21,7 @@ const RenameButton = ({ shareId, selectedLinks }: Props) => {
         <ToolbarButton
             title={c('Action').t`Rename`}
             icon={<Icon name="pen-square" />}
-            onClick={() => openRename(shareId, selectedLinks[0])}
+            onClick={() => openRename(selectedLinks[0].rootShareId, selectedLinks[0])}
             data-testid="toolbar-rename"
         />
     );

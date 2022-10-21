@@ -67,7 +67,7 @@ export default function useUploadFolder() {
             throw Error(c('Error').t`The original folder or file not found`);
         }
         checkSignal(abortSignal, folderName);
-        await trashLinks(abortSignal, shareId, parentId, [link.linkId]);
+        await trashLinks(abortSignal, [{ shareId, parentLinkId: parentId, linkId: link.linkId }]);
         return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
     };
 

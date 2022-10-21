@@ -33,7 +33,9 @@ import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword } from '@proton/srp';
 import chunk from '@proton/utils/chunk';
 import getRandomString from '@proton/utils/getRandomString';
+import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
+import unique from '@proton/utils/unique';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -413,23 +415,34 @@ export default function useShareUrl() {
         await events.pollAllDriveEvents();
     };
 
-    const deleteShareUrls = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]) => {
-        const links = await Promise.all(linkIds.map((linkId) => getLink(abortSignal, shareId, linkId)));
+    const deleteShareUrls = async (abortSignal: AbortSignal, ids: { linkId: string; shareId: string }[]) => {
+        const links = await Promise.all(ids.map(({ linkId, shareId }) => getLink(abortSignal, shareId, linkId)));
 
         const successes: string[] = [];
         const failures: { [linkId: string]: any } = {};
 
         // First delete urls in batches so the request is of reasonable size.
-        // If we delete shares first, API automatically deletes also urls.
         const sharedLinks = links
-            .map(({ linkId, shareUrl }) => ({ linkId, shareUrlId: shareUrl?.id }))
-            .filter(({ shareUrlId }) => shareUrlId) as { linkId: string; shareUrlId: string }[];
-        const batches = chunk(sharedLinks, BATCH_REQUEST_SIZE);
+            .map(({ linkId, shareUrl, rootShareId }) => ({ linkId, rootShareId, shareUrlId: shareUrl?.id }))
+            .filter(({ shareUrlId }) => shareUrlId) as { linkId: string; shareUrlId: string; rootShareId: string }[];
+        const groupedLinksByShareId = groupWith((a, b) => a.rootShareId === b.rootShareId, sharedLinks);
+
+        const batches: typeof sharedLinks[] = [];
+
+        groupedLinksByShareId.forEach((linkGroup) => {
+            if (linkGroup.length <= BATCH_REQUEST_SIZE) {
+                batches.push(linkGroup);
+                return;
+            }
+
+            batches.push(...chunk(sharedLinks, BATCH_REQUEST_SIZE));
+        });
+
         const deleteShareUrlQueue = batches.map(
             (batchLinks) => () =>
                 debouncedRequest<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }>(
                     queryDeleteMultipleSharedLinks(
-                        shareId,
+                        batchLinks[0].rootShareId,
                         batchLinks.map(({ shareUrlId }) => shareUrlId)
                     )
                 )
@@ -459,7 +472,10 @@ export default function useShareUrl() {
         });
         await preventLeave(runInQueue(deleteShareQueue, MAX_THREADS_PER_REQUEST));
 
-        await events.pollAllShareEvents(shareId);
+        const shareIdsToUpdate = unique(batches.map((batch) => batch[0].rootShareId));
+
+        await events.pollAllShareEvents(shareIdsToUpdate);
+
         return { successes, failures };
     };
 

@@ -39,7 +39,7 @@ const HeaderCell = <T,>({
         const allSelected = Boolean(itemCount && itemCount === selectionControls.selectedItemIds.length);
 
         return (
-            <TableHeaderCell>
+            <TableHeaderCell className="file-browser-header-checkbox-cell">
                 <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                     <Checkbox
                         className="increase-click-surface"

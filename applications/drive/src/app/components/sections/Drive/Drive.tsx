@@ -16,7 +16,7 @@ import FileBrowser, {
 } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import useOpenModal from '../../useOpenModal';
-import { GridViewItem } from '../FileBrowser/GridViewItem';
+import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { ModifiedCell, NameCell, ShareOptionsCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';

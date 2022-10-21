@@ -1,13 +1,15 @@
 @import '~@proton/styles/scss/config';
 
-.file-browser-list-item td,
-.file-browser-table th {
-	&:first-of-type {
-		// Checkbox cell
-		position: relative; // Because of .increase-click-surface
-		padding-inline: 1em;
-		inline-size: calc(#{rem(16)} + 2em);
-	}
+.file-browser-header-checkbox-cell,
+.file-browser-list-checkbox-cell {
+	position: relative; // Because of .increase-click-surface
+	padding-inline: 1em;
+	inline-size: calc(#{rem(16)} + 2em);
+}
+
+.file-browser-table .filebrowser-list-header-name-cell,
+.file-browser-table .filebrowser-list-device-name-cell {
+	padding-inline-start: 1em;
 }
 
 // in this case, we can remove focus, that is visible via selected row

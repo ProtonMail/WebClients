@@ -22,5 +22,6 @@ export { useDownloadProvider as useDownload, useThumbnailsDownload } from './_do
 export * from './_downloads/interface';
 export * from './_links/interface';
 export * from './_shares/interface';
+export * from './_devices/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';

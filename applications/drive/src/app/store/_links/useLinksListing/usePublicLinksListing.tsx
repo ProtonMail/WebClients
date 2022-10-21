@@ -65,7 +65,7 @@ export function usePublicLinksListingProvider() {
             },
             abortSignal
         );
-        return { links: Links.map(linkMetaToEncryptedLink), parents: [] };
+        return { links: Links.map((linkMeta) => linkMetaToEncryptedLink(linkMeta, '')), parents: [] };
     };
 
     const fetchPublicChildrenNextPage = async (

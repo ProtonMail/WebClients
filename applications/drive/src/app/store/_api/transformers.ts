@@ -1,9 +1,11 @@
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
+import { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 
+import { Device } from '../_devices';
 import { DriveEvents } from '../_events/interface';
 import { EncryptedLink } from '../_links/interface';
 import { Share, ShareWithKey } from '../_shares/interface';
@@ -16,7 +18,7 @@ type LinkMetaWithShareURL = LinkMeta & {
     })[];
 };
 
-export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLink {
+export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: string): EncryptedLink {
     return {
         linkId: link.LinkID,
         parentLinkId: link.ParentLinkID,
@@ -48,6 +50,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLi
         hasThumbnail: link.FileProperties?.ActiveRevision?.Thumbnail === 1,
         isShared: !!link.Shared,
         shareId: link.ShareIDs?.length > 0 ? link.ShareIDs[0] : undefined,
+        rootShareId: shareId,
         shareUrl:
             link.ShareUrls?.length > 0
                 ? {
@@ -80,6 +83,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         isDefault: isMainShare(share),
         isVolumeSoftDeleted: share.VolumeSoftDeleted,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
+        type: share.Type,
     };
 }
 
@@ -94,13 +98,27 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
     };
 }
 
-export function driveEventsResultToDriveEvents({ EventID, Events, Refresh }: DriveEventsResult): DriveEvents {
+export function driveEventsResultToDriveEvents(
+    { EventID, Events, Refresh }: DriveEventsResult,
+    shareId: string
+): DriveEvents {
     return {
         eventId: EventID,
         events: Events.map((event) => ({
             eventType: event.EventType,
-            encryptedLink: linkMetaToEncryptedLink(event.Link),
+            encryptedLink: linkMetaToEncryptedLink(event.Link, shareId),
         })),
         refresh: Refresh !== 0,
     };
 }
+
+export const deviceInfoToDevices = (info: DevicePayload): Device => {
+    return {
+        id: info.Device.DeviceID,
+        volumeId: info.Device.VolumeID,
+        shareId: info.Share.ShareID,
+        name: info.Share.Name,
+        modificationTime: info.Device.ModifyTime,
+        linkId: info.Share.LinkID,
+    };
+};

@@ -4,14 +4,15 @@ import { DecryptedLink, TreeItem } from '../../store';
 import ExpandableRow from './ExpandableRow';
 
 interface Props {
-    rootFolder: TreeItem;
+    treeItems: TreeItem[];
     selectedItemId?: string;
     onSelect: (link: DecryptedLink) => void;
     rowIsDisabled?: (item: TreeItem) => boolean;
     toggleExpand: (linkId: string) => void;
+    isLoaded: boolean;
 }
 
-const FolderTree = ({ rootFolder, selectedItemId, onSelect, rowIsDisabled, toggleExpand }: Props) => {
+const FolderTree = ({ isLoaded, treeItems, selectedItemId, onSelect, rowIsDisabled, toggleExpand }: Props) => {
     const generateRows = (items: TreeItem[], depth = 0) => {
         const rows = items.map((item: TreeItem) => {
             const { link, children, isExpanded, isLoaded } = item;
@@ -38,12 +39,12 @@ const FolderTree = ({ rootFolder, selectedItemId, onSelect, rowIsDisabled, toggl
         return <>{rows}</>;
     };
 
-    const rows = generateRows([rootFolder]);
+    const rows = generateRows(treeItems);
 
     return (
         <div className="folder-tree">
             <table className="folder-tree-table simple-table simple-table--is-hoverable ">
-                <tbody>{!rootFolder.isLoaded ? <TableRowBusy /> : rows}</tbody>
+                <tbody>{isLoaded ? rows : <TableRowBusy />}</tbody>
             </table>
         </div>
     );

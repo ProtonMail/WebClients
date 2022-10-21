@@ -6,19 +6,18 @@ import { DecryptedLink, useDownload } from '../../../store';
 import { hasFoldersSelected, noSelection } from './utils';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
     disabledFolders?: boolean;
 }
 
-const DownloadButton = ({ shareId, selectedLinks, disabledFolders }: Props) => {
+const DownloadButton = ({ selectedLinks, disabledFolders }: Props) => {
     const { download } = useDownload();
 
     const onClick = () => {
         void download(
             selectedLinks.map((link) => ({
                 ...link,
-                shareId,
+                shareId: link.rootShareId,
             }))
         );
     };

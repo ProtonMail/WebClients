@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
-import { FileIcon, TableCell, classnames, useActiveBreakpoint } from '@proton/components';
+import { FileIcon, Icon, TableCell, classnames, useActiveBreakpoint } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
 import SignatureIcon from '../../SignatureIcon';
+import { DeviceItem } from '../Devices/Devices';
 import { DriveItem } from '../Drive/Drive';
 import { SharedLinkItem } from '../SharedLinks/SharedLinks';
 import { TrashItem } from '../Trash/Trash';
 import CopyLinkIcon from './CopyLinkIcon';
-import { getLinkIconText } from './utils';
+import { getDeviceIconText, getLinkIconText } from './utils';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
 
@@ -42,11 +43,16 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashIte
     );
 };
 
-export const SizeCell = ({ item }: { item: DriveItem | TrashItem }) => {
-    const { isDesktop } = useActiveBreakpoint();
+export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
+    const iconText = getDeviceIconText(item.name);
+
     return (
-        <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
-            {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
+        <TableCell
+            className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid filebrowser-list-device-name-cell"
+            data-testid="column-name"
+        >
+            <Icon name="tv" alt={iconText} className="mr0-5" />
+            <NameCellBase name={item.name} />
         </TableCell>
     );
 };
@@ -58,6 +64,23 @@ export const ModifiedCell = ({ item }: { item: DriveItem }) => {
         </TableCell>
     );
 };
+
+export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
+    return (
+        <TableCell className="m0 w15" data-testid="column-modified">
+            <TimeCell time={item.modificationTime} />
+        </TableCell>
+    );
+};
+
+export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
+    const { isDesktop } = useActiveBreakpoint();
+    return (
+        <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
+            {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
+        </TableCell>
+    );
+}
 
 export const DeletedCell = ({ item }: { item: TrashItem }) => {
     return (

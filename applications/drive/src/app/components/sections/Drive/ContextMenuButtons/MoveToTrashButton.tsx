@@ -4,12 +4,11 @@ import { DecryptedLink, useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
     close: () => void;
 }
 
-const MoveToTrashButton = ({ shareId, selectedLinks, close }: Props) => {
+const MoveToTrashButton = ({ selectedLinks, close }: Props) => {
     const { trashLinks } = useActions();
 
     return (
@@ -17,7 +16,7 @@ const MoveToTrashButton = ({ shareId, selectedLinks, close }: Props) => {
             name={c('Action').t`Move to trash`}
             icon="trash"
             testId="context-menu-trash"
-            action={() => trashLinks(new AbortController().signal, shareId, selectedLinks)}
+            action={() => trashLinks(new AbortController().signal, selectedLinks)}
             close={close}
         />
     );

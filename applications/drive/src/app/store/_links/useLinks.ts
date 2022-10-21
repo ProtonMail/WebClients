@@ -37,8 +37,15 @@ export default function useLinks() {
         return { links, errors };
     };
 
-    const getLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]): Promise<DecryptedLink[]> => {
-        const queue = linkIds.map((linkId) => async () => getLink(abortSignal, shareId, linkId));
+    const getLinks = async (
+        abortSignal: AbortSignal,
+        ids: { linkId: string; shareId: string }[]
+    ): Promise<DecryptedLink[]> => {
+        const queue = ids.map(
+            ({ linkId, shareId }) =>
+                async () =>
+                    getLink(abortSignal, shareId, linkId)
+        );
         return runInQueue(queue, MAX_THREADS_PER_REQUEST);
     };
 
