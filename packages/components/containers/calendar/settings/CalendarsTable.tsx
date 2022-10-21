@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import { useAddresses } from '@proton/components/hooks';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
+import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
+import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -14,6 +15,7 @@ import clsx from '@proton/utils/clsx';
 import {
     Icon,
     Info,
+    SettingsLink,
     Table,
     TableBody,
     TableCell,
@@ -124,8 +126,9 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                         )}
                                     <Tooltip title={c('Calendar table settings button tooltip').t`Open settings`}>
                                         <ButtonLike
-                                            as={Link}
-                                            to={`/calendar/calendars/${ID}`}
+                                            as={SettingsLink}
+                                            app={APPS.PROTONCALENDAR}
+                                            path={getCalendarSubpagePath(ID)}
                                             shape="outline"
                                             size="small"
                                             icon

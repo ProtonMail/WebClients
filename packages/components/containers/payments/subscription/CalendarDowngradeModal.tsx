@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { AlertModal, AppLink, ModalProps } from '../../../components';
@@ -15,7 +16,7 @@ const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 
 const CalendarDowngradeModal = ({ isDowngrade, onConfirm, onClose, ...rest }: Props) => {
     const linkButton = (
-        <AppLink toApp={APPS.PROTONACCOUNT} to="/calendar/calendars" onClick={onClose}>
+        <AppLink toApp={APPS.PROTONACCOUNT} to={getCalendarsSettingsPath({ fullPath: true })} onClick={onClose}>
             {c('Action').t`Open ${CALENDAR_APP_NAME} settings`}
         </AppLink>
     );

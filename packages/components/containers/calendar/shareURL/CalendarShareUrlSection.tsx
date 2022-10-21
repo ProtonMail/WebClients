@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
-import { CALENDAR_SETTINGS_SUBSECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/shareUrl/helpers';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -242,7 +242,7 @@ const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
                     content
                 ) : (
                     <>
-                        <h3 className="text-bold" id={CALENDAR_SETTINGS_SUBSECTION_ID.SHARE_PUBLICLY}>
+                        <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
                             {c('Calendar settings section title').t`Share with anyone`}
                         </h3>
                         {content}

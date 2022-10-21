@@ -38,9 +38,11 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SETTINGS_SECTION_ID, MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
+import { getGeneralSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
@@ -377,9 +379,11 @@ const CalendarContainerView = ({
     );
     const shouldShowSpotlight = useSpotlightShow(show);
     const goToSettingsLink = (
-        <SettingsLink path="/general#invitations" app={APPS.PROTONCALENDAR} key="settings-link">{c(
-            'Spotlight settings link'
-        ).t`Go to settings`}</SettingsLink>
+        <SettingsLink
+            path={getGeneralSettingsPath({ sectionId: CALENDAR_SETTINGS_SECTION_ID.INVITATIONS })}
+            app={APPS.PROTONCALENDAR}
+            key="settings-link"
+        >{c('Spotlight settings link').t`Go to settings`}</SettingsLink>
     );
 
     const header = isSideApp ? (
@@ -437,7 +441,10 @@ const CalendarContainerView = ({
                         }
                     >
                         <div>
-                            <TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />
+                            <TopNavbarListItemSettingsDropdown
+                                to={`/${getSlugFromApp(APPS.PROTONCALENDAR)}`}
+                                toApp={APPS.PROTONACCOUNT}
+                            />
                         </div>
                     </Spotlight>
                 }

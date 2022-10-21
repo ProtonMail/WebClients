@@ -37,6 +37,7 @@ import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -161,7 +162,7 @@ const CalendarSidebar = ({
         <Tooltip title={c('Info').t`Manage your calendars`}>
             <SidebarListItemHeaderLink
                 toApp={APPS.PROTONACCOUNT}
-                to="/calendar/calendars"
+                to={getCalendarsSettingsPath({ fullPath: true })}
                 target="_self"
                 icon="cog-wheel"
                 info={c('Link').t`Calendars`}
