@@ -14,9 +14,7 @@ interface Props {
 }
 
 const ImportReportRow = ({ report }: Props) => {
-    const { ID, Account, Product } = report;
-
-    const { EndTime, TotalSize, State: ReportStatus } = report;
+    const { ID, Account, Product, RollbackState, EndTime, TotalSize, State: ReportStatus } = report;
 
     const importType = () => {
         switch (Product) {
@@ -58,11 +56,11 @@ const ImportReportRow = ({ report }: Props) => {
             </div>
         </div>,
         <div className="on-mobile-text-center" key="status">
-            <ImportReportStatus status={ReportStatus} />
+            <ImportReportStatus status={ReportStatus} rollbackState={RollbackState} />
         </div>,
         <time key="importDate">{format(EndTime * 1000, 'PPp', { locale: dateLocale })}</time>,
         humanSize(TotalSize),
-        <ImportReportRowActions key="button" ID={ID} importType={Product} />,
+        <ImportReportRowActions key="button" ID={ID} importType={Product} rollbackState={RollbackState} />,
     ];
 
     return <TableRow cells={cells} />;
