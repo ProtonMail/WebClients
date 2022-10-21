@@ -121,14 +121,16 @@ export const sendModifications = (
 
 export const endUndo = (
     state: Draft<MessagesState>,
-    { payload: { messageID } }: PayloadAction<{ messageID: string }>
+    { payload: { messageID, hasClickedUndo } }: PayloadAction<{ messageID: string; hasClickedUndo: boolean }>
 ) => {
     const message = getMessage(state, messageID);
 
     if (message && message.data) {
         message.loadRetry = 0;
         message.data.LabelIDs = message.data.LabelIDs.filter((value) => value !== MAILBOX_LABEL_IDS.OUTBOX);
-        message.data.Flags = setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data);
+        if (!hasClickedUndo) {
+            message.data.Flags = setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data);
+        }
     }
 };
 
@@ -168,9 +170,9 @@ export const cancelScheduled = (state: Draft<MessagesState>, { payload: ID }: Pa
 };
 
 export const cancelSendSuccess = (state: Draft<MessagesState>, action: PayloadAction<Message>) => {
-    const stateMessage = getMessage(state, action.payload.ID);
+    const message = getMessage(state, action.payload.ID);
 
-    if (stateMessage) {
-        stateMessage.data = action.payload;
+    if (message) {
+        message.data = action.payload;
     }
 };
