@@ -214,6 +214,7 @@ export const useSendMessage = () => {
                         // This should be handled by the backend
                         dispatch(endUndo({ messageID: localID, hasClickedUndo: hasClickedUndoSend }));
                     }
+                    hasClickedUndoSend = false;
                 };
 
                 void endSending();
@@ -241,6 +242,7 @@ export const useSendMessage = () => {
                         SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST,
                     ].includes(error?.data?.Code)
                 ) {
+                    hasClickedUndoSend = false;
                     onCompose({
                         existingDraft: {
                             localID,
