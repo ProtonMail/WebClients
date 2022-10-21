@@ -38,19 +38,19 @@ describe('useDriveEventManager', () => {
 
     it('subscribes to a share by id', async () => {
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
             expect(hook.current.getSubscriptionIds()).toEqual([SHARE_ID_FIRST]);
-            await hook.current.subscribeToShare(SHARE_ID_SECOND);
+            await hook.current.shares.startSubscription(SHARE_ID_SECOND);
             expect(hook.current.getSubscriptionIds()).toEqual([SHARE_ID_FIRST, SHARE_ID_SECOND]);
         });
     });
 
     it('unsubscribes from shares by id', async () => {
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            await hook.current.subscribeToShare(SHARE_ID_SECOND);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_SECOND);
 
-            hook.current.unsubscribeFromShare(SHARE_ID_SECOND);
+            hook.current.shares.unsubscribe(SHARE_ID_SECOND);
             expect(hook.current.getSubscriptionIds()).toEqual([SHARE_ID_FIRST]);
         });
     });
@@ -59,9 +59,9 @@ describe('useDriveEventManager', () => {
         const handler = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            hook.current.registerEventHandler(handler);
-            await hook.current.pollShare(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            hook.current.eventHandlers.register(handler);
+            await hook.current.pollEvents.shares([SHARE_ID_FIRST]);
 
             expect(handler).toBeCalledTimes(1);
         });
@@ -72,10 +72,10 @@ describe('useDriveEventManager', () => {
         const handler2 = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            hook.current.registerEventHandler(handler);
-            hook.current.registerEventHandler(handler2);
-            await hook.current.pollShare(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            hook.current.eventHandlers.register(handler);
+            hook.current.eventHandlers.register(handler2);
+            await hook.current.pollEvents.shares([SHARE_ID_FIRST]);
 
             expect(handler).toBeCalledTimes(1);
             expect(handler2).toBeCalledTimes(1);
@@ -86,11 +86,11 @@ describe('useDriveEventManager', () => {
         const handler = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_SECOND);
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            hook.current.registerEventHandler(handler);
-            await hook.current.pollShare(SHARE_ID_FIRST);
-            await hook.current.pollShare(SHARE_ID_SECOND);
+            await hook.current.shares.startSubscription(SHARE_ID_SECOND);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            hook.current.eventHandlers.register(handler);
+            await hook.current.pollEvents.shares([SHARE_ID_FIRST]);
+            await hook.current.pollEvents.shares([SHARE_ID_SECOND]);
 
             expect(handler).toBeCalledTimes(2);
         });
@@ -101,11 +101,11 @@ describe('useDriveEventManager', () => {
         const handler2 = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            hook.current.registerEventHandler(handler);
-            const handlerId = hook.current.registerEventHandler(handler2);
-            hook.current.unregisterEventHandler(handlerId);
-            await hook.current.pollShare(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            hook.current.eventHandlers.register(handler);
+            const handlerId = hook.current.eventHandlers.register(handler2);
+            hook.current.eventHandlers.unregister(handlerId);
+            await hook.current.pollEvents.shares([SHARE_ID_FIRST]);
 
             expect(handler).toBeCalledTimes(1);
             expect(handler2).toBeCalledTimes(0);
@@ -114,36 +114,20 @@ describe('useDriveEventManager', () => {
 
     it('polls event', async () => {
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            await hook.current.pollShare(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            await hook.current.pollEvents.shares([SHARE_ID_FIRST]);
 
             expect(apiMock).toBeCalledTimes(2); // fetching events + poll itself
         });
     });
 
-    it('can register event a handler by id', async () => {
-        const HANDLER_ID = 'handler-id';
-        const handler = jest.fn().mockImplementation(() => {});
-        await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            hook.current.registerEventHandlerById(HANDLER_ID, handler);
-            const res = hook.current.unregisterEventHandler(HANDLER_ID);
-
-            await hook.current.pollShare(SHARE_ID_FIRST);
-
-            expect(handler).toBeCalledTimes(0);
-            expect(res).toBe(true);
-        });
-    });
-
     it("can poll events for all shares it's subscribed to", async () => {
-        const HANDLER_ID = 'handler-id';
         const handler = jest.fn().mockImplementation(() => {});
         await act(async () => {
-            await hook.current.subscribeToShare(SHARE_ID_FIRST);
-            await hook.current.subscribeToShare(SHARE_ID_SECOND);
-            hook.current.registerEventHandlerById(HANDLER_ID, handler);
-            await hook.current.pollAllDriveEvents();
+            await hook.current.shares.startSubscription(SHARE_ID_FIRST);
+            await hook.current.shares.startSubscription(SHARE_ID_SECOND);
+            hook.current.eventHandlers.register(handler);
+            await hook.current.pollEvents.driveEvents();
             expect(handler).toBeCalledTimes(2);
             expect(handler).toBeCalledWith(
                 SHARE_ID_FIRST,

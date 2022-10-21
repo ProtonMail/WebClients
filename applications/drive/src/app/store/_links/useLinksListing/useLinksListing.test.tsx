@@ -33,8 +33,10 @@ jest.mock('../../_api/useDebouncedRequest', () => {
 jest.mock('../../_events/useDriveEventManager', () => {
     const useDriveEventManager = () => {
         return {
-            registerEventHandler: () => undefined,
-            unregisterEventHandler: () => undefined,
+            eventHandlers: {
+                register: () => 'id',
+                unregister: () => false,
+            },
         };
     };
     return {
@@ -68,7 +70,7 @@ describe('useLinksListing', () => {
     beforeEach(() => {
         jest.resetAllMocks();
 
-        mockDecrypt.mockImplementation((abortSignal: AbortSignal, shareId: string, encrypted: EncryptedLink) =>
+        mockDecrypt.mockImplementation((_abortSignal: AbortSignal, _shareId: string, encrypted: EncryptedLink) =>
             Promise.resolve(encrypted)
         );
 

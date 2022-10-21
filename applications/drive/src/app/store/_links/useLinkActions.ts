@@ -78,7 +78,7 @@ export default function useLinkActions() {
                 })
             )
         );
-        await events.pollShare(shareId);
+        await events.pollEvents.shares([shareId]);
         return Folder.ID;
     };
 
@@ -122,7 +122,7 @@ export default function useLinkActions() {
                 })
             )
         );
-        await events.pollShare(shareId);
+        await events.pollEvents.shares([shareId]);
     };
 
     /**

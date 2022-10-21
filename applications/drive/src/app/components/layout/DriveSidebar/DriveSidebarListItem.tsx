@@ -32,9 +32,9 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon
     const handleDoubleClick = () => {
         onDoubleClick?.();
         if (!refreshing && shareId) {
-            withRefreshing(Promise.all([driveEventManager.pollAllShareEvents([shareId]), wait(1000)])).catch(
-                console.warn
-            );
+            withRefreshing(
+                Promise.all([driveEventManager.pollEvents.shares([shareId], { includeCommon: true }), wait(1000)])
+            ).catch(console.warn);
         }
     };
 
