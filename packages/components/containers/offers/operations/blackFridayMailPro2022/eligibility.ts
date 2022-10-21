@@ -12,7 +12,10 @@ interface Props {
 const isEligible = ({ user, organization, subscription, protonConfig }: Props) => {
     const { UsedMembers = 0 } = organization || {};
     const plan = getPlan(subscription);
-    const isVpnApp = protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const isValidApp =
+        protonConfig?.APP_NAME === APPS.PROTONMAIL ||
+        protonConfig?.APP_NAME === APPS.PROTONACCOUNT ||
+        protonConfig?.APP_NAME === APPS.PROTONACCOUNTLITE;
     const noBFVPN = !hasVPNBlackFridayDiscount(subscription);
     const isNotExternal = !isExternal(subscription);
 
@@ -22,7 +25,7 @@ const isEligible = ({ user, organization, subscription, protonConfig }: Props) =
         (subscription?.Amount ?? 999999) < 42000 &&
         user.canPay &&
         isNotExternal &&
-        !isVpnApp &&
+        isValidApp &&
         !user.isDelinquent &&
         noBFVPN
     );
