@@ -18,20 +18,15 @@ import {
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
-import { formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../store';
+import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../store';
 
 interface Props {
-    shareId: string;
     onClose?: () => void;
-    item: {
-        linkId: string;
-        name: string;
-        isFile: boolean;
-    };
+    item: DecryptedLink;
     open?: boolean;
 }
 
-const RenameModal = ({ shareId, item, onClose, open }: Props) => {
+const RenameModal = ({ item, onClose, open }: Props) => {
     const { renameLink } = useActions();
     const [name, setName] = useState(item.name);
     const [loading, withLoading] = useLoading();
@@ -63,7 +58,7 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
-        await renameLink(new AbortController().signal, shareId, item.linkId, formattedName);
+        await renameLink(new AbortController().signal, item.rootShareId, item.linkId, formattedName);
         onClose?.();
     };
 

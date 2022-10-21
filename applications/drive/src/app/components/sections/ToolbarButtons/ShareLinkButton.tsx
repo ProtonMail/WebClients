@@ -7,11 +7,10 @@ import useOpenModal from '../../useOpenModal';
 import { isMultiSelect, noSelection } from './utils';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }
 
-const ShareLinkButton = ({ shareId, selectedLinks }: Props) => {
+const ShareLinkButton = ({ selectedLinks }: Props) => {
     const { openLinkSharing } = useOpenModal();
 
     if (noSelection(selectedLinks) || isMultiSelect(selectedLinks)) {
@@ -25,7 +24,7 @@ const ShareLinkButton = ({ shareId, selectedLinks }: Props) => {
             disabled={noSelection(selectedLinks) || isMultiSelect(selectedLinks)}
             title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
             icon={<Icon name={hasSharedLink ? 'link-pen' : 'link'} />}
-            onClick={() => openLinkSharing(shareId, selectedLinks[0].linkId)}
+            onClick={() => openLinkSharing(selectedLinks[0].rootShareId, selectedLinks[0].linkId)}
             data-testid="toolbar-share-link"
         />
     );

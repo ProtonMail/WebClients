@@ -8,6 +8,7 @@ import {
 } from '@proton/components';
 
 import { TreeItem } from '../../../../store';
+import { generateSidebarItemStyle } from '../utils';
 import ExpandButton from './ExpandButton';
 import useSubfolderLoading from './useSubfolderLoading';
 
@@ -28,6 +29,13 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
         }
     };
 
+    const expandeButtonStyle: React.CSSProperties =
+        folder.children.length === 0 && folder.isLoaded
+            ? {
+                  visibility: 'hidden',
+              }
+            : {};
+
     return (
         <SidebarListItem>
             <SidebarListItemLink
@@ -37,10 +45,15 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
                 title={folder.link.name}
             >
                 <SidebarListItemContent>
-                    <div className="flex flex-nowrap" style={{ marginLeft: `${(level * 10) / 16}rem` }}>
-                        <ExpandButton className="mr0-5" expanded={folder.isExpanded} onClick={toggleExpand} />
+                    <div className="flex flex-nowrap" style={generateSidebarItemStyle(level)}>
+                        <ExpandButton
+                            className="mr0-5"
+                            expanded={folder.isExpanded}
+                            onClick={toggleExpand}
+                            style={expandeButtonStyle}
+                        />
                         {isLoading ? (
-                            <Loader className="mr0-5 flex drive-sidebar--icon" />
+                            <Loader className="mr0-5 flex flex-item-noshrink drive-sidebar--icon" />
                         ) : (
                             <FileIcon className="mr0-5 flex-item-centered-vert drive-sidebar--icon" mimeType="Folder" />
                         )}

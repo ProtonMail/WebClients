@@ -109,12 +109,12 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
 
     return (
         <ModalTwo
-            size="small"
             as={Form}
-            onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
             onClose={onClose}
             onReset={onClose}
+            onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
             open={open}
+            size="small"
         >
             <ModalTwoHeader title={c('Action').t`Submit report`} />
             <ModalTwoContent>

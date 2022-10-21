@@ -42,6 +42,10 @@ function useNavigate() {
         pushToHistory(`/trash`);
     }, [history]);
 
+    const navigateToDevices = () => {
+        pushToHistory('/devices');
+    };
+
     const navigateToSearch = useCallback(
         (searchTerm) => {
             history.push({
@@ -71,6 +75,7 @@ function useNavigate() {
         navigateToSearch,
         addListener,
         removeListener,
+        navigateToDevices,
     };
 }
 

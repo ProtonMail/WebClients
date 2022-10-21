@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { CollapsingBreadcrumbs } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 
-import { useLinkPath } from '../../store';
+import { useLinkPathPublic } from '../../store/_views/useLinkPath';
 
 interface Props {
     token: string;
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }: Props) {
-    const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using usePublicFolderView instead one day.
+    const { traverseLinksToRoot } = useLinkPathPublic(); // TODO: Get data using usePublicFolderView instead one day.
     const defaultBreadcrumbs: BreadcrumbInfo[] = [
         {
             key: 'default',
@@ -27,7 +27,7 @@ export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }:
     useEffect(() => {
         const abortController = new AbortController();
 
-        traverseLinksToRoot(abortController.signal, token, linkId, false)
+        traverseLinksToRoot(abortController.signal, token, linkId)
             .then((pathItems) => {
                 const breadcrumbs = pathItems.map((item) => {
                     const breadcrumb: BreadcrumbInfo = {
@@ -42,6 +42,7 @@ export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }:
             })
             .catch((err: any) => {
                 if (err.name !== 'AbortError') {
+                    console.warn(err);
                     setBreadcrumbs(defaultBreadcrumbs);
                 }
             });

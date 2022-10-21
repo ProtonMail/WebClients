@@ -26,16 +26,14 @@ export function SharedLinksItemContextMenu({
         selectedLink.mimeType &&
         isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
 
-    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
-
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
             {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
             {isOnlyOneItem && <RenameButton shareId={shareId} link={selectedLink} close={close} />}
-            <DetailsButton shareId={shareId} linkIds={selectedLinkIds} close={close} />
+            <DetailsButton selectedLinks={selectedLinks} close={close} />
             {isOnlyOneItem && <ShareLinkButton shareId={shareId} link={selectedLink} close={close} />}
-            <StopSharingButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
+            <StopSharingButton selectedLinks={selectedLinks} close={close} />
         </ItemContextMenu>
     );
 }

@@ -72,14 +72,14 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => openFilesDetails(shareId, selectedLinkIds),
+            action: () => openFilesDetails(selectedLinks),
         },
         {
             hidden: false,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () => trashLinks(new AbortController().signal, shareId, selectedLinks),
+            action: () => trashLinks(new AbortController().signal, selectedLinks),
         },
         {
             hidden: isMultiSelect,

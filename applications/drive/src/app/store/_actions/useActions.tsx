@@ -5,6 +5,7 @@ import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useConfirm from '../../hooks/util/useConfirm';
+import useDevicesActions from '../_devices/useDevicesActions';
 import { useDownload } from '../_downloads';
 import { useLinkActions, useLinksActions } from '../_links';
 import { useShareUrl } from '../_shares';
@@ -31,18 +32,7 @@ export default function useAction() {
     const link = useLinkActions();
     const links = useLinksActions();
     const shareUrl = useShareUrl();
-
-    const aggregateResults = (results: { successes: string[]; failures: { [linkId: string]: any } }[]) => {
-        return results.reduce(
-            (acc, val) => {
-                return {
-                    successes: [...acc.successes, ...val.successes],
-                    failures: { ...acc.failures, ...val.failures },
-                };
-            },
-            { successes: [], failures: {} }
-        );
-    };
+    const devicesActions = useDevicesActions();
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -142,57 +132,56 @@ export default function useAction() {
         createMovedItemsNotifications(linksToMove, result.successes, result.failures, undoAction);
     };
 
-    const trashLinks = async (abortSignal: AbortSignal, shareId: string, linksToTrash: LinkInfo[]) => {
+    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[]) => {
         if (!linksToTrash.length) {
             return;
         }
 
-        // One day this can be simplified to .groupBy((item) => item.parentLinkId)
-        const linksToTrashPerParentId = linksToTrash.reduce((acc, item) => {
-            (acc[item.parentLinkId] ||= []).push(item);
-            return acc;
-        }, {} as { [parentLinkId: string]: LinkInfo[] });
-
-        const result = aggregateResults(
-            await Promise.all(
-                Object.entries(linksToTrashPerParentId).map(async ([parentLinkId, childsToTrash]) => {
-                    const linkIds = childsToTrash.map(({ linkId }) => linkId);
-                    return links.trashLinks(abortSignal, shareId, parentLinkId, linkIds);
-                })
-            )
+        const result = await links.trashLinks(
+            abortSignal,
+            linksToTrash.map(({ linkId, rootShareId, parentLinkId }) => ({
+                linkId,
+                shareId: rootShareId,
+                parentLinkId,
+            }))
         );
 
         const undoAction = async () => {
-            const undoResult = await links.restoreLinks(abortSignal, shareId, result.successes);
+            const linksToUndo = result.successes
+                .map((linkId) => linksToTrash.find((link) => link.linkId === linkId))
+                .filter(isTruthy)
+                .map((link) => ({ linkId: link.linkId, shareId: link.rootShareId }));
+
+            const undoResult = await links.restoreLinks(abortSignal, linksToUndo);
             createRestoredItemsNotifications(linksToTrash, undoResult.successes, undoResult.failures);
         };
 
         createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
     };
 
-    const restoreLinks = async (abortSignal: AbortSignal, shareId: string, linksToRestore: LinkInfo[]) => {
+    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[]) => {
         if (!linksToRestore.length) {
             return;
         }
 
         const result = await links.restoreLinks(
             abortSignal,
-            shareId,
-            linksToRestore.map(({ linkId }) => linkId)
+            linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
         );
 
         const undoAction = async () => {
             const linksToTrash = result.successes
                 .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))
                 .filter(isTruthy);
-            await trashLinks(abortSignal, shareId, linksToTrash);
+
+            await trashLinks(abortSignal, linksToTrash);
         };
 
         createRestoredItemsNotifications(linksToRestore, result.successes, result.failures, undoAction);
     };
 
-    const deletePermanently = async (abortSignal: AbortSignal, shareId: string, linksToDelete: LinkInfo[]) => {
-        if (!linksToDelete.length) {
+    const deletePermanently = async (abortSignal: AbortSignal, linksToDelete: LinkInfo[]) => {
+        if (linksToDelete.length === 0) {
             return;
         }
 
@@ -211,8 +200,7 @@ export default function useAction() {
             onConfirm: async () => {
                 const result = await links.deleteTrashedLinks(
                     abortSignal,
-                    shareId,
-                    linksToDelete.map(({ linkId }) => linkId)
+                    linksToDelete.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
                 );
                 createDeletedItemsNotifications(linksToDelete, result.successes, result.failures);
             },
@@ -230,7 +218,7 @@ export default function useAction() {
             message,
             onConfirm: async () => {
                 await links
-                    .deleteTrash(abortSignal, shareId)
+                    .emptyTrash(abortSignal, shareId)
                     .then(() => {
                         const notificationText = c('Notification')
                             .t`All items will soon be permanently deleted from trash`;
@@ -243,7 +231,7 @@ export default function useAction() {
         });
     };
 
-    const stopSharingLinks = (abortSignal: AbortSignal, shareId: string, linksToStopSharing: LinkInfo[]) => {
+    const stopSharingLinks = (abortSignal: AbortSignal, linksToStopSharing: LinkInfo[]) => {
         if (!linksToStopSharing.length) {
             return;
         }
@@ -257,8 +245,10 @@ export default function useAction() {
                 linksToStopSharing.length
             ),
             onConfirm: async () => {
-                const linkIds = linksToStopSharing.map(({ linkId }) => linkId);
-                const result = await shareUrl.deleteShareUrls(abortSignal, shareId, linkIds);
+                const result = await shareUrl.deleteShareUrls(
+                    abortSignal,
+                    linksToStopSharing.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
+                );
                 createDeletedSharedLinksNotifications(linksToStopSharing, result.successes, result.failures);
             },
         });
@@ -286,6 +276,32 @@ export default function useAction() {
                   });
           };
 
+    const removeDevice = (deviceId: string, abortSignal: AbortSignal) => {
+        return devicesActions
+            .remove(deviceId, abortSignal)
+            .then(() => {
+                const notificationText = c('Notification').t`Device removed`;
+                createNotification({ text: notificationText });
+            })
+            .catch((err) => {
+                showErrorNotification(err, c('Notification').t`Device failed to be removed`);
+                reportError(err);
+            });
+    };
+
+    const renameDevice = (params: { deviceId: string; newName: string }, abortSignal?: AbortSignal) => {
+        return devicesActions
+            .rename(params, abortSignal)
+            .then(() => {
+                const notificationText = c('Notification').t`Device renamed`;
+                createNotification({ text: notificationText });
+            })
+            .catch((err) => {
+                showErrorNotification(err, c('Notification').t`Device failed to be renamed`);
+                reportError(err);
+            });
+    };
+
     return {
         createFolder,
         renameLink,
@@ -297,5 +313,19 @@ export default function useAction() {
         emptyTrash,
         stopSharingLinks,
         copyShareLinkToClipboard,
+        removeDevice,
+        renameDevice,
     };
+}
+
+function aggregateResults(results: { successes: string[]; failures: { [linkId: string]: any } }[]) {
+    return results.reduce(
+        (acc, val) => {
+            return {
+                successes: [...acc.successes, ...val.successes],
+                failures: { ...acc.failures, ...val.failures },
+            };
+        },
+        { successes: [], failures: {} }
+    );
 }

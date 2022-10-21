@@ -19,7 +19,7 @@ const TrashView = () => {
 
     return (
         <FileBrowserStateProvider itemIds={trashView.items.map(({ linkId }) => linkId)}>
-            <TrashToolbar shareId={activeShareId} items={trashView.items} />
+            <TrashToolbar items={trashView.items} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                 <div className="p1 text-strong border-bottom section--header">{c('Info').t`Trash`}</div>
                 <Trash shareId={activeShareId} trashView={trashView} />

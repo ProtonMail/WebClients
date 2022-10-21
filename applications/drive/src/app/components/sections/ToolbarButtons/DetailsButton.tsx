@@ -2,18 +2,18 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
+import { DecryptedLink } from '../../../store';
 import useOpenModal from '../../useOpenModal';
 import { noSelection } from './utils';
 
 interface Props {
-    shareId: string;
-    linkIds: string[];
+    selectedLinks: DecryptedLink[];
 }
 
-const DetailsButton = ({ shareId, linkIds }: Props) => {
+const DetailsButton = ({ selectedLinks }: Props) => {
     const { openDetails, openFilesDetails } = useOpenModal();
 
-    if (noSelection(linkIds)) {
+    if (noSelection(selectedLinks)) {
         return null;
     }
 
@@ -22,10 +22,10 @@ const DetailsButton = ({ shareId, linkIds }: Props) => {
             title={c('Action').t`Details`}
             icon={<Icon name="info-circle" />}
             onClick={() => {
-                if (linkIds.length === 1) {
-                    openDetails(shareId, linkIds[0]);
-                } else if (linkIds.length > 1) {
-                    openFilesDetails(shareId, linkIds);
+                if (selectedLinks.length === 1) {
+                    openDetails(selectedLinks[0].rootShareId, selectedLinks[0].linkId);
+                } else if (selectedLinks.length > 1) {
+                    openFilesDetails(selectedLinks);
                 }
             }}
             data-testid="toolbar-details"
