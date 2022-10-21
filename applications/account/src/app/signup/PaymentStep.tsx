@@ -17,7 +17,7 @@ import PlanCustomization from '@proton/components/containers/payments/subscripti
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
 } from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Api, Currency, Cycle, PaymentMethodStatus, Plan, PlansMap } from '@proton/shared/lib/interfaces';
@@ -39,6 +39,7 @@ interface Props {
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
+    plan: Plan | undefined;
     planName: string | undefined;
     paymentMethodStatus: PaymentMethodStatus | undefined;
 }
@@ -50,6 +51,7 @@ const PaymentStep = ({
     onChangeCycle,
     onChangeCurrency,
     onChangePlanIDs,
+    plan,
     plans,
     planName: planNameString,
     paymentMethodStatus,
@@ -62,6 +64,7 @@ const PaymentStep = ({
     ].filter(isTruthy);
 
     const plansMap = toMap(plans, 'Name') as PlansMap;
+    const hasGuarantee = plan?.Name === PLANS.VPN;
 
     const {
         card,
@@ -145,12 +148,22 @@ const PaymentStep = ({
                         planIDs={subscriptionData.planIDs}
                         onChangePlanIDs={onChangePlanIDs}
                     />
-                    <div className="flex flex-nowrap color-weak mb0-5 text-sm">
-                        <span className="flex-item-noshrink mr0-5">
-                            <Icon name="shield" />
-                        </span>
-                        <span className="flex-item-fluid pt0-1">{c('Info')
-                            .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
+                    <div className="text-sm">
+                        <div className="flex flex-nowrap color-weak mb0-5">
+                            <span className="flex-item-noshrink mr0-5">
+                                <Icon name="shield" />
+                            </span>
+                            <span className="flex-item-fluid pt0-1">{c('Info')
+                                .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
+                        </div>
+                        {hasGuarantee && (
+                            <div className="flex flex-nowrap color-weak mb0-5">
+                                <span className="flex-item-noshrink mr0-5">
+                                    <Icon name="clock" className="align-top" />
+                                </span>
+                                <span className="flex-item-fluid">{c('Info').t`30-day money-back guarantee.`}</span>
+                            </div>
+                        )}
                     </div>
                 </Content>
             </Main>
