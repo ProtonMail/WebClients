@@ -393,7 +393,14 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     }
 
                     if (step === SIGNUP_STEPS.HUMAN_VERIFICATION || step === SIGNUP_STEPS.UPSELL) {
-                        return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
+                        return {
+                            activeStep: 1,
+                            steps: [
+                                stepLabels.accountSetup,
+                                stepLabels.verification,
+                                hasPaidPlanPreSelected && stepLabels.payment,
+                            ].filter(isTruthy),
+                        };
                     }
 
                     if (step === SIGNUP_STEPS.PAYMENT) {
