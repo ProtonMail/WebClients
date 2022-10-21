@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -8,6 +7,7 @@ import {
     ButtonGroup,
     Icon,
     Info,
+    SettingsLink,
     Table,
     TableBody,
     TableCell,
@@ -25,6 +25,8 @@ import {
     getCalendarStatusBadges,
     getDisabledCalendarBadge,
 } from '@proton/shared/lib/calendar/badges';
+import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
+import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -67,7 +69,14 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
             </TableCell>
             <TableCell>
                 <Tooltip title={c('Calendar table settings button tooltip').t`Open settings`}>
-                    <ButtonLike as={Link} to={`/calendar/calendars/${ID}`} shape="outline" size="small" icon>
+                    <ButtonLike
+                        as={SettingsLink}
+                        app={APPS.PROTONCALENDAR}
+                        path={getCalendarSubpagePath(ID)}
+                        shape="outline"
+                        size="small"
+                        icon
+                    >
                         <Icon name="cog-wheel" className="flex-item-noshrink" />
                     </ButtonLike>
                 </Tooltip>

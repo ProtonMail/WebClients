@@ -15,6 +15,7 @@ import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/compo
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS, getIsMember } from '@proton/shared/lib/calendar/permissions';
+import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
@@ -64,7 +65,7 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
                 type: 'error',
                 text: c('Error').t`Calendar cannot be found`,
             });
-            history.replace('/calendar/calendars');
+            history.replace(getCalendarsSettingsPath({ fullPath: true }));
         } else {
             setCalendar(calendar);
         }
