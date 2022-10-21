@@ -3,6 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { CALENDAR_TYPE, CALENDAR_TYPE_EXTENDED, EXTENDED_CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 
 import { AlertModal } from '../../components/alertModal';
@@ -32,7 +33,7 @@ const CalendarLimitReachedModal = ({ open, onClose, calendarType }: Props) => {
             open={open}
             title={c('Modal title').t`Unable to add more calendars`}
             buttons={[
-                <ButtonLike color="norm" as={SettingsLink} path="/calendars">
+                <ButtonLike color="norm" as={SettingsLink} path={getCalendarsSettingsPath()}>
                     {c('Modal action').t`Manage calendars`}
                 </ButtonLike>,
                 <Button onClick={onClose}>{c('Modal action').t`Close`}</Button>,

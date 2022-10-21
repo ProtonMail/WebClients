@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Alert, SettingsLink } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
@@ -108,7 +109,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                 return (
                     <Alert className={alertClassName} type="warning">
                         <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
-                        <SettingsLink path="/calendars" app={APPS.PROTONCALENDAR}>
+                        <SettingsLink path={getCalendarsSettingsPath()} app={APPS.PROTONCALENDAR}>
                             {c('Link').t`Create a calendar linked to an active email address.`}
                         </SettingsLink>
                     </Alert>
@@ -124,7 +125,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                             </SettingsLink>
                         </span>
                         <span>
-                            <SettingsLink path="/calendars" app={APPS.PROTONCALENDAR}>
+                            <SettingsLink path={getCalendarsSettingsPath()} app={APPS.PROTONCALENDAR}>
                                 {c('Link')
                                     .t`Or you can delete one of your calendars and create a new one linked to an active email address.`}
                             </SettingsLink>

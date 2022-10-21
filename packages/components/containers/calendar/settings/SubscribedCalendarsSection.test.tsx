@@ -14,6 +14,19 @@ import ModalsProvider from '../../modals/Provider';
 import SubscribedCalendarsSection, { SubscribedCalendarsSectionProps } from './SubscribedCalendarsSection';
 
 jest.mock('../../../hooks/useApi', () => () => jest.fn(() => Promise.resolve({})));
+jest.mock('@proton/components/hooks/useConfig', () => () => ({
+    CLIENT_TYPE: 1,
+    CLIENT_SECRET: 'not_so_secret',
+    APP_VERSION: 'test',
+    APP_NAME: 'proton-calendar',
+    API_URL: 'api',
+    LOCALES: {},
+    DATE_VERSION: 'test',
+    COMMIT: 'test',
+    BRANCH: 'test',
+    SENTRY_DSN: 'test',
+    VERSION_PATH: 'test',
+}));
 jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
 jest.mock('../../../hooks/useFeatures', () => () => ({}));
 jest.mock('../../../hooks/useSubscribedCalendars', () => jest.fn(() => ({ loading: true })));
@@ -26,6 +39,7 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useCalendarSubscribeFeature', () =>
     jest.fn(() => ({ enabled: true, unavailable: false }))
 );
+jest.mock('@proton/components/hooks/useIsProtonMailDomainMigrationEnabled', () => jest.fn(() => [true]));
 
 function renderComponent(props?: Partial<SubscribedCalendarsSectionProps>) {
     const defaultProps: SubscribedCalendarsSectionProps = {
