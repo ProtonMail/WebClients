@@ -61,6 +61,25 @@ $root-equiv-10-px: false !default;
 // you should NEVER update this value, however… who can predict the future…
 $root-default-font-size: 16 !default;
 
+// Breakpoints for include-media
+$breakpoints: (
+	'xlarge': em($breakpoint-large, $root-default-font-size),
+	'large': em($breakpoint-medium-landscape, $root-default-font-size),
+	'medium': em($breakpoint-medium, $root-default-font-size),
+	'small': em($breakpoint-small, $root-default-font-size),
+	'xsmall': em($breakpoint-tiny, $root-default-font-size),
+);
+
+// Media expressions for include-media
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'mouse': '(hover: hover) and (pointer: fine)',
+	'touch': '(hover: none)',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+);
+
 // others
 $use-reset-button: true !default;
 $use-vertical-align-img-iframe: true !default;
