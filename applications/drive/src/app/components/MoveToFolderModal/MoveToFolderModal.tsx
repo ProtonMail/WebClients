@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -17,7 +17,9 @@ import {
     useModals,
 } from '@proton/components';
 
+import useActiveShare from '../../hooks/drive/useActiveShare';
 import { DecryptedLink, TreeItem, useActions, useFolderTree } from '../../store';
+import { ShareType, useShare } from '../../store/_shares';
 import CreateFolderModal from '../CreateFolderModal';
 import FolderTree from '../FolderTree/FolderTree';
 import ModalContentLoader from '../ModalContentLoader';
@@ -34,11 +36,15 @@ interface Props {
 const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => {
     const { createModal } = useModals();
     const { moveLinks } = useActions();
+    const { activeFolder } = useActiveShare();
+    const { getShare } = useShare();
     const { rootFolder, expand, toggleExpand } = useFolderTree(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { isNarrow } = useActiveBreakpoint();
+
+    const [shareType, setShareType] = useState<ShareType>();
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, shareId, selectedItems, parentFolderId);
@@ -105,7 +111,8 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         ),
         content: rootFolder && (
             <FolderTree
-                rootFolder={rootFolder}
+                treeItems={shareType === ShareType.device ? rootFolder.children : [rootFolder]}
+                isLoaded={rootFolder.isLoaded}
                 selectedItemId={selectedFolder}
                 rowIsDisabled={(item: TreeItem) => itemsToMove.includes(item.link.linkId)}
                 onSelect={onSelect}
@@ -159,6 +166,15 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
             footer: null,
         };
     }
+
+    useEffect(() => {
+        const ac = new AbortController();
+        getShare(ac.signal, activeFolder.shareId)
+            .then((share) => {
+                setShareType(share.type);
+            })
+            .catch(reportError);
+    }, [activeFolder.shareId]);
 
     return (
         <ModalTwo

@@ -6,9 +6,10 @@ interface Props {
     className?: string;
     expanded: boolean;
     onClick: () => void;
+    style?: React.CSSProperties;
 }
 
-export default function ExpandButton({ className, expanded, onClick }: Props) {
+export default function ExpandButton({ className, expanded, onClick, style }: Props) {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         e.preventDefault();
@@ -27,6 +28,7 @@ export default function ExpandButton({ className, expanded, onClick }: Props) {
             onClick={handleClick}
             aria-expanded={expanded}
             title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
+            style={style}
         >
             <Icon
                 name={expanded ? 'chevron-down' : 'chevron-right'}

@@ -119,7 +119,7 @@ export function useLinksListingProvider() {
             },
             abortSignal
         );
-        return { links: Links.map(linkMetaToEncryptedLink), parents: [] };
+        return { links: Links.map((link) => linkMetaToEncryptedLink(link, shareId)), parents: [] };
     };
 
     /**
@@ -193,8 +193,8 @@ export function useLinksListingProvider() {
             abortSignal
         );
         return {
-            links: Links.map(linkMetaToEncryptedLink),
-            parents: Object.values(Parents).map(linkMetaToEncryptedLink),
+            links: Links.map((link) => linkMetaToEncryptedLink(link, shareId)),
+            parents: Object.values(Parents).map((link) => linkMetaToEncryptedLink(link, shareId)),
         };
     };
 
@@ -240,7 +240,7 @@ export function useLinksListingProvider() {
             })),
         }));
 
-        const allLinks = enhancedLinks.map(linkMetaToEncryptedLink);
+        const allLinks = enhancedLinks.map((link) => linkMetaToEncryptedLink(link, shareId));
         const links = allLinks.filter(({ isShared }) => isShared);
         const parents = allLinks.filter(({ isShared }) => !isShared);
         return { links, parents };
@@ -265,8 +265,8 @@ export function useLinksListingProvider() {
         );
 
         return {
-            links: Links.map(linkMetaToEncryptedLink),
-            parents: Parents ? Object.values(Parents).map(linkMetaToEncryptedLink) : [],
+            links: Links.map((link) => linkMetaToEncryptedLink(link, shareId)),
+            parents: Parents ? Object.values(Parents).map((link) => linkMetaToEncryptedLink(link, shareId)) : [],
         };
     };
 

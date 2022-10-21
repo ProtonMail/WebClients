@@ -11,7 +11,7 @@ import { driveEventsResultToDriveEvents } from '../_api';
 import { logError } from '../_utils';
 import { EventHandler } from './interface';
 
-const DRIVE_EVENT_HANDLER_PREFIX = 'drive-event-handler';
+const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
 
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
     const eventHandlers = useRef(new Map<string, EventHandler>());
@@ -24,7 +24,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
 
         const handlerPromises: unknown[] = [];
         eventHandlers.current.forEach((handler) => {
-            handlerPromises.push(handler(shareId, driveEventsResultToDriveEvents(driveEvents)));
+            handlerPromises.push(handler(shareId, driveEventsResultToDriveEvents(driveEvents, shareId)));
         });
 
         /*
@@ -86,7 +86,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Poll events for specific share
+     * Polls events for specific share
      */
     const pollShare = async (shareId: string): Promise<void> => {
         const eventManager = eventManagers.current.get(shareId);
@@ -100,10 +100,10 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Polls event from all active event loop associcated with passed shareId
+     * Polls event from all active event loop associcated with passed shareId's
      */
-    const pollAllShareEvents = async (shareId: string): Promise<void> => {
-        const pollingPromises = [pollShare(shareId), generalEventManager.call()];
+    const pollAllShareEvents = async (shareIds: string[]): Promise<void> => {
+        const pollingPromises = [...shareIds.map((shareId) => pollShare(shareId)), generalEventManager.call()];
         await Promise.all(pollingPromises).catch(logError);
     };
 
@@ -130,7 +130,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
      * Registers passed event handler to process currenlty active share subscriptions
      */
     const registerEventHandler = (callback: EventHandler): string => {
-        const callbackUID = generateUID(DRIVE_EVENT_HANDLER_PREFIX);
+        const callbackUID = generateUID(DRIVE_EVENT_HANDLER_ID_PREFIX);
         return registerEventHandlerById(callbackUID, callback);
     };
 

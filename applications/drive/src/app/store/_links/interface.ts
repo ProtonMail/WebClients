@@ -39,6 +39,8 @@ interface Link {
     // The current share context needs to be always passed explicitely, never
     // used from the link itself.
     shareId?: string;
+    // Links associated with Shared URLs don't have share id
+    rootShareId: string;
     shareUrl?: LinkShareUrl;
     activeRevision?: {
         id: string;

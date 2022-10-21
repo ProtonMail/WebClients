@@ -5,11 +5,10 @@ import { Icon, ToolbarButton, useLoading } from '@proton/components';
 import { DecryptedLink, useActions } from '../../../../store';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }
 
-const RestoreFromTrashButton = ({ shareId, selectedLinks }: Props) => {
+const RestoreFromTrashButton = ({ selectedLinks }: Props) => {
     const [restoreLoading, withRestoreLoading] = useLoading();
     const { restoreLinks } = useActions();
 
@@ -18,7 +17,7 @@ const RestoreFromTrashButton = ({ shareId, selectedLinks }: Props) => {
             disabled={restoreLoading}
             title={c('Action').t`Restore from trash`}
             icon={<Icon name="arrow-rotate-right" />}
-            onClick={() => withRestoreLoading(restoreLinks(new AbortController().signal, shareId, selectedLinks))}
+            onClick={() => withRestoreLoading(restoreLinks(new AbortController().signal, selectedLinks))}
             data-testid="toolbar-restore"
         />
     );

@@ -145,8 +145,14 @@ describe('useDriveEventManager', () => {
             hook.current.registerEventHandlerById(HANDLER_ID, handler);
             await hook.current.pollAllDriveEvents();
             expect(handler).toBeCalledTimes(2);
-            expect(handler).toBeCalledWith(SHARE_ID_FIRST, driveEventsResultToDriveEvents(EVENT_PAYLOAD));
-            expect(handler).toBeCalledWith(SHARE_ID_SECOND, driveEventsResultToDriveEvents(EVENT_PAYLOAD));
+            expect(handler).toBeCalledWith(
+                SHARE_ID_FIRST,
+                driveEventsResultToDriveEvents(EVENT_PAYLOAD, SHARE_ID_FIRST)
+            );
+            expect(handler).toBeCalledWith(
+                SHARE_ID_SECOND,
+                driveEventsResultToDriveEvents(EVENT_PAYLOAD, SHARE_ID_SECOND)
+            );
         });
     });
 });

@@ -33,7 +33,6 @@ export function DriveItemContextMenu({
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedLink.mimeType && isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const hasLink = isOnlyOneItem && selectedLink.shareUrl && !selectedLink.shareUrl.isExpired && !selectedLink.trashed;
-    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -45,9 +44,9 @@ export function DriveItemContextMenu({
             <ContextSeparator />
             <MoveToFolderButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
             {isOnlyOneItem && <RenameButton shareId={shareId} link={selectedLink} close={close} />}
-            <DetailsButton shareId={shareId} linkIds={selectedLinkIds} close={close} />
+            <DetailsButton selectedLinks={selectedLinks} close={close} />
             <ContextSeparator />
-            <MoveToTrashButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
+            <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
             {children}
         </ItemContextMenu>
     );

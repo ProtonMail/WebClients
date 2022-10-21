@@ -41,7 +41,7 @@ export default function useLink() {
             },
             abortSignal
         );
-        return linkMetaToEncryptedLink(Link);
+        return linkMetaToEncryptedLink(Link, shareId);
     };
 
     return useLinkInner(
