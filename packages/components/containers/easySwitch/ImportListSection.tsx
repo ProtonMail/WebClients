@@ -53,6 +53,7 @@ const ImportListSection = () => {
                 NumItems: Summary.Mail.NumMessages,
                 State: Summary.Mail.State,
                 TotalSize: Summary.Mail.TotalSize,
+                ...(Summary.Mail.RollbackState ? { RollbackState: Summary.Mail.RollbackState } : {}),
             });
         }
         if (Summary.Calendar) {
@@ -62,6 +63,7 @@ const ImportListSection = () => {
                 NumItems: Summary.Calendar.NumEvents,
                 State: Summary.Calendar.State,
                 TotalSize: Summary.Calendar.TotalSize,
+                ...(Summary.Calendar.RollbackState ? { RollbackState: Summary.Calendar.RollbackState } : {}),
             });
         }
         if (Summary.Contacts) {
@@ -71,6 +73,7 @@ const ImportListSection = () => {
                 NumItems: Summary.Contacts.NumContacts,
                 State: Summary.Contacts.State,
                 TotalSize: Summary.Contacts.TotalSize,
+                ...(Summary.Contacts.RollbackState ? { RollbackState: Summary.Contacts.RollbackState } : {}),
             });
         }
 
