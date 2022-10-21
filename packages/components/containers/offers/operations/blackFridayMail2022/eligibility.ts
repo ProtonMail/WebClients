@@ -11,11 +11,14 @@ interface Props {
 const isEligible = ({ subscription, protonConfig, user }: Props) => {
     const plan = getPlan(subscription);
     const hasPaidPlan = plan?.Name === PLANS.MAIL || plan?.Name === PLANS.DRIVE || plan?.Name === PLANS.VPN;
-    const isVpnApp = protonConfig?.APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const isValidApp =
+        protonConfig?.APP_NAME === APPS.PROTONMAIL ||
+        protonConfig?.APP_NAME === APPS.PROTONACCOUNT ||
+        protonConfig?.APP_NAME === APPS.PROTONACCOUNTLITE;
     const noBFVPN = !hasVPNBlackFridayDiscount(subscription);
     const notTrial = !isTrial(subscription);
     const isNotExternal = !isExternal(subscription);
-    return hasPaidPlan && notTrial && isNotExternal && user.canPay && !isVpnApp && !user.isDelinquent && noBFVPN;
+    return hasPaidPlan && notTrial && isNotExternal && user.canPay && isValidApp && !user.isDelinquent && noBFVPN;
 };
 
 export default isEligible;
