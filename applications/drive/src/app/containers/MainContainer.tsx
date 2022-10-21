@@ -11,7 +11,7 @@ import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import ConflictModal from '../components/uploads/ConflictModal';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
+import { DriveProvider, useDefaultShare, useSearchControl } from '../store';
 import DevicesContainer from './DevicesContainer';
 import DriveStartupModals from './DriveStartupModals';
 import FolderContainer from './FolderContainer';
@@ -33,7 +33,6 @@ const InitContainer = () => {
     const [loading, withLoading] = useLoading(true);
     const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const driveEventManager = useDriveEventManager();
     const { searchEnabled } = useSearchControl();
 
     useEffect(() => {
@@ -42,20 +41,6 @@ const InitContainer = () => {
         });
         withLoading(initPromise).catch(noop);
     }, []);
-
-    useEffect(() => {
-        if (
-            defaultShareRoot.linkId === DEFAULT_SHARE_VALUE.linkId ||
-            defaultShareRoot.shareId === DEFAULT_SHARE_VALUE.shareId
-        ) {
-            return;
-        }
-
-        driveEventManager.subscribeToShare(defaultShareRoot.shareId).catch(console.warn);
-        return () => {
-            driveEventManager.unsubscribeFromShare(defaultShareRoot.shareId);
-        };
-    }, [defaultShareRoot.shareId]);
 
     if (loading) {
         return (

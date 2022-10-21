@@ -39,7 +39,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
 
     const [isInitialized, setIsInitialize] = useState(false);
     const handlerId = useRef<string>();
-    const driveEventManager = useDriveEventManager();
+    const events = useDriveEventManager();
 
     const esHelpers = useESHelpers({
         api,
@@ -92,16 +92,16 @@ export const SearchLibraryProvider = ({ children }: Props) => {
             return;
         }
         if (handlerId.current) {
-            driveEventManager.unregisterEventHandler(handlerId.current);
+            events.eventHandlers.unregister(handlerId.current);
         }
-        handlerId.current = driveEventManager.registerEventHandler(async (shareId, events) => {
+        handlerId.current = events.eventHandlers.register(async (shareId, events) => {
             const searchEvents = await convertDriveEventsToSearchEvents(shareId, events, getLinkPrivateKey);
             await esFunctions.handleEvent(searchEvents);
         });
 
         return () => {
             if (handlerId.current) {
-                driveEventManager.unregisterEventHandler(handlerId.current);
+                events.eventHandlers.unregister(handlerId.current);
             }
         };
     }, [esFunctions.handleEvent]);
