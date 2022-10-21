@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -79,12 +79,17 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
         return `${recipientGroup?.group?.Name} (${count}/${contactsInGroup})`;
     }
 
-    /* translator: "members" is a part of a longer string used to display the number of contacts selected from a contact group
-     * The final string looks like "${contactGroupName} (${numberOfSelectedContacts}/${numberOfContactsInGroup} members)"
-     * Full sentence for reference: "Work (2/10 members)"
-     */
-    const members = c('Info').t`members`;
-    return `${recipientGroup?.group?.Name} (${count}/${contactsInGroup} ${members})`;
+    // Copy variables to give explicit naming in the translation string
+    const contactGroupName = recipientGroup?.group?.Name;
+    const numberOfSelectedContacts = count;
+    const numberOfContactsInGroup = contactsInGroup;
+
+    // translator: The final string looks like "Work (2/10 members)"
+    return c('Info').ngettext(
+        msgid`${contactGroupName} (${numberOfSelectedContacts}/${numberOfContactsInGroup} member)`,
+        `${contactGroupName} (${numberOfSelectedContacts}/${numberOfContactsInGroup} members)`,
+        numberOfContactsInGroup
+    );
 };
 
 export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGroupsMap?: ContactGroupsMap) =>
