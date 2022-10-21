@@ -157,9 +157,11 @@ label.navigation-link {
 	&[aria-expanded='true'],
 	&:focus-within {
 		background: var(--interaction-default);
+		color: var(--text-weak);
 
 		&:hover {
 			background: var(--interaction-default-hover);
+			color: var(--text-norm);
 		}
 	}
 
