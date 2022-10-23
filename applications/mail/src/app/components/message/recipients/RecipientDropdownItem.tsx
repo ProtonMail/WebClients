@@ -8,11 +8,12 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 interface Props {
     label: string;
     recipient: Recipient;
+    bimiSelector?: string;
     closeDropdown: () => void;
     displaySenderImage: boolean;
 }
 
-const RecipientDropdownItem = ({ displaySenderImage, label, recipient, closeDropdown }: Props) => {
+const RecipientDropdownItem = ({ displaySenderImage, bimiSelector, label, recipient, closeDropdown }: Props) => {
     const { createNotification } = useNotifications();
 
     // Label value can contain :
@@ -44,6 +45,7 @@ const RecipientDropdownItem = ({ displaySenderImage, label, recipient, closeDrop
                         email={displaySenderImage ? recipient.Address : ''}
                         name={label}
                         className="w100 h100 rounded"
+                        bimiSelector={bimiSelector}
                     />
                 </span>
             </span>

@@ -31,10 +31,12 @@ interface Props {
     showDropdown?: boolean;
     isOutside?: boolean;
     displaySenderImage: boolean;
+    bimiSelector?: string;
 }
 
 const RecipientItemGroup = ({
     displaySenderImage,
+    bimiSelector,
     group,
     mapStatusIcons,
     globalIcon,
@@ -116,6 +118,7 @@ const RecipientItemGroup = ({
                                     label={getRecipientLabel(recipient)}
                                     closeDropdown={close}
                                     key={recipient.Address}
+                                    bimiSelector={bimiSelector}
                                 />
                             );
                         })}
