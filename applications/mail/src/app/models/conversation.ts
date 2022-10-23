@@ -21,7 +21,7 @@ export interface Conversation {
     ContextNumAttachments?: number;
     ExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
-    BimiSelector?: string;
+    BimiSelector?: string | null;
 }
 
 export interface ConversationLabel {
