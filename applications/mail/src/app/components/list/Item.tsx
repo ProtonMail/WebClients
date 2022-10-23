@@ -154,7 +154,7 @@ const Item = ({
             >
                 <ItemCheckbox
                     ID={element.ID}
-                    bimiSelector={element.BimiSelector}
+                    bimiSelector={element.BimiSelector || undefined}
                     name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
                     email={displaySenderImage ? (displayRecipients ? firstRecipientAddress : firstSenderAddress) : ''}
                     checked={checked}
