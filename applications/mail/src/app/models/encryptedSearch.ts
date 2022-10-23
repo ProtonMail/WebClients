@@ -27,6 +27,7 @@ export type ESBaseMessage = Pick<
     | 'ExpirationTime'
     | 'LabelIDs'
     | 'AttachmentInfo'
+    | 'BimiSelector'
 >;
 
 export interface ESDBStatusMail {

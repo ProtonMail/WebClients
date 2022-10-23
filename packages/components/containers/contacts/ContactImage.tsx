@@ -9,12 +9,13 @@ interface Props {
     email: string;
     name: string;
     className?: string;
+    bimiSelector?: string;
 }
 
-const ContactImage = ({ email, name, className }: Props) => {
+const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
     const initials = getInitials(name);
     const [load, setLoad] = useState(false);
-    const url = useSenderImage(load ? email : '');
+    const url = useSenderImage(load ? email : '', bimiSelector);
     const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
