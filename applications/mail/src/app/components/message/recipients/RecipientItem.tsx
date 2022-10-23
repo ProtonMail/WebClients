@@ -61,6 +61,7 @@ const RecipientItem = ({
         return (
             <RecipientItemGroup
                 displaySenderImage={!!message?.data?.DisplaySenderImage}
+                bimiSelector={message?.data?.BimiSelector || undefined}
                 group={recipientOrGroup.group}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}

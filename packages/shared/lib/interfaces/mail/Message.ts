@@ -74,6 +74,7 @@ export interface Message {
     UnsubscribeMethods?: UnsubscribeMethods;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     EORecipient?: Recipient;
+    BimiSelector?: string | null;
 }
 
 export type DraftMessage = Pick<

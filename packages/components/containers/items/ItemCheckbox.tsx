@@ -13,6 +13,7 @@ interface Props {
     email?: string;
     compactClassName?: string;
     normalClassName?: string;
+    bimiSelector?: string;
     checked: boolean;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -24,6 +25,7 @@ const ItemCheckbox = ({
     compactClassName,
     normalClassName,
     checked,
+    bimiSelector,
     onChange,
 }: Props) => {
     const [userSettings] = useUserSettings();
@@ -58,7 +60,7 @@ const ItemCheckbox = ({
                 data-testid="element-list:message-checkbox"
             >
                 <span className="mauto item-abbr">
-                    <ContactImage email={email} name={name} className="w100 h100 rounded" />
+                    <ContactImage email={email} name={name} bimiSelector={bimiSelector} className="w100 h100 rounded" />
                 </span>
                 <span className="item-icon-fakecheck mauto">
                     <Icon name="checkmark" className="item-icon-fakecheck-icon" />
