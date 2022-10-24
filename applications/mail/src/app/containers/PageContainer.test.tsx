@@ -33,6 +33,7 @@ describe('PageContainer', () => {
         addApiMock('payments/plans', () => ({}));
         addApiMock('mail/v4/conversations', () => ({}));
         addApiMock('domains/optin', () => ({}));
+        addApiMock('payments/subscription/latest', () => ({}));
 
         minimalCache();
         addToCache('MailSettings', { Shortcuts: 1 });
