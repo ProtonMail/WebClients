@@ -1,6 +1,13 @@
 import { EncryptedSearchFunctions } from './models';
 
 /**
+ * Maximum number of times an API call to fetch an item
+ * content will be retried before being stored locally
+ * for a later attempt
+ */
+export const ES_MAX_RETRIES = 10;
+
+/**
  * Number of items to add to the search results list during
  * a partial search. It corresponds to one page of results in mail
  */
