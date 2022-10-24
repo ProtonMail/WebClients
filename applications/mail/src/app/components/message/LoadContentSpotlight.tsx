@@ -17,7 +17,9 @@ const LoadContentSpotlight = ({ children, anchorRef, show, onDisplayed }: Props)
     // translator: This string is part of a longer string and is used to redirect the user to the settings
     // Full string for reference: We now load images by default and block senders from tracking you. This can be changed in the settings.
     const settingsLink = (
-        <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL}>{c('Link to settings').t`settings`}</SettingsLink>
+        <SettingsLink path="/email-privacy" app={APPS.PROTONMAIL} key="load-content-settings-link">{c(
+            'Link to settings'
+        ).t`settings`}</SettingsLink>
     );
 
     // translator: The variable "settingsLink" is a link used to redirect the user to the settings. It should contain "settings"

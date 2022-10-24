@@ -10,6 +10,8 @@ import { MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
 import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
 
+jest.setTimeout(20000);
+
 describe('Mailbox elements list reacting to events', () => {
     const { labelID } = props;
 
