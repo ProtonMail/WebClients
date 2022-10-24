@@ -674,8 +674,9 @@ export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
 };
 
 export enum KEY_FLAG {
+    NO_EMAIL_SIGN = 8,
     // Flag used for external addresses
-    FLAG_EXTERNAL = 4,
+    NO_EMAIL_ENCRYPT = 4,
     // Key can be used to encrypt
     FLAG_NOT_OBSOLETE = 2,
     // Key can be used to verify signatures
