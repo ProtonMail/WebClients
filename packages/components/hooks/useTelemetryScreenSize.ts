@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useApi, useSideApp, useUser } from '@proton/components/hooks/index';
+import { useApi, useSideApp } from '@proton/components/hooks/index';
 import { TelemetryMeasurementGroups, TelemetryScreenSizeEvents } from '@proton/shared/lib/api/telemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -8,7 +8,6 @@ import debounce from '@proton/utils/debounce';
 
 const useTelemetryScreenSize = () => {
     const api = useApi();
-    const [user] = useUser();
     const { parentApp } = useSideApp();
 
     const sendScreenSizeToTelemetry = async (event: TelemetryScreenSizeEvents) => {
@@ -25,11 +24,7 @@ const useTelemetryScreenSize = () => {
             viewHeight: window.innerHeight,
         };
 
-        const dimensions = {
-            Uid: user.ID,
-        };
-
-        await sendTelemetryReport(api, TelemetryMeasurementGroups.screenSize, event, values, dimensions);
+        await sendTelemetryReport(api, TelemetryMeasurementGroups.screenSize, event, values);
     };
 
     // Send default user screen size
