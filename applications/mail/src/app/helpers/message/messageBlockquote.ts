@@ -2,6 +2,7 @@ export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote',
     '.gmail_quote',
     '.yahoo_quoted',
+    '.skiff_quote',
     '.gmail_extra',
     '.zmail_extra', // zoho
     '.moz-cite-prefix',
