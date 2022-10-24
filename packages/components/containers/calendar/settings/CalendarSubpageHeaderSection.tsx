@@ -31,6 +31,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, isEdi
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
     const createdByText = getCalendarCreatedByText(calendar, contactEmailsMap);
+    const editCalendarText = c('Calendar edit button tooltip').t`Edit calendar`;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
 
@@ -98,9 +99,9 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, isEdi
                     )}
                 </div>
                 <span className="ml1 pt0-5 flex-item-noshrink">
-                    <Tooltip title={c('Calendar edit button tooltip').t`Edit calendar information`}>
+                    <Tooltip title={editCalendarText}>
                         <ButtonLike shape="outline" onClick={handleEdit} icon disabled={isEditDisabled}>
-                            <Icon name="pen" alt={c('Calendar edit button tooltip').t`Edit calendar information`} />
+                            <Icon name="pen" alt={editCalendarText} />
                         </ButtonLike>
                     </Tooltip>
                 </span>

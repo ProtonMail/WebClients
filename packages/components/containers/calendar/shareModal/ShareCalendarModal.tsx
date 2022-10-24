@@ -316,6 +316,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
             .some(({ type }) => type === NOT_PROTON_ACCOUNT)
             ? c('Share calendar assistive text').t`To invite non-Proton users, share your calendar with a link`
             : '';
+    const addressesInputText = c('Calendar access select label').t`Add people or groups`;
 
     const items = recipients.map((recipient) => {
         const invalidEmailMessage = invalidRecipients[recipient.Address]?.message;
@@ -401,26 +402,24 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                     !totalRecipients && 'my0-15',
                                     !!totalRecipients && 'p0 rounded-none',
                                 ])}
-                                title={c('Calendar access select label').t`Email address`}
+                                title={addressesInputText}
                                 onKeyDown={onAutocompleteKeyDown}
                                 placeholder={
                                     recipients.length
                                         ? ''
-                                        : c('Share calendar modal input placeholder').t`Add people or groups`
+                                        : c('Share calendar modal input placeholder')
+                                              .t`Enter an email address or group name`
                                 }
                             />
                         }
                         items={items}
                         error={maxReachedError}
                         className={clsx(['multi-select-container', !!totalRecipients && 'px0-5 py0-15'])}
-                        label={c('Calendar access select label').t`Email address`}
+                        label={addressesInputText}
                     />
                 </div>
                 <div>
-                    <InputField as="div" label={c('Calendar permissions label').t`Permissions`} dense>
-                        <div className="color-weak mt0 mb1">
-                            {c('Calendar permissions hint').t`You can change or remove permissions at any time.`}
-                        </div>
+                    <InputField as="div" label={c('Calendar permissions label').t`Permissions`}>
                         <div>
                             <RadioGroup
                                 name="calendar-sharing-access"
@@ -429,7 +428,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                         label: (
                                             <span className="flex-item-fluid">
                                                 {c('Calendar sharing access option label')
-                                                    .t`Full view (see all event details)`}
+                                                    .t`View (see all event details)`}
                                             </span>
                                         ),
                                         value: MEMBER_PERMISSIONS.FULL_VIEW,
@@ -450,11 +449,14 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 value={permissions}
                             />
                         </div>
+                        <div className="color-weak">
+                            {c('Calendar permissions hint').t`You can change or remove permissions at any time.`}
+                        </div>
                     </InputField>
                 </div>
             </ModalContent>
             <ModalFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                 <Button
                     loading={loading}
                     color="norm"
