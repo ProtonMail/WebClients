@@ -29,7 +29,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
     return (
         <>
             <ToolbarButton
-                data-test-id="calendar-toolbar:today"
+                data-testid="calendar-toolbar:today"
                 className="flex-item-noshrink"
                 title={todayTitle}
                 onClick={onToday}
@@ -39,7 +39,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
             </ToolbarButton>
             <Vr />
             <ToolbarButton
-                data-test-id="calendar-toolbar:previous"
+                data-testid="calendar-toolbar:previous"
                 title={previous}
                 onClick={onPrev}
                 icon={<Icon name="chevron-left" className="mauto toolbar-icon" />}
@@ -47,7 +47,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 <span className="sr-only">{previous}</span>
             </ToolbarButton>
             <ToolbarButton
-                data-test-id="calendar-toolbar:next"
+                data-testid="calendar-toolbar:next"
                 title={next}
                 onClick={onNext}
                 icon={<Icon name="chevron-right" className="mauto toolbar-icon" />}

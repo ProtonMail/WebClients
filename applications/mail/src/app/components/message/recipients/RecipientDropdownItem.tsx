@@ -76,7 +76,7 @@ const RecipientDropdownItem = ({
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
                 size="small"
-                data-test-id="recipient:dropdown-item--copy-address-button"
+                data-testid="recipient:dropdown-item--copy-address-button"
             />
         </div>
     );

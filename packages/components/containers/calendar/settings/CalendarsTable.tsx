@@ -95,7 +95,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDe
                                 </div>
                             </TableCell>
                             <TableCell label={statusHeader}>
-                                <div data-test-id="calendar-settings-page:calendar-status" key="status">
+                                <div data-testid="calendar-settings-page:calendar-status" key="status">
                                     {badges.map(({ statusType, badgeType, text, tooltipText }) => (
                                         <CalendarBadge
                                             key={statusType}

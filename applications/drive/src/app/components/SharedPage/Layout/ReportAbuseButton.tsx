@@ -25,7 +25,7 @@ export default function ReportAbuseButton({ linkInfo, className }: Props) {
                 shape="ghost"
                 size="small"
                 color="weak"
-                data-test-id="report-abuse-button"
+                data-testid="report-abuse-button"
                 className={clsx('flex flex-align-items-center', className)}
                 onClick={() => showReportAbuseModal({ linkInfo, onSubmit: submitAbuseReport })}
             >
