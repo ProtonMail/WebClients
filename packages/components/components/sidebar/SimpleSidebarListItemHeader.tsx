@@ -69,7 +69,7 @@ const SimpleSidebarListItemHeader = ({
                     aria-expanded={toggle}
                     onFocus={() => onFocus(id || '')}
                     data-shortcut-target={id}
-                    data-test-id={testId}
+                    data-testid={testId}
                 >
                     {hasCaret && (
                         <span className="flex-item-noshrink">

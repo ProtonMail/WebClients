@@ -199,7 +199,7 @@ ${kbLink}
                                 setValidationError(undefined);
                                 setCalendarURL(e.target.value.trim());
                             }}
-                            data-test-id="input:calendar-subscription"
+                            data-testid="input:calendar-subscription"
                         />
                     </>
                 )
