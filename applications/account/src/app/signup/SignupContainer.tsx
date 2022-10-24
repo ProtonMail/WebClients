@@ -336,7 +336,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         return handleSelectPlan({ cache, api: ignoreHumanApi, subscriptionData }).then(handleResult).catch(handleError);
     };
 
-    const planName = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs)?.Title;
+    const plan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs);
+    const planName = plan?.Title;
     const verificationModel = cache?.humanVerificationResult?.verificationModel;
 
     const handleBackStep = (() => {
@@ -589,6 +590,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     api={normalApi}
                     paymentMethodStatus={model.paymentMethodStatus}
                     plans={model.plans}
+                    plan={plan}
                     planName={planName}
                     subscriptionData={model.subscriptionData}
                     onChangeCurrency={handleChangeCurrency}
