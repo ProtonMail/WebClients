@@ -1,15 +1,25 @@
 import { IDBPDatabase } from 'idb';
 
+import { serverTime } from '@proton/crypto';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ES_MAX_PARALLEL_ITEMS } from '../constants';
-import { ESCache, ESItemEvent, ESSyncingHelpers } from '../models';
+import { AesGcmCiphertext, ESCache, ESItemEvent, ESSyncingHelpers, RetryObject } from '../models';
 import { esSentryReport } from './esAPI';
 import { encryptToDB } from './esBuild';
 import { addToESCache, findItemIndex, removeFromESCache, replaceInESCache, sizeOfESItem } from './esCache';
 import { decryptFromDB, uncachedSearch } from './esSearch';
-import { getNumItemsDB, getOldestItem, openESDB, updateSizeIDB } from './esUtils';
+import {
+    addRetry,
+    getNumItemsDB,
+    getOldestItem,
+    getRetries,
+    openESDB,
+    setES,
+    updateRetryObject,
+    updateSizeIDB,
+} from './esUtils';
 
 /**
  * Check whether the DB is limited, either after indexing or if it became so
@@ -226,7 +236,9 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
                 const resultIndex = findItemIndex(ID, prefetchedItems, getItemID);
                 const itemToCache = resultIndex !== -1 ? prefetchedItems[resultIndex] : undefined;
                 if (!itemToCache) {
-                    // If a permanent error occured while fetching, we ignore the update
+                    // If an error occured while fetching, we ignore the update and store
+                    // the item for later fetching
+                    addRetry(userID, ID);
                     continue;
                 }
 
@@ -240,7 +252,7 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
 
                 const size = sizeOfESItem(itemToCache);
                 updateSizeIDB(userID, size);
-                addToESCache(itemToCache, esCacheRef, getTimePoint, size);
+                addToESCache<ESItem>(itemToCache, esCacheRef, getTimePoint, size);
 
                 if (!!esSearchParams && applySearch(esSearchParams, itemToCache)) {
                     updatePermanentResults({ itemToCache });
@@ -267,7 +279,9 @@ export const syncMessageEvents = async <ESItem, ESItemMetadata, ESItemChanges, E
                     const resultIndex = findItemIndex(ID, prefetchedItems, getItemID);
                     const fetchedItemToCache = resultIndex !== -1 ? prefetchedItems[resultIndex] : undefined;
                     if (!fetchedItemToCache) {
-                        // If a permanent error occured while fetching, we ignore the update
+                        // If an error occured while fetching, we ignore the update and store
+                        // the item for later fetching
+                        addRetry(userID, ID);
                         continue;
                     }
                     newItemToCache = fetchedItemToCache;
@@ -409,4 +423,56 @@ export const correctDecryptionErrors = async <ESItemMetadata, ESItem, ESItemChan
     }
 
     return newItemsFound;
+};
+
+/**
+ * Retry previously failed API calls
+ */
+export const retryAPICalls = async <ESItem, ESCiphertext>(
+    userID: string,
+    indexKey: CryptoKey,
+    storeName: string,
+    esCacheRef: React.MutableRefObject<ESCache<ESItem>>,
+    prepareCiphertext: (itemToStore: ESItem, aesGcmCiphertext: AesGcmCiphertext) => ESCiphertext,
+    fetchESItem: (itemID: string) => Promise<ESItem | undefined>,
+    getTimePoint: (storedItem: ESItem) => [number, number]
+) => {
+    const retryMap = getRetries(userID);
+    if (!retryMap.size) {
+        return;
+    }
+
+    const now = +serverTime();
+    const esDB = await openESDB(userID);
+
+    const arrayMap = Array.from(retryMap);
+    const newArrayMap = (
+        await Promise.all(
+            arrayMap.map(async ([ID, retryObject]): Promise<[string, RetryObject] | undefined> => {
+                if (retryObject.retryTime > now) {
+                    return [ID, retryObject];
+                }
+
+                const item = await fetchESItem(ID);
+                if (item) {
+                    try {
+                        const ciphertext = await encryptToDB<ESItem, ESCiphertext>(item, indexKey, prepareCiphertext);
+                        await esDB.put(storeName, ciphertext);
+                        const size = sizeOfESItem(item);
+                        addToESCache<ESItem>(item, esCacheRef, getTimePoint, size);
+                        updateSizeIDB(userID, size);
+                        return;
+                    } catch (error: any) {
+                        // We store it back as if it failed fetching
+                    }
+                }
+
+                return [ID, updateRetryObject(retryObject)];
+            })
+        )
+    ).filter(isTruthy);
+
+    esDB.close();
+
+    setES.Retries(userID, newArrayMap);
 };

@@ -1,3 +1,4 @@
+import { AesGcmCiphertext } from '@proton/encrypted-search';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -97,20 +98,10 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    signal?: AbortSignal,
-    messageMetadata?: Message
+    signal?: AbortSignal
 ): Promise<ESMessage | undefined> => {
     const message = await queryMessage(api, messageID, signal);
     if (!message) {
-        // If a permanent error happened and metadata was given, the returned
-        // ESMessage is as if decryption failed
-        if (messageMetadata) {
-            return {
-                ...prepareMessageMetadata(messageMetadata),
-                decryptionError: true,
-            };
-        }
-        // Otherwise an undefined message is returned
         return;
     }
 
@@ -148,4 +139,15 @@ export const fetchMessage = async (
     };
 
     return cachedMessage;
+};
+
+export const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: AesGcmCiphertext) => {
+    const { ID, Time, Order, LabelIDs } = itemToStore;
+    return {
+        ID,
+        Time,
+        Order,
+        LabelIDs,
+        aesGcmCiphertext,
+    };
 };

@@ -3,6 +3,14 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { ESSetResultsList } from './esFunctions';
 
 /**
+ * Object to be stored locally to retry an API call
+ */
+export interface RetryObject {
+    retryTime: number;
+    numberRetries: number;
+}
+
+/**
  * Object stored in local storage during indexing to keep track
  * of its status
  */

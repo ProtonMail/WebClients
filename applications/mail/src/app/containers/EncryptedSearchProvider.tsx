@@ -8,13 +8,15 @@ import {
     useApi,
     useFeature,
     useGetMessageCounts,
+    useGetUserKeys,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
-import { useEncryptedSearch } from '@proton/encrypted-search';
+import { decryptIndexKey, esSentryReport, getES, useEncryptedSearch } from '@proton/encrypted-search';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import noop from '@proton/utils/noop';
 
 import {
     defaultESContextMail,
@@ -25,6 +27,7 @@ import {
     storeName,
 } from '../constants';
 import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchMailHelpers';
+import { checkIndexCorruption, recoverIndex } from '../helpers/encryptedSearch/esRecovery';
 import { convertEventType } from '../helpers/encryptedSearch/esSync';
 import { parseSearchParams } from '../helpers/encryptedSearch/esUtils';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
@@ -49,6 +52,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const history = useHistory();
     const getMessageKeys = useGetMessageKeys();
     const getMessageCounts = useGetMessageCounts();
+    const getUserKeys = useGetUserKeys();
     const api = useApi();
     const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
@@ -133,6 +137,33 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         };
     };
 
+    /**
+     * Initialize ES
+     */
+    const initializeESMail = async () => {
+        // If no ES:*:Key blob can be found, the user has never activated ES.
+        const armoredKey = getES.Key(user.ID);
+        if (!armoredKey) {
+            return;
+        }
+
+        // If the blob can be found but failed decryption, the content of IDB
+        // cannot be decrypted, therefore we trigger the initialisation directly
+        // which will take care of this case
+        const indexKey = await decryptIndexKey(getUserKeys, armoredKey).catch(noop);
+
+        const isIndexCorrupted = await checkIndexCorruption(user.ID, api).catch(() => false);
+        if (indexKey && isIndexCorrupted) {
+            // The recovery process should happen transparently in the background
+            // and ES should be active in the meantime
+            void recoverIndex(user.ID, indexKey, api, getMessageKeys).catch((error: any) =>
+                esSentryReport('recoverIndex', { error })
+            );
+        }
+
+        return initializeES();
+    };
+
     useSubscribeEventManager(async (event: Event) => {
         void handleEvent(convertEventType(event));
     });
@@ -164,7 +195,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     }, [isSearch]);
 
     useEffect(() => {
-        void initializeES();
+        void initializeESMail();
     }, []);
 
     const esFunctions = {

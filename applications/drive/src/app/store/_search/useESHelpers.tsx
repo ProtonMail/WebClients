@@ -59,11 +59,7 @@ export const useESHelpers = ({
     };
     const { getES } = esStorageHelpers();
 
-    const fetchESItem = async (itemId: IDBValidKey, itemMetadata?: ESLink): Promise<ESLink | undefined> => {
-        if (itemMetadata) {
-            return itemMetadata;
-        }
-
+    const fetchESItem = async (itemId: IDBValidKey): Promise<ESLink | undefined> => {
         const { shareId, linkId } = parseItemId(itemId as string);
         const link = await getLink(new AbortController().signal, shareId, linkId);
 
