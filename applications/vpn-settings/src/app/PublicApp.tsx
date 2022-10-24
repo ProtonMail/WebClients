@@ -10,6 +10,7 @@ import { ProtonLoginCallback, StandardPublicApp, Unauthenticated } from '@proton
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { setLiteRedirect } from '@proton/shared/lib/subscription/redirect';
 
 import LoginContainer from './containers/LoginContainer';
 
@@ -59,6 +60,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         </Route>
                         <Route
                             render={({ location }) => {
+                                setLiteRedirect(new URLSearchParams(location.search));
                                 return (
                                     <Redirect
                                         to={{

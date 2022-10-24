@@ -15,6 +15,7 @@ import {
     ModalTwo,
     ModalTwoContent,
 } from '../../../components';
+import { useWelcomeFlags } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';
 import VPNClientCard from './VPNClientCard';
@@ -55,6 +56,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
 const ProtonVPNClientsSection = () => {
     const history = useHistory();
     const location = useLocation();
+    const [, setDone] = useWelcomeFlags();
 
     const androidLinks = [
         {
@@ -87,6 +89,7 @@ const ProtonVPNClientsSection = () => {
                 open={location.search.includes('prompt')}
                 onClose={() => {
                     history.replace({ ...location, search: '' });
+                    setDone();
                 }}
             />
             <SettingsParagraph>
