@@ -32,6 +32,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import {
     Api,
     Currency,
@@ -173,12 +174,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                 .catch(() => {
                     // If the check call fails, just reset everything
                     return {
-                        checkResult: getFreeCheckResult(signupParameters.currency, signupParameters.cycle),
+                        checkResult: getFreeCheckResult(
+                            signupParameters.currency,
+                            // "Reset" the cycle because the custom cycles are only valid with a coupon
+                            getNormalCycleFromCustomCycle(signupParameters.cycle)
+                        ),
                         planIDs: undefined,
                     };
                 });
             return {
-                cycle: signupParameters.cycle,
+                cycle: checkResult.Cycle,
                 minimumCycle: signupParameters.minimumCycle,
                 currency: checkResult.Currency,
                 checkResult,
@@ -579,7 +584,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                             model.subscriptionData.currency,
                             model.subscriptionData.cycle,
                             model.subscriptionData.checkResult.Coupon?.Code
-                        );
+                        ).catch(errorHandler);
+                        if (!checkResult) {
+                            return;
+                        }
                         return handlePlanSelectionCallback({ checkResult, planIDs });
                     }}
                 />
