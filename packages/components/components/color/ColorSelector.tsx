@@ -50,7 +50,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false, 
                                 name={uid}
                                 value={color}
                                 className="color-selector-input"
-                                data-test-id={`color-selector:${color}`}
+                                data-testid={`color-selector:${color}`}
                                 onChange={() => onChange(color)}
                                 autoFocus={autoFocus ? isSelected : undefined}
                             />

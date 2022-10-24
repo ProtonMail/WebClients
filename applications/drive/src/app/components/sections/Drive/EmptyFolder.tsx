@@ -45,7 +45,7 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
                         src: !isNarrow ? uploadSvg : uploadSvgMobile,
                         title: c('Info').t`There are no files yet`,
                     }}
-                    data-test-id="my-files-empty-placeholder"
+                    data-testid="my-files-empty-placeholder"
                 >
                     <h3 className="text-bold">{c('Info').t`Go ahead, upload a file`}</h3>
                     <p className="color-weak">

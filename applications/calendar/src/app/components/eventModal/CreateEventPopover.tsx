@@ -180,12 +180,12 @@ const CreateEventPopover = ({
                 <PopoverFooter className="flex-nowrap flex-justify-end">
                     <Button
                         disabled={loadingAction}
-                        data-test-id="create-event-popover:more-event-options"
+                        data-testid="create-event-popover:more-event-options"
                         className="mr1"
                         onClick={handleMore}
                     >{c('Action').t`More options`}</Button>
                     <PrimaryButton
-                        data-test-id="create-event-popover:save"
+                        data-testid="create-event-popover:save"
                         type="submit"
                         loading={loadingAction && lastAction === ACTION.SUBMIT}
                         disabled={loadingAction || cannotSave}

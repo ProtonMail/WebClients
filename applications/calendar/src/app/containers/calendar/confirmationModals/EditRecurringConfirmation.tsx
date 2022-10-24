@@ -221,7 +221,7 @@ const EditRecurringConfirmModal = ({
                     types={types}
                     type={type}
                     setType={setType}
-                    data-test-id="update-recurring-popover:update-option-radio"
+                    data-testid="update-recurring-popover:update-option-radio"
                 />
             ) : null}
             {recurringWarningText ? (

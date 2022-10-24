@@ -100,7 +100,7 @@ const CreateEventModal = ({
     const submitButton = (
         <Button
             color="norm"
-            data-test-id="create-event-modal:save"
+            data-testid="create-event-modal:save"
             loading={loadingAction && lastAction === ACTION.SUBMIT}
             disabled={loadingAction || cannotSave}
             type="submit"
@@ -168,7 +168,7 @@ const CreateEventModal = ({
                 <>
                     <Button
                         className="no-tiny-mobile"
-                        data-test-id="event-creation-modal:cancel-event-creation"
+                        data-testid="event-creation-modal:cancel-event-creation"
                         disabled={loadingAction}
                         onClick={onClose}
                     >

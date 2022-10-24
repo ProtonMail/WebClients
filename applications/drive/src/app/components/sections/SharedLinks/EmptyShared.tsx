@@ -24,7 +24,7 @@ const EmptyShared = ({ shareId }: Props) => {
         <>
             <EmptyViewContainer
                 imageProps={{ src: noLinksSvg, title: c('Info').t`Share files with links` }}
-                data-test-id="shared-links-empty-placeholder"
+                data-testid="shared-links-empty-placeholder"
             >
                 <h3 className="text-bold">{c('Info').t`Share files with links`}</h3>
                 <p>{c('Info').t`Create links and share your files with others.`}</p>

@@ -164,7 +164,7 @@ const CalendarShareSection = ({
                         />
                     )
                 ) : (
-                    <Card rounded className="mt1" data-test-id="card:upgrade">
+                    <Card rounded className="mt1" data-testid="card:upgrade">
                         <div className="flex flex-nowrap flex-align-items-center">
                             <p className="flex-item-fluid my-0 pr2">
                                 {c('Upgrade notice')

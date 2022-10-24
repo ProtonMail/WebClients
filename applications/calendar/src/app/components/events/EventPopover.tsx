@@ -183,7 +183,7 @@ const EventPopover = ({
     const editButton = getCanEditEvent({ isCalendarDisabled }) && (
         <Tooltip title={editText}>
             <ButtonLike
-                data-test-id="event-popover:edit"
+                data-testid="event-popover:edit"
                 shape="ghost"
                 onClick={onEdit}
                 disabled={loadingDelete}
@@ -197,7 +197,7 @@ const EventPopover = ({
     const deleteButton = getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation }) && (
         <Tooltip title={deleteText}>
             <ButtonLike
-                data-test-id="event-popover:delete"
+                data-testid="event-popover:delete"
                 shape="ghost"
                 onClick={loadingDelete ? noop : handleDelete}
                 loading={loadingDelete}
@@ -217,7 +217,7 @@ const EventPopover = ({
         }) && (
             <Tooltip title={duplicateText}>
                 <ButtonLike
-                    data-test-id="event-popover:duplicate"
+                    data-testid="event-popover:duplicate"
                     shape="ghost"
                     onClick={onDuplicate}
                     disabled={loadingDelete}
@@ -232,7 +232,7 @@ const EventPopover = ({
     const reloadButton = (
         <Tooltip title={reloadText}>
             <ButtonLike
-                data-test-id="event-popover:refresh"
+                data-testid="event-popover:refresh"
                 shape="ghost"
                 onClick={loadingRefresh ? noop : () => withLoadingRefresh(onRefresh())}
                 icon

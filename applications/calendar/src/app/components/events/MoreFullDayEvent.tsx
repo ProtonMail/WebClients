@@ -31,7 +31,7 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
                 ])}
                 ref={eventRef}
             >
-                <span data-test-id="calendar-view:more-events-collapsed" className="myauto">
+                <span data-testid="calendar-view:more-events-collapsed" className="myauto">
                     {
                         // translator: This string shows up when we have to collapse some events in the calendar view because they don't all fit in the window. The variable ${more} is a number. E.g.: "3 more" (short for 3 events more)
                         c('Calendar view; more events collapsed').ngettext(msgid`${more} more`, `${more} more`, more)
