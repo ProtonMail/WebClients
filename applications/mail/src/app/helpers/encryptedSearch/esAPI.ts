@@ -1,6 +1,7 @@
 import { ES_MAX_PARALLEL_ITEMS, apiHelper } from '@proton/encrypted-search';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -36,7 +37,7 @@ export const queryMessagesMetadata = async (
         signal,
         queryMessageMetadata({
             Limit: ES_MAX_PARALLEL_ITEMS,
-            Location: '5',
+            Location: MAILBOX_LABEL_IDS.ALL_MAIL,
             Sort: 'Time',
             Desc: 1,
             ...options,
