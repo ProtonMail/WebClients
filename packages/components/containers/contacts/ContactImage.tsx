@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
+import 'intersection-observer';
+
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
