@@ -10,6 +10,7 @@ import {
     useFetchOffer,
 } from '@proton/components/containers/offers';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
@@ -82,7 +83,7 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                         setType(type);
                         onceCloseRef.current = true;
                         if (redirect) {
-                            document.location.replace(redirect);
+                            replaceUrl(redirect);
                             return;
                         }
                         broadcast({ type: MessageType.CLOSE });

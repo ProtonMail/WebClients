@@ -50,9 +50,10 @@ export const useSubscriptionModal = () => {
 interface Props {
     children: ReactNode;
     app: APP_NAMES;
+    onClose?: () => void;
 }
 
-const SubscriptionModalProvider = ({ children, app }: Props) => {
+const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [user] = useUser();
@@ -72,7 +73,7 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
         onSuccess?: () => void;
         fullscreen?: boolean;
     } | null>(null);
-    const [modalState, setModalState, render] = useModalState({ onClose: subscriptionProps?.current?.onClose });
+    const [modalState, setModalState, render] = useModalState();
 
     const loading = Boolean(loadingSubscription || loadingPlans || loadingOrganization);
 
@@ -86,7 +87,15 @@ const SubscriptionModalProvider = ({ children, app }: Props) => {
                 (getHasLegacyPlans(subscription) ? (
                     <SubscriptionModalDisabled {...modalState} />
                 ) : (
-                    <SubscriptionModal {...subscriptionProps.current} {...modalState} />
+                    <SubscriptionModal
+                        {...subscriptionProps.current}
+                        {...modalState}
+                        onClose={() => {
+                            onClose?.();
+                            subscriptionProps?.current?.onClose?.();
+                            modalState.onClose();
+                        }}
+                    />
                 ))}
             <SubscriptionModalContext.Provider
                 value={[
