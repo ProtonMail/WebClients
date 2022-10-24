@@ -107,7 +107,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         <TimeZoneSelector
                             className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 flex-item-fluid"
                             id="event-start-timezone-select"
-                            data-test-id="create-event-modal/start:time-zone-dropdown"
+                            data-testid="create-event-modal/start:time-zone-dropdown"
                             timezone={start.tzid}
                             onChange={handleChangeStart}
                             date={startDateTime}
@@ -156,7 +156,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         <TimeZoneSelector
                             className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 flex-item-fluid"
                             id="event-end-timezone-select"
-                            data-test-id="create-event-modal/end:time-zone-dropdown"
+                            data-testid="create-event-modal/end:time-zone-dropdown"
                             timezone={end.tzid}
                             onChange={handleChangeEnd}
                             date={endDateTime}
@@ -182,7 +182,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     (showTzSelector ? (
                         <UnderlineButton
                             className="p0"
-                            data-test-id="hide-tz"
+                            data-testid="hide-tz"
                             onClick={() => setShowTzSelector(false)}
                             title={c('Title').t`Hide time zones for event start and end times`}
                         >
@@ -191,7 +191,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     ) : (
                         <UnderlineButton
                             className="p0"
-                            data-test-id="show-tz"
+                            data-testid="show-tz"
                             onClick={() => setShowTzSelector(true)}
                             title={c('Title').t`Show time zones for event start and end times`}
                         >

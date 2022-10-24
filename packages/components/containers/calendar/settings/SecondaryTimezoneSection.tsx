@@ -42,7 +42,7 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
             <SettingsLayoutRight>
                 <TimeZoneSelector
                     id={timeZoneSelectorId}
-                    data-test-id="settings/secondary-time-zone:dropdown"
+                    data-testid="settings/secondary-time-zone:dropdown"
                     loading={loadingSecondaryTimeZone}
                     disabled={!DisplaySecondaryTimezone}
                     timezone={SecondaryTimezone || timezone}

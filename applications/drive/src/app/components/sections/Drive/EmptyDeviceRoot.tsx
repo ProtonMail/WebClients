@@ -8,7 +8,7 @@ const EmptyDeviceRoot = () => {
         <div role="presentation" onClick={close} className="flex w100 flex flex-item-fluid">
             <EmptyViewContainer
                 imageProps={{ src: uploadSvg, title: c('Info').t`No synced folders` }}
-                data-test-id="my-files-device-root-empty-placeholder"
+                data-testid="my-files-device-root-empty-placeholder"
             >
                 <h3 className="text-bold">{c('Info').t`No synced folders`}</h3>
                 <p className="color-weak">{c('Info').t`Folders you sync from your computer will appear here.`}</p>

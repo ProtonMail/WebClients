@@ -112,7 +112,7 @@ const DayGrid = ({
     return (
         <div className="flex-item-fluid scroll-if-needed h100 is-month-view">
             <div className="calendar-daygrid flex flex-column relative h100">
-                <div data-test-id="calendar-month-view:week-header" className="flex calendar-daygrid-days">
+                <div data-testid="calendar-month-view:week-header" className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
                     {rows[0].map((day) => {
                         return (
@@ -165,13 +165,13 @@ const DayGrid = ({
                                 // eslint-disable-next-line react/no-array-index-key
                                 <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w100 relative">
                                     <div
-                                        data-test-id="calendar-month-view:week-row"
+                                        data-testid="calendar-month-view:week-row"
                                         className="flex calendar-daygrid-columns no-pointer-events"
                                     >
                                         {days.map((day) => {
                                             return (
                                                 <div
-                                                    data-test-id="calendar-month-view:day-cell"
+                                                    data-testid="calendar-month-view:day-cell"
                                                     className="flex-item-fluid calendar-daygrid-column"
                                                     key={day.getUTCDate()}
                                                 />

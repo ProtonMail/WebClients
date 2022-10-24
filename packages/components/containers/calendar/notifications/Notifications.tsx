@@ -59,7 +59,7 @@ const Notifications = ({
                         />
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
-                                data-test-id="delete-notification"
+                                data-testid="delete-notification"
                                 className="flex flex-item-noshrink ml-2"
                                 disabled={disabled}
                                 onClick={() => onChange(removeItem(notifications, index))}
@@ -83,7 +83,7 @@ const Notifications = ({
                     ])}
                     shape={addIcon ? 'ghost' : 'underline'}
                     color={addIcon ? 'weak' : 'norm'}
-                    data-test-id="add-notification"
+                    data-testid="add-notification"
                     title={addNotificationTitle}
                     disabled={disabled}
                     onClick={() =>
