@@ -55,7 +55,8 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
         const trustedFingerprints = new Set(model.trustedFingerprints);
         const encryptionCapableFingerprints = new Set(model.encryptionCapableFingerprints);
 
-        await Promise.all(
+        // Each promise returns true if the corresponding key was processed successfully
+        const successStatuses = await Promise.all(
             keys.map(async ({ keyIsPrivate, armoredKey }) => {
                 if (keyIsPrivate) {
                     // do not allow to upload private keys
@@ -63,7 +64,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                         type: 'error',
                         text: c('Error').t`Invalid public key file`,
                     });
-                    return;
+                    return false;
                 }
                 const publicKey = await CryptoProxy.importPublicKey({ armoredKey });
                 const fingerprint = publicKey.getFingerprint();
@@ -74,16 +75,19 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 if (!trustedFingerprints.has(fingerprint)) {
                     trustedFingerprints.add(fingerprint);
                     pinnedKeys.push(publicKey);
-                    return;
+                    return true;
                 }
                 const indexFound = pinnedKeys.findIndex((publicKey) => publicKey.getFingerprint() === fingerprint);
                 createNotification({ text: c('Info').t`Duplicate key updated`, type: 'warning' });
                 pinnedKeys.splice(indexFound, 1, publicKey);
+                return true;
             })
         );
 
         setModel({
             ...model,
+            // automatically enable encryption on (successful) key upload
+            encrypt: model.encrypt || successStatuses.some(Boolean),
             publicKeys: { ...model.publicKeys, pinnedKeys },
             trustedFingerprints,
             encryptionCapableFingerprints,
