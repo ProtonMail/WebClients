@@ -19,6 +19,7 @@ interface Props extends HeaderProps {
     feedbackButton?: ReactNode;
     backUrl?: string;
     floatingButton?: ReactNode;
+    upsellButton?: ReactNode;
     searchBox?: ReactNode;
     searchDropdown?: ReactNode;
     appsDropdown?: ReactNode;
@@ -31,6 +32,7 @@ interface Props extends HeaderProps {
 const PrivateHeader = ({
     isNarrow,
     appsDropdown: AppsDropdownComponent = <AppsDropdown />,
+    upsellButton,
     userDropdown,
     logo,
     settingsButton,
@@ -77,7 +79,7 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
-                    <TopNavbarUpsell />
+                    {upsellButton !== undefined ? upsellButton : <TopNavbarUpsell />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {contactsButton ? <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem> : null}
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}

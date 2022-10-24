@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useSubscription, useSubscriptionModal, useUser } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getUpgradedPlan } from '@proton/shared/lib/helpers/subscription';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
@@ -49,7 +50,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             setType(type);
             onceCloseRef.current = true;
             if (redirect) {
-                document.location.replace(redirect);
+                replaceUrl(redirect);
                 return;
             }
             broadcast({ type: MessageType.CLOSE });

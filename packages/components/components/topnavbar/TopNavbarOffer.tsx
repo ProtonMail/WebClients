@@ -18,9 +18,11 @@ import TopNavbarListItemButton from './TopNavbarListItemButton';
 
 interface Props {
     offerConfig: OfferConfig;
+    ignoreVisited?: boolean;
+    ignoreOnboarding?: boolean;
 }
 
-const TopNavbarOffer = ({ offerConfig }: Props) => {
+const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
     const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
     const { isVisited, loading } = useOfferFlags(offerConfig);
     const onceRef = useRef(false);
@@ -44,11 +46,11 @@ const TopNavbarOffer = ({ offerConfig }: Props) => {
         if (
             loading ||
             !offerConfig.autoPopUp ||
-            isVisited ||
+            (isVisited && !ignoreVisited) ||
             onceRef.current ||
             // Only hide the autopopup during the welcome flow, ignore if other modals may be open
             // and re-trigger it when the welcome flow completes.
-            !welcomeFlags.isDone
+            (!welcomeFlags.isDone && !ignoreOnboarding)
         ) {
             return;
         }
