@@ -43,7 +43,7 @@ const getTexts = ({
             modalText: c('Remove calendar section text')
                 .t`If you leave this calendar, you'll have to ask the owner to join again.`,
             description: c('Remove calendar section description').t`You will no longer have access to this calendar.`,
-            deleteText: c('Action').t`Delete`,
+            deleteText: c('Action').t`Leave`,
         };
     }
     return {
