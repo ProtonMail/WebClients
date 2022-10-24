@@ -134,15 +134,16 @@ export const CalendarModal = ({
     const hasError = error || setupError;
 
     const getTitle = (type: CALENDAR_MODAL_TYPE) => {
+        const editCalendarText = c('Title; edit calendar modal').t`Edit calendar`;
         if (hasError) {
             return c('Title').t`Error`;
         }
 
         if (type === VISUAL) {
-            return c('Title; edit calendar information modal').t`Edit information`;
+            return editCalendarText;
         }
 
-        return initialCalendar ? c('Title').t`Edit calendar` : c('Title').t`Create calendar`;
+        return initialCalendar ? editCalendarText : c('Title; create calendar modal').t`Create calendar`;
     };
     const getSubline = () => {
         if (type !== CALENDAR_MODAL_TYPE.SHARED || !calendar || !contactEmailsMap) {
