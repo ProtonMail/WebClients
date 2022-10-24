@@ -49,6 +49,7 @@ describe('MailHeader', () => {
         addToCache('User', user);
         addApiMock('payments/plans', () => ({}));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
+        addApiMock('payments/subscription/latest', () => ({}));
 
         props = getProps();
 
