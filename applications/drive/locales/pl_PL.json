@@ -410,6 +410,9 @@
       "Remove": [
         "Usuń"
       ],
+      "Remove device": [
+        "Usuń urządzenie"
+      ],
       "Remove from this list": [
         "Usuń z listy"
       ],
@@ -1811,6 +1814,9 @@
         "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
         "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
       ],
+      "Device name does not match": [
+        "Nazwy urządzeń nie pasują do siebie"
+      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -3192,6 +3198,9 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No synced devices": [
+        "Brak zsynchronizowanych urządzeń"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Szyfrowanie zostało automatycznie wyłączone."
       ],
@@ -3375,6 +3384,9 @@
       "Swiss privacy": [
         "Szwajcarska polityka prywatności"
       ],
+      "Synced devices": [
+        "Zsynchronizowane urządzenia"
+      ],
       "Tap the + button to upload a file or folder": [
         "Kliknij przycisk +, aby przesłać plik lub folder"
       ],
@@ -3434,6 +3446,9 @@
       ],
       "This will overwrite the existing folder": [
         "Spowoduje to nadpisanie istniejącego folderu"
+      ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName }. Lokalne pliki na urządzeniu nie zostaną utracone."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Aby włączyć prywatne wyszukiwanie, musimy lokalnie zaindeksować pliki. Możesz nadal używać aplikacji ${ DRIVE_APP_NAME }. Powiadomimy Cię, kiedy indeksowanie zostanie zakończone."
@@ -3781,6 +3796,12 @@
       "Deleted": [
         "Usunięty"
       ],
+      "Device": [
+        "Urządzenie"
+      ],
+      "Device name": [
+        "Nazwa urządzenia"
+      ],
       "Do not ask again": [
         "Nie pytaj ponownie"
       ],
@@ -3804,6 +3825,9 @@
       ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
+      ],
+      "Enter device name": [
+        "Wpisz nazwę urządzenia"
       ],
       "Expired": [
         "Wygasł"
@@ -4246,11 +4270,6 @@
         "Przełącz lub dodaj konto"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Przedstawiamy odświeżony wygląd usługi Proton.${ br }Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Opowiedz nam o swoich wrażeniach. (opcjonalnie)"
@@ -4259,11 +4278,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Opinia"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Zaktualizowany Proton, ujednolicona ochrona"
       ]
     },
     "Notification": {
@@ -4377,6 +4391,18 @@
       ],
       "Contact group updated": [
         "Grupa kontaktów została zaktualizowana"
+      ],
+      "Device failed to be removed": [
+        "Usunięcie urządzenia nie powiodło się"
+      ],
+      "Device failed to be renamed": [
+        "Zmiana nazwy urządzenia nie powiodła się"
+      ],
+      "Device removed": [
+        "Urządzenie zostało usunięte"
+      ],
+      "Device renamed": [
+        "Nazwa urządzenia została zmieniona"
       ],
       "Encrypted search activated": [
         "Wyszukiwanie zawartości zostało włączone"
@@ -4603,6 +4629,9 @@
       "Enter a new folder name": [
         "Wpisz nową nazwę folderu"
       ],
+      "Enter device name": [
+        "Wpisz nazwę urządzenia"
+      ],
       "Enter your email address": [
         "Wpisz adres e-mail"
       ],
@@ -4708,6 +4737,247 @@
     "Select files": {
       "Upload": [
         "Prześlij"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Don't show this again": [
+        "Nie pokazuj tego ponownie"
+      ],
+      "Special offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Przejdź na plan Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dzień",
+        "${ days } dni",
+        "${ days } dni",
+        "${ days } dnia"
+      ],
+      "${ hours } hour": [
+        "${ hours } godzina",
+        "${ hours } godziny",
+        "${ hours } godzin",
+        "${ hours } godziny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekundy"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } miesiąc BEZPŁATNIE",
+        "${ n } miesiące BEZPŁATNIE",
+        "${ n } miesięcy BEZPŁATNIE",
+        "${ n } miesiąca BEZPŁATNIE"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } całkowitej przestrzeni dyskowej"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 użytkowników"
+      ],
+      "64 countries": [
+        "64 kraje"
+      ],
+      "All paid Mail and Calendar features": [
+        "Wszystkie płatne funkcje poczty i kalendarza"
+      ],
+      "High speed VPN": [
+        "Usługa VPN wysokiej prędkości"
+      ],
+      "Highest VPN speed": [
+        "Najwyższa prędkość VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Poczta, kalendarz, dysk"
+      ],
+      "Premium Drive": [
+        "Dysk premium"
+      ],
+      "Premium early access": [
+        "Wczesny dostęp premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Poczta i kalendarz premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Poczta, kalendarz i dysk premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Secure cloud storage": [
+        "Bezpieczna przestrzeń dyskowa w chmurze"
+      ],
+      "Secure streaming": [
+        "Bezpieczny streaming"
+      ],
+      "Support online privacy": [
+        "Wspieraj prywatność w Internecie"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabaty są liczone na podstawie standardowych cen miesięcznych."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Subskrypcja będzie odnawiana automatycznie co roku za tę samą cenę aż do momentu anulowania jej."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta nieograniczona czasowo"
+      ],
+      "Limited time only": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Most popular": [
+        "Najpopularniejszy"
+      ],
+      "Offer ends soon": [
+        "Oferta wkrótce dobiega końca"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Rabat będzie obowiązywał po odnowieniu aż do anulowania lub zmodyfikowania subskrypcji"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Twoja subskrypcja zostanie automatycznie odnowiona za standardową stawkę na koniec Twojego cyklu rozliczeniowego"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Przejdź do planów subskrypcji"
+      ],
+      "Upgrade": [
+        "Uaktualnij"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ miesiąc"
+      ],
+      "1 year": [
+        "1 rok"
+      ],
+      "2 years": [
+        "2 lata"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "Płatne ${ amount } za pierwsze 2 lata"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "Płatne ${ amount } za pierwszy miesiąc"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "Płatne ${ amount } za pierwszy rok"
+      ],
+      "Billed at ${ amountDue }": [
+        "Płatne ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "za ${ n } miesiąc",
+        "za ${ n } miesiące",
+        "za ${ n } miesięcy",
+        "za ${ n } miesiąca"
+      ],
+      "Get the deal": [
+        "Uzyskaj ofertę"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Odnowienie po roku za niższą cenę ${ discountedAmount } zamiast ${ regularAmount } (rabat ${ discount }%)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Odnowienie po 2 latach za niższą cenę ${ discountedAmount } zamiast ${ regularAmount } (rabat ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Zaoszczędź ${ discount }%"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Standardowa cena: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Wyprzedaż z okazji Czarnego Piątku"
+      ],
+      "Cyber Week Sale": [
+        "Wyprzedaż z okazji cybertygodnia"
+      ],
+      "End of year offer": [
+        "Oferta końcoworoczna"
+      ],
+      "End of Year Sale": [
+        "Wyprzedaż końcoworoczna"
+      ],
+      "Get our premium bundle and save more": [
+        "Uzyskaj nasz pakiet premium i zaoszczędź więcej"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Nasz wycofany z dystrybucji plan Visionary powrócił na czas ograniczony"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Zaoszczędź więcej dzięki rocznej subskrypcji Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Uaktualnij i zaoszczędź więcej dzięki Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Uzyskaj dostęp do blokowanych treści i przeglądaj Internet z zachowaniem prywatności. Obsługuje 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN na użytkownika, usługi streamowania na całym świecie, blokowanie reklam i złośliwego oprogramowania i inne."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Uzyskaj dostęp do blokowanych treści i przeglądaj Internet z zachowaniem prywatności. Obsługuje 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN, usługi streamowania na całym świecie, blokowanie reklam i złośliwego oprogramowania i inne."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczone aliasy Hide My Email, udostępnianie kalendarza, zaszyfrowane przechowywanie w chmurze i udostępnianie plików i nie tylko."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny e-mail, 10 adresów e-mail, 10 aliasów Hide My Email, udostępnianie kalendarza i nie tylko."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Obejmuje obsługę 3 niestandardowych domen e-mail, 15 adresów e-mail, nielimitowane aliasy Hide My Email, udostępnianie kalendarza i nie tylko."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Otrzymaj bez dodatkowych kosztów płatne wersje wszystkich nowych usług prywatności, jakie wydamy w przyszłości, a także wczesny dostęp do wszystkich przyszłych funkcji i produktów."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje automatyczną synchronizację, szyfrowane udostępnianie plików i nie tylko."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5197,11 +5467,17 @@
       "Recover data": [
         "Odzyskaj dane"
       ],
+      "Remove device?": [
+        "Usunąć urządzenie?"
+      ],
       "Rename a file": [
         "Zmień nazwę pliku"
       ],
       "Rename a folder": [
         "Zmień nazwę folderu"
+      ],
+      "Rename device": [
+        "Zmień nazwę urządzenia"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -5274,6 +5550,9 @@
       ],
       "Stop transfers?": [
         "Zatrzymać listę transferów?"
+      ],
+      "Synced devices": [
+        "Zsynchronizowane urządzenia"
       ],
       "The link either does not exist or has expired": [
         "Link wygasł lub nie istnieje"

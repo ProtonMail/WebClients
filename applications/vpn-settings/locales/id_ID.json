@@ -414,28 +414,11 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } users": [
-        "+ ${ _users } pengguna"
-      ],
       "+ ${ domains } custom domains": [
         "+ ${ domains } domain khusus"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } addresses": [
-        "${ addressAddon.MaxAddresses } alamat"
       ],
-      "${ domainAddon.MaxDomains } domains": [
-        "${ domainAddon.MaxDomains } domain"
-      ],
-      "${ memberAddon.MaxMembers } users": [
-        "${ memberAddon.MaxMembers } pengguna"
-      ],
-      "${ vpnAddon.MaxVPN } connections": [
-        "${ vpnAddon.MaxVPN } koneksi"
-      ],
-      "${ vpnBonus } connections": [
-        "${ vpnBonus } koneksi"
+      "+ ${ users } users": [
+        "+ ${ users } pengguna"
       ]
     },
     "Alter": {
@@ -457,14 +440,23 @@
       "Payable every 12 months": [
         "Dapat dibayar per 12 bulan"
       ],
+      "Payable every 15 months": [
+        "Dapat dibayar per 15 bolan"
+      ],
       "Payable every 24 months": [
         "Dapat dibayar per 24 bulan"
+      ],
+      "Payable every 30 months": [
+        "Dapat dibayar per 30 bolan"
       ],
       "Payable every month": [
         "Dapat dibayar per bulan"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Diperbarui secara otomatis pada ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Diperbarui secara otomatis pada ${ formattedEndTime } dengan harga ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -649,14 +641,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Hapus metode pembayaran"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } days": [
-        "${ days } hari"
-      ],
-      "${ monthsWithYears } months": [
-        "${ monthsWithYears } bulan"
       ]
     },
     "Country name": {
@@ -1431,11 +1415,6 @@
         "(via ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Kupon diterapkan: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Saldo yang belum digunakan"
@@ -1884,9 +1863,6 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Paket ${ vpnPlus } atau ${ visionary } dibutuhkan untuk dapat mengakses fitur Secure Core."
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "* No credit card required.": [
         "* Tanpa perlu kartu kredit."
       ],
@@ -1898,9 +1874,6 @@
       ],
       "10 email addresses": [
         "10 alamat email"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Diskon 20% berlaku untuk langganan dengan kupon ${ code }"
       ],
       "30-day money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
@@ -1947,20 +1920,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Tertagih pada akhir siklus penagihan Anda saat ini (diperbarui pada ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 berlaku untuk langganan anda"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 berlaku untuk langganan anda"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Diskon Black Friday 2020 untuk pengguna baru telah diterapkan"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan beralih ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -1988,9 +1949,6 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Jangan gunakan informasi kredensial OpenVPN / IKEv2 pada aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2060,9 +2018,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa dan MasterCard, 3 digit di belakang kartu Anda. Untuk American Express, 4 digit di depan kartu Anda."
-      ],
-      "Free": [
-        "Gratis"
       ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
@@ -2232,6 +2187,9 @@
       "Preview": [
         "Pratinjau"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
+      ],
       "Priority support": [
         "Dukungan prioritas"
       ],
@@ -2288,9 +2246,6 @@
       ],
       "support team": [
         "tim dukungan"
-      ],
-      "Thank you for supporting our mission.": [
-        "Terima kasih telah mendukung misi kami."
       ],
       "The securest way to browse, stream, and be online.": [
         "Cara teraman untuk menjelajah, menonton, dan beraktivitas di internet."
@@ -2537,9 +2492,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Akun Anda sedang ditingkatkan, ini perlu waktu hingga 30 detik."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -2791,9 +2743,6 @@
       "Digits": [
         "Digit"
       ],
-      "Discount": [
-        "Diskon"
-      ],
       "Do you have any suggestions for our team?": [
         "Apakah Anda memiliki saran untuk tim kami?"
       ],
@@ -2814,9 +2763,6 @@
       ],
       "Expires": [
         "Kedaluwarsa"
-      ],
-      "extra storage": [
-        "penyimpanan tambahan"
       ],
       "Gift code": [
         "Kode hadiah"
@@ -2934,9 +2880,6 @@
       ],
       "System information": [
         "Informasi sistem"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
       ],
       "Two-password mode": [
         "Mode dua kata sandi"
@@ -3400,8 +3343,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* Dengan berlangganan selama 12 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* Dengan langganan selama 15 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Dengan berlangganan selama 24 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* Dengan langganan selama 30 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
@@ -3423,9 +3372,6 @@
       ],
       "Popular": [
         "Populer"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Harga untuk memperbarui langganan Anda ke depannya: meliputi seluruh kupon yang belum kedaluwarsa, dapat digunakan, dan tersimpan pada akun Anda"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Rangkaian gawai privasi dan keamanan untuk bisnis, dengan seluruh layanan premium Proton yang terkandung di dalamnya."
@@ -3971,11 +3917,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
+      "Get up to ${ credits } in credits.": [
+        "Dapatkan saldo hingga ${ credits }."
       ],
-      "Invite friends and earn rewards!": [
-        "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
+      "Invite friends to Proton": [
+        "Undang teman ke Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
@@ -4188,9 +4134,6 @@
       ]
     },
     "Title": {
-      "${ maxUsers } users": [
-        "${ maxUsers } pengguna"
-      ],
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
       ],
@@ -4359,6 +4302,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
       ],
+      "Gift": [
+        "Hadiah"
+      ],
       "Gift code": [
         "Kode hadiah"
       ],
@@ -4436,9 +4382,6 @@
       ],
       "Previous": [
         "Sebelumnya"
-      ],
-      "Processing": [
-        "Memproses"
       ],
       "Processing...": [
         "Memproses..."
@@ -4569,12 +4512,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Diskon diaktifkan untuk penagihan tahunan"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Diskon diaktifkan untuk penagihan dua tahunan"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ]

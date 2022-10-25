@@ -505,9 +505,6 @@
       "Pay ${ price }": [
         "Betaal ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Neem contact op met de beheerder in uw organisatie om het abonnement te beheren"
-      ],
       "Preview": [
         "Voorbeeld"
       ],
@@ -538,11 +535,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -880,35 +877,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } gebruiker",
-        "+ ${ _users } gebruikers"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } eigen domein",
         "+ ${ domains } eigen domeinen"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adres",
-        "${ addressAddon.MaxAddresses } adressen"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domein",
-        "${ domainAddon.MaxDomains } domeinen"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } gebruiker",
-        "${ memberAddon.MaxMembers } gebruikers"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } verbinding",
-        "${ vpnAddon.MaxVPN } verbindingen"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } verbinding",
-        "${ vpnBonus } verbindingen"
       ]
     },
     "Address action": {
@@ -1617,16 +1588,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } maand",
-        "${ monthsWithYears } maanden"
       ]
     },
     "Country name": {
@@ -2401,11 +2362,6 @@
         "(via ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Kortingscode toegepast: ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "Geen zoekresultaten gevonden"
@@ -2520,14 +2476,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "Krijg tot 3 maanden ${ mailPlus } gratis voor elke vriend die zich abonneert op ${ MAIL_APP_NAME }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Volg hoeveel mensen klikken op uw link, registreren en betalende gebruikers worden. Kijk hoeveel gratis maanden er toegevoegd worden."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "U kan vrienden blijven uitnodigen, maar u kan geen tegoed meer ontvangen"
@@ -4274,9 +4224,6 @@
         "Één contactpersoon",
         "${ numContacts } contactpersonen"
       ],
-      "${ planName } credits earned": [
-        "${ planName } tegoed verdiend"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
         "${ providerFoldersNumLocalized } mappen gevonden"
@@ -4284,9 +4231,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } label gevonden in Gmail",
         "${ providerFoldersNumLocalized } labels gevonden in Gmail"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } van de ${ rewardsLimit } maanden"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
@@ -4330,9 +4274,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filter als aan EEN van de volgende voorwaarden is voldaan)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "* No credit card required.": [
         "* Green kredietkaart vereist."
       ],
@@ -4351,9 +4292,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Ze proberen ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% korting toegepast op uw abonnement met coupon ${ code }"
       ],
       "3. You earn credits": [
         "3. U verdient tegoed"
@@ -4556,20 +4494,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Gefactureerd aan het einde van uw huidige factureringscyclus (vernieuwing op ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Het kan even duren voordat Bitcoin-transacties worden bevestigd (tot 24 uur), waarna wij de credits aan uw account zullen toevoegen. Na de transactiebevestiging kunt u uw factuur met de credits betalen."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 korting toegepast op uw abonnement"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 toegepast op uw abonnement"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Black Friday 2020 nieuwkomer korting is toegepast"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokkeert dat afzenders kunnen zien of en wanneer u een bericht hebt geopend."
@@ -4671,9 +4597,6 @@
       "Delete link?": [
         "Koppeling verwijderen?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Korting toegepast op uw abonnement met kortingscode ${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet kunt u niet meer inloggen of uw berichten ontsleutelen."
       ],
@@ -4716,9 +4639,6 @@
       ],
       "Drop the file here to upload": [
         "Sleep het bestand hierheen om te uploaden"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "${ rewards } van de ${ rewardsLimit } maanden ${ planName } verdiend."
       ],
       "Edit label": [
         "Label bewerken"
@@ -4800,9 +4720,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa en MasterCard zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
-      ],
-      "Free": [
-        "Gratis"
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -5235,9 +5152,6 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Voorkomt dat inhoud van de server van de afzender wordt geladen zonder uw toestemming."
-      ],
       "Preview": [
         "Voorbeeld"
       ],
@@ -5400,9 +5314,6 @@
       "Text to display": [
         "Tekst om weer te geven"
       ],
-      "Thank you for supporting our mission.": [
-        "Bedankt voor uw steun aan onze missie."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
       ],
@@ -5437,9 +5348,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Deze configuraties worden verstrekt om te werken met WireGuard-routers en officiële clients."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "Deze 30-dagen gratis proefversie is op geen enkele andere manier beschikbaar."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -5687,9 +5595,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel-e-mailadres als u nieuwe berichten in uw ${ MAIL_APP_NAME } account heeft."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Wanneer zij abonneren op een betaald abonnement, zal er 1 tot 3 maanden van ${ planName } gecrediteerd worden aan uw account."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
       ],
@@ -5837,9 +5742,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Uw account wordt geüpgraded, dit kan tot 30 seconden duren."
-      ],
       "Your account recovery method is set": [
         "Uw account herstel methode is ingesteld"
       ],
@@ -5916,9 +5818,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Track your referral link activities here": [
-        "Volg uw doorverwijslinkactiviteiten hier"
       ],
       "Try Mail Plus": [
         "Probeer Mail Plus"
@@ -6335,10 +6234,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } voettekst"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } maand gecrediteerd",
-        "${ monthsRewarded } maanden gecrediteerd"
-      ],
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
@@ -6410,9 +6305,6 @@
       "Apply filter to existing emails": [
         "Filter toepassen op bestaande e-mails"
       ],
-      "Ask before loading remote content": [
-        "Vraag voordat externe inhoud wordt geladen"
-      ],
       "Attach public key": [
         "Publieke sleutel bijvoegen"
       ],
@@ -6421,9 +6313,6 @@
       ],
       "Auto-detect primary time zone": [
         "Automatisch primaire tijdzone detecteren"
-      ],
-      "Auto-load embedded images": [
-        "Ingesloten afbeeldingen automatisch laden"
       ],
       "Auto-reply": [
         "Automatisch antwoord"
@@ -6554,9 +6443,6 @@
       "Create password": [
         "Wachtwoord aanmaken"
       ],
-      "Credits pending": [
-        "Tegoed in afwachting"
-      ],
       "Credits used": [
         "Verbruikt tegoed"
       ],
@@ -6604,9 +6490,6 @@
       ],
       "Digits": [
         "Cijfers"
-      ],
-      "Discount": [
-        "Korting"
       ],
       "Display name": [
         "Weergavenaam"
@@ -6670,9 +6553,6 @@
       ],
       "Expires": [
         "Verloopt"
-      ],
-      "extra storage": [
-        "extra opslagruimte"
       ],
       "File": [
         "Bestand"
@@ -7031,9 +6911,6 @@
       "To: ${ PMEmailAddress }": [
         "Aan: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Totaal (${ countdown })"
-      ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
       ],
@@ -7069,9 +6946,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Wachten op abonnement"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
@@ -7114,9 +6988,6 @@
       ],
       "Your referral link": [
         "Uw doorverwijslink"
-      ],
-      "Your reward": [
-        "Uw bonus"
       ],
       "ZIP code": [
         "Postcode"
@@ -7970,6 +7841,26 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8007,9 +7898,6 @@
       "Popular": [
         "Populair"
       ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Prijs inclusief alle toepasselijke, niet-verlopen kortingscodes die zijn opgeslagen in uw account"
-      ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
       ],
@@ -8036,26 +7924,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9129,15 +8997,243 @@
         "Verificatie"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Sluiten"
+      ],
+      "Don't show this again": [
+        "Niet opnieuw weergeven"
+      ],
+      "Special offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Kies Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "64 countries": [
+        "64 landen"
+      ],
+      "All paid Mail and Calendar features": [
+        "Alle betaalde Mail- en Calendar-functies"
+      ],
+      "High speed VPN": [
+        "High-speed VPN"
+      ],
+      "Highest VPN speed": [
+        "Hoogste VPN-snelheid"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Premium vroege toegang"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail en Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Veilige cloudopslag"
+      ],
+      "Secure streaming": [
+        "Beveiligd streamen"
+      ],
+      "Support online privacy": [
+        "Ondersteun online privacy"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op de standaardprijs per maand."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Dit abonnement wordt elk jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
+      ]
+    },
+    "specialoffer: Info": {
+      "No available offers found.": [
+        "Geen aanbiedingen gevonden."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Deal voor het leven"
+      ],
+      "Limited time only": [
+        "Beperkt geldig"
+      ],
+      "Most popular": [
+        "Populairste keuze"
+      ],
+      "Offer ends soon": [
+        "Tijdelijke aanbieding"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "De korting wordt toegepast bij verlenging, tot het abonnement wordt opgezegd of aangepast"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaardtarief"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Naar abonnementen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ maand"
+      ],
+      "1 year": [
+        "1 jaar"
+      ],
+      "2 years": [
+        "2 jaar"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "U betaalt ${ amount } voor de eerste 2 jaar"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "U betaalt ${ amount } voor de eerste maand"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "U betaalt ${ amount } voor het eerste jaar"
+      ],
+      "Billed at ${ amountDue }": [
+        "U betaalt ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
+      ],
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 1 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 2 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Save ${ discount }%": [
+        "Bespaar ${ discount }%"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Standaardprijs ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday Sale"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week Sale"
+      ],
+      "End of year offer": [
+        "Eindejaarsaanbieding"
+      ],
+      "End of Year Sale": [
+        "Eindejaarssale"
+      ],
+      "Get our premium bundle and save more": [
+        "Kies onze premium bundel en bespaar meer"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Ons oude Visionary-abonnement is tijdelijk terug"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Bespaar meer met 1 jaar Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Upgrade en bespaar meer met Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde content en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en ad-blocker, en meer."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde content en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en ad-blocker, en meer."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Al onze premium services met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide My Email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 Hide My Email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide My Email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Ontvang kostenloos de betaalde versies van alle nieuwe privacyservices die we in de toekomst uitbrengen en krijg vroege toegang tot alle toekomstige functies en producten."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Krijg tot 18 maanden ${ planName } gratis"
-      ],
-      "Invite friends and earn rewards!": [
-        "Nodig vrienden uit en verdien bonussen!"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
@@ -9601,10 +9697,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } gebruiker",
-        "${ maxUsers } gebruikers"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Geef een naam aan de te genereren configuratie"
       ],
@@ -9676,9 +9768,6 @@
       ],
       "Add Sieve filter": [
         "Sievefilter toevoegen"
-      ],
-      "Add to not spam list": [
-        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Toevoegen aan spamlijst"
@@ -9977,9 +10066,6 @@
       "Export public key": [
         "Exporteer publieke sleutel"
       ],
-      "Extension": [
-        "Extensies"
-      ],
       "External PGP settings": [
         "Externe PGP-instellingen"
       ],
@@ -10006,9 +10092,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Gift code": [
         "Geschenkcode"
@@ -10164,9 +10247,6 @@
       "Privacy and data collection": [
         "Privacy en gegevensverzameling"
       ],
-      "Processing": [
-        "Verwerken"
-      ],
       "Processing...": [
         "Wordt verwerkt..."
       ],
@@ -10187,9 +10267,6 @@
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
-      ],
-      "Referral tracker": [
-        "Doorverwijstracker"
       ],
       "Remove calendar": [
         "Agenda verwijderen"
@@ -10508,12 +10585,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Korting toegepast op jaarlijkse factureringscyclus"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Korting toegepast voor tweejaarlijkse factureringscyclus"
       ],
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"

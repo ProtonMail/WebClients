@@ -436,9 +436,6 @@
       "Hide messages": [
         "Skjul beskeder"
       ],
-      "Hide My Email": [
-        "Skjul Min E-mail"
-      ],
       "Hide my email": [
         "Skjul min e-mail"
       ],
@@ -508,9 +505,6 @@
       ],
       "Load more": [
         "Indlæs flere"
-      ],
-      "Load unprotected": [
-        "Indlæs ubeskyttet"
       ],
       "Loading${ ellipsis }": [
         "Indlæser${ ellipsis }"
@@ -646,9 +640,6 @@
       ],
       "No": [
         "Nej"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Ingen trackere fundet, men nogle billeder kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "No, I won't attend": [
         "Nej, jeg deltager ikke"
@@ -817,6 +808,9 @@
       ],
       "Search message content": [
         "Søg i beskedindhold"
+      ],
+      "See plan features": [
+        "Se abonnementfunktioner"
       ],
       "Select all": [
         "Vælg alle"
@@ -4120,10 +4114,6 @@
         "${ total } besked",
         "${ total } beskeder"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } planlagt besked",
-        "${ totalMessagesCount } planlagte beskeder"
-      ],
       "${ unread } unread conversation": [
         "${ unread } ulæst samtale",
         "${ unread } ulæste samtaler"
@@ -4489,9 +4479,6 @@
         "Time",
         "Timer"
       ],
-      "How Hide My Email works": [
-        "Sådan fungerer Skjul min e-mail"
-      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Jeg sender denne besked til en, som ikke bruger Proton Mail."
       ],
@@ -4600,9 +4587,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Det maksimale antal vedhæftninger (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overskredet."
-      ],
-      "members": [
-        "medlemmer"
       ],
       "Members": [
         "Medlemmer"
@@ -4767,9 +4751,6 @@
       "Priority support": [
         "Prioriteret support"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tjener ikke penge ved at misbruge privatlivets fred."
       ],
@@ -4872,9 +4853,6 @@
       "Show original message": [
         "Vis oprindelig besked"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin er en Proton-tjeneste, og din Proton-konto omfatter Skjul min e-mail-aliasser. Hvis du vil begynde at sløre din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
       ],
@@ -4944,9 +4922,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med Skjul min e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -5159,9 +5134,6 @@
       ],
       "When do you want your message to be sent?": [
         "Hvornår skal din besked sendes?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Når du udleverer din e-mail, kan du bruge et unikt, Skjul min e-mail-alias i stedet for din rigtige e-mailadresse."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
@@ -6542,11 +6514,6 @@
         "Skift eller tilføj konto"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Vi præsenterer Proton's nye udseende.${ br }Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Fortæl os om dine indtryk. (Valgfrit)"
@@ -6555,11 +6522,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Opdateret Proton, forenet beskyttelse"
       ]
     },
     "Notification": {
@@ -7048,17 +7010,8 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Få op til 18 måneder med ${ planName } gratis"
-      ],
-      "Invite friends and earn rewards!": [
-        "Inviter venner, og optjen belønninger!"
-      ],
       "Message Content Search": [
         "Søgning efter beskedindhold"
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "For at beskytte dit privatliv har Proton blokeret e-mail-trackere i denne besked"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"

@@ -397,6 +397,9 @@
       "Search countries": [
         "搜尋國家與地區"
       ],
+      "See plan features": [
+        "看看方案功能"
+      ],
       "Select all": [
         "全選"
       ],
@@ -2916,6 +2919,9 @@
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 Proton。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
       ],
@@ -4357,11 +4363,6 @@
         "切換或是加入帳號"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "與我們分享您的使用體驗。（選填）"
@@ -4370,11 +4371,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "意見回饋"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "改版更新的 Proton，全方面防護"
       ]
     },
     "Notification": {
@@ -4815,11 +4811,11 @@
       "Easily accept invites": [
         "簡單地同意邀請"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "獲得最多 18 個月的 ${ planName } 零元優惠"
+      "Get up to ${ credits } in credits.": [
+        "取得多達 ${ credits } 的積點。"
       ],
-      "Invite friends and earn rewards!": [
-        "邀請朋友並賺取獎勵！"
+      "Invite friends to Proton": [
+        "邀請好友使用 Proton"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"

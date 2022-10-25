@@ -455,11 +455,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -744,35 +744,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } utilizador",
-        "+ ${ _users } utilizadores"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } endereço",
-        "${ addressAddon.MaxAddresses } endereços"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domínio",
-        "${ domainAddon.MaxDomains } domínios"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } utilizador",
-        "${ memberAddon.MaxMembers } utilizadores"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } ligação",
-        "${ vpnAddon.MaxVPN } ligações"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } ligação",
-        "${ vpnBonus } ligações"
       ]
     },
     "Address action": {
@@ -1136,16 +1110,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mês",
-        "${ monthsWithYears } meses"
       ]
     },
     "Country name": {
@@ -3220,9 +3184,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(filtrar se UMA das seguintes condições for cumprida)"
       ],
-      "(Mail + VPN)": [
-        "(Correio + VPN)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -3232,9 +3193,6 @@
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Foi aplicado um desconto de 20% com o cupão ${ code }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
@@ -3371,20 +3329,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber emails dos seus novos endereços, é necessário criar as respectivas chaves de encriptação."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturado no termo do seu ciclo de facturação actual (renova a ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "As transacções em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transacção, pode pagar a sua factura com os créditos."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Foi aplicado um desconto de Sexta-feira negra 2018"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Foi aplicado um desconto de Sexta-feira negra 2019"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Foi aplicado um desconto de boas vindas da Sexta-feira negra 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
@@ -3452,9 +3398,6 @@
       ],
       "Daily": [
         "Diariamente"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Foi aplicado um desconto com o cupão ${ code }"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NÃO se esqueça desta senha. Se a esquecer, não conseguirá iniciar sessão ou desencriptar as mensagens."
@@ -3905,9 +3848,6 @@
       "Text to display": [
         "Texto a mostrar"
       ],
-      "Thank you for supporting our mission.": [
-        "Obrigado por apoiar a nossa missão."
-      ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "O endereço que pôs no topo da lista é o seu email predefinido. Arraste e largue para reordenar os endereços."
       ],
@@ -4116,9 +4056,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "A sua conta está a ser actualizada, pode levar até 30 segundos."
       ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será actualizada assim que o pagamento for aprovado."
@@ -4589,9 +4526,6 @@
       "Attach public key": [
         "Anexar chave pública"
       ],
-      "Auto-load embedded images": [
-        "Carregar automaticamente imagens incorporadas"
-      ],
       "bonus storage": [
         "bónus de armazenamento"
       ],
@@ -4694,9 +4628,6 @@
       "Digits": [
         "Algarismos"
       ],
-      "Discount": [
-        "Desconto"
-      ],
       "Display name": [
         "Nome a mostrar"
       ],
@@ -4747,9 +4678,6 @@
       ],
       "Expires": [
         "Expira"
-      ],
-      "extra storage": [
-        "armazenamento extra"
       ],
       "File": [
         "Ficheiro"
@@ -4999,9 +4927,6 @@
       ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
       ],
       "Two-password mode": [
         "Modo Senha dupla"
@@ -6114,11 +6039,6 @@
         "Utilizador"
       ]
     },
-    "Spotlight": {
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenha até 18 meses grátis de ${ planName }"
-      ]
-    },
     "State": {
       "Downgrading your account, please wait": [
         "A regredir a conta, por favor aguarde"
@@ -6432,10 +6352,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } utilizador",
-        "${ maxUsers } utilizadores"
-      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
@@ -6694,9 +6610,6 @@
       "Export public key": [
         "Exportar chave pública"
       ],
-      "Extension": [
-        "Extensão"
-      ],
       "External PGP settings": [
         "Definições de PGP externo"
       ],
@@ -6714,9 +6627,6 @@
       ],
       "Generate missing keys": [
         "Gerar chaves em falta"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenha até 18 meses grátis de ${ planName }"
       ],
       "Gift code": [
         "Código de oferta"
@@ -6831,9 +6741,6 @@
       ],
       "Previous": [
         "Anterior"
-      ],
-      "Processing": [
-        "A processar"
       ],
       "Processing...": [
         "A processar..."
@@ -7094,12 +7001,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personalize a importação para reduzir o número de etiquetas"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Desconto aplicado para o ciclo de facturação anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Desconto aplicado para o ciclo de facturação bianual"
       ],
       "Edit folder names": [
         "Editar nomes de pastas"

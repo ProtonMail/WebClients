@@ -399,6 +399,9 @@
       "Search countries": [
         "Ülke ara"
       ],
+      "See plan features": [
+        "Tarife özelliklerini görün"
+      ],
       "Select all": [
         "Tümünü seç"
       ],
@@ -4611,11 +4614,6 @@
         "Hesap değiştirin ya da ekleyin"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Bize deneyimlerinizi anlatın. (İsteğe bağlı)"
@@ -4624,11 +4622,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Geri bildirim"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Güncellenmiş Proton, birleşik koruma"
       ]
     },
     "Notification": {
@@ -5104,11 +5097,11 @@
       "Easily accept invites": [
         "Davetleri kolayca onaylayın"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } kazanın"
+      "Get up to ${ credits } in credits.": [
+        "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends and earn rewards!": [
-        "Arkadaşlarınızı davet edin ve ödül kazanın!"
+      "Invite friends to Proton": [
+        "Arkadaşlarınıza Proton daveti gönderin"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Artık davetler takviminizde bekleyen etkinlikler olarak görüntülenecek. Yanıtlamak istediğiniz etkinliği açmanız yeterli. ${ goToSettingsLink }"

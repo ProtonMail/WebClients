@@ -53,6 +53,9 @@
       "Try another method": [
         "روش دیگری بیازمایید"
       ],
+      "Use authentication code": [
+        "از کد تایید استفاده نمایید"
+      ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
@@ -950,6 +953,24 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "همچنین می‌توانید ${ refresh } کرده یا بعدا دوباره امتحان کنید."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "کلید امنیتی مرتبط با اکانت ${ BRAND_NAME } خودتان را وارد کنید."
+      ],
+      "Security key": [
+        "کلید امنیتی"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "کلید امنیتی"
       ]
     },
     "Human verification method": {

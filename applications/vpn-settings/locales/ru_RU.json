@@ -414,49 +414,11 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } пользователь",
-        "+ ${ _users } пользователя",
-        "+ ${ _users } пользователей",
-        "+ ${ _users } пользователей"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } свой домен",
         "+ ${ domains } своих домена",
         "+ ${ domains } своих доменов",
         "+ ${ domains } своих доменов"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } адрес",
-        "${ addressAddon.MaxAddresses } адреса",
-        "${ addressAddon.MaxAddresses } адресов",
-        "${ addressAddon.MaxAddresses } адресов"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } домен",
-        "${ domainAddon.MaxDomains } домена",
-        "${ domainAddon.MaxDomains } доменов",
-        "${ domainAddon.MaxDomains } доменов"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } пользователь",
-        "${ memberAddon.MaxMembers } пользователя",
-        "${ memberAddon.MaxMembers } пользователей",
-        "${ memberAddon.MaxMembers } пользователей"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } подключение",
-        "${ vpnAddon.MaxVPN } подключения",
-        "${ vpnAddon.MaxVPN } подключений",
-        "${ vpnAddon.MaxVPN } подключений"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } подключение",
-        "${ vpnBonus } подключения",
-        "${ vpnBonus } подключений",
-        "${ vpnBonus } подключений"
       ]
     },
     "Alter": {
@@ -478,8 +440,14 @@
       "Payable every 12 months": [
         "Оплачивается каждые 12 месяцев"
       ],
+      "Payable every 15 months": [
+        "Оплачивается каждые 15 месяцев"
+      ],
       "Payable every 24 months": [
         "Оплачивается каждые 24 месяца"
+      ],
+      "Payable every 30 months": [
+        "Оплачивается каждые 30 месяцев"
       ],
       "Payable every month": [
         "Оплачивается каждый месяц"
@@ -676,20 +644,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Удалить способ оплаты"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дней"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } месяц",
-        "${ monthsWithYears } месяца",
-        "${ monthsWithYears } месяцев",
-        "${ monthsWithYears } месяцев"
       ]
     },
     "Country name": {
@@ -1464,11 +1418,6 @@
         "(через ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Купон применен: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Неиспользованные кредиты"
@@ -1941,9 +1890,6 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "${ vpnPlus } или ${ visionary } нужны для использования функции Secure Core."
       ],
-      "(Mail + VPN)": [
-        "(Почта и VPN)"
-      ],
       "* No credit card required.": [
         "* Кредитная карточка не требуется."
       ],
@@ -1958,9 +1904,6 @@
       ],
       "10 email addresses": [
         "10 адресов электронной почты"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
       "30-day money-back guarantee.": [
         "30-дневная гарантия возврата денег."
@@ -2007,20 +1950,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Счет выставляется в конце текущего платежного цикла (продлевается ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Черная пятница — 2018 применена к вашей подписке"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Черная пятница 2019 применена к вашей подписке"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Скидка для новых пользователей \"Черная пятница 2020\" была применена"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -2048,9 +1979,6 @@
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Скидка применена к вашей подписке с купоном ${ code }"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Не используйте учётные данные OpenVPN / IKEv2 в приложениях ${ VPN_APP_NAME } или в панели управления ${ VPN_APP_NAME }.\n${ learnMore }"
@@ -2120,9 +2048,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa и MasterCard - три цифры на обратной стороне карты. Для American Express - 4 цифры на лицевой стороне карты."
-      ],
-      "Free": [
-        "Free"
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
@@ -2348,9 +2273,6 @@
       ],
       "support team": [
         "служба поддержки"
-      ],
-      "Thank you for supporting our mission.": [
-        "Спасибо за поддержку нашей миссии."
       ],
       "The securest way to browse, stream, and be online.": [
         "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
@@ -2597,9 +2519,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ваш аккаунт улучшается, это может занять до 30 секунд."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
@@ -2854,9 +2773,6 @@
       "Digits": [
         "Цифры"
       ],
-      "Discount": [
-        "Скидка"
-      ],
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
@@ -2877,9 +2793,6 @@
       ],
       "Expires": [
         "Срок действия"
-      ],
-      "extra storage": [
-        "дополнительное хранилище"
       ],
       "Gift code": [
         "Подарочный код"
@@ -2997,9 +2910,6 @@
       ],
       "System information": [
         "Сведения о системе"
-      ],
-      "Total (${ countdown })": [
-        "Всего (${ countdown })"
       ],
       "Two-password mode": [
         "Режим с двумя паролями"
@@ -3528,9 +3438,6 @@
       ],
       "Popular": [
         "Популярный"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Стоимость будущего продления включает все применимые неистекшие купоны, сохраненные в вашем аккаунте"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
@@ -4084,15 +3991,256 @@
         "Подтверждение"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
+      ],
+      "Special offer": [
+        "Специальное предложение"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Хранилище объемом ${ storageSize }"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "64 countries": [
+        "64 страны"
+      ],
+      "All paid Mail and Calendar features": [
+        "Все платные функции Mail и Calendar"
+      ],
+      "High speed VPN": [
+        "Высокоскоростной VPN"
+      ],
+      "Highest VPN speed": [
+        "Высочайшая скорость VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Платная версия Drive"
+      ],
+      "Premium early access": [
+        "Ранний доступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Платная версия Mail и Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Платные версии Mail, Calendar и Drive"
+      ],
+      "Premium VPN": [
+        "Платная версия VPN"
+      ],
+      "Secure cloud storage": [
+        "Безопасное облачное хранилище"
+      ],
+      "Secure streaming": [
+        "Защищенный стриминг"
+      ],
+      "Support online privacy": [
+        "Обеспечьте свою конфиденциальность в Интернете"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждый год по той же цене до тех пор, пока вы ее не отмените."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Бессрочное предложение"
+      ],
+      "Limited time only": [
+        "Предложение ограничено"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Offer ends soon": [
+        "Акция скоро закончится"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Скидка будет применяться при продлении до тех пор, пока подписка не будет отменена или изменена"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Подписка автоматически продлится по стандартной цене в конце платежного цикла"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти к тарифам"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "в месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 года"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "${ amount } за первые 2 года"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "${ amount } за первый месяц"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "${ amount } за первый год"
+      ],
+      "Billed at ${ amountDue }": [
+        "Итого: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Save ${ discount }%": [
+        "Сэкономьте ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Черная пятница"
+      ],
+      "Cyber Week Sale": [
+        "Распродажа в честь кибернедели"
+      ],
+      "End of year offer": [
+        "Предложение в честь конца года"
+      ],
+      "End of Year Sale": [
+        "Распродажа в честь конца года"
+      ],
+      "Get our premium bundle and save more": [
+        "Приобретите платный пакет и сэкономьте"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Экономьте с годовой подпиской на Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Перейдите на Proton Unlimited и экономьте"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все функции наших платных сервисов с максимальными квотами. Включает 100 адресов электронной почты, поддержку 10 пользовательских доменов и неограниченного числа алиасов Hide My Email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, а также другие преимущества."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 пользовательских доменов, 15 адресов электронной почты, неограниченного числа алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Получайте платные версии всех сервисов, которые мы выпустим в будущем, а также ранний доступ ко всем новым функциям и продуктам без дополнительной платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Переместите свои материалы в облачное хранилище с шифрованием. Включает автоматическую синхронизацию, зашифрованный обмен файлами и другие преимущества."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Получите до 18 месяцев ${ planName } бесплатно"
+      "Get up to ${ credits } in credits.": [
+        "Вы можете получить до ${ credits } в кредитах."
       ],
-      "Invite friends and earn rewards!": [
-        "Приглашайте друзей и получайте вознаграждения!"
+      "Invite friends to Proton": [
+        "Пригласите друзей в Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробуйте ${DRIVE_APP_NAME}"
@@ -4344,12 +4492,6 @@
       ]
     },
     "Title": {
-      "${ maxUsers } user": [
-        "${ maxUsers } пользователь",
-        "${ maxUsers } пользователя",
-        "${ maxUsers } пользователей",
-        "${ maxUsers } пользователей"
-      ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
       ],
@@ -4518,6 +4660,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
       ],
+      "Gift": [
+        "Подарок"
+      ],
       "Gift code": [
         "Подарочный код"
       ],
@@ -4595,9 +4740,6 @@
       ],
       "Previous": [
         "Назад"
-      ],
-      "Processing": [
-        "Обработка"
       ],
       "Processing...": [
         "Обработка…"
@@ -4728,12 +4870,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Применена скидка за счет оплаты на год вперёд"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Скидка применяется при оплате на 2 года вперёд"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
       ]
