@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { format } from 'date-fns';
+import { c } from 'ttag';
 
 import { ActiveImportID } from '@proton/activation/logic/importers/importers.interface';
 import { selectActiveImporterById, selectImporterById } from '@proton/activation/logic/importers/importers.selectors';
@@ -27,9 +28,9 @@ const ImporterRow = ({ activeImporterId }: Props) => {
 
     return (
         <TableRow>
-            <ReportsTableCell product={product} title={account} date={startDate} />
+            <ReportsTableCell product={product} title={account} />
             <TableCell>
-                <div className="on-mobile-text-center">
+                <div>
                     <ImporterRowStatus
                         processed={processedState.processed}
                         total={processedState.total}
@@ -41,7 +42,7 @@ const ImporterRow = ({ activeImporterId }: Props) => {
             <TableCell>
                 <time>{format(startDate * 1000, 'PPp', { locale: dateLocale })}</time>
             </TableCell>
-            <TableCell>{'-'}</TableCell>
+            <TableCell label={c('Title header').t`Size`}>{'-'}</TableCell>
             <TableCell>
                 <ImporterRowActions activeImporterID={activeImporter.localID} />
             </TableCell>

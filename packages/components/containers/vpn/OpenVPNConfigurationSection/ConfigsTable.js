@@ -92,7 +92,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
         };
 
     return (
-        <Table className="simple-table--has-actions">
+        <Table hasActions>
             <thead>
                 <tr>
                     <TableCell

@@ -7,6 +7,13 @@ import { Alert, Label, Table, TableBody, TableHeader, TableRow } from '../../com
 
 const MXSection = () => {
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
+    const tableTitles = [
+        c('Header for domain modal').t`Type`,
+        c('Header for domain modal').t`Host name`,
+        c('Header for domain modal').t`Value / Data / Points to`,
+        c('Header for domain modal').t`Priority`,
+    ];
+
     return (
         <>
             <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
@@ -15,18 +22,11 @@ const MXSection = () => {
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following MX record. Note, DNS records can take several hours to update.`}</Label>
-            <Table>
-                <TableHeader
-                    cells={[
-                        c('Header for domain modal').t`Type`,
-                        c('Header for domain modal').t`Host name`,
-                        c('Header for domain modal').t`Value / Data / Points to`,
-                        c('Header for domain modal').t`Priority`,
-                    ]}
-                />
+            <Table responsive="cards">
+                <TableHeader cells={tableTitles} />
                 <TableBody>
-                    <TableRow cells={['MX', '@', 'mail.protonmail.ch', '10']} />
-                    <TableRow cells={['MX', '@', 'mailsec.protonmail.ch', '20']} />
+                    <TableRow labels={tableTitles} cells={['MX', '@', 'mail.protonmail.ch', '10']} />
+                    <TableRow labels={tableTitles} cells={['MX', '@', 'mailsec.protonmail.ch', '20']} />
                 </TableBody>
             </Table>
             <Alert className="mb1">

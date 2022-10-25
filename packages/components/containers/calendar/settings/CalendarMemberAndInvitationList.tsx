@@ -66,16 +66,12 @@ const CalendarMemberAndInvitationList = ({
                 </Alert>
             )}
 
-            <Table className="simple-table--has-actions">
-                <TableHeader className="no-mobile">
+            <Table hasActions responsive="cards">
+                <TableHeader>
                     <TableRow>
                         <TableHeaderCell>{c('Header').t`User`}</TableHeaderCell>
-                        {displayPermissions && (
-                            <TableHeaderCell className="no-mobile">{c('Header').t`Permissions`}</TableHeaderCell>
-                        )}
-                        {displayStatus && (
-                            <TableHeaderCell className="no-tablet no-mobile">{c('Header').t`Status`}</TableHeaderCell>
-                        )}
+                        {displayPermissions && <TableHeaderCell>{c('Header').t`Permissions`}</TableHeaderCell>}
+                        {displayStatus && <TableHeaderCell>{c('Header').t`Status`}</TableHeaderCell>}
                         <TableHeaderCell className="w15">{c('Header').t`Action`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>

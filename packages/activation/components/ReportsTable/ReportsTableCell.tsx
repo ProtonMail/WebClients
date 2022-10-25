@@ -1,5 +1,3 @@
-import format from 'date-fns/format';
-
 import { ImportType } from '@proton/activation/interface';
 import { Icon, TableCell } from '@proton/components/components';
 
@@ -7,12 +5,11 @@ import { getImportIconNameByProduct, getImportProductName } from './ReportsTable
 
 interface Props {
     product: ImportType;
-    date: number;
     title: string;
     isSync?: boolean;
 }
 
-const ReportsTableCell = ({ product: app, date, title, isSync }: Props) => (
+const ReportsTableCell = ({ product: app, title, isSync }: Props) => (
     <TableCell>
         <div className="flex">
             <div className="flex-item-noshrink mr0-5 no-mobile">
@@ -22,16 +19,7 @@ const ReportsTableCell = ({ product: app, date, title, isSync }: Props) => (
                 <div className="w100 text-ellipsis" title={title}>
                     {title}
                 </div>
-                <div className="flex color-weak">
-                    <Icon
-                        name={getImportIconNameByProduct(app)}
-                        className="flex-align-self-center mr0-5 no-desktop no-tablet"
-                    />
-                    {getImportProductName(app)}
-                </div>
-                <div className="no-desktop no-tablet">
-                    <time>{format(date * 1000, 'PPp')}</time>
-                </div>
+                <div className="flex color-weak">{getImportProductName(app)}</div>
             </div>
         </div>
     </TableCell>

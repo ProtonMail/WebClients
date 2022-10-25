@@ -147,7 +147,7 @@ const KeyUploadContent = ({
     if (uploadedKeys.length) {
         return (
             <>
-                <Table className="simple-table--has-actions">
+                <Table hasActions>
                     <TableBody>
                         {uploadedKeys.map((key) => {
                             const fingerprint = key.getFingerprint();
