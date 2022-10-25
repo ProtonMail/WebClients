@@ -6,6 +6,7 @@ import {
     getIsPersonalCalendar,
     getProbablyActiveCalendars,
     getVisualCalendars,
+    sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     EASY_SWITCH_SOURCE,
@@ -66,7 +67,7 @@ const AccountEasySwitchSection = () => {
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const activeCalendars = getProbablyActiveCalendars(getVisualCalendars(calendars || []));
+    const activeCalendars = getProbablyActiveCalendars(sortCalendars(getVisualCalendars(calendars || [])));
 
     const [personalActiveCalendars] = partition<VisualCalendar>(activeCalendars, getIsPersonalCalendar);
 
