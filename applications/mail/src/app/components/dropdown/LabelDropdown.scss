@@ -8,16 +8,12 @@
 		align-items: stretch;
 	}
 
-	&-list-container {
+	&-container {
 		flex: 1 1 auto;
 
 		@include respond-to($breakpoint-small, 'min') {
 			max-inline-size: 20em;
 			max-block-size: 12em;
-		}
-
-		.checkbox-fakecheck {
-			margin-inline-end: 0;
 		}
 	}
 }
