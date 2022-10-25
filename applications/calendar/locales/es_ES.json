@@ -7,6 +7,9 @@
     "Access level": {
       "Full view (see all event details)": [
         "Vista completa (ver todos los detalles del evento)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Vista limitada (solo ver libre/ocupado)"
       ]
     },
     "Action": {
@@ -396,6 +399,9 @@
       "Search countries": [
         "Buscar países"
       ],
+      "See plan features": [
+        "Ver las características del plan"
+      ],
       "Select all": [
         "Seleccionar todo"
       ],
@@ -523,7 +529,18 @@
         "Sí, asistiré"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Cualquiera en posesión de este enlace puede ver tu calendario"
+      ],
+      "They can view or edit your calendar": [
+        "Pueden ver o editar tu calendario"
+      ]
+    },
     "Action title": {
+      "Share with anyone": [
+        "Compartir con cualquiera"
+      ],
       "Share with Proton users": [
         "Compartir con usuarios de Proton"
       ]
@@ -837,6 +854,11 @@
         "Solo tú puedes ver la etiqueta"
       ]
     },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Puedes modificar o eliminar permisos en cualquier momento."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Permisos"
@@ -853,9 +875,18 @@
       ],
       "Manage members": [
         "Gestionar miembros"
+      ],
+      "Unable to create more calendar links": [
+        "No se pueden crear más enlaces a calendarios"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "No se puede compartir este calendario con más usuarios de Proton"
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Editar (ver, crear y editar detalles de evento)"
+      ],
       "Full view (see all event details)": [
         "Vista completa (ver todos los detalles del evento)"
       ]
@@ -2576,13 +2607,13 @@
         "URL no válida"
       ],
       "Oops, something went wrong": [
-        "Oops, algo ha salido mal"
+        "Ups, algo salió mal"
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Algo ha ido mal. Por favor, actualice la página o inténtelo más tarde."
+        "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to Proton.": [
         "Ha ocurrido un problema al conectarse a Proton."
@@ -2871,7 +2902,7 @@
       ],
       "This file contains an invitation response:": [
         "Este archivo contiene una respuesta de invitación:",
-        "Este archivo contiene las respuestas a las invitaciones:"
+        "Este archivo contiene respuestas de invitaciones:"
       ],
       "This file contains some data that we cannot import:": [
         "Este archivo contiene algunos datos que no podemos importar:"
@@ -3289,10 +3320,10 @@
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Por favor, contacta con tu administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Los participantes agregados y eliminados serán notificados de todos los eventos de esta serie."
+        "Los participantes añadidos y eliminados serán notificados de todos los eventos de esta serie."
       ],
       "Added and removed participants will be notified.": [
-        "Se notificarán a los participantes agregados y eliminados."
+        "Se notificará a los participantes añadidos y eliminados."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
@@ -3406,13 +3437,13 @@
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
       "Existent and added participants will be notified.": [
-        "Se notificarán a los participantes existentes y agregados."
+        "Se notificarán a los participantes existentes y añadidos."
       ],
       "Existent and removed participants will be notified.": [
         "Se notificarán a los participantes existentes y eliminados."
       ],
       "Existent, added and removed participants will be notified.": [
-        "Se notificarán a los participantes existentes, agregados y eliminados."
+        "Se notificarán a los participantes existentes, añadidos y eliminados."
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -3603,7 +3634,7 @@
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "Removed participants will be notified.": [
-        "Se notificarán a los participantes eliminados."
+        "Se notificará a los participantes eliminados."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -3675,7 +3706,7 @@
         "Este evento ha sido actualizado. Se notificará al organizador de que rechazas la invitación. ¿Quieres eliminar este evento?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Este evento ha sido actualizado. El organizador no será notificado de que rechazas la invitación ya que no puedes enviar correos electrónicos desde la dirección invitada. ¿Deseas eliminar este evento de todos modos?"
+        "Este evento ha sido actualizado. El organizador no será notificado de que rechazas la invitación, ya que no puedes enviar correos electrónicos desde la dirección invitada. ¿Deseas eliminar este evento de todos modos?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
@@ -4358,6 +4389,11 @@
         "No se pueden añadir más calendarios. Has alcanzado el número máximo de calendarios permitidos dentro de tu plan."
       ]
     },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } ha compartido su calendario ${ boldCalendarName } contigo."
+      ]
+    },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "Unirse al calendario"
@@ -4558,11 +4594,6 @@
         "Cambiar o añadir cuenta"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a un Internet en el que la privacidad es la norma."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Cuéntanos tu experiencia. (Opcional)"
@@ -4571,11 +4602,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentarios"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Proton actualizado, protección unificada"
       ]
     },
     "Notification": {
@@ -5013,9 +5039,243 @@
         "Compartir con usuarios de Proton"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Creado por ${ ownerName }"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gestionar calendario"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Don't show this again": [
+        "No volver a mostrar"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Pásate a Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "All paid Mail and Calendar features": [
+        "Todas las funciones de pago de Mail y Calendar"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidad"
+      ],
+      "Highest VPN speed": [
+        "VPN de máxima velocidad"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Drive prémium"
+      ],
+      "Premium early access": [
+        "Acceso anticipado prémium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail y Calendar prémium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar y Drive prémium"
+      ],
+      "Premium VPN": [
+        "VPN prémium"
+      ],
+      "Secure cloud storage": [
+        "Almacenamiento seguro en la nube"
+      ],
+      "Secure streaming": [
+        "Transmisiones seguras"
+      ],
+      "Support online privacy": [
+        "Apoya la privacidad en línea"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada año al mismo precio hasta su cancelación."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta de por vida"
+      ],
+      "Limited time only": [
+        "Solo por tiempo limitado"
+      ],
+      "Most popular": [
+        "Más popular"
+      ],
+      "Offer ends soon": [
+        "La oferta acaba pronto"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "El descuento seguirá aplicándose en cada renovación hasta que canceles o modifiques la suscripción"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Tu suscripción se renovará automáticamente cada año al precio de la cuota estándar al final del ciclo de facturación"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ir a los planes de suscripción"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mes"
+      ],
+      "1 year": [
+        "1 año"
+      ],
+      "2 years": [
+        "2 años"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "A un precio de ${ amount } durante los 2 primeros años"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "A un precio de ${ amount } durante el primer mes"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "A un precio de ${ amount } durante el primer año"
+      ],
+      "Billed at ${ amountDue }": [
+        "Facturación: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "durante ${ n } mes",
+        "durante ${ n } meses"
+      ],
+      "Get the deal": [
+        "Aprovecha la oportunidad"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Transcurrido 1 año, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Transcurridos 2 años, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
+      ],
+      "Save ${ discount }%": [
+        "Ahorra un ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Rebajas de Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Rebajas de la Cyber Week"
+      ],
+      "End of year offer": [
+        "Oferta de fin de año"
+      ],
+      "End of Year Sale": [
+        "Rebajas de fin de año"
+      ],
+      "Get our premium bundle and save more": [
+        "Contrata nuestro paquete prémium y ahorra más dinero"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Nuestro económico plan Visionary está de nuevo disponible por tiempo limitado"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Ahorra más dinero con 1 año de Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Mejora tu suscripción y ahorra más dinero con Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN por usuario, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Todos nuestros servicios prémium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfecto para familias o equipos pequeños. Cada miembro puede tener su propia bandeja de entrada y seudónimo. Requiere un dominio personalizado."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Disfruta sin coste adicional de las versiones de pago de todos los nuevos servicios de privacidad que lancemos en el futuro, así como de acceso anticipado a todas nuestras futuras funciones y productos."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5028,11 +5288,11 @@
       "Easily accept invites": [
         "Acepta invitaciones fácilmente"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Consigue gratis hasta 18 meses de ${ planName } $"
+      "Get up to ${ credits } in credits.": [
+        "Consigue hasta ${ credits } en créditos."
       ],
-      "Invite friends and earn rewards!": [
-        "¡Invita amigos y gana recompensas!"
+      "Invite friends to Proton": [
+        "Invita amigos a Proton"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ahora las invitaciones aparecen en tu calendario como eventos pendientes. Solo abre un evento para responder. ${ goToSettingsLink }"
@@ -5846,6 +6106,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Tu periodo de prueba gratuito acaba el ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Para acceder a este calendario compartido, activa esta dirección o pide a ${ boldCalendarOwnerEmail } que te envía una invitación a una dirección activa."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "No puedes unirte a este calenario porque la dirección de correo invitada (${ boldInvitedAddress }) está deshabilitada."
       ]
     },
     "Weekly recurring event, frequency": {

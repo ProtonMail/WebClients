@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bloquear mensajes de este remitente"
       ],
+      "Block sender": [
+        "Bloquear remitente"
+      ],
       "Block senders": [
         "Bloquear remitentes"
       ],
@@ -436,9 +439,6 @@
       "Hide messages": [
         "Ocultar mensajes"
       ],
-      "Hide My Email": [
-        "Ocultar mi dirección de correo electrónico"
-      ],
       "Hide my email": [
         "Ocultar mi correo electrónico"
       ],
@@ -500,6 +500,9 @@
       "Load": [
         "Cargar"
       ],
+      "Load anyway": [
+        "Cargar de todos modos"
+      ],
       "Load embedded images": [
         "Cargar imágenes incrustadas"
       ],
@@ -508,9 +511,6 @@
       ],
       "Load more": [
         "Cargar más"
-      ],
-      "Load unprotected": [
-        "Cargar sin protección"
       ],
       "Loading${ ellipsis }": [
         "Cargando${ ellipsis }"
@@ -646,9 +646,6 @@
       ],
       "No": [
         "No"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "No se encontraron rastreadores. Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo."
       ],
       "No, I won't attend": [
         "No, no asistiré"
@@ -818,6 +815,9 @@
       "Search message content": [
         "Buscar contenido del mensaje"
       ],
+      "See plan features": [
+        "Ver las características del plan"
+      ],
       "Select all": [
         "Seleccionar todo"
       ],
@@ -907,6 +907,9 @@
       ],
       "Skip": [
         "Omitir"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "Algunas de las imágenes no han podido ser cargadas con la protección de rastreo."
       ],
       "Star": [
         "Destacar"
@@ -3545,13 +3548,13 @@
         "No se han encontrado resultados para \"${ query }\""
       ],
       "Oops, something went wrong": [
-        "Oops, algo ha salido mal"
+        "Ups, algo salió mal"
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Algo ha ido mal. Por favor, actualice la página o inténtelo más tarde."
+        "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to Proton.": [
         "Ha ocurrido un problema al conectarse a Proton."
@@ -4292,6 +4295,10 @@
         "${ contactEmailsLength } Miembro",
         "${ contactEmailsLength } Miembros"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } contacto)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } contactos)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contiene múltiples direcciones de correo."
       ],
@@ -4381,10 +4388,6 @@
         "${ total } mensaje",
         "${ total } mensajes"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } mensaje programado",
-        "${ totalMessagesCount } mensajes programados"
-      ],
       "${ unread } unread conversation": [
         "${ unread } conversación sin leer",
         "${ unread } conversaciones sin leer"
@@ -4392,6 +4395,10 @@
       "${ unread } unread message": [
         "${ unread } mensaje sin leer",
         "${ unread } mensajes sin leer"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } mensaje programado",
+        "${ unreadCount } mensajes programados"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversación sin leer",
@@ -4759,9 +4766,6 @@
         "Hora",
         "Horas"
       ],
-      "How Hide My Email works": [
-        "Cómo funciona Hide My Email"
-      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Estoy enviando este mensaje a alguien que no utiliza Proton Mail."
       ],
@@ -4873,9 +4877,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Cantidad máxima de adjuntos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedida."
-      ],
-      "members": [
-        "miembros"
       ],
       "Members": [
         "Miembros"
@@ -5040,9 +5041,6 @@
       "Priority support": [
         "Soporte prioritario"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Proteja su correo electrónico para que no sea utilizado en listas de correo o por los spammers con ${ maskMyEmailButton }."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no gana dinero abusando de la privacidad."
       ],
@@ -5145,9 +5143,6 @@
       "Show original message": [
         "Mostrar el mensaje original"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin es un servicio de Proton y tu cuenta de Proton incluye alias de Hide My Email. Para comenzar a enmascarar tu dirección de correo electrónico, acude a SimpleLogin y crea tu primer alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quieres exponer tu dirección de correo electrónico real."
       ],
@@ -5217,9 +5212,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Se ha producido un error con la firma utilizada para verificar los datos del contacto, que pueden ser el resultado de un restablecimiento de contraseña."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "No pueden enviarte spam si no conocen tu dirección de correo. Protege tu bandeja de entrada con Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de la política."
@@ -5438,9 +5430,6 @@
       ],
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Cuando proporciones tu correo, utiliza un único alias desechable de Hide My Email en lugar de tu dirección de correo electrónico real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando habilitaste las claves de confianza para ${ senderName }, las claves públicas fueron añadidas a los datos del contacto."
@@ -6539,6 +6528,11 @@
         "Abrir en ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "ajustes"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Ya casi está"
@@ -6835,11 +6829,6 @@
         "Cambiar o añadir cuenta"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a un Internet en el que la privacidad es la norma."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Cuéntanos tu experiencia. (Opcional)"
@@ -6848,11 +6837,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentarios"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Proton actualizado, protección unificada"
       ]
     },
     "Notification": {
@@ -7347,24 +7331,256 @@
         "Más pequeño primero"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Don't show this again": [
+        "No volver a mostrar"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Pásate a Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "All paid Mail and Calendar features": [
+        "Todas las funciones de pago de Mail y Calendar"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidad"
+      ],
+      "Highest VPN speed": [
+        "VPN de máxima velocidad"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Drive prémium"
+      ],
+      "Premium early access": [
+        "Acceso anticipado prémium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail y Calendar prémium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar y Drive prémium"
+      ],
+      "Premium VPN": [
+        "VPN prémium"
+      ],
+      "Secure cloud storage": [
+        "Almacenamiento seguro en la nube"
+      ],
+      "Secure streaming": [
+        "Transmisiones seguras"
+      ],
+      "Support online privacy": [
+        "Apoya la privacidad en línea"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada año al mismo precio hasta su cancelación."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta de por vida"
+      ],
+      "Limited time only": [
+        "Solo por tiempo limitado"
+      ],
+      "Most popular": [
+        "Más popular"
+      ],
+      "Offer ends soon": [
+        "La oferta acaba pronto"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "El descuento seguirá aplicándose en cada renovación hasta que canceles o modifiques la suscripción"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Tu suscripción se renovará automáticamente cada año al precio de la cuota estándar al final del ciclo de facturación"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ir a los planes de suscripción"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mes"
+      ],
+      "1 year": [
+        "1 año"
+      ],
+      "2 years": [
+        "2 años"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "A un precio de ${ amount } durante los 2 primeros años"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "A un precio de ${ amount } durante el primer mes"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "A un precio de ${ amount } durante el primer año"
+      ],
+      "Billed at ${ amountDue }": [
+        "Facturación: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "durante ${ n } mes",
+        "durante ${ n } meses"
+      ],
+      "Get the deal": [
+        "Aprovecha la oportunidad"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Transcurrido 1 año, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Transcurridos 2 años, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
+      ],
+      "Save ${ discount }%": [
+        "Ahorra un ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Rebajas de Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Rebajas de la Cyber Week"
+      ],
+      "End of year offer": [
+        "Oferta de fin de año"
+      ],
+      "End of Year Sale": [
+        "Rebajas de fin de año"
+      ],
+      "Get our premium bundle and save more": [
+        "Contrata nuestro paquete prémium y ahorra más dinero"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Nuestro económico plan Visionary está de nuevo disponible por tiempo limitado"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Ahorra más dinero con 1 año de Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Mejora tu suscripción y ahorra más dinero con Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN por usuario, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Todos nuestros servicios prémium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfecto para familias o equipos pequeños. Cada miembro puede tener su propia bandeja de entrada y seudónimo. Requiere un dominio personalizado."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Disfruta sin coste adicional de las versiones de pago de todos los nuevos servicios de privacidad que lancemos en el futuro, así como de acceso anticipado a todas nuestras futuras funciones y productos."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha salido de la versión beta. Dé a sus archivos la misma seguridad que reciben sus correos electrónicos."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Consigue gratis hasta 18 meses de ${ planName } $"
+      "Email tracking protection": [
+        "Protección de rastreo de correo electrónico"
       ],
-      "Invite friends and earn rewards!": [
-        "¡Invita amigos y gana recompensas!"
+      "Get up to ${ credits } in credits.": [
+        "Consigue hasta ${ credits } en créditos."
+      ],
+      "Invite friends to Proton": [
+        "Invita amigos a Proton"
       ],
       "Message Content Search": [
         "Búsqueda de contenido de los mensajes"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo electrónico en este mensaje"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prueba ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Ahora cargamos las imágenes por defecto y bloqueamos el rastreo por parte de los remitentes. Esto se puede cambiar en ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde"

@@ -467,9 +467,6 @@
       "Pay ${ price }": [
         "Xelleṣ ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Ma ulac aɣilif, nermes anedbal n tkebbanit i usefrek n umultaɣ-inek•inem"
-      ],
       "Preview": [
         "Taskant"
       ],
@@ -500,11 +497,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -821,35 +818,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } aseqdac",
-        "+ ${ _users } n yiseqdacen"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } taɣult tudmawant",
         "+ ${ domains } tiɣula tudmawanin"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } tansa",
-        "${ addressAddon.MaxAddresses } tansiwin"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } taɣult",
-        "${ domainAddon.MaxDomains } tiɣula"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } aseqdac",
-        "${ memberAddon.MaxMembers } iseqdacen"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } tuqqna",
-        "${ vpnAddon.MaxVPN } tuqqniwin"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } n tuqqniwin",
-        "${ vpnBonus } n tuqqniwin"
       ]
     },
     "Address action": {
@@ -1313,16 +1284,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } n wass",
-        "${ days } wussan"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } n wayyur",
-        "${ monthsWithYears } n wayyuren"
       ]
     },
     "Country name": {
@@ -3464,9 +3425,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Sizdeg ma tella ɣas yiwet seg tewtilin-agi)"
       ],
-      "(Mail + VPN)": [
-        "(Imayl + VPN)"
-      ],
       "* No credit card required.": [
         "* Ulac takarḍa n usmad yettwasran."
       ],
@@ -3482,9 +3440,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Ttaɛraḍen ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% n usenqes i yettwagen ɣef umulteɣ-inek·inem s ukupun ${ code } "
       ],
       "30-day money-back guarantee.": [
         "Aɣram ɣef 30 n wussan yettwaḍmen."
@@ -3639,20 +3594,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Uqbel ad tizmireḍ ad tazneḍ neɣ ad teṭṭfeḍ imaylen s tansiwin-ik timaynutin, ilaq ad asent-id-tesnulfuḍ tisura n uwgelhen."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Ad d-taweḍ tfaṭurt taggara n wallus n tfatuṛt-ik·im tamirant (ad tettwales deg ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Tinigawin s Bitcoin zemrent ad ṭṭfent kra n wakud i wakken ad ttwasentment (ugar n 24 n isragen). Ticki tettwasentem, ad nernu asmad ar umiḍan-ik. Seld asentem n tnigawt, ad tizmired ad txellseḍ tafaturt-ik s usmad."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 yettusnes ɣef umulteɣ-inek·inem"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 yettusnes ɣef umulteɣ-inek·inem"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Asenqes i wid i d-yewwḍen d imaynuten ɣer Black Friday 2020 yettusnes"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ma teṣṣubeḍ-d ɣer lqem n baṭṭel, ad teṣruḥed i lebda akk ayen d-ḥellaḍ, ɣas ma yella tleqmeḍ tikkeld nniḍen sya ɣer zdat."
@@ -3735,9 +3678,6 @@
       ],
       "Delete link?": [
         "Kkes aseɣwen?"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Yettwag usenqes ɣef umulteɣ-inek·inem s ukupun ${ code }"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Ur Tettu ARA awal-agi uffir. Ma tettuḍ-t, ur tettizmireḍ ara ad tkecmed neɣ ad tzemkeḍ iznan-ik."
@@ -3841,9 +3781,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "I wayen yeɛnan Visa, MasterCard, 3 yizwilen i yellan deffir tkarḍa-inek·inem. I American Express, 4 yiwilen i yellan ɣef n tkarḍa-inek·inem."
-      ],
-      "Free": [
-        "Baṭel"
       ],
       "Free up some space or add more storage space.": [
         "Slelli kra n tallunt neɣ rnu tallunt-nniḍen n weḥraz."
@@ -4278,9 +4215,6 @@
       "Text to display": [
         "Aḍris ad d-yettwaseknen"
       ],
-      "Thank you for supporting our mission.": [
-        "Tanemmirt imi aɣ-d-tmuddeḍ afus deg tuɣdaḍt-nneɣ."
-      ],
       "The calendar will be removed from your account.": [
         "Awitay ad yettwakkes seg umiḍan-ik·im."
       ],
@@ -4550,9 +4484,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Amiḍan-ik la yettwaleqqam akka tura, ayagi yezmer ad yeṭṭef alamma d 30 n tasinin."
       ],
       "Your account recovery method is set": [
         "Tarayt-inek•inem n tririt n umiḍan tettusbadu"
@@ -5058,17 +4989,11 @@
       "App password": [
         "Awal uffir n usnas"
       ],
-      "Ask before loading remote content": [
-        "Steqsi send asali n ugbur anmeggag"
-      ],
       "Attach public key": [
         "Seddu tasarut tazayezt"
       ],
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
-      ],
-      "Auto-load embedded images": [
-        "Sali tugniwin tusliɣin s wudem awurman"
       ],
       "Auto-reply": [
         "Tiririt tawurmant"
@@ -5217,9 +5142,6 @@
       "Digits": [
         "Izwilen"
       ],
-      "Discount": [
-        "Asaεed"
-      ],
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
@@ -5276,9 +5198,6 @@
       ],
       "Expires": [
         "Ad ifat di"
-      ],
-      "extra storage": [
-        "ugar n tallunt n uḥraz"
       ],
       "File": [
         "Afaylu"
@@ -5597,9 +5516,6 @@
       ],
       "To: ${ PMEmailAddress }": [
         "I: ${ PMEmailAddress }"
-      ],
-      "Total (${ countdown })": [
-        "Asemday (${ countdown })"
       ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
@@ -7364,10 +7280,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } n useqdac",
-        "${ maxUsers } n yiseqdacen"
-      ],
       "1. Select platform": [
         "Fren tiɣerɣert"
       ],
@@ -7704,9 +7616,6 @@
       "Export public key": [
         "Sfeḍ tasarut tazayazt"
       ],
-      "Extension": [
-        "Asiɣzef"
-      ],
       "External PGP settings": [
         "Iɣewwaren PGP izɣarayen"
       ],
@@ -7865,9 +7774,6 @@
       ],
       "Previous": [
         "Γer deffir"
-      ],
-      "Processing": [
-        "Asesfer"
       ],
       "Processing...": [
         "Asesfer n %s..."
@@ -8183,12 +8089,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Sagen aktar i usenqes amḍan n tebzimin"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Yettwag usenqes i tallit n tfakturin n useggas"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Yettwag usenqes i tallit n tfakturin n sin yiseggasen"
       ],
       "Each imported email will have this label": [
         "Yal imayl i d-yettwaketren ad yesɛu tabzimt-a"

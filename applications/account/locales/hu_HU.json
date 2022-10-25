@@ -485,9 +485,6 @@
       "Pay ${ price }": [
         "${ price } fizetése"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Az előfizetés kezeléséhez, kérjük vegye fel a kapcsolatot a szervezet adminisztrátorával"
-      ],
       "Preview": [
         "Előnézet"
       ],
@@ -518,11 +515,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -851,35 +848,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } felhasználó",
-        "+ ${ _users } felhasználó"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } saját domain név",
         "+ ${ domains } saját domain név"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } cím",
-        "${ addressAddon.MaxAddresses } cím"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domain név",
-        "${ domainAddon.MaxDomains } domain név"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } felhasználó",
-        "${ memberAddon.MaxMembers } felhasználó"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } kapcsolat",
-        "${ vpnAddon.MaxVPN } kapcsolat"
-      ],
-      "${ vpnBonus } connection": [
-        "+ ${ vpnBonus } kapcsolódás",
-        "+ ${ vpnBonus } kapcsolódás"
       ]
     },
     "Address action": {
@@ -1506,16 +1477,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } nap",
-        "${ days } nap"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } hónap",
-        "${ monthsWithYears } hónap"
       ]
     },
     "Country name": {
@@ -2281,11 +2242,6 @@
         "(${ entryCountryName }-on keresztül)"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Kupon alkalmazva: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Felhasználatlan kreditek"
@@ -2376,14 +2332,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "Szerezzen 3 hónapnyi ${ mailPlus } csomagot ingyen minden ismerőséért, aki előfizet a ${ MAIL_APP_NAME } csomagra."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Kövesse hány ember kattint az ajánlójára, iratkozik fel és lesz fizető felhasználó. Kövesse, ahogy gyűlnek ingyenes hónapjai."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Folytathatja a barátok meghívását, de további krediteket nem fog tudni szerezni"
@@ -3963,9 +3913,6 @@
         "${ numContacts } névjegy",
         "${ numContacts } névjegy"
       ],
-      "${ planName } credits earned": [
-        "${ planName } kreditetek szerzett"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
         "${ providerFoldersNumLocalized } mappa található"
@@ -3973,9 +3920,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } címke található a Gmailben",
         "${ providerFoldersNumLocalized } címke található a Gmailben"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } hónap enyiből: ${ rewardsLimit }"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
@@ -4019,9 +3963,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Szűrés ha az alábbi feltételek közül BÁRMELYIK teljesül)"
       ],
-      "(Mail + VPN)": [
-        "(E-mail + VPN)"
-      ],
       "* No credit card required.": [
         "* Bankkártya nem szükséges."
       ],
@@ -4040,9 +3981,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Kipróbálják a ${ planName } csomagot"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% kedvezmény érvényesítve a kuponnal: ${ code }"
       ],
       "3. You earn credits": [
         "3. Krediteket kap"
@@ -4212,20 +4150,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Számlázva a jelenlegi számlázási periódusának végén (megújul: ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "A Bitcoin tranzakciók visszaigazolása időbe telhet (akár 24 órába). Amint a visszaigazolás megtörténik, jóváírjuk a fiókján. A tranzakció megerősítését követően fizetheti a számláit a jóváírt összeggel."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Az előfizetésre a 2018. évi Black Friday akció került alkalmazásra"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Az előfizetésre a 2019. évi Black Friday akció került alkalmazásra"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "A 2020. évi Black Friday új előfizetési akció került alkalmazásra"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Megakadályozza, hogy a feladó értesüljön arról amikor megnyitja az üzenetet."
@@ -4318,9 +4244,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, se bejelentkezni sem pedig az üzeneteit visszafejteni nem tudja."
       ],
@@ -4363,9 +4286,6 @@
       ],
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "Szerzett ${ rewards } hónap jóváírást a lehetséges ${ rewardsLimit } ${ planName } hónapból."
       ],
       "Edit label": [
         "Címke szerkesztése"
@@ -4447,9 +4367,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa és MasterCard esetén, a 3 számjegy a kártya hátoldalán. American Express esetén a 4 számjegy a kártya elején."
-      ],
-      "Free": [
-        "Ingyenes"
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
@@ -4856,9 +4773,6 @@
       "Plus or Visionary subscription required": [
         "Plus vagy Visionary előfizetés szükséges"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Megakadályozza a küldő szerverén lévő tartalmak letöltését az engedélye nélkül."
-      ],
       "Preview": [
         "Előnézet"
       ],
@@ -5012,9 +4926,6 @@
       "Text to display": [
         "Megjelenő szöveg"
       ],
-      "Thank you for supporting our mission.": [
-        "Köszönjük, hogy támogatja céljaink elérését."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "A ${ boldDataLocked } üzenetet többé nem mutatjuk, de az adatait továbbra is feloldhatja ezen a linken keresztül: ${ encryptionAndKeysLink } ."
       ],
@@ -5035,9 +4946,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ezeket a beállításokat WireGuard routerekkel és hivatalos kliensekkel való működéshez biztosítottuk."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "Ez a 30 napos ingyenes próbaverzió más módon nem érhető el."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
@@ -5255,11 +5163,8 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Amennyiben engedélyezi az értesítéseket, a ${ MAIL_APP_NAME } fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Amikor előfizetnek egy fizetős csomagra, 1-3 havi ${ planName } elérést írunk jóvá a fiókjára."
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk visszaállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -5384,9 +5289,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "A fiók frissítése folyamatban van, ez akár 30 másodpercig is eltarthat."
-      ],
       "Your account recovery method is set": [
         "Be van állítva a fiókja helyreállítási módja"
       ],
@@ -5454,9 +5356,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "A kulcs ${ fingerprint } már feltöltésre került"
-      ],
-      "Track your referral link activities here": [
-        "Itt figyelemmel követheti az ajánló hivatkozásait"
       ],
       "Your subscription starts on ${ startText }.": [
         "Az előfizetése ekkor kezdődik: ${ startText }."
@@ -5853,10 +5752,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } lábléc"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } hónap jóváírva",
-        "${ monthsRewarded } hónap jóváírva"
-      ],
       "${ n } month": [
         "${ n } hónap",
         "${ n } hónap"
@@ -5925,9 +5820,6 @@
       "Apply filter to existing emails": [
         "Szűrő alkalmazása a meglévő e-mailekre"
       ],
-      "Ask before loading remote content": [
-        "Megerősítés távoli tartalom betöltése előtt"
-      ],
       "Attach public key": [
         "Nyilvános kulcs csatolása"
       ],
@@ -5939,9 +5831,6 @@
       ],
       "Auto-detect primary time zone": [
         "Az elsődleges időzóna automatikus detektálása"
-      ],
-      "Auto-load embedded images": [
-        "Beágyazott képek automatikus betöltése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
@@ -6072,9 +5961,6 @@
       "Create password": [
         "Jelszó létrehozása"
       ],
-      "Credits pending": [
-        "Függőben lévő kreditek"
-      ],
       "Credits used": [
         "Felhasznált kredit"
       ],
@@ -6119,9 +6005,6 @@
       ],
       "Digits": [
         "Számjegy"
-      ],
-      "Discount": [
-        "Kedvezmény"
       ],
       "Display name": [
         "Megjelenített név"
@@ -6179,9 +6062,6 @@
       ],
       "Expires": [
         "Lejárat"
-      ],
-      "extra storage": [
-        "további tárhely"
       ],
       "File": [
         "Fájl"
@@ -6534,9 +6414,6 @@
       "To: ${ PMEmailAddress }": [
         "Cél: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Összesen (${ countdown })"
-      ],
       "Two-password mode": [
         "Két jelszavas mód"
       ],
@@ -6572,9 +6449,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Várakozás feliratkozásra"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Sajnáljuk, hogy megszünteti a fiókját. Kérjük, ossza meg velünk az indokait, hogy fejlődhessünk."
@@ -6617,9 +6491,6 @@
       ],
       "Your referral link": [
         "Ajánló hivatkozása"
-      ],
-      "Your reward": [
-        "Jutalma"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -7444,6 +7315,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7481,9 +7372,6 @@
       "Popular": [
         "Népszerű"
       ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "A következő megújítás ára: tartalmazza az összes alkalmazható, jelenleg is érvényes kupont a fiókjából"
-      ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Adatvédelmi és biztonsági csomag cégeknek, beleértve az összes Proton prémium szolgáltatást."
       ],
@@ -7510,26 +7398,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8528,12 +8396,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyi ${ planName } csomagot ingyen"
-      ],
-      "Invite friends and earn rewards!": [
-        "Hívja meg barátait és szerezzen nyereményeket!"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ]
@@ -8980,10 +8842,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } felhasználó",
-        "${ maxUsers } felhasználó"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Adjon nevet a létrehozandó beálltásnak"
       ],
@@ -9347,9 +9205,6 @@
       "Export public key": [
         "Nyilvános kulcs exportálása"
       ],
-      "Extension": [
-        "Bővítmény"
-      ],
       "External PGP settings": [
         "Külső PGP beállítások"
       ],
@@ -9376,9 +9231,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Fizessen elő ${ vpnPlus } csomagra az összes szerver használatához"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyi ${ planName } csomagot ingyen"
       ],
       "Gift code": [
         "Ajándék kód"
@@ -9531,9 +9383,6 @@
       "Privacy and data collection": [
         "Adatvédelem és adatgyűjtés"
       ],
-      "Processing": [
-        "Feldolgozás"
-      ],
       "Processing...": [
         "Folyamatban..."
       ],
@@ -9554,9 +9403,6 @@
       ],
       "Refer a friend": [
         "Ajánlja egy barátnak"
-      ],
-      "Referral tracker": [
-        "Meghívás követő"
       ],
       "Remove calendar": [
         "Naptár eltávolítása"
@@ -9867,12 +9713,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Módosítsa az importálás beállításait hogy kevesebb címkére legyen szükség"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Éves fizetés kedvezménye jóváírásra került"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Kétéves fizetés kedvezménye jóváírásra került"
       ],
       "Each imported email will have this label": [
         "Minden importált üzenet megkapja ezt a címkét"

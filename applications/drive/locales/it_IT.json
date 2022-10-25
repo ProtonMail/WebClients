@@ -406,6 +406,9 @@
       "Remove": [
         "Rimuovi"
       ],
+      "Remove device": [
+        "Rimuovi il dispositivo"
+      ],
       "Remove from this list": [
         "Rimuovi da questa lista"
       ],
@@ -1801,6 +1804,9 @@
         "Deseleziona almeno ${ calendarToFixCount } calendario o",
         "Deseleziona almeno ${ calendarToFixCount } calendari o"
       ],
+      "Device name does not match": [
+        "Il nome del dispositivo non corrisponde"
+      ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
       ],
@@ -3086,6 +3092,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "No synced devices": [
+        "Nessun dispositivo sincronizzato"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Nessuna delle chiavi caricate sono valide per la crittografia. La crittografia è disabilitata automaticamente."
       ],
@@ -3265,6 +3274,9 @@
       "Swiss privacy": [
         "Privacy svizzera"
       ],
+      "Synced devices": [
+        "Dispositivi sincronizzati"
+      ],
       "Tap the + button to upload a file or folder": [
         "Tocca il pulsante + per caricare un file o una cartella"
       ],
@@ -3323,6 +3335,9 @@
       "This will overwrite the existing folder": [
         "Questo sovrascriverà la cartella esistente"
       ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Questo rimuoverà da Proton Drive il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Per abilitare la ricerca veramente privata, dobbiamo indicizzare i tuoi file localmente. Puoi comunque utilizzare ${ DRIVE_APP_NAME } normalmente: ti faremo sapere al termine dell'indicizzazione."
       ],
@@ -3379,6 +3394,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Usa Drive per Desktop per sincronizzare le cartelle sul tuo computer con Proton Drive. Verranno visualizzati qui e saranno accessibili da qualsiasi luogo. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
@@ -3667,6 +3685,12 @@
       "Deleted": [
         "Eliminato"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
+      "Device name": [
+        "Nome dispositivo"
+      ],
       "Do not ask again": [
         "Non chiedermelo più"
       ],
@@ -3690,6 +3714,9 @@
       ],
       "Encrypt emails": [
         "Email criptate"
+      ],
+      "Enter device name": [
+        "Inserisci il nome del dispositivo"
       ],
       "Expired": [
         "Scaduto"
@@ -4124,11 +4151,6 @@
         "Cambia o aggiungi un account"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ti presentiamo il nuovo look di Proton.${ br }Molti servizi, una missione. Benvenuti in un internet dove la privacy è la regola."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlaci della tua esperienza. (Facoltativo)"
@@ -4137,11 +4159,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Suggerimenti"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Nuovo Proton, protezione unificata"
       ]
     },
     "Notification": {
@@ -4233,6 +4250,18 @@
       ],
       "Contact group updated": [
         "Gruppo di contatto aggiornato"
+      ],
+      "Device failed to be removed": [
+        "Impossibile rimuovere il dispositivo"
+      ],
+      "Device failed to be renamed": [
+        "Impossibile rinominare il dispositivo"
+      ],
+      "Device removed": [
+        "Dispositivo rimosso"
+      ],
+      "Device renamed": [
+        "Dispositivo rinominato"
       ],
       "Encrypted search activated": [
         "Ricerca criptata attivata"
@@ -4443,6 +4472,9 @@
       "Enter a new folder name": [
         "Inserisci un nuovo nome del file"
       ],
+      "Enter device name": [
+        "Inserisci il nome del dispositivo"
+      ],
       "Enter your email address": [
         "Inserisci il tuo indirizzo email"
       ],
@@ -4550,12 +4582,247 @@
         "Carica"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Chiudi"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
+      ],
+      "Special offer": [
+        "Offerta speciale"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Scegli Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secondo",
+        "${ seconds } secondi"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } di spazio di archiviazione totale"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "64 countries": [
+        "64 Paesi"
+      ],
+      "All paid Mail and Calendar features": [
+        "Tutte le funzioni a pagamento di Mail e Calendar"
+      ],
+      "High speed VPN": [
+        "VPN a velocità elevata"
+      ],
+      "Highest VPN speed": [
+        "Massima velocità della VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium early access": [
+        "Accesso anticipato premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail e Calendar premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar e Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Secure cloud storage": [
+        "Archiviazione sul cloud sicura"
+      ],
+      "Secure streaming": [
+        "Streaming sicuro"
+      ],
+      "Support online privacy": [
+        "Supporta la privacy online"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Gli sconti si basano sui prezzi mensili standard."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Questo abbonamento si rinnova automaticamente ogni anno alla stessa tariffa fino a quando non viene annullato."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Per sempre"
+      ],
+      "Limited time only": [
+        "A tempo limitato"
+      ],
+      "Most popular": [
+        "Il più richiesto"
+      ],
+      "Offer ends soon": [
+        "L'offerta scade a breve"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Lo sconto continuerà a essere applicato al momento del rinnovo finché l'abbonamento non viene annullato o modificato"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Questo abbonamento si rinnova automaticamente alla tariffa standard alla fine del ciclo di fatturazione"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Vai ai piani di abbonamento"
+      ],
+      "Upgrade": [
+        "Upgrade"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mese"
+      ],
+      "1 year": [
+        "1 anno"
+      ],
+      "2 years": [
+        "2 anni"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "Addebito di ${ amount } per i primi 2 anni"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "Addebito di ${ amount } per il primo mese"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "Addebito di ${ amount } per il primo anno"
+      ],
+      "Billed at ${ amountDue }": [
+        "Addebito di ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "per ${ n } mese",
+        "per ${ n } mesi"
+      ],
+      "Get the deal": [
+        "Acquista"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Si rinnova dopo 1 anno al prezzo scontato di ${ discountedAmount } anziché ${ regularAmount } (${ discount }% di sconto)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Si rinnova dopo 2 anni al prezzo scontato di ${ discountedAmount } anziché ${ regularAmount } (${ discount }% di sconto)"
+      ],
+      "Save ${ discount }%": [
+        "Risparmia il ${ discount }%"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Prezzo standard ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Sconto Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Sconto Cyber Week"
+      ],
+      "End of year offer": [
+        "Offerta di fine anno"
+      ],
+      "End of Year Sale": [
+        "Sconto di fine anno"
+      ],
+      "Get our premium bundle and save more": [
+        "Acquista il pacchetto premium e risparmia ancora di più"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Il piano Visionary che avevamo sospeso è di nuovo disponibile per un periodo limitato"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Risparmia con 1 anno di Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Effettua l'upgrade e risparmia con Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide My Email illimitati, condivisione del calendario, archiviazione su cloud e file sharing cifrati e altro ancora."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide My Email, condivisione del calendario e altro ancora."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide My Email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfetto per famiglie o team di piccole dimensioni, ogni persona può avere la propria casella di posta e il proprio alias. È necessario un dominio personalizzato."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lo spazio d'archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } è uscito dalla fase beta! Garantite ai vostri file la stessa sicurezza delle vostre e-mail."
       ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Guadagna fino a ${ credits } in crediti."
+      ],
+      "Invite friends to Proton": [
+        "Invita i tuoi amici su Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
@@ -5007,11 +5274,17 @@
       "Recover data": [
         "Recupera dati"
       ],
+      "Remove device?": [
+        "Rimuovere il dispositivo?"
+      ],
       "Rename a file": [
         "Rinominare un file"
       ],
       "Rename a folder": [
         "Rinomina una cartella"
+      ],
+      "Rename device": [
+        "Rinomina il dispositivo"
       ],
       "Report a problem": [
         "Segnala un problema"
@@ -5084,6 +5357,9 @@
       ],
       "Stop transfers?": [
         "Interrompere i trasferimenti?"
+      ],
+      "Synced devices": [
+        "Dispositivi sincronizzati"
       ],
       "The link either does not exist or has expired": [
         "Il link non esiste o è scaduto"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Blokovat zprávy tohoto odesílatele"
       ],
+      "Block sender": [
+        "Blokovat odesílatele"
+      ],
       "Block senders": [
         "Blokovat odesílatele"
       ],
@@ -440,9 +443,6 @@
       "Hide messages": [
         "Skrýt zprávy"
       ],
-      "Hide My Email": [
-        "Skrýt můj e-mail"
-      ],
       "Hide my email": [
         "Skrýt můj e-mail"
       ],
@@ -506,6 +506,9 @@
       "Load": [
         "Načíst"
       ],
+      "Load anyway": [
+        "Přesto načíst"
+      ],
       "Load embedded images": [
         "Načíst vložené obrázky"
       ],
@@ -514,9 +517,6 @@
       ],
       "Load more": [
         "Načíst více"
-      ],
-      "Load unprotected": [
-        "Načíst nechráněné"
       ],
       "Loading${ ellipsis }": [
         "Načítání${ ellipsis }"
@@ -652,9 +652,6 @@
       ],
       "No": [
         "Ne"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování."
       ],
       "No, I won't attend": [
         "Ne, nezúčastním se"
@@ -824,6 +821,9 @@
       "Search message content": [
         "Hledat v obsahu zpráv"
       ],
+      "See plan features": [
+        "Zobrazit funkce tarifu"
+      ],
       "Select all": [
         "Vybrat vše"
       ],
@@ -913,6 +913,9 @@
       ],
       "Skip": [
         "Přeskočit"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "Některé obrázky se nepodařilo načíst s ochranou proti sledování."
       ],
       "Star": [
         "Přidat hvězdičku"
@@ -4372,6 +4375,12 @@
         "${ contactEmailsLength } členů",
         "${ contactEmailsLength } členů"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } člena)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } členů)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } členů)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } členů)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } obsahuje více e-mailových adres."
       ],
@@ -4501,12 +4510,6 @@
         "${ total } zpráv",
         "${ total } zpráv"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } naplánovaná zpráva",
-        "${ totalMessagesCount } naplánované zprávy",
-        "${ totalMessagesCount } naplánovaných zpráv",
-        "${ totalMessagesCount } naplánovaných zpráv"
-      ],
       "${ unread } unread conversation": [
         "${ unread } nepřečtená konverzace",
         "${ unread } nepřečtené konverzace",
@@ -4518,6 +4521,12 @@
         "${ unread } nepřečtené zprávy",
         "${ unread } nepřečtených zpráv",
         "${ unread } nepřečtených zpráv"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } naplánovaná zpráva",
+        "${ unreadCount } naplánované zprávy",
+        "${ unreadCount } naplánovaných zpráv",
+        "${ unreadCount } naplánovaných zpráv"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } nepřečtená konverzace",
@@ -5037,9 +5046,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Maximální počet příloh (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) překročen."
-      ],
-      "members": [
-        "členové"
       ],
       "Members": [
         "Členové"
@@ -6733,6 +6739,11 @@
         "Otevřít v ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "nastavení"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Téměř hotovo"
@@ -7043,11 +7054,6 @@
         "Přepnout nebo přidat účet"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme nový vzhled Protonu.${ br }Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Povězte nám o svých zkušenostech. (Nepovinné)"
@@ -7056,11 +7062,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Zpětná vazba"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Aktualizovaný Proton, jednotná ochrana"
       ]
     },
     "Notification": {
@@ -7577,20 +7578,23 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Získejte ${ planName } až na 18 měsíců zdarma"
+      "Email tracking protection": [
+        "Ochrana před sledovacími prvky v e-mailech"
       ],
-      "Invite friends and earn rewards!": [
-        "Pozvěte přátele a získejte odměny!"
+      "Get up to ${ credits } in credits.": [
+        "Získejte až ${ credits } v kreditech."
+      ],
+      "Invite friends to Proton": [
+        "Pozvěte přátele do služby Proton"
       ],
       "Message Content Search": [
         "Vyhledávání obsahu zpráv"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Z důvodu ochrany vašeho soukromí společnost Proton v této zprávě zablokovala sledovací prvky"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Vyzkoušejte ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv na později"

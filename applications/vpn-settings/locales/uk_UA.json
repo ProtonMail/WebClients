@@ -414,49 +414,17 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } користувач",
-        "+ ${ _users } користувачі",
-        "+ ${ _users } користувачів",
-        "+ ${ _users } користувача"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } власний домен",
         "+ ${ domains } власні домени",
         "+ ${ domains } власних доменів",
         "+ ${ domains } власних доменів"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } адреса",
-        "${ addressAddon.MaxAddresses } адреси",
-        "${ addressAddon.MaxAddresses } адрес",
-        "${ addressAddon.MaxAddresses } адрес"
       ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } домен",
-        "${ domainAddon.MaxDomains } домени",
-        "${ domainAddon.MaxDomains } доменів",
-        "${ domainAddon.MaxDomains } доменів"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } користувач",
-        "${ memberAddon.MaxMembers } користувачі",
-        "${ memberAddon.MaxMembers } користувачів",
-        "${ memberAddon.MaxMembers } користувачів"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } з'єднання",
-        "${ vpnAddon.MaxVPN } з'єднання",
-        "${ vpnAddon.MaxVPN } з'єднань",
-        "${ vpnAddon.MaxVPN } з'єднань"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } з'єднання",
-        "${ vpnBonus } з'єднання",
-        "${ vpnBonus } з'єднань",
-        "${ vpnBonus } з'єднань"
+      "+ ${ users } user": [
+        "+ ${ users } користувач",
+        "+ ${ users } користувачі",
+        "+ ${ users } користувачів",
+        "+ ${ users } користувачів"
       ]
     },
     "Alter": {
@@ -478,14 +446,23 @@
       "Payable every 12 months": [
         "Сплачується щороку"
       ],
+      "Payable every 15 months": [
+        "Сплачується кожні 15 місяців"
+      ],
       "Payable every 24 months": [
         "Сплачується кожні два роки"
+      ],
+      "Payable every 30 months": [
+        "Сплачується кожні 30 місяців"
       ],
       "Payable every month": [
         "Сплачується щомісяця"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Поновлюється автоматично ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Поновлюється автоматично ${ formattedEndTime } за ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -676,20 +653,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Видалити спосіб оплати"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дні",
-        "${ days } днів",
-        "${ days } днів"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } місяць",
-        "${ monthsWithYears } місяці",
-        "${ monthsWithYears } місяців",
-        "${ monthsWithYears } місяців"
       ]
     },
     "Country name": {
@@ -1464,11 +1427,6 @@
         "(через ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Купон застосовано: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Невикористані кредити"
@@ -1714,22 +1672,89 @@
         "Підтримка торентів (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Додати ключ безпеки"
+      ],
+      "Delete key": [
+        "Видалити ключ"
+      ]
+    },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Перш ніж вимкнути TOTP, деактивуйте двоетапну перевірку з ключем безпеки"
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Під час реєстрації вашого ключа безпеки щось пішло не так. Будь ласка, спробуйте знову."
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "Двоетапну перевірку з ключем безпеки вимкнено"
+      ],
+      "Add a name to identify your security key with.": [
+        "Додайте назву своєму ключу безпеки."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Ви дійсно хочете видалити ключ безпеки ${ name }?"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Вставте ключ безпеки у роз'єм USB свого пристрою."
+      ],
+      "Security key": [
+        "Ключ безпеки"
+      ],
+      "Security key removed": [
+        "Ключ безпеки вилучено"
+      ],
+      "Security key updated": [
+        "Ключ безпеки оновлено"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Ця дія призведе до видалення всіх ключів безпеки, пов'язаних з вашим обліковим записом."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Щоб увімкнути двоетапну перевірку з ключем безпеки, необхідно активувати її через програму авторизації"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Виконуйте перевірку з використанням ключа безпеки U2F або FIDO2"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Ваш ключ двоетапної перевірки готовий до використання."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Назва ключа"
       ],
       "Security key": [
         "Ключ безпеки"
       ]
     },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безпеки"
+    "fido2: Title": {
+      "Delete security key?": [
+        "Видалити ключ безпеки?"
+      ],
+      "Disable 2FA via security key?": [
+        "Вимкнути двоетапну перевірку з ключем безпеки?"
+      ],
+      "Name your security key": [
+        "Назвіть свій ключ безпеки"
+      ],
+      "Register your security key": [
+        "Зареєструйте свій ключ безпеки"
+      ],
+      "Registered security keys": [
+        "Зареєстровані ключі безпеки"
+      ],
+      "Security key registered": [
+        "Ключ безпеки зареєстровано"
       ]
     },
     "file size format": {
@@ -1775,6 +1800,11 @@
         "Мегабайтів"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Приватність – це стандарт."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 електронний лист на місяць)"
@@ -1789,6 +1819,11 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Уже маєте обліковий запис? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Вперше в ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1864,9 +1899,6 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Для функції Secure Core необхідна передплата ${ vpnPlus } або ${ visionary }."
       ],
-      "(Mail + VPN)": [
-        "(Пошта + VPN)"
-      ],
       "* No credit card required.": [
         "* Кредитна картка не потрібна."
       ],
@@ -1881,9 +1913,6 @@
       ],
       "10 email addresses": [
         "10 адрес е-пошти"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "До вашої передплати застосовано знижку 20% з купоном ${ code }"
       ],
       "30-day money-back guarantee.": [
         "Гарантія повернення грошей протягом 30 днів."
@@ -1902,6 +1931,12 @@
       ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
+      ],
+      "add a recovery method": [
+        "додайте спосіб відновлення"
+      ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Розширте рівень захисту свого облікового запису. Необхідно проходити двоетапну перевірку щоразу під час входу в систему."
       ],
       "Additional options": [
         "Додаткові опції"
@@ -1924,20 +1959,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Сплачується в кінці вашого поточного платіжного циклу (оновлюється ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "До вашої передплати застосовано знижку до Чорної П'ятниці 2018"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "До вашої передплати застосовано знижку до Чорної П'ятниці 2019"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "До вашої передплати застосовано знижку до Чорної П'ятниці 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -1966,9 +1989,6 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "До вашої передплати застосовано знижку за кодом купона ${ code }"
-      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Не використовуйте облікові дані OpenVPN / IKEv2 у застосунках ${ VPN_APP_NAME } чи на панелі керування ${ VPN_APP_NAME }. ${ learnMore }"
       ],
@@ -1993,8 +2013,14 @@
       "Emailing preference saved": [
         "Налаштування електронної пошти збережено"
       ],
+      "Enter code from your authenticator app": [
+        "Введіть код зі своєї програми авторизації"
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручну"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Введіть новий пароль для користувача ${ userName }."
       ],
       "Enter the code from your authenticator app": [
         "Введіть код з програми автентифікації"
@@ -2031,9 +2057,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa та MasterCard - 3 цифри на зворотній стороні картки. Для American Express - 4 цифри на лицьовій стороні картки."
-      ],
-      "Free": [
-        "Безплатно"
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -2128,6 +2151,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, російських державних агенцій та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
       ],
@@ -2200,8 +2226,14 @@
       "Preview": [
         "Попередній перегляд"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
+      ],
       "Priority support": [
         "Пріоритетна підтримка"
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Технологія шифрування Proton гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
@@ -2253,9 +2285,6 @@
       ],
       "support team": [
         "командою підтримки"
-      ],
-      "Thank you for supporting our mission.": [
-        "Дякуємо за підтримку нашої місії."
       ],
       "The securest way to browse, stream, and be online.": [
         "Найзахищеніший спосіб переглядати, передавати та бути онлайн."
@@ -2370,6 +2399,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Підтверджуйте свій вхід у систему за допомогою тимчасових одноразових кодів, отриманих із програми авторизації"
       ],
       "Verifying your payment": [
         "Перевірка вашого платежу"
@@ -2499,9 +2531,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ваш обліковий запис оновлюється, це може тривати до 30 секунд."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
@@ -2756,9 +2785,6 @@
       "Digits": [
         "Цифри"
       ],
-      "Discount": [
-        "Знижка"
-      ],
       "Do you have any suggestions for our team?": [
         "У вас є пропозиції для нашої команди?"
       ],
@@ -2779,9 +2805,6 @@
       ],
       "Expires": [
         "Термін дії"
-      ],
-      "extra storage": [
-        "додаткове сховище"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -2900,9 +2923,6 @@
       "System information": [
         "Інформація про систему"
       ],
-      "Total (${ countdown })": [
-        "Всього (${ countdown })"
-      ],
       "Two-password mode": [
         "Двопарольний режим"
       ],
@@ -2988,6 +3008,9 @@
       ],
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
+      ],
+      "Create account": [
+        "Зареєструватися"
       ],
       "Forgot username?": [
         "Забули ім'я користувача?"
@@ -3404,8 +3427,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* З передплатою на 12 місяців. Інші варіанти передплати доступні під час оформлення замовлення."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* З передплатою на 15 місяців. Інші варіанти передплати доступні під час оформлення замовлення."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* З передплатою на 24 місяці. Інші варіанти передплати доступні під час оформлення замовлення."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* З передплатою на 30 місяців. Інші варіанти передплати доступні під час оформлення замовлення."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
@@ -3427,9 +3456,6 @@
       ],
       "Popular": [
         "Популярний"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Ціна для майбутнього поновлення: включає всі чинні купони, збережені у вашому обліковому записі"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Комплект із приватності та безпеки для компаній, включно з преміумслужбами Proton."
@@ -3734,6 +3760,12 @@
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
       ],
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Створіть ${ numberOfPersonalCalendars } особистий календар",
+        "Створіть ${ numberOfPersonalCalendars } особисті календарі",
+        "Створіть ${ numberOfPersonalCalendars } особистих календарів",
+        "Створіть ${ numberOfPersonalCalendars } особистих календарів"
+      ],
       "Everything in ${ vpnPlanName }": [
         "Усе в ${ vpnPlanName }"
       ],
@@ -3981,11 +4013,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Отримайте до 18 місяців ${ planName } безплатно"
+      "Get up to ${ credits } in credits.": [
+        "Отримайте до ${ credits } кредиту."
       ],
-      "Invite friends and earn rewards!": [
-        "Запрошуйте друзів та отримуйте винагороди!"
+      "Invite friends to Proton": [
+        "Запрошуйте друзів до Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробувати ${ DRIVE_APP_NAME }"
@@ -4237,12 +4269,6 @@
       ]
     },
     "Title": {
-      "${ maxUsers } user": [
-        "${ maxUsers } користувач",
-        "${ maxUsers } користувача",
-        "${ maxUsers } користувачів",
-        "${ maxUsers } користувача"
-      ],
       "${ VPN_APP_NAME } clients": [
         "Клієнти ${ VPN_APP_NAME }"
       ],
@@ -4411,6 +4437,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
       ],
+      "Gift": [
+        "Подарунок"
+      ],
       "Gift code": [
         "Подарунковий код"
       ],
@@ -4488,9 +4517,6 @@
       ],
       "Previous": [
         "Назад"
-      ],
-      "Processing": [
-        "Обробка"
       ],
       "Processing...": [
         "Триває обробка..."
@@ -4621,12 +4647,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Знижка застосовується до річного циклу платежів"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Знижка застосовується до дворічного циклу платежів"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ]

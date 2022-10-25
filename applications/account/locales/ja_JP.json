@@ -499,9 +499,6 @@
       "Pay ${ price }": [
         "${ price } を支払う"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "サブスクリプションを管理するには、あなたの組織の管理者に問い合わせてください"
-      ],
       "Preview": [
         "プレビュー"
       ],
@@ -532,10 +529,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -865,28 +862,8 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } users": [
-        "+ ${ _users } ユーザー"
-      ],
       "+ ${ domains } custom domains": [
         "+ ${ domains } 独自ドメイン"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } addresses": [
-        "${ addressAddon.MaxAddresses } 件のアドレス"
-      ],
-      "${ domainAddon.MaxDomains } domains": [
-        "${ domainAddon.MaxDomains } 件のドメイン"
-      ],
-      "${ memberAddon.MaxMembers } users": [
-        "${ memberAddon.MaxMembers } 人のユーザー"
-      ],
-      "${ vpnAddon.MaxVPN } connections": [
-        "${ vpnAddon.MaxVPN } 件の接続"
-      ],
-      "${ vpnBonus } connections": [
-        "${ vpnBonus } 接続"
       ]
     },
     "Address action": {
@@ -1565,14 +1542,6 @@
       ],
       "Yomi": [
         "ふりがな"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } days": [
-        "${ days } 日"
-      ],
-      "${ monthsWithYears } months": [
-        "${ monthsWithYears } か月"
       ]
     },
     "Country name": {
@@ -2347,11 +2316,6 @@
         "(${ entryCountryName } 経由)"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "適用済みクーポン: ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "検索結果が見つかりません"
@@ -2892,7 +2856,7 @@
         "処理が中断されました"
       ],
       "Removed duplicate recipients: ${ joinedRecipients }": [
-        "競合する宛先を削除しました: ${ joinedRecipients }"
+        "重複していた宛先を削除しました（${ joinedRecipients }）"
       ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
@@ -4145,17 +4109,11 @@
       "${ numContacts } contacts": [
         "${ numContacts } 件の連絡先"
       ],
-      "${ planName } credits earned": [
-        "${ planName } のクレジットを得ました"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
       ],
       "${ providerFoldersNumLocalized } labels found in Gmail": [
         "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewardsLimit } か月のうち ${ rewards } か月"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
@@ -4193,9 +4151,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(以下のいずれかの条件が満たされた場合に動作します)"
       ],
-      "(Mail + VPN)": [
-        "(メール + VPN)"
-      ],
       "* No credit card required.": [
         "* クレジットカードは必要ありません。"
       ],
@@ -4213,9 +4168,6 @@
       ],
       "2. They try ${ planName }": [
         "2. 友達は ${ planName } を試すことができます"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "クーポン ${ code } 付きのサブスクリプションに 20% の割引が適用されます"
       ],
       "3. You earn credits": [
         "3. クレジットを得ます"
@@ -4397,20 +4349,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "現在の支払いサイクル終了後に請求されます (${ renewalDate } に更新)"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "ビットコイン取引は確認に最大で24時間かかります。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "ブラックフライデー 2018 があなたのサブスクリプションに適用されました"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "ブラックフライデー 2019 があなたのサブスクリプションに適用されました"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "ブラックフライデー 2020 の新規登録者向け割引が適用されました。"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者が確認できないようにします。"
@@ -4507,9 +4447,6 @@
       ],
       "Delete link?": [
         "リンクを削除しますか?"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "クーポン ${ code } 付きのサブスクリプションに割引が適用されます"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "このパスワードを忘れないでください。忘れてしまった場合は、ログインしたり、メッセージを復号することはできません。"
@@ -4636,9 +4573,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、MasterCard の場合は、カード裏面に記載された 3 桁の数字です。American Express は表面の 4 桁の数字です。"
-      ],
-      "Free": [
-        "無料"
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -5045,9 +4979,6 @@
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "権限なしに送信者のサーバーからコンテンツを読み込むことを防ぎます。"
-      ],
       "Preview": [
         "プレビュー"
       ],
@@ -5201,9 +5132,6 @@
       "Text to display": [
         "表示用のテキスト"
       ],
-      "Thank you for supporting our mission.": [
-        "サポートしていただきありがとうございます！"
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }メッセージは表示されませんが、${ encryptionAndKeysLink }を利用してロックを解除できます。"
       ],
@@ -5224,9 +5152,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "この設定ファイルを WireGuard ルーターや公式クライアントで使用できます。"
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "何らかの原因で 30 日のトライアルは利用できません。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -5596,9 +5521,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "アカウントをアップグレード中です。30 秒程お待ちください。"
       ],
       "Your account recovery method is set": [
         "アカウントの回復手段が設定されています"
@@ -6118,9 +6040,6 @@
       "Apply filter to existing emails": [
         "既存のメールにフィルターを適用"
       ],
-      "Ask before loading remote content": [
-        "リモートコンテンツを読み込む前に確認"
-      ],
       "Attach public key": [
         "公開鍵の添付"
       ],
@@ -6132,9 +6051,6 @@
       ],
       "Auto-detect primary time zone": [
         "2 つ目のタイムゾーンを自動検出"
-      ],
-      "Auto-load embedded images": [
-        "埋め込み画像を自動で読み込む"
       ],
       "Auto-reply": [
         "自動返信"
@@ -6262,9 +6178,6 @@
       "Create password": [
         "パスワードを作成"
       ],
-      "Credits pending": [
-        "保留中のクレジット"
-      ],
       "Credits used": [
         "使用クレジット"
       ],
@@ -6309,9 +6222,6 @@
       ],
       "Digits": [
         "桁"
-      ],
-      "Discount": [
-        "割引"
       ],
       "Display name": [
         "表示名"
@@ -6375,9 +6285,6 @@
       ],
       "Expires": [
         "有効期限"
-      ],
-      "extra storage": [
-        "追加のストレージ"
       ],
       "File": [
         "ファイル"
@@ -6730,9 +6637,6 @@
       "To: ${ PMEmailAddress }": [
         "移行先: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "合計 (${ countdown })"
-      ],
       "Two-password mode": [
         "2 パスワードモード"
       ],
@@ -6768,9 +6672,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "サブスクリプション待ち"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
@@ -6813,9 +6714,6 @@
       ],
       "Your referral link": [
         "あなたの招待リンク"
-      ],
-      "Your reward": [
-        "報酬"
       ],
       "ZIP code": [
         "郵便番号"
@@ -7611,6 +7509,20 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7656,20 +7568,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8584,12 +8482,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "${ planName } が最大 18 か月無料"
-      ],
-      "Invite friends and earn rewards!": [
-        "友だちを招待して報酬を手に入れよう!"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
       ]
@@ -9026,9 +8918,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } users": [
-        "${ maxUsers } ユーザー"
-      ],
       "1. Give a name to the config to be generated": [
         "1. 生成する設定ファイルに名前をつける"
       ],
@@ -9100,9 +8989,6 @@
       ],
       "Add Sieve filter": [
         "Sieve フィルターの追加"
-      ],
-      "Add to not spam list": [
-        "Add to Not spam list"
       ],
       "Add to spam list": [
         "迷惑メールリストに追加"
@@ -9383,9 +9269,6 @@
       "Export public key": [
         "公開鍵のエクスポート"
       ],
-      "Extension": [
-        "拡張機能"
-      ],
       "External PGP settings": [
         "外部 PGP 設定"
       ],
@@ -9412,9 +9295,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "${ planName } が最大 18 か月無料"
       ],
       "Gift code": [
         "ギフトコード"
@@ -9569,9 +9449,6 @@
       "Privacy and data collection": [
         "プライバシーとデータ収集"
       ],
-      "Processing": [
-        "処理中"
-      ],
       "Processing...": [
         "処理中..."
       ],
@@ -9592,9 +9469,6 @@
       ],
       "Refer a friend": [
         "友達を招待"
-      ],
-      "Referral tracker": [
-        "紹介トラッカー"
       ],
       "Remove calendar": [
         "カレンダーを削除"
@@ -9909,12 +9783,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "ラベルの数を減らすためにインポートをカスタマイズします"
-      ],
-      "Discount applied for annual billing cycle": [
-        "年間契約に適用される割引"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "2年プランに適用される割引"
       ],
       "Each imported email will have this label": [
         "インポートされたメールすべてにこのラベルがついています"

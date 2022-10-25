@@ -404,6 +404,9 @@
       "Remove": [
         "移除"
       ],
+      "Remove device": [
+        "移除裝置"
+      ],
       "Remove from this list": [
         "從此清單中移除"
       ],
@@ -1754,6 +1757,9 @@
       "Deselect at least ${ calendarToFixCount } calendars or": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
+      "Device name does not match": [
+        "裝置名稱不符合"
+      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
@@ -2264,6 +2270,9 @@
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 Proton。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
@@ -2879,6 +2888,9 @@
       "No results found": [
         "找不到相符的結果"
       ],
+      "No synced devices": [
+        "沒有已同步的裝置"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
@@ -3052,6 +3064,9 @@
       ],
       "Swiss privacy": [
         "瑞士等級的隱私"
+      ],
+      "Synced devices": [
+        "已同步的裝置"
       ],
       "Tap the + button to upload a file or folder": [
         "輕點 + 按鈕以上載檔案或資料夾"
@@ -3438,6 +3453,12 @@
       "Deleted": [
         "已刪除"
       ],
+      "Device": [
+        "裝置"
+      ],
+      "Device name": [
+        "裝置名稱"
+      ],
       "Do not ask again": [
         "不要再詢問"
       ],
@@ -3461,6 +3482,9 @@
       ],
       "Encrypt emails": [
         "加密電郵"
+      ],
+      "Enter device name": [
+        "輸入裝置名稱"
       ],
       "Expired": [
         "已失效"
@@ -3882,11 +3906,6 @@
         "切換或是加入帳號"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "與我們分享您的使用體驗。（選填）"
@@ -3895,11 +3914,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "意見回饋"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "改版更新的 Proton，全方面防護"
       ]
     },
     "Notification": {
@@ -3980,6 +3994,18 @@
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
+      ],
+      "Device failed to be removed": [
+        "無法移除裝置"
+      ],
+      "Device failed to be renamed": [
+        "無法重新命名裝置"
+      ],
+      "Device removed": [
+        "裝置已移除"
+      ],
+      "Device renamed": [
+        "裝置已重新命名"
       ],
       "Encrypted search activated": [
         "已啟用加密搜索"
@@ -4179,6 +4205,9 @@
       "Enter a new folder name": [
         "請輸入新的資料夾名稱"
       ],
+      "Enter device name": [
+        "輸入裝置名稱"
+      ],
       "Enter your email address": [
         "請輸入您的電郵位址"
       ],
@@ -4286,6 +4315,12 @@
       ],
       "Encrypted search is here": [
         "經加密搜尋功能現已推出"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "取得多達 ${ credits } 的積點。"
+      ],
+      "Invite friends to Proton": [
+        "邀請好友使用 Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "現在您可輕易搜尋 Drive 檔案，同時保持您的資料安全。"
@@ -4716,11 +4751,17 @@
       "Recover data": [
         "恢復資料"
       ],
+      "Remove device?": [
+        "移除裝置？"
+      ],
       "Rename a file": [
         "重新命名檔案"
       ],
       "Rename a folder": [
         "重新命名資料夾"
+      ],
+      "Rename device": [
+        "重新命名裝置"
       ],
       "Report a problem": [
         "回報問題"
@@ -4793,6 +4834,9 @@
       ],
       "Stop transfers?": [
         "停止傳輸？"
+      ],
+      "Synced devices": [
+        "已同步的裝置"
       ],
       "The link either does not exist or has expired": [
         "連結不存在或已失效"

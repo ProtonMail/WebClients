@@ -430,9 +430,6 @@
       "Hide messages": [
         "Amagar missatges"
       ],
-      "Hide My Email": [
-        "Amaga el meu correu"
-      ],
       "Hide my email": [
         "Amaga el meu correu"
       ],
@@ -502,9 +499,6 @@
       ],
       "Load more": [
         "Carregar-ne més"
-      ],
-      "Load unprotected": [
-        "Carrega sense protecció"
       ],
       "Loading${ ellipsis }": [
         "Carregant${ ellipsis }"
@@ -640,9 +634,6 @@
       ],
       "No": [
         "No"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment."
       ],
       "No, I won't attend": [
         "No, no hi assistiré"
@@ -4082,10 +4073,6 @@
         "${ total } missatge",
         "${ total } missatges"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } missatge programat",
-        "${ totalMessagesCount } missatges programats"
-      ],
       "${ unread } unread conversation": [
         "${ unread } conversació sense llegir",
         "${ unread } conversacions sense llegir"
@@ -4550,9 +4537,6 @@
       ],
       "Manage your labels": [
         "Gestioneu les vostres etiquetes"
-      ],
-      "members": [
-        "membres"
       ],
       "Members": [
         "Membres"
@@ -6399,19 +6383,9 @@
         "Canvia o afegeix un compte"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentem el nou aspecte de Proton.${ br }Molts serveis, una missió. Benvingut/da a l'Internet on tenim la privacitat per defecte."
-      ]
-    },
     "new_plans: placeholder": {
       "Feedback": [
         "Comentaris"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Proton actualitzat, protecció unificada"
       ]
     },
     "Notification": {
@@ -6846,17 +6820,8 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
-      ],
-      "Invite friends and earn rewards!": [
-        "Convideu amistats i guanyeu recompenses!"
-      ],
       "Message Content Search": [
         "Cerca de contingut del missatge"
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Per a protegir la vostra privacitat, Proton ha bloquejat els rastrejadors de correu electrònic en aquest missatge"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
