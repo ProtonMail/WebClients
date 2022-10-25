@@ -1,20 +1,20 @@
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
-    '.gmail_quote', // Gmail
-    '.3D"gmail_quote"', // Gmail
-    '.gmail_extra', // Gmail
-    '.yahoo_quoted', // Yahoo Mail
+    'div.gmail_quote', // Gmail
+    'div.gmail_extra', // Gmail
+    'div.yahoo_quoted', // Yahoo Mail
     '.tutanota_quote', // Tutanota Mail
     '.zmail_extra', // Zoho
     '.skiff_quote', // Skiff Mail
-    '#3D"divRplyFwdMsg"', // Outlook Mail
+    'div[id="3D\\"divRplyFwdMsg\\""]', // Outlook Mail
+    'hr[id=replySplit]',
     '.moz-cite-prefix',
-    '#isForwardContent',
-    '#isReplyContent',
-    '#mailcontent:not(table)',
-    '#origbody',
-    '#reply139content',
-    '#oriMsgHtmlSeperator',
+    'div[id=isForwardContent]',
+    'blockquote[id=isReplyContent]',
+    'div[id=mailcontent]',
+    'div[id=origbody]',
+    'div[id=reply139content]',
+    'blockquote[id=oriMsgHtmlSeperator]',
     'blockquote[type="cite"]',
     '[name="quote"]', // gmx
 ];
