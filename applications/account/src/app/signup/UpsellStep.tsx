@@ -141,7 +141,7 @@ const UpsellStep = ({
                     <Header
                         title={upsellShortPlan.title}
                         right={
-                            <div className="inline-block mt2 on-mobile-mt1">
+                            <div className="inline-block mt2 on-mobile-mt1 on-tiny-mobile-mt0">
                                 <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} />
                             </div>
                         }

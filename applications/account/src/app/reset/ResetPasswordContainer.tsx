@@ -337,7 +337,7 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
     return (
         <Layout
             hasDecoration={step === STEPS.REQUEST_RECOVERY_METHODS}
-            hasBackButton={!!handleBackStep}
+            onBack={handleBackStep}
             bottomRight={<LoginSupportDropdown />}
         >
             {children}

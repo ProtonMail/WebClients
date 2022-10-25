@@ -19,7 +19,7 @@ const LayoutFooter = ({ className, app, version }: FooterProps) => {
                     c('Footer').t`${BRAND_NAME}. Privacy by default.`
                 }
             </div>
-            <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
+            <div className="text-center text-sm m0 pt1 pb0-5 on-tiny-mobile-pb0 flex-item-noshrink">
                 <span className="auto-tiny-mobile">
                     <Href key="terms" className="signup-footer-link" href={getTermsURL(app)}>{c('Link').t`Terms`}</Href>
                 </span>
@@ -34,7 +34,7 @@ const LayoutFooter = ({ className, app, version }: FooterProps) => {
                 <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
                     |
                 </span>
-                <span className="auto-tiny-mobile">{c('Info').jt`Version ${version}`}</span>
+                <span className="no-tiny-mobile">{c('Info').jt`Version ${version}`}</span>
             </div>
         </footer>
     );
