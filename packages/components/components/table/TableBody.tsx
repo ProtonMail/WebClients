@@ -9,7 +9,11 @@ interface Props {
 }
 
 const TableBody = ({ children, loading = false, colSpan, ...rest }: Props) => {
-    return <tbody {...rest}>{loading ? <TableRowBusy colSpan={colSpan} /> : children}</tbody>;
+    return (
+        <tbody role="rowgroup" {...rest}>
+            {loading ? <TableRowBusy colSpan={colSpan} /> : children}
+        </tbody>
+    );
 };
 
 export default TableBody;

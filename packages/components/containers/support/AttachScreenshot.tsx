@@ -87,7 +87,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                 </FileInput>
             </div>
             {screenshots.length > 0 && (
-                <Table className="simple-table--has-actions">
+                <Table hasActions>
                     <TableBody>
                         {screenshots.map((screenshot) => {
                             return (

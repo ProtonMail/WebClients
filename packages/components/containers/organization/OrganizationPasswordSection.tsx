@@ -37,6 +37,8 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     const hasOtherAdmins = members ? getHasOtherAdmins(members) : false;
     const publicMembers = members ? getNonPrivateMembers(members) : [];
 
+    const tableHeaders = [c('Header').t`Organization key fingerprint`, c('Header').t`Key type`];
+
     const handleChangeOrganizationKeys = (mode?: 'reset') => {
         if (!organizationKey) {
             throw new Error('Organization key not loaded');
@@ -156,10 +158,11 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                 )}
             </Block>
             {displayOrganizationKey.fingerprint && (
-                <Table>
-                    <TableHeader cells={[c('Header').t`Organization key fingerprint`, c('Header').t`Key type`]} />
+                <Table responsive="cards">
+                    <TableHeader cells={tableHeaders} />
                     <TableBody colSpan={2}>
                         <TableRow
+                            labels={tableHeaders}
                             cells={[
                                 <code key={1} className="max-w100 block text-ellipsis">
                                     {displayOrganizationKey.fingerprint}

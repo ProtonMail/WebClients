@@ -19,6 +19,74 @@
 		}
 	}
 
+	// NEW RESPONSIVE TABLES
+	&--responsive {
+		@include respond-to($breakpoint-medium) {
+			td:not(.no-mobile, .no-tablet) {
+				display: block;
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+
+			thead {
+				display: none;
+			}
+
+			tr {
+				display: block;
+			}
+		}
+	}
+
+	&--responsive-stacked {
+		@include respond-to($breakpoint-medium) {
+			tr {
+				margin-block-end: em(8);
+				border-block-end: 1px solid var(--border-norm);
+			}
+
+			td {
+				padding-block-end: em(8);
+			}
+		}
+	}
+
+	&--responsive-cards {
+		@include respond-to($breakpoint-medium) {
+			tr {
+				padding: em(12);
+				border: 1px solid var(--border-norm);
+				border-radius: var(--border-radius-lg);
+
+				&:not(:last-child) {
+					margin-block-end: em(12);
+				}
+			}
+
+			td {
+				&:not(:last-child) {
+					padding-block-end: em(8);
+				}
+			}
+		}
+	}
+
+	&--responsive &__th-small {
+		display: none;
+
+		@include respond-to($breakpoint-medium) {
+			display: flex;
+			align-content: center;
+			font-weight: var(--font-weight-medium);
+			color: var(--text-weak);
+			font-size: 0.86em;
+			margin: 0;
+		}
+	}
+
+	// END
+
 	th:not(#{&}-row-th) {
 		@extend .text-left;
 
@@ -103,6 +171,18 @@
 			th {
 				&:last-child {
 					text-align: end;
+				}
+			}
+		}
+	}
+
+	// TODO: refactor this
+	@include respond-to($breakpoint-medium) {
+		&--responsive#{&}--has-actions {
+			td,
+			th {
+				&:last-child {
+					text-align: start;
 				}
 			}
 		}
