@@ -467,9 +467,6 @@
       "Pay ${ price }": [
         "Πληρωμή ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Για διαχείριση της συνδρομής, παρακαλούμε επικοινωνήστε με τον διαχειριστή του οργανισμού"
-      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -500,11 +497,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reload": [
         "Ανανέωση"
@@ -812,28 +809,6 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } προσαρμοσμένο domain",
         "+ ${ domains } προσαρμοσμένα domains"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } διεύθυνση",
-        "${ addressAddon.MaxAddresses } διευθύνσεις"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domain",
-        "${ domainAddon.MaxDomains } domains"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } χρήστης",
-        "${ memberAddon.MaxMembers } χρήστες"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } σύνδεση",
-        "${ vpnAddon.MaxVPN } συνδέσεις"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } σύνδεση",
-        "${ vpnBonus } συνδέσεις"
       ]
     },
     "Address action": {
@@ -1374,16 +1349,6 @@
       ],
       "Yomi": [
         "Ανάγνωση"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } ημέρα",
-        "${ days } ημέρες"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } μήνας",
-        "${ monthsWithYears } μήνες"
       ]
     },
     "Country name": {
@@ -3630,9 +3595,6 @@
         "${ numContacts } επαφή",
         "${ numContacts } επαφές"
       ],
-      "${ planName } credits earned": [
-        "Κερδήθηκαν πιστώσεις για ${ planName }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
         "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
@@ -3640,9 +3602,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
         "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } από ${ rewardsLimit } μήνες"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
@@ -3686,9 +3645,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "* No credit card required.": [
         "* Δεν απαιτείται πιστωτική κάρτα."
       ],
@@ -3704,9 +3660,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Έπειτα δοκιμάστε ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Εφαρμόζεται 20% έκπτωση για τη συνδρομή σας, με το κουπόνι ${ code }"
       ],
       "3. You earn credits": [
         "3. Κερδίζετε πιστώσεις"
@@ -3873,20 +3826,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Χρέωση στο τέλος του τρέχοντος κύκλου χρέωσης (ανανεώνεται σε ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Οι συναλλαγές σε Bitcoin χρειάζονται ένα διάστημα για να επιβεβαιωθούν (μέχρι 24 ώρες). Με την επιβεβαίωση, θα πιστώσουμε μονάδες στον λογαριασμό σας. Μετά την επιβεβαίωση της συναλλαγής, μπορείτε να αποπληρώσετε το τιμολόγιό σας με τις πιστωτικές μονάδες."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Η Black Friday 2018 εφαρμόστηκε στη συνδρομή σας"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Η Black Friday 2019 εφαρμόστηκε στη συνδρομή σας"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Η νεοφερμένη έκπτωση Black Friday 2020 έχει εφαρμοστεί"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Αποκλείει στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
@@ -3979,9 +3920,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν το ξεχάσετε, δεν θα μπορείτε να συνδεθείτε ή να αποκρυπτογραφήσετε τα μηνύματα σας."
       ],
@@ -4021,9 +3959,6 @@
       ],
       "Drop the file here to upload": [
         "Σύρτε το αρχείο εδώ για ανέβασμα"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "Κερδήθηκαν ${ rewards } από ${ rewardsLimit } μήνες ${ planName }."
       ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
@@ -4099,9 +4034,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Για Visa και MasterCard, τα 3 ψηφία στο πίσω μέρος της κάρτας σας. Για την American Express, τα 4 ψηφία στο μπροστινό μέρος της κάρτας σας."
-      ],
-      "Free": [
-        "Δωρεάν"
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -4502,9 +4434,6 @@
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Αποτρέπει τη φόρτωση περιεχομένου από τον διακομιστή του αποστολέα χωρίς την άδειά σας."
-      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -4649,9 +4578,6 @@
       "Text to display": [
         "Κείμενο για εμφάνιση"
       ],
-      "Thank you for supporting our mission.": [
-        "Σας ευχαριστούμε που υποστηρίζετε την αποστολή μας."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
       ],
@@ -4672,9 +4598,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Αυτές οι διαμορφώσεις παρέχονται για δρομολογητές WireGuard και επίσημους πελάτες."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "Η δωρεάν δοκιμή 30-ημερών δεν είναι διαθέσιμη με κανέναν άλλον τρόπο."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -4886,9 +4809,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Εφόσον οι ειδοποιήσεις είναι ενεργοποιημένες, όταν έχετε νέα μηνύματα στον λογαριασμό σας ${ MAIL_APP_NAME } θα στέλνουμε μια ειδοποίηση στη διεύθυνσή σας ανάκτησης."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Όταν εγγράφονται σε πρόγραμμα επί πληρωμή, 1 έως 3 μήνες του ${ planName } $ θα πιστώνονται στον λογαριασμό σας."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Κατά την ανανέωση της συνδρομής σας, θα χρησιμοποιηθούν τυχόν διαθέσιμες πιστώσεις πριν σας χρεώσουμε με τον παραπάνω τρόπο πληρωμής."
       ],
@@ -5008,9 +4928,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ο λογαριασμός σας αναβαθμίζεται, αυτό μπορεί να διαρκέσει έως 30 δευτερόλεπτα."
       ],
       "Your account recovery method is set": [
         "Η μέθοδος ανάκτησης του λογαριασμού σας έχει οριστεί"
@@ -5466,10 +5383,6 @@
       "${ MAIL_APP_NAME } footer": [
         "Υποσέλιδο ${ MAIL_APP_NAME }"
       ],
-      "${ monthsRewarded } month credited": [
-        "Πιστώθηκε ${ monthsRewarded } μήνας",
-        "Πιστώθηκαν ${ monthsRewarded } μήνες"
-      ],
       "${ n } month": [
         "${ n } μήνας",
         "${ n } μήνες"
@@ -5529,17 +5442,11 @@
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
-      "Ask before loading remote content": [
-        "Ερώτηση πριν τη φόρτωση απομακρυσμένου περιεχομένου"
-      ],
       "Attach public key": [
         "Επισυνάψτε το δημόσιο κλειδί"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
-      ],
-      "Auto-load embedded images": [
-        "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
       ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
@@ -5658,9 +5565,6 @@
       "Create password": [
         "Δημιουργία κωδικού πρόσβασης"
       ],
-      "Credits pending": [
-        "Εκκρεμούν πιστώσεις"
-      ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
       ],
@@ -5699,9 +5603,6 @@
       ],
       "Digits": [
         "Ψηφία"
-      ],
-      "Discount": [
-        "Έκπτωση"
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -5759,9 +5660,6 @@
       ],
       "Expires": [
         "Λήγει"
-      ],
-      "extra storage": [
-        "επιπλέον αποθηκευτικός χώρος"
       ],
       "File": [
         "Αρχείο"
@@ -6099,9 +5997,6 @@
       "To: ${ PMEmailAddress }": [
         "Προς: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Σύνολο (${ countdown })"
-      ],
       "Two-password mode": [
         "Λειτουργία δύο κωδικών"
       ],
@@ -6137,9 +6032,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Αναμονή για συνδρομή"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
@@ -6179,9 +6071,6 @@
       ],
       "Your referral link": [
         "Ο σύνδεσμος παραπομπής σας"
-      ],
-      "Your reward": [
-        "Η επιβράβευσή σας"
       ],
       "ZIP code": [
         "Τ.Κ."
@@ -6898,6 +6787,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6916,17 +6816,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7676,9 +7565,6 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ planName } for free": [
-        "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"
       ]
@@ -8040,10 +7926,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } χρήστης",
-        "${ maxUsers } χρήστες"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Δώστε όνομα στην παραγόμενη διαμόρφωση"
       ],
@@ -8401,9 +8283,6 @@
       "Get ${ vpnPlus } to access all servers": [
         "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ${ vpnPlus }"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
-      ],
       "Gift code": [
         "Κωδικός δώρου"
       ],
@@ -8546,9 +8425,6 @@
       "Previous": [
         "Προηγούμενο"
       ],
-      "Processing": [
-        "Επεξεργασία"
-      ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
@@ -8569,9 +8445,6 @@
       ],
       "Refer a friend": [
         "Παραπέμψτε έναν φίλο"
-      ],
-      "Referral tracker": [
-        "Ιχνηλάτης παραπομπών"
       ],
       "Remove calendar": [
         "Αφαίρεση ημερολογίου"
@@ -8860,12 +8733,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
       ],
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"

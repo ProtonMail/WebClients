@@ -510,9 +510,6 @@
       "Pay ${ price }": [
         "Zaplatit ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Prosím kontaktujte administrátora organizace pro správu předplatného"
-      ],
       "Preview": [
         "Náhled"
       ],
@@ -543,11 +540,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -898,49 +895,17 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } uživatel",
-        "+ ${ _users } uživatelé",
-        "+ ${ _users } uživatelů",
-        "+ ${ _users } uživatelů"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } vlastní doména",
         "+ ${ domains } vlastní domény",
         "+ ${ domains } vlastních domén",
         "+ ${ domains } vlastních domén"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adresa",
-        "${ addressAddon.MaxAddresses } adresy",
-        "${ addressAddon.MaxAddresses } adres",
-        "${ addressAddon.MaxAddresses } adres"
       ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } doména",
-        "${ domainAddon.MaxDomains } domény",
-        "${ domainAddon.MaxDomains } domén",
-        "${ domainAddon.MaxDomains } domén"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } uživatel",
-        "${ memberAddon.MaxMembers } uživatelé",
-        "${ memberAddon.MaxMembers } uživatelů",
-        "${ memberAddon.MaxMembers } uživatelů"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } připojení",
-        "${ vpnAddon.MaxVPN } připojení",
-        "${ vpnAddon.MaxVPN } připojení",
-        "${ vpnAddon.MaxVPN } připojení"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } připojení",
-        "${ vpnBonus } připojení",
-        "${ vpnBonus } připojení",
-        "${ vpnBonus } připojení"
+      "+ ${ users } user": [
+        "+ ${ users } uživatel",
+        "+ ${ users } uživatelé",
+        "+ ${ users } uživatelů",
+        "+ ${ users } uživatelů"
       ]
     },
     "Address action": {
@@ -1056,14 +1021,23 @@
       "Payable every 12 months": [
         "Splatné každých 12 měsíců"
       ],
+      "Payable every 15 months": [
+        "Splatné každých 15 měsíců"
+      ],
       "Payable every 24 months": [
         "Splatné každých 24 měsíců"
+      ],
+      "Payable every 30 months": [
+        "Splatné každých 30 měsíců"
       ],
       "Payable every month": [
         "Splatné každý měsíc"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Obnoví se automaticky v ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Obnoví se automaticky ${ formattedEndTime } za ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1713,20 +1687,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } den",
-        "${ days } dny",
-        "${ days } dnů",
-        "${ days } dnů"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } měsíc",
-        "${ monthsWithYears } měsíce",
-        "${ monthsWithYears } měsíců",
-        "${ monthsWithYears } měsíce"
       ]
     },
     "Country name": {
@@ -2501,11 +2461,6 @@
         "(prostřednictvím ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Použitý kupón: ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "Žádné výsledky vyhledávání"
@@ -2628,8 +2583,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "Získejte až 3 měsíce ${ mailPlus } zdarma za každého přítele, který si předplatí ${ MAIL_APP_NAME }."
+      "Get up to ${ credits } in credits by inviting friends to Proton.": [
+        "Pozváním přátel do Protonu získáte až ${ credits } kreditů."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -2640,8 +2595,8 @@
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Sledujte, kolik lidí klikne na váš odkaz, zaregistrujte se a stane se předplatiteli. Sledujte, jak vaše bezplatné měsíce přibývají."
+      "Track the status and activity of your referrals.": [
+        "Sledujte stav a aktivitu svých doporučení."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
@@ -4514,6 +4469,9 @@
         "${ calendarsToBeMergedCount } sloučených kalendářů",
         "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
+      "${ current } of ${ total }": [
+        "${ current } z ${ total }"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } není platná e-mailová adresa"
       ],
@@ -4565,9 +4523,6 @@
         "${ numContacts } kontaktů",
         "${ numContacts } kontaktů"
       ],
-      "${ planName } credits earned": [
-        "${ planName } kreditů získáno"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
         "${ providerFoldersNumLocalized } složky nalezeny",
@@ -4579,9 +4534,6 @@
         "${ providerFoldersNumLocalized } štítky nalezeny v Gmailu",
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } z ${ rewardsLimit } měsíců"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
@@ -4637,9 +4589,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrování pokud je splněna jakákoliv z následujících podmínek)"
       ],
-      "(Mail + VPN)": [
-        "(E-mail + VPN)"
-      ],
       "* No credit card required.": [
         "* Kreditní karta není vyžadována."
       ],
@@ -4660,9 +4609,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Vyzkouší ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% sleva na Vaše předplatné s kupónem${ code }"
       ],
       "3. You earn credits": [
         "3. Získáte kredity"
@@ -4877,20 +4823,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Vyúčtováno na konci aktuálního účtovacího období (obnovuje se ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Potvrzení Bitcoin transakcí může nějakou dobu trvat (až 24 hodin). Jakmile bude transakce potvrzena, kredity připíšeme na Váš účet. Po potvrzené transakci můžete fakturu uhradit kredity."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Na Vaše předplatné byl použit Black Friday 2018"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Na Vaše předplatné byl použit Black Friday 2019"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Byla použita sleva Black Friday 2020 pro nováčka"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Zamezuje odesílatelům zjistit, zda a kdy jste zprávu otevřeli."
@@ -4994,9 +4928,6 @@
       "Delete link?": [
         "Odstranit odkaz?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Sleva na Vaše předplatné s kupónem${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
       ],
@@ -5044,9 +4975,6 @@
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "Připsáno ${ rewards } z ${ rewardsLimit } ${ planName } měsíců."
       ],
       "Edit label": [
         "Upravit štítek"
@@ -5140,9 +5068,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pro Visa a MasterCard, 3 číslice na zadní straně Vaší karty. Pro American Express 4 číslice na přední straně Vaší karty."
-      ],
-      "Free": [
-        "Zdarma"
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
@@ -5360,6 +5285,9 @@
       "Link type": [
         "Typ odkazu"
       ],
+      "Loaded content is being protected by our proxy when the block tracker is activated.": [
+        "Načtený obsah je chráněn naším proxy serverem, když je aktivováno blokování sledovacích parametrů."
+      ],
       "Loading": [
         "Načítání"
       ],
@@ -5543,6 +5471,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Zkontrolujte prosím svůj soubor nebo zkuste použít náš ${ csvTemplateButton }."
       ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Prosím kontaktujte správce organizace pro správu předplatného."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
@@ -5588,14 +5519,17 @@
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Zabrání načtení obsahu ze serveru odesílatele bez vašeho svolení."
-      ],
       "Preview": [
         "Náhled"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
+      ],
       "Priority support": [
         "Prioritní podpora"
+      ],
+      "Proton ${ planName } credits earned": [
+        "Získané kredity na Proton ${ planName }"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton pozastavil import, protože ztratil spojení s Vaším jiným poskytovatelem e-mailů. Prosím zkontrolujte připojení."
@@ -5759,9 +5693,6 @@
       "Text to display": [
         "Text k zobrazení"
       ],
-      "Thank you for supporting our mission.": [
-        "Děkujeme za podporu naší mise."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
       ],
@@ -5801,8 +5732,8 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Tyto konfigurace jsou určeny pro práci s routery WireGuard a oficiálními klienty."
       ],
-      "This 30-day free trial is not available any other way.": [
-        "Tato 30denní bezplatná zkušební verze není k dispozici žádným jiným způsobem."
+      "They'll receive a free month of ${ planName }.": [
+        "Obdrží měsíc služby ${ planName } zdarma."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -6053,8 +5984,8 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Pokud máte zapnuta upozornění a obdržíte nové zprávy ve Vašem účtu ${ MAIL_APP_NAME }, pošleme Vám upozornění na adresu pro obnovení / oznámení."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Když si předplatí placený tarif, bude na váš účet připsáno 1 až 3 měsíce ${ planName }."
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "Když si předplatí tarif, získáte kredity, které můžete použít na své předplatné."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -6112,6 +6043,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
+      ],
+      "You can now close this window.": [
+        "Nyní můžete toto okno zavřít."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Nyní můžete přijímat zprávy na svou adresu @pm.me. Přejděte na placený tarif, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
@@ -6215,9 +6149,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Váš účet se aktualizuje, může to trvat až 30 sekund."
-      ],
       "Your account recovery method is set": [
         "Vaše metoda obnovení účtu je nastavena"
       ],
@@ -6294,9 +6225,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Track your referral link activities here": [
-        "Sledujte aktivitu vašeho doporučujícího odkazu zde"
       ],
       "Try Mail Plus": [
         "Vyzkoušejte Mail Plus"
@@ -6713,12 +6641,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } zápatí"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } měsíc připsán",
-        "${ monthsRewarded } měsíce připsány",
-        "${ monthsRewarded } měsíců připsáno",
-        "${ monthsRewarded } měsíců připsáno"
-      ],
       "${ n } month": [
         "${ n } měsíc",
         "${ n } měsíce",
@@ -6794,9 +6716,6 @@
       "Apply filter to existing emails": [
         "Použít filtr na existující e-maily"
       ],
-      "Ask before loading remote content": [
-        "Zeptat se před načtením vzdáleného obsahu"
-      ],
       "Attach public key": [
         "Připojit veřejný klíč"
       ],
@@ -6806,17 +6725,23 @@
       "Authenticator app": [
         "Ověřovací aplikace"
       ],
+      "Auto show embedded images": [
+        "Automaticky zobrazovat vložené obrázky"
+      ],
+      "Auto show remote images": [
+        "Automaticky zobrazovat externí obrázky"
+      ],
       "Auto-detect primary time zone": [
         "Automaticky rozpoznat primární časové pásmo"
-      ],
-      "Auto-load embedded images": [
-        "Automaticky načíst vložené obrázky"
       ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
       "Auto-unsubscribe": [
         "Odhlásit odběr"
+      ],
+      "Awarded": [
+        "Uděleno"
       ],
       "Billing cycle": [
         "Fakturační období"
@@ -6941,8 +6866,8 @@
       "Create password": [
         "Vytvořit heslo"
       ],
-      "Credits pending": [
-        "Kredity čekající na schválení"
+      "Credits": [
+        "Kredity"
       ],
       "Credits used": [
         "Použité kredity"
@@ -6991,9 +6916,6 @@
       ],
       "Digits": [
         "Číslice"
-      ],
-      "Discount": [
-        "Sleva"
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -7057,9 +6979,6 @@
       ],
       "Expires": [
         "Vyprší"
-      ],
-      "extra storage": [
-        "extra úložiště"
       ],
       "File": [
         "Soubor"
@@ -7268,6 +7187,9 @@
       "Payment method": [
         "Způsob platby"
       ],
+      "Pending": [
+        "Čekající"
+      ],
       "Phone number": [
         "Telefonní číslo"
       ],
@@ -7421,9 +7343,6 @@
       "To: ${ PMEmailAddress }": [
         "Komu: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Celkem (${ countdown })"
-      ],
       "Two-password mode": [
         "Režim se dvěma hesly"
       ],
@@ -7459,9 +7378,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Čekání na předplatné"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
@@ -7504,9 +7420,6 @@
       ],
       "Your referral link": [
         "Váš doporučující odkaz"
-      ],
-      "Your reward": [
-        "Vaše odměna"
       ],
       "ZIP code": [
         "PSČ"
@@ -8414,6 +8327,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8427,8 +8360,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* S 12měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* V případě předplatného na 15 měsíců. Další možnosti předplatného jsou k dispozici u pokladny."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* S 24měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* V případě předplatného na 30 měsíců. Další možnosti předplatného jsou k dispozici u pokladny."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
@@ -8450,9 +8389,6 @@
       ],
       "Popular": [
         "Oblíbené"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Cena budoucího obnovení: zahrnuje všechny související neprošlé kupóny uložené ve vašem účtu"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb Proton."
@@ -8480,26 +8416,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9654,11 +9570,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Získejte ${ planName } až na 18 měsíců zdarma"
+      "Get up to ${ credits } in credits.": [
+        "Získejte až ${ credits } v kreditech."
       ],
-      "Invite friends and earn rewards!": [
-        "Pozvěte přátele a získejte odměny!"
+      "Invite friends to Proton": [
+        "Pozvěte přátele do služby Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Vyzkoušejte ${ DRIVE_APP_NAME }"
@@ -10157,12 +10073,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } uživatel",
-        "${ maxUsers } uživatelé",
-        "${ maxUsers } uživatelů",
-        "${ maxUsers } uživatelů"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Pojmenujte konfiguraci, která se má vygenerovat"
       ],
@@ -10235,8 +10145,8 @@
       "Add Sieve filter": [
         "Přidat filtr Sieve"
       ],
-      "Add to not spam list": [
-        "Add to Not spam list"
+      "Add to Not spam list": [
+        "Přidat na seznam vyžádaných e-mailů"
       ],
       "Add to spam list": [
         "Přidat do seznamu spamů"
@@ -10535,9 +10445,6 @@
       "Export public key": [
         "Exportovat veřejný klíč"
       ],
-      "Extension": [
-        "Rozšíření"
-      ],
       "External PGP settings": [
         "Externí nastavení PGP"
       ],
@@ -10565,14 +10472,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Získejte ${ planName } až na 18 měsíců zdarma"
+      "Gift": [
+        "Dárek"
       ],
       "Gift code": [
         "Dárkový kód"
       ],
       "How does it work?": [
         "Jak to funguje?"
+      ],
+      "How to refer a friend and get credits": [
+        "Jak doporučit známého a získat kredity"
       ],
       "How your free trial works": [
         "Jak funguje vaše zkušební verze"
@@ -10724,9 +10634,6 @@
       "Privacy and data collection": [
         "Soukromí a sběr dat"
       ],
-      "Processing": [
-        "Zpracovává se"
-      ],
       "Processing...": [
         "Zpracovávání..."
       ],
@@ -10747,9 +10654,6 @@
       ],
       "Refer a friend": [
         "Doporučte přítele"
-      ],
-      "Referral tracker": [
-        "Sledování doporučení"
       ],
       "Remove calendar": [
         "Odstranit kalendář"
@@ -10894,6 +10798,9 @@
       ],
       "Time zone": [
         "Časové pásmo"
+      ],
+      "Track your referrals": [
+        "Sledujte svá doporučení"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Vyzkoušejte zdarma to nejlepší z ${ MAIL_APP_NAME }"
@@ -11073,12 +10980,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Přizpůsobit import pro snížení počtu štítků"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Byla uplatněna sleva pro roční účtování"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Byla uplatněna sleva pro dvouleté účtování"
       ],
       "Each imported email will have this label": [
         "Každý importovaný e-mail bude mít tento štítek"

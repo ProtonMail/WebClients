@@ -510,9 +510,6 @@
       "Pay ${ price }": [
         "Payer ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Veuillez contacter l'administrateur de votre organisation pour gérer votre abonnement"
-      ],
       "Preview": [
         "Aperçu"
       ],
@@ -543,11 +540,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Rafraîchir la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reload": [
         "Recharger"
@@ -898,35 +895,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } utilisateur·rice",
-        "+ ${ _users } utilisateur·rice·s"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domaine personnalisé",
         "+ ${ domains } domaines personnalisés"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adresse",
-        "${ addressAddon.MaxAddresses } adresses"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domaine",
-        "${ domainAddon.MaxDomains } domaines"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } utilisateur",
-        "${ memberAddon.MaxMembers } utilisateurs"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } connexion",
-        "${ vpnAddon.MaxVPN } connexions"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } connexion",
-        "${ vpnBonus } connexions"
       ]
     },
     "Address action": {
@@ -1693,16 +1664,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } jour",
-        "${ days } jours"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mois",
-        "${ monthsWithYears } mois"
       ]
     },
     "Country name": {
@@ -2477,11 +2438,6 @@
         "(via ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Coupon appliqué: ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "Aucun résultat de recherche trouvé"
@@ -2596,14 +2552,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "Obtenez gratuitement jusqu'à 3 mois de ${ mailPlus } pour chaque ami souscrivant à ${ MAIL_APP_NAME }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne certains groupes. Veuillez vérifier comment ces groupes doivent être importés."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Suivez le nombre de personnes qui cliquent sur votre lien, s'inscrivent et deviennent des abonnés payants. Regardez s'accumuler vos mois gratuits."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Vous pouvez continuer à inviter des amis, mais vous ne pourrez plus gagner de crédits"
@@ -4440,9 +4390,6 @@
         "${ numContacts } contact",
         "${ numContacts } contacts"
       ],
-      "${ planName } credits earned": [
-        "Crédits ${ planName } gagnés"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
         "${ providerFoldersNumLocalized } dossiers trouvés"
@@ -4450,9 +4397,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } label trouvé dans Gmail",
         "${ providerFoldersNumLocalized } labels trouvés dans Gmail"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } sur ${ rewardsLimit } mois"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } sur ${ providerCalendars.length } calendrier",
@@ -4496,9 +4440,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(filtrer si l’UNE des conditions suivantes est remplie)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "* No credit card required.": [
         "*Aucune carte bancaire requise."
       ],
@@ -4517,9 +4458,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Ils essaient ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20 % de remise sur votre abonnement avec le code promo ${ code }"
       ],
       "3. You earn credits": [
         "3. Vous gagnez des crédits"
@@ -4728,20 +4666,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir commencer à envoyer et à recevoir des courriels de vos nouvelles adresses, vous devez créer des clés de chiffrement pour celles-ci."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturé à la fin de votre cycle de facturation actuel (renouvelé le ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois celles-ci confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pouvez payer votre facture avec les crédits."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "L’offre du Black Friday 2018 a été appliquée à votre abonnement"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "L’offre du Vendredi fou 2019 a été appliquée à votre abonnement"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "La réduction du Vendredi fou 2020 pour les nouveaux arrivants a été appliquée"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Empêche les expéditeurs de voir si et quand vous avez ouvert un message."
@@ -4843,9 +4769,6 @@
       "Delete link?": [
         "Supprimer le lien?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Remise appliquée à votre abonnement avec le code promo ${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus vous connecter ou déchiffrer vos messages."
       ],
@@ -4891,9 +4814,6 @@
       ],
       "Each code can only be used once": [
         "Chaque code ne peut être utilisé qu'une seule fois"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "${ rewards } sur ${ rewardsLimit } mois de ${ planName } gagnés."
       ],
       "Edit label": [
         "Modifier le label"
@@ -4987,9 +4907,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pour Visa et MasterCard, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
-      ],
-      "Free": [
-        "Gratuit"
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l'espace ou ajoutez plus d'espace de stockage."
@@ -5425,9 +5342,6 @@
       "Plus or Visionary subscription required": [
         "Abonnement Plus ou Visionary requis"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Empêche le contenu du serveur de l'expéditeur de se charger sans votre permission."
-      ],
       "Preview": [
         "Aperçu"
       ],
@@ -5596,9 +5510,6 @@
       "Text to display": [
         "Texte à afficher"
       ],
-      "Thank you for supporting our mission.": [
-        "Merci de soutenir notre mission."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Le message ${ boldDataLocked } n'apparaîtra plus, mais vous pouvez toujours déverrouiller vos données sous ${ encryptionAndKeysLink }."
       ],
@@ -5633,9 +5544,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ces configurations sont fournies pour fonctionner avec les routeurs WireGuard et les clients officiels."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "L'essai gratuit de 30 jours n'est disponible nulle part ailleurs."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
@@ -5886,9 +5794,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Lorsque les notifications sont activées, nous envoyons une alerte sur votre adresse de récupération si vous recevez de nouveaux messages sur votre compte ${ MAIL_APP_NAME }."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Lorsqu'ils souscrivent à un abonnement payant, 1 à 3 mois de ${ planName } seront crédités sur votre compte."
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -6039,9 +5944,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Votre compte est en cours de mise à jour, ceci peut prendre jusqu'à 30 secondes."
-      ],
       "Your account recovery method is set": [
         "Votre méthode de récupération de compte est définie"
       ],
@@ -6118,9 +6020,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "La clé ${ fingerprint } a déjà été téléversée"
-      ],
-      "Track your referral link activities here": [
-        "Suivez l'activité de vos liens de parrainage ici"
       ],
       "Try Mail Plus": [
         "Essayer Mail Plus"
@@ -6537,10 +6436,6 @@
       "${ MAIL_APP_NAME } footer": [
         "Pied de page ${ MAIL_APP_NAME }"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } mois crédité",
-        "${ monthsRewarded } mois crédités"
-      ],
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
@@ -6612,9 +6507,6 @@
       "Apply filter to existing emails": [
         "Appliquer le filtre aux courriels existants"
       ],
-      "Ask before loading remote content": [
-        "Demander avant de charger le contenu distant"
-      ],
       "Attach public key": [
         "Joindre une clé publique"
       ],
@@ -6626,9 +6518,6 @@
       ],
       "Auto-detect primary time zone": [
         "Détection automatique du fuseau horaire principal"
-      ],
-      "Auto-load embedded images": [
-        "Charger automatiquement les images intégrées"
       ],
       "Auto-reply": [
         "Réponse automatique"
@@ -6759,9 +6648,6 @@
       "Create password": [
         "Créer un mot de passe"
       ],
-      "Credits pending": [
-        "Crédits en attente"
-      ],
       "Credits used": [
         "Crédits utilisés"
       ],
@@ -6809,9 +6695,6 @@
       ],
       "Digits": [
         "Chiffres"
-      ],
-      "Discount": [
-        "Remise"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -6875,9 +6758,6 @@
       ],
       "Expires": [
         "Expire le"
-      ],
-      "extra storage": [
-        "stockage supplémentaire"
       ],
       "File": [
         "Fichier"
@@ -7236,9 +7116,6 @@
       "To: ${ PMEmailAddress }": [
         "À: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
       "Two-password mode": [
         "Mode deux mots de passe"
       ],
@@ -7274,9 +7151,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "En attente d'abonnement"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Nous sommes désolés de vous voir partir. Afin de nous aider à nous améliorer pourriez-vous s’il-vous-plaît nous expliquer pourquoi vous partez."
@@ -7319,9 +7193,6 @@
       ],
       "Your referral link": [
         "Votre lien de parrainage"
-      ],
-      "Your reward": [
-        "Votre récompense"
       ],
       "ZIP code": [
         "Code postal"
@@ -8180,6 +8051,26 @@
         "Gestion de l'équipe"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -8217,9 +8108,6 @@
       "Popular": [
         "Populaire"
       ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Le prix du futur renouvellement comprend tous les codes promotionnels non expirés et applicables qui sont enregistrés sur votre compte"
-      ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Suite de confidentialité et de sécurité pour les entreprises, comprenant tous les services premium de Proton."
       ],
@@ -8246,26 +8134,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9394,12 +9262,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
-      ],
-      "Invite friends and earn rewards!": [
-        "Invitez des amis et gagnez des récompenses!"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
       ]
@@ -9867,10 +9729,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } utilisateur·rice",
-        "${ maxUsers } utilisateur·rice·s"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Donnez un nom à la configuration à générer"
       ],
@@ -10240,9 +10098,6 @@
       "Export public key": [
         "Exporter la clé publique"
       ],
-      "Extension": [
-        "Extension"
-      ],
       "External PGP settings": [
         "Paramètres PGP externes"
       ],
@@ -10269,9 +10124,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenir ${ vpnPlus } pour accéder à tous les serveurs"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
       ],
       "Gift code": [
         "Code cadeau"
@@ -10427,9 +10279,6 @@
       "Privacy and data collection": [
         "Vie privée et collecte de données"
       ],
-      "Processing": [
-        "En cours de traitement"
-      ],
       "Processing...": [
         "Traitement en cours..."
       ],
@@ -10450,9 +10299,6 @@
       ],
       "Refer a friend": [
         "Parrainer un ami"
-      ],
-      "Referral tracker": [
-        "Suivi des parrainages"
       ],
       "Remove calendar": [
         "Retirer le calendrier"
@@ -10771,12 +10617,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personnalisez l'importation pour réduire le nombre de labels"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Remise appliquée pour un cycle de facturation annuel"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
         "Chaque courriel importé aura ce label"

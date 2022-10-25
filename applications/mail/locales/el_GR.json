@@ -418,9 +418,6 @@
       "Hide messages": [
         "Απόκρυψη μηνυμάτων"
       ],
-      "Hide My Email": [
-        "Κρύψτε το email μου"
-      ],
       "Hide my email": [
         "Κρύψτε το email μου"
       ],
@@ -490,9 +487,6 @@
       ],
       "Load more": [
         "Φόρτωση περισσοτέρων"
-      ],
-      "Load unprotected": [
-        "Φόρτωση μη προστατευμένων"
       ],
       "Loading${ ellipsis }": [
         "Γίνεται φόρτωση${ ellipsis }"
@@ -628,9 +622,6 @@
       ],
       "No": [
         "Όχι"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Δεν βρέθηκαν ιχνηλάτες, όμως κάποιες εικόνες δεν μπόρεσαν να φορτωθούν με προστασία ιχνηλασίας."
       ],
       "No, I won't attend": [
         "Οχί, δεν θα παρευρεθώ"
@@ -3901,10 +3892,6 @@
         "${ total } μήνυμα",
         "${ total } μηνύματα"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } προγραμματισμένο μήνυμα",
-        "${ totalMessagesCount } προγραμματισμένα μηνύματα"
-      ],
       "${ unread } unread conversation": [
         "${ unread } μη διαβασμένη συνομιλία",
         "${ unread } μη διαβασμένες συνομιλίες"
@@ -4351,9 +4338,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
-      ],
-      "members": [
-        "μέλη"
       ],
       "Members": [
         "Μέλη"
@@ -6142,11 +6126,6 @@
         "Σχόλια"
       ]
     },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Ενημερωμένο Proton, ενοποιημένη προστασία"
-      ]
-    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } δημιουργήθηκε"
@@ -6605,14 +6584,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ planName } for free": [
-        "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
-      ],
       "Message Content Search": [
         "Αναζήτηση εντός Περιεχομένου Μηνυμάτων"
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Για την προστασία του απορρήτου σας, το Proton απέκλεισε τους ιχνηλάτες εντός αυτού του μηνύματος"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"

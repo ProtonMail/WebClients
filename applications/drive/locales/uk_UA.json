@@ -410,6 +410,9 @@
       "Remove": [
         "Вилучити"
       ],
+      "Remove device": [
+        "Вилучити пристрій"
+      ],
       "Remove from this list": [
         "Вилучити з цього списку"
       ],
@@ -607,6 +610,9 @@
       ],
       "View invoice": [
         "Переглянути рахунок"
+      ],
+      "Your 500 MB bonus": [
+        "Ваша винагорода 500 МБ"
       ],
       "Zoom in": [
         "Збільшити"
@@ -1802,6 +1808,9 @@
         "Приберіть принаймні ${ calendarToFixCount } календарів або",
         "Приберіть принаймні ${ calendarToFixCount } календаря або"
       ],
+      "Device name does not match": [
+        "Назва пристрою відрізняється"
+      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -2192,6 +2201,11 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } оновлено"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Приватність – це стандарт."
       ]
     },
     "Group": {
@@ -2785,6 +2799,9 @@
       "and": [
         "та"
       ],
+      "And access it from anywhere": [
+        "Та отримайте до нього доступ де завгодно"
+      ],
       "Anyone with this link can access your file.": [
         "Будь-хто за цим посиланням може отримати доступ до вашого файлу."
       ],
@@ -2884,11 +2901,20 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
+      "Delete locked drive": [
+        "Видалити заблокований диск",
+        "Видалити заблоковані диски",
+        "Видалити заблоковані диски",
+        "Видалити заблоковані диски"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цей файл безпечно вивантажено ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цю теку безпечно вивантажено ${ emailAddress }."
+      ],
+      "double your storage": [
+        "подвоїти обсяг свого сховища"
       ],
       "Download canceled": [
         "Завантаження скасовано"
@@ -3001,6 +3027,9 @@
       "Free up some space or contact your administrator.": [
         "Звільніть місце або зверніться до свого адміністратора."
       ],
+      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
+        "Ознайомтеся з Proton Drive та отримайте винагороду – 500 MB обсягу сховища! Не зволікайте."
+      ],
       "Go ahead, upload a file": [
         "Уперед, вивантажте файл"
       ],
@@ -3073,6 +3102,9 @@
       "It’s as easy as drag and drop or selecting files": [
         "Це так само просто, як перетягування або вибір файлів"
       ],
+      "It’s easy and secure": [
+        "Це легко та безпечно"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
       ],
@@ -3081,6 +3113,9 @@
       ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
+      ],
+      "Labels:": [
+        "Мітки:"
       ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
@@ -3111,6 +3146,9 @@
       ],
       "Loading preview": [
         "Завантаження попереднього перегляду"
+      ],
+      "Makes your account safer": [
+        "Робить ваш обліковий запис надійнішим"
       ],
       "Merged": [
         "Об'єднано"
@@ -3154,6 +3192,9 @@
       "No results found": [
         "Результатів не знайдено"
       ],
+      "No synced devices": [
+        "Немає синхронізованих пристроїв"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
@@ -3195,6 +3236,9 @@
       ],
       "Paused": [
         "Зупинено"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Остаточно видаліть усі файли у своєму заблокованому сховищі"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
@@ -3334,6 +3378,9 @@
       "Swiss privacy": [
         "Швейцарська приватність"
       ],
+      "Synced devices": [
+        "Синхронізовані пристрої"
+      ],
       "Tap the + button to upload a file or folder": [
         "Торкніться кнопки +, щоб вивантажити файл або теку"
       ],
@@ -3394,6 +3441,12 @@
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
       ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Ця дія вилучить з Proton Drive синхронізований пристрій ${ deviceName }. Ці зміни не вплинуть на локальні файли пристрою."
+      ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Для забезпечення дійсно приватного пошуку нам необхідно індексувати ваші локальні файли. Ви й надалі можете користуватися ${ DRIVE_APP_NAME } як зазвичай – ми повідомимо, коли індексування завершиться."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -3448,8 +3501,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Використовуйте Drive для комп'ютера, щоб синхронізувати теки на своєму комп'ютері з Proton Drive. Вони з'являться тут і будуть доступними де завгодно.  ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Усе готово! Ви щойно подвоїли обсяг свого безплатного сховища!"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
@@ -3507,6 +3566,9 @@
       ],
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "У вас залишилося ${ expiresInDays } днів для отримання додаткових 500 МБ з нагоди запуску і "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли ${ spaceDisplayed }% свого обсягу сховища. ${ freeUpMessage } ${ upgradeLink }"
@@ -3576,6 +3638,9 @@
       ],
       "file data key": [
         "ключ даних файлу"
+      ],
+      "file data order": [
+        "порядок файлів даних"
       ],
       "keys": [
         "ключі"
@@ -3704,6 +3769,12 @@
       "Country": [
         "Країна"
       ],
+      "Create a share link": [
+        "Створіть спільне посилання"
+      ],
+      "Create Proton account": [
+        "Створіть обліковий запис Proton"
+      ],
       "Created": [
         "Створено"
       ],
@@ -3721,6 +3792,12 @@
       ],
       "Deleted": [
         "Видалено"
+      ],
+      "Device": [
+        "Пристрій"
+      ],
+      "Device name": [
+        "Назва пристрою"
       ],
       "Do not ask again": [
         "Не питати знову"
@@ -3745,6 +3822,9 @@
       ],
       "Encrypt emails": [
         "Шифрувати листи"
+      ],
+      "Enter device name": [
+        "Уведіть назву пристрою"
       ],
       "Expired": [
         "Термін дії завершився"
@@ -3926,6 +4006,9 @@
       "Set expiration date": [
         "Вказати термін дії"
       ],
+      "Set recovery method": [
+        "Налаштуйте спосіб відновлення"
+      ],
       "Sign emails": [
         "Підписувати листи"
       ],
@@ -3991,6 +4074,9 @@
       ],
       "Upload picture": [
         "Завантажити зображення"
+      ],
+      "Upload your first file": [
+        "Вивантажте свій перший файл"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Ім'я користувача або адреса ${ MAIL_APP_NAME }"
@@ -4181,11 +4267,6 @@
         "Перемкнути або додати обліковий запис"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляємо оновлений вигляд.${ br }Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Розкажіть нам про своє враження. (Необов'язково)"
@@ -4194,11 +4275,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Відгук"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Оновлений Proton, єдиний захист"
       ]
     },
     "Notification": {
@@ -4312,6 +4388,18 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ],
+      "Device failed to be removed": [
+        "Не вдалося вилучити пристрій"
+      ],
+      "Device failed to be renamed": [
+        "Не вдалося перейменувати пристрій"
+      ],
+      "Device removed": [
+        "Пристрій вилучено"
+      ],
+      "Device renamed": [
+        "Пристрій перейменовано"
       ],
       "Encrypted search activated": [
         "Зашифрований пошук активовано"
@@ -4442,10 +4530,16 @@
         "Почніть користуватися Proton Drive, і ми подвоїмо обсяг вашого безплатного сховища до 1 Гб!"
       ],
       "Set a recovery method": [
-        "Вказати спосіб відновлення"
+        "Налаштуйте спосіб відновлення"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Просто завершіть описані дії впродовж наступного дня:",
+        "Просто завершіть описані дії впродовж наступних ${ expiresInDays } днів:",
+        "Просто завершіть описані дії впродовж наступних ${ expiresInDays } днів:",
+        "Просто завершіть описані дії впродовж наступних ${ expiresInDays } днів:"
       ],
       "Upload a file": [
-        "Вивантажити файл"
+        "Вивантажте файл"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваше надійне онлайн-сховище для життєво важливих документів і дорогоцінних спогадів."
@@ -4531,6 +4625,9 @@
       ],
       "Enter a new folder name": [
         "Уведіть нову назву теки"
+      ],
+      "Enter device name": [
+        "Уведіть назву пристрою"
       ],
       "Enter your email address": [
         "Введіть адресу своєї е-пошти"
@@ -5132,11 +5229,17 @@
       "Recover data": [
         "Відновити дані"
       ],
+      "Remove device?": [
+        "Вилучити пристрій?"
+      ],
       "Rename a file": [
         "Перейменувати файл"
       ],
       "Rename a folder": [
         "Перейменувати теку"
+      ],
+      "Rename device": [
+        "Перейменувати пристрій"
       ],
       "Report a problem": [
         "Повідомити про проблему"
@@ -5210,6 +5313,9 @@
       "Stop transfers?": [
         "Зупинити передавання?"
       ],
+      "Synced devices": [
+        "Синхронізовані пристрої"
+      ],
       "The link either does not exist or has expired": [
         "Посилання або не існує або не чинне"
       ],
@@ -5276,8 +5382,17 @@
       "You've got files": [
         "Ви отримали файли"
       ],
+      "Your 500 MB bonus": [
+        "Ваша винагорода 500 МБ"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
+      ],
+      "Your welcome actions": [
+        "Ваші дії"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Відтепер обсяг вашого сховища – 1 ГБ"
       ]
     },
     "Today icon tooltip in mini calendar": {

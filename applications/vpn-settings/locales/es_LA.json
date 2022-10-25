@@ -414,35 +414,13 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } usuario",
-        "+ ${ _users } usuarios"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } dominio personalizado",
         "+ ${ domains } dominio personalizado"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } dirección",
-        "${ addressAddon.MaxAddresses } dirección"
       ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } dominio",
-        "${ domainAddon.MaxDomains } dominio"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } usuario",
-        "${ memberAddon.MaxMembers } usuario"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } conexión",
-        "${ vpnAddon.MaxVPN } conexión"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } conexión",
-        "${ vpnBonus } conexiones"
+      "+ ${ users } user": [
+        "+ ${ users } usuario",
+        "+ ${ users } usuarios"
       ]
     },
     "Alter": {
@@ -464,14 +442,23 @@
       "Payable every 12 months": [
         "Pagable cada 12 meses"
       ],
+      "Payable every 15 months": [
+        "Pagable cada 15 meses"
+      ],
       "Payable every 24 months": [
         "Pagable cada 24 meses"
+      ],
+      "Payable every 30 months": [
+        "Pagable cada 30 meses"
       ],
       "Payable every month": [
         "Pagable cada mes"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renueva automáticamente el ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Se renueva automáticamente en ${ formattedEndTime } por ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -658,16 +645,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Eliminar método de pago"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } día",
-        "${ days } día"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes",
-        "${ monthsWithYears } meses"
       ]
     },
     "Country name": {
@@ -1442,11 +1419,6 @@
         "(vía ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Cupón aplicado: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Créditos no usados"
@@ -1735,7 +1707,7 @@
         "Llave de seguridad actualizada"
       ],
       "This will delete all security keys linked to your account.": [
-        "Esto eleminará todas las llaves de seguridad vinculadas a su cuenta."
+        "Esto eliminará todas las llaves de seguridad vinculadas a su cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
         "Habilite 2FA con una llave de seguridad, para esto necesitará activar 2FA con una aplicación de autenticación"
@@ -1903,9 +1875,6 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } o ${ visionary } para la función de Secure Core."
       ],
-      "(Mail + VPN)": [
-        "(Correo + VPN)"
-      ],
       "* No credit card required.": [
         "* No se requiere tarjeta de crédito."
       ],
@@ -1918,9 +1887,6 @@
       ],
       "10 email addresses": [
         "10 direcciones de correo"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% de descuento aplicado a su suscripción con el cupón ${ code }"
       ],
       "30-day money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
@@ -1967,20 +1933,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturado al final de su ciclo de facturación actual (se renueva en ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Las transacciones de Bitcoin pueden tomar un tiempo en confirmarse (hasta 24 horas). Una vez confirmada, añadiremos los créditos a su cuenta. Después de la confirmación de la transacción, puede pagar su factura con los créditos."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 se aplicó a su suscripción"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 se aplicó a su suscripción"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Descuento aplicado para recién llegados del Black Friday 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al degradar a un plan Free, perderá permanentemente estos beneficios, incluso si mejora de nuevo en el futuro."
@@ -2008,9 +1962,6 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Descuento aplicado a su suscripción con el cupón ${ code }"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "No use las credenciales de OpenVPN/IKEv2 en las aplicaciones de ${ VPN_APP_NAME } ni en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2080,9 +2031,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa y MasterCard, los 3 dígitos en la parte posterior de la tarjeta."
-      ],
-      "Free": [
-        "Gratis"
       ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
@@ -2252,6 +2200,9 @@
       "Preview": [
         "Vista previa"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en su cuenta."
+      ],
       "Priority support": [
         "Soporte prioritario"
       ],
@@ -2308,9 +2259,6 @@
       ],
       "support team": [
         "equipo de soporte"
-      ],
-      "Thank you for supporting our mission.": [
-        "Gracias por apoyar nuestra misión."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, transmitir y estar en línea."
@@ -2557,9 +2505,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Su cuenta se está mejorando, esto puede tomar hasta 30 segundos."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Su cuenta se actualizará una vez que el pago se haya completado."
@@ -2812,9 +2757,6 @@
       "Digits": [
         "Dígitos"
       ],
-      "Discount": [
-        "Descuento"
-      ],
       "Do you have any suggestions for our team?": [
         "¿Tiene alguna sugerencia para nuestro equipo?"
       ],
@@ -2835,9 +2777,6 @@
       ],
       "Expires": [
         "Expira"
-      ],
-      "extra storage": [
-        "almacenamiento adicional"
       ],
       "Gift code": [
         "Código de regalo"
@@ -2955,9 +2894,6 @@
       ],
       "System information": [
         "Información del sistema"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
       ],
       "Two-password mode": [
         "Modo de dos contraseñas"
@@ -3435,8 +3371,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* Con 12 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* Con 15 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Con 24 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* Con 30 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Los créditos, prorrateo y cupones correspondientes se aplican en el siguiente paso"
@@ -3458,9 +3400,6 @@
       ],
       "Popular": [
         "Popular"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Precio para futuras renovaciones: incluye todos los cupones no expirados aplicables guardados en su cuenta"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Conjunto de soluciones de privacidad y seguridad para empresas con todos los servicios premium de Proton."
@@ -4006,15 +3945,244 @@
         "Verificación"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Don't show this again": [
+        "No volver a mostrar esto"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Obtenga la versión ilimitada"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "All paid Mail and Calendar features": [
+        "Todas las funciones pagas de Mail y Calendar"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidad"
+      ],
+      "Highest VPN speed": [
+        "Máxima velocidad de VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar y Drive"
+      ],
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium early access": [
+        "Acceso anticipado premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail y Calendar premium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar y Drive premium"
+      ],
+      "Premium VPN": [
+        "VPN premium"
+      ],
+      "Secure cloud storage": [
+        "Almacenamiento en la nube seguro"
+      ],
+      "Secure streaming": [
+        "Transmisión segura"
+      ],
+      "Support online privacy": [
+        "Soporte para la privacidad en línea"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Los descuentos se basan en los precios estándares mensuales."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada año con la misma tarifa hasta que sea cancelada."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta de por vida"
+      ],
+      "Limited time only": [
+        "Solo por tiempo limitado"
+      ],
+      "Most popular": [
+        "Más popular"
+      ],
+      "Offer ends soon": [
+        "La oferta termina pronto"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "El descuento se seguirá aplicando en el momento de la renovación hasta que la suscripción sea cancelada o modificada"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "La suscripción se renovará automáticamente a la tarifa estándar al final de su ciclo de facturación"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ir a los planes de suscripción"
+      ],
+      "Upgrade": [
+        "Contratar"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "por mes"
+      ],
+      "1 year": [
+        "1 año"
+      ],
+      "2 years": [
+        "2 años"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "Con un costo de ${ amount } durante los primeros 2 años"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "Con un costo de ${ amount } durante el primer mes"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "Con un costo de ${ amount } durante el primer año"
+      ],
+      "Billed at ${ amountDue }": [
+        "Con un costo de ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "for ${ n } mes",
+        "for ${ n } meses"
+      ],
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Se renueva después de 1 año a un precio con descuento de ${ discountedAmount } en lugar de ${ regularAmount } (${ discount }% de descuento)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Se renueva después de 2 años a un precio con descuento de ${ discountedAmount } en lugar de ${ regularAmount } (${ discount }% de descuento)"
+      ],
+      "Save ${ discount }%": [
+        "Ahorre un ${ discount }%"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Precio estándar: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Oferta de Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Oferta durante el Cyber Week"
+      ],
+      "End of year offer": [
+        "Oferta de fin de año"
+      ],
+      "End of Year Sale": [
+        "Oferta de fin de año"
+      ],
+      "Get our premium bundle and save more": [
+        "Obtenga nuestro paquete premium y ahorre más dinero"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Nuestro legendario Plan Visionary volvió por tiempo limitado"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Ahorre más con 1 año de Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Actualice a una mejor versión de Proton Unlimited y ahorre más"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de transmisión en todo el mundo, bloqueador de malware y anuncios, y más."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de transmisión en todo el mundo, bloqueador de malware y anuncios, y más."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Todos nuestros servicios premium con sus límites más altos: 100 direcciones de correo electrónico, soporte para 10 dominios personalizados, alias ilimitados de Hide My Email, uso compartido de calendarios, almacenamiento en la nube encriptado y uso compartido de archivos, y más."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye soporte para 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide My Email, uso compartido de calendario y más."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye soporte para 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide My Email, uso compartido de calendario y más."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Es perfecto para familias o equipos pequeños, ya que cada uno puede tener su propia bandeja de entrada y alias. Requiere un dominio personalizado."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Obtenga sin costo adicional las versiones pagas de todos los nuevos servicios de privacidad que lanzaremos en el futuro, junto con acceso anticipado a todas las funciones y productos futuros."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Proteja sus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Espacio de almacenamiento compartido en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenga hasta 18 meses de ${ planName } gratis"
+      "Get up to ${ credits } in credits.": [
+        "Obtenga hasta ${ credits } en créditos."
       ],
-      "Invite friends and earn rewards!": [
-        "¡Invite a sus amigos y gane recompensas!"
+      "Invite friends to Proton": [
+        "Invite amigos a Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probar ${ DRIVE_APP_NAME }"
@@ -4240,10 +4408,6 @@
       ]
     },
     "Title": {
-      "${ maxUsers } user": [
-        "${ maxUsers } usuario",
-        "${ maxUsers } usuarios"
-      ],
       "${ VPN_APP_NAME } clients": [
         "Clientes de ${ VPN_APP_NAME }"
       ],
@@ -4412,6 +4576,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Obtenga ${ vpnPlus } para acceder a todos los servidores"
       ],
+      "Gift": [
+        "Regalía"
+      ],
       "Gift code": [
         "Código de regalo"
       ],
@@ -4489,9 +4656,6 @@
       ],
       "Previous": [
         "Anterior"
-      ],
-      "Processing": [
-        "Procesando"
       ],
       "Processing...": [
         "Procesando..."
@@ -4622,12 +4786,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Descuento aplicado para el ciclo de facturación anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Descuento aplicado para el ciclo de facturación de dos años"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ]

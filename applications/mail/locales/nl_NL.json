@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Berichten van deze afzender blokkeren"
       ],
+      "Block sender": [
+        "Blokkeer afzender"
+      ],
       "Block senders": [
         "Blokkeer afzenders"
       ],
@@ -436,9 +439,6 @@
       "Hide messages": [
         "Verberg berichten"
       ],
-      "Hide My Email": [
-        "Verberg Mijn E-mailadres"
-      ],
       "Hide my email": [
         "Verberg mijn e-mailadres"
       ],
@@ -500,6 +500,9 @@
       "Load": [
         "Laden"
       ],
+      "Load anyway": [
+        "Toch laden"
+      ],
       "Load embedded images": [
         "Ingesloten afbeeldingen laden"
       ],
@@ -508,9 +511,6 @@
       ],
       "Load more": [
         "Laad meer"
-      ],
-      "Load unprotected": [
-        "Onbeveligd inladen"
       ],
       "Loading${ ellipsis }": [
         "Laden${ ellipsis }"
@@ -646,9 +646,6 @@
       ],
       "No": [
         "Nee"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking."
       ],
       "No, I won't attend": [
         "Nee, ik zal niet aanwezig zijn"
@@ -818,6 +815,9 @@
       "Search message content": [
         "Doorzoek berichtinhoud"
       ],
+      "See plan features": [
+        "Bekijk de abonnementskenmerken"
+      ],
       "Select all": [
         "Alles selecteren"
       ],
@@ -907,6 +907,9 @@
       ],
       "Skip": [
         "Overslaan"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "Sommige afbeeldingen konden niet geladen worden met bescherming tegen tracking."
       ],
       "Star": [
         "Ster"
@@ -4344,10 +4347,6 @@
         "${ total } bericht",
         "${ total } berichten"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "Één gepland bericht",
-        "${ totalMessagesCount } ingeplande berichten"
-      ],
       "${ unread } unread conversation": [
         "${ unread } ongelezen gesprek",
         "${ unread } ongelezen gesprekken"
@@ -4713,9 +4712,6 @@
         "Uur",
         "Uren"
       ],
-      "How Hide My Email works": [
-        "Zo werkt Verberg Mijn E-mailadres"
-      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Ik verzend dit bericht naar een niet-Proton Mail-gebruiker."
       ],
@@ -4827,9 +4823,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Maximum aantal bijlagen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overschreden."
-      ],
-      "members": [
-        "leden"
       ],
       "Members": [
         "Leden"
@@ -4994,9 +4987,6 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton verdient geen geld door privacy te misbruiken."
       ],
@@ -5099,9 +5089,6 @@
       "Show original message": [
         "Toon origineel bericht"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin is een Protondienst, en uw Proton Account bevat Verberg Mijn E-mailaliassen. Om te beginnen met het maskeren van uw e-mailadres, ga naar SimpleLogin en maak uw eerste alias aan."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
       ],
@@ -5171,9 +5158,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Er is iets misgegaan met de ondertekening tijdens het controleren van de contactgegevens, dat veroorzaakt kan zijn door het resetten van uw wachtwoord."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Ze kunnen u niet spammen als ze uw e-mailadres niet kennen. Bescherm uw inbox met Verberg Mijn E-mailadres."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -5392,9 +5376,6 @@
       ],
       "When do you want your message to be sent?": [
         "Wanneer wilt u dat uw bericht wordt verzonden?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Bij het doorgeven van uw e-mailadres, gebruik een unieke wegwerpbare alias met Verberg Mijn E-mailadres, in de plaats van uw echt e-mailadres."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
@@ -6487,6 +6468,11 @@
         "Open in ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "instellingen"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Bijna daar"
@@ -6775,11 +6761,6 @@
         "Account toevoegen of wisselen"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ontdek de nieuwe look van Proton.${ br }Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Vertel ons over uw ervaring. (Optioneel)"
@@ -6788,11 +6769,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Vernieuwde Proton, uniforme beveiliging"
       ]
     },
     "Notification": {
@@ -7283,24 +7259,250 @@
         "Kleinste eerst"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Sluiten"
+      ],
+      "Don't show this again": [
+        "Niet opnieuw weergeven"
+      ],
+      "Special offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Kies Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "64 countries": [
+        "64 landen"
+      ],
+      "All paid Mail and Calendar features": [
+        "Alle betaalde Mail- en Calendar-functies"
+      ],
+      "High speed VPN": [
+        "High-speed VPN"
+      ],
+      "Highest VPN speed": [
+        "Hoogste VPN-snelheid"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium early access": [
+        "Premium vroege toegang"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail en Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Premium Mail, Calendar en Drive"
+      ],
+      "Premium VPN": [
+        "Premium VPN"
+      ],
+      "Secure cloud storage": [
+        "Veilige cloudopslag"
+      ],
+      "Secure streaming": [
+        "Beveiligd streamen"
+      ],
+      "Support online privacy": [
+        "Ondersteun online privacy"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op de standaardprijs per maand."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Dit abonnement wordt elk jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Deal voor het leven"
+      ],
+      "Limited time only": [
+        "Beperkt geldig"
+      ],
+      "Most popular": [
+        "Populairste keuze"
+      ],
+      "Offer ends soon": [
+        "Tijdelijke aanbieding"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "De korting wordt toegepast bij verlenging, tot het abonnement wordt opgezegd of aangepast"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaardtarief"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Naar abonnementen"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ maand"
+      ],
+      "1 year": [
+        "1 jaar"
+      ],
+      "2 years": [
+        "2 jaar"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "U betaalt ${ amount } voor de eerste 2 jaar"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "U betaalt ${ amount } voor de eerste maand"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "U betaalt ${ amount } voor het eerste jaar"
+      ],
+      "Billed at ${ amountDue }": [
+        "U betaalt ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
+      ],
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 1 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 2 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Save ${ discount }%": [
+        "Bespaar ${ discount }%"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Standaardprijs ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday Sale"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week Sale"
+      ],
+      "End of year offer": [
+        "Eindejaarsaanbieding"
+      ],
+      "End of Year Sale": [
+        "Eindejaarssale"
+      ],
+      "Get our premium bundle and save more": [
+        "Kies onze premium bundel en bespaar meer"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Ons oude Visionary-abonnement is tijdelijk terug"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Bespaar meer met 1 jaar Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Upgrade en bespaar meer met Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde content en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en ad-blocker, en meer."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde content en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en ad-blocker, en meer."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Al onze premium services met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide My Email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 Hide My Email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide My Email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Ontvang kostenloos de betaalde versies van alle nieuwe privacyservices die we in de toekomst uitbrengen en krijg vroege toegang tot alle toekomstige functies en producten."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Krijg tot 18 maanden ${ planName } gratis"
-      ],
-      "Invite friends and earn rewards!": [
-        "Nodig vrienden uit en verdien bonussen!"
+      "Email tracking protection": [
+        "E-mailtrackingsbescherming"
       ],
       "Message Content Search": [
         "Zoeken naar berichtinhoud"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Om uw privacy te beschermen, heeft Proton e-mailtrackers in dit bericht geblokkeerd"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
