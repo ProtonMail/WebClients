@@ -133,7 +133,7 @@ const InvoicesSection = () => {
                     c('Error').t`You have no invoices.`
                 ) : (
                     <div style={{ overflow: 'auto' }}>
-                        <Table className="simple-table--has-actions">
+                        <Table hasActions responsive="cards">
                             <TableHeader>
                                 <TableRow>
                                     <TableCell type="header">ID</TableCell>
@@ -150,6 +150,14 @@ const InvoicesSection = () => {
                                     return (
                                         <TableRow
                                             key={key}
+                                            labels={[
+                                                'ID',
+                                                c('Title').t`Amount`,
+                                                c('Title').t`Type`,
+                                                c('Title').t`Status`,
+                                                c('Title').t`Date`,
+                                                '',
+                                            ]}
                                             cells={[
                                                 invoice.ID,
                                                 <InvoiceAmount key={key} invoice={invoice} />,

@@ -24,8 +24,8 @@ const KeysTable = ({
 }: Props) => {
     const headerCells = [
         { node: c('Title header for keys table').t`Fingerprint`, className: 'text-ellipsis' },
-        { node: c('Title header for keys table').t`Key type`, className: 'w15 no-mobile' },
-        { node: c('Title header for keys table').t`Status`, className: 'w10e no-tiny-mobile' },
+        { node: c('Title header for keys table').t`Key type`, className: 'w15' },
+        { node: c('Title header for keys table').t`Status`, className: 'w10e' },
         { node: c('Title header for keys table').t`Actions`, className: 'w10e' },
     ].map(({ node, className = '' }) => {
         return (
@@ -36,7 +36,7 @@ const KeysTable = ({
     });
 
     return (
-        <Table className="simple-table--has-actions">
+        <Table hasActions responsive="cards">
             <thead>
                 <tr>{headerCells}</tr>
             </thead>
@@ -45,12 +45,18 @@ const KeysTable = ({
                     return (
                         <TableRow
                             key={ID}
+                            labels={[
+                                c('Title header for keys table').t`Fingerprint`,
+                                c('Title header for keys table').t`Key type`,
+                                '',
+                                '',
+                            ]}
                             cells={[
                                 <div key={1} className="flex flex-row flex-nowrap flex-align-items-center">
                                     <Copy
                                         size="small"
                                         value={fingerprint}
-                                        className="flex-item-noshrink no-tiny-mobile mr1 on-mobile-mr0-5 on-tiny-mobile-m0"
+                                        className="flex-item-noshrink mr1 on-mobile-mr0-5"
                                     />
                                     <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
                                         {fingerprint}
@@ -79,7 +85,7 @@ const KeysTable = ({
                                     onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
                                 />,
                             ]}
-                            className="on-mobile-hide-td2 on-tiny-mobile-hide-td3"
+                            className="xon-mobile-hide-td2 xon-tiny-mobile-hide-td3"
                         />
                     );
                 })}

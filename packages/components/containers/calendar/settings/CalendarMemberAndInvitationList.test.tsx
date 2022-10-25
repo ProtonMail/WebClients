@@ -100,40 +100,24 @@ describe('CalendarMemberAndInvitationList', () => {
         // Temporary until free/busy becomes available
         // expect(screen.getByText(/See all event details/)).toBeInTheDocument();
         expect(screen.getAllByText(/See all event details/).length).toBeTruthy();
-        expect(screen.getByText(/Remove this member/)).toBeInTheDocument();
+
+        // String is found 2 times due to responsive behaviour.
+        // We need two buttons, each with the label "Remove this member"
+        const removeMemberLabel = screen.getAllByText(/Remove this member/);
+        expect(removeMemberLabel).toHaveLength(2);
 
         expect(screen.getByText(/^UP$/)).toBeInTheDocument();
         expect(screen.getByText(/invitation1@pm.gg/)).toBeInTheDocument();
         // expect(screen.getByText(/See only free\/busy/)).toBeInTheDocument();
 
-        // Because of how we are handling the table's responsiveness, there will be two elements
-        // with the label "Invite sent", but just one will show up based on the media query
-        // We can distinguish them by the class name of the parent
-        const inviteSentLabels = screen.getAllByText(/Invite sent/);
-        expect(inviteSentLabels).toHaveLength(2);
-        const [noDesktopInviteSentLabel, noMobileInviteSentLabel] = inviteSentLabels;
-        expect(noDesktopInviteSentLabel?.closest('div')?.className.includes('no-desktop')).toBe(true);
-        const noMobileInviteSentLabelClassName = noMobileInviteSentLabel?.closest('td')?.className || '';
-        expect(
-            noMobileInviteSentLabelClassName.includes('no-mobile') &&
-                noMobileInviteSentLabelClassName.includes('no-tablet')
-        ).toBe(true);
+        expect(screen.getByText(/Invite sent/)).toBeInTheDocument();
 
         expect(screen.getByText(/^I$/)).toBeInTheDocument();
         expect(screen.getByText(/invitation2@pm.gg/)).toBeInTheDocument();
-        // As above, we'll get two elements with the label "Declined"
-        const declinedLabels = screen.getAllByText(/Declined/);
-        expect(declinedLabels).toHaveLength(2);
-        const [noDesktopDeclinedLabel, noMobileDeclinedLabel] = inviteSentLabels;
-        expect(noDesktopDeclinedLabel?.closest('div')?.className.includes('no-desktop')).toBe(true);
-        const noMobileDeclinedLabelClassName = noMobileDeclinedLabel?.closest('td')?.className || '';
-        expect(
-            noMobileDeclinedLabelClassName.includes('no-mobile') && noMobileDeclinedLabelClassName.includes('no-tablet')
-        ).toBe(true);
-        expect(screen.getAllByText(/Declined/)[0]).toBeInTheDocument();
+        expect(screen.getByText(/Declined/)).toBeInTheDocument();
 
-        expect(screen.getAllByText(/Revoke this invitation/).length).toBe(1);
-        expect(screen.getAllByText(/Delete/).length).toBe(1);
+        expect(screen.getAllByText(/Revoke this invitation/).length).toBe(2);
+        expect(screen.getAllByText(/Delete/).length).toBe(2);
 
         /*
          * Check cannot edit case
@@ -155,6 +139,9 @@ describe('CalendarMemberAndInvitationList', () => {
         changePermissionsButtons.forEach((button) => {
             expect(button).toBeDisabled();
         });
-        expect(screen.getByRole('button', { name: 'Remove this member' })).not.toBeDisabled();
+        const removeThisMemberButtons = screen.getAllByRole('button', { name: /Remove this member/ });
+        removeThisMemberButtons.forEach((button) => {
+            expect(button).not.toBeDisabled();
+        });
     });
 });

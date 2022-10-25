@@ -59,15 +59,13 @@ const ReportsTable = () => {
     return (
         <>
             <ReportsTableInfos />
-            <Table className="on-mobile-hide-td3 on-mobile-hide-td4 simple-table--has-actions">
+            <Table hasActions responsive="cards">
                 <TableHeader>
                     <TableRow>
                         <TableHeaderCell>{c('Title header').t`Import`}</TableHeaderCell>
-                        <TableHeaderCell className="on-mobile-w33 on-mobile-text-center">
-                            {c('Title header').t`Status`}
-                        </TableHeaderCell>
-                        <TableHeaderCell className="no-mobile">{c('Title header').t`Date`}</TableHeaderCell>
-                        <TableHeaderCell className="no-mobile">{c('Title header').t`Size`}</TableHeaderCell>
+                        <TableHeaderCell>{c('Title header').t`Status`}</TableHeaderCell>
+                        <TableHeaderCell>{c('Title header').t`Date`}</TableHeaderCell>
+                        <TableHeaderCell>{c('Title header').t`Size`}</TableHeaderCell>
                         <TableHeaderCell>{c('Title header').t`Actions`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>
