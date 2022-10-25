@@ -414,35 +414,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } kullanıcı",
-        "+ ${ _users } kullanıcı"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } özel etki alanı",
         "+ ${ domains } özel etki alanı"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adres",
-        "${ addressAddon.MaxAddresses } adres"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } etki alanı",
-        "${ domainAddon.MaxDomains } etki alanı"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } kullanıcı",
-        "${ memberAddon.MaxMembers } kullanıcı"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } bağlantı",
-        "${ vpnAddon.MaxVPN } bağlantı"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } bağlantı",
-        "${ vpnBonus } bağlantı"
       ]
     },
     "Alter": {
@@ -658,16 +632,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Ödeme yöntemini sil"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } gün",
-        "${ days } gün"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } ay",
-        "${ monthsWithYears } ay"
       ]
     },
     "Country name": {
@@ -1442,11 +1406,6 @@
         "(${ entryCountryName } üzerinden)"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Kupon uygulandı: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Kalan kredi"
@@ -1903,9 +1862,6 @@
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Secure Core özelliği için ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
       ],
-      "(Mail + VPN)": [
-        "(Posta + VPN)"
-      ],
       "* No credit card required.": [
         "* Kredi kartı gerekmez."
       ],
@@ -1918,9 +1874,6 @@
       ],
       "10 email addresses": [
         "10 e-posta adresi"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30-day money-back guarantee.": [
         "30 gün ücret iade garantisi."
@@ -1967,20 +1920,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Güncel fatura döneminin sonunda faturalanır (${ renewalDate } tarihinde yenilenir)"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "2018 Kara Cuma indirimi aboneliğinize uygulandı"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "2019 Kara Cuma indirimi aboneliğinize uygulandı"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "2020 Kara Cuma yeni gelen indirimi uygulandı"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
@@ -2008,9 +1949,6 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize indirim uygulandı"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "${ VPN_APP_NAME } uygulamalarında veya ${ VPN_APP_NAME } panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
@@ -2080,9 +2018,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
-      ],
-      "Free": [
-        "Ücretsiz"
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -2308,9 +2243,6 @@
       ],
       "support team": [
         "destek ekibi"
-      ],
-      "Thank you for supporting our mission.": [
-        "Misyonumuza destek olduğunuz için teşekkür ederiz."
       ],
       "The securest way to browse, stream, and be online.": [
         "Web üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrimiçi olmanın en güvenli yolu."
@@ -2557,9 +2489,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Hesabınız yüksek tarifeye geçiriliyor. Bu işlem 30 saniye kadar sürebilir."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
@@ -2812,9 +2741,6 @@
       "Digits": [
         "Hane sayısı"
       ],
-      "Discount": [
-        "İndirim"
-      ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
@@ -2835,9 +2761,6 @@
       ],
       "Expires": [
         "Geçerlilik sonu"
-      ],
-      "extra storage": [
-        "ek depolama alanı"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -2955,9 +2878,6 @@
       ],
       "System information": [
         "Sistem bilgileri"
-      ],
-      "Total (${ countdown })": [
-        "Toplam (${ countdown })"
       ],
       "Two-password mode": [
         "İki parola kipi"
@@ -3458,9 +3378,6 @@
       ],
       "Popular": [
         "Beğenilen"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Gelecekteki yenileme fiyatı: Hesabınızda kayıtlı kullanılabilecek tüm süresi dolmamış kuponları içerir"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Tüm ücretli Proton hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
@@ -4010,11 +3927,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } kazanın"
+      "Get up to ${ credits } in credits.": [
+        "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends and earn rewards!": [
-        "Arkadaşlarınızı davet edin ve ödül kazanın!"
+      "Invite friends to Proton": [
+        "Arkadaşlarınıza Proton daveti gönderin"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
@@ -4240,10 +4157,6 @@
       ]
     },
     "Title": {
-      "${ maxUsers } user": [
-        "${ maxUsers } kullanıcı",
-        "${ maxUsers } kullanıcı"
-      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } istemcileri"
       ],
@@ -4490,9 +4403,6 @@
       "Previous": [
         "Önceki"
       ],
-      "Processing": [
-        "İşleniyor"
-      ],
       "Processing...": [
         "İşleniyor..."
       ],
@@ -4622,12 +4532,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Yıllık fatura dönemine uygulanan indirim"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "İki yıllık fatura dönemine uygulanan indirim"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ]

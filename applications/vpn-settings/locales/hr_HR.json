@@ -328,33 +328,6 @@
         "+ ${ domains } prilagođena domena"
       ]
     },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adresa",
-        "${ addressAddon.MaxAddresses } adrese",
-        "${ addressAddon.MaxAddresses } adresa"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domena",
-        "${ domainAddon.MaxDomains } domene",
-        "${ domainAddon.MaxDomains } domena"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } korisnik",
-        "${ memberAddon.MaxMembers } korisnika",
-        "${ memberAddon.MaxMembers } korisnika"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } veza",
-        "${ vpnAddon.MaxVPN } veze",
-        "${ vpnAddon.MaxVPN } veza"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } veza",
-        "${ vpnBonus } veze",
-        "${ vpnBonus } veza"
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton aplikacije"
@@ -450,18 +423,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Brisanje načina plaćanja"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dan",
-        "${ days } dana",
-        "${ days } dana"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mjesec",
-        "${ monthsWithYears } mjeseca",
-        "${ monthsWithYears } mjeseci"
       ]
     },
     "CountryInfo": {
@@ -716,14 +677,8 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Ovu ćete adresu e-pošte koristiti za prijavu u sve ${ BRAND_NAME } usluge."
       ],
-      "(Mail + VPN)": [
-        "(E-pošta + VPN)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Popust od 20% je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
@@ -746,20 +701,8 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus ili Visionary pretplata je potrebna"
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Naplaćuje se na kraju vašeg trenutnog ciklusa naplate (obnova ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Potvrda Bitcoin transakcije može potrajati neko vrijeme (do 24 sata). Kada potvrdimo, dodijelit ćemo vam kredit na vaš račun. Nakon potvrde transakcije, možete platiti fakturu s kreditom."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Crni petak 2018 je primijenjen na vašu pretplatu"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Crni petak 2019 je primijenjen na vašu pretplatu"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Primijenjen je popust za pridošlice za Crni petak 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
@@ -775,9 +718,6 @@
       ],
       "Continue anyway?": [
         "Svejedno nastavi?"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
@@ -950,9 +890,6 @@
       "support team": [
         "tim za podršku"
       ],
-      "Thank you for supporting our mission.": [
-        "Hvala vam što podupirete našu misiju."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Vaš račun je suspendiran zbog mogućih kršenja pravila."
       ],
@@ -1078,9 +1015,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Vaš se račun nadograđuje, što može potrajati do 30 sekundi."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Vaš račun će se ažurirati nakon uspješnog plaćanja."
@@ -1249,9 +1183,6 @@
       "Digits": [
         "Znamenke"
       ],
-      "Discount": [
-        "Popust"
-      ],
       "Email address": [
         "Adresa e-pošte"
       ],
@@ -1263,9 +1194,6 @@
       ],
       "Expires": [
         "Ističe"
-      ],
-      "extra storage": [
-        "dodatni prostor za pohranu"
       ],
       "Gift code": [
         "Darovni kôd"
@@ -1344,9 +1272,6 @@
       ],
       "System information": [
         "Informacije o sustavu"
-      ],
-      "Total (${ countdown })": [
-        "Ukupno (${ countdown })"
       ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
@@ -1938,9 +1863,6 @@
       "Previous": [
         "Prethodno"
       ],
-      "Processing": [
-        "Obrada"
-      ],
       "Processing...": [
         "Obrada..."
       ],
@@ -2032,12 +1954,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Popust se primjenjuje za godišnji ciklus naplate"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Popust se primjenjuje za dvogodišnji ciklus naplate"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
       ]

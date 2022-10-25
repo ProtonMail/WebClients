@@ -389,11 +389,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -643,33 +643,6 @@
         "+ ${ domains } prilagođena domena",
         "+ ${ domains } prilagođene domene",
         "+ ${ domains } prilagođena domena"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adresa",
-        "${ addressAddon.MaxAddresses } adrese",
-        "${ addressAddon.MaxAddresses } adresa"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domena",
-        "${ domainAddon.MaxDomains } domene",
-        "${ domainAddon.MaxDomains } domena"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } korisnik",
-        "${ memberAddon.MaxMembers } korisnika",
-        "${ memberAddon.MaxMembers } korisnika"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } veza",
-        "${ vpnAddon.MaxVPN } veze",
-        "${ vpnAddon.MaxVPN } veza"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } veza",
-        "${ vpnBonus } veze",
-        "${ vpnBonus } veza"
       ]
     },
     "Address action": {
@@ -1002,18 +975,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dan",
-        "${ days } dana",
-        "${ days } dana"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mjesec",
-        "${ monthsWithYears } mjeseca",
-        "${ monthsWithYears } mjeseci"
       ]
     },
     "CountryInfo": {
@@ -2123,14 +2084,8 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
       ],
-      "(Mail + VPN)": [
-        "(E-pošta + VPN)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Popust od 20% je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
@@ -2227,20 +2182,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Naplaćuje se na kraju vašeg trenutnog ciklusa naplate (obnova ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Potvrda Bitcoin transakcije može potrajati neko vrijeme (do 24 sata). Kada potvrdimo, dodijelit ćemo vam kredit na vaš račun. Nakon potvrde transakcije, možete platiti fakturu s kreditom."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Crni petak 2018 je primijenjen na vašu pretplatu"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Crni petak 2019 je primijenjen na vašu pretplatu"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Primijenjen je popust za pridošlice za Crni petak 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
@@ -2286,9 +2229,6 @@
       ],
       "Daily": [
         "Dnevno"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći prijaviti ni dešifrirati vaše poruke."
@@ -2664,9 +2604,6 @@
       "Text to display": [
         "Tekst za prikaz"
       ],
-      "Thank you for supporting our mission.": [
-        "Hvala vam što podupirete našu misiju."
-      ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Adresa e-pošte koju stavite na vrh popisa je vaša zadana adresa e-pošte. Povucite i ispustite da biste promjenili redoslijed adresa."
       ],
@@ -2855,9 +2792,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Vaš se račun nadograđuje, što može potrajati do 30 sekundi."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Vaš račun će se ažurirati nakon uspješnog plaćanja."
@@ -3289,9 +3223,6 @@
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
       ],
-      "Auto-load embedded images": [
-        "Automatsko prikazivanje ugrađenih slika"
-      ],
       "bonus storage": [
         "bonus prostor za pohranu"
       ],
@@ -3394,9 +3325,6 @@
       "Digits": [
         "Znamenke"
       ],
-      "Discount": [
-        "Popust"
-      ],
       "Display name": [
         "Zaslonski naziv"
       ],
@@ -3441,9 +3369,6 @@
       ],
       "Expires": [
         "Ističe"
-      ],
-      "extra storage": [
-        "dodatni prostor za pohranu"
       ],
       "File": [
         "Datoteka"
@@ -3672,9 +3597,6 @@
       ],
       "Timezone": [
         "Vremenska zona"
-      ],
-      "Total (${ countdown })": [
-        "Ukupno (${ countdown })"
       ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
@@ -5290,9 +5212,6 @@
       "Previous": [
         "Prethodno"
       ],
-      "Processing": [
-        "Obrada"
-      ],
       "Processing...": [
         "Obrada..."
       ],
@@ -5533,12 +5452,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Prilagodite uvoz da biste smanjili broj oznaka"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Popust se primjenjuje za godišnji ciklus naplate"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Popust se primjenjuje za dvogodišnji ciklus naplate"
       ],
       "Edit folder names": [
         "Uredi nazive mapa"

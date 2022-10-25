@@ -4,6 +4,14 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Повний перегляд (усі подробиці події)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Обмежений перегляд (лише доступність)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Знайомство з ${ BRAND_NAME }"
@@ -395,6 +403,9 @@
       "Search countries": [
         "Пошук країн"
       ],
+      "See plan features": [
+        "Переглянути можливості тарифного плану"
+      ],
       "Select all": [
         "Вибрати все"
       ],
@@ -525,6 +536,9 @@
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Будь-хто може переглянути ваш календар за посиланням"
+      ],
+      "They can view or edit your calendar": [
+        "Можуть переглядати й редагувати ваш календар"
       ]
     },
     "Action title": {
@@ -865,6 +879,26 @@
       ],
       "Unable to share this calendar with more Proton users": [
         "Неможливо поділитися цим календарем з іншими користувачами Proton"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Ви досягли максимальної кількості – ${ MAX_CALENDAR_MEMBERS } учасник для цього календаря.\nЩоб поділитися цим календарем з більшою кількістю облікових записів Proton, видаліть когось з учасників.",
+        "Ви досягли максимальної кількості – ${ MAX_CALENDAR_MEMBERS } учасники для цього календаря.\nЩоб поділитися цим календарем з більшою кількістю облікових записів Proton, видаліть когось з учасників.",
+        "Ви досягли максимальної кількості – ${ MAX_CALENDAR_MEMBERS } учасників для цього календаря.\nЩоб поділитися цим календарем з більшою кількістю облікових записів Proton, видаліть когось з учасників.",
+        "Ви досягли максимальної кількості – ${ MAX_CALENDAR_MEMBERS } учасників для цього календаря.\nЩоб поділитися цим календарем з більшою кількістю облікових записів Proton, видаліть когось з учасників."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Ви досягли максимальної кількості – ${ MAX_LINKS_PER_CALENDAR } посилання для цього календаря.\nЩоб створити нове посилання для цього календаря, видаліть наявне.",
+        "Ви досягли максимальної кількості – ${ MAX_LINKS_PER_CALENDAR } посилання для цього календаря.\nЩоб створити нове посилання для цього календаря, видаліть одне з наявних.",
+        "Ви досягли максимальної кількості – ${ MAX_LINKS_PER_CALENDAR } посилань для цього календаря.\nЩоб створити нове посилання для цього календаря, видаліть одне з наявних.",
+        "Ви досягли максимальної кількості – ${ MAX_LINKS_PER_CALENDAR } посилань для цього календаря.\nЩоб створити нове посилання для цього календаря, видаліть одне з наявних."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Редагування (перегляд, створення й редагування подробиць події)"
+      ],
+      "Full view (see all event details)": [
+        "Повний перегляд (усі подробиці події)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2270,11 +2304,17 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
+      "No public key for Proton address": [
+        "Немає публічного ключа для адреси Proton"
+      ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Для користувача не отримано жодного ключа WKD, дійсного для надсилання"
+      ],
+      "Not a Proton account": [
+        "Не є обліковим записом Proton"
       ],
       "Not a valid number": [
         "Номер недійсний"
@@ -3597,6 +3637,9 @@
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
       ],
+      "Labels:": [
+        "Мітки:"
+      ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
       ],
@@ -4495,6 +4538,11 @@
         "Не вдається створити інші календарі. Ви досягли обмеження особистих календарів для свого тарифного плану."
       ]
     },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } ділиться з вами своїм календарем ${ boldCalendarName }."
+      ]
+    },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "Приєднатися до календаря"
@@ -4701,11 +4749,6 @@
         "Перемкнути або додати обліковий запис"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляємо оновлений вигляд.${ br }Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Розкажіть нам про своє враження. (Необов'язково)"
@@ -4714,11 +4757,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Відгук"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Оновлений Proton, єдиний захист"
       ]
     },
     "Notification": {
@@ -4735,6 +4773,14 @@
         "Учасників додано",
         "Учасників додано",
         "Учасників додано"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Запрошення до календаря відхилено"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Приєднується до ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -5196,9 +5242,37 @@
         "Не вдалося оновити налаштування"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Щоб запросити людей, які не є користувачами Proton, надішліть їм посилання на свій календар"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Ви перевищили максимальну кількість – ${ MAX_CALENDAR_MEMBERS } учасник на календар",
+        "Ви перевищили максимальну кількість – ${ MAX_CALENDAR_MEMBERS } учасники на календар",
+        "Ви перевищили максимальну кількість – ${ MAX_CALENDAR_MEMBERS } учасників на календар",
+        "Ви перевищили максимальну кількість – ${ MAX_CALENDAR_MEMBERS } учасників на календар"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Додайте облікові записи Proton, з якими ви хочете поділитися ${ calendarName }. Вони отримають запрошення."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Додати людей чи групи"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Поділіться з користувачами Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Створено ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5216,11 +5290,11 @@
       "Easily accept invites": [
         "Легко погоджуйтеся на запрошення"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Отримайте до 18 місяців ${ planName } безплатно"
+      "Get up to ${ credits } in credits.": [
+        "Отримайте до ${ credits } кредиту."
       ],
-      "Invite friends and earn rewards!": [
-        "Запрошуйте друзів та отримуйте винагороди!"
+      "Invite friends to Proton": [
+        "Запрошуйте друзів до Proton"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Відтепер запрошення показуються у вашому календарі подіями, що очікують на розгляд. Просто відкрийте подію, щоб відповісти. ${ goToSettingsLink }"
@@ -5900,6 +5974,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Виберіть номер"
+      ]
+    },
+    "Title; edit calendar information modal": {
+      "Edit information": [
+        "Редагувати інформацію"
       ]
     },
     "Today icon tooltip in mini calendar": {
