@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
 import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { OfferGlobalFeatureCodeValue } from '@proton/components/containers/offers/interface';
 import {
     useApi,
     useErrorHandler,
@@ -119,6 +120,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
+    const offersFeature = useFeature<OfferGlobalFeatureCodeValue>(FeatureCode.Offers);
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
@@ -195,33 +197,40 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         const fetchDependencies = async () => {
             const { referrer, invite } = signupParameters;
 
-            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
-                normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                silentApi<PaymentMethodStatus>(getPaymentMethodStatus()),
-                referrer
-                    ? await silentApi(checkReferrer(referrer))
-                          .then(() => ({
-                              referrer: referrer || '',
-                              invite: invite || '',
-                          }))
-                          .catch(() => undefined)
-                    : undefined,
-                silentApi<{ Plans: Plan[] }>(
-                    queryPlans(
-                        signupParameters.currency
-                            ? {
-                                  Currency: signupParameters.currency,
-                              }
-                            : undefined
-                    )
-                ).then(({ Plans }) => Plans),
-            ]);
+            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans, offersFeatureValue] =
+                await Promise.all([
+                    normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
+                    silentApi<PaymentMethodStatus>(getPaymentMethodStatus()),
+                    referrer
+                        ? await silentApi(checkReferrer(referrer))
+                              .then(() => ({
+                                  referrer: referrer || '',
+                                  invite: invite || '',
+                              }))
+                              .catch(() => undefined)
+                        : undefined,
+                    silentApi<{ Plans: Plan[] }>(
+                        queryPlans(
+                            signupParameters.currency
+                                ? {
+                                      Currency: signupParameters.currency,
+                                  }
+                                : undefined
+                        )
+                    ).then(({ Plans }) => Plans),
+                    offersFeature.get().catch(() => undefined),
+                ]);
 
             if (location.pathname === SSO_PATHS.REFER && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
             const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
+
+            const entries = Object.entries(offersFeatureValue?.Value || {});
+            if (entries.some(([key, value]) => key.includes('black-friday') && value)) {
+                subscriptionData.skipUpsell = true;
+            }
 
             setModelDiff({
                 domains,
