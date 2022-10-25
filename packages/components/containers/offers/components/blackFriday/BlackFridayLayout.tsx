@@ -24,12 +24,18 @@ const BlackFridayLayout = ({ children, offer }: Props) => {
         >
             {hasMultipleDeals ? null : (
                 <div className="offer-side-image-container no-mobile no-scroll relative">
-                    <img
-                        className="offer-side-image absolute absolute-center-y"
-                        src={sideImage}
-                        srcSet={`${sideImage}, ${sideImage2x} 2x`}
-                        alt=""
-                    />
+                    <picture>
+                        <source
+                            media="(-webkit-min-device-pixel-ratio: 1.25), min-resolution: 1.25dppx"
+                            srcSet={`${sideImage2x}`}
+                        />
+                        <img
+                            className="offer-side-image absolute absolute-center-y"
+                            src={sideImage}
+                            srcSet={`${sideImage}, ${sideImage2x} 2x`}
+                            alt=""
+                        />
+                    </picture>
                 </div>
             )}
             <div
