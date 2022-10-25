@@ -193,7 +193,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 />
             </div>
             <div
-                className="scroll-if-needed scroll-smooth-touch mt1 move-dropdown-list-container"
+                className="scroll-if-needed scroll-smooth-touch mt1 move-dropdown-container"
                 data-testid="move-dropdown-list"
             >
                 <ul className="unstyled mt0 mb0">
@@ -238,20 +238,26 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 </ul>
             </div>
             {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
-                <div className={classnames(['p1 pb0 border-top', alwaysCheckboxDisabled && 'color-disabled'])}>
-                    <Checkbox
-                        className="mr0-5"
-                        id={alwaysCheckID}
-                        checked={always}
-                        disabled={alwaysCheckboxDisabled}
-                        onChange={({ target }) => setAlways(target.checked)}
-                        data-testid="move-dropdown:always-move"
-                        data-prevent-arrow-navigation
-                    />
-                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                        {c('Label').t`Always move sender's emails`}
-                    </label>
-                </div>
+                <>
+                    <hr className="m0" />
+                    <div
+                        className={classnames([
+                            'move-dropdown-container px1 mt1',
+                            alwaysCheckboxDisabled && 'color-disabled',
+                        ])}
+                    >
+                        <Checkbox
+                            id={alwaysCheckID}
+                            checked={always}
+                            disabled={alwaysCheckboxDisabled}
+                            onChange={({ target }) => setAlways(target.checked)}
+                            data-testid="move-dropdown:always-move"
+                            data-prevent-arrow-navigation
+                        >
+                            {c('Label').t`Always move sender's emails`}
+                        </Checkbox>
+                    </div>
+                </>
             )}
             <div className="m1">
                 <PrimaryButton
