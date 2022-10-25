@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -27,6 +28,8 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     const { isVisited, loading } = useOfferFlags(offerConfig);
     const onceRef = useRef(false);
     const [user] = useUser();
+    const history = useHistory();
+    const location = useLocation();
     const [fetchOffer, setFetchOffer] = useState(false);
     const [welcomeFlags] = useWelcomeFlags();
 
@@ -43,16 +46,23 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     });
 
     useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const autoOffer = searchParams.get('offer') === 'auto';
+        const combinedIgnoreVisited = ignoreVisited || autoOffer;
+        // No welcome modal in account
         if (
             loading ||
             !offerConfig.autoPopUp ||
-            (isVisited && !ignoreVisited) ||
+            (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
             // Only hide the autopopup during the welcome flow, ignore if other modals may be open
             // and re-trigger it when the welcome flow completes.
             (!welcomeFlags.isDone && !ignoreOnboarding)
         ) {
             return;
+        }
+        if (autoOffer) {
+            history.replace({ search: undefined });
         }
         onceRef.current = true;
         setFetchOffer(true);

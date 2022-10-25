@@ -13,6 +13,7 @@ import {
     ReferralModalContainer,
     SectionConfig,
     TopBanners,
+    TopNavbarUpsell,
     UserDropdown,
     useActiveBreakpoint,
     useAddresses,
@@ -151,6 +152,8 @@ const MainContainer = () => {
     const header = (
         <PrivateHeader
             userDropdown={<UserDropdown />}
+            // No onboarding in account
+            upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} />}
             logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
