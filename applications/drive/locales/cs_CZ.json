@@ -410,6 +410,9 @@
       "Remove": [
         "Odstranit"
       ],
+      "Remove device": [
+        "Odstranit zařízení"
+      ],
       "Remove from this list": [
         "Odebrat ze seznamu"
       ],
@@ -1811,6 +1814,9 @@
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
       ],
+      "Device name does not match": [
+        "Název zařízení se neshoduje"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -3183,6 +3189,9 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
+      "No synced devices": [
+        "Žádná synchronizovaná zařízení"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
       ],
@@ -3366,6 +3375,9 @@
       "Swiss privacy": [
         "Švýcarské soukromí"
       ],
+      "Synced devices": [
+        "Synchronizovaná zařízení"
+      ],
       "Tap the + button to upload a file or folder": [
         "Klepnutím na tlačítko + nahrajete soubor nebo složku"
       ],
@@ -3426,6 +3438,9 @@
       "This will overwrite the existing folder": [
         "Tím se přepíše existující složka"
       ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Tím odstraníte z Proton Drive synchronizované zařízení ${ deviceName }. Místní soubory v zařízení nebudou ovlivněny."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Abychom umožnili skutečně soukromé vyhledávání, musíme vaše soubory indexovat lokálně. Stále můžete normálně používat ${ DRIVE_APP_NAME } –⁠ dáme vám vědět, až bude indexování dokončeno."
       ],
@@ -3482,6 +3497,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Pomocí Drive pro PC můžete synchronizovat složky v počítači s Proton Drive. Zobrazí se zde a budou přístupné odkudkoli.  ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
@@ -3766,6 +3784,12 @@
       "Deleted": [
         "Odstraněno"
       ],
+      "Device": [
+        "Zařízení"
+      ],
+      "Device name": [
+        "Název zařízení"
+      ],
       "Do not ask again": [
         "Příště se neptat"
       ],
@@ -3789,6 +3813,9 @@
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
+      ],
+      "Enter device name": [
+        "Zadejte název zařízení"
       ],
       "Expired": [
         "Vypršelo"
@@ -4228,11 +4255,6 @@
         "Přepnout nebo přidat účet"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme nový vzhled Protonu.${ br }Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Povězte nám o svých zkušenostech. (Nepovinné)"
@@ -4241,11 +4263,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Zpětná vazba"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Aktualizovaný Proton, jednotná ochrana"
       ]
     },
     "Notification": {
@@ -4359,6 +4376,18 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
+      ],
+      "Device failed to be removed": [
+        "Zařízení se nepodařilo odstranit"
+      ],
+      "Device failed to be renamed": [
+        "Zařízení se nepodařilo přejmenovat"
+      ],
+      "Device removed": [
+        "Zařízení odstraněno"
+      ],
+      "Device renamed": [
+        "Zařízení přejmenováno"
       ],
       "Encrypted search activated": [
         "Vyhledávání v šifrovaných datech bylo zapnuto"
@@ -4585,6 +4614,9 @@
       "Enter a new folder name": [
         "Zadejte nový název složky"
       ],
+      "Enter device name": [
+        "Zadejte název zařízení"
+      ],
       "Enter your email address": [
         "Zadejte svou e-mailovou adresu"
       ],
@@ -4706,7 +4738,7 @@
         "Vyhledávání v šifrovaných datech je zde"
       ],
       "Get up to ${ credits } in credits.": [
-        "Získáte až ${ credits } v kreditech."
+        "Získejte až ${ credits } v kreditech."
       ],
       "Invite friends to Proton": [
         "Pozvěte přátele do služby Proton"
@@ -5185,11 +5217,17 @@
       "Recover data": [
         "Obnovit data"
       ],
+      "Remove device?": [
+        "Odstranit zařízení?"
+      ],
       "Rename a file": [
         "Přejmenovat soubor"
       ],
       "Rename a folder": [
         "Přejmenovat složku"
+      ],
+      "Rename device": [
+        "Přejmenovat zařízení"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -5262,6 +5300,9 @@
       ],
       "Stop transfers?": [
         "Zastavit přenosy?"
+      ],
+      "Synced devices": [
+        "Synchronizovaná zařízení"
       ],
       "The link either does not exist or has expired": [
         "Odkaz buď neexistuje, nebo jeho platnost vypršela"

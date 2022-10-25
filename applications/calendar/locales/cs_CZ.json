@@ -403,6 +403,9 @@
       "Search countries": [
         "Vyhledat země"
       ],
+      "See plan features": [
+        "Zobrazit funkce tarifu"
+      ],
       "Select all": [
         "Vybrat vše"
       ],
@@ -4752,11 +4755,6 @@
         "Přepnout nebo přidat účet"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme nový vzhled Protonu.${ br }Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Povězte nám o svých zkušenostech. (Nepovinné)"
@@ -4765,11 +4763,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Zpětná vazba"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Aktualizovaný Proton, jednotná ochrana"
       ]
     },
     "Notification": {
@@ -5303,11 +5296,11 @@
       "Easily accept invites": [
         "Snadné přijímání pozvánek"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Získejte ${ planName } až na 18 měsíců zdarma"
+      "Get up to ${ credits } in credits.": [
+        "Získejte až ${ credits } v kreditech."
       ],
-      "Invite friends and earn rewards!": [
-        "Pozvěte přátele a získejte odměny!"
+      "Invite friends to Proton": [
+        "Pozvěte přátele do služby Proton"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nyní se pozvánky zobrazují v kalendáři jako události bez odpovědi. Stačí otevřít událost a odpovědět na ni. ${ goToSettingsLink }"

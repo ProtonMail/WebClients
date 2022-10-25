@@ -510,9 +510,6 @@
       "Pay ${ price }": [
         "Оплатить ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Пожалуйста, свяжитесь с администратором организации для управления подпиской"
-      ],
       "Preview": [
         "Предпросмотр"
       ],
@@ -543,11 +540,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -898,49 +895,11 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } пользователь",
-        "+ ${ _users } пользователя",
-        "+ ${ _users } пользователей",
-        "+ ${ _users } пользователей"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } свой домен",
         "+ ${ domains } своих домена",
         "+ ${ domains } своих доменов",
         "+ ${ domains } своих доменов"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } адрес",
-        "${ addressAddon.MaxAddresses } адреса",
-        "${ addressAddon.MaxAddresses } адресов",
-        "${ addressAddon.MaxAddresses } адресов"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } домен",
-        "${ domainAddon.MaxDomains } домена",
-        "${ domainAddon.MaxDomains } доменов",
-        "${ domainAddon.MaxDomains } доменов"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } пользователь",
-        "${ memberAddon.MaxMembers } пользователя",
-        "${ memberAddon.MaxMembers } пользователей",
-        "${ memberAddon.MaxMembers } пользователей"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } подключение",
-        "${ vpnAddon.MaxVPN } подключения",
-        "${ vpnAddon.MaxVPN } подключений",
-        "${ vpnAddon.MaxVPN } подключений"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } подключение",
-        "${ vpnBonus } подключения",
-        "${ vpnBonus } подключений",
-        "${ vpnBonus } подключений"
       ]
     },
     "Address action": {
@@ -1056,8 +1015,14 @@
       "Payable every 12 months": [
         "Оплачивается каждые 12 месяцев"
       ],
+      "Payable every 15 months": [
+        "Оплачивается каждые 15 месяцев"
+      ],
       "Payable every 24 months": [
         "Оплачивается каждые 24 месяца"
+      ],
+      "Payable every 30 months": [
+        "Оплачивается каждые 30 месяцев"
       ],
       "Payable every month": [
         "Оплачивается каждый месяц"
@@ -1713,20 +1678,6 @@
       ],
       "Yomi": [
         "Ёми"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дней"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } месяц",
-        "${ monthsWithYears } месяца",
-        "${ monthsWithYears } месяцев",
-        "${ monthsWithYears } месяцев"
       ]
     },
     "Country name": {
@@ -2501,11 +2452,6 @@
         "(через ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Купон применен: ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "Результаты поиска не обнаружены"
@@ -2628,14 +2574,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "Получите до 3 месяцев ${ mailPlus } бесплатно за каждого друга, подписавшегося на ${ MAIL_APP_NAME }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Отслеживайте, сколько людей переходят по вашей ссылке, регистрируются и становятся подписчиками платных тарифов. Следите за тем, как накапливаются ваши бесплатные месяцы."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можете продолжать приглашать друзей, но не сможете заработать больше кредитов"
@@ -2669,11 +2609,17 @@
       "${ name } deletion failed": [
         "${ name } удаление не удалось"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } не удалось переместить в список не спама"
+      ],
       "${ name } failed to move to spam list": [
         "не удалось переместить ${ name } в список спама"
       ],
       "${ name } failed to move to your block list": [
         "не удалось переместить ${ name } в список блокируемых"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } перемещено в список не спама"
       ],
       "${ name } moved to spam list": [
         "${ name } перемещен в список спама"
@@ -2780,11 +2726,17 @@
       "${ name } deletion failed": [
         "${ name } удаление не удалось"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } не удалось переместить в список не спама"
+      ],
       "${ name } failed to move to spam list": [
         "не удалось переместить ${ name } в список спама"
       ],
       "${ name } failed to move to your block list": [
         "не удалось переместить ${ name } в список блокируемых"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } перемещено в список не спама"
       ],
       "${ name } moved to spam list": [
         "${ name } перемещен в список спама"
@@ -4547,9 +4499,6 @@
         "${ numContacts } контактов",
         "${ numContacts } контакт(а,ов)"
       ],
-      "${ planName } credits earned": [
-        "${ planName } $ кредитов получено"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
         "Найдены ${ providerFoldersNumLocalized } папки",
@@ -4561,9 +4510,6 @@
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыка",
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } из ${ rewardsLimit } месяцев"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
@@ -4619,9 +4565,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Фильтровать, если ЛЮБОЕ из следующих условий выполнено)"
       ],
-      "(Mail + VPN)": [
-        "(Почта и VPN)"
-      ],
       "* No credit card required.": [
         "* Кредитная карточка не требуется."
       ],
@@ -4642,9 +4585,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Они пробуют ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
       "3. You earn credits": [
         "3. Вы получаете кредиты"
@@ -4859,20 +4799,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Счет выставляется в конце текущего платежного цикла (продлевается ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Черная пятница — 2018 применена к вашей подписке"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Черная пятница 2019 применена к вашей подписке"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Скидка для новых пользователей \"Черная пятница 2020\" была применена"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Запрещает отправителям видеть, открывали ли вы сообщение и когда."
@@ -4976,9 +4904,6 @@
       "Delete link?": [
         "Удалить ссылку?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Скидка применена к вашей подписке с купоном ${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете авторизоваться или расшифровать свои сообщения."
       ],
@@ -5026,9 +4951,6 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "Получено ${ rewards } из ${ rewardsLimit } месяцев ${ planName }."
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -5122,9 +5044,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa и MasterCard - три цифры на обратной стороне карты. Для American Express - 4 цифры на лицевой стороне карты."
-      ],
-      "Free": [
-        "Free"
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
@@ -5570,9 +5489,6 @@
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Предотвращает скачивание содержимого с сервера отправителя без вашего разрешения."
-      ],
       "Preview": [
         "Предпросмотр"
       ],
@@ -5741,9 +5657,6 @@
       "Text to display": [
         "Текст для отображения"
       ],
-      "Thank you for supporting our mission.": [
-        "Спасибо за поддержку нашей миссии."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Сообщение ${ boldDataLocked } больше не будет отображаться, но вы по-прежнему можете разблокировать свои данные по ссылке: ${ encryptionAndKeysLink }."
       ],
@@ -5782,9 +5695,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Эти конфигурации предоставляются для работы с маршрутизаторами WireGuard и официальными клиентами."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "Этот 30-дневный бесплатный пробный период не доступен никаким другим способом."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -6035,9 +5945,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Если уведомления включены, мы будем отправлять оповещения на ваш резервный адрес электронной почты, если в вашем аккаунте ${ MAIL_APP_NAME } появятся новые сообщения."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Когда они подпишутся на платный план, от 1 до 3 месяцев ${ planName } $ будут зачислены на ваш счет."
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
@@ -6191,9 +6098,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ваш аккаунт улучшается, это может занять до 30 секунд."
-      ],
       "Your account recovery method is set": [
         "Установлен метод восстановления вашего аккаунта"
       ],
@@ -6270,9 +6174,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ключ ${ fingerprint } уже был загружен"
-      ],
-      "Track your referral link activities here": [
-        "Отслеживайте активность ваших реферальных ссылок здесь"
       ],
       "Try Mail Plus": [
         "Попробуйте Почту Plus"
@@ -6689,12 +6590,6 @@
       "${ MAIL_APP_NAME } footer": [
         "Нижний колонтитул ${ MAIL_APP_NAME }"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } месяц начислен",
-        "${ monthsRewarded } месяца начислено",
-        "${ monthsRewarded } месяцев начислено",
-        "${ monthsRewarded } месяцев начислено"
-      ],
       "${ n } month": [
         "${ n } месяц",
         "${ n } месяца",
@@ -6770,9 +6665,6 @@
       "Apply filter to existing emails": [
         "Применить к существующему сообщению"
       ],
-      "Ask before loading remote content": [
-        "Спрашивать перед скачиванием внешнего содержимого"
-      ],
       "Attach public key": [
         "Присоединить публичный ключ"
       ],
@@ -6784,9 +6676,6 @@
       ],
       "Auto-detect primary time zone": [
         "Автоопределение основного часового пояса"
-      ],
-      "Auto-load embedded images": [
-        "Авто-показ встроенных изображений"
       ],
       "Auto-reply": [
         "Автоответчик"
@@ -6917,9 +6806,6 @@
       "Create password": [
         "Создать пароль"
       ],
-      "Credits pending": [
-        "Кредиты на рассмотрении"
-      ],
       "Credits used": [
         "Кредитов использовано"
       ],
@@ -6967,9 +6853,6 @@
       ],
       "Digits": [
         "Цифры"
-      ],
-      "Discount": [
-        "Скидка"
       ],
       "Display name": [
         "Отображаемое имя"
@@ -7033,9 +6916,6 @@
       ],
       "Expires": [
         "Срок действия"
-      ],
-      "extra storage": [
-        "дополнительное хранилище"
       ],
       "File": [
         "Файл"
@@ -7192,6 +7072,9 @@
       ],
       "Non-standard ports": [
         "Нестандартные порты"
+      ],
+      "Not spam": [
+        "Не спам"
       ],
       "Notification": [
         "Уведомление"
@@ -7394,9 +7277,6 @@
       "To: ${ PMEmailAddress }": [
         "Кому: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Всего (${ countdown })"
-      ],
       "Two-password mode": [
         "Режим с двумя паролями"
       ],
@@ -7432,9 +7312,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Ожидание подписки"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
@@ -7477,9 +7354,6 @@
       ],
       "Your referral link": [
         "Ваша реферальная ссылка"
-      ],
-      "Your reward": [
-        "Ваше вознаграждение"
       ],
       "ZIP code": [
         "ZIP-код"
@@ -8387,6 +8261,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8424,9 +8318,6 @@
       "Popular": [
         "Популярный"
       ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Стоимость будущего продления включает все применимые неистекшие купоны, сохраненные в вашем аккаунте"
-      ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
       ],
@@ -8453,26 +8344,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9623,15 +9494,261 @@
         "Подтверждение"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
+      ],
+      "Special offer": [
+        "Специальное предложение"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Хранилище объемом ${ storageSize }"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "64 countries": [
+        "64 страны"
+      ],
+      "All paid Mail and Calendar features": [
+        "Все платные функции Mail и Calendar"
+      ],
+      "High speed VPN": [
+        "Высокоскоростной VPN"
+      ],
+      "Highest VPN speed": [
+        "Высочайшая скорость VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Платная версия Drive"
+      ],
+      "Premium early access": [
+        "Ранний доступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Платная версия Mail и Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Платные версии Mail, Calendar и Drive"
+      ],
+      "Premium VPN": [
+        "Платная версия VPN"
+      ],
+      "Secure cloud storage": [
+        "Безопасное облачное хранилище"
+      ],
+      "Secure streaming": [
+        "Защищенный стриминг"
+      ],
+      "Support online privacy": [
+        "Обеспечьте свою конфиденциальность в Интернете"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждый год по той же цене до тех пор, пока вы ее не отмените."
+      ]
+    },
+    "specialoffer: Info": {
+      "No available offers found.": [
+        "Специальные предложения не найдены."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Бессрочное предложение"
+      ],
+      "Limited time only": [
+        "Предложение ограничено"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Offer ends soon": [
+        "Акция скоро закончится"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Скидка будет применяться при продлении до тех пор, пока подписка не будет отменена или изменена"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Подписка автоматически продлится по стандартной цене в конце платежного цикла"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти к тарифам"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "в месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 года"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "${ amount } за первые 2 года"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "${ amount } за первый месяц"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "${ amount } за первый год"
+      ],
+      "Billed at ${ amountDue }": [
+        "Итого: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Save ${ discount }%": [
+        "Сэкономьте ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Черная пятница"
+      ],
+      "Cyber Week Sale": [
+        "Распродажа в честь кибернедели"
+      ],
+      "End of year offer": [
+        "Предложение в честь конца года"
+      ],
+      "End of Year Sale": [
+        "Распродажа в честь конца года"
+      ],
+      "Get our premium bundle and save more": [
+        "Приобретите платный пакет и сэкономьте"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Экономьте с годовой подпиской на Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Перейдите на Proton Unlimited и экономьте"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все функции наших платных сервисов с максимальными квотами. Включает 100 адресов электронной почты, поддержку 10 пользовательских доменов и неограниченного числа алиасов Hide My Email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, а также другие преимущества."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 пользовательских доменов, 15 адресов электронной почты, неограниченного числа алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Получайте платные версии всех сервисов, которые мы выпустим в будущем, а также ранний доступ ко всем новым функциям и продуктам без дополнительной платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Переместите свои материалы в облачное хранилище с шифрованием. Включает автоматическую синхронизацию, зашифрованный обмен файлами и другие преимущества."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Получите до 18 месяцев ${ planName } бесплатно"
+      "Get up to ${ credits } in credits.": [
+        "Вы можете получить до ${ credits } в кредитах."
       ],
-      "Invite friends and earn rewards!": [
-        "Приглашайте друзей и получайте вознаграждения!"
+      "Invite friends to Proton": [
+        "Пригласите друзей в Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробуйте ${DRIVE_APP_NAME}"
@@ -10130,12 +10247,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } пользователь",
-        "${ maxUsers } пользователя",
-        "${ maxUsers } пользователей",
-        "${ maxUsers } пользователей"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Дайте имя генерируемой конфигурации"
       ],
@@ -10207,9 +10318,6 @@
       ],
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
-      ],
-      "Add to not spam list": [
-        "Add to Not spam list"
       ],
       "Add to spam list": [
         "Добавить в список спама"
@@ -10508,9 +10616,6 @@
       "Export public key": [
         "Экспорт открытого ключа"
       ],
-      "Extension": [
-        "Расширение"
-      ],
       "External PGP settings": [
         "Внешние настройки PGP"
       ],
@@ -10538,8 +10643,8 @@
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Получите до 18 месяцев ${ planName } бесплатно"
+      "Gift": [
+        "Подарок"
       ],
       "Gift code": [
         "Подарочный код"
@@ -10697,9 +10802,6 @@
       "Privacy and data collection": [
         "Конфиденциальность и сбор данных"
       ],
-      "Processing": [
-        "Обработка"
-      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -10720,9 +10822,6 @@
       ],
       "Refer a friend": [
         "Порекомендуйте другу"
-      ],
-      "Referral tracker": [
-        "Трекер рефералов"
       ],
       "Remove calendar": [
         "Удалить календарь"
@@ -11046,12 +11145,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Настройте импорт, чтобы уменьшить количество ярлыков"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Применена скидка за счет оплаты на год вперёд"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Скидка применяется при оплате на 2 года вперёд"
       ],
       "Each imported email will have this label": [
         "У каждого импортированного письма будет этот ярлык"

@@ -376,6 +376,9 @@
       "Save": [
         "Mentés"
       ],
+      "See plan features": [
+        "Csomag részleteinek megtekintése"
+      ],
       "Select all": [
         "Összes kijelölése"
       ],
@@ -3505,7 +3508,7 @@
         "Hét"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk visszaállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "Which event would you like to delete?": [
         "Melyik eseményt szeretné törölni?"
@@ -4298,11 +4301,6 @@
         "Visszajelzés"
       ]
     },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Frissített Proton, egységesített védelem"
-      ]
-    },
     "Notification": {
       "Contact group created": [
         "Névjegy csoport létrehozva"
@@ -4699,12 +4697,6 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyi ${ planName } csomagot ingyen"
-      ],
-      "Invite friends and earn rewards!": [
-        "Hívja meg barátait és szerezzen nyereményeket!"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Próbálja ki a ${ DRIVE_APP_NAME }-ot"

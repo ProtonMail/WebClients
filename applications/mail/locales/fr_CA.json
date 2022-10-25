@@ -436,9 +436,6 @@
       "Hide messages": [
         "Masquer les messages"
       ],
-      "Hide My Email": [
-        "Masquer mon courriel"
-      ],
       "Hide my email": [
         "Masquer mon courriel"
       ],
@@ -508,9 +505,6 @@
       ],
       "Load more": [
         "Charger plus"
-      ],
-      "Load unprotected": [
-        "Chargement non protégé"
       ],
       "Loading${ ellipsis }": [
         "Chargement${ ellipsis }"
@@ -646,9 +640,6 @@
       ],
       "No": [
         "Non"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking."
       ],
       "No, I won't attend": [
         "Non, je ne participerai pas"
@@ -817,6 +808,9 @@
       ],
       "Search message content": [
         "Rechercher dans le contenu des messages"
+      ],
+      "See plan features": [
+        "Voir les fonctionnaliés de l'offre"
       ],
       "Select all": [
         "Tout sélectionner"
@@ -4362,10 +4356,6 @@
         "${ total } message",
         "${ total } messages"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } message programmé",
-        "${ totalMessagesCount } messages programmés"
-      ],
       "${ unread } unread conversation": [
         "${ unread } conversation non lue",
         "${ unread } conversations non lues"
@@ -4740,9 +4730,6 @@
         "Heure",
         "Heures"
       ],
-      "How Hide My Email works": [
-        "Comment fonctionne Masquer mon courriel"
-      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
       ],
@@ -4854,9 +4841,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Nombre maximal de pièces jointes (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) dépassé."
-      ],
-      "members": [
-        "membres"
       ],
       "Members": [
         "Membres"
@@ -5021,9 +5005,6 @@
       "Priority support": [
         "Assistance prioritaire"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les pourrielleurs avec ${ maskMyEmailButton }."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton ne gagne pas d'argent en abusant de la vie privée."
       ],
@@ -5126,9 +5107,6 @@
       "Show original message": [
         "Afficher le message original"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin est un service Proton, et votre compte Proton inclut des alias Masquer mon courriel. Pour commencer à masquer votre adresse électronique, allez sur SimpleLogin et créez votre premier alias."
-      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables où vous ne voulez pas exposer votre adresse électronique réelle."
       ],
@@ -5198,9 +5176,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Il y a eu une erreur avec la signature utilisée pour vérifier les coordonnées qui peut provenir d'une réinitialisation du mot de passe."
-      ],
-      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "On ne peut pas vous pourrieller si on ne connaît pas votre adresse électronique. Protégez votre boîte de réception avec Masquer mon courriel."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
@@ -5419,9 +5394,6 @@
       ],
       "When do you want your message to be sent?": [
         "Quand souhaitez-vous que votre message soit envoyé?"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Lorsque vous communiquez votre courriel, utilisez un alias Masquer mon courriel, jetable et unique, au lieu de votre véritable adresse électronique."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Lorsque vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
@@ -6816,11 +6788,6 @@
         "Basculez vers ou ajoutez un compte"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la protection de la vie privée est la règle absolue."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlez-nous de votre expérience (optionnel)"
@@ -6829,11 +6796,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Votre avis"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Nouvelle version, protection unifiée"
       ]
     },
     "Notification": {
@@ -7328,17 +7290,8 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
-      ],
-      "Invite friends and earn rewards!": [
-        "Invitez des amis et gagnez des récompenses!"
-      ],
       "Message Content Search": [
         "Recherche de contenu de message"
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Pour protéger votre vie privée, Proton a bloqué les traqueurs de courriel dans ce message"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"

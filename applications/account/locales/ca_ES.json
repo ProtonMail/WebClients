@@ -496,11 +496,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
       "Refresh the page": [
         "Actualitza la pàgina"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -814,28 +814,6 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } dominis personalitzats",
         "+ ${ domains } domini personalitzat"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adreça",
-        "${ addressAddon.MaxAddresses } adreces"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domini",
-        "${ domainAddon.MaxDomains } dominis"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } usuari",
-        "${ memberAddon.MaxMembers } usuaris"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } conexió",
-        "${ vpnAddon.MaxVPN } conexions"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } connexió",
-        "${ vpnBonus } connexions"
       ]
     },
     "Address action": {
@@ -1415,16 +1393,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dies"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes",
-        "${ monthsWithYears } mesos"
       ]
     },
     "Country name": {
@@ -3550,9 +3518,6 @@
         "${ numContacts } contacte",
         "${ numContacts } contactes"
       ],
-      "${ planName } credits earned": [
-        "${ planName } crèdits aconseguits"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
         "${ providerFoldersNumLocalized } carpetes trobades"
@@ -3560,9 +3525,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } de ${ rewardsLimit } mesos"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
@@ -3600,9 +3562,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtre si es compleixen ALGUNES de les condicions següents)"
       ],
-      "(Mail + VPN)": [
-        "(Correu + VPN)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -3614,9 +3573,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Elles proven ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% de descompte aplicat a la vostra subscripció amb un cupó ${ code }"
       ],
       "3. You earn credits": [
         "3. Guanyeu crèdits"
@@ -3756,20 +3712,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturat al final del vostre cicle de facturació actual (es renova el ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Les transaccions en Bitcoins poden trigar una estona en ser confirmades (fins a 24 hores). Un cop confirmada, afegirem els crèdits al seu compte. Després de la confirmació podrà efectuar el pagament del rebut amb els crèdits."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 aplicat a la teva suscripció"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "El Black Friday 2019 aplicat a la vostra subscripció"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "S'ha aplicat el descompte per a nouvinguts del Black Friday 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -3849,9 +3793,6 @@
       ],
       "Delete link?": [
         "Voleu eliminar l'enllaç?"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Descompte aplicat a la vostra subscripció amb un cupó ${ code }"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NO oblideu aquesta contrasenya. Si l'oblideu, no podreu accedir ni desxifrar els vostres missatges."
@@ -3943,9 +3884,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Per a Visa i MasterCard, els 3 dígits a la part posterior de la targeta. Per American Express, els 4 dígits de la part frontal de la targeta."
-      ],
-      "Free": [
-        "Gratuït"
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -4385,9 +4323,6 @@
       "Text to display": [
         "Text per mostrar"
       ],
-      "Thank you for supporting our mission.": [
-        "Gràcies per donar suport a la nostra missió."
-      ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "L'adreça de correu electrònic que poseu a la primera posició de la llista és la vostra adreça per defecte. Arrossegueu i deixeu anar per reordenar-les."
       ],
@@ -4654,9 +4589,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "El seu compte s'està actualitzant, el que pot arribar a trigar fins a 30 segons."
       ],
       "Your account recovery method is set": [
         "S'ha establert el mètode de recuperació del vostre compte"
@@ -5147,17 +5079,11 @@
       "Apply filter to existing emails": [
         "Aplica el filtre als correus existents"
       ],
-      "Ask before loading remote content": [
-        "Confirmar abans de carregar contingut remot"
-      ],
       "Attach public key": [
         "Adjunta la clau pública"
       ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
-      ],
-      "Auto-load embedded images": [
-        "Càrrega automàtica d'imatges incrustades"
       ],
       "Auto-reply": [
         "Resposta automàtica"
@@ -5294,9 +5220,6 @@
       "Digits": [
         "Dígits"
       ],
-      "Discount": [
-        "Descompte"
-      ],
       "Display name": [
         "Nom a mostrar"
       ],
@@ -5353,9 +5276,6 @@
       ],
       "Expires": [
         "Expira"
-      ],
-      "extra storage": [
-        "emmagatzematge addicional"
       ],
       "File": [
         "Fitxer"
@@ -5669,9 +5589,6 @@
       "To: ${ PMEmailAddress }": [
         "Per: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
       ],
@@ -5740,9 +5657,6 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
-      ],
-      "Your reward": [
-        "La seva recompensa"
       ],
       "ZIP code": [
         "Codi postal"
@@ -6937,12 +6851,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
-      ],
-      "Invite friends and earn rewards!": [
-        "Convideu amistats i guanyeu recompenses!"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
       ]
@@ -7312,10 +7220,6 @@
       "${ appName } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ appName }"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } usuari",
-        "${ maxUsers } usuaris"
-      ],
       "1. Select platform": [
         "1. Seleccioneu la plataforma"
       ],
@@ -7634,9 +7538,6 @@
       "Export public key": [
         "Exporta clau pública"
       ],
-      "Extension": [
-        "Extensió"
-      ],
       "External PGP settings": [
         "Configuració de PGP externa"
       ],
@@ -7657,9 +7558,6 @@
       ],
       "Generate missing keys": [
         "Generar claus perdudes"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
       "Gift code": [
         "Codi regal"
@@ -7806,9 +7704,6 @@
       "Privacy and data collection": [
         "Privacitat i recopilació de dades"
       ],
-      "Processing": [
-        "Processant"
-      ],
       "Processing...": [
         "Processant..."
       ],
@@ -7829,9 +7724,6 @@
       ],
       "Refer a friend": [
         "Recomana a un amic"
-      ],
-      "Referral tracker": [
-        "Seguiment de recomanacions"
       ],
       "Remove calendar": [
         "Elimina el calendari"
@@ -8118,12 +8010,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Descompte aplicat per al cicle de facturació anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Descompte aplicat per al cicle de facturació anual"
       ],
       "Each imported email will have this label": [
         "Tots els correus electrònics importats tindran aquesta etiqueta"

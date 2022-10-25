@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Заблокировать сообщения этого отправителя"
       ],
+      "Block sender": [
+        "Заблокировать отправителя"
+      ],
       "Block senders": [
         "Заблокировать отправителей"
       ],
@@ -440,9 +443,6 @@
       "Hide messages": [
         "Скрыть сообщения"
       ],
-      "Hide My Email": [
-        "Скрыть мою электронную почту"
-      ],
       "Hide my email": [
         "Скрыть мою электронную почту"
       ],
@@ -506,6 +506,9 @@
       "Load": [
         "Загрузить"
       ],
+      "Load anyway": [
+        "Загрузить всё равно"
+      ],
       "Load embedded images": [
         "Загрузить встроенные изображения"
       ],
@@ -514,9 +517,6 @@
       ],
       "Load more": [
         "Загрузить ещё"
-      ],
-      "Load unprotected": [
-        "Загрузить без защиты"
       ],
       "Loading${ ellipsis }": [
         "Загрузка${ ellipsis }"
@@ -612,7 +612,7 @@
         "Переместить во Входящие"
       ],
       "Move to inbox (not spam)": [
-        "Переместить во входящие (не спам)"
+        "Переместить во Входящие (не спам)"
       ],
       "Move to spam": [
         "Переместить в спам"
@@ -652,9 +652,6 @@
       ],
       "No": [
         "Нет"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания."
       ],
       "No, I won't attend": [
         "Нет, я не участвую"
@@ -823,6 +820,9 @@
       ],
       "Search message content": [
         "Поиск содержимого сообщения"
+      ],
+      "See plan features": [
+        "Посмотреть возможности тарифа"
       ],
       "Select all": [
         "Выделить все"
@@ -4530,12 +4530,6 @@
         "${ total } сообщений",
         "${ total } сообщений"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } запланированное сообщение",
-        "${ totalMessagesCount } запланированных сообщений",
-        "${ totalMessagesCount } запланированное(ых) сообщение(й)",
-        "${ totalMessagesCount } запланированное(ых) сообщение(й)"
-      ],
       "${ unread } unread conversation": [
         "${ unread } непрочитанная цепочка писем",
         "${ unread } непрочитанные цепочки писем",
@@ -5067,9 +5061,6 @@
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Превышено максимальное количество вложений (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
       ],
-      "members": [
-        "участники"
-      ],
       "Members": [
         "Участники"
       ],
@@ -5235,9 +5226,6 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Защитите свою электронную почту от утечки в списки рассылки или спамерам с ${ maskMyEmailButton }."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не зарабатывает на нарушении конфиденциальности."
       ],
@@ -5339,9 +5327,6 @@
       ],
       "Show original message": [
         "Показать исходное сообщение"
-      ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin - это служба Proton, а ваш аккаунт Proton включает псевдонимы Hide My Email. Чтобы начать маскировать свой адрес электронной почты, зайдите в SimpleLogin и создайте свой первый псевдоним."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin предоставляет простой способ создания логинов на ненадежных сторонних сайтах, где вы не хотите раскрывать свой реальный адрес электронной почты."
@@ -6762,6 +6747,11 @@
         "Открыть в ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "настройки"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Почти готово"
@@ -7072,11 +7062,6 @@
         "Изменить или добавить аккаунт"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Мы освежили внешний вид Proton.\nУ наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Расскажите нам о вашем опыте (не обязательно)"
@@ -7085,11 +7070,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Обратная связь"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Обновленный Proton, комплексная защита"
       ]
     },
     "Notification": {
@@ -7596,24 +7576,268 @@
         "Сначала маленькие"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
+      ],
+      "Special offer": [
+        "Специальное предложение"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Хранилище объемом ${ storageSize }"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "64 countries": [
+        "64 страны"
+      ],
+      "All paid Mail and Calendar features": [
+        "Все платные функции Mail и Calendar"
+      ],
+      "High speed VPN": [
+        "Высокоскоростной VPN"
+      ],
+      "Highest VPN speed": [
+        "Высочайшая скорость VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Платная версия Drive"
+      ],
+      "Premium early access": [
+        "Ранний доступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Платная версия Mail и Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Платные версии Mail, Calendar и Drive"
+      ],
+      "Premium VPN": [
+        "Платная версия VPN"
+      ],
+      "Secure cloud storage": [
+        "Безопасное облачное хранилище"
+      ],
+      "Secure streaming": [
+        "Защищенный стриминг"
+      ],
+      "Support online privacy": [
+        "Обеспечьте свою конфиденциальность в Интернете"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждый год по той же цене до тех пор, пока вы ее не отмените."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Бессрочное предложение"
+      ],
+      "Limited time only": [
+        "Предложение ограничено"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Offer ends soon": [
+        "Акция скоро закончится"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Скидка будет применяться при продлении до тех пор, пока подписка не будет отменена или изменена"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Подписка автоматически продлится по стандартной цене в конце платежного цикла"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти к тарифам"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "в месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 года"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "${ amount } за первые 2 года"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "${ amount } за первый месяц"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "${ amount } за первый год"
+      ],
+      "Billed at ${ amountDue }": [
+        "Итого: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Save ${ discount }%": [
+        "Сэкономьте ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Черная пятница"
+      ],
+      "Cyber Week Sale": [
+        "Распродажа в честь кибернедели"
+      ],
+      "End of year offer": [
+        "Предложение в честь конца года"
+      ],
+      "End of Year Sale": [
+        "Распродажа в честь конца года"
+      ],
+      "Get our premium bundle and save more": [
+        "Приобретите платный пакет и сэкономьте"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Экономьте с годовой подпиской на Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Перейдите на Proton Unlimited и экономьте"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все функции наших платных сервисов с максимальными квотами. Включает 100 адресов электронной почты, поддержку 10 пользовательских доменов и неограниченного числа алиасов Hide My Email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, а также другие преимущества."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 пользовательских доменов, 15 адресов электронной почты, неограниченного числа алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Получайте платные версии всех сервисов, которые мы выпустим в будущем, а также ранний доступ ко всем новым функциям и продуктам без дополнительной платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Переместите свои материалы в облачное хранилище с шифрованием. Включает автоматическую синхронизацию, зашифрованный обмен файлами и другие преимущества."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Получите до 18 месяцев ${ planName } бесплатно"
+      "Email tracking protection": [
+        "Защита от отслеживания электронной почты"
       ],
-      "Invite friends and earn rewards!": [
-        "Приглашайте друзей и получайте вознаграждения!"
+      "Get up to ${ credits } in credits.": [
+        "Вы можете получить до ${ credits } в кредитах."
+      ],
+      "Invite friends to Proton": [
+        "Пригласите друзей в Proton"
       ],
       "Message Content Search": [
         "Поиск содержимого сообщения"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Чтобы защитить вашу конфиденциальность, Proton заблокировал почтовые трекеры в этом сообщении"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробуйте ${DRIVE_APP_NAME}"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Теперь мы загружаем изображения по умолчанию и не даем отправителю отслеживать вас. Это можно изменить в ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Сейчас вы можете запланировать отправку ваших сообщений на более позднее время"
@@ -7737,11 +7961,23 @@
         "${ elementsCount } сообщений помечено как непрочитанные.",
         "${ elementsCount } сообщение(я, ий) помечены(о) как непрочитанные."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } сообщение перемещено в ${ folderName }, а отправитель добавлен в список не спама.",
+        "${ elementsCount } сообщения перемещены в ${ folderName }, а отправители добавлены в список не спама.",
+        "${ elementsCount } сообщений перемещены в ${ folderName }, а отправители добавлены в список не спама.",
+        "${ elementsCount } сообщений перемещены в ${ folderName }, а отправители добавлены в список не спама."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } сообщение перемещено в ${ folderName }.",
         "${ elementsCount } сообщения перемещены в ${ folderName }.",
         "${ elementsCount } сообщений перемещено в ${ folderName }.",
         "${ elementsCount } сообщений перемещено в ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } сообщение перемещено в спам, а отправитель добавлен в список спама.",
+        "${ elementsCount } сообщения перемещены в спам, а отправители добавлены в список спама.",
+        "${ elementsCount } сообщений перемещены в спам, а отправители добавлены в список спама.",
+        "${ elementsCount } сообщений перемещены в спам, а отправители добавлены в список спама."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "С ${ elementsCount } сообщения удалён ярлык ${ labelName }.",
@@ -7797,6 +8033,9 @@
       "Conversation moved to ${ folderName }.": [
         "Цепочка писем перемещена в ${ folderName }."
       ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Цепочка писем перемещена в спам, и отправитель добавлен в список спама."
+      ],
       "Conversation removed from ${ labelName }.": [
         "Цепочка писем удалена из ${ labelName }."
       ],
@@ -7851,8 +8090,14 @@
       "Message marked as unread.": [
         "Сообщение помечено как непрочитанное."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Сообщение перемещено в ${ folderName }, а отправитель добавлен в список не спама."
+      ],
       "Message moved to ${ folderName }.": [
         "Сообщение перемещено в ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Сообщение перемещено в спам, а отправитель добавлен в ваш список спама."
       ],
       "Message removed from ${ labelName }.": [
         "Сообщение удалено из ${ labelName }."
@@ -8327,7 +8572,7 @@
         "Переместить во Входящие"
       ],
       "Move to inbox (not spam)": [
-        "Переместить во входящие (не спам)"
+        "Переместить во Входящие (не спам)"
       ],
       "Move to spam": [
         "Переместить в Спам"

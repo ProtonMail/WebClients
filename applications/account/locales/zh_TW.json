@@ -496,9 +496,6 @@
       "Pay ${ price }": [
         "費用 ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "請洽詢組織機構的管理員以管理訂購授權"
-      ],
       "Preview": [
         "預覽"
       ],
@@ -529,10 +526,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -856,28 +853,8 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } users": [
-        "+ ${ _users } 個使用者"
-      ],
       "+ ${ domains } custom domains": [
         "+ ${ domains } 個自訂網域"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } addresses": [
-        "${ addressAddon.MaxAddresses } 個電郵位址"
-      ],
-      "${ domainAddon.MaxDomains } domains": [
-        "${ domainAddon.MaxDomains } 個網域"
-      ],
-      "${ memberAddon.MaxMembers } users": [
-        "${ memberAddon.MaxMembers } 個使用者"
-      ],
-      "${ vpnAddon.MaxVPN } connections": [
-        "${ vpnAddon.MaxVPN } 個連線"
-      ],
-      "${ vpnBonus } connections": [
-        "${ vpnBonus } 個連線"
       ]
     },
     "Address action": {
@@ -1427,14 +1404,6 @@
       ],
       "Yomi": [
         "漢字讀音"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } days": [
-        "${ days } 天"
-      ],
-      "${ monthsWithYears } months": [
-        "${ monthsWithYears } 個月"
       ]
     },
     "Country name": {
@@ -2287,14 +2256,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "當您的朋友訂閱 ${ MAIL_APP_NAME } 後，您最多可以獲得免費的三個月 ${ mailPlus } 訂閱。"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "追蹤多少人按下您的連結、註冊，並成為付費訂閱者。看著您的免費月份增長。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3620,6 +3583,9 @@
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 Proton。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
       ],
@@ -3849,17 +3815,11 @@
       "${ numContacts } contacts": [
         "${ numContacts } 位聯絡人"
       ],
-      "${ planName } credits earned": [
-        "${ planName } 儲值已賺取"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
       "${ providerFoldersNumLocalized } labels found in Gmail": [
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 個標籤"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } 個月，最多 ${ rewardsLimit } 個月"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -3897,9 +3857,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(篩選須符合下列「任一」條件)"
       ],
-      "(Mail + VPN)": [
-        "（郵件 + VPN）"
-      ],
       "* No credit card required.": [
         "* 無需信用卡。"
       ],
@@ -3917,9 +3874,6 @@
       ],
       "2. They try ${ planName }": [
         "2. 讓他們試試看 ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "您使用優惠券 ${ code } 的訂閱已享用 20% 折扣"
       ],
       "3. You earn credits": [
         "三、您賺取儲值"
@@ -4104,20 +4058,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "在您目前的付款週期結束時扣帳 (於 ${ renewalDate } 續期)"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特幣交易可能需時確認 (可能長達 24 小時)。一俟確認，儲值將撥入您的帳號。在交易確認後，您即可使用儲值餘額支付您的帳單。"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "您的訂閱已享用 2018 黑色星期五優惠"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "您的訂閱已享用 2019 黑色星期五優惠"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "已享用 2020 黑色星期五迎新折扣"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "阻止寄件人得知你閱讀此封郵件。"
@@ -4215,9 +4157,6 @@
       "Delete link?": [
         "刪除連結？"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "您使用優惠券 ${ code } 的訂閱已享用折扣"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "請切勿忘記此密碼。否則，您將無法登入或解密您的郵件。"
       ],
@@ -4256,9 +4195,6 @@
       ],
       "Drop the file here to upload": [
         "拖放檔案到此處以上載"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "已賺取 ${ rewards } 個月，最多 ${ rewardsLimit } 個月 ${ planName } $。"
       ],
       "Edit label": [
         "編輯標籤"
@@ -4334,9 +4270,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "對於 Visa 與 MasterCard 信用卡而言，所指的是卡背的 3 位數字。而 American Express 信用卡則是卡面的 4 位數字。"
-      ],
-      "Free": [
-        "免費"
       ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
@@ -4746,9 +4679,6 @@
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂閱方案"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "未經您的需可，禁止自寄件伺服器載入內容。"
-      ],
       "Preview": [
         "預覽"
       ],
@@ -4905,9 +4835,6 @@
       "Text to display": [
         "要顯示的文字"
       ],
-      "Thank you for supporting our mission.": [
-        "感謝您支援我們的使命。"
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "這個 ${ boldDataLocked } 將不會再顯示，但您仍然可以解鎖您的資料在 ${ encryptionAndKeysLink }。"
       ],
@@ -4940,9 +4867,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "這些設定檔提供 WireGuard routers 與官方用戶端使用。"
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "此 30 天免費試用算是友情份上，千金不換喔。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -5178,9 +5102,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳號中有新訊息，我們將向您的復原/通知電郵位址傳送提示。"
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "當他們訂閱付費方案時，您的帳號將獲得 1 至 3 個月 ${ planName } $ 儲值。"
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂閱續期時，我們會先在可用的餘額中扣除，才會以上面的付款方法扣款。"
       ],
@@ -5307,9 +5228,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "您的帳號正在升級，請稍候最多 30 秒。"
-      ],
       "Your account recovery method is set": [
         "你已設置帳號復原方法"
       ],
@@ -5374,9 +5292,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "金鑰 ${ fingerprint } 已上載"
-      ],
-      "Track your referral link activities here": [
-        "在此追蹤您的推介連結活動"
       ],
       "Your new email address is ready to go!": [
         "您的新電郵位址已準備就緒！"
@@ -5778,9 +5693,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 頁尾"
       ],
-      "${ monthsRewarded } months credited": [
-        "${ monthsRewarded } 個月已儲值"
-      ],
       "${ n } months": [
         "${ n } 月"
       ],
@@ -5847,9 +5759,6 @@
       "Apply filter to existing emails": [
         "將篩選器套用至現有的電郵"
       ],
-      "Ask before loading remote content": [
-        "載入遠端內容前先詢問"
-      ],
       "Attach public key": [
         "附上公鑰"
       ],
@@ -5859,14 +5768,14 @@
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
       ],
-      "Auto-load embedded images": [
-        "自動載入嵌入圖像"
-      ],
       "Auto-reply": [
         "自動回覆"
       ],
       "Auto-unsubscribe": [
         "自動解除訂閱"
+      ],
+      "Awarded": [
+        "獲得獎勵"
       ],
       "Billing cycle": [
         "帳單週期"
@@ -5988,9 +5897,6 @@
       "Create password": [
         "建立密碼"
       ],
-      "Credits pending": [
-        "額度正在路上"
-      ],
       "Credits used": [
         "已使用儲值"
       ],
@@ -6035,9 +5941,6 @@
       ],
       "Digits": [
         "位數"
-      ],
-      "Discount": [
-        "折扣"
       ],
       "Display name": [
         "顯示名稱"
@@ -6101,9 +6004,6 @@
       ],
       "Expires": [
         "有效期限"
-      ],
-      "extra storage": [
-        "額外儲存空間"
       ],
       "File": [
         "檔案"
@@ -6309,6 +6209,9 @@
       "Payment method": [
         "付款方式"
       ],
+      "Pending": [
+        "擱置中"
+      ],
       "Phone number": [
         "手機號碼"
       ],
@@ -6459,9 +6362,6 @@
       "To: ${ PMEmailAddress }": [
         "收件者：${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "總計 (${ countdown })"
-      ],
       "Two-password mode": [
         "雙重密碼模式"
       ],
@@ -6497,9 +6397,6 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
-      ],
-      "Waiting for subscription": [
-        "正等候訂閱"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "很抱歉您想離開。請告訴我們原因以讓我們改進。"
@@ -6542,9 +6439,6 @@
       ],
       "Your referral link": [
         "您的推薦連結"
-      ],
-      "Your reward": [
-        "你的報酬"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -7178,9 +7072,6 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 計畫不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "未來續費價格：包含您帳戶中所有有效的優惠券"
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
@@ -8008,11 +7899,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "獲得最多 18 個月的 ${ planName } 零元優惠"
+      "Get up to ${ credits } in credits.": [
+        "取得多達 ${ credits } 的積點。"
       ],
-      "Invite friends and earn rewards!": [
-        "邀請朋友並賺取獎勵！"
+      "Invite friends to Proton": [
+        "邀請好友使用 Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
@@ -8420,9 +8311,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } users": [
-        "${ maxUsers } 位使用者"
-      ],
       "1. Give a name to the config to be generated": [
         "1. 為生成的設定檔取一個名稱"
       ],
@@ -8494,6 +8382,9 @@
       ],
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
+      ],
+      "Add to Not spam list": [
+        "新增到非垃圾郵件清單"
       ],
       "Add to spam list": [
         "新增到垃圾郵件清單"
@@ -8783,9 +8674,6 @@
       "Export public key": [
         "匯出公鑰"
       ],
-      "Extension": [
-        "附加元件"
-      ],
       "External PGP settings": [
         "外部 PGP 設定"
       ],
@@ -8813,14 +8701,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "選購 ${ vpnPlus } 即可存取所有的伺服器"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "免費取得最多18個月的 ${ planName }"
+      "Gift": [
+        "禮物"
       ],
       "Gift code": [
         "禮品代碼"
       ],
       "How does it work?": [
         "那是如何運作的？"
+      ],
+      "How to refer a friend and get credits": [
+        "如何介紹朋友以獲得獎勵餘額"
       ],
       "How your free trial works": [
         "您的免費試用是如何工作的"
@@ -8966,9 +8857,6 @@
       "Privacy and data collection": [
         "隱私與資料蒐集"
       ],
-      "Processing": [
-        "處理中"
-      ],
       "Processing...": [
         "處理中..."
       ],
@@ -8989,9 +8877,6 @@
       ],
       "Refer a friend": [
         "介紹朋友"
-      ],
-      "Referral tracker": [
-        "推介追蹤"
       ],
       "Remove calendar": [
         "移除行事曆"
@@ -9124,6 +9009,9 @@
       ],
       "Time zone": [
         "時區"
+      ],
+      "Track your referrals": [
+        "追蹤你的介紹紀錄"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "免費試試我們最讚的 ${ MAIL_APP_NAME }"
@@ -9303,12 +9191,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "自訂匯入以減少標籤數目"
-      ],
-      "Discount applied for annual billing cycle": [
-        "每年帳單週期已享用折扣"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "兩年帳單週期已享用折扣"
       ],
       "Each imported email will have this label": [
         "每一封匯入的電郵將加上此標籤"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Заблокувати повідомлення від цього відправника"
       ],
+      "Block sender": [
+        "Блокувати відправника"
+      ],
       "Block senders": [
         "Блокувати відправників"
       ],
@@ -441,7 +444,7 @@
         "Приховати повідомлення"
       ],
       "Hide My Email": [
-        "Сховати мою е‑адресу"
+        "Hide My Email"
       ],
       "Hide my email": [
         "Сховати мою е‑адресу"
@@ -506,6 +509,9 @@
       "Load": [
         "Завантажити"
       ],
+      "Load anyway": [
+        "Все одно завантажити"
+      ],
       "Load embedded images": [
         "Завантажити вбудовані зображення"
       ],
@@ -514,9 +520,6 @@
       ],
       "Load more": [
         "Завантажити ще"
-      ],
-      "Load unprotected": [
-        "Завантаження незахищене"
       ],
       "Loading${ ellipsis }": [
         "Завантаження${ ellipsis }"
@@ -652,9 +655,6 @@
       ],
       "No": [
         "Ні"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження."
       ],
       "No, I won't attend": [
         "Не підтверджую присутність"
@@ -824,6 +824,9 @@
       "Search message content": [
         "Пошук вмісту повідомлень"
       ],
+      "See plan features": [
+        "Переглянути можливості тарифного плану"
+      ],
       "Select all": [
         "Вибрати все"
       ],
@@ -913,6 +916,9 @@
       ],
       "Skip": [
         "Пропустити"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "У зв'язку із захистом від стеження, не вдалося завантажити деякі зображення."
       ],
       "Star": [
         "Позначити зірочкою"
@@ -3844,6 +3850,11 @@
         "Типовий"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Приватність – це стандарт."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Ми збільшили загальний обсяг сховища вашого облікового запису до ${ rewardInGb } ГБ. Отримайте додатковий обсяг та доступ до можливостей преміум."
@@ -4361,6 +4372,12 @@
         "${ contactEmailsLength } учасників",
         "${ contactEmailsLength } учасників"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасник)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасники)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасників)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасників)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } містить кілька адрес е-пошти."
       ],
@@ -4490,12 +4507,6 @@
         "${ total } повідомлень",
         "${ total } повідомлень"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } заплановане повідомлення",
-        "${ totalMessagesCount } заплановані повідомлення",
-        "${ totalMessagesCount } запланованих повідомлень",
-        "${ totalMessagesCount } запланованих повідомлень"
-      ],
       "${ unread } unread conversation": [
         "${ unread } непрочитана розмова",
         "${ unread } непрочитані розмови",
@@ -4507,6 +4518,12 @@
         "${ unread } непрочитані повідомлення",
         "${ unread } непрочитаних повідомлень",
         "${ unread } непрочитаних повідомлень"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } заплановане повідомлення",
+        "${ unreadCount } заплановані повідомлення",
+        "${ unreadCount } запланованих повідомлень",
+        "${ unreadCount } запланованих повідомлень"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } непрочитана розмова",
@@ -4911,7 +4928,7 @@
         "Годин"
       ],
       "How Hide My Email works": [
-        "Як працює функція «Сховати мою е‑адресу»"
+        "Як працює Hide My Email"
       ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Я надсилаю повідомлення користувачу поза Proton Mail."
@@ -4991,6 +5008,9 @@
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
       ],
+      "Labels:": [
+        "Мітки:"
+      ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
       ],
@@ -5023,9 +5043,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Перевищено максимальну кількість вкладень (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
-      ],
-      "members": [
-        "учасники"
       ],
       "Members": [
         "Учасники"
@@ -5298,7 +5315,7 @@
         "Показати оригінальне повідомлення"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin — це служба Proton, і ваш обліковий запис Proton містить псевдоадреси для приховування справжньої адреси. Щоб почати маскувати адресу електронної пошти, перейдіть до SimpleLogin і створіть свою першу псевдоадресу."
+        "SimpleLogin — це служба Proton, і ваш обліковий запис Proton містить псевдоніми Hide My Email. Щоб почати маскувати адресу електронної пошти, перейдіть до SimpleLogin і створіть свій перший псевдонім."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin забезпечує простий спосіб створення облікових записів на не довірених сторонніх сайтах, де ви не хочете розкривати свою справжню адресу електронної пошти."
@@ -5373,7 +5390,7 @@
         "Сталася помилка з підписом, використаним для перевірки контактних даних, що могла стати результатом скидання пароля."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Вони не можуть надсилати вам спам, якщо не знають вашої електронної адреси. Захистіть свою поштову скриньку за допомогою функції «Сховати мою е‑адресу»."
+        "Вони не можуть надсилати вам спам, якщо не знають вашої електронної адреси. Захистіть свою поштову скриньку за допомогою Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -5598,7 +5615,7 @@
         "Коли ви хочете надіслати ваше повідомлення?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Надаючи свою електронну адресу, використовуйте унікальну одноразову псевдоадресу служби «Сховати мою е‑адресу» замість вашої справжньої електронної адреси."
+        "Надаючи свою електронну адресу, використовуйте унікальний одноразовий псевдонім служби Hide My Email замість вашої справжньої електронної адреси."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Коли ви увімкнули довірені ключі для ${ senderName }, відкриті ключі було додано до контактних даних."
@@ -6719,6 +6736,11 @@
         "Відкрити в ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "налаштування"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Майже готово"
@@ -7029,11 +7051,6 @@
         "Перемкнути або додати обліковий запис"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляємо оновлений вигляд.${ br }Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Розкажіть нам про своє враження. (Необов'язково)"
@@ -7042,11 +7059,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Відгук"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Оновлений Proton, єдиний захист"
       ]
     },
     "Notification": {
@@ -7563,20 +7575,23 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Отримайте до 18 місяців ${ planName } безплатно"
+      "Email tracking protection": [
+        "Захист від стеження електронної пошти"
       ],
-      "Invite friends and earn rewards!": [
-        "Запрошуйте друзів та отримуйте винагороди!"
+      "Get up to ${ credits } in credits.": [
+        "Отримайте до ${ credits } кредиту."
+      ],
+      "Invite friends to Proton": [
+        "Запрошуйте друзів до Proton"
       ],
       "Message Content Search": [
         "Пошук у вмісті повідомлень"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Щоб захистити вашу приватність, Proton заблокував елементи стеження в цьому повідомленні"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробувати ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Відтепер ми типово завантажуємо зображення і не даємо відправникам відстежувати вас.\nЦе можна змінити в ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Тепер ви можете планувати надсилання повідомлень"

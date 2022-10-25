@@ -410,6 +410,9 @@
       "Remove": [
         "Удалить"
       ],
+      "Remove device": [
+        "Удалить устройство"
+      ],
       "Remove from this list": [
         "Удалить из этого списка"
       ],
@@ -1840,6 +1843,9 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
+      "Device name does not match": [
+        "Имя устройства не совпадает"
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -3221,6 +3227,9 @@
       "No results found": [
         "Результаты не найдены"
       ],
+      "No synced devices": [
+        "Нет синхронизируемых устройств"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
       ],
@@ -3403,6 +3412,9 @@
       ],
       "Swiss privacy": [
         "Швейцарская конфиденциальность"
+      ],
+      "Synced devices": [
+        "Синхронизируемые устройства"
       ],
       "Tap the + button to upload a file or folder": [
         "Нажмите кнопку \"+\", чтобы загрузить файл или папку"
@@ -3810,6 +3822,12 @@
       "Deleted": [
         "Удаленно"
       ],
+      "Device": [
+        "Устройство"
+      ],
+      "Device name": [
+        "Название устройства"
+      ],
       "Do not ask again": [
         "Больше не спрашивать"
       ],
@@ -3833,6 +3851,9 @@
       ],
       "Encrypt emails": [
         "Шифровать письма"
+      ],
+      "Enter device name": [
+        "Ввести название устройства"
       ],
       "Expired": [
         "Истекло"
@@ -4275,11 +4296,6 @@
         "Изменить или добавить аккаунт"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Мы освежили внешний вид Proton.\nУ наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Расскажите нам о вашем опыте (не обязательно)"
@@ -4288,11 +4304,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Обратная связь"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Обновленный Proton, комплексная защита"
       ]
     },
     "Notification": {
@@ -4406,6 +4417,18 @@
       ],
       "Contact group updated": [
         "Группа контактов обновлена"
+      ],
+      "Device failed to be removed": [
+        "Не удалось удалить устройство"
+      ],
+      "Device failed to be renamed": [
+        "Не удалось переименовать устройство"
+      ],
+      "Device removed": [
+        "Устройство удалено"
+      ],
+      "Device renamed": [
+        "Устройство переименовано"
       ],
       "Encrypted search activated": [
         "Зашифрованный поиск активирован"
@@ -4632,6 +4655,9 @@
       "Enter a new folder name": [
         "Введите новое имя папки"
       ],
+      "Enter device name": [
+        "Ввести название устройства"
+      ],
       "Enter your email address": [
         "Введите адрес вашей электронной почты"
       ],
@@ -4739,12 +4765,259 @@
         "Загрузить"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
+      ],
+      "Special offer": [
+        "Специальное предложение"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "Хранилище объемом ${ storageSize }"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "64 countries": [
+        "64 страны"
+      ],
+      "All paid Mail and Calendar features": [
+        "Все платные функции Mail и Calendar"
+      ],
+      "High speed VPN": [
+        "Высокоскоростной VPN"
+      ],
+      "Highest VPN speed": [
+        "Высочайшая скорость VPN"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Платная версия Drive"
+      ],
+      "Premium early access": [
+        "Ранний доступ"
+      ],
+      "Premium Mail and Calendar": [
+        "Платная версия Mail и Calendar"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Платные версии Mail, Calendar и Drive"
+      ],
+      "Premium VPN": [
+        "Платная версия VPN"
+      ],
+      "Secure cloud storage": [
+        "Безопасное облачное хранилище"
+      ],
+      "Secure streaming": [
+        "Защищенный стриминг"
+      ],
+      "Support online privacy": [
+        "Обеспечьте свою конфиденциальность в Интернете"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Подписка будет автоматически продлеваться каждый год по той же цене до тех пор, пока вы ее не отмените."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Бессрочное предложение"
+      ],
+      "Limited time only": [
+        "Предложение ограничено"
+      ],
+      "Most popular": [
+        "Самое популярное"
+      ],
+      "Offer ends soon": [
+        "Акция скоро закончится"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Скидка будет применяться при продлении до тех пор, пока подписка не будет отменена или изменена"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Подписка автоматически продлится по стандартной цене в конце платежного цикла"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти к тарифам"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "в месяц"
+      ],
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 года"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "${ amount } за первые 2 года"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "${ amount } за первый месяц"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "${ amount } за первый год"
+      ],
+      "Billed at ${ amountDue }": [
+        "Итого: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Save ${ discount }%": [
+        "Сэкономьте ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Обычная цена: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Черная пятница"
+      ],
+      "Cyber Week Sale": [
+        "Распродажа в честь кибернедели"
+      ],
+      "End of year offer": [
+        "Предложение в честь конца года"
+      ],
+      "End of Year Sale": [
+        "Распродажа в честь конца года"
+      ],
+      "Get our premium bundle and save more": [
+        "Приобретите платный пакет и сэкономьте"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Экономьте с годовой подпиской на Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Перейдите на Proton Unlimited и экономьте"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вирусов и другие преимущества."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Все функции наших платных сервисов с максимальными квотами. Включает 100 адресов электронной почты, поддержку 10 пользовательских доменов и неограниченного числа алиасов Hide My Email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, а также другие преимущества."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Включает поддержку 3 пользовательских доменов, 15 адресов электронной почты, неограниченного числа алиасов Hide My Email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Получайте платные версии всех сервисов, которые мы выпустим в будущем, а также ранний доступ ко всем новым функциям и продуктам без дополнительной платы."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Переместите свои материалы в облачное хранилище с шифрованием. Включает автоматическую синхронизацию, зашифрованный обмен файлами и другие преимущества."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
       ],
       "Encrypted search is here": [
         "Зашифрованный поиск тут"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Вы можете получить до ${ credits } в кредитах."
+      ],
+      "Invite friends to Proton": [
+        "Пригласите друзей в Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Теперь вы легко можете искать файлы в Хранилище, сохраняя защищенность своих данных."
@@ -5220,11 +5493,17 @@
       "Recover data": [
         "Восстановление данных"
       ],
+      "Remove device?": [
+        "Удалить устройство?"
+      ],
       "Rename a file": [
         "Переименовать файл"
       ],
       "Rename a folder": [
         "Переименовать папку"
+      ],
+      "Rename device": [
+        "Переименовать устройство"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -5297,6 +5576,9 @@
       ],
       "Stop transfers?": [
         "Остановить передачи?"
+      ],
+      "Synced devices": [
+        "Синхронизируемые устройства"
       ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"

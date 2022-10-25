@@ -961,6 +961,9 @@
       ]
     },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Mata in en säkerhetsnyckel kopplad till ditt ${ BRAND_NAME } konto."
+      ],
       "Security key": [
         "Säkerhetsnyckel"
       ]
@@ -1035,6 +1038,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "När du aktiverar tvåfaktors-autentisering kommer vi att erbjuda återställningskoder som du kan använda för att logga in om du förlorar åtkomst till din autentiserings-app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"

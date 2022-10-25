@@ -436,9 +436,6 @@
       "Hide messages": [
         "Üzenetek elrejtése"
       ],
-      "Hide My Email": [
-        "E-mail Cím Elrejtése"
-      ],
       "Hide my email": [
         "E-mail cím elrejtése"
       ],
@@ -508,9 +505,6 @@
       ],
       "Load more": [
         "Több betöltése"
-      ],
-      "Load unprotected": [
-        "Betöltés védelem nélkül"
       ],
       "Loading${ ellipsis }": [
         "Betöltés${ ellipsis }"
@@ -646,9 +640,6 @@
       ],
       "No": [
         "Nem"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett."
       ],
       "No, I won't attend": [
         "Nem, nem megyek"
@@ -814,6 +805,9 @@
       ],
       "Search message content": [
         "Keresés az üzenetek tartalmában"
+      ],
+      "See plan features": [
+        "Csomag részleteinek megtekintése"
       ],
       "Select all": [
         "Összes kijelölése"
@@ -2791,7 +2785,7 @@
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "A ${ senderEmailAddress } és ${ otherSendersCount } más címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek.",
+        "A ${ senderEmailAddress } és ${ otherSendersCount } másik címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek.",
         "A ${ senderEmailAddress } és ${ otherSendersCount } más címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
@@ -4212,10 +4206,6 @@
         "${ total } üzenet",
         "${ total } üzenet"
       ],
-      "${ totalMessagesCount } scheduled message": [
-        "${ totalMessagesCount } időzített üzenet",
-        "${ totalMessagesCount } időzített üzenet"
-      ],
       "${ unread } unread conversation": [
         "${ unread } olvasatlan beszélgetés",
         "${ unread } olvasatlan beszélgetés"
@@ -4693,9 +4683,6 @@
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Mellékletek maximális száma (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) túllépve."
       ],
-      "members": [
-        "tagok"
-      ],
       "Members": [
         "Tagok"
       ],
@@ -4855,9 +4842,6 @@
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Védje meg e-mail címét az adatszivárgásoktól és a csalóktól az ${ maskMyEmailButton } szolgáltatással."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "A Proton nem abból él, hogy a személyes adatokkal visszaéljen."
@@ -5044,8 +5028,8 @@
         "Ez a beszélgetés törölt üzeneteket is tartalmaz."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ez az üzenet levélszemétként lesz megjelölve. Le szeretnél iratkozni a jövőbeli e-mailekről?",
-        "Ezek az üzenetek levélszemétként lesznek megjelölve. Le szeretnél iratkozni a jövőbeli e-mailekről?"
+        "Ez az beszélgetés levélszemétként lesz megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?",
+        "Ezek az beszélgetések levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Az e-mail nem felelt meg a domain név ellenőrzési követelményeinek. Lehet becsapós üzenet vagy hibásan továbbított!"
@@ -5081,8 +5065,8 @@
         "Ez az üzenet a csatolt kulccsal van aláírva, ami még nincs megbízhatóként megjelölve."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ez az üzenet levélszemétként lesz megjelölve. Le szeretnél iratkozni a jövőbeli e-mailekről?",
-        "Ezek az üzenetek levélszemétként lesznek megjelölve. Le szeretnél iratkozni a jövőbeli e-mailekről?"
+        "Ez az üzenet levélszemétként lesz megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?",
+        "Ezek az üzenetek levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ez az üzenet átkerül a Vázlatokba, hogy szerkeszthesse. Újra meg kell majd adnia az elküldés időpontját."
@@ -5238,7 +5222,7 @@
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk visszaállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
+        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
@@ -6607,11 +6591,6 @@
         "Visszajelzés"
       ]
     },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Frissített Proton, egységesített védelem"
-      ]
-    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } létrehozva"
@@ -7087,17 +7066,8 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyi ${ planName } csomagot ingyen"
-      ],
-      "Invite friends and earn rewards!": [
-        "Hívja meg barátait és szerezzen nyereményeket!"
-      ],
       "Message Content Search": [
         "Keresés üzenetek tartalmában"
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "A magánszférájának védelme érdekében, a Proton e-mail követőket tiltott le ebben az üzenetben"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Próbálja ki a ${ DRIVE_APP_NAME }-ot"

@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "封鎖此寄件者的所有來信"
       ],
+      "Block sender": [
+        "封鎖寄件者"
+      ],
       "Bold": [
         "粗體"
       ],
@@ -428,9 +431,6 @@
       "Hide messages": [
         "隱藏郵件"
       ],
-      "Hide My Email": [
-        "隱藏我的電郵"
-      ],
       "Hide my email": [
         "隱藏我的電郵"
       ],
@@ -499,9 +499,6 @@
       ],
       "Load more": [
         "載入更多"
-      ],
-      "Load unprotected": [
-        "無保護加載"
       ],
       "Loading${ ellipsis }": [
         "正在載入${ ellipsis }"
@@ -637,9 +634,6 @@
       ],
       "No": [
         "否"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "沒有發現追蹤器，但某些圖片無法在追蹤保護啟用時載入。"
       ],
       "No, I won't attend": [
         "否，我不會出席"
@@ -808,6 +802,9 @@
       ],
       "Search message content": [
         "搜尋郵件內容"
+      ],
+      "See plan features": [
+        "看看方案功能"
       ],
       "Select all": [
         "全選"
@@ -3828,6 +3825,9 @@
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 Proton。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
       ],
@@ -4036,9 +4036,6 @@
       ],
       "${ total } messages": [
         "${ total } 封郵件"
-      ],
-      "${ totalMessagesCount } scheduled messages": [
-        "${ totalMessagesCount } 封已安排時間寄送的郵件"
       ],
       "${ unread } unread conversations": [
         "${ unread } 個未讀交談"
@@ -4382,9 +4379,6 @@
       "Hours": [
         "小時"
       ],
-      "How Hide My Email works": [
-        "隱藏我的電郵位址運作方式"
-      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "我正傳送郵件給一位非 Proton Mail 的使用者。"
       ],
@@ -4492,9 +4486,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "附件數量上限 (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) 已滿。"
-      ],
-      "members": [
-        "成員"
       ],
       "Members": [
         "成員"
@@ -4658,9 +4649,6 @@
       "Priority support": [
         "優先支援"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "防止您的郵件地址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不會透過濫用隱私來賺錢。"
       ],
@@ -4756,9 +4744,6 @@
       ],
       "Show original message": [
         "顯示原始訊息"
-      ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "間單登入是一項 Proton 服務，您的 Proton 帳戶包含「隱藏我的郵件別名」功能。要開始隱藏您的電子信箱，請造訪簡單登入並建立您的第一個別名。"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "簡單登入提供了一個簡單的方法，讓您可以建立使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
@@ -5038,9 +5023,6 @@
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
-      ],
-      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "當發送電子郵件時，請使用唯一、一次性隱藏我的電子郵件別名，來代替您的真實電子郵件地址。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
@@ -6095,6 +6077,11 @@
         "於 ${ CALENDAR_APP_NAME } 開啟"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "設定"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "快完成了"
@@ -6373,11 +6360,6 @@
         "切換或是加入帳號"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "與我們分享您的使用體驗。（選填）"
@@ -6386,11 +6368,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "意見回饋"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "改版更新的 Proton，全方面防護"
       ]
     },
     "Notification": {
@@ -6865,17 +6842,14 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "獲得最多 18 個月的 ${ planName } 零元優惠"
+      "Get up to ${ credits } in credits.": [
+        "取得多達 ${ credits } 的積點。"
       ],
-      "Invite friends and earn rewards!": [
-        "邀請朋友並賺取獎勵！"
+      "Invite friends to Proton": [
+        "邀請好友使用 Proton"
       ],
       "Message Content Search": [
         "郵件內文搜尋"
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "為確保您的隱私，Proton以封鎖此郵件中的電郵追蹤器"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
