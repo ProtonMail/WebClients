@@ -14,7 +14,7 @@ import {
     VERIFY_STATE,
 } from '@proton/shared/lib/constants';
 import { Address, Api, DecryptedKey, Domain, DomainAddress } from '@proton/shared/lib/interfaces';
-import { getSignedKeyList } from '@proton/shared/lib/keys';
+import { clearExternalFlags, getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 import {
@@ -91,7 +91,14 @@ const convertToInternalAddress = async ({
         // Reset type to an internal address with a custom domain
         Type: ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN,
     };
-    const signedKeyList = await getSignedKeyList(getNormalizedActiveKeys(internalAddress, activeKeys));
+    const signedKeyList = await getSignedKeyList(
+        getNormalizedActiveKeys(internalAddress, activeKeys).map((key) => {
+            return {
+                ...key,
+                flags: clearExternalFlags(key.flags),
+            };
+        })
+    );
     await api(
         addressType(address.ID, {
             Type: internalAddress.Type,
