@@ -112,12 +112,10 @@ const storeItems = async <ESItemMetadata, ESItem, ESCiphertext>(
             throw new Error('Operation aborted');
         }
 
-        // Since itemMetadata is given, fetchESItem doesn't return undefined
-        const itemToStore = (await fetchESItem(
-            getItemID(itemMetadata),
-            itemMetadata,
-            abortIndexingRef.current.signal
-        ))!;
+        const itemToStore = await fetchESItem(getItemID(itemMetadata), abortIndexingRef.current.signal);
+        if (!itemToStore) {
+            throw new Error('Item fetching failed');
+        }
 
         recordLocalProgress(++counter);
         batchSize += sizeOfESItem(itemToStore);

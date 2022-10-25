@@ -2,17 +2,14 @@ import { History } from 'history';
 
 import { Feature, WelcomeFlagsState } from '@proton/components';
 import {
-    AesGcmCiphertext,
     ESEvent,
     ESHelpers,
-    ES_MAX_PARALLEL_ITEMS,
-    apiHelper,
     esSentryReport,
     esStorageHelpers,
     indexKeyExists,
     testKeywords,
 } from '@proton/encrypted-search';
-import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -24,8 +21,8 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { ESItemChangesMail, ESMessage, NormalizedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
-import { queryEvents } from './esAPI';
-import { fetchMessage } from './esBuild';
+import { queryEvents, queryMessagesMetadata } from './esAPI';
+import { fetchMessage, prepareCiphertext } from './esBuild';
 import { normaliseSearchParams, shouldOnlySortResults, testMetadata } from './esSearch';
 import { convertEventType } from './esSync';
 import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
@@ -54,33 +51,17 @@ export const getESHelpers = ({
 }: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
     const { ID: userID } = user;
 
-    const fetchESItem = (itemID: string, itemMetadata?: Message, abortSignal?: AbortSignal) =>
-        fetchMessage(itemID, api, getMessageKeys, abortSignal, itemMetadata);
-
-    const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: AesGcmCiphertext) => {
-        const { ID, Time, Order, LabelIDs } = itemToStore;
-        return {
-            ID,
-            Time,
-            Order,
-            LabelIDs,
-            aesGcmCiphertext,
-        };
-    };
+    const fetchESItem = (itemID: string, abortSignal?: AbortSignal) =>
+        fetchMessage(itemID, api, getMessageKeys, abortSignal);
 
     const queryItemsMetadata = async (storedItem: StoredCiphertext | undefined, signal: AbortSignal) => {
-        const result = await apiHelper<{ Total: number; Messages: Message[] }>(
+        const result = await queryMessagesMetadata(
             api,
-            signal,
-            queryMessageMetadata({
-                Limit: ES_MAX_PARALLEL_ITEMS,
-                Location: '5',
-                Sort: 'Time',
-                Desc: 1,
+            {
                 EndID: storedItem?.ID,
                 End: storedItem?.Time,
-            } as any),
-            'queryMessageMetadata',
+            },
+            signal,
             userID
         );
 
@@ -142,7 +123,7 @@ export const getESHelpers = ({
 
     const getDecryptionErrorParams = (): NormalizedSearchParams => {
         return {
-            ...normaliseSearchParams({}, '5'),
+            ...normaliseSearchParams({}, MAILBOX_LABEL_IDS.ALL_MAIL),
             decryptionError: true,
         };
     };

@@ -5,7 +5,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api } from '@proton/shared/lib/interfaces/Api';
 
-import { ES_TEMPORARY_ERRORS } from '../constants';
+import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
 import { ESIndexMetrics, ESSearchMetrics } from '../models';
 import { estimateIndexingDuration } from './esBuild';
 import { addESTimestamp, getES, getNumItemsDB } from './esUtils';
@@ -36,14 +36,20 @@ export const esSentryReport = (errorMessage: string, extra?: any) => {
  * include in sentry reports in case of permanent errors
  * @param userID the user ID, used only during indexing to store the timestamp of a correctly indexed
  * batch of items and to estimate indexing time
+ * @param retries the number of times the same call has already been retried
  */
 export const apiHelper = async <T>(
     api: Api,
     signal: AbortSignal | undefined,
     options: Object,
     callingContext: string,
-    userID?: string
+    userID?: string,
+    retries: number = 1
 ): Promise<T | undefined> => {
+    if (signal?.aborted) {
+        return;
+    }
+
     let apiResponse: T;
     try {
         apiResponse = await api<T>({
@@ -53,36 +59,32 @@ export const apiHelper = async <T>(
             signal,
         });
     } catch (error: any) {
-        // Network and temporary errors trigger a retry, for any other error undefined is returned
-        if (
-            getIsOfflineError(error) ||
-            getIsTimeoutError(error) ||
-            error.name === 'NetworkError' ||
-            (error?.status && ES_TEMPORARY_ERRORS.includes(error.status))
-        ) {
-            let retryAfterSeconds = 1;
+        const isUnknownError =
+            !getIsOfflineError(error) &&
+            !getIsTimeoutError(error) &&
+            error.name !== 'NetworkError' &&
+            error.message !== 'Failed to fetch' &&
+            error.message !== 'Load failed' &&
+            !ES_TEMPORARY_ERRORS.includes(error.status) &&
+            error.message !== 'Operation aborted' &&
+            error.name !== 'AbortError';
 
-            const { response } = error;
-            if (response) {
-                const { headers } = response;
-                retryAfterSeconds = headers ? parseInt(headers.get('retry-after') || '1', 10) : retryAfterSeconds;
-            }
-
-            if (userID) {
-                addESTimestamp(userID, 'stop');
-            }
-
-            await wait(retryAfterSeconds * SECOND);
-
-            return apiHelper<T>(api, signal, options, callingContext, userID);
-        }
-
-        if (!(error.message && error.message === 'Operation aborted') && !(error.name && error.name === 'AbortError')) {
-            // This happens when the user pauses indexing, for which we don't need a sentry report
+        if (isUnknownError) {
             esSentryReport(`apiHelper: ${callingContext}`, { error });
         }
 
-        return;
+        if (retries >= ES_MAX_RETRIES) {
+            return;
+        }
+
+        if (userID) {
+            addESTimestamp(userID, 'stop');
+        }
+
+        const retryAfterSeconds = parseInt(error.response?.headers?.get('retry-after') || '5', 10);
+        await wait(retryAfterSeconds * SECOND);
+
+        return apiHelper<T>(api, signal, options, callingContext, userID, retries + 1);
     }
 
     return apiResponse;
