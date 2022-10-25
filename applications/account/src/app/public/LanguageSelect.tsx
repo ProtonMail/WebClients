@@ -47,10 +47,13 @@ const LanguageSelect = ({ className, locales = {}, outlined, globe }: Props) => 
 
     const content = globe ? (
         <>
-            <Icon className="mr0-5" name="globe" /> {LOCALES[localeCode]}
+            <Icon className="mr0-5 flex-item-noshrink no-tiny-mobile" name="globe" />{' '}
+            <span className="text-ellipsis">{LOCALES[localeCode]}</span>
         </>
     ) : (
-        LOCALES[localeCode]
+        <>
+            <span className="text-ellipsis">{LOCALES[localeCode]}</span>
+        </>
     );
 
     if (outlined) {

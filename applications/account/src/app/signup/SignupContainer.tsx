@@ -761,7 +761,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
     return (
         <Layout
-            hasBackButton={!!handleBackStep}
+            onBack={handleBackStep}
             bottomRight={<SignupSupportDropdown />}
             hasDecoration={hasDecoration}
             headerClassName={clsx(stepper && 'mb1 on-tiny-mobile-mb2')}

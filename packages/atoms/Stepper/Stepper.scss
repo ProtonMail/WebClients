@@ -2,16 +2,15 @@
 
 .stepper {
 	$mobile-padding: 10%;
+	$dot-size: em(12);
+	$weak-opacity: 0.2;
+	$connector-height: em(2);
+	$connector-gap: em(2);
+	$connector-max-width: em(120);
 
 	padding-inline: $mobile-padding;
 
 	&-item {
-		$dot-size: em(12);
-		$weak-opacity: 0.2;
-		$connector-height: em(2);
-		$connector-gap: em(2);
-		$connector-max-width: em(120);
-
 		max-inline-size: calc($connector-max-width + $dot-size - $connector-gap);
 
 		&-dot {
@@ -48,6 +47,11 @@
 	}
 
 	@include respond-to($breakpoint-tiny, 'max') {
+		$connector-max-width: em(40); // smaller for mobile
+		&-item {
+			max-inline-size: calc($connector-max-width + $dot-size - $connector-gap);
+		}
+
 		&-labels {
 			margin-inline: -$mobile-padding;
 		}
@@ -58,6 +62,8 @@
 			&.stepper-item--active {
 				visibility: visible;
 				flex: 2 1 0px;
+				min-block-size: 3em; // for signup, I need to have a predictible height (and it could avoid jumps btw)
+				min-inline-size: 50%; // YOLO, enough space for text
 			}
 		}
 	}
