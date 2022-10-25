@@ -485,9 +485,6 @@
       "Pay ${ price }": [
         "Betal ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Kontakt venligst din administrator for, at håndtere abonnementet"
-      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -518,11 +515,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -854,35 +851,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } bruger",
-        "+ ${ _users } brugere"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } brugerdomæne",
         "+ ${ domains } brugerdomæner"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adresse",
-        "${ addressAddon.MaxAddresses } adresser"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domæne",
-        "${ domainAddon.MaxDomains } domæner"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } bruger",
-        "${ memberAddon.MaxMembers } brugere"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } forbindelse",
-        "${ vpnAddon.MaxVPN } forbindelser"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } forbindelse",
-        "${ vpnBonus } forbindelser"
       ]
     },
     "Address action": {
@@ -1409,16 +1380,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dage"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } måned",
-        "${ monthsWithYears } måneder"
       ]
     },
     "Country name": {
@@ -2193,11 +2154,6 @@
         "(via ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Kupon anvendt: ${ CouponCode }"
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Ubrugte kreditter"
@@ -2278,14 +2234,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "Få op til 3 måneders ${ mailPlus } gratis for hver ven, der abonnerer på ${ MAIL_APP_NAME }."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Følg hvor mange der klikker på dit link, tilmelder sig og bliver betalende abonnenter. Se dine gratis måneder hobe sig op."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
@@ -3789,9 +3739,6 @@
         "${ numContacts } kontakt",
         "${ numContacts } kontakter"
       ],
-      "${ planName } credits earned": [
-        "${ planName }-kreditter optjent"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
         "${ providerFoldersNumLocalized } mapper fundet"
@@ -3799,9 +3746,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } etiket fundet i Gmail",
         "${ providerFoldersNumLocalized } etiketter fundet i Gmail"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } af ${ rewardsLimit } måneder"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
@@ -3845,9 +3789,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
       ],
-      "(Mail + VPN)": [
-        "(Mail + VPN)"
-      ],
       "* No credit card required.": [
         "* Der kræves ikke kreditkort."
       ],
@@ -3866,9 +3807,6 @@
       ],
       "2. They try ${ planName }": [
         "2. De prøver ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% rabat anvendt på dit abonnement med kupon ${ code }"
       ],
       "3. You earn credits": [
         "3. Du optjener kreditter"
@@ -4065,20 +4003,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Faktureres ved udløbet af din aktuelle faktureringscyklus (fornys den ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin-transaktioner kan tage noget tid at bekræfte (op til 24 timer). Efter bekræftelsen vil vi tilføje kreditter til din konto. Efter transaktionsbekræftelsen kan du betale din faktura med kreditterne."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 anvendes til dit abonnement"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 anvendes til dit abonnement"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Black Friday 2020-nybruger-rabat er tilføjet"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokerer afsendere fra at se, om og hvornår du har åbnet en besked."
@@ -4177,9 +4103,6 @@
       "Delete link?": [
         "Slet link?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Rabat anvendt på dit abonnement med rabatkupon ${ code }"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke kunne logge ind eller dekryptere dine beskeder."
       ],
@@ -4219,9 +4142,6 @@
       ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "Optjente ${ rewards } af ${ rewardsLimit } ${ planName } måneder."
       ],
       "Edit label": [
         "Redigér etiket"
@@ -4303,9 +4223,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "For Visa, MasterCard og Discover er det de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
-      ],
-      "Free": [
-        "Gratis"
       ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
@@ -4718,9 +4635,6 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Forhindrer at indhold fra afsenderens server indlæses uden din tilladelse."
-      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -4877,9 +4791,6 @@
       "Text to display": [
         "Tekst at vise"
       ],
-      "Thank you for supporting our mission.": [
-        "Tak for din støtte til vores mission."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
       ],
@@ -4911,9 +4822,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Disse konfigurationer er beregnet til at fungere med WireGuard-routere og officielle klienter."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "Denne 30-dages gratis prøveperiode er ikke tilgængelig på nogen anden måde."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -5146,9 +5054,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Når de abonnerer på et betalt abonnement, vil 1 til 3 måneder af ${ planName } $ blive krediteret din konto."
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
@@ -5293,9 +5198,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Din konto opgraderes. Dette kan tage op til 30 sekunder."
-      ],
       "Your account recovery method is set": [
         "Din metode til kontogendannelse er indstillet"
       ],
@@ -5360,9 +5262,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Track your referral link activities here": [
-        "Tjek aktiviteten på dine henvisningslinks her"
       ]
     },
     "Info - folder colouring feature": {
@@ -5753,10 +5652,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } sidefod"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } måned krediteret",
-        "${ monthsRewarded } måneder krediteret"
-      ],
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
@@ -5822,9 +5717,6 @@
       "Apply filter to existing emails": [
         "Anvend filter på eksisterende e-mails"
       ],
-      "Ask before loading remote content": [
-        "Spørg før indlæsning af fjernindhold"
-      ],
       "Attach public key": [
         "Vedhæft offentlig nøgle"
       ],
@@ -5833,9 +5725,6 @@
       ],
       "Authenticator app": [
         "Godkendelsesapp"
-      ],
-      "Auto-load embedded images": [
-        "Auto-indlæs indlejrede billeder"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -5957,9 +5846,6 @@
       "Create password": [
         "Opret adgangskode"
       ],
-      "Credits pending": [
-        "Kreditter afventer"
-      ],
       "Credits used": [
         "Kredit forbrugt"
       ],
@@ -6001,9 +5887,6 @@
       ],
       "Digits": [
         "Cifre"
-      ],
-      "Discount": [
-        "Rabat"
       ],
       "Display name": [
         "Visningsnavn"
@@ -6067,9 +5950,6 @@
       ],
       "Expires": [
         "Udløber"
-      ],
-      "extra storage": [
-        "ekstra lagerplads"
       ],
       "File": [
         "Fil"
@@ -6410,9 +6290,6 @@
       "To: ${ PMEmailAddress }": [
         "Til: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
       "Two-password mode": [
         "To-adgangskodetilstand"
       ],
@@ -6448,9 +6325,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Venter på abonnement"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Vi er kede af at du forlader os. Forklar venligst hvorfor, så vi kan forbedre os."
@@ -6493,9 +6367,6 @@
       ],
       "Your referral link": [
         "Dit henvisningslink"
-      ],
-      "Your reward": [
-        "Din belønning"
       ],
       "ZIP code": [
         "Postnummer"
@@ -7073,17 +6944,17 @@
         "Support"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
+      ]
+    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
-      ]
-    },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -7811,12 +7682,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Få op til 18 måneder med ${ planName } gratis"
-      ],
-      "Invite friends and earn rewards!": [
-        "Inviter venner, og optjen belønninger!"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
       ]
@@ -8257,10 +8122,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } bruger",
-        "${ maxUsers } brugere"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Giv et navn til den konfiguration, der skal genereres"
       ],
@@ -8627,9 +8488,6 @@
       "Export public key": [
         "Eksportér offentlig nøgle"
       ],
-      "Extension": [
-        "Udvidelse"
-      ],
       "External PGP settings": [
         "Eksterne PGP-indstillinger"
       ],
@@ -8656,9 +8514,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Gift code": [
         "Gavekode"
@@ -8814,9 +8669,6 @@
       "Privacy and data collection": [
         "Privatliv og dataindsamling"
       ],
-      "Processing": [
-        "Behandler"
-      ],
       "Processing...": [
         "Behandler..."
       ],
@@ -8837,9 +8689,6 @@
       ],
       "Refer a friend": [
         "Henvis en ven"
-      ],
-      "Referral tracker": [
-        "Sporing af henvisning"
       ],
       "Remove calendar": [
         "Fjern kalender"
@@ -9150,12 +8999,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Rabat er fratrukket årlig faktureringsperiode"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Rabat fratrukket toårig faktureringsperiode"
       ],
       "Each imported email will have this label": [
         "Hver importeret e-mail vil have denne etiket"

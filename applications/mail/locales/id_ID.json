@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Blokir pesan dari pengirim ini"
       ],
+      "Block sender": [
+        "Blokir pengirim"
+      ],
       "Block senders": [
         "Blokir pengirim"
       ],
@@ -434,9 +437,6 @@
       "Hide messages": [
         "Sembunyikan pesan"
       ],
-      "Hide My Email": [
-        "Hide My Email"
-      ],
       "Hide my email": [
         "Sembunyikan email saya"
       ],
@@ -497,6 +497,9 @@
       "Load": [
         "Muat"
       ],
+      "Load anyway": [
+        "Tetap muat"
+      ],
       "Load embedded images": [
         "Muat gambar yang tersemat"
       ],
@@ -505,9 +508,6 @@
       ],
       "Load more": [
         "Muat lebih banyak"
-      ],
-      "Load unprotected": [
-        "Muat pesan asli"
       ],
       "Loading${ ellipsis }": [
         "Memuat${ ellipsis }"
@@ -643,9 +643,6 @@
       ],
       "No": [
         "Tidak"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Tidak ada pelacak yang ditemukan, namun beberapa gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
       "No, I won't attend": [
         "Tidak, saya tidak akan hadir"
@@ -815,6 +812,9 @@
       "Search message content": [
         "Cari konten pesan"
       ],
+      "See plan features": [
+        "Lihat seluruh fitur paket"
+      ],
       "Select all": [
         "Pilih semua"
       ],
@@ -904,6 +904,9 @@
       ],
       "Skip": [
         "Lewati"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "Sebagian gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
       "Star": [
         "Berikan tanda bintang"
@@ -4255,6 +4258,9 @@
       "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } Anggota"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } anggota)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } mengandung lebih dari satu alamat email."
       ],
@@ -4324,14 +4330,14 @@
       "${ total } messages": [
         "${ total } pesan"
       ],
-      "${ totalMessagesCount } scheduled messages": [
-        "${ totalMessagesCount } pesan terjadwal"
-      ],
       "${ unread } unread conversations": [
         "${ unread } percakapan yang belum dibaca"
       ],
       "${ unread } unread messages": [
         "${ unread } pesan yang belum dibaca"
+      ],
+      "${ unreadCount } scheduled messages": [
+        "${ unreadCount } pesan terjadwal"
       ],
       "${ unreadCount } unread conversations": [
         "${ unreadCount } percakapan yang belum dibaca"
@@ -4794,9 +4800,6 @@
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Jumlah lampiran maksimum (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) terlampaui."
-      ],
-      "members": [
-        "anggota"
       ],
       "Members": [
         "Anggota"
@@ -6445,6 +6448,11 @@
         "Buka di ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "pengaturan"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Hampir selesai"
@@ -6734,11 +6742,6 @@
         "Pindah atau tambahkan akun"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Memperkenalkan tampilan Proton yang baru.${ br }Berbagai layanan, satu misi. Selamat datang di Internet yang menjunjung privasi sebagai hal yang baku."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Mohon ceritakan pengalaman Anda kepada kami. (Opsional)"
@@ -6747,11 +6750,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Masukan"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Proton yang baru, dengan perlindungan yang tersatukan"
       ]
     },
     "Notification": {
@@ -7241,20 +7239,23 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
+      "Email tracking protection": [
+        "Perlindungan pelacak email"
       ],
-      "Invite friends and earn rewards!": [
-        "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
+      "Get up to ${ credits } in credits.": [
+        "Dapatkan saldo hingga ${ credits }."
+      ],
+      "Invite friends to Proton": [
+        "Undang teman ke Proton"
       ],
       "Message Content Search": [
         "Pencarian Konten Pesan"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Demi melindungi privasi Anda, Proton telah memblokir pelacak email yang terdapat pada pesan ini"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"

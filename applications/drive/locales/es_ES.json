@@ -406,6 +406,9 @@
       "Remove": [
         "Eliminar"
       ],
+      "Remove device": [
+        "Eliminar dispositivo"
+      ],
       "Remove from this list": [
         "Eliminar de la lista"
       ],
@@ -1801,6 +1804,9 @@
         "Deseleccionar al menos ${ calendarToFixCount } calendario o",
         "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
       ],
+      "Device name does not match": [
+        "El nombre del dispositivo no concuerda"
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo de nuevo más tarde"
       ],
@@ -1823,10 +1829,10 @@
         "Un archivo no puede unirse con un directorio"
       ],
       "File selection is already downloading": [
-        "La selección de archivos está descargándose actualmente"
+        "La selección de archivos ya se está descargando"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "El directorio \"${ name }\" ya se está descargando"
+        "La carpeta \"${ name }\" ya se está descargando"
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
@@ -2081,13 +2087,13 @@
         "No encontrado"
       ],
       "Oops, something went wrong": [
-        "Oops, algo ha salido mal"
+        "Ups, algo salió mal"
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Algo ha ido mal. Por favor, actualice la página o inténtelo más tarde."
+        "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to Proton.": [
         "Ha ocurrido un problema al conectarse a Proton."
@@ -2701,6 +2707,9 @@
       "and": [
         "y"
       ],
+      "And access it from anywhere": [
+        "Y accede desde cualquier lugar"
+      ],
       "Anyone with this link can access your file.": [
         "Cualquiera que tenga este enlace puede acceder a tu archivo."
       ],
@@ -2741,7 +2750,7 @@
         "Limpiar datos"
       ],
       "Clear encrypted search data": [
-        "Limpiar datos de búsqueda cifrada"
+        "Borrar datos de búsqueda cifrados"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Limpiar los datos del navegador limpiará el índice de búsqueda en este dispositivo. Todos los ficheros necesitarán ser reindexados nuevamente al usar la búsqueda."
@@ -2807,6 +2816,9 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este directorio ha sido cargado de forma segura por ${ emailAddress }."
+      ],
+      "double your storage": [
+        "doblar tu almacenamiento"
       ],
       "Download canceled": [
         "Descarga cancelada"
@@ -2897,7 +2909,7 @@
         "Finalizando"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "El directorio \"${ link.name }\" fue eliminado durante la descarga"
+        "La carpeta \"${ link.name }\" fue eliminada durante la descarga"
       ],
       "Folder contents will merge into a single folder": [
         "El contenido de los directorios se unirá en un solo directorio"
@@ -2916,6 +2928,12 @@
       ],
       "Free up some space or contact your administrator.": [
         "Libera algo de espacio o ponte en contacto con tu administrador."
+      ],
+      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
+        "Conoce Proton Drive y gana tu bono de 500MB de almacenamiento."
+      ],
+      "Go ahead, upload a file": [
+        "Cargar un archivo"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Dirígete a \"Mis archivos\" y carga algunos archivos primero."
@@ -2939,7 +2957,7 @@
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Si tiene uno de estos, continúe con la configuración de la cuenta de Proton para continuar con el proceso de desbloqueo."
+        "Si tienes uno de estos, continúa con la configuración de la cuenta de Proton para\ncomenzar con el proceso de desbloqueo."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -2980,6 +2998,9 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Es tan fácil como arrastrar y soltar o seleccionar archivos"
       ],
       "It’s easy and secure": [
         "Es fácil y seguro"
@@ -3067,6 +3088,9 @@
       ],
       "No results found": [
         "No se han encontrado resultados"
+      ],
+      "No synced devices": [
+        "Dispositivos sin sincronizar"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ninguna de las claves cargadas es válida para cifrado. El cifrado se ha deshabilitado automáticamente."
@@ -3158,7 +3182,7 @@
         "Soporte prioritario"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Búsqueda privada habilitada. Ya puedes cerrar este diálogo y buscar carpetas y archivos."
+        "Búsqueda privada habilitada. Puedes cerrar esta ventana y buscar archivos y carpetas."
       ],
       "Queued": [
         "En cola"
@@ -3247,6 +3271,9 @@
       "Swiss privacy": [
         "Privacidad suiza"
       ],
+      "Synced devices": [
+        "Dispositivos sincronizados"
+      ],
       "Tap the + button to upload a file or folder": [
         "Pulsa el botón + para subir un archivo o una carpeta"
       ],
@@ -3296,14 +3323,17 @@
         "Este enlace será deshabilitado de forma permanente. Nadie en posesión de este enlace tendrá acceso a su directorio. Necesitará un enlace nuevo para volver a compartir el directorio."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviera.",
-        "Esta acción eliminará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviera."
+        "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
+        "Esta acción eliminará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviese."
       ],
       "This will overwrite the existing file": [
-        "Esta acción sobreescribirá el archivo existente"
+        "Esto sobrescribirá el archivo existente"
       ],
       "This will overwrite the existing folder": [
         "Esta acción sobreescribirá el directorio existente"
+      ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Esto eliminará de Proton Drive el dispositivo sincronizado ${ deviceName }. Los archivos locales en el dispositivo no se verán afectados."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para permitir una búsqueda verdaderamente privada, debemos indexar tus archivos localmente. Puedes seguir utilizando ${ DRIVE_APP_NAME } normalmente - te avisaremos cuando la indexación haya terminado."
@@ -3324,13 +3354,13 @@
         "Se ha cancelado la transferencia del archivo \"${ name }\""
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "Se ha cancelado la transferencia del directorio \"${ name }\""
+        "Se ha cancelado la transferencia de la carpeta \"${ name }\""
       ],
       "Transfer skipped for file \"${ file.name }\"": [
         "Se ha omitido la transferencia del archivo \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Se ha omitido la transferencia del directorio \"${ folderName }\""
+        "Se ha omitido la transferencia de la carpeta \"${ folderName }\""
       ],
       "Trash": [
         "Papelera"
@@ -3362,8 +3392,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Subir cientos de archivos a la vez puede tener un impacto en el rendimiento."
       ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Usa Drive para Escritorio para sincronizar carpetas en tu ordenador con Proton Drive. Aparecerán aquí y serán accesibles desde cualquier lugar. ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Usa este formulario para notificarnos contenido inapropiado, ilegal o malicioso en archivos compartidos. Vas a reportar:"
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Acabas de doblar tu almacenamento gratuito."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "No se pudo verificar que ${ emailAddress } haya cargado ${ fileName }."
@@ -3421,6 +3457,9 @@
       ],
       "You cannot undo this action.": [
         "No puedes deshacer esta acción."
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Te quedan ${ expiresInDays } días para reclamar tus 500 MB de bono de bienvenida y "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el ${ spaceDisplayed }% de tu capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
@@ -3490,6 +3529,9 @@
       ],
       "file data key": [
         "clave de datos de archivo"
+      ],
+      "file data order": [
+        "orden de datos de archivo"
       ],
       "keys": [
         "claves"
@@ -3640,6 +3682,12 @@
       "Deleted": [
         "Eliminado"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
+      "Device name": [
+        "Nombre del dispositivo"
+      ],
       "Do not ask again": [
         "No preguntar de nuevo"
       ],
@@ -3663,6 +3711,9 @@
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
+      ],
+      "Enter device name": [
+        "Introduce el nombre del dispositivo"
       ],
       "Expired": [
         "Expirado"
@@ -3875,7 +3926,7 @@
         "Texto"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Esto eliminará permanentemente todos los archivos en su unidad bloqueada."
+        "Esto eliminará permanentemente todos los archivos en tu unidad bloqueada."
       ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
@@ -3912,6 +3963,9 @@
       ],
       "Upload picture": [
         "Subir imagen"
+      ],
+      "Upload your first file": [
+        "Carga tu primer archivo"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nombre de usuario o correo de ${ MAIL_APP_NAME }"
@@ -4094,11 +4148,6 @@
         "Cambiar o añadir cuenta"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a un Internet en el que la privacidad es la norma."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Cuéntanos tu experiencia. (Opcional)"
@@ -4107,11 +4156,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentarios"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        "Proton actualizado, protección unificada"
       ]
     },
     "Notification": {
@@ -4134,13 +4178,13 @@
         "\"${ name }\" no se pudo mover a la papelera"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "No se pudo restaurar \"${ name }\" desde la papelera"
+        "No se pudo restaurar \"${ name }\" de la papelera"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" se ha movido a la papelera"
       ],
       "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado desde la papelera"
+        "\"${ name }\" se ha restaurado de la papelera"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" fue movido con éxito"
@@ -4204,6 +4248,18 @@
       "Contact group updated": [
         "Grupo de contactos actualizado"
       ],
+      "Device failed to be removed": [
+        "Falló la eliminación del dispositivo"
+      ],
+      "Device failed to be renamed": [
+        "Falló el renombrado del dispositivo"
+      ],
+      "Device removed": [
+        "Dispositivo eliminado"
+      ],
+      "Device renamed": [
+        "Dispositivo renombrado"
+      ],
       "Encrypted search activated": [
         "Búsqueda cifrada activada"
       ],
@@ -4211,20 +4267,20 @@
         "No se pudieron descargar los archivos: ${ err }"
       ],
       "Failed to move, please try again": [
-        "Se ha producido un error al mover. Por favor, inténtalo de nuevo"
+        "No se pudo mover. Inténtalo de nuevo más tarde"
       ],
       "Failed to upload files: ${ err }": [
         "No se pudieron cargar los archivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El archivo o directorio \"${ filename }\" y otros ${ count } se están cargando actualmente",
-        "El archivo o directorio \"${ filename }\" y otros ${ count } se están cargando actualmente"
+        "El archivo o directorio \"${ filename }\" y ${ count } otro ya están siendo cargados",
+        "El archivo o directorio \"${ filename }\" y ${ count } otros ya están siendo cargados"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "El archivo o directorio \"${ filename }\" ya se está cargando"
       ],
       "File or folder is missing a name": [
-        "No se encuentra un nombre del archivo o directorio"
+        "Falta el nombre del archivo o carpeta"
       ],
       "Item failed to be verified": [
         "No se pudo verificar el elemento"
@@ -4278,7 +4334,7 @@
         "No se pudo eliminar el enlace a tu elemento"
       ],
       "The link to your item was deleted": [
-        "El enlace a su elemento ha sido eliminado"
+        "El enlace a tu elemento ha sido eliminado"
       ],
       "Trash failed to be emptied": [
         "No se pudo vaciar la papelera"
@@ -4413,6 +4469,9 @@
       "Enter a new folder name": [
         "Introduce un nombre nuevo para la carpeta"
       ],
+      "Enter device name": [
+        "Introduce el nombre del dispositivo"
+      ],
       "Enter your email address": [
         "Introduce tu dirección de correo electrónico"
       ],
@@ -4518,6 +4577,235 @@
     "Select files": {
       "Upload": [
         "Subir"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Don't show this again": [
+        "No volver a mostrar"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Pásate a Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "${ storageSize } total storage": [
+        "${ storageSize } de almacenamiento total"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "64 countries": [
+        "64 países"
+      ],
+      "All paid Mail and Calendar features": [
+        "Todas las funciones de pago de Mail y Calendar"
+      ],
+      "High speed VPN": [
+        "VPN de alta velocidad"
+      ],
+      "Highest VPN speed": [
+        "VPN de máxima velocidad"
+      ],
+      "Mail, Calendar, Drive": [
+        "Mail, Calendar, Drive"
+      ],
+      "Premium Drive": [
+        "Drive prémium"
+      ],
+      "Premium early access": [
+        "Acceso anticipado prémium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail y Calendar prémium"
+      ],
+      "Premium Mail, Calendar and Drive": [
+        "Mail, Calendar y Drive prémium"
+      ],
+      "Premium VPN": [
+        "VPN prémium"
+      ],
+      "Secure cloud storage": [
+        "Almacenamiento seguro en la nube"
+      ],
+      "Secure streaming": [
+        "Transmisiones seguras"
+      ],
+      "Support online privacy": [
+        "Apoya la privacidad en línea"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
+      ],
+      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente cada año al mismo precio hasta su cancelación."
+      ]
+    },
+    "specialoffer: Label": {
+      "Lifetime deal": [
+        "Oferta de por vida"
+      ],
+      "Limited time only": [
+        "Solo por tiempo limitado"
+      ],
+      "Most popular": [
+        "Más popular"
+      ],
+      "Offer ends soon": [
+        "La oferta acaba pronto"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "El descuento seguirá aplicándose en cada renovación hasta que canceles o modifiques la suscripción"
+      ],
+      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
+        "Tu suscripción se renovará automáticamente cada año al precio de la cuota estándar al final del ciclo de facturación"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Ir a los planes de suscripción"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ]
+    },
+    "specialoffer: Offers": {
+      "/ month": [
+        "/ mes"
+      ],
+      "1 year": [
+        "1 año"
+      ],
+      "2 years": [
+        "2 años"
+      ],
+      "Billed at ${ amount } for the first 2 years": [
+        "A un precio de ${ amount } durante los 2 primeros años"
+      ],
+      "Billed at ${ amount } for the first month": [
+        "A un precio de ${ amount } durante el primer mes"
+      ],
+      "Billed at ${ amount } for the first year": [
+        "A un precio de ${ amount } durante el primer año"
+      ],
+      "Billed at ${ amountDue }": [
+        "Facturación: ${ amountDue }"
+      ],
+      "for ${ n } month": [
+        "durante ${ n } mes",
+        "durante ${ n } meses"
+      ],
+      "Get the deal": [
+        "Aprovecha la oportunidad"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Transcurrido 1 año, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Transcurridos 2 años, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
+      ],
+      "Save ${ discount }%": [
+        "Ahorra un ${ discount } %"
+      ],
+      "Standard price ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Rebajas de Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Rebajas de la Cyber Week"
+      ],
+      "End of year offer": [
+        "Oferta de fin de año"
+      ],
+      "End of Year Sale": [
+        "Rebajas de fin de año"
+      ],
+      "Get our premium bundle and save more": [
+        "Contrata nuestro paquete prémium y ahorra más dinero"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Nuestro económico plan Visionary está de nuevo disponible por tiempo limitado"
+      ],
+      "Save more with 1 year of Proton Unlimited": [
+        "Ahorra más dinero con 1 año de Proton Unlimited"
+      ],
+      "Upgrade and save more with Proton Unlimited": [
+        "Mejora tu suscripción y ahorra más dinero con Proton Unlimited"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN por usuario, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Todos nuestros servicios prémium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendario, etc."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfecto para familias o equipos pequeños. Cada miembro puede tener su propia bandeja de entrada y seudónimo. Requiere un dominio personalizado."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Disfruta sin coste adicional de las versiones de pago de todos los nuevos servicios de privacidad que lancemos en el futuro, así como de acceso anticipado a todas nuestras futuras funciones y productos."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -4983,11 +5271,17 @@
       "Recover data": [
         "Recuperar datos"
       ],
+      "Remove device?": [
+        "¿Eliminar dispositivo?"
+      ],
       "Rename a file": [
         "Renombrar un archivo"
       ],
       "Rename a folder": [
         "Renombrar una carpeta"
+      ],
+      "Rename device": [
+        "Renombrar dispositivo"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -5060,6 +5354,9 @@
       ],
       "Stop transfers?": [
         "¿Detener transferencias?"
+      ],
+      "Synced devices": [
+        "Dispositivos sincronizados"
       ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado"

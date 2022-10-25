@@ -510,9 +510,6 @@
       "Pay ${ price }": [
         "${ price } öde"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "Lütfen aboneliğinizle ilgili işlemleri yapması için kuruluşunuzun yöneticisi ile görüşün"
-      ],
       "Preview": [
         "Ön izle"
       ],
@@ -543,11 +540,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -898,35 +895,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } kullanıcı",
-        "+ ${ _users } kullanıcı"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } özel etki alanı",
         "+ ${ domains } özel etki alanı"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } adres",
-        "${ addressAddon.MaxAddresses } adres"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } etki alanı",
-        "${ domainAddon.MaxDomains } etki alanı"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } kullanıcı",
-        "${ memberAddon.MaxMembers } kullanıcı"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } bağlantı",
-        "${ vpnAddon.MaxVPN } bağlantı"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } bağlantı",
-        "${ vpnBonus } bağlantı"
       ]
     },
     "Address action": {
@@ -1693,16 +1664,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } gün",
-        "${ days } gün"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } ay",
-        "${ monthsWithYears } ay"
       ]
     },
     "Country name": {
@@ -2477,11 +2438,6 @@
         "(${ entryCountryName } üzerinden)"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "Kupon uygulandı: ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -2596,18 +2552,12 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } uygulamasına abone olan her arkadaşınız için 3 aya kadar ücretsiz ${ mailPlus } kazanın."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Kaç kişinin bağlantınıza tıkladığını, hesap açtığını ve ücretli abone olduğunu izleyin. Ne kadar ücretsiz aylık kullanım kazandığınızı görün."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Arkadaşlarınızı çağırmayı sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
@@ -4461,9 +4411,6 @@
         "${ numContacts } kişi",
         "${ numContacts } kişi"
       ],
-      "${ planName } credits earned": [
-        "${ planName } ödülü kazandınız"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } klasör bulundu",
         "${ providerFoldersNumLocalized } klasör bulundu"
@@ -4471,9 +4418,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "${ rewards } / ${ rewardsLimit } ay"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
@@ -4517,9 +4461,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Aşağıdaki koşullardan BİRİ karşılandığında süzülür)"
       ],
-      "(Mail + VPN)": [
-        "(Posta + VPN)"
-      ],
       "* No credit card required.": [
         "* Kredi kartı gerekmez."
       ],
@@ -4538,9 +4479,6 @@
       ],
       "2. They try ${ planName }": [
         "2. Onlar da ${ planName } denesinler"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "3. You earn credits": [
         "3. Ödülünüzü kazanın"
@@ -4749,20 +4687,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Güncel fatura döneminin sonunda faturalanır (${ renewalDate } tarihinde yenilenir)"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "2018 Kara Cuma indirimi aboneliğinize uygulandı"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "2019 Kara Cuma indirimi aboneliğinize uygulandı"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "2020 Kara Cuma yeni gelen indirimi uygulandı"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Göndericilerin bir iletiyi açıp açmadığınızı ve ne zaman açtığınızı görmesini engeller."
@@ -4864,9 +4790,6 @@
       "Delete link?": [
         "Bağlantı silinsin mi?"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "${ code } kuponu ile aboneliğinize indirim uygulandı"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, oturum açamaz veya iletilerinizin şifresini çözemezsiniz."
       ],
@@ -4912,9 +4835,6 @@
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "${ rewards } / ${ rewardsLimit } ay ${ planName } kazandınız."
       ],
       "Edit label": [
         "Etiketi düzenle"
@@ -5008,9 +4928,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
-      ],
-      "Free": [
-        "Ücretsiz"
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -5446,9 +5363,6 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "Göndericinin sunucusundaki içeriğin izniniz olmadan yüklenmesini engeller."
-      ],
       "Preview": [
         "Ön izle"
       ],
@@ -5617,9 +5531,6 @@
       "Text to display": [
         "Görüntülenecek metin"
       ],
-      "Thank you for supporting our mission.": [
-        "Misyonumuza destek olduğunuz için teşekkür ederiz."
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin kilidini açabilirsiniz."
       ],
@@ -5654,9 +5565,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Bu yapılandırmalar WireGuard yönelticileri ve resmi istemciler ile çalışmak üzere sunulmuştur."
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "Bu 30 günlük ücretsiz denemeyi başka türlü kullanamazlar."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -5907,9 +5815,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Arkadaşlarınız ücretli bir tarifeye abone olduğunda, hesabınıza 1 ile 3 ay arasında ${ planName } ödülü aktarılır."
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
@@ -6067,9 +5972,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Hesabınız yüksek tarifeye geçiriliyor. Bu işlem 30 saniye kadar sürebilir."
-      ],
       "Your account recovery method is set": [
         "Hesap kurtarma yönteminiz ayarlandı"
       ],
@@ -6146,9 +6048,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Track your referral link activities here": [
-        "Öneri bağlantınızla yapılan işlemleri izleyin"
       ],
       "Try Mail Plus": [
         "Mail Plus tarifesini deneyin"
@@ -6565,10 +6464,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } alt bilgisi"
       ],
-      "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } ay kredi kazanıldı",
-        "${ monthsRewarded } ay kredi kazanıldı"
-      ],
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
@@ -6640,9 +6535,6 @@
       "Apply filter to existing emails": [
         "Süzgeci var olan e-postalara uygula"
       ],
-      "Ask before loading remote content": [
-        "Uzak içerik yüklenmeden önce sorulsun"
-      ],
       "Attach public key": [
         "Herkese açık anahtar eklensin"
       ],
@@ -6654,9 +6546,6 @@
       ],
       "Auto-detect primary time zone": [
         "Birincil saat dilimi otomatik algılansın"
-      ],
-      "Auto-load embedded images": [
-        "Gömülü görseller otomatik yüklensin"
       ],
       "Auto-reply": [
         "Otomatik yanıt"
@@ -6787,9 +6676,6 @@
       "Create password": [
         "Parola oluştur"
       ],
-      "Credits pending": [
-        "Bekleyen kredi"
-      ],
       "Credits used": [
         "Kullanılan kredi"
       ],
@@ -6837,9 +6723,6 @@
       ],
       "Digits": [
         "Hane sayısı"
-      ],
-      "Discount": [
-        "İndirim"
       ],
       "Display name": [
         "Görüntülenecek ad"
@@ -6903,9 +6786,6 @@
       ],
       "Expires": [
         "Geçerlilik sonu"
-      ],
-      "extra storage": [
-        "ek depolama alanı"
       ],
       "File": [
         "Dosya"
@@ -7267,9 +7147,6 @@
       "To: ${ PMEmailAddress }": [
         "Nereye: ${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "Toplam (${ countdown })"
-      ],
       "Two-password mode": [
         "İki parola kipi"
       ],
@@ -7305,9 +7182,6 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
-      ],
-      "Waiting for subscription": [
-        "Abone olunması bekleniyor"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
@@ -7350,9 +7224,6 @@
       ],
       "Your referral link": [
         "Öneri bağlantınız"
-      ],
-      "Your reward": [
-        "Ödülünüz"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -8214,6 +8085,26 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8251,9 +8142,6 @@
       "Popular": [
         "Beğenilen"
       ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Gelecekteki yenileme fiyatı: Hesabınızda kayıtlı kullanılabilecek tüm süresi dolmamış kuponları içerir"
-      ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Tüm ücretli Proton hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
       ],
@@ -8280,26 +8168,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -9428,11 +9296,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } kazanın"
+      "Get up to ${ credits } in credits.": [
+        "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends and earn rewards!": [
-        "Arkadaşlarınızı davet edin ve ödül kazanın!"
+      "Invite friends to Proton": [
+        "Arkadaşlarınıza Proton daveti gönderin"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
@@ -9901,10 +9769,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
-      "${ maxUsers } user": [
-        "${ maxUsers } kullanıcı",
-        "${ maxUsers } kullanıcı"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Oluşturulacak yapılandırmaya bir ad verin"
       ],
@@ -9976,9 +9840,6 @@
       ],
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
-      ],
-      "Add to not spam list": [
-        "Add to Not spam list"
       ],
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
@@ -10277,9 +10138,6 @@
       "Export public key": [
         "Herkese açık anahtarı dışa aktar"
       ],
-      "Extension": [
-        "Uzantı"
-      ],
       "External PGP settings": [
         "Dış PGP ayarları"
       ],
@@ -10306,9 +10164,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } kazanın"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -10464,9 +10319,6 @@
       "Privacy and data collection": [
         "Kişisel gizlilik ve veri toplama"
       ],
-      "Processing": [
-        "İşleniyor"
-      ],
       "Processing...": [
         "İşleniyor..."
       ],
@@ -10487,9 +10339,6 @@
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
-      ],
-      "Referral tracker": [
-        "Öneri izleyici"
       ],
       "Remove calendar": [
         "Takvimi kaldır"
@@ -10811,12 +10660,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Yıllık fatura dönemine uygulanan indirim"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "İki yıllık fatura dönemine uygulanan indirim"
       ],
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"

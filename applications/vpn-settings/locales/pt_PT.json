@@ -358,35 +358,9 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "+ ${ _users } utilizador",
-        "+ ${ _users } utilizadores"
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } endereço",
-        "${ addressAddon.MaxAddresses } endereços"
-      ],
-      "${ domainAddon.MaxDomains } domain": [
-        "${ domainAddon.MaxDomains } domínio",
-        "${ domainAddon.MaxDomains } domínios"
-      ],
-      "${ memberAddon.MaxMembers } user": [
-        "${ memberAddon.MaxMembers } utilizador",
-        "${ memberAddon.MaxMembers } utilizadores"
-      ],
-      "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } ligação",
-        "${ vpnAddon.MaxVPN } ligações"
-      ],
-      "${ vpnBonus } connection": [
-        "${ vpnBonus } ligação",
-        "${ vpnBonus } ligações"
       ]
     },
     "Apps dropdown": {
@@ -502,16 +476,6 @@
     "Confirmation title": {
       "Delete payment method": [
         "Eliminar método de pagamento"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ monthsWithYears } month": [
-        "${ monthsWithYears } mês",
-        "${ monthsWithYears } meses"
       ]
     },
     "Country name": {
@@ -1561,9 +1525,6 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
       ],
-      "(Mail + VPN)": [
-        "(Correio + VPN)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -1573,9 +1534,6 @@
       ],
       "10 email addresses": [
         "10 endereços de e-mail"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "Foi aplicado um desconto de 20% com o cupão ${ code }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
@@ -1601,20 +1559,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturado no termo do seu ciclo de facturação actual (renova a ${ renewalDate })"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "As transacções em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transacção, pode pagar a sua factura com os créditos."
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Foi aplicado um desconto de Sexta-feira negra 2018"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Foi aplicado um desconto de Sexta-feira negra 2019"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Foi aplicado um desconto de boas vindas da Sexta-feira negra 2020"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
@@ -1633,9 +1579,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua assinatura"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Foi aplicado um desconto com o cupão ${ code }"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
@@ -1829,9 +1772,6 @@
       "support team": [
         "equipa de assistência"
       ],
-      "Thank you for supporting our mission.": [
-        "Obrigado por apoiar a nossa missão."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -1972,9 +1912,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
-      ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "A sua conta está a ser actualizada, pode levar até 30 segundos."
       ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será actualizada assim que o pagamento for aprovado."
@@ -2150,9 +2087,6 @@
       "Digits": [
         "Algarismos"
       ],
-      "Discount": [
-        "Desconto"
-      ],
       "Email address": [
         "Endereço de email"
       ],
@@ -2164,9 +2098,6 @@
       ],
       "Expires": [
         "Expira"
-      ],
-      "extra storage": [
-        "armazenamento extra"
       ],
       "Gift code": [
         "Código de oferta"
@@ -2248,9 +2179,6 @@
       ],
       "System information": [
         "Informação do sistema"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
       ],
       "Two-password mode": [
         "Modo Senha dupla"
@@ -2582,11 +2510,6 @@
         "Utilizador"
       ]
     },
-    "Spotlight": {
-      "Get up to 18 months of ${ planName } for free": [
-        "Obtenha até 18 meses grátis de ${ planName }"
-      ]
-    },
     "State": {
       "Downgrading your account, please wait": [
         "A regredir a conta, por favor aguarde"
@@ -2724,10 +2647,6 @@
       ]
     },
     "Title": {
-      "${ maxUsers } user": [
-        "${ maxUsers } utilizador",
-        "${ maxUsers } utilizadores"
-      ],
       "${ VPN_APP_NAME } clients": [
         "Clientes ${ VPN_APP_NAME }"
       ],
@@ -2935,9 +2854,6 @@
       "Previous": [
         "Anterior"
       ],
-      "Processing": [
-        "A processar"
-      ],
       "Processing...": [
         "A processar..."
       ],
@@ -3034,12 +2950,6 @@
       ]
     },
     "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Desconto aplicado para o ciclo de facturação anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Desconto aplicado para o ciclo de facturação bianual"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, insira-o aqui."
       ]

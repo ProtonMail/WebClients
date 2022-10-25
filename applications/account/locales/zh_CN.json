@@ -507,9 +507,6 @@
       "Pay ${ price }": [
         "支付 ${ price }"
       ],
-      "Please contact the administrator of the organisation to manage the subscription": [
-        "请联系组织管理员以管理订阅"
-      ],
       "Preview": [
         "预览"
       ],
@@ -540,10 +537,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -892,28 +889,8 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } users": [
-        "+${ _users } 位用户"
-      ],
       "+ ${ domains } custom domains": [
         "+ ${ domains } 个自有域名"
-      ]
-    },
-    "Addon unit for subscription": {
-      "${ addressAddon.MaxAddresses } addresses": [
-        "${ addressAddon.MaxAddresses } 个地址"
-      ],
-      "${ domainAddon.MaxDomains } domains": [
-        "${ domainAddon.MaxDomains } 个域名"
-      ],
-      "${ memberAddon.MaxMembers } users": [
-        "${ memberAddon.MaxMembers } 位用户"
-      ],
-      "${ vpnAddon.MaxVPN } connections": [
-        "${ vpnAddon.MaxVPN } 台设备可同时接入 VPN"
-      ],
-      "${ vpnBonus } connections": [
-        "${ vpnBonus } 台设备可同时接入 VPN"
       ]
     },
     "Address action": {
@@ -1677,14 +1654,6 @@
       ],
       "Yomi": [
         "读音"
-      ]
-    },
-    "Countdown unit": {
-      "${ days } days": [
-        "${ days } 天"
-      ],
-      "${ monthsWithYears } months": [
-        "${ monthsWithYears } 月"
       ]
     },
     "Country name": {
@@ -2459,11 +2428,6 @@
         "(通过 ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        "已使用优惠券： ${ CouponCode }"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "没有搜索结果"
@@ -2568,14 +2532,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        "每邀请一位好友订阅 ${ MAIL_APP_NAME } ，最高可得 ${ mailPlus } 3 个月免费使用。"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "在这里可以查询点击了您的邀请链接、注册以及开通付费账户的人数，亲眼目睹您的免费体验期逐步延长。"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "您可以继续邀请朋友，但不能再赚取更多奖励。"
@@ -4294,17 +4252,11 @@
       "${ numContacts } contacts": [
         "${ numContacts } 名联系人"
       ],
-      "${ planName } credits earned": [
-        "已赚取奖励 ${ planName }"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
       "${ providerFoldersNumLocalized } labels found in Gmail": [
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
-      ],
-      "${ rewards } of ${ rewardsLimit } months": [
-        "最长 ${ rewardsLimit } 个月，已获 ${ rewards } 个月"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
@@ -4342,9 +4294,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "（满足下列任一条件）"
       ],
-      "(Mail + VPN)": [
-        "(邮箱 + VPN)"
-      ],
       "* No credit card required.": [
         "* 无需信用卡。"
       ],
@@ -4362,9 +4311,6 @@
       ],
       "2. They try ${ planName }": [
         "2. 体验 ${ planName }"
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "使用优惠码 ${ code } 即可享受 20% 的优惠。"
       ],
       "3. You earn credits": [
         "3. 赢取奖励"
@@ -4567,20 +4513,8 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "使用新地址收发邮件前，您需要先为其创建密钥。"
       ],
-      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "当前订购期结束后收费（续费日为 ${ renewalDate }）"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特币付款需要一段时间（最长 24 小时）来确认交易，确认后金额将充入您的账户余额中，然后您就可以用余额支付了。"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "2018 年黑色星期五优惠已计入"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "2019 年黑色星期五优惠已计入"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "2020 年黑色星期五新用户优惠已计入"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "阻止发件人查看您是否以及何时打开过邮件。"
@@ -4681,9 +4615,6 @@
       "Delete link?": [
         "删除链接？"
       ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "优惠码 ${ code } 已计入，可用于您本次的结算。"
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "不要忘记这个密码：如果您忘记了这个密码，您将无法登录或解密您的邮件。"
       ],
@@ -4728,9 +4659,6 @@
       ],
       "Each code can only be used once": [
         "每条恢复码只能使用一次"
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "最长 ${ rewardsLimit } 个月 ${ planName } 计划体验期，已获得 ${ rewards } 个月。"
       ],
       "Edit label": [
         "更改标签"
@@ -4818,9 +4746,6 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、万事达卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
-      ],
-      "Free": [
-        "免费版"
       ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
@@ -5242,9 +5167,6 @@
       "Plus or Visionary subscription required": [
         "需开通增强版或尊享版账户"
       ],
-      "Prevents content from the sender's server from loading without your permission.": [
-        "防止在未经您同意的情况下加载发件方服务器上的内容。"
-      ],
       "Preview": [
         "预览"
       ],
@@ -5410,9 +5332,6 @@
       "Text to display": [
         "要显示的文字"
       ],
-      "Thank you for supporting our mission.": [
-        "感谢您的支持。"
-      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
       ],
@@ -5445,9 +5364,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "这些配置可用于 WireGuard 路由器和官方客户端。"
-      ],
-      "This 30-day free trial is not available any other way.": [
-        "免费试用 30 天，机会绝无仅有。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -5689,9 +5605,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "好友开通付费账户后，您的 ${ planName } 账户等级也将延长 1 至 3 个月。"
-      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
@@ -5839,9 +5752,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
-      "Your account is being upgraded, this may take up to 30 seconds.": [
-        "正在为您升级账户，请稍等半分钟。"
-      ],
       "Your account recovery method is set": [
         "账户恢复方式已设置"
       ],
@@ -5918,9 +5828,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "密钥 ${ fingerprint } 已上传"
-      ],
-      "Track your referral link activities here": [
-        "您的邀请链接动态将显示在这里"
       ],
       "Try Mail Plus": [
         "试试 Mail Plus"
@@ -6337,9 +6244,6 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 标识"
       ],
-      "${ monthsRewarded } months credited": [
-        "已奖励 ${ monthsRewarded } 个月"
-      ],
       "${ n } months": [
         "${ n } 个月"
       ],
@@ -6409,9 +6313,6 @@
       "Apply filter to existing emails": [
         "为已有电子邮件应用过滤器"
       ],
-      "Ask before loading remote content": [
-        "加载外链内容前提示"
-      ],
       "Attach public key": [
         "附上公钥"
       ],
@@ -6423,9 +6324,6 @@
       ],
       "Auto-detect primary time zone": [
         "自动检测主要时区"
-      ],
-      "Auto-load embedded images": [
-        "自动加载嵌入图像"
       ],
       "Auto-reply": [
         "自动回复"
@@ -6556,9 +6454,6 @@
       "Create password": [
         "创建密码"
       ],
-      "Credits pending": [
-        "款项待定"
-      ],
       "Credits used": [
         "扣除余额"
       ],
@@ -6606,9 +6501,6 @@
       ],
       "Digits": [
         "验证码位数"
-      ],
-      "Discount": [
-        "优惠"
       ],
       "Display name": [
         "称呼"
@@ -6672,9 +6564,6 @@
       ],
       "Expires": [
         "有效期至"
-      ],
-      "extra storage": [
-        "新增存储空间"
       ],
       "File": [
         "文件"
@@ -7030,9 +6919,6 @@
       "To: ${ PMEmailAddress }": [
         "导入到：${ PMEmailAddress }"
       ],
-      "Total (${ countdown })": [
-        "合计（${ countdown }）"
-      ],
       "Two-password mode": [
         "双密码模式"
       ],
@@ -7068,9 +6954,6 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
-      ],
-      "Waiting for subscription": [
-        "等待对方开通"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
@@ -7113,9 +6996,6 @@
       ],
       "Your referral link": [
         "您的邀请链接"
-      ],
-      "Your reward": [
-        "您的奖励"
       ],
       "ZIP code": [
         "邮编"
@@ -7948,6 +7828,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7985,9 +7885,6 @@
       "Popular": [
         "流行的"
       ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "未来续订的价格：包括保存到您账号的所有适用未过期优惠券"
-      ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "为企业量身定制的隐私与安全防护体系，囊括了所有 Proton 高级服务。"
       ],
@@ -8014,26 +7911,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -9125,12 +9002,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        "免费获得最长 18 个月的 ${ planName } 使用权"
-      ],
-      "Invite friends and earn rewards!": [
-        "邀请好友注册赢取奖励！"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
       ]
@@ -9583,9 +9454,6 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } 桥接"
       ],
-      "${ maxUsers } users": [
-        "${ maxUsers } 位用户"
-      ],
       "1. Give a name to the config to be generated": [
         "1. 为需要生成的证书设置名称"
       ],
@@ -9955,9 +9823,6 @@
       "Export public key": [
         "导出公钥"
       ],
-      "Extension": [
-        "扩展"
-      ],
       "External PGP settings": [
         "对外 PGP 设置"
       ],
@@ -9984,9 +9849,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "获取 ${ vpnPlus } 以访问所有服务器"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        "免费获得最长 18 个月的 ${ planName } 使用权"
       ],
       "Gift code": [
         "礼品码"
@@ -10138,9 +10000,6 @@
       "Privacy and data collection": [
         "隐私与数据收集"
       ],
-      "Processing": [
-        "处理中"
-      ],
       "Processing...": [
         "正在处理..."
       ],
@@ -10161,9 +10020,6 @@
       ],
       "Refer a friend": [
         "邀请好友"
-      ],
-      "Referral tracker": [
-        "邀请记录"
       ],
       "Remove calendar": [
         "移除日历"
@@ -10473,12 +10329,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "自定义导入以减少标签数量"
-      ],
-      "Discount applied for annual billing cycle": [
-        "年费折扣已计入"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "两年折扣已计入"
       ],
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"
