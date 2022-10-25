@@ -16,15 +16,10 @@ export interface ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext> {
      * Send the API request to fetch the item and return it decrypted. If anything fails and itemMetadata
      * is given, return an item made only with the metadata. Otherwise return undefined
      * @param itemID The unique ID used as a primary key in IDB
-     * @param itemMetadata The metadata of an item
      * @param abortSignal An AbortSignal object to abort the request
      * @returns A decrypted item, potentially without content, or undefined if something fails and itemMetadata is not provided
      */
-    fetchESItem: (
-        itemID: string,
-        itemMetadata?: ESItemMetadata,
-        abortSignal?: AbortSignal
-    ) => Promise<ESItem | undefined>;
+    fetchESItem: (itemID: string, abortSignal?: AbortSignal) => Promise<ESItem | undefined>;
 
     /**
      * Return the value to be stored to IDB given the plaintext item and its encryption.

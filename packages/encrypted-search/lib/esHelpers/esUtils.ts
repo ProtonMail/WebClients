@@ -1,9 +1,12 @@
+import { add } from 'date-fns';
 import { IDBPDatabase, deleteDB, openDB } from 'idb';
 
+import { serverTime } from '@proton/crypto';
+import { MINUTE } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { DIACRITICS_REGEXP, ES_MAX_PARALLEL_ITEMS } from '../constants';
-import { ESProgressBlob } from '../models';
+import { ESProgressBlob, RetryObject } from '../models';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -28,6 +31,17 @@ export const getES = {
     Size: (userID: string) => parseInt(getESItem(userID, 'SizeIDB') || '0', 10) || 0,
     Pause: (userID: string) => getESItem(userID, 'Pause') === 'true',
     Enabled: (userID: string) => getESItem(userID, 'ESEnabled') === 'true',
+    Retries: (userID: string): Map<string, RetryObject> => new Map(JSON.parse(getESItem(userID, 'Retries') || '[]')),
+};
+// Removers
+export const removeES = {
+    Key: (userID: string) => removeESItem(userID, 'Key'),
+    Event: (userID: string) => removeESItem(userID, 'Event'),
+    Progress: (userID: string) => removeESItem(userID, 'BuildProgress'),
+    Size: (userID: string) => removeESItem(userID, 'SizeIDB'),
+    Pause: (userID: string) => removeESItem(userID, 'Pause'),
+    Enabled: (userID: string) => removeESItem(userID, 'ESEnabled'),
+    Retries: (userID: string) => removeESItem(userID, 'Retries'),
 };
 // Setters
 export const setES = {
@@ -38,15 +52,14 @@ export const setES = {
     Size: (userID: string, size: number) => setESItem(userID, 'SizeIDB', `${size}`),
     Pause: (userID: string) => setESItem(userID, 'Pause', 'true'),
     Enabled: (userID: string) => setESItem(userID, 'ESEnabled', 'true'),
-};
-// Removers
-export const removeES = {
-    Key: (userID: string) => removeESItem(userID, 'Key'),
-    Event: (userID: string) => removeESItem(userID, 'Event'),
-    Progress: (userID: string) => removeESItem(userID, 'BuildProgress'),
-    Size: (userID: string) => removeESItem(userID, 'SizeIDB'),
-    Pause: (userID: string) => removeESItem(userID, 'Pause'),
-    Enabled: (userID: string) => removeESItem(userID, 'ESEnabled'),
+    Retries: (userID: string, retries: Map<string, RetryObject> | [string, RetryObject][]) => {
+        const arrayRetries = Array.from(retries);
+        if (arrayRetries.length) {
+            setESItem(userID, 'Retries', JSON.stringify(arrayRetries));
+        } else {
+            removeES.Retries(userID);
+        }
+    },
 };
 
 /**
@@ -322,3 +335,50 @@ export const requestPersistence = async () => {
  */
 export const normalizeString = (str: string, format: 'NFD' | 'NFKD' = 'NFKD') =>
     str.toLocaleLowerCase().normalize(format).replace(DIACRITICS_REGEXP, '');
+
+/**
+ * Increase the number of retries by one and set a new retryTime accordingly
+ */
+export const updateRetryObject = (retry: RetryObject): RetryObject => ({
+    retryTime: +serverTime() + 2 ** (retry.numberRetries + 1) * MINUTE,
+    numberRetries: retry.numberRetries + 1,
+});
+
+/**
+ * Add a new item ID to the list of retries
+ */
+export const addRetry = (userID: string, retryID: string) => {
+    const retryMap = getES.Retries(userID);
+    const retryObject = retryMap.get(retryID);
+    const now = +serverTime();
+
+    if (!!retryObject) {
+        const { retryTime } = retryObject;
+        if (retryTime < now) {
+            retryMap.set(retryID, updateRetryObject(retryObject));
+        }
+    } else {
+        const defaultRetryObject: RetryObject = { retryTime: now, numberRetries: 0 };
+        retryMap.set(retryID, defaultRetryObject);
+    }
+
+    setES.Retries(userID, retryMap);
+};
+
+/**
+ * Get all items to be retried. If an item has reached a
+ * retry time of one year, we remove it from the list
+ */
+export const getRetries = (userID: string) => {
+    const retryMap = getES.Retries(userID);
+
+    for (const [retryID, { retryTime }] of retryMap) {
+        if (retryTime > +add(serverTime(), { years: 1 })) {
+            retryMap.delete(retryID);
+        }
+    }
+
+    setES.Retries(userID, retryMap);
+
+    return retryMap;
+};
