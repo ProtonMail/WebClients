@@ -2,9 +2,9 @@ import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
-import { clearBit, setBit } from '../helpers/bitset';
+import { clearBit } from '../helpers/bitset';
 import { ActiveKey, Address, DecryptedKey, Key, SignedKeyList } from '../interfaces';
-import { getDefaultKeyFlags } from './keyFlags';
+import { getDefaultKeyFlags, setExternalFlags } from './keyFlags';
 import { getParsedSignedKeyList, getSignedKeyListMap } from './signedKeyList';
 
 export const getPrimaryFlag = (keys: ActiveKey[]): 1 | 0 => {
@@ -72,17 +72,11 @@ export const getNormalizedActiveKeys = (address: Address | undefined, keys: Acti
     return keys
         .sort((a, b) => b.primary - a.primary)
         .map((result, index) => {
-            let flags = result.flags;
-            if (address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL) {
-                flags = setBit(flags, KEY_FLAG.FLAG_EXTERNAL);
-            } else {
-                flags = clearBit(flags, KEY_FLAG.FLAG_EXTERNAL);
-            }
             return {
                 ...result,
+                flags: address?.Type === ADDRESS_TYPE.TYPE_EXTERNAL ? setExternalFlags(result.flags) : result.flags,
                 // Reset and normalize the primary key. The primary values can be doubly set to 1 if an old SKL is used.
                 primary: index === 0 ? 1 : 0,
-                flags,
             };
         });
 };
