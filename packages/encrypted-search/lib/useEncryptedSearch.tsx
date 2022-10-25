@@ -39,6 +39,7 @@ import {
     removeES,
     removeESFlags,
     requestPersistence,
+    retryAPICalls,
     sendIndexingMetrics,
     sendSearchingMetrics,
     setES,
@@ -411,6 +412,16 @@ const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemCh
             esCacheRef,
             storeName,
             indexName,
+            esHelpers.getTimePoint
+        );
+
+        await retryAPICalls<ESItem, ESCiphertext>(
+            userID,
+            indexKey,
+            storeName,
+            esCacheRef,
+            esHelpers.prepareCiphertext,
+            esHelpers.fetchESItem,
             esHelpers.getTimePoint
         );
 
