@@ -18,6 +18,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
     const currencyParam = params.get('currency')?.toUpperCase();
     const target = params.get('target');
     const edit = params.get('edit');
+    const type = params.get('type');
     const offer = params.get('offer');
 
     const parsedTarget = (() => {
@@ -42,8 +43,8 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
         currency: parsedCurrency || getCurrency(user, subscription, plans),
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
-        disablePlanSelection: edit === 'disable',
-        disableCycleSelector: Boolean(offer),
+        disablePlanSelection: type === 'offer' || edit === 'disable',
+        disableCycleSelector: type === 'offer' || Boolean(offer),
     };
 };
 
