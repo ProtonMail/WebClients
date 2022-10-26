@@ -12,7 +12,9 @@ interface Props extends ReturnType<typeof getCalendarAppRoutes> {
 const CalendarSettingsSidebar = ({ header, routes, prefix }: Props) => {
     return (
         <SidebarList>
-            <SidebarListItem className="text-uppercase text-sm navigation-link-header-group">{header}</SidebarListItem>
+            <SidebarListItem className="text-uppercase text-sm navigation-link-header-group">
+                <h3>{header}</h3>
+            </SidebarListItem>
             {getIsSectionAvailable(routes.general) && (
                 <SettingsListItem
                     to={getSectionPath(prefix, routes.general)}
