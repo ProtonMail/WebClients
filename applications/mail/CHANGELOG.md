@@ -1,3 +1,15 @@
+## Release 5.0.11.0 - October 26, 2022
+
+### Improvements
+
+-   Added the ability to block a sender on right click
+-   We now load images by default and block senders from tracking you. This can be changed in the settings
+-   Hover actions redesigned in the mail list
+
+### Bug fixes
+
+-   Bug fixes on block sender
+
 ## Release 5.0.10.0 — October 19, 2022
 
 ### Improvements
