@@ -383,11 +383,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         return PLANS.MAIL;
     })();
 
+    // True while loading, and then true if it's fetched correctly.
+    const hasValidPlanSelected = model === DEFAULT_SIGNUP_MODEL || plan;
+
     const stepper = useMemo(
         () =>
             (() => {
                 const hasPaidPlanPreSelected =
-                    signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free';
+                    signupParameters.preSelectedPlan &&
+                    signupParameters.preSelectedPlan !== 'free' &&
+                    hasValidPlanSelected;
                 const stepLabels = {
                     accountSetup: c('Signup step').t`Account setup`,
                     verification: c('Signup step').t`Verification`,
@@ -450,7 +455,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
 
                 return;
             })(),
-        [step, signupParameters.preSelectedPlan, signupType]
+        [step, signupParameters.preSelectedPlan, signupType, hasValidPlanSelected]
     );
 
     const children = (
