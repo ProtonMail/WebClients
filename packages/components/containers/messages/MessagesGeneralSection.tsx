@@ -76,7 +76,7 @@ const MessagesGeneralSection = () => {
                             </div>
                         )}
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-item-fluid">
+                    <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
                         {!userLoading && showRecoveryEmailInput && (
                             <RecoveryEmail
                                 className="mb0 on-mobile-mb1"
