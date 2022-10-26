@@ -103,7 +103,7 @@ export const resumeImport = (data: { ImporterID: string; Products: ImportType[] 
 });
 
 export const rollbackImport = (reportID: string, Products: ImportType[]) => ({
-    url: `importer/v1/reports/${reportID}/rollback`,
+    url: `importer/v1/reports/${reportID}/undo`,
     method: 'POST',
     data: { Products },
 });
