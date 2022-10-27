@@ -626,6 +626,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         const verifyingPinnedKeys = [pinnedFakeKey2, pinnedFakeKey3];
         const publicKeyModel = {
             ...model,
+            encrypt: true,
+            sign: true,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey2', 'fakeKey3']),
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
@@ -633,8 +635,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
         expect(result).toEqual({
-            encrypt: false,
-            sign: false,
+            encrypt: true,
+            sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
             sendKey: pinnedFakeKey2,
@@ -656,6 +658,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     it('should give a warning for keyid mismatch', () => {
         const publicKeyModel = {
             ...model,
+            encrypt: true,
+            sign: true,
             publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey1], verifyingPinnedKeys: [] },
             trustedFingerprints: new Set(['fakeKey1']),
             encryptionCapableFingerprints: new Set(['fakeKey1']),
@@ -668,6 +672,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     it('should give an error when the preferred pinned key is not valid for sending', () => {
         const publicKeyModel = {
             ...model,
+            encrypt: true,
+            sign: true,
             publicKeys: {
                 apiKeys: [],
                 pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1],
