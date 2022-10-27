@@ -76,18 +76,18 @@ const MessageBodyImage = ({
     iframeRef,
 }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
-
-    const { type, error } = image;
-    const showPlaceholder = error || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
+    const { type, error, url, status, original } = image;
+    const showPlaceholder =
+        error || status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
     const showImage = !showPlaceholder;
 
     const attributes =
-        image.original?.getAttributeNames().reduce<SimpleMap<string>>((acc, name) => {
-            acc[name] = image.original?.getAttribute(name) as string;
+        original?.getAttributeNames().reduce<SimpleMap<string>>((acc, name) => {
+            acc[name] = original?.getAttribute(name) as string;
             return acc;
         }, {}) || {};
 
-    forEachStyle(image.original?.style, (prop, value) => {
+    forEachStyle(original?.style, (prop, value) => {
         anchor.style[prop as any] = value;
     });
 
@@ -102,10 +102,10 @@ const MessageBodyImage = ({
     }, [showImage]);
 
     if (showImage) {
-        return <img ref={imageRef} src={image.url} />;
+        return <img ref={imageRef} src={url} />;
     }
 
-    const showLoader = image.status === 'loading';
+    const showLoader = status === 'loading';
 
     const errorMessage = error?.data?.Error
         ? error?.data?.Error
@@ -118,7 +118,7 @@ const MessageBodyImage = ({
 
     const icon = error ? 'cross-circle' : 'file-shapes';
 
-    const style = extractStyle(image.original, iframeRef.current?.contentWindow?.innerWidth);
+    const style = extractStyle(original, iframeRef.current?.contentWindow?.innerWidth);
 
     const placeholder = (
         <span
