@@ -109,7 +109,10 @@ export default function useUploadFile() {
                     SignatureAddress: addressKeyInfo.address.Email,
                     ClientUID: clientUid,
                 })
-            );
+            ).catch((err) => {
+                uploadFailed();
+                throw err;
+            });
 
             return {
                 fileID: createdFile.ID,
