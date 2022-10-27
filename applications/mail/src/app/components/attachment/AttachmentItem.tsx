@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import {
-    CircleLoader,
     CircularProgress,
     FileIcon,
     FileNameDisplay,

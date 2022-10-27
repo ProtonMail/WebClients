@@ -1,4 +1,4 @@
-import CircleLoader from './CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 
 const LoaderIcon = () => (
     <div className="p1" aria-busy="true">

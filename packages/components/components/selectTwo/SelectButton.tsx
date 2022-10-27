@@ -1,8 +1,9 @@
 import { ComponentPropsWithRef, KeyboardEvent, forwardRef } from 'react';
 
+import { CircleLoader } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 import { DropdownCaret } from '../dropdown';
-import { CircleLoader } from '../loader';
 import { NodeOrBoolean } from '../v2/field/InputField';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {

@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader, Icon, ProtonLogo, classnames } from '@proton/components';
+import { CircleLoader } from '@proton/atoms';
+import { Icon, ProtonLogo, classnames } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
