@@ -3,7 +3,7 @@ import { ReactElement, ReactNode } from 'react';
 import { RenderResult, render as originalRender } from '@testing-library/react';
 import { resolvedRequest } from 'proton-mail/src/app/helpers/test/cache';
 
-import { CryptoApiInterface, CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoApiInterface, VERIFICATION_STATUS } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
@@ -16,29 +16,6 @@ import EventManagerContext from '../../eventManager/context';
 import FeaturesProvider from '../../features/FeaturesProvider';
 import { NotificationsContext } from '../../notifications';
 import ContactProvider from '../ContactProvider';
-
-// probably better to instead let the tests explicitly set the crypto proxy, since it needs releasing anyway to avoid memory leaks
-export const mockCryptoApi = () => {
-    const mockedApi = {
-        encryptMessage: jest.fn().mockImplementation(async ({ textData }) => ({
-            signature: `mocked signature over ${textData}`,
-            message: `${textData}`,
-        })),
-        decryptMessage: jest.fn().mockImplementation(async ({ armoredMessage }) => ({
-            data: `${armoredMessage}`,
-            verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
-        })),
-        signMessage: jest
-            .fn()
-            .mockImplementation(async ({ textData }) => ({ signature: `mocked signature over ${textData}` })),
-        verifyMessage: jest.fn().mockImplementation(async () => ({
-            verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
-            signatureTimestamp: new Date(),
-        })),
-    } as any as CryptoApiInterface;
-
-    CryptoProxy.setEndpoint(mockedApi);
-};
 
 export const mockedCryptoApi = {
     encryptMessage: jest.fn().mockImplementation(async ({ textData }) => ({
