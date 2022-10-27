@@ -491,6 +491,9 @@
       "Load": [
         "載入"
       ],
+      "Load anyway": [
+        "仍要載入"
+      ],
       "Load embedded images": [
         "載入內崁圖樣"
       ],
@@ -896,6 +899,9 @@
       "Skip": [
         "略過"
       ],
+      "Some images failed to load with tracking protection.": [
+        "追蹤防護會導致某些圖像無法載入。"
+      ],
       "Star": [
         "星號"
       ],
@@ -1187,59 +1193,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "若您遇上問題，您隨時可以停用 Beta 測試版。"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "測試版"
-      ],
-      "Includes": [
-        "包含"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "標準價格：${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "最熱門"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Get the deal now": [
-        "立即取得優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "省下 ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "每月"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "特別優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 個月"
-      ],
-      "12 months": [
-        "12 個月"
-      ],
-      "24 months": [
-        "24 個月"
       ]
     },
     "Bug category": {
@@ -3968,6 +3921,9 @@
       "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } 位成員"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 成員)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 聯絡人包含數組電郵位址。"
       ],
@@ -4042,6 +3998,9 @@
       ],
       "${ unread } unread messages": [
         "${ unread } 封未讀郵件"
+      ],
+      "${ unreadCount } scheduled messages": [
+        "${ unreadCount } 排程訊息"
       ],
       "${ unreadCount } unread conversations": [
         "${ unreadCount } 個未讀交談"
@@ -6842,6 +6801,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
       ],
+      "Email tracking protection": [
+        "電郵追蹤防護"
+      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
@@ -6853,6 +6815,9 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
