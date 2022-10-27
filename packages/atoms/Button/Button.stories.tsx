@@ -166,7 +166,7 @@ export const Like = () => {
     return (
         <div>
             <div>
-                <ButtonLike as="a" shape="outline" color="norm" href="https://protonmail.com">
+                <ButtonLike as="a" shape="outline" color="norm" href="https://proton.me">
                     Link
                 </ButtonLike>
             </div>
