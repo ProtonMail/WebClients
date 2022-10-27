@@ -22,7 +22,7 @@ const isEligible = ({ user, organization, subscription, protonConfig }: Props) =
     return (
         [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.MAIL_PRO].includes(plan?.Name as PLANS) &&
         MaxMembers <= 5 &&
-        (subscription?.Amount ?? 999999) < 42000 &&
+        (subscription?.RenewAmount ?? 999999) < 42000 &&
         user.canPay &&
         isNotExternal &&
         isValidApp &&

@@ -41,7 +41,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -64,7 +64,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE_PRO,
@@ -87,7 +87,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.MAIL_PRO,
@@ -111,7 +111,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             isDelinquent: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -134,7 +134,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: false,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -157,7 +157,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -180,7 +180,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -203,7 +203,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             CouponCode: COUPON_CODES.VPN_BLACK_FRIDAY_2022,
             Plans: [
                 {
@@ -227,7 +227,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 99999,
+            RenewAmount: 99999,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -251,7 +251,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
         } as UserModel;
         const subscription = {
             External: External.iOS,
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -275,7 +275,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             isDelinquent: false,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
