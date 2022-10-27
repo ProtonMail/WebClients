@@ -1,10 +1,22 @@
-import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
+import {
+    FORWARDED_MESSAGE,
+    FW_PREFIX,
+    ORIGINAL_MESSAGE,
+    RE_PREFIX,
+    formatSubject,
+} from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { createNewDraft, handleActions } from './messageDraft';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { formatFullDate } from '../date';
+import {
+    createNewDraft,
+    generatePreviousMessageInfos,
+    getBlockquoteRecipientsString,
+    handleActions,
+} from './messageDraft';
 
 const ID = 'ID';
 const Time = 0;
@@ -274,6 +286,86 @@ describe('messageDraft', () => {
             expect(result.data?.AddressID).toBe(address.ID);
             expect(result.data?.Sender?.Address).toBe(address.Email);
             expect(result.data?.Sender?.Name).toBe(address.DisplayName);
+        });
+    });
+
+    describe('getBlockquoteRecipientsString', () => {
+        it('should return the expected recipient string for blockquotes', () => {
+            const recipientList = [
+                { Name: 'Display Name', Address: 'address@protonmail.com' },
+                { Name: '', Address: 'address2@protonmail.com' },
+                { Address: 'address3@protonmail.com' },
+            ] as Recipient[];
+
+            const expectedString = `Display Name &lt;address@protonmail.com&gt;, address2@protonmail.com &lt;address2@protonmail.com&gt;, address3@protonmail.com &lt;address3@protonmail.com&gt;`;
+
+            expect(getBlockquoteRecipientsString(recipientList)).toEqual(expectedString);
+        });
+    });
+
+    describe('generatePreviousMessageInfos', () => {
+        const messageSubject = 'Subject';
+        const meRecipient = { Name: 'me', Address: 'me@protonmail.com' };
+        const toRecipient = { Name: 'toRecipient', Address: 'toRecipient@protonmail.com' };
+        const ccRecipient = { Address: 'ccRecipient@protonmail.com' };
+        const sender = { Name: 'sender', Address: 'sender@protonmail.com' } as Recipient;
+        const toList = [meRecipient, toRecipient] as Recipient[];
+        const ccList = [ccRecipient] as Recipient[];
+
+        const generateMessage = (hasCCList = true) => {
+            return {
+                localID: ID,
+                data: {
+                    ID,
+                    Subject: messageSubject,
+                    Sender: sender,
+                    ToList: toList,
+                    CCList: hasCCList ? ccList : undefined,
+                },
+            } as MessageState;
+        };
+
+        it('should return the correct message blockquotes info for a reply', () => {
+            const referenceMessage = generateMessage();
+
+            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.REPLY);
+
+            const expectedString = `${ORIGINAL_MESSAGE}<br>
+        On ${formatFullDate(new Date(0))}, ${referenceMessage.data?.Sender.Name} &lt;${
+                referenceMessage.data?.Sender.Address
+            }&gt; wrote:<br><br>`;
+
+            expect(messageBlockquotesInfos).toEqual(expectedString);
+        });
+
+        it('should return the correct message blockquotes info for a forward', () => {
+            const referenceMessage = generateMessage();
+
+            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.FORWARD);
+
+            const expectedString = `${FORWARDED_MESSAGE}<br>
+        From: ${referenceMessage.data?.Sender.Name} &lt;${referenceMessage.data?.Sender.Address}&gt;<br>
+        Date: On ${formatFullDate(new Date(0))}<br>
+        Subject: ${messageSubject}<br>
+        To: ${meRecipient.Name} &lt;${meRecipient.Address}&gt;, ${toRecipient.Name} &lt;${toRecipient.Address}&gt;<br>
+        CC: ${ccRecipient.Address} &lt;${ccRecipient.Address}&gt;<br><br>`;
+
+            expect(messageBlockquotesInfos).toEqual(expectedString);
+        });
+
+        it('should return the correct message blockquotes info for a forward with no CC', () => {
+            const referenceMessage = generateMessage(false);
+
+            const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.FORWARD);
+
+            const expectedString = `${FORWARDED_MESSAGE}<br>
+        From: ${referenceMessage.data?.Sender.Name} &lt;${referenceMessage.data?.Sender.Address}&gt;<br>
+        Date: On ${formatFullDate(new Date(0))}<br>
+        Subject: ${messageSubject}<br>
+        To: ${meRecipient.Name} &lt;${meRecipient.Address}&gt;, ${toRecipient.Name} &lt;${toRecipient.Address}&gt;<br>
+        <br>`;
+
+            expect(messageBlockquotesInfos).toEqual(expectedString);
         });
     });
 });
