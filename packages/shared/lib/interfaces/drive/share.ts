@@ -24,7 +24,6 @@ export interface ShareMetaShort {
     Creator: string;
     PermissionsMask: 0;
     Flags: number;
-    BlockSize: number;
     PossibleKeyPackets?: { KeyPacket: string }[];
     VolumeSoftDeleted: boolean;
 }
