@@ -223,6 +223,11 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 .item-hover-action-buttons {
 	display: none;
+
+	// prevent layout jump in row mode
+	.main-area--row-mode & {
+		margin-block: em(-2);
+	}
 }
 
 @media (hover: hover) and (pointer: fine) and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)}) {
@@ -230,7 +235,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
 	}
 
-.item-container:hover,
+	.item-container:hover,
 	.item-container-row:hover {
 		.item-hover-action-buttons {
 			display: inline-flex; // We don't want any transition, so we can use `display`.
