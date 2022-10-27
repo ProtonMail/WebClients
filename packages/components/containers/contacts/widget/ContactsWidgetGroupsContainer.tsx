@@ -2,12 +2,13 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { CircleLoader, SearchInput } from '../../../components';
+import { SearchInput } from '../../../components';
 import { useContactEmails, useContactGroups, useNotifications, useUser, useUserSettings } from '../../../hooks';
 import { useItemsSelection } from '../../items';
 import { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';

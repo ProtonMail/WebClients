@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { CircleLoader, Field, Info, Label } from '@proton/components';
+import { CircleLoader } from '@proton/atoms';
+import { Field, Info, Label } from '@proton/components';
 import { useContacts, useMailSettings } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
