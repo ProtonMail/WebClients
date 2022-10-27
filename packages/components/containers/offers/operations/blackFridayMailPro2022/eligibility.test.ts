@@ -50,7 +50,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -73,7 +73,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -96,7 +96,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -120,7 +120,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -143,7 +143,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -166,7 +166,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONVPN_SETTINGS,
@@ -213,7 +213,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -236,7 +236,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -260,7 +260,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            MaxMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
