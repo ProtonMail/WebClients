@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "plural-forms": "nplurals=2; plural=(n >= 2);",
     "language": "fr_FR"
   },
   "contexts": {
@@ -456,6 +456,9 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renouvelle automatiquement le ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Se renouvelle automatiquement le ${ formattedEndTime } pour ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -476,16 +479,6 @@
       ],
       "Two-year": [
         "Tous les deux ans"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        "La réduction de l'offre spéciale ${ vpnPlus } Plus 2021 a été appliquée."
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
       ]
     },
     "Bug category": {
@@ -2207,6 +2200,9 @@
       "Preview": [
         "Aperçu"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Le prix comprend tous les codes promotionnels non expirés et applicables enregistrés sur votre compte."
+      ],
       "Priority support": [
         "Assistance prioritaire"
       ],
@@ -3375,8 +3371,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "*Pour un abonnement de 12 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "*Pour 15 mois d'abonnement. D'autres options d'abonnement sont disponibles lors du paiement."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "*Pour un abonnement de 24 mois. D'autres options d'abonnement sont disponibles lors du paiement."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "*Pour 30 mois d'abonnement. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."

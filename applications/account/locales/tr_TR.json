@@ -898,6 +898,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } özel etki alanı",
         "+ ${ domains } özel etki alanı"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } kullanıcı",
+        "+ ${ users } kullanıcı"
       ]
     },
     "Address action": {
@@ -1013,14 +1017,23 @@
       "Payable every 12 months": [
         "12 ayda bir ödemeli"
       ],
+      "Payable every 15 months": [
+        "15 ayda bir ödemeli"
+      ],
       "Payable every 24 months": [
         "24 ayda bir ödemeli"
+      ],
+      "Payable every 30 months": [
+        "30 ayda bir ödemeli"
       ],
       "Payable every month": [
         "Her ay ödemeli"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "${ formattedEndTime } tarihinde otomatik olarak yenilenir"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "${ formattedEndTime } tarihinde ${ amount } tutar ile otomatik olarak yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -2552,12 +2565,18 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "Get up to ${ credits } in credits by inviting friends to Proton.": [
+        "Arkadaşlarınızı Proton kullanmaya çağırarak ${ credits } krediye kadar hediye kazanın."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "Track the status and activity of your referrals.": [
+        "Önerileri işlemlerinizi ve durumunu izleyin."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Arkadaşlarınızı çağırmayı sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
@@ -4372,6 +4391,9 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
+      "${ current } of ${ total }": [
+        "${ current } / ${ total }"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
       ],
@@ -5141,6 +5163,9 @@
       "Link type": [
         "Bağlantı türü"
       ],
+      "Loaded content is being protected by our proxy when the block tracker is activated.": [
+        "Engelleme izleyici açıkken yüklenen içerik vekil sunucumuz tarafından korunur."
+      ],
       "Loading": [
         "Yükleniyor"
       ],
@@ -5318,6 +5343,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Lütfen dosyanızı denetleyin ya da hazır ${ csvTemplateButton }nı kullanmayı deneyin."
       ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Lütfen aboneliğinizle ilgili işlemleri yapması için kuruluşunuzun yöneticisi ile görüşün."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
@@ -5366,8 +5394,14 @@
       "Preview": [
         "Ön izle"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve süresi dolmamış kuponlar katılmıştır."
+      ],
       "Priority support": [
         "Öncelikli destek"
+      ],
+      "Proton ${ planName } credits earned": [
+        "Proton ${ planName } kredisi kazandınız"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
@@ -5565,6 +5599,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Bu yapılandırmalar WireGuard yönelticileri ve resmi istemciler ile çalışmak üzere sunulmuştur."
+      ],
+      "They'll receive a free month of ${ planName }.": [
+        "${ planName } tarifesini bir ay ücretsiz olarak kullanabilecekler."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -5815,6 +5852,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
       ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz krediler kazanacaksınız."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
@@ -5871,6 +5911,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Şimdi hesaba bir yönetici olarak erişebilir ve yönetebilirsiniz."
+      ],
+      "You can now close this window.": [
+        "Şimdi bu pencereyi kapatabilirsiniz."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Artık, @pm.me adresinizle iletiler alabilirsiniz. @pm.me adresinizi kullanarak e-posta göndermek ve başka @pm.me adresleri eklemek için ücretli bir tarifeye geçin."
@@ -6544,6 +6587,12 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
+      "Auto show embedded images": [
+        "Gömülü görseller otomatik olarak görüntülensin"
+      ],
+      "Auto show remote images": [
+        "Uzak görseller otomatik olarak görüntülensin"
+      ],
       "Auto-detect primary time zone": [
         "Birincil saat dilimi otomatik algılansın"
       ],
@@ -6552,6 +6601,9 @@
       ],
       "Auto-unsubscribe": [
         "Otomatik abonelikten ayrılma"
+      ],
+      "Awarded": [
+        "Hediye edilen"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -6675,6 +6727,9 @@
       ],
       "Create password": [
         "Parola oluştur"
+      ],
+      "Credits": [
+        "Krediler"
       ],
       "Credits used": [
         "Kullanılan kredi"
@@ -6993,6 +7048,9 @@
       ],
       "Payment method": [
         "Ödeme yöntemi"
+      ],
+      "Pending": [
+        "Bekliyor"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -8118,8 +8176,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* 12 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* 15 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* 24 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* 30 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
@@ -9841,6 +9905,9 @@
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
       ],
+      "Add to Not spam list": [
+        "İstenmeyen değil listesine ekle"
+      ],
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
       ],
@@ -10165,11 +10232,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
       ],
+      "Gift": [
+        "Hediye"
+      ],
       "Gift code": [
         "Hediye kodu"
       ],
       "How does it work?": [
         "Nasıl çalışır?"
+      ],
+      "How to refer a friend and get credits": [
+        "Kredi kazanmak için bir arkadaşınıza nasıl önerebilirsiniz"
       ],
       "How your free trial works": [
         "Ücretsiz deneme nasıl işler"
@@ -10481,6 +10554,9 @@
       ],
       "Time zone": [
         "Saat dilimi"
+      ],
+      "Track your referrals": [
+        "Önerilerinizi izleyin"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "En iyi ${ MAIL_APP_NAME } sürümünü ücretsiz deneyin"
