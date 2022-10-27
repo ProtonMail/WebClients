@@ -1,5 +1,7 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import { classnames } from '../../helpers';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -10,6 +12,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const SidebarNav = ({ children, className, ...rest }: Props) => {
     return (
         <nav className={classnames(['navigation max-w100 flex-item-fluid-auto', className])} {...rest}>
+            <h2 className="sr-only">{c('Label').t`Navigation`}</h2>
             {children}
         </nav>
     );
