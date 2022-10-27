@@ -10,7 +10,7 @@ interface Props {
 }
 
 const isEligible = ({ user, organization, subscription, protonConfig }: Props) => {
-    const { UsedMembers = 0 } = organization || {};
+    const { MaxMembers = 0 } = organization || {};
     const plan = getPlan(subscription);
     const isValidApp =
         protonConfig?.APP_NAME === APPS.PROTONMAIL ||
@@ -21,7 +21,7 @@ const isEligible = ({ user, organization, subscription, protonConfig }: Props) =
 
     return (
         [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.MAIL_PRO].includes(plan?.Name as PLANS) &&
-        UsedMembers <= 5 &&
+        MaxMembers <= 5 &&
         (subscription?.Amount ?? 999999) < 42000 &&
         user.canPay &&
         isNotExternal &&
