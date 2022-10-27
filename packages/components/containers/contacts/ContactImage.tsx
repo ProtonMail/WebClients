@@ -41,7 +41,7 @@ const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
     }, [ref?.current]);
 
     if (url) {
-        return <img className={clsx(className, 'item-sender-image')} alt="" src={url} />;
+        return <img className={clsx(className, 'item-sender-image')} alt="" width="32" src={url} />;
     }
 
     return <span ref={ref}>{initials}</span>;
