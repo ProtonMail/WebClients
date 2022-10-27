@@ -15,7 +15,7 @@ import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import ButtonLike from '../ButtonLike/ButtonLike';
+import ButtonLike from '../Button/ButtonLike';
 import SliderMark from './SliderMark';
 
 import './Slider.scss';
