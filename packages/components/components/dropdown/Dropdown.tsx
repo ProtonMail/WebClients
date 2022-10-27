@@ -120,6 +120,7 @@ const Dropdown = ({
     const combinedDropdownRef = useCombinedRefs<HTMLDivElement>(rootRef, setPopperEl, floating);
 
     const contentRef = useRef<HTMLDivElement>(null);
+    const combinedContentRef = useCombinedRefs(contentRef, contentProps?.ref);
 
     const anchorRectRef = useRef<DOMRect | undefined>();
     const [contentRect, setContentRect] = useState<DOMRect | undefined>();
@@ -286,9 +287,9 @@ const Dropdown = ({
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </div>
                 <div
-                    ref={contentRef}
                     style={contentStyle}
                     {...contentProps}
+                    ref={combinedContentRef}
                     className={classnames([
                         'dropdown-content',
                         getCustomSizingClasses(contentStyle),
