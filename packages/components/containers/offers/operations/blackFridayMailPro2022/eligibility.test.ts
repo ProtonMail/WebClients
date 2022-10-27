@@ -41,7 +41,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -50,7 +50,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -64,7 +64,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE_PRO,
@@ -73,7 +73,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -87,7 +87,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.MAIL_PRO,
@@ -96,7 +96,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -111,7 +111,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             isDelinquent: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -120,7 +120,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -134,7 +134,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: false,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -143,7 +143,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -157,7 +157,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -166,7 +166,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONVPN_SETTINGS,
@@ -180,7 +180,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -189,7 +189,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 6,
+            MaxMembers: 6,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -203,7 +203,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 1500,
+            RenewAmount: 1500,
             CouponCode: COUPON_CODES.VPN_BLACK_FRIDAY_2022,
             Plans: [
                 {
@@ -213,7 +213,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -227,7 +227,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             canPay: true,
         } as UserModel;
         const subscription = {
-            Amount: 99999,
+            RenewAmount: 99999,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -236,7 +236,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
@@ -251,7 +251,7 @@ describe('black-friday-mail-pro-2022 offer', () => {
         } as UserModel;
         const subscription = {
             External: External.iOS,
-            Amount: 1500,
+            RenewAmount: 1500,
             Plans: [
                 {
                     Name: PLANS.BUNDLE,
@@ -260,7 +260,31 @@ describe('black-friday-mail-pro-2022 offer', () => {
             ],
         } as Subscription;
         const organization = {
-            UsedMembers: 0,
+            MaxMembers: 1,
+        } as Organization;
+        const protonConfig = {
+            APP_NAME: APPS.PROTONMAIL,
+        } as ProtonConfig;
+        expect(isEligible({ subscription, user, organization, protonConfig })).toBe(false);
+    });
+
+    it('should not be available for organization with more than 5 members', () => {
+        const user = {
+            canPay: true,
+            isFree: false,
+            isDelinquent: false,
+        } as UserModel;
+        const subscription = {
+            RenewAmount: 1500,
+            Plans: [
+                {
+                    Name: PLANS.BUNDLE,
+                    Type: PLAN_TYPES.PLAN,
+                },
+            ],
+        } as Subscription;
+        const organization = {
+            MaxMembers: 6,
         } as Organization;
         const protonConfig = {
             APP_NAME: APPS.PROTONMAIL,
