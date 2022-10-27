@@ -24,7 +24,7 @@ interface Props {
 const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
     const { createNotification } = useNotifications();
 
-    const hasApiKeys = !!model.publicKeys.apiKeys.length;
+    const hasApiKeys = !!model.publicKeys.apiKeys.length; // internal or WKD keys
     const hasPinnedKeys = !!model.publicKeys.pinnedKeys.length;
 
     const isPrimaryPinned = hasApiKeys && model.trustedFingerprints.has(model.publicKeys.apiKeys[0].getFingerprint());
@@ -106,7 +106,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 <Alert className="mb1" type="warning">{c('Info')
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
-            {hasApiKeys && (
+            {hasApiKeys && !hasPinnedKeys && (
                 <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
                     .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
             )}
@@ -114,9 +114,9 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
                     .t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}</Alert>
             )}
-            {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && (
+            {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && model.encrypt && (
                 <Alert className="mb1" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
-                    .t`None of the uploaded keys are valid for encryption. Encryption is automatically disabled.`}</Alert>
+                    .t`None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable "Encrypt emails".`}</Alert>
             )}
             {!hasApiKeys && (
                 <Row>
@@ -132,7 +132,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                         <Toggle
                             id="encrypt-toggle"
                             checked={model.encrypt}
-                            disabled={!model.publicKeys.pinnedKeys.length || noPinnedKeyCanSend}
+                            disabled={!hasPinnedKeys}
                             onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                                 setModel({
                                     ...model,
