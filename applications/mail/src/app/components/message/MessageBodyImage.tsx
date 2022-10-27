@@ -77,8 +77,9 @@ const MessageBodyImage = ({
 }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const { type, error, url, status, original } = image;
-    const showPlaceholder = error || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
-    const showImage = !showPlaceholder && status === 'loaded';
+    const showPlaceholder =
+        error || status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
+    const showImage = !showPlaceholder;
 
     const attributes =
         original?.getAttributeNames().reduce<SimpleMap<string>>((acc, name) => {
