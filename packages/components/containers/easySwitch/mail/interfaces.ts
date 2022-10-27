@@ -1,4 +1,5 @@
 import {
+    ImportReportRollbackState,
     ImportType,
     ImportedMailFolder,
     MailImporterPayload,
@@ -52,6 +53,7 @@ export interface ImportHistory {
     State: ImportMailReportStatus;
     TotalSize: number;
     CanDeleteSource: number;
+    RollbackState?: ImportReportRollbackState;
     Product?: ImportType;
 }
 
