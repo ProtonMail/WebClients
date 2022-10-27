@@ -134,6 +134,9 @@
       "Customize import": [
         "Personalizar importação"
       ],
+      "Decline invite": [
+        "Recusar convite"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -630,56 +633,14 @@
         "Opcional"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Em breve"
+      ]
+    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Se encontrar problemas, pode sempre desactivar o acesso Beta."
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Inclui"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtenha a promoção"
-      ],
-      "Get the deal now": [
-        "Obter a promoção já"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "por mês"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ]
     },
     "Bug category": {
@@ -793,13 +754,24 @@
       ]
     },
     "Calendar share limit modal": {
+      "Manage links": [
+        "Gerir ligações"
+      ],
       "Manage members": [
         "Gerir membros"
       ]
     },
     "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Adicionar agenda de uma URL"
+      ],
       "More options": [
         "Mais opções"
+      ]
+    },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Partilhado comigo"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2571,6 +2543,9 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "O Proton não pode ligar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
       ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "O Proton não pode ligar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
@@ -3308,6 +3283,9 @@
       "App password": [
         "Senha da aplicação"
       ],
+      "Attach screenshot(s)": [
+        "Anexar capturas de ecrã"
+      ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
@@ -3663,6 +3641,9 @@
       ],
       "Time zone changed": [
         "Fuso horário alterado"
+      ],
+      "Unable to add more calendars": [
+        "Não é possível adicionar mais agendas"
       ]
     },
     "Modal title and action": {
@@ -3812,6 +3793,11 @@
       ],
       "Label name": [
         "Nome da etiqueta"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Trocar ou adicionar conta"
       ]
     },
     "Notification": {
@@ -4193,9 +4179,19 @@
         "Nenhum resultado encontrado"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Add people or groups": [
+        "Adicionar pessoas ou grupos"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Partilhar com utilizadores do Proton"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Criado por ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4212,6 +4208,9 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Os convites para eventos aparecem agora na sua agenda como eventos pendentes. Desta forma, para responder basta abrir o evento. ${ goToSettingsLink }"
+      ],
+      "Subscribe to other calendars": [
+        "Subscrever a outras agendas"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Pode agora adicionar notificações às agendas subscritas."
@@ -4231,6 +4230,11 @@
       ],
       "Your current storage:": [
         "O seu armazenamento actual:"
+      ]
+    },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL da agenda"
       ]
     },
     "Subscribed calendar URL length warning": {

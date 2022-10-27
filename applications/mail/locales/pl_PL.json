@@ -1229,62 +1229,6 @@
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Zawiera"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standardowa cena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Subskrypcja zostanie odnowiona automatycznie po 2 latach za tę samą cenę aż do momentu anulowania jej."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Najlepsza oferta"
-      ],
-      "Most popular": [
-        "Najpopularniejszy"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
-      "Get the deal now": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "miesięcznie"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta specjalna"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 miesiąc"
-      ],
-      "12 months": [
-        "12 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problem z aplikacją"
@@ -4375,6 +4319,12 @@
         "${ contactEmailsLength } członków",
         "${ contactEmailsLength } członków"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } członek)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } członków)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } członków)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } członków)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "Kontakt ${ contactName } zawiera wiele adresów e-mail."
       ],
@@ -7300,6 +7250,12 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktu.",
+        "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktów.",
+        "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktów.",
+        "Pomyślnie wyeksportowano ${ contactsExported.length } z ${ countContacts } kontaktów."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "Kontakt został usunięty.",
         "Pomyślnie usunięto ${ model.deleted.length } z ${ totalBeDeleted } kontaktów.",
@@ -7623,7 +7579,7 @@
         "64 kraje"
       ],
       "All paid Mail and Calendar features": [
-        "Wszystkie płatne funkcje poczty i kalendarza"
+        "Wszystkie płatne funkcje usług Mail i Calendar"
       ],
       "High speed VPN": [
         "Usługa VPN wysokiej prędkości"
@@ -7632,19 +7588,19 @@
         "Najwyższa prędkość VPN"
       ],
       "Mail, Calendar, Drive": [
-        "Poczta, kalendarz, dysk"
+        "Usługi Mail, Calendar i Drive"
       ],
       "Premium Drive": [
-        "Dysk premium"
+        "Usługa Drive w wersji premium"
       ],
       "Premium early access": [
         "Wczesny dostęp premium"
       ],
       "Premium Mail and Calendar": [
-        "Poczta i kalendarz premium"
+        "Usługi Mail i Calendar w wersji premium"
       ],
       "Premium Mail, Calendar and Drive": [
-        "Poczta, kalendarz i dysk premium"
+        "Usługi Mail, Calendar i Drive w wersji premium"
       ],
       "Premium VPN": [
         "VPN premium"
@@ -7695,7 +7651,7 @@
         "Przejdź do planów subskrypcji"
       ],
       "Upgrade": [
-        "Uaktualnij"
+        "Ulepsz"
       ]
     },
     "specialoffer: Offers": {
@@ -7744,7 +7700,7 @@
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
-        "Wyprzedaż z okazji Czarnego Piątku"
+        "Wyprzedaż Black Friday"
       ],
       "Cyber Week Sale": [
         "Wyprzedaż z okazji cybertygodnia"
