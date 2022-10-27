@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { reportBug } from '@proton/shared/lib/api/reports';
-import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -36,6 +36,17 @@ import AttachScreenshot, { Screenshot } from './AttachScreenshot';
 
 export type BugModalMode = 'chat-unavailable' | 'chat-no-agents';
 
+type OptionLabelItem = { type: 'label'; value: string };
+type OptionOptionItem = { type: 'option'; title: string; value: string; clientType?: CLIENT_TYPES };
+type OptionItem = OptionOptionItem | OptionLabelItem;
+
+interface Model extends ReturnType<typeof getReportInfo> {
+    Category: OptionOptionItem | undefined;
+    Description: string;
+    Email: string;
+    Username: string;
+}
+
 export interface Props {
     username?: string;
     email?: string;
@@ -45,7 +56,47 @@ export interface Props {
     open: ModalProps['open'];
 }
 
-type OptionItem = { type: 'label'; value: string } | { type: 'option'; title: string; value: string };
+const getMailOptions = (): OptionItem[] => {
+    return [
+        { type: 'label', value: c('Group').t`Account` },
+        { type: 'option', value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
+        { type: 'option', value: 'Sign up problem', title: c('Bug category').t`Sign up problem` },
+        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
+        { type: 'option', value: 'Custom domain problem', title: c('Bug category').t`Custom domain problem` },
+        { type: 'label', value: c('Group').t`Apps` },
+        { type: 'option', value: 'Bridge problem', title: c('Bug category').t`Bridge problem` },
+        { type: 'option', value: 'Import / export problem', title: c('Bug category').t`Import / export problem` },
+        { type: 'label', value: c('Group').t`Network` },
+        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
+        { type: 'option', value: 'Slow speed problem', title: c('Bug category').t`Slow speed problem` },
+        { type: 'label', value: c('Group').t`Services` },
+        { type: 'option', value: 'Calendar problem', title: c('Bug category').t`Calendar problem` },
+        { type: 'option', value: 'Contacts problem', title: c('Bug category').t`Contacts problem` },
+        { type: 'option', value: 'Drive problem', title: c('Bug category').t`Drive problem` },
+        { type: 'option', value: 'Mail problem', title: c('Bug category').t`Mail problem` },
+        { type: 'option', value: 'VPN problem', title: c('Bug category').t`VPN problem`, clientType: CLIENT_TYPES.VPN },
+        { type: 'label', value: c('Group').t`Other category` },
+        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
+        { type: 'option', value: 'Other', title: c('Bug category').t`Other` },
+    ];
+};
+
+const getVPNOptions = (): OptionItem[] => {
+    return [
+        { type: 'option', value: 'Login problem', title: c('Bug category').t`Sign in problem` },
+        { type: 'option', value: 'Signup problem', title: c('Bug category').t`Signup problem` },
+        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
+        { type: 'option', value: 'Installation problem', title: c('Bug category').t`Installation problem` },
+        { type: 'option', value: 'Update problem', title: c('Bug category').t`Update problem` },
+        { type: 'option', value: 'Application problem', title: c('Bug category').t`Application problem` },
+        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
+        { type: 'option', value: 'Speed problem', title: c('Bug category').t`Speed problem` },
+        { type: 'option', value: 'Manual setup problem', title: c('Bug category').t`Manual setup problem` },
+        { type: 'option', value: 'Website access problem', title: c('Bug category').t`Website access problem` },
+        { type: 'option', value: 'Streaming problem', title: c('Bug category').t`Streaming problem` },
+        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
+    ];
+};
 
 const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit }: Props) => {
     const api = useApi();
@@ -64,46 +115,12 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
 
-    const mailOptions: OptionItem[] = [
-        { type: 'label', value: c('Group').t`Account` },
-        { type: 'option', value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
-        { type: 'option', value: 'Sign up problem', title: c('Bug category').t`Sign up problem` },
-        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
-        { type: 'option', value: 'Custom domain problem', title: c('Bug category').t`Custom domain problem` },
-        { type: 'label', value: c('Group').t`Apps` },
-        { type: 'option', value: 'Bridge problem', title: c('Bug category').t`Bridge problem` },
-        { type: 'option', value: 'Import / export problem', title: c('Bug category').t`Import / export problem` },
-        { type: 'label', value: c('Group').t`Network` },
-        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
-        { type: 'option', value: 'Slow speed problem', title: c('Bug category').t`Slow speed problem` },
-        { type: 'label', value: c('Group').t`Services` },
-        { type: 'option', value: 'Calendar problem', title: c('Bug category').t`Calendar problem` },
-        { type: 'option', value: 'Contacts problem', title: c('Bug category').t`Contacts problem` },
-        { type: 'option', value: 'Drive problem', title: c('Bug category').t`Drive problem` },
-        { type: 'option', value: 'Mail problem', title: c('Bug category').t`Mail problem` },
-        { type: 'option', value: 'VPN problem', title: c('Bug category').t`VPN problem` },
-        { type: 'label', value: c('Group').t`Other category` },
-        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
-        { type: 'option', value: 'Other', title: c('Bug category').t`Other` },
-    ];
+    const options = useMemo(() => {
+        return isVpn ? getVPNOptions() : getMailOptions();
+    }, []);
 
-    const vpnOptions: OptionItem[] = [
-        { type: 'option', value: 'Login problem', title: c('Bug category').t`Sign in problem` },
-        { type: 'option', value: 'Signup problem', title: c('Bug category').t`Signup problem` },
-        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
-        { type: 'option', value: 'Installation problem', title: c('Bug category').t`Installation problem` },
-        { type: 'option', value: 'Update problem', title: c('Bug category').t`Update problem` },
-        { type: 'option', value: 'Application problem', title: c('Bug category').t`Application problem` },
-        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
-        { type: 'option', value: 'Speed problem', title: c('Bug category').t`Speed problem` },
-        { type: 'option', value: 'Manual setup problem', title: c('Bug category').t`Manual setup problem` },
-        { type: 'option', value: 'Website access problem', title: c('Bug category').t`Website access problem` },
-        { type: 'option', value: 'Streaming problem', title: c('Bug category').t`Streaming problem` },
-        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
-    ];
-
-    const categoryOptions = (isVpn ? vpnOptions : mailOptions).map((item) => {
-        const { type, value } = item;
+    const categoryOptions = options.map((option) => {
+        const { type, value } = option;
         if (type === 'label') {
             return (
                 <label className="text-semibold px0-5 py0-25 block" key={value}>
@@ -112,14 +129,14 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
             );
         }
 
-        const { title } = item;
-        return <Option title={title} value={value} key={value} />;
+        const { title } = option;
+        return <Option title={title} value={option} key={value} />;
     });
 
-    const [model, setModel] = useState(() => {
+    const [model, setModel] = useState<Model>(() => {
         return {
             ...getReportInfo(),
-            Title: '',
+            Category: undefined,
             Description: '',
             Email: email || '',
             Username: Username || '',
@@ -130,9 +147,16 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
     const { validator, onFormSubmit } = useFormErrors();
-    const handleChange = (key: keyof typeof model) => {
-        return (value: any) => setModel({ ...model, [key]: value });
+
+    const setModelDiff = (model: Partial<Model>) => {
+        setModel((oldModel) => ({ ...oldModel, ...model }));
     };
+    const handleChange = <K extends keyof Model>(key: K) => {
+        return (value: Model[K]) => setModelDiff({ [key]: value });
+    };
+
+    const categoryTitle = model.Category?.title || '';
+    const clientType = model.Category?.clientType || CLIENT_TYPE;
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
@@ -147,16 +171,16 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 return acc;
             }, {});
 
-            const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, model.Title]
+            const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, categoryTitle]
                 .filter(Boolean)
                 .join(' ');
 
             return {
                 ...screenshotBlobs,
-                ...omit(model, ['OSArtificial']),
+                ...omit(model, ['OSArtificial', 'Category']),
                 Client,
                 ClientVersion: APP_VERSION,
-                ClientType: CLIENT_TYPE,
+                ClientType: clientType,
                 Title,
             };
         };
@@ -227,6 +251,11 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
         );
     })();
 
+    // Retrieves the selected option by title to ensure referential equality for Select's value
+    const selectedValue = options.find(
+        (option) => (option.type === 'option' && option.title === model.Category?.title) || ''
+    );
+
     return (
         <Modal as={Form} open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
             <ModalHeader title={c('Title').t`Report a problem`} />
@@ -253,13 +282,17 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 />
                 {showCategory && (
                     <InputFieldTwo
-                        as={SelectTwo}
+                        as={SelectTwo<OptionItem>}
                         label={c('Label').t`Category`}
                         placeholder={c('Placeholder').t`Select`}
                         id="Title"
-                        value={model.Title}
-                        onValue={handleChange('Title')}
-                        error={validator([requiredValidator(model.Title)])}
+                        value={selectedValue}
+                        onValue={(option: OptionItem) => {
+                            if (option.type === 'option') {
+                                setModelDiff({ Category: option });
+                            }
+                        }}
+                        error={validator([requiredValidator(categoryTitle)])}
                         disabled={loading}
                     >
                         {categoryOptions}
