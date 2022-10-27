@@ -254,6 +254,13 @@ export enum ImportStatus {
     DELAYED = 6,
 }
 
+export enum ImportReportRollbackState {
+    CANNOT_ROLLBACK = 0,
+    CAN_ROLLBACK = 1,
+    ROLLING_BACK = 2,
+    ROLLED_BACK = 3,
+}
+
 export interface ImporterActiveProps {
     CreateTime: number;
     State: ImportStatus;
@@ -292,6 +299,12 @@ enum ImportReportStatus {
     SENT = 1,
 }
 
+interface ImportSummary {
+    State: ImportStatus;
+    TotalSize: number;
+    RollbackState?: ImportReportRollbackState;
+}
+
 export interface ImportReportAggregated {
     ID: string;
     Account: string;
@@ -301,20 +314,14 @@ export interface ImportReportAggregated {
     CreateTime: number;
     EndTime: number;
     Summary: {
-        Mail?: {
+        Mail?: ImportSummary & {
             NumMessages: number;
-            State: ImportStatus;
-            TotalSize: number;
         };
-        Calendar?: {
+        Calendar?: ImportSummary & {
             NumEvents: number;
-            State: ImportStatus;
-            TotalSize: number;
         };
-        Contacts?: {
+        Contacts?: ImportSummary & {
             NumContacts: number;
-            State: ImportStatus;
-            TotalSize: number;
         };
     };
 }
@@ -330,6 +337,7 @@ export interface ImportReport {
     State: ImportStatus;
     TotalSize: number;
     Product: ImportType;
+    RollbackState?: ImportReportRollbackState;
 }
 
 export enum EASY_SWITCH_SOURCE {
