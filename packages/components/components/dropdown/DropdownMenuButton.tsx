@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
+import { CircleLoader } from '@proton/atoms';
 import { classnames } from '../../helpers';
-import { CircleLoader } from '../loader';
 
 export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
     loading?: boolean;

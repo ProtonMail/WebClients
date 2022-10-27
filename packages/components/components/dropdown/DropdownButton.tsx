@@ -1,9 +1,10 @@
 import { ElementType, ReactElement, forwardRef } from 'react';
 
+import { CircleLoader } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import Button from '../button/Button';
-import { CircleLoader } from '../loader';
 import DropdownCaret from './DropdownCaret';
 
 export interface OwnProps {
