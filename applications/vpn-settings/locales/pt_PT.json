@@ -77,6 +77,12 @@
       "Create": [
         "Criar"
       ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Criar antes um endereço seguro do ${ MAIL_APP_NAME }"
+      ],
+      "Create account": [
+        "Criar conta"
+      ],
       "Create address": [
         "Criar endereço"
       ],
@@ -146,8 +152,14 @@
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar outros planos ${ BRAND_NAME }"
       ],
+      "Get ${ vpnPlus }": [
+        "Obter o ${ vpnPlus }"
+      ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "Go to sign in": [
+        "Ir para o início de sessão"
       ],
       "Hide": [
         "Ocultar"
@@ -166,6 +178,9 @@
       ],
       "Mark as default": [
         "Marcar como predefinição"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -235,6 +250,9 @@
       ],
       "Retry": [
         "Repetir"
+      ],
+      "Revoke": [
+        "Revogar"
       ],
       "Save": [
         "Gravar"
@@ -323,6 +341,9 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
+      "Use your current email address instead": [
+        "Utilizar o seu endereço de e-mail atual"
+      ],
       "User": [
         "Utilizador"
       ],
@@ -361,6 +382,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } utilizador",
+        "+ ${ users } utilizadores"
       ]
     },
     "Apps dropdown": {
@@ -368,7 +393,21 @@
         "Aplicações do Proton"
       ]
     },
+    "Badge": {
+      "5 users": [
+        "5 utilizadores"
+      ]
+    },
     "Billing cycle option": {
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
       "Annually": [
         "Anualmente"
       ],
@@ -1255,6 +1294,14 @@
         "Créditos não utilizados"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/mês"
+      ],
+      "/user per month": [
+        "/utilizador por mês"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura em dívida"
@@ -1334,6 +1381,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Os pagamentos não estão actualmente disponíveis, por favor tente mais tarde"
+      ],
+      "Please set a recovery email first": [
+        "Por favor, defina primeiro um e-mail de recuperação"
       ],
       "Please set a recovery phone number first": [
         "Por favor, defina um número de telefone de recuperação"
@@ -1525,6 +1575,12 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "Requeridos ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } para uma ligação a nível de país."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "Requeridos ${ vpnPlus } ou ${ visionary } para a funcionalidade Secure Core."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -1577,8 +1633,17 @@
       "Continue anyway?": [
         "Continuar mesmo assim?"
       ],
+      "Creating your account": [
+        "A criar a sua conta"
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua assinatura"
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Não use as credenciais OpenVPN/IKEv2 nas aplicações ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
@@ -1642,6 +1707,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se perder o seu dispositivo com autenticação em dois passos, poderá utilizar estes códigos em vez do código 2FA de 6 algarismos para entrar na conta. Cada código só pode ser utilizado uma vez."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Se continuar com a regressão, perderá o acesso às funcionalidades pagas do ${ VPN_APP_NAME }."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se deseja combinar esta conta com outra, NÃO a elimine."
@@ -1772,6 +1840,9 @@
       "support team": [
         "equipa de assistência"
       ],
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Estes ficheiros de configuração permitem escolher o servidor ${ VPN_APP_NAME } a que ligar ao usar uma aplicação de VPN de terceiros ou ao configurar uma ligação VPN num router."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -1814,6 +1885,9 @@
       "Tor": [
         "Tor"
       ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
       "Two-factor authentication disabled": [
         "Autenticação em dois passos desactivada"
       ],
@@ -1846,6 +1920,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
+      ],
+      "Version ${ version }": [
+        "Versão ${ version }"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Aviso: a eliminação é permanente. Remove também o acesso a todos os serviços ligados e elimina todos os contactos."
@@ -1921,6 +1998,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
+      ],
+      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
+        "A sua conta ${ BRAND_NAME } existente pode ser utilizada para aceder a todos os serviços ${ BRAND_NAME }. Por favor, inicie sessão com ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
@@ -2005,6 +2085,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } email or username": [
+        "E-mail ou nome de usuário do ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
@@ -2026,6 +2109,12 @@
       ],
       "Amount due": [
         "Quantia devida"
+      ],
+      "Attach screenshot(s)": [
+        "Anexar capturas de ecrã"
+      ],
+      "Billing cycle": [
+        "Ciclo de faturação"
       ],
       "bonus storage": [
         "bónus de armazenamento"
@@ -2096,6 +2185,9 @@
       "Enter the code displayed on your TV": [
         "Insira o código mostrado na sua TV"
       ],
+      "Expiration date": [
+        "Data de validade"
+      ],
       "Expires": [
         "Expira"
       ],
@@ -2153,6 +2245,12 @@
       "Payer": [
         "Pagante"
       ],
+      "Payment details": [
+        "Detalhes de pagamento"
+      ],
+      "Payment method": [
+        "Método de pagamento"
+      ],
       "Phone number": [
         "Número de telefone"
       ],
@@ -2165,6 +2263,9 @@
       "Proton username": [
         "Utilizador Proton"
       ],
+      "Recovery phone number": [
+        "Número de telefone de recuperação"
+      ],
       "Recovery phrase": [
         "Frase de recuperação"
       ],
@@ -2174,8 +2275,14 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Security code": [
+        "Código de segurança"
+      ],
       "Select your country": [
         "Escolha o seu país"
+      ],
+      "Subscription options": [
+        "Opções da subscrição"
       ],
       "System information": [
         "Informação do sistema"
@@ -2191,6 +2298,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos a sua partida. Por favor, diga-nos porquê, para podermos melhorar o serviço."
@@ -2209,6 +2319,9 @@
       ],
       "Your password (admin)": [
         "A sua senha (admin)"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Label for news": {
@@ -2257,6 +2370,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Need help?": [
+        "Precisa de ajuda?"
       ],
       "Pay invoice": [
         "Pagar factura"
@@ -2311,12 +2427,23 @@
       ],
       "Got it": [
         "Percebi"
+      ],
+      "Switch or add account": [
+        "Trocar ou adicionar conta"
       ]
     },
     "new_plans: feature": {
       "${ n } email address": [
         "${ n } endereço de e-mail",
         "${ n } endereços de e-mail/aliases"
+      ],
+      "${ n } filter": [
+        "${ n } filtro",
+        "${ n } filtros"
+      ],
+      "${ n } folder": [
+        "${ n } pasta",
+        "${ n } pastas"
       ],
       "${ n } label": [
         "${ n } etiqueta",
@@ -2333,6 +2460,12 @@
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
+      ],
+      "Auto-reply": [
+        "Resposta automática"
+      ],
+      "Contact groups": [
+        "Grupos de contactos"
       ],
       "Encrypted contact details": [
         "Detalhes de contacto encriptados"
@@ -2354,6 +2487,11 @@
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ]
     },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/mês"
+      ]
+    },
     "new_plans: signup": {
       "Subscription": [
         "Subscrição"
@@ -2367,6 +2505,11 @@
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN/IKEv2 regeneradas"
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ VPN_APP_NAME }": [
+        "Boas-vindas ao ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -2467,6 +2610,9 @@
       "Select": [
         "Selecionar"
       ],
+      "Select a reason": [
+        "Seleccione um motivo"
+      ],
       "ZIP": [
         "CP"
       ]
@@ -2474,6 +2620,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Adicione o seu nome (ou o da empresa) e morada às facturas"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "contacto"
       ]
     },
     "Price": {
@@ -2558,6 +2709,15 @@
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } de ${ MaxMembers } utilizador",
         "${ UsedMembers } de ${ MaxMembers } utilizadores"
+      ],
+      "1 email address": [
+        "1 endereço de e-mail"
+      ],
+      "1 VPN connection": [
+        "1 ligação VPN"
+      ],
+      "Built-in ad blocker (NetShield)": [
+        "Bloqueador integrado (NetShield)"
       ]
     },
     "Subscription saving": {
@@ -2624,6 +2784,14 @@
         "A sua subscrição foi cancelada com sucesso"
       ]
     },
+    "Suffix": {
+      "/month": [
+        "/mês"
+      ],
+      "/user per month": [
+        "/utilizador por mês"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Acção"
@@ -2652,6 +2820,9 @@
       ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
+      ],
+      "2. Select platform": [
+        "2. Seleccionar plataforma"
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -2728,6 +2899,12 @@
       "Confirm phone number": [
         "Confirmar número de telefone"
       ],
+      "Congratulations on choosing privacy!": [
+        "Parabéns por escolher a privacidade!"
+      ],
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Criar um endereço de ${ MAIL_APP_NAME }"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -2749,11 +2926,17 @@
       "Delete account": [
         "Eliminar conta"
       ],
+      "Delete organization?": [
+        "Eliminar organização?"
+      ],
       "Device connected!": [
         "Dispositivo ligado!"
       ],
       "Disable two-factor authentication": [
         "Desactivar autenticação em dois passos"
+      ],
+      "Downgrade account": [
+        "Regredir conta"
       ],
       "Downloads": [
         "Transferências"
@@ -2778,6 +2961,9 @@
       ],
       "General": [
         "Geral"
+      ],
+      "Get ${ vpnPlus } to access all servers": [
+        "Obtenha o ${ vpnPlus } para aceder a todos os servidores"
       ],
       "Gift code": [
         "Código de oferta"
@@ -2857,6 +3043,12 @@
       "Processing...": [
         "A processar..."
       ],
+      "Recommended": [
+        "Recomendado"
+      ],
+      "Recovery": [
+        "Recuperação"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -2868,6 +3060,9 @@
       ],
       "Reset password?": [
         "Repor senha?"
+      ],
+      "Save contact details": [
+        "Guardar detalhes do contacto"
       ],
       "Select a plan": [
         "Seleccione um plano"
@@ -2914,6 +3109,9 @@
       "Unsupported browser": [
         "Navegador não suportado"
       ],
+      "Verification": [
+        "Verificação"
+      ],
       "Warning": [
         "Aviso"
       ],
@@ -2922,6 +3120,9 @@
       ],
       "What's new": [
         "O que há de novo"
+      ],
+      "You already have a Proton account": [
+        "Já tem uma conta Proton"
       ],
       "Your current plan": [
         "O seu plano actual"

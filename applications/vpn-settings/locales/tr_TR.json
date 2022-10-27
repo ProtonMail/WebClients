@@ -417,6 +417,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } özel etki alanı",
         "+ ${ domains } özel etki alanı"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } kullanıcı",
+        "+ ${ users } kullanıcı"
       ]
     },
     "Alter": {
@@ -438,14 +442,23 @@
       "Payable every 12 months": [
         "12 ayda bir ödemeli"
       ],
+      "Payable every 15 months": [
+        "15 ayda bir ödemeli"
+      ],
       "Payable every 24 months": [
         "24 ayda bir ödemeli"
+      ],
+      "Payable every 30 months": [
+        "30 ayda bir ödemeli"
       ],
       "Payable every month": [
         "Her ay ödemeli"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "${ formattedEndTime } tarihinde otomatik olarak yenilenir"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "${ formattedEndTime } tarihinde ${ amount } tutar ile otomatik olarak yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -2187,6 +2200,9 @@
       "Preview": [
         "Ön izle"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve süresi dolmamış kuponlar katılmıştır."
+      ],
       "Priority support": [
         "Öncelikli destek"
       ],
@@ -3355,8 +3371,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* 12 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* 15 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* 24 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* 30 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
@@ -4324,6 +4346,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
+      ],
+      "Gift": [
+        "Hediye"
       ],
       "Gift code": [
         "Hediye kodu"

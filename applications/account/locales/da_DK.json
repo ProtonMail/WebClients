@@ -931,6 +931,11 @@
         "Ikke-understøttet begivenhed"
       ]
     },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "Føj til kalender og markér som afventende"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
@@ -5632,6 +5637,9 @@
       ]
     },
     "Knowledge base link label": {
+      "Here's how": [
+        "Sådan gør du"
+      ],
       "Learn more": [
         "Få mere at vide"
       ]
@@ -5725,6 +5733,9 @@
       ],
       "Authenticator app": [
         "Godkendelsesapp"
+      ],
+      "Auto-detect primary time zone": [
+        "Registrer automatisk primær tidszone"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -5869,6 +5880,9 @@
       ],
       "Default PGP scheme": [
         "Standard PGP-metode"
+      ],
+      "Default view": [
+        "Standardvisning"
       ],
       "Delete": [
         "Slet"
@@ -6224,6 +6238,15 @@
       "Send auto-reply": [
         "Send auto-svar"
       ],
+      "Send in": [
+        "Send på"
+      ],
+      "Show secondary time zone": [
+        "Vis sekundær tidszone"
+      ],
+      "Show week numbers": [
+        "Vis ugenumre"
+      ],
       "Sign external messages": [
         "Signér eksterne beskeder"
       ],
@@ -6541,6 +6564,9 @@
       ],
       "How to unlock data": [
         "Sådan oplåses data"
+      ],
+      "Import/export": [
+        "Import/eksport"
       ],
       "Learn more": [
         "Få yderligere information"
@@ -7358,6 +7384,11 @@
         "Paypal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Opret en kalender, så du kan holde styr på din tidsplan, samtidig med at dine data er sikre."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
@@ -7470,6 +7501,14 @@
         "Gratis"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Primær tidszone"
+      ],
+      "Secondary time zone": [
+        "Sekundær tidszone"
+      ]
+    },
     "Private Member": {
       "private": [
         "privat"
@@ -7529,6 +7568,9 @@
       "Verify recovery email?": [
         "Bekræft e-mail til gendannelse?"
       ],
+      "Verify with email": [
+        "Verificer med e-mail"
+      ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Ved at bekræfte din e-mailadresse øger du din kontosikkerhed og giver dig flere muligheder for at genoprette din konto."
       ],
@@ -7554,8 +7596,14 @@
       "Cancel": [
         "Annullér"
       ],
+      "Verify by SMS": [
+        "Verificer med SMS"
+      ],
       "Verify now": [
         "Bekræft nu"
+      ],
+      "Verify recovery phone?": [
+        "Verificer telefon til gendannelse?"
       ]
     },
     "Remark about a key type option": {
@@ -7735,6 +7783,11 @@
       ],
       "This link might be wrong": [
         "Dette link er muligvis forkert"
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "Tilføj offentlige, eksterne eller delte kalendere ved hjælp af en URL."
       ]
     },
     "Subscribed calendar URL length warning": {
