@@ -44,7 +44,7 @@ const RecipientDropdownItem = ({ displaySenderImage, bimiSelector, label, recipi
                     <ContactImage
                         email={displaySenderImage ? recipient.Address : ''}
                         name={label}
-                        className="w100 h100 rounded"
+                        className="rounded"
                         bimiSelector={bimiSelector}
                     />
                 </span>
