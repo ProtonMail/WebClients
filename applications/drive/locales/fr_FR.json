@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "plural-forms": "nplurals=2; plural=(n >= 2);",
     "language": "fr_FR"
   },
   "contexts": {
@@ -650,97 +650,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Profiter de l'offre"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "bêta"
-      ],
-      "Includes": [
-        "Inclut"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Prix normal : ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Meilleure offre"
-      ],
-      "Most popular": [
-        "Le plus populaire"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Économisez plus en combinant Mail et VPN"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Profiter de l'offre"
-      ],
-      "Get the deal now": [
-        "Profitez de l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "-${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        "Conditions générales des offres spéciales"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "par mois"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
-      ],
-      "1 month": [
-        "1 mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Facturé ${ amount } pour le premier mois.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Facturé ${ amount } pour la première année.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Profitez maintenant de l'offre spéciale de fin d'année sur notre abonnement haut de gamme Proton VPN Plus"
       ]
     },
     "Bug category": {
@@ -3369,6 +3278,9 @@
       ],
       "This will overwrite the existing folder": [
         "Ceci va écraser le dossier existant."
+      ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Cela supprimera de Proton Drive l'appareil synchronisé ${ deviceName }. Les fichiers locaux sur\nl'appareil ne seront pas affectés."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour permettre une recherche vraiment privée, nous devons indexer vos fichiers localement. Vous pouvez utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons quand l'indexation sera terminée."

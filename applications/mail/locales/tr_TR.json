@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bu göndericiden gelen iletileri engelle"
       ],
+      "Block sender": [
+        "Göndericiyi engelle"
+      ],
       "Block senders": [
         "Göndericileri engelle"
       ],
@@ -499,6 +502,9 @@
       ],
       "Load": [
         "Yükle"
+      ],
+      "Load anyway": [
+        "Yine de yükle"
       ],
       "Load embedded images": [
         "Gömülü görseller yüklensin"
@@ -905,6 +911,9 @@
       "Skip": [
         "Atla"
       ],
+      "Some images failed to load with tracking protection.": [
+        "İzleme koruması nedeniyle bazı görseller yüklenemedi."
+      ],
       "Star": [
         "Yıldız koy"
       ],
@@ -1211,65 +1220,6 @@
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "İçerdikleri"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standart fiyat: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "En iyi teklif"
-      ],
-      "Most popular": [
-        "En popüler olanlar"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Get the deal now": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "aylık"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "24 months": [
-        "24 ay"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Ücretli Proton VPN Plus tarifemizi özel yıl sonu teklifi ile alın"
       ]
     },
     "Bug category": {
@@ -4292,6 +4242,10 @@
         "${ contactEmailsLength } üye",
         "${ contactEmailsLength } üye"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } üye)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } üye)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } için birkaç e-posta adresi var."
       ],
@@ -4388,6 +4342,10 @@
       "${ unread } unread message": [
         "${ unread } okunmamış ileti",
         "${ unread } okunmamış ileti"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } zamanlanmış ileti",
+        "${ unreadCount } zamanlanmış ileti"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } okunmamış yazışma",
@@ -6532,6 +6490,11 @@
         "${ CALENDAR_APP_NAME } uygulamasında aç"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "ayarlar"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Neredeyse tamam"
@@ -7334,6 +7297,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
       ],
+      "Email tracking protection": [
+        "E-posta izleme koruması"
+      ],
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
@@ -7345,6 +7311,9 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"
