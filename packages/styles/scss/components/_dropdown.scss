@@ -102,7 +102,7 @@
 
 	@include media('touch', '<=xsmall') {
 		&.adaptive-for-touch-screens {
-			padding: 15%;
+			padding-inline: 10%;
 		}
 	}
 
