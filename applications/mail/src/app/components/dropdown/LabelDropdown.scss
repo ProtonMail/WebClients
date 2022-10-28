@@ -4,8 +4,15 @@
 	.dropdown-content {
 		display: flex;
 		flex-flow: column nowrap;
+		align-items: stretch;
+	}
+
+	&-content-inner {
+		display: flex;
+		flex-flow: column nowrap;
 		justify-content: flex-start;
 		align-items: stretch;
+		flex: 1 0 auto;
 	}
 
 	&-container {

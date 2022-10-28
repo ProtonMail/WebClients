@@ -265,7 +265,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="label-dropdown-content-inner" onSubmit={handleSubmit}>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
@@ -347,12 +347,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             </div>
             <hr className="m0" />
             {displayContextFiltering && (
-                <div
-                    className={classnames([
-                        'label-dropdown-container px1 mt1',
-                        alwaysCheckboxDisabled && 'color-disabled',
-                    ])}
-                >
+                <div className={classnames(['px1 mt1', alwaysCheckboxDisabled && 'color-disabled'])}>
                     <Checkbox
                         id={alwaysCheckID}
                         checked={always}
@@ -365,7 +360,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     </Checkbox>
                 </div>
             )}
-            <div className="label-dropdown-container px1 mt1">
+            <div className="px1 mt1">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
