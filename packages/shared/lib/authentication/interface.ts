@@ -37,6 +37,7 @@ export interface PullForkResponse {
     Payload: string;
     LocalID: number;
     UID: string;
+    AccessToken: string;
     RefreshToken: string;
     ExpiresIn: number;
     TokenType: string;
