@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "@babel/cli": "^7.19.3",
-        "@babel/core": "^7.19.3",
+        "@babel/core": "^7.19.6",
         "@babel/plugin-proposal-class-properties": "^7.18.6",
         "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
         "@babel/plugin-proposal-object-rest-spread": "^7.19.4",
@@ -22,23 +22,23 @@
         "@babel/plugin-proposal-private-methods": "^7.18.6",
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/plugin-transform-regenerator": "^7.18.6",
-        "@babel/plugin-transform-runtime": "^7.19.1",
+        "@babel/plugin-transform-runtime": "^7.19.6",
         "@babel/preset-env": "^7.19.4",
         "@babel/preset-react": "^7.18.6",
         "@babel/preset-typescript": "^7.18.6",
-        "@babel/runtime": "^7.19.4",
+        "@babel/runtime": "^7.20.0",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.8",
-        "autoprefixer": "^10.4.12",
+        "autoprefixer": "^10.4.13",
         "babel-loader": "^8.2.5",
         "babel-plugin-lodash": "^3.3.4",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "chalk": "4.1.2",
         "commander": "^9.4.1",
         "copy-webpack-plugin": "^11.0.0",
-        "core-js": "^3.25.5",
+        "core-js": "^3.26.0",
         "cross-env": "^7.0.3",
         "css-loader": "^6.7.1",
-        "css-minimizer-webpack-plugin": "^4.2.1",
+        "css-minimizer-webpack-plugin": "^4.2.2",
         "dedent": "^0.7.0",
         "eslint-webpack-plugin": "^3.2.0",
         "execa": "^5.1.1",
@@ -49,7 +49,7 @@
         "mini-css-extract-plugin": "^2.6.1",
         "po-gettext-loader": "^1.0.0",
         "portfinder": "^1.0.32",
-        "postcss": "^8.4.17",
+        "postcss": "^8.4.18",
         "postcss-color-functional-notation": "^4.2.4",
         "postcss-loader": "^7.0.1",
         "postcss-logical": "^5.0.4",
@@ -66,10 +66,10 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^8.25.0",
+        "eslint": "^8.26.0",
         "prettier": "^2.7.1"
     },
     "engines": {
-        "node": ">= v16.17.1"
+        "node": ">= v16.18.0"
     }
 }
