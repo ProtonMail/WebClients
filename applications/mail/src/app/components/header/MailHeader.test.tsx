@@ -2,8 +2,7 @@ import { fireEvent, getAllByText, getByText } from '@testing-library/dom';
 import { screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import {
     addApiMock,
@@ -79,9 +78,8 @@ describe('MailHeader', () => {
 
     describe('Core features', () => {
         it('should redirect on inbox when click on logo', async () => {
-            const protonmailAppName = getAppName(APPS.PROTONMAIL);
-            const { getByText } = await setup();
-            const logo = getByText(protonmailAppName);
+            const { getByTestId } = await setup();
+            const logo = getByTestId('main-logo') as HTMLAnchorElement;
             fireEvent.click(logo);
 
             const history = getHistory();
