@@ -23,10 +23,10 @@ export const authJwt = (data: { Token: String; ClientSecret?: String }) => ({
     data,
 });
 
-export const revoke = (query?: { Child?: 1 }) => ({
+export const revoke = (params?: { Child?: 1 }) => ({
     method: 'delete',
     url: 'auth',
-    query,
+    params,
 });
 
 interface RefreshArgs {
