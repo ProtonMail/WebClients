@@ -1,4 +1,6 @@
-import { pullForkSession, pushForkSession, setRefreshCookies } from '../api/auth';
+import noop from '@proton/utils/noop';
+
+import { pullForkSession, pushForkSession, revoke, setRefreshCookies } from '../api/auth';
 import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getUser } from '../api/user';
 import { getAppHref, getClientID } from '../apps/helper';
@@ -206,11 +208,14 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
     const url = new URL(previousUrl);
     const path = `${url.pathname}${url.search}${url.hash}`;
 
-    const { UID, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
+    const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
 
     try {
         // Resume and use old session if it exists
         const validatedSession = await resumeSession(api, LocalID);
+
+        api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
+
         return {
             ...validatedSession,
             path,
