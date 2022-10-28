@@ -82,7 +82,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const backUrl = setParamsInUrl(location, { labelID });
     const showBackButton = breakpoints.isNarrow && elementID;
     const labelName = getLabelName(labelID, labels, folders);
-    const logo = <MainLogo to="/inbox" />;
+    const logo = <MainLogo to="/inbox" data-test-id="main-logo" />;
 
     const clearDataButton =
         dbExists || esEnabled ? (
