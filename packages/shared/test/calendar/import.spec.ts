@@ -1007,6 +1007,56 @@ END:VEVENT`;
         });
     });
 
+    it('should fix bad DTSTAMPs', async () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20221012T171500
+DTEND;TZID=America/New_York:20221012T182500
+DTSTAMP;TZID=America/New_York:20221007T151646
+UID:11353R6@voltigeursbourget.com
+SEQUENCE:0
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
+        const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.PUBLISH,
+            vcalComponent: event,
+            hasXWrTimezone: false,
+            guessTzid: 'Europe/Zurich',
+        });
+        expect(supportedEvent).toEqual({
+            component: 'vevent',
+            uid: { value: '11353R6@voltigeursbourget.com' },
+            dtstamp: {
+                value: { year: 2022, month: 10, day: 7, hours: 19, minutes: 16, seconds: 46, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2022, month: 10, day: 12, hours: 17, minutes: 15, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            dtend: {
+                value: { year: 2022, month: 10, day: 12, hours: 18, minutes: 25, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should generate DTSTAMP if not present', async () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20221012T171500
+DTEND;TZID=America/New_York:20221012T182500
+UID:11353R6@voltigeursbourget.com
+SEQUENCE:0
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
+        const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.PUBLISH,
+            vcalComponent: event,
+            hasXWrTimezone: false,
+            guessTzid: 'Europe/Zurich',
+        });
+        expect(Object.keys(supportedEvent)).toContain('dtstamp');
+    });
+
     it('should not import alarms for invitations', async () => {
         const vevent = `
 BEGIN:VEVENT
