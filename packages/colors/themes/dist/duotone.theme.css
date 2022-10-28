@@ -76,6 +76,8 @@
   --optional-link-hover: initial;
   --optional-link-active: initial;
   --optional-main-border-color: transparent;
+  --optional-email-item-read-background-color: #f8f8f6;
+  --optional-email-item-read-text-color: #474544;
   --optional-email-item-selected-background-color: var(
     --interaction-norm-major-1
   );
