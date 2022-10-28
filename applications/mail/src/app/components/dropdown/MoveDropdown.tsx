@@ -161,7 +161,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const applyDisabled = selectedFolder?.ID === undefined;
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="move-dropdown-content-inner" onSubmit={handleSubmit}>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
@@ -240,12 +240,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
                 <>
                     <hr className="m0" />
-                    <div
-                        className={classnames([
-                            'move-dropdown-container px1 mt1',
-                            alwaysCheckboxDisabled && 'color-disabled',
-                        ])}
-                    >
+                    <div className={classnames(['px1 mt1', alwaysCheckboxDisabled && 'color-disabled'])}>
                         <Checkbox
                             id={alwaysCheckID}
                             checked={always}
