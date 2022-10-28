@@ -5,6 +5,14 @@
  * For conversations list
  */
 
+.view-column-detail {
+	.scroll-inner {
+		@supports (overflow-y: overlay) {
+			overflow-y: overlay; // Deprecated, but didn't have the choice
+		}
+	}
+}
+
 .items-column-list {
 	inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
 	min-inline-size: 320px; // Subjective value
