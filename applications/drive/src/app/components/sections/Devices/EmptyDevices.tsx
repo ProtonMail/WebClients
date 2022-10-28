@@ -13,8 +13,8 @@ const EmptyDevices = () => {
     );
 
     return (
-        <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`No synced devices` }}>
-            <h3 className="text-bold">{c('Info').t`No synced devices`}</h3>
+        <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`No synced computers` }}>
+            <h3 className="text-bold">{c('Info').t`No synced computers`}</h3>
             <p className="empty-devices-placeholder-info">
                 {c('Info')
                     .jt`Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${LearnMore}`}
