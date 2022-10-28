@@ -326,6 +326,66 @@ END:VCALENDAR`;
             });
         });
 
+        test('should generate a DTSTAMP from the message if no DTSTAMP was present', async () => {
+            const invitation = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+BEGIN:VEVENT
+UID:test-event
+DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
+DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
+LOCATION:1CP Conference Room 4350
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+TRANSP:OPAQUE
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1W2D
+ACTION:EMAIL
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Date.UTC(2022, 9, 10, 10, 0, 0) / 1000 } as Message;
+            expect(
+                await getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).toEqual({
+                method: 'PUBLISH',
+                vevent: expect.objectContaining({
+                    component: 'vevent',
+                    uid: { value: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event' },
+                    dtstamp: {
+                        value: { year: 2022, month: 10, day: 10, hours: 10, minutes: 0, seconds: 0, isUTC: true },
+                    },
+                    dtstart: {
+                        value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Brussels' },
+                    },
+                    dtend: {
+                        value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Brussels' },
+                    },
+                }),
+                originalVcalInvitation: parsedInvitation,
+                originalUniqueIdentifier: 'test-event',
+                hasMultipleVevents: false,
+                fileName: 'test.ics',
+            });
+        });
+
         test('should not throw without version, untrimmed calscale and duration', async () => {
             const invitation = `BEGIN:VCALENDAR
 CALSCALE: Gregorian
