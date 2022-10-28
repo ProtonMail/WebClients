@@ -4,12 +4,19 @@
 	.dropdown-content {
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: flex-start;
 		align-items: stretch;
 	}
 
+	&-content-inner {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		flex: 1 0 auto;
+	}
+
 	&-container {
-		flex: 1 1 auto;
+		flex: 1 0 auto;
 
 		@include respond-to($breakpoint-small, 'min') {
 			max-inline-size: 20em;
