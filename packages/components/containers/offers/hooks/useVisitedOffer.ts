@@ -10,7 +10,7 @@ const useVisitedOffer = (offerConfig: OfferConfig) => {
     const { handleVisit, isVisited, loading } = useOfferFlags(offerConfig);
 
     useEffect(() => {
-        if (!loading && !isVisited) {
+        if (!loading && !isVisited && offerConfig.autoPopUp === 'one-time') {
             void handleVisit();
         }
     }, [loading]);
