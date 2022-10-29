@@ -99,6 +99,7 @@ const ModalHeader = ({
                                 className="flex-item-noshrink"
                                 icon
                                 shape="ghost"
+                                data-testid="modal:close"
                                 onClick={onClose}
                                 {...closeButtonProps}
                             >

@@ -85,42 +85,72 @@ const MoreDropdown = ({
     const handleMoveAll = () => moveAll(labelID);
 
     const inbox = (
-        <DropdownMenuButton key="context-menu-inbox" className="text-left" onClick={() => onMove(INBOX)}>
+        <DropdownMenuButton
+            key="context-menu-inbox"
+            className="text-left"
+            onClick={() => onMove(INBOX)}
+            data-testid="toolbar:more-dropdown--movetoinbox"
+        >
             <Icon name="inbox" className="mr0-5" />
             {c('Action').t`Move to inbox`}
         </DropdownMenuButton>
     );
 
     const nospam = (
-        <DropdownMenuButton key="context-menu-nospam" className="text-left" onClick={() => onMove(INBOX)}>
+        <DropdownMenuButton
+            key="context-menu-nospam"
+            className="text-left"
+            onClick={() => onMove(INBOX)}
+            data-testid="toolbar:more-dropdown--movetonospam"
+        >
             <Icon name="fire-slash" className="mr0-5" />
             {c('Action').t`Move to inbox (not spam)`}
         </DropdownMenuButton>
     );
 
     const archive = (
-        <DropdownMenuButton key="context-menu-archive" className="text-left" onClick={() => onMove(ARCHIVE)}>
+        <DropdownMenuButton
+            key="context-menu-archive"
+            className="text-left"
+            onClick={() => onMove(ARCHIVE)}
+            data-testid="toolbar:more-dropdown--movetonoarchive"
+        >
             <Icon name="archive-box" className="mr0-5" />
             {c('Action').t`Move to archive`}
         </DropdownMenuButton>
     );
 
     const trash = (
-        <DropdownMenuButton key="context-menu-trash" className="text-left" onClick={() => onMove(TRASH)}>
+        <DropdownMenuButton
+            key="context-menu-trash"
+            className="text-left"
+            onClick={() => onMove(TRASH)}
+            data-testid="toolbar:more-dropdown--movetotrash"
+        >
             <Icon name="trash" className="mr0-5" />
             {c('Action').t`Move to trash`}
         </DropdownMenuButton>
     );
 
     const spam = (
-        <DropdownMenuButton key="context-menu-spam" className="text-left" onClick={() => onMove(SPAM)}>
+        <DropdownMenuButton
+            key="context-menu-spam"
+            className="text-left"
+            onClick={() => onMove(SPAM)}
+            data-testid="toolbar:more-dropdown--movetospam"
+        >
             <Icon name="fire" className="mr0-5" />
             {c('Action').t`Move to spam`}
         </DropdownMenuButton>
     );
 
     const deleteButton = (
-        <DropdownMenuButton key="context-menu-delete" className="text-left" onClick={() => onDelete()}>
+        <DropdownMenuButton
+            key="context-menu-delete"
+            className="text-left"
+            onClick={() => onDelete()}
+            data-testid="toolbar:more-dropdown--delete"
+        >
             <Icon name="cross-circle" className="mr0-5" />
             {c('Action').t`Delete`}
         </DropdownMenuButton>
@@ -171,11 +201,16 @@ const MoreDropdown = ({
                                 <DropdownMenuButton
                                     className="text-left border-top"
                                     onClick={() => onOpenAdditionnal(0)}
+                                    data-testid="toolbar:more-dropdown--moveto"
                                 >
                                     <Icon name="folder-arrow-in" className="mr0-5" />
                                     {c('Title').t`Move to`}
                                 </DropdownMenuButton>
-                                <DropdownMenuButton className="text-left" onClick={() => onOpenAdditionnal(1)}>
+                                <DropdownMenuButton
+                                    className="text-left"
+                                    onClick={() => onOpenAdditionnal(1)}
+                                    data-testid="toolbar:more-dropdown--labelas"
+                                >
                                     <Icon name="tag" className="mr0-5" />
                                     {c('Title').t`Label as`}
                                 </DropdownMenuButton>

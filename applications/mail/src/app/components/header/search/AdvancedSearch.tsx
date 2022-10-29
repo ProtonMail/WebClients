@@ -339,6 +339,7 @@ const AdvancedSearch = ({
             <div className={classnames(['py1 mx1-5 flex flex-align-items-center flex-justify-space-between'])}>
                 {showMore ? null : (
                     <Button
+                        data-testid="advanced-search:show-more"
                         className="mb0-5 on-mobile-w100"
                         onClick={toggleShowMore}
                         title={c('Action').t`Show more search options`}

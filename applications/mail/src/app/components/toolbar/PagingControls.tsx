@@ -44,6 +44,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
             className="text-underline"
             onClick={() => onPage(total)}
             aria-label={c('Action').t`Load more`}
+            data-testid="toolbar:load-more"
         >
             {c('Action').t`Load more`}
         </DropdownMenuButton>

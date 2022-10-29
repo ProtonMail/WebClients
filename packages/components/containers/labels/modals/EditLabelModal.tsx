@@ -199,8 +199,10 @@ const EditLabelModal = ({
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" loading={loading} onClick={handleSubmit}>{c('Action').t`Save`}</Button>
+                <Button data-testid="label-modal:cancel" onClick={handleClose}>{c('Action').t`Cancel`}</Button>
+                <Button data-testid="label-modal:save" color="norm" loading={loading} onClick={handleSubmit}>{c(
+                    'Action'
+                ).t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
