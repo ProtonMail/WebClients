@@ -51,7 +51,13 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
         <>
             {render && <ChangelogModal {...changelogModal} changelog={changelog} />}
             <Tooltip title={c('Storage').t`Release notes`}>
-                <button type="button" onClick={() => setChangelogModalOpen(true)} title={title} className={className}>
+                <button
+                    type="button"
+                    data-testid="app-infos:release-notes-button"
+                    onClick={() => setChangelogModalOpen(true)}
+                    title={title}
+                    className={className}
+                >
                     {children}
                 </button>
             </Tooltip>
