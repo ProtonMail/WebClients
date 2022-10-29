@@ -113,13 +113,13 @@ describe('MailSidebar', () => {
 
         const { getByTestId, queryByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
+        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
         const folderIcon = folderElement.querySelector('svg:not(.navigation-icon--expand)');
 
         expect(folderElement.textContent).toContain(folder.Name);
         expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folders');
 
-        const subfolderElement = getByTestId(`navigation-link:${subfolder.Name}`);
+        const subfolderElement = getByTestId(`navigation-link:${subfolder.ID}`);
         const subfolderIcon = subfolderElement.querySelector('svg');
 
         expect(subfolderElement.textContent).toContain(subfolder.Name);
@@ -139,7 +139,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const labelElement = getByTestId(`navigation-link:${label.Name}`);
+        const labelElement = getByTestId(`navigation-link:${label.ID}`);
         const labelIcon = labelElement.querySelector('svg');
 
         expect(labelElement.textContent).toContain(label.Name);
@@ -155,10 +155,10 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const inboxElement = getByTestId(`navigation-link:Inbox`);
-        const allMailElement = getByTestId(`navigation-link:All mail`);
-        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
-        const labelElement = getByTestId(`navigation-link:${label.Name}`);
+        const inboxElement = getByTestId(`navigation-link:inbox`);
+        const allMailElement = getByTestId(`navigation-link:all-mail`);
+        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
+        const labelElement = getByTestId(`navigation-link:${label.ID}`);
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         const allMailLocationAside = allMailElement.querySelector('.navigation-counter-item');
@@ -176,7 +176,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
+        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
 
         const history = getHistory();
 
@@ -194,7 +194,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
+        const folderElement = getByTestId(`navigation-link:${folder.ID}`);
 
         // Click on the label to be redirected in it
         act(() => {
@@ -232,7 +232,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const inboxElement = getByTestId('navigation-link:Inbox');
+        const inboxElement = getByTestId('navigation-link:inbox');
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessages.Unread}`);
@@ -286,10 +286,10 @@ describe('MailSidebar', () => {
             const Folders = getByTitle('Folders');
             const Labels = getByTitle('Labels');
 
-            const Inbox = getByTestId('navigation-link:Inbox');
-            const Drafts = getByTestId('navigation-link:Drafts');
-            const Folder = getByTestId(`navigation-link:${folder.Name}`);
-            const Label = getByTestId(`navigation-link:${label.Name}`);
+            const Inbox = getByTestId('navigation-link:inbox');
+            const Drafts = getByTestId('navigation-link:drafts');
+            const Folder = getByTestId(`navigation-link:${folder.ID}`);
+            const Label = getByTestId(`navigation-link:${label.ID}`);
 
             const down = () => fireEvent.keyDown(sidebar, { key: 'ArrowDown' });
             const up = () => fireEvent.keyDown(sidebar, { key: 'ArrowUp' });
