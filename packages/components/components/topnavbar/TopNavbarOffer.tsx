@@ -52,7 +52,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
         // No welcome modal in account
         if (
             loading ||
-            !offerConfig.autoPopUp ||
+            typeof offerConfig.autoPopUp === 'undefined' ||
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
             // Only hide the autopopup during the welcome flow, ignore if other modals may be open
