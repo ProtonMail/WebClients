@@ -22,7 +22,7 @@ const offerConfigAutopopup: OfferConfig = {
     layout: () => <div>{OFFER_CONTENT}</div>,
     ID: 'test-offer-2022' as OfferConfig['ID'],
     canBeDisabled: true,
-    autoPopUp: true,
+    autoPopUp: 'one-time',
 };
 
 jest.mock('./hooks/useOfferConfig', function () {
