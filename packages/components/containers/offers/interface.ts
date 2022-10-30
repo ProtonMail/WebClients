@@ -43,7 +43,7 @@ export type OperationsMap = Record<OfferId, Operation>;
 export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
-    autoPopUp?: boolean;
+    autoPopUp?: 'each-time' | 'one-time';
     canBeDisabled?: boolean;
     deals: Deal[];
     layout: JSXElementConstructor<OfferLayoutProps>;
