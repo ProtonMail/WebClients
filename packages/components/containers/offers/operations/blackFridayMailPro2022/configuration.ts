@@ -7,7 +7,7 @@ import Layout from './Layout';
 
 const config: OfferConfig = {
     ID: 'black-friday-mail-pro-2022',
-    autoPopUp: true,
+    autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFridayMailPro2022,
     deals: [
         {

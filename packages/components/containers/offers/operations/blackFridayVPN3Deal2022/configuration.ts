@@ -8,7 +8,7 @@ import Layout from './Layout';
 
 const config: OfferConfig = {
     ID: 'black-friday-vpn-3-deal-2022',
-    autoPopUp: true,
+    autoPopUp: 'each-time',
     featureCode: FeatureCode.OfferBlackFridayVPN3Deal2022,
     deals: [
         {
