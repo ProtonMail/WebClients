@@ -4,7 +4,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useErrorHandler, waitFor } from '../../_utils';
+import { reportError, useErrorHandler, waitFor } from '../../_utils';
 import { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
 import useLinksState, { Link } from '../useLinksState';
@@ -225,7 +225,7 @@ export function useLinksListingHelpers() {
                     (!decrypted && !fetchMeta?.isInProgress) // When link was added not by listing.
             )
             .map(({ encrypted }) => encrypted);
-        void decryptAndCacheLinks(abortSignal, shareId, linksToBeDecrypted);
+        decryptAndCacheLinks(abortSignal, shareId, linksToBeDecrypted).catch(reportError);
 
         return {
             links: links.map(({ decrypted }) => decrypted).filter(isTruthy),

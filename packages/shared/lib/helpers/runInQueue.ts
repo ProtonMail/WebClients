@@ -5,7 +5,7 @@ async function runInQueue<T>(functions: (() => Promise<T>)[], maxProcessing = 1)
     const results: T[] = [];
     let resultIndex = 0;
 
-    const runNext = (): Promise<any> => {
+    const runNext = async (): Promise<any> => {
         const index = resultIndex;
         const executor = functions[index];
 
