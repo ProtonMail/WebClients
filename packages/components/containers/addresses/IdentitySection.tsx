@@ -2,7 +2,8 @@ import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ADDRESS_STATUS, MAIL_APP_NAME, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { Info, Loader, Select } from '../../components';
@@ -22,14 +23,7 @@ const IdentitySection = () => {
     const [address, setAddress] = useState<Address>();
 
     const filtered = useMemo<Address[]>(() => {
-        return addresses
-            ? addresses.filter(
-                  ({ Status, Receive, Send }) =>
-                      Status === ADDRESS_STATUS.STATUS_ENABLED &&
-                      Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
-                      Send === SEND_ADDRESS.SEND_YES
-              )
-            : [];
+        return addresses ? addresses.filter(getIsAddressActive) : [];
     }, [addresses]);
 
     useEffect(() => {
