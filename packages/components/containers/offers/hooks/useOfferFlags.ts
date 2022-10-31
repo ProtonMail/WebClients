@@ -1,6 +1,6 @@
 import { useFeature, useSubscription } from '@proton/components/hooks';
-import { COUPON_CODES } from '@proton/shared/lib/constants';
 import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import { hasBlackFridayDiscount } from '@proton/shared/lib/helpers/subscription';
 
 import { FeatureCode } from '../../features';
 import { OfferConfig, OfferGlobalFeatureCodeValue, OfferUserFeatureCodeValue } from '../interface';
@@ -19,10 +19,7 @@ const useOfferFlags = (config: OfferConfig) => {
     } = useFeature<OfferUserFeatureCodeValue>(config.featureCode);
 
     const userFlagValue = userFlag?.Value || Default;
-
-    const hasSubscribedToBFOffer = [COUPON_CODES.MAIL_BLACK_FRIDAY_2022, COUPON_CODES.VPN_BLACK_FRIDAY_2022].includes(
-        subscription?.CouponCode as COUPON_CODES
-    );
+    const hasSubscribedToBFOffer = hasBlackFridayDiscount(subscription);
 
     return {
         loading: globalFlagLoading || userFlagLoading || subscriptionLoading,
