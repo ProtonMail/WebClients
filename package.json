@@ -21,6 +21,7 @@
         "@types/jest": "^27.5.2",
         "@types/react": "^17.0.52",
         "@types/react-dom": "^17.0.18",
+        "client-zip@2.3.0": "patch:client-zip@npm:2.3.0#.yarn/patches/client-zip-npm-2.3.0-366ca56ce9.patch",
         "memfs": "^3.4.13",
         "safe-buffer": "^5.2.1"
     },

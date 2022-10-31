@@ -1649,16 +1649,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:^7.18.3":
-  version: 7.20.6
-  resolution: "@babel/runtime-corejs3@npm:7.20.6"
-  dependencies:
-    core-js-pure: ^3.25.1
-    regenerator-runtime: ^0.13.11
-  checksum: d533d432216509426c4f9dad56db2fe453112b7d738433111944372fba4abd0b07bee3261f19a218530b435de46592121b2a6a57b98c0c7c3452d552ba009c3e
-  languageName: node
-  linkType: hard
-
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.20.7
   resolution: "@babel/runtime@npm:7.20.7"
@@ -5716,18 +5706,6 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
-  languageName: node
-  linkType: hard
-
-"@transcend-io/conflux@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "@transcend-io/conflux@npm:4.0.2"
-  dependencies:
-    "@babel/runtime-corejs3": ^7.18.3
-    jsbi: ^3.2.5
-    pako: ^1.0.11
-    web-streams-polyfill: ^3.2.1
-  checksum: a1a438deabcfb40afb29bcb9b16e94fd82a97f21dd58add5bbf0766cf237263c566bc9434963df2ac032a6c01e654def8496f41ef82a2e4074da24d40edbb70c
   languageName: node
   linkType: hard
 
@@ -11067,6 +11045,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"client-zip@npm:2.3.0":
+  version: 2.3.0
+  resolution: "client-zip@npm:2.3.0"
+  checksum: 3286ab695a5582d66819f716477ddc66ec1e88532acc4ad33276e090e9a141f097bd874852f430cce01b7975dc4bd6d11ed034f6d9daff38934518f123128fc1
+  languageName: node
+  linkType: hard
+
+"client-zip@patch:client-zip@npm:2.3.0#.yarn/patches/client-zip-npm-2.3.0-366ca56ce9.patch::locator=root%40workspace%3A.":
+  version: 2.3.0
+  resolution: "client-zip@patch:client-zip@npm%3A2.3.0#.yarn/patches/client-zip-npm-2.3.0-366ca56ce9.patch::version=2.3.0&hash=df8035&locator=root%40workspace%3A."
+  checksum: f907d52dea0ce9affe6707395d35be903af55cb0addd2c5c701788ae1a9ca74c1f82e4b6001a465c9561bb3f7b1c38d1712df5731ab65a29b05f50928a14f013
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^2.1.0":
   version: 2.1.0
   resolution: "cliui@npm:2.1.0"
@@ -11737,7 +11729,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js-pure@npm:^3.23.3, core-js-pure@npm:^3.25.1":
+"core-js-pure@npm:^3.23.3":
   version: 3.26.1
   resolution: "core-js-pure@npm:3.26.1"
   checksum: d88c40e5e29e413c11d1ef991a8d5b6a63f00bd94707af0f649d3fc18b3524108b202f4ae75ce77620a1557d1ba340bc3362b4f25d590eccc37cf80fc75f7cd4
@@ -19423,13 +19415,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jsbi@npm:^3.2.5":
-  version: 3.2.5
-  resolution: "jsbi@npm:3.2.5"
-  checksum: 642d1bb139ad1c1e96c4907eb159565e980a0d168487626b493d0d0b7b341da0e43001089d3b21703fe17b18a7a6c0f42c92026f71d54471ed0a0d1b3015ec0f
-  languageName: node
-  linkType: hard
-
 "jsbi@npm:^4.3.0":
   version: 4.3.0
   resolution: "jsbi@npm:4.3.0"
@@ -23444,7 +23429,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pako@npm:^1.0.11, pako@npm:~1.0.2, pako@npm:~1.0.5":
+"pako@npm:~1.0.2, pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
   checksum: 1be2bfa1f807608c7538afa15d6f25baa523c30ec870a3228a89579e474a4d992f4293859524e46d5d87fd30fa17c5edf34dbef0671251d9749820b488660b16
@@ -25037,13 +25022,13 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
-    "@transcend-io/conflux": ^4.0.2
     "@types/mime-types": ^2.1.1
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
     "@types/react-window": ^1.8.5
     babel-plugin-transform-class-properties: ^6.24.1
     babel-plugin-transform-require-context: ^0.1.1
+    client-zip: 2.3.0
     cross-env: ^7.0.3
     cross-var: ^1.1.0
     ejs-webpack-loader: ^2.2.2
