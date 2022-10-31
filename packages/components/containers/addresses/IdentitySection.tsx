@@ -1,11 +1,12 @@
-import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ADDRESS_STATUS, MAIL_APP_NAME, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Info, Loader, Select } from '../../components';
+import { Info, Loader, Option, SelectTwo } from '../../components';
 import { useAddresses, useMailSettings, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
@@ -19,36 +20,23 @@ const IdentitySection = () => {
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
 
-    const [address, setAddress] = useState<Address>();
+    const [addressID, setAddressID] = useState<string>();
 
-    const filtered = useMemo<Address[]>(() => {
-        return addresses
-            ? addresses.filter(
-                  ({ Status, Receive, Send }) =>
-                      Status === ADDRESS_STATUS.STATUS_ENABLED &&
-                      Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
-                      Send === SEND_ADDRESS.SEND_YES
-              )
-            : [];
+    const filteredAddresses = useMemo<Address[]>(() => {
+        return addresses?.filter(getIsAddressActive) || [];
     }, [addresses]);
 
-    useEffect(() => {
-        if (!address && filtered.length) {
-            setAddress(filtered[0]);
-        }
-    }, [address, filtered]);
+    const selectedAddress = filteredAddresses.find((address) => address.ID === addressID) || filteredAddresses[0];
 
-    if (!loading && !filtered.length) {
+    useEffect(() => {
+        if (!addressID && filteredAddresses.length) {
+            setAddressID(filteredAddresses[0].ID);
+        }
+    }, [addressID, filteredAddresses]);
+
+    if (!loading && !filteredAddresses.length) {
         return <SettingsParagraph>{c('Info').t`No addresses exist`}</SettingsParagraph>;
     }
-
-    const options = filtered.map(({ Email: text }, index) => ({ text, value: index }));
-
-    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
-        if (filtered) {
-            setAddress(filtered[+target.value]);
-        }
-    };
 
     return (
         <SettingsSectionWide>
@@ -63,16 +51,22 @@ const IdentitySection = () => {
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="on-mobile-pb0 flex flex-row flex-nowrap">
-                            <Select
+                            <SelectTwo<Address>
                                 id="addressSelector"
-                                options={options}
-                                onChange={handleChange}
+                                onValue={(address) => {
+                                    setAddressID(address.ID);
+                                }}
+                                value={selectedAddress}
                                 data-testid="settings:identity-section:address"
-                            />
+                            >
+                                {filteredAddresses.map((address) => (
+                                    <Option key={address.ID} value={address} title={address.Email} />
+                                ))}
+                            </SelectTwo>
                         </SettingsLayoutRight>
                     </SettingsLayout>
 
-                    {address && <EditAddressesSection address={address} />}
+                    {selectedAddress && <EditAddressesSection address={selectedAddress} />}
 
                     <SettingsLayout>
                         <SettingsLayoutLeft>
