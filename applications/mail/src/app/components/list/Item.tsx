@@ -134,7 +134,9 @@ const Item = ({
                 onDragEnd={onDragEnd}
                 className={classnames([
                     'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container',
-                    columnLayout ? 'item-container' : 'item-container-row flex-align-items-center',
+                    columnLayout
+                        ? 'item-container item-container-column'
+                        : 'item-container-row flex-align-items-center',
                     isSelected && 'item-is-selected',
                     !unread && 'read',
                     unread && 'unread',
