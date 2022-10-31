@@ -9,9 +9,10 @@ import {
     useRef,
 } from 'react';
 
+import { ButtonLike } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
-import ButtonLike from './ButtonLike';
 
 import './FileButton.scss';
 

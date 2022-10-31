@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button, ButtonLike } from '@proton/atoms';
 import { useAuthentication } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -22,7 +23,7 @@ import { Member } from '@proton/shared/lib/interfaces/Member';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { AlertModal, AlertModalProps, Button, ButtonLike, LearnMore } from '../../components';
+import { AlertModal, AlertModalProps, LearnMore } from '../../components';
 import { AuthModal } from '../password';
 
 export const validateMemberLogin = (

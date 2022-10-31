@@ -2,10 +2,10 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
 import {
-    Button,
     EmojiScale,
     EmojiScaleProps,
     ModalTwo as Modal,

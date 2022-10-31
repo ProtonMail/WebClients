@@ -2,7 +2,8 @@ import { MouseEvent, MutableRefObject, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Label, Tooltip, classnames, generateUID } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Label, Tooltip, classnames, generateUID } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import { MessageSendInfo } from '../../../hooks/useSendInfo';

@@ -1,10 +1,9 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
-import * as React from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     Checkbox,
     FeatureCode,
     Icon,

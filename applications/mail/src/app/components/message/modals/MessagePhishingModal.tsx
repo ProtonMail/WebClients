@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { AlertModal, Button, ErrorButton, ModalProps, useApi, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, ErrorButton, ModalProps, useApi, useNotifications } from '@proton/components';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

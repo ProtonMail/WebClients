@@ -2,11 +2,11 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import {
-    Button,
     Checkbox,
     Form,
     ModalProps,

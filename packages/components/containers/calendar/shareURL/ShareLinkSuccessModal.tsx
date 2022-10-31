@@ -2,9 +2,10 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 
-import { BasicModal, Button } from '../../../components';
+import { BasicModal } from '../../../components';
 
 interface Props {
     link: string;

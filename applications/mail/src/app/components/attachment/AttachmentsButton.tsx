@@ -3,7 +3,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, ButtonLikeProps, Icon, classnames } from '@proton/components';
+import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
+import { Icon, classnames } from '@proton/components';
 
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;

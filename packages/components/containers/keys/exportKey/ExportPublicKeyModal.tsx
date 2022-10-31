@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
 
 import {
-    Button,
     Form,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

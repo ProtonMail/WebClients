@@ -3,11 +3,11 @@ import { useEffect, useMemo, useRef } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import {
     Alert,
     AppLink,
     Badge,
-    ButtonLike,
     CalendarInviteButtons,
     FeatureCode,
     Icon,

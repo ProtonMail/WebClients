@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
-import { AlertModal, Button, ModalProps, useModalState } from '../../../components';
+import { AlertModal, ModalProps, useModalState } from '../../../components';
 import { useEventManager, useLoading, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 

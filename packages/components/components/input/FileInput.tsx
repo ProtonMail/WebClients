@@ -1,9 +1,9 @@
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactNode, Ref, forwardRef, useRef } from 'react';
 
+import { ButtonLike, ButtonLikeShape } from '@proton/atoms';
 import { ThemeColorUnion } from '@proton/colors';
 
 import { useCombinedRefs } from '../../hooks';
-import { ButtonLike, Shape } from '../button';
 
 export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     children: ReactNode;
@@ -11,7 +11,7 @@ export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputEl
     className?: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     disabled?: boolean;
-    shape?: Shape;
+    shape?: ButtonLikeShape;
     color?: ThemeColorUnion;
     loading?: boolean;
 }

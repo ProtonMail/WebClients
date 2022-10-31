@@ -2,7 +2,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, Icon, MainLogo, Unauthenticated, classnames } from '@proton/components';
+import { ButtonLike } from '@proton/atoms';
+import { Icon, MainLogo, Unauthenticated, classnames } from '@proton/components';
 import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 

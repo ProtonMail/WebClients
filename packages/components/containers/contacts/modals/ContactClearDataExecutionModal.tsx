@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
 import { Key } from '@proton/shared/lib/interfaces';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import {
     Alert,
-    Button,
     DynamicProgress,
     ModalProps,
     ModalTwo,

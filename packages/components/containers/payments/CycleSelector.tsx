@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { Cycle } from '@proton/shared/lib/interfaces';
 
-import { Button, ButtonGroup, Option, SelectTwo } from '../../components';
+import { ButtonGroup, Option, SelectTwo } from '../../components';
 import Select, { Props as SelectProps } from '../../components/select/Select';
 import { classnames } from '../../helpers';
 

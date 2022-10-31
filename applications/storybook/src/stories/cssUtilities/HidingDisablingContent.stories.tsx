@@ -1,4 +1,5 @@
-import { Button, Icon } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './HidingDisablingContent.mdx';

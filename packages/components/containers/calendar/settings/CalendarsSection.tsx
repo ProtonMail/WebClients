@@ -2,12 +2,12 @@ import { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { ButtonLike, Card } from '@proton/atoms';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, ButtonLike, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
+import { Alert, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
 import { SettingsSection } from '../../account';
 import CalendarsTable from './CalendarsTable';
 

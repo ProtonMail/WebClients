@@ -2,6 +2,7 @@ import { MutableRefObject, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
 import {
@@ -10,7 +11,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Alert, Block, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useMembers, useModals, useNotifications, useOrganizationKey, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';

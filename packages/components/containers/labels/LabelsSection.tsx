@@ -3,11 +3,12 @@ import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { orderLabels } from '@proton/shared/lib/api/labels';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { Button, Loader, useDebounceInput, useModalState } from '../../components';
+import { Loader, useDebounceInput, useModalState } from '../../components';
 import { useApi, useEventManager, useLabels, useLoading, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
 import LabelSortableList from './LabelSortableList';

@@ -2,12 +2,13 @@ import { ComponentType, Dispatch, ReactNode, SetStateAction, useRef } from 'reac
 
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import removeItem from '@proton/utils/removeIndex';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { Button, ButtonProps, Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
+import { Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 

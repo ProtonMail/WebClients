@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms';
+import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { APP_NAMES, DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -13,7 +13,6 @@ import { Member } from '@proton/shared/lib/interfaces';
 import {
     Badge,
     Block,
-    Button,
     Info,
     SearchInput,
     Table,

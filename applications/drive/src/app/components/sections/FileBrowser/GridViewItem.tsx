@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Checkbox, FileNameDisplay, Icon, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Checkbox, FileNameDisplay, Icon, classnames } from '@proton/components';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';

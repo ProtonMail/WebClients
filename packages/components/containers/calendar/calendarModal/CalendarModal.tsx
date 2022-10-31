@@ -2,6 +2,7 @@ import { ChangeEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
@@ -12,7 +13,6 @@ import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/s
 
 import { FeatureCode } from '../..';
 import {
-    Button,
     ColorPicker,
     Form,
     InputFieldTwo,

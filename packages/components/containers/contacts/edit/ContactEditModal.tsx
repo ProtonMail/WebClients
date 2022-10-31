@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     addVCardProperty,
     getSortedProperties,
@@ -18,7 +19,7 @@ import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/conta
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useContactEmails, useEventManager, useHandler, useLoading, useNotifications } from '../../../hooks';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';

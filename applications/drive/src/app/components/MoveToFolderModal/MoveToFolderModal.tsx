@@ -2,8 +2,8 @@ import React, { ReactNode, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     Icon,
     InnerModal,
     ModalTwo,

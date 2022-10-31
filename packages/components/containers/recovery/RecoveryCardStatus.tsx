@@ -1,4 +1,6 @@
-import { ButtonLike, Icon, SettingsLink } from '../../components';
+import { ButtonLike } from '@proton/atoms';
+
+import { Icon, SettingsLink } from '../../components';
 import RecoveryStatusIcon from './RecoveryStatusIcon';
 import RecoveryStatusText from './RecoveryStatusText';
 

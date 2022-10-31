@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { PushNotification } from 'push.js';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Status, create, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
 
-import { Badge, Button, Field } from '../../components';
+import { Badge, Field } from '../../components';
 
 const testDefaultNotification = () => {
     return create(c('Info').t`You have a new email`, {

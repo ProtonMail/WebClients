@@ -1,9 +1,9 @@
-import * as React from 'react';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Loader, Tooltip, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Loader, Tooltip, classnames } from '@proton/components';
 
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';

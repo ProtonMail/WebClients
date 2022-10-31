@@ -2,6 +2,7 @@ import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
@@ -25,7 +26,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
-import { BasicModal, Button, onlyDragFiles } from '../../../components';
+import { BasicModal, onlyDragFiles } from '../../../components';
 import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 import AttachingModalContent from './AttachingModalContent';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { BasicModal, Button } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { BasicModal } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';

@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -9,7 +10,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import {
     Alert,
     Block,
-    Button,
     ButtonGroup,
     Pagination,
     Table,

@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

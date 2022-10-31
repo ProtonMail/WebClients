@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 
 interface Props {
     onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

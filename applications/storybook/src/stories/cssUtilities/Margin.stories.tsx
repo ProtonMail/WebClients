@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Button, ButtonGroup, Checkbox, Label, Option, SelectTwo } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { ButtonGroup, Checkbox, Label, Option, SelectTwo } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Margin.mdx';

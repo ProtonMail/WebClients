@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     FeatureCode,
     ModalProps,
     ModalTwo,

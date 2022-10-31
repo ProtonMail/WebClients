@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '../../components';
+import { Button } from '@proton/atoms';
+
 import Icon from '../../components/icon/Icon';
 import { classnames } from '../../helpers';
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import {
     updateOrganizationKeysLegacy,
@@ -21,7 +22,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

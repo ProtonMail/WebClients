@@ -1,14 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import {
-    Button,
-    Form,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    classnames,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, classnames } from '@proton/components';
 
 interface Props {
     mapWarnings: { [key: string]: string[] };

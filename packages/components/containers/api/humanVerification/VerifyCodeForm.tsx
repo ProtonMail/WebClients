@@ -2,11 +2,12 @@ import { KeyboardEvent, ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import noop from '@proton/utils/noop';
 
-import { Button, InputFieldTwo, useFormErrors } from '../../../components';
+import { InputFieldTwo, useFormErrors } from '../../../components';
 import { useLoading } from '../../../hooks';
 import Text from './Text';
 import { getFormattedCode } from './helper';

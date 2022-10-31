@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InputFieldTwo, RequestNewCodeModal, useFormErrors, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { InputFieldTwo, RequestNewCodeModal, useFormErrors, useLoading } from '@proton/components';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';

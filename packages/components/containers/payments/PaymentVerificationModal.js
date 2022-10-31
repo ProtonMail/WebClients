@@ -3,11 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import { Button, DoNotWindowOpenAlertError, FormModal, Loader, PrimaryButton } from '../../components';
+import { DoNotWindowOpenAlertError, FormModal, Loader, PrimaryButton } from '../../components';
 import { useNotifications } from '../../hooks';
 import PaymentVerificationImage from './PaymentVerificationImage';
 import { toParams } from './paymentTokenToParams';

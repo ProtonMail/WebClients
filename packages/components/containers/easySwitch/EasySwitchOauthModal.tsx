@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     createImport,
@@ -49,7 +50,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { Button, FormModal, PrimaryButton, useSettingsLink } from '../../components';
+import { FormModal, PrimaryButton, useSettingsLink } from '../../components';
 import {
     useApi,
     useCalendars,

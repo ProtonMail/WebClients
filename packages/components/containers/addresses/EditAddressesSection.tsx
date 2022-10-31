@@ -2,10 +2,11 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Button, Editor, EditorActions, InputTwo } from '../../components';
+import { Editor, EditorActions, InputTwo } from '../../components';
 import { useApi, useEventManager, useHotkeys, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

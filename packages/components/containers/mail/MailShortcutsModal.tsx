@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 
 import {
     Alert,
-    Button,
     Field,
     Label,
     ModalProps,

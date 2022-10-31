@@ -2,12 +2,11 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Button, Card } from '@proton/atoms';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Organization } from '@proton/shared/lib/interfaces';
 
 import {
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

@@ -2,10 +2,11 @@ import { ReactNode, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { ButtonProps } from '@proton/atoms';
 import { useModals, useNotifications } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonProps, FileInput, InlineLinkButton } from '../../../../components';
+import { FileInput, InlineLinkButton } from '../../../../components';
 import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';
 import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';

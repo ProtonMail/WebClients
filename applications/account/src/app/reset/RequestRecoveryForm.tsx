@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';

@@ -2,9 +2,9 @@ import { useDispatch } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     AlertModal,
-    Button,
     ErrorButton,
     Href,
     useAddresses,

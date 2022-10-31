@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { Button, Copy, Icon, Tooltip } from '../../../../components';
+import { Copy, Icon, Tooltip } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
 import { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';

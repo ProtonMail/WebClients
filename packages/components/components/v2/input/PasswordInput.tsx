@@ -2,7 +2,8 @@ import { Ref, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '../../button';
+import { Button } from '@proton/atoms';
+
 import Icon from '../../icon/Icon';
 import InputTwo, { InputTwoProps } from './Input';
 

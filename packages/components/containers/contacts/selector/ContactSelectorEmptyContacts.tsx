@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 import noop from '@proton/utils/noop';
 
-import { Button } from '../../../components';
 import { ContactEditProps } from '../edit/ContactEditModal';
 
 interface Props {

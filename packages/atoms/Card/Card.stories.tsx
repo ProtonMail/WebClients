@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Button, Checkbox } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Checkbox } from '@proton/components';
 
 import Card from './Card';
 import mdx from './Card.mdx';

@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     checkMemberAddressAvailability,
     createMember,
@@ -26,7 +27,6 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import clamp from '@proton/utils/clamp';
 
 import {
-    Button,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

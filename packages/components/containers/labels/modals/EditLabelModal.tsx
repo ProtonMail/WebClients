@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
 import { ACCENT_COLORS, LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -11,7 +12,6 @@ import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
-    Button,
     ModalProps,
     ModalTwo,
     ModalTwoContent,

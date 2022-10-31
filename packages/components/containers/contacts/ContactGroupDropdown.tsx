@@ -2,13 +2,12 @@ import { ChangeEvent, FormEvent, ReactNode, useEffect, useMemo, useState } from 
 
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { DropdownButton } from '../../components';
-import { Button } from '../../components/button';
-import { ButtonProps } from '../../components/button/Button';
 import Dropdown from '../../components/dropdown/Dropdown';
 import Icon from '../../components/icon/Icon';
 import Checkbox from '../../components/input/Checkbox';

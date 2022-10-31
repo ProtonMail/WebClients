@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/subscription';
 import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { getPlan, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
-import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
     useEventManager,

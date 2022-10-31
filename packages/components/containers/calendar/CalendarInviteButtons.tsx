@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 
-import { Button, ButtonGroup, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../components';
+import { ButtonGroup, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../components';
 import { useLoading } from '../../hooks';
 
 interface Props {

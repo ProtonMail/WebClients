@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
