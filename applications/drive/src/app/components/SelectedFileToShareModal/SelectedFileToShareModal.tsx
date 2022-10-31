@@ -13,7 +13,7 @@ import {
     useLoading,
 } from '@proton/components';
 
-import { DecryptedLink, useTree } from '../../store';
+import { DecryptedLink, useFolderTreeModals } from '../../store';
 import FolderTree from '../FolderTree/FolderTree';
 import ModalContentLoader from '../ModalContentLoader';
 import useOpenModal from '../useOpenModal';
@@ -26,7 +26,7 @@ interface Props {
 }
 
 const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
-    const { rootFolder, toggleExpand } = useTree(shareId, { rootExpanded: true });
+    const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useFolderTreeModals(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<DecryptedLink>();
@@ -49,12 +49,12 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
 
     let modalContents = {
         title: c('Action').t`Share item`,
-        content: rootFolder && (
+        content: rootItems && rootItems.length && (
             <>
                 <Alert className="mb1">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
                 <FolderTree
-                    treeItems={[rootFolder]}
-                    isLoaded={rootFolder.isLoaded}
+                    treeItems={rootItems}
+                    isLoaded={isTreeLoaded}
                     selectedItemId={selectedFile?.linkId}
                     onSelect={onSelect}
                     toggleExpand={toggleExpand}
@@ -73,7 +73,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
         ) as ReactNode,
     };
 
-    if (rootFolder && rootFolder.isLoaded && rootFolder.children.length === 0) {
+    if (rootItems && isTreeLoaded && rootItems.length === 0) {
         modalContents = {
             content: <HasNoFilesToShare />,
             title: '',
@@ -94,7 +94,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
             as="form"
         >
             <ModalTwoHeader title={modalContents.title} closeButtonProps={{ disabled: loading }} />
-            {!rootFolder || !rootFolder.isLoaded ? (
+            {!rootItems.length || !isTreeLoaded ? (
                 <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             ) : (
                 <>
