@@ -10,6 +10,7 @@ import {
     useFetchOffer,
 } from '@proton/components/containers/offers';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
@@ -24,7 +25,7 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
     const [user] = useUser();
     const [open, loading] = useSubscriptionModal();
     const [isOfferOpen, setIsOfferOpen] = useState(true);
-    const [currency, setCurrency] = useState<Currency>('CHF');
+    const [currency, setCurrency] = useState<Currency>(user.Currency || DEFAULT_CURRENCY);
     const [type, setType] = useState<SubscribeType | undefined>(undefined);
     const onceCloseRef = useRef(false);
 
@@ -75,7 +76,7 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                 offer={offer}
                 offerConfig={offerConfig}
                 modalProps={{ open: isOfferOpen, fullscreen }}
-                onSelectDeal={(_, deal) => {
+                onSelectDeal={(_, deal, currency) => {
                     const handleNotify = (type: SubscribeType) => {
                         if (onceCloseRef.current) {
                             return;
@@ -106,6 +107,7 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                         planIDs: { [deal.planName]: 1 },
                         cycle: deal.cycle,
                         coupon: deal.couponCode,
+                        currency,
                         disableThanksStep: true,
                         disableCycleSelector: true,
                         onSuccess: handleSuccess,
