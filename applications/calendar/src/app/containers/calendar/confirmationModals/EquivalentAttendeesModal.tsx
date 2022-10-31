@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Alert, BasicModal, Button } from '@proton/components';
+import { Button } from '@proton/atoms/Button';
+import { Alert, BasicModal } from '@proton/components';
 
 interface Props {
     onClose: () => void;

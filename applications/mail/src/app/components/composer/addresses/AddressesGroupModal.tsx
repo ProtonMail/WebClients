@@ -2,8 +2,8 @@ import { ChangeEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     Checkbox,
     Form,
     Label,

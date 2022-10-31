@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { AlertModal, Button, ErrorButton, ModalProps } from '../../../components';
+import { AlertModal, ErrorButton, ModalProps } from '../../../components';
 
 interface Props extends ModalProps {
     label: Label;

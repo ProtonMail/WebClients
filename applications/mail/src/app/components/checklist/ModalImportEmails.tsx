@@ -1,13 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    ButtonLike,
-    DialogModal,
-    InnerModal,
-    ModalCloseButton,
-    ModalPropsInjection,
-    SettingsLink,
-} from '@proton/components';
+import { ButtonLike } from '@proton/atoms';
+import { DialogModal, InnerModal, ModalCloseButton, ModalPropsInjection, SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 

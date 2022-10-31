@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
     Alert,
-    Button,
     ConfirmModal,
     Pagination,
     Table,

@@ -2,10 +2,11 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
-import { AlertModal, Button, ModalProps } from '../../components';
+import { AlertModal, ModalProps } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import { PaymentTokenResult } from './interface';
 import { process } from './paymentTokenHelper';

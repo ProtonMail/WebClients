@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 
-import { BasicModal, Button, Form, InputFieldTwo } from '../../../components';
+import { BasicModal, Form, InputFieldTwo } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 
 interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'> {

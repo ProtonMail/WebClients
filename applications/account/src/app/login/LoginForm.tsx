@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Button, Card } from '@proton/atoms';
 import {
-    Button,
     Challenge,
     ChallengeError,
     ChallengeRef,

@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { Button, Icon, ModalProps, ModalTwo } from '../../../components';
+import { Icon, ModalProps, ModalTwo } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';

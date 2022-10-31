@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { AlertModal, AlertModalProps, Button, Href } from '../../../components';
+import { AlertModal, AlertModalProps, Href } from '../../../components';
 
 interface Props extends Omit<AlertModalProps, 'children' | 'title' | 'buttons'> {
     onConfirm: () => void;

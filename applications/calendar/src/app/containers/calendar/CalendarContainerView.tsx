@@ -3,8 +3,8 @@ import { ReactNode, Ref, useCallback, useEffect, useMemo, useState } from 'react
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     FeatureCode,
     FloatingButton,
     Icon,

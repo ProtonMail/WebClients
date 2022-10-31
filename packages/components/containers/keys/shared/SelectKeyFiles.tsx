@@ -2,10 +2,10 @@ import { ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { ButtonLikeShape } from '@proton/atoms';
 import { ThemeColorUnion } from '@proton/colors';
 import { ArmoredKeyWithInfo, parseKeyFiles } from '@proton/shared/lib/keys';
 
-import { Shape } from '../../../components/button';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
 
@@ -16,7 +16,7 @@ interface Props {
     className?: string;
     children?: ReactNode;
     disabled?: boolean;
-    shape?: Shape;
+    shape?: ButtonLikeShape;
     color?: ThemeColorUnion;
 }
 

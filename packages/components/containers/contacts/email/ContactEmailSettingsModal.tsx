@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
 import {
@@ -31,7 +32,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
     Alert,
-    Button,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,

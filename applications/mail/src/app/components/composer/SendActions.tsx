@@ -2,7 +2,7 @@ import { ReactNode, Ref, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import Button from '@proton/components/components/button/Button';
+import { Button } from '@proton/atoms';
 import ButtonGroup, { Color, Shape } from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';

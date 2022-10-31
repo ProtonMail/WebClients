@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     ButtonGroup,
     DropdownMenu,
     DropdownMenuButton,

@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Card } from '@proton/atoms';
-import { ButtonLike, SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
+import { ButtonLike, Card } from '@proton/atoms';
+import { SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
 import { PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
 const VpnUpgradeSection = () => {

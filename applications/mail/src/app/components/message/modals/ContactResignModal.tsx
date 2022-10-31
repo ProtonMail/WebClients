@@ -3,8 +3,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     Form,
     Loader,
     ModalProps,

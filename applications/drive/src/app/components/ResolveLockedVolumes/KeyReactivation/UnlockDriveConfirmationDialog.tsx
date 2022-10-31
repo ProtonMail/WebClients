@@ -2,15 +2,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Button,
-    ButtonLike,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    SettingsLink,
-} from '@proton/components';
+import { Button, ButtonLike } from '@proton/atoms';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

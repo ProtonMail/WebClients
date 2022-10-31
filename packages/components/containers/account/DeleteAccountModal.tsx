@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     Checkbox,
     ErrorButton,
     Form,

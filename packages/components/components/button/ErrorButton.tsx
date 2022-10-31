@@ -1,6 +1,6 @@
 import { Ref, forwardRef } from 'react';
 
-import Button, { ButtonProps } from './Button';
+import { Button, ButtonProps } from '@proton/atoms';
 
 export type ErrorButtonProps = Omit<ButtonProps, 'color'>;
 

@@ -2,11 +2,11 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import {
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

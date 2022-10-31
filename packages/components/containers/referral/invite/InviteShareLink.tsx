@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Icon, TwitterButton, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, TwitterButton, useNotifications } from '@proton/components';
 import { useUserSettings } from '@proton/components/hooks';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

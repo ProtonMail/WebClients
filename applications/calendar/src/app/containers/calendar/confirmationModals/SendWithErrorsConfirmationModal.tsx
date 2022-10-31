@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { BasicModal, Button } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { BasicModal } from '@proton/components';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';

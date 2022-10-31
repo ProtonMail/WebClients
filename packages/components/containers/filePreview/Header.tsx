@@ -2,7 +2,9 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, FileIcon, FileNameDisplay, Icon } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { FileIcon, FileNameDisplay, Icon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,

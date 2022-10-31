@@ -1,14 +1,7 @@
 import { addDays } from 'date-fns';
 
-import {
-    ButtonLike,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    SimpleDropdown,
-    useConfig,
-    useForceRefresh,
-} from '@proton/components';
+import { ButtonLike } from '@proton/atoms';
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';

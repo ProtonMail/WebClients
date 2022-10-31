@@ -2,13 +2,13 @@ import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react'
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 
 import {
-    Button,
     ErrorZone,
     Field,
     FileInput,

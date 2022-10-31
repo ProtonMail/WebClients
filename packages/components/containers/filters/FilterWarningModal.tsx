@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
+
 import { AlertModal } from '../../components/alertModal';
-import { Button } from '../../components/button';
 
 interface Props {
     open: boolean;

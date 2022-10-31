@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
+
 import { classnames } from '../../../helpers';
 import { Badge } from '../../badge';
-import { Button } from '../../button';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
 import { FONT_FACES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';

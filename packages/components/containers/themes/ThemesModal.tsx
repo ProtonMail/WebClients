@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateThemeType } from '@proton/shared/lib/api/settings';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
@@ -7,7 +8,7 @@ import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { ThemeCards, useTheme } from '.';
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useSideApp } from '../../hooks';
 
 const ThemesModal = (props: ModalProps) => {

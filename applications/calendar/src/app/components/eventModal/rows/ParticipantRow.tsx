@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Icon, Tooltip, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, classnames } from '@proton/components';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';

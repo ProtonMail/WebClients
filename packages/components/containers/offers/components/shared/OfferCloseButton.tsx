@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Icon, Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip } from '@proton/components/components';
 
 interface Props {
     onClose?: () => void;

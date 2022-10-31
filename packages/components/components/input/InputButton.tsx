@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+import { ButtonLike, ButtonLikeProps as TButtonLikeProps } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import ButtonLike, { ButtonLikeProps as TButtonLikeProps } from '../button/ButtonLike';
 
 export interface InputButtonProps extends ComponentPropsWithoutRef<'input'> {
     id?: string;

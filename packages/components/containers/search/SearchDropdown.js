@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import { Button, Dropdown, DropdownButton, Icon, PrimaryButton, SearchInput, usePopperAnchor } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { Dropdown, DropdownButton, Icon, PrimaryButton, SearchInput, usePopperAnchor } from '../../components';
 import { generateUID } from '../../helpers';
 
 const SearchDropdown = ({

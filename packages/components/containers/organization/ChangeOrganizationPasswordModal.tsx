@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { PrivateKeyReference } from '@proton/crypto';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -10,7 +11,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

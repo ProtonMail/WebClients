@@ -1,11 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 
 import {
     Alert,
-    Button,
     Form,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

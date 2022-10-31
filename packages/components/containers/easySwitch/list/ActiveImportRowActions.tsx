@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { cancelImport, createToken, resumeImport, updateImport } from '@proton/shared/lib/api/easySwitch';
 import {
     AuthenticationMethod,
@@ -13,7 +14,7 @@ import {
     OAuthProps,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { Alert, Button, ConfirmModal, DropdownActions } from '../../../components';
+import { Alert, ConfirmModal, DropdownActions } from '../../../components';
 import {
     useAddresses,
     useApi,

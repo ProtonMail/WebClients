@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { ButtonLike, SettingsLink } from '../../components';
+import { SettingsLink } from '../../components';
 import { SettingsParagraph, SettingsSection } from '../account';
 import PmMeButton from './PmMeButton';
 

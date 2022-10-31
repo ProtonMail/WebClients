@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Alert, Button, FooterModal, HeaderModal, InnerModal } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Alert, FooterModal, HeaderModal, InnerModal } from '@proton/components';
 
 interface Props {
     modalTitleID: string;

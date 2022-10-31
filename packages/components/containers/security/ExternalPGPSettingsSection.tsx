@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { AlertModal, AlertModalProps, Button, Info, Toggle, useModalState } from '../../components';
+import { AlertModal, AlertModalProps, Info, Toggle, useModalState } from '../../components';
 import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

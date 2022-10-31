@@ -2,6 +2,7 @@ import { Ref, forwardRef, useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
     compareVCardPropertyByPref,
@@ -15,7 +16,7 @@ import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import move from '@proton/utils/move';
 
-import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
+import { Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import { ContactImageProps } from '../modals/ContactImageModal';
 import EncryptedIcon from '../view/EncryptedIcon';

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Button } from '../../../components';
 import Icon from '../../../components/icon/Icon';
 import Href from '../../../components/link/Href';
 import { classnames } from '../../../helpers';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Icon } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import LocationFieldDropdown from './LocationFieldDropdown';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, useModalState } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { useModalState } from '@proton/components/components';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 

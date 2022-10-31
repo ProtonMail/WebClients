@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
-import { Button, Info, Loader, Toggle } from '../../components';
+import { Info, Loader, Toggle } from '../../components';
 import useModalState from '../../components/modalTwo/useModalState';
 import { useSearchParamsEffect, useUser, useUserSettings } from '../../hooks';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';

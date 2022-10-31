@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { AlertModal, Button, useAddresses, useModalState } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, useAddresses, useModalState } from '@proton/components';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 

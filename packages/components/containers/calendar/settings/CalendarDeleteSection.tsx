@@ -3,7 +3,8 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Alert, AlertModal, Button, ErrorButton, useModalState } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Alert, AlertModal, ErrorButton, useModalState } from '@proton/components/components';
 import { SettingsParagraph } from '@proton/components/containers';
 import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
 import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
