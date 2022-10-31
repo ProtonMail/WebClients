@@ -97,9 +97,14 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
 
     useEffect(() => {
         const abortController = new AbortController();
-        void getShare(abortController.signal, activeFolder.shareId).then((share) => {
-            setRootShare(share);
-        });
+        getShare(abortController.signal, activeFolder.shareId)
+            .then((share) => {
+                setRootShare(share);
+            })
+            .catch(reportError);
+        return () => {
+            abortController.abort();
+        };
     }, [activeFolder.shareId]);
 
     if (breadcrumbs.length === 0) {
