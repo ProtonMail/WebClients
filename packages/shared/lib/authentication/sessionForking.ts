@@ -1,4 +1,6 @@
-import { pullForkSession, pushForkSession, setRefreshCookies } from '../api/auth';
+import noop from '@proton/utils/noop';
+
+import { pullForkSession, pushForkSession, revoke } from '../api/auth';
 import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getUser } from '../api/user';
 import { getAppHref, getClientID } from '../apps/helper';
@@ -10,7 +12,7 @@ import { Api, User as tsUser } from '../interfaces';
 import { FORK_TYPE } from './ForkInterface';
 import { getKey } from './cryptoHelper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
-import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
+import { PullForkResponse, PushForkResponse } from './interface';
 import { persistSession, resumeSession } from './persistedSessionHelper';
 import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
 import {
@@ -206,11 +208,15 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
     const url = new URL(previousUrl);
     const path = `${url.pathname}${url.search}${url.hash}`;
 
-    const { UID, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
+    const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
 
     try {
         // Resume and use old session if it exists
         const validatedSession = await resumeSession(api, LocalID);
+
+        // Revoke the discarded forked session
+        api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
+
         return {
             ...validatedSession,
             path,
@@ -233,11 +239,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         }
     }
 
-    const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>(
-        withUIDHeaders(UID, setRefreshCookies({ RefreshToken }))
-    );
-
-    const User = await api<{ User: tsUser }>(withAuthHeaders(UID, newAccessToken, getUser())).then(({ User }) => User);
+    const User = await api<{ User: tsUser }>(withAuthHeaders(UID, AccessToken, getUser())).then(({ User }) => User);
 
     const result = {
         User,
@@ -246,8 +248,8 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         keyPassword,
         persistent,
         trusted,
-        AccessToken: newAccessToken,
-        RefreshToken: newRefreshToken,
+        AccessToken,
+        RefreshToken,
     };
 
     await persistSession({ api, ...result });
