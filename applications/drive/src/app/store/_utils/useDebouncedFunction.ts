@@ -4,6 +4,8 @@ type CacheValue = {
     promise: Promise<any>;
     controller: AbortController;
     signals: (AbortSignal | undefined)[];
+    numberOfCallers: number;
+    error?: any;
 };
 
 export default function useDebouncedFunction() {
@@ -19,42 +21,54 @@ export default function useDebouncedFunction() {
     const debouncedFunction = <T>(
         callback: (signal: AbortSignal) => Promise<T>,
         args: object,
-        signal?: AbortSignal
+        originalSignal?: AbortSignal
     ): Promise<T> => {
         const key = `drivedebouncedfn_${JSON.stringify(args)}`;
         const cachedValue = cache.get(key);
 
-        // When signal is aborted, it can take a bit of time before the promise
-        // is removed from the cache. Therefore it is better to double check.
-        if (cachedValue && !cachedValue.controller.signal.aborted) {
-            cachedValue.signals.push(signal);
-            addAbortListener(cachedValue, signal);
-            return propagateAbortError(cachedValue.promise, signal);
-        }
-
-        const controller = new AbortController();
-        const promise = callback(controller.signal);
-
-        const value = {
-            promise,
-            controller,
-            signals: [signal],
-        };
-        cache.set(key, value);
-        addAbortListener(value, signal);
-
         const cleanup = () => {
             cache.delete(key);
         };
-        promise.then(cleanup).catch(cleanup);
-        return propagateAbortError(promise, signal);
+
+        // When signal is aborted, it can take a bit of time before the promise
+        // is removed from the cache. Therefore it is better to double check.
+        if (cachedValue && !cachedValue.controller.signal.aborted) {
+            cachedValue.signals.push(originalSignal);
+            cachedValue.numberOfCallers++;
+            addAbortListener(cachedValue, originalSignal);
+            return propagateErrors(cleanup, cachedValue, originalSignal);
+        }
+
+        // @ts-ignore: Missing promise is set on the next line.
+        const value: CacheValue = {
+            controller: new AbortController(),
+            signals: [originalSignal],
+            numberOfCallers: 1,
+        };
+
+        value.promise = callback(value.controller.signal)
+            // Ideally, we could just store the promise and return it everywhere
+            // as is--but that stores promise without any catch which is causing
+            // unhandled promises in console even though we handle them all.
+            // That's why we need to catch the error and add it to the cache
+            // instead. To make it work, it is crucial to not cleanup the cache
+            // before all promises were returned (because we need to propagate
+            // back the original error).
+            .catch((err) => {
+                value.error = err;
+            });
+
+        cache.set(key, value);
+        addAbortListener(value, originalSignal);
+
+        return propagateErrors(cleanup, value, originalSignal);
     };
 
     return debouncedFunction;
 }
 
-function addAbortListener(value: CacheValue, signal?: AbortSignal) {
-    if (!signal) {
+function addAbortListener(value: CacheValue, originalSignal?: AbortSignal) {
+    if (!originalSignal) {
         return;
     }
     const handleAbort = () => {
@@ -63,17 +77,29 @@ function addAbortListener(value: CacheValue, signal?: AbortSignal) {
             value.controller.abort();
         }
     };
-    signal.addEventListener('abort', handleAbort);
+    originalSignal.addEventListener('abort', handleAbort);
     value.promise.finally(() => {
-        signal.removeEventListener('abort', handleAbort);
+        originalSignal.removeEventListener('abort', handleAbort);
     });
 }
 
-function propagateAbortError<T>(promise: Promise<T>, signal?: AbortSignal): Promise<T> {
-    return promise.then((result: T) => {
+async function propagateErrors<T>(
+    cacheCleanup: () => void,
+    cachedValue: CacheValue,
+    originalSignal?: AbortSignal
+): Promise<any> {
+    return cachedValue.promise.then((result: T) => {
+        // When last caller is served, we can clean the cache.
+        cachedValue.numberOfCallers--;
+        if (cachedValue.numberOfCallers <= 0) {
+            cacheCleanup();
+        }
+        if (cachedValue.error) {
+            throw cachedValue.error;
+        }
         // The original signal is wrapped, so the check if aborted error
         // should be propagated needs to be done.
-        if (signal?.aborted) {
+        if (originalSignal?.aborted) {
             // Replace with throw signal.reason once supported by browsers.
             throw new DOMException('Aborted', 'AbortError');
         }

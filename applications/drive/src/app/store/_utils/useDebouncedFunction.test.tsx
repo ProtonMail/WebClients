@@ -72,4 +72,26 @@ describe('useDebouncedFunction', () => {
         await expect(call1).rejects.toThrowError('Aborted');
         await expect(call2).rejects.toThrowError('Aborted');
     });
+
+    it('should return original error', async () => {
+        const mock = jest.fn();
+        mock.mockImplementation(async () => Promise.reject(new Error('failed')));
+
+        const ac1 = new AbortController();
+        const call1 = debouncedFunction(mock, { test: 'test' }, ac1.signal);
+        const ac2 = new AbortController();
+        const call2 = debouncedFunction(mock, { test: 'test' }, ac2.signal);
+        await expect(call1).rejects.toThrowError('failed');
+        await expect(call2).rejects.toThrowError('failed');
+    });
+
+    it('should return original error when aborted', async () => {
+        const mock = jest.fn();
+        mock.mockImplementation(async () => Promise.reject(new Error('failed')));
+
+        const ac1 = new AbortController();
+        const call1 = debouncedFunction(mock, { test: 'test' }, ac1.signal);
+        ac1.abort();
+        await expect(call1).rejects.toThrowError('failed');
+    });
 });
