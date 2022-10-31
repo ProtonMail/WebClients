@@ -2,7 +2,7 @@ import { Ref } from 'react';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Kbd, Vr } from '@proton/atoms';
 import { Icon, useMailSettings } from '@proton/components';
 
 import { Breakpoints } from '../../models/utils';
@@ -39,7 +39,7 @@ const LabelsAndFolders = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="border-none">M</kbd>
+            <Kbd shortcut="M" />
         </>
     ) : (
         c('Title').t`Move to`
@@ -49,7 +49,7 @@ const LabelsAndFolders = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="border-none">L</kbd>
+            <Kbd shortcut="L" />
         </>
     ) : (
         c('Title').t`Label as`
