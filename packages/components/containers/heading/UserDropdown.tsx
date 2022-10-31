@@ -4,11 +4,10 @@ import { useLocation } from 'react-router';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms';
+import { Button } from '@proton/atoms';
+import { ButtonLike, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import {
-    Button,
-    ButtonLike,
     ConfirmSignOutModal,
     Copy,
     Dropdown,

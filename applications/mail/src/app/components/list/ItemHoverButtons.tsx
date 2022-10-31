@@ -2,7 +2,8 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Tooltip, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

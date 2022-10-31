@@ -1,24 +1,13 @@
 import { useState } from 'react';
 
-import {
-    Button,
-    ButtonLike,
-    Checkbox,
-    Icon,
-    RadioGroup,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-} from '@proton/components';
+import { Button, ButtonLike } from '@proton/atoms';
+import { Checkbox, Icon, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Button.mdx';
 
 export default {
     component: Button,
-    title: getTitle(__filename, false),
+    title: 'components/Button',
     parameters: {
         docs: {
             page: mdx,
@@ -177,7 +166,7 @@ export const Like = () => {
     return (
         <div>
             <div>
-                <ButtonLike as="a" shape="outline" color="norm" href="https://protonmail.com">
+                <ButtonLike as="a" shape="outline" color="norm" href="https://proton.me">
                     Link
                 </ButtonLike>
             </div>

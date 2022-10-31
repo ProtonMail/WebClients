@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, FileIcon, FileNameDisplay, Icon, TableRowBusy, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { FileIcon, FileNameDisplay, Icon, TableRowBusy, classnames } from '@proton/components';
 
 import { DecryptedLink } from '../../store';
 

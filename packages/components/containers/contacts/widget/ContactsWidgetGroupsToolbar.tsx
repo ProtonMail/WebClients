@@ -2,10 +2,11 @@ import { ChangeEvent } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { Button, Checkbox, Icon, Tooltip } from '../../../components';
+import { Checkbox, Icon, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 
 interface Props {

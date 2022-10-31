@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
     DEFAULT_ENCRYPTION_CONFIG,
@@ -24,7 +25,6 @@ import {
 import noop from '@proton/utils/noop';
 
 import {
-    Button,
     InputFieldTwo,
     ModalProps,
     ModalTwo,

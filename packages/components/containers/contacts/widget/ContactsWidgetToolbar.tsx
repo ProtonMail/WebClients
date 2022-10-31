@@ -2,10 +2,11 @@ import { ChangeEvent, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Button, Checkbox, Icon, Tooltip } from '../../../components';
+import { Checkbox, Icon, Tooltip } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useContactList from '../hooks/useContactList';

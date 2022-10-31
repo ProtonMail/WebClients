@@ -2,7 +2,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Alert, ButtonLike, Icon, Tooltip, useModalState } from '@proton/components/components';
+import { ButtonLike } from '@proton/atoms';
+import { Alert, Icon, Tooltip, useModalState } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { SettingsSection } from '@proton/components/containers';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';

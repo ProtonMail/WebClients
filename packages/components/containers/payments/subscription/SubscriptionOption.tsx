@@ -2,7 +2,9 @@ import { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Info } from '../../../components';
+import { Button } from '@proton/atoms';
+
+import { Icon, Info } from '../../../components';
 
 interface SubscriptionOptionProps {
     name: string;

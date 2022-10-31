@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { AlertModal, Button, ModalProps } from '../../../components';
+import { AlertModal, ModalProps } from '../../../components';
 import { useApi, useNotifications } from '../../../hooks';
 
 interface Props extends ModalProps {

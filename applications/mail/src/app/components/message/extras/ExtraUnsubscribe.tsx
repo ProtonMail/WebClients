@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import { Button, ButtonLike } from '@proton/atoms';
 import {
     AlertModal,
-    Button,
-    ButtonLike,
     FeatureCode,
     Field,
     Href,

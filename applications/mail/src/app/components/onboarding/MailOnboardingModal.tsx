@@ -1,12 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    Button,
-    OnboardingContent,
-    OnboardingModal,
-    OnboardingStep,
-    OnboardingStepRenderCallback,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingMailWelcome from '@proton/styles/assets/img/onboarding/mail-welcome.svg';
 

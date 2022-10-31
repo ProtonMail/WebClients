@@ -2,9 +2,10 @@ import { ReactNode, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { hasMailPlus } from '@proton/shared/lib/helpers/subscription';
 
-import { ButtonLike, SettingsLink } from '../../components';
+import { SettingsLink } from '../../components';
 import { useOrganization, useSubscription, useUser, useUserSettings } from '../../hooks';
 import { SettingsPageTitle } from '../account';
 import { SectionConfig } from '../layout';

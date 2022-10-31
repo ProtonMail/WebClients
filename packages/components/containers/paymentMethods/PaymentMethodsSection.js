@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Button, Loader } from '../../components';
+import { Loader } from '../../components';
 import { useConfig, useModals, usePaymentMethods, useSubscription } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';

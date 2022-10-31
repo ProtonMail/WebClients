@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { classnames } from '@proton/components/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -9,7 +10,7 @@ import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/sha
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 
-import { Button, ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
+import { ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
 import { useConfig, useNotifications, useUserSettings } from '../../hooks';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';

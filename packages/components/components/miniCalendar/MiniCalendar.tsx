@@ -4,10 +4,10 @@ import { addMonths, endOfMonth, isSameMonth, startOfMonth } from 'date-fns';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
 import { useElementRect } from '../../hooks';
-import { Button } from '../button';
 import { TodayIcon } from '../icon';
 import Icon from '../icon/Icon';
 import { Tooltip } from '../tooltip';

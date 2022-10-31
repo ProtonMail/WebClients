@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, useModalState } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { useModalState } from '../../components';
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 

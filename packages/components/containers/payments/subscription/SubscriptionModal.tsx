@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import {
     getShouldCalendarPreventSubscripitionChange,
@@ -20,7 +21,6 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
-    Button,
     Icon,
     ModalProps,
     ModalTwo,

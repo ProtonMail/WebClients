@@ -2,11 +2,11 @@ import { MouseEvent, Ref, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
-import Button, { ButtonProps } from './Button';
 
 interface Props extends ButtonProps {
     value: string;

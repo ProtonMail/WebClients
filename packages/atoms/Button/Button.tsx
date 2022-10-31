@@ -4,8 +4,8 @@ import ButtonLike, { ButtonLikeProps } from './ButtonLike';
 
 export interface ButtonProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {}
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
+const Button = (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
     return <ButtonLike type="button" ref={ref} {...props} as="button" />;
-});
+};
 
-export default Button;
+export default forwardRef<HTMLButtonElement, ButtonProps>(Button);

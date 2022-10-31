@@ -2,11 +2,12 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import { AutoReplyDuration, BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import { Button, Editor, EditorActions, Toggle } from '../../components';
+import { Editor, EditorActions, Toggle } from '../../components';
 import {
     useApi,
     useErrorHandler,

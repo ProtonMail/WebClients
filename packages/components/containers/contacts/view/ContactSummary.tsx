@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { Button, Icon, Tooltip } from '../../../components';
+import { Icon, Tooltip } from '../../../components';
 import { classnames } from '../../../helpers';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import ContactImageSummary from './ContactImageSummary';

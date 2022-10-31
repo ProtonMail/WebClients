@@ -1,11 +1,10 @@
 import { Fragment, MouseEvent, MutableRefObject, RefObject, useEffect, useRef, useState } from 'react';
-import * as React from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     AddressesAutocomplete,
-    Button,
     Icon,
     Tooltip,
     classnames,

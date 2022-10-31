@@ -2,13 +2,13 @@ import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import {
-    Button,
     Checkbox,
     Form,
     ModalProps,

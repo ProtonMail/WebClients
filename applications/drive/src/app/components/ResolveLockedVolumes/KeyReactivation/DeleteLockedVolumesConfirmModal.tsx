@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     Alert,
-    Button,
     Checkbox,
     ModalTwo,
     ModalTwoContent,

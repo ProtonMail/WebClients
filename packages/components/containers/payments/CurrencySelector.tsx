@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { Button, ButtonGroup, Option, Select, SelectTwo } from '../../components';
+import { ButtonGroup, Option, Select, SelectTwo } from '../../components';
 import { classnames } from '../../helpers';
 
 const addSymbol = (currency: Currency) => {

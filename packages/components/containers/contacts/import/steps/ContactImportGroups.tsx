@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -10,7 +11,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import {
     Alert,
-    Button,
     InputTwo,
     ModalTwoContent,
     ModalTwoFooter,

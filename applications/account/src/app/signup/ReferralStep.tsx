@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Loader, ReferralFeaturesList, ReferralHowItWorks, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Loader, ReferralFeaturesList, ReferralHowItWorks, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { PlanIDs } from '@proton/shared/lib/interfaces';

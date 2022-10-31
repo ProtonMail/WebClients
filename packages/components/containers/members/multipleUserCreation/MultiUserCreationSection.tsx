@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, useModalState } from '../../../components';
+import { Button } from '@proton/atoms';
+
+import { useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';

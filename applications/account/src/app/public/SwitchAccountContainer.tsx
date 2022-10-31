@@ -2,10 +2,9 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import {
     Alert,
-    Button,
     ConfirmSignOutModal,
     Icon,
     InlineLinkButton,

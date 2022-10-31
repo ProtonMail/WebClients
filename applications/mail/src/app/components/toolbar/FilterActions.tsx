@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
@@ -118,10 +118,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                         size="small"
                         shape="ghost"
                         aria-pressed={isActive}
-                        className={classnames([
-                            'text-sm my0 mx0-25',
-                            isActive && 'no-pointer-events bg-strong',
-                        ])}
+                        className={classnames(['text-sm my0 mx0-25', isActive && 'no-pointer-events bg-strong'])}
                         onClick={onClick}
                     >
                         {text}

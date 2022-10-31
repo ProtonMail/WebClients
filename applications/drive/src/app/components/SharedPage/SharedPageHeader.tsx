@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, NotificationType, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { NotificationType, useNotifications } from '@proton/components';
 
 import { DecryptedLink, useDownload } from '../../store';
 import {

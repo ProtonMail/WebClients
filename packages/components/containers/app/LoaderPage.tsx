@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getIsAuthorizedApp, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 
-import { Button, Icon, TextLoader, Tooltip } from '../../components';
+import { Icon, TextLoader, Tooltip } from '../../components';
 import { classnames } from '../../helpers';
 import { useConfig, useDocumentTitle } from '../../hooks';
 

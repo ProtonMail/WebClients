@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, Icon, TableCell } from '../../../../components';
+import { Button } from '@proton/atoms';
+
+import { Icon, TableCell } from '../../../../components';
 
 interface Props {
     disabledPrevious: boolean;

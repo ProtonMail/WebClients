@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';

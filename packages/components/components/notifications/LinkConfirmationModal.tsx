@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useApi, useEventManager } from '../../hooks';
-import { Button } from '../button';
 import { Form } from '../form';
 import { Checkbox } from '../input';
 import { Label } from '../label';

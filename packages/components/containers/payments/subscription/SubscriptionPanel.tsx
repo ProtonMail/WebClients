@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -18,7 +19,7 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Button, Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../components';
+import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../components';
 import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,

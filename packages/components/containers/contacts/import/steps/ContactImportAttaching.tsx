@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, DragEvent, FormEvent, SetStateAction, useState }
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     MAX_IMPORT_CONTACTS,
     MAX_IMPORT_CONTACTS_STRING,
@@ -21,7 +22,6 @@ import {
     Alert,
     AttachedFile,
     Bordered,
-    Button,
     Dropzone,
     FileInput,
     ModalTwoContent,

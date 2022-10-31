@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
-import { Button } from '../button';
 import ContentModal from './Content';
 import DialogModal from './Dialog';
 import FooterModal from './Footer';

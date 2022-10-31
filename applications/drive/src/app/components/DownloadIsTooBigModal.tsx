@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { BasicModal, Button, PrimaryButton } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { BasicModal, PrimaryButton } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 type Props = {

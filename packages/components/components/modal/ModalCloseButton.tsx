@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '../button';
+import { Button } from '@proton/atoms';
+
 import { Icon } from '../icon';
 
 interface ModalCloseButtonProps {

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '../../components';
+import { Button } from '@proton/atoms';
+
 import Icon from '../../components/icon/Icon';
 
 interface Props {

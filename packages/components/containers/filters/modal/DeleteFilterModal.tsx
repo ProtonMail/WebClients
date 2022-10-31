@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { AlertModal, Button, ModalProps } from '../../../components';
+import { Button } from '@proton/atoms';
+
+import { AlertModal, ModalProps } from '../../../components';
 
 interface Props extends ModalProps {
     filterName: string;

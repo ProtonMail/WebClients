@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';

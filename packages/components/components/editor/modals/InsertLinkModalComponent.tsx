@@ -2,13 +2,13 @@ import { ChangeEvent, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import { PrimaryButton } from '../../button';
-import { Button } from '../../button';
 import Field from '../../container/Field';
 import Row from '../../container/Row';
 import { Form } from '../../form';

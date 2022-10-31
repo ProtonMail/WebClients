@@ -1,14 +1,14 @@
 import { ElementType, ReactElement, cloneElement, forwardRef } from 'react';
 
+import { ButtonLike, ButtonLikeShape } from '@proton/atoms';
 import { ThemeColorUnion } from '@proton/colors';
 
 import { classnames } from '../../helpers';
 import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
-import { ButtonLike, Shape } from '../button';
 
 interface OwnProps {
     color?: ThemeColorUnion;
-    shape?: Shape;
+    shape?: ButtonLikeShape;
     icon: ReactElement;
     text: string;
     hasRedDot?: boolean;

@@ -2,14 +2,13 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Button, Card } from '@proton/atoms';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { Member } from '@proton/shared/lib/interfaces/Member';
 
 import {
     Alert,
-    Button,
     InputFieldTwo,
     ModalProps,
     ModalTwo,

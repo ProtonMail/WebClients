@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ButtonLike, ChecklistItem, Loader, SettingsLink, classnames, useApi } from '@proton/components';
+import { ButtonLike } from '@proton/atoms';
+import { ChecklistItem, Loader, SettingsLink, classnames, useApi } from '@proton/components';
 import { useDateCountdown } from '@proton/hooks';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';

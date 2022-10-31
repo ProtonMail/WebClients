@@ -2,6 +2,7 @@ import { FormEvent, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -11,7 +12,6 @@ import { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
 import {
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

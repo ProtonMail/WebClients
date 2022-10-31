@@ -3,6 +3,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     getVerificationDataRoute,
@@ -12,7 +13,7 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { Button, Loader } from '../../../components';
+import { Loader } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';

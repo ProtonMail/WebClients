@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
-import { AlertModal, Button } from '../../../components';
+import { AlertModal } from '../../../components';
 import { useLoading } from '../../../hooks';
 import { VerificationModel } from './interface';
 

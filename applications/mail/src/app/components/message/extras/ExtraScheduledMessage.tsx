@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     AlertModal,
-    Button,
     Icon,
     classnames,
     useApi,

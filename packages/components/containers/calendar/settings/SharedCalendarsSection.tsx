@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button, ButtonLike } from '@proton/atoms';
 import {
-    Button,
     ButtonGroup,
-    ButtonLike,
     Icon,
     Info,
     Table,

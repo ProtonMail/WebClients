@@ -3,23 +3,14 @@ import { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import groupWith from '@proton/utils/groupWith';
 
-import {
-    Block,
-    Button,
-    ButtonLike,
-    Href,
-    Icon,
-    Info,
-    Radio,
-    RadioGroup,
-    SettingsLink,
-    Tooltip,
-} from '../../../components';
+import { Block, Href, Icon, Info, Radio, RadioGroup, SettingsLink, Tooltip } from '../../../components';
 import { correctAbbr, getCountryByAbbr } from '../../../helpers/countries';
 import { useApiWithoutResult, usePlans, useSortedList, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { SettingsParagraph } from '../../account';
