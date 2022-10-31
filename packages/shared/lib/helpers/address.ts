@@ -5,6 +5,10 @@ import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { canonicalizeInternalEmail } from './email';
 
+export const getIsAddressEnabled = (address: Address) => {
+    return address.Status === ADDRESS_STATUS.STATUS_ENABLED;
+};
+
 export const getIsAddressDisabled = (address: Address) => {
     return address.Status === ADDRESS_STATUS.STATUS_DISABLED;
 };
