@@ -362,6 +362,7 @@ const MessageView = (
             onFocus={handleFocus('BUBBLED_EVENT')}
             onBlur={handleBlur}
             data-hasfocus={hasFocus}
+            data-expanded={expanded}
         >
             {expanded ? (
                 <>
