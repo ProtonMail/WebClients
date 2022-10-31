@@ -17,8 +17,10 @@ export function FolderContextMenu({
     position,
     open,
     close,
+    isActiveLinkReadOnly,
 }: ContextMenuProps & {
     shareId: string;
+    isActiveLinkReadOnly?: boolean;
 }) {
     useEffect(() => {
         if (position) {
@@ -47,12 +49,22 @@ export function FolderContextMenu({
             <input multiple type="file" ref={fileInput} className="hidden" onChange={fileChange} />
             <input multiple type="file" ref={folderInput} className="hidden" onChange={folderChange} />
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-                <CreateNewFolderButton close={close} />
-                {isEditEnabled && <CreateNewFileButton close={close} />}
+                { !isActiveLinkReadOnly && <CreateNewFolderButton close={close} /> }
+                {isEditEnabled && !isActiveLinkReadOnly && <CreateNewFileButton close={close} />}
                 <ContextSeparator />
-                <UploadFileButton close={close} onClick={fileClick} />
-                <UploadFolderButton close={close} onClick={folderClick} />
-                <ContextSeparator />
+                {!isActiveLinkReadOnly ? (
+                    <>
+                        <CreateNewFolderButton close={close} />
+                        <ContextSeparator />
+                    </>
+                ) : null}
+                {!isActiveLinkReadOnly ? (
+                    <>
+                        <UploadFileButton close={close} onClick={fileClick} />
+                        <UploadFolderButton close={close} onClick={folderClick} />
+                        <ContextSeparator />
+                    </>
+                ) : null}
                 <ShareFileButton close={close} shareId={shareId} />
             </ContextMenu>
         </>

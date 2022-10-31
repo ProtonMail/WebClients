@@ -4,7 +4,7 @@ import { DecryptedLink, TreeItem } from '../../store';
 import ExpandableRow from './ExpandableRow';
 
 interface Props {
-    treeItems: TreeItem[];
+    treeItems: TreeItem | TreeItem[];
     selectedItemId?: string;
     onSelect: (link: DecryptedLink) => void;
     rowIsDisabled?: (item: TreeItem) => boolean;
@@ -13,6 +13,8 @@ interface Props {
 }
 
 const FolderTree = ({ isLoaded, treeItems, selectedItemId, onSelect, rowIsDisabled, toggleExpand }: Props) => {
+    const treeItemsArray = Array.isArray(treeItems) ? treeItems : [treeItems];
+
     const generateRows = (items: TreeItem[], depth = 0) => {
         const rows = items.map((item: TreeItem) => {
             const { link, children, isExpanded, isLoaded } = item;
@@ -39,7 +41,7 @@ const FolderTree = ({ isLoaded, treeItems, selectedItemId, onSelect, rowIsDisabl
         return <>{rows}</>;
     };
 
-    const rows = generateRows(treeItems);
+    const rows = generateRows(treeItemsArray);
 
     return (
         <div className="folder-tree">
