@@ -93,6 +93,7 @@ const ItemRowLayout = ({
                 <ItemStar element={element} />
             </div>
             <div className={classnames(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+                <ItemUnread element={element} labelID={labelID} className="mr0-2 item-unread-dot" />
                 <ItemAction element={element} className="mr0-5 flex-item-noshrink myauto" />
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {sendersContent}
@@ -173,9 +174,6 @@ const ItemRowLayout = ({
                         useTooltip
                     />
                 </span>
-            </span>
-            <span className="flex w2e ml0-5 text-center flex-align-items-center">
-                <ItemUnread element={element} labelID={labelID} className="ml0-5" />
             </span>
         </div>
     );

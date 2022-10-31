@@ -139,6 +139,11 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		}
 	}
 
+	.item-unread-dot {
+		display: flex;
+		align-items: center;
+	}
+
 	// Styling for contact items inside contact dropdown
 	&.item-contact {
 		background-color: var(--email-item-unread-background-color);
@@ -277,10 +282,19 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		}
 	}
 
-	.item-unread-dot {
+	.item-container-column .item-unread-dot {
+		display: block;
 		position: absolute;
 		inset-block-start: em(18);
 		inset-inline-start: em(2);
+		z-index: 1;
+	}
+
+	.item-container-row .item-unread-dot {
+		position: absolute;
+		block-size: 100%;
+		inset-block-start: 0;
+		inset-inline-start: em(5);
 		z-index: 1;
 	}
 
