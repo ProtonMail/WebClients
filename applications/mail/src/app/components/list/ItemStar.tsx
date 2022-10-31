@@ -2,6 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Kbd } from '@proton/atoms';
 import { Icon, IconSize, Tooltip, classnames, useLoading, useMailSettings } from '@proton/components';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
@@ -44,7 +45,7 @@ const ItemStar = ({ element, size }: Props) => {
                     <>
                         {title}
                         <br />
-                        <kbd className="border-none">*</kbd>
+                        <Kbd shortcut="*" />
                     </>
                 ) : (
                     title

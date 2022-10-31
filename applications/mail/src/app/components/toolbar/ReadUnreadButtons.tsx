@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
@@ -33,7 +34,7 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
         <>
             {c('Action').t`Mark as read`}
             <br />
-            <kbd className="border-none">R</kbd>
+            <Kbd shortcut="R" />
         </>
     ) : (
         c('Action').t`Mark as read`
@@ -43,7 +44,7 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
         <>
             {c('Action').t`Mark as unread`}
             <br />
-            <kbd className="border-none">U</kbd>
+            <Kbd shortcut="U" />
         </>
     ) : (
         c('Action').t`Mark as unread`
