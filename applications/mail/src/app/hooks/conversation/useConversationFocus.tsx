@@ -42,10 +42,22 @@ export const useConversationFocus = (messages: Message[]) => {
         if (focusIndex === undefined) {
             return;
         }
-        const element = document.querySelector(
-            `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"] iframe`
+
+        const focus = (element: HTMLElement | null) => element?.focus({ preventScroll: true });
+
+        let element = document.querySelector(
+            `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
         ) as HTMLElement;
-        element?.focus({ preventScroll: true });
+
+        // Focus iframe conditionnaly to solve the following issues:
+        // 1. Text selection grays out because focus moves outside iframe
+        // 2. Focus is not visually displayed when keyboard nav on non expanded messages
+        const isExpanded = element?.dataset?.expanded === 'true';
+        if (isExpanded) {
+            focus(element.querySelector('iframe'));
+        } else {
+            focus(element);
+        }
 
         if (nextScrollTo) {
             element?.scrollIntoView({ behavior: 'smooth' });
