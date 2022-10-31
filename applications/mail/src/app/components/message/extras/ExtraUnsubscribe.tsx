@@ -104,6 +104,23 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         submit = async () => {
             await api(oneClickUnsubscribe(messageID));
         };
+    } else if (unsubscribeMethods.HttpClient) {
+        modalContent = (
+            <>
+                {c('Info')
+                    .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
+                <br />
+                <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
+                <div className="text-bold rounded border p1 bg-weak text-break mb1 mt1">{c('Info')
+                    .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
+            </>
+        );
+
+        submit = () => {
+            if (unsubscribeMethods.HttpClient) {
+                openNewTab(unsubscribeMethods.HttpClient);
+            }
+        };
     } else if (unsubscribeMethods.Mailto) {
         const { Subject = 'Unsubscribe', Body = 'Please, unsubscribe me', ToList = [] } = unsubscribeMethods.Mailto;
         // "address" by default, but will default to another address if this address cant send message
@@ -182,23 +199,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             const message = getMessage(cleanMessage.localID) as MessageStateWithData;
             cleanMessage.data = message.data;
             await sendMessage({ inputMessage: cleanMessage, mapSendPrefs, onCompose });
-        };
-    } else if (unsubscribeMethods.HttpClient) {
-        modalContent = (
-            <>
-                {c('Info')
-                    .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
-                <br />
-                <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
-                <div className="text-bold rounded border p1 bg-weak text-break mb1 mt1">{c('Info')
-                    .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
-            </>
-        );
-
-        submit = () => {
-            if (unsubscribeMethods.HttpClient) {
-                openNewTab(unsubscribeMethods.HttpClient);
-            }
         };
     }
 
