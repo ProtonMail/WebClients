@@ -69,22 +69,22 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
 
         const plan = maybeType === 'upgrade' ? getUpgradedPlan(subscription, app) : undefined;
 
-        const maybeStep = (() => {
-            if (maybeType === 'upgrade' && plan) {
-                return SUBSCRIPTION_STEPS.CHECKOUT;
-            }
+        const step = (() => {
             if (maybeStart === 'compare') {
                 return SUBSCRIPTION_STEPS.PLAN_SELECTION;
             }
             if (maybeStart === 'checkout') {
                 return SUBSCRIPTION_STEPS.CHECKOUT;
             }
+            if (maybeType === 'upgrade' && plan) {
+                return SUBSCRIPTION_STEPS.PLAN_SELECTION;
+            }
+            return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
         })();
 
         onceRef.current = true;
-        const defaultStep = user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
         open({
-            step: maybeStep || defaultStep,
+            step,
             onClose: handleClose,
             onSuccess: handleSuccess,
             plan: plan,
