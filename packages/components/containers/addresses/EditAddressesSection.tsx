@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Button, Editor, EditorActions, Input } from '../../components';
+import { Button, Editor, EditorActions, InputTwo } from '../../components';
 import { useApi, useEventManager, useHotkeys, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -18,6 +18,7 @@ const formatSignature = (value: string) => (EMPTY_VALUES.some((regex) => regex.t
 interface Props {
     address: Address;
 }
+
 const EditAddressesSection = ({ address }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const api = useApi();
@@ -90,7 +91,7 @@ const EditAddressesSection = ({ address }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <Input
+                    <InputTwo
                         id="displayName"
                         value={displayName}
                         placeholder={c('Placeholder').t`Choose display name`}
