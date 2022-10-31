@@ -1,18 +1,11 @@
-import { Writer as ZipWriter } from '@transcend-io/conflux';
-import { ReadableStream } from 'web-streams-polyfill';
+import { makeZip } from 'client-zip';
+import { ReadableStream, TransformStream } from 'web-streams-polyfill';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../_links';
 import { StartedNestedLinkDownload } from './interface';
-
-type Entry = {
-    directory?: boolean;
-    name: string;
-    lastModified?: Date;
-    stream?: () => ReadableStream<Uint8Array>;
-};
 
 function getPathString(path: string[]): string {
     return path.length > 0 ? `/${path.join('/')}` : '';
@@ -25,7 +18,7 @@ function getPathString(path: string[]): string {
 export default class ArchiveGenerator {
     stream: ReadableStream<Uint8Array>;
 
-    private writer: WritableStreamDefaultWriter<Entry>;
+    private writer: WritableStream<Uint8Array>;
 
     private canceled: boolean;
 
@@ -35,14 +28,11 @@ export default class ArchiveGenerator {
 
     private originalToAdjustedPath: Map<string, string>;
 
-    constructor(
-        initZipWriter = (): { readable: ReadableStream<Uint8Array>; writable: WritableStream<Entry> } => new ZipWriter()
-    ) {
-        const { readable, writable } = initZipWriter();
-        const writer = writable.getWriter();
+    constructor() {
+        let { readable, writable } = new TransformStream();
 
         this.stream = readable;
-        this.writer = writer;
+        this.writer = writable;
         this.canceled = false;
 
         this.includedFiles = [];
@@ -51,35 +41,27 @@ export default class ArchiveGenerator {
     }
 
     async writeLinks(links: AsyncGenerator<StartedNestedLinkDownload>) {
-        const promises: Promise<void>[] = [];
+        const zipStream = makeZip(this.transformLinksToZipItems(links));
+        await zipStream.pipeTo(this.writer);
+    }
+
+    async *transformLinksToZipItems(links: AsyncGenerator<StartedNestedLinkDownload>) {
         for await (const link of links) {
             if (this.canceled) {
                 return;
             }
             if (link.isFile) {
                 const name = this.adjustFilePath(link.parentPath, link.name);
-                promises.push(
-                    this.writer.write({
-                        name: name.slice(1), // Windows doesn't like leading root slash.
-                        // lastModified: new Date(),
-                        stream: () => link.stream,
-                    })
-                );
+                yield {
+                    name: name.slice(1), // Windows doesn't like leading root slash.
+                    input: link.stream,
+                };
             } else {
                 const name = this.adjustFolderPath(link.parentPath, link.name);
-                promises.push(
-                    this.writer.write({
-                        directory: true,
-                        name: name.slice(1), // Windows doesn't like leading root slash.
-                        // lastModified: new Date(),
-                    })
-                );
+                yield {
+                    name: name.slice(1), // Windows doesn't like leading root slash.
+                };
             }
-        }
-        if (!this.canceled) {
-            await Promise.all(promises).then(() => {
-                void this.writer.close();
-            });
         }
     }
 
