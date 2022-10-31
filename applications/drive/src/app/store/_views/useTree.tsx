@@ -5,9 +5,10 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 
 import { DecryptedLink, useLink, useLinksListing } from '../_links';
-import { useShare } from '../_shares';
+import { ShareType, useShare } from '../_shares';
 import { useErrorHandler } from '../_utils';
 import { useAbortSignal } from './utils';
+import { useShareType } from './utils/useShareType';
 
 export interface TreeItem {
     link: DecryptedLink;
@@ -25,8 +26,32 @@ interface TreeOptions extends FolderTreeOptions {
     foldersOnly?: boolean;
 }
 
+export function useFolderTreeModals(shareId: string, options?: FolderTreeOptions) {
+    const shareType = useShareType(shareId);
+
+    const getRootItems = (tree: ReturnType<typeof useTree>): TreeItem[] => {
+        if (shareType === ShareType.device) {
+            return tree.rootFolder?.children ? tree.rootFolder?.children : [];
+        }
+
+        return tree.rootFolder ? [tree.rootFolder] : [];
+    };
+
+    const tree = useTree(shareId, { ...options, foldersOnly: true });
+    const linkStructure = {
+        ...tree,
+        rootItems: getRootItems(tree),
+        rootLinkId: tree.rootFolder?.link.linkId,
+        isLoaded: tree.rootFolder?.isLoaded || false,
+    };
+
+    return linkStructure;
+}
+
 /**
  * useFolderTree provides data for folder tree view of the provided share.
+ * @deprecated use useFolderTreeModals – it skips the root link and provides multiple
+ * entries to the file structure
  */
 export function useFolderTree(shareId: string, options?: FolderTreeOptions) {
     return useTree(shareId, { ...options, foldersOnly: true });
