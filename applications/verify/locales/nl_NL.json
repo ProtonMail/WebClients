@@ -53,6 +53,9 @@
       "Try another method": [
         "Andere methode proberen"
       ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
@@ -952,6 +955,16 @@
         "U kunt ook ${ refresh } of probeer het later opnieuw."
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -976,8 +989,14 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -1009,6 +1028,9 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
@@ -1026,6 +1048,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Authenticator-app"
+      ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],

@@ -82,7 +82,7 @@
         "Tambahkan PayPal"
       ],
       "Add sieve filter": [
-        "Tambahkan filter saringan"
+        "Tambah filter sieve"
       ],
       "Add user": [
         "Tambah pengguna"
@@ -322,7 +322,7 @@
         "Ubah nomor telepon"
       ],
       "Edit sieve": [
-        "Edit sieve"
+        "Sunting sieve"
       ],
       "Edit sign-in details": [
         "Sunting rincian masuk"
@@ -771,6 +771,9 @@
       "Underline": [
         "Garis bawah"
       ],
+      "Undo import": [
+        "Urungkan impor"
+      ],
       "Unlock": [
         "Membuka"
       ],
@@ -858,6 +861,9 @@
       "Yes": [
         "Ya"
       ],
+      "Yes, undo": [
+        "Ya, urungkan"
+      ],
       "Zoom in": [
         "Perbesar"
       ],
@@ -927,7 +933,7 @@
         "Aktif"
       ],
       "Default": [
-        "Bawaan"
+        "Default"
       ],
       "Disabled": [
         "Nonaktif"
@@ -1580,6 +1586,9 @@
       ],
       "Remove from the list?": [
         "Hapus dari daftar?"
+      ],
+      "Undo this import?": [
+        "Urungkan impor ini?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -3182,7 +3191,7 @@
         "Anda telah kehilangan akses ke kunci organisasi Anda. Tanpa pemulihan Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
       "You have no invoices.": [
-        "Anda tidak memiliki tagihan apapun."
+        "Anda tidak memiliki tagihan apa pun."
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
@@ -3757,7 +3766,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        "Tambahkan filter khusus agar berbagai proses tertentu, seperti pelabelan atau pengarsipan pesan, dapat berlangsung secara otomatis. Filter dapat disunting dan dibuat secara langsung dengan menggunakan bahasa pemrograman Sieve."
+        "Tambahkan filter khusus agar berbagai tindakan seperti pelabelan atau pengarsipan pesan dapat berlangsung secara otomatis. Filter ini dapat disunting dan dibuat secara langsung dengan bahasa pemrograman Sieve."
       ],
       "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
         "Email yang berasal dari alamat yang ditandai spam oleh Anda atau Proton akan masuk ke dalam folder spam Anda. Apabila Anda ingin menerima email dari satu atau lebih alamat yang telah ditandai spam, tandai alamat yang bersangkutan sebagai \"bukan spam\"."
@@ -4276,6 +4285,14 @@
         "Lainnya"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Pengurungan selesai"
+      ],
+      "Undo in progress": [
+        "Pengurungan sedang berlangsung"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% dijeda"
@@ -4632,7 +4649,7 @@
         "Warna latar belakang"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+        "Navigasi dan tindakan dasar akan tetap tersedia terlepas dari apakah pintasan keyboard diaktifkan atau tidak di pengaturan."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
@@ -4677,7 +4694,7 @@
         "Periksa status impor sekarang dan sebelumnya."
       ],
       "Choose the look and feel of the application.": [
-        "Pilih tampilan aplikasi."
+        "Tentukan tema dan tampilan aplikasi Anda."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -4785,10 +4802,10 @@
         "Unduh berkas pemulihan"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke manapun Anda pergi."
+        "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "Unduh kunci PGP Anda untuk menggunakannya dengan layanan PGP lain."
+        "Anda dapat mengunduh kunci PGP Anda untuk digunakan dengan layanan lain yang kompatibel dengan PGP."
       ],
       "Drop a file here to upload": [
         "Letakkan berkas yang hendak Anda unggah di sini"
@@ -4905,10 +4922,10 @@
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirimi Anda dengan pesan terenkripsi end-to-end!"
+        "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirim Anda dengan pesan terenkripsi ujung ke ujung!"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google merekam aktivitas online dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
+        "Google merekam aktivitas daring dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
       "here": [
         "di sini"
@@ -5088,7 +5105,7 @@
         "Kiri ke Kanan"
       ],
       "Let your contacts know you care about their privacy.": [
-        "Beri tahu kontak-kontak Anda bahwa Anda peduli dengan privasi mereka."
+        "Beri tahu kontak Anda bahwa Anda peduli dengan privasi mereka."
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke clipboard"
@@ -5103,7 +5120,7 @@
         "Jenis tautan"
       ],
       "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Konten yang dimuat dilindungi oleh proxy kami pada saat perlindungan pelacak diaktifkan."
+        "Loaded content is being protected by our proxy when tracker protection is activated."
       ],
       "Loading": [
         "Memuat"
@@ -5346,10 +5363,10 @@
         "Proton menjeda proses impor karena kuota penyimpanan Anda tidak mencukupi. Anda dapat:"
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton akan mencoba melanjutkan impor sesegera mungkin saat layanan surel Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apapun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan Anda harus mengulanginya dari awal."
+        "Proton akan mencoba melanjutkan impor sesegera mungkin saat layanan surel Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apa pun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan Anda harus mengulanginya dari awal."
       ],
       "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Teknologi enkripsi Proton memastikan bahwa tidak ada siapapun yang akan dapat mengakses kata sandi Anda - termasuk kami sendiri."
+        "Teknologi enkripsi Proton memastikan bahwa tidak ada siapa pun yang akan dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
       "Public link invite": [
         "Tautan undangan publik"
@@ -5385,7 +5402,7 @@
         "Frasa pemulihan telah dinonaktifkan"
       ],
       "Recovery phrase is not associated with any keys.": [
-        "Frasa pemulihan tidak terhubung dengan kunci manapun."
+        "Frasa pemulihan tidak terhubung dengan kunci mana pun."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Frasa pemulihan tidak terhubung dengan kunci yang telah kedaluwarsa."
@@ -5526,7 +5543,7 @@
         "Nama akan terlihat pada pengguna Anda ketika mereka masuk."
       ],
       "The securest way to browse, stream, and be online.": [
-        "Cara teraman untuk menjelajah, menonton, dan beraktivitas di internet."
+        "Cara paling aman untuk menjelajah, menonton, dan beraktivitas di internet."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
@@ -5598,7 +5615,7 @@
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Ini akan mengganti kata sandi sementara Anda. Anda akan menggunakannya untuk mengakses akun ${ BRAND_NAME } di masa mendatang."
+        "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan otentikasi dua faktor."
@@ -5616,7 +5633,7 @@
         "untuk melanjutkan ke ${ toAppName }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang akan digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Seluruh informasi yang kami kumpulkan tidak akan dibagikan kepada layanan pihak ketiga manapun."
+        "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang akan digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Seluruh informasi yang kami kumpulkan tidak akan dibagikan kepada layanan pihak ketiga mana pun."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk dapat mendekripsi dan mengakses data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
@@ -5664,7 +5681,7 @@
         "Otentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Mode dua kata sandi membutuhkan dua kata sandi: satu untuk masuk ke akun Anda dan satu untuk mendekripsi kotak surat Anda. (Lanjutan)"
+        "Mode dua kata sandi mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi kotak surat Anda. (Fitur lanjutan)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Mode dua kata sandi menggunakan kata sandi terpisah untuk masuk akun dan dekripsi kotak pesan. Ini memberikan sedikit manfaat keamanan pada situasi tertentu, namun kami menyarankan mode satu kata sandi untuk sebagian besar pengguna. Untuk beralih ke mode dua kata sandi, atur dulu kata sandi masuk kemudian tentukan kata sandi kotak pesan."
@@ -5811,7 +5828,7 @@
         "Yahoo membaca data pribadi Anda untuk disampaikan kepada para pengiklan, lembaga intelijen AS, dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex merekam aktivitas online dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
+        "Yandex merekam aktivitas daring dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
       "Yearly": [
         "Tahunan"
@@ -5856,7 +5873,7 @@
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop manapun yang mendukung IMAP/SMTP termasuk Outlook, Apple Mail, dan Thunderbird."
+        "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop mana pun yang mendukung IMAP/SMTP termasuk Outlook, Apple Mail, dan Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
@@ -5922,7 +5939,7 @@
         "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apapun yang terenkripsi dengan kunci ini."
+        "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apa pun yang terenkripsi dengan kunci ini."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -6050,7 +6067,7 @@
     },
     "Info for domain modal": {
       "Add a new address for any user of your organization.": [
-        "Tambah alamat baru untuk siapapun pengguna organisasi Anda."
+        "Tambah alamat baru untuk siapa pun pengguna organisasi Anda."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Tambah pengguna baru ke organisasi Anda dan buat alamat untuknya."
@@ -6846,7 +6863,7 @@
         "Kekuatan kunci"
       ],
       "Keyboard shortcuts": [
-        "Pintasan papan ketik"
+        "Pintasan keyboard"
       ],
       "Label as": [
         "Labeli sebagai"
@@ -7308,7 +7325,7 @@
     },
     "Label on payment method": {
       "Default": [
-        "Bawaan"
+        "Default"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -7559,13 +7576,13 @@
         "Cara untuk mengimpor kalender-kalender dari Yahoo"
       ],
       "How to import contacts from another service": [
-        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+        "Cara untuk mengimpor kontak dari layanan email lainnya"
       ],
       "How to import contacts from Outlook": [
-        "Cara untuk mengimpor kontak-kontak dari Outlook"
+        "Cara untuk mengimpor kontak dari Outlook"
       ],
       "How to import contacts from Yahoo": [
-        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+        "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
         "Cara untuk mengimpor email-email dari layanan email lainnya"
@@ -7938,7 +7955,7 @@
         "Server VPN yang terenkripsi"
       ],
       "End-to-end encryption": [
-        "Enkripsi end-to-end"
+        "Enkripsi ujung ke ujung"
       ],
       "Free VPN on a single device": [
         "VPN gratis untuk satu perangkat"
@@ -8051,26 +8068,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8140,6 +8137,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8219,7 +8236,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di manapun Anda berada"
+        "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Setiap alamat dapat digunakan untuk mengirim dan menerima pesan. Seorang pengguna dapat memiliki lebih dari satu alamat; meskipun demikian, satu alamat tidak dapat dimiliki oleh lebih dari satu pengguna."
@@ -8240,7 +8257,7 @@
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, cth. JohnShopper@proton.me untuk akun berbelanja Anda dan JohnNews@proton.me untuk akun berita Anda"
+        "Buat beberapa alamat email untuk identitas daring Anda, mis. JohnShopper@proton.me untuk akun belanja, JohnNews@proton.me untuk langganan berita"
       ],
       "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
@@ -8255,10 +8272,10 @@
         "Bagi dan tautkan kalender Anda kepada keluarga, teman, atau rekan kerja Anda dengan mudah"
       ],
       "End-to-end encrypted calendar": [
-        "Kalender yang terenkripsi end-to-end"
+        "Kalender yang terenkripsi ujung ke ujung"
       ],
       "End-to-end encrypted file storage": [
-        "Layanan penyimpanan berkas yang terenkripsi end-to-end"
+        "Layanan penyimpanan berkas yang terenkripsi ujung ke ujung"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif ataupun salah ketik sekalipun, akan tetap dapat Anda terima"
@@ -8339,7 +8356,7 @@
         "Tentukan filter untuk dapat membalas, menyortir, dan/atau melabeli email Anda secara otomatis"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        "Bagikan berkas atau folder Anda dengan siapapun melalui tautan yang aman dan mudah untuk dibagikan"
+        "Bagikan berkas atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Teknologi NetShield kami dirancang secara khusus untuk melindungi perangkat Anda dan mempercepat perambanan Anda dengan memblokir iklan, program pelacak, serta malware"
@@ -8360,7 +8377,7 @@
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Kami tidak menyimpan log sesi yang merekam aktivitas online Anda, dan kami juga tidak menyimpan informasi metadata apapun yang dapat membayahakan privasi Anda"
+        "Kami tidak menyimpan catatan sesi yang merekam aktivitas daring Anda, dan kami juga tidak menyimpan informasi metadata apa pun yang dapat membayahakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH yang bertujuan untuk melindungi rekam jejak kesehatan pribadi (PHI) tiap-tiap individu. Kami menawarkan Perjanjian Kerjasama Bisnis (BAA) yang telah ditandangani bagi seluruh pelanggan ${ BRAND_NAME } for Business kami."
@@ -8891,7 +8908,7 @@
         "Nomor telepon"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
       ],
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
@@ -9370,7 +9387,7 @@
         "1 koneksi VPN"
       ],
       "Access to streaming services globally": [
-        "Akses berbagai layanan streaming di manapun Anda berada"
+        "Akses berbagai layanan streaming di mana pun Anda berada"
       ],
       "Built-in ad blocker (NetShield)": [
         "Pemblokir iklan bawaan (NetShield)"
@@ -9480,7 +9497,7 @@
         "Tagihan dibayar"
       ],
       "Keyboard shortcuts preferences updated": [
-        "Preferensi pintasan papan ketik diperbarui"
+        "Preferensi pintasan keyboard diperbarui"
       ],
       "Keys updated": [
         "Kunci berhasil diperbarui"
@@ -9523,6 +9540,9 @@
       ],
       "SPF value copied to clipboard": [
         "Nilai SPF disalin ke clipboard"
+      ],
+      "Undo in progress": [
+        "Pengurungan sedang berlangsung"
       ],
       "User created": [
         "Pengguna berhasil dibuat"
@@ -9708,7 +9728,7 @@
     },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
-        "${ appName } Pintasan Papan Ketik"
+        "${ appName } Pintasan Keyboard"
       ],
       "${ MAIL_APP_NAME } Bridge": [
         "Bridge ${ MAIL_APP_NAME }"
@@ -9768,7 +9788,7 @@
         "Tambahkan kartu kredit/debit"
       ],
       "Add credits": [
-        "Tambahkan saldo"
+        "Tambah saldo"
       ],
       "Add domain": [
         "Tambah domain"
@@ -9972,7 +9992,7 @@
         "Pemulihan data"
       ],
       "Date": [
-        "Pasangan"
+        "Tanggal"
       ],
       "Decrypt key": [
         "Dekripsi kunci"
@@ -10326,7 +10346,7 @@
         "Keamanan dan privasi"
       ],
       "Security logs": [
-        "Catatan keamanan"
+        "Log keamanan"
       ],
       "Select a plan": [
         "Pilih paket"
@@ -10628,7 +10648,7 @@
         "Aktifkan/nonaktifkan notifikasi desktop dan ponsel"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Mengaktifkan catatan lanjut merekam alamat IP untuk setiap kejadian di catatan keamanan."
+        "Log lanjutan akan merekam alamat IP untuk setiap peristiwa yang tercatat pada log keamanan."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
@@ -10643,7 +10663,7 @@
         "Pesan di folder Terkirim atau Draf akan selalu muncul di folder tersebut, walaupun Anda memindahkannya ke folder lain."
       ],
       "Set how your list of messages looks like by default.": [
-        "Tentukan bagaimana daftar pesan Anda akan tertata secara bawaan."
+        "Tentukan bagaimana daftar pesan Anda akan terlihat secara default."
       ],
       "Set the default Composer popup size as small or full screen.": [
         "Atur ukuran popup composer standar sebagai layar kecil atau layar penuh."
@@ -10887,7 +10907,7 @@
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
@@ -10895,8 +10915,11 @@
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Tindakan ini akan menghapus seluruh pesan, folder, dan label yang dihasilkan pada saat impor."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
+        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."

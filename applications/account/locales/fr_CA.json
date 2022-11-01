@@ -771,6 +771,9 @@
       "Underline": [
         "Souligné"
       ],
+      "Undo import": [
+        "Annuler l'importation"
+      ],
       "Unlock": [
         "Déverrouiller"
       ],
@@ -858,6 +861,9 @@
       "Yes": [
         "Oui"
       ],
+      "Yes, undo": [
+        "Oui, annuler"
+      ],
       "Zoom in": [
         "Zoom avant"
       ],
@@ -898,6 +904,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } domaine personnalisé",
         "+ ${ domains } domaines personnalisés"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } utilisateur",
+        "+ ${ users } utilisateurs"
       ]
     },
     "Address action": {
@@ -1013,14 +1023,23 @@
       "Payable every 12 months": [
         "Payable tous les 12 mois"
       ],
+      "Payable every 15 months": [
+        "Payable tous les 15 mois"
+      ],
       "Payable every 24 months": [
         "Payable tous les 24 mois"
+      ],
+      "Payable every 30 months": [
+        "Payable tous les 30 mois"
       ],
       "Payable every month": [
         "Payable tous les mois"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renouvelle automatiquement le ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Se renouvelle automatiquement le ${ formattedEndTime } pour ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1572,6 +1591,9 @@
       ],
       "Remove from the list?": [
         "Retirer de la liste?"
+      ],
+      "Undo this import?": [
+        "Annuler cette importation?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -2552,8 +2574,18 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
+      "Get up to ${ credits } in credits by inviting friends to Proton.": [
+        "Recevez jusqu'à ${ credits }€ de crédits en invitant vos amis à rejoindre Proton."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne certains groupes. Veuillez vérifier comment ces groupes doivent être importés."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
+        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
+      ],
+      "Track the status and activity of your referrals.": [
+        "Suivez vos parrainages."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Vous pouvez continuer à inviter des amis, mais vous ne pourrez plus gagner de crédits"
@@ -2587,11 +2619,17 @@
       "${ name } deletion failed": [
         "La suppression de ${ name } a échoué"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } n'a pas pu être placé dans la liste des non indésirables"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être déplacé vers la liste des indésirables"
       ],
       "${ name } failed to move to your block list": [
         "${ name } n'a pas pu être déplacé vers la liste de blocages"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } est maintenant dans la liste des non indésirables"
       ],
       "${ name } moved to spam list": [
         "${ name } a été déplacé vers la liste des indésirables"
@@ -2698,11 +2736,17 @@
       "${ name } deletion failed": [
         "La suppression de ${ name } a échoué"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } n'a pas pu être placé dans la liste des non indésirables"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être déplacé vers la liste des indésirables"
       ],
       "${ name } failed to move to your block list": [
         "${ name } n'a pas pu être déplacé vers la liste de blocages"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } est maintenant dans la liste des non indésirables"
       ],
       "${ name } moved to spam list": [
         "${ name } a été déplacé vers la liste des indésirables"
@@ -3768,6 +3812,11 @@
         "Par défaut"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. La vie privée par défaut."
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 courriel par mois)"
@@ -4271,6 +4320,14 @@
         "Autre"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Annulation terminée"
+      ],
+      "Undo in progress": [
+        "Annulation en cours"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue } % mis en pause"
@@ -4350,6 +4407,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } sur ${ total }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide"
@@ -5120,6 +5180,9 @@
       "Link type": [
         "Type de lien"
       ],
+      "Loaded content is being protected by our proxy when the block tracker is activated.": [
+        "Loaded content is being protected by our proxy when tracker protection is activated."
+      ],
       "Loading": [
         "Chargement"
       ],
@@ -5297,6 +5360,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Vérifier votre fichier ou essayez d'utiliser notre ${ csvTemplateButton }."
       ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Nous vous invitons à contacter l'administrateur de votre organisation pour gérer votre abonnement."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Veuillez saisir la phrase de récupération de 12 mots associée à votre compte."
       ],
@@ -5345,8 +5411,14 @@
       "Preview": [
         "Aperçu"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
+      ],
       "Priority support": [
         "Assistance prioritaire"
+      ],
+      "Proton ${ planName } credits earned": [
+        "Crédits Proton ${ planName } gagnés"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton a interrompu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Veuillez vous reconnecter."
@@ -5544,6 +5616,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ces configurations sont fournies pour fonctionner avec les routeurs WireGuard et les clients officiels."
+      ],
+      "They'll receive a free month of ${ planName }.": [
+        "Un mois gratuit de ${ planName } leur sera offert."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
@@ -5794,6 +5869,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Lorsque les notifications sont activées, nous envoyons une alerte sur votre adresse de récupération si vous recevez de nouveaux messages sur votre compte ${ MAIL_APP_NAME }."
       ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "Quand les personnes que vous avez parrainées souscrivent à un abonnement, vous gagnez des crédits à utiliser pour votre abonnement."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -5848,6 +5926,12 @@
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
+      ],
+      "You can now close this window.": [
+        "Vous pouvez maintenant fermer cette fenêtre."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Vous pouvez maintenant recevoir des messages sur votre adresse @pm.me. Passez à une offre payante afin de pouvoir également envoyer des courriels en utilisant votre adresse @pm.me et créer des adresses @pm.me supplémentaires."
       ],
@@ -5859,6 +5943,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application RPV à code source ouvert tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Vous ne pouvez pas envoyer plus d'${ emailSendLimitNumber } courriel d'invitation au cours des 24 prochaines heures",
+        "Vous ne pouvez pas envoyer plus de ${ emailSendLimitNumber } courriels d'invitation au cours des 24 prochaines heures"
       ],
       "You cannot refer ${ appName } users": [
         "Vous ne pouvez pas parrainer les utilisateur·rice·s de ${ appName }"
@@ -6516,6 +6604,12 @@
       "Authenticator app": [
         "Application d'authentification"
       ],
+      "Auto show embedded images": [
+        "Afficher automatiquement les images intégrées"
+      ],
+      "Auto show remote images": [
+        "Afficher automatiquement les images distantes"
+      ],
       "Auto-detect primary time zone": [
         "Détection automatique du fuseau horaire principal"
       ],
@@ -6524,6 +6618,9 @@
       ],
       "Auto-unsubscribe": [
         "Désinscription automatique"
+      ],
+      "Awarded": [
+        "Attribué"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -6647,6 +6744,9 @@
       ],
       "Create password": [
         "Créer un mot de passe"
+      ],
+      "Credits": [
+        "Crédits"
       ],
       "Credits used": [
         "Crédits utilisés"
@@ -6915,6 +7015,9 @@
       "Non-standard ports": [
         "Ports non standards"
       ],
+      "Not spam": [
+        "Non indésirables"
+      ],
       "Notification": [
         "Notification"
       ],
@@ -6962,6 +7065,9 @@
       ],
       "Payment method": [
         "Mode de paiement"
+      ],
+      "Pending": [
+        "En attente"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -7731,6 +7837,9 @@
       "Blocked": [
         "Bloqué"
       ],
+      "Not spam": [
+        "Non indésirables"
+      ],
       "Spam": [
         "Indésirable"
       ]
@@ -8051,26 +8160,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -8084,8 +8173,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "*Pour un abonnement de 12 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* Pour 15 mois d'abonnement. D'autres options d'abonnement sont disponibles lors du paiement."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "*Pour un abonnement de 24 mois. D'autres options d'abonnement sont disponibles lors du paiement."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* Pour 30 mois d'abonnement. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante"
@@ -8134,6 +8229,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9262,6 +9377,12 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
+      "Get up to ${ credits } in credits.": [
+        "Recevez jusqu'à ${ credits } en crédits."
+      ],
+      "Invite friends to Proton": [
+        "Invitez vos amis à rejoindre Proton"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
       ]
@@ -9538,6 +9659,9 @@
       "SPF value copied to clipboard": [
         "La valeur du SPF a été copiée dans le presse-papiers"
       ],
+      "Undo in progress": [
+        "Annulation en cours"
+      ],
       "User created": [
         "Utilisateur créé"
       ],
@@ -9800,6 +9924,9 @@
       ],
       "Add Sieve filter": [
         "Ajouter un filtre Sieve"
+      ],
+      "Add to Not spam list": [
+        "Ajouter à la liste des non indésirables"
       ],
       "Add to spam list": [
         "Ajouter à la liste des indésirables"
@@ -10125,11 +10252,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "Obtenir ${ vpnPlus } pour accéder à tous les serveurs"
       ],
+      "Gift": [
+        "Cadeau"
+      ],
       "Gift code": [
         "Code cadeau"
       ],
       "How does it work?": [
         "Comment ça fonctionne?"
+      ],
+      "How to refer a friend and get credits": [
+        "Comment parrainer un ami et gagner des crédits?"
       ],
       "How your free trial works": [
         "Comment fonctionne votre essai gratuit"
@@ -10390,6 +10523,9 @@
       "Sign out": [
         "Se déconnecter"
       ],
+      "Signed in to member account": [
+        "Connecté au compte membre"
+      ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
       ],
@@ -10438,6 +10574,9 @@
       ],
       "Time zone": [
         "Fuseau horaire"
+      ],
+      "Track your referrals": [
+        "Suivre vos parrainages"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Essayez le meilleur de ${ MAIL_APP_NAME } gratuitement"
@@ -10687,6 +10826,9 @@
       "This key is encrypted with an old password": [
         "Cette clé est chiffrée avec un ancien mot de passe"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Cette clé est utilisée par ${ MAIL_APP_NAME } pour chiffrer les données de vos contacts"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nous avons détecté un problème avec votre configuration DNS. Veuillez vous assurer que vos enregistrements correspondent aux instructions ci-dessous. Si le problème persiste, nous devrons annuler la signature DKIM."
       ],
@@ -10900,6 +11042,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Cette importation peut dépasser la capacité de stockage actuellement disponible dans votre compte Proton. Veuillez envisager de personnaliser votre importation."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Ceci supprimera tous les messages, dossiers et labels créés pendant l'importation."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, et nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
