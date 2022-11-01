@@ -3868,7 +3868,7 @@ __metadata:
     "@testing-library/react": ^12.1.5
     "@types/jest": ^27.5.2
     "@types/mustache": ^4.2.1
-    "@types/node": ^17.0.31
+    "@types/node": ^18.11.9
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
     babel-loader: ^8.2.5
@@ -3898,7 +3898,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@types/css-tree": ^1.0.7
     "@types/jest": ^27.5.2
-    "@types/node": ^16.18.2
+    "@types/node": ^18.11.9
     "@types/tinycolor2": ^1.4.3
     css-tree: ^2.2.1
     eslint: ^8.26.0
@@ -4231,7 +4231,7 @@ __metadata:
     "@sentry/browser": ^7.17.2
     "@types/dompurify": ^2.3.4
     "@types/jasmine": ^4.3.0
-    "@types/node": ^16.18.2
+    "@types/node": ^18.11.9
     "@types/papaparse": ^5.3.5
     "@types/ua-parser-js": ^0.7.36
     "@types/webpack-env": ^1.18.0
@@ -6657,10 +6657,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^17.0.31":
-  version: 17.0.31
-  resolution: "@types/node@npm:17.0.31"
-  checksum: 704618350f8420d5c47db0f7778398e821b7724369946f5c441a7e6b9343295553936400eb8309f0b07d5e39c240988ab3456b983712ca86265dabc9aee4ad3d
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.11.9":
+  version: 18.11.9
+  resolution: "@types/node@npm:18.11.9"
+  checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
   languageName: node
   linkType: hard
 
@@ -6671,7 +6671,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.0.10 || ^16.0.0, @types/node@npm:^14.14.20 || ^16.0.0, @types/node@npm:^16.18.2":
+"@types/node@npm:^14.0.10 || ^16.0.0, @types/node@npm:^14.14.20 || ^16.0.0":
   version: 16.18.2
   resolution: "@types/node@npm:16.18.2"
   checksum: d21bb6614916b88242300abb23f11ae8bdaabd60c8f7c5edac21f3bf4b1f3ebfbd2a9019a664dd28e5b5730145c069074d70e7a2ab063e80a2fa9ab12de9797a
