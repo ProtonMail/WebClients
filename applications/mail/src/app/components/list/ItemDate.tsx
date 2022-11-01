@@ -55,7 +55,12 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
     }, [element, mode, labelID]);
 
     const itemDate = (
-        <span className={className} title={useTooltip ? undefined : fullDate} data-testid="item-date">
+        <span
+            className={className}
+            title={useTooltip ? undefined : fullDate}
+            aria-label={fullDate}
+            data-testid="item-date"
+        >
             {formattedDate}
         </span>
     );
