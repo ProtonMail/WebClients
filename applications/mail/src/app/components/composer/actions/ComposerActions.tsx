@@ -3,7 +3,7 @@ import { MutableRefObject, useRef } from 'react';
 import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Kbd } from '@proton/atoms';
 import {
     EditorMetadata,
     EllipsisLoader,
@@ -120,8 +120,7 @@ const ComposerActions = ({
         <>
             {c('Title').t`Attachments`}
             <br />
-            <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">{shiftKey}</kbd> +{' '}
-            <kbd className="border-none">A</kbd>
+            <Kbd shortcut={metaKey} /> + <Kbd shortcut={shiftKey} /> + <Kbd shortcut="A" />
         </>
     ) : (
         c('Title').t`Attachments`
@@ -131,8 +130,7 @@ const ComposerActions = ({
         <>
             {c('Title').t`Delete draft`}
             <br />
-            <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">{altKey}</kbd> +{' '}
-            <kbd className="border-none">Backspace</kbd>
+            <Kbd shortcut={metaKey} /> + <Kbd shortcut={altKey} /> + <Kbd shortcut="Backspace" />
         </>
     ) : (
         c('Title').t`Delete draft`
@@ -141,7 +139,7 @@ const ComposerActions = ({
         <>
             {c('Title').t`Send email`}
             <br />
-            <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">Enter</kbd>
+            <Kbd shortcut={metaKey} /> + <Kbd shortcut="Enter" />
         </>
     ) : null;
 

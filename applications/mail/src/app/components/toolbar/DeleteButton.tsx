@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton, useLoading, useMailSettings } from '@proton/components';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
@@ -16,7 +17,7 @@ const DeleteButton = ({ onDelete, selectedIDs = [] }: Props) => {
         <>
             {c('Action').t`Delete permanently`}
             <br />
-            <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">Backspace</kbd>
+            <Kbd shortcut={metaKey} /> + <Kbd shortcut="Backspace" />
         </>
     ) : (
         c('Action').t`Delete permanently`

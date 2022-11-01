@@ -1,3 +1,5 @@
+import { Kbd } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 
 interface Shortcut {
@@ -20,13 +22,17 @@ const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
                         <li key={name} className="flex flex-align-items-center flex-justify-space-between mb0-5">
                             <span>{name}</span>
                             {typeof keys === 'string' ? (
-                                <kbd>{keys}</kbd>
+                                <Kbd shortcut={keys} />
                             ) : (
                                 <span>
                                     {keys.map((k: string, i: number) => (
-                                        <kbd key={`${name} - ${k}`} className={classnames([i > 0 && 'ml0-5'])}>
+                                        <Kbd
+                                            key={`${name} - ${k}`}
+                                            shortcut={k}
+                                            className={classnames([i > 0 && 'ml0-5'])}
+                                        >
                                             {k}
-                                        </kbd>
+                                        </Kbd>
                                     ))}
                                 </span>
                             )}

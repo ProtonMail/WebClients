@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Kbd, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useLoading, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -35,7 +35,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
         <>
             {c('Action').t`Move to inbox`}
             <br />
-            <kbd className="border-none">I</kbd>
+            <Kbd shortcut="I" />
         </>
     ) : (
         c('Action').t`Move to inbox`
@@ -56,7 +56,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
         <>
             {c('Action').t`Move to archive`}
             <br />
-            <kbd className="border-none">A</kbd>
+            <Kbd shortcut="A" />
         </>
     ) : (
         c('Action').t`Move to archive`
@@ -77,7 +77,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
         <>
             {c('Action').t`Move to spam`}
             <br />
-            <kbd className="border-none">S</kbd>
+            <Kbd shortcut="S" />
         </>
     ) : (
         c('Action').t`Move to spam`
@@ -98,7 +98,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
         <>
             {c('Action').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="border-none">I</kbd>
+            <Kbd shortcut="I" />
         </>
     ) : (
         c('Action').t`Move to inbox (not spam)`
@@ -119,7 +119,7 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
         <>
             {c('Action').t`Move to trash`}
             <br />
-            <kbd className="border-none">T</kbd>
+            <Kbd shortcut="T" />
         </>
     ) : (
         c('Action').t`Move to trash`

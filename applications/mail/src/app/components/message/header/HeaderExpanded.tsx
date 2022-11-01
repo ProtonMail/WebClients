@@ -2,7 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Kbd } from '@proton/atoms';
 import {
     ButtonGroup,
     Icon,
@@ -167,7 +167,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply`}
             <br />
-            <kbd className="border-none">R</kbd>
+            <Kbd shortcut="R" />
         </>
     ) : (
         c('Title').t`Reply`
@@ -176,7 +176,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply all`}
             <br />
-            <kbd className="border-none">{shiftKey}</kbd> + <kbd className="border-none">R</kbd>
+            <Kbd shortcut={shiftKey} /> + <Kbd shortcut="R" />
         </>
     ) : (
         c('Title').t`Reply all`
@@ -185,7 +185,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Forward`}
             <br />
-            <kbd className="border-none">{shiftKey}</kbd> + <kbd className="border-none">F</kbd>
+            <Kbd shortcut={shiftKey} /> + <Kbd shortcut="F" />
         </>
     ) : (
         c('Title').t`Forward`

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Kbd, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useLabels, useLoading, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
@@ -49,8 +49,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
         <>
             {title}
             <br />
-            <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">{shiftKey}</kbd> +{' '}
-            <kbd className="border-none">Backspace</kbd>
+            <Kbd shortcut={metaKey} /> + <Kbd shortcut={shiftKey} /> + <Kbd shortcut="Backspace" />
         </>
     ) : (
         title

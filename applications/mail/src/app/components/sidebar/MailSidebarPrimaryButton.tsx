@@ -1,5 +1,7 @@
-import { SidebarPrimaryButton, Tooltip, useMailSettings } from '@proton/components';
 import { c } from 'ttag';
+
+import { Kbd } from '@proton/atoms';
+import { SidebarPrimaryButton, Tooltip, useMailSettings } from '@proton/components';
 
 interface Props {
     handleCompose: () => void;
@@ -12,7 +14,7 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
         <>
             {c('Title').t`New message`}
             <br />
-            <kbd className="border-none">N</kbd>
+            <Kbd shortcut="N" />
         </>
     ) : null;
 
