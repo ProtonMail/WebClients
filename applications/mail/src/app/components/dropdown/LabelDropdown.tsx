@@ -36,6 +36,8 @@ import { Breakpoints } from '../../models/utils';
 
 import './LabelDropdown.scss';
 
+export const labelDropdownContentProps = { className: 'flex flex-column flex-nowrap flex-align-items-stretch' };
+
 enum LabelState {
     On = 'On',
     Off = 'Off',

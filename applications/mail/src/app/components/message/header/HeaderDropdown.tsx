@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import { Dropdown, DropdownButton, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownProps, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
 
 export interface DropdownRenderProps {
     onClose: () => void;
@@ -10,7 +10,8 @@ export interface DropdownRenderProps {
 }
 
 export interface DropdownRender {
-    (props: DropdownRenderProps): ReactNode;
+    contentProps?: DropdownProps['contentProps'];
+    render: (props: DropdownRenderProps) => ReactNode;
 }
 
 interface Props {
@@ -29,6 +30,7 @@ interface Props {
      */
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: React.MutableRefObject<() => void>;
+
     [rest: string]: any;
 }
 
@@ -88,8 +90,9 @@ const HeaderDropdown = ({
                 noMaxHeight={noMaxHeight}
                 anchorRef={anchorRef}
                 onClose={close}
+                contentProps={children.contentProps}
             >
-                {children({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
+                {children.render({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
             </Dropdown>
             {additionalDropdowns?.map((additionalDropdown, index) => {
                 return (
@@ -103,8 +106,9 @@ const HeaderDropdown = ({
                         noMaxSize
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
+                        contentProps={additionalDropdown.contentProps}
                     >
-                        {additionalDropdown({
+                        {additionalDropdown.render({
                             onClose: handleAdditionalClose,
                             onLock: setLock,
                             onOpenAdditionnal: setAdditionalOpen,

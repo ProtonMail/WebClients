@@ -26,7 +26,7 @@ interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;
 }
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     anchorRef: RefObject<HTMLElement>;
     anchorPosition?: PopperPosition | null;
     children: ReactNode;
@@ -81,7 +81,7 @@ const Dropdown = ({
     disableDefaultArrowNavigation = false,
     UNSTABLE_AUTO_HEIGHT,
     ...rest
-}: Props) => {
+}: DropdownProps) => {
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
 
     const { floating, position, arrow, placement } = usePopper({

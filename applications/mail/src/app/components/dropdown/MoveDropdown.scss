@@ -1,12 +1,6 @@
 @import '~@proton/styles/scss/config';
 
 .move-dropdown {
-	.dropdown-content {
-		display: flex;
-		flex-flow: column nowrap;
-		align-items: stretch;
-	}
-
 	&-content-inner {
 		display: flex;
 		flex-flow: column nowrap;

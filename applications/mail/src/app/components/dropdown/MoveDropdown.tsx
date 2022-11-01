@@ -38,6 +38,8 @@ import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
 
+export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap flex-align-items-stretch' };
+
 type FolderItem = Folder & { icon: IconName; level: number };
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;

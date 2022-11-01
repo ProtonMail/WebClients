@@ -1,6 +1,14 @@
 import { ReactNode, Ref, useImperativeHandle, useState } from 'react';
 
-import { Dropdown, DropdownButton, Tooltip, classnames, generateUID, usePopperAnchor } from '@proton/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownProps,
+    Tooltip,
+    classnames,
+    generateUID,
+    usePopperAnchor,
+} from '@proton/components';
 
 export interface DropdownRenderProps {
     onClose: () => void;
@@ -9,7 +17,8 @@ export interface DropdownRenderProps {
 }
 
 export interface DropdownRender {
-    (props: DropdownRenderProps): ReactNode;
+    contentProps?: DropdownProps['contentProps'];
+    render: (props: DropdownRenderProps) => ReactNode;
 }
 
 interface Props {
@@ -29,6 +38,7 @@ interface Props {
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: Ref<() => void>;
     externalCloseRef?: Ref<() => void>;
+
     [rest: string]: any;
 }
 
@@ -92,8 +102,9 @@ const ToolbarDropdown = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 className={classnames(['toolbar-dropdown', dropDownClassName])}
+                contentProps={children.contentProps}
             >
-                {children({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
+                {children.render({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
             </Dropdown>
             {additionalDropdowns?.map((additionalDropdown, index) => {
                 return (
@@ -107,8 +118,9 @@ const ToolbarDropdown = ({
                         noMaxSize
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
+                        contentProps={additionalDropdown.contentProps}
                     >
-                        {additionalDropdown({
+                        {additionalDropdown.render({
                             onClose: handleAdditionalClose,
                             onLock: setLock,
                             onOpenAdditionnal: setAdditionalOpen,
