@@ -31,7 +31,8 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { getIsVcalendarWithErrors } from '@proton/shared/lib/calendar/vcalHelper';
+import { VcalCalendarComponentWithErrors, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -172,6 +173,15 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (!parsedVcalendar) {
                                         return;
                                     }
+                                    if (getIsVcalendarWithErrors(parsedVcalendar)) {
+                                        const externalError = (parsedVcalendar.components || []).find(
+                                            (component) => !!(component as VcalCalendarComponentWithErrors).error
+                                        )!.error;
+                                        return new EventInvitationError(
+                                            EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID,
+                                            { externalError }
+                                        );
+                                    }
                                     const { PrimaryTimezone: primaryTimezone } = await getCalendarUserSettings();
                                     const supportedEventInvitation = await getSupportedEventInvitation({
                                         vcalComponent: parsedVcalendar,
@@ -185,10 +195,9 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (error instanceof EventInvitationError) {
                                         return error;
                                     }
-                                    return new EventInvitationError(
-                                        EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID,
-                                        error
-                                    );
+                                    return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                                        externalError: error,
+                                    });
                                 }
                             })
                         )
