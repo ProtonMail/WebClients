@@ -3,8 +3,6 @@ import { c } from 'ttag';
 import { serverTime } from '@proton/crypto';
 
 import { acceptInvitation, rejectInvitation } from '../../../api/calendars';
-import { getIsOwnedCalendar } from '../../../calendar/calendar';
-import { getIsSubscribedCalendar } from '../../../calendar/subscribe/helpers';
 import { SECOND } from '../../../constants';
 import { getContactDisplayNameEmail } from '../../../contacts/contactEmail';
 import { canonicalizeEmail } from '../../../helpers/email';
@@ -13,7 +11,10 @@ import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } fr
 import { ContactEmail } from '../../../interfaces/contacts';
 import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
+import { getIsOwnedCalendar, getIsSubscribedCalendar } from '../../calendar';
+import { CALENDAR_PERMISSIONS } from '../../constants';
 import { decryptPassphrase, signPassphrase } from '../../crypto/keys/calendarKeys';
+import { getCanWrite } from '../../permissions';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
     if (!ExpirationTime) {
@@ -92,4 +93,43 @@ export const getCalendarCreatedByText = (calendar: VisualCalendar, contactEmails
     });
 
     return c('Shared calendar; Info about calendar owner').t`Created by ${ownerName}`;
+};
+
+export const getCalendarNameWithOwner = ({
+    calendarName,
+    ownerEmail,
+}: {
+    calendarName: string;
+    ownerEmail: string;
+}) => {
+    return `${calendarName} (${ownerEmail})`;
+};
+
+export const getCalendarNameSubline = ({
+    displayEmail,
+    memberEmail,
+    memberPermissions,
+}: {
+    displayEmail: boolean;
+    memberEmail: string;
+    memberPermissions: CALENDAR_PERMISSIONS;
+}) => {
+    const email = displayEmail ? memberEmail : '';
+    const viewOnlyText = !getCanWrite(memberPermissions)
+        ? c('Info; access rights for shared calendar').t`View only`
+        : '';
+
+    if (!email && !viewOnlyText) {
+        return '';
+    }
+
+    if (!viewOnlyText) {
+        return email;
+    }
+
+    if (!email) {
+        return viewOnlyText;
+    }
+
+    return `${viewOnlyText} • ${email}`;
 };

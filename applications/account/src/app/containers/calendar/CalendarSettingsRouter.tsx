@@ -23,6 +23,7 @@ import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
     getPersonalCalendars,
+    getPreferredActiveWritableCalendar,
     getVisualCalendars,
     groupCalendarsByTaxonomy,
 } from '@proton/shared/lib/calendar/calendar';
@@ -85,6 +86,10 @@ const CalendarSettingsRouter = ({
         useCalendarUserSettings();
 
     const defaultCalendar = getDefaultCalendar(myCalendars, calendarUserSettings.DefaultCalendarID);
+    const preferredPersonalActiveCalendar = getPreferredActiveWritableCalendar(
+        visualCalendars,
+        calendarUserSettings.DefaultCalendarID
+    );
 
     useCalendarsInfoListener(allCalendarIDs);
 
@@ -142,7 +147,11 @@ const CalendarSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, interopsRoute)} exact>
                 <PrivateMainSettingsArea config={interopsRoute}>
-                    <CalendarImportSection calendars={visualCalendars} defaultCalendar={defaultCalendar} user={user} />
+                    <CalendarImportSection
+                        calendars={visualCalendars}
+                        initialCalendar={preferredPersonalActiveCalendar}
+                        user={user}
+                    />
                     <CalendarExportSection
                         personalCalendars={personalCalendars}
                         fallbackCalendar={defaultCalendar || personalCalendars[0]}

@@ -29,6 +29,7 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
         eventReadError: eventReadResult?.error,
         eventTitleSafe,
         verificationStatus: eventReadResult?.result?.[0]?.verificationStatus,
+        isInvitation: !!model.organizer,
         isCancelled,
         isRecurring,
         isSingleEdit,

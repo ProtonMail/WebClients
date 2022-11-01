@@ -14,7 +14,6 @@ import { getHasUserReachedCalendarsLimit } from './calendarLimits';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from './constants';
 import { reactivateCalendarsKeys } from './crypto/keys/reactivateCalendarKeys';
 import { getCanWrite } from './permissions';
-import { getIsSubscribedCalendar } from './subscribe/helpers';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
@@ -50,8 +49,14 @@ export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalen
     return calendar.Type === CALENDAR_TYPE.PERSONAL;
 };
 
-export const getIsOwnedCalendar = (calendar: VisualCalendar) => {
+export const getIsOwnedCalendar = (calendar: CalendarWithOwnMembers) => {
     return calendar.Owner.Email === calendar.Members[0].Email;
+};
+
+export const getIsSubscribedCalendar = (
+    calendar: Calendar | VisualCalendar | SubscribedCalendar
+): calendar is SubscribedCalendar => {
+    return calendar.Type === CALENDAR_TYPE.SUBSCRIPTION;
 };
 
 export const getPersonalCalendars = <T extends Calendar>(calendars: T[] = []): T[] => {
@@ -123,13 +128,23 @@ export const sortCalendars = (calendars: VisualCalendar[]) => {
     });
 };
 
-export const getDefaultCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
-    // only active owned personal calendars can be default
-    const activeOwnedCalendars = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars));
-    if (!activeOwnedCalendars.length) {
+const getPreferredCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
+    if (!calendars.length) {
         return;
     }
-    return activeOwnedCalendars.find(({ ID }) => ID === defaultCalendarID) || activeOwnedCalendars[0];
+    return calendars.find(({ ID }) => ID === defaultCalendarID) || calendars[0];
+};
+
+export const getPreferredActiveWritableCalendar = (
+    calendars: VisualCalendar[] = [],
+    defaultCalendarID: string | null = ''
+) => {
+    return getPreferredCalendar(getProbablyActiveCalendars(getWritableCalendars(calendars)), defaultCalendarID);
+};
+
+export const getDefaultCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
+    // only active owned personal calendars can be default
+    return getPreferredCalendar(getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars)), defaultCalendarID);
 };
 
 export const getVisualCalendar = <T>(calendar: CalendarWithOwnMembers & T): VisualCalendar & T => {
@@ -152,12 +167,12 @@ export const getVisualCalendars = <T>(calendars: (CalendarWithOwnMembers & T)[])
 
 export const getCanCreateCalendar = ({
     calendars,
-    writableCalendars,
+    ownedPersonalCalendars,
     disabledCalendars,
     isFreeUser,
 }: {
     calendars: VisualCalendar[];
-    writableCalendars: VisualCalendar[];
+    ownedPersonalCalendars: VisualCalendar[];
     disabledCalendars: VisualCalendar[];
     isFreeUser: boolean;
 }) => {
@@ -165,9 +180,10 @@ export const getCanCreateCalendar = ({
     if (isCalendarsLimitReached) {
         return false;
     }
-    const activeCalendars = getProbablyActiveCalendars(writableCalendars);
+    // TODO: The following if condition is very flaky. We should check that somewhere else
+    const activeCalendars = getProbablyActiveCalendars(ownedPersonalCalendars);
     const totalActionableCalendars = activeCalendars.length + disabledCalendars.length;
-    if (totalActionableCalendars < writableCalendars.length) {
+    if (totalActionableCalendars < ownedPersonalCalendars.length) {
         // calendar keys need to be reactivated before being able to create a calendar
         return false;
     }

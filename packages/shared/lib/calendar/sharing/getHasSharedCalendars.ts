@@ -5,9 +5,9 @@ import { filterOutDeclinedInvitations } from '@proton/shared/lib/calendar/sharin
 import { Api } from '../../interfaces';
 import {
     CalendarUrlsResponse,
+    CalendarWithOwnMembers,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
-    VisualCalendar,
 } from '../../interfaces/calendar';
 import { getIsOwnedCalendar } from '../calendar';
 
@@ -16,7 +16,7 @@ const getHasSharedCalendars = async ({
     api,
     catchErrors,
 }: {
-    calendars: VisualCalendar[];
+    calendars: CalendarWithOwnMembers[];
     api: Api;
     catchErrors?: boolean;
 }) => {

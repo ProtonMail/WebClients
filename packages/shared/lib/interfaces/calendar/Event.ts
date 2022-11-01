@@ -148,6 +148,7 @@ export interface CalendarViewModel {
     permissions: number;
     isSubscribed: boolean;
     isOwned: boolean;
+    isWritable: boolean;
 }
 
 export interface CalendarsModel {
@@ -157,6 +158,7 @@ export interface CalendarsModel {
     permissions: number;
     isSubscribed: boolean;
     isOwned: boolean;
+    isWritable: boolean;
 }
 
 export interface EventModelView {

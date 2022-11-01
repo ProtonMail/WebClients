@@ -1,10 +1,9 @@
-import { CalendarKey, CalendarPassphrase } from '../../interfaces/calendar/CalendarKey';
-
 import { PaginationParams } from '../../api/interface';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
 import { ApiResponse } from '../Api';
 import { Nullable, RequireSome } from '../utils';
 import { CalendarNotificationSettings } from './Calendar';
+import { CalendarKey, CalendarPassphrase } from './CalendarKey';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
 import { Attendee, CalendarEvent, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';

@@ -14,10 +14,9 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';

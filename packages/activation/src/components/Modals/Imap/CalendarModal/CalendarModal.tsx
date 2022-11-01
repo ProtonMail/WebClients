@@ -2,7 +2,7 @@ import { ImportModal } from '@proton/components/containers/calendar/importModal'
 import { useCalendarUserSettings } from '@proton/components/hooks';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS as DEFAULT_SETTINGS,
-    getDefaultCalendar,
+    getPreferredActiveWritableCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 
 import useUserCalendars from '../../../../hooks/useUserCalendars';
@@ -15,7 +15,7 @@ const CalendarModal = ({ onClose }: Props) => {
     const [userActiveCalendars, loading] = useUserCalendars();
     const [settings = DEFAULT_SETTINGS, loadingSettings] = useCalendarUserSettings();
 
-    const defaultCalendar = getDefaultCalendar(userActiveCalendars, settings.DefaultCalendarID);
+    const defaultCalendar = getPreferredActiveWritableCalendar(userActiveCalendars, settings.DefaultCalendarID);
 
     if (loading || loadingSettings) {
         return null;
@@ -26,7 +26,7 @@ const CalendarModal = ({ onClose }: Props) => {
             key={'calendar-import-modal'}
             isOpen
             onClose={onClose}
-            defaultCalendar={defaultCalendar!}
+            initialCalendar={defaultCalendar!}
             calendars={userActiveCalendars}
         />
     );
