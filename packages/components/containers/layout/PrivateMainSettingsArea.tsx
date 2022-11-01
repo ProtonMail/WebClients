@@ -56,7 +56,10 @@ export const PrivateMainSettingsAreaBase = ({
             return;
         }
         const mainArea = mainAreaRef.current;
-        const el = mainArea.querySelector(hash);
+        let el: Element | null | undefined;
+        try {
+            el = mainArea.querySelector(hash);
+        } catch (e) {}
         if (!el) {
             return;
         }
