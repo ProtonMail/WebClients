@@ -14,7 +14,7 @@
         "noUnusedLocals": true,
         "resolveJsonModule": true,
         "strict": true,
-        "target": "es2018",
+        "target": "es2021",
         "skipLibCheck": true,
         "types": ["webpack-env", "jest"],
         "baseUrl": ".",
