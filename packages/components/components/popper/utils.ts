@@ -19,6 +19,18 @@ export const allPopperPlacements: PopperPlacement[] = [
     'left-start',
 ];
 
+export const getInvertedRTLPlacement = (placement: PopperPlacement, rtl: boolean): PopperPlacement => {
+    if (!rtl) {
+        return placement;
+    }
+    if (placement.startsWith('top') || placement.startsWith('bottom')) {
+        return placement.endsWith('-start')
+            ? (placement.replace('-start', '-end') as PopperPlacement)
+            : (placement.replace('-end', '-start') as PopperPlacement);
+    }
+    return placement;
+};
+
 const getInvertedPlacement = (placement: PopperPlacement): PopperPlacement => {
     const position = placement.split('-')[0];
     if (position === 'top') {
@@ -205,6 +217,18 @@ export const rects = (): Middleware => {
         name: 'rects',
         async fn(middlewareArguments: MiddlewareArguments): Promise<MiddlewareReturn> {
             return { data: middlewareArguments.rects };
+        },
+    };
+};
+
+export const rtlPlacement = (): Middleware => {
+    return {
+        name: 'rtlPlacement',
+        async fn({ placement, elements, platform }: MiddlewareArguments): Promise<MiddlewareReturn> {
+            // Floating ui transparently handles RTL internally in the x,y values. But we expect the classnames to
+            // reflect where it's placed so this is just flipping it in the same way that floating ui happens.
+            const rtl = Boolean(await platform.isRTL?.(elements.floating));
+            return { data: { placement: getInvertedRTLPlacement(placement, rtl) } };
         },
     };
 };
