@@ -32,6 +32,19 @@ import LiteLayout from './containers/LiteLayout';
 import LiteLoaderPage from './containers/LiteLoaderPage';
 import MainContainer from './containers/MainContainer';
 
+const checkDomain = (hostname: string, domain: string) => {
+    return hostname === domain || hostname.endsWith(`.${domain}`);
+};
+
+const getFallbackUrl = (maybeUrl?: string) => {
+    try {
+        const url = new URL(maybeUrl || '');
+        if (checkDomain(url.hostname, 'protonvpn.com') || checkDomain(url.hostname, 'proton.me')) {
+            return url.toString();
+        }
+    } catch (e) {}
+};
+
 interface Props {
     onLogin: (UID: string) => void;
     UID?: string;
@@ -108,7 +121,13 @@ const Setup = ({ onLogin, UID }: Props) => {
             });
         };
 
+        const fallbackUrl = getFallbackUrl(searchParams.get('fallback_url') || '');
+
         const handleSetupError = (error: any) => {
+            if (fallbackUrl) {
+                replaceUrl(fallbackUrl);
+                return;
+            }
             broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
             errorHandler(error);
             setError({
@@ -129,7 +148,6 @@ const Setup = ({ onLogin, UID }: Props) => {
             setupApp(UID).catch(handleSetupError);
         } else {
             // Old clients not supprting auto-sign in receive upgrade notifications to the lite app.
-            const fallbackUrl = searchParams.get('fallback_url');
             if (fallbackUrl) {
                 replaceUrl(fallbackUrl);
                 return;
