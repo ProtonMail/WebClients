@@ -1,4 +1,4 @@
-import { ChangeEvent, Fragment, Ref, RefObject, forwardRef, memo } from 'react';
+import { ChangeEvent, Fragment, Ref, RefObject, forwardRef, memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -8,9 +8,11 @@ import {
     PaginationRow,
     classnames,
     getCanReactiveMnemonic,
+    useConversationCounts,
     useEventManager,
     useIsMnemonicAvailable,
     useItemsDraggable,
+    useMessageCounts,
     useModalState,
     useModals,
     useSettingsLink,
@@ -149,6 +151,9 @@ const List = (
     const canReactivateMnemonic = getCanReactiveMnemonic(user);
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
+    const [messageCounts] = useMessageCounts();
+    const [conversationCounts] = useConversationCounts();
+
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
     const { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } = useEncryptedSearchList(
@@ -190,6 +195,11 @@ const List = (
         onDelete,
     });
 
+    const unreads = useMemo(() => {
+        const counters = conversationMode ? conversationCounts : messageCounts;
+        return (counters || []).find((counter) => counter.LabelID === labelID)?.Unread || 0;
+    }, [conversationMode, labelID, conversationCounts, messageCounts]);
+
     return (
         <div className={classnames(['relative items-column-list relative', !show && 'hidden'])}>
             <div
@@ -197,7 +207,8 @@ const List = (
                 className={classnames(['h100 scroll-if-needed scroll-smooth-touch', isCompactView && 'list-compact'])}
             >
                 <h1 className="sr-only">
-                    {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
+                    {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
+                    {c('Title').ngettext(msgid`${unreads} unread message`, `${unreads} unread messages`, unreads)}
                 </h1>
                 <div className="items-column-list-inner flex flex-nowrap flex-column relative items-column-list-inner--mail">
                     <ListSettings
