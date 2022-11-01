@@ -8,6 +8,8 @@ import useApi from './useApi';
 import useLoading from './useLoading';
 import useUser from './useUser';
 
+let promise: Promise<LatestSubscription> | undefined;
+
 const useLastSubscriptionEnd = (): [latestSubscription: number, loading: boolean] => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -22,7 +24,11 @@ const useLastSubscriptionEnd = (): [latestSubscription: number, loading: boolean
         }
         const run = async () => {
             try {
-                const { LastSubscriptionEnd = 0 } = await api<LatestSubscription>(getLastCancelledSubscription());
+                if (!promise) {
+                    promise = api<LatestSubscription>(getLastCancelledSubscription());
+                }
+
+                const { LastSubscriptionEnd = 0 } = await promise;
 
                 if (isMounted()) {
                     setLatestSubscription(LastSubscriptionEnd || 0);
