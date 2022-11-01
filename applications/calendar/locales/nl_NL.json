@@ -498,6 +498,9 @@
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
       ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
       "Use for sending": [
         "Gebruiken om te versturen"
       ],
@@ -1877,6 +1880,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
+        "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -2636,6 +2643,16 @@
         "Uw feedback"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3295,11 +3312,17 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Existent and added participants will be notified.": [
         "Bestaande en toegevoegde deelnemers worden op de hoogte gebracht."
@@ -3430,9 +3453,6 @@
       ],
       "None of the participants can be notified about your changes:": [
         "Geen van de deelnemers kan op de hoogte worden gebracht van uw wijzigingen:"
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -3623,6 +3643,9 @@
       ],
       "Week": [
         "Week"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
@@ -3824,6 +3847,9 @@
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
+      ],
+      "Authenticator app": [
+        "Authenticator-app"
       ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"

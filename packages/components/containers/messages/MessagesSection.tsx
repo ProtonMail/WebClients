@@ -79,7 +79,7 @@ const MessagesSection = () => {
                             <Info
                                 url={getKnowledgeBaseUrl('/images-by-default')}
                                 title={c('Info')
-                                    .t`Loaded content is being protected by our proxy when the block tracker is activated.`}
+                                    .t`Loaded content is being protected by our proxy when tracker protection is activated.`}
                             />
                         </label>
                     </SettingsLayoutLeft>

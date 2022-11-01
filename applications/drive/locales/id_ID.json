@@ -261,7 +261,7 @@
         "Dapatkan tautan"
       ],
       "Get started": [
-        "Mulai"
+        "Selesai"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -1660,7 +1660,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Gunakan setelan bawaan (${ defaultValueText })"
+        "Gunakan nilai default global (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -2606,10 +2606,10 @@
         "Dan akses dari mana saja"
       ],
       "Anyone with this link can access your file.": [
-        "Siapapun dengan tautan ini bisa mengakses berkas Anda."
+        "Siapa pun dengan tautan ini bisa mengakses berkas Anda."
       ],
       "Anyone with this link can access your folder.": [
-        "Siapapun yang memiliki tautan ini akan dapat mengakses folder Anda."
+        "Siapa pun yang memiliki tautan ini akan dapat mengakses folder Anda."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Apakah Anda yakin untuk mengosongkan sampah dan menghapus seluruh berkas yang ada di dalamnya secara permanen?"
@@ -2621,7 +2621,7 @@
         "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Karena ${ appName } terenkripsi secara end-to-end, kami tidak dapat mengakses atau mendekripsi data-data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
+        "Karena ${ appName } terenkripsi secara ujung ke ujung, kami tidak dapat mengakses atau mendekripsi data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
@@ -2986,8 +2986,8 @@
       "No synced devices": [
         "Tidak ada perangkat yang disinkronkan"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Tidak ada satupun dari kunci yang diunggah yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
       ],
       "Not a valid URL": [
         "URL tidak valid"
@@ -3122,7 +3122,7 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
+        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Share files with links": [
         "Berbagi berkas dengan tautan"
@@ -3185,7 +3185,7 @@
         "Tidak ada berkas"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Berkas berikut dibagikan dengan enkripsi end-to-end. Untuk menjaga keamanan berkas ini — dan juga privasi seluruh dokumen, foto, serta berkas lainnya yang Anda miliki — simpanlah semuanya di Proton Drive milik Anda. Mudah digunakan dan gratis."
+        "Berkas berikut dibagikan dengan enkripsi ujung ke ujung. Untuk menjaga keamanan berkas ini — dan juga privasi seluruh dokumen, foto, serta berkas lainnya yang Anda miliki — simpanlah semuanya di Proton Drive milik Anda. Mudah digunakan dan gratis."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -4000,13 +4000,13 @@
         "Cara untuk mengimpor kalender-kalender dari Yahoo"
       ],
       "How to import contacts from another service": [
-        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+        "Cara untuk mengimpor kontak dari layanan email lainnya"
       ],
       "How to import contacts from Outlook": [
-        "Cara untuk mengimpor kontak-kontak dari Outlook"
+        "Cara untuk mengimpor kontak dari Outlook"
       ],
       "How to import contacts from Yahoo": [
-        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+        "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
         "Cara untuk mengimpor email-email dari layanan email lainnya"
@@ -4252,7 +4252,7 @@
         "Unggah berkas"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
-        "Brankas online terpercaya untuk berbagai dokumen penting dan momen berharga Anda."
+        "Brankas daring terpercaya untuk berbagai dokumen penting dan momen berharga Anda."
       ]
     },
     "Onboarding Proton": {
@@ -4361,7 +4361,7 @@
         "Kata sandi"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
       ],
       "Search for group name": [
         "Cari nama grup"
@@ -4691,7 +4691,7 @@
         "Sesuaikan proses impor email"
       ],
       "Date": [
-        "Pasangan"
+        "Tanggal"
       ],
       "Decrypting": [
         "Mendekripsi"
@@ -5106,7 +5106,7 @@
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
+        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
@@ -5177,7 +5177,7 @@
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
@@ -5207,7 +5207,7 @@
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
+        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
