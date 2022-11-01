@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -63,7 +63,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
         <>
             {tooltipText}
             <br />
-            <kbd className="border-none">{shiftKey}</kbd> + <kbd className="border-none">C</kbd>
+            <Kbd shortcut={shiftKey} /> + <Kbd shortcut="C" />
         </>
     ) : undefined;
 

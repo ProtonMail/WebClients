@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Kbd } from '@proton/atoms';
 import { Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
@@ -66,7 +67,7 @@ const ComposerTitleBar = ({
             <>
                 {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
                 <br />
-                <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">M</kbd>
+                <Kbd shortcut={metaKey} /> + <Kbd shortcut="M" />
             </>
         ) : minimized ? (
             c('Action').t`Maximize composer`
@@ -79,8 +80,7 @@ const ComposerTitleBar = ({
             <>
                 {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
                 <br />
-                <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">{shiftKey}</kbd> +{' '}
-                <kbd className="border-none">M</kbd>
+                <Kbd shortcut={metaKey} /> + <Kbd shortcut={shiftKey} /> + <Kbd shortcut="M" />
             </>
         ) : maximized ? (
             c('Action').t`Contract composer`
@@ -92,7 +92,7 @@ const ComposerTitleBar = ({
         <>
             {c('Action').t`Close composer`}
             <br />
-            <kbd className="border-none">Escape</kbd>
+            <Kbd shortcut="Escape" />
         </>
     ) : (
         c('Action').t`Close composer`

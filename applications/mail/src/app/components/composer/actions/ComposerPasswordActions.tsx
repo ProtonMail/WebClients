@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
@@ -23,8 +23,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
         <>
             {c('Title').t`External encryption`}
             <br />
-            <kbd className="border-none">{metaKey}</kbd> + <kbd className="border-none">{shiftKey}</kbd> +{' '}
-            <kbd className="border-none">E</kbd>
+            <Kbd shortcut={metaKey} /> + <Kbd shortcut={shiftKey} /> + <Kbd shortcut="E" />
         </>
     ) : (
         c('Title').t`External encryption`

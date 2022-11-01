@@ -2,6 +2,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
+import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -39,7 +40,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Previous conversation`}
             <br />
-            <kbd className="border-none">K</kbd>
+            <Kbd shortcut="K" />
         </>
     ) : (
         c('Title').t`Previous conversation`
@@ -49,7 +50,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Previous message`}
             <br />
-            <kbd className="border-none">K</kbd>
+            <Kbd shortcut="K" />
         </>
     ) : (
         c('Title').t`Previous message`
@@ -59,7 +60,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Next conversation`}
             <br />
-            <kbd className="border-none">J</kbd>
+            <Kbd shortcut="J" />
         </>
     ) : (
         c('Title').t`Next conversation`
@@ -69,7 +70,7 @@ const NavigationControls = ({
         <>
             {c('Title').t`Next message`}
             <br />
-            <kbd className="border-none">J</kbd>
+            <Kbd shortcut="J" />
         </>
     ) : (
         c('Title').t`Next message`
