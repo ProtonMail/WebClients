@@ -3,12 +3,14 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { useNoBFCookie } from '../..';
 import { AppLink, Hamburger, Icon } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
+import { useConfig } from '../../hooks';
 import { AppsDropdown } from '../app';
 
 interface Props extends HeaderProps {
@@ -47,6 +49,7 @@ const PrivateHeader = ({
     title,
 }: Props) => {
     useNoBFCookie();
+    const { APP_NAME } = useConfig();
 
     if (backUrl) {
         return (
@@ -69,6 +72,7 @@ const PrivateHeader = ({
 
     return (
         <Header>
+            <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
             <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                 {logo}
                 {AppsDropdownComponent}
