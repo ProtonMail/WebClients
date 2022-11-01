@@ -19,6 +19,10 @@ $padding-block-link: rem(7) !default;
 	padding-inline: $padding-inline-start-link $padding-inline-end-link;
 	text-decoration: none;
 	display: block;
+
+	h3 {
+		font-size: inherit;
+	}
 }
 
 // specificity...
