@@ -771,6 +771,9 @@
       "Underline": [
         "Підкреслений"
       ],
+      "Undo import": [
+        "Скасувати імпорт"
+      ],
       "Unlock": [
         "Розблокувати"
       ],
@@ -857,6 +860,9 @@
       ],
       "Yes": [
         "Так"
+      ],
+      "Yes, undo": [
+        "Так, скасувати"
       ],
       "Zoom in": [
         "Збільшити"
@@ -1595,6 +1601,9 @@
       ],
       "Remove from the list?": [
         "Вилучити з цього списку?"
+      ],
+      "Undo this import?": [
+        "Скасувати цей імпорт?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -4381,6 +4390,14 @@
         "Інший"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Скасування завершено"
+      ],
+      "Undo in progress": [
+        "Скасовується"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% зупинено"
@@ -5286,7 +5303,7 @@
         "Тип посилання"
       ],
       "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Якщо увімкнено блокування стеження, завантажений вміст захищається нашим проксі."
+        "Loaded content is being protected by our proxy when tracker protection is activated."
       ],
       "Loading": [
         "Завантаження"
@@ -8327,26 +8344,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8416,6 +8413,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9878,6 +9895,9 @@
       "SPF value copied to clipboard": [
         "Значення SPF скопійовано в буфер обміну"
       ],
+      "Undo in progress": [
+        "Скасовується"
+      ],
       "User created": [
         "Користувача створено"
       ],
@@ -11278,6 +11298,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису Proton. Розгляньте можливість налаштування вашого імпортування."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Це призведе до вилучення всіх повідомлень, тек і міток, створених під час імпорту."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."

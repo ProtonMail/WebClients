@@ -771,6 +771,9 @@
       "Underline": [
         "Subrayado"
       ],
+      "Undo import": [
+        "Deshacer importación"
+      ],
       "Unlock": [
         "Desbloquear"
       ],
@@ -857,6 +860,9 @@
       ],
       "Yes": [
         "Sí"
+      ],
+      "Yes, undo": [
+        "Sí, deshacer"
       ],
       "Zoom in": [
         "Acercar"
@@ -1585,6 +1591,9 @@
       ],
       "Remove from the list?": [
         "¿Eliminar de la lista?"
+      ],
+      "Undo this import?": [
+        "¿Deshacer esta importación?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -4311,6 +4320,14 @@
         "Otro"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Deshacer finalizado"
+      ],
+      "Undo in progress": [
+        "Deshacer en curso"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% pausado"
@@ -5164,7 +5181,7 @@
         "Tipo de enlace"
       ],
       "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Nuestro proxy protege el contenido cargado cuando se activa el rastreador de bloqueo."
+        "Loaded content is being protected by our proxy when tracker protection is activated."
       ],
       "Loading": [
         "Cargando"
@@ -8143,26 +8160,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8232,6 +8229,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Actualice al paquete empresarial con acceso a todos los servicios premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Actualice al último paquete de privacidad y acceda a todos los servicios premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9876,6 +9893,9 @@
       "SPF value copied to clipboard": [
         "Valor SPF copiado al portapapeles"
       ],
+      "Undo in progress": [
+        "Deshacer en curso"
+      ],
       "User created": [
         "Usuario creado"
       ],
@@ -11256,6 +11276,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Esta importación puede exceder la capacidad de almacenamiento disponible actualmente en su cuenta Proton. Considere personalizar su importación."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Esto eliminará todos los mensajes, carpetas y etiquetas creados durante la importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablemente no estamos en línea en este momento. Complete el formulario a continuación para describir su problema, lo investigaremos y nos pondremos en contacto cuando volvamos a estar en línea."

@@ -580,6 +580,9 @@
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
       ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
       "Use for sending": [
         "Gebruiken om te versturen"
       ],
@@ -1680,6 +1683,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
+        "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -1737,6 +1744,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Ten minste ${ calendarToFixCount } agenda deselecteren of",
         "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
+      ],
+      "Device name does not match": [
+        "Apparaatnaam komt niet overeen"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -2054,6 +2064,16 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Uw feedback"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
       ]
     },
     "file size format": {
@@ -2759,6 +2779,9 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Enabling drive search": [
         "Drive doorzoeken wordt ingeschakeld"
       ],
@@ -2773,6 +2796,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -2986,8 +3012,8 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
+      "No synced devices": [
+        "Geen gesynchroniseerde apparaten"
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -3220,6 +3246,9 @@
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
       ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van Proton Drive. Lokale bestanden op het apparaat blijven onaangeroerd."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Om echt privé zoeken in te schakelen, moeten we uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
       ],
@@ -3306,6 +3335,9 @@
       ],
       "What would you like to do?": [
         "Wat zou u willen doen?"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -3481,6 +3513,9 @@
       ],
       "Audio file": [
         "Geluidsbestand"
+      ],
+      "Authenticator app": [
+        "Authenticator-app"
       ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
@@ -4113,8 +4148,17 @@
       "Contact group updated": [
         "Contactgroep bijgewerkt"
       ],
+      "Device failed to be removed": [
+        "Apparaat kon niet worden verwijderd"
+      ],
+      "Device failed to be renamed": [
+        "Apparaat kon niet worden hernoemd"
+      ],
       "Device removed": [
         "Apparaat verwijderd"
+      ],
+      "Device renamed": [
+        "Apparaat hernoemd"
       ],
       "Encrypted search activated": [
         "Versleuteld zoeken geactiveerd"
