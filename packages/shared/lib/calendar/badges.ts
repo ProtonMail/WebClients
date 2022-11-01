@@ -1,13 +1,10 @@
 import { c } from 'ttag';
 
 import { BadgeType } from '@proton/components/components/badge/Badge';
-import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
-import {
-    getCalendarHasSubscriptionParameters,
-    getCalendarIsNotSyncedInfo,
-    getIsSubscribedCalendar,
-} from '@proton/shared/lib/calendar/subscribe/helpers';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import { SubscribedCalendar, VisualCalendar } from '../interfaces/calendar';
+import { getIsCalendarDisabled, getIsCalendarProbablyActive, getIsSubscribedCalendar } from './calendar';
+import { getCalendarHasSubscriptionParameters, getCalendarIsNotSyncedInfo } from './subscribe/helpers';
 
 export enum CALENDAR_STATUS_TYPE {
     DEFAULT,

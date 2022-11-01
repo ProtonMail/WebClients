@@ -2,9 +2,9 @@ import { useGetAddresses, useGetCalendarBootstrap, useLoading } from '@proton/co
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
+import { getIsAvailableCalendar } from '../../../helpers/event';
 import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';
 
 export interface Props extends Omit<SelectProps<string>, 'children'> {
@@ -27,16 +27,30 @@ const CreateEventCalendarSelect = ({
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
 
-    const { id: calendarID } = model.calendar;
-    const options = model.calendars
-        .filter(({ isSubscribed, permissions }) => !isSubscribed && getCanWrite(permissions))
-        .map(({ value, text, color, permissions, isOwned, isSubscribed }) => ({
+    const {
+        organizer,
+        calendars,
+        calendar: { id: calendarID },
+    } = model;
+
+    const options = calendars
+        .filter(
+            ({ value: id, isOwned, isWritable }) =>
+                id === calendarID ||
+                getIsAvailableCalendar({
+                    isOwnedCalendar: isOwned,
+                    isCalendarWritable: isWritable,
+                    isInvitation: !!organizer,
+                })
+        )
+        .map(({ value, text, color, permissions, isOwned, isSubscribed, isWritable }) => ({
             id: value,
             name: text,
             color,
             permissions,
             isOwned,
             isSubscribed,
+            isWritable,
         }));
     const { name } = options.find(({ id }) => id === calendarID) || options[0];
 
@@ -51,7 +65,8 @@ const CreateEventCalendarSelect = ({
     }
 
     const handleChangeCalendar = async (newId: string) => {
-        const { color, permissions, isOwned, isSubscribed } = options.find(({ id }) => id === newId) || options[0];
+        const { color, permissions, isOwned, isSubscribed, isWritable } =
+            options.find(({ id }) => id === newId) || options[0];
 
         // grab members and default settings for the new calendar
         const {
@@ -83,7 +98,7 @@ const CreateEventCalendarSelect = ({
 
         setModel({
             ...model,
-            calendar: { id: newId, color, permissions, isOwned, isSubscribed },
+            calendar: { id: newId, color, permissions, isOwned, isSubscribed, isWritable },
             ...getInitialMemberModel(addresses, Members, Member, address),
             ...getOrganizerAndSelfAddressModel({ attendees: model.attendees, addresses, addressID: address.ID }),
             defaultEventDuration,

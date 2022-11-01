@@ -4,47 +4,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BasicModal, Form } from '@proton/components';
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
-import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
+import { getCanDeleteEvent, getCanEditSharedEventData, getCannotSaveEvent } from '../../helpers/event';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import EventForm from './EventForm';
 import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
-
-const getCanEditSharedEventData = ({
-    isSubscribedCalendar,
-    permissions,
-    isOrganizer,
-    isAttendee,
-    selfAddress,
-}: {
-    isSubscribedCalendar: boolean;
-    permissions: number;
-    isOrganizer: boolean;
-    isAttendee: boolean;
-    selfAddress?: Address;
-}) => {
-    if (isSubscribedCalendar) {
-        return false;
-    }
-    if (!getCanWrite(permissions)) {
-        return false;
-    }
-    if (isAttendee) {
-        return false;
-    }
-    if (isOrganizer) {
-        return selfAddress ? getIsAddressActive(selfAddress) : false;
-    }
-    return true;
-};
 
 interface Props {
     isNarrow: boolean;
@@ -52,6 +24,7 @@ interface Props {
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     isCreateEvent: boolean;
+    isInvitation: boolean;
     isDuplicating: boolean;
     isDrawerApp: boolean;
     model: EventModel;
@@ -70,6 +43,7 @@ const CreateEventModal = ({
     displayWeekNumbers,
     weekStartsOn,
     isCreateEvent,
+    isInvitation,
     isDuplicating,
     isDrawerApp,
     addresses,
@@ -90,22 +64,31 @@ const CreateEventModal = ({
         onDelete,
     });
     const { isOrganizer, isAttendee, selfAddress, selfAttendeeIndex, attendees, status } = model;
-    const { isSubscribed: isSubscribedCalendar, permissions } = model.calendar;
+    const { isOwned: isOwnedCalendar, isWritable: isCalendarWritable } = model.calendar;
 
     const isCancelled = status === ICAL_EVENT_STATUS.CANCELLED;
-    const cannotSave = model.isOrganizer && attendees.length > MAX_ATTENDEES;
-    const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
+    const selfAttendee = selfAttendeeIndex !== undefined ? attendees[selfAttendeeIndex] : undefined;
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
         !isCancelled && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
-    const canEditSharedEventData = getCanEditSharedEventData({
-        isSubscribedCalendar,
-        permissions,
+    const canEditSharedEventData =
+        isCreateEvent ||
+        getCanEditSharedEventData({
+            isOwnedCalendar,
+            isCalendarWritable,
+            isOrganizer,
+            isAttendee,
+            isInvitation,
+            selfAddress,
+        });
+    const cannotSave = getCannotSaveEvent({
+        isOwnedCalendar,
         isOrganizer,
-        isAttendee,
-        selfAddress,
+        numberOfAttendees: attendees.length,
+        canEditSharedEventData,
     });
+
     // new events have no uid yet
     const inviteActions = {
         // the type will be more properly assessed in getSaveEventActions
@@ -126,6 +109,7 @@ const CreateEventModal = ({
             {c('Action').t`Save`}
         </Button>
     );
+
     const deleteInviteActions = model.isAttendee
         ? {
               type: isSelfAddressActive ? INVITE_ACTION_TYPES.DECLINE_INVITATION : INVITE_ACTION_TYPES.DECLINE_DISABLED,
@@ -141,20 +125,25 @@ const CreateEventModal = ({
               selfAddress: model.selfAddress,
               selfAttendeeIndex: model.selfAttendeeIndex,
           };
-
     const handleDeleteWithNotice = () => handleDelete(deleteInviteActions);
-    const submit = isCreateEvent ? (
+    const deleteButton = (
+        <Button
+            onClick={loadingAction ? noop : handleDeleteWithNotice}
+            loading={loadingAction && lastAction === ACTION.DELETE}
+            disabled={loadingAction}
+            className="mr0-5 on-tiny-mobile-mr0 on-tiny-mobile-mb0-5"
+        >{c('Action').t`Delete`}</Button>
+    );
+
+    const endAlignedButtons = isCreateEvent ? (
         submitButton
     ) : (
         <div className="flex on-tiny-mobile-w100 on-tiny-mobile-flex-column">
-            {!isSubscribedCalendar && (
-                <Button
-                    onClick={loadingAction ? noop : handleDeleteWithNotice}
-                    loading={loadingAction && lastAction === ACTION.DELETE}
-                    disabled={loadingAction}
-                    className="mr0-5 on-tiny-mobile-mr0 on-tiny-mobile-mb0-5"
-                >{c('Action').t`Delete`}</Button>
-            )}
+            {getCanDeleteEvent({
+                isOwnedCalendar,
+                isCalendarWritable,
+                isInvitation,
+            }) && deleteButton}
             {submitButton}
         </div>
     );
@@ -185,7 +174,7 @@ const CreateEventModal = ({
                     >
                         {c('Action').t`Cancel`}
                     </Button>
-                    {submit}
+                    {endAlignedButtons}
                 </>
             }
         >
@@ -200,8 +189,10 @@ const CreateEventModal = ({
                 tzid={tzid}
                 canEditSharedEventData={canEditSharedEventData}
                 isCreateEvent={isCreateEvent}
+                isInvitation={isInvitation}
                 setParticipantError={setParticipantError}
-                isWritableCalendar={!isSubscribedCalendar && getCanWrite(permissions)}
+                isOwnedCalendar={isOwnedCalendar}
+                isCalendarWritable={isCalendarWritable}
                 isDuplicating={isDuplicating}
                 isDrawerApp={isDrawerApp}
             />

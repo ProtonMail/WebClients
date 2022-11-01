@@ -32,8 +32,8 @@ const getText = (isDowngrade: boolean, calendarSharingEnabled: boolean) => {
         );
     }
     return c('Info').ngettext(
-        msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links before you cancel your subscription.`,
-        `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links before you cancel your subscription.`,
+        msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
+        `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
         MAX_CALENDARS_FREE
     );
 };

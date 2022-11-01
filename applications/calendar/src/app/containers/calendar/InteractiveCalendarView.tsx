@@ -48,6 +48,7 @@ import {
     getIsCalendarDisabled,
     getIsCalendarProbablyActive,
     getIsCalendarWritable,
+    getIsOwnedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     DELETE_CONFIRMATION_TYPES,
@@ -118,6 +119,7 @@ import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
+import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
@@ -219,7 +221,7 @@ type ModalsMap = {
     }>;
     importModal: ModalWithProps<{
         files: File[];
-        defaultCalendar: VisualCalendar;
+        initialCalendar: VisualCalendar;
     }>;
 };
 
@@ -234,8 +236,8 @@ interface Props extends SharedViewProps {
     calendars: VisualCalendar[];
     addresses: Address[];
     activeAddresses: Address[];
-    defaultCalendar?: VisualCalendar;
-    defaultCalendarBootstrap?: CalendarBootstrap;
+    createEventCalendar?: VisualCalendar;
+    createEventCalendarBootstrap?: CalendarBootstrap;
     containerRef: HTMLDivElement | null;
     timeGridViewRef: RefObject<TimeGridRef>;
     interactiveRef: RefObject<InteractiveRef>;
@@ -274,8 +276,8 @@ const InteractiveCalendarView = ({
     activeAddresses,
 
     activeCalendars,
-    defaultCalendar,
-    defaultCalendarBootstrap,
+    createEventCalendar,
+    createEventCalendarBootstrap,
 
     interactiveRef,
     containerRef,
@@ -391,6 +393,7 @@ const InteractiveCalendarView = ({
 
     const isCreatingEvent = !!tmpData && !tmpEvent;
     const isEditingEvent = !!tmpData && !!tmpEvent;
+    const isInvitation = !!tmpDataOriginal?.organizer;
     const isDuplicatingEvent = !!modalsMap.createEventModal.props?.isDuplicating;
     const isInTemporaryBlocking =
         tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
@@ -459,12 +462,12 @@ const InteractiveCalendarView = ({
     };
 
     const getCreateModel = (isAllDay: boolean, attendees?: AttendeeModel[]) => {
-        if (!defaultCalendar || !defaultCalendarBootstrap) {
+        if (!createEventCalendar || !createEventCalendarBootstrap) {
             return;
         }
 
         const initialDate = getInitialDate();
-        const { Members = [], CalendarSettings } = defaultCalendarBootstrap;
+        const { Members = [], CalendarSettings } = createEventCalendarBootstrap;
         const [Member] = Members;
         const Address = activeAddresses.find(({ Email }) => Member?.Email === Email);
 
@@ -475,7 +478,7 @@ const InteractiveCalendarView = ({
         return getInitialModel({
             initialDate,
             CalendarSettings,
-            Calendar: defaultCalendar,
+            Calendar: createEventCalendar,
             Calendars: activeCalendars,
             Addresses: activeAddresses,
             Members,
@@ -609,9 +612,18 @@ const InteractiveCalendarView = ({
             const targetCalendar = event.data.calendarData;
 
             const isAllowedToTouchEvent = true;
-            const isInvitation = !!event.data.eventReadResult?.result?.[0].selfAddressData.isAttendee;
+            const canEditSharedEventData = getCanEditSharedEventData({
+                isOwnedCalendar: getIsOwnedCalendar(targetCalendar),
+                isCalendarWritable: getIsCalendarWritable(targetCalendar),
+                isOrganizer: !!event.data.eventReadResult?.result?.[0].selfAddressData.isOrganizer,
+                isAttendee: !!event.data.eventReadResult?.result?.[0].selfAddressData.isAttendee,
+                isInvitation: !!event.data.eventReadResult?.result?.[0].veventComponent.organizer,
+                selfAddress: event.data.eventReadResult?.result?.[0].selfAddressData.selfAddress,
+            });
             let isAllowedToMoveEvent =
-                getIsCalendarProbablyActive(targetCalendar) && getIsCalendarWritable(targetCalendar) && !isInvitation;
+                getIsCalendarProbablyActive(targetCalendar) &&
+                getIsCalendarWritable(targetCalendar) &&
+                canEditSharedEventData;
 
             if (!isAllowedToTouchEvent) {
                 return;
@@ -705,7 +717,7 @@ const InteractiveCalendarView = ({
         }
 
         if (isCreateDownAction(mouseDownAction)) {
-            if (!defaultCalendar || !defaultCalendarBootstrap) {
+            if (!createEventCalendar || !createEventCalendarBootstrap) {
                 return;
             }
 
@@ -731,7 +743,8 @@ const InteractiveCalendarView = ({
                 return;
             }
             const { start: initialStart, end: initialEnd } = newTemporaryModel;
-            let newTemporaryEvent = temporaryEvent || getCreateTemporaryEvent(defaultCalendar, newTemporaryModel, tzid);
+            let newTemporaryEvent =
+                temporaryEvent || getCreateTemporaryEvent(createEventCalendar, newTemporaryModel, tzid);
 
             const eventDuration = +getTimeInUtc(initialEnd, false) - +getTimeInUtc(initialStart, false);
 
@@ -1041,7 +1054,7 @@ const InteractiveCalendarView = ({
         startModel?: EventModel;
         isDuplicating?: boolean;
     }) => {
-        if (!defaultCalendar) {
+        if (!createEventCalendar) {
             return;
         }
 
@@ -1050,7 +1063,11 @@ const InteractiveCalendarView = ({
         if (!model) {
             throw new Error('Unable to get create model');
         }
-        const newTemporaryEvent = getTemporaryEvent(getCreateTemporaryEvent(defaultCalendar, model, tzid), model, tzid);
+        const newTemporaryEvent = getTemporaryEvent(
+            getCreateTemporaryEvent(createEventCalendar, model, tzid),
+            model,
+            tzid
+        );
         handleEditEvent(newTemporaryEvent, isDuplicating);
     };
 
@@ -1450,7 +1467,7 @@ const InteractiveCalendarView = ({
             return;
         }
 
-        if (!defaultCalendar) {
+        if (!createEventCalendar) {
             return createNotification({
                 type: 'error',
                 text: c('Error message').t`You need an active personal calendar to import events`,
@@ -1461,7 +1478,7 @@ const InteractiveCalendarView = ({
             isOpen: true,
             props: {
                 files,
-                defaultCalendar,
+                initialCalendar: createEventCalendar,
             },
         });
     };
@@ -1482,8 +1499,8 @@ const InteractiveCalendarView = ({
         const duplicateFromNonWritableCalendarData =
             isDuplication &&
             (getIsCalendarDisabled(viewEventData.calendarData) || !getIsCalendarWritable(viewEventData.calendarData)) &&
-            defaultCalendar
-                ? { calendar: defaultCalendar }
+            createEventCalendar
+                ? { calendar: createEventCalendar }
                 : undefined;
         const newTemporaryModel = getUpdateModel({
             viewEventData,
@@ -1666,6 +1683,7 @@ const InteractiveCalendarView = ({
                                 isDraggingDisabled={isNarrow || isDrawerApp}
                                 isNarrow={isNarrow}
                                 isCreateEvent={isCreatingEvent}
+                                isInvitation={isInvitation}
                                 style={style}
                                 popoverRef={ref}
                                 model={tmpData}
@@ -1839,7 +1857,6 @@ const InteractiveCalendarView = ({
                     return true;
                 }}
             />
-
             {!!tmpData && (
                 <CreateEventModal
                     isNarrow={isNarrow}
@@ -1848,6 +1865,7 @@ const InteractiveCalendarView = ({
                     tzid={tzid}
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
+                    isInvitation={isInvitation}
                     isDuplicating={isDuplicatingEvent}
                     isOpen={createEventModal.isOpen}
                     onSave={async (inviteActions: InviteActions) => {

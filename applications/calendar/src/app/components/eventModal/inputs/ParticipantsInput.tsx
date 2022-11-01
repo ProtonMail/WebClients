@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { AddressesAutocompleteTwo, Alert, Details, Summary } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_ROLE, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import {
     CANONICALIZE_SCHEME,
@@ -18,6 +18,7 @@ import { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/cal
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import { getParticipantsError } from '../helpers';
 import OrganizerRow from '../rows/OrganizerRow';
 import ParticipantRow from '../rows/ParticipantRow';
 
@@ -25,6 +26,7 @@ const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 
 interface Props {
     value: AttendeeModel[];
+    isOwnedCalendar: boolean;
     addresses: Address[];
     organizer?: OrganizerModel;
     id: string;
@@ -40,13 +42,14 @@ const ParticipantsInput = ({
     placeholder,
     organizer,
     value = [],
+    isOwnedCalendar,
     onChange,
     id,
     addresses,
     setParticipantError,
     collapsible = true,
 }: Props) => {
-    const numberOfParticipants = value.length;
+    const numberOfAttendees = value.length;
 
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
 
@@ -60,6 +63,8 @@ const ParticipantsInput = ({
     });
 
     const recipientsSet = new Set(recipients.map(({ Address }) => canonicalizeEmail(Address)));
+
+    const error = getParticipantsError({ isOwnedCalendar, numberOfAttendees });
 
     const handleAddRecipients = (recipients: Recipient[]) => {
         setParticipantError?.(false);
@@ -156,23 +161,19 @@ const ParticipantsInput = ({
                     }
                 }}
             />
-            {numberOfParticipants > MAX_ATTENDEES && (
+            {error && (
                 <Alert className="mb1 mt0-5" type="error">
-                    {c('Info').ngettext(
-                        msgid`At most ${MAX_ATTENDEES} participant is allowed per invitation`,
-                        `At most ${MAX_ATTENDEES} participants are allowed per invitation`,
-                        MAX_ATTENDEES
-                    )}
+                    {error}
                 </Alert>
             )}
-            {numberOfParticipants > 0 &&
+            {numberOfAttendees > 0 &&
                 (collapsible ? (
                     <Details className="border-none mt0-25" open>
                         <Summary>
                             {c('Event form').ngettext(
-                                msgid`${numberOfParticipants} participant`,
-                                `${numberOfParticipants} participants`,
-                                numberOfParticipants
+                                msgid`${numberOfAttendees} participant`,
+                                `${numberOfAttendees} participants`,
+                                numberOfAttendees
                             )}
                         </Summary>
                         {participantRows}
@@ -180,7 +181,7 @@ const ParticipantsInput = ({
                 ) : (
                     participantRows
                 ))}
-            {numberOfParticipants > 0 && organizer && (
+            {numberOfAttendees > 0 && organizer && (
                 <div className="pt0-25">
                     <OrganizerRow organizer={organizer} />
                 </div>

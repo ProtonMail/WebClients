@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
-import { MAX_DEFAULT_NOTIFICATIONS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

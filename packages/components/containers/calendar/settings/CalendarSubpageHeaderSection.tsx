@@ -7,7 +7,7 @@ import { SettingsSectionWide } from '@proton/components/containers';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { classnames } from '@proton/components/helpers';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
-import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
+import { getCalendarCreatedByText, getCalendarNameSubline } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -25,10 +25,11 @@ interface Props {
 const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEdit }: Props) => {
     const { contactEmailsMap } = useContactEmailsCache();
 
-    const { Name, Description, Color, Email } = calendar;
+    const { Name, Description, Color, Email: memberEmail, Permissions: memberPermissions } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
     const createdByText = getCalendarCreatedByText(calendar, contactEmailsMap);
+    const subline = getCalendarNameSubline({ displayEmail: true, memberEmail, memberPermissions });
     const editCalendarText = c('Calendar edit button tooltip').t`Edit calendar`;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
@@ -59,8 +60,8 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                             {createdByText}
                         </div>
                     )}
-                    <div className="text-ellipsis color-weak" title={Email}>
-                        {Email}
+                    <div className="text-ellipsis color-weak" title={subline}>
+                        {subline}
                     </div>
                     {isSubscribed && (
                         <div

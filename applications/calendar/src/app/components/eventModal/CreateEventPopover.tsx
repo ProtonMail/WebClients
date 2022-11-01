@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PrimaryButton } from '@proton/components';
-import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
+import { getCannotSaveEvent } from '../../helpers/event';
 import { useRect } from '../../hooks/useRect';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from '../events/PopoverContainer';
@@ -33,6 +33,7 @@ interface Props {
     popoverRef: Ref<HTMLDivElement>;
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;
+    isInvitation: boolean;
     isDraggingDisabled?: boolean;
 }
 
@@ -49,11 +50,16 @@ const CreateEventPopover = ({
     addresses,
     isNarrow,
     isCreateEvent,
+    isInvitation,
     isDraggingDisabled = false,
 }: Props) => {
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
-    const cannotSave = model.isOrganizer && model.attendees.length > MAX_ATTENDEES;
+    const cannotSave = getCannotSaveEvent({
+        isOwnedCalendar: model.calendar.isOwned,
+        isOrganizer: model.isOrganizer,
+        numberOfAttendees: model.attendees.length,
+    });
     const formRef = useRef<HTMLFormElement>(null);
     const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({
         containerEl: formRef.current,
@@ -168,6 +174,7 @@ const CreateEventPopover = ({
                     setModel={setModel}
                     isMinimal
                     isCreateEvent={isCreateEvent}
+                    isInvitation={isInvitation}
                     setParticipantError={setParticipantError}
                 />
                 <PopoverFooter className="flex-nowrap flex-justify-end">

@@ -97,7 +97,7 @@ interface Props {
     visibleCalendars: VisualCalendar[];
     activeCalendars: VisualCalendar[];
     calendars: VisualCalendar[];
-    defaultCalendar?: VisualCalendar;
+    createEventCalendar?: VisualCalendar;
     userSettings: UserSettings;
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
@@ -118,7 +118,7 @@ const CalendarContainer = ({
     calendars,
     activeCalendars,
     visibleCalendars,
-    defaultCalendar,
+    createEventCalendar,
     userSettings,
     calendarUserSettings,
     calendarsEventsCacheRef,
@@ -385,15 +385,15 @@ const CalendarContainer = ({
         setCustom({ view: DAY, range: undefined, date: newDate });
     }, []);
 
-    const [defaultCalendarBootstrap, loadingCalendarBootstrap] = useCalendarBootstrap(
-        defaultCalendar ? defaultCalendar.ID : undefined
+    const [createEventCalendarBootstrap, loadingCreateEventCalendarBootstrap] = useCalendarBootstrap(
+        createEventCalendar ? createEventCalendar.ID : undefined
     );
 
     const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
 
-    const isLoading = loadingCalendarBootstrap || loadingEvents;
+    const isLoading = loadingCreateEventCalendarBootstrap || loadingEvents;
     const isEventCreationDisabled =
-        disableCreate || !defaultCalendarBootstrap || !activeCalendars.some(unary(getIsCalendarWritable));
+        disableCreate || !createEventCalendarBootstrap || !activeCalendars.some(unary(getIsCalendarWritable));
 
     return (
         <CalendarContainerView
@@ -464,8 +464,8 @@ const CalendarContainer = ({
                 addresses={addresses}
                 activeAddresses={activeAddresses}
                 activeCalendars={activeCalendars}
-                defaultCalendar={defaultCalendar}
-                defaultCalendarBootstrap={defaultCalendarBootstrap}
+                createEventCalendar={createEventCalendar}
+                createEventCalendarBootstrap={createEventCalendarBootstrap}
                 interactiveRef={interactiveRef}
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
