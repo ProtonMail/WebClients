@@ -4479,7 +4479,7 @@
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "ほかの PGP 互換サービスで使用するために PGP キーをダウンロードします。"
+        "ほかの PGP 互換サービスで使用するためには PGP 鍵をダウンロードしてください。"
       ],
       "Drop a file here to upload": [
         "アップロードするファイルをここにドロップしてください"
@@ -6049,6 +6049,12 @@
       "Authenticator app": [
         "認証アプリ"
       ],
+      "Auto show embedded images": [
+        "埋め込み画像の自動表示"
+      ],
+      "Auto show remote images": [
+        "外部画像の自動表示"
+      ],
       "Auto-detect primary time zone": [
         "2 つ目のタイムゾーンを自動検出"
       ],
@@ -7509,20 +7515,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7568,6 +7560,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9087,7 +9093,7 @@
         "消去"
       ],
       "Composing": [
-        "作成"
+        "組版"
       ],
       "Confirm address": [
         "アドレスの確認"
@@ -9309,7 +9315,7 @@
         "人間であることの検証"
       ],
       "Identity and addresses": [
-        "ユーザー情報とアドレス"
+        "署名とアドレス"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -9372,7 +9378,7 @@
         "メッセージ"
       ],
       "Messages and composing": [
-        "メッセージと作成"
+        "メッセージと組版"
       ],
       "Minicalendar": [
         "ミニカレンダー"
@@ -9381,7 +9387,7 @@
         "複数ユーザー対応"
       ],
       "My addresses": [
-        "あなたのメールアドレス"
+        "自分のメールアドレス"
       ],
       "My calendars": [
         "マイカレンダー"
@@ -9523,6 +9529,9 @@
       ],
       "Select when you want this notification to be sent": [
         "通知を送信する時間を選択"
+      ],
+      "Sender image": [
+        "差出人画像"
       ],
       "Session management": [
         "セッション管理"

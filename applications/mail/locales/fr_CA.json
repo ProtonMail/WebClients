@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Bloquer les messages de cet expéditeur"
       ],
+      "Block sender": [
+        "Bloquer l'expéditeur"
+      ],
       "Block senders": [
         "Bloquer les expéditeurs"
       ],
@@ -496,6 +499,9 @@
       ],
       "Load": [
         "Charger"
+      ],
+      "Load anyway": [
+        "Charger quand même"
       ],
       "Load embedded images": [
         "Charger les images intégrées"
@@ -901,6 +907,9 @@
       ],
       "Skip": [
         "Ignorer"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "Certaines images n'ont pas pu être chargées avec la protection contre le suivi."
       ],
       "Star": [
         "Ajouter aux favoris"
@@ -2798,6 +2807,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas délivrés et seront définitivement supprimés.",
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas délivrés et seront définitivement supprimés."
+      ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés."
       ],
@@ -2806,6 +2819,10 @@
       ],
       "No labels": [
         "Aucun label"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
+        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
@@ -3726,6 +3743,11 @@
         "Par défaut"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. La vie privée par défaut."
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Nous avons augmenté l'espace de stockage total de votre compte à ${ rewardInGb } Go. Obtenez un espace de stockage supplémentaire et débloquez des fonctionnalités haut de gamme dès aujourd'hui."
@@ -4217,6 +4239,10 @@
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membre)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membres)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } dispose de plusieurs adresses courriel."
       ],
@@ -4313,6 +4339,10 @@
       "${ unread } unread message": [
         "${ unread } message non lu",
         "${ unread } messages non lus"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } message programmé",
+        "${ unreadCount } messages programmés"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversation non lue",
@@ -4680,6 +4710,9 @@
         "Heure",
         "Heures"
       ],
+      "How Hide My Email works": [
+        "Comment fonctionne Hide My Email"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
       ],
@@ -4873,8 +4906,8 @@
       "non-Proton Mail": [
         "autre que Proton Mail"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Aucune des clés téléversées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Aucune des clés téléversées n'est valide pour le chiffrement. Pour pouvoir envoyer des messages à cette adresse, téléversez une clé valide ou désactivez la fonction « Chiffrer les courriels »."
       ],
       "Not a valid URL": [
         "URL non valide"
@@ -4954,6 +4987,9 @@
       ],
       "Priority support": [
         "Assistance prioritaire"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les pourrielleurs avec ${ maskMyEmailButton }."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton ne gagne pas d'argent en abusant de la vie privée."
@@ -5057,6 +5093,9 @@
       "Show original message": [
         "Afficher le message original"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin est un service Proton, et votre compte Proton inclut des alias Hide My Email. Pour commencer à masquer votre adresse courriel, allez sur SimpleLogin et créez votre premier alias."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables où vous ne voulez pas exposer votre adresse électronique réelle."
       ],
@@ -5126,6 +5165,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Il y a eu une erreur avec la signature utilisée pour vérifier les coordonnées qui peut provenir d'une réinitialisation du mot de passe."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse électronique. Protégez votre boîte aux lettres avec Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
@@ -5344,6 +5386,9 @@
       ],
       "When do you want your message to be sent?": [
         "Quand souhaitez-vous que votre message soit envoyé?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Lorsque vous communiquez votre courriel, utilisez un alias unique Hide My Email au lieu de votre véritable adresse courriel."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Lorsque vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
@@ -6442,6 +6487,11 @@
         "Ouvrir dans ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "paramètres"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Nous y sommes presque"
@@ -6993,6 +7043,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } sur ${ countContacts } contact exporté avec succès.",
+        "${ contactsExported.length } sur ${ countContacts } contacts exportés avec succès."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
         "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
@@ -7240,11 +7294,23 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
+      "Email tracking protection": [
+        "Protection contre le suivi des courriels"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Recevez jusqu'à ${ credits } en crédits."
+      ],
+      "Invite friends to Proton": [
+        "Invitez vos amis à rejoindre Proton"
+      ],
       "Message Content Search": [
         "Recherche de contenu de message"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer ceci dans les ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez maintenant programmer vos messages pour les envoyer plus tard"
@@ -7318,9 +7384,17 @@
         "${ elementsCount } conversation marquée comme non lue.",
         "${ elementsCount } conversations marquées comme non lues."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables.",
+        "${ elementsCount } conversations déplacées dans le dossier ${ folderName } et expéditeurs ajoutés à votre liste des non indésirables."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversation déplacée vers ${ folderName }.",
         "${ elementsCount } conversations déplacées vers ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } conversation déplacée dans le dossier Indésirables et expéditeur ajouté à votre liste d'indésirables.",
+        "${ elementsCount } conversations déplacées dans le dossier Indésirables et expéditeurs ajoutés à votre liste d'indésirables."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation retirée de ${ labelName }.",
@@ -7342,9 +7416,17 @@
         "${ elementsCount } message marqué comme non lu.",
         "${ elementsCount } messages marqués comme non lus."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } message déplacé dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables.",
+        "${ elementsCount } messages déplacés dans le dossier ${ folderName } et expéditeurs ajoutés à votre liste des non indésirables."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } message déplacé vers ${ folderName }.",
         "${ elementsCount } messages déplacés vers ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } message déplacé dans le dossier Indésirables et expéditeur ajouté à votre liste d'indésirables.",
+        "${ elementsCount } messages déplacés dans le dossier Indésirables et expéditeurs ajoutés à votre liste d'indésirables."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
@@ -7391,8 +7473,14 @@
       "Conversation marked as unread.": [
         "Conversation marquée comme non lue."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversation déplacée vers ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversation déplacée dans le dossier Indésirables et expéditeur ajouté à votre liste d'indésirables."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -7448,8 +7536,14 @@
       "Message marked as unread.": [
         "Message marqué comme non lu."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Message déplacé dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables."
+      ],
       "Message moved to ${ folderName }.": [
         "Message déplacé vers ${ folderName }."
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Message déplacé dans le dossier Indésirables et expéditeur ajouté à votre liste d'indésirables."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."

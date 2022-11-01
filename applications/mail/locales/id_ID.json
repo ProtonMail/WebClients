@@ -381,7 +381,7 @@
         "Dapatkan ekstensi SimpleLogin"
       ],
       "Get started": [
-        "Mulai"
+        "Selesai"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -480,7 +480,7 @@
         "Miring"
       ],
       "Keyboard shortcuts": [
-        "Pintasan papan ketik"
+        "Pintasan keyboard"
       ],
       "Label as": [
         "Labeli sebagai"
@@ -1775,13 +1775,13 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Dienkripsi end-to-end"
+        "Dienkripsi ujung ke ujung"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Dienkripsi end-to-end untuk penerima terverifikasi"
+        "Dienkripsi ujung ke ujung untuk penerima terverifikasi"
       ],
       "End-to-end encrypted. ${ warningsText }": [
-        "Dienkripsi end-to-end. ${ warningsText }"
+        "Dienkripsi ujung ke ujung. ${ warningsText }"
       ],
       "PGP-encrypted": [
         "Terenkripsi PGP"
@@ -2763,7 +2763,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Gunakan setelan bawaan (${ defaultValueText })"
+        "Gunakan nilai default global (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -3726,7 +3726,7 @@
         "Kami telah meningkatkan kuota penyimpanan Anda menjadi ${ rewardInGb } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
       ],
       "You're all set!": [
-        "Anda kini sudah siap!"
+        "Anda kini telah siap!"
       ]
     },
     "Get started checklist incentive": {
@@ -3768,7 +3768,7 @@
     },
     "Get started checklist item": {
       "Get mobile app": [
-        "Dapatkan aplikasi mobile"
+        "Dapatkan aplikasi seluler"
       ],
       "Import contacts or emails": [
         "Impor kontak atau email"
@@ -4389,7 +4389,7 @@
         "Warna latar belakang"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+        "Navigasi dan tindakan dasar akan tetap tersedia terlepas dari apakah pintasan keyboard diaktifkan atau tidak di pengaturan."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
@@ -4533,7 +4533,7 @@
         "Perlindungan pelacak email dinonakifkan"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "Pelacak email dapat mengusik privasi Anda. Proton tidak menemukan pelacak apapun dalam pesan ini."
+        "Pelacak email dapat mengusik privasi Anda. Proton tidak menemukan pelacak apa pun dalam pesan ini."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } trackers.": [
         "Pelacak email dapat mengusik privasi Anda. Proton telah menemukan dan memblokir ${ numberOfTrackers } pelacak yang terdapat pada email ini."
@@ -4587,7 +4587,7 @@
         "Akan segera kedaluwarsa"
       ],
       "files attached": [
-        "file terlampir"
+        "berkas terlampir"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
@@ -4823,8 +4823,8 @@
       "non-Proton Mail": [
         "non-Proton Mail"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Tidak ada satupun dari kunci yang diunggah yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
       ],
       "Not a valid URL": [
         "URL tidak valid"
@@ -5004,7 +5004,7 @@
         "Tentukan frasa pemulihan"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
+        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Show original message": [
         "Tampilkan pesan asli"
@@ -5028,7 +5028,7 @@
         "Subjek"
       ],
       "Subject is end-to-end encrypted": [
-        "Subjek terenkripsi secara end-to-end"
+        "Subjek terenkripsi secara ujung ke ujung"
       ],
       "Subject:": [
         "Subjek:"
@@ -5040,7 +5040,7 @@
         "Dukungan 1 alamat email dengan domain khusus"
       ],
       "Support privacy by upgrading for": [
-        "Dukung privasi online dengan meningkatkan jenis akun Anda mulai dari"
+        "Dukung privasi daring dengan meningkatkan untuk"
       ],
       "support team": [
         "tim dukungan"
@@ -5265,7 +5265,7 @@
         "Gunakan ${ calendarAppName } untuk menjaga agar agenda Anda tetap privat."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "Gunakan pintasan kibor untuk mempersingkat waktu."
+        "Gunakan pintasan keyboard untuk mengelola email secara lebih ringkas."
       ],
       "Using SimpleLogin is easy": [
         "Menggunakan SimpleLogin itu mudah"
@@ -5349,7 +5349,7 @@
         "Anda tidak dapat membalas dari alamat yang diundang."
       ],
       "You do not have any messages here": [
-        "Anda tidak memiliki pesan apapun di sini"
+        "Anda tidak memiliki pesan apa pun di sini"
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Anda mempunyai ${ totalLabel } di kotak masuk Anda."
@@ -5397,7 +5397,7 @@
         "Anda memilih **${ count } pesan** berlabel ini"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apapun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
+        "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
@@ -5920,7 +5920,7 @@
         "Impor ke alamat email"
       ],
       "Keyboard shortcuts": [
-        "Pintasan papan ketik"
+        "Pintasan keyboard"
       ],
       "Keyword": [
         "Kata kunci"
@@ -6519,13 +6519,13 @@
         "Cara untuk mengimpor kalender-kalender dari Yahoo"
       ],
       "How to import contacts from another service": [
-        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+        "Cara untuk mengimpor kontak dari layanan email lainnya"
       ],
       "How to import contacts from Outlook": [
-        "Cara untuk mengimpor kontak-kontak dari Outlook"
+        "Cara untuk mengimpor kontak dari Outlook"
       ],
       "How to import contacts from Yahoo": [
-        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+        "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
         "Cara untuk mengimpor email-email dari layanan email lainnya"
@@ -6805,7 +6805,7 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        "Dapatkan aplikasi mobile"
+        "Dapatkan aplikasi seluler"
       ],
       "Import contacts or emails": [
         "Impor kontak atau email"
@@ -6893,7 +6893,7 @@
         "Nomor telepon"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
       ],
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
@@ -6991,13 +6991,13 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "Pesan ditandatangani dan dienkripsi end-to-end"
+        "Pesan ditandatangani dan dienkripsi ujung ke ujung"
       ],
       "End-to-end encrypted message": [
-        "Pesan dienkripsi end-to-end"
+        "Pesan dienkripsi ujung ke ujung"
       ],
       "End-to-end encrypted message from verified sender": [
-        "Pesan terenkripsi end-to-end dari pengirim terverifikasi"
+        "Pesan terenkripsi ujung ke ujung dari pengirim terverifikasi"
       ],
       "PGP-encrypted and signed message": [
         "Pesan ditandatangani dan dienkripsi PGP"
@@ -7112,16 +7112,16 @@
         "Dienkripsi oleh ${ MAIL_APP_NAME } untuk penerima pesan yang telah terverifikasi"
       ],
       "End-to-end encrypted": [
-        "Dienkripsi end-to-end"
+        "Dienkripsi ujung ke ujung"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "Dienkripsi end-to-end untuk penerima PGP"
+        "Dienkripsi ujung ke ujung untuk penerima PGP"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "Dienkripsi end-to-end untuk penerima PGP terverifikasi"
+        "Dienkripsi ujung ke ujung untuk penerima PGP terverifikasi"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Dienkripsi end-to-end untuk penerima terverifikasi"
+        "Dienkripsi ujung ke ujung untuk penerima terverifikasi"
       ],
       "PGP-signed": [
         "Ditandatangani PGP"
@@ -7133,10 +7133,10 @@
         "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access untuk penerima yang telah terverifikasi"
       ],
       "Sent by you with end-to-end encryption": [
-        "Dikirim oleh Anda dengan enkripsi end-to-end"
+        "Dikirim oleh Anda dengan enkripsi ujung ke ujung"
       ],
       "Sent by you with end-to-end encryption to verified recipients": [
-        "Dikirim oleh Anda dengan enkripsi end-to-end untuk penerima terverifikasi"
+        "Dikirim oleh Anda dengan enkripsi ujung ke ujung untuk penerima terverifikasi"
       ],
       "Stored with zero-access encryption": [
         "Disimpan dengan enkripsi zero access"
@@ -7202,7 +7202,7 @@
         "Kini Anda dapat menjadwalkan pengiriman pesan"
       ],
       "You can now search the content of your encrypted emails.": [
-        "Anda kini dapat mencari isi konten email-email Anda yang terenkripsi."
+        "Anda kini dapat mencari isi konten email Anda yang terenkripsi."
       ]
     },
     "Status": {
@@ -7366,7 +7366,7 @@
         "Folder dibersihkan"
       ],
       "Keyboard shortcuts preferences updated": [
-        "Preferensi pintasan papan ketik diperbarui"
+        "Preferensi pintasan keyboard diperbarui"
       ],
       "Label cleared": [
         "Label dihapus"
@@ -7550,7 +7550,7 @@
     },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
-        "${ appName } Pintasan Papan Ketik"
+        "${ appName } Pintasan Keyboard"
       ],
       "${ emailsCount } members": [
         "${ emailsCount } anggota"
@@ -8091,7 +8091,7 @@
         "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
+        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
@@ -8161,7 +8161,7 @@
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
       "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
         "Tanda tangan lampiran gagal diverifikasi.\nAnda tetap dapat mengunduh lampiran ini tapi mungkin saja sudah rusak."
@@ -8194,7 +8194,7 @@
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
+        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."

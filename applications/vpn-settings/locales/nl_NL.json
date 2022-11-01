@@ -353,6 +353,9 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
+      "Use authentication code": [
+        "Verificatiecode gebruiken"
+      ],
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
@@ -414,6 +417,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } eigen domein",
         "+ ${ domains } eigen domeinen"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } gebruiker",
+        "+ ${ users } gebruikers"
       ]
     },
     "Alter": {
@@ -435,14 +442,23 @@
       "Payable every 12 months": [
         "Betaalbaar elke 12 maanden"
       ],
+      "Payable every 15 months": [
+        "Betaalbaar elke 15 maanden"
+      ],
       "Payable every 24 months": [
         "Betaalbaar elke 24 maanden"
+      ],
+      "Payable every 30 months": [
+        "Betaalbaar elke 30 maanden"
       ],
       "Payable every month": [
         "Betaalbaar elke maand"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Vernieuwd automatisch op ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Vernieuwd automatisch op ${ formattedEndTime } aan ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1647,8 +1663,16 @@
       ]
     },
     "fido2: Info": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ],
       "Security key updated": [
         "Veiligheidssleutel bijgewerkt"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
       ]
     },
     "file size format": {
@@ -1876,6 +1900,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
       ],
+      "Each code can only be used once": [
+        "Elke code kan maar één keer gebruikt worden"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
@@ -1905,6 +1932,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -2192,7 +2222,7 @@
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Om uw internetverbinding te beveiligen, download en installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een server."
+        "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
@@ -2292,6 +2322,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -2531,6 +2564,9 @@
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
+      ],
+      "Authenticator app": [
+        "Authenticator-app"
       ],
       "Billing cycle": [
         "Facturatieperiode"
@@ -3242,8 +3278,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* Bij een abonnement van 12 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* Bij een abonnement van 15 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Bij een abonnement van 24 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* Bij een abonnement van 30 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
@@ -4440,6 +4482,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
+      ],
+      "Gift": [
+        "Geschenk"
       ],
       "Gift code": [
         "Geschenkcode"

@@ -771,6 +771,9 @@
       "Underline": [
         "Subliniat"
       ],
+      "Undo import": [
+        "Anulare importare"
+      ],
       "Unlock": [
         "Deblocare"
       ],
@@ -857,6 +860,9 @@
       ],
       "Yes": [
         "Da"
+      ],
+      "Yes, undo": [
+        "Da, anulare"
       ],
       "Zoom in": [
         "Mărire"
@@ -1590,6 +1596,9 @@
       ],
       "Remove from the list?": [
         "Eliminare din listă?"
+      ],
+      "Undo this import?": [
+        "Anulați această importare?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -4346,6 +4355,14 @@
         "Altele"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Anulare finalizată"
+      ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% întrerupt"
@@ -5225,7 +5242,7 @@
         "Tip legătură"
       ],
       "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Conținutul încărcat este protejat de proxy-ul nostru atunci când blocarea urmăririi este activată."
+        "Loaded content is being protected by our proxy when tracker protection is activated."
       ],
       "Loading": [
         "Se încarcă"
@@ -8235,26 +8252,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8324,6 +8321,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9760,6 +9777,9 @@
       "SPF value copied to clipboard": [
         "Valoarea SPF a fost copiată în memorie"
       ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
+      ],
       "User created": [
         "Utilizator creat"
       ],
@@ -11150,6 +11170,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont Proton. Luați în considerare modificarea opțiunilor de importare."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Aceasta va șterge toate mesajele, folderele și etichetele create în timpul importării."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

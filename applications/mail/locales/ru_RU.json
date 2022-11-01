@@ -914,6 +914,9 @@
       "Skip": [
         "Пропустить"
       ],
+      "Some images failed to load with tracking protection.": [
+        "Некоторые изображения не удалось загрузить с защитой от отслеживания."
+      ],
       "Star": [
         "Важное"
       ],
@@ -2837,6 +2840,12 @@
       "No labels": [
         "Нет ярлыков"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
+        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
+        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
+        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
       ],
@@ -4451,6 +4460,12 @@
         "${ unread } непрочитанного сообщения",
         "${ unread } непрочитанного сообщения"
       ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } запланированное сообщение",
+        "${ unreadCount } запланированных сообщения",
+        "${ unreadCount } запланированных сообщений",
+        "${ unreadCount } запланированных сообщения"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } непрочитанная цепочка писем",
         "${ unreadCount } непрочитанные цепочки писем",
@@ -5051,8 +5066,8 @@
       "non-Proton Mail": [
         "не Proton Mail"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Ни один из загруженных ключей не действителен для шифрования. Чтобы отправить сообщения по этому адресу, пожалуйста, загрузите действующий ключ или отключите функцию \"Зашифровать электронные письма\"."
       ],
       "Not a valid URL": [
         "Недопустимый URL"
@@ -5134,6 +5149,9 @@
       ],
       "Priority support": [
         "Приоритетная поддержка"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Защитите свою электронную почту от утечки в списки рассылки или спамеров с помощью ${ maskMyEmailButton }."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не зарабатывает на нарушении конфиденциальности."
@@ -5236,6 +5254,9 @@
       ],
       "Show original message": [
         "Показать исходное сообщение"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin - это услуга Proton, а ваш аккаунт Proton включает псевдонимы Hide My Email. Чтобы начать маскировку своего адреса электронной почты, зайдите в SimpleLogin и создайте свой первый псевдоним."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin предоставляет простой способ создания логинов на ненадежных сторонних сайтах, где вы не хотите раскрывать свой реальный адрес электронной почты."
@@ -7226,6 +7247,12 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } из ${ countContacts } контакта успешно экспортированы.",
+        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы.",
+        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы.",
+        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
@@ -7834,11 +7861,23 @@
         "${ elementsCount } цепочек писем помечены как непрочитанные.",
         "${ elementsCount } цепочка(и) писем помечена(ы) как непрочитанные."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } цепочка писем перемещена в ${ folderName }, и отправитель добавлен в ваш список \"не спам\".",
+        "${ elementsCount } цепочки писем перемещены в ${ folderName }, и отправители добавлены в ваш список \"не спам\".",
+        "${ elementsCount } цепочек писем перемещены в ${ folderName }, и отправители добавлены в ваш список \"не спам\".",
+        "${ elementsCount } цепочки писем перемещены в ${ folderName }, и отправители добавлены в ваш список \"не спам\"."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } цепочка писем перемещена в ${ folderName }.",
         "${ elementsCount } цепочки писем перемещены в ${ folderName }.",
         "${ elementsCount } цепочки писем перемещено в ${ folderName }.",
         "${ elementsCount } цепочка(и,ек) писем перемещено в ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } цепочка писем перемещена в спам, и отправитель добавлен в ваш список спама.",
+        "${ elementsCount } цепочки писем перемещены в спам, и отправители добавлены в ваш список спама.",
+        "${ elementsCount } цепочек писем перемещены в спам, и отправители добавлены в ваш список спама.",
+        "${ elementsCount } цепочки писем перемещено в спам, и отправители добавлены в ваш список спама."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "C ${ elementsCount } цепочки писем снят ярлык ${ labelName }.",
@@ -7938,6 +7977,9 @@
       ],
       "Conversation marked as unread.": [
         "Цепочка писем помечена как непрочитанная."
+      ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Цепочка писем перемещена в ${ folderName }, и отправитель добавлен в ваш список \"не спам\"."
       ],
       "Conversation moved to ${ folderName }.": [
         "Цепочка писем перемещена в ${ folderName }."

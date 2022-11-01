@@ -212,7 +212,7 @@
         "Teruskan sebagai lampiran"
       ],
       "Get started": [
-        "Mulai"
+        "Selesai"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -529,7 +529,7 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Siapapun yang memiliki tautan ini akan dapat melihat kalender Anda"
+        "Siapa pun yang memiliki tautan ini akan dapat melihat kalender Anda"
       ],
       "They can view or edit your calendar": [
         "Mereka dapat melihat atau menyunting kalender Anda"
@@ -1895,7 +1895,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Gunakan setelan bawaan (${ defaultValueText })"
+        "Gunakan nilai default global (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -3455,8 +3455,8 @@
       "None of the participants can be notified about your changes:": [
         "Tidak ada peserta yang dapat diberi tahu tentang perubahan Anda:"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Tidak ada satupun dari kunci yang diunggah yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
       ],
       "Not a valid URL": [
         "URL tidak valid"
@@ -3540,7 +3540,7 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara end-to-end dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
+        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Beberapa jawaban Anda untuk kejadian sebelumnya yang diperbarui oleh penyelenggara akan hilang."
@@ -4305,13 +4305,13 @@
         "Cara untuk mengimpor kalender-kalender dari Yahoo"
       ],
       "How to import contacts from another service": [
-        "Cara untuk mengimpor kontak-kontak dari layanan email lainnya"
+        "Cara untuk mengimpor kontak dari layanan email lainnya"
       ],
       "How to import contacts from Outlook": [
-        "Cara untuk mengimpor kontak-kontak dari Outlook"
+        "Cara untuk mengimpor kontak dari Outlook"
       ],
       "How to import contacts from Yahoo": [
-        "Cara untuk mengimpor kontak-kontak dari Yahoo"
+        "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
         "Cara untuk mengimpor email-email dari layanan email lainnya"
@@ -4795,7 +4795,7 @@
         "Kata sandi"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
       ],
       "Search for group name": [
         "Cari nama grup"
@@ -4932,7 +4932,7 @@
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
       ],
       "Don't miss any events": [
-        "Jangan lewatkan acara apapun"
+        "Jangan lewatkan acara apa pun"
       ],
       "Easily accept invites": [
         "Terima undangan dengan mudah"
@@ -5647,7 +5647,7 @@
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"
+        "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
@@ -5703,7 +5703,7 @@
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
@@ -5733,7 +5733,7 @@
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak online. Harap jabarkan masalah yang tengah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali online."
+        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."

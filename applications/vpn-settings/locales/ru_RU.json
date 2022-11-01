@@ -419,6 +419,12 @@
         "+ ${ domains } своих домена",
         "+ ${ domains } своих доменов",
         "+ ${ domains } своих доменов"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } пользователь",
+        "+ ${ users } пользователя",
+        "+ ${ users } пользователей",
+        "+ ${ users } пользователя"
       ]
     },
     "Alter": {
@@ -454,6 +460,9 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Пролонгируется автоматически ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Пролонгируется автоматически ${ formattedEndTime } за ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -2217,6 +2226,9 @@
       "Preview": [
         "Предпросмотр"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
+      ],
       "Priority support": [
         "Приоритетная поддержка"
       ],
@@ -3415,8 +3427,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* При подписке на 12 месяцев. Другие варианты подписки доступны на странице оформления заказа."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* С подпиской на 15 месяцев. Другие варианты подписки доступны на странице оформления заказа."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* При подписке на 24 месяца. Другие варианты подписки доступны на странице оформления заказа."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* С подпиской на 30 месяцев. Другие варианты подписки доступны на странице оформления заказа."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
