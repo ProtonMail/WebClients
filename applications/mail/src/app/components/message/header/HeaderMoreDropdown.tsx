@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Kbd } from '@proton/atoms';
 import {
     ButtonGroup,
     DropdownMenu,
@@ -189,7 +189,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="border-none">I</kbd>
+            <Kbd shortcut="I" />
         </>
     ) : (
         c('Title').t`Move to inbox (not spam)`
@@ -198,7 +198,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Mark as unread`}
             <br />
-            <kbd className="border-none">U</kbd>
+            <Kbd shortcut="U" />
         </>
     ) : (
         c('Title').t`Mark as unread`
@@ -207,7 +207,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox`}
             <br />
-            <kbd className="border-none">I</kbd>
+            <Kbd shortcut="I" />
         </>
     ) : (
         c('Title').t`Move to inbox`
@@ -216,7 +216,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to trash`}
             <br />
-            <kbd className="border-none">T</kbd>
+            <Kbd shortcut="T" />
         </>
     ) : (
         c('Title').t`Move to trash`
@@ -225,7 +225,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="border-none">M</kbd>
+            <Kbd shortcut="M" />
         </>
     ) : (
         c('Title').t`Move to`
@@ -234,7 +234,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="border-none">L</kbd>
+            <Kbd shortcut="L" />
         </>
     ) : (
         c('Title').t`Label as`
@@ -243,7 +243,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Filter on...`}
             <br />
-            <kbd className="border-none">F</kbd>
+            <Kbd shortcut="F" />
         </>
     ) : (
         c('Title').t`Filter on...`
