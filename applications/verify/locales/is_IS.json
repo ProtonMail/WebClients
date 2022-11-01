@@ -53,6 +53,9 @@
       "Try another method": [
         "Prófa aðra aðferð"
       ],
+      "Use authentication code": [
+        "Nota auðkenningarkóða"
+      ],
       "Use recovery code": [
         "Nota endurheimtukóða"
       ],
@@ -312,6 +315,9 @@
       "Czech Republic": [
         "Tékkland"
       ],
+      "Côte d'Ivoire": [
+        "Fílabeinsströndin"
+      ],
       "Denmark": [
         "Danmörk"
       ],
@@ -341,6 +347,9 @@
       ],
       "Estonia": [
         "Eistland"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Eþíópía"
@@ -584,6 +593,9 @@
       ],
       "Mozambique": [
         "Mósambík"
+      ],
+      "Myanmar": [
+        "Mjanmar"
       ],
       "Namibia": [
         "Namibía"
@@ -964,8 +976,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Smelltu á „Óska eftir nýjum kóða“ til að fá nýjan staðfestingarkóða sendan ${ strong }. Ef þetta símanúmer er rangt skaltu smella á „Breyta“ til að leiðrétta það."
       ],
+      "Each code can only be used once": [
+        "Hvern kóða er aðeins hægt að nota einu sinni"
+      ],
+      "Enter the code from your authenticator app": [
+        "Settu inn kóðann sem auðkenningarforritið útbjó"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Settu inn sannvottunarkóðann sem sendur var til ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Settu inn þitt eigið lykilorð (sem stjórnandi fyrirtækis/stofnunar/samtaka/félags)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ef þú átt í vandræðum með að útbúa notandaaðgang, geturðu sent inn beiðni um aðgang og við munum svara innan næsta virka dags."
@@ -1014,6 +1035,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Auðkenningarforrit"
+      ],
       "Code is 6 digits without spaces": [
         "Kóðinn er 6 tölustafir án bils"
       ],
