@@ -60,30 +60,32 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                     size="narrow"
                     data-testid="toolbar:page-number-dropdown"
                 >
-                    {() => (
-                        <DropdownMenu>
-                            {[...Array(total)].map((_, i) => {
-                                const pageNumber = i + 1; // paging tooling is 0 based
-                                const active = page === pageNumber;
-                                return (
-                                    <DropdownMenuButton
-                                        key={i} // eslint-disable-line react/no-array-index-key
-                                        loading={loading}
-                                        aria-selected={active}
-                                        isSelected={active}
-                                        onClick={() => onPage(i + 1)}
-                                        aria-label={c('Action').t`Page ${pageNumber}`}
-                                        data-testid={`toolbar:page-number-${pageNumber}`}
-                                        className={classnames(['flex flex-row'])}
-                                    >
-                                        <span className="text-left flex-item-fluid">{pageNumber}</span>
-                                        {active ? <Icon name="checkmark" /> : null}
-                                    </DropdownMenuButton>
-                                );
-                            })}
-                            {useLoadMore && loadMore}
-                        </DropdownMenu>
-                    )}
+                    {{
+                        render: () => (
+                            <DropdownMenu>
+                                {[...Array(total)].map((_, i) => {
+                                    const pageNumber = i + 1; // paging tooling is 0 based
+                                    const active = page === pageNumber;
+                                    return (
+                                        <DropdownMenuButton
+                                            key={i} // eslint-disable-line react/no-array-index-key
+                                            loading={loading}
+                                            aria-selected={active}
+                                            isSelected={active}
+                                            onClick={() => onPage(i + 1)}
+                                            aria-label={c('Action').t`Page ${pageNumber}`}
+                                            data-testid={`toolbar:page-number-${pageNumber}`}
+                                            className={classnames(['flex flex-row'])}
+                                        >
+                                            <span className="text-left flex-item-fluid">{pageNumber}</span>
+                                            {active ? <Icon name="checkmark" /> : null}
+                                        </DropdownMenuButton>
+                                    );
+                                })}
+                                {useLoadMore && loadMore}
+                            </DropdownMenu>
+                        ),
+                    }}
                 </ToolbarDropdown>
             </>
         );
@@ -111,32 +113,34 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 data-testid="toolbar:page-number-dropdown"
                 hasCaret={false}
             >
-                {() => (
-                    <DropdownMenu>
-                        <Scroll>
-                            {[...Array(total)].map((_, i) => {
-                                const pageNumber = i + 1; // paging tooling is 0 based
-                                const active = page === pageNumber;
-                                return (
-                                    <DropdownMenuButton
-                                        key={i} // eslint-disable-line react/no-array-index-key
-                                        loading={loading}
-                                        aria-selected={active}
-                                        isSelected={active}
-                                        onClick={() => onPage(i + 1)}
-                                        aria-label={c('Action').t`Page ${pageNumber}`}
-                                        data-testid={`toolbar:page-number-${pageNumber}`}
-                                        className={classnames(['flex flex-row'])}
-                                    >
-                                        <span className="text-left flex-item-fluid">{pageNumber}</span>
-                                        {active ? <Icon name="checkmark" className="mt0-2" /> : null}
-                                    </DropdownMenuButton>
-                                );
-                            })}
-                            {useLoadMore && loadMore}
-                        </Scroll>
-                    </DropdownMenu>
-                )}
+                {{
+                    render: () => (
+                        <DropdownMenu>
+                            <Scroll>
+                                {[...Array(total)].map((_, i) => {
+                                    const pageNumber = i + 1; // paging tooling is 0 based
+                                    const active = page === pageNumber;
+                                    return (
+                                        <DropdownMenuButton
+                                            key={i} // eslint-disable-line react/no-array-index-key
+                                            loading={loading}
+                                            aria-selected={active}
+                                            isSelected={active}
+                                            onClick={() => onPage(i + 1)}
+                                            aria-label={c('Action').t`Page ${pageNumber}`}
+                                            data-testid={`toolbar:page-number-${pageNumber}`}
+                                            className={classnames(['flex flex-row'])}
+                                        >
+                                            <span className="text-left flex-item-fluid">{pageNumber}</span>
+                                            {active ? <Icon name="checkmark" className="mt0-2" /> : null}
+                                        </DropdownMenuButton>
+                                    );
+                                })}
+                                {useLoadMore && loadMore}
+                            </Scroll>
+                        </DropdownMenu>
+                    ),
+                }}
             </ToolbarDropdown>
             <ToolbarButton
                 disabled={loading || page >= total}
