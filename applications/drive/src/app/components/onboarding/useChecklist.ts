@@ -27,8 +27,12 @@ export default function useChecklist() {
 
     const expiresInDays = checklist?.ExpiresAt ? differenceInDays(fromUnixTime(checklist.ExpiresAt), new Date()) : 0;
 
-    const markCompletedAsSeen = () => {
-        setChecklist(undefined);
+    // If dismiss is set to true, then the checklist disappears completely.
+    // If set to false, it just marks seen on backend but keeps it on web for the session.
+    const markCompletedAsSeen = (dismiss: boolean = true) => {
+        if (dismiss) {
+            setChecklist(undefined);
+        }
         api<ChecklistApiResponse>(seenCompletedDriveChecklist('get-started'));
     };
 
