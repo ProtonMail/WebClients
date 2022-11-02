@@ -91,7 +91,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
                             return c('Action').t`Verify account`;
                         }
                         if (verification.type === 'external') {
-                            return c('Action').t`Verify email`;
+                            return c('Action').t`Verify`;
                         }
                     }
                     if (verification.method === 'ownership-sms') {
@@ -113,7 +113,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
                     onNoReceive();
                 }}
                 className="mt0-5"
-            >{c('Action').t`Didn't receive the code?`}</Button>
+            >{c('Action').t`Resend code`}</Button>
         </>
     );
 };
