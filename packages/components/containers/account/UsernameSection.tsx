@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { ButtonLike } from '@proton/atoms/Button';
+import { Card } from '@proton/atoms/Card';
+import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { Address, UserType } from '@proton/shared/lib/interfaces';
 
-import { Href, InlineLinkButton, useModalState } from '../../components';
+import { AppLink, Href, InlineLinkButton, useModalState } from '../../components';
 import { useAddresses, useConfig, useUser } from '../../hooks';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import SettingsLayout from './SettingsLayout';
@@ -59,6 +61,16 @@ const UsernameSection = () => {
         <>
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
             <SettingsSection>
+                {Type === UserType.EXTERNAL && primaryAddress && (
+                    <Card className="mb2" rounded bordered={false}>
+                        <div className="mb1">
+                            {c('Info')
+                                .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME} services including Mail and Calendar.`}
+                        </div>
+                        <ButtonLike as={AppLink} to={`/setup-internal-address?app=${APPS.PROTONMAIL}`}>{c('Info')
+                            .t`Get my ${BRAND_NAME} address`}</ButtonLike>
+                    </Card>
+                )}
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <div className="text-semibold">{Name ? c('Label').t`Name` : c('Label').t`Username`}</div>
