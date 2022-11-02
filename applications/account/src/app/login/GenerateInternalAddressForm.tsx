@@ -24,17 +24,18 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
 
     const { validator, onFormSubmit } = useFormErrors();
 
+    const trimmedUsername = username.trim();
     const domain = availableDomains?.length ? availableDomains[0] : '';
 
     const handleSubmit = async () => {
         try {
-            await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+            await api(queryCheckUsernameAvailability(`${trimmedUsername}@${domain}`, true));
         } catch (e: any) {
             const errorText = getApiErrorMessage(e) || c('Error').t`Can't check username, try again later`;
             setUsernameError(errorText);
             throw e;
         }
-        onSubmit(username, domain);
+        onSubmit(trimmedUsername, domain);
     };
 
     return (
@@ -53,7 +54,7 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
                 bigger
                 id="username"
                 label={c('Label').t`Username`}
-                error={validator([requiredValidator(username), usernameError])}
+                error={validator([requiredValidator(trimmedUsername), usernameError])}
                 autoFocus
                 disableChange={loading}
                 value={username}
