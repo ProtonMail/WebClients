@@ -28,6 +28,7 @@ import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/
 import { UserType } from '@proton/shared/lib/interfaces';
 import { getInternalAddressSetupMode, handleInternalAddressGeneration } from '@proton/shared/lib/keys';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
+import noop from '@proton/utils/noop';
 
 import GenerateInternalAddressStep from '../login/GenerateInternalAddressStep';
 import Footer from '../public/Footer';
@@ -93,7 +94,8 @@ const SetupInternalAccountContainer = () => {
             const toApp = getValidatedApp(searchParams.get('app') || '');
 
             if (!toApp) {
-                return handleBack();
+                handleBack();
+                return new Promise(noop);
             }
 
             const [user, addresses, domains] = await Promise.all([
@@ -103,7 +105,8 @@ const SetupInternalAccountContainer = () => {
             ]);
 
             if (user.Type !== UserType.EXTERNAL) {
-                return handleToApp(toApp);
+                handleToApp(toApp);
+                return new Promise(noop);
             }
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
