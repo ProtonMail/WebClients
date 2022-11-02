@@ -140,10 +140,33 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
-    const defaultSignupType =
-        clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
+    const isExternalSignupEnabled = externalSignupFeature.feature?.Value;
 
-    const [signupType, setSignupType] = useState<SignupType>(defaultSignupType);
+    const signupTypes = (() => {
+        if (isExternalSignupEnabled) {
+            if (toApp && getHasAppExternalSignup(toApp)) {
+                return [SignupType.Email, SignupType.Username];
+            }
+            if (!toApp) {
+                return [SignupType.Username, SignupType.Email];
+            }
+        }
+        return clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS
+            ? [SignupType.VPN]
+            : [SignupType.Username];
+    })();
+    const defaultSignupType = signupTypes[0];
+
+    const [signupType, setSignupType] = useState<{ method: 'auto' | 'manual'; type: SignupType }>({
+        method: 'auto',
+        type: defaultSignupType,
+    });
+
+    useEffect(() => {
+        if (signupType.method === 'auto' && signupType.type !== defaultSignupType) {
+            setSignupType({ method: 'auto', type: defaultSignupType });
+        }
+    }, [signupType.type, defaultSignupType]);
 
     const setModelDiff = (diff: Partial<SignupModel>) => {
         return setModel((model) => ({
@@ -281,8 +304,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         throw new Error('Missing dependencies');
     }
 
-    const hasAppExternalSignup = externalSignupFeature.feature?.Value && (!toApp || getHasAppExternalSignup(toApp));
-
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
     const handleChangeCurrency = async (currency: Currency) => {
@@ -399,7 +420,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     payment: c('Signup step').t`Payment`,
                 };
 
-                const isExternalAccountFlow = signupType === SignupType.Email;
+                const isExternalAccountFlow = signupType.type === SignupType.Email;
                 if (isExternalAccountFlow) {
                     if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
                         return {
@@ -478,19 +499,30 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                         return c('Title').t`Create your ${BRAND_NAME} Account`;
                     })()}
                     subTitle={(() => {
+                        if (loading) {
+                            return '';
+                        }
                         if (model.referralData) {
                             return c('Title').t`Secure email based in Switzerland`;
                         }
                         if (toAppName) {
+                            if (signupType.type === SignupType.Username && signupTypes.includes(SignupType.Email)) {
+                                return c('Info').t`to use ${toAppName} and all ${BRAND_NAME} services`;
+                            }
                             return c('Info').t`to continue to ${toAppName}`;
                         }
-                        return c('Info').t`One account for all ${BRAND_NAME} services.`;
+                        if (signupType.type === SignupType.Email) {
+                            return '';
+                        }
+                        return c('Info').t`One account. All ${BRAND_NAME} services.`;
                     })()}
                     defaultEmail={accountData?.email}
                     defaultUsername={accountData?.username}
-                    defaultSignupType={defaultSignupType}
-                    signupType={signupType}
-                    onChangeSignupType={setSignupType}
+                    signupTypes={signupTypes}
+                    signupType={signupType.type}
+                    onChangeSignupType={(type) => {
+                        setSignupType({ method: 'manual', type });
+                    }}
                     defaultRecoveryEmail={
                         (accountData?.signupType === SignupType.VPN && accountData.recoveryEmail) || ''
                     }
@@ -533,7 +565,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                             .catch(handleError);
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
-                    hasExternalSignup={hasAppExternalSignup}
                     loading={loading || externalSignupFeature.loading}
                 />
             )}
