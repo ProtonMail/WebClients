@@ -19,6 +19,9 @@ export const mergeHeaders = ({ headers: configHeaders, ...restConfig }: MergeHea
 });
 
 export const getAppVersionHeaders = (clientID: string, appVersion: string) => {
+    if (process.env.NODE_ENV !== 'production') {
+        appVersion = `${appVersion.replace(/-.*/, '')}-dev`;
+    }
     return {
         'x-pm-appversion': `${clientID}@${appVersion}`,
     };
