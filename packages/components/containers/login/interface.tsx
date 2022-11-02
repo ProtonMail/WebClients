@@ -10,9 +10,10 @@ import {
 import { InternalAddressGenerationSetup } from '@proton/shared/lib/keys';
 
 export interface InternalAddressGeneration {
-    externalEmailAddress?: Address;
+    externalEmailAddress: Address | undefined;
     availableDomains: string[];
     setup: InternalAddressGenerationSetup;
+    claimableAddress: { username: string; domain: string } | undefined;
 }
 
 export enum AuthStep {
