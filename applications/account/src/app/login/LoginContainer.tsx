@@ -90,6 +90,13 @@ const LoginContainer = ({
         };
     }, []);
 
+    useEffect(() => {
+        const isProtonMailDomain = window.location.hostname.endsWith('.protonmail.com');
+        if (isProtonMailDomain) {
+            window.location.replace('https://account.proton.me');
+        }
+    }, []);
+
     const handleCancel = () => {
         previousUsernameRef.current = cacheRef.current?.username ?? '';
         cacheRef.current = undefined;
