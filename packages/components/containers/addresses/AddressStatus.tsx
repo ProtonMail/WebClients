@@ -5,12 +5,17 @@ import isTruthy from '@proton/utils/isTruthy';
 import { Badge } from '../../components';
 import { AddressStatuses } from './helper';
 
-const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys }: AddressStatuses) => {
+const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys, isExternal }: AddressStatuses) => {
     const list = [
         isDefault &&
             ({
                 text: c('Address status').t`Default`,
                 type: 'primary',
+            } as const),
+        isExternal &&
+            ({
+                text: c('Address status').t`External`,
+                type: 'info',
             } as const),
         isActive &&
             ({
