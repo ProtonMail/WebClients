@@ -57,7 +57,7 @@ import SubscriptionCheckout from './SubscriptionCheckout';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import SubscriptionThanks from './SubscriptionThanks';
-import { SUBSCRIPTION_STEPS } from './constants';
+import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
 
 import './SubscriptionModal.scss';
@@ -390,7 +390,7 @@ const SubscriptionModal = ({
     return (
         <ModalTwo
             className={classnames([
-                'subscription-modal',
+                subscriptionModalClassName,
                 [
                     SUBSCRIPTION_STEPS.PLAN_SELECTION,
                     SUBSCRIPTION_STEPS.CUSTOMIZATION,

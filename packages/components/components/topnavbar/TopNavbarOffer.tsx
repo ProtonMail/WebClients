@@ -12,6 +12,7 @@ import { OfferModal } from '../../containers';
 import useFetchOffer from '../../containers/offers/hooks/useFetchOffer';
 import useOfferFlags from '../../containers/offers/hooks/useOfferFlags';
 import { OfferConfig } from '../../containers/offers/interface';
+import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { useUser, useWelcomeFlags } from '../../hooks';
 import Icon from '../icon/Icon';
 import TopNavbarListItem from './TopNavbarListItem';
@@ -48,6 +49,8 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const autoOffer = searchParams.get('offer') === 'auto';
+        const plan = searchParams.get('plan');
+
         const combinedIgnoreVisited = ignoreVisited || autoOffer;
         // No welcome modal in account
         if (
@@ -55,9 +58,12 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
             !offerConfig.autoPopUp ||
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
-            // Only hide the autopopup during the welcome flow, ignore if other modals may be open
-            // and re-trigger it when the welcome flow completes.
-            (!welcomeFlags.isDone && !ignoreOnboarding)
+            // Hide the autopopup during the welcome flow and re-trigger it when the welcome flow completes.
+            (!welcomeFlags.isDone && !ignoreOnboarding) ||
+            // If the subscription modal is open. Explicitly not checking if any modal is open since it intereferes with the onboarding modal.
+            document.querySelector(`.${subscriptionModalClassName}`) !== null ||
+            // Trying to catch if the automatic subscription modal will get opened.
+            !!plan
         ) {
             return;
         }
