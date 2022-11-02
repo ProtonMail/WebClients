@@ -2,14 +2,17 @@ import { useEffect, useRef } from 'react';
 
 import {
     FeatureCode,
+    MigrationModal,
     RebrandingFeedbackModal,
     ReferralModal,
+    getShouldOpenMigrationModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
     useSubscription,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 
@@ -19,6 +22,11 @@ interface Props {
 }
 
 const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
+    // Migration modal
+    const [migrationModal, setMigrationModal, renderMigrationModal] = useModalState();
+    const migrationModalLastShownFeature = useFeature<string>(FeatureCode.MigrationModalLastShown);
+    const shouldOpenMigrationModal = getShouldOpenMigrationModal(migrationModalLastShownFeature);
+
     // Onboarding modal
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
@@ -42,17 +50,20 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
             setModalOpen(true);
         };
 
-        if (onboardingOpen) {
+        if (shouldOpenMigrationModal) {
+            openModal(setMigrationModal);
+        } else if (onboardingOpen) {
             openModal(setOnboardingModal);
         } else if (shouldOpenReferralModal.open) {
             openModal(setReferralModal);
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
+    }, [shouldOpenMigrationModal, shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
+            {renderMigrationModal && <MigrationModal app={APPS.PROTONMAIL} {...migrationModal} />}
             {renderOnboardingModal && (
                 <MailOnboardingModal
                     onDone={() => {
