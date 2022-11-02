@@ -124,6 +124,7 @@ const AccountStep = ({
     const [loginModal, setLoginModal, renderLoginModal] = useModalState();
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
+    const trimmedEmail = email.trim();
     const trimmedUsername = username.trim();
 
     const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
@@ -136,7 +137,15 @@ const AccountStep = ({
 
     const run = async () => {
         const payload = await challengeRefLogin.current?.getChallenge();
-        return onSubmit({ username: trimmedUsername, password, signupType, domain, email, recoveryEmail, payload });
+        return onSubmit({
+            username: trimmedUsername,
+            password,
+            signupType,
+            domain,
+            email: trimmedEmail,
+            recoveryEmail,
+            payload,
+        });
     };
 
     const handleSubmit = () => {
@@ -172,8 +181,8 @@ const AccountStep = ({
             label={emailLabel}
             error={validator(
                 signupType === SignupType.Username || signupType === SignupType.VPN
-                    ? [requiredValidator(username)]
-                    : [requiredValidator(email), emailValidator(email)]
+                    ? [requiredValidator(trimmedUsername)]
+                    : [requiredValidator(trimmedEmail), emailValidator(trimmedEmail)]
             )}
             disableChange={loading}
             autoFocus
@@ -324,7 +333,7 @@ const AccountStep = ({
                     ) : (
                         innerChallenge
                     )}
-                    {signupType === SignupType.Email && <InsecureEmailInfo email={email} />}
+                    {signupType === SignupType.Email && <InsecureEmailInfo email={trimmedEmail} />}
                     {signupTypes.includes(SignupType.Email) ? (
                         <div className="text-center mb1">
                             <InlineLinkButton
