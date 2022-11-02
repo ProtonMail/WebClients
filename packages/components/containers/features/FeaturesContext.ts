@@ -97,6 +97,7 @@ export enum FeatureCode {
     BulkUserUpload = 'BulkUserUpload',
     DriveMyDevices = 'DriveWebMyDevices',
     ConversationHeaderInScroll = 'ConversationHeaderInScroll',
+    MigrationModalLastShown = 'MigrationModalLastShown',
 }
 
 export interface FeaturesContextValue {
