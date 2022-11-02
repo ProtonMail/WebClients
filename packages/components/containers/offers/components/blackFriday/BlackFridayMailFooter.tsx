@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { Price } from '@proton/components/components';
 
 import { getDiscount } from '../../helpers/dealPrices';
@@ -36,6 +38,8 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
                     </p>
                 );
             })}
+            <p className="text-sm text-center color-weak">{c('specialoffer: Footer')
+                .t`Discounts are based on the standard monthly pricing.`}</p>
         </div>
     );
 };
