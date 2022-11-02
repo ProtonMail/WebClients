@@ -1,10 +1,11 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 
+import { requiresNonDelinquent, requiresProtonAccount } from 'proton-account/src/app/public/helper';
 import { c } from 'ttag';
 
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
@@ -102,7 +103,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             cache,
         };
 
-        const hasInternalEmailAddressRequirement = REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(APP_NAME);
+        const hasInternalEmailAddressRequirement = requiresProtonAccount.includes(APP_NAME);
 
         const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
 
@@ -119,7 +120,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             setSentryEnabled(!!userSettings.CrashReports);
             setMetricsEnabled(!!userSettings.Telemetry);
 
-            const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
+            const hasNonDelinquentRequirement = requiresNonDelinquent.includes(APP_NAME);
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
             hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
 
@@ -171,7 +172,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                     return;
                 }
                 if (shouldSetupInternalAddress) {
-                    appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
+                    appLink(`/setup-internal-address?to=${APP_NAME}`, APPS.PROTONACCOUNT);
                 } else {
                     setLoading(false);
                 }
