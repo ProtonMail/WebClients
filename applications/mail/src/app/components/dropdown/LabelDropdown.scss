@@ -1,20 +1,10 @@
 @import '~@proton/styles/scss/config';
 
 .label-dropdown {
-	&-content-inner {
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: flex-start;
-		align-items: stretch;
-		flex: 1 0 auto;
-	}
-
 	&-container {
-		flex: 1 1 auto;
-
 		@include respond-to($breakpoint-small, 'min') {
-			max-inline-size: 20em;
-			max-block-size: 12em;
+			max-inline-size: 22em;
+			max-block-size: 13.5em;
 		}
 	}
 }
