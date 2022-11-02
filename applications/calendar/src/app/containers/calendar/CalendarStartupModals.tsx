@@ -2,20 +2,28 @@ import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 import {
     FeatureCode,
+    MigrationModal,
     RebrandingFeedbackModal,
     ReferralModal,
+    getShouldOpenMigrationModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
     useSubscription,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 
 interface Props {
     setStartupModalState: Dispatch<SetStateAction<{ hasModal?: boolean; isOpen: boolean }>>;
 }
 
 const CalendarStartupModals = ({ setStartupModalState }: Props) => {
+    // Migration modal
+    const [migrationModal, setMigrationModal, renderMigrationModal] = useModalState();
+    const migrationModalLastShownFeature = useFeature<string>(FeatureCode.MigrationModalLastShown);
+    const shouldOpenMigrationModal = getShouldOpenMigrationModal(migrationModalLastShownFeature);
+
     // Referral modal
     const [subscription] = useSubscription();
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
@@ -42,17 +50,20 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
             setStartupModalState({ hasModal: true, isOpen: true });
         };
 
-        if (shouldOpenReferralModal.open) {
+        if (shouldOpenMigrationModal) {
+            openModal(setMigrationModal);
+        } else if (shouldOpenReferralModal.open) {
             openModal(setReferralModal);
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         } else {
             setStartupModalState({ hasModal: false, isOpen: false });
         }
-    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
+    }, [shouldOpenMigrationModal, shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
+            {renderMigrationModal && <MigrationModal app={APPS.PROTONCALENDAR} {...migrationModal} />}
             {renderReferralModal && (
                 <ReferralModal
                     endDate={shouldOpenReferralModal.endDate}
