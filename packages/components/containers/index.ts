@@ -38,6 +38,7 @@ export * from './logs';
 export * from './mail';
 export * from './members';
 export * from './messages';
+export * from './migrationModal';
 export * from './mnemonic';
 export * from './modals';
 export * from './notification';
