@@ -42,6 +42,7 @@ import {
     PaymentMethodStatus,
     Plan,
 } from '@proton/shared/lib/interfaces';
+import { getLocalPart } from '@proton/shared/lib/keys/setupInternalAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -59,7 +60,7 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getLocalPart, getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
+import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
 import {
     InviteData,
     PlanIDs,

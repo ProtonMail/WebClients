@@ -26,7 +26,11 @@ import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkVa
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import { UserType } from '@proton/shared/lib/interfaces';
-import { getInternalAddressSetupMode, handleInternalAddressGeneration } from '@proton/shared/lib/keys';
+import {
+    getClaimableAddress,
+    getInternalAddressSetupMode,
+    handleInternalAddressGeneration,
+} from '@proton/shared/lib/keys';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
@@ -115,9 +119,16 @@ const SetupInternalAccountContainer = () => {
             // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
             stop();
             toAppRef.current = toApp;
+            const externalEmailAddress = addresses?.[0];
+            const claimableAddress = await getClaimableAddress({
+                api: silentApi,
+                email: externalEmailAddress?.Email,
+                domains,
+            }).catch(noop);
             generateInternalAddressRef.current = {
-                externalEmailAddress: addresses?.[0],
+                externalEmailAddress,
                 availableDomains: domains,
+                claimableAddress,
                 setup: getInternalAddressSetupMode({
                     User: user,
                     loginPassword: undefined,
@@ -167,6 +178,7 @@ const SetupInternalAccountContainer = () => {
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
                     setup={generateInternalAddress.setup}
+                    claimableAddress={generateInternalAddress.claimableAddress}
                     onSubmit={async (payload) => {
                         try {
                             const keyPassword = await handleInternalAddressGeneration({
