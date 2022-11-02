@@ -572,6 +572,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                 <VerificationStep
                     onBack={handleBackStep}
                     defaultCountry={defaultCountry}
+                    title={(() => {
+                        if (cache?.humanVerificationData?.methods.includes('ownership-email')) {
+                            return c('Title').t`Verify email address`;
+                        }
+                        return c('Title').t`Verification`;
+                    })()}
                     defaultEmail={accountData?.signupType === SignupType.VPN ? accountData.recoveryEmail : ''}
                     token={cache?.humanVerificationData?.token || ''}
                     methods={cache?.humanVerificationData?.methods || []}
