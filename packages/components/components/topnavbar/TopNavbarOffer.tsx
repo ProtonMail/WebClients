@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { useModalState } from '../../components/modalTwo';
@@ -13,7 +13,7 @@ import useFetchOffer from '../../containers/offers/hooks/useFetchOffer';
 import useOfferFlags from '../../containers/offers/hooks/useOfferFlags';
 import { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
-import { useUser, useWelcomeFlags } from '../../hooks';
+import { useSubscription, useUser, useWelcomeFlags } from '../../hooks';
 import Icon from '../icon/Icon';
 import TopNavbarListItem from './TopNavbarListItem';
 import TopNavbarListItemButton from './TopNavbarListItemButton';
@@ -29,6 +29,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     const { isVisited, loading } = useOfferFlags(offerConfig);
     const onceRef = useRef(false);
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
     const [fetchOffer, setFetchOffer] = useState(false);
@@ -58,6 +59,8 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
             !offerConfig.autoPopUp ||
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
+            // Hide for paid mail cycle 12/24
+            (user.hasPaidMail && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(subscription?.Cycle)) ||
             // Hide the autopopup during the welcome flow and re-trigger it when the welcome flow completes.
             (!welcomeFlags.isDone && !ignoreOnboarding) ||
             // If the subscription modal is open. Explicitly not checking if any modal is open since it intereferes with the onboarding modal.
