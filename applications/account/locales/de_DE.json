@@ -4310,6 +4310,9 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
+      "${ current } of ${ total }": [
+        "${ current } von ${ total }"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
       ],
@@ -4459,6 +4462,9 @@
       ],
       "Add a recovery email address": [
         "Emailadresse zur Wiederherstellung hinzufügen"
+      ],
+      "add a recovery method": [
+        "Wiederherstellungsmethode hinzufügen"
       ],
       "Add a recovery phone number": [
         "Rufnummer für die Wiederherstellung hinzufügen"
@@ -4895,7 +4901,7 @@
         "Wenn die Zeitzone des Systems nicht mit der aktuellen Zeitzoneneinstellung übereinstimmt, wirst du aufgefordert, diese zu aktualisieren (höchstens einmal täglich)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Wenn diese Domain derzeit E-Mails empfängt, wählen Sie den Tab „${ boldAddresses }” und fügen Sie alle aktiven E-Mail-Adressen hinzu, bevor Sie den MX-Eintrag ändern, um einen reibungslosen Übergang zu gewährleisten."
+        "Wenn diese Domain derzeit E-Mails empfängt, wähle den Tab „${ boldAddresses }“ und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, um einen reibungslosen Übergang zu gewährleisten."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Wenn dies auf eine alte Kennwortzurücksetzung zurückzuführen ist, kannst du verhindern, dass die Meldung erneut angezeigt wird."
@@ -4919,7 +4925,7 @@
         "Wenn du Zwei-Faktor-Authentifizierung noch nie zuvor verwendet hast, empfehlen wir dir dringend ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Wenn Sie sowohl SPF als auch DKIM eingerichtet haben, können Sie mit DMARC festlegen, wie andere E-Mail-Dienste Nachrichten für Ihre Domain zustellen sollen, wenn sowohl SPF- als auch DKIM-Prüfungen fehlgeschlagen sind. Dies kann es Spammern erschweren, Ihre Identität vorzutäuschen - kann aber auch zu Zustellungsproblemen führen, wenn dies nicht ordnungsgemäß eingestellt ist."
+        "Wenn du sowohl SPF als auch DKIM eingerichtet hast, kannst du mit DMARC festlegen, wie andere E-Mail-Dienste Nachrichten für deine Domain zustellen sollen, wenn sowohl SPF- als auch DKIM-Prüfungen fehlgeschlagen sind. Dies kann es Spammern erschweren, deine Identität vorzutäuschen - kann aber auch zu Zustellungsproblemen führen, wenn dies nicht ordnungsgemäß eingestellt ist."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Wenn du deine Anmeldedaten verlierst und deshalb dein Konto zurücksetzen musst, ist es ${ boldImperative } dass du eine ${ boldAccountRecovery } eingerichtet hast."
@@ -4943,7 +4949,7 @@
         "Falls du kürzlich dein Passwort zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Wenn Sie einen bestehenden SPF-Eintrag behalten möchten, können Sie einfach ${ spf } nach dem ${ spfValue } hinzufügen. Erstellen Sie keinesfalls mehrere SPF-Einträge."
+        "Wenn du einen bestehenden SPF-Eintrag behalten möchtest, kannst du einfach ${ spf } nach dem ${ spfValue } hinzufügen. Erstelle keinesfalls mehrere SPF-Einträge."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Wenn Sie dieses Konto mit einem anderen kombinieren möchten, dürfen Sie es NICHT löschen."
@@ -5035,7 +5041,7 @@
         "Sende ihnen einfach deinen persönlichen Empfehlungslink."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Bewahren Sie diese Einträge in Ihrem DNS so lange auf, wie Sie DKIM verwenden möchten."
+        "Belasse diese Einträge so lange in deiner DNS-Zone, wie du DKIM verwenden möchtest."
       ],
       "Key deletion is irreversible!": [
         "Das Löschen eines Schlüssels kann nicht rückgängig gemacht werden!"
@@ -5076,6 +5082,9 @@
       "Link type": [
         "Linktyp"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Geladene Inhalte werden durch unseren Proxy geschützt, wenn der Tracker-Schutz aktiviert ist."
+      ],
       "Loading": [
         "Wird geladen"
       ],
@@ -5096,6 +5105,9 @@
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+      ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Stelle sicher, dass du ${ addARecoveryMethod }, damit du dich wieder in deinem Konto einloggen kannst, wenn du dein Passwort vergessen hast."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Gib diese Informationen manuell in dein Zwei‐Faktor‐Authentifizierungsgerät ein, um dein Konto einzurichten. ${ _switchButton }."
@@ -5304,6 +5316,9 @@
       "Priority support": [
         "Vorrangiger Support"
       ],
+      "Proton ${ planName } credits earned": [
+        "Proton ${ planName } Guthaben verdient"
+      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton hat einen Importvorgang angehalten, weil die Verbindung zu Ihrem anderen E-Mail-Provider unterbrochen wurde. Bitte stellen Sie die Verbindung wieder her."
       ],
@@ -5312,6 +5327,9 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton wird versuchen, den Import fortzusetzen, sobald Ihr E-Mail-Anbieter die ${ bandwithLimitLink } Ihres Kontos zurücksetzt. Sie brauchen nichts weiter zu unternehmen. Wenn Sie den Import abbrechen, können Sie ihn nicht mehr fortsetzen und er muss erneut begonnen werden."
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Die Verschlüsselungstechnologie von Proton bedeutet, dass niemand auf dein Passwort zugreifen kann - nicht einmal wir."
       ],
       "Public link invite": [
         "Öffentlicher Einladungslink"
@@ -6617,6 +6635,9 @@
       "Credits used": [
         "Guthaben verwendet"
       ],
+      "Current display name": [
+        "Aktueller Anzeigename"
+      ],
       "Customize invoices": [
         "Rechnungen anpassen"
       ],
@@ -6797,6 +6818,9 @@
       "Key strength": [
         "Schlüsselstärke"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturkürzel: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Tastaturkürzel"
       ],
@@ -6859,6 +6883,12 @@
       ],
       "Name on card": [
         "Karteninhaber"
+      ],
+      "Navigation": [
+        "Navigation"
+      ],
+      "New display name": [
+        "Neuer Anzeigename"
       ],
       "New login password": [
         "Neues Anmeldepasswort"
@@ -6945,13 +6975,13 @@
         "Die Phrase besteht aus 12 einzigartigen Wörtern in einer bestimmten Reihenfolge"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Bitte fügen Sie alle 3 der folgenden CNAME-Einträge hinzu. Beachten Sie, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
+        "Bitte füge alle 3 der folgenden CNAME-Einträge hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
       ],
       "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Bitte fügen Sie den folgenden MX-Eintrag hinzu. Beachten Sie, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
+        "Bitte füge den folgenden MX-Eintrag hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
       ],
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Bitte fügen Sie den folgenden Text-Eintrag hinzu. Beachten Sie dass es einige Stunden dauern kann bis DNS-Einträge aktualisiert werden."
+        "Bitte füge den folgenden Text-Eintrag hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
       ],
       "Please select files to upload": [
         "Bitte Dateien zum Hochladen auswählen"
@@ -8023,6 +8053,26 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8086,26 +8136,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto zurückstufst, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9400,13 +9430,13 @@
         "Black-Friday-Sale"
       ],
       "Cyber Week Sale": [
-        "Cyber Week-Angebot"
+        "Cyber-Week-Sale"
       ],
       "End of year offer": [
         "Angebot zum Jahresende"
       ],
       "End of Year Sale": [
-        "Angebot zum Jahresende"
+        "Jahresend-Sale"
       ],
       "Get our premium bundle and save more": [
         "Hole dir unser Premium-Paket und spare noch mehr"
@@ -9663,6 +9693,9 @@
       ],
       "Default calendar updated": [
         "Standardkalender aktualisiert"
+      ],
+      "Display name updated": [
+        "Anzeigename aktualisiert"
       ],
       "DMARC value copied to clipboard": [
         "DMARC-Wert wurde in die Zwischenablage kopiert"
@@ -10256,6 +10289,9 @@
       ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
+      ],
+      "Edit display name": [
+        "Anzeigename bearbeiten"
       ],
       "Edit domain": [
         "Domain bearbeiten"

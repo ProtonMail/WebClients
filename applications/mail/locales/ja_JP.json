@@ -3997,7 +3997,7 @@
         "${ unread } 件の未読のメッセージ"
       ],
       "${ unreadCount } unread conversations": [
-        "${ unreadCount } 件の会話が未読"
+        "${ unreadCount } 件の未読の会話"
       ],
       "${ unreadCount } unread messages": [
         "${ unreadCount } 件のメッセージが未読"
@@ -6003,6 +6003,11 @@
         "${ CALENDAR_APP_NAME } で開く"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "設定"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "もう少しです"
@@ -6759,11 +6764,17 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
       ],
+      "Email tracking protection": [
+        "メールトラッキング防止"
+      ],
       "Message Content Search": [
         "メッセージの内容を検索"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "デフォルトで画像を読み込みつつ、送信者があなたをトラッキングするのを防ぎます。これは ${ settingsLink } で変更できます。"
       ],
       "You can now schedule your messages to be sent later": [
         "あとでメッセージを送信するようスケジュールしました"

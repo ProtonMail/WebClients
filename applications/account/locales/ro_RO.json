@@ -5241,8 +5241,8 @@
       "Link type": [
         "Tip legătură"
       ],
-      "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Loaded content is being protected by our proxy when tracker protection is activated."
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Conținutul încărcat este protejat de proxy-ul nostru atunci când este activată protecția tracker."
       ],
       "Loading": [
         "Se încarcă"
@@ -6820,6 +6820,9 @@
       "Credits used": [
         "Credite folosite"
       ],
+      "Current display name": [
+        "Numele actual de afișare"
+      ],
       "Customize invoices": [
         "Personalizare facturi"
       ],
@@ -7062,6 +7065,9 @@
       ],
       "Name on card": [
         "Titular card"
+      ],
+      "New display name": [
+        "Noul nume de afișare"
       ],
       "New login password": [
         "Parola nouă de conectare"
@@ -8252,6 +8258,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8321,26 +8347,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9702,6 +9708,9 @@
       "Default calendar updated": [
         "Calendarul implicit a fost actualizat."
       ],
+      "Display name updated": [
+        "Nume afișat actualizat"
+      ],
       "DMARC value copied to clipboard": [
         "Valoarea DMARC a fost copiată în memorie"
       ],
@@ -10296,6 +10305,9 @@
       ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"
+      ],
+      "Edit display name": [
+        "Editare nume afișat"
       ],
       "Edit domain": [
         "Editare domeniu"

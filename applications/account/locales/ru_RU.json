@@ -5302,6 +5302,9 @@
       "Link type": [
         "Тип ссылки"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Когда активирована защита от отслеживания, все загруженные данные находятся под защитой прокси сервера."
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -6877,6 +6880,9 @@
       "Credits used": [
         "Кредитов использовано"
       ],
+      "Current display name": [
+        "Текущее отображаемое имя"
+      ],
       "Customize invoices": [
         "Настройка счетов"
       ],
@@ -7057,6 +7063,9 @@
       "Key strength": [
         "Надежность ключа"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбинация клавиш: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
       ],
@@ -7119,6 +7128,12 @@
       ],
       "Name on card": [
         "Имя на карте"
+      ],
+      "Navigation": [
+        "Навигация"
+      ],
+      "New display name": [
+        "Новое отображаемое имя"
       ],
       "New login password": [
         "Новый пароль для входа"
@@ -8332,6 +8347,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8401,26 +8436,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9764,13 +9779,13 @@
         "Черная пятница"
       ],
       "Cyber Week Sale": [
-        "Распродажа в честь кибернедели"
+        "Кибернеделя"
       ],
       "End of year offer": [
         "Предложение в честь конца года"
       ],
       "End of Year Sale": [
-        "Распродажа в честь конца года"
+        "Конец года"
       ],
       "Get our premium bundle and save more": [
         "Приобретите платный пакет и сэкономьте"
@@ -10053,6 +10068,9 @@
       ],
       "Default calendar updated": [
         "Календарь по умолчанию обновлен"
+      ],
+      "Display name updated": [
+        "Отображаемое имя обновлено"
       ],
       "DMARC value copied to clipboard": [
         "Значение DMARC скопировано в буфер обмена"
@@ -10650,6 +10668,9 @@
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
+      ],
+      "Edit display name": [
+        "Редактировать отображаемое имя"
       ],
       "Edit domain": [
         "Изменить домен"

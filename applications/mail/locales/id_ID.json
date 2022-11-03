@@ -4233,10 +4233,10 @@
         "${ numContacts } kontak"
       ],
       "${ numOccurrences } occurrences found": [
-        "${ numOccurrences } peristiwa ditemukan"
+        "${ numOccurrences } kecocokan ditemukan"
       ],
       "${ numOccurrences } occurrences found in the mail content": [
-        "${ numOccurrences } peristiwa ditemukan di dalam isi surat"
+        "${ numOccurrences } kecocokan ditemukan di dalam isi surat"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -4284,7 +4284,7 @@
         "${ unreadCount } percakapan yang belum dibaca"
       ],
       "${ unreadCount } unread messages": [
-        "${ unreadCount } pesan belum dibaca"
+        "${ unreadCount } pesan yang belum dibaca"
       ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
@@ -4560,7 +4560,7 @@
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minutes": [
-        "Waktu yang diperkirakan tersisa: ${ estimatedMinutes } menit"
+        "Perkiraan waktu yang tersisa: ${ estimatedMinutes } menit"
       ],
       "Estimated time remaining: Less than a minute": [
         "Waktu yang diperkirakan tersisa: Kurang dari satu menit"
@@ -5919,6 +5919,9 @@
       "Import to email address": [
         "Impor ke alamat email"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pintasan keyboard: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Pintasan keyboard"
       ],
@@ -5978,6 +5981,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Navigation": [
+        "Navigasi"
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
