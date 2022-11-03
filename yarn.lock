@@ -16092,7 +16092,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-monkey@npm:1.0.3":
+"fs-monkey@npm:^1.0.3":
   version: 1.0.3
   resolution: "fs-monkey@npm:1.0.3"
   checksum: cf50804833f9b88a476911ae911fe50f61a98d986df52f890bd97e7262796d023698cb2309fa9b74fdd8974f04315b648748a0a8ee059e7d5257b293bfc409c0
@@ -21760,12 +21760,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"memfs@npm:^3.1.2, memfs@npm:^3.2.2, memfs@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "memfs@npm:3.4.1"
+"memfs@npm:^3.4.9":
+  version: 3.4.9
+  resolution: "memfs@npm:3.4.9"
   dependencies:
-    fs-monkey: 1.0.3
-  checksum: 6d2f49d447d1be24ff9c747618933784eeb059189bc6a0d77b7a51c7daf06e2d3a74674a2e2ff1520e2c312bf91e719ed37144cf05087379b3ba0aef0b6aa062
+    fs-monkey: ^1.0.3
+  checksum: 575dfde73f4105db42ffc2fdcd06efb9037541de095bd4fe9fb29134a1a775dfe922839b30db632de76cb29354d79d8f82a5e4f5f588e21bc47358b6d058a9c6
   languageName: node
   linkType: hard
 
