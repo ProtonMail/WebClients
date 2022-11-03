@@ -376,6 +376,9 @@
       "Save": [
         "Mentés"
       ],
+      "Search countries": [
+        "Ország keresése"
+      ],
       "See plan features": [
         "Csomag részleteinek megtekintése"
       ],
@@ -772,6 +775,9 @@
       "Calendar is syncing": [
         "A naptár szinkronizál"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "A naptár szinkronizál: több percig is eltarthat, mire az összes esemény látható lesz."
+      ],
       "Calendar is too big": [
         "A naptár túl nagy"
       ],
@@ -791,6 +797,17 @@
         "Nem támogatott naptár formátum"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "A naptár hivatkozás nem érhető el a naptárszolgáltató rendszerén kívül."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Több mint 12 óra telt el a legutóbbi frissítés óta — a Proton Calendar néhány órán belül megpróbálja frissíteni a naptárat."
+      ]
+    },
     "Calendar view": {
       "Day": [
         "Nap"
@@ -800,6 +817,14 @@
       ],
       "Week": [
         "Hét"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Összecsukás"
+      ],
+      "Expand": [
+        "Kibontás"
       ]
     },
     "colon": {
@@ -1140,6 +1165,9 @@
       "Czech Republic": [
         "Csehország"
       ],
+      "Côte d'Ivoire": [
+        "Elefántcsontpart"
+      ],
       "Denmark": [
         "Dánia"
       ],
@@ -1169,6 +1197,9 @@
       ],
       "Estonia": [
         "Észtország"
+      ],
+      "Eswatini": [
+        "Szváziföld"
       ],
       "Ethiopia": [
         "Etiópia"
@@ -1412,6 +1443,9 @@
       ],
       "Mozambique": [
         "Mozambik"
+      ],
+      "Myanmar": [
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -1778,6 +1812,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek törlése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
@@ -1789,6 +1826,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
+        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
@@ -1973,6 +2014,9 @@
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy",
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy"
       ],
+      "Domain not available, try again later": [
+        "A domain név nem érhető el, próbálja meg később"
+      ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
@@ -2055,6 +2099,15 @@
       "Name required": [
         "Név megadása kötelező"
       ],
+      "No calendars found to import": [
+        "Nincs importálandó naptár"
+      ],
+      "No contacts found to import": [
+        "Nincs importálandó névjegy"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nincs importálandó e-mail - a fiókban nincsenek beérkezett levelek"
+      ],
       "No valid address found": [
         "Nincs érvényes cím"
       ],
@@ -2097,6 +2150,9 @@
       "Primary key is not valid for sending": [
         "Az elsődleges kulcs nem érvényes a küldéshez"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "${ BRAND_NAME } felhasználóhoz rendelt elsődleges kulcs nem érvényes a küldéshez"
+      ],
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
@@ -2115,11 +2171,17 @@
       "Some groups could not be deleted": [
         "Néhány csoport törlése nem sikerült"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Bizonyos mappák neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos mappák neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos mappák neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Bizonyos címkék neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
@@ -2169,6 +2231,9 @@
       "This label name is not available. Please choose a different name.": [
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ez az üzenet olyan URL hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+      ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
       ],
@@ -2183,6 +2248,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát. Néhány naptár importálása nem sikerült."
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
@@ -2262,6 +2330,9 @@
       "Calendar": [
         "Naptár"
       ],
+      "Calendar time zone not supported": [
+        "A naptár időzónája nem támogatott"
+      ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
@@ -2334,6 +2405,9 @@
       "Start time out of bounds": [
         "Kezdő időpont a korlátokon kívül"
       ],
+      "Time zone not supported": [
+        "Időzóna nem támogatott"
+      ],
       "Timezone": [
         "Időzóna"
       ],
@@ -2359,6 +2433,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
       ],
       "There was a problem connecting to Proton.": [
         "Hiba lépett fel a Protonhoz történő csatlakozás során."
@@ -2479,6 +2556,24 @@
     "Feedback Modal Title": {
       "Your feedback": [
         "Az ön visszajelzése"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcsok"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
       ]
     },
     "file size format": {
@@ -2880,6 +2975,9 @@
       "contacts": [
         "névjegyek"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV vagy VCF (vCard) fájl"
+      ],
       "full calendar view": [
         "teljes naptár nézetet"
       ],
@@ -3270,6 +3368,9 @@
       "None of the participants can be notified about your changes:": [
         "Egyik résztvevő sem értesíthető a módosításokról:"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Egyik feltöltött kulcs sem alkalmas titkosításra. Erre a címre való küldéshez töltsön fel egy érvényes kulcsot, vagy kapcsolja ki az üzenetek titkosítást."
+      ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
@@ -3290,6 +3391,9 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -3324,6 +3428,9 @@
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "A helyreállítási információ megmarad ezen az eszközön, kivéve ha törli."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -3447,6 +3554,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
+      ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Költöztünk! Kérjük, lépjen be az új címen: ${ link }."
       ],
       "Week": [
         "Hét"
@@ -3692,6 +3802,9 @@
       "Delete": [
         "Törlés"
       ],
+      "Delete recovery-related information.": [
+        "Helyreállítási információk törlése."
+      ],
       "Description": [
         "Leírás"
       ],
@@ -3808,6 +3921,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Navigation": [
+        "Navigáció"
       ],
       "Notification": [
         "Értesítés"
@@ -3975,6 +4091,9 @@
       ],
       "Upgrade account": [
         "Csomag váltása"
+      ],
+      "What’s this?": [
+        "Mi ez?"
       ]
     },
     "Loading info": {
@@ -4001,6 +4120,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
         "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4568,6 +4691,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts }).",
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
@@ -5037,6 +5164,9 @@
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
       ],
+      "Edit email settings": [
+        "E-mail beállítások szerkesztése"
+      ],
       "Edit image": [
         "Kép szerkesztése"
       ],
@@ -5100,6 +5230,9 @@
       ],
       "Merging contacts": [
         "Névjegyek egyesítése"
+      ],
+      "Minicalendar": [
+        "Mini naptár"
       ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
@@ -5310,6 +5443,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"

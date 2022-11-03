@@ -1901,6 +1901,9 @@
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
+      "add a recovery method": [
+        "Wiederherstellungsmethode hinzufügen"
+      ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Fügen deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit 2FA verifizieren, wenn du dich anmeldest."
       ],
@@ -2117,6 +2120,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Stelle sicher, dass du ${ addARecoveryMethod }, damit du dich wieder in deinem Konto einloggen kannst, wenn du dein Passwort vergessen hast."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Gib diese Informationen manuell in dein Zwei‐Faktor‐Authentifizierungsgerät ein, um dein Konto einzurichten. ${ _switchButton }."
       ],
@@ -2194,6 +2200,9 @@
       ],
       "Priority support": [
         "Vorrangiger Support"
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Die Verschlüsselungstechnologie von Proton bedeutet, dass niemand auf dein Passwort zugreifen kann - nicht einmal wir."
       ],
       "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
@@ -2722,6 +2731,9 @@
       "Credits used": [
         "Guthaben verwendet"
       ],
+      "Current display name": [
+        "Aktueller Anzeigename"
+      ],
       "Customize invoices": [
         "Rechnungen anpassen"
       ],
@@ -2739,6 +2751,9 @@
       ],
       "Digits": [
         "Ziffern"
+      ],
+      "Display name": [
+        "Anzeigename"
       ],
       "Do you have any suggestions for our team?": [
         "Möchten Sie unserem Team Anregungen geben?"
@@ -2790,6 +2805,12 @@
       ],
       "Name on card": [
         "Karteninhaber"
+      ],
+      "Navigation": [
+        "Navigation"
+      ],
+      "New display name": [
+        "Neuer Anzeigename"
       ],
       "New login password": [
         "Neues Anmeldepasswort"
@@ -4098,13 +4119,13 @@
         "Black-Friday-Sale"
       ],
       "Cyber Week Sale": [
-        "Cyber Week-Angebot"
+        "Cyber-Week-Sale"
       ],
       "End of year offer": [
         "Angebot zum Jahresende"
       ],
       "End of Year Sale": [
-        "Angebot zum Jahresende"
+        "Jahresend-Sale"
       ],
       "Get our premium bundle and save more": [
         "Hole dir unser Premium-Paket und spare noch mehr"
@@ -4280,6 +4301,9 @@
       ],
       "Credits added": [
         "Guthaben hinzugefügt"
+      ],
+      "Display name updated": [
+        "Anzeigename aktualisiert"
       ],
       "Email address copied to clipboard": [
         "E-Mail-Adresse in die Zwischenablage kopiert"
@@ -4531,6 +4555,9 @@
       ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
+      ],
+      "Edit display name": [
+        "Anzeigename bearbeiten"
       ],
       "Email": [
         "E-Mail-Adresse"
