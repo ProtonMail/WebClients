@@ -1,91 +1,22 @@
-import {
-    ConfigProvider,
-    StandardErrorPage,
-    SubscriptionModalProvider,
-    useActiveBreakpoint,
-    useConfig,
-} from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
-import { getRedirect } from '@proton/shared/lib/subscription/redirect';
+import { ConfigProvider, StandardErrorPage, SubscriptionModalProvider } from '@proton/components';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import DeleteAccount from './DeleteAccount';
 import SubscribeAccount from './SubscribeAccount';
 import VpnBlackFriday from './VpnBlackFriday';
+import { SupportedActions } from './helper';
 
-enum SupportedActions {
-    DeleteAccount = 'delete-account',
-    SubscribeAccount = 'subscribe-account',
-    VpnBlackFriday = 'vpn-black-friday',
+interface Props {
+    action: SupportedActions | null;
+    fullscreen: boolean;
+    redirect: string | undefined;
+    app: APP_NAMES;
+    searchParams: URLSearchParams;
+    config: ProtonConfig;
 }
 
-const getApp = (appQueryParam: string | null, redirect: string | undefined) => {
-    if (appQueryParam === 'vpn') {
-        return APPS.PROTONVPN_SETTINGS;
-    }
-    if (appQueryParam === 'mail') {
-        return APPS.PROTONMAIL;
-    }
-    if (appQueryParam === 'drive') {
-        return APPS.PROTONDRIVE;
-    }
-    if (redirect) {
-        if (redirect.includes('vpn')) {
-            return APPS.PROTONVPN_SETTINGS;
-        }
-        if (redirect.includes('mail')) {
-            return APPS.PROTONMAIL;
-        }
-        if (redirect.includes('drive')) {
-            return APPS.PROTONDRIVE;
-        }
-    }
-    return APPS.PROTONVPN_SETTINGS;
-};
-
-enum FullscreenOption {
-    On,
-    Off,
-    Auto,
-}
-
-const getFullscreenOption = (value: string | null | undefined) => {
-    if (value === 'off' || value === 'false') {
-        return FullscreenOption.Off;
-    }
-    if (value === 'auto') {
-        return FullscreenOption.Auto;
-    }
-    return FullscreenOption.On;
-};
-
-const MainContainer = () => {
-    const config = useConfig();
-    const { isNarrow } = useActiveBreakpoint();
-
-    const searchParams = new URLSearchParams(window.location.search);
-    const action = searchParams.get('action');
-    const client = searchParams.get('client');
-
-    const defaultValues =
-        {
-            macOS: {
-                redirect: 'protonvpn://refresh',
-                fullscreen: 'off',
-            },
-        }[client || ''] || {};
-
-    const redirect = getRedirect(searchParams.get('redirect') || defaultValues.redirect || undefined);
-    const fullscreenOption = getFullscreenOption(
-        searchParams.get('fullscreen') || defaultValues.fullscreen || undefined
-    );
-    const app = getApp(searchParams.get('app'), redirect);
-    const fullscreen = (() => {
-        if (fullscreenOption === FullscreenOption.Auto) {
-            return isNarrow;
-        }
-        return fullscreenOption !== FullscreenOption.Off;
-    })();
-
+const MainContainer = ({ config, action, fullscreen, redirect, app, searchParams }: Props) => {
     if (!action || !Object.values<string>(SupportedActions).includes(action)) {
         return <StandardErrorPage>No action parameter found.</StandardErrorPage>;
     }
