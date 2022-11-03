@@ -4,10 +4,14 @@ import { CreateNotificationOptions, NotificationsContext, NotificationsContextVa
 import noop from '@proton/utils/noop';
 
 interface NotificationsHijackProps {
-    onCreate: (options: CreateNotificationOptions) => void;
+    onCreate: ((options: CreateNotificationOptions) => void) | undefined;
 }
 
 const NotificationsHijack: FC<NotificationsHijackProps> = ({ children, onCreate }) => {
+    if (!onCreate) {
+        return <>{children}</>;
+    }
+
     const hijackedCreateNotification = (options: CreateNotificationOptions) => {
         onCreate(options);
 
