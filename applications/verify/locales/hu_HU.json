@@ -44,6 +44,9 @@
       "Request new code": [
         "Új kód kérése"
       ],
+      "Search countries": [
+        "Ország keresése"
+      ],
       "Submit": [
         "Küldés"
       ],
@@ -312,6 +315,9 @@
       "Czech Republic": [
         "Csehország"
       ],
+      "Côte d'Ivoire": [
+        "Elefántcsontpart"
+      ],
       "Denmark": [
         "Dánia"
       ],
@@ -341,6 +347,9 @@
       ],
       "Estonia": [
         "Észtország"
+      ],
+      "Eswatini": [
+        "Szváziföld"
       ],
       "Ethiopia": [
         "Etiópia"
@@ -584,6 +593,9 @@
       ],
       "Mozambique": [
         "Mozambik"
+      ],
+      "Myanmar": [
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -933,11 +945,32 @@
       "Please ${ refresh } or check your connection.": [
         "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
+      ],
       "There was a problem connecting to Proton.": [
         "Hiba lépett fel a Protonhoz történő csatlakozás során."
       ],
       "You may also ${ refresh } or try again later.": [
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcsok"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
       ]
     },
     "Human verification method": {

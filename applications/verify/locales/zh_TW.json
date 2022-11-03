@@ -53,6 +53,9 @@
       "Try another method": [
         "嘗試其它驗證方式"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use recovery code": [
         "使用復原代碼"
       ],
@@ -919,6 +922,24 @@
         "您亦可${ refresh } 或稍後再試一次。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全性金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全性金鑰"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "驗證碼"
@@ -943,8 +964,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -976,6 +1006,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
       ],
@@ -993,6 +1026,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "驗證器APP"
+      ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],

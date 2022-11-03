@@ -5180,8 +5180,8 @@
       "Link type": [
         "Tipo di link"
       ],
-      "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Loaded content is being protected by our proxy when tracker protection is activated."
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Il contenuto caricato viene protetto dal nostro proxy quando la protezione anti-tracciamento è attiva."
       ],
       "Loading": [
         "Caricamento"
@@ -6751,6 +6751,9 @@
       "Credits used": [
         "Crediti utilizzati"
       ],
+      "Current display name": [
+        "Nome utilizzato attualmente"
+      ],
       "Customize invoices": [
         "Personalizza le fatture"
       ],
@@ -6931,6 +6934,9 @@
       "Key strength": [
         "Robustezza della chiave"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Scorciatoia da tastiera: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Scorciatoie da tastiera"
       ],
@@ -6993,6 +6999,12 @@
       ],
       "Name on card": [
         "Nome sulla carta"
+      ],
+      "Navigation": [
+        "Navigazione"
+      ],
+      "New display name": [
+        "Aggiungi nuovo nome"
       ],
       "New login password": [
         "Nuova password d'accesso"
@@ -8160,6 +8172,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -8229,26 +8261,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9554,13 +9566,13 @@
         "Sconti Black Friday"
       ],
       "Cyber Week Sale": [
-        "Sconto Cyber Week"
+        "Sconti Cyber Week"
       ],
       "End of year offer": [
         "Offerta di fine anno"
       ],
       "End of Year Sale": [
-        "Sconto di fine anno"
+        "Sconti di fine anno"
       ],
       "Get our premium bundle and save more": [
         "Acquista il pacchetto premium e risparmia ancora di più"
@@ -9817,6 +9829,9 @@
       ],
       "Default calendar updated": [
         "Calendario predefinito aggiornato"
+      ],
+      "Display name updated": [
+        "Nome visualizzato aggiornato"
       ],
       "DMARC value copied to clipboard": [
         "Valore DMARC copiato negli appunti"
@@ -10410,6 +10425,9 @@
       ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"
+      ],
+      "Edit display name": [
+        "Modifica nome visualizzato"
       ],
       "Edit domain": [
         "Modifica dominio"
