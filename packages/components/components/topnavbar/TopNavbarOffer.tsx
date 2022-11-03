@@ -29,7 +29,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
     const { isVisited, loading } = useOfferFlags(offerConfig);
     const onceRef = useRef(false);
     const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
     const [fetchOffer, setFetchOffer] = useState(false);
@@ -56,6 +56,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
         // No welcome modal in account
         if (
             loading ||
+            loadingSubscription ||
             !offerConfig.autoPopUp ||
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
