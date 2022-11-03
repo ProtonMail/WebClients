@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import {
@@ -30,7 +30,6 @@ import getRandomString from '@proton/utils/getRandomString';
 import broadcast, { MessageType } from './broadcast';
 import LiteLayout from './containers/LiteLayout';
 import LiteLoaderPage from './containers/LiteLoaderPage';
-import MainContainer from './containers/MainContainer';
 
 const checkDomain = (hostname: string, domain: string) => {
     return hostname === domain || hostname.endsWith(`.${domain}`);
@@ -48,9 +47,10 @@ const getFallbackUrl = (maybeUrl?: string) => {
 interface Props {
     onLogin: (UID: string) => void;
     UID?: string;
+    children: ReactNode;
 }
 
-const Setup = ({ onLogin, UID }: Props) => {
+const Setup = ({ onLogin, UID, children }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -174,9 +174,7 @@ const Setup = ({ onLogin, UID }: Props) => {
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <ModalsChildren />
-            <LiteLayout>
-                <MainContainer />
-            </LiteLayout>
+            <LiteLayout>{children}</LiteLayout>
         </EventManagerProvider>
     );
 };
