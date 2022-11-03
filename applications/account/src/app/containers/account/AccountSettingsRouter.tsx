@@ -100,7 +100,7 @@ const AccountSettingsRouter = ({
             <Route path={getSectionPath(path, password)}>
                 <PrivateMainSettingsArea config={password}>
                     <>
-                        <UsernameSection />
+                        <UsernameSection app={app} />
                         <PasswordsSection />
                     </>
                     <TwoFactorSection />
