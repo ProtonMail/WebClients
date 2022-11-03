@@ -771,6 +771,9 @@
       "Underline": [
         "Altı çizili"
       ],
+      "Undo import": [
+        "İçe aktarmayı geri al"
+      ],
       "Unlock": [
         "Kilidi aç"
       ],
@@ -857,6 +860,9 @@
       ],
       "Yes": [
         "Evet"
+      ],
+      "Yes, undo": [
+        "Evet, geri al"
       ],
       "Zoom in": [
         "Yakınlaştır"
@@ -1585,6 +1591,9 @@
       ],
       "Remove from the list?": [
         "Listeden kaldırılsın mı?"
+      ],
+      "Undo this import?": [
+        "Bu içer aktarma geri alınsın mı?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -4311,6 +4320,14 @@
         "Diğer"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Geri alındı"
+      ],
+      "Undo in progress": [
+        "Geri alınıyor"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "%${ percentageValue } duraklatıldı"
@@ -5163,8 +5180,8 @@
       "Link type": [
         "Bağlantı türü"
       ],
-      "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Loaded content is being protected by our proxy when tracker protection is activated."
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "İzleyici koruması açıkken yüklenen içerik vekil sunucumuz tarafından korunur."
       ],
       "Loading": [
         "Yükleniyor"
@@ -6734,6 +6751,9 @@
       "Credits used": [
         "Kullanılan kredi"
       ],
+      "Current display name": [
+        "Geçerli görüntülenecek ad"
+      ],
       "Customize invoices": [
         "Faturaları özelleştir"
       ],
@@ -6914,6 +6934,9 @@
       "Key strength": [
         "Anahtar güçlüğü"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Klavye kısayolları"
       ],
@@ -6976,6 +6999,12 @@
       ],
       "Name on card": [
         "Kart üzerindeki isim"
+      ],
+      "Navigation": [
+        "Gezinme"
+      ],
+      "New display name": [
+        "Yeni görüntülenecek ad"
       ],
       "New login password": [
         "Yeni oturum açma parolası"
@@ -8143,6 +8172,26 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8212,26 +8261,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -9567,6 +9596,9 @@
       "Default calendar updated": [
         "Varsayılan takvim güncellendi"
       ],
+      "Display name updated": [
+        "Görüntülenecek ad güncellendi"
+      ],
       "DMARC value copied to clipboard": [
         "DMARC değeri panoya kopyalandı"
       ],
@@ -9641,6 +9673,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF değeri panoya kopyalandı"
+      ],
+      "Undo in progress": [
+        "Geri alınıyor"
       ],
       "User created": [
         "Kullanıcı eklendi"
@@ -10156,6 +10191,9 @@
       ],
       "Edit credit/debit card": [
         "Kredi/banka kartını düzenle"
+      ],
+      "Edit display name": [
+        "Görüntülenecek adı düzenle"
       ],
       "Edit domain": [
         "Etki alanını düzenle"
@@ -11022,6 +11060,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Bu içe aktarma işlemi, Proton hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Bu işlem, içe aktarma sırasında eklenen tüm iletileri, klasörleri ve etiketleri siler."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."

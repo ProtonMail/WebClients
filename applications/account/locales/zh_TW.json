@@ -784,6 +784,9 @@
       "Use a different payment method": [
         "改用另一個付款方法"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use recovery code": [
         "使用復原代碼"
       ],
@@ -1240,6 +1243,9 @@
       "lemon yellow": [
         "檸檬黃"
       ],
+      "light red": [
+        "淡紅色"
+      ],
       "maize": [
         "玉米"
       ],
@@ -1248,6 +1254,9 @@
       ],
       "olive": [
         "橄欖"
+      ],
+      "persian red": [
+        "波斯紅"
       ],
       "pickle": [
         "泡菜"
@@ -2259,6 +2268,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
+        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
       ]
@@ -2617,6 +2629,15 @@
       "No active sessions": [
         "無使用中工作階段"
       ],
+      "No calendars found to import": [
+        "沒有找到行事曆可以匯入"
+      ],
+      "No contacts found to import": [
+        "沒有找到聯絡人可以匯入"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
+      ],
       "No public key for Proton address": [
         "Proton 地址沒有公開金鑰"
       ],
@@ -2695,6 +2716,9 @@
       "Primary key is not valid for sending": [
         "寄件用的主金鑰不正確。"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "從 ${ BRAND_NAME } 擷取出的使用者專屬主金鑰不適用於發送郵件"
+      ],
       "Process aborted": [
         "處理已中止"
       ],
@@ -2716,11 +2740,23 @@
       "Signature verification failed": [
         "簽名驗證失敗"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "部份資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "您有部分的資料夾名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -2829,6 +2865,9 @@
       ],
       "You have no invoices.": [
         "您沒有任何帳單。"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -3159,12 +3198,28 @@
         "Torrenting 支援 (P2P)"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
     "fido2: Info": {
       "2FA via security key disabled": [
         "搭用安全金鑰的雙重驗證停用中"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全性金鑰"
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用實體 U2F 或 FIDO2 金鑰來確保您的身份"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全性金鑰"
       ]
     },
     "file size format": {
@@ -3272,6 +3327,11 @@
     "Font Size Default": {
       "Default": [
         "預設"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。預設隱私。"
       ]
     },
     "Frequency of news": {
@@ -3496,6 +3556,9 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
+      "2-step verification is enabled in your external account.": [
+        "您的外部帳號已啟用兩步驟驗證。"
+      ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
       ],
@@ -3510,6 +3573,9 @@
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
+      ],
+      "IMAP access is enabled in your external account.": [
+        "您的外部帳號已啟用 IMAP 存取。"
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "您的 Yahoo 帳號已啟用 IMAP 存取。"
@@ -3535,6 +3601,12 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
       ],
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
+      ],
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保："
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近的請求太多。請容後再試。"
       ],
@@ -3549,6 +3621,15 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
+      ],
+      "Your email account requires an app password to export your data.": [
+        "您的電子郵件帳號要求應用程式密碼來匯出您的資料。"
+      ],
+      "Your email account requires one to export your data.": [
+        "您的電子郵件帳號要求一個方式來匯出您的資料。"
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "您的電子郵件地址和應用程式密碼均為正確。${ boldNot } 使用您的一般密碼。"
       ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
@@ -3625,11 +3706,17 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
       ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
+      ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
@@ -3680,6 +3767,9 @@
       "contacts": [
         "聯絡人"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV 或 VCF (vCard) 檔案"
+      ],
       "full calendar view": [
         "完整行事曆檢視方式"
       ],
@@ -3694,6 +3784,26 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "點擊 ${ boldICS } 連結並下載檔案。"
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "前往您 Outlook. com 設定中的 ${ calendarLink }。"
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "前往 Yahoo 郵件中的 ${ calendarViewLink }。"
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "將滑鼠游標停在您要匯入的行事曆上並開啟下拉式選單。"
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "在 ${ boldPublish } 下，選取您要匯入的行事曆。設定權限給 ${ boldCanViewAllDetails } 並發佈它。"
       ]
     },
     "Import key": {
@@ -4196,6 +4306,9 @@
       "Drop the file here to upload": [
         "拖放檔案到此處以上載"
       ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
       "Edit label": [
         "編輯標籤"
       ],
@@ -4229,6 +4342,9 @@
       "Enter key manually instead": [
         "改為手動輸入金鑰"
       ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "輸入傳送到您的手機號碼 ${ phone } 的代碼。"
       ],
@@ -4249,6 +4365,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
@@ -4448,6 +4567,9 @@
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
       ],
+      "Labels:": [
+        "標籤："
+      ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
       ],
@@ -4477,6 +4599,9 @@
       ],
       "Link type": [
         "連結類型"
+      ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "開啟追蹤程式保護功能，代理伺服器會保護已載入的內容。"
       ],
       "Loading": [
         "正在載入"
@@ -4711,6 +4836,9 @@
       ],
       "Recovery files have been voided": [
         "帳號救援金鑰已被作廢"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
@@ -5101,6 +5229,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳號中有新訊息，我們將向您的復原/通知電郵位址傳送提示。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂閱續期時，我們會先在可用的餘額中扣除，才會以上面的付款方法扣款。"
@@ -5765,6 +5896,9 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
+      "Authenticator app": [
+        "驗證器APP"
+      ],
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
       ],
@@ -5900,6 +6034,9 @@
       "Credits used": [
         "已使用儲值"
       ],
+      "Current display name": [
+        "目前顯示名稱"
+      ],
       "Customize invoices": [
         "自訂帳單"
       ],
@@ -5929,6 +6066,9 @@
       ],
       "Delete": [
         "刪除"
+      ],
+      "Delete recovery-related information.": [
+        "刪除復原相關的資料。"
       ],
       "Density": [
         "密度"
@@ -6077,6 +6217,9 @@
       "Key strength": [
         "金鑰強度"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "鍵盤快速鍵: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
       ],
@@ -6139,6 +6282,12 @@
       ],
       "Name on card": [
         "持卡人姓名"
+      ],
+      "Navigation": [
+        "巡覽"
+      ],
+      "New display name": [
+        "新的顯示名稱"
       ],
       "New login password": [
         "新的登入密碼"
@@ -6657,6 +6806,9 @@
       "What is the difference between UDP and TCP protocols?": [
         "UDP 與 TCP 通訊協定有何分別？"
       ],
+      "What’s this?": [
+        "這是什麼？"
+      ],
       "Why set recovery methods?": [
         "為什麼要設定復原方法?"
       ]
@@ -6693,8 +6845,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "從 ${ totalLabelsCount } 個資料夾匯入 ${ selectedLabelsCount } 個資料夾中自 ${ periodFragment } 以來的所有訊息，並將它們標記為 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "匯入全部 ${ totalLabelsCount } 個標籤中的 ${ selectedLabelsCount } 個最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入${ periodFragment } 迄今來自 ${ totalLabelsCount } 資料夾的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "從 ${ totalLabelsCount } 個標籤匯入最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -8071,6 +8229,9 @@
       "Default calendar updated": [
         "預設行事曆已更新"
       ],
+      "Display name updated": [
+        "已更新顯示名稱"
+      ],
       "DMARC value copied to clipboard": [
         "DMARC 字串已經複製到剪貼簿"
       ],
@@ -8626,6 +8787,9 @@
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
       ],
+      "Edit display name": [
+        "編輯顯示名稱"
+      ],
       "Edit domain": [
         "編輯網域"
       ],
@@ -8784,6 +8948,9 @@
       ],
       "Messages and composing": [
         "訊息與排版"
+      ],
+      "Minicalendar": [
+        "小型行事曆"
       ],
       "Multi-user support": [
         "多使用者支援"
@@ -9234,6 +9401,9 @@
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "此金鑰產生的簽章被視作無效，不能用於加密"
       ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
+      ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
       ],
@@ -9443,6 +9613,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "您在清單中將再也看不見此匯入記錄。"
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "您的免費試用將於 ${ textDate } 結束。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "您的帳號救援檔案已過時，若您再次重設您的帳號，該復原檔案將無法還原新的資料。"

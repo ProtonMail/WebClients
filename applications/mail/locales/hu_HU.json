@@ -107,6 +107,9 @@
       "Block messages from this sender": [
         "Üzenetek tiltása ettől a feladótól"
       ],
+      "Block sender": [
+        "Feladó letiltása"
+      ],
       "Block senders": [
         "Feladók letiltása"
       ],
@@ -497,6 +500,9 @@
       "Load": [
         "Betöltés"
       ],
+      "Load anyway": [
+        "Betöltés mindenképp"
+      ],
       "Load embedded images": [
         "Beágyazott képek betöltése"
       ],
@@ -800,6 +806,9 @@
       "Search": [
         "Keresés"
       ],
+      "Search countries": [
+        "Ország keresése"
+      ],
       "Search in ${ option.text }": [
         "Keresés itt: ${ option.text }"
       ],
@@ -898,6 +907,9 @@
       ],
       "Skip": [
         "Kihagyás"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "Néhány kép betöltése nem sikerült a követési védelemmel."
       ],
       "Star": [
         "Csillagozás"
@@ -1093,6 +1105,11 @@
         "Résztvevő hozzáadva"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Időkorlátos üzenet"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "A folyamat megszakítása esetén, bizonyos névjegyek nem kerülnek importálásra"
@@ -1114,6 +1131,9 @@
       "Star message": [
         "Üzenet csillagozása"
       ],
+      "Unread email": [
+        "Olvasatlan e-mail"
+      ],
       "Unstar conversation": [
         "Beszélgetés csillagozásának visszavonása"
       ],
@@ -1124,6 +1144,16 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Beszélgetés"
+      ]
+    },
+    "Alternative text for simple login image": {
+      "Simple Login": [
+        "Simple Login"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1489,6 +1519,9 @@
       "This invitation is out of date. The event has been updated.": [
         "A meghívó elavult. Az eseményt frissítették."
       ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ez az új javasolt időpont nem fedi a meghívó adatait. Ellenőrizze a meghívó részleteit a naptárában."
+      ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Ez a válasz nem fedi az ön meghívási adatait. Ellenőrizze a meghívási részleteit a naptárában."
       ],
@@ -1529,6 +1562,9 @@
       "Calendar is syncing": [
         "A naptár szinkronizál"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "A naptár szinkronizál: több percig is eltarthat, mire az összes esemény látható lesz."
+      ],
       "Calendar is too big": [
         "A naptár túl nagy"
       ],
@@ -1548,6 +1584,17 @@
         "Nem támogatott naptár formátum"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "A naptár hivatkozás nem érhető el a naptárszolgáltató rendszerén kívül."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Több mint 12 óra telt el a legutóbbi frissítés óta — a Proton Calendar néhány órán belül megpróbálja frissíteni a naptárat."
+      ]
+    },
     "Calendar widget banner": {
       "Event already ended": [
         "Az esemény már befejeződött"
@@ -1556,7 +1603,18 @@
         "Az esemény folyamatban van"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Összecsukás"
+      ],
+      "Expand": [
+        "Kibontás"
+      ]
+    },
     "color": {
+      "apple": [
+        "alma"
+      ],
       "azureish white": [
         "azúrkék fehér"
       ],
@@ -2063,6 +2121,9 @@
       "Czech Republic": [
         "Csehország"
       ],
+      "Côte d'Ivoire": [
+        "Elefántcsontpart"
+      ],
       "Denmark": [
         "Dánia"
       ],
@@ -2092,6 +2153,9 @@
       ],
       "Estonia": [
         "Észtország"
+      ],
+      "Eswatini": [
+        "Szváziföld"
       ],
       "Ethiopia": [
         "Etiópia"
@@ -2335,6 +2399,9 @@
       ],
       "Mozambique": [
         "Mozambik"
+      ],
+      "Myanmar": [
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -2644,6 +2711,9 @@
       "Attachment": [
         "Melléklet"
       ],
+      "Filter on": [
+        "Szűrés"
+      ],
       "Next": [
         "Következő"
       ],
@@ -2719,6 +2789,12 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } a beállításoknál."
+      ],
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek törlése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
@@ -2734,6 +2810,19 @@
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "A ${ senderEmailAddress } és ${ otherSendersCount } másik címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek.",
         "A ${ senderEmailAddress } és ${ otherSendersCount } más címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "A ${ senderEmailAddress } címről érkező új üzenetek nem kerülnek kézbesítésre, és véglegesen törlésre kerülnek."
+      ],
+      "No folders": [
+        "Nincsenek mappák"
+      ],
+      "No labels": [
+        "Nincsenek címkék"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
+        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
@@ -2886,6 +2975,9 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
+      "A problem occurred, please try again": [
+        "Hiba történt, próbálja meg újra"
+      ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
@@ -2936,6 +3028,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy",
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy"
+      ],
+      "Domain not available, try again later": [
+        "A domain név nem érhető el, próbálja meg később"
       ],
       "Draft could not be saved. Try again.": [
         "Piszkozat mentése nem sikerült. Próbálja újra."
@@ -3028,6 +3123,15 @@
       "No address with keys available to compose a message": [
         "Nincs elérhető kulcsokkal rendelkező cím az üzenet íráshoz"
       ],
+      "No calendars found to import": [
+        "Nincs importálandó naptár"
+      ],
+      "No contacts found to import": [
+        "Nincs importálandó névjegy"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "Nincs importálandó e-mail - a fiókban nincsenek beérkezett levelek"
+      ],
       "No valid address found": [
         "Nincs érvényes cím"
       ],
@@ -3047,6 +3151,9 @@
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
+      ],
+      "Please activate your content search again": [
+        "Aktiválja újra az üzenetek tartalmában való keresést"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
@@ -3069,6 +3176,9 @@
       ],
       "Primary key is not valid for sending": [
         "Az elsődleges kulcs nem érvényes a küldéshez"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "${ BRAND_NAME } felhasználóhoz rendelt elsődleges kulcs nem érvényes a küldéshez"
       ],
       "Public key could not be trusted": [
         "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
@@ -3104,11 +3214,17 @@
       "Some groups could not be deleted": [
         "Néhány csoport törlése nem sikerült"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Bizonyos mappák neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos mappák neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos mappák neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Bizonyos címkék neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
@@ -3174,6 +3290,12 @@
       "This message has already been sent. A new draft has been saved.": [
         "Az üzenet már elküldésre került. Egy új piszkozat került mentésre."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ez az üzenet olyan URL hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Túl sok bekapcsolt szűrő. Váltson nagyobb csomagra további szűrők bekapcsolásához."
+      ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
       ],
@@ -3201,6 +3323,9 @@
       ],
       "You did not provide a file.": [
         "Nem adott meg fájlt."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát. Néhány naptár importálása nem sikerült."
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
@@ -3277,6 +3402,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar time zone not supported": [
+        "A naptár időzónája nem támogatott"
+      ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
@@ -3343,6 +3471,9 @@
       "Start time out of bounds": [
         "Kezdő időpont a korlátokon kívül"
       ],
+      "Time zone not supported": [
+        "Időzóna nem támogatott"
+      ],
       "To-do entry": [
         "Tennivaló elem"
       ],
@@ -3365,6 +3496,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
       ],
       "There was a problem connecting to Proton.": [
         "Hiba lépett fel a Protonhoz történő csatlakozás során."
@@ -3450,6 +3584,24 @@
         "Az ön visszajelzése"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
+      ],
+      "Security key": [
+        "Hitelesítési kulcsok"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3492,6 +3644,9 @@
       "Archive": [
         "Archívum"
       ],
+      "Do not move": [
+        "Ne helyezze át"
+      ],
       "Inbox": [
         "Beérkezett üzenetek"
       ],
@@ -3517,6 +3672,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Ha a mellékletek"
+      ],
+      "If the recipient": [
+        "Ha a címzett"
+      ],
+      "If the sender": [
+        "Ha a feladó"
+      ],
+      "If the subject": [
+        "Ha a tárgy"
+      ],
       "Select…": [
         "Választás…"
       ],
@@ -3574,6 +3741,11 @@
     "Font Size Default": {
       "Default": [
         "Alapértelmezett"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Adatvédelem alapértelmezett."
       ]
     },
     "Get started checklist completion": {
@@ -3992,6 +4164,9 @@
       "contacts": [
         "névjegyek"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV vagy VCF (vCard) fájl"
+      ],
       "full calendar view": [
         "teljes naptár nézetet"
       ],
@@ -4063,6 +4238,10 @@
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
         "${ contactEmailsLength } tag"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } tag)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } tag)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } több e-mail címet tartalmaz."
@@ -4160,6 +4339,10 @@
       "${ unread } unread message": [
         "${ unread } olvasatlan üzenet",
         "${ unread } olvasatlan üzenet"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } időzített üzenet",
+        "${ unreadCount } időzített üzenet"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } olvasatlan beszélgetés",
@@ -4383,6 +4566,9 @@
       "Don't forget to share the password with the recipient": [
         "Ne felejtse el megosztani a jelszót a címzettel"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Letöltés: ${ esProgress } üzenet. Összesen: ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Piszkozat"
       ],
@@ -4415,6 +4601,9 @@
       ],
       "Email address": [
         "E-mail cím"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "A levelek az e-mail címére továbbítódnak, a címe mégis rejtett marad."
       ],
       "Email tracker protection is disabled": [
         "E-mail követő védelem ki van kapcsolva"
@@ -4521,6 +4710,9 @@
         "Óra",
         "Óra"
       ],
+      "How Hide My Email works": [
+        "Így működik a Hide My Email"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Egy nem-ProtonMail címzettnek küldöm ezt az üzenetet."
       ],
@@ -4532,6 +4724,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Ha az alternatív címét eladják, kiszivárog vagy rossz kezekbe kerül, egyszerűen kikapcsolhatja, hogy ne érkezzen rá több levélszemét."
       ],
       "Image description": [
         "Kép leírása"
@@ -4711,6 +4906,9 @@
       "non-Proton Mail": [
         "nem-Proton Mail"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Egyik feltöltött kulcs sem alkalmas titkosításra. Erre a címre való küldéshez töltsön fel egy érvényes kulcsot, vagy kapcsolja ki az üzenetek titkosítást."
+      ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
@@ -4734,6 +4932,9 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
       "Phone number": [
         "Telefonszám"
@@ -4787,11 +4988,17 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Akadályozza meg, hogy e-mail címe hírlevél listákra vagy levélszemét küldők kezébe kerüljön: ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "A Proton nem abból él, hogy a személyes adatokkal visszaéljen."
       ],
       "Recipient: ": [
         "Címzett: "
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "A helyreállítási információ megmarad ezen az eszközön, kivéve ha törli."
       ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
@@ -4807,6 +5014,9 @@
       ],
       "Request read receipt": [
         "Olvasási visszaigazolás igénylése"
+      ],
+      "Rich text": [
+        "Formázott szöveg"
       ],
       "Right to Left": [
         "Jobbról balra"
@@ -4883,6 +5093,12 @@
       "Show original message": [
         "Eredeti üzenet megjelenítése"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "A SimpleLogin egy Proton szolgáltatás és a Proton fiókja tartalmazza a Hide My Email címeit. E-mail címének elrejtéséhez, nyissa meg a SimpleLogin oldalt és hozza létre első alternatív e-mail címeit."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "A SimpleLogin egy egyszerű lehetőséget biztosít arra, hogy nem teljesen megbízhatónak ítélt oldalakon, a saját e-mail címének felfedése nélkül regisztráljon."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Sajnáljuk, az üzenet nem létezik vagy már lejárt."
       ],
@@ -4949,6 +5165,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Hiba történt a névjegy aláírásnak ellenőrzésekor. Ezt jelszó visszaállítás is okozhatja."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Senki sem tud önnek levélszemetet küldeni, ha nem ismerik a valós e-mail címét. Védje meg az e-mail címét a Hide My Email szolgáltatással."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
@@ -5135,6 +5354,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Az e-mail egyszerűbb kezeléséhez használjon gyorsbillentyűket."
       ],
+      "Using SimpleLogin is easy": [
+        "A SimpleLogin használata egyszerű"
+      ],
       "Version ${ appVersion }": [
         "Verzió: ${ appVersion }"
       ],
@@ -5153,6 +5375,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Költöztünk! Kérjük, lépjen be az új címen: ${ link }."
+      ],
       "Web URL": [
         "Weblap link"
       ],
@@ -5161,6 +5386,9 @@
       ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Amikor megadja valahol az e-mail címét, adjon meg egy egyedi, eldobható, Hide My Email alternatív címet a valós e-mail címe helyett."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
@@ -5597,6 +5825,12 @@
       "Also archive": [
         "Archiválás is"
       ],
+      "Always label sender's emails": [
+        "A feladó leveleit mindig jelölje címkékkel"
+      ],
+      "Always move sender's emails": [
+        "A feladó leveleit mindig helyezze mappába"
+      ],
       "AND": [
         "ÉS"
       ],
@@ -5693,6 +5927,9 @@
       "Delete": [
         "Törlés"
       ],
+      "Delete recovery-related information.": [
+        "Helyreállítási információk törlése."
+      ],
       "Do not ask again": [
         "Ne kérdezze újra"
       ],
@@ -5780,6 +6017,9 @@
       "Import to email address": [
         "Importálás e-mail címre"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Gyorsbillentyű: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Gyorsbillentyűk"
       ],
@@ -5825,6 +6065,9 @@
       "Mark as": [
         "Megjelölés mint"
       ],
+      "Move ${ sidebarElementName }": [
+        "${ sidebarElementName } áthelyezése"
+      ],
       "Move to": [
         "Mozgatás ide"
       ],
@@ -5836,6 +6079,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Navigation": [
+        "Navigáció"
       ],
       "No label found": [
         "Nem található címke"
@@ -6142,6 +6388,12 @@
       "Learn more": [
         "További információk"
       ],
+      "Less": [
+        "Kevesebb"
+      ],
+      "Manage blocked email addresses": [
+        "Letiltott e-mail címek kezelése"
+      ],
       "Manage your folders": [
         "Mappák kezelése"
       ],
@@ -6208,6 +6460,9 @@
       "Upgrade account": [
         "Csomag váltása"
       ],
+      "What’s this?": [
+        "Mi ez?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "A esemény hozzáadásához előbb aktiválnia kell a naptár kulcsait"
       ],
@@ -6238,6 +6493,11 @@
         "${ CALENDAR_APP_NAME } megnyitása"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "beállításoknál"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Majdnem kész"
@@ -6262,6 +6522,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
         "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -6315,6 +6579,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "A Proton SimpleLogin szolgáltatásából"
       ]
     },
     "Message image": {
@@ -6539,6 +6808,9 @@
       "${ _Filter.Name } created": [
         "${ _Filter.Name } létrehozva"
       ],
+      "Block removed": [
+        "Tiltás megszüntetve"
+      ],
       "Contact group created": [
         "Névjegy csoport létrehozva"
       ],
@@ -6547,6 +6819,12 @@
       ],
       "Password has been set successfully": [
         "A jelszó beállítása sikeres"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "${ firstSenderAddress } feladó letiltva"
+      ],
+      "Senders blocked": [
+        "Feladók letiltva"
       ]
     },
     "Oauth instructions": {
@@ -6629,6 +6907,11 @@
       ],
       "Merge with calendar": [
         "Összefőzés naptárral"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ totalText }": [
+        "${ page } (összesen: ${ totalText })"
       ]
     },
     "Paid user checklist item": {
@@ -6766,6 +7049,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts }).",
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
         "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
@@ -6871,6 +7158,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nem sikerült a szervező címére küldeni: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "A meghívó újra-titkosítása sikertelen. Próbálja meg újra."
       ]
     },
     "Search - no results": {
@@ -7010,11 +7300,17 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
       ],
+      "Email tracking protection": [
+        "E-mail követési védelem"
+      ],
       "Message Content Search": [
         "Keresés üzenetek tartalmában"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "A képek már alapértelmezetten betöltődnek, a feladók általi követés megakadályozásával. Ez megváltoztatható a ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Most már ütemezheti is a leveleit későbbi elküldésre"
@@ -7088,9 +7384,17 @@
         "${ elementsCount } beszélgetés olvasatlannak megjelölve.",
         "${ elementsCount } beszélgetés olvasatlannak megjelölve."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
+        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába.",
         "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } beszélgetés átkerült a levélszeméthez, a feladó pedig a levélszemét listára.",
+        "${ elementsCount } beszélgetés átkerült a levélszeméthez, a feladó pedig a levélszemét listára."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva ${ elementsCount } beszélgetésről.",
@@ -7111,6 +7415,10 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } üzenet olvasatlannak megjelölve.",
         "${ elementsCount } üzenet olvasatlannak megjelölve."
+      ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült a nem levélszemét listába.",
+        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült a nem levélszemét listába."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } üzenet átkerült a ${ folderName } mappába.",
@@ -7165,11 +7473,23 @@
       "Conversation marked as unread.": [
         "Beszélgetés olvasatlannak megjelölve."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "A beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
       "Conversation moved to ${ folderName }.": [
         "A beszélgetés átkerült a ${ folderName } mappába."
       ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "A beszélgetés átkerült a levélszeméthez, a feladó pedig a levélszemét listára."
+      ],
       "Conversation removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva a beszélgetésről."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } érkező üzenetek a(z) ${ labelsList } címkével lesznek megjelölve"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } érkező beszélgetések a(z) ${ folder } mappába kerülnek áthelyezésre"
       ],
       "Draft deleted": [
         "Piszkozat törölve"
@@ -7216,11 +7536,23 @@
       "Message marked as unread.": [
         "Üzenet megjelölve olvasatlanként."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Az üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült a nem levélszemét listába."
+      ],
       "Message moved to ${ folderName }.": [
         "Az üzenet átkerült a ${ folderName } mappába."
       ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Az üzenet átkerült a levélszeméthez, a feladó pedig a levélszemét listára."
+      ],
       "Message removed from ${ labelName }.": [
         "${ labelName } címke eltávolítva az üzenetről."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } érkező üzenetek a(z) ${ labelsList } címkével lesznek megjelölve"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } érkező üzenetek a(z) ${ folder } mappába kerülnek áthelyezésre"
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } beszélgetés áthelyezése",
@@ -7410,6 +7742,9 @@
       "Blind Carbon Copy": [
         "Titkos másolat"
       ],
+      "Block sender": [
+        "Feladó letiltása"
+      ],
       "Carbon Copy": [
         "Másolat"
       ],
@@ -7508,11 +7843,17 @@
       "Deleting contacts": [
         "Névjegyek törlése"
       ],
+      "Don't give spam a chance": [
+        "Ne adjon esélyt a levélszemétnek"
+      ],
       "Edit contact": [
         "Névjegy szerkesztése"
       ],
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
+      ],
+      "Edit email settings": [
+        "E-mail beállítások szerkesztése"
       ],
       "Edit filter": [
         "Szűrő szerkesztése"
@@ -7553,11 +7894,17 @@
       "Feedback": [
         "Visszajelzés"
       ],
+      "Filter on...": [
+        "Szűrés..."
+      ],
       "Forward": [
         "Továbbítás"
       ],
       "Groups": [
         "Csoportok"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Rejtse el e-mail címét a Proton SimpleLogin szolgáltatásával"
       ],
       "Human verification": [
         "Robot ellenőrzés"
@@ -7616,8 +7963,14 @@
       "Message will expire": [
         "Az üzenet lejár"
       ],
+      "Minicalendar": [
+        "Mini naptár"
+      ],
       "More": [
         "Továbbiak"
+      ],
+      "More actions": [
+        "További műveletek"
       ],
       "More options": [
         "További lehetőségek"
@@ -7803,6 +8156,9 @@
       "Unsubscribe": [
         "Leiratkozás"
       ],
+      "Unsubscribe request sent": [
+        "Leiratkozási kérés elküldve"
+      ],
       "Upgrade required": [
         "Nagyobb csomag szükséges"
       ],
@@ -7870,6 +8226,9 @@
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
       ],
@@ -7878,6 +8237,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"

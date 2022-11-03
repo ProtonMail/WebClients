@@ -5285,8 +5285,8 @@
       "Link type": [
         "Typ odkazu"
       ],
-      "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Loaded content is being protected by our proxy when tracker protection is activated."
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Načtený obsah je chráněn naším proxy serverem, když je aktivována ochrana proti sledování."
       ],
       "Loading": [
         "Načítání"
@@ -6872,6 +6872,9 @@
       "Credits used": [
         "Použité kredity"
       ],
+      "Current display name": [
+        "Aktuální zobrazované jméno"
+      ],
       "Customize invoices": [
         "Přizpůsobení faktur"
       ],
@@ -7052,6 +7055,9 @@
       "Key strength": [
         "Síla klíče"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová zkratka: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Klávesové zkratky"
       ],
@@ -7114,6 +7120,12 @@
       ],
       "Name on card": [
         "Jméno na kartě"
+      ],
+      "Navigation": [
+        "Navigace"
+      ],
+      "New display name": [
+        "Nové zobrazované jméno"
       ],
       "New login password": [
         "Nové přihlašovací heslo"
@@ -8327,6 +8339,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8396,26 +8428,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9803,6 +9815,9 @@
       "Default calendar updated": [
         "Výchozí kalendář byl aktualizován"
       ],
+      "Display name updated": [
+        "Zobrazované jméno aktualizováno"
+      ],
       "DMARC value copied to clipboard": [
         "Hodnota DMARC byla zkopírována do schránky"
       ],
@@ -10396,6 +10411,9 @@
       ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
+      ],
+      "Edit display name": [
+        "Upravit zobrazované jméno"
       ],
       "Edit domain": [
         "Upravit doménu"
@@ -11278,6 +11296,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Tento import může překročit kapacitu úložiště, která je momentálně k dispozici ve vašem Proton účtu. Zvažte prosím přizpůsobení importu."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Tím se odstraní všechny zprávy, složky a štítky vytvořené během importu."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužel nejsme momentálně dostupní. Chcete-li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat vás, až budeme opět dostupní."
