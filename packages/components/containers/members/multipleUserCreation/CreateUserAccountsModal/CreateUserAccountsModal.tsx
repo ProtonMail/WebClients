@@ -376,7 +376,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 : c('Title').t`Couldn’t create accounts`,
             content: (
                 <>
-                    {failedUsers.length && !invalidAddresses.length && unavailableAddresses.length
+                    {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
                         ? c('Info')
                               .t`Please check your file for errors, or contact customer support for more information.`
                         : null}
