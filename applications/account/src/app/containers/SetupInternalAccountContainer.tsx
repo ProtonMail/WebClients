@@ -39,7 +39,7 @@ import Footer from '../public/Footer';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
-import { getToAppName } from '../public/helper';
+import { externalApps, getToAppName } from '../public/helper';
 
 const SetupSupportDropdown = () => {
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -68,6 +68,7 @@ const SetupInternalAccountContainer = () => {
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
     const toAppRef = useRef<APP_NAMES | null>(null);
+    const fromAppRef = useRef<APP_NAMES>(externalApps[0]);
     const authentication = useAuthentication();
     const getAddresses = useGetAddresses();
     const getUser = useGetUser();
@@ -78,7 +79,11 @@ const SetupInternalAccountContainer = () => {
     const handleBack = () => {
         // Always forces a refresh for the theme
         document.location.assign(
-            getAppHref(`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`, APPS.PROTONACCOUNT, authentication.getLocalID())
+            getAppHref(
+                `/${getSlugFromApp(fromAppRef.current)}/dashboard`,
+                APPS.PROTONACCOUNT,
+                authentication.getLocalID()
+            )
         );
     };
 
@@ -95,9 +100,10 @@ const SetupInternalAccountContainer = () => {
     useEffect(() => {
         const run = async () => {
             const searchParams = new URLSearchParams(window.location.search);
-            const toApp = getValidatedApp(searchParams.get('app') || '');
+            fromAppRef.current = getValidatedApp(searchParams.get('from') || '') || externalApps[0];
+            const toApp = getValidatedApp(searchParams.get('to') || searchParams.get('app') || '');
 
-            if (!toApp) {
+            if (!toApp || externalApps.includes(toApp as any)) {
                 handleBack();
                 return new Promise(noop);
             }
