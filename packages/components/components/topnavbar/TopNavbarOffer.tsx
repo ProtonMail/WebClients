@@ -79,7 +79,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
         onceRef.current = true;
         setFetchOffer(true);
         setOfferModalOpen(true);
-    }, [loading, welcomeFlags.isDone]);
+    }, [loading, loadingSubscription, welcomeFlags.isDone]);
 
     return (
         <>
