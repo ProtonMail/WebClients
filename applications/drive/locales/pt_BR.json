@@ -1748,6 +1748,9 @@
         "Desmarque ao menos ${ calendarToFixCount } calendário ou",
         "Desmarque ao menos ${ calendarToFixCount } calendários ou"
       ],
+      "Device name does not match": [
+        "O nome do dispositivo não corresponde"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -3276,6 +3279,9 @@
       "This will overwrite the existing folder": [
         "Isto irá sobrescrever a pasta existente"
       ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Isso removerá do Proton Drive o dispositivo sincronizado ${ deviceName }. Arquivos \nlocais ativados no dispositivo não será afetado."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para habilitar uma pesquisa verdadeiramente privada, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
       ],
@@ -3332,6 +3338,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Use o Drive para Desktop para sincronizar pastas em seu computador com o Proton Drive. Eles aparecerão aqui e estarão acessíveis de qualquer lugar. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use esse formulário para nos notificar de arquivos compartilhados que são inapropriados, ilegais, ou maliciosos. Você irá denunciar:"
@@ -3650,6 +3659,9 @@
       "Encrypt emails": [
         "Criptografar e-mails"
       ],
+      "Enter device name": [
+        "Digite o nome do dispositivo"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -3760,6 +3772,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Navigation": [
+        "Navegação"
       ],
       "Never": [
         "Nunca"
@@ -4183,6 +4198,12 @@
       "Contact group updated": [
         "O grupo de contatos foi atualizado"
       ],
+      "Device failed to be removed": [
+        "Falha ao remover o dispositivo"
+      ],
+      "Device failed to be renamed": [
+        "Falha ao renomear o dispositivo"
+      ],
       "Device removed": [
         "Dispositivo removido"
       ],
@@ -4397,6 +4418,9 @@
       ],
       "Enter a new folder name": [
         "Digite o nome para nova pasta"
+      ],
+      "Enter device name": [
+        "Digite o nome do dispositivo"
       ],
       "Enter your email address": [
         "Digite seu endereço de e-mail"
@@ -4740,6 +4764,9 @@
       ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Receba até ${ credits } em créditos."
       ],
       "Invite friends to Proton": [
         "Convide amigos para o Proton"

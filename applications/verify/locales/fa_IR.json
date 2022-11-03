@@ -997,8 +997,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
+      "Each code can only be used once": [
+        "هر کد تنها یک بار می‌تواند استفاده شود"
+      ],
+      "Enter the code from your authenticator app": [
+        "کد سامانه تایید کننده را وارد نمایید"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که به ${ destinationText } ارسال شد را وارد نمایید."
+      ],
+      "Enter your own password (as organization admin).": [
+        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر در ایجاد حساب کاربری خود مشکلی دارید، لطفا یک دعوت‌ نامه درخواست کنید و ما ظرف یک روز کاری پاسخ خواهیم داد."
@@ -1029,6 +1038,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "زمانی که شما اصالت‌سنجی دو-عاملی را فعال کنید، ما به شما کد بازیابی میدهیم که در صورت عدم دسترسی به برنامه اصالت‌سنجی خود، میتوانید از این کدها برای ورود به حساب استفاده کنید."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
