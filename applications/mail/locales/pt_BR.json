@@ -4239,6 +4239,10 @@
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membro)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membros)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contém vários endereços de e-mail."
       ],
@@ -4706,6 +4710,9 @@
         "Hora",
         "Horas"
       ],
+      "How Hide My Email works": [
+        "Como Hide My Email funciona"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Estou enviando essa mensagem para um não-usuário do Proton Mail."
       ],
@@ -4981,6 +4988,9 @@
       "Priority support": [
         "Suporte prioritário"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "A Proton não ganha dinheiro abusando da privacidade."
       ],
@@ -5083,6 +5093,9 @@
       "Show original message": [
         "Exibir mensagem original"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "O SimpleLogin é um serviço Proton, e sua Conta Proton inclui os aliases do Hide My Email. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não confiáveis nos quais você não quer expor o seu endereço de e-mail real."
       ],
@@ -5152,6 +5165,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Houve um erro com a assinatura usada para verificar os detalhes do contato, o que pode ser o resultado de uma redefinição da senha."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Eles não podem enviar spam para você se não souberem seu endereço de e-mail. Proteja sua caixa de entrada com Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
@@ -5370,6 +5386,9 @@
       ],
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Ao distribuir seu e-mail, use um alias exclusivo e descartável do Hide My Email em vez do seu endereço de e-mail real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves confiáveis para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
@@ -5998,6 +6017,9 @@
       "Import to email address": [
         "Importar para o endereço de e-mail"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Atalhos do teclado"
       ],
@@ -6057,6 +6079,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Navigation": [
+        "Navegação"
       ],
       "No label found": [
         "Nenhum marcador encontrado"
@@ -7507,6 +7532,9 @@
       "Email tracking protection": [
         "Proteção de rastreamento de e-mail"
       ],
+      "Get up to ${ credits } in credits.": [
+        "Receba até ${ credits } em créditos."
+      ],
       "Invite friends to Proton": [
         "Convide amigos para o Proton"
       ],
@@ -7515,6 +7543,9 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Experimente ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
         "Agora você pode agendar suas mensagens para serem enviadas depois"

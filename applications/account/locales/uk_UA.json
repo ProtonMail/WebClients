@@ -5302,8 +5302,8 @@
       "Link type": [
         "Тип посилання"
       ],
-      "Loaded content is being protected by our proxy when the block tracker is activated.": [
-        "Loaded content is being protected by our proxy when tracker protection is activated."
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Якщо увімкнено захист від стеження, завантажений вміст захищається нашим проксі."
       ],
       "Loading": [
         "Завантаження"
@@ -6889,6 +6889,9 @@
       "Credits used": [
         "Витрата кредитів"
       ],
+      "Current display name": [
+        "Поточне ім'я"
+      ],
       "Customize invoices": [
         "Налаштування рахунків"
       ],
@@ -7069,6 +7072,9 @@
       "Key strength": [
         "Надійність ключа"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбінація клавіш: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
       ],
@@ -7131,6 +7137,12 @@
       ],
       "Name on card": [
         "Ім'я на картці"
+      ],
+      "Navigation": [
+        "Навігація"
+      ],
+      "New display name": [
+        "Нове ім'я"
       ],
       "New login password": [
         "Новий пароль входу"
@@ -8344,6 +8356,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8413,26 +8445,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9820,6 +9832,9 @@
       "Default calendar updated": [
         "Типовий календар оновлено"
       ],
+      "Display name updated": [
+        "Ім'я оновлено"
+      ],
       "DMARC value copied to clipboard": [
         "Значення DMARC скопійовано в буфер обміну"
       ],
@@ -10416,6 +10431,9 @@
       ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
+      ],
+      "Edit display name": [
+        "Редагувати ім'я"
       ],
       "Edit domain": [
         "Редагувати домен"

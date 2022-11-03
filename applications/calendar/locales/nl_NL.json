@@ -529,6 +529,14 @@
         "Ja, ik zal aanwezig zijn"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Iedereen met de link kan uw agenda inzien"
+      ],
+      "They can view or edit your calendar": [
+        "Ze kunnen uw agenda inzien of wijzigen"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } of ${ importContact }."
@@ -777,6 +785,11 @@
         "U hebt de uitnodiging voorlopig geaccepteerd"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Alleen u kunt het label zien"
+      ]
+    },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
         "U kan eender wanneer de rechten aanpassen of verwijderen."
@@ -787,9 +800,17 @@
         "Rechten"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "U heeft al toegang tot deze agenda"
+      ]
+    },
     "Calendar share limit modal": {
       "Manage links": [
         "Beheer links"
+      ],
+      "Manage members": [
+        "Beheer leden"
       ]
     },
     "Calendar sharing access option label": {
@@ -806,6 +827,11 @@
       ],
       "More options": [
         "Meer opties"
+      ]
+    },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Met mij gedeeld"
       ]
     },
     "Calendar status": {
@@ -4902,6 +4928,11 @@
         "Voeg mensen en groepen toe"
       ]
     },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Delen met Proton gebruikers"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Aangemaakt door ${ ownerName }"
@@ -5094,7 +5125,7 @@
         "Eindejaarsaanbieding"
       ],
       "End of Year Sale": [
-        "Eindejaarssale"
+        "Eindejaarsuitverkoop"
       ],
       "Get our premium bundle and save more": [
         "Kies onze premium bundel en bespaar meer"
