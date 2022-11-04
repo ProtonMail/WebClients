@@ -71,7 +71,7 @@ const UsernameSection = ({ app }: Props) => {
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="pt0-5">
                             <div className="flex flex-nowrap">
-                                <div className="text-ellipsis user-select mr0-5">{DisplayName}</div>
+                                {DisplayName && <div className="text-ellipsis user-select mr0-5">{DisplayName}</div>}
                                 <InlineLinkButton
                                     onClick={() => {
                                         setTmpAddress(primaryAddress);

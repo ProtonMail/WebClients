@@ -334,7 +334,7 @@ const AccountStep = ({
                         innerChallenge
                     )}
                     {signupType === SignupType.Email && <InsecureEmailInfo email={trimmedEmail} />}
-                    {signupTypes.includes(SignupType.Email) ? (
+                    {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
                         <div className="text-center mb1">
                             <InlineLinkButton
                                 id="existing-email-button"

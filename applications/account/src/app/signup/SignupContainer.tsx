@@ -144,9 +144,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const isExternalSignupEnabled = externalSignupFeature.feature?.Value;
 
     const signupTypes = (() => {
-        if (isExternalSignupEnabled) {
+        if (isExternalSignupEnabled && signupParameters.type !== 'vpn') {
             if (toApp && getHasAppExternalSignup(toApp)) {
                 return [SignupType.Email, SignupType.Username];
+            }
+            if (clientType === CLIENT_TYPES.VPN) {
+                return [SignupType.Email];
             }
             if (!toApp) {
                 return [SignupType.Username, SignupType.Email];
