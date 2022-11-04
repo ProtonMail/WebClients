@@ -41,7 +41,7 @@ export const queryMessagesMetadata = async (
             Sort: 'Time',
             Desc: 1,
             ...options,
-        } as any),
+        }),
         'queryMessageMetadata',
         userID
     );
