@@ -137,16 +137,35 @@ export const getUnlimitedVPNFeatures = () => {
     ];
 };
 
-const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
-
 export const getDealBilledDescription = (cycle: CYCLE, amount: ReactElement): string | string[] | null => {
     switch (cycle) {
-        case MONTHLY:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the first month`;
-        case YEARLY:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the first year`;
-        case TWO_YEARS:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the first 2 years`;
+        case CYCLE.MONTHLY:
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 1 month`;
+        case CYCLE.YEARLY:
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 12 months`;
+        case CYCLE.TWO_YEARS:
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 24 months`;
+        case CYCLE.FIFTEEN:
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 15 months`;
+        case CYCLE.THIRTY:
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 30 months`;
+        default:
+            return null;
+    }
+};
+
+export const getStandardPriceDescription = (cycle: CYCLE, amount: ReactElement): string | string[] | null => {
+    switch (cycle) {
+        case CYCLE.MONTHLY:
+            return c('specialoffer: Offers').jt`Standard price ${amount} for 1 month`;
+        case CYCLE.YEARLY:
+            return c('specialoffer: Offers').jt`Standard price ${amount} for 12 months`;
+        case CYCLE.TWO_YEARS:
+            return c('specialoffer: Offers').jt`Standard price ${amount} for 24 months`;
+        case CYCLE.FIFTEEN:
+            return c('specialoffer: Offers').jt`Standard price ${amount} for 15 months`;
+        case CYCLE.THIRTY:
+            return c('specialoffer: Offers').jt`Standard price ${amount} for 30 months`;
         default:
             return null;
     }
@@ -188,10 +207,10 @@ export const getRenewDescription = (
     discount: number
 ): string | string[] | null => {
     switch (cycle) {
-        case YEARLY:
+        case CYCLE.YEARLY:
             return c('specialoffer: Offers')
                 .jt`Renews after 1 year at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
-        case TWO_YEARS:
+        case CYCLE.TWO_YEARS:
             return c('specialoffer: Offers')
                 .jt`Renews after 2 years at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
         default:
