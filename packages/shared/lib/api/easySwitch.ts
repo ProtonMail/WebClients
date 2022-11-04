@@ -71,23 +71,17 @@ export const getContactsImportData = (importerID: string) => ({
     method: 'get',
 });
 
-export const deleteImportReport = (reportID: string, importType?: ImportType) => {
-    let url = `mail/v4/importers/reports/${reportID}`; // default uses legacy
+export const deleteImportReport = (reportID: string, importType: ImportType) => {
+    const method = 'delete';
 
-    if (importType === ImportType.MAIL) {
-        url = `importer/v1/mail/importers/reports/${reportID}`;
+    switch (importType) {
+        case ImportType.MAIL:
+            return { url: `importer/v1/mail/importers/reports/${reportID}`, method };
+        case ImportType.CALENDAR:
+            return { url: `importer/v1/calendar/importers/reports/${reportID}`, method };
+        case ImportType.CONTACTS:
+            return { url: `importer/v1/contacts/importers/reports/${reportID}`, method };
     }
-    if (importType === ImportType.CALENDAR) {
-        url = `importer/v1/calendar/importers/reports/${reportID}`;
-    }
-    if (importType === ImportType.CONTACTS) {
-        url = `importer/v1/contacts/importers/reports/${reportID}`;
-    }
-
-    return {
-        url,
-        method: 'delete',
-    };
 };
 
 export const cancelImport = (data: { ImporterID: string; Products: ImportType[] }) => ({
