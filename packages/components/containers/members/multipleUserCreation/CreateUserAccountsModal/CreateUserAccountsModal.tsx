@@ -226,7 +226,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 }
             }
 
-            setCurrentProgress(currentProgress + 1);
+            setCurrentProgress((currentProgress) => currentProgress + 1);
         }
 
         await call();
