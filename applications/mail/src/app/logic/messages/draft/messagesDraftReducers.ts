@@ -136,6 +136,7 @@ export const sent = (state: Draft<MessagesState>, { payload: Sent }: PayloadActi
         message.data = Sent;
         message.messageDocument = undefined;
         message.messageImages = undefined;
+        message.loadRetry = 0;
     }
 };
 
