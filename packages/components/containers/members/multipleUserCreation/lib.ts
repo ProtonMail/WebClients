@@ -80,17 +80,19 @@ export const createUser = async ({
         }),
     });
 
-    const memberAddresses = await Promise.all(
-        addressParts.map(async ({ Local, Domain }) => {
-            const { Address } = await api<{ Address: Address }>(
-                createMemberAddress(Member.ID, {
-                    Local,
-                    Domain,
-                })
-            );
-            return Address;
-        })
-    );
+    /**
+     * Create addresses one at a time
+     */
+    const memberAddresses: Address[] = [];
+    for (const { Local, Domain } of addressParts) {
+        const { Address } = await api<{ Address: Address }>(
+            createMemberAddress(Member.ID, {
+                Local,
+                Domain,
+            })
+        );
+        memberAddresses.push(Address);
+    }
 
     if (!privateSubUser) {
         const ownerAddresses = await getAddresses();

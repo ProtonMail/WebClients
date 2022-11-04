@@ -8,7 +8,6 @@ import {
     Checkbox,
     Icon,
     InputTwo,
-    Label,
     Marks,
     ModalProps,
     ModalTwo,
@@ -227,7 +226,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 }
             }
 
-            setCurrentProgress(currentProgress + 1);
+            setCurrentProgress((currentProgress) => currentProgress + 1);
         }
 
         await call();
@@ -251,15 +250,14 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-justify-space-between align-items-center create-user-accounts-additional-content mt1">
-                        <Label htmlFor="selectAll">
-                            <Checkbox
-                                id="selectAll"
-                                checked={isSelectAllChecked}
-                                onChange={handleSelectAllFilteredOptionsClick}
-                            />
+                    <div className="flex flex-justify-space-between flex-align-items-center create-user-accounts-additional-content mt1">
+                        <Checkbox
+                            id="selectAll"
+                            checked={isSelectAllChecked}
+                            onChange={handleSelectAllFilteredOptionsClick}
+                        >
                             {c('Checkbox label').t`All`}
-                        </Label>
+                        </Checkbox>
                         <InputTwo
                             className="max-w270p"
                             placeholder={c('Placeholder').t`Search`}
@@ -287,24 +285,23 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 return (
                                     <tr key={displayName.text} onClick={() => handleCheckboxChange(id)}>
                                         <TableCell key="displayName" className="align-top">
-                                            <div className="flex flex-row flex-align-items-start">
-                                                <Checkbox
-                                                    id={checkboxId}
-                                                    checked={isItemSelected}
-                                                    onChange={(e) => {
-                                                        handleCheckboxChange(id);
-                                                        e.stopPropagation();
-                                                    }}
-                                                />
-                                                <div className="flex-item-fluid" title={displayName.text}>
+                                            <Checkbox
+                                                id={checkboxId}
+                                                checked={isItemSelected}
+                                                onChange={(e) => {
+                                                    handleCheckboxChange(id);
+                                                    e.stopPropagation();
+                                                }}
+                                            >
+                                                <div title={displayName.text}>
                                                     <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
                                                 </div>
-                                            </div>
+                                            </Checkbox>
                                         </TableCell>
                                         <TableCell key="emailAddresses" className="align-top">
                                             <ul className="unstyled m0">
                                                 {emailAddresses.map(({ chunks, text }) => (
-                                                    <li className="text-ellipsis" title={text}>
+                                                    <li key={text} className="text-ellipsis" title={text}>
                                                         <Marks chunks={chunks}>{text}</Marks>
                                                     </li>
                                                 ))}
@@ -379,7 +376,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 : c('Title').t`Couldn’t create accounts`,
             content: (
                 <>
-                    {failedUsers.length && !invalidAddresses.length && unavailableAddresses.length
+                    {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
                         ? c('Info')
                               .t`Please check your file for errors, or contact customer support for more information.`
                         : null}
@@ -396,7 +393,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             <ul className="unstyled">
                                 {invalidAddresses.map((address) => {
                                     return (
-                                        <li className="mb0 text-ellipsis" title={address}>
+                                        <li key={address} className="mb0 text-ellipsis" title={address}>
                                             {address}
                                         </li>
                                     );
@@ -417,7 +414,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             <ul className="unstyled">
                                 {unavailableAddresses.map((address) => {
                                     return (
-                                        <li className="mb0 text-ellipsis" title={address}>
+                                        <li key={address} className="mb0 text-ellipsis" title={address}>
                                             {address}
                                         </li>
                                     );
