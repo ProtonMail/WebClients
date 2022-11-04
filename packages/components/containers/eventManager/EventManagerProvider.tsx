@@ -1,11 +1,11 @@
 import { ReactNode, useEffect } from 'react';
 
-import createEventManager from '@proton/shared/lib/eventManager/eventManager';
+import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
 import EventManagerContext from './context';
 
 interface Props {
-    eventManager: ReturnType<typeof createEventManager>;
+    eventManager: EventManager;
     children: ReactNode;
 }
 
