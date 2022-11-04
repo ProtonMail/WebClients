@@ -195,16 +195,6 @@ const MessageView = (
             return;
         }
 
-        /* @todo refine padding bottom calculation */
-        const wrapperPaddingBottom = parseInt(getComputedStyle(wrapperRef.current).paddingBottom, 10);
-        const wrapperPaddingTop = parseInt(getComputedStyle(wrapperRef.current).paddingTop, 10);
-
-        setParentBottomPadding(
-            Math.max(
-                containerHeight - offset - elementRef.current.offsetHeight + wrapperPaddingBottom + wrapperPaddingTop,
-                0
-            )
-        );
         createScrollIntoView(elementRef.current, containerRef.current, false, offset);
     };
 
