@@ -92,7 +92,7 @@ const ConversationView = ({
         messageViewsRefs.current[messageID || '']?.expand();
         const index = messagesToShow.findIndex((message) => message.ID === messageID);
         if (index !== undefined) {
-            handleFocus(index, scrollTo);
+            handleFocus(index, { scrollTo });
         }
     };
 

@@ -3,13 +3,15 @@ import { useRef } from 'react';
 import { HotkeyTuple, useHotkeys } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { HandleConversationFocus } from './useConversationFocus';
+
 export interface ConversationHotkeysContext {
     messages: Message[];
     focusIndex: number | undefined;
 }
 
 export interface ConversationHotkeysHandlers {
-    handleFocus: (index: number | undefined) => void;
+    handleFocus: HandleConversationFocus;
     expandMessage: (ID: string) => void;
     getFocusedId: () => string | undefined;
 }
@@ -38,7 +40,7 @@ export const useConversationHotkeys = (
             ['Meta', 'ArrowUp'],
             (e) => {
                 e.stopPropagation();
-                handleFocus(0);
+                handleFocus(0, { withKeyboard: true });
             },
         ],
         [
@@ -56,20 +58,18 @@ export const useConversationHotkeys = (
                 if (previousIndex !== 0) {
                     e.preventDefault();
                 }
-                handleFocus(previousIndex);
+                handleFocus(previousIndex, { withKeyboard: true });
             },
         ],
         [
             ['Meta', 'ArrowDown'],
-
             (e) => {
                 e.stopPropagation();
-                handleFocus(messages.length - 1);
+                handleFocus(messages.length - 1, { withKeyboard: true });
             },
         ],
         [
             'ArrowDown',
-
             (e) => {
                 e.stopPropagation();
                 const lastIndex = messages.length - 1;
@@ -78,7 +78,7 @@ export const useConversationHotkeys = (
                 if (nextIndex !== lastIndex) {
                     e.preventDefault();
                 }
-                handleFocus(nextIndex);
+                handleFocus(nextIndex, { withKeyboard: true });
             },
         ],
         [
