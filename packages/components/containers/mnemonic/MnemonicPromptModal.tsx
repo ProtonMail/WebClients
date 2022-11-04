@@ -16,8 +16,7 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
 } from '../../components';
-import { useApi, useFeature, useGetUserKeys, useUser } from '../../hooks';
-import { FeatureCode } from '../features';
+import { useApi, useGetUserKeys, useUser } from '../../hooks';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 import './MnemonicPromptModal.scss';
@@ -56,20 +55,6 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
 
         void generateMnemonicData();
     }, [open]);
-
-    const { feature: hasSeenMnemonicPrompt, update: setSeenMnemonicPrompt } = useFeature(
-        FeatureCode.SeenMnemonicPrompt
-    );
-
-    useEffect(() => {
-        if (!open) {
-            return;
-        }
-
-        if (hasSeenMnemonicPrompt?.Value === false) {
-            void setSeenMnemonicPrompt(true);
-        }
-    }, [open, hasSeenMnemonicPrompt]);
 
     const handleSubmit = async () => {
         if (!mnemonicData) {
