@@ -142,13 +142,13 @@ export const getDealBilledDescription = (cycle: CYCLE, amount: ReactElement): st
         case CYCLE.MONTHLY:
             return c('specialoffer: Offers').jt`Billed at ${amount} for 1 month`;
         case CYCLE.YEARLY:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the 12 months`;
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 12 months`;
         case CYCLE.TWO_YEARS:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the 24 months`;
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 24 months`;
         case CYCLE.FIFTEEN:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the 15 months`;
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 15 months`;
         case CYCLE.THIRTY:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the 30 months`;
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 30 months`;
         default:
             return null;
     }
