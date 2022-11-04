@@ -301,7 +301,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                         <TableCell key="emailAddresses" className="align-top">
                                             <ul className="unstyled m0">
                                                 {emailAddresses.map(({ chunks, text }) => (
-                                                    <li className="text-ellipsis" title={text}>
+                                                    <li key={text} className="text-ellipsis" title={text}>
                                                         <Marks chunks={chunks}>{text}</Marks>
                                                     </li>
                                                 ))}
@@ -393,7 +393,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             <ul className="unstyled">
                                 {invalidAddresses.map((address) => {
                                     return (
-                                        <li className="mb0 text-ellipsis" title={address}>
+                                        <li key={address} className="mb0 text-ellipsis" title={address}>
                                             {address}
                                         </li>
                                     );
@@ -414,7 +414,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             <ul className="unstyled">
                                 {unavailableAddresses.map((address) => {
                                     return (
-                                        <li className="mb0 text-ellipsis" title={address}>
+                                        <li key={address} className="mb0 text-ellipsis" title={address}>
                                             {address}
                                         </li>
                                     );
