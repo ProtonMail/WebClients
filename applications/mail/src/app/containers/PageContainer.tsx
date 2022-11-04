@@ -2,8 +2,10 @@ import { ReactNode, Ref, forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import {
+    FeatureCode,
     LocationErrorBoundary,
     MailShortcutsModal,
+    useFeature,
     useFolders,
     useLabels,
     useMailSettings,
@@ -25,6 +27,7 @@ import useIncomingDefaultsLoad from '../hooks/incomingDefaults/useIncomingDefaul
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import { Breakpoints } from '../models/utils';
+import LegacyMessagesMigrationContainer from './LegacyMessagesMigrationContainer';
 import MailStartupModals from './MailStartupModals';
 import MailboxContainer from './mailbox/MailboxContainer';
 
@@ -43,6 +46,8 @@ const PageContainer = (
     const [mailSettings] = useMailSettings();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+
+    const runLegacyMessageMigration = !!useFeature(FeatureCode.LegacyMessageMigrationEnabled).feature?.Value;
 
     useContactsListener();
     useConversationsEvent();
@@ -75,6 +80,7 @@ const PageContainer = (
         >
             <MailStartupModals onboardingOpen={onboardingOpen} onOnboardingDone={() => setWelcomeFlagsDone()} />
             <LocationErrorBoundary>
+                {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
                 <MailboxContainer
                     labelID={labelID}
                     mailSettings={mailSettings as MailSettings}

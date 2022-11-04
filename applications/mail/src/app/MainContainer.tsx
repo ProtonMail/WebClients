@@ -43,6 +43,7 @@ const MainContainer = () => {
         FeatureCode.UsedMailMobileApp,
         FeatureCode.SpyTrackerProtection,
         FeatureCode.ContextFiltering,
+        FeatureCode.LegacyMessageMigrationEnabled,
     ]);
 
     // Service Worker registration
