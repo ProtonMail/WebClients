@@ -1,7 +1,6 @@
-import { c } from 'ttag';
-
 import { Price } from '@proton/components/components';
 
+import { getDealBilledDescription, getStandardPriceDescription } from '../../../helpers/offerCopies';
 import { useDealContext } from './DealContext';
 
 const DealPriceInfos = () => {
@@ -27,9 +26,9 @@ const DealPriceInfos = () => {
         <div className="mb0-5 w100">
             <small className="w100 color-weak text-left">
                 <span className="block">
-                    {c('specialoffer: Offers').jt`Billed at ${amountDue}`} {star ? <sup>{star}</sup> : null}
+                    {getDealBilledDescription(cycle, amountDue)} {star ? <sup>{star}</sup> : null}
                 </span>
-                <span className="block">{c('specialoffer: Offers').jt`Standard price ${regularPrice}`}</span>
+                <span className="block">{getStandardPriceDescription(cycle, regularPrice)}</span>
             </small>
         </div>
     );
