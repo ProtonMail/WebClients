@@ -140,7 +140,7 @@ export const getUnlimitedVPNFeatures = () => {
 export const getDealBilledDescription = (cycle: CYCLE, amount: ReactElement): string | string[] | null => {
     switch (cycle) {
         case CYCLE.MONTHLY:
-            return c('specialoffer: Offers').jt`Billed at ${amount} for the 1 month`;
+            return c('specialoffer: Offers').jt`Billed at ${amount} for 1 month`;
         case CYCLE.YEARLY:
             return c('specialoffer: Offers').jt`Billed at ${amount} for the 12 months`;
         case CYCLE.TWO_YEARS:
