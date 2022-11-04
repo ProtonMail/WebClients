@@ -13,7 +13,7 @@ interface QueryMessageMetadataParams {
     Page?: number;
     PageSize?: number;
     Limit?: number;
-    LabelID?: string[];
+    LabelID?: string | string[];
     Sort?: string;
     Desc?: number;
     Begin?: number;
@@ -34,9 +34,9 @@ interface QueryMessageMetadataParams {
 
 export const queryMessageMetadata = ({
     Location,
-    Page = 0,
-    PageSize = 50,
-    Limit = 50,
+    Page,
+    PageSize,
+    Limit,
     LabelID,
     Sort = 'Time',
     Desc = 1,
