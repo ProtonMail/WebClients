@@ -26,8 +26,6 @@ export const queryMessagesMetadata = async (
         EndID?: string;
         Limit?: number;
         End?: number;
-        PageSize?: number;
-        Page?: number;
     },
     signal?: AbortSignal,
     userID?: string
@@ -41,7 +39,7 @@ export const queryMessagesMetadata = async (
             Sort: 'Time',
             Desc: 1,
             ...options,
-        } as any),
+        }),
         'queryMessageMetadata',
         userID
     );
@@ -51,7 +49,7 @@ export const queryMessagesMetadata = async (
  * Fetch number of messages
  */
 export const queryMessagesCount = async (api: Api, signal?: AbortSignal) => {
-    const resultMetadata = await queryMessagesMetadata(api, { Limit: 1, PageSize: 1 }, signal);
+    const resultMetadata = await queryMessagesMetadata(api, { Limit: 1 }, signal);
     if (!resultMetadata) {
         return;
     }
