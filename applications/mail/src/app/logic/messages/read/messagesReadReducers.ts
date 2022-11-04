@@ -78,7 +78,9 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
             // Draft updates can contains body updates but will not contains it in the event
             // By removing the current body value in the cache, we will reload it next time we need it
             if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                if (!currentValue.draftFlags?.sending) {
+                // Also, if draft has already been sent, we don't want to reload the content of the message
+                // Otherwise we would show the skeleton for a while, which seems weird since the message you sent should not change
+                if (!currentValue.draftFlags?.sending && !isSentDraft) {
                     currentValue.messageDocument = undefined;
                     currentValue.messageImages = undefined;
                     currentValue.data.Body = undefined;
