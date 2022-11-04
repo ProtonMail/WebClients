@@ -34,7 +34,7 @@ interface QueryMessageMetadataParams {
 
 export const queryMessageMetadata = ({
     Location,
-    Page = 0,
+    Page,
     PageSize,
     Limit,
     LabelID,
