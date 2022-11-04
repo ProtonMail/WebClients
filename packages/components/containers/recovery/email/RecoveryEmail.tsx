@@ -79,7 +79,6 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                         id="recovery-email-input"
                         disableChange={loading}
                         value={input || ''}
-                        placeholder={c('Info').t`Not set`}
                         error={validator([input && emailValidator(input)].filter(isTruthy))}
                         onValue={setInput}
                         assistiveText={
