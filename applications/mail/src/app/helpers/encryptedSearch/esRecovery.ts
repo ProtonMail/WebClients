@@ -25,7 +25,6 @@ export const checkIndexCorruption = async (userID: string, api: Api) => {
         Messages: [mailboxOldestMessage],
     } = await api<{ Messages: Message[] }>({
         ...queryMessageMetadata({
-            PageSize: 1,
             Limit: 1,
             Location: MAILBOX_LABEL_IDS.ALL_MAIL,
             Sort: 'Time',
