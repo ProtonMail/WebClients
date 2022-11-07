@@ -27,7 +27,6 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
                 const href = `https://${VPN_HOSTNAME}/${stripLeadingAndTrailingSlash(to)}`;
                 return (
                     // internal link, trusted
-                    // eslint-disable-next-line react/jsx-no-target-blank
                     <a ref={ref} {...rest} target="_blank" href={href}>
                         {children}
                     </a>
@@ -46,7 +45,6 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
             const href = getAppHref(to, targetApp);
             return (
                 // internal link, trusted
-                // eslint-disable-next-line react/jsx-no-target-blank
                 <a ref={ref} target="_blank" {...rest} href={href}>
                     {children}
                 </a>
