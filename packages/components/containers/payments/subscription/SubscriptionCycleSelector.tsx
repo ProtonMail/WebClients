@@ -70,7 +70,15 @@ const CycleItemView = ({
         <>
             <div className="flex-item-fluid pl0-5">
                 <div className="flex flex-align-items-center">
-                    <strong className="text-lg flex-item-fluid mr1">{text}</strong>
+                    <div className="flex-item-fluid-auto mr1">
+                        <strong className="text-lg">{text}</strong>
+                        {freeMonths > 0 && (
+                            <span className="color-success">
+                                {` + `}
+                                {getMonthFreeText(freeMonths)}
+                            </span>
+                        )}
+                    </div>
                     <strong className="text-lg flex-item-noshrink color-primary">
                         {c('Subscription price').t`For`}
                         <Price className="ml0-25" currency={currency}>
@@ -79,7 +87,7 @@ const CycleItemView = ({
                     </strong>
                 </div>
                 <div className="flex flex-align-items-center">
-                    <span className="color-weak flex flex-item-fluid">
+                    <span className="color-weak flex flex-item-fluid-auto">
                         <Price currency={currency} suffix={monthlySuffix}>
                             {totalPerMonth}
                         </Price>
@@ -88,15 +96,6 @@ const CycleItemView = ({
                         {getDiscountPrice(discount, currency)}
                     </span>
                 </div>
-                {freeMonths > 0 && (
-                    <div className="flex flex-align-items-center">
-                        <div className="flex-item-fluid"></div>
-                        <span className="color-success flex flex-item-noshrink">
-                            {` + `}
-                            {getMonthFreeText(freeMonths)}
-                        </span>
-                    </div>
-                )}
             </div>
         </>
     );
