@@ -2,14 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import getIsProtonMailDomain from '@proton/shared/lib/browser/getIsProtonMailDomain';
+
 import { Href } from '../../components';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features';
 import TopBanner from './TopBanner';
-
-export const getIsProtonMailDomain = () => {
-    return window.location.host.endsWith('.protonmail.com');
-};
 
 const NudgeTopBanner = () => {
     const [show] = useState(getIsProtonMailDomain);
