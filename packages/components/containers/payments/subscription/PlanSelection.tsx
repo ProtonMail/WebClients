@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     Audience,
@@ -12,12 +11,13 @@ import {
     PlanIDs,
     PlansMap,
     Subscription,
+    VPNCountries,
+    VPNServers,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
-import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -59,6 +59,9 @@ interface Props {
     hasFreePlan?: boolean;
     cycle: Cycle;
     plans: Plan[];
+    plansMap: PlansMap;
+    vpnServers: VPNServers;
+    vpnCountries: VPNCountries;
     loading?: boolean;
     mode: 'signup' | 'settings' | 'modal';
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
@@ -77,6 +80,9 @@ const PlanSelection = ({
     hasFreePlan = true,
     planIDs,
     plans,
+    plansMap,
+    vpnServers,
+    vpnCountries,
     cycle,
     currency,
     loading,
@@ -91,9 +97,6 @@ const PlanSelection = ({
     onChangeSelectedProductPlans,
 }: Props) => {
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
-    const plansMap = toMap(plans, 'Name');
-    const [vpnServers] = useVPNServersCount();
-    const [vpnCountries] = useVPNCountriesCount();
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
