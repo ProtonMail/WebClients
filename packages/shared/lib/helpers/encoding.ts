@@ -37,3 +37,19 @@ export const validateBase64string = (str: string, useVariantAlphabet?: boolean) 
 
     return regex.test(str);
 };
+
+/**
+ * Automatic password reset parameter encoder
+ */
+export const encodeAutomaticResetParams = (json: any) => {
+    const jsonString = JSON.stringify(json);
+    return encodeBase64URL(jsonString);
+};
+
+/**
+ * Automatic password reset parameter decoder
+ */
+export const decodeAutomaticResetParams = (base64String: string) => {
+    const decodedString = decodeBase64URL(base64String);
+    return JSON.parse(decodedString);
+};
