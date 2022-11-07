@@ -4331,6 +4331,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/styles@workspace:packages/styles"
   dependencies:
+    include-media: ^1.4.10
     inter-ui: ^3.19.3
     prettier: ^2.7.1
     sass: ^1.55.0
@@ -17871,6 +17872,13 @@ fsevents@^1.2.7:
   version: 0.1.4
   resolution: "imurmurhash@npm:0.1.4"
   checksum: 7cae75c8cd9a50f57dadd77482359f659eaebac0319dd9368bcd1714f55e65badd6929ca58569da2b6494ef13fdd5598cd700b1eba23f8b79c5f19d195a3ecf7
+  languageName: node
+  linkType: hard
+
+"include-media@npm:^1.4.10":
+  version: 1.4.10
+  resolution: "include-media@npm:1.4.10"
+  checksum: e5187b9632994db07d05f384b0a40b45938c017bf12a5abaece929635267c41fd5bb264928582f00f1df7f23e069b8601968252dfafe33de1631f0eefe0d5991
   languageName: node
   linkType: hard
 
