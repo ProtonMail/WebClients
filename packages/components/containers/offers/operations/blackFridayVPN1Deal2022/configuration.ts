@@ -13,7 +13,7 @@ const config: OfferConfig = {
     featureCode: FeatureCode.OfferBlackFridayVPN1Deal2022,
     deals: [
         {
-            ref: 'bf_22_vpn_offers-modal-b2',
+            ref: 'bf_22_vpn_plus-2y-modal-u24',
             planName: PLANS.BUNDLE,
             planIDs: {
                 [PLANS.BUNDLE]: 1,
