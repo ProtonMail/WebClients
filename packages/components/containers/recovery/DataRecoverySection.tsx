@@ -62,7 +62,12 @@ const DataRecoverySection = () => {
             }
 
             if (params.get('action') === 'generate-recovery-phrase') {
-                setGenerateMnemonicModalOpen(true);
+                if (user.MnemonicStatus === MNEMONIC_STATUS.SET || user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
+                    setGenerateMnemonicModalButtonOpen(true);
+                } else {
+                    setGenerateMnemonicModalOpen(true);
+                }
+
                 params.delete('action');
                 return params;
             }
