@@ -1,4 +1,4 @@
-import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
+import { FeatureCode, StandardPrivateApp, useApi, useProtonMailMigrationRedirect } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -33,6 +33,8 @@ const getAppContainer = () => import('./MainContainer');
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+
+    useProtonMailMigrationRedirect();
 
     return (
         <StandardPrivateApp
