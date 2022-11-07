@@ -11,6 +11,7 @@ const DEFAULT_RESULT: VPNServers = {
     free_vpn: 23,
     [PLANS.VPN]: 1200,
 };
+let cache: Promise<{ LogicalServers: any }> | undefined;
 
 const useVPNServersCount = (): [VPNServers, boolean] => {
     const api = useApi();
@@ -19,7 +20,12 @@ const useVPNServersCount = (): [VPNServers, boolean] => {
 
     useEffect(() => {
         const query = async () => {
-            const { LogicalServers: resultLogicalServerInfo } = await api(queryVPNLogicalServerInfo());
+            if (!cache) {
+                cache = api<{ LogicalServers: any }>(queryVPNLogicalServerInfo());
+            }
+            const promise = cache;
+
+            const { LogicalServers: resultLogicalServerInfo } = await promise;
 
             const countFreeVPNServers = resultLogicalServerInfo.filter(
                 (server: { Tier: number }) => server.Tier === 0

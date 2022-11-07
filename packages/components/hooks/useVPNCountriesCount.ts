@@ -11,6 +11,7 @@ const DEFAULT_RESULT: VPNCountries = {
     free_vpn: { count: 4 },
     [PLANS.VPN]: { count: 15 },
 };
+let cache: Promise<{ Counts: { Count: number }[] }> | undefined;
 
 const useVPNCountriesCount = (): [VPNCountries, boolean] => {
     const api = useApi();
@@ -19,7 +20,10 @@ const useVPNCountriesCount = (): [VPNCountries, boolean] => {
 
     useEffect(() => {
         const query = async () => {
-            const { Counts = [] } = await api<{ Counts: { Count: number }[] }>(queryVPNCountriesCount());
+            if (!cache) {
+                cache = api<{ Counts: { Count: number }[] }>(queryVPNCountriesCount());
+            }
+            const { Counts = [] } = await cache;
             const result = (
                 [
                     [0, 'free_vpn'],

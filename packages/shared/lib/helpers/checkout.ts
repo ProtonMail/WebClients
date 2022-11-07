@@ -1,7 +1,9 @@
 import { c, msgid } from 'ttag';
 
+import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
+
 import { ADDON_NAMES, COUPON_CODES, CYCLE, DEFAULT_CYCLE, MEMBER_PLAN_MAPPING, PLANS, PLAN_TYPES } from '../constants';
-import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse } from '../interfaces';
+import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse, VPNServers } from '../interfaces';
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
 import { customCycles, getNormalCycleFromCustomCycle } from './subscription';
@@ -135,7 +137,46 @@ export const getCheckout = ({
     };
 };
 
-export const getWhatsIncluded = ({ planIDs, plansMap }: { planIDs: PlanIDs; plansMap: PlansMap }) => {
+export type Included =
+    | {
+          type: 'text';
+          text: string;
+      }
+    | {
+          type: 'value';
+          text: string;
+          value: string | number;
+      };
+export const getWhatsIncluded = ({
+    planIDs,
+    plansMap,
+    vpnServers,
+}: {
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    vpnServers: VPNServers;
+}): Included[] => {
+    const vpn = planIDs[PLANS.VPN];
+    if (vpn !== undefined && vpn > 0) {
+        return [
+            {
+                type: 'text',
+                text: getVpnServers(vpnServers[PLANS.VPN]),
+            },
+            {
+                type: 'text',
+                text: c('specialoffer: Deal details').t`Highest VPN speed`,
+            },
+            {
+                type: 'text',
+                text: c('specialoffer: Deal details').t`Secure streaming`,
+            },
+            {
+                type: 'text',
+                text: getVpnConnections(10),
+            },
+        ];
+    }
     const summary = Object.entries(planIDs).reduce(
         (acc, [planNameValue, quantity]) => {
             const planName = planNameValue as keyof PlansMap;
@@ -153,12 +194,13 @@ export const getWhatsIncluded = ({ planIDs, plansMap }: { planIDs: PlanIDs; plan
     );
     return [
         {
+            type: 'value',
             text: c('Info').t`Total storage`,
             value: humanSize(summary.space || FREE_PLAN.MaxSpace, undefined, undefined, 0),
         },
-        { text: c('Info').t`Total email addresses`, value: summary.addresses || FREE_PLAN.MaxAddresses },
-        { text: c('Info').t`Total supported domains`, value: summary.domains || FREE_PLAN.MaxDomains },
-        { text: c('Info').t`Total VPN connections`, value: summary.vpn || FREE_PLAN.MaxVPN },
+        { type: 'value', text: c('Info').t`Total email addresses`, value: summary.addresses || FREE_PLAN.MaxAddresses },
+        { type: 'value', text: c('Info').t`Total supported domains`, value: summary.domains || FREE_PLAN.MaxDomains },
+        { type: 'value', text: c('Info').t`Total VPN connections`, value: summary.vpn || FREE_PLAN.MaxVPN },
     ];
 };
 

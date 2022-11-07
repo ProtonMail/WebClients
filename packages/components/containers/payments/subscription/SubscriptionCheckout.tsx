@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import {
+    Included,
     RequiredCheckResponse,
     getCheckout,
     getDiscountText,
@@ -11,7 +12,7 @@ import {
 } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, PlanIDs, PlansMap, VPNServers } from '@proton/shared/lib/interfaces';
 
 import {
     Badge,
@@ -27,8 +28,7 @@ import Checkout from '../Checkout';
 import { getTotalBillingText } from '../helper';
 import CheckoutRow from './CheckoutRow';
 
-const PlanDescription = ({ planIDs, plansMap }: { planIDs: PlanIDs; plansMap: PlansMap }) => {
-    const list = getWhatsIncluded({ planIDs, plansMap });
+const PlanDescription = ({ list }: { list: Included[] }) => {
     return (
         <div className="mt2">
             <hr />
@@ -44,12 +44,26 @@ const PlanDescription = ({ planIDs, plansMap }: { planIDs: PlanIDs; plansMap: Pl
                     {c('Action').t`What do I get?`}
                 </CollapsibleHeader>
                 <CollapsibleContent>
-                    {list.map((item) => (
-                        <div key={item.text} className="flex flex-nowrap mb0-5">
-                            <div className="flex-item-fluid-auto text-ellipsis mr1">{item.text}</div>
-                            <div className="flex-item-fluid-auto flex-item-noshrink text-right">{item.value}</div>
-                        </div>
-                    ))}
+                    {list.map((item) => {
+                        if (item.type === 'value') {
+                            return (
+                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb0-5">
+                                    <div className="flex-item-fluid-auto text-ellipsis mr1">{item.text}</div>
+                                    <div className="flex-item-fluid-auto flex-item-noshrink text-right">
+                                        {item.value}
+                                    </div>
+                                </div>
+                            );
+                        }
+                        if (item.type === 'text') {
+                            return (
+                                <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb0-5">
+                                    <div className="flex-item-fluid-auto text-ellipsis">{item.text}</div>
+                                </div>
+                            );
+                        }
+                        return null;
+                    })}
                 </CollapsibleContent>
             </Collapsible>
         </div>
@@ -60,6 +74,7 @@ interface Props {
     submit?: ReactNode;
     loading?: boolean;
     plansMap: PlansMap;
+    vpnServers: VPNServers;
     checkResult: RequiredCheckResponse | undefined;
     currency: Currency;
     cycle: Cycle;
@@ -72,6 +87,7 @@ interface Props {
 const SubscriptionCheckout = ({
     submit = c('Action').t`Pay`,
     plansMap,
+    vpnServers,
     currency,
     cycle,
     onChangeCurrency,
@@ -102,6 +118,8 @@ const SubscriptionCheckout = ({
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 
+    const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
+
     return (
         <Checkout
             currency={currency}
@@ -109,7 +127,7 @@ const SubscriptionCheckout = ({
             loading={loading}
             hasGuarantee={isVPNPlanSelected}
             hasPayments={!isOptimistic}
-            description={<PlanDescription planIDs={planIDs} plansMap={plansMap} />}
+            description={<PlanDescription list={list} />}
         >
             <div className="mb1">
                 <strong>{planTitle}</strong>
