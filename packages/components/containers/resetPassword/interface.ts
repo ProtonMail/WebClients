@@ -5,6 +5,7 @@ import { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { AuthSession } from '../login/interface';
 
 export enum STEPS {
+    LOADING,
     REQUEST_RECOVERY_METHODS = 1,
     NO_RECOVERY_METHODS,
     REQUEST_RESET_TOKEN,
