@@ -42,6 +42,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     noMaxHeight?: boolean;
     noMaxSize?: boolean;
     noCaret?: boolean;
+    adaptiveForTouchScreens?: boolean;
     availablePlacements?: PopperPlacement[];
     sameAnchorWidth?: boolean;
     offset?: number;
@@ -70,6 +71,7 @@ const Dropdown = ({
     noMaxHeight = false,
     noMaxSize = false,
     noCaret = false,
+    adaptiveForTouchScreens = true,
     disableFocusTrap = false,
     sameAnchorWidth = false,
     autoClose = true,
@@ -118,6 +120,7 @@ const Dropdown = ({
     const combinedDropdownRef = useCombinedRefs<HTMLDivElement>(rootRef, setPopperEl, floating);
 
     const contentRef = useRef<HTMLDivElement>(null);
+    const combinedContentRef = useCombinedRefs(contentRef, contentProps?.ref);
 
     const anchorRectRef = useRef<DOMRect | undefined>();
     const [contentRect, setContentRect] = useState<DOMRect | undefined>();
@@ -212,6 +215,7 @@ const Dropdown = ({
         `dropdown--${placement}`,
         isClosing && `is-dropdown-out`,
         noCaret && 'dropdown--no-caret',
+        adaptiveForTouchScreens && 'adaptive-for-touch-screens',
         className,
         'outline-none',
     ]);
@@ -283,9 +287,9 @@ const Dropdown = ({
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </div>
                 <div
-                    ref={contentRef}
                     style={contentStyle}
                     {...contentProps}
+                    ref={combinedContentRef}
                     className={classnames([
                         'dropdown-content',
                         getCustomSizingClasses(contentStyle),
