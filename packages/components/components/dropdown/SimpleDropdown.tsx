@@ -2,7 +2,7 @@ import { CSSProperties, ElementType, ReactNode, forwardRef, useState } from 'rea
 
 import { generateUID } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
-import { usePopperAnchor } from '../popper';
+import { PopperPlacement, usePopperAnchor } from '../popper';
 import Dropdown from './Dropdown';
 import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 
@@ -10,7 +10,7 @@ interface OwnProps {
     hasCaret?: boolean;
     content?: ReactNode;
     children?: ReactNode;
-    originalPlacement?: string;
+    originalPlacement?: PopperPlacement;
     autoClose?: boolean;
     dropdownClassName?: string;
     dropdownStyle?: CSSProperties;

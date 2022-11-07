@@ -1,8 +1,9 @@
 import { KeyboardEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 
-import { classnames } from '../..';
+import { classnames } from '../../helpers';
 import { Dropdown } from '../dropdown';
 import Option from '../option/Option';
+import { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
@@ -27,7 +28,7 @@ export interface Props<V> extends SelectProps<V> {
      * that instance of the Select.
      */
     noMaxWidth?: boolean;
-    originalPlacement?: string;
+    originalPlacement?: PopperPlacement;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     getSearchableValue?: (value: V) => string;
 }

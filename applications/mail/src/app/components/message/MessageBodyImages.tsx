@@ -2,17 +2,15 @@ import { RefObject, useEffect, useRef } from 'react';
 
 import { MessageImages } from '../../logic/messages/messagesTypes';
 import MessageBodyImage from './MessageBodyImage';
-import { IframeOffsetType } from './interface';
 
 interface Props {
     messageImages: MessageImages | undefined;
     iframeRef: RefObject<HTMLIFrameElement>;
     isPrint: boolean;
-    iframeOffset: IframeOffsetType | undefined;
     onImagesLoaded?: () => void;
 }
 
-const MessageBodyImages = ({ messageImages, iframeRef, isPrint, iframeOffset, onImagesLoaded }: Props) => {
+const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded }: Props) => {
     const hasTriggeredLoaded = useRef<boolean>(false);
 
     useEffect(() => {
@@ -32,7 +30,6 @@ const MessageBodyImages = ({ messageImages, iframeRef, isPrint, iframeOffset, on
                           showRemoteImages={messageImages?.showRemoteImages || false}
                           showEmbeddedImages={messageImages?.showEmbeddedImages || false}
                           image={image}
-                          iframePosition={iframeOffset}
                           isPrint={isPrint}
                       />
                   ))

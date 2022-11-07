@@ -7,6 +7,7 @@ import {
     RefObject,
     cloneElement,
     useEffect,
+    useRef,
     useState,
 } from 'react';
 
@@ -16,11 +17,10 @@ import { Button } from '@proton/atoms';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
-import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { classnames, generateUID } from '../../helpers';
 import { useCombinedRefs, useIsClosing } from '../../hooks';
 import { Icon } from '../icon';
-import { usePopper, usePopperAnchor } from '../popper';
+import { PopperPlacement, usePopper, usePopperState } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';
 import Portal from '../portal/Portal';
 
@@ -32,10 +32,10 @@ export interface SpotlightProps {
     content: ReactNode;
     type?: SpotlightType;
     onDisplayed?: () => void;
-    originalPlacement?: string;
+    originalPlacement?: PopperPlacement;
     hasClose?: boolean;
     /**
-     * Setting the anchor is optionnal, it will default on the root child
+     * Setting the anchor is optional, it will default on the root child
      */
     anchorRef?: RefObject<HTMLElement>;
     style?: CSSProperties;
@@ -56,21 +56,21 @@ const Spotlight = ({
 }: SpotlightProps) => {
     const [uid] = useState(generateUID('spotlight'));
 
-    const [isRTL] = useRightToLeft();
-    const rtlAdjustedPlacement = originalPlacement.includes('right')
-        ? originalPlacement.replace('right', 'left')
-        : originalPlacement.replace('left', 'right');
-
-    const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
-    const { anchorRef: popperAnchorRef, open, close, isOpen } = usePopperAnchor<HTMLElement>();
+    const popperAnchorRef = useRef<HTMLDivElement>(null);
+    const { open, close, isOpen } = usePopperState();
     const anchorRef = inputAnchorRef || popperAnchorRef;
-    const { position, placement } = usePopper({
-        popperEl,
-        anchorEl: anchorRef.current,
+    const { floating, position, arrow, placement } = usePopper({
+        // Spotlights open automatically and often targets elements which might have layout shifts,
+        // so it's updated more aggressively than dropdowns and tooltips which are user triggered.
+        updateAnimationFrame: true,
+        reference: {
+            mode: 'element',
+            value: anchorRef?.current,
+        },
         isOpen,
-        originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
+        originalPlacement,
     });
-    const showSideRadius = shouldShowSideRadius(position, placement, 8);
+    const showSideRadius = shouldShowSideRadius(arrow['--arrow-offset'], placement, 8);
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
 
@@ -113,9 +113,9 @@ const Spotlight = ({
             })}
             <Portal>
                 <div
-                    ref={setPopperEl}
+                    ref={floating}
                     id={uid}
-                    style={{ ...position, ...style }}
+                    style={{ ...position, ...arrow, ...style }}
                     className={classnames([
                         'spotlight',
                         `spotlight--${placement}`,

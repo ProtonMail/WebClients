@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react';
 
-import { classnames, generateUID, usePopperAnchor } from '@proton/components';
+import { PopperPlacement, classnames, generateUID, usePopperAnchor } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
@@ -15,7 +15,7 @@ interface Props {
     onOpen?: () => void;
     noMaxSize?: boolean;
     disabled?: boolean;
-    originalPlacement?: string;
+    originalPlacement?: PopperPlacement;
 
     [rest: string]: any;
 }
@@ -30,7 +30,7 @@ const ComposerMoreOptionsDropdown = ({
     noMaxSize,
     autoClose = true,
     disabled = false,
-    originalPlacement = 'top-left',
+    originalPlacement = 'top-start',
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));

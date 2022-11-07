@@ -1,14 +1,6 @@
 .dropdown {
-	@include respond-to($breakpoint-small, 'min') {
-		--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
-		--max-width-bounds: calc(100vw - (var(--left) * 1px) - 2px);
-	}
-
-	// On mobile view, left and top are not used
-	@include respond-to($breakpoint-small, 'max') {
-		--max-height-bounds: 100vh;
-		--max-width-bounds: 100vw;
-	}
+	--max-height-bounds: 100vh;
+	--max-width-bounds: 100vw;
 
 	&:not(#{&}--no-max-size) {
 		--min-width: 10em;
