@@ -25,6 +25,7 @@ import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
+import VerifiedBadge from './VerifiedBadge';
 
 interface Props {
     labelID: string;
@@ -41,6 +42,7 @@ interface Props {
     unread: boolean;
     onBack: () => void;
     isSelected: boolean;
+    hasVerifiedBadge?: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -58,6 +60,7 @@ const ItemColumnLayout = ({
     unread,
     onBack,
     isSelected,
+    hasVerifiedBadge = false,
 }: Props) => {
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
@@ -126,6 +129,7 @@ const ItemColumnLayout = ({
                             >
                                 {sendersContent}
                             </span>
+                            {hasVerifiedBadge && <VerifiedBadge />}
                         </div>
 
                         <span className="item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center">

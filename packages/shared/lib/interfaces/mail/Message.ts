@@ -52,6 +52,7 @@ export interface MessageMetadata {
     Size: number;
     /** @deprecated use Flags instead */
     IsEncrypted?: number;
+    IsProton: number;
     ExpirationTime?: number;
     IsReplied: number;
     IsRepliedAll: number;
