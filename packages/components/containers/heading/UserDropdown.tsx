@@ -330,7 +330,6 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                         ? 'https://protonvpn.com/support/'
                                         : getStaticURL('/support')
                                 }
-                                // eslint-disable-next-line react/jsx-no-target-blank
                                 target="_blank"
                                 data-testid="userdropdown:help:link:question"
                             >
