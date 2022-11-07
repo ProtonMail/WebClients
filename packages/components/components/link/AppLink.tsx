@@ -2,10 +2,11 @@ import { AnchorHTMLAttributes, Ref, forwardRef } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, APP_NAMES, VPN_HOSTNAME, isSSOMode, isStandaloneMode } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
-import { useAuthentication, useConfig } from '../../hooks';
+import { useAuthentication, useConfig, useIsProtonMailDomainMigrationEnabled } from '../../hooks';
 import Tooltip from '../tooltip/Tooltip';
 
 export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
@@ -17,6 +18,7 @@ export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElemen
 const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
+    const [isProtonMailDomainMigrationEnabled] = useIsProtonMailDomainMigrationEnabled();
 
     const targetApp = selfOpening ? APP_NAME : toApp;
 
@@ -33,6 +35,20 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
                 );
             }
             const localID = authentication.getLocalID?.();
+
+            /**
+             * If protonmail.com domain and trying to link to non account
+             * application, then hijack link and add show migration modal action
+             */
+            if (isProtonMailDomainMigrationEnabled && APP_NAME === APPS.PROTONACCOUNT && toApp !== APPS.PROTONACCOUNT) {
+                const path = stripLocalBasenameFromPathname(window.location.pathname);
+                return (
+                    <ReactRouterLink ref={ref} {...rest} to={`${path}?action=show-migration-modal`}>
+                        {children}
+                    </ReactRouterLink>
+                );
+            }
+
             const href = getAppHref(to, targetApp, localID);
             return (
                 // internal link, trusted
