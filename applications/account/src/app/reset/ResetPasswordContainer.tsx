@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import {
     FeatureCode,
     GenericError,
@@ -27,6 +27,7 @@ import {
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
@@ -49,6 +50,7 @@ interface Props {
 const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
     const { APP_NAME } = useConfig();
     const history = useHistory();
+    const location = useLocation();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
     const [automaticVerification, setAutomaticVerification] = useState({ loading: false, username: '' });
@@ -109,12 +111,71 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
 
     const handleError = (e: any) => {
         errorHandler(e);
-        if (step === STEPS.NEW_PASSWORD) {
-            setStep(STEPS.ERROR);
-        }
+        setStep((step) => {
+            if (step === STEPS.NEW_PASSWORD) {
+                return STEPS.ERROR;
+            }
+
+            if (step === STEPS.LOADING) {
+                return STEPS.REQUEST_RECOVERY_METHODS;
+            }
+
+            return step;
+        });
     };
 
-    useSearchParamsEffect(
+    /**
+     * Recovery phrase automatic password reset
+     */
+    useEffect(() => {
+        const hash = location.hash.slice(1);
+        if (!hash) {
+            return;
+        }
+        history.replace({ ...location, hash: '' });
+
+        let params;
+        try {
+            params = decodeAutomaticResetParams(hash);
+        } catch (error) {
+            handleError(error);
+        }
+
+        if (!params) {
+            return;
+        }
+
+        const { username, value } = params;
+        if (!username || !value) {
+            return;
+        }
+
+        setStep(STEPS.LOADING);
+
+        cacheRef.current = {
+            appName: APP_NAME,
+            persistent: persistent ?? true,
+            username: username ?? '',
+            Methods: [],
+            hasGenerateKeys,
+            hasTrustedDeviceRecovery,
+        };
+
+        handleRequestToken({
+            cache: cacheRef.current,
+            value,
+            method: 'mnemonic',
+            username,
+            api: silentApi,
+        })
+            .then(handleResult)
+            .catch(handleError);
+    }, []);
+
+    /**
+     * Automatic token validation reset
+     */
+     useSearchParamsEffect(
         (params) => {
             if (trustedDeviceRecoveryFeature.loading === true) {
                 return;
@@ -167,6 +228,14 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
 
     const children = (
         <Main>
+            {step === STEPS.LOADING && (
+                <>
+                    <Header title={c('Title').t`Reset password`} />
+                    <Content className="text-center">
+                        <CircleLoader className="color-primary my1" size="large" />
+                    </Content>
+                </>
+            )}
             {step === STEPS.REQUEST_RECOVERY_METHODS && (
                 <>
                     <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
