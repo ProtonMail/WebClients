@@ -3,7 +3,8 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href, ProtonLogo, PublicTopBanners, classnames, getAppVersion, useConfig } from '@proton/components';
-import NudgeTopBanner, { getIsProtonMailDomain } from '@proton/components/containers/topBanners/NudgeTopBanner';
+import NudgeTopBanner from '@proton/components/containers/topBanners/NudgeTopBanner';
+import getIsProtonMailDomain from '@proton/shared/lib/browser/getIsProtonMailDomain';
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
