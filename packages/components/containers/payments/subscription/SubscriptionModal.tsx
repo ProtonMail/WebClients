@@ -41,6 +41,8 @@ import {
     usePlans,
     useSubscription,
     useUser,
+    useVPNCountriesCount,
+    useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import LossLoyaltyModal from '../LossLoyaltyModal';
@@ -125,6 +127,8 @@ const SubscriptionModal = ({
     const { createNotification } = useNotifications();
     const [plans = []] = usePlans();
     const plansMap = toMap(plans, 'Name') as PlansMap;
+    const [vpnServers] = useVPNServersCount();
+    const [vpnCountries] = useVPNCountriesCount();
     const [organization] = useOrganization();
     const getCalendars = useGetCalendars();
 
@@ -424,6 +428,9 @@ const SubscriptionModal = ({
                     <PlanSelection
                         loading={loadingCheck}
                         plans={plans}
+                        plansMap={plansMap}
+                        vpnServers={vpnServers}
+                        vpnCountries={vpnCountries}
                         currency={model.currency}
                         cycle={model.cycle}
                         planIDs={model.planIDs}
@@ -484,6 +491,7 @@ const SubscriptionModal = ({
                                         plansMap,
                                     })}
                                     plansMap={plansMap}
+                                    vpnServers={vpnServers}
                                     isOptimistic={true}
                                     loading={loadingCheck}
                                     currency={model.currency}
@@ -560,6 +568,7 @@ const SubscriptionModal = ({
                                     }
                                     plansMap={plansMap}
                                     checkResult={checkResult}
+                                    vpnServers={vpnServers}
                                     loading={loadingCheck}
                                     currency={model.currency}
                                     cycle={model.cycle}
