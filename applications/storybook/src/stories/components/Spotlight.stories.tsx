@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { RadioGroup, Spotlight } from '@proton/components';
-import { ALL_PLACEMENTS } from '@proton/components/components/popper/utils';
+import { PopperPlacement, RadioGroup, Spotlight, allPopperPlacements } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Spotlight.mdx';
@@ -22,14 +21,14 @@ const sizeOptions = [
     { value: '14px', label: '14px' },
 ];
 
-const placementOptions = ALL_PLACEMENTS.map((placement) => ({
+const placementOptions = allPopperPlacements.map((placement) => ({
     value: placement,
     label: placement,
 }));
 
 export const Sandbox = () => {
     const [targetSize, setTargetSize] = useState(sizeOptions[1].value);
-    const [placement, setPlacement] = useState(ALL_PLACEMENTS[0]);
+    const [placement, setPlacement] = useState<PopperPlacement>(allPopperPlacements[0]);
     const [show, setShow] = useState(false);
 
     useEffect(() => {
@@ -42,7 +41,7 @@ export const Sandbox = () => {
         setTimeout(() => setShow(true), 100);
     };
 
-    const handleChangePlacement = (placement: string) => {
+    const handleChangePlacement = (placement: PopperPlacement) => {
         setShow(false);
         setPlacement(placement);
         setTimeout(() => setShow(true), 100);

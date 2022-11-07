@@ -55,7 +55,7 @@ const ToolbarFontSizeDropdown = ({ setValue, value, onClickDefault, defaultValue
 
     return (
         <ToolbarDropdown
-            originalPlacement="bottom-left"
+            originalPlacement="bottom-start"
             content={selectedValue}
             className="flex-item-noshrink"
             title={c('Action').t`Size`}

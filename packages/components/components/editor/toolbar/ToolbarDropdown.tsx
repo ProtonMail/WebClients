@@ -1,5 +1,6 @@
 import { ReactNode, Ref, forwardRef, useImperativeHandle, useState } from 'react';
 
+import { PopperPlacement } from '../../../components/popper';
 import { classnames, generateUID } from '../../../helpers';
 import Dropdown from '../../dropdown/Dropdown';
 import DropdownButton from '../../dropdown/DropdownButton';
@@ -16,8 +17,9 @@ interface Props {
     onOpen?: () => void;
     noMaxSize?: boolean;
     disabled?: boolean;
-    originalPlacement?: string;
+    originalPlacement?: PopperPlacement;
     hasCaret?: boolean;
+
     [rest: string]: any;
 }
 

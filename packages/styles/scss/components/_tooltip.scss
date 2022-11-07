@@ -30,37 +30,38 @@
 
 	// Placement - no need for logical props - managed by plugins
 	/* stylelint-disable */
-	&--top-left {
+	&--top-start {
 		border-bottom-left-radius: 0;
 	}
 
-	&--top-right {
+	&--top-end {
 		border-bottom-right-radius: 0;
 	}
 
-	&--bottom-left {
+	&--bottom-start {
 		border-top-left-radius: 0;
 	}
 
-	&--bottom-right {
+	&--bottom-end {
 		border-top-right-radius: 0;
 	}
 
-	&--left-bottom {
+	&--left-end {
 		border-bottom-right-radius: 0;
 	}
 
-	&--right-bottom {
+	&--right-end {
 		border-bottom-left-radius: 0;
 	}
 
-	&--left-top {
+	&--left-start {
 		border-top-right-radius: 0;
 	}
 
-	&--right-top {
+	&--right-start {
 		border-top-left-radius: 0;
 	}
+
 	/* stylelint-enable */
 
 	/* pseudo-element to make arrows */
@@ -74,31 +75,32 @@
 		pointer-events: none;
 		border: $arrow-width solid transparent;
 	}
+
 	/* stylelint-disable */
 	&--top::before,
-	&--top-left::before,
-	&--top-right::before {
+	&--top-start::before,
+	&--top-end::before {
 		top: 100%;
 		border-top: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--bottom::before,
-	&--bottom-left::before,
-	&--bottom-right::before {
+	&--bottom-start::before,
+	&--bottom-end::before {
 		bottom: 100%;
 		border-bottom: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--right::before,
-	&--right-top::before,
-	&--right-bottom::before {
+	&--right-start::before,
+	&--right-end::before {
 		left: -#{$arrow-width * 2};
 		border-right: $arrow-width solid var(--tooltip-background-color);
 	}
 
 	&--left::before,
-	&--left-top::before,
-	&--left-bottom::before {
+	&--left-start::before,
+	&--left-end::before {
 		right: -#{$arrow-width * 2};
 		border-left: $arrow-width solid var(--tooltip-background-color);
 	}
@@ -108,13 +110,13 @@
 		left: calc(50% - #{$arrow-width});
 	}
 
-	&--top-left::before,
-	&--bottom-left::before {
+	&--top-start::before,
+	&--bottom-start::before {
 		left: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
-	&--top-right::before,
-	&--bottom-right::before {
+	&--top-end::before,
+	&--bottom-end::before {
 		right: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
@@ -123,13 +125,13 @@
 		top: calc(50% - #{$arrow-width});
 	}
 
-	&--left-top::before,
-	&--right-top::before {
+	&--left-start::before,
+	&--right-start::before {
 		top: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
-	&--left-bottom::before,
-	&--right-bottom::before {
+	&--left-end::before,
+	&--right-end::before {
 		bottom: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 
