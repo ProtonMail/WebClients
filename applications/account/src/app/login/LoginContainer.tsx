@@ -23,6 +23,7 @@ import {
 import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import getIsProtonMailDomain from '@proton/shared/lib/browser/getIsProtonMailDomain';
 import { APPS, APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
@@ -91,7 +92,7 @@ const LoginContainer = ({
     }, []);
 
     useEffect(() => {
-        const isProtonMailDomain = window.location.hostname.endsWith('.protonmail.com');
+        const isProtonMailDomain = getIsProtonMailDomain();
         if (isProtonMailDomain) {
             window.location.replace('https://account.proton.me');
         }
