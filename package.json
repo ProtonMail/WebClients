@@ -28,6 +28,8 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
         "is-ci": "^3.0.1",
+        "react-sanitized-html": "^2.0.0",
+        "sanitize-html": "^2.7.3",
         "stylelint-use-logical-spec": "^4.1.0",
         "typescript": "^4.9.3"
     },
