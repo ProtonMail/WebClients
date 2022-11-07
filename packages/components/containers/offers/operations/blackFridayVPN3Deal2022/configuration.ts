@@ -12,7 +12,7 @@ const config: OfferConfig = {
     featureCode: FeatureCode.OfferBlackFridayVPN3Deal2022,
     deals: [
         {
-            ref: 'bf_22_vpn_offers-modal-vpn15',
+            ref: 'bf_22_vpn_free-plus-1m-modal-v15',
             planName: PLANS.VPN,
             planIDs: {
                 [PLANS.VPN]: 1,
@@ -23,7 +23,7 @@ const config: OfferConfig = {
             header: LifetimeDeal,
         },
         {
-            ref: 'bf_22_vpn_offers-modal-vpn30',
+            ref: 'bf_22_vpn_free-plus-1m-modal-v30',
             planName: PLANS.VPN,
             planIDs: {
                 [PLANS.VPN]: 1,
@@ -35,7 +35,7 @@ const config: OfferConfig = {
             header: LifetimeDeal,
         },
         {
-            ref: 'bf_22_vpn_offers-modal-b2',
+            ref: 'bf_22_vpn_free-plus-1m-modal-u24',
             planName: PLANS.BUNDLE,
             planIDs: {
                 [PLANS.BUNDLE]: 1,
