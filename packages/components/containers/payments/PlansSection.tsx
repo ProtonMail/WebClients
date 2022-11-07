@@ -7,12 +7,30 @@ import { Button } from '@proton/atoms';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, PlanIDs, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Currency,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    SubscriptionCheckResponse,
+} from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader } from '../../components';
-import { useApi, useConfig, useLoading, useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
+import {
+    useApi,
+    useConfig,
+    useLoading,
+    useOrganization,
+    usePlans,
+    useSubscription,
+    useUser,
+    useVPNCountriesCount,
+    useVPNServersCount,
+} from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
@@ -33,6 +51,9 @@ const PlansSection = () => {
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
+    const plansMap = toMap(plans, 'Name') as PlansMap;
+    const [vpnServers] = useVPNServersCount();
+    const [vpnCountries] = useVPNCountriesCount();
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const api = useApi();
@@ -106,6 +127,9 @@ const PlansSection = () => {
                 onChangeAudience={setAudience}
                 loading={loading}
                 plans={plans}
+                plansMap={plansMap}
+                vpnServers={vpnServers}
+                vpnCountries={vpnCountries}
                 currency={currency}
                 cycle={cycle}
                 onChangeCycle={setCycle}
