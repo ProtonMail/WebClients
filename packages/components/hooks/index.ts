@@ -94,6 +94,7 @@ export { default as usePlans } from './usePlans';
 export { default as usePremiumDomains } from './usePremiumDomains';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 export { default as usePrimaryRecoverySecret } from './usePrimaryRecoverySecret';
+export { default as useProtonMailMigrationRedirect } from './useProtonMailMigrationRedirect';
 export { default as usePromiseResult } from './usePromiseResult';
 export { default as useRecoverySecrets } from './useRecoverySecrets';
 export { default as useRecoveryStatus } from './useRecoveryStatus';
