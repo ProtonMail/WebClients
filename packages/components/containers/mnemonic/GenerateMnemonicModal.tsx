@@ -94,7 +94,6 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
     }, []);
 
     const authenticating = step === STEPS.AUTH;
-    const mnemonic = authenticating ? undefined : mnemonicData?.mnemonic;
     const handleClose = generating ? noop : onClose;
 
     return (
@@ -103,7 +102,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                 <AuthModal
                     config={unlockPasswordChanges()}
                     {...authModalProps}
-                    onCancel={undefined}
+                    onCancel={onClose}
                     onSuccess={async () => {
                         try {
                             const payload = await getPayload(mnemonicData);
@@ -152,11 +151,14 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                 <Modal size="small" open={open} onClose={handleClose} onExit={onExit}>
                     <ModalHeader title={c('Info').t`Your recovery phrase`} />
                     <ModalContent>
-                        <MnemonicPhraseStepContent mnemonic={mnemonic} loading={generating || authenticating} />
+                        <MnemonicPhraseStepContent
+                            mnemonic={mnemonicData?.mnemonic}
+                            loading={generating || authenticating}
+                        />
                     </ModalContent>
                     <ModalFooter>
                         <MnemonicPhraseStepButtons
-                            mnemonic={mnemonic}
+                            mnemonic={mnemonicData?.mnemonic}
                             disabled={generating || authenticating}
                             onDone={onClose}
                         />
