@@ -65,6 +65,7 @@ const prepareMessageMetadata = (message: Message | ESMessage) => {
         IsReplied: message.IsReplied,
         IsRepliedAll: message.IsRepliedAll,
         IsForwarded: message.IsForwarded,
+        IsProton: message.IsProton,
         ToList: message.ToList,
         CCList: message.CCList,
         BCCList: message.BCCList,

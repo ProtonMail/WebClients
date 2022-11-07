@@ -20,6 +20,7 @@ import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
+import VerifiedBadge from './VerifiedBadge';
 
 interface Props {
     isCompactView: boolean;
@@ -35,6 +36,7 @@ interface Props {
     displayRecipients: boolean;
     loading: boolean;
     onBack: () => void;
+    hasVerifiedBadge?: boolean;
 }
 
 const ItemRowLayout = ({
@@ -51,6 +53,7 @@ const ItemRowLayout = ({
     displayRecipients,
     loading,
     onBack,
+    hasVerifiedBadge = false,
 }: Props) => {
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -98,6 +101,7 @@ const ItemRowLayout = ({
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {sendersContent}
                 </span>
+                {hasVerifiedBadge && <VerifiedBadge />}
             </div>
 
             <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap mauto">
