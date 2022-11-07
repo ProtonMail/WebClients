@@ -148,7 +148,7 @@ function FloatingSpotlight({
         <Spotlight
             content={content}
             show={show}
-            originalPlacement="top-right"
+            originalPlacement="top-end"
             className="max-w-custom upper-layer"
             style={{ '--max-width-custom': '25em' }}
             hasClose={hasClose}

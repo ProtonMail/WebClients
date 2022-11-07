@@ -89,7 +89,7 @@ const CalendarInviteButtons = ({
 
     return (
         <SimpleDropdown
-            originalPlacement="top-right"
+            originalPlacement="top-end"
             disabled={disabled}
             loading={loadingAnswer}
             className={className}

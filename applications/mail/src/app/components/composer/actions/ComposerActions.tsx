@@ -167,7 +167,7 @@ const ComposerActions = ({
         >
             <div className="flex flex-row-reverse flex-align-self-center w100 ml0-5 mr1-5 pl1-25 pr0-25 mb1">
                 <Spotlight
-                    originalPlacement="top-right"
+                    originalPlacement="top-end"
                     show={shouldShowSpotlight}
                     onDisplayed={onDisplayed}
                     anchorRef={dropdownRef}

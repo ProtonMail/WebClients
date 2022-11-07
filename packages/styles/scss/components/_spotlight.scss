@@ -72,32 +72,32 @@
 	}
 
 	&--top,
-	&--top-left,
-	&--top-right {
+	&--top-start,
+	&--top-end {
 		&::before {
 			inset-block-end: -#{math.div($arrow-width, 2)};
 		}
 	}
 
 	&--bottom,
-	&--bottom-left,
-	&--bottom-right {
+	&--bottom-start,
+	&--bottom-end {
 		&::before {
 			inset-block-start: -#{math.div($arrow-width, 2)};
 		}
 	}
 
 	&--right,
-	&--right-top,
-	&--right-bottom {
+	&--right-start,
+	&--right-end {
 		&::before {
 			inset-inline-start: -#{math.div($arrow-width, 2)};
 		}
 	}
 
 	&--left,
-	&--left-top,
-	&--left-bottom {
+	&--left-start,
+	&--left-end {
 		&::before {
 			inset-inline-end: -#{math.div($arrow-width, 2)};
 		}
@@ -111,15 +111,15 @@
 	}
 
 	// the + 0.5px is just to avoid a glitch
-	&--top-left,
-	&--bottom-left {
+	&--top-start,
+	&--bottom-start {
 		&::before {
 			inset-inline-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}) + 0.5px, 0px);
 		}
 	}
 
-	&--top-right,
-	&--bottom-right {
+	&--top-end,
+	&--bottom-end {
 		&::before {
 			inset-inline-end: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}) + 0.5px, 0px);
 		}
@@ -132,15 +132,15 @@
 		}
 	}
 
-	&--left-top,
-	&--right-top {
+	&--left-start,
+	&--right-start {
 		&::before {
 			inset-block-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
 		}
 	}
 
-	&--left-bottom,
-	&--right-bottom {
+	&--left-end,
+	&--right-end {
 		&::before {
 			inset-block-end: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
 		}
@@ -157,8 +157,8 @@
 		// remove glitches caused by border-radiuses when arrow is in edges ^^
 		&.spotlight {
 			&--top,
-			&--top-left,
-			&--top-right {
+			&--top-start,
+			&--top-end {
 				&::before {
 					border-block-start: 0;
 					border-inline-start: 0;
@@ -166,40 +166,40 @@
 			}
 
 			&--bottom,
-			&--bottom-left,
-			&--bottom-right {
+			&--bottom-start,
+			&--bottom-end {
 				&::before {
 					border-block-end: 0;
 					border-inline-end: 0;
 				}
 			}
 
-			&--top-right,
-			&--left-bottom {
+			&--top-end,
+			&--left-end {
 				&,
 				& .spotlight-inner {
 					border-end-end-radius: 0;
 				}
 			}
 
-			&--top-left,
-			&--right-bottom {
+			&--top-start,
+			&--right-end {
 				&,
 				& .spotlight-inner {
 					border-end-start-radius: 0;
 				}
 			}
 
-			&--bottom-left,
-			&--right-top {
+			&--bottom-start,
+			&--right-start {
 				&,
 				& .spotlight-inner {
 					border-start-start-radius: 0;
 				}
 			}
 
-			&--bottom-right,
-			&--left-top {
+			&--bottom-end,
+			&--left-start {
 				&,
 				& .spotlight-inner {
 					border-start-end-radius: 0;

@@ -8,7 +8,6 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { getAnchor } from '../../helpers/message/messageImages';
 import { MessageImage } from '../../logic/messages/messagesTypes';
-import { IframeOffsetType } from './interface';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 
@@ -61,20 +60,11 @@ interface Props {
     showEmbeddedImages: boolean;
     image: MessageImage;
     anchor: HTMLElement;
-    iframePosition: IframeOffsetType | undefined;
     isPrint?: boolean;
     iframeRef: RefObject<HTMLIFrameElement>;
 }
 
-const MessageBodyImage = ({
-    showRemoteImages,
-    showEmbeddedImages,
-    image,
-    anchor,
-    iframePosition,
-    isPrint,
-    iframeRef,
-}: Props) => {
+const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor, isPrint, iframeRef }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const { type, error, url, status, original } = image;
     const showPlaceholder =
@@ -147,7 +137,7 @@ const MessageBodyImage = ({
     }
 
     return (
-        <Tooltip title={placeholderTooltip} anchorOffset={iframePosition}>
+        <Tooltip title={placeholderTooltip} relativeReference={iframeRef}>
             {placeholder}
         </Tooltip>
     );

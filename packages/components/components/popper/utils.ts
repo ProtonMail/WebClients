@@ -1,233 +1,234 @@
-const DEFAULT_TOOLTIP_OFFSET = 10;
+import { RefObject } from 'react';
 
-export const ALL_PLACEMENTS = [
-    'bottom',
-    'bottom-left',
-    'bottom-right',
+import { Middleware, MiddlewareArguments, MiddlewareReturn, size } from '@floating-ui/react-dom';
+
+import { ArrowOffset, PopperPlacement, PopperPosition } from './interface';
+
+export const allPopperPlacements: PopperPlacement[] = [
+    'top-start',
     'top',
-    'top-left',
-    'top-right',
-    'left',
-    'left-bottom',
-    'left-top',
+    'top-end',
+    'right-start',
     'right',
-    'right-bottom',
-    'right-top',
+    'right-end',
+    'bottom-end',
+    'bottom',
+    'bottom-start',
+    'left-end',
+    'left',
+    'left-start',
 ];
 
-export const CORNERS_ONLY_PLACEMENTS = [
-    'bottom-left',
-    'bottom-right',
-    'top-left',
-    'top-right',
-    'left-bottom',
-    'left-top',
-    'right-bottom',
-    'right-top',
+export const getInvertedRTLPlacement = (placement: PopperPlacement, rtl: boolean): PopperPlacement => {
+    if (!rtl) {
+        return placement;
+    }
+    if (placement.startsWith('top') || placement.startsWith('bottom')) {
+        return placement.endsWith('-start')
+            ? (placement.replace('-start', '-end') as PopperPlacement)
+            : (placement.replace('-end', '-start') as PopperPlacement);
+    }
+    return placement;
+};
+
+const getInvertedPlacement = (placement: PopperPlacement): PopperPlacement => {
+    const position = placement.split('-')[0];
+    if (position === 'top') {
+        return 'bottom';
+    }
+    if (position === 'bottom') {
+        return 'top';
+    }
+    if (position === 'left') {
+        return 'right';
+    }
+    if (position === 'right') {
+        return 'left';
+    }
+    return 'top';
+};
+
+export const cornerPopperPlacements: PopperPlacement[] = [
+    'top-start',
+    'top-end',
+    'right-start',
+    'right-end',
+    'bottom-end',
+    'bottom-start',
+    'left-end',
+    'left-start',
 ];
 
-const inverted: { [key: string]: string } = {
-    left: 'right',
-    right: 'left',
-    bottom: 'top',
-    top: 'bottom',
+const getPlacements = (value: PopperPlacement) => {
+    return value.split('-') as [PopperPlacement, PopperPlacement | undefined];
 };
-
-export type Position = { top: number; left: number; '--arrow-offset': 0 | string };
-
-type ElementRect = {
-    top: number;
-    left: number;
-    width: number;
-    height: number;
-};
-
 /**
- * Tries to maintain placement as close to the original as possible.
- * Places in this order of preference:
- * - same orientation as original (e.g. bottom-left, bottom, bottom-right)
- * - same orientation as original alignment (e.g. left-bottom => bottom-*)
- * - inverted orientation than original (e.g. top => bottom)
- * - whatever is left
- *
- * always prefers alignment to be the same as original alignment or orientation.
+ * Tries to maintain placement as close to the original as possible. In order of
+ * 1. Same position
+ * 2. Inverted position
+ * 3. Remaining
  */
-export const orderPlacements = (originalPlacement: string, placements = ALL_PLACEMENTS) => {
-    const orientation = originalPlacement.split('-')[0];
-    const alignment = originalPlacement.split('-')[1];
-
-    const compareAlignment = (a: string, b: string) => {
-        if (
-            (b.endsWith(alignment) && !b.startsWith(alignment) && !a.endsWith(alignment)) ||
-            (b.endsWith(orientation) && !b.startsWith(orientation) && !a.endsWith(orientation))
-        ) {
-            return 1;
-        }
-
-        if (
-            (a.endsWith(alignment) && !a.startsWith(alignment) && !b.endsWith(alignment)) ||
-            (a.endsWith(orientation) && !a.startsWith(orientation) && !b.endsWith(orientation))
-        ) {
-            return -1;
-        }
-
-        return 0;
-    };
-
-    const sameOrientation = placements.filter((placement) => placement.startsWith(orientation)).sort(compareAlignment);
-    const sameOrientationAsAlignment = placements
-        .filter((placement) => placement.startsWith(alignment))
-        .sort(compareAlignment);
-    const invertedOrientation = placements
-        .filter((placement) => placement.startsWith(inverted[orientation]))
-        .sort(compareAlignment);
-    const preferred = [...sameOrientation, ...sameOrientationAsAlignment, ...invertedOrientation];
-    const remaining = placements.filter((placement) => !preferred.includes(placement)).sort(compareAlignment);
-    return [...preferred, ...remaining];
-};
-
-const calculatePosition = (
-    target: ElementRect,
-    tooltip: ElementRect,
-    placement: string,
-    offset = DEFAULT_TOOLTIP_OFFSET,
-    originalPosition?: Position
-): Position => {
-    let alignCenter = {
-        top: target.top + target.height / 2 - tooltip.height / 2,
-        left: target.left + target.width / 2 - tooltip.width / 2,
-    };
-
-    let alignTop = target.top;
-    let alignBottom = target.top + target.height - tooltip.height;
-    let alignLeft = target.left;
-    let alignRight = target.left - tooltip.width + target.width;
-
-    let placeAbove = target.top - tooltip.height - offset;
-    let placeBelow = target.top + target.height + offset;
-    let placeLeft = target.left - tooltip.width - offset;
-    let placeRight = target.left + target.width + offset;
-
-    const minHeight = target.height < tooltip.height ? target.height : tooltip.height;
-    const minWidth = target.width < tooltip.width ? target.width : tooltip.width;
-    const horizontalOffset = `${minWidth / 2}px`;
-    const verticalOffset = `${minHeight / 2}px`;
-
-    if (originalPosition) {
-        alignCenter = {
-            top: originalPosition.top + target.height / 2 - tooltip.height / 2,
-            left: originalPosition.left + target.width / 2 - tooltip.width / 2,
-        };
-
-        alignTop = originalPosition.top;
-        alignBottom = originalPosition.top + tooltip.height;
-        alignLeft = originalPosition.left;
-        alignRight = originalPosition.left - tooltip.width;
-
-        placeAbove = originalPosition.top - tooltip.height - offset;
-        placeBelow = originalPosition.top + offset;
-        placeLeft = originalPosition.left - tooltip.width - offset;
-        placeRight = originalPosition.left + offset;
-    }
-
-    const placementList: { [key: string]: Position } = {
-        top: { left: alignCenter.left, top: placeAbove, '--arrow-offset': 0 },
-        bottom: { left: alignCenter.left, top: placeBelow, '--arrow-offset': 0 },
-        left: { left: placeLeft, top: alignCenter.top, '--arrow-offset': 0 },
-        right: { left: placeRight, top: alignCenter.top, '--arrow-offset': 0 },
-        'bottom-left': { left: alignLeft, top: placeBelow, '--arrow-offset': horizontalOffset },
-        'top-left': { left: alignLeft, top: placeAbove, '--arrow-offset': horizontalOffset },
-        'bottom-right': { left: alignRight, top: placeBelow, '--arrow-offset': horizontalOffset },
-        'top-right': { left: alignRight, top: placeAbove, '--arrow-offset': horizontalOffset },
-        'right-bottom': { left: placeRight, top: alignBottom, '--arrow-offset': verticalOffset },
-        'right-top': { left: placeRight, top: alignTop, '--arrow-offset': verticalOffset },
-        'left-bottom': { left: placeLeft, top: alignBottom, '--arrow-offset': verticalOffset },
-        'left-top': { left: placeLeft, top: alignTop, '--arrow-offset': verticalOffset },
-    };
-
-    return placementList[placement];
-};
-
-const isOutOfScreen = (tooltip: ElementRect, position: Position) => {
-    return (
-        position.top + tooltip.height > window.innerHeight ||
-        position.left + tooltip.width > window.innerWidth ||
-        position.top < 0 ||
-        position.left < 0
+export const getFallbackPlacements = (
+    originalPlacement: PopperPlacement,
+    placements = allPopperPlacements
+): PopperPlacement[] => {
+    const groupedPlacements = placements.reduce<Partial<{ [key in PopperPlacement]: PopperPlacement[] }>>(
+        (acc, cur) => {
+            const [position] = getPlacements(cur);
+            let prev = acc[position];
+            if (!prev) {
+                prev = acc[position] = [];
+            }
+            prev.push(cur);
+            return acc;
+        },
+        {}
     );
-};
-
-const howMuchIsOutOfScreen = (tooltip: ElementRect, position: Position) => {
-    const offsets = [
-        position.top + tooltip.height - window.innerHeight,
-        position.left + tooltip.width - window.innerWidth,
-        0 - position.top,
-        0 - position.left,
+    const [originalPosition, originalAlignment] = getPlacements(originalPlacement);
+    const invertedPosition = getInvertedPlacement(originalPosition);
+    const groupedOriginalPlacements = groupedPlacements[originalPosition];
+    const groupedInvertedPlacements = groupedPlacements[invertedPosition];
+    if (!groupedOriginalPlacements || !groupedInvertedPlacements) {
+        return placements;
+    }
+    return [
+        ...groupedOriginalPlacements.filter((placement) => placement !== originalPlacement),
+        ...groupedInvertedPlacements.sort((a, b) => {
+            const [, alignmentA] = a.split('-');
+            const [, alignmentB] = b.split('-');
+            if (alignmentA === alignmentB) {
+                return 0;
+            }
+            if (alignmentA === originalAlignment) {
+                return -1;
+            }
+            if (alignmentB === originalAlignment) {
+                return 1;
+            }
+            return 0;
+        }),
+        ...Object.keys(groupedPlacements).flatMap((placement) => {
+            if (placement === originalPosition || placement === invertedPosition) {
+                return [];
+            }
+            const placements = groupedPlacements[placement as keyof typeof groupedPlacements];
+            if (!placements) {
+                return [];
+            }
+            return placements;
+        }),
     ];
-    return offsets.filter((number) => number > 0).reduce((acc, number) => acc + number, 0);
 };
 
-const optimisePositionAndPlacement = (
-    target: ElementRect,
-    tooltip: ElementRect,
-    offset: number,
-    availablePlacements = ALL_PLACEMENTS,
-    originalPosition?: Position
-): { position: Position; placement: string } | null => {
-    if (!availablePlacements.length) {
-        return null;
-    }
-
-    const [placement, ...rest] = availablePlacements;
-    const position = calculatePosition(target, tooltip, placement, offset, originalPosition);
-
-    if (!isOutOfScreen(tooltip, position)) {
-        return { position, placement };
-    }
-
-    // Return the position which can fit the most content on the screen.
-    const otherPosition = optimisePositionAndPlacement(target, tooltip, offset, rest, originalPosition);
-    return otherPosition &&
-        howMuchIsOutOfScreen(tooltip, position) > howMuchIsOutOfScreen(tooltip, otherPosition.position)
-        ? otherPosition
-        : { position, placement };
-};
-
-export const adjustPosition = (
-    target: ElementRect,
-    tooltip: ElementRect,
-    placement: string,
-    offset: number,
-    originalPosition?: Position,
-    availablePlacements = ALL_PLACEMENTS
+export const shouldShowSideRadius = (
+    arrowOffset: ArrowOffset,
+    placement: PopperPlacement | 'hidden',
+    radiusSize = 8,
+    arrowSize = 10
 ) => {
-    const placementsByPriority = orderPlacements(placement, availablePlacements);
-    const optimalLocation = optimisePositionAndPlacement(
-        target,
-        tooltip,
-        offset,
-        placementsByPriority,
-        originalPosition
-    );
-
-    if (!optimalLocation) {
-        // No good position on screen, fallback to original
-        const position = calculatePosition(target, tooltip, placement, offset, originalPosition);
-        return {
-            position,
-            placement,
-        };
+    if (placement === 'hidden') {
+        return false;
     }
-    return optimalLocation;
-};
-
-export const computedSize = (stylePixels: string, boundsSize: number) => {
-    const computedStyleSize = Number(stylePixels.replace('px', ''));
-    return Number.isNaN(computedStyleSize) ? boundsSize : computedStyleSize;
-};
-
-export const shouldShowSideRadius = (position: Position, placement: string, radiusSize = 8, arrowSize = 10) => {
-    const arrowOffset = position['--arrow-offset'];
     const offset = arrowOffset === 0 ? arrowOffset : Number(arrowOffset.replace('px', ''));
-    return !CORNERS_ONLY_PLACEMENTS.includes(placement) || offset > radiusSize + arrowSize;
+    return !cornerPopperPlacements.includes(placement) || offset > radiusSize + arrowSize;
+};
+
+export const getClickRect = (position: PopperPosition) => {
+    return {
+        x: position.left,
+        y: position.top,
+        top: position.top,
+        bottom: position.top,
+        left: position.left,
+        right: position.left,
+        width: 0,
+        height: 0,
+    };
+};
+
+export const arrowOffset = (): Middleware => {
+    return {
+        name: 'arrowOffset',
+        fn({ rects, placement }: MiddlewareArguments): MiddlewareReturn {
+            const minHeight = Math.min(rects.reference.height, rects.floating.height);
+            const minWidth = Math.min(rects.reference.width, rects.floating.width);
+            const horizontalOffset = (minWidth || 0) / 2;
+            const verticalOffset = (minHeight || 0) / 2;
+            const placementList: { [key in PopperPlacement]: number } = {
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                'bottom-start': horizontalOffset,
+                'top-start': horizontalOffset,
+                'bottom-end': horizontalOffset,
+                'top-end': horizontalOffset,
+                'right-end': verticalOffset,
+                'right-start': verticalOffset,
+                'left-end': verticalOffset,
+                'left-start': verticalOffset,
+            } as const;
+
+            return {
+                data: { value: placementList[placement] || 0 },
+            };
+        },
+    };
+};
+
+export const anchorOffset = (ref: RefObject<HTMLElement> | undefined): Middleware => {
+    return {
+        name: 'anchorOffset',
+        fn({ x, y }: MiddlewareArguments): MiddlewareReturn {
+            if (!ref?.current) {
+                return {};
+            }
+            const position = ref.current.getBoundingClientRect();
+            return {
+                x: x + position.x,
+                y: y + position.y,
+            };
+        },
+    };
+};
+
+export const availableSize = (): Middleware => {
+    let availableSize = { width: 0, height: 0 };
+
+    const sizeMiddleWare = size({
+        apply(args: MiddlewareArguments & { availableWidth: number; availableHeight: number }) {
+            availableSize.width = args.availableWidth;
+            availableSize.height = args.availableHeight;
+        },
+    });
+
+    return {
+        name: 'availableSize',
+        async fn(middlewareArguments: MiddlewareArguments): Promise<MiddlewareReturn> {
+            // Hack to get the result of the size middleware to be returned.
+            await sizeMiddleWare.fn(middlewareArguments);
+            return { data: availableSize };
+        },
+    };
+};
+
+export const rects = (): Middleware => {
+    return {
+        name: 'rects',
+        async fn(middlewareArguments: MiddlewareArguments): Promise<MiddlewareReturn> {
+            return { data: middlewareArguments.rects };
+        },
+    };
+};
+
+export const rtlPlacement = (): Middleware => {
+    return {
+        name: 'rtlPlacement',
+        async fn({ placement, elements, platform }: MiddlewareArguments): Promise<MiddlewareReturn> {
+            // Floating ui transparently handles RTL internally in the x,y values. But we expect the classnames to
+            // reflect where it's placed so this is just flipping it in the same way that floating ui happens.
+            const rtl = Boolean(await platform.isRTL?.(elements.floating));
+            return { data: { placement: getInvertedRTLPlacement(placement, rtl) } };
+        },
+    };
 };

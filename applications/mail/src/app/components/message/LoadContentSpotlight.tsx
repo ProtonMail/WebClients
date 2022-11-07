@@ -29,7 +29,7 @@ const LoadContentSpotlight = ({ children, anchorRef, show, onDisplayed }: Props)
 
     return (
         <Spotlight
-            originalPlacement="bottom-right"
+            originalPlacement="bottom-end"
             show={show}
             onDisplayed={onDisplayed}
             anchorRef={anchorRef}

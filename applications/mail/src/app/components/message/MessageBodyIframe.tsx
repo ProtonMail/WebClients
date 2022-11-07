@@ -16,7 +16,6 @@ import MessagePrintHeader from './MessagePrintHeader';
 import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from './constants';
 import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
-import useIframeOffset from './hooks/useIframeOffset';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useObserveIframeHeight from './hooks/useObserveIframeHeight';
@@ -82,7 +81,6 @@ const MessageBodyIframe = ({
         showBlockquoteToggle,
         onBlockquoteToggle,
     });
-    const iframeOffset = useIframeOffset(iframeRef);
     const iframePrintHeaderDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_HEADER_ID);
     const iframePrintFooterDiv = iframeRef.current?.contentDocument?.getElementById(MESSAGE_IFRAME_PRINT_FOOTER_ID);
 
@@ -118,19 +116,14 @@ const MessageBodyIframe = ({
                 allowFullScreen={false}
             />
             {initStatus !== 'start' && (
-                <MessageBodyImages
-                    iframeOffset={iframeOffset}
-                    iframeRef={iframeRef}
-                    isPrint={isPrint}
-                    messageImages={message.messageImages}
-                />
+                <MessageBodyImages iframeRef={iframeRef} isPrint={isPrint} messageImages={message.messageImages} />
             )}
             {showToggle &&
                 iframeToggleDiv &&
                 createPortal(
                     <Tooltip
                         title={showBlockquote ? c('Info').t`Hide original message` : c('Info').t`Show original message`}
-                        anchorOffset={iframeOffset}
+                        relativeReference={iframeRef}
                     >
                         <button
                             type="button"

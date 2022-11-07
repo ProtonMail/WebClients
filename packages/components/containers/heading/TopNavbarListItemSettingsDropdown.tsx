@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, forwardRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -35,7 +35,7 @@ const TopNavbarListItemSettingsButtonBase = (
 const TopNavbarListItemSettingsButton = forwardRef(TopNavbarListItemSettingsButtonBase);
 
 interface Props extends ComponentPropsWithoutRef<typeof AppLink> {
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 const TopNavbarListItemSettingsDropdown = (props: Props) => {
@@ -56,9 +56,9 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
     return (
         <SimpleDropdown
             as={TopNavbarListItemSettingsButton}
-            originalPlacement="bottom-left"
+            originalPlacement="bottom-start"
             hasCaret={false}
-            dropdownStyle={{ '--min-width': '18em', '--max-height': 'none' }}
+            dropdownStyle={{ '--min-width': '18em' }}
         >
             <DropdownMenu>
                 <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">

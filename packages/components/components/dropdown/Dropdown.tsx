@@ -16,12 +16,10 @@ import { c } from 'ttag';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import noop from '@proton/utils/noop';
 
-import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { classnames, getCustomSizingClasses } from '../../helpers';
 import { HotkeyTuple, useCombinedRefs, useDropdownArrowNavigation, useHotkeys, useIsClosing } from '../../hooks';
 import { useFocusTrap } from '../focus';
-import { usePopper } from '../popper';
-import { ALL_PLACEMENTS, Position } from '../popper/utils';
+import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
@@ -30,21 +28,21 @@ interface ContentProps extends HTMLAttributes<HTMLDivElement> {
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     anchorRef: RefObject<HTMLElement>;
+    anchorPosition?: PopperPosition | null;
     children: ReactNode;
     className?: string;
     style?: CSSProperties;
     onClose?: (event?: ReactMouseEvent<HTMLDivElement> | Event) => void;
     onClosed?: () => void;
     onContextMenu?: (event: ReactMouseEvent<HTMLDivElement, MouseEvent>) => void;
-    originalPlacement?: string;
+    originalPlacement?: PopperPlacement;
     disableFocusTrap?: boolean;
     isOpen?: boolean;
     noMaxWidth?: boolean;
     noMaxHeight?: boolean;
     noMaxSize?: boolean;
     noCaret?: boolean;
-    availablePlacements?: string[];
-    originalPosition?: Position;
+    availablePlacements?: PopperPlacement[];
     sameAnchorWidth?: boolean;
     offset?: number;
     autoClose?: boolean;
@@ -52,18 +50,17 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     autoCloseOutsideAnchor?: boolean;
     contentProps?: ContentProps;
     disableDefaultArrowNavigation?: boolean;
-    updatePositionOnDOMChange?: boolean;
     UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
 const Dropdown = ({
     anchorRef,
+    anchorPosition,
     children,
     className,
     style,
     originalPlacement = 'bottom',
-    availablePlacements = ALL_PLACEMENTS,
-    originalPosition,
+    availablePlacements = allPopperPlacements,
     offset = 8,
     onClose = noop,
     onClosed,
@@ -80,26 +77,27 @@ const Dropdown = ({
     autoCloseOutsideAnchor = true,
     contentProps,
     disableDefaultArrowNavigation = false,
-    updatePositionOnDOMChange = true,
     UNSTABLE_AUTO_HEIGHT,
     ...rest
 }: Props) => {
-    const [isRTL] = useRightToLeft();
-    const rtlAdjustedPlacement = originalPlacement.includes('right')
-        ? originalPlacement.replace('right', 'left')
-        : originalPlacement.replace('left', 'right');
-
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
 
-    const { position, placement } = usePopper({
-        popperEl,
-        anchorEl: anchorRef.current,
+    const { floating, position, arrow, placement } = usePopper({
+        reference:
+            anchorPosition || anchorPosition === null
+                ? {
+                      mode: 'position',
+                      value: anchorPosition,
+                      anchor: anchorRef.current,
+                  }
+                : {
+                      mode: 'element',
+                      value: anchorRef.current,
+                  },
         isOpen,
-        originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
+        originalPlacement,
         availablePlacements,
-        originalPosition,
         offset,
-        updatePositionOnDOMChange,
     });
 
     /*
@@ -117,7 +115,7 @@ const Dropdown = ({
     };
 
     const rootRef = useRef<HTMLDivElement>(null);
-    const combinedContainerRef = useCombinedRefs<HTMLDivElement>(rootRef, setPopperEl);
+    const combinedDropdownRef = useCombinedRefs<HTMLDivElement>(rootRef, setPopperEl, floating);
 
     const contentRef = useRef<HTMLDivElement>(null);
 
@@ -153,7 +151,7 @@ const Dropdown = ({
         if (sameAnchorWidth) {
             anchorRectRef.current = anchorRef.current?.getBoundingClientRect();
         }
-    }, [isOpen]);
+    }, [isOpen, sameAnchorWidth]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -227,25 +225,17 @@ const Dropdown = ({
         '--left': position.left,
     };
 
+    const staticContentRectWidth = contentRect?.width || undefined;
+    const staticContentRectHeight = contentRect?.height || undefined;
+    const width = sameAnchorWidth ? anchorRectRef.current?.width : staticContentRectWidth;
+    const height = staticContentRectHeight;
     const varSize =
-        contentRect || anchorRectRef.current
+        width !== undefined
             ? {
-                  '--width': `${anchorRectRef.current?.width || contentRect?.width}`,
-                  '--height': `${contentRect?.height || undefined}`,
+                  '--width': `${width}`,
+                  '--height': `${height}`,
               }
             : {};
-
-    const handleAnimationEnd = ({ animationName }: AnimationEvent) => {
-        if (animationName.includes('anime-dropdown-out') && isClosing) {
-            setIsClosed();
-            setContentRect(undefined);
-            onClosed?.();
-        }
-        if (animationName.includes('anime-dropdown-in') && isOpen && contentRef.current && !contentRect) {
-            const contentClientRect = contentRef.current?.getBoundingClientRect();
-            setContentRect(contentClientRect);
-        }
-    };
 
     const rootStyle = {
         ...(noMaxHeight ? { '--max-height': 'unset' } : {}),
@@ -260,12 +250,22 @@ const Dropdown = ({
     return (
         <Portal>
             <div
-                ref={combinedContainerRef}
-                style={{ ...rootStyle, ...style, ...varPosition, ...varSize }}
+                ref={combinedDropdownRef}
+                style={{ ...rootStyle, ...style, ...arrow, ...varPosition, ...varSize }}
                 role="dialog"
                 className={popperClassName}
                 onClick={handleClickContent}
-                onAnimationEnd={handleAnimationEnd}
+                onAnimationEnd={({ animationName }: AnimationEvent) => {
+                    if (animationName.includes('anime-dropdown-out') && isClosing) {
+                        setIsClosed();
+                        setContentRect(undefined);
+                        onClosed?.();
+                    }
+                    if (animationName.includes('anime-dropdown-in') && isOpen && contentRef.current && !contentRect) {
+                        const contentClientRect = contentRef.current?.getBoundingClientRect();
+                        setContentRect(contentClientRect);
+                    }
+                }}
                 onContextMenu={onContextMenu}
                 data-testid="dropdown-button"
                 {...rest}

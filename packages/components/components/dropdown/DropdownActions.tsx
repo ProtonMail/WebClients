@@ -80,7 +80,7 @@ const DropdownActions = ({
                 as={Button}
                 icon
                 autoFocus={autoFocus}
-                originalPlacement="bottom-right"
+                originalPlacement="bottom-end"
                 disabled={disabled}
                 loading={loading}
                 className={classnames(['flex-item-noshrink', className])}
