@@ -4725,6 +4725,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Arra az esetre, ha nem tudja a jelszavát, állítson be helyreállító jelmondatot, hogy ne veszíthesse el a hozzáférést fiókjához és adataihoz."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Ha az alternatív címét eladják, kiszivárog vagy rossz kezekbe kerül, egyszerűen kikapcsolhatja, hogy ne érkezzen rá több levélszemét."
       ],
@@ -5087,11 +5090,17 @@
       "Set a recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
+      "Set recovery phrase": [
+        "Helyreállító jelmondat beállítása"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "A SimpleLogin egy Proton szolgáltatás és a Proton fiókja tartalmazza a Hide My Email címeit. E-mail címének elrejtéséhez, nyissa meg a SimpleLogin oldalt és hozza létre első alternatív e-mail címeit."
@@ -5384,6 +5393,9 @@
       "Week": [
         "Hét"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Átköltözünk a ${ PROTON_ME_DOMAIN } webcímre."
+      ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
       ],
@@ -5502,6 +5514,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -7702,6 +7717,10 @@
         "${ emailsCount } tag",
         "${ emailsCount } tag"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } olvasatlan üzenet",
+        "${ unreads } olvasatlan üzenet"
+      ],
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
@@ -8112,6 +8131,9 @@
       ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Bejelentkezés a ${ PROTON_ME_DOMAIN } címen"
       ],
       "Sign out": [
         "Kijelentkezés"

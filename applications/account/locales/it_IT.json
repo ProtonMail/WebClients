@@ -468,6 +468,9 @@
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "Informazioni aggiuntive: scorciatoie da tastiera"
+      ],
       "move emails to": [
         "sposta l'email in"
       ],
@@ -5276,9 +5279,6 @@
       "Not a valid URL": [
         "URL non valido"
       ],
-      "Not set": [
-        "Non impostato"
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Non è il tuo dispositivo? Usa una finestra di navigazione in incognito per accedere e chiudila quando hai finito. ${ learnMore }"
       ],
@@ -6558,6 +6558,9 @@
       ],
       "All-day event notifications": [
         "Notifiche dell'evento per tutto il giorno"
+      ],
+      "Allow notifications by email": [
+        "Consenti le notifiche via e-mail"
       ],
       "Allow recovery by email": [
         "Consenti il recupero via email"
@@ -8172,26 +8175,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -8261,6 +8244,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9529,18 +9532,6 @@
       "2 years": [
         "2 anni"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Addebito di ${ amount } per i primi 2 anni"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Addebito di ${ amount } per il primo mese"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Addebito di ${ amount } per il primo anno"
-      ],
-      "Billed at ${ amountDue }": [
-        "Addebito di ${ amountDue }"
-      ],
       "for ${ n } month": [
         "per ${ n } mese",
         "per ${ n } mesi"
@@ -9556,9 +9547,6 @@
       ],
       "Save ${ discount }%": [
         "Risparmia il ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Prezzo standard ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -9767,7 +9755,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Salva"
+        "Risparmia"
       ]
     },
     "Subtitle for trial plan": {

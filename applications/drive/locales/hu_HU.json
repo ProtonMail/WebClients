@@ -2869,6 +2869,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Arra az esetre, ha nem tudja a jelszavát, állítson be helyreállító jelmondatot, hogy ne veszíthesse el a hozzáférést fiókjához és adataihoz."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Ha ezek bármelyike rendelkezésére áll, nyissa meg a Proton fiókjában a beállításokat, a feloldási folyamat indításához."
       ],
@@ -3123,6 +3126,9 @@
       "Session timed out": [
         "A munkamenet lejárt"
       ],
+      "Set recovery phrase": [
+        "Helyreállító jelmondat beállítása"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
@@ -3131,6 +3137,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Megosztható hivatkozás ehhez: ${ boldNameText }"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "Signature check will be ignored": [
         "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
@@ -3283,6 +3292,9 @@
       "Week": [
         "Hét"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Átköltözünk a ${ PROTON_ME_DOMAIN } webcímre."
+      ],
       "What do you want to do?": [
         "Mit szeretne tenni?"
       ],
@@ -3342,6 +3354,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -4883,6 +4898,9 @@
       ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Bejelentkezés a ${ PROTON_ME_DOMAIN } címen"
       ],
       "Sign out": [
         "Kijelentkezés"

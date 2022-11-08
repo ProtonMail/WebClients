@@ -470,6 +470,9 @@
       "Load": [
         "Carregar"
       ],
+      "Load anyway": [
+        "Carregar mesmo assim"
+      ],
       "Load embedded images": [
         "Carregar imagens incorporadas"
       ],
@@ -532,6 +535,9 @@
       ],
       "More": [
         "Mais"
+      ],
+      "More details about ${ ariaLabelTitle }": [
+        "Mais detalhes sobre ${ ariaLabelTitle }"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -3520,6 +3526,9 @@
       "Edit expiration time": [
         "Editar data de validade"
       ],
+      "Edit link": [
+        "Editar ligação"
+      ],
       "Email address": [
         "Endereço de email"
       ],
@@ -3866,6 +3875,9 @@
       "Set a recovery phrase": [
         "Definir uma frase de recuperação"
       ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A configuração do PGP permite o envio de correios eletrónicos encriptados de ponta-a-ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
@@ -4073,6 +4085,14 @@
       ],
       "You have ${ unreadsLabel } in your inbox.": [
         "Tem ${ unreadsLabel } na sua caixa de entrada."
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Tem **${ count } conversa com esta etiqueta",
+        "Tem **${ count } conversas com esta etiqueta"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Tem **${ count } mensagem** com esta etiqueta",
+        "Tem **${ count } mensagens** com esta etiqueta"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Não definiu um assunto para a mensagem. Deseja enviar mesmo assim?"
@@ -5652,9 +5672,17 @@
         "${ elementsCount } mensagem adicionada a ${ labelName }.",
         "${ elementsCount } mensagens adicionadas a ${ labelName }."
       ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } mensagem marcada como lida.",
+        "${ elementsCount } mensagens marcadas como lidas."
+      ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } mensagem marcada com estrela.",
         "${ elementsCount } mensagens marcadas com estrela."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } mensagem marcada como não lida.",
+        "${ elementsCount } mensagens marcadas como não lidas."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensagem movida para ${ folderName }.",

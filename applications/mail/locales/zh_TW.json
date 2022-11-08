@@ -1610,11 +1610,26 @@
       "apple": [
         "Apple"
       ],
+      "azureish white": [
+        "天藍白"
+      ],
+      "blanched almond": [
+        "杏仁黃"
+      ],
+      "blue-gray": [
+        "藍灰色"
+      ],
       "caramel": [
         "焦糖"
       ],
       "carrot": [
         "胡蘿蔔"
+      ],
+      "cerise": [
+        "櫻桃"
+      ],
+      "cinnabar": [
+        "硃砂色"
       ],
       "cobalt": [
         "鈷"
@@ -1622,14 +1637,50 @@
       "copper": [
         "銅"
       ],
+      "cyan-blue azure": [
+        "青藍色"
+      ],
       "dandelion": [
         "蒲公英"
+      ],
+      "dark cerulean": [
+        "深藍色"
+      ],
+      "dark midnight blue": [
+        "深午夜藍"
+      ],
+      "dim gray": [
+        "昏灰色"
+      ],
+      "enzian": [
+        "龍膽"
+      ],
+      "fern": [
+        "蕨類"
+      ],
+      "field drab": [
+        "黃褐色"
       ],
       "forest": [
         "森林"
       ],
+      "gainsboro": [
+        "庚斯博羅灰色"
+      ],
+      "japanese laurel": [
+        "日本月桂綠"
+      ],
+      "kiwi": [
+        "奇異果綠"
+      ],
       "lemon yellow": [
         "檸檬黃"
+      ],
+      "light carmine pink": [
+        "淡胭脂紅"
+      ],
+      "light moss green": [
+        "淺苔綠色"
       ],
       "light red": [
         "淡紅色"
@@ -1637,14 +1688,41 @@
       "maize": [
         "玉米"
       ],
+      "mughal green": [
+        "蒙兀兒綠"
+      ],
       "ocean": [
         "海洋"
       ],
       "olive": [
         "橄欖"
       ],
+      "outer space": [
+        "外太空"
+      ],
+      "pacific": [
+        "太平洋"
+      ],
+      "palatinate blue": [
+        "帕拉蒂藍"
+      ],
+      "pale cerulean": [
+        "淡藍色"
+      ],
+      "pastel gray": [
+        "柔和灰"
+      ],
+      "persian plum": [
+        "波斯梅色"
+      ],
       "persian red": [
         "波斯紅"
+      ],
+      "philippine gray": [
+        "菲律賓灰色"
+      ],
+      "philippine silver": [
+        "菲律賓銀色"
       ],
       "pickle": [
         "泡菜"
@@ -1655,11 +1733,41 @@
       "pink": [
         "粉紅色"
       ],
+      "pistachio": [
+        "開心果綠"
+      ],
+      "plum": [
+        "梅子"
+      ],
       "purple": [
         "紫色"
       ],
+      "raisin black": [
+        "葡萄乾黑"
+      ],
+      "reef": [
+        "礁石"
+      ],
+      "ruddy pink": [
+        "紅潤的粉紅色"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "satin sheen gold": [
+        "緞面金"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
       "soil": [
         "土壤"
+      ],
+      "strawberry": [
+        "草莓"
+      ],
+      "vivid auburn": [
+        "鮮豔的赤褐色"
       ],
       "white": [
         "白色"
@@ -2125,6 +2233,9 @@
       "Haiti": [
         "海地"
       ],
+      "Heard Island and McDonald Islands": [
+        "赫德島及麥唐納群島"
+      ],
       "Holy See (Vatican City State)": [
         "梵蒂岡"
       ],
@@ -2412,6 +2523,9 @@
       ],
       "San Marino": [
         "聖馬利諾"
+      ],
+      "Sao Tome and Principe": [
+        "聖多美普林西比"
       ],
       "Saudi Arabia": [
         "沙烏地阿拉伯"
@@ -4529,6 +4643,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "倘若您擔心記不住密碼，可設定復原片語， 存取帳號和資料即可萬無一失。"
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "倘若您的別名位址被不當販售、洩漏或甚至是濫用，只需簡單地停用該別名，就可停止收受垃圾郵件。"
       ],
@@ -4889,11 +5006,17 @@
       "Set a recovery phrase": [
         "設定還原短語"
       ],
+      "Set recovery phrase": [
+        "設定還原短語"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
       ],
       "Show original message": [
         "顯示原始訊息"
+      ],
+      "Sign in": [
+        "登入"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin 是一項 Proton 服務，您的 Proton 帳戶包含 Hide My Email 功能。要開始隱藏您的電子信箱，請造訪 SimpleLogin 並建立您的第一個別名。"
@@ -5180,6 +5303,9 @@
       "Week": [
         "週"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "我們搬家嘍，點擊這裡 ${ PROTON_ME_DOMAIN }。"
+      ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
       ],
@@ -5290,6 +5416,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳號。"
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "您的電郵位址毋需變更。 不過日後就得在 ${ link } 進行登入。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -7444,6 +7573,9 @@
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
       ],
+      "${ unreads } unread messages": [
+        "${ unreads } 封未讀郵件"
+      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -7848,6 +7980,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "點擊登入 ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "登出"

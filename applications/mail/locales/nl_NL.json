@@ -4703,6 +4703,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Als u uw wachtwoord niet weet, stel dan een herstelzin in zodat u zeker de toegang tot uw account en gegevens niet verliest."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Als uw alias wordt verkocht, gelekt of misbruikt, stop de ontvangst van spam door eenvoudigweg de alias te deactiveren."
       ],
@@ -5059,11 +5062,17 @@
       "Set a recovery phrase": [
         "Stel een herstelzin in"
       ],
+      "Set recovery phrase": [
+        "Herstelzin instellen"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
       "Show original message": [
         "Toon origineel bericht"
+      ],
+      "Sign in": [
+        "Inloggen"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
@@ -5350,6 +5359,9 @@
       "Week": [
         "Week"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "We verhuizen naar ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Wanneer wilt u dat uw bericht wordt verzonden?"
       ],
@@ -5465,6 +5477,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Uw e-mailadres zal niet veranderen, maar binnenkort moet u zich inloggen via ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -5980,6 +5995,9 @@
       "Import to email address": [
         "Importeren naar e-mailadres"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Toetsenbordsneltoets: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Toetsenbord snelkoppelingen"
       ],
@@ -6039,6 +6057,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Navigation": [
+        "Navigatie"
       ],
       "No label found": [
         "Geen label gevonden"
@@ -7380,18 +7401,6 @@
       "2 years": [
         "2 jaar"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "U betaalt ${ amount } voor de eerste 2 jaar"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "U betaalt ${ amount } voor de eerste maand"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "U betaalt ${ amount } voor het eerste jaar"
-      ],
-      "Billed at ${ amountDue }": [
-        "U betaalt ${ amountDue }"
-      ],
       "for ${ n } month": [
         "voor ${ n } maand",
         "voor ${ n } maanden"
@@ -7407,9 +7416,6 @@
       ],
       "Save ${ discount }%": [
         "Bespaar ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Standaardprijs ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -7868,6 +7874,10 @@
         "${ emailsCount } lid",
         "${ emailsCount } leden"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } ongelezen bericht",
+        "${ unreads } ongelezen berichten"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -8278,6 +8288,9 @@
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Inloggen via ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Uitloggen"
