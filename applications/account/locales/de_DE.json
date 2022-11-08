@@ -106,7 +106,7 @@
         "Auf bestehende Nachrichten anwenden"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Authenticate": [
         "Authentifizieren"
@@ -538,7 +538,7 @@
         "Daten wiederherstellen"
       ],
       "Refer a friend": [
-        "Einem Freund empfehlen"
+        "Wirb einen Freund"
       ],
       "Refresh status": [
         "Status aktualisieren"
@@ -691,7 +691,7 @@
         "Catch-All festlegen"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Share": [
         "Teilen"
@@ -1198,6 +1198,12 @@
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Du hast die maximale Anzahl von privaten Kalendern erreicht, die du in deinem Abonnement erstellen kannst."
       ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Du hast die maximale Anzahl von persönlichen Kalendern erreicht, die du haben kannst. Um ausstehende Kalendereinladungen anzunehmen, musst du einige deiner Kalender entfernen."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Du hast die maximale Anzahl von geteilten Kalendern erreicht, die du haben kannst. Um ausstehende Kalendereinladungen anzunehmen, musst du einige deiner Kalender entfernen."
+      ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Du hast die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS } abonnierten Kalender erreicht.",
         "Du hast die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS } abonnierten Kalendern erreicht."
@@ -1237,6 +1243,11 @@
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
         "Erstelle einen Link zu deinem Kalender und teile ihn mit Personen außerhalb von Proton. Nur du selbst kannst Termine hinzufügen oder entfernen."
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Teile deinen Kalender mit anderen Proton-Benutzern. Ermögliche die Zusammenarbeit, indem du ihnen erlaubst, Termine in deinem Kalender hinzuzufügen und zu bearbeiten. Du kannst die Benutzerberechtigungen jederzeit ändern."
       ]
     },
     "Calendar settings section title": {
@@ -1290,7 +1301,7 @@
         "Nicht synchronisiert"
       ],
       "Syncing": [
-        "Wird synchronisiert"
+        "Synchronisiere"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1310,7 +1321,7 @@
         "Kalender-Link ist nicht erreichbar"
       ],
       "Calendar link is temporarily inaccessible": [
-        "Der Link zum Kalender ist vorübergehend unzugänglich"
+        "Der Link zum Kalender ist vorübergehend nicht erreichbar."
       ],
       "Failed to sync calendar": [
         "Kalender konnte nicht synchronisiert werden"
@@ -1913,7 +1924,7 @@
         "Heard und McDonaldinseln"
       ],
       "Holy See (Vatican City State)": [
-        "Vatikanstaat"
+        "Heiliger Stuhl (Vatikanstaat)"
       ],
       "Honduras": [
         "Honduras"
@@ -2051,7 +2062,7 @@
         "Mexiko"
       ],
       "Moldova": [
-        "Republik Moldau"
+        "Moldawien"
       ],
       "Monaco": [
         "Monaco"
@@ -2333,10 +2344,10 @@
         "Vereinigtes Königreich"
       ],
       "United States": [
-        "USA"
+        "Vereinigte Staaten"
       ],
       "United States Minor Outlying Islands": [
-        "Kleinere Amerikanische Überseeinseln"
+        "Kleinere abgelegene Inseln der Vereinigten Staaten"
       ],
       "Uruguay": [
         "Uruguay"
@@ -2401,6 +2412,9 @@
     "CSV format error": {
       "Error on row ${ erroredRowsString }.": [
         "Fehler in Zeile ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Scheinbar fehlt deiner Datei die '${ options.fieldName }'-Kopfzeile."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Wir haben beim Import Fehler in mehreren Zeilen festgestellt. Bitte überprüfe deine CSV-Datei."
@@ -2494,8 +2508,18 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
+      "Get up to ${ credits } in credits by inviting friends to Proton.": [
+        "Erhalte bis zu ${ credits } als Guthaben, indem du Freunde zu Proton einlädst."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
+        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
+      ],
+      "Track the status and activity of your referrals.": [
+        "Verfolge den Status und die Aktivität deiner Empfehlungen."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kannst weiterhin Freunde einladen, aber dadurch kannst du keine weiteren Credits verdienen"
@@ -2801,7 +2825,7 @@
         "Filter mit diesem Namen bereits vorhanden"
       ],
       "Folder name cannot be empty.": [
-        "Name des Ordners muss angegeben werden."
+        "Name des Ordners kann nicht leer sein."
       ],
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
@@ -2849,7 +2873,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Label name cannot be empty.": [
-        "Name der Kategorie muss angegeben werden."
+        "Name der Kategorie kann nicht leer sein."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
@@ -3738,6 +3762,11 @@
         "(1-2 E-Mails pro Monat)"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Du hast bereits ein Konto? ${ signIn }"
+      ]
+    },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
         "Neu bei ${ BRAND_NAME }? ${ signUp }"
@@ -4511,7 +4540,7 @@
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } Kategorie(n))",
+        "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
       "All keys successfully reactivated": [
@@ -4977,7 +5006,7 @@
         "Importieren aus"
       ],
       "Import in progress": [
-        "Datenimport im Gange"
+        "Datenimport läuft gerade"
       ],
       "Import mailbox": [
         "Postfach importieren"
@@ -5019,7 +5048,7 @@
         "Internetverbindung unterbrochen"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung getrennt. Bitte überprüfe die Konnektivität deines Geräts."
+        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
@@ -5262,6 +5291,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Bitte überprüfe deine Datei auf Fehler, oder versuche es mit unserer ${ csvTemplateButton }."
       ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Bitte wende dich an den Administrator der Organisation, um das Abonnement zu verwalten."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte geben Sie die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit Ihrem Konto verknüpft ist."
       ],
@@ -5410,7 +5442,7 @@
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Gesendet mittels einer sicheren E-Mail von <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
@@ -5741,6 +5773,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
+      ],
       "Web URL": [
         "Web-URL"
       ],
@@ -5764,6 +5799,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Wenn Benachrichtigungen aktiviert sind, senden wir eine Benachrichtigung an deine Wiederherstellungs-E-Mail-Adresse, wenn du neue Nachrichten in deinem Konto ${ MAIL_APP_NAME } vorhanden sind."
+      ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "Wenn sie ein Abonnement abschließen, erhältst du Guthaben, das du für dein Abonnement verwenden kannst."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
@@ -5801,6 +5839,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Du bist beim Konto ${ memberAddress } angemeldet."
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kannst zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
       ],
@@ -5815,6 +5856,9 @@
       ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
+      ],
+      "You can now access and manage the account as an administrator.": [
+        "Du kannst nun als Administrator auf das Konto zugreifen und es verwalten."
       ],
       "You can now close this window.": [
         "Dieses Fenster kann nun geschlossen werden."
@@ -6509,6 +6553,9 @@
       "Auto-unsubscribe": [
         "Automatisch abmelden"
       ],
+      "Awarded": [
+        "Gutgeschrieben"
+      ],
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
@@ -6831,7 +6878,7 @@
         "Kategorisieren als"
       ],
       "Label messages as": [
-        "Nachrichten kennzeichnen als"
+        "Nachrichten kategorisieren als"
       ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
@@ -7457,10 +7504,10 @@
         "Neue Kalender werden angelegt"
       ],
       "Gathering your data": [
-        "Deine Daten werden zusammengestellt"
+        "Deine Daten werden gesammelt"
       ],
       "We're gathering your data from your provider": [
-        "Wir erfassen deine Daten bei deinem Anbieter"
+        "Wir sammeln deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
         "Dein Datenimport wurde gestartet"
@@ -8072,8 +8119,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* Mit 12-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* Mit 15-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Mit 24-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* Mit 30-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Anwendbare Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
@@ -8742,7 +8795,7 @@
     },
     "Option group": {
       "Custom folders": [
-        "Benutzerdefinierter Ordner"
+        "Benutzerdefinierte Ordner"
       ],
       "Default folders": [
         "Standardordner"
@@ -8756,7 +8809,7 @@
         "Neuen Kalender erstellen"
       ],
       "Merge with calendar": [
-        "Zusammenführen mit Kalender"
+        "Mit Kalender zusammenführen"
       ]
     },
     "Option protection mode": {
@@ -9213,6 +9266,17 @@
         "Teile deinen Kalender mit einem Link, um Nicht-Proton-Benutzer einzuladen"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitglied pro Kalender überschritten.",
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern pro Kalender überschritten."
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Füge die Proton-Konten hinzu, mit denen du ${ calendarName } teilen möchtest. Wir werden ihnen eine Einladung schicken."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Personen oder Gruppen hinzufügen"
@@ -9399,6 +9463,21 @@
       "2 years": [
         "Zwei Jahre"
       ],
+      "Billed at ${ amount } for 1 month": [
+        "Für 1 Monat mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Für 12 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Für 15 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Für 24 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Für 30 Monate mit ${ amount } abgerechnet"
+      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -9414,6 +9493,21 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardpreis: ${ amount } für 1 Monat"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardpreis: ${ amount } für 12 Monate"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardpreis: ${ amount } für 15 Monate"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardpreis: ${ amount } für 24 Monate"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardpreis: ${ amount } für 30 Monate"
       ]
     },
     "specialoffer: Title": {
@@ -10368,6 +10462,9 @@
       "How does it work?": [
         "Wie funktioniert es?"
       ],
+      "How to refer a friend and get credits": [
+        "Wie du einen Freund wirbst und Guthaben erhältst"
+      ],
       "How your free trial works": [
         "So funktioniert deine kostenlose Testversion"
       ],
@@ -10930,6 +11027,9 @@
       "This key is encrypted with an old password": [
         "Dieser Schlüssel ist mit einem alten Passwort verschlüsselt"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Dieser Schlüssel wird von ${ MAIL_APP_NAME } verwendet, um die Daten deiner Kontakte zu verschlüsseln."
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit Ihrer DNS-Konfiguration festgestellt. Bitte stellen Sie sicher, dass Ihre Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Abmeldung abgeschaltet."
       ],
@@ -11007,6 +11107,9 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Mit einem Umstieg auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, den du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst.",
         "Mit einem Umstieg auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, die du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst."
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Upgrade auf ein kostenpflichtiges Abonnement, um deinen Kalender zu teilen. "
       ]
     },
     "User referee invited via email": {

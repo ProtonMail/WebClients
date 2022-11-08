@@ -87,7 +87,7 @@
         "Archivieren"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Attachment": [
         "Anhang"
@@ -111,7 +111,7 @@
         "Absender sperren"
       ],
       "Block senders": [
-        "Absender sperren"
+        "Absender blockieren"
       ],
       "Bold": [
         "Fett"
@@ -290,7 +290,7 @@
         "Verwerfen"
       ],
       "Dismiss get started checklist": [
-        "Checkliste „Erste Schritte” verwerfen "
+        "Checkliste „Erste Schritte“ verwerfen"
       ],
       "Done": [
         "Fertig"
@@ -537,7 +537,7 @@
         "Zum Löschen vormerken"
       ],
       "Mark legitimate": [
-        "Als „Seriös” kennzeichnen"
+        "Als „Seriös“ kennzeichnen"
       ],
       "Maximize composer": [
         "Verfassen-Fenster maximieren"
@@ -663,7 +663,7 @@
         "Kalender öffnen"
       ],
       "Open get started checklist modal": [
-        "Checkliste „Erste Schritte” als Fenster öffnen"
+        "Checkliste „Erste Schritte“ als Fenster öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -729,7 +729,7 @@
         "Daten wiederherstellen"
       ],
       "Refer a friend": [
-        "Einem Freund empfehlen"
+        "Wirb einen Freund"
       ],
       "Refine it": [
         "Verfeinere sie"
@@ -750,7 +750,7 @@
         "Verschlüsselung entfernen"
       ],
       "Remove expiration time": [
-        "Ablaufzeitpunkt entfernen"
+        "Ablaufdatum entfernen"
       ],
       "Remove this label": [
         "Kategorie entfernen"
@@ -849,13 +849,13 @@
         "Als Standard festlegen"
       ],
       "Set encryption": [
-        "Verschlüsselung einstellen"
+        "Verschlüsselung festlegen"
       ],
       "Set expiration time": [
-        "Gültigkeitsdatum festlegen"
+        "Ablaufdatum festlegen"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Share via link": [
         "Als Link teilen"
@@ -958,7 +958,7 @@
         "Unterstreichen"
       ],
       "Undo": [
-        "Widerrufen"
+        "Rückgängig"
       ],
       "Unlock data": [
         "Daten entsperren"
@@ -994,7 +994,7 @@
         "Wechseln"
       ],
       "Upgrade now": [
-        "Jetzt umsteigen"
+        "Jetzt upgraden"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -1033,7 +1033,7 @@
         "Kontaktinformationen anzeigen"
       ],
       "View headers": [
-        "Kopfzeilen anzeigen"
+        "Header anzeigen"
       ],
       "View HTML": [
         "Als HTML anzeigen"
@@ -1505,7 +1505,7 @@
         "Diese Antwort konnte nicht zu „${ calendarAppName }” hinzugefügt werden, da derzeit nur Antworten auf alle Ereignisse einer Serie unterstützt werden"
       ],
       "This event has been canceled.": [
-        "Dieses Ereignis wurde abgesagt."
+        "Dieser Termin wurde abgesagt."
       ],
       "This event has been updated.": [
         "Dieses Ereignis wurde aktualisiert."
@@ -1514,7 +1514,7 @@
         "Diese Einladung ist nicht mehr gültig. Das Ereignis wurde abgesagt."
       ],
       "This invitation is out of date. The event has been deleted.": [
-        "Diese Einladung ist nicht mehr gültig. Das Ereignis wurde gelöscht."
+        "Diese Einladung ist nicht mehr gültig. Der Termin wurde gelöscht."
       ],
       "This invitation is out of date. The event has been updated.": [
         "Diese Einladung ist nicht mehr gültig. Das Ereignis wurde aktualisiert."
@@ -1552,7 +1552,7 @@
         "Nicht synchronisiert"
       ],
       "Syncing": [
-        "Wird synchronisiert"
+        "Synchronisiere"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1572,7 +1572,7 @@
         "Kalender-Link ist nicht erreichbar"
       ],
       "Calendar link is temporarily inaccessible": [
-        "Der Link zum Kalender ist vorübergehend unzugänglich"
+        "Der Link zum Kalender ist vorübergehend nicht erreichbar."
       ],
       "Failed to sync calendar": [
         "Kalender konnte nicht synchronisiert werden"
@@ -2173,7 +2173,7 @@
         "Heard und McDonaldinseln"
       ],
       "Holy See (Vatican City State)": [
-        "Vatikanstaat"
+        "Heiliger Stuhl (Vatikanstaat)"
       ],
       "Honduras": [
         "Honduras"
@@ -2311,7 +2311,7 @@
         "Mexiko"
       ],
       "Moldova": [
-        "Republik Moldau"
+        "Moldawien"
       ],
       "Monaco": [
         "Monaco"
@@ -2593,10 +2593,10 @@
         "Vereinigtes Königreich"
       ],
       "United States": [
-        "USA"
+        "Vereinigte Staaten"
       ],
       "United States Minor Outlying Islands": [
-        "Kleinere Amerikanische Überseeinseln"
+        "Kleinere abgelegene Inseln der Vereinigten Staaten"
       ],
       "Uruguay": [
         "Uruguay"
@@ -2751,6 +2751,10 @@
       "No labels": [
         "Keine Kategorie"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
+        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
@@ -2773,7 +2777,7 @@
     },
     "Desktop notification title": {
       "New email received": [
-        "Neue Nachricht empfangen"
+        "Neue E-Mail empfangen"
       ]
     },
     "Download attachments": {
@@ -2999,7 +3003,7 @@
         "Filter mit diesem Namen bereits vorhanden"
       ],
       "Folder name cannot be empty.": [
-        "Name des Ordners muss angegeben werden."
+        "Name des Ordners kann nicht leer sein."
       ],
       "Image upload failed": [
         "Hochladen des Bilds fehlgeschlagen"
@@ -3023,7 +3027,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Label name cannot be empty.": [
-        "Name der Kategorie muss angegeben werden."
+        "Name der Kategorie kann nicht leer sein."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximale Anzahl von Anhängen (${ attachmentsCountLimit }) überschritten"
@@ -3694,7 +3698,7 @@
         "Verfällt heute"
       ],
       "Only ${ days } day left": [
-        "Nur noch ${ days } } Tag verbleibend",
+        "Nur noch ${ days } Tag verbleibend",
         "Nur noch ${ days } Tage verbleibend"
       ]
     },
@@ -3753,7 +3757,7 @@
         "Apps"
       ],
       "Custom folders": [
-        "Benutzerdefinierter Ordner"
+        "Benutzerdefinierte Ordner"
       ],
       "Default folders": [
         "Standardordner"
@@ -4182,8 +4186,8 @@
         "${ count } ungelesene Nachrichten"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } eingebettete Grafik",
-        "${ embeddedAttachmentsCount } eingebettete Grafiken"
+        "${ embeddedAttachmentsCount } eingebettetes Bild",
+        "${ embeddedAttachmentsCount } eingebettete Bilder"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
@@ -4294,7 +4298,7 @@
         "(Filtern, wenn IRGENDEINE der folgenden Bedingungen erfüllt ist)"
       ],
       "(No Recipient)": [
-        "(Keine Empfänger)"
+        "(Kein Empfänger)"
       ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
@@ -4328,7 +4332,7 @@
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } Kategorie(n))",
+        "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
@@ -4395,7 +4399,7 @@
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
       "Body: ": [
-        "Nachrichteninhalt: "
+        "Nachrichteninhalt:"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
@@ -4536,18 +4540,18 @@
         "E-Mail-Nachverfolgungsschutz ist deaktiviert"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Proton hat keine Tracker in dieser Nachricht gefunden."
+        "E-Mail-Tracker können deine Privatsphäre verletzen. Proton hat keine Tracker in dieser Nachricht gefunden."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Proton hat ${ numberOfTrackers } Tracker erkannt und gesperrt.",
-        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Proton hat ${ numberOfTrackers } Tracker erkannt und gesperrt."
+        "E-Mail-Tracker können deine Privatsphäre verletzen. Proton hat ${ numberOfTrackers } Tracker erkannt und gesperrt.",
+        "E-Mail-Tracker können deine Privatsphäre verletzen. Proton hat ${ numberOfTrackers } Tracker erkannt und gesperrt."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "E-Mail-Tracker können deine Privatsphäre verletzen. Aktiviere den Tracker-Schutz, damit Absender nicht wissen, ob und wann du eine Nachricht geöffnet hast."
       ],
       "embedded image": [
-        "eingebettete Grafik",
-        "eingebettete Grafiken"
+        "eingebettetes Bild",
+        "eingebettete Bilder"
       ],
       "Encrypt message": [
         "Nachricht verschlüsseln"
@@ -4653,7 +4657,7 @@
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Falls du dein Passwort nicht mehr weist, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
+        "Falls du dein Passwort nicht mehr weißt, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Wenn dein Alias verkauft, geleakt oder missbraucht wird, deaktiviere ihn einfach, um keinen Spam mehr zu erhalten."
@@ -4678,7 +4682,7 @@
         "Importieren aus"
       ],
       "Import in progress": [
-        "Datenimport im Gange"
+        "Datenimport läuft gerade"
       ],
       "Import mailbox": [
         "Postfach importieren"
@@ -4705,7 +4709,7 @@
         "Internetverbindung unterbrochen"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung getrennt. Bitte überprüfe die Konnektivität deines Geräts."
+        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
@@ -4873,7 +4877,7 @@
         "Klartext"
       ],
       "Please add at least one recipient.": [
-        "Bitte mindestens einen Empfänger angeben."
+        "Bitte füge mindestens einen Empfänger hinzu."
       ],
       "Please fill out this field.": [
         "Bitte fülle dieses Feld aus."
@@ -4925,7 +4929,7 @@
         "Proton verdient kein Geld durch Missbrauch der Privatsphäre."
       ],
       "Recipient: ": [
-        "Empfänger: "
+        "Empfänger:"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -4991,7 +4995,7 @@
         "Sende eine verschlüsselte, passwortgeschützte Nachricht an eine ${ boldText } E-Mail-Adresse."
       ],
       "Sender has been blocked.": [
-        "Der Absender wurde gesperrt"
+        "Der Absender wurde blockiert."
       ],
       "Sending": [
         "Wird gesendet"
@@ -5003,7 +5007,7 @@
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }” gesendet."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Gesendet mittels einer sicheren E-Mail von <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -5054,7 +5058,7 @@
         "Betreff:"
       ],
       "Subject: ": [
-        "Betreff: "
+        "Betreff:"
       ],
       "Support for 1 custom email domain": [
         "Unterstützung für 1 individuelle E-Mail-Domain"
@@ -5081,7 +5085,7 @@
         "Die in den Entwurf eingegebenen Daten werden möglicherweise nicht gespeichert, wenn du die Seite verlässt."
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchtest, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr widerrufen werden."
+        "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchtest, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr rückgängig gemacht werden."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultEmail } gesendet."
@@ -5097,7 +5101,7 @@
         "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: die Kontakte wurden nicht korrekt signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nDu musst die Kontakte erneut signieren, um eine Nachricht an ${ contactAddresses } zu senden oder die Kontakte zu bearbeiten."
       ],
       "Themes can give your inbox a new look.": [
-        "Farbschemen können deinem Posteingang ein neues Aussehen verleihen."
+        "Farbschemas können deinem Posteingang ein neues Aussehen verleihen."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Bei der Signatur, die zur Überprüfung der Kontaktdaten verwendet wurde, ist ein Fehler aufgetreten, der möglicherweise das Ergebnis einer Passwortzurücksetzung ist."
@@ -5158,7 +5162,7 @@
         "Diese Nachricht wurde an eine Verteilerliste gesendet."
       ],
       "This message is signed by a key that has not been trusted yet.": [
-        "Diese Nachricht ist mit einem Schlüssel signiert, dem noch nicht vertraut wurde."
+        "Diese Nachricht ist mit einem Schlüssel signiert, der noch nicht vertrauenswürdig ist."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Diese Nachricht ist mit dem beigefügten Schlüssel signiert, dem noch nicht vertraut wurde."
@@ -5174,7 +5178,7 @@
         "Diese Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
       ],
       "This message will be sent shortly": [
-        "Diese Nachricht wird demnächst gesendet"
+        "Diese Nachricht wird in Kürze gesendet"
       ],
       "This message will be sent today at ${ formattedTime }": [
         "Diese Nachricht wird heute um ${ formattedTime } gesendet"
@@ -5207,10 +5211,10 @@
         "Um deine Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in deinem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird der Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Um deine Daten wiederherzustellen, musst du den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu brauchst du das Passwort, das bei der Erzeugung des Schlüssels verwendet wurde."
+        "Um deine Daten wiederherzustellen, musst du den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu brauchst du das Passwort, welches bei der Erzeugung des Schlüssels verwendet wurde."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Für das Abmelden von dieser Verteilerliste, wird eine E-Mail von ${ boldFrom } mit folgenden Angaben (wie vom Absender des Newsletters festgelegt) gesendet:"
+        "Für das Abmelden von dieser Verteilerliste wird eine E-Mail von ${ boldFrom } mit folgenden Angaben (wie vom Absender des Newsletters festgelegt) gesendet:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Um dich von dieser Verteilerliste abzumelden, wirst du auf die folgende URL weitergeleitet, auf der du Anweisungen vom Absender des Newsletters erhältst:"
@@ -5243,7 +5247,7 @@
         "Suche nach Nachrichteninhalten wird aktiviert …"
       ],
       "Upgrade to add more addresses to your account.": [
-        "Führe ein Upgrade durch, um weitere E-Mail-Adressen zu deinem Konto hinzuzufügen."
+        "Upgrade, um deinem Konto weitere E-Mail-Adressen hinzuzufügen."
       ],
       "Upgrade to configure a vacation auto-responder.": [
         "Führe ein Upgrade durch, um „Automatische Antworten“ (z.B. in Urlaubszeiten) zu konfigurieren."
@@ -5252,19 +5256,19 @@
         "Führe ein Upgrade durch, um mehr Ordner, Filter und E-Mail-Adressen erstellen zu können."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Führe ein Upgrade durch, um E-Mails deiner eigenen Domain zu hosten."
+        "Upgrade, um E-Mails deiner eigenen Domain zu hosten."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Führe ein Upgrade durch, um Nachrichten von @pm.me-Adressen senden zu können."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Führe ein Upgrade durch, um auf einfache Weise Nachrichten an Kontaktgruppen senden zu können."
+        "Upgrade, um auf einfache Weise Nachrichten an Kontaktgruppen senden zu können."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Führe ein Upgrade durch, um ein datenschutzfreundliches Internet zu unterstützen."
+        "Upgrade, um ein datenschutzfreundliches Internet zu unterstützen."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Führe ein Upgrade durch, um unsere Mission des Datenschutzes für alle zu unterstützen."
+        "Upgrade, um unsere Mission des Datenschutzes für alle zu unterstützen."
       ],
       "Upgrade to support privacy and get more features.": [
         "Führe ein Upgrade durch, um den Datenschutz zu unterstützen und zusätzliche Funktionen zu erhalten."
@@ -5293,6 +5297,9 @@
       "Using SimpleLogin is easy": [
         "Das Verwenden von SimpleLogin ist einfach"
       ],
+      "Verified Proton message": [
+        "Verifizierte Proton-Nachricht"
+      ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
@@ -5310,6 +5317,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
       ],
       "Web URL": [
         "Web-URL"
@@ -5375,10 +5385,10 @@
         "Noch keine Nachrichten vorhanden"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Es befinden sich ${ totalLabel } in deinem Posteingang."
+        "Du hast ${ totalLabel } in deinem Posteingang."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "Es befinden sich ${ unreadsLabel } in deinem Posteingang."
+        "Du hast ${ unreadsLabel } in deinem Posteingang."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
@@ -5765,7 +5775,7 @@
         "Auch archivieren"
       ],
       "Always label sender's emails": [
-        "Nachrichten dieses Absenders immer kennzeichnen"
+        "Nachrichten dieses Absenders immer kategorisieren"
       ],
       "Always move sender's emails": [
         "Nachrichten dieses Absenders immer verschieben"
@@ -5969,7 +5979,7 @@
         "Kategorisieren als"
       ],
       "Label messages as": [
-        "Nachrichten kennzeichnen als"
+        "Nachrichten kategorisieren als"
       ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
@@ -6331,7 +6341,7 @@
         "Weniger"
       ],
       "Manage blocked email addresses": [
-        "Verwalte gesperrte E-Mail-Adressen"
+        "Blockierte E-Mail-Adressen verwalten"
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -6451,10 +6461,10 @@
         "Neue Kalender werden angelegt"
       ],
       "Gathering your data": [
-        "Deine Daten werden zusammengestellt"
+        "Deine Daten werden gesammelt"
       ],
       "We're gathering your data from your provider": [
-        "Wir erfassen deine Daten bei deinem Anbieter"
+        "Wir sammeln deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
         "Dein Datenimport wurde gestartet"
@@ -6831,7 +6841,7 @@
     },
     "Option group": {
       "Custom folders": [
-        "Benutzerdefinierter Ordner"
+        "Benutzerdefinierte Ordner"
       ],
       "Default folders": [
         "Standardordner"
@@ -6845,7 +6855,7 @@
         "Neuen Kalender erstellen"
       ],
       "Merge with calendar": [
-        "Zusammenführen mit Kalender"
+        "Mit Kalender zusammenführen"
       ]
     },
     "Pagination": {
@@ -7140,7 +7150,7 @@
     },
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
-        "Möchtest du die Datei dennoch als E-Mail versenden?"
+        "Möchtest du die E-Mail trotzdem versenden?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
         "Wenn du dich entscheidest, die Nachricht trotzdem zu versenden, wird der folgende Empfänger die Nachricht ohne Ablaufdatum erhalten:",
@@ -7374,6 +7384,21 @@
       "2 years": [
         "Zwei Jahre"
       ],
+      "Billed at ${ amount } for 1 month": [
+        "Für 1 Monat mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Für 12 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Für 15 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Für 24 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Für 30 Monate mit ${ amount } abgerechnet"
+      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -7389,6 +7414,21 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardpreis: ${ amount } für 1 Monat"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardpreis: ${ amount } für 12 Monate"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardpreis: ${ amount } für 15 Monate"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardpreis: ${ amount } für 24 Monate"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardpreis: ${ amount } für 30 Monate"
       ]
     },
     "specialoffer: Title": {
@@ -7472,7 +7512,7 @@
         "Bilder werden jetzt standardmäßig geladen und deren Absender können dich nicht mehr zurückverfolgen.\nDies kann in den ${ settingsLink } geändert werden."
       ],
       "You can now schedule your messages to be sent later": [
-        "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen"
+        "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
       ],
       "You can now search the content of your encrypted emails.": [
         "Ab nun kannst du den Inhalt deiner verschlüsselten E-Mails durchsuchen."
@@ -7624,34 +7664,34 @@
         "Unterhaltung gelöscht"
       ],
       "Conversation marked as read.": [
-        "Unterhaltung als gelesen markieren."
+        "Unterhaltung als gelesen markiert."
       ],
       "Conversation marked as Starred.": [
         "Unterhaltung gekennzeichnet."
       ],
       "Conversation marked as unread.": [
-        "Unterhaltung als ungelesen markieren."
+        "Unterhaltung als ungelesen markiert."
       ],
       "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Thema in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
+        "Unterhaltung in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Conversation moved to ${ folderName }.": [
         "Unterhaltung in „${ folderName }” verschoben."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
-        "Thema in Spam verschoben und Absender zur Spamliste hinzugefügt."
+        "Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
-        "Themen von ${ sendersList } werden als ${ labelsList } gekennzeichnet"
+        "Unterhaltungen von ${ sendersList } werden als ${ labelsList } kategorisiert"
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
-        "Themen von ${ sendersList } werden in den Ordner ${ folder } verschoben"
+        "Unterhaltungen von ${ sendersList } werden in den Ordner ${ folder } verschoben"
       ],
       "Draft deleted": [
-        "Entwurf wurde gelöscht"
+        "Entwurf gelöscht"
       ],
       "Email address copied to clipboard": [
         "E-Mail-Adresse in die Zwischenablage kopiert"
@@ -7669,7 +7709,7 @@
         "Kategorie geleert"
       ],
       "Labels applied.": [
-        "Kategorien übernommen."
+        "Kategorien angewendet."
       ],
       "Mail list unsubscribed": [
         "Aus Verteilerliste ausgetragen"
@@ -7684,16 +7724,16 @@
         "Nachricht gelöscht"
       ],
       "Message marked as legitimate": [
-        "Nachricht als „Seriös” gekennzeichnet"
+        "Nachricht als seriös markiert"
       ],
       "Message marked as read.": [
-        "Nachricht als gelesen gekennzeichnet."
+        "Nachricht als gelesen markiert."
       ],
       "Message marked as Starred.": [
         "Nachricht gekennzeichnet."
       ],
       "Message marked as unread.": [
-        "Nachricht als ungelesen gekennzeichnet."
+        "Nachricht als ungelesen markiert."
       ],
       "Message moved to ${ folderName } and sender added to your not spam list.": [
         "Nachricht in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
@@ -7939,7 +7979,7 @@
         "Kontakte"
       ],
       "Conversation list": [
-        "Themenbaum"
+        "Unterhaltungsliste"
       ],
       "Create contact": [
         "Kontakt erstellen"
@@ -7992,7 +8032,7 @@
         "${ Name } löschen"
       ],
       "Delete all messages": [
-        "Alle Nachrichten auswählen"
+        "Alle Nachrichten löschen"
       ],
       "Delete conversation": [
         "Unterhaltung löschen"
@@ -8031,7 +8071,7 @@
         "Fenster zum Verfassen von E-Mails"
       ],
       "Email content": [
-        "Nachrichtentext"
+        "E-Mail-Inhalt"
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
@@ -8073,7 +8113,7 @@
         "Captcha"
       ],
       "Image": [
-        "Grafik"
+        "Bild"
       ],
       "Import contacts": [
         "Kontakte importieren"
@@ -8103,7 +8143,7 @@
         "Postfach-Anordnung"
       ],
       "Mark as read": [
-        "Als „Gelesen“ kennzeichnen"
+        "Als gelesen markieren"
       ],
       "Mark as unread": [
         "Als ungelesen kennzeichnen"
