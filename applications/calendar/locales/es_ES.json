@@ -825,6 +825,14 @@
       ],
       "Unable to share this calendar with more Proton users": [
         "No se puede compartir este calendario con más usuarios de Proton"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario. Para compartir este calendario con más cuentas de Proton, elimina algunos miembros.",
+        "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario. Para compartir este calendario con más cuentas de Proton, elimina algunos miembros."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlace para este calendario. Para crear un nuevo enlace a este calendario, elimina uno existente.",
+        "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlaces para este calendario. Para crear un nuevo enlace a este calendario, elimina uno existente."
       ]
     },
     "Calendar sharing access option label": {
@@ -3413,6 +3421,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Establece una frase de recuperación para no perder el acceso a tu cuenta y a tus datos si no recuerdas tu contraseña."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
@@ -3595,8 +3606,14 @@
       "Session timed out": [
         "El tiempo de la sesión ha expirado"
       ],
+      "Set recovery phrase": [
+        "Configura una frase de recuperación"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP le permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
+      ],
+      "Sign in": [
+        "Iniciar sesión"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
@@ -3618,6 +3635,12 @@
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "El organizador no puede ser notificado de que rechazas la invitación:"
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        "El organizador no puede ser notificado de que quieres cambiar tu respuesta:"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        "El organizador no pudo ser notificado de que has cambiado tu respuesta:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "El organizador ha actualizado algunos de los eventos de esta serie. Todavía no se admite cambiar el calendario para este tipo de eventos recurrentes."
@@ -3696,6 +3719,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Nos hemos mudado a ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -3807,6 +3833,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Sus datos están listos para ser importados desde ${ importedEmailAddressStrong } a su cuenta de Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Tu dirección de correo no cambiará, pero pronto tendrás que iniciar sesión en ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
@@ -4334,6 +4363,9 @@
       ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "No se pueden añadir más calendarios. Has alcanzado el número máximo de calendarios permitidos dentro de tu plan."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "No se pueden crear más calendarios. Has alcanzado el número máximo de calendarios personales dentro de tu plan."
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4563,6 +4595,14 @@
       "Member added": [
         "Miembro añadido",
         "Miembros añadidos"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Invitación al calendario rechazada"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Unido a ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4970,10 +5010,20 @@
         "Fallo en la actualización de la configuración"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Para invitar a usuarios que no sean de Proton, comparte tu calendario con un enlace"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
         "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Añade las cuentas de Proton con las que quieras compartir ${ calendarName }. Les enviaremos una invitación."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -5135,18 +5185,6 @@
       "2 years": [
         "2 años"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "A un precio de ${ amount } durante los 2 primeros años"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "A un precio de ${ amount } durante el primer mes"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "A un precio de ${ amount } durante el primer año"
-      ],
-      "Billed at ${ amountDue }": [
-        "Facturación: ${ amountDue }"
-      ],
       "for ${ n } month": [
         "durante ${ n } mes",
         "durante ${ n } meses"
@@ -5162,9 +5200,6 @@
       ],
       "Save ${ discount }%": [
         "Ahorra un ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5851,6 +5886,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Iniciar sesión en ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Cerrar sesión"

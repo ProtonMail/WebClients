@@ -4889,6 +4889,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Ustaw hasło odzyskiwania, aby uniknąć utraty dostępu do konta i danych."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Jeśli alias został sprzedany, ujawniony lub nadużyty, wyłącz go, aby zatrzymać otrzymywanie spamu."
       ],
@@ -5252,11 +5255,17 @@
       "Set a recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
       ],
       "Show original message": [
         "Pokaż oryginalną wiadomość"
+      ],
+      "Sign in": [
+        "Zaloguj się"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin to usługa Proton. Twoje konto Proton zawiera aliasy Hide My Email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
@@ -5555,6 +5564,9 @@
       "Week": [
         "Tydzień"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Przenosimy się na ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Kiedy chcesz wysłać wiadomość?"
       ],
@@ -5689,6 +5701,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Twój adres e-mail nie zostanie zmieniony. Wkrótce logowanie będzie możliwe tylko na stronie ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
@@ -7670,18 +7685,6 @@
       "2 years": [
         "2 lata"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Płatne ${ amount } za pierwsze 2 lata"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Płatne ${ amount } za pierwszy miesiąc"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Płatne ${ amount } za pierwszy rok"
-      ],
-      "Billed at ${ amountDue }": [
-        "Płatne ${ amountDue }"
-      ],
       "for ${ n } month": [
         "za ${ n } miesiąc",
         "za ${ n } miesiące",
@@ -7699,9 +7702,6 @@
       ],
       "Save ${ discount }%": [
         "Zaoszczędź ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Standardowa cena: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -8234,6 +8234,12 @@
         "${ emailsCount } członków",
         "${ emailsCount } członków"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } nieprzeczytana wiadomość",
+        "${ unreads } nieprzeczytane wiadomości",
+        "${ unreads } nieprzeczytanych wiadomości",
+        "${ unreads } nieprzeczytanych wiadomości"
+      ],
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
@@ -8656,6 +8662,9 @@
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Zaloguj się na ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Wyloguj"

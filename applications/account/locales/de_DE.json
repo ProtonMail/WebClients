@@ -468,6 +468,9 @@
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "Weitere Informationen: Tastaturkürzel"
+      ],
       "move emails to": [
         "Nachrichten verschieben nach"
       ],
@@ -4699,7 +4702,7 @@
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Derzeit ist der gesamte verfügbare Speicher dem Administratorkonto zugeordnet. Bitte reduzieren Sie den dem Administrator-Konto zugewiesenen Speicher, um Platz für zusätzliche Benutzer freizugeben. Sie können den Gesamtspeicherplatz jederzeit durch ein Hochstufen Ihres Kontos erhöhen."
+        "Derzeit ist der gesamte verfügbare Speicher dem Administratorkonto zugeordnet. Bitte reduziere den dem Administrator-Konto zugewiesenen Speicher, um Platz für zusätzliche Benutzer freizugeben. Du kannst den Gesamtspeicherplatz jederzeit durch ein Hochstufen deines Kontos erhöhen."
       ],
       "Custom": [
         "Benutzerdefiniert"
@@ -4732,10 +4735,10 @@
         "Link löschen?"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Vergessen Sie dieses Passwort NICHT. Sollten Sie es vergessen, können Sie sich weder anmelden noch Ihre Nachrichten entschlüsseln."
+        "Vergiss dieses Passwort NICHT. Solltest du es vergessen, kannst du dich weder anmelden noch deine Nachrichten entschlüsseln."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
-        "Vergessen Sie dieses Passwort NICHT. Wenn Sie es vergessen, können Sie Ihre Organisation nicht mehr verwalten."
+        "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Verwende die OpenVPN / IKEv2 Zugangsdaten NICHT in ${ VPN_APP_NAME }-Anwendungen oder auf dem ${ VPN_APP_NAME }-Dashboard. ${ learnMore }"
@@ -5178,9 +5181,6 @@
       "Not a valid URL": [
         "Ungültige URL"
       ],
-      "Not set": [
-        "Nicht gesetzt"
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nicht dein Gerät? Verwende ein privates Browser-Fenster, um dich anzumelden, und schließe es, wenn du fertig bist. ${ learnMore }"
       ],
@@ -5562,7 +5562,7 @@
         "Dadurch wird dein aktuelles kostenpflichtiges Abonnement aufgehoben und du verlierst alle angesammelten Treuevorteile. Der verbleibende Restbetrag deines Abonnements wird als Kontoguthaben zurückerstattet."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Dadurch wird ein Verschlüsselungscode für Ihre Organisation erstellt. 4096-Bit-Schlüssel funktionieren nur auf Hochleistungscomputern. Für die meisten Benutzer empfehlen wir die Verwendung von 2048-Bit-Schlüsseln."
+        "Dadurch wird ein Verschlüsselungscode für deine Organisation erstellt. 4096-Bit-Schlüssel funktionieren nur auf Hochleistungscomputern. Für die meisten Benutzer empfehlen wir die Verwendung von 2048-Bit-Schlüsseln."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dadurch wird Ihre aktuelle Wiederherstellungsphrase deaktiviert. Sie sind dann nicht mehr in der Lage, auf Ihr Konto zuzugreifen oder Ihre Daten zu entschlüsseln."
@@ -5592,7 +5592,7 @@
         "Um Datenverluste zu vermeiden, lösche sie nur, wenn du dir sicher bist, was du tust, oder eine Kopie exportiert hast."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "Zur Bestätigung geben Sie bitte den Namen des zu löschenden Benutzers ein."
+        "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
       ],
       "to continue to ${ toAppName }": [
         "um mit ${ toAppName } fortzufahren"
@@ -5842,7 +5842,7 @@
         "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder der ${ VPN_APP_NAME }-Übersicht anzumelden. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Sie haben keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls Sie Ihr Passwort vergessen. Trotzdem ohne Wiederherstellungs-Möglichkeit fortfahren?"
+        "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
       ],
       "You have no personal calendars to export.": [
         "Du hast keine persönlichen Kalender zum Exportieren."
@@ -5950,7 +5950,7 @@
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Ihr Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn Sie diesen Administrationsberechtigungen erteilen möchten. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf Ihre Organisation zu erhalten, wenn Sie den Zugriff auf Ihr Konto verlieren. Bitte speichern Sie dieses Passwort sicher ab."
+        "Dein Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn du diesen Administrationsberechtigungen erteilen möchtest. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf deine Organisation zu erhalten, wenn du den Zugriff auf dein Konto verlierst. Bitte speichere dieses Passwort sicher ab."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Die E-Mails Ihrer Organisation werden durch eine Ende-zu-Ende Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in Ihrem Konto einen identischen Schlüssel verwenden."
@@ -6445,6 +6445,9 @@
       ],
       "All-day event notifications": [
         "Benachrichtigungen zu ganztägigen Terminen"
+      ],
+      "Allow notifications by email": [
+        "Benachrichtigungen per E-Mail zulassen"
       ],
       "Allow recovery by email": [
         "Wiederherstellung per E-Mail zulassen"
@@ -7045,6 +7048,9 @@
       ],
       "Show secondary time zone": [
         "Zweite Zeitzone anzeigen"
+      ],
+      "Show sender images": [
+        "Avatar des Absenders anzeigen"
       ],
       "Show week numbers": [
         "Kalenderwochen anzeigen"
@@ -8053,26 +8059,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8136,6 +8122,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto zurückstufst, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9393,18 +9399,6 @@
       "2 years": [
         "Zwei Jahre"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Zum Preis von ${ amount } in den ersten zwei Jahren"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Zum Preis von ${ amount } im ersten Monat"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Zum Preis von ${ amount } im ersten Jahr"
-      ],
-      "Billed at ${ amountDue }": [
-        "Zum Preis von ${ amountDue }"
-      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -9420,9 +9414,6 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Regulärer Preis: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -10908,6 +10899,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Setzt die folgende Fußzeile in die von dir gesendeten E-Mails: ${ signature } Der Link verweist auf deinen Empfehlungslink. Die Fußzeile wird unter deiner Signatur erscheinen. Du kannst deine Signatur jederzeit in den Einstellungen personalisieren."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Zeigen Sie das Bild der Absender in der Nachrichtenliste an. Wenn kein Foto vorhanden ist, werden die Initialen des Absenders angezeigt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Mit diesem Schlüssel erzeugte Signaturen werden als ungültig behandelt und können nicht zur Verschlüsselung verwendet werden."

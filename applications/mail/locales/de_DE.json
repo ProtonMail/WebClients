@@ -4652,6 +4652,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Falls du dein Passwort nicht mehr weist, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Wenn dein Alias verkauft, geleakt oder missbraucht wird, deaktiviere ihn einfach, um keinen Spam mehr zu erhalten."
       ],
@@ -5014,11 +5017,17 @@
       "Set a recovery phrase": [
         "Wiederherstellungsphrase festlegen"
       ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
       ],
       "Show original message": [
         "Originalnachricht anzeigen"
+      ],
+      "Sign in": [
+        "Anmelden"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin ist ein Proton-Dienst, und dein Proton-Konto enthält „Hide My Email“-Aliase. Um mit dem Tarnen deiner E-Mail-Adresse zu beginnen, begib dich zu SimpleLogin und erstelle deinen ersten Alias."
@@ -5308,6 +5317,9 @@
       "Week": [
         "Woche"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Wir wechseln zu ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Wann soll diese Nachricht gesendet werden?"
       ],
@@ -5426,6 +5438,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Deine Daten von ${ importedEmailAddressStrong } können nun in dein Proton-Konto übertragen werden."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Deine E-Mail-Adresse wird sich nicht ändern. Aber bald wirst du dich unter ${ link } anmelden müssen."
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -7359,18 +7374,6 @@
       "2 years": [
         "Zwei Jahre"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Zum Preis von ${ amount } in den ersten zwei Jahren"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Zum Preis von ${ amount } im ersten Monat"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Zum Preis von ${ amount } im ersten Jahr"
-      ],
-      "Billed at ${ amountDue }": [
-        "Zum Preis von ${ amountDue }"
-      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -7386,9 +7389,6 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Regulärer Preis: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -7861,6 +7861,10 @@
         "${ emailsCount } Mitglied",
         "${ emailsCount } Mitglieder"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } ungelesene Nachricht",
+        "${ unreads } ungelesene Nachrichten"
+      ],
       "Account suspended": [
         "Konto gesperrt"
       ],
@@ -8271,6 +8275,9 @@
       ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Bei ${ PROTON_ME_DOMAIN } anmelden"
       ],
       "Sign out": [
         "Abmelden"
