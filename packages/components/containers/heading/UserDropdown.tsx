@@ -181,9 +181,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
             <Dropdown
                 id={uid}
                 className="userDropdown"
-                style={{ '--min-width': '18em', '--max-width': '30em' }}
                 isOpen={isOpen}
-                noMaxSize
                 anchorRef={anchorRef}
                 autoClose={false}
                 onClose={close}

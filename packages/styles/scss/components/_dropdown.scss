@@ -1,7 +1,7 @@
 .dropdown {
 	--min-width: 10em;
 	--max-width: min(20em, 100vw);
-	--max-height: min(20em, 100vh);
+	--max-height: min(30em, 100vh);
 
 	&--no-max-size {
 		--min-width: initial;
