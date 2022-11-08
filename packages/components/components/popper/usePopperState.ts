@@ -1,14 +1,16 @@
 import { useCallback, useState } from 'react';
 
-const usePopperState = () => {
+const usePopperState = (onChange?: (state: boolean) => void) => {
     const [isOpen, setOpen] = useState(false);
 
     const open = useCallback(() => {
         setOpen(true);
+        onChange?.(true);
     }, []);
 
     const close = useCallback(() => {
         setOpen(false);
+        onChange?.(false);
     }, []);
 
     const toggle = useCallback(() => {
