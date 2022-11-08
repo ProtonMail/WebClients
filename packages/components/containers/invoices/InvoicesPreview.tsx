@@ -77,7 +77,7 @@ const InvoicesPreview = (
 
     return (
         <FilePreview
-            loading={!previewing.contents}
+            isLoading={!previewing.contents}
             contents={previewing.contents}
             fileName={filename()}
             fileSize={previewing.contents?.length}
