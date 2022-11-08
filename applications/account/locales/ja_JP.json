@@ -457,6 +457,9 @@
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "その他のお役立ち情報：キーボードのショートカット"
+      ],
       "move emails to": [
         "メールを移動"
       ],
@@ -541,6 +544,9 @@
       "Remove": [
         "削除"
       ],
+      "Remove Block": [
+        "ブロック解除"
+      ],
       "Remove bonuses": [
         "ボーナスを削除"
       ],
@@ -552,6 +558,9 @@
       ],
       "Remove this label": [
         "このラベルを削除"
+      ],
+      "Remove this member": [
+        "メンバーを削除"
       ],
       "Remove this notification": [
         "この通知を削除"
@@ -615,6 +624,9 @@
       ],
       "Revoke all other sessions": [
         "ほかのすべてのセッションを取り消す"
+      ],
+      "Revoke this invitation": [
+        "招待を取り消し"
       ],
       "Save": [
         "保存"
@@ -751,6 +763,9 @@
       "Underline": [
         "下線"
       ],
+      "Undo import": [
+        "インポートを取り消す"
+      ],
       "Unlock": [
         "ロック解除"
       ],
@@ -838,6 +853,9 @@
       "Yes": [
         "はい"
       ],
+      "Yes, undo": [
+        "取り消す"
+      ],
       "Zoom in": [
         "拡大"
       ],
@@ -867,6 +885,9 @@
     "Addon": {
       "+ ${ domains } custom domains": [
         "+ ${ domains } 独自ドメイン"
+      ],
+      "+ ${ users } users": [
+        "＋${ users }名のユーザー"
       ]
     },
     "Address action": {
@@ -1131,6 +1152,9 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "現在のプランで作成できるパーソナルカレンダーの最大数に達しています。"
+      ],
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
+        "登録カレンダーの登録上限（${ MAX_SUBSCRIBED_CALENDARS }）に達しました。"
       ]
     },
     "Calendar link purpose update success message": {
@@ -4961,6 +4985,12 @@
       "Plan upgrade required": [
         "プランのアップグレードが必要です"
       ],
+      "Please add email addresses for the users on rows": [
+        "追加ユーザーのメールアドレスを入力してください。"
+      ],
+      "Please add passwords for the users on rows": [
+        "追加ユーザーのパスワードを入力してください。"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
       ],
@@ -5028,7 +5058,7 @@
         "追加ストレージを購入する"
       ],
       "Queued": [
-        "処理待ち"
+        "転送予定"
       ],
       "read our two-factor authentication guide first": [
         "はじめに 2 要素認証ガイドをお読みください"
@@ -5168,11 +5198,20 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "リストの一番上にあるものが、デフォルトのメールアドレスとして使用されます。メールアドレスを並び替えるには、ドラッグ＆ドロップしてください。"
       ],
+      "The following addresses are invalid.": [
+        "次のアドレスに間違いがあります。"
+      ],
+      "The following addresses are unavailable.": [
+        "次のアドレスはご利用になれません。"
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export アプリを使うことで、ローカルなバックアップ用にメッセージをエクスポートしたり、以前のバックアップをアカウントに戻すことができます。"
       ],
       "The name will be visible to your users while they are logged in.": [
         "あなたのユーザがログインしている間は、この名前が表示されます。"
+      ],
+      "The securest way to browse, stream, and be online.": [
+        "インターネットを一番安全に使うためのソフト"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "これらの設定ファイルは、サードパーティ製の VPN アプリを使用する際や、ルーターで VPN 接続を設定する際に、どの ${ VPN_APP_NAME } サーバーに接続するかを選択するためのものです。"
@@ -5342,6 +5381,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "負荷や所在地を考慮した最適なサーバーを使用: ${ formattedBestServerName }"
       ],
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "公式アプリを使わず${ VPN_APP_NAME }のサーバーに接続するには、以下の認証情報を使用してください。TunnelblickをMacOSで使う場合や、OpenVPNを使う場合などです。"
+      ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
       ],
@@ -5474,6 +5516,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        "今後24時間で送信できる招待メールの数は合計${ emailSendLimitNumber }件です。"
+      ],
       "You cannot refer ${ appName } users": [
         "${ appName } のユーザーは招待できません"
       ],
@@ -5533,6 +5578,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "続行すると、回復ファイルでデータを復元することができなくなります。また、信頼済みのデバイス回復情報も同時に無効化されます。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "ブラウザを閉じてもサインインを維持します。"
@@ -7037,6 +7085,16 @@
         "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "共有リンクは一つのカレンダーごとに${ MAX_LINKS_PER_CALENDAR }個まで作成できます。新しいリンクを作成するには、以下の中から一つ削除してください。"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
+        "カレンダーの最大人数（${ MAX_CALENDAR_MEMBERS }人）に達しました。"
+      ]
+    },
     "Member action": {
       "Delete": [
         "削除"
@@ -8119,6 +8177,17 @@
         "コンテンツをプロキシー経由で読み込み添付ファイルとして保持します"
       ]
     },
+    "Organization capacity error": {
+      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
+        "現在のプランでは、最大${ availableAddresses }件のメールアドレスを作成できます。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
+        "現在のプランでは、最大${ availableNumberOfMembers }名のユーザーを作成できます。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
+        "現在のプランでは、最大${ availableVPNAccess }件のVPNアカウントを作成できます。"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (Debian/Ubuntu 用)"
@@ -8269,6 +8338,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "プランに含めるユーザー数を選択してください。ユーザーを 1 人追加するごとに ${ price } 必要です。"
+      ],
+      "Should you need more than ${ maxUsers } user accounts, please ${ contact } our Sales team.": [
+        "${ maxUsers }個以上のアカウントが必要な場合は、営業チームに連絡してください。${ contact }"
       ]
     },
     "Price": {
@@ -8529,6 +8601,12 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "最大${ credits }分のクレジットを獲得できます"
+      ],
+      "Invite friends to Proton": [
+        "Protonに友達を招待する"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
@@ -9038,8 +9116,14 @@
       "Add Sieve filter": [
         "Sieve フィルターの追加"
       ],
+      "Add to Not spam list": [
+        "迷惑メールから除外"
+      ],
       "Add to spam list": [
         "迷惑メールリストに追加"
+      ],
+      "Add to your block list": [
+        "ブロックリストに追加"
       ],
       "Add user": [
         "ユーザーを追加"
@@ -9149,6 +9233,9 @@
       "Confirm phone number": [
         "電話番号の確認"
       ],
+      "Congratulations on choosing privacy!": [
+        "プライバシーを重視していただいたことに、感謝申し上げます。"
+      ],
       "Connect ${ name }": [
         "${ name } に接続"
       ],
@@ -9158,17 +9245,29 @@
       "Continue with partial import?": [
         "部分的なインポートを続行しますか?"
       ],
+      "Couldn’t create accounts": [
+        "アカウントの作成に失敗しました"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } アドレスを作成"
       ],
       "Create calendar": [
         "カレンダーの作成"
       ],
+      "Create multiple user accounts": [
+        "アカウントを複数作成する"
+      ],
       "Create public link": [
         "公開リンクを作成"
       ],
+      "Create user accounts": [
+        "アカウントを作成"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Creating user accounts": [
+        "アカウントを作成中"
       ],
       "Credentials": [
         "認証情報"
@@ -9269,6 +9368,9 @@
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
       ],
+      "Edit display name": [
+        "公開名の編集"
+      ],
       "Edit domain": [
         "ドメインの編集"
       ],
@@ -9344,11 +9446,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
       ],
+      "Gift": [
+        "ギフト"
+      ],
       "Gift code": [
         "ギフトコード"
       ],
       "How does it work?": [
         "どのように動作しますか?"
+      ],
+      "How to refer a friend and get credits": [
+        "友人を招待し、クレジットを獲得する方法"
       ],
       "How your free trial works": [
         "無料トライアルについて"
@@ -9638,6 +9746,9 @@
       "Success": [
         "完了"
       ],
+      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
+        "アカウント${ successfullyCreatedUsers.length }のを作成しました"
+      ],
       "Switch to one-password mode": [
         "標準のパスワードモードに切り替える"
       ],
@@ -9655,6 +9766,9 @@
       ],
       "Time zone": [
         "タイムゾーン"
+      ],
+      "Track your referrals": [
+        "招待状況を確認"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "${ MAIL_APP_NAME } を無料で試す"
