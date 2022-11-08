@@ -6,9 +6,7 @@ import { c } from 'ttag';
 import {
     FeatureCode,
     HotkeyTuple,
-    Icon,
     SidebarList,
-    SidebarListItemHeaderLink,
     SimpleSidebarListItemHeader,
     useConversationCounts,
     useFeature,
@@ -18,11 +16,9 @@ import {
     useLocalState,
     useMailSettings,
     useMessageCounts,
-    useModalState,
     useUser,
 } from '@proton/components';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -31,6 +27,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getCounterMap } from '../../helpers/elements';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
+import { LabelActionsContextProvider } from './EditLabelContext';
+import MailSidebarListActions from './MailSidebarListActions';
 import MailSidebarSystemFolders from './MailSidebarSystemFolders';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
@@ -64,9 +62,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
 
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
-
-    const [labelType, setLabelType] = useState<'label' | 'folder'>();
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
 
@@ -159,11 +154,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
 
     const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
 
-    const handleOpenLabelModal = (labelType: 'label' | 'folder') => {
-        setLabelType(labelType);
-        setEditLabelModalOpen(true);
-    };
-
     const sidebarListItems = useMemo(() => {
         const foldersArray = folders?.length ? reduceFolderTreeview : ['add-folder'];
         const labelsArray = labels?.length ? labels.map((f) => f.ID) : ['add-label'];
@@ -234,104 +224,62 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     useHotkeys(sidebarRef, shortcutHandlers);
 
     return (
-        <div ref={sidebarRef} tabIndex={-1} className="outline-none">
-            <SidebarList>
-                <MailSidebarSystemFolders
-                    counterMap={counterMap}
-                    currentLabelID={currentLabelID}
-                    location={location}
-                    mailSettings={mailSettings}
-                    setFocusedItem={setFocusedItem}
-                    totalMessagesMap={totalMessagesMap}
-                    displayMoreItems={displayMoreItems}
-                    showScheduled={showScheduled}
-                    onToggleMoreItems={toggleDisplayMoreItems}
-                />
-                <hr aria-hidden="true" className="my0-25" />
-                <SimpleSidebarListItemHeader
-                    toggle={displayFolders}
-                    onToggle={(display: boolean) => toggleFolders(display)}
-                    text={c('Link').t`Folders`}
-                    title={c('Link').t`Folders`}
-                    id="toggle-folders"
-                    onFocus={setFocusedItem}
-                    right={
-                        <div className="flex flex-align-items-center pr0-75">
-                            <button
-                                type="button"
-                                className="flex navigation-link-header-group-control flex-item-noshrink"
-                                onClick={() => handleOpenLabelModal('folder')}
-                                title={c('Action').t`Create a new folder`}
-                                data-testid="navigation-link:add-folder"
-                            >
-                                <Icon name="plus" alt={c('Action').t`Create a new folder`} />
-                            </button>
-                            <SidebarListItemHeaderLink
-                                to="/mail/folders-labels"
-                                toApp={APPS.PROTONACCOUNT}
-                                icon="cog-wheel"
-                                title={c('Info').t`Manage your folders`}
-                                info={c('Link').t`Manage your folders`}
-                                target="_self"
-                                data-testid="navigation-link:folders-settings"
-                            />
-                        </div>
-                    }
-                />
-                {displayFolders && (
-                    <SidebarFolders
-                        currentLabelID={currentLabelID}
+        <LabelActionsContextProvider>
+            <div ref={sidebarRef} tabIndex={-1} className="outline-none">
+                <SidebarList>
+                    <MailSidebarSystemFolders
                         counterMap={counterMap}
-                        folders={folders || []}
-                        loadingFolders={loadingFolders}
-                        updateFocusItem={updateFocusItem}
-                        handleToggleFolder={handleToggleFolder}
-                        foldersTreeview={foldersTreeview}
-                    />
-                )}
-                <hr aria-hidden="true" className="my0-25" />
-                <SimpleSidebarListItemHeader
-                    toggle={displayLabels}
-                    onToggle={(display: boolean) => toggleLabels(display)}
-                    text={c('Link').t`Labels`}
-                    title={c('Link').t`Labels`}
-                    id="toggle-labels"
-                    onFocus={setFocusedItem}
-                    right={
-                        <div className="flex flex-align-items-center pr0-75">
-                            <button
-                                type="button"
-                                className="flex navigation-link-header-group-control flex-item-noshrink"
-                                onClick={() => handleOpenLabelModal('label')}
-                                title={c('Action').t`Create a new label`}
-                                data-testid="navigation-link:add-label"
-                            >
-                                <Icon name="plus" alt={c('Action').t`Create a new label`} />
-                            </button>
-                            <SidebarListItemHeaderLink
-                                to="/mail/folders-labels"
-                                toApp={APPS.PROTONACCOUNT}
-                                icon="cog-wheel"
-                                title={c('Info').t`Manage your labels`}
-                                info={c('Link').t`Manage your labels`}
-                                target="_self"
-                                data-testid="navigation-link:labels-settings"
-                            />
-                        </div>
-                    }
-                />
-                {displayLabels && (
-                    <SidebarLabels
                         currentLabelID={currentLabelID}
-                        counterMap={counterMap}
-                        labels={labels || []}
-                        updateFocusItem={updateFocusItem}
+                        location={location}
+                        mailSettings={mailSettings}
+                        setFocusedItem={setFocusedItem}
+                        totalMessagesMap={totalMessagesMap}
+                        displayMoreItems={displayMoreItems}
+                        showScheduled={showScheduled}
+                        onToggleMoreItems={toggleDisplayMoreItems}
                     />
-                )}
-            </SidebarList>
-
-            <EditLabelModal type={labelType} {...editLabelProps} />
-        </div>
+                    <hr aria-hidden="true" className="my0-25" />
+                    <SimpleSidebarListItemHeader
+                        toggle={displayFolders}
+                        onToggle={(display: boolean) => toggleFolders(display)}
+                        text={c('Link').t`Folders`}
+                        title={c('Link').t`Folders`}
+                        id="toggle-folders"
+                        onFocus={setFocusedItem}
+                        right={<MailSidebarListActions type="folder" />}
+                    />
+                    {displayFolders && (
+                        <SidebarFolders
+                            currentLabelID={currentLabelID}
+                            counterMap={counterMap}
+                            folders={folders || []}
+                            loadingFolders={loadingFolders}
+                            updateFocusItem={updateFocusItem}
+                            handleToggleFolder={handleToggleFolder}
+                            foldersTreeview={foldersTreeview}
+                        />
+                    )}
+                    <hr aria-hidden="true" className="my0-25" />
+                    <SimpleSidebarListItemHeader
+                        toggle={displayLabels}
+                        onToggle={(display: boolean) => toggleLabels(display)}
+                        text={c('Link').t`Labels`}
+                        title={c('Link').t`Labels`}
+                        id="toggle-labels"
+                        onFocus={setFocusedItem}
+                        right={<MailSidebarListActions type="label" />}
+                    />
+                    {displayLabels && (
+                        <SidebarLabels
+                            currentLabelID={currentLabelID}
+                            counterMap={counterMap}
+                            labels={labels || []}
+                            updateFocusItem={updateFocusItem}
+                        />
+                    )}
+                </SidebarList>
+            </div>
+        </LabelActionsContextProvider>
     );
 };
 

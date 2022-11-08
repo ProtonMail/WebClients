@@ -153,14 +153,30 @@
 	inset: 0;
 }
 
+.hide-on-hover {
+	// TODO review if finaly used
+	&-container:focus-within &,
+	&-container:hover & {
+		display: none;
+	}
+}
+
 // Make hover-only interaction focusable with keyboard
 .opacity-on-hover {
 	opacity: 0; // Do not use visibility to keep it focusable even when invisible
+
+	&-no-width {
+		inline-size: 0;
+	}
 
 	// Need a container to manage with focus-within
 	&-container:focus-within &,
 	&-container:focus-within &-only-desktop {
 		opacity: 1;
+	}
+
+	&-container:focus-within &-no-width {
+		inline-size: auto;
 	}
 
 	@media (hover: hover) and (pointer: fine) {
@@ -169,8 +185,16 @@
 			opacity: 1;
 		}
 
+		&-container:hover &-no-width {
+			inline-size: auto;
+		}
+
 		&-only-desktop {
 			opacity: 0;
 		}
+	}
+
+	.navigation-item-dropdown-opened & {
+		opacity: 1;
 	}
 }

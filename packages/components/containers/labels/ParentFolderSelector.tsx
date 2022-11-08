@@ -48,7 +48,7 @@ const ParentFolderSelector = ({ id, value, onChange, className, disableOptions =
     return (
         <SelectTwo id={id} className={className} value={value} onChange={({ value }) => onChange?.(value)}>
             {options.map((option) => {
-                return <Option value={option.value} title={option.text.toString()} />;
+                return <Option key={option.value} value={option.value} title={option.text.toString()} />;
             })}
         </SelectTwo>
     );
