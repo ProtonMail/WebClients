@@ -2,9 +2,9 @@ import { CSSProperties, MouseEventHandler, Ref, useEffect, useRef, useState } fr
 
 import { c } from 'ttag';
 
-import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { Button } from '@proton/atoms';
 import { PrimaryButton } from '@proton/components';
+import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
