@@ -37,7 +37,11 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const useNavigation =
         !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash') && !referer?.startsWith('/search');
 
-    const { isLoading, error, link, contents, saveFile, navigation } = useFileView(shareId, linkId, useNavigation);
+    const { isLinkLoading, isContentLoading, error, link, contents, saveFile, navigation } = useFileView(
+        shareId,
+        linkId,
+        useNavigation
+    );
 
     // If the link is not type of file, probably user modified the URL.
     useEffect(() => {
@@ -147,7 +151,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
 
     return (
         <FilePreview
-            loading={isLoading}
+            isMetaLoading={isLinkLoading}
+            isLoading={isContentLoading}
             contents={contents}
             fileName={link?.name}
             mimeType={link?.mimeType}
@@ -156,7 +161,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             onClose={navigateToParent}
             onSave={saveFile}
             onDetail={openDetails}
-            onShare={isLoading || !!link?.trashed ? undefined : openShareOptions}
+            onShare={isLinkLoading || !!link?.trashed ? undefined : openShareOptions}
+            imgThumbnailUrl={link?.cachedThumbnailUrl}
             ref={rootRef}
             navigationControls={
                 link &&
