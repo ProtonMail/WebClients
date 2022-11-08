@@ -457,6 +457,9 @@
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "更多資訊：鍵盤捷徑"
+      ],
       "move emails to": [
         "將電郵移動到"
       ],
@@ -471,6 +474,9 @@
       ],
       "No": [
         "否"
+      ],
+      "Not spam": [
+        "非垃圾郵件"
       ],
       "OK": [
         "好"
@@ -553,6 +559,9 @@
       "Remove this label": [
         "移除此標籤"
       ],
+      "Remove this member": [
+        "移除此成員"
+      ],
       "Remove this notification": [
         "移除此通知"
       ],
@@ -615,6 +624,9 @@
       ],
       "Revoke all other sessions": [
         "撤銷所有其它工作階段"
+      ],
+      "Revoke this invitation": [
+        "撤銷此邀請"
       ],
       "Save": [
         "儲存"
@@ -736,6 +748,9 @@
       "Support": [
         "支援"
       ],
+      "Switch account": [
+        "切換帳號"
+      ],
       "Top up": [
         "充值"
       ],
@@ -747,6 +762,9 @@
       ],
       "Underline": [
         "底線"
+      ],
+      "Undo import": [
+        "復原匯入"
       ],
       "Unlock": [
         "解鎖"
@@ -835,6 +853,9 @@
       "Yes": [
         "是"
       ],
+      "Yes, undo": [
+        "確定，請復原"
+      ],
       "Zoom in": [
         "放大"
       ],
@@ -855,9 +876,22 @@
         "免費試用 30 天"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "接受"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "拒絕"
+      ]
+    },
     "Addon": {
       "+ ${ domains } custom domains": [
         "+ ${ domains } 個自訂網域"
+      ],
+      "+ ${ users } users": [
+        "+ ${ users } 位使用者"
       ]
     },
     "Address action": {
@@ -928,6 +962,11 @@
       ],
       "Unsupported event": [
         "不支援的事件"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "加入至行事曆，同時標記為待辦"
       ]
     },
     "Autoresponse": {
@@ -1093,6 +1132,11 @@
         "邀請傳送"
       ]
     },
+    "Calendar limit warning": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
+        "您已達到最高限數 ${ MAX_SUBSCRIBED_CALENDARS } 訂購授權行事曆。"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "僅有您可以看見標籤"
@@ -1189,6 +1233,11 @@
         "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "開啟設定"
+      ]
+    },
     "Calendar view": {
       "Day": [
         "天"
@@ -1208,6 +1257,9 @@
     "Checkout row": {
       "${ users } users": [
         "${ users } 個使用者"
+      ],
+      "Total for ${ n } months": [
+        "總額可用 ${ n } 個月"
       ]
     },
     "Collapsible tooltip": {
@@ -1222,11 +1274,26 @@
       "apple": [
         "Apple"
       ],
+      "azureish white": [
+        "天藍白"
+      ],
+      "blanched almond": [
+        "杏仁黃"
+      ],
+      "blue-gray": [
+        "藍灰色"
+      ],
       "caramel": [
         "焦糖"
       ],
       "carrot": [
         "胡蘿蔔"
+      ],
+      "cerise": [
+        "櫻桃"
+      ],
+      "cinnabar": [
+        "硃砂色"
       ],
       "cobalt": [
         "鈷"
@@ -1234,14 +1301,50 @@
       "copper": [
         "銅"
       ],
+      "cyan-blue azure": [
+        "青藍色"
+      ],
       "dandelion": [
         "蒲公英"
+      ],
+      "dark cerulean": [
+        "深藍色"
+      ],
+      "dark midnight blue": [
+        "深午夜藍"
+      ],
+      "dim gray": [
+        "昏灰色"
+      ],
+      "enzian": [
+        "龍膽"
+      ],
+      "fern": [
+        "蕨類"
+      ],
+      "field drab": [
+        "黃褐色"
       ],
       "forest": [
         "森林"
       ],
+      "gainsboro": [
+        "庚斯博羅灰色"
+      ],
+      "japanese laurel": [
+        "日本月桂綠"
+      ],
+      "kiwi": [
+        "奇異果綠"
+      ],
       "lemon yellow": [
         "檸檬黃"
+      ],
+      "light carmine pink": [
+        "淡胭脂紅"
+      ],
+      "light moss green": [
+        "淺苔綠色"
       ],
       "light red": [
         "淡紅色"
@@ -1249,14 +1352,41 @@
       "maize": [
         "玉米"
       ],
+      "mughal green": [
+        "蒙兀兒綠"
+      ],
       "ocean": [
         "海洋"
       ],
       "olive": [
         "橄欖"
       ],
+      "outer space": [
+        "外太空"
+      ],
+      "pacific": [
+        "太平洋"
+      ],
+      "palatinate blue": [
+        "帕拉蒂藍"
+      ],
+      "pale cerulean": [
+        "淡藍色"
+      ],
+      "pastel gray": [
+        "柔和灰"
+      ],
+      "persian plum": [
+        "波斯梅色"
+      ],
       "persian red": [
         "波斯紅"
+      ],
+      "philippine gray": [
+        "菲律賓灰色"
+      ],
+      "philippine silver": [
+        "菲律賓銀色"
       ],
       "pickle": [
         "泡菜"
@@ -1267,11 +1397,41 @@
       "pink": [
         "粉紅色"
       ],
+      "pistachio": [
+        "開心果綠"
+      ],
+      "plum": [
+        "梅子"
+      ],
       "purple": [
         "紫色"
       ],
+      "raisin black": [
+        "葡萄乾黑"
+      ],
+      "reef": [
+        "礁石"
+      ],
+      "ruddy pink": [
+        "紅潤的粉紅色"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "satin sheen gold": [
+        "緞面金"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
       "soil": [
         "土壤"
+      ],
+      "strawberry": [
+        "草莓"
+      ],
+      "vivid auburn": [
+        "鮮豔的赤褐色"
       ],
       "white": [
         "白色"
@@ -1713,6 +1873,9 @@
       "Haiti": [
         "海地"
       ],
+      "Heard Island and McDonald Islands": [
+        "赫德島及麥唐納群島"
+      ],
       "Holy See (Vatican City State)": [
         "梵蒂岡"
       ],
@@ -2001,6 +2164,9 @@
       "San Marino": [
         "聖馬利諾"
       ],
+      "Sao Tome and Principe": [
+        "聖多美普林西比"
+      ],
       "Saudi Arabia": [
         "沙烏地阿拉伯"
       ],
@@ -2251,9 +2417,19 @@
         "週三"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "預設的事件設定"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "所有在此行事曆上的事件將會刪除。"
       ]
     },
     "Delinquent modal title": {
@@ -2706,6 +2882,12 @@
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "請嘗試重新認證並確保權限設定正確。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "請升級至商務方案，可享有多使用者帳號與服務支援。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至商務方案，可享有多使用者帳號與管理多使用者功能。"
       ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
@@ -3892,6 +4074,9 @@
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
+      "${ current } of ${ total }": [
+        "${ total } 中的 ${ current }"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 無效"
       ],
@@ -4015,11 +4200,17 @@
       "Account successfully updated": [
         "帳號已成功更新"
       ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "加入一個 @pm.me 的電郵位址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
       ],
       "Add a recovery email address": [
         "加入復原電郵位址"
+      ],
+      "add a recovery method": [
+        "新增一個備援方式"
       ],
       "Add a recovery phone number": [
         "加入復原手機號碼"
@@ -4107,6 +4298,9 @@
       ],
       "Are you sure you want to delete this calendar?": [
         "您確定要刪除此行事曆嗎？"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "您確認刪除此行事曆嗎？所有相關事件將會被刪除。"
       ],
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
@@ -4333,14 +4527,23 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "帶有此標籤的電郵不會被刪除，仍可在對應的資料夾中找到。"
       ],
+      "Enable this address to join this calendar": [
+        "啟用此地址來加入這個行事曆"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "再次啟用短語回復方案將會生成新的短語。"
       ],
       "Encryption setting updated": [
         "加密設定已更新"
       ],
+      "Enter code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter key manually instead": [
         "改為手動輸入金鑰"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "為使用者 ${ userName } 輸入新密碼。"
       ],
       "Enter the code from your authenticator app": [
         "輸入驗證應用程式中的驗證代碼"
@@ -4624,6 +4827,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
       ],
@@ -4689,9 +4895,6 @@
       ],
       "Not a valid URL": [
         "非有效的圖像網址"
-      ],
-      "Not set": [
-        "未設定"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "不是您的裝置？請使用隱私瀏覽視窗登入並在完成後關閉它。${ learnMore }"
@@ -4759,6 +4962,12 @@
       "Plan upgrade required": [
         "需要升級方案"
       ],
+      "Please add email addresses for the users on rows": [
+        "請在此行使用者處加入電郵位址"
+      ],
+      "Please add passwords for the users on rows": [
+        "請在此行使用者處加入密碼"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
       ],
@@ -4810,6 +5019,9 @@
       "Priority support": [
         "優先支援"
       ],
+      "Proton ${ planName } credits earned": [
+        "Proton ${ planName } 儲值已賺取"
+      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton 暫停了一項匯入，因為與您另一個電郵提供者的連線已中斷。請重新連線。"
       ],
@@ -4818,6 +5030,9 @@
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton 將會在電郵提供商提供重設您帳號的 ${ bandwithLimitLink } 後嘗試復原匯入。您不需要執行任何動作。如果您取消匯入，將無法復原匯入，而您就必須重新開始。"
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Proton 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
       "Public link invite": [
         "公開的連結邀請"
@@ -4996,6 +5211,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "這些設定檔提供 WireGuard routers 與官方用戶端使用。"
       ],
+      "They'll receive a free month of ${ planName }.": [
+        "他們將會收到免費的月數在 ${ planName }。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
       ],
@@ -5004,6 +5222,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "取決於您的裝置，這可能需要幾秒鐘或幾分鐘"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "這可能耗時最多 15 分鐘。請勿關閉此頁面，或斷開網路連線。"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "此一 12字短語是你過去被要求設定的。"
@@ -5089,6 +5310,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的請求。"
       ],
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "為了保護您的網路連線，下載並安裝 ${ VPN_APP_NAME } 軟體到您的裝置上，並連接至伺服器。"
+      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "正常運作情況下，每一個篩選器必須包含至少一個名稱及一個有效的 Sieve 程序檔。您可查看 ${ link }。"
       ],
@@ -5164,6 +5388,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
       ],
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
+      ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
       ],
@@ -5230,6 +5457,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳號中有新訊息，我們將向您的復原/通知電郵位址傳送提示。"
       ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "當他們訂購了一個方案。您會得到點數可使用在您的訂購授權上。"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
@@ -5266,6 +5496,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "您已登入帳號 ${ memberAddress }。"
+      ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
       ],
@@ -5281,6 +5514,9 @@
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
+      "You can now access and manage the account as an administrator.": [
+        "您現在可以管理員身份存取與管理帳號。"
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您的 @pm.me 電郵位址現在可以接收郵件了。升級至付費方案，不但可使用您的 @pm.me 電郵位址傳送郵件外，還可創建更多的 @pm.me 電郵位址。"
       ],
@@ -5292,6 +5528,9 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        "在接下來的 24 小時內，您最多只能發送 ${ emailSendLimitNumber } 封電郵邀請"
       ],
       "You cannot refer ${ appName } users": [
         "您不能推薦 ${ appName } 使用者"
@@ -5316,6 +5555,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消 Mail 訂購授權。"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消訂購授權。"
@@ -5343,6 +5585,12 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "您無法使用下載的復原檔案進行鎖定資料復原。"
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "您無法使用下載的復原檔案進行鎖定資料復原。此舉亦將廢止原受信任裝置的復原資訊。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
@@ -5856,6 +6104,9 @@
       ],
       "All-day event notifications": [
         "全日事件通知"
+      ],
+      "Allow notifications by email": [
+        "允許電郵通知"
       ],
       "Allow recovery by email": [
         "允許透過電郵復原"
@@ -6599,6 +6850,9 @@
       ],
       "Recovery phrase": [
         "復原短語"
+      ],
+      "Trusted device recovery": [
+        "已信任的裝置復原"
       ]
     },
     "Label for default event notifications": {
@@ -6856,6 +7110,16 @@
       ],
       "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "從 ${ totalLabelsCount } 個標籤匯入最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "您可以為每個行事曆建立最多 ${ MAX_LINKS_PER_CALENDAR } 個連結。若要為此行事曆建立新連結，請先從下列清單中刪除一個。"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
+        "您已達到最高限數 ${ MAX_CALENDAR_MEMBERS } 位成員。"
       ]
     },
     "Member action": {
@@ -7121,6 +7385,14 @@
         "立即升級"
       ]
     },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connections": [
+        "取得 ${ connections } 個高速 VPN 連線"
+      ],
+      "Get ${ connections } high-speed VPN connections per user": [
+        "取得 ${ connections } 個高速 VPN 連線 / 每一位使用者"
+      ]
+    },
     "new_plans: feature": {
       "${ n } custom email domains": [
         "${ n } 個自訂電郵網域"
@@ -7184,6 +7456,9 @@
       ],
       "End-to-end encryption": [
         "端對端加密"
+      ],
+      "High-speed VPN on ${ n } devices": [
+        "極速 VPN 裝載多達 ${ n } 臺裝置"
       ],
       "Priority support": [
         "優先支援"
@@ -7251,6 +7526,11 @@
         "/月"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
+        "您的 ${ currentPlanName } $ 帳號還剩 ${ daysRemaining } 天。"
+      ]
+    },
     "new_plans: signup": {
       "Payment details": [
         "付款細節"
@@ -7271,6 +7551,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "Create up to ${ n } custom calendars.": [
+        "創建多達 ${ n } 自訂行事曆。"
+      ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力。"
       ]
@@ -7281,6 +7564,9 @@
       ],
       "10 email addresses/aliases": [
         "10 組電郵位址/別名"
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
+        "建立 ${ numberOfPersonalCalendars } 個人行事曆"
       ],
       "Priority support": [
         "優先支援"
@@ -7320,6 +7606,11 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "已加入 ${ calendarName }（${ senderEmail }）"
+      ]
+    },
+    "Notification success": {
+      "Event defaults updated": [
+        "事件預設值已更新"
       ]
     },
     "Notification time input": {
@@ -7618,6 +7909,15 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } 點擊取得更多儲存空間；或移除一些分配儲存以釋出可用空間。"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
+        "您的方案包含多達 ${ availableAddresses } 組電子郵件位址。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
+        "您的方案包含多達 ${ availableNumberOfMembers } 位單位組織使用者。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
+        "您的方案包含多達 ${ availableVPNAccess } 個 VPN 帳號。"
       ]
     },
     "OS compatibility": {
@@ -7874,6 +8174,9 @@
       ],
       "Phone number has been verified.": [
         "電話號碼已曾驗證."
+      ],
+      "Phone number not yet verified.": [
+        "電話號碼尚未驗證過。"
       ],
       "Verify by SMS": [
         "簡訊驗證"
@@ -8165,6 +8468,9 @@
       ],
       "1 VPN connection": [
         "1 個 VPN 連線"
+      ],
+      "High-speed VPN on ${ maxVpn } devices": [
+        "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
       ]
     },
     "Subscription saving": {
@@ -8391,6 +8697,11 @@
         "個人使用"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "與我分享"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "動作"
@@ -8550,6 +8861,9 @@
       "Add to spam list": [
         "新增到垃圾郵件清單"
       ],
+      "Add to your block list": [
+        "加入至封鎖清單"
+      ],
       "Add user": [
         "加入使用者"
       ],
@@ -8670,6 +8984,9 @@
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
       ],
+      "Couldn’t create accounts": [
+        "無法建立帳號"
+      ],
       "Create a ${ MAIL_APP_NAME } address": [
         "創建新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
@@ -8687,6 +9004,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "創建您的 ${ BRAND_NAME } 帳號"
+      ],
+      "Creating user accounts": [
+        "建立使用者帳號"
       ],
       "Credentials": [
         "認證"
@@ -9099,6 +9419,9 @@
       "Select when you want this notification to be sent": [
         "請選擇您想此通知何時傳送"
       ],
+      "Sender image": [
+        "寄件者圖像"
+      ],
       "Session management": [
         "工作階段管理"
       ],
@@ -9132,6 +9455,9 @@
       "Sign out": [
         "登出"
       ],
+      "Signed in to member account": [
+        "登入到成員帳號"
+      ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"
       ],
@@ -9158,6 +9484,9 @@
       ],
       "Success": [
         "成功"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
+        "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
       ],
       "Switch to one-password mode": [
         "切換為單一密碼模式"
@@ -9479,6 +9808,11 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "升級為 ${ planName } 方案，即可讓 ${ n } 台裝置同時連線 VPN"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "升級為付費方案後可創建多達 ${ MAX_CALENDARS_PAID } 個行事曆，讓您可建立行事曆用於公務、與好友共享，也可為自己處理私事。"
       ]
     },
     "User role": {

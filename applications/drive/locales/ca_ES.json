@@ -2007,9 +2007,17 @@
       ]
     },
     "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
       "Gigabyte": [
         "gigabyte",
         "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
       ],
       "Megabyte": [
         "megabyte",
@@ -2621,6 +2629,9 @@
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
       ],
+      "Labels:": [
+        "Etiquetes:"
+      ],
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
@@ -2793,6 +2804,9 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Set recovery phrase": [
+        "Estableix la frase de recuperació"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
@@ -2801,6 +2815,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Enllaç per a compartir ${ boldNameText }"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Signature issue": [
         "Problema de signatura"
@@ -2916,6 +2933,9 @@
       "Week": [
         "Setmana"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ens estem movent a ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "Què voleu fer?"
       ],
@@ -2969,6 +2989,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "La teva adreça de correu no canviarà. Però properament l'enllaç per a l'inici de sessió serà ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -3502,9 +3525,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ totalLabelsCount } carpeta des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d'${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",

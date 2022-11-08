@@ -4710,6 +4710,9 @@
         "Hora",
         "Horas"
       ],
+      "How Hide My Email works": [
+        "Cómo funciona Hide My Email"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Estoy enviando este mensaje a alguien que no utiliza Proton Mail."
       ],
@@ -4721,6 +4724,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
+      ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Establece una frase de recuperación para no perder el acceso a tu cuenta y a tus datos si no recuerdas tu contraseña."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si tu alias es vendido o filtrado, simplemente desactívalo para dejar de recibir spam."
@@ -4985,6 +4991,9 @@
       "Priority support": [
         "Soporte prioritario"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no gana dinero abusando de la privacidad."
       ],
@@ -5081,11 +5090,20 @@
       "Set a recovery phrase": [
         "Configura una frase de recuperación"
       ],
+      "Set recovery phrase": [
+        "Configura una frase de recuperación"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP le permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
       "Show original message": [
         "Mostrar el mensaje original"
+      ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin es un servicio de Proton y tu cuenta de Proton incluye alias de Hide My Email. Para comenzar a enmascarar tus direcciones de correo electrónico, acude a SimpleLogin y crea tu primer alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quieres exponer tu dirección de correo electrónico real."
@@ -5156,6 +5174,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Se ha producido un error con la firma utilizada para verificar los datos del contacto, que pueden ser el resultado de un restablecimiento de contraseña."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "No pueden enviarte spam si no conocen tu dirección de correo. Protege tu buzón con Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de la política."
@@ -5372,8 +5393,14 @@
       "Week": [
         "Semana"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Nos hemos mudado a ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Cuando des tu correo electrónico, usa un alias Hide My Email único y desechable en vez de tu dirección de correo real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando habilitaste las claves de confianza para ${ senderName }, las claves públicas fueron añadidas a los datos del contacto."
@@ -5487,6 +5514,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Sus datos están listos para ser importados desde ${ importedEmailAddressStrong } a su cuenta de Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Tu dirección de correo no cambiará, pero pronto tendrás que iniciar sesión en ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
@@ -7420,18 +7450,6 @@
       "2 years": [
         "2 años"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "A un precio de ${ amount } durante los 2 primeros años"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "A un precio de ${ amount } durante el primer mes"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "A un precio de ${ amount } durante el primer año"
-      ],
-      "Billed at ${ amountDue }": [
-        "Facturación: ${ amountDue }"
-      ],
       "for ${ n } month": [
         "durante ${ n } mes",
         "durante ${ n } meses"
@@ -7447,9 +7465,6 @@
       ],
       "Save ${ discount }%": [
         "Ahorra un ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -7922,6 +7937,10 @@
         "${ emailsCount } miembro",
         "${ emailsCount } miembros"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } mensaje no leído",
+        "${ unreads } mensajes no leídos"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -8332,6 +8351,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Iniciar sesión en ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Cerrar sesión"

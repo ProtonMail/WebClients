@@ -2900,6 +2900,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Establece una frase de recuperación para no perder el acceso a tu cuenta y a tus datos si no recuerdas tu contraseña."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Si tienes uno de estos, continúa con la configuración de la cuenta de Proton para\ncomenzar con el proceso de desbloqueo."
       ],
@@ -2990,6 +2993,9 @@
       ],
       "Loading preview": [
         "Cargando previsualización"
+      ],
+      "Makes your account safer": [
+        "Hace que tu cuenta sea más segura"
       ],
       "Merged": [
         "Fusionado"
@@ -3173,6 +3179,9 @@
       "Session timed out": [
         "El tiempo de la sesión ha expirado"
       ],
+      "Set recovery phrase": [
+        "Configura una frase de recuperación"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP le permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
@@ -3184,6 +3193,9 @@
       ],
       "Shared link failed to be loaded": [
         "No se pudo cargar el enlace compartido"
+      ],
+      "Sign in": [
+        "Iniciar sesión"
       ],
       "Signature check will be ignored": [
         "La comprobación de firma será ignorada"
@@ -3363,6 +3375,9 @@
       "Week": [
         "Semana"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Nos hemos mudado a ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "¿Qué quieres hacer?"
       ],
@@ -3425,6 +3440,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Sus datos están listos para ser importados desde ${ importedEmailAddressStrong } a su cuenta de Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Tu dirección de correo no cambiará, pero pronto tendrás que iniciar sesión en ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
@@ -4665,18 +4683,6 @@
       "2 years": [
         "2 años"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "A un precio de ${ amount } durante los 2 primeros años"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "A un precio de ${ amount } durante el primer mes"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "A un precio de ${ amount } durante el primer año"
-      ],
-      "Billed at ${ amountDue }": [
-        "Facturación: ${ amountDue }"
-      ],
       "for ${ n } month": [
         "durante ${ n } mes",
         "durante ${ n } meses"
@@ -4692,9 +4698,6 @@
       ],
       "Save ${ discount }%": [
         "Ahorra un ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5277,6 +5280,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Iniciar sesión en ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Cerrar sesión"

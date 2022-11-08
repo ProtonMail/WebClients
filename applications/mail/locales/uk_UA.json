@@ -4892,6 +4892,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Якщо ви не знаєте пароль, налаштуйте фразу відновлення, щоб не втратити доступ до свого облікового запису та даних."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Якщо ваша псевдоадреса продана, її виявлено в якомусь витоку даних або її використали в неналежному місці, просто вимкніть її, щоб припинити отримання спаму."
       ],
@@ -5258,11 +5261,17 @@
       "Set a recovery phrase": [
         "Встановити фразу відновлення"
       ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
+      ],
+      "Sign in": [
+        "Увійти"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin — це служба Proton, і ваш обліковий запис Proton містить псевдоніми Hide My Email. Щоб почати маскувати адресу електронної пошти, перейдіть до SimpleLogin і створіть свій перший псевдонім."
@@ -5561,6 +5570,9 @@
       "Week": [
         "Тиждень"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ми переходимо на ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати ваше повідомлення?"
       ],
@@ -5695,6 +5707,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Ваша електронна адреса не зміниться. Але незабаром вам потрібно буде входити використовуючи ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -7999,6 +8014,12 @@
         "${ emailsCount } учасників",
         "${ emailsCount } учасників"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } непрочитане повідомлення",
+        "${ unreads } непрочитані повідомлення",
+        "${ unreads } непрочитаних повідомлень",
+        "${ unreads } непрочитані повідомлення"
+      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -8421,6 +8442,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Увійти використовуючи ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Вийти"

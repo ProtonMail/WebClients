@@ -5398,9 +5398,6 @@
       "Not a valid URL": [
         "Недопустимый URL"
       ],
-      "Not set": [
-        "Не задано"
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Не ваше устройство? Используйте окно приватного просмотра браузера для входа в систему и закройте его по завершении. ${ learnMore }"
       ],
@@ -8347,26 +8344,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8436,6 +8413,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9740,18 +9737,6 @@
       "2 years": [
         "2 года"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "${ amount } за первые 2 года"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "${ amount } за первый месяц"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "${ amount } за первый год"
-      ],
-      "Billed at ${ amountDue }": [
-        "Итого: ${ amountDue }"
-      ],
       "for ${ n } month": [
         "за ${ n } месяц ",
         "за ${ n } месяца",
@@ -9769,9 +9754,6 @@
       ],
       "Save ${ discount }%": [
         "Сэкономьте ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Обычная цена: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -10006,7 +9988,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Сохранить"
+        "Сэкономьте"
       ]
     },
     "Subtitle for trial plan": {

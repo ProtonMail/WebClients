@@ -244,6 +244,9 @@
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
       ],
+      "Join calendar": [
+        "Junte-se à agenda"
+      ],
       "Load image": [
         "Carregar imagem"
       ],
@@ -759,6 +762,9 @@
       ],
       "Manage members": [
         "Gerir membros"
+      ],
+      "Unable to create more calendar links": [
+        "Não é possível criar mais ligações à agenda."
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1750,6 +1756,11 @@
         "Desactivado"
       ]
     },
+    "Disabled calendar name suffix": {
+      "Disabled": [
+        "Desativado"
+      ]
+    },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "O evento pertence a uma agenda desactivada."
@@ -1877,6 +1888,9 @@
       ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
+      ],
+      "Already a member of this calendar": [
+        "Já é membro desta agenda"
       ],
       "Answer failed to be sent": [
         "Falha ao enviar a resposta"
@@ -2311,6 +2325,11 @@
         "A sua resposta foi enviada, mas o evento não pôde ser adicionado à sua agenda"
       ]
     },
+    "Event popover close button": {
+      "Close popover": [
+        "Fechar balão"
+      ]
+    },
     "Event reply": {
       "maybe": [
         "talvez"
@@ -2458,6 +2477,16 @@
       ],
       "vCard versions < 3.0": [
         "Versões vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "This file contains an event invitation:": [
+        "Este ficheiro contém um convite para um evento:",
+        "Este ficheiro contém convites para um evento:"
+      ],
+      "This file contains an invitation response:": [
+        "Este ficheiro contém uma resposta de convite:",
+        "Este arquivo contém respostas a convites:"
       ]
     },
     "Import contact": {
@@ -2629,6 +2658,9 @@
       ],
       "No contact can be imported. Click for details": [
         "Nenhum contacto pode ser importado. Clique para detalhes"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Nenhum evento pode ser importado. Expande para detalhes."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo da sua agenda não é suportado e não será importado."
@@ -3022,6 +3054,9 @@
       "Session timed out": [
         "A sessão expirou."
       ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A configuração do PGP permite o envio de correios eletrónicos encriptados de ponta-a-ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
@@ -3135,6 +3170,9 @@
       ],
       "Yearly": [
         "Anualmente"
+      ],
+      "You already joined this calendar": [
+        "Já se juntou a esta agenda"
       ],
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
@@ -3603,6 +3641,14 @@
       ],
       "Manage calendars": [
         "Gerir agendas"
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Junte-se à agenda"
+      ],
+      "Unable to join more calendars": [
+        "Não é possível se juntar à mais agendas"
       ]
     },
     "Modal title": {
@@ -4234,6 +4280,11 @@
         "URL da agenda"
       ]
     },
+    "Subscribed calendar extension warning": {
+      "This link might be wrong": [
+        "Esta ligação pode estar errada."
+      ]
+    },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
         "URL demasiado longo"
@@ -4618,6 +4669,10 @@
       ],
       "Human verification": [
         "Verificação humana"
+      ],
+      "Import as simple event?": [
+        "Importar com um evento simples?",
+        "Importar com eventos simples?"
       ],
       "Import contacts": [
         "Importar contactos"

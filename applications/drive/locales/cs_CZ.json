@@ -2749,6 +2749,9 @@
       "and": [
         "a"
       ],
+      "And access it from anywhere": [
+        "A přistupte k němu odkudkoli"
+      ],
       "Anyone with this link can access your file.": [
         "Kdokoli s tímto odkazem má přístup k vašemu souboru."
       ],
@@ -2859,6 +2862,9 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ emailAddress }."
+      ],
+      "double your storage": [
+        "zdvojnásobte své úložiště"
       ],
       "Download canceled": [
         "Stahování zrušeno"
@@ -2998,6 +3004,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Pokud heslo neznáte, nastavte si frázi pro obnovení, abyste neztratili přístup ke svému účtu a datům."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Pokud máte některý z nich, pokračujte do nastavení účtu Proton, pro\nzahájení procesu odblokování."
       ],
@@ -3045,6 +3054,9 @@
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Je to stejně snadné jako přesouvání nebo výběr souborů"
+      ],
+      "It’s easy and secure": [
+        "Je to snadné a bezpečné"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -3277,6 +3289,9 @@
       "Session timed out": [
         "Relace vypršela"
       ],
+      "Set recovery phrase": [
+        "Nastavit obnovovací frázi"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
@@ -3288,6 +3303,9 @@
       ],
       "Shared link failed to be loaded": [
         "Sdílený odkaz se nepodařilo načíst"
+      ],
+      "Sign in": [
+        "Přihlásit se"
       ],
       "Signature check will be ignored": [
         "Výsledek kontroly podpisu bude ignorován"
@@ -3469,6 +3487,9 @@
       "Week": [
         "Týden"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Přesouváme se na ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "Co chcete udělat?"
       ],
@@ -3508,6 +3529,9 @@
       "You cannot undo this action.": [
         "Nemůžete vrátit zpět tuto akci."
       ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Zbývá vám ${ expiresInDays } dní na získání uvítacího bonusu 500 MB a "
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3528,6 +3552,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Vaše e-mailová adresa se nezmění. Brzy se však budete muset přihlásit na ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
@@ -3576,6 +3603,9 @@
       ],
       "file data key": [
         "klíč k datům souboru"
+      ],
+      "file data order": [
+        "pořadí dat v souboru"
       ],
       "keys": [
         "klíče"
@@ -4012,6 +4042,9 @@
       ],
       "Upload picture": [
         "Nahrát obrázek"
+      ],
+      "Upload your first file": [
+        "Nahrajte svůj první soubor"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Uživatelské jméno nebo adresa ${ MAIL_APP_NAME }"
@@ -5223,6 +5256,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Přihlásit se na ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Odhlásit se"

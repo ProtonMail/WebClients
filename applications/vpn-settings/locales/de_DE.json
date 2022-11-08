@@ -30,7 +30,7 @@
         "Übernehmen"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Authenticate": [
         "Authentifizieren"
@@ -222,7 +222,7 @@
         "Zurück"
       ],
       "Refer a friend": [
-        "Einem Freund empfehlen"
+        "Wirb einen Freund"
       ],
       "Refresh the page": [
         "Seite aktualisieren"
@@ -288,7 +288,7 @@
         "Meinen Benutzernamen senden"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Share via link": [
         "Als Link teilen"
@@ -949,7 +949,7 @@
         "Heard und McDonaldinseln"
       ],
       "Holy See (Vatican City State)": [
-        "Vatikanstaat"
+        "Heiliger Stuhl (Vatikanstaat)"
       ],
       "Honduras": [
         "Honduras"
@@ -1087,7 +1087,7 @@
         "Mexiko"
       ],
       "Moldova": [
-        "Republik Moldau"
+        "Moldawien"
       ],
       "Monaco": [
         "Monaco"
@@ -1369,10 +1369,10 @@
         "Vereinigtes Königreich"
       ],
       "United States": [
-        "USA"
+        "Vereinigte Staaten"
       ],
       "United States Minor Outlying Islands": [
-        "Kleinere Amerikanische Überseeinseln"
+        "Kleinere abgelegene Inseln der Vereinigten Staaten"
       ],
       "Uruguay": [
         "Uruguay"
@@ -1796,6 +1796,11 @@
         "(1-2 E-Mails pro Monat)"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Du hast bereits ein Konto? ${ signIn }"
+      ]
+    },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
         "Neu bei ${ BRAND_NAME }? ${ signUp }"
@@ -2138,9 +2143,6 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
-      "Not set": [
-        "Nicht gesetzt"
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nicht dein Gerät? Verwende ein privates Browser-Fenster, um dich anzumelden, und schließe es, wenn du fertig bist. ${ learnMore }"
       ],
@@ -2399,6 +2401,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Sie erhalten dann einen Rücksetzungscode an die E-Mail-Adresse, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
       ],
@@ -2448,7 +2453,7 @@
         "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder der ${ VPN_APP_NAME }-Übersicht anzumelden. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Sie haben keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls Sie Ihr Passwort vergessen. Trotzdem ohne Wiederherstellungs-Möglichkeit fortfahren?"
+        "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
       ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
@@ -3375,8 +3380,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* Mit 12-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* Mit 15-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Mit 24-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* Mit 30-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Anwendbare Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
@@ -4082,18 +4093,6 @@
       "2 years": [
         "Zwei Jahre"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Zum Preis von ${ amount } in den ersten zwei Jahren"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Zum Preis von ${ amount } im ersten Monat"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Zum Preis von ${ amount } im ersten Jahr"
-      ],
-      "Billed at ${ amountDue }": [
-        "Zum Preis von ${ amountDue }"
-      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -4109,9 +4108,6 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Regulärer Preis: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {

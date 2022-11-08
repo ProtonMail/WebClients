@@ -462,7 +462,7 @@
         "ドライブを検索"
       ],
       "See plan features": [
-        "プラン機能を見る"
+        "プランの特徴を見る"
       ],
       "Select all": [
         "すべて選択"
@@ -578,6 +578,9 @@
       "Use ${ label } theme": [
         "${ label } テーマを使用"
       ],
+      "Use authentication code": [
+        "認証コードを使用"
+      ],
       "Use for sending": [
         "送信に使用"
       ],
@@ -646,16 +649,16 @@
     },
     "Bug category": {
       "Application problem": [
-        "アプリケーションの問題"
+        "アプリケーションに関する問題"
       ],
       "Bridge problem": [
-        "Bridge の問題"
+        "Bridge に関する問題"
       ],
       "Calendar problem": [
         "Calendar に関する問題"
       ],
       "Connection problem": [
-        "接続の問題"
+        "接続に関する問題"
       ],
       "Contacts problem": [
         "Contacts に関する問題"
@@ -670,46 +673,46 @@
         "機能の提案"
       ],
       "Import / export problem": [
-        "インポート・エクスポートの問題"
+        "インポート・エクスポートに関する問題"
       ],
       "Installation problem": [
-        "インストールの問題"
+        "インストールに関する問題"
       ],
       "Mail problem": [
         "Mail に関する問題"
       ],
       "Manual setup problem": [
-        "手動セットアップの問題"
+        "手動セットアップに関する問題"
       ],
       "Other": [
         "その他"
       ],
       "Payments problem": [
-        "支払いの問題"
+        "支払いに関する問題"
       ],
       "Sign in problem": [
-        "サインインの問題"
+        "サインインに関する問題"
       ],
       "Sign up problem": [
-        "アカウント登録の問題"
+        "アカウント登録に関する問題"
       ],
       "Signup problem": [
-        "アカウント登録の問題"
+        "アカウント登録に関する問題"
       ],
       "Slow speed problem": [
-        "通信速度が遅い問題"
+        "通信速度が遅いなどの問題"
       ],
       "Speed problem": [
-        "速度の問題"
+        "通信速度に関する問題"
       ],
       "Streaming problem": [
-        "ストリーミングの問題"
+        "ストリーミングに関する問題"
       ],
       "Update problem": [
-        "更新の問題"
+        "更新に関する問題"
       ],
       "VPN problem": [
-        "VPN の問題"
+        "VPN に関する問題"
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
@@ -1792,6 +1795,9 @@
       "No contacts found to import": [
         "インポートする連絡先が見つかりません"
       ],
+      "No emails found to import - the account does not have an inbox": [
+        "インポートするメールがありません - アカウントに受信箱がありません"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -1840,11 +1846,17 @@
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "フォルダー名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "フォルダー名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "ラベル名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -1920,6 +1932,9 @@
       ],
       "You can't send vCards of more than 10 contacts": [
         "10 件以上の連絡先の vCard を送信することはできません"
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -2381,6 +2396,9 @@
       ],
       "contacts": [
         "連絡先"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV または VCF (vCard) ファイル"
       ],
       "full calendar view": [
         "フルカレンダー表示"
@@ -2844,6 +2862,9 @@
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
+      "Labels:": [
+        "ラベル:"
+      ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
@@ -3044,6 +3065,9 @@
       ],
       "Session timed out": [
         "セッションがタイムアウトしました"
+      ],
+      "Set recovery phrase": [
+        "回復用フレーズを設定"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -3442,6 +3466,9 @@
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
+      "Coming soon": [
+        "まもなく登場"
+      ],
       "Comment": [
         "コメント"
       ],
@@ -3610,6 +3637,9 @@
       "Name": [
         "名前"
       ],
+      "Navigation": [
+        "ナビゲーション"
+      ],
       "Never": [
         "なし"
       ],
@@ -3620,10 +3650,10 @@
         "OK"
       ],
       "Operating system": [
-        "オペレーティングシステム"
+        "OS"
       ],
       "Operating system version": [
-        "OSのバージョン"
+        "OS のバージョン"
       ],
       "Other": [
         "その他"
@@ -3937,31 +3967,31 @@
         "「${ name }」が正常に作成されました。"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "「${ name }」がごみ箱から完全に削除されました"
+        "「${ name }」をごみ箱から完全に削除しました"
       ],
       "\"${ name }\" failed to be created": [
         "「${ name }」の移動に失敗しました。"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "「${ name }」をごみ箱から完全に削除することに失敗しました"
+        "「${ name }」をごみ箱から完全に削除できませんでした"
       ],
       "\"${ name }\" failed to be moved": [
-        "「${ name }」の移動に失敗しました。"
+        "「${ name }」の移動に失敗しました"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "「${ name }」のごみ箱への移動に失敗しました"
+        "「${ name }」をごみ箱に移動できませんでした"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "「${ name }」をごみ箱から取り戻すことに失敗しました"
+        "「${ name }」をごみ箱から復元できませんでした"
       ],
       "\"${ name }\" moved to trash": [
-        "「${ name }」がごみ箱に移動されました"
+        "「${ name }」をごみ箱に移動しました"
       ],
       "\"${ name }\" restored from trash": [
-        "「${ name }」がごみ箱から復元されました"
+        "「${ name }」をごみ箱から復元しました"
       ],
       "\"${ name }\" successfully moved": [
-        "「${ name }」は正常に移動されました"
+        "「${ name }」を移動しました"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」の名前の変更に失敗しました。"
@@ -4012,7 +4042,7 @@
         "連絡先グループが更新されました"
       ],
       "Encrypted search activated": [
-        "暗号化された検索が有効になりました"
+        "暗号化検索が有効になりました"
       ],
       "Failed to download files: ${ err }": [
         "ファイルのダウンロードに失敗しました: ${ err }"
@@ -4027,7 +4057,7 @@
         "ファイルまたはフォルダー「${ filename }」とその他 ${ count } 件はすでにアップロード中です"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "ファイルまたはフォルダー \"${ filename }\" はすでにアップロード中です"
+        "ファイルまたはフォルダー「${ filename }」はすでにアップロード中です"
       ],
       "File or folder is missing a name": [
         "ファイルまたはフォルダーに名前がありません"
@@ -4069,28 +4099,28 @@
         "サブフォルダーの読み込みに失敗しました"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "「${ name }」へのリンクの削除に失敗しました"
+        "「${ name }」のリンクの削除に失敗しました"
       ],
       "The link to \"${ name }\" was deleted": [
-        "「${ name }」へのリンクが削除されました"
+        "「${ name }」のリンクが削除されました"
       ],
       "The link to your item failed to be deleted": [
-        "アイテムへのリンクが削除できませんでした"
+        "アイテムのリンクが削除できませんでした"
       ],
       "The link to your item was deleted": [
-        "アイテムへのリンクが削除されました"
+        "アイテムのリンクを削除しました"
       ],
       "Trash failed to be emptied": [
-        "ゴミ箱を空にするのに失敗しました"
+        "ごみ箱を空にできませんでした"
       ],
       "Your old files will be deleted in 72 hours": [
-        "古いファイルは 72 時間で削除されます"
+        "古いファイルは72時間で削除されます"
       ],
       "Your settings failed to be saved": [
         "設定の保存に失敗しました"
       ],
       "Your settings have been changed successfully": [
-        "設定は正常に変更されました"
+        "設定を変更しました"
       ]
     },
     "Oauth instructions": {
@@ -4238,7 +4268,7 @@
         "名前またはメールアドレスで検索"
       ],
       "Select": [
-        "選択"
+        "選択してください"
       ],
       "Start typing an email address": [
         "電子メールアドレスを入力"
@@ -4368,10 +4398,10 @@
         "設定が保存されました"
       ],
       "Recovery has started": [
-        "復元は開始しました"
+        "復元を開始しました"
       ],
       "The link to your file was successfully copied": [
-        "ファイルへのリンクがコピーされました"
+        "ファイルのリンクがコピーされました"
       ],
       "Verification successful": [
         "検証に成功しました"
@@ -4602,6 +4632,9 @@
       ],
       "Edit contact group": [
         "連絡先グループを編集"
+      ],
+      "Edit email settings": [
+        "メール設定を編集"
       ],
       "Edit image": [
         "画像の編集"
@@ -4963,7 +4996,7 @@
     },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
-        "「${ str }」は正しい名前ではありません"
+        "「${ str }」という名前は使用できません"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "名前に \"/\" または \"\\\" の文字を使うことができません。 "
@@ -4972,13 +5005,13 @@
         "名前は ${ MAX_NAME_LENGTH } 以内である必要があります"
       ],
       "Name must not be empty": [
-        "名前を空にすることはできません"
+        "名前を入力してください"
       ],
       "Name must not begin with a space": [
-        "名前は最後が空白で始まることができません"
+        "名前の最初に空白は入力できません"
       ],
       "Name must not end with a space": [
-        "名前は最後が空白で終わることができません"
+        "名前の最後に空白は入力できません"
       ]
     },
     "Video control": {
@@ -5021,7 +5054,7 @@
         "Protonは、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "レポートはエンドツーエンドで暗号化されていません。機密情報を送信しないでください。"
+        "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "連絡先データが壊れているため表示できません。"
