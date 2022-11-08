@@ -4643,6 +4643,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Apabila Anda tidak mengetahui kata sandi Anda, tentukan frasa keamanan agar Anda tidak kehilangan akses menuju akun dan data Anda."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Apabila alamat email samaran Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
       ],
@@ -5003,11 +5006,17 @@
       "Set a recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Show original message": [
         "Tampilkan pesan asli"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin merupakan layanan milik Proton, dan akun Proton Anda meliputi perlindungan Hide My Email. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan buat alamat email samaran Anda."
@@ -5297,6 +5306,9 @@
       "Week": [
         "Pekan"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Kami telah berpindah ke ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Kapankah Anda ingin pesan Anda terkirim?"
       ],
@@ -5407,6 +5419,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Alamat email Anda tidak akan berubah. Meskipun demikian, ke depannya Anda akan perlu untuk masuk pada ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
@@ -7561,6 +7576,9 @@
       "${ emailsCount } members": [
         "${ emailsCount } anggota"
       ],
+      "${ unreads } unread messages": [
+        "${ unreads } pesan yang belum dibaca"
+      ],
       "Account suspended": [
         "Akun ditangguhkan"
       ],
@@ -7965,6 +7983,9 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Masuk pada ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Keluar"

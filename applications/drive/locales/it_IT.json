@@ -2900,6 +2900,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Se non conosci la tua password, imposta una frase di recupero per assicurarti di non perdere l'accesso al tuo account e ai tuoi dati."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Se disponi di uno di questi, passa alle impostazioni dell'account Proton per\niniziare il processo di sblocco."
       ],
@@ -3176,6 +3179,9 @@
       "Session timed out": [
         "Sessione scaduta"
       ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
       ],
@@ -3187,6 +3193,9 @@
       ],
       "Shared link failed to be loaded": [
         "Impossibile caricare il collegamento condiviso"
+      ],
+      "Sign in": [
+        "Accedi"
       ],
       "Signature check will be ignored": [
         "Il controllo della firma verrà ignorato"
@@ -3366,6 +3375,9 @@
       "Week": [
         "Settimana"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ci stiamo spostando su ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "Cosa vuoi fare?"
       ],
@@ -3428,6 +3440,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "A breve, dovrai accedere a ${ link }. Il tuo indirizzo email non cambierà."
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
@@ -4668,18 +4683,6 @@
       "2 years": [
         "2 anni"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Addebito di ${ amount } per i primi 2 anni"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Addebito di ${ amount } per il primo mese"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Addebito di ${ amount } per il primo anno"
-      ],
-      "Billed at ${ amountDue }": [
-        "Addebito di ${ amountDue }"
-      ],
       "for ${ n } month": [
         "per ${ n } mese",
         "per ${ n } mesi"
@@ -4695,9 +4698,6 @@
       ],
       "Save ${ discount }%": [
         "Risparmia il ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Prezzo standard ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5280,6 +5280,9 @@
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Accedi a ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Esci"

@@ -2884,6 +2884,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Falls du dein Passwort nicht mehr weist, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Wenn eines davon auf dich zutrifft, fahre mit den Proton-Kontoeinstellungen fort,\num den Entsperrungsprozess zu starten."
       ],
@@ -2929,6 +2932,9 @@
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Es ist so einfach wie Ziehen und Ablegen oder Auswählen von Dateien"
+      ],
+      "It’s easy and secure": [
+        "Es ist einfach und sicher"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
@@ -3154,6 +3160,9 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
       ],
@@ -3165,6 +3174,9 @@
       ],
       "Shared link failed to be loaded": [
         "Geteilter Link konnte nicht geladen werden"
+      ],
+      "Sign in": [
+        "Anmelden"
       ],
       "Signature check will be ignored": [
         "Signatur-Prüfung wird ignoriert"
@@ -3332,6 +3344,9 @@
       "Week": [
         "Woche"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Wir wechseln zu ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "Was willst du tun?"
       ],
@@ -3391,6 +3406,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Deine Daten von ${ importedEmailAddressStrong } können nun in dein Proton-Konto übertragen werden."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Deine E-Mail-Adresse wird sich nicht ändern. Aber bald wirst du dich unter ${ link } anmelden müssen."
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -3569,6 +3587,9 @@
       ],
       "Create a share link": [
         "Erstelle einen Freigabelink"
+      ],
+      "Create Proton account": [
+        "Proton-Konto erstellen"
       ],
       "Created": [
         "Erstellt"
@@ -4621,18 +4642,6 @@
       "2 years": [
         "Zwei Jahre"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Zum Preis von ${ amount } in den ersten zwei Jahren"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Zum Preis von ${ amount } im ersten Monat"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Zum Preis von ${ amount } im ersten Jahr"
-      ],
-      "Billed at ${ amountDue }": [
-        "Zum Preis von ${ amountDue }"
-      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -4648,9 +4657,6 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Regulärer Preis: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5233,6 +5239,9 @@
       ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Bei ${ PROTON_ME_DOMAIN } anmelden"
       ],
       "Sign out": [
         "Abmelden"

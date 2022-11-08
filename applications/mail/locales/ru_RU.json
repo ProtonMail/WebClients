@@ -4883,6 +4883,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Если вы не знаете пароль, то установите секретную фразу, чтобы не потерять доступ к вашему аккаунту и данным."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Если ваш псевдоним будет продан, утечет или будет использоваться не по назначению, просто отключите его, чтобы перестать получать спам."
       ],
@@ -5249,11 +5252,17 @@
       "Set a recovery phrase": [
         "Установите фразу для восстановления"
       ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту, защифрованную сквозным метом с пользователем, не являющимся ${ BRAND_NAME }, который использует службу, совместимую с PGP."
       ],
       "Show original message": [
         "Показать исходное сообщение"
+      ],
+      "Sign in": [
+        "Войти"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin - это услуга Proton, а ваш аккаунт Proton включает псевдонимы Hide My Email. Чтобы начать маскировку своего адреса электронной почты, зайдите в SimpleLogin и создайте свой первый псевдоним."
@@ -5552,6 +5561,9 @@
       "Week": [
         "Неделя"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Перемещаемся в ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Когда вы хотите, чтобы ваше сообщение было отправлено?"
       ],
@@ -5686,6 +5698,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Скоро вам необходимо будет войти через ${ link }. Ваш адрес электронной почты не изменится."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -7667,18 +7682,6 @@
       "2 years": [
         "2 года"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "${ amount } за первые 2 года"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "${ amount } за первый месяц"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "${ amount } за первый год"
-      ],
-      "Billed at ${ amountDue }": [
-        "Итого: ${ amountDue }"
-      ],
       "for ${ n } month": [
         "за ${ n } месяц ",
         "за ${ n } месяца",
@@ -7696,9 +7699,6 @@
       ],
       "Save ${ discount }%": [
         "Сэкономьте ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Обычная цена: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -8231,6 +8231,9 @@
         "${ emailsCount } участников",
         "${ emailsCount } участника"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } непрочитанное сообщение"
+      ],
       "Account suspended": [
         "Аккаунт отключен"
       ],
@@ -8653,6 +8656,9 @@
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Войти через ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Выйти"

@@ -1681,6 +1681,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
+        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
@@ -1709,6 +1712,9 @@
     "Error": {
       "A group with this name already exists": [
         "已存在同名群组"
+      ],
+      "A problem occurred, please try again": [
+        "出错了，请重试"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -1814,6 +1820,9 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
+      ],
+      "Please activate your content search again": [
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2094,6 +2103,11 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 标签已更改"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。隐私优先。"
       ]
     },
     "Group": {
@@ -2819,6 +2833,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "如果您已忘记密码，请先设置恢复密语，以免届时无法登录账户并导致个人数据丢失。"
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "如果您有其中之一，请前往 Proton 账户设置以\n启动解锁进程。"
       ],
@@ -2872,6 +2889,9 @@
       ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
+      ],
+      "Labels:": [
+        "标签："
       ],
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
@@ -2944,6 +2964,9 @@
       ],
       "No results found": [
         "未找到结果"
+      ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "已上传的所有密钥都不能用于加密，如需向此地址发送邮件，请上传一份有效密钥或关闭邮件加密。"
       ],
       "Not a valid URL": [
         "URL 无效"
@@ -3077,6 +3100,9 @@
       "Session timed out": [
         "会话超时"
       ],
+      "Set recovery phrase": [
+        "设置恢复密语"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
@@ -3088,6 +3114,9 @@
       ],
       "Shared link failed to be loaded": [
         "分享链接加载失败"
+      ],
+      "Sign in": [
+        "登录"
       ],
       "Signature check will be ignored": [
         "将忽略签名校验"
@@ -3248,6 +3277,9 @@
       "Week": [
         "周"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "我们的域名现已变更为 ${ PROTON_ME_DOMAIN }。"
+      ],
       "What do you want to do?": [
         "您想要做什么？"
       ],
@@ -3307,6 +3339,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "数据随时可以从 ${ importedEmailAddressStrong } 导入至您的 Proton 账户。"
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "您的邮箱地址不会变化，但近期您将需要通过 ${ link } 重新登录。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -3632,6 +3667,9 @@
       ],
       "Name": [
         "姓名"
+      ],
+      "Navigation": [
+        "导航栏"
       ],
       "Never": [
         "永不"
@@ -4275,6 +4313,9 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ contactsExported.length }/${ countContacts } 名联系人已成功导出。"
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
@@ -4628,6 +4669,9 @@
       "Edit contact group": [
         "更改联系人群组"
       ],
+      "Edit email settings": [
+        "更改邮箱设置"
+      ],
       "Edit image": [
         "更改图片"
       ],
@@ -4711,6 +4755,9 @@
       ],
       "MIME type": [
         "MIME 类型"
+      ],
+      "Minicalendar": [
+        "迷你日历"
       ],
       "Modified": [
         "修改时间"
@@ -4822,6 +4869,9 @@
       ],
       "Sign in and grant access": [
         "登录并授予权限"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "前往 ${ PROTON_ME_DOMAIN } 登录"
       ],
       "Sign out": [
         "退出"

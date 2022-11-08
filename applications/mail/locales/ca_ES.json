@@ -107,6 +107,12 @@
       "Block messages from this sender": [
         "Bloqueja els missatges d'aquest remitent"
       ],
+      "Block sender": [
+        "Bloqueja el remitent"
+      ],
+      "Block senders": [
+        "Bloqueja els remitents"
+      ],
       "Bold": [
         "Negreta"
       ],
@@ -361,6 +367,9 @@
       "Fewer search options": [
         "Menys opcions de cerca"
       ],
+      "Filter on...": [
+        "Filtra per..."
+      ],
       "Font": [
         "Font"
       ],
@@ -490,6 +499,9 @@
       ],
       "Load": [
         "Carregar"
+      ],
+      "Load anyway": [
+        "Carrega de totes maneres"
       ],
       "Load embedded images": [
         "Carregar imatges incrustades"
@@ -2730,6 +2742,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altre no s'entregaran i seran eliminats permanentment.",
+        "Nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altres no s'entregaran i seran eliminats permanentment."
+      ],
       "No folders": [
         "Cap carpeta"
       ],
@@ -3471,9 +3487,17 @@
       ]
     },
     "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
       "Gigabyte": [
         "gigabyte",
         "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
       ],
       "Megabyte": [
         "megabyte",
@@ -3977,6 +4001,14 @@
         "${ numContacts } contacte",
         "${ numContacts } contactes"
       ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } coincidència",
+        "${ numOccurrences } coincidències"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "S'ha trobat ${ numOccurrences } coincidència en el contingut del correu",
+        "S'han trobat ${ numOccurrences } coincidències en el contingut del correu"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
         "${ providerFoldersNumLocalized } carpetes trobades"
@@ -4382,6 +4414,9 @@
         "Hora",
         "Hores"
       ],
+      "How Hide My Email works": [
+        "Com funciona Hide My Email"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Envio aquest missatge a un usuari que no és de Proton Mail."
       ],
@@ -4454,6 +4489,9 @@
       ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
+      ],
+      "Labels:": [
+        "Etiquetes:"
       ],
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
@@ -4726,11 +4764,17 @@
       "Set a recovery phrase": [
         "Establir una frase de recuperació"
       ],
+      "Set recovery phrase": [
+        "Estableix la frase de recuperació"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
       "Show original message": [
         "Mostra el missatge original"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -4819,6 +4863,10 @@
       ],
       "This conversation contains trashed messages.": [
         "Aquesta conversa conté missatges esborrats."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
+        "Aquests missatges seran marcats com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Aquest correu no ha superat els requisits d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament!"
@@ -5001,6 +5049,9 @@
       "Week": [
         "Setmana"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ens estem movent a ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Quan voleu que s'enviï el vostre missatge?"
       ],
@@ -5113,6 +5164,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "La teva adreça de correu no canviarà. Però properament l'enllaç per a l'inici de sessió serà ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -6101,9 +6155,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ totalLabelsCount } carpeta des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d'${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6721,6 +6783,10 @@
       "PGP-signed": [
         "Signat amb PGP"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Enviat per ${ MAIL_APP_NAME } amb xifrat d'accés zero a un destinatari verificat",
+        "Enviats per ${ MAIL_APP_NAME } amb xifrat d'accés zero a un destinatari verificat"
+      ],
       "Sent by you with end-to-end encryption": [
         "Enviat per vós amb xifrat d'extrem a extrem"
       ],
@@ -7122,6 +7188,10 @@
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } missatge sense llegir",
+        "${ unreads } missatges sense llegir"
       ],
       "Account suspended": [
         "Compte suspès"

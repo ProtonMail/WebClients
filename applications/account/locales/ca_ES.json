@@ -427,6 +427,9 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "Més informació: Dreceres de teclat"
+      ],
       "move emails to": [
         "moure correus electrònics a"
       ],
@@ -3018,9 +3021,17 @@
       ]
     },
     "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
       "Gigabyte": [
         "gigabyte",
         "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
       ],
       "Megabyte": [
         "megabyte",
@@ -4035,6 +4046,9 @@
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
       ],
+      "Labels:": [
+        "Etiquetes:"
+      ],
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
@@ -4130,9 +4144,6 @@
       ],
       "Not a valid URL": [
         "No és una URL vàlida"
-      ],
-      "Not set": [
-        "No establert"
       ],
       "Number of users": [
         "Nombre d'usuaris"
@@ -5068,6 +5079,9 @@
       "ALL": [
         "TOT"
       ],
+      "Allow notifications by email": [
+        "Permet notificacions per correu"
+      ],
       "Allow recovery by email": [
         "Permetre recuperació per correu electrònic"
       ],
@@ -5924,9 +5938,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ totalLabelsCount } carpeta des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d'${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
