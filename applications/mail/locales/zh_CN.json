@@ -107,6 +107,12 @@
       "Block messages from this sender": [
         "屏蔽来自此发件人的所有邮件"
       ],
+      "Block sender": [
+        "屏蔽发件人"
+      ],
+      "Block senders": [
+        "屏蔽发件人"
+      ],
       "Bold": [
         "粗体"
       ],
@@ -490,6 +496,9 @@
       ],
       "Load": [
         "加载"
+      ],
+      "Load anyway": [
+        "确定加载"
       ],
       "Load embedded images": [
         "加载嵌入图像"
@@ -895,6 +904,9 @@
       ],
       "Skip": [
         "跳过"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "跟踪防护已阻止加载部分图像。"
       ],
       "Star": [
         "星标"
@@ -2786,11 +2798,20 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } others won't be delivered and will be permanently deleted.": [
+        "来自 ${ senderEmailAddress } 与另外 ${ otherSendersCount } 个邮箱的新邮件将被直接删除，不再送达。"
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "来自 ${ senderEmailAddress } 的新邮件将被直接删除，不再送达。"
+      ],
       "No folders": [
         "无文件夹"
       ],
       "No labels": [
         "无标签"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
+        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -2941,6 +2962,9 @@
       ],
       "A group with this name already exists": [
         "已存在同名群组"
+      ],
+      "A problem occurred, please try again": [
+        "出错了，请重试"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -3104,6 +3128,9 @@
       "Passwords do not match": [
         "密码不匹配"
       ],
+      "Please activate your content search again": [
+        "请重新开启全文搜索"
+      ],
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
@@ -3124,6 +3151,9 @@
       ],
       "Primary key is not valid for sending": [
         "主密钥无法发送邮件"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "已获取的 ${ BRAND_NAME } 用户主密钥无效，无法发送邮件"
       ],
       "Public key could not be trusted": [
         "无法信任公钥"
@@ -3686,6 +3716,11 @@
         "默认"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。隐私优先。"
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "我们已将您的存储空间升至 ${ rewardInGb } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
@@ -4164,6 +4199,9 @@
       "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } 会员"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
+        "${ contactGroupName }（${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 名成员）"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 有多个邮箱地址。"
       ],
@@ -4449,6 +4487,9 @@
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "正在下载邮件 ${ esProgress } / ${ totalProgressToShow }"
+      ],
       "Draft": [
         "草稿"
       ],
@@ -4584,6 +4625,9 @@
       "Hours": [
         "小时"
       ],
+      "How Hide My Email works": [
+        "Hide My Email 的原理"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "我要将此邮件发给非 Proton Mail 邮箱。"
       ],
@@ -4595,6 +4639,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "如果您已忘记密码，请先设置恢复密语，以免届时无法登录账户并导致个人数据丢失。"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "倘若临时邮箱地址被泄露、被贩卖、被滥用，只需予以销毁即可免受垃圾邮件袭扰。"
@@ -4658,6 +4705,9 @@
       ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
+      ],
+      "Labels:": [
+        "标签："
       ],
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
@@ -4773,6 +4823,9 @@
       "non-Proton Mail": [
         "非 Proton Mail"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "已上传的所有密钥都不能用于加密，如需向此地址发送邮件，请上传一份有效密钥或关闭邮件加密。"
+      ],
       "Not a valid URL": [
         "URL 无效"
       ],
@@ -4850,6 +4903,9 @@
       ],
       "Priority support": [
         "优先享受客服"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "使用 ${ maskMyEmailButton } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 绝不以践踏用户隐私的方式牟利。"
@@ -4947,11 +5003,20 @@
       "Set a recovery phrase": [
         "设置恢复密语"
       ],
+      "Set recovery phrase": [
+        "设置恢复密语"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
       "Show original message": [
         "显示原始邮件"
+      ],
+      "Sign in": [
+        "登录"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "您可以使用 Proton 提供的 SimpleLogin 服务隐藏您的邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "如果您不愿将真实邮箱透露给其他网站，SimpleLogin 能够方便快捷地生成临时邮箱供您使用。"
@@ -5027,6 +5092,9 @@
       ],
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "标为垃圾邮件后，是否要退订此类邮件？"
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "只要不知道您的邮箱地址就无法发送垃圾邮件。使用 Hide My Email 功能将垃圾邮件拒之门外。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -5232,8 +5300,14 @@
       "Week": [
         "周"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "我们的域名现已变更为 ${ PROTON_ME_DOMAIN }。"
+      ],
       "When do you want your message to be sent?": [
         "您想要什么时候发送您的邮件？"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "在网上填写邮箱时，不必使用真实的邮箱地址，只需填写一个可销毁的 Hide My Email 临时邮箱。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
@@ -5339,6 +5413,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "数据随时可以从 ${ importedEmailAddressStrong } 导入至您的 Proton 账户。"
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "您的邮箱地址不会变化，但近期您将需要通过 ${ link } 重新登录。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -5851,6 +5928,9 @@
       "Import to email address": [
         "导入到邮箱地址"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "快捷键：${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "开启快捷键"
       ],
@@ -5896,6 +5976,9 @@
       "Mark as": [
         "标为"
       ],
+      "Move ${ sidebarElementName }": [
+        "移动 ${ sidebarElementName }"
+      ],
       "Move to": [
         "移至"
       ],
@@ -5907,6 +5990,9 @@
       ],
       "Name": [
         "姓名"
+      ],
+      "Navigation": [
+        "导航栏"
       ],
       "No label found": [
         "未找到标签"
@@ -6318,6 +6404,11 @@
         "在 ${ CALENDAR_APP_NAME } 中打开"
       ]
     },
+    "Link to settings": {
+      "settings": [
+        "设置"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "即将准备就绪"
@@ -6632,6 +6723,12 @@
       ],
       "Password has been set successfully": [
         "密码已设置成功"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "发件人 ${ firstSenderAddress } 已屏蔽"
+      ],
+      "Senders blocked": [
+        "发件人已屏蔽"
       ]
     },
     "Oauth instructions": {
@@ -6856,6 +6953,9 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ contactsExported.length }/${ countContacts } 名联系人已成功导出。"
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
@@ -7095,11 +7195,17 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
       ],
+      "Email tracking protection": [
+        "邮件追踪防护"
+      ],
       "Message Content Search": [
         "邮件全文搜索"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
+      ],
+      "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
+        "我们现已默认允许外链图片加载，并为您开启发件方追踪防护。这些选项可以在${ settingsLink }中更改。"
       ],
       "You can now schedule your messages to be sent later": [
         "您现在可以计划稍后发送邮件"
@@ -7166,8 +7272,14 @@
       "${ elementsCount } conversations marked as unread.": [
         "${ elementsCount } 条会话已标记为未读。"
       ],
+      "${ elementsCount } conversations moved to ${ folderName } and senders added to your not spam list.": [
+        "${ elementsCount } 项会话已移至${ folderName }，其发件人已加入白名单。"
+      ],
       "${ elementsCount } conversations moved to ${ folderName }.": [
         "${ elementsCount } 条会话已移至${ folderName }。"
+      ],
+      "${ elementsCount } conversations moved to spam and senders added to your spam list.": [
+        "${ elementsCount } 项会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "${ elementsCount } conversations removed from ${ labelName }.": [
         "${ elementsCount } 条会话已移除 ${ labelName } 标签。"
@@ -7184,8 +7296,14 @@
       "${ elementsCount } messages marked as unread.": [
         "${ elementsCount } 封邮件已标记为未读。"
       ],
+      "${ elementsCount } messages moved to ${ folderName } and senders added to your not spam list.": [
+        "${ elementsCount } 封邮件已移至${ folderName }，其发件人已加入白名单。"
+      ],
       "${ elementsCount } messages moved to ${ folderName }.": [
         "${ elementsCount } 封邮件已移至${ folderName }。"
+      ],
+      "${ elementsCount } messages moved to spam and senders added to your spam list.": [
+        "${ elementsCount } 封邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "${ elementsCount } messages removed from ${ labelName }.": [
         "${ elementsCount } 封邮件已移除 ${ labelName } 标签。"
@@ -7226,8 +7344,14 @@
       "Conversation marked as unread.": [
         "会话已标记为未读。"
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "会话已移至${ folderName }，其发件人已加入白名单。"
+      ],
       "Conversation moved to ${ folderName }.": [
         "会话已移至${ folderName }。"
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "Conversation removed from ${ labelName }.": [
         "会话已移除 ${ labelName } 标签。"
@@ -7283,8 +7407,14 @@
       "Message marked as unread.": [
         "邮件已标记为未读。"
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "邮件已移至${ folderName }，其发件人已加入白名单。"
+      ],
       "Message moved to ${ folderName }.": [
         "邮件已移至${ folderName }。"
+      ],
+      "Message moved to spam and sender added to your spam list.": [
+        "邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "Message removed from ${ labelName }.": [
         "邮件已移除 ${ labelName } 标签。"
@@ -7578,6 +7708,9 @@
       "Edit contact group": [
         "更改联系人群组"
       ],
+      "Edit email settings": [
+        "更改邮箱设置"
+      ],
       "Edit filter": [
         "更改规则"
       ],
@@ -7686,8 +7819,14 @@
       "Message will expire": [
         "此邮件已设置有效期"
       ],
+      "Minicalendar": [
+        "迷你日历"
+      ],
       "More": [
         "更多"
+      ],
+      "More actions": [
+        "更多操作"
       ],
       "More options": [
         "更多选项"
@@ -7830,6 +7969,9 @@
       "Sign in and grant access": [
         "登录并授予权限"
       ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "前往 ${ PROTON_ME_DOMAIN } 登录"
+      ],
       "Sign out": [
         "退出"
       ],
@@ -7953,6 +8095,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此操作将从服务器下载所有邮件并在本机进行搜索，清理浏览器数据将导致此选项关闭。"
       ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"

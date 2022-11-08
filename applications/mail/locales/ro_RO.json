@@ -4807,6 +4807,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Dacă nu vă cunoașteți parola, setați o frază de recuperare pentru a vă asigura că nu vă pierdeți accesul la cont și date."
+      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Dacă aliasul este vândut, divulgat sau abuzat, îl dezactivați pur și simplu pentru a înceta să mai primiți mesaje nedorite."
       ],
@@ -5171,11 +5174,17 @@
       "Set a recovery phrase": [
         "Setați o frază de recuperare"
       ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
       "Show original message": [
         "Afișare mesaj original"
+      ],
+      "Sign in": [
+        "Autentificare"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin este un serviciu Proton, iar acest cont include aliasuri de ascundere a adresei de e-mail. Pentru a începe să vă mascați adresa, accesați SimpleLogin și creați-vă primul alias."
@@ -5471,6 +5480,9 @@
       "Week": [
         "Săptămâna"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ne mutăm la domeniul ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
       ],
@@ -5597,6 +5609,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Adresa de e-mail nu vi se va schimba. Dar curând, va trebui să vă autentificați la ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
@@ -5984,7 +5999,7 @@
         "Calendare"
       ],
       "Carbon Copy": [
-        "Copie identică"
+        "Copie"
       ],
       "Category": [
         "Categoria"
@@ -7852,6 +7867,11 @@
         "${ emailsCount } membri",
         "${ emailsCount } de membri"
       ],
+      "${ unreads } unread message": [
+        "Un mesaj necitit.",
+        "${ unreads } mesaje necitite.",
+        "${ unreads } de mesaje necitite."
+      ],
       "Account suspended": [
         "Cont suspendat"
       ],
@@ -7897,7 +7917,7 @@
         "Blocare expeditor"
       ],
       "Carbon Copy": [
-        "Copie identică"
+        "Copie"
       ],
       "CC": [
         "C"
@@ -8268,6 +8288,9 @@
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Autentificare la ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Deconectare"

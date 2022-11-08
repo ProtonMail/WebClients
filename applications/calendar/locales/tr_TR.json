@@ -3421,6 +3421,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Parolanızı bilmiyorsanız, hesabınıza ve verilerinize erişimi kaybetmeyeceğinizden emin olmak için bir kurtarma ifadesi ayarlayın."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
       ],
@@ -3603,8 +3606,14 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
+      "Set recovery phrase": [
+        "Kurtarma ifadesini ayarla"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
+      ],
+      "Sign in": [
+        "Oturum aç"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Düzenleyici tarafından daha önce güncellenmiş etkinliklere verdiğiniz yanıtlardan bazıları kaybolacak."
@@ -3710,6 +3719,9 @@
       ],
       "Week": [
         "Hafta"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "${ PROTON_ME_DOMAIN } üzerine taşınıyoruz."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
@@ -3821,6 +3833,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "E-posta adresiniz değişmeyecek. Ancak yakında ${ link } adresinden oturum açmanız gerekecek."
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -5657,6 +5672,9 @@
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "${ PROTON_ME_DOMAIN } üzerinde oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"

@@ -2848,6 +2848,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Apabila Anda tidak mengetahui kata sandi Anda, tentukan frasa keamanan agar Anda tidak kehilangan akses menuju akun dan data Anda."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Apabila Anda memiliki setidaknya salah satunya, tuju menu pengaturan akun Proton\nuntuk dapat mencabut pemblokiran yang ada."
       ],
@@ -3121,6 +3124,9 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
@@ -3132,6 +3138,9 @@
       ],
       "Shared link failed to be loaded": [
         "Tautan yang dibagikan gagal dimuat"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "Signature check will be ignored": [
         "Proses verifikasi tanda tangan akan diabaikan"
@@ -3310,6 +3319,9 @@
       "Week": [
         "Pekan"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Kami telah berpindah ke ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "Apa yang ingin Anda lakukan?"
       ],
@@ -3372,6 +3384,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Alamat email Anda tidak akan berubah. Meskipun demikian, ke depannya Anda akan perlu untuk masuk pada ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
@@ -4953,6 +4968,9 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Masuk pada ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Keluar"

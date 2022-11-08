@@ -1918,6 +1918,9 @@
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
       ],
+      "Enter new password for user ${ userName }.": [
+        "Voer een nieuw wachtwoord in voor gebruiker ${ userName }."
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Voer de code in die naar uw telefoonnummer ${ phone } is gestuurd."
       ],
@@ -2059,9 +2062,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "Not set": [
-        "Niet ingesteld"
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
@@ -2118,6 +2118,9 @@
       ],
       "Priority support": [
         "Prioriteitsondersteuning"
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Proton's versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
       ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
@@ -2646,6 +2649,9 @@
       "Credits used": [
         "Verbruikt tegoed"
       ],
+      "Current display name": [
+        "Huidige weergavenaam"
+      ],
       "Customize invoices": [
         "Facturen aanpassen"
       ],
@@ -2717,6 +2723,12 @@
       ],
       "Name on card": [
         "Naam op de kaart"
+      ],
+      "Navigation": [
+        "Navigatie"
+      ],
+      "New display name": [
+        "Nieuwe weergavenaam"
       ],
       "New login password": [
         "Nieuw inlogwachtwoord"
@@ -3994,18 +4006,6 @@
       "2 years": [
         "2 jaar"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "U betaalt ${ amount } voor de eerste 2 jaar"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "U betaalt ${ amount } voor de eerste maand"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "U betaalt ${ amount } voor het eerste jaar"
-      ],
-      "Billed at ${ amountDue }": [
-        "U betaalt ${ amountDue }"
-      ],
       "for ${ n } month": [
         "voor ${ n } maand",
         "voor ${ n } maanden"
@@ -4021,9 +4021,6 @@
       ],
       "Save ${ discount }%": [
         "Bespaar ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Standaardprijs ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -4213,6 +4210,9 @@
       ],
       "Credits added": [
         "Tegoed toegevoegd"
+      ],
+      "Display name updated": [
+        "Weergavenaam bijgewerkt"
       ],
       "Email address copied to clipboard": [
         "E-mailadres gekopieerd naar het klembord"
@@ -4464,6 +4464,9 @@
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
+      ],
+      "Edit display name": [
+        "Wijzig weergavenaam"
       ],
       "Email": [
         "E-mailadres"

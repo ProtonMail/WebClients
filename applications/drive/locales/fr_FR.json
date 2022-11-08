@@ -2900,6 +2900,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Si vous ne vous rappelez plus de votre mot de passe, ajoutez une phrase de récupération pour vous assurer de ne pas perdre l'accès à votre compte ou données."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Si vous avez un de ces éléments, passez à la configuration du compte Proton pour commencer le processus de déblocage."
       ],
@@ -3176,6 +3179,9 @@
       "Session timed out": [
         "Session expirée"
       ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des e-mails chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
@@ -3187,6 +3193,9 @@
       ],
       "Shared link failed to be loaded": [
         "Le lien partagé n'a pas pu être chargé."
+      ],
+      "Sign in": [
+        "Se connecter"
       ],
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée."
@@ -3425,6 +3434,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Votre adresse mail restera la même. Bientôt, vous devrez utiliser le nom de domaine ${ link } pour vous connecter."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
@@ -4665,18 +4677,6 @@
       "2 years": [
         "2 ans"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Facturé ${ amount } pour les 2 premières années"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Facturé ${ amount } pour le premier mois"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Facturé ${ amount } pour la première année"
-      ],
-      "Billed at ${ amountDue }": [
-        "Facturé ${ amountDue }"
-      ],
       "for ${ n } month": [
         "pour ${ n } mois",
         "pour ${ n } mois"
@@ -4692,9 +4692,6 @@
       ],
       "Save ${ discount }%": [
         "Économisez ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Le prix habituel est de ${ regularPrice }."
       ]
     },
     "specialoffer: Title": {

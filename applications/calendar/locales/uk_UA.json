@@ -3545,6 +3545,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Якщо ви не знаєте пароль, налаштуйте фразу відновлення, щоб не втратити доступ до свого облікового запису та даних."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
       ],
@@ -3731,8 +3734,14 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
+      ],
+      "Sign in": [
+        "Увійти"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Деякі з ваших відповідей на повторювані події, раніше оновлені організатором, будуть втрачені."
@@ -3838,6 +3847,9 @@
       ],
       "Week": [
         "Тиждень"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ми переходимо на ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
@@ -3949,6 +3961,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Ваша електронна адреса не зміниться. Але незабаром вам потрібно буде входити використовуючи ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -5877,6 +5892,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Увійти використовуючи ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Вийти"

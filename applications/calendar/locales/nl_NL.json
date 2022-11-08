@@ -537,6 +537,14 @@
         "Ze kunnen uw agenda inzien of wijzigen"
       ]
     },
+    "Action title": {
+      "Share with anyone": [
+        "Delen met iemand"
+      ],
+      "Share with Proton users": [
+        "Delen met Proton-gebruikers"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } of ${ importContact }."
@@ -811,6 +819,20 @@
       ],
       "Manage members": [
         "Beheer leden"
+      ],
+      "Unable to create more calendar links": [
+        "Kan niet meer agenda-links aanmaken"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Kan deze agenda niet met meer Proton-gebruikers delen"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid voor deze agenda bereikt.\nVerwijder enkele leden om deze agenda met meer Proton-accounts te delen.",
+        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden voor deze agenda bereikt.\nVerwijder enkele leden om deze agenda met meer Proton-accounts te delen."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "U hebt het maximum van ${ MAX_LINKS_PER_CALENDAR } link bereikt voor deze agenda.\nVerwijder een bestaande link om een nieuwe link naar deze agenda te maken.",
+        "U hebt het maximum van ${ MAX_LINKS_PER_CALENDAR } links bereikt voor deze agenda.\nVerwijder een bestaande link om een nieuwe link naar deze agenda te maken."
       ]
     },
     "Calendar sharing access option label": {
@@ -2362,6 +2384,11 @@
         "Uw import zal niet worden verwerkt."
       ]
     },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Uitgenodigd adres bestaat niet"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
@@ -3383,6 +3410,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Als u uw wachtwoord niet weet, stel dan een herstelzin in zodat u zeker de toegang tot uw account en gegevens niet verliest."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
@@ -3562,8 +3592,14 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Set recovery phrase": [
+        "Herstelzin instellen"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
+      ],
+      "Sign in": [
+        "Inloggen"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
@@ -3669,6 +3705,9 @@
       ],
       "Week": [
         "Week"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "We verhuizen naar ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
@@ -3780,6 +3819,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Uw e-mailadres zal niet veranderen, maar binnenkort moet u zich inloggen via ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -4054,6 +4096,9 @@
       "Name": [
         "Naam"
       ],
+      "Navigation": [
+        "Navigatie"
+      ],
       "Notification": [
         "Notificatie"
       ],
@@ -4293,11 +4338,25 @@
     "Modal for limit of calendars reached": {
       "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
         "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw abonnement bereikt."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Kan niet meer agenda's toevoegen. U hebt het maximum aantal geabonneerde agenda's binnen uw plan bereikt."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw plan bereikt."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } deelde hun agenda ${ boldCalendarName } met u."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "Vervoeg agenda"
+      ],
+      "Unable to join more calendars": [
+        "Kan niet van meer agenda's lid worden"
       ]
     },
     "Modal title": {
@@ -4514,6 +4573,14 @@
       "Member added": [
         "Lid toegevoegd",
         "Leden toegevoegd"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Agenda-uitnodiging afgewezen"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Lid geworden van ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4917,10 +4984,20 @@
         "Instellingen wijzigen mislukt"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Deel uw agenda met een link om niet-Proton-gebruikers uit te nodigen"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid per agenda overschreden",
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden per agenda overschreden"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Voeg de Proton-accounts toe met wie u ${ calendarName } wil delen. We sturen ze een uitndoging."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -5082,18 +5159,6 @@
       "2 years": [
         "2 jaar"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "U betaalt ${ amount } voor de eerste 2 jaar"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "U betaalt ${ amount } voor de eerste maand"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "U betaalt ${ amount } voor het eerste jaar"
-      ],
-      "Billed at ${ amountDue }": [
-        "U betaalt ${ amountDue }"
-      ],
       "for ${ n } month": [
         "voor ${ n } maand",
         "voor ${ n } maanden"
@@ -5109,9 +5174,6 @@
       ],
       "Save ${ discount }%": [
         "Bespaar ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Standaardprijs ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5799,6 +5861,9 @@
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Inloggen via ${ PROTON_ME_DOMAIN }"
+      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -6000,6 +6065,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Schakel dit adres in om toegang te krijgen tot de gedeelde agenda, of vraag ${ boldCalendarOwnerEmail } om een uitnodiging te verzenden naar een actief adres."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "U kan geen lid worden van deze agenda omdat het uitgenodigde e-mailadres (${ boldInvitedAddress }) uitgeschakeld is."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -2900,6 +2900,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Se você não souber sua senha, defina uma frase de recuperação para garantir que não perca o acesso à sua conta e aos dados."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Se você tiver uma destas, siga para a configuração da conta Proton para iniciar o processo de desbloqueio."
       ],
@@ -3176,6 +3179,9 @@
       "Session timed out": [
         "Sessão expirada"
       ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
@@ -3187,6 +3193,9 @@
       ],
       "Shared link failed to be loaded": [
         "O link compartilhado falhou ao carregar"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Signature check will be ignored": [
         "Verificação de assinatura será ignorada"
@@ -3366,6 +3375,9 @@
       "Week": [
         "Semana"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Estamos movendo para ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "O que você deseja fazer?"
       ],
@@ -3428,6 +3440,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Seu endereço de e-mail não será alterado. Mas em breve, você precisará fazer login em ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -4668,18 +4683,6 @@
       "2 years": [
         "2 anos"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Com o preço de ${ amount } nos primeiros dois anos"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Com o preço de ${ amount } no primeiro mês"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Com o preço de ${ amount } no primeiro ano"
-      ],
-      "Billed at ${ amountDue }": [
-        "Com o custo de ${ amountDue }"
-      ],
       "for ${ n } month": [
         "por ${ n } mês",
         "por ${ n } meses"
@@ -4695,9 +4698,6 @@
       ],
       "Save ${ discount }%": [
         "Economize ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Preço padrão ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5280,6 +5280,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Faça login em ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Encerrar sessão"

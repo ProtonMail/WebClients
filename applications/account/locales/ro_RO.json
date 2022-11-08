@@ -468,6 +468,9 @@
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "Detalii: combinații de taste"
+      ],
       "move emails to": [
         "mutare mesaje în"
       ],
@@ -5242,7 +5245,7 @@
         "Tip legătură"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "Conținutul încărcat este protejat de proxy-ul nostru atunci când este activată protecția tracker."
+        "Conținutul încărcat este protejat de proxy-ul nostru atunci când blocarea urmăririi este activată."
       ],
       "Loading": [
         "Se încarcă"
@@ -5336,9 +5339,6 @@
       ],
       "Not a valid URL": [
         "URL nevalid"
-      ],
-      "Not set": [
-        "Nesetat"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nu este dispozitivul dvs.? Folosiți o fereastră de navigare privată pentru a vă conecta și închideți-o când ați terminat. ${ learnMore }"
@@ -6628,6 +6628,9 @@
       "All-day event notifications": [
         "Notificări evenimente toată ziua"
       ],
+      "Allow notifications by email": [
+        "Permitere notificări pe e-mail"
+      ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
       ],
@@ -6821,7 +6824,7 @@
         "Credite folosite"
       ],
       "Current display name": [
-        "Numele actual de afișare"
+        "Nume actual afișat"
       ],
       "Customize invoices": [
         "Personalizare facturi"
@@ -7003,6 +7006,9 @@
       "Key strength": [
         "Putere cheie"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Combinații de taste"
       ],
@@ -7066,8 +7072,11 @@
       "Name on card": [
         "Titular card"
       ],
+      "Navigation": [
+        "Navigare"
+      ],
       "New display name": [
-        "Noul nume de afișare"
+        "Nume nou afișat"
       ],
       "New login password": [
         "Parola nouă de conectare"
@@ -7178,7 +7187,7 @@
         "Solicitare chei de încredere"
       ],
       "Proration": [
-        "Proporții"
+        "Credit neutilizat"
       ],
       "Protection mode": [
         "Mod de protejare"
@@ -8258,26 +8267,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8347,6 +8336,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
