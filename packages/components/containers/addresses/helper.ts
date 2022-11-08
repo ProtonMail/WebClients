@@ -1,19 +1,27 @@
-import { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_STATUS,
+    ADDRESS_TYPE,
+    MEMBER_PRIVATE,
+    MEMBER_TYPE,
+    RECEIVE_ADDRESS,
+} from '@proton/shared/lib/constants';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 
-const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM, TYPE_EXTERNAL } = ADDRESS_TYPE;
+const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 
 export const getStatus = (address: Address, i: number) => {
-    const { Status, Receive, DomainID, HasKeys } = address;
+    const { Type, Status, Receive, DomainID, HasKeys } = address;
 
     const isActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
     const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
-    const isOrphan = DomainID === null;
+    const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
+    const isOrphan = DomainID === null && !isExternal;
     const isMissingKeys = !HasKeys;
 
     return {
         isDefault: i === 0 && !isDisabled && isActive,
         isActive,
+        isExternal,
         isDisabled,
         isOrphan,
         isMissingKeys,
@@ -63,11 +71,7 @@ export const getPermissions = ({
 
     let canDisable = isEnabled && isAdmin && !isSpecialAddress;
 
-    // TODO: This is a heuristic that finds out if it's a managed user pending the new Type field (which will
-    // be added to the member response) by looking if it has a PM address or external address.
-    const isManagedUser = !addresses.some(
-        (address) => address.Type === TYPE_ORIGINAL || address.Type === TYPE_EXTERNAL
-    );
+    const isManagedUser = member?.Type === MEMBER_TYPE.MANAGED;
     if (isManagedUser) {
         const hasOtherEnabledAddress = addresses.some(
             (otherAddress) => otherAddress.ID !== ID && otherAddress.Status === ADDRESS_STATUS.STATUS_ENABLED
@@ -106,7 +110,7 @@ const addressSort = (a: Address, b: Address) => {
 
 export const formatAddresses = (addresses?: Address[]) => {
     if (Array.isArray(addresses)) {
-        return addresses.filter(({ Type }) => Type !== ADDRESS_TYPE.TYPE_EXTERNAL).sort(addressSort);
+        return addresses.sort(addressSort);
     }
     return [];
 };

@@ -35,6 +35,7 @@ export const getSignupSearchParams = (search: History.Search) => {
     const referrer = searchParams.get('referrer') || undefined; // referral ID
     const invite = searchParams.get('invite') || undefined;
     const coupon = searchParams.get('coupon') || undefined;
+    const type = searchParams.get('type') || undefined;
 
     return {
         coupon,
@@ -47,6 +48,7 @@ export const getSignupSearchParams = (search: History.Search) => {
         domains,
         referrer,
         invite,
+        type,
     };
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;

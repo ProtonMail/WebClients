@@ -2,7 +2,6 @@ import { PaymentParameters } from '@proton/components/containers/payments/interf
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { PLAN_TYPES } from '@proton/shared/lib/constants';
-import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Api, Currency, Cycle, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -57,9 +56,4 @@ export const getSubscriptionPrices = async (
 export const getPlanFromPlanIDs = (plans: Plan[], planIDs?: PlanIDs) => {
     const planIDsList = Object.keys(planIDs || {});
     return plans.find(({ Name, Type }) => Type === PLAN_TYPES.PLAN && planIDsList.includes(Name));
-};
-
-export const getLocalPart = (email: string) => {
-    const [localPart] = getEmailParts(email);
-    return removePlusAliasLocalPart(localPart);
 };

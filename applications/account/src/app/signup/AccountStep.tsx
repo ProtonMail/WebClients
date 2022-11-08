@@ -12,17 +12,25 @@ import {
     ChallengeRef,
     ChallengeResult,
     Href,
+    Info,
+    InlineLinkButton,
     InputFieldTwo,
     ModalProps,
     Option,
     PasswordInputTwo,
     SelectTwo,
-    UnderlineButton,
     useFormErrors,
     useLoading,
     useModalState,
 } from '@proton/components';
-import { APPS, BRAND_NAME, CLIENT_TYPES, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    BRAND_NAME,
+    CALENDAR_APP_NAME,
+    CLIENT_TYPES,
+    MAIL_APP_NAME,
+    SSO_PATHS,
+} from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -65,11 +73,10 @@ interface Props {
     onBack?: () => void;
     defaultUsername?: string;
     defaultEmail?: string;
-    defaultSignupType: SignupType;
+    signupTypes: SignupType[];
     signupType: SignupType;
     onChangeSignupType: (signupType: SignupType) => void;
     defaultRecoveryEmail?: string;
-    hasExternalSignup?: boolean;
     domains: string[];
     hasChallenge?: boolean;
     title: string;
@@ -93,12 +100,11 @@ const AccountStep = ({
     subTitle,
     defaultUsername,
     defaultEmail,
-    defaultSignupType,
+    signupTypes,
     signupType,
     onChangeSignupType,
     defaultRecoveryEmail,
     onSubmit,
-    hasExternalSignup,
     hasChallenge = true,
     domains,
     loading: loadingDependencies,
@@ -118,6 +124,7 @@ const AccountStep = ({
     const [loginModal, setLoginModal, renderLoginModal] = useModalState();
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
+    const trimmedEmail = email.trim();
     const trimmedUsername = username.trim();
 
     const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
@@ -130,7 +137,15 @@ const AccountStep = ({
 
     const run = async () => {
         const payload = await challengeRefLogin.current?.getChallenge();
-        return onSubmit({ username: trimmedUsername, password, signupType, domain, email, recoveryEmail, payload });
+        return onSubmit({
+            username: trimmedUsername,
+            password,
+            signupType,
+            domain,
+            email: trimmedEmail,
+            recoveryEmail,
+            payload,
+        });
     };
 
     const handleSubmit = () => {
@@ -166,8 +181,8 @@ const AccountStep = ({
             label={emailLabel}
             error={validator(
                 signupType === SignupType.Username || signupType === SignupType.VPN
-                    ? [requiredValidator(username)]
-                    : [requiredValidator(email), emailValidator(email)]
+                    ? [requiredValidator(trimmedUsername)]
+                    : [requiredValidator(trimmedEmail), emailValidator(trimmedEmail)]
             )}
             disableChange={loading}
             autoFocus
@@ -318,10 +333,10 @@ const AccountStep = ({
                     ) : (
                         innerChallenge
                     )}
-                    {signupType === SignupType.Email && <InsecureEmailInfo email={email} />}
-                    {hasExternalSignup ? (
-                        <div className="text-center">
-                            <UnderlineButton
+                    {signupType === SignupType.Email && <InsecureEmailInfo email={trimmedEmail} />}
+                    {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
+                        <div className="text-center mb1">
+                            <InlineLinkButton
                                 id="existing-email-button"
                                 onClick={() => {
                                     // Reset verification parameters if email is changed
@@ -330,7 +345,7 @@ const AccountStep = ({
                                             if (signupType === SignupType.Username || signupType === SignupType.VPN) {
                                                 return SignupType.Email;
                                             }
-                                            return defaultSignupType;
+                                            return signupTypes.find((type) => type !== signupType) || signupType;
                                         })()
                                     );
                                     setUsername('');
@@ -338,9 +353,20 @@ const AccountStep = ({
                                 }}
                             >
                                 {signupType === SignupType.Email
-                                    ? c('Action').t`Create a secure ${MAIL_APP_NAME} address instead`
-                                    : c('Action').t`Use your current email address instead`}
-                            </UnderlineButton>
+                                    ? c('Action').t`Get a new encrypted email address`
+                                    : c('Action').t`Use your current email instead`}
+                            </InlineLinkButton>
+                            <Info
+                                buttonTabIndex={-1}
+                                className="ml0-5"
+                                title={
+                                    signupType === SignupType.Email
+                                        ? c('Info')
+                                              .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME} services`
+                                        : c('Info')
+                                              .t`You will need a ${BRAND_NAME} address to use ${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`
+                                }
+                            />
                         </div>
                     ) : null}
 

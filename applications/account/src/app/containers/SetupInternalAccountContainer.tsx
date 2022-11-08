@@ -26,15 +26,20 @@ import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkVa
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import { UserType } from '@proton/shared/lib/interfaces';
-import { getInternalAddressSetupMode, handleInternalAddressGeneration } from '@proton/shared/lib/keys';
+import {
+    getClaimableAddress,
+    getInternalAddressSetupMode,
+    handleInternalAddressGeneration,
+} from '@proton/shared/lib/keys';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
+import noop from '@proton/utils/noop';
 
 import GenerateInternalAddressStep from '../login/GenerateInternalAddressStep';
 import Footer from '../public/Footer';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
-import { getToAppName } from '../public/helper';
+import { externalApps, getToAppName } from '../public/helper';
 
 const SetupSupportDropdown = () => {
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -63,6 +68,7 @@ const SetupInternalAccountContainer = () => {
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
     const toAppRef = useRef<APP_NAMES | null>(null);
+    const fromAppRef = useRef<APP_NAMES>(externalApps[0]);
     const authentication = useAuthentication();
     const getAddresses = useGetAddresses();
     const getUser = useGetUser();
@@ -73,7 +79,11 @@ const SetupInternalAccountContainer = () => {
     const handleBack = () => {
         // Always forces a refresh for the theme
         document.location.assign(
-            getAppHref(`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`, APPS.PROTONACCOUNT, authentication.getLocalID())
+            getAppHref(
+                `/${getSlugFromApp(fromAppRef.current)}/dashboard`,
+                APPS.PROTONACCOUNT,
+                authentication.getLocalID()
+            )
         );
     };
 
@@ -90,10 +100,12 @@ const SetupInternalAccountContainer = () => {
     useEffect(() => {
         const run = async () => {
             const searchParams = new URLSearchParams(window.location.search);
-            const toApp = getValidatedApp(searchParams.get('app') || '');
+            fromAppRef.current = getValidatedApp(searchParams.get('from') || '') || externalApps[0];
+            const toApp = getValidatedApp(searchParams.get('to') || searchParams.get('app') || '');
 
-            if (!toApp) {
-                return handleBack();
+            if (!toApp || externalApps.includes(toApp as any)) {
+                handleBack();
+                return new Promise(noop);
             }
 
             const [user, addresses, domains] = await Promise.all([
@@ -103,7 +115,8 @@ const SetupInternalAccountContainer = () => {
             ]);
 
             if (user.Type !== UserType.EXTERNAL) {
-                return handleToApp(toApp);
+                handleToApp(toApp);
+                return new Promise(noop);
             }
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
@@ -112,9 +125,16 @@ const SetupInternalAccountContainer = () => {
             // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
             stop();
             toAppRef.current = toApp;
+            const externalEmailAddress = addresses?.[0];
+            const claimableAddress = await getClaimableAddress({
+                api: silentApi,
+                email: externalEmailAddress?.Email,
+                domains,
+            }).catch(noop);
             generateInternalAddressRef.current = {
-                externalEmailAddress: addresses?.[0],
+                externalEmailAddress,
                 availableDomains: domains,
+                claimableAddress,
                 setup: getInternalAddressSetupMode({
                     User: user,
                     loginPassword: undefined,
@@ -164,6 +184,7 @@ const SetupInternalAccountContainer = () => {
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
                     setup={generateInternalAddress.setup}
+                    claimableAddress={generateInternalAddress.claimableAddress}
                     onSubmit={async (payload) => {
                         try {
                             const keyPassword = await handleInternalAddressGeneration({

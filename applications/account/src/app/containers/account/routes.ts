@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { ThemeColor } from '@proton/colors';
 import { DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 
 import { recoveryIds } from './recoveryIds';
@@ -18,8 +18,9 @@ export const getAccountAppRoutes = ({
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
 }) => {
-    const { isFree, canPay, isPaid, isPrivate, isMember, Currency } = user;
+    const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
+    const isExternal = Type === UserType.EXTERNAL;
     return <const>{
         header: c('Settings section title').t`Account`,
         routes: {
@@ -156,8 +157,7 @@ export const getAccountAppRoutes = ({
             },
             referral: <SectionConfig>{
                 text: c('Title').t`Refer a friend`,
-                description: c('Description')
-                    .t`Get up to ${credits} in credits by inviting friends to Proton.`,
+                description: c('Description').t`Get up to ${credits} in credits by inviting friends to Proton.`,
                 to: '/referral',
                 icon: 'gift',
                 available: !!isReferralProgramEnabled,
@@ -175,6 +175,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
+                available: !isExternal,
                 description: c('Settings description').t`Make the move to privacy. Effortlessly and securely.`,
                 subsections: [
                     {
