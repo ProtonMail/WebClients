@@ -10,7 +10,9 @@ interface Props {
     active?: boolean;
     weak?: boolean;
     refreshing?: boolean;
+    itemOptions?: React.ReactNode;
     shouldDisplayTotal: boolean;
+    hideCountOnHover: boolean;
 }
 
 const { GROUP } = VIEW_MODE;
@@ -22,6 +24,8 @@ const LocationAside = ({
     refreshing = false,
     weak = false,
     shouldDisplayTotal,
+    hideCountOnHover,
+    itemOptions,
 }: Props) => {
     const [mailSettings] = useMailSettings();
 
@@ -59,6 +63,7 @@ const LocationAside = ({
                 <span
                     className={classnames([
                         'navigation-counter-item flex-item-noshrink',
+                        hideCountOnHover && 'hide-on-hover',
                         weak && 'navigation-counter-item--weak',
                     ])}
                     title={getUnreadTitle()}
@@ -68,6 +73,11 @@ const LocationAside = ({
                     {unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount}
                 </span>
             ) : null}
+            {itemOptions && (
+                <span className="opacity-on-hover opacity-on-hover-no-width flex-item-noshrink no-mobile">
+                    {itemOptions}
+                </span>
+            )}
         </>
     );
 };

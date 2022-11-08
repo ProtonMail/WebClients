@@ -1,10 +1,8 @@
 import { c } from 'ttag';
 
-import { deleteLabel } from '@proton/shared/lib/api/labels';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { DropdownActions, useModalState } from '../../components';
-import { useApi, useEventManager, useNotifications } from '../../hooks';
 import DeleteLabelModal from './modals/DeleteLabelModal';
 import EditLabelModal from './modals/EditLabelModal';
 
@@ -13,20 +11,8 @@ interface Props {
 }
 
 function ActionsLabel({ label }: Props) {
-    const api = useApi();
-    const { call } = useEventManager();
-    const { createNotification } = useNotifications();
-
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
     const [deleteLabelProps, setDeleteLabelModalOpen] = useModalState();
-
-    const handleRemove = async () => {
-        await api(deleteLabel(label.ID));
-        await call();
-        createNotification({
-            text: c('Success notification').t`${label.Name} removed`,
-        });
-    };
 
     const list = [
         {
@@ -46,7 +32,7 @@ function ActionsLabel({ label }: Props) {
         <>
             <DropdownActions size="small" list={list} />
             <EditLabelModal {...editLabelProps} label={label} mode="edition" />
-            <DeleteLabelModal label={label} onRemove={handleRemove} {...deleteLabelProps} />
+            <DeleteLabelModal label={label} {...deleteLabelProps} />
         </>
     );
 }
