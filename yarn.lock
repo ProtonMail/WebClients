@@ -3872,7 +3872,7 @@ __metadata:
     "@types/node": ^18.11.9
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
-    babel-loader: ^8.3.0
+    babel-loader: ^9.1.0
     chalk: ^4.1.2
     commander: ^9.4.1
     eslint: ^8.27.0
@@ -4158,7 +4158,7 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.8
     autoprefixer: ^10.4.13
-    babel-loader: ^8.3.0
+    babel-loader: ^9.1.0
     babel-plugin-lodash: ^3.3.4
     babel-plugin-transform-react-remove-prop-types: ^0.4.24
     chalk: 4.1.2
@@ -9107,7 +9107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^8.0.0, babel-loader@npm:^8.3.0":
+"babel-loader@npm:^8.0.0":
   version: 8.3.0
   resolution: "babel-loader@npm:8.3.0"
   dependencies:
@@ -9119,6 +9119,19 @@ __metadata:
     "@babel/core": ^7.0.0
     webpack: ">=2"
   checksum: d48bcf9e030e598656ad3ff5fb85967db2eaaf38af5b4a4b99d25618a2057f9f100e6b231af2a46c1913206db506115ca7a8cbdf52c9c73d767070dae4352ab5
+  languageName: node
+  linkType: hard
+
+"babel-loader@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "babel-loader@npm:9.1.0"
+  dependencies:
+    find-cache-dir: ^3.3.2
+    schema-utils: ^4.0.0
+  peerDependencies:
+    "@babel/core": ^7.12.0
+    webpack: ">=5"
+  checksum: 774758febd1e8ca804abcae3b8f65634330dc688837424d0946f06d1386914de43435cce691710fa144eccdf1292cf883439ac3598ce7320916acfaaa2372641
   languageName: node
   linkType: hard
 
@@ -15617,7 +15630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.2.0, find-cache-dir@npm:^3.3.1":
+"find-cache-dir@npm:^3.2.0, find-cache-dir@npm:^3.3.1, find-cache-dir@npm:^3.3.2":
   version: 3.3.2
   resolution: "find-cache-dir@npm:3.3.2"
   dependencies:
@@ -25753,7 +25766,7 @@ fsevents@^1.2.7:
     "@storybook/source-loader": ^6.5.13
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
-    babel-loader: ^8.3.0
+    babel-loader: ^9.1.0
     cross-env: ^7.0.3
     eslint: ^8.27.0
     eslint-plugin-storybook: ^0.6.7
