@@ -15,14 +15,14 @@
         "@proton/crypto": "workspace:packages/crypto",
         "@proton/shared": "workspace:packages/shared",
         "@proton/utils": "workspace:packages/utils",
-        "idb": "^7.1.0"
+        "idb": "^7.1.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/jasmine": "^4.3.0",
-        "eslint": "^8.26.0",
-        "jasmine": "^4.4.0",
-        "jasmine-core": "^4.4.0",
+        "eslint": "^8.27.0",
+        "jasmine": "^4.5.0",
+        "jasmine-core": "^4.5.0",
         "karma": "^6.4.1",
         "karma-chrome-launcher": "^3.1.1",
         "karma-jasmine": "^5.1.0",
