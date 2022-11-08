@@ -68,13 +68,13 @@ export const blockAddressesFullfilled = (
     state: Draft<IncomingDefaultsState>,
     action: PayloadAction<IncomingDefault[]>
 ) => {
-    action.payload.forEach((incomintDefault) => {
-        const itemIndex = state.list.findIndex((item) => item.ID === incomintDefault.ID);
+    action.payload.forEach((incomingDefault) => {
+        const itemIndex = state.list.findIndex((item) => item.ID === incomingDefault.ID);
 
         if (itemIndex !== -1) {
-            state.list[itemIndex] = incomintDefault;
+            state.list[itemIndex] = incomingDefault;
         } else {
-            state.list.push(incomintDefault);
+            state.list.push(incomingDefault);
         }
     });
 };

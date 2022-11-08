@@ -194,6 +194,7 @@ const MailRecipientItemSingle = ({
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickBlockSender}
+                    data-testid="block-sender:button"
                 >
                     <Icon name="circle-slash" className="mr0-5" />
                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
