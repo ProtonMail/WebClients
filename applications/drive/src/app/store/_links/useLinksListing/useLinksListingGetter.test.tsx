@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import { EncryptedLink } from '../interface';
 import { useLinksListingProvider } from './useLinksListing';
 
@@ -82,7 +83,11 @@ describe('useLinksListing', () => {
             { encrypted: { linkId: 'stale' }, decrypted: { isStale: true } },
         ]);
 
-        const { result } = renderHook(() => useLinksListingProvider());
+        const wrapper = ({ children }: { children: React.ReactNode }) => (
+            <VolumesStateProvider>{children}</VolumesStateProvider>
+        );
+
+        const { result } = renderHook(() => useLinksListingProvider(), { wrapper });
         hook = result;
     });
 

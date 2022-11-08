@@ -1,4 +1,4 @@
-import { EXPENSIVE_REQUEST_TIMEOUT, FOLDER_PAGE_SIZE } from '../../drive/constants';
+import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { MoveLink } from '../../interfaces/drive/link';
 import { CreateDriveShare } from '../../interfaces/drive/share';
 
@@ -28,15 +28,6 @@ export const queryRenameLink = (
     method: `put`,
     url: `drive/shares/${shareID}/links/${linkID}/rename`,
     data,
-});
-
-export const queryTrashList = (
-    shareID: string,
-    { Page, PageSize = FOLDER_PAGE_SIZE }: { Page: number; PageSize?: number }
-) => ({
-    method: 'get',
-    url: `drive/shares/${shareID}/trash`,
-    params: { Page, PageSize },
 });
 
 export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) => ({
