@@ -3212,6 +3212,9 @@
       "Free up some space or contact your administrator.": [
         "スペースを解放するか、管理者にお問い合わせしてください。"
       ],
+      "Frequency modifications will be lost.": [
+        "間隔の設定は失われます"
+      ],
       "Group assignment applied": [
         "グループの割り当てが適用されました"
       ],
@@ -3558,7 +3561,7 @@
         "鍵が復活したため、以下のカレンダーに登録されている予定は復号できるようになりました。"
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "パスワードを変更したため、以下のカレンダーに登録されていたイベントを復号できませんでした。\nパスワードの変更前に共有したリンクにはアクセスできません。\n登録したカレンダーは数分後に同期されます。"
+        "パスワードが変更されたため、以下のカレンダーに登録されていた予定を復号できませんでした。\nパスワードの変更前に共有したリンクにはアクセスできません。\n登録した他人のカレンダーは数分後に同期されます。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
@@ -4711,6 +4714,12 @@
       ],
       "Easily accept invites": [
         "招待を簡単に了承できます"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "最大${ credits }分のクレジットを獲得できます"
+      ],
+      "Invite friends to Proton": [
+        "Protonに友達を招待する"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "招待は、保留中の予定としてカレンダーに表示されるようになりました。その予定を開いて、返信することができます。${ goToSettingsLink }"

@@ -2093,7 +2093,7 @@
         "Internetverbindung unterbrochen"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung getrennt. Bitte überprüfe die Konnektivität deines Geräts."
+        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
@@ -4093,6 +4093,21 @@
       "2 years": [
         "Zwei Jahre"
       ],
+      "Billed at ${ amount } for 1 month": [
+        "Für 1 Monat mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Für 12 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Für 15 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Für 24 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Für 30 Monate mit ${ amount } abgerechnet"
+      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -4108,6 +4123,21 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardpreis: ${ amount } für 1 Monat"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardpreis: ${ amount } für 12 Monate"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardpreis: ${ amount } für 15 Monate"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardpreis: ${ amount } für 24 Monate"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardpreis: ${ amount } für 30 Monate"
       ]
     },
     "specialoffer: Title": {
