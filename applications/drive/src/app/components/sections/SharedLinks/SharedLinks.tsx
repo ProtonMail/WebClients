@@ -30,6 +30,7 @@ export interface SharedLinkItem extends FileBrowserBaseItem {
     size: number;
     trashed: number | null;
     parentLinkId: string;
+    rootShareId: string;
 }
 
 type Props = {

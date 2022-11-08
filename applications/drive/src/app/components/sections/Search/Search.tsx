@@ -30,6 +30,7 @@ export interface SearchItem extends FileBrowserBaseItem {
     size: number;
     trashed: number | null;
     parentLinkId: string;
+    rootShareId: string;
 }
 
 interface Props {

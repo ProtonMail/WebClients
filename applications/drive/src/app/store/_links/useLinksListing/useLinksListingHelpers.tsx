@@ -16,13 +16,17 @@ export type FetchMeta = {
     lastPage?: number;
 };
 
-// SortParams are available sorting methods for listing.
+/**
+ * Available sorting methods for listing.
+ */
 export type SortParams = {
     sortField: 'size' | 'createTime' | 'metaDataModifyTime';
     sortOrder: SORT_DIRECTION;
 };
 
-// FetchResponse is internal data holder of results from API.
+/**
+ * FetchResponse is internal data holder of results from API.
+ */
 export type FetchResponse = {
     // links contain all requests links (that is links in specified folder
     // in case folder children were requested).
@@ -47,7 +51,7 @@ export const DEFAULT_SORTING: SortParams = {
 };
 
 /**
- * useLinksListingProvider provides helpers to list links.
+ * Provides helpers to list links.
  */
 export function useLinksListingHelpers() {
     const { showErrorNotification, showAggregatedErrorNotification } = useErrorHandler();
@@ -55,7 +59,7 @@ export function useLinksListingHelpers() {
     const { decryptLinks } = useLinks();
 
     /**
-     * decryptAndCacheLinks runs in parallel decryption of links and stores them in the cache.
+     * Decrypts links in parallel and caches them.
      */
     const decryptAndCacheLinks = async (abortSignal: AbortSignal, shareId: string, links: EncryptedLink[]) => {
         if (!links.length) {
@@ -63,7 +67,10 @@ export function useLinksListingHelpers() {
         }
 
         const result = await decryptLinks(abortSignal, shareId, links);
-        linksState.setLinks(shareId, result.links);
+
+        if (result.links.length) {
+            linksState.setLinks(shareId, result.links);
+        }
 
         if (result.errors.length) {
             showAggregatedErrorNotification(result.errors, (errors: any[]) => {
@@ -78,8 +85,7 @@ export function useLinksListingHelpers() {
     };
 
     /**
-     * cacheLoadedLinks stores encrypted versions of loaded links and runs
-     * its decryption right away.
+     * Caches encrypted links and decrypts them.
      */
     const cacheLoadedLinks = async (
         abortSignal: AbortSignal,
@@ -100,7 +106,7 @@ export function useLinksListingHelpers() {
     };
 
     /**
-     * fetchNextPageWithSortingHelper ensures only one fetch for the given
+     * Ensures only one fetch for the given
      * `fetchMeta` is in progress, and it never runs if all was already fetched
      * before.
      * The algorithm also ensures proper paging; e.g., if first page used sort
@@ -125,7 +131,6 @@ export function useLinksListingHelpers() {
             return false;
         }
         fetchMeta.isInProgress = true;
-
         const currentSorting = sorting || fetchMeta.lastSorting || DEFAULT_SORTING;
         const currentPage =
             isSameSorting(fetchMeta.lastSorting, currentSorting) && fetchMeta.lastPage !== undefined
@@ -173,7 +178,7 @@ export function useLinksListingHelpers() {
     };
 
     /**
-     * fetchNextPageHelper is the wrapper around fetchNextPageWithSortingHelper.
+     * A wrapper around fetchNextPageWithSortingHelper.
      * Basically the same thing, just for cases when sorting is not available
      * (for example, listing trash or shared links).
      */
@@ -189,40 +194,37 @@ export function useLinksListingHelpers() {
     };
 
     /**
-     * loadHelper just calls `callback` (any version of next page returnig
-     * whether there is next page) until all pages are loaded.
+     * Invokes a callback function until all pages are loaded. The callback function must
+     * return a boolean value representing a presence of the next page in listing.
      */
-    const loadHelper = async (callback: () => Promise<boolean>): Promise<void> => {
+    const loadFullListing = async (callback: () => Promise<boolean>): Promise<void> => {
         const hasNextPage = await callback();
+
         if (hasNextPage) {
-            await loadHelper(callback);
+            await loadFullListing(callback);
         }
     };
 
     /**
-     * getCachedLinksHelper returns directly cached decrypted links (even
-     * the staled links), and ensures all non-decrypted or stale links are
-     * decrypted on background. Once that is done, the cache is updated,
-     * and call to list of decrypted links repeated.
-     * The second returned value represents whether some decryption (and
-     * thus future update) is happening. Useful for indication in GUI.
+     * Returns cached decrypted links (including stale), decrypts
+     * all encrypted or stale links in the background.
      */
-    const getCachedLinksHelper = (
+    const getDecryptedLinksAndDecryptRest = (
         abortSignal: AbortSignal,
         shareId: string,
         links: Link[],
         fetchMeta?: FetchMeta
     ): { links: DecryptedLink[]; isDecrypting: boolean } => {
-        // On background, decrypt or re-decrypt links which were updated
-        // elsewhere, for example, by event update. It is done in background
-        // so we return cached links right away, but we do the work only
-        // when the link is really needed (not decrypted sooner when its
-        // not displayed anywhere).
+        // Return decrypted links right away.
+        // Those links the have been updated in the background by an event,
+        // still need to be decrypted. We run descryption asynchronous.
         const linksToBeDecrypted = links
             .filter(
                 ({ decrypted }) =>
-                    decrypted?.isStale || // When link was updated.
-                    (!decrypted && !fetchMeta?.isInProgress) // When link was added not by listing.
+                    decrypted?.isStale ||
+                    // Link was added outside of this listing and thus we need to decrypt it now
+                    // (if the listing is in progress, it might still be decrypted)
+                    (!decrypted && !fetchMeta?.isInProgress) // Link was added not by listing.
             )
             .map(({ encrypted }) => encrypted);
         decryptAndCacheLinks(abortSignal, shareId, linksToBeDecrypted).catch(reportError);
@@ -237,8 +239,8 @@ export function useLinksListingHelpers() {
         cacheLoadedLinks,
         fetchNextPageWithSortingHelper,
         fetchNextPageHelper,
-        loadHelper,
-        getCachedLinksHelper,
+        loadFullListing,
+        getDecryptedLinksAndDecryptRest,
     };
 }
 
