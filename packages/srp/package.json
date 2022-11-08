@@ -17,12 +17,12 @@
         "bcryptjs": "^2.4.3"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.19.4",
+        "@babel/preset-env": "^7.20.2",
         "@babel/preset-typescript": "^7.18.6",
         "@babel/register": "^7.18.9",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
-        "eslint": "^8.26.0",
-        "jsdom": "^20.0.1",
+        "eslint": "^8.27.0",
+        "jsdom": "^20.0.2",
         "jsdom-global": "^3.0.2",
         "mocha": "^10.1.0",
         "prettier": "^2.7.1",
