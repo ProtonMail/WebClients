@@ -2,20 +2,9 @@
 @import '~@proton/styles/scss/config';
 
 .overlay {
-	@include respond-to($breakpoint-small, 'min') {
-		--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
-		--max-width-bounds: calc(100vw - (var(--left) * 1px) - 2px);
-	}
-
-	// On mobile view, left and top are not used
-	@include respond-to($breakpoint-small, 'max') {
-		--max-height-bounds: 100vh;
-		--max-width-bounds: 100vw;
-	}
-
 	--min-width: 0;
-	--max-width: var(--max-width-bounds);
-	--max-height: var(--max-height-bounds);
+	--max-width: 100vw;
+	--max-height: 100vh;
 
 	position: fixed;
 	z-index: $layer-modals;
