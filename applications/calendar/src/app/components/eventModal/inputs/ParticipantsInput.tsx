@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { AddressesAutocompleteTwo, Alert, Details, Summary } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import {
     CANONICALIZE_SCHEME,
@@ -14,7 +14,7 @@ import {
     validateEmailAddress,
 } from '@proton/shared/lib/helpers/email';
 import { Address, Recipient } from '@proton/shared/lib/interfaces';
-import { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 
@@ -25,8 +25,8 @@ const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 
 interface Props {
     value: AttendeeModel[];
-    model: EventModel;
     addresses: Address[];
+    organizer?: OrganizerModel;
     id: string;
     placeholder: string;
     className?: string;
@@ -38,7 +38,7 @@ interface Props {
 const ParticipantsInput = ({
     className,
     placeholder,
-    model,
+    organizer,
     value = [],
     onChange,
     id,
@@ -159,9 +159,13 @@ const ParticipantsInput = ({
                     }
                 }}
             />
-            {numberOfParticipants > 100 && (
+            {numberOfParticipants > MAX_ATTENDEES && (
                 <Alert className="mb1 mt0-5" type="error">
-                    {c('Info').t`At most 100 participants are allowed per invitation`}
+                    {c('Info').ngettext(
+                        msgid`At most ${MAX_ATTENDEES} participant is allowed per invitation`,
+                        `At most ${MAX_ATTENDEES} participants are allowed per invitation`,
+                        MAX_ATTENDEES
+                    )}
                 </Alert>
             )}
             {value.length > 0 &&
@@ -179,9 +183,9 @@ const ParticipantsInput = ({
                 ) : (
                     participantRows
                 ))}
-            {value.length > 0 && (
+            {organizer && (
                 <div className="pt0-25">
-                    <OrganizerRow model={model} addresses={addresses} />
+                    <OrganizerRow organizer={organizer} />
                 </div>
             )}
         </>
