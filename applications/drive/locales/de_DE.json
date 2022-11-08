@@ -45,7 +45,7 @@
         "Übernehmen"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Authenticate": [
         "Authentifizieren"
@@ -395,7 +395,7 @@
         "Daten wiederherstellen"
       ],
       "Refer a friend": [
-        "Einem Freund empfehlen"
+        "Wirb einen Freund"
       ],
       "Refresh the page": [
         "Seite aktualisieren"
@@ -476,7 +476,7 @@
         "Feedback senden"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Share file": [
         "Datei teilen"
@@ -545,7 +545,7 @@
         "Eine andere Methode ausprobieren"
       ],
       "Undo": [
-        "Widerrufen"
+        "Rückgängig"
       ],
       "Unlock data": [
         "Daten entsperren"
@@ -606,6 +606,9 @@
       ],
       "View invoice": [
         "Rechnung anzeigen"
+      ],
+      "Your 500 MB bonus": [
+        "Dein 500 MB Bonus."
       ],
       "Zoom in": [
         "Vergrößern"
@@ -1187,7 +1190,7 @@
         "Heard und McDonaldinseln"
       ],
       "Holy See (Vatican City State)": [
-        "Vatikanstaat"
+        "Heiliger Stuhl (Vatikanstaat)"
       ],
       "Honduras": [
         "Honduras"
@@ -1325,7 +1328,7 @@
         "Mexiko"
       ],
       "Moldova": [
-        "Republik Moldau"
+        "Moldawien"
       ],
       "Monaco": [
         "Monaco"
@@ -1607,10 +1610,10 @@
         "Vereinigtes Königreich"
       ],
       "United States": [
-        "USA"
+        "Vereinigte Staaten"
       ],
       "United States Minor Outlying Islands": [
-        "Kleinere Amerikanische Überseeinseln"
+        "Kleinere abgelegene Inseln der Vereinigten Staaten"
       ],
       "Uruguay": [
         "Uruguay"
@@ -1682,6 +1685,10 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
+        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
@@ -1772,7 +1779,7 @@
         "Der Ordner „${ name }“ wird bereits heruntergeladen"
       ],
       "Folder name cannot be empty.": [
-        "Name des Ordners muss angegeben werden."
+        "Name des Ordners kann nicht leer sein."
       ],
       "Image upload failed": [
         "Hochladen des Bilds fehlgeschlagen"
@@ -1796,7 +1803,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Label name cannot be empty.": [
-        "Name der Kategorie muss angegeben werden."
+        "Name der Kategorie kann nicht leer sein."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
@@ -2635,7 +2642,7 @@
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } Kategorie(n))",
+        "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
       "An active recovery file": [
@@ -2643,6 +2650,9 @@
       ],
       "and": [
         "und"
+      ],
+      "And access it from anywhere": [
+        "Und greife von überall darauf zu"
       ],
       "Anyone with this link can access your file.": [
         "Jeder mit diesem Link kann auf deine Datei zugreifen."
@@ -2750,6 +2760,9 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ emailAddress } sicher hochgeladen."
+      ],
+      "double your storage": [
+        "deinen Speicherplatz zu verdoppeln."
       ],
       "Download canceled": [
         "Herunterladen abgebrochen"
@@ -2860,6 +2873,9 @@
       "Free up some space or contact your administrator.": [
         "Gib etwas Platz frei oder wende dich an deinen Administrator."
       ],
+      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
+        "Lerne Proton Drive kennen und sichere dir deinen 500 MB Speicherbonus! Werde noch heute aktiv."
+      ],
       "Go ahead, upload a file": [
         "Na los, lade etwas hoch"
       ],
@@ -2885,7 +2901,7 @@
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Falls du dein Passwort nicht mehr weist, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
+        "Falls du dein Passwort nicht mehr weißt, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Wenn eines davon auf dich zutrifft, fahre mit den Proton-Kontoeinstellungen fort,\num den Entsperrungsprozess zu starten."
@@ -2901,7 +2917,7 @@
         "Importieren aus"
       ],
       "Import in progress": [
-        "Datenimport im Gange"
+        "Datenimport läuft gerade"
       ],
       "Import mailbox": [
         "Postfach importieren"
@@ -2925,7 +2941,7 @@
         "Internetverbindung unterbrochen"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung getrennt. Bitte überprüfe die Konnektivität deines Geräts."
+        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
@@ -2977,6 +2993,9 @@
       ],
       "Loading preview": [
         "Vorschau wird geladen"
+      ],
+      "Makes your account safer": [
+        "Macht dein Konto sicherer"
       ],
       "Merged": [
         "Zusammengeführt"
@@ -3272,6 +3291,9 @@
       "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "Dadurch wird das synchronisierte Gerät ${ deviceName } aus Proton Drive entfernt. Lokale Dateien auf dem Gerät sind davon nicht betroffen."
       ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Um eine wirklich private Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiternutzen - wir informieren dich, sobald die Indexierung erfolgt ist."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
@@ -3279,7 +3301,7 @@
         "Um deine Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in deinem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird der Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Um deine Daten wiederherzustellen, musst du den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu brauchst du das Passwort, das bei der Erzeugung des Schlüssels verwendet wurde."
+        "Um deine Daten wiederherzustellen, musst du den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu brauchst du das Passwort, welches bei der Erzeugung des Schlüssels verwendet wurde."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
@@ -3326,8 +3348,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Das gleichzeitige Hochladen von Hunderten von Dateien kann sich negativ auf die Leistung auswirken."
       ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Verwende Drive for Desktop, um Ordner auf deinem Computer mit Proton Drive zu synchronisieren. Sie werden dann hier angezeigt und sind von überall aus zugänglich.  ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder andersweitig schädliche geteilte Dateien zu melden. Du bist dabei folgendes zu melden:"
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Gut gemacht, du hast soeben deinen kostenlosen Speicherplatz verdoppelt!"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -3340,6 +3368,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
       ],
       "Week": [
         "Woche"
@@ -3385,6 +3416,9 @@
       ],
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Du hast noch ${ expiresInDays } Tage Zeit, um deinen 500 MB Willkommensbonus in Anspruch zu nehmen und "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du hast ${ spaceDisplayed } % deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
@@ -3704,7 +3738,7 @@
         "In E-Mail-Adresse importieren"
       ],
       "Label messages as": [
-        "Nachrichten kennzeichnen als"
+        "Nachrichten kategorisieren als"
       ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
@@ -3986,10 +4020,10 @@
         "Neue Kalender werden angelegt"
       ],
       "Gathering your data": [
-        "Deine Daten werden zusammengestellt"
+        "Deine Daten werden gesammelt"
       ],
       "We're gathering your data from your provider": [
-        "Wir erfassen deine Daten bei deinem Anbieter"
+        "Wir sammeln deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
         "Dein Datenimport wurde gestartet"
@@ -4305,6 +4339,10 @@
       "Set a recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Führe einfach die folgenden Schritte in ${ expiresInDays } Tag aus:",
+        "Führe einfach die folgenden Schritte in den nächsten ${ expiresInDays } Tagen aus:"
+      ],
       "Upload a file": [
         "Datei hochladen"
       ],
@@ -4359,7 +4397,7 @@
         "Neuen Kalender erstellen"
       ],
       "Merge with calendar": [
-        "Zusammenführen mit Kalender"
+        "Mit Kalender zusammenführen"
       ]
     },
     "PGP key encryption warning": {
@@ -4642,6 +4680,21 @@
       "2 years": [
         "Zwei Jahre"
       ],
+      "Billed at ${ amount } for 1 month": [
+        "Für 1 Monat mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Für 12 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Für 15 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Für 24 Monate mit ${ amount } abgerechnet"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Für 30 Monate mit ${ amount } abgerechnet"
+      ],
       "for ${ n } month": [
         "für ${ n } Monat",
         "für ${ n } Monate"
@@ -4657,6 +4710,21 @@
       ],
       "Save ${ discount }%": [
         "Spare ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standardpreis: ${ amount } für 1 Monat"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardpreis: ${ amount } für 12 Monate"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardpreis: ${ amount } für 15 Monate"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardpreis: ${ amount } für 24 Monate"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardpreis: ${ amount } für 30 Monate"
       ]
     },
     "specialoffer: Title": {
@@ -5336,8 +5404,14 @@
       "You've got files": [
         "Du hast Dateien erhalten"
       ],
+      "Your 500 MB bonus": [
+        "Dein 500 MB Bonus."
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Du hast 1 GB Speicherplatz."
       ]
     },
     "Today icon tooltip in mini calendar": {
