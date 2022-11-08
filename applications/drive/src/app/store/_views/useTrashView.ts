@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -6,6 +6,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
 import { reportError } from '../_utils';
+import { useDefaultShare } from '../_shares';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -17,25 +18,32 @@ const DEFAULT_SORT = {
 /**
  * useTrashView provides data for trash view (file browser of trash).
  */
-export default function useTrashView(shareId: string) {
-    const abortSignal = useAbortSignal([shareId]);
-
+export default function useTrashView() {
+    const abortSignal = useAbortSignal();
+    const { getDefaultShare } = useDefaultShare();
     const [isLoading, withLoading] = useLoading(true);
+    const volumeId = useRef<string>();
 
     const linksListing = useLinksListing();
-    const { links: trashedLinks, isDecrypting } = linksListing.getCachedTrashed(abortSignal, shareId);
+    const { links: trashedLinks, isDecrypting } = linksListing.getCachedTrashed(abortSignal, volumeId.current);
     const cachedTrashedLinks = useMemoArrayNoMatterTheOrder(trashedLinks);
 
     const { layout } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedTrashedLinks, DEFAULT_SORT);
 
+    const loadTrashListing = async (signal: AbortSignal) => {
+        const defaultShare = await getDefaultShare();
+        volumeId.current = defaultShare.volumeId;
+        await linksListing.loadTrashedLinks(signal, defaultShare.volumeId);
+    };
+
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadTrashedLinks(ac.signal, shareId).catch(reportError));
+        void withLoading(loadTrashListing(ac.signal)).catch(reportError)
         return () => {
             ac.abort();
         };
-    }, [shareId]);
+    }, []);
 
     return {
         layout,
