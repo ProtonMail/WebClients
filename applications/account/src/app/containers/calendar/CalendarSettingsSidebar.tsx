@@ -1,7 +1,6 @@
-import { SidebarList, SidebarListItem } from '@proton/components';
+import { SettingsListItem, SidebarList, SidebarListItem } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
-import SettingsListItem from '../../components/SettingsListItem';
 import CalendarsSettingsSidebarList from './CalendarsSettingsSidebarList';
 import { getCalendarAppRoutes } from './routes';
 
