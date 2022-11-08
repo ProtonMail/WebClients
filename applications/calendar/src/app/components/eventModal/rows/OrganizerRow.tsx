@@ -1,23 +1,15 @@
 import { c } from 'ttag';
 
 import { classnames } from '@proton/components';
-import { Address } from '@proton/shared/lib/interfaces';
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
-    model: EventModel;
-    addresses: Address[];
+    organizer: OrganizerModel;
 }
 
-const OrganizerRow = ({ model, addresses }: Props) => {
-    const { addressID } = model.member;
-    const organizerAddress = addresses.find(({ ID }) => ID === addressID);
-    const { Email: email, DisplayName: name } = organizerAddress || {};
+const OrganizerRow = ({ organizer }: Props) => {
+    const { email, cn: name } = organizer;
     const displayFull = name && name !== email;
-
-    if (!organizerAddress) {
-        return null;
-    }
 
     return (
         <div key={email} className={classnames(['address-item flex mb0-25 pl0-5 pr0-5'])}>
