@@ -1801,6 +1801,11 @@
         "¿Ya tienes una cuenta? ${ signIn }"
       ]
     },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "¿Nuevo en ${ BRAND_NAME }? ${ signUp }"
+      ]
+    },
     "Group": {
       "Account": [
         "Cuenta"
@@ -2137,9 +2142,6 @@
       ],
       "No results found": [
         "No se han encontrado resultados"
-      ],
-      "Not set": [
-        "No establecido"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "¿No es tu dispositivo? Utiliza una ventana de navegación privada para iniciar sesión y ciérrala cuando hayas terminado. ${ learnMore }"
@@ -4091,18 +4093,6 @@
       "2 years": [
         "2 años"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "A un precio de ${ amount } durante los 2 primeros años"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "A un precio de ${ amount } durante el primer mes"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "A un precio de ${ amount } durante el primer año"
-      ],
-      "Billed at ${ amountDue }": [
-        "Facturación: ${ amountDue }"
-      ],
       "for ${ n } month": [
         "durante ${ n } mes",
         "durante ${ n } meses"
@@ -4118,9 +4108,6 @@
       ],
       "Save ${ discount }%": [
         "Ahorra un ${ discount } %"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {

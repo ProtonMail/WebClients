@@ -463,6 +463,9 @@
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "Meer informatie: toetsenbordsneltoetsen"
+      ],
       "move emails to": [
         "e-mails verplaatsen naar"
       ],
@@ -766,6 +769,9 @@
       "Underline": [
         "Onderstreept"
       ],
+      "Undo import": [
+        "Import ongedaan maken"
+      ],
       "Unlock": [
         "Ontgrendel"
       ],
@@ -853,6 +859,9 @@
       "Yes": [
         "Ja"
       ],
+      "Yes, undo": [
+        "Ja, ongedaan maken"
+      ],
       "Zoom in": [
         "Inzoomen"
       ],
@@ -877,6 +886,16 @@
       ],
       "Try free for 30 days": [
         "Probeer gratis uit voor 30 dagen"
+      ]
+    },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Accepteren"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Afwijzen"
       ]
     },
     "Addon": {
@@ -1162,6 +1181,14 @@
         "U kunt ICS-bestanden importeren van een andere agenda naar ${ CALENDAR_APP_NAME }. Hiermee kunt u snel een afspraak of een volledige agenda importeren."
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "Afgewezen"
+      ],
+      "Invite sent": [
+        "Uitnodiging verzonden"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "U hebt het maximale aantal persoonlijke agenda's bereikt dat u binnen uw abonnement kunt aanmaken."
@@ -1182,6 +1209,11 @@
         "Label bewerkt"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Alleen u kunt het label zien"
+      ]
+    },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
         "U kan eender wanneer de rechten aanpassen of verwijderen."
@@ -1192,14 +1224,33 @@
         "Rechten"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "U heeft al toegang tot deze agenda"
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "Deel agenda"
+      ],
+      "Share outside Proton": [
+        "Deel buiten Proton"
+      ],
+      "Share with anyone": [
+        "Delen met iemand"
+      ],
+      "Share with Proton users": [
+        "Delen met Proton-gebruikers"
       ]
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Toon nog ${ remainingItems } meer"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Bekijk alle afspraakgegevens"
       ]
     },
     "Calendar sharing access option label": {
@@ -1208,6 +1259,11 @@
       ],
       "Full view (see all event details)": [
         "Volledig beeld (bekijk alle afspraakdetails)"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Toegangsrechten gewijzigd voor ${ email }"
       ]
     },
     "Calendar status": {
@@ -1265,6 +1321,11 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Instellingen openen"
       ]
     },
     "Calendar view": {
@@ -1512,6 +1573,9 @@
       ],
       "Remove from the list?": [
         "Dit bericht komt van een mailinglist."
+      ],
+      "Undo this import?": [
+        "Deze import ongedaan maken?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -4139,6 +4203,14 @@
         "Overig"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Ongedaan maken voltooid"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% gepauzeerd"
@@ -4462,6 +4534,9 @@
       "Are you sure you want to delete this calendar?": [
         "Weet u zeker dat u deze agenda wilt verwijderen?"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "Weet u zeker dat u deze agenda wil verwijderen? Alle adressen waarmee u deze agenda delen verliezen er toegang toe."
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Weet u zeker dat u deze agenda wilt verwijderen? Alle gebeurtenissen erin zullen worden verwijderd."
       ],
@@ -4704,6 +4779,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-mails met dit label worden niet verwijderd en zijn nog steeds te vinden in de betreffende map."
       ],
+      "Enable this address to join this calendar": [
+        "Schakel dit adres in om lid te worden van deze agenda"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
       ],
@@ -4715,6 +4793,9 @@
       ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Voer een nieuw wachtwoord in voor gebruiker ${ userName }."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Voer de code in die naar uw telefoonnummer ${ phone } is gestuurd."
@@ -4976,6 +5057,9 @@
       "Link type": [
         "Soort"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Geladen inhoud wordt beschermd door onze proxy wanneer trackerbescherming geactiveerd is."
+      ],
       "Loading": [
         "Laden"
       ],
@@ -5065,9 +5149,6 @@
       ],
       "Not a valid URL": [
         "Ongeldige link"
-      ],
-      "Not set": [
-        "Niet ingesteld"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
@@ -5216,6 +5297,9 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton zal proberen de import te hervatten zodra uw e-mailprovider de ${ bandwithLimitLink } van uw account opnieuw instelt. U hoeft niets te doen. Als u het importeren annuleert, kunt u het niet meer hervatten en moet u opnieuw beginnen."
       ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "Proton's versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
+      ],
       "Public link invite": [
         "Publieke uitnodigingslink"
       ],
@@ -5260,6 +5344,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
+      ],
+      "Remove one of your calendars to join this one": [
+        "Verwijderen één van uw agenda's om lid te worden van deze"
       ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
@@ -5718,6 +5805,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodiging verzenden voor de komende 24 uur",
+        "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodigingen verzenden voor de komende 24 uur"
       ],
       "You cannot refer ${ appName } users": [
         "U kan geen ${ appName }-gebruikers doorverwijzen"
@@ -6330,6 +6421,9 @@
       "All-day event notifications": [
         "De hele dag meldingen van afspraken"
       ],
+      "Allow notifications by email": [
+        "Meldingen van e-mail toestaan"
+      ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
       ],
@@ -6522,6 +6616,9 @@
       "Credits used": [
         "Verbruikt tegoed"
       ],
+      "Current display name": [
+        "Huidige weergavenaam"
+      ],
       "Customize invoices": [
         "Facturen aanpassen"
       ],
@@ -6702,6 +6799,9 @@
       "Key strength": [
         "Sleutelsterkte"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Toetsenbordsneltoets: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Toetsenbord snelkoppelingen"
       ],
@@ -6761,6 +6861,12 @@
       ],
       "Name on card": [
         "Naam op de kaart"
+      ],
+      "Navigation": [
+        "Navigatie"
+      ],
+      "New display name": [
+        "Nieuwe weergavenaam"
       ],
       "New login password": [
         "Nieuw inlogwachtwoord"
@@ -7920,26 +8026,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8009,6 +8095,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8314,9 +8420,26 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Uitnodiging verwijderd"
+      ],
+      "Invitation revoked": [
+        "Uitnodiging ingetrokken"
+      ],
       "Member added": [
         "Lid toegevoegd",
         "Leden toegevoegd"
+      ],
+      "Member deleted": [
+        "Lid verwijderd"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Agenda-uitnodiging afgewezen"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Lid geworden van ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -8937,9 +9060,25 @@
         "State-of-the-art"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Door u op deze agenda niet meer te abonneren, zult u er geen toegang meer tot hebben. Alle gebeurtenissen uit deze agenda zullen van uw account gewist worden, maar blijven beschikbaar via de originele publieke link."
+      ],
+      "You will no longer have access to this calendar.": [
+        "U zult niet langer toegang hebben tot deze agenda."
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Als u deze agenda verlaat, moet u de eigenaar vragen om opnieuw lid te worden."
+      ]
+    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Agenda verwijderen?"
+      ],
+      "Leave calendar?": [
+        "Agenda verlaten?"
       ],
       "Remove calendar": [
         "Agenda verwijderen"
@@ -9039,15 +9178,30 @@
         "Labels"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Deel uw agenda met een link om niet-Proton-gebruikers uit te nodigen"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid per agenda overschreden",
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden per agenda overschreden"
       ]
     },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Voeg de Proton-accounts toe met wie u ${ calendarName } wil delen. We sturen ze een uitndoging."
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Add people or groups": [
         "Voeg mensen en groepen toe"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Delen met Proton gebruikers"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -9226,18 +9380,6 @@
       "2 years": [
         "2 jaar"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "U betaalt ${ amount } voor de eerste 2 jaar"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "U betaalt ${ amount } voor de eerste maand"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "U betaalt ${ amount } voor het eerste jaar"
-      ],
-      "Billed at ${ amountDue }": [
-        "U betaalt ${ amountDue }"
-      ],
       "for ${ n } month": [
         "voor ${ n } maand",
         "voor ${ n } maanden"
@@ -9253,9 +9395,6 @@
       ],
       "Save ${ discount }%": [
         "Bespaar ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Standaardprijs ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -9464,7 +9603,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ]
     },
     "Subtitle for trial plan": {
@@ -9526,6 +9665,9 @@
       ],
       "Default calendar updated": [
         "Standaardagenda geüpdated"
+      ],
+      "Display name updated": [
+        "Weergavenaam bijgewerkt"
       ],
       "DMARC value copied to clipboard": [
         "DMARC-waarde gekopieerd naar klembord"
@@ -9601,6 +9743,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-waarde gekopieerd naar klembord"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ],
       "User created": [
         "Gebruiker aangemaakt"
@@ -9703,6 +9848,11 @@
       ],
       "For individuals": [
         "Voor particulieren"
+      ]
+    },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Gedeeld met mij"
       ]
     },
     "TableHeader": {
@@ -10109,6 +10259,9 @@
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
+      "Edit display name": [
+        "Wijzig weergavenaam"
+      ],
       "Edit domain": [
         "Domein bewerken"
       ],
@@ -10504,6 +10657,9 @@
       "Time zone": [
         "Tijdzone"
       ],
+      "Track your referrals": [
+        "Uw doorverwijzingen opvolgen"
+      ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Probeer het beste van ${ MAIL_APP_NAME } gratis"
       ],
@@ -10826,6 +10982,9 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Upgrade naar een betaald Mail-abonnement om tot ${ MAX_CALENDARS_PAID } agenda te maken, waardoor u agenda's kunt aanmaken voor werk, om te delen met vrienden of gewoon voor uzelf.",
         "Upgrade naar een betaald Mail-abonnement om tot ${ MAX_CALENDARS_PAID } agenda's te maken, waardoor u agenda's kunt aanmaken voor werk, om te delen met vrienden of gewoon voor uzelf."
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Upgrade naar een betaald Mail-abonnement om uw agenda te delen."
       ]
     },
     "User referee invited via email": {
@@ -10959,6 +11118,9 @@
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw Proton account. Overweeg om uw import aan te passen."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Dit zal alle berichten, mappen en labels aangemaakt tijdens de import, verwijderen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."

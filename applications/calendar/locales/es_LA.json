@@ -3421,6 +3421,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en su buzón, revise en la carpeta de spam."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Si no recuerda su contraseña, defina una frase de recuperación y asegúrese de no perder acceso a su cuenta y datos."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
@@ -3603,8 +3606,14 @@
       "Session timed out": [
         "Sesión agotada"
       ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
+      ],
+      "Sign in": [
+        "Iniciar sesión"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de sus respuestas a ocurrencias previamente actualizadas por el organizador."
@@ -3710,6 +3719,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Nos trasladamos a ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
@@ -3821,6 +3833,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Sus datos están listos para importar desde ${ importedEmailAddressStrong } a su cuenta de Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Su dirección de correo no cambiará, pero pronto tendrá que iniciar sesión en ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Su correo electrónico sólo se usará para esta verificación única."
@@ -5170,18 +5185,6 @@
       "2 years": [
         "2 años"
       ],
-      "Billed at ${ amount } for the first 2 years": [
-        "Con un costo de ${ amount } durante los primeros 2 años"
-      ],
-      "Billed at ${ amount } for the first month": [
-        "Con un costo de ${ amount } durante el primer mes"
-      ],
-      "Billed at ${ amount } for the first year": [
-        "Con un costo de ${ amount } durante el primer año"
-      ],
-      "Billed at ${ amountDue }": [
-        "Con un costo de ${ amountDue }"
-      ],
       "for ${ n } month": [
         "for ${ n } mes",
         "for ${ n } meses"
@@ -5197,9 +5200,6 @@
       ],
       "Save ${ discount }%": [
         "Ahorre un ${ discount }%"
-      ],
-      "Standard price ${ regularPrice }": [
-        "Precio estándar: ${ regularPrice }"
       ]
     },
     "specialoffer: Title": {
@@ -5886,6 +5886,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Iniciar sesión en ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Cerrar sesión"

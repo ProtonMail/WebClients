@@ -2952,6 +2952,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Dacă nu vă cunoașteți parola, setați o frază de recuperare pentru a vă asigura că nu vă pierdeți accesul la cont și date."
+      ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Dacă aveți una dintre acestea, accesați setările contului Proton pentru a\nîncepe procesul de deblocare."
       ],
@@ -3231,6 +3234,9 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
@@ -3242,6 +3248,9 @@
       ],
       "Shared link failed to be loaded": [
         "Legătura de partajare nu a putut fi încărcată."
+      ],
+      "Sign in": [
+        "Autentificare"
       ],
       "Signature check will be ignored": [
         "Verificarea semnăturii va fi ignorată"
@@ -3422,6 +3431,9 @@
       "Week": [
         "Săptămâna"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Ne mutăm la domeniul ${ PROTON_ME_DOMAIN }."
+      ],
       "What do you want to do?": [
         "Ce doriți să faceți?"
       ],
@@ -3484,6 +3496,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Adresa de e-mail nu vi se va schimba. Dar curând, va trebui să vă autentificați la ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
@@ -5146,6 +5161,9 @@
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Autentificare la ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Deconectare"

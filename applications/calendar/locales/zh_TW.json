@@ -933,11 +933,20 @@
       "carrot": [
         "胡蘿蔔"
       ],
+      "cerise": [
+        "櫻桃"
+      ],
       "cobalt": [
         "鈷"
       ],
       "copper": [
         "銅"
+      ],
+      "enzian": [
+        "龍膽"
+      ],
+      "fern": [
+        "蕨類"
       ],
       "forest": [
         "森林"
@@ -948,6 +957,9 @@
       "olive": [
         "橄欖"
       ],
+      "pacific": [
+        "太平洋"
+      ],
       "pickle": [
         "泡菜"
       ],
@@ -957,11 +969,26 @@
       "pink": [
         "粉紅色"
       ],
+      "plum": [
+        "梅子"
+      ],
       "purple": [
         "紫色"
       ],
+      "reef": [
+        "礁石"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
       "soil": [
         "土壤"
+      ],
+      "strawberry": [
+        "草莓"
       ]
     },
     "Confirm modal title": {
@@ -1352,6 +1379,9 @@
       "Haiti": [
         "海地"
       ],
+      "Heard Island and McDonald Islands": [
+        "赫德島及麥唐納群島"
+      ],
       "Holy See (Vatican City State)": [
         "梵蒂岡"
       ],
@@ -1639,6 +1669,9 @@
       ],
       "San Marino": [
         "聖馬利諾"
+      ],
+      "Sao Tome and Principe": [
+        "聖多美普林西比"
       ],
       "Saudi Arabia": [
         "沙烏地阿拉伯"
@@ -3326,6 +3359,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "倘若您擔心記不住密碼，可設定復原片語， 存取帳號和資料即可萬無一失。"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
       ],
@@ -3506,8 +3542,14 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
+      "Set recovery phrase": [
+        "設定還原短語"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
+      ],
+      "Sign in": [
+        "登入"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
@@ -3610,6 +3652,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "我們搬家嘍，點擊這裡 ${ PROTON_ME_DOMAIN }。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
@@ -3721,6 +3766,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳號。"
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "您的電郵位址毋需變更。 不過日後就得在 ${ link } 進行登入。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -5508,6 +5556,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "點擊登入 ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "登出"

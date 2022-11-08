@@ -3545,6 +3545,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Pokud heslo neznáte, nastavte si frázi pro obnovení, abyste neztratili přístup ke svému účtu a datům."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
@@ -3731,8 +3734,14 @@
       "Session timed out": [
         "Relace vypršela"
       ],
+      "Set recovery phrase": [
+        "Nastavit obnovovací frázi"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
+      ],
+      "Sign in": [
+        "Přihlásit se"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Některé vaše odpovědi na události, které byly dříve aktualizovány organizátorem, budou ztraceny."
@@ -3838,6 +3847,9 @@
       ],
       "Week": [
         "Týden"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Přesouváme se na ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -3949,6 +3961,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
+      ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Vaše e-mailová adresa se nezmění. Brzy se však budete muset přihlásit na ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
@@ -5877,6 +5892,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Přihlásit se na ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Odhlásit se"
