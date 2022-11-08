@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
+
 import { getAllAddresses } from '../api/addresses';
 import { updateUsername } from '../api/settings';
 import { getUser, queryCheckUsernameAvailability } from '../api/user';
@@ -10,6 +12,18 @@ import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { handleSetupAddress } from './setupAddressKeys';
 import { handleSetupKeys } from './setupKeys';
+
+export const getLocalPart = (email: string) => {
+    const [localPart] = getEmailParts(email);
+    return removePlusAliasLocalPart(localPart);
+};
+
+export const getClaimableAddress = async ({ api, email, domains }: { api: Api; email: string; domains: string[] }) => {
+    const username = getLocalPart(email).trim();
+    const domain = domains[0];
+    await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+    return { username, domain };
+};
 
 export type InternalAddressGenerationSetup =
     | {

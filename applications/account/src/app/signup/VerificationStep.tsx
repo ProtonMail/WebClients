@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { HumanVerificationForm } from '@proton/components';
 import { HumanVerificationFormProps } from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
 
@@ -9,12 +7,13 @@ import Main from '../public/Main';
 
 interface Props extends HumanVerificationFormProps {
     onBack?: () => void;
+    title: string;
 }
 
-const VerificationStep = ({ onBack, ...rest }: Props) => {
+const VerificationStep = ({ title, onBack, ...rest }: Props) => {
     return (
         <Main>
-            <Header title={c('Title').t`Verification`} onBack={onBack} />
+            <Header title={title} onBack={onBack} />
             <Content>
                 <HumanVerificationForm {...rest} />
             </Content>
