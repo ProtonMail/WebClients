@@ -177,8 +177,16 @@ const EditLabelModal = ({
         return isFolder ? c('Label/folder modal').t`Edit folder` : c('Label/folder modal').t`Edit label`;
     };
 
+    const getTestId = () => {
+        const isFolder = model.Type === LABEL_TYPE.MESSAGE_FOLDER;
+        if (mode === 'create') {
+            return isFolder ? 'create-folder-modal' : 'create-label-modal';
+        }
+        return isFolder ? 'edit-folder-modal' : 'edit-label-modal';
+    };
+
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" data-testid={getTestId()} {...rest}>
             <ModalTwoHeader title={getTitle()} />
             <ModalTwoContent>
                 <NewLabelForm
