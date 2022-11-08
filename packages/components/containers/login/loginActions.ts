@@ -25,6 +25,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import {
     InternalAddressGenerationPayload,
+    getClaimableAddress,
     getDecryptedUserKeysHelper,
     getInternalAddressSetupMode,
     getSentryError,
@@ -91,13 +92,20 @@ const finalizeLogin = async ({
             authApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
             maybeAddresses || getAllAddresses(authApi),
         ]);
+        const externalEmailAddress = addresses?.[0];
+        const claimableAddress = await getClaimableAddress({
+            api: authApi,
+            email: externalEmailAddress?.Email,
+            domains: Domains,
+        }).catch(noop);
         return {
             to: AuthStep.GENERATE_INTERNAL,
             cache: {
                 ...cache,
                 internalAddressSetup: {
                     availableDomains: Domains,
-                    externalEmailAddress: addresses?.[0],
+                    externalEmailAddress,
+                    claimableAddress,
                     setup: getInternalAddressSetupMode({ User, loginPassword, keyPassword }),
                 },
             },

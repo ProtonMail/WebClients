@@ -276,6 +276,7 @@ const LoginContainer = ({
                     toAppName={toAppName || MAIL_APP_NAME}
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
+                    claimableAddress={generateInternalAddress.claimableAddress}
                     setup={generateInternalAddress.setup}
                     onSubmit={async (payload) => {
                         return handleSetupInternalAddress({

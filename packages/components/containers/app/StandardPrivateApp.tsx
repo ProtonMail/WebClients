@@ -1,10 +1,11 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 
+import { requiresNonDelinquent, requiresProtonAccount } from 'proton-account/src/app/public/helper';
 import { c } from 'ttag';
 
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
@@ -17,6 +18,7 @@ import { Model } from '@proton/shared/lib/interfaces/Model';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
+import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
 import { useAppLink } from '../../components';
@@ -102,28 +104,31 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             cache,
         };
 
-        const hasInternalEmailAddressRequirement = REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(APP_NAME);
+        const hasInternalEmailAddressRequirement = requiresProtonAccount.includes(APP_NAME);
 
         const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
-
-        const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
 
         let earlyAccessRefresher: undefined | (() => void);
         let shouldSetupInternalAddress = false;
 
+        const userModelPromise = loadModels([UserModel], loadModelsArgs).then((result: any) => {
+            const [user] = result as [User];
+
+            const hasNonDelinquentRequirement = requiresNonDelinquent.includes(APP_NAME);
+            const hasNonDelinquentScope = getHasNonDelinquentScope(user);
+            hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
+
+            shouldSetupInternalAddress = hasInternalEmailAddressRequirement && user.Type === UserType.EXTERNAL;
+        });
+
+        const models = unique([UserSettingsModel, ...preloadModels]).filter((model) => model !== UserModel);
         const setupPromise = loadModels(models, loadModelsArgs).then((result: any) => {
-            const [userSettings, user] = result as [UserSettings, User];
+            const [userSettings] = result as [UserSettings];
 
             cache.set(WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue(userSettings));
 
             setSentryEnabled(!!userSettings.CrashReports);
             setMetricsEnabled(!!userSettings.Telemetry);
-
-            const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
-            const hasNonDelinquentScope = getHasNonDelinquentScope(user);
-            hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
-
-            shouldSetupInternalAddress = hasInternalEmailAddressRequirement && user.Type === UserType.EXTERNAL;
 
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
@@ -143,43 +148,43 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const appPromise = appFactory().then((result) => {
             appRef.current = result.default;
         });
+        const initPromise = onInit?.();
+        const cryptoWorkerPromise = loadCryptoWorker(getCryptoWorkerOptions(APP_NAME));
 
-        const run = () => {
-            return Promise.all([
-                eventManagerPromise,
-                setupPromise,
-                onInit?.(),
-                loadCryptoWorker(getCryptoWorkerOptions(APP_NAME)),
-                appPromise,
-            ]).catch((error) => {
+        const run = async () => {
+            const promises = [eventManagerPromise, setupPromise, initPromise, cryptoWorkerPromise, appPromise];
+            try {
+                await userModelPromise;
+                await Promise.all(promises);
+            } catch (error) {
                 if (getIs401Error(error)) {
                     // Trigger onLogout early, ignoring the unload wrapper
                     onLogout();
+                    await new Promise(noop);
                 }
                 throw error;
-            });
-        };
-
-        wrapUnloadError(run())
-            .then(() => {
+            } finally {
                 // The Version cookie is set on each request. This causes race-conditions between with what the client
                 // has set it to and what the API is replying with. Old API requests with old cookies may finish after
                 // the refresh has happened which resets the Version cookie, causing assets to fail loading.
                 // Here we explicitly wait for all requests to finish loading before triggering the refresh.
                 if (earlyAccessRefresher) {
+                    await Promise.allSettled(promises);
                     earlyAccessRefresher();
-                    return;
+                    await new Promise(noop);
                 }
                 if (shouldSetupInternalAddress) {
-                    appLink(`/setup-internal-address?app=${APP_NAME}`, APPS.PROTONACCOUNT);
-                } else {
-                    setLoading(false);
+                    appLink(`/setup-internal-address?to=${APP_NAME}`, APPS.PROTONACCOUNT);
+                    await new Promise(noop);
                 }
+            }
+        };
+
+        wrapUnloadError(run())
+            .then(() => {
+                setLoading(false);
             })
             .catch((error) => {
-                if (getIs401Error(error)) {
-                    return;
-                }
                 setError({
                     message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
                 });

@@ -30,7 +30,6 @@ import {
     APPS,
     APPS_CONFIGURATION,
     CLIENT_TYPES,
-    REQUIRES_INTERNAL_EMAIL_ADDRESS,
     SSO_PATHS,
     UNPAID_STATE,
     isSSOMode,
@@ -49,7 +48,7 @@ import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
-import { getToAppName } from '../public/helper';
+import { externalApps, getToAppName, requiresProtonAccount } from '../public/helper';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
@@ -144,9 +143,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         maybeQueryAppIntent;
 
     // Require internal setup if an app is specified. Otherwise, external accounts will get redirected to vpn (without having to setup an internal address)
-    const shouldSetupInternalAddress = maybePreAppIntent
-        ? REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybePreAppIntent)
-        : false;
+    const shouldSetupInternalAddress = maybePreAppIntent ? requiresProtonAccount.includes(maybePreAppIntent) : false;
 
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.Proton) {
@@ -227,7 +224,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         const { keyPassword, UID, User: user, LocalID, persistent, trusted, appIntent: maybeFlowAppIntent } = args;
         const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
         // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
-        const toApp = toAppIntent || (user.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
+        const toApp = toAppIntent || (user.Type === UserType.EXTERNAL ? externalApps[0] : DEFAULT_APP);
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect =

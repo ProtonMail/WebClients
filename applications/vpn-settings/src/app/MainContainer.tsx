@@ -222,7 +222,7 @@ const MainContainer = () => {
                             <Route path={routes.account.to}>
                                 <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.account}>
                                     <>
-                                        <UsernameSection />
+                                        <UsernameSection app={APPS.PROTONVPN_SETTINGS} />
                                         <PasswordsSection />
                                     </>
                                     <TwoFactorSection />
