@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useSelector, useStore } from 'react-redux';
 
 import { useApi, useCache, useConversationCounts, useEventManager, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -33,7 +33,7 @@ import {
     totalReturned as totalReturnedSelector,
 } from '../../logic/elements/elementsSelectors';
 import { messageByID } from '../../logic/messages/messagesSelectors';
-import { RootState } from '../../logic/store';
+import { RootState, useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { useElementsEvents } from '../events/useElementsEvents';
@@ -63,8 +63,8 @@ interface UseElements {
 }
 
 export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter, onPage }) => {
-    const store = useStore();
-    const dispatch = useDispatch();
+    const store = useStore<RootState>();
+    const dispatch = useAppDispatch();
 
     const api = useApi();
     const { call } = useEventManager();
@@ -158,6 +158,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     conversationMode,
                     labelID,
                     search,
+                    // @ts-expect-error to fix later
                     page,
                     sort,
                     filter,
@@ -206,7 +207,7 @@ export const useGetElementByID = () => {
  * Don't use this for optimistic for example
  */
 export const useGetElementsFromIDs = () => {
-    const store = useStore();
+    const store = useStore<RootState>();
 
     return useCallback((elementIDs: string[]): Element[] => {
         const state = store.getState();

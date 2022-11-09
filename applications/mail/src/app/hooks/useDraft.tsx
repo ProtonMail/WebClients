@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
 import {
     generateUID,
@@ -20,6 +19,7 @@ import { findSender } from '../helpers/addresses';
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
 import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
+import { useAppDispatch } from '../logic/store';
 import { useGetAttachment } from './useAttachment';
 
 const CACHE_KEY = 'Draft';
@@ -52,7 +52,7 @@ export const useDraft = () => {
     const cache = useCache();
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { handleDraftVerifications: draftVerifications, sendingFromDefaultAddressModal } = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
@@ -22,6 +21,7 @@ import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
     message: MessageStateWithData;
@@ -30,7 +30,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [nowDate, setNowDate] = useState(() => Date.now());
 
     const onCompose = useOnCompose();

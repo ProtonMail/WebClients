@@ -1,4 +1,4 @@
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useSelector, useStore } from 'react-redux';
 
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -11,7 +11,7 @@ import {
     taskRunning as taskRunningSelector,
 } from '../../logic/elements/elementsSelectors';
 import { EventUpdates } from '../../logic/elements/elementsTypes';
-import { RootState } from '../../logic/store';
+import { RootState, useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
 import { SearchParameters } from '../../models/tools';
@@ -22,7 +22,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
     const esDBStatus = getESDBStatus();
 
     const store = useStore<RootState>();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const isLive = useSelector(isLiveSelector);
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
     const taskRunning = useSelector(taskRunningSelector);

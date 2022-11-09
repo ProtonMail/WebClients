@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import {
     addDays,
@@ -23,6 +22,7 @@ import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import { updateScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 import ComposerInnerModal from './ComposerInnerModal';
 
 const formatDateInput = (value: Date, locale: Locale) => {
@@ -44,7 +44,7 @@ interface Props {
 }
 
 const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const defaultDate =
         message && message.draftFlags?.scheduledAt

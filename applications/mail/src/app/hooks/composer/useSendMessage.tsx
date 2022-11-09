@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
@@ -28,6 +27,7 @@ import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { cancelScheduled, endUndo, sent, updateExpires } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from '../useAttachment';
@@ -50,7 +50,7 @@ export const useSendMessage = () => {
     const api = useApi();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { call } = useEventManager();
     const getMessage = useGetMessage();
     const history = useHistory<any>();
