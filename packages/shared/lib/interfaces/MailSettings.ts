@@ -1,4 +1,4 @@
-import { DRAFT_MIME_TYPES, PACKAGE_TYPE } from '../constants';
+import { DRAFT_MIME_TYPES, PACKAGE_TYPE, SHOW_IMAGES } from '../constants';
 import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
 
 export interface AutoResponder {
@@ -33,8 +33,8 @@ export interface MailSettings {
     SwipeLeft: number;
     SwipeRight: number;
     AlsoArchive: number;
-    HideEmbeddedImages: number;
-    HideRemoteImages: number;
+    HideEmbeddedImages: SHOW_IMAGES;
+    HideRemoteImages: SHOW_IMAGES;
     Hotkeys: number; // used by v3 (Angular)
     Shortcuts: number; // used by v4
     PMSignature: number;
