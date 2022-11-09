@@ -172,17 +172,15 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
             .catch(handleError);
     }, []);
 
-    /**
-     * Automatic token validation reset
-     */
-     useSearchParamsEffect(
+    useSearchParamsEffect(
         (params) => {
-            if (trustedDeviceRecoveryFeature.loading === true) {
-                return;
-            }
             const username = params.get('username');
             const token = params.get('token');
-            if (username && token) {
+
+            /**
+             * Automatic token validation reset
+             */
+            if (trustedDeviceRecoveryFeature.loading === false && username && token) {
                 setAutomaticVerification({ username, loading: true });
 
                 handleValidateResetToken({
@@ -203,6 +201,14 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
                         setAutomaticVerification({ username, loading: false });
                     });
 
+                return new URLSearchParams();
+            }
+
+            /**
+             * Automatic username filling
+             */
+            if (username) {
+                setAutomaticVerification({ username, loading: false });
                 return new URLSearchParams();
             }
         },
