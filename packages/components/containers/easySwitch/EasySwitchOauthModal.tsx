@@ -80,6 +80,7 @@ interface Props {
     source: EASY_SWITCH_SOURCE;
     featureMap?: EasySwitchFeatureFlag;
     provider?: OAUTH_PROVIDER;
+    onExit?: () => void;
 }
 
 const {

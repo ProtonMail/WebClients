@@ -136,12 +136,7 @@ const CalendarSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, interopsRoute)} exact>
                 <PrivateMainSettingsArea config={interopsRoute}>
-                    <CalendarImportSection
-                        addresses={addresses}
-                        calendars={visualCalendars}
-                        defaultCalendar={defaultCalendar}
-                        user={user}
-                    />
+                    <CalendarImportSection calendars={visualCalendars} defaultCalendar={defaultCalendar} user={user} />
                     <CalendarExportSection
                         personalCalendars={personalCalendars}
                         fallbackCalendar={defaultCalendar || personalCalendars[0]}

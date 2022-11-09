@@ -1,5 +1,4 @@
-export * from './mail';
+export { default as EasySwitchSettingsArea } from './components/SettingsArea/SettingsArea';
 export { default as EasySwitchOauthModal } from './EasySwitchOauthModal';
-export { default as EasySwitchDefaultModal } from './EasySwitchDefaultModal';
-export { default as EasySwitchDashboard } from './dashboard/Dashboard';
-export { default as EasySwitchStoreProvider } from './logic/StoreProvider';
+export { default as EasySwitchProvider } from './logic/StoreProvider';
+export { default as EasySwitchOauthImportButton } from './components/OauthImportButton/OauthImportButton';
