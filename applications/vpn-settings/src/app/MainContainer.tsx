@@ -27,9 +27,9 @@ import {
     PrivateHeader,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
+    SettingsListItem,
     Sidebar,
     SidebarList,
-    SidebarListItemsWithSubsections,
     SidebarNav,
     StandardErrorPage,
     SubscriptionModalProvider,
@@ -49,7 +49,7 @@ import {
     useUserSettings,
 } from '@proton/components';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
-import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
+import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -80,7 +80,6 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
     const location = useLocation();
-    const [activeSection, setActiveSection] = useState('');
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const routes = getRoutes(user);
@@ -167,11 +166,21 @@ const MainContainer = () => {
         >
             <SidebarNav>
                 <SidebarList>
-                    <SidebarListItemsWithSubsections
-                        list={Object.values(routes)}
-                        pathname={location.pathname}
-                        activeSection={activeSection}
-                    />
+                    {Object.values(routes).map(
+                        (section) =>
+                            getIsSectionAvailable(section) && (
+                                <SettingsListItem
+                                    to={getSectionPath('', section)}
+                                    icon={section.icon}
+                                    notification={section.notification}
+                                    key={section.to}
+                                >
+                                    <span className="text-ellipsis" title={section.text}>
+                                        {section.text}
+                                    </span>
+                                </SettingsListItem>
+                            )
+                    )}
                 </SidebarList>
             </SidebarNav>
         </Sidebar>
@@ -199,10 +208,7 @@ const MainContainer = () => {
                                         }}
                                     >
                                         <AutomaticSubscriptionModal />
-                                        <PrivateMainSettingsArea
-                                            setActiveSection={setActiveSection}
-                                            config={routes.dashboard}
-                                        >
+                                        <PrivateMainSettingsArea config={routes.dashboard}>
                                             <PlansSection />
                                             <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
                                             <BillingSection />
@@ -214,13 +220,13 @@ const MainContainer = () => {
                                 </Route>
                             )}
                             <Route path={routes.general.to}>
-                                <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.general}>
+                                <PrivateMainSettingsArea config={routes.general}>
                                     <LanguageSection locales={locales} />
                                     <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>
-                                <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.account}>
+                                <PrivateMainSettingsArea config={routes.account}>
                                     <>
                                         <UsernameSection app={APPS.PROTONVPN_SETTINGS} />
                                         <PasswordsSection />
@@ -233,7 +239,7 @@ const MainContainer = () => {
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.downloads.to}>
-                                <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.downloads}>
+                                <PrivateMainSettingsArea config={routes.downloads}>
                                     <ProtonVPNClientsSection />
                                     <OpenVPNConfigurationSection />
                                     <WireGuardConfigurationSection />
@@ -241,10 +247,7 @@ const MainContainer = () => {
                             </Route>
                             {getIsSectionAvailable(routes.payments) && (
                                 <Route path={routes.payments.to}>
-                                    <PrivateMainSettingsArea
-                                        setActiveSection={setActiveSection}
-                                        config={routes.payments}
-                                    >
+                                    <PrivateMainSettingsArea config={routes.payments}>
                                         <PaymentMethodsSection />
                                         <InvoicesSection />
                                     </PrivateMainSettingsArea>
