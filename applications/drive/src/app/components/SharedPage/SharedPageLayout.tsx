@@ -3,11 +3,14 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Icon, MainLogo, Unauthenticated, classnames } from '@proton/components';
+import { Icon, Logo, Unauthenticated, classnames, useConfig } from '@proton/components';
 import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import './Layout.scss';
+
+const DRIVE_LANGIND_PAGE = '/drive';
+const DRIVE_PRICING_PAGE = '/drive/pricing?product=drive';
 
 interface Props {
     reportAbuseButton?: React.ReactNode;
@@ -17,11 +20,25 @@ interface Props {
 }
 
 export default function SharedPageLayout({ reportAbuseButton, withSidebar, expand, children }: Props) {
+    const { APP_NAME } = useConfig();
+
     return (
         <Unauthenticated>
             <div className="shared-page-layout-bg flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative">
-                <header className="shared-page-layout-logo">
-                    <MainLogo to="/" className="mb1" />
+                <header className="shared-page-layout-logo flex flex-align-items-center flex-justify-space-between">
+                    <a href={getStaticURL(DRIVE_LANGIND_PAGE)} className="mt0-1">
+                        <Logo appName={APP_NAME} />
+                    </a>
+                    <ButtonLike
+                        className="no-tablet no-desktop"
+                        color="norm"
+                        shape="outline"
+                        as="a"
+                        href={getStaticURL(DRIVE_PRICING_PAGE)}
+                        target="_blank"
+                    >
+                        {c('Action').t`Get ${DRIVE_APP_NAME}`}
+                    </ButtonLike>
                 </header>
                 <div
                     className={classnames([
@@ -49,7 +66,7 @@ export default function SharedPageLayout({ reportAbuseButton, withSidebar, expan
 
 function SharedPageGetDriveSidebar() {
     return (
-        <div className="flex flex-column flex-nowrap w45 on-mobile-ml0">
+        <div className="flex flex-column flex-nowrap w45 no-mobile">
             <div>
                 <h3 className="text-bold">{c('Title').t`You've got files`}</h3>
                 <p>{c('Info')
@@ -59,7 +76,7 @@ function SharedPageGetDriveSidebar() {
                         color="norm"
                         shape="outline"
                         as="a"
-                        href={getStaticURL('/drive/pricing?product=drive')}
+                        href={getStaticURL(DRIVE_PRICING_PAGE)}
                         target="_blank"
                     >
                         {c('Action').t`Get ${DRIVE_APP_NAME}`}
