@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useAuthentication } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -11,12 +10,13 @@ import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
 import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageEmbeddedImage, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 
 export const useSendModifications = () => {
     const getMessage = useGetMessage();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessageKeys = useGetMessageKeys();
     const auth = useAuthentication();
 

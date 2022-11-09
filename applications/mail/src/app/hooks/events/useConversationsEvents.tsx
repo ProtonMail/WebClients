@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -11,13 +9,14 @@ import {
     eventMessageUpdate,
     load as loadAction,
 } from '../../logic/conversations/conversationsActions';
+import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Event, LabelIDsChanges } from '../../models/event';
 import { useGetConversation } from '../conversation/useConversation';
 
 export const useConversationsEvent = () => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getConversation = useGetConversation();
 
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {

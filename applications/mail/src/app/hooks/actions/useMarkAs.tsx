@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -12,6 +11,7 @@ import UndoActionNotification from '../../components/notifications/UndoActionNot
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { useOptimisticMarkAs } from '../optimistic/useOptimisticMarkAs';
 
@@ -65,7 +65,7 @@ export const useMarkAs = () => {
     const { call, start, stop } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS, silent = true) => {
         if (!elements.length) {

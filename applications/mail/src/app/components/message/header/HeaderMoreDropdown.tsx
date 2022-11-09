@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -38,6 +37,7 @@ import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { useGetAttachment } from '../../../hooks/useAttachment';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
 import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
@@ -92,7 +92,7 @@ const HeaderMoreDropdown = ({
     const location = useLocation();
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const { call } = useEventManager();

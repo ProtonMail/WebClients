@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,11 +7,12 @@ import { AlertModal, ErrorButton, useApi, useEventManager, useModalState } from 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { moveAll } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
 
 export const useMoveAll = () => {
     const api = useApi();
     const { call } = useEventManager();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const [modalProps, setModalOpen] = useModalState();
     const [actionProps, setActionProps] = useState<{ SourceLabelID: string; DestinationLabelID: string }>({

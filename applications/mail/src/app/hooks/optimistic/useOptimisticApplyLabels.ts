@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { useCache, useFolders, useHandler } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
@@ -23,6 +21,7 @@ import {
 } from '../../logic/conversations/conversationsActions';
 import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../logic/elements/elementsActions';
 import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { CacheEntry } from '../../models/tools';
@@ -47,7 +46,7 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
 };
 
 export const useOptimisticApplyLabels = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getElementByID = useGetElementByID();
     const [folders = []] = useFolders();
     const globalCache = useCache();

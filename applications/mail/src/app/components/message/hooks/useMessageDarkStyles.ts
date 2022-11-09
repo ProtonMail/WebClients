@@ -1,5 +1,4 @@
 import { RefObject, useEffect, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
@@ -8,6 +7,7 @@ import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../../logic/store';
 
 const useMessageDarkStyles = (
     message: MessageState,
@@ -16,7 +16,7 @@ const useMessageDarkStyles = (
 ) => {
     const darkStylesFeature = useFeature(FeatureCode.DarkStylesInBody);
     const [theme] = useTheme();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const isDarkTheme = DARK_THEMES.includes(theme);
 
     const needCompute =

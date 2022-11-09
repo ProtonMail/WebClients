@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -14,6 +13,7 @@ import { createMessage, updateMessage } from '../../helpers/message/messageExpor
 import { deleteConversation } from '../../logic/conversations/conversationsActions';
 import { deleteDraft, draftSaved } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
@@ -22,7 +22,7 @@ const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 export const useCreateDraft = () => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
     const { createNotification } = useNotifications();
@@ -43,7 +43,7 @@ export const useCreateDraft = () => {
 
 const useUpdateDraft = () => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessage = useGetMessage();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
@@ -112,7 +112,7 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
 export const useDeleteDraft = () => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const getConversation = useGetConversation();
