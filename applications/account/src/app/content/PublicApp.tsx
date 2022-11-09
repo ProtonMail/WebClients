@@ -46,8 +46,9 @@ import AuthExtension from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
+import RemoveRecoveryEmailContainer from '../public/RemoveRecoveryEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
-import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
+import VerifyRecoveryEmailContainer from '../public/VerifyRecoveryEmailContainer';
 import { externalApps, getToAppName, requiresProtonAccount } from '../public/helper';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
@@ -99,6 +100,7 @@ const getLocalRedirect = (pathname?: string) => {
 const UNAUTHENTICATED_ROUTES = {
     UNSUBSCRIBE: '/unsubscribe',
     VERIFY_EMAIL: '/verify-email',
+    REMOVE_EMAIL: '/remove-email',
 };
 
 interface Props {
@@ -376,14 +378,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             <HandleLogout />
             <ModalsChildren />
             <Switch>
-                <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions`}>
+                <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions?`}>
                     <Unauthenticated>
                         <EmailUnsubscribeContainer />
                     </Unauthenticated>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>
                     <Unauthenticated>
-                        <ValidateRecoveryEmailContainer />
+                        <VerifyRecoveryEmailContainer
+                            onSubscribe={(jwt) => {
+                                history.replace({ pathname: `${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}`, hash: jwt });
+                            }}
+                        />
+                    </Unauthenticated>
+                </Route>
+                <Route path={UNAUTHENTICATED_ROUTES.REMOVE_EMAIL}>
+                    <Unauthenticated>
+                        <RemoveRecoveryEmailContainer />
                     </Unauthenticated>
                 </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>

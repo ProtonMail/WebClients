@@ -1,20 +1,24 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import EmailUnsubscribeCategories from './EmailUnsubscribeCategories';
 import PublicLayout from './PublicLayout';
 
 interface EmailUnsubscribedProps {
-    categories: string[];
+    categories: ReactNode;
     onResubscribeClick: () => void;
     onManageClick: () => void;
     loading: boolean;
 }
 
-const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick, loading }: EmailUnsubscribedProps) => {
-    const categoriesJsx = <EmailUnsubscribeCategories categories={categories} />;
-
+const EmailUnsubscribed = ({
+    categories: categoriesJsx,
+    onResubscribeClick,
+    onManageClick,
+    loading,
+}: EmailUnsubscribedProps) => {
     return (
         <PublicLayout
             main={c('Email Unsubscribe').jt`You unsubscribed from ${categoriesJsx} emails.`}
