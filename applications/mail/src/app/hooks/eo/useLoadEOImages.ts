@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useApi } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -11,10 +10,11 @@ import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { EOLoadEmbedded, EOLoadRemote } from '../../logic/eo/eoActions';
 import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../logic/eo/eoType';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
     const getMessage = useGetEOMessageState();
 
@@ -38,7 +38,7 @@ export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
 };
 
 export const useLoadEOEmbeddedImages = (id: string) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
     const getMessage = useGetEOMessageState();
     const getDecryptedToken = useGetEODecryptedToken();

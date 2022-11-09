@@ -1,19 +1,21 @@
 import { useCallback } from 'react';
+
 import { useApi, useEventManager } from '@proton/components';
-import { useDispatch } from 'react-redux';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Element } from '../../models/element';
-import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
+
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
+import { Element } from '../../models/element';
+import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 
 export const useStar = () => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const star = useCallback(async (elements: Element[], value: boolean) => {
         if (!elements.length) {

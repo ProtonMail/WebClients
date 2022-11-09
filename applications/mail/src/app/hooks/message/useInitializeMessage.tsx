@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
@@ -38,6 +37,7 @@ import {
     documentInitializePending,
     load,
 } from '../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../logic/store';
 import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
 import { useGetAttachment } from '../useAttachment';
 import { useBase64Cache } from '../useBase64Cache';
@@ -48,7 +48,7 @@ import { useGetMessage } from './useMessage';
 export const useInitializeMessage = () => {
     const api = useApi();
     const markAs = useMarkAs();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();

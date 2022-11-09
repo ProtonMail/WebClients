@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useCache, useContactEmails, useContactGroups, useEventManager, useUserKeys } from '@proton/components';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
@@ -14,6 +13,7 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { refresh } from '../../logic/contacts/contactsActions';
 import { resetVerification } from '../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../logic/store';
 import { Event } from '../../models/event';
 
 /**
@@ -54,7 +54,7 @@ const processContactUpdate = async (
 
 export const useContactsListener = () => {
     const globalCache = useCache();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
     const [contacts = []] = useContactEmails() as [ContactEmail[], boolean, Error];

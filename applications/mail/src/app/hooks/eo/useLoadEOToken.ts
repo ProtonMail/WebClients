@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
@@ -8,6 +7,7 @@ import { useApi, useNotifications } from '@proton/components';
 import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
 import { eoDecrypt } from '../../helpers/eo/message';
 import { loadEOMessage } from '../../logic/eo/eoActions';
+import { useAppDispatch } from '../../logic/store';
 
 interface Props {
     id?: string;
@@ -17,7 +17,7 @@ interface Props {
 
 export const useLoadEOToken = ({ id, encryptedToken, setSessionStorage }: Props) => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { createNotification } = useNotifications();
     const history = useHistory();
 
