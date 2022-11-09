@@ -4,7 +4,7 @@ import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { GenericError, useApi, useLoading, useNotifications } from '@proton/components';
+import { EmailSubscriptionCategories, GenericError, useApi, useLoading, useNotifications } from '@proton/components';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from '@proton/shared/lib/api/settings';
 import { NEWS } from '@proton/shared/lib/constants';
@@ -43,19 +43,7 @@ const EmailUnsubscribeContainer = () => {
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
 
     const subscriptions = Number(subscriptionsParam);
-
     const subscriptionBits = getBits(subscriptions) as NEWS[];
-
-    const newsTypeToWording = {
-        [NEWS.ANNOUNCEMENTS]: c('Label for news').t`Proton announcements`,
-        [NEWS.FEATURES]: c('Label for news').t`Proton major features`,
-        [NEWS.BUSINESS]: c('Label for news').t`Proton for Business`,
-        [NEWS.NEWSLETTER]: c('Label for news').t`Proton newsletter`,
-        [NEWS.BETA]: c('Label for news').t`Proton Beta`,
-        [NEWS.OFFERS]: c('Label for news').t`Proton offers and promotions`,
-    };
-
-    const categories = subscriptionBits.map((bit) => newsTypeToWording[bit]);
 
     useEffect(() => {
         const init = async () => {
@@ -68,24 +56,20 @@ const EmailUnsubscribeContainer = () => {
             const authApiFn: Api = (config: object) =>
                 api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
 
-            const {
-                UserSettings: { News: currentNews },
-            } = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
+            const result = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
+            let currentNews = result.UserSettings.News;
 
-            const nextNews = subscriptionBits.reduce(clearBit, currentNews);
+            if (!subscriptionBits.length) {
+                setPage(PAGE.MANAGE);
+            } else {
+                const nextNews = subscriptionBits.reduce(clearBit, currentNews);
+                const result = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
+                currentNews = result.UserSettings.News;
+            }
 
-            const {
-                UserSettings: { News: updatedNews },
-            } = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
-
-            /*
-             * https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate
-             *
-             * we want to store the 'authApiFn' here, not tell react to use the function to generate the next state
-             */
             setAuthApi(() => authApiFn);
 
-            setNews(updatedNews);
+            setNews(currentNews);
         };
 
         init().catch(setError);
@@ -124,64 +108,62 @@ const EmailUnsubscribeContainer = () => {
         void withLoading(update(news));
     };
 
-    const renderView = () => {
-        if (news === null) {
-            return (
-                <div className="absolute-center text-center">
-                    <CircleLoader size="large" />
-                </div>
-            );
-        }
+    const categoriesJsx = <EmailSubscriptionCategories news={subscriptionBits} />;
 
-        switch (page) {
-            case PAGE.UNSUBSCRIBE: {
-                return (
-                    <EmailUnsubscribed
-                        categories={categories}
-                        onResubscribeClick={handleResubscribeClick}
-                        onManageClick={handleManageClick}
-                        loading={loading}
-                    />
-                );
-            }
+    return (
+        <main className="main-area email-unsubscribe-container--main">
+            {(() => {
+                if (error) {
+                    const signIn = (
+                        <a key="1" href="/login" target="_self">
+                            {c('Error message, unsubscribe').t`sign in`}
+                        </a>
+                    );
 
-            case PAGE.RESUBSCRIBE: {
-                return (
-                    <EmailResubscribed
-                        categories={categories}
-                        onUnsubscribeClick={handleUnsubscribeClick}
-                        onManageClick={handleManageClick}
-                        loading={loading}
-                    />
-                );
-            }
-
-            case PAGE.MANAGE: {
-                return <EmailSubscriptionManagement News={news} disabled={loading} onChange={handleChange} />;
-            }
-
-            default:
+                    return (
+                        <div className="absolute-center text-center">
+                            <GenericError>
+                                <span>{c('Error message, unsubscribe').t`There was a problem unsubscribing you.`}</span>
+                                <span>{c('Error message, unsubscribe')
+                                    .jt`Please ${signIn} to update your email subscription preferences.`}</span>
+                            </GenericError>
+                        </div>
+                    );
+                }
+                if (news === null) {
+                    return (
+                        <div className="absolute-center text-center">
+                            <CircleLoader size="large" />
+                        </div>
+                    );
+                }
+                if (page === PAGE.UNSUBSCRIBE) {
+                    return (
+                        <EmailUnsubscribed
+                            categories={categoriesJsx}
+                            onResubscribeClick={handleResubscribeClick}
+                            onManageClick={handleManageClick}
+                            loading={loading}
+                        />
+                    );
+                }
+                if (page === PAGE.RESUBSCRIBE) {
+                    return (
+                        <EmailResubscribed
+                            categories={categoriesJsx}
+                            onUnsubscribeClick={handleUnsubscribeClick}
+                            onManageClick={handleManageClick}
+                            loading={loading}
+                        />
+                    );
+                }
+                if (page === PAGE.MANAGE) {
+                    return <EmailSubscriptionManagement News={news} disabled={loading} onChange={handleChange} />;
+                }
                 return null;
-        }
-    };
-
-    if (error) {
-        const signIn = (
-            <a key="1" href="/login" target="_self">
-                {c('Error message, unsubscribe').t`sign in`}
-            </a>
-        );
-
-        return (
-            <GenericError>
-                <span>{c('Error message, unsubscribe').t`There was a problem unsubscribing you.`}</span>
-                <span>{c('Error message, unsubscribe')
-                    .jt`Please ${signIn} to update your email subscription preferences.`}</span>
-            </GenericError>
-        );
-    }
-
-    return <main className="main-area email-unsubscribe-container--main">{renderView()}</main>;
+            })()}
+        </main>
+    );
 };
 
 export default EmailUnsubscribeContainer;
