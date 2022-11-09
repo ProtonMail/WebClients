@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import {
     Icon,
     SectionConfig,
+    SettingsListItem,
     SidebarListItem,
     SidebarListItemButton,
     SidebarListItemContent,
@@ -21,7 +22,6 @@ import { getIsOwnedCalendar, getVisualCalendars, sortCalendars } from '@proton/s
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
-import SettingsListItem from '../../components/SettingsListItem';
 import { getIsSingleCalendarSection } from './routes';
 
 const MAX_CALENDARS = 10;

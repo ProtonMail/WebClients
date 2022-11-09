@@ -1,18 +1,16 @@
+import { ReactNode } from 'react';
+
 import { NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
-import {
-    IconName,
-    SidebarListItem,
-    SidebarListItemContent,
-    SidebarListItemContentIcon,
-    SidebarListItemLink,
-} from '@proton/components';
+
+import { IconName } from '../icon/Icon';
+import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon, SidebarListItemLink } from './index';
 
 interface Props {
     to: string;
     icon: IconName;
     notification?: ThemeColor;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const SettingsListItem = ({ to, icon, children, notification }: Props) => {
