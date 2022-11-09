@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { FeatureCode, useApi, useFeature } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
@@ -19,6 +18,7 @@ import {
 import { getAttachmentCounts } from '../helpers/message/messages';
 import { updateAttachment } from '../logic/attachments/attachmentsActions';
 import { MessageKeys, MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
+import { useAppDispatch } from '../logic/store';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
 import { useGetMessage } from './message/useMessage';
 import { useGetAttachment } from './useAttachment';
@@ -41,7 +41,7 @@ const useSyncedMessageKeys = () => {
 export const useDownload = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
@@ -89,7 +89,7 @@ export const useDownload = () => {
 export const useDownloadAll = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
@@ -144,7 +144,7 @@ export const useDownloadAll = () => {
 export const usePreview = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 

@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { c } from 'ttag';
 
 import { useEventManager, useHandler, useMailSettings, useNotifications } from '@proton/components';
@@ -13,6 +11,7 @@ import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { MapSendInfo } from '../../models/crypto';
 import { useGetMessage } from '../message/useMessage';
 import { PromiseHandlers } from '../usePromise';
@@ -53,7 +52,7 @@ export const useSendHandler = ({
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessage = useGetMessage();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications(

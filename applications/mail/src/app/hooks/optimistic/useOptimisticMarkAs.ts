@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { useCache, useHandler, useMailSettings } from '@proton/components';
@@ -18,6 +17,7 @@ import {
 } from '../../logic/conversations/conversationsActions';
 import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
 import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { CacheEntry } from '../../models/tools';
@@ -102,7 +102,7 @@ const applyMarkAsChangesOnConversationWithMessages = (
 };
 
 export const useOptimisticMarkAs = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getElementByID = useGetElementByID();
     const globalCache = useCache();
     const [mailSettings] = useMailSettings();

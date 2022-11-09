@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -14,6 +13,7 @@ import UndoActionNotification from '../../components/notifications/UndoActionNot
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { useCreateFilters } from './useCreateFilters';
@@ -90,7 +90,7 @@ export const useApplyLabels = () => {
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { getFilterActions } = useCreateFilters();
 
     const applyLabels = useCallback(

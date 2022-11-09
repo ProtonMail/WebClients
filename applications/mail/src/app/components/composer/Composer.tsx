@@ -10,7 +10,6 @@ import {
     useRef,
     useState,
 } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -54,6 +53,7 @@ import { useLongLivingState } from '../../hooks/useLongLivingState';
 import { useMessageSendInfo, useReloadSendInfo } from '../../hooks/useSendInfo';
 import { removeInitialAttachments } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { Event } from '../../models/event';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
@@ -99,7 +99,7 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessage = useGetMessage();
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();

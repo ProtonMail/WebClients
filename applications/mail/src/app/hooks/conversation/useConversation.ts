@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useSelector, useStore } from 'react-redux';
 
 import { useApi } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -11,7 +11,7 @@ import { hasError, hasErrorType } from '../../helpers/errors';
 import { initialize, load as loadAction, retryLoading } from '../../logic/conversations/conversationsActions';
 import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
 import { ConversationErrors, ConversationState } from '../../logic/conversations/conversationsTypes';
-import { RootState } from '../../logic/store';
+import { RootState, useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 
@@ -47,7 +47,7 @@ interface UseConversation {
 }
 
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversation = useGetConversation();

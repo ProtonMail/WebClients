@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useApi, useFeature } from '@proton/components/hooks';
@@ -7,12 +6,13 @@ import { useApi, useFeature } from '@proton/components/hooks';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { load as loadConversation } from '../../logic/conversations/conversationsActions';
 import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../logic/store';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessage } from '../message/useMessage';
 
 const usePreLoadElements = (elementIDs: string[], isConversation: boolean, labelID: string) => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
     const numberOfPreloadedConversations = feature?.Value || 0;
     const firstElementIDs = elementIDs.slice(0, numberOfPreloadedConversations);

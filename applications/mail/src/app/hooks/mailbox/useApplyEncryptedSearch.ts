@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -21,7 +21,7 @@ import {
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     shouldSendRequest as shouldSendRequestSelector,
 } from '../../logic/elements/elementsSelectors';
-import { RootState } from '../../logic/store';
+import { RootState, useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 
@@ -47,7 +47,7 @@ export const useApplyEncryptedSearch = ({
     const history = useHistory();
     const api = useApi();
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { call } = useEventManager();
 
     const { getESDBStatus, encryptedSearch } = useEncryptedSearchContext();

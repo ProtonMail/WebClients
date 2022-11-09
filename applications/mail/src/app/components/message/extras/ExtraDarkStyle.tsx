@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -10,13 +9,14 @@ import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { removeDarkStyle } from '../../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
     message: MessageStateWithData;
 }
 
 const ExtraDarkStyle = ({ message }: Props) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
     const showBanner = message.messageDocument?.hasDarkStyle && !message.messageDocument?.noDarkStyle;
 

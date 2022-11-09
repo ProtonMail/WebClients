@@ -1,5 +1,4 @@
 import { ChangeEvent, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { isToday, isTomorrow } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -15,6 +14,7 @@ import { formatDateToHuman } from '../../../helpers/date';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 import { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
@@ -79,7 +79,7 @@ interface Props {
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const {
         password,
         setPassword,
