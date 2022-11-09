@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { c, msgid } from 'ttag';
 
 import { FeatureCode, Href, useFeatures, useNotifications } from '@proton/components';
@@ -11,6 +9,7 @@ import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 import { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
@@ -58,7 +57,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
         onFormSubmit,
     } = useExternalExpiration(message);
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [{ feature: EORedesignFeature, loading }] = useFeatures([FeatureCode.EORedesign]);
 
     const isEORedesign = EORedesignFeature?.Value;

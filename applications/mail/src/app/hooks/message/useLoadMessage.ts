@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useApi } from '@proton/components';
 
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { load, reload } from '../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../logic/store';
 import { useInitializeMessage } from './useInitializeMessage';
 
 export const useLoadMessage = (inputMessage: MessageWithOptionalBody) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
 
     return useCallback(async () => {
@@ -17,7 +17,7 @@ export const useLoadMessage = (inputMessage: MessageWithOptionalBody) => {
 };
 
 export const useReloadMessage = (localID: string) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const initializeMessage = useInitializeMessage();
 
     return useCallback(async () => {

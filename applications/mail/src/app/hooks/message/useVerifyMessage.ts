@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { PublicKeyReference, WorkerDecryptionResult, getMatchingSigningKey } from '@proton/crypto';
@@ -11,6 +10,7 @@ import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../help
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { MessageErrors, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
 import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../logic/store';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetAttachment } from '../useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
@@ -20,7 +20,7 @@ export const useVerifyMessage = (localID: string) => {
     const api = useApi();
     const getMessage = useGetMessage();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessageKeys = useGetMessageKeys();
     const contactsMap = useContactsMap();

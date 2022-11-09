@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import {
     useAddresses,
@@ -52,6 +51,7 @@ import { useGetAttachment } from '../../../hooks/useAttachment';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { MessageErrors, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { errors as errorsAction } from '../../../logic/messages/read/messagesReadActions';
+import { useAppDispatch } from '../../../logic/store';
 import ExtraEvent from './calendar/ExtraEvent';
 
 interface Props {
@@ -63,7 +63,7 @@ const ExtraEvents = ({ message }: Props) => {
     const isMounted = useIsMounted();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     // const messageCache = useMessageCache();
     const getCalendars = useGetCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails();

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useSelector, useStore } from 'react-redux';
 
 import { useApi } from '@proton/components';
 
@@ -14,6 +14,7 @@ import {
 } from '../../logic/eo/eoSelectors';
 import { RootState } from '../../logic/eo/eoStore';
 import { OutsideKey } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 
 export const useGetEOMessage = () => {
     const store = useStore<RootState>();
@@ -46,7 +47,7 @@ interface Props {
 }
 
 export const useLoadEOMessage = ({ id, setSessionStorage }: Props) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
 
     const encryptedToken = useSelector((state: RootState) => eoTokenSelector(state));

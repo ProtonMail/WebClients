@@ -1,4 +1,4 @@
-import { useDispatch, useStore } from 'react-redux';
+import { useStore } from 'react-redux';
 
 import { useCache, useHandler } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
@@ -21,13 +21,13 @@ import {
     optimisticEmptyLabel as optimisticEmptyLabelMessage,
     optimisticRestore as optimisticRestoreMessage,
 } from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { RootState } from '../../logic/store';
+import { RootState, useAppDispatch } from '../../logic/store';
 import { CacheEntry } from '../../models/tools';
 import { useGetAllConversations } from '../conversation/useConversation';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const globalCache = useCache();
     const getAllConversations = useGetAllConversations();
 

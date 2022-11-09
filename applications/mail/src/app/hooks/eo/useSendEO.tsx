@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
@@ -21,6 +20,7 @@ import { prepareExport } from '../../helpers/message/messageExport';
 import { EOAddReply } from '../../logic/eo/eoActions';
 import { EOMessageReply } from '../../logic/eo/eoType';
 import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 
 interface EOAttachment {
     Filename: string[];
@@ -38,7 +38,7 @@ interface Props {
 
 export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const history = useHistory();
     const notifManager = createSendingMessageNotificationManager();
     const { createNotification, hideNotification } = useNotifications();

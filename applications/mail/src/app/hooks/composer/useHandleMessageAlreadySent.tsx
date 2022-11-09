@@ -1,11 +1,10 @@
-import { useDispatch } from 'react-redux';
-
 import { c } from 'ttag';
 
 import { useHandler, useNotifications } from '@proton/components';
 
 import { deleteDraft } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetMessage } from '../message/useMessage';
 import { useCreateDraft } from '../message/useSaveDraft';
 
@@ -18,7 +17,7 @@ export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandle
     const { createNotification } = useNotifications();
     const createDraft = useCreateDraft();
     const getMessage = useGetMessage();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const duplicateDraft = useHandler(() => {
         const messageFromCache = getMessage(modelMessage.localID) as MessageStateWithData;

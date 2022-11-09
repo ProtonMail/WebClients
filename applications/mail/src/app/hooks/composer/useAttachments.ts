@@ -1,5 +1,4 @@
 import { MutableRefObject, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useApi, useAuthentication, useHandler, useNotifications } from '@proton/components';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
@@ -26,6 +25,7 @@ import { getEmbeddedImages, updateImages } from '../../helpers/message/messageIm
 import { Upload } from '../../helpers/upload';
 import { addAttachment } from '../../logic/attachments/attachmentsActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -56,7 +56,7 @@ export const useAttachments = ({
     const auth = useAuthentication();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
