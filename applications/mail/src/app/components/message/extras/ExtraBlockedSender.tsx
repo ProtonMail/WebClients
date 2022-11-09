@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -13,6 +11,7 @@ import {
 } from '../../../hooks/incomingDefaults/useIncomingDefaults';
 import { remove } from '../../../logic/incomingDefaults/incomingDefaultsActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
     message: MessageState;
@@ -20,7 +19,7 @@ interface Props {
 
 const ExtraBlockedSender = ({ message }: Props) => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { createNotification } = useNotifications();
 
     const senderAddress = getSender(message.data)?.Address;

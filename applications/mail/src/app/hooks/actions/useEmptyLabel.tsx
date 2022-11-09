@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -18,6 +17,7 @@ import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages
 
 import { isCustomLabel } from '../../helpers/labels';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
 import { useOptimisticEmptyLabel } from '../optimistic/useOptimisticEmptyLabel';
 
 export const useEmptyLabel = () => {
@@ -27,7 +27,7 @@ export const useEmptyLabel = () => {
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const [labelID, setLabelID] = useState<string>('');
     const [deleteModalProps, setDeleteModalOpen] = useModalState();

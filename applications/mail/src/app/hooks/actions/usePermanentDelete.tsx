@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -11,6 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { isConversation } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 import useOptimisticDelete from '../optimistic/useOptimisticDelete';
 
@@ -137,7 +137,7 @@ export const usePermanentDelete = (labelID: string) => {
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();

@@ -1,5 +1,4 @@
 import { ReactNode, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { Loader, useApi } from '@proton/components';
@@ -9,6 +8,7 @@ import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';
 import { useGetEODecryptedToken, useGetEOPassword } from '../../hooks/eo/useLoadEOMessage';
 import { loadEOMessage } from '../../logic/eo/eoActions';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 
 interface Props {
     id?: string;
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const EORedirect = ({ id, isStoreInitialized, messageState, children, setSessionStorage }: Props) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
 
     const getPassword = useGetEOPassword();

@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { useCache, useHandler } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
@@ -22,6 +20,7 @@ import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,
 } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { CacheEntry } from '../../models/tools';
 import { useGetAllConversations } from '../conversation/useConversation';
@@ -29,7 +28,7 @@ import { useGetElementByID } from '../mailbox/useElements';
 import { useGetMessage } from '../message/useMessage';
 
 const useOptimisticDelete = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getElementByID = useGetElementByID();
     const globalCache = useCache();
     const getAllConversations = useGetAllConversations();

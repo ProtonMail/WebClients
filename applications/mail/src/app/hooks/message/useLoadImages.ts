@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useApi, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
@@ -22,12 +21,13 @@ import {
     MessageState,
     MessageStateWithData,
 } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetAttachment } from '../useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
 export const useLoadRemoteImages = (localID: string) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
     const getMessage = useGetMessage();
     const [mailSettings] = useMailSettings();
@@ -70,7 +70,7 @@ export const useLoadRemoteImages = (localID: string) => {
 };
 
 export const useLoadEmbeddedImages = (localID: string) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const api = useApi();
     const getAttachment = useGetAttachment();
     const getMessage = useGetMessage();

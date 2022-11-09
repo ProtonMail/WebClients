@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
@@ -29,12 +28,13 @@ import {
     MessageState,
     MessageStateWithDataFull,
 } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useInitializeEOMessage = () => {
     const api = useApi();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const getMessage = useGetEOMessageState();
     const getPassword = useGetEOPassword();
     const getEODecryptedToken = useGetEODecryptedToken();

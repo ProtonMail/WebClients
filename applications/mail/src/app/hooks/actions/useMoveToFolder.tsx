@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -24,6 +23,7 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isCustomLabel, isLabel } from '../../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
@@ -154,7 +154,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const [mailSettings] = useMailSettings();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { getFilterActions } = useCreateFilters();
 
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash

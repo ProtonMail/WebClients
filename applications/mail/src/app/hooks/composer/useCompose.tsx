@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -26,6 +24,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { isDirtyAddress } from '../../helpers/addresses';
 import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
@@ -69,7 +68,7 @@ export const useCompose = (
     const getUser = useGetUser();
     const [addresses = []] = useAddresses();
     const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { createDraft, sendingFromDefaultAddressModal } = useDraft();
     const goToSettings = useSettingsLink();
     const api = useApi();
