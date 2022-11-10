@@ -80,6 +80,7 @@ export * from './useMessageCounts';
 export { default as useModals } from './useModals';
 export { default as useIsDataRecoveryAvailable } from './useIsDataRecoveryAvailable';
 export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
+export { default as useIsProtonMailDomainMigrationEnabled } from './useIsProtonMailDomainMigrationEnabled';
 export { default as useIsRecoveryFileAvailable } from './useIsRecoveryFileAvailable';
 export { default as useMyLocation } from './useMyLocation';
 export { default as useNextSubscription } from './useNextSubscription';
