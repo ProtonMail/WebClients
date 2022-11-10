@@ -28,7 +28,7 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 },
             ].map(({ title, logo }) => {
                 return (
-                    <div key={title} className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25" title={title}>
+                    <div key={title} className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-max-w50p" title={title}>
                         {logo}
                     </div>
                 );

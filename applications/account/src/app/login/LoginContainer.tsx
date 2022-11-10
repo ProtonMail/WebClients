@@ -297,7 +297,7 @@ const LoginContainer = ({
     return (
         <Layout
             hasWelcome
-            hasBackButton={!!handleBackStep}
+            onBack={handleBackStep}
             hasDecoration={step === AuthStep.LOGIN}
             bottomRight={<LoginSupportDropdown />}
         >

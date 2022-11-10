@@ -177,7 +177,7 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
         </Main>
     );
     return (
-        <Layout hasBackButton={!!handleBackStep} bottomRight={<LoginSupportDropdown />} hasDecoration={true}>
+        <Layout onBack={handleBackStep} bottomRight={<LoginSupportDropdown />} hasDecoration={true}>
             {children}
         </Layout>
     );
