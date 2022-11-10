@@ -123,7 +123,7 @@
         "Zurückstufen"
       ],
       "Downgrade account": [
-        "Konto herabstufen"
+        "Konto downgraden"
       ],
       "Download": [
         "Herunterladen"
@@ -153,10 +153,13 @@
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Erkundige dich über andere ${ BRAND_NAME }-Abonnements"
+        "Entdecke weitere ${ BRAND_NAME }-Abonnements"
       ],
       "Extend": [
         "Erweitern"
+      ],
+      "Fit to window": [
+        "An das Fenster anpassen"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } holen"
@@ -250,9 +253,6 @@
       ],
       "Reset password": [
         "Passwort zurücksetzen"
-      ],
-      "Reset zoom": [
-        "Vergrößerung zurücksetzen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -1448,7 +1448,7 @@
         "Fehlende Funktion(en)"
       ],
       "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreiben Sie das Problem)"
+        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
       ],
       "Streaming service unsupported": [
         "Streaming-Dienst wird nicht unterstützt"
@@ -1465,7 +1465,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Helfen Sie uns, besser zu werden!"
+        "Hilf uns, besser zu werden!"
       ]
     },
     "Error": {
@@ -1533,7 +1533,7 @@
         "Keine gültige Zahl"
       ],
       "Organization not recognized. Try again.": [
-        "Organisation nicht erkannt. Bitte versuchen Sie es erneut."
+        "Organisation nicht erkannt. Bitte versuche es erneut."
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -1560,7 +1560,7 @@
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail fest"
       ],
       "Please set a recovery phone number first": [
-        "Bitte zuerst eine Wiederherstellungsrufnummer festlegen"
+        "Bitte zuerst eine Wiederherstellungs-Telefonnummer festlegen"
       ],
       "Process aborted": [
         "Prozess abgebrochen"
@@ -1850,7 +1850,7 @@
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Wenn Sie fortfahren, verlieren Sie den Zugriff auf alle derzeit verschlüsselten Daten in Ihrem Konto."
+        "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
@@ -1867,7 +1867,7 @@
         "${ storageSize } Speicherplatz"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Mit dieser E-Mail-Adresse können Sie sich bei allen Diensten von ${ BRAND_NAME } anmelden."
+        "${ strongAddressAvailable } Mit dieser E-Mail-Adresse kannst du dich bei allen Diensten von ${ BRAND_NAME } anmelden."
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "${ vpnBasic }, ${ vpnPlus } oder ${ visionary } ist für eine Verbindung auf Länderebene erforderlich."
@@ -1922,7 +1922,7 @@
         "Mindestbetrag unterschritten (${ amount })."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL liest Ihre persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+        "AOL liest deine persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du eine sichere E-Mail-Adresse einrichten."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
@@ -1961,7 +1961,7 @@
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
       ],
       "Custom email domains": [
-        "Benutzerdefinierte E-Mail-Domains"
+        "Eigene E-Mail-Domains"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Verwende die OpenVPN / IKEv2 Zugangsdaten NICHT in ${ VPN_APP_NAME }-Anwendungen oder auf dem ${ VPN_APP_NAME }-Dashboard. ${ learnMore }"
@@ -1970,7 +1970,7 @@
         "Fertig! Es wurde ein Code an „${ destination }” gesendet."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Das Zurückstufen beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
+        "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
@@ -1979,7 +1979,7 @@
         "Jeder Code kann nur einmal verwendet werden"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-Mail-Hosting für 10 benutzerdefinierte E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
+        "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über Proton möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
@@ -2000,10 +2000,10 @@
         "Code aus der Authenticator App eingeben"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "Geben Sie den an Ihre Rufnummer „${ phone }” gesendeten Code ein."
+        "Gib den an deine Telefonnummer „${ phone }“ gesendeten Code ein."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Geben Sie den an „${ email }” gesendeten Code ein. Sollten Sie die Nachricht nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
+        "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -2018,10 +2018,10 @@
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Geben Sie Ihre E-Mail-Adresse für die Wiederherstellung ein und es wird Ihnen Ihr Benutzername oder Ihre E-Mail-Adresse zugeschickt."
+        "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Geben Sie Ihre Wiederherstellungs-Rufnummer ein und es wird Ihnen Ihr Benutzername oder Ihre E-Mail-Adresse zugeschickt."
+        "Gib deine Wiederherstellungs-Telefonnummer ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugesendet."
       ],
       "Expired": [
         "Abgelaufen"
@@ -2039,7 +2039,7 @@
         "Gib etwas Platz frei oder wende dich an deinen Administrator."
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google zeichnet Ihre Online-Aktivität auf und liest Ihre persönlichen Daten aus, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz erstellen Sie eine sichere E-Mail-Adresse."
+        "Google zeichnet deine Online-Aktivität auf und liest deine persönlichen Daten aus, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "here": [
         "hier"
@@ -2069,10 +2069,10 @@
         "Wenn du mit dem Zurückstufen fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } , einschließlich zusätzlichem Speicher und Filter."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Wenn du mit dem Zurückstufen fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
+        "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Wenn Sie dieses Konto mit einem anderen kombinieren möchten, dürfen Sie es NICHT löschen."
+        "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
@@ -2123,7 +2123,7 @@
         "den Zugriff auf alle derzeit verschlüsselten Daten verlieren"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+        "Mail.ru liest deine persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du dich wieder in deinem Konto einloggen kannst, wenn du dein Passwort vergessen hast."
@@ -2171,13 +2171,13 @@
         "Umstieg auf ein anderes Abo erforderlich"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Bitte geben Sie die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit Ihrem Konto verknüpft ist."
+        "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Bitte geben Sie eine E‐Mail‐Adresse an, falls wir Sie kontaktieren müssen."
+        "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
@@ -2198,7 +2198,7 @@
         "Vorschau"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf Ihrem Konto gespeichert sind."
+        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
       "Priority support": [
         "Vorrangiger Support"
@@ -2252,7 +2252,7 @@
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ],
       "Support for 1 custom email domain": [
-        "Unterstützung für 1 individuelle E-Mail-Domain"
+        "Unterstützung für 1 eigene E-Mail-Domain"
       ],
       "support team": [
         "Support-Team"
@@ -2288,10 +2288,10 @@
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Dies ersetzt Ihr vorläufiges Passwort. Sie benötigen es, um zukünftig auf Ihr ${ BRAND_NAME }-Konto zuzugreifen."
+        "Dies ersetzt dein vorläufiges Passwort. Du benötigst es, um zukünftig auf dein ${ BRAND_NAME }-Konto zuzugreifen."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Dadurch werden Sie von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
+        "Dadurch wirst du von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf deinem Proton-Konto. Zwei-Faktor-Authentifizierung wird dein Proton-Konto sicherer machen, daher empfehlen wir dir, diese zu aktivieren."
@@ -2306,7 +2306,7 @@
         "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Um fortzufahren, wählen Sie eine Kontenwiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
+        "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME }-App für dein Gerät herunter, installiere diese und verbinde dich mit einem Server."
@@ -2345,10 +2345,10 @@
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
       ],
       "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filterlisten"
+        "Unbegrenzt viele Ordner, Kategorien und Filterlisten"
       ],
       "Unlimited messages": [
-        "Unbegrenzte Anzahl von Nachrichten"
+        "Unbegrenzt viele Nachrichten"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -2390,7 +2390,7 @@
         "Wir empfehlen dir, wenn möglich, die offiziellen ${ VPN_APP_NAME } Anwendungen zu verwenden."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Wir empfehlen, stattdessen Ihre Wiederherstellungsphrase zu verwenden."
+        "Wir empfehlen, stattdessen deine Wiederherstellungsphrase zu verwenden."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Wir verwenden 3-D Secure zum Schutz Ihrer Zahlungen."
@@ -2405,10 +2405,10 @@
         "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Sie erhalten dann einen Rücksetzungscode an die E-Mail-Adresse, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
+        "Du erhältst dann einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Sie erhalten dann einen Rücksetzungscode an die Rufnummer, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
+        "Du erhältst dann einen Rücksetzungscode an die Telefonnummer, die du für die Wiederherstellung deines Kontos angegeben hast."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Wir aktualisieren dein aktuelles Abonnement auf ein verbessertes Abonnement, das mehr für den gleichen Preis bietet. Während unsere Systeme aktualisiert werden, kannst du es nicht ändern. Wir werden dich per E-Mail informieren, sobald die Aktualisierung abgeschlossen ist."
@@ -2429,10 +2429,10 @@
         "Möchtest du einen neuen Verifizierungscode erhalten?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo liest Ihre persönlichen Daten, um Werbetreibenden, US-Geheimdiensten und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+        "Yahoo liest Ihre persönlichen Daten, um Werbetreibenden, US-Geheimdiensten und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex zeichnet Ihre Online-Aktivitäten auf und liest Ihre persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für eine bessere Privatsphäre, erstellen Sie eine sichere E-Mail-Adresse."
+        "Yandex zeichnet deine Online-Aktivitäten auf und liest deine persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "You already have a free account": [
         "Sie verfügen bereits über ein kostenloses Konto"
@@ -2450,7 +2450,7 @@
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder der ${ VPN_APP_NAME }-Übersicht anzumelden. ${ learnMore }"
+        "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder dem ${ VPN_APP_NAME }-Dashboard anzumelden. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
@@ -2459,7 +2459,7 @@
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement zurückstufen kannst."
+        "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
@@ -2480,7 +2480,7 @@
         "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Sie werden ${ loseAllData } Ihrem Konto „${ BRAND_NAME }” verlieren. Um diese wiederherzustellen, müssen Sie Ihr altes Passwort eingeben."
+        "Du wirst ${ loseAllData } in deinem ${ BRAND_NAME }-Konto verlieren. Um diese wiederherzustellen, musst du dein altes Passwort eingeben."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
@@ -2519,13 +2519,13 @@
         "Ihre Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Dein Proton-Konto ist derzeit gesperrt. Um dein Konto weiterhin nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
       ],
       "Your recovery email address:": [
-        "Ihre Wiederherstellungs-E-Mail-Adresse:"
+        "Deine Wiederherstellungs-E-Mail-Adresse:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ihr Abonnement wird von Mozilla verwaltet. Bitte kontaktieren Sie den Mozilla-Support."
@@ -2653,7 +2653,7 @@
         "Fälliger Betrag"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Authenticator app": [
         "Authenticator App"
@@ -2722,13 +2722,13 @@
         "Kopieren"
       ],
       "Could you please let us know which provider?": [
-        "Könnten Sie uns bitte mitteilen, welcher Anbieter das ist?"
+        "Kannst du uns bitte mitteilen, welcher Anbieter das ist?"
       ],
       "Could you please specify which streaming service?": [
-        "Könnten Sie bitte angeben, um welchen Streaming-Dienst es sich handelt?"
+        "Kannst du bitte angeben, um welchen Streaming-Dienst es sich handelt?"
       ],
       "Could you please specify?": [
-        "Können Sie das bitte präzisieren?"
+        "Kannst du das bitte präzisieren?"
       ],
       "Country": [
         "Land"
@@ -2761,7 +2761,7 @@
         "Anzeigename"
       ],
       "Do you have any suggestions for our team?": [
-        "Möchten Sie unserem Team Anregungen geben?"
+        "Möchtest du unserem Team Anregungen geben?"
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -2881,7 +2881,7 @@
         "Wiederherstellungs-E-Mail-Adresse"
       ],
       "Recovery phone number": [
-        "Rufnummer für die Wiederherstellung"
+        "Telefonnummer für die Wiederherstellung"
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
@@ -2929,7 +2929,7 @@
         "Was ist der Hauptgrund für Ihre Stornierung?"
       ],
       "What is the main reason you are deleting your account?": [
-        "Welches ist der Hauptgrund, weshalb Sie Ihr Konto löschen möchten?"
+        "Welches ist der Hauptgrund, weshalb su dein Konto löschen möchtest?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
@@ -2943,7 +2943,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Rufnummer für die Wiederherstellung"
+        "Telefonnummer für die Wiederherstellung"
       ]
     },
     "Label for news": {
@@ -3041,7 +3041,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit Ihrer Organisation verknüpft sind, unwiderruflich gelöscht."
+        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit deiner Organisation verknüpft sind, unwiderruflich gelöscht."
       ]
     },
     "Message": {
@@ -3152,8 +3152,8 @@
     },
     "new_plans: feature": {
       "${ n } custom email domain": [
-        "${ n } benutzerdefinierte E-Mail-Domain",
-        "${ n } benutzerdefinierte E-Mail-Domains"
+        "${ n } eigene E-Mail-Domain",
+        "${ n } eigene E-Mail-Domains"
       ],
       "${ n } email address": [
         "${ n } E-Mail-Adresse",
@@ -3618,7 +3618,7 @@
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung durch das Kundenbetreuungsteam von Proton besteht für Kunden mit mindestens 6 Benutzern innerhalb europäischer Geschäftszeiten."
+        "Telefonische Unterstützung ist durch das Proton-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindere den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -3678,7 +3678,7 @@
         "Wir helfen unseren Kunden, die HIPAA-/HITECH-Richtlinien unterliegen, mit aller Macht dabei, Gesundheitsdaten zu schützen. Eine signierte Geschäftspartnervereinbarung steht allen Kunden von ${ BRAND_NAME } für Unternehmen zur Verfügung."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Wenn du mit unserem VPN verbunden bist, sendet dein DNS Anfragen durch unseren verschlüsselten VPN-Tunnel, was deine Privatsphäre zusätzlich schützt."
+        "Wenn du mit unserem VPN verbunden bist, werden deine DNS Anfragen durch unseren verschlüsselten VPN-Tunnel geleitet, was deine Privatsphäre zusätzlich schützt."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Beim Versand an andere ${ MAIL_APP_NAME }-Benutzer erfolgt eine automatische Verschlüsselung. Beim Versand an Personen, die ${ MAIL_APP_NAME } nicht verwenden, muss zunächst ein Passwort festgelegt werden."
@@ -3903,7 +3903,7 @@
         "E-Mail-Adresse"
       ],
       "Phone number": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Phrase": [
         "Phrase"
@@ -3914,10 +3914,10 @@
         "Abbrechen"
       ],
       "Phone number has been verified.": [
-        "Rufnummer wurde verifiziert."
+        "Telefonnummer wurde verifiziert."
       ],
       "Phone number not yet verified.": [
-        "Die Rufnummer wurde noch nicht verifiziert."
+        "Die Telefonnummer wurde noch nicht verifiziert."
       ],
       "Verify by SMS": [
         "Per SMS verifizieren"
@@ -3926,10 +3926,10 @@
         "Jetzt verifizieren"
       ],
       "Verify recovery phone?": [
-        "Wiederherstellungs-Rufnummer verifizieren?"
+        "Wiederherstellungs-Telefonnummer verifizieren?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Das verifizieren deiner Rufnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+        "Das verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
     "Signup label": {
@@ -4246,8 +4246,8 @@
         "${ n } Hochgeschwindigkeits-VPN-Verbindungen"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } Hochgeschwindigkeits-VPN-Verbindung/Benutzer",
-        "${ n } Hochgeschwindigkeits-VPN-Verbindungen/Benutzer"
+        "${ n } Hochgeschwindigkeits-VPN-Verbindung pro Benutzer",
+        "${ n } Hochgeschwindigkeits-VPN-Verbindungen pro Benutzer"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
@@ -4317,7 +4317,7 @@
         "${ server.Domain } in die Zwischenablage kopiert"
       ],
       "Account deleted. Logging out...": [
-        "Konto gelöscht. Abmeldung wird ausgeführt …"
+        "Konto gelöscht. Abmeldung wird ausgeführt…"
       ],
       "Bug reported": [
         "Fehler gemeldet"
@@ -4341,10 +4341,10 @@
         "Gutscheincode eingelöst"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben haben, wird Ihnen in Kürze eine E-Mail mit Ihren Benutzernamen zugesendet."
+        "Wenn du eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben hast, wird dir in Kürze eine E-Mail mit deinen Benutzernamen zugesendet."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Wiederherstellungs-Rufnummer eingegeben haben, erhalten Sie in Kürze eine SMS mit Ihren Benutzernamen."
+        "Wenn du eine gültige Wiederherstellungs-Telefonnummer eingegeben hast, erhältst du in Kürze eine SMS mit deinem Benutzernamen."
       ],
       "Invoice customized": [
         "Rechnung angepasst"
@@ -4368,7 +4368,7 @@
         "Zahlungsmethode aktualisiert"
       ],
       "Phone number updated": [
-        "Rufnummer aktualisiert"
+        "Telefonnummer aktualisiert"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
@@ -4529,7 +4529,7 @@
         "Bestätigen Sie den Verzicht auf Proton-Prämien"
       ],
       "Confirm phone number": [
-        "Rufnummer bestätigen"
+        "Telefonnummer bestätigen"
       ],
       "Congratulations on choosing privacy!": [
         "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz!"
@@ -4550,7 +4550,7 @@
         "Abonnement anpassen"
       ],
       "Dashboard": [
-        "Übersicht"
+        "Dashboard"
       ],
       "Date": [
         "Datum"
@@ -4562,7 +4562,7 @@
         "Konto löschen"
       ],
       "Delete organization?": [
-        "Organisation entfernen?"
+        "Organisation löschen?"
       ],
       "Device connected!": [
         "Gerät verbunden!"
@@ -4571,7 +4571,7 @@
         "Zwei-Faktor-Authentifizierung deaktivieren"
       ],
       "Downgrade account": [
-        "Konto herabstufen"
+        "Konto downgraden"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
@@ -4676,7 +4676,7 @@
         "PayPal-Verifizierung fehlgeschlagen"
       ],
       "Phone": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Plan summary": [
         "Abo-Zusammenfassung"
@@ -4688,7 +4688,7 @@
         "Zurück"
       ],
       "Processing...": [
-        "Wird verarbeitet ..."
+        "Wird verarbeitet..."
       ],
       "Recommended": [
         "Empfohlen"
@@ -4745,7 +4745,7 @@
         "Wechseln zum Zwei-Passwörter-Modus"
       ],
       "This address might compromise your privacy.": [
-        "Diese E-Mail-Adresse könnte Ihre Privatsphäre gefährden."
+        "Diese E-Mail-Adresse könnte deine Privatsphäre gefährden."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Teste das Beste von ${ MAIL_APP_NAME } kostenlos"
@@ -4760,7 +4760,7 @@
         "Typ"
       ],
       "Unlock your mailbox": [
-        "Entsperren Sie Ihr Postfach"
+        "Entsperre dein Postfach"
       ],
       "Unsupported browser": [
         "Nicht unterstützter Browser"
@@ -4772,7 +4772,7 @@
         "Warnhinweis"
       ],
       "Warning!": [
-        "Warnhinweis!"
+        "Warnung!"
       ],
       "What's new": [
         "Neuigkeiten"
@@ -4790,7 +4790,7 @@
         "Dein aktuelles Abonnement"
       ],
       "Your plan": [
-        "Mein Abonnement"
+        "Dein Abonnement"
       ],
       "You’ve been invited to try ${ mailAppName }": [
         "Du wurdest eingeladen, ${ mailAppName } zu testen"
@@ -4842,7 +4842,7 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } Server",
-        "Mehr als ${ n } Server"
+        "${ n }+ Server"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
@@ -4881,7 +4881,7 @@
         "Möchten Sie die Adresse wirklich löschen?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "Möchten Sie die Rufnummer wirklich löschen?"
+        "Möchtest du die Telefonnummer wirklich löschen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Wenn Sie diese Adresse löschen, werden Sie keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
@@ -4893,7 +4893,7 @@
         "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Wenn Sie diese Rufnummer löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
+        "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Der Live-Chat ist eine Premium-Funktion, die nur für Kunden mit kostenpflichtigen ${ VPN_APP_NAME }-Abonnements verfügbar ist. Bitte öffne stattdessen ein Ticket."
@@ -4908,7 +4908,7 @@
         "Die Datums- und Zeiteinstellungen auf deinem Gerät sind nicht synchronisiert. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
+        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"

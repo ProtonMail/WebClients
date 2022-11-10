@@ -14,7 +14,7 @@
         "Vollständige Ansicht"
       ],
       "Full view (see all event details)": [
-        "Gesamtansicht (siehe alle Ereignisdetails)"
+        "Gesamtansicht (siehe alle Termindetails)"
       ],
       "Limited view": [
         "Eingeschränkte Ansicht"
@@ -24,9 +24,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } ist verfügbar."
-      ],
       "${ BRAND_NAME } introduction": [
         "Vorstellung von ${ BRAND_NAME }"
       ],
@@ -195,17 +192,11 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Erstelle stattdessen eine sichere ${ MAIL_APP_NAME }-Adresse"
-      ],
       "Create account": [
         "Konto erstellen"
       ],
       "Create accounts": [
         "Konten erstellen"
-      ],
-      "Create address": [
-        "Adresse erstellen"
       ],
       "Create calendar": [
         "Kalender erstellen"
@@ -261,9 +252,6 @@
       "Didn't receive a code?": [
         "Code nicht erhalten?"
       ],
-      "Didn't receive the code?": [
-        "Code nicht erhalten?"
-      ],
       "Disable": [
         "Deaktivieren"
       ],
@@ -286,7 +274,7 @@
         "Zurückstufen"
       ],
       "Downgrade account": [
-        "Konto herabstufen"
+        "Konto downgraden"
       ],
       "Download": [
         "Herunterladen"
@@ -343,7 +331,7 @@
         "Verschlüsseln und exportieren"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Erkundige dich über andere ${ BRAND_NAME }-Abonnements"
+        "Entdecke weitere ${ BRAND_NAME }-Abonnements"
       ],
       "Export": [
         "Exportieren"
@@ -359,6 +347,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Die Filter werden angewendet. Dies kann wenige Minuten dauern."
+      ],
+      "Fit to window": [
+        "An das Fenster anpassen"
       ],
       "Font": [
         "Schriftart"
@@ -451,7 +442,7 @@
         "Als Standard festlegen"
       ],
       "Mark as not spam": [
-        "Als „kein Spam“ markieren"
+        "Als kein Spam markieren"
       ],
       "Mark as spam": [
         "Als Spam markieren"
@@ -591,6 +582,9 @@
       "Requires a verified recovery email address": [
         "Erfordert eine verifizierte Wiederherstellungs-E-Mail-Adresse"
       ],
+      "Resend code": [
+        "Code erneut senden"
+      ],
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
       ],
@@ -605,9 +599,6 @@
       ],
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
-      ],
-      "Reset zoom": [
-        "Vergrößerung zurücksetzen"
       ],
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
@@ -819,7 +810,7 @@
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "Verwende stattdessen deine aktuelle E-Mail-Adresse"
       ],
       "Use “${ label }” setting": [
@@ -833,9 +824,6 @@
       ],
       "Verify account": [
         "Konto verifizieren"
-      ],
-      "Verify email": [
-        "E-Mail-Adresse verifizieren"
       ],
       "View": [
         "Anzeigen"
@@ -943,6 +931,9 @@
       "Disabled": [
         "Deaktiviert"
       ],
+      "External": [
+        "Extern"
+      ],
       "Missing keys": [
         "Fehlende Schlüssel"
       ],
@@ -955,7 +946,7 @@
         "Wenn du jetzt beendest, können einige Kontakte nicht importiert werden."
       ],
       "By leaving now, some events may not be imported": [
-        "Wenn du jetzt beendest, können einige Termine nicht importiert werden."
+        "Wenn du jetzt beendest, werden einige Termine eventuell nicht importiert."
       ]
     },
     "Alter": {
@@ -973,7 +964,7 @@
         "Leere ICS-Datei"
       ],
       "Invalid event": [
-        "Ungültiges Ereignis"
+        "Ungültiger Termin"
       ],
       "Invalid ICS file": [
         "Ungültige ICS-Datei"
@@ -985,7 +976,7 @@
         "Nicht unterstütztes Kalender-Modul"
       ],
       "Unsupported event": [
-        "Nicht unterstütztes Ereignis"
+        "Nicht unterstützter Termin"
       ]
     },
     "Auto import invitations setting": {
@@ -1271,15 +1262,15 @@
     },
     "Calendar share permission label": {
       "See all event details": [
-        "Alle Einzelheiten zum Ereignis anzeigen"
+        "Alle Einzelheiten zum Termin anzeigen"
       ]
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Bearbeiten (Ereignisdetails anzeigen, erstellen und bearbeiten)"
+        "Bearbeiten (Termindetails anzeigen, erstellen und bearbeiten)"
       ],
       "Full view (see all event details)": [
-        "Gesamtansicht (siehe alle Ereignisdetails)"
+        "Gesamtansicht (siehe alle Termindetails)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -1421,10 +1412,10 @@
         "Kiwi"
       ],
       "lemon yellow": [
-        "zitronengelb"
+        "Zitronengelb"
       ],
       "light moss green": [
-        "helles moosgrün"
+        "helles Moosgrün"
       ],
       "maize": [
         "Mais"
@@ -1439,7 +1430,7 @@
         "Pazifikblau"
       ],
       "pastel gray": [
-        "pastellgrau"
+        "Pastellgrau"
       ],
       "pickle": [
         "Moosgrün"
@@ -2525,7 +2516,7 @@
         "Du kannst weiterhin Freunde einladen, aber dadurch kannst du keine weiteren Credits verdienen"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht Überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+        "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2586,7 +2577,7 @@
         "Fehlende Funktion(en)"
       ],
       "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreiben Sie das Problem)"
+        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
       ],
       "Streaming service unsupported": [
         "Streaming-Dienst wird nicht unterstützt"
@@ -2603,7 +2594,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Helfen Sie uns, besser zu werden!"
+        "Hilf uns, besser zu werden!"
       ]
     },
     "Duration": {
@@ -2717,10 +2708,10 @@
         "Zu welchen Themen möchtest du Nachrichten von ${ BRAND_NAME } erhalten?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        "Sie haben ${ categoriesJsx }-E-Mails erneut abonniert."
+        "Du hast ${ categoriesJsx }-E-Mails erneut abonniert."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Sie haben sich von ${ categoriesJsx }-E-Mails abgemeldet."
+        "Du hast dich von ${ categoriesJsx }-E-Mails abgemeldet."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -2736,7 +2727,7 @@
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
       "Account does not exist": [
-        "Konto nicht vorhanden"
+        "Konto existiert nicht"
       ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
@@ -2745,7 +2736,7 @@
         "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduzieren Sie den anderen Benutzern zugewiesenen Speicherplatz."
       ],
       "Already a member of this calendar": [
-        "Bereits Mitglied in diesem Kalender"
+        "Bereits Mitglied dieses Kalenders"
       ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
@@ -2876,8 +2867,8 @@
         "Name der Kategorie kann nicht leer sein."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen"
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen.",
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen."
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
@@ -2928,7 +2919,7 @@
         "Organisationsschlüssel wird nicht entschlüsselt."
       ],
       "Organization not recognized. Try again.": [
-        "Organisation nicht erkannt. Bitte versuchen Sie es erneut."
+        "Organisation nicht erkannt. Bitte versuche es erneut."
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -2968,7 +2959,7 @@
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail fest"
       ],
       "Please set a recovery phone number first": [
-        "Bitte zuerst eine Wiederherstellungsrufnummer festlegen"
+        "Bitte zuerst eine Wiederherstellungs-Telefonnummer festlegen"
       ],
       "Please set a recovery/notification email first": [
         "Bitte zuerst eine E-Mail-Adresse für Wiederherstellung/Benachrichtigungen festlegen"
@@ -2980,13 +2971,13 @@
         "Bitte wechsle zu einem Business-Plan mit mehr als einem Benutzer, um Support für mehrere Benutzer zu erhalten."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Bitte wechsle zu einem Business-Plan mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
+        "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
-        "Der Schlüssel der primären Adresse wird nicht entschlüsselt."
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
       "Primary key is not valid for sending": [
         "Primärschlüssel ist für das Senden nicht gültig"
@@ -3053,10 +3044,10 @@
         "Der Name des Ordners ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "Die Schlüssel in Ihrer Wiederherstellungsdatei konnten nicht überprüft werden. Bitte kontaktieren Sie den Support."
+        "Die Schlüssel in deiner Wiederherstellungsdatei konnten nicht überprüft werden. Bitte kontaktiere den Support."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Die Schlüssel in Ihren Wiederherstellungsdateien konnten nicht überprüft werden. Bitte laden Sie die Dateien einzeln hoch, um weitere Informationen zu erhalten."
+        "Die Schlüssel in deinen Wiederherstellungsdateien konnten nicht überprüft werden. Bitte lade die Dateien einzeln hoch, um weitere Informationen zu erhalten."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Der Name der Kategorie ist ungültig. Bitte wähle einen anderen Namen."
@@ -3152,10 +3143,10 @@
         "Sie haben die max. Anzahl von Benutzern in Ihrem Abonnement ausgeschöpft. Bitte wechseln Sie Ihr Abonnement, um weitere Benutzer hinzufügen zu können."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Sie müssen Ihre Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
+        "Du musst deine Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
       ],
       "You must privatize all users before generating new organization keys": [
-        "Sie müssen zunächst alle Benutzer privatisieren, bevor Sie neue Organisationsschlüssel erzeugen"
+        "Du musst zunächst alle Benutzer privatisieren, bevor du neue Organisationsschlüssel erzeugst."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -3245,13 +3236,13 @@
         "Kalenderzeitzone wird nicht unterstützt"
       ],
       "Component with wrong format": [
-        "Komponente in einem ungültigen Format"
+        "Komponente mit ungültigem Format"
       ],
       "Custom timezone": [
         "Benutzerdefinierte Zeitzone"
       ],
       "Edited event not supported": [
-        "Bearbeitetes Ereignis wird nicht unterstützt"
+        "Bearbeitete Termine werden nicht unterstützt"
       ],
       "Element": [
         "Eintrag"
@@ -3266,7 +3257,7 @@
         "Termin"
       ],
       "Event validation failed": [
-        "Überprüfung der Ereignisse fehlgeschlagen"
+        "Überprüfung der Termine fehlgeschlagen"
       ],
       "Floating times not supported": [
         "Gleitzeiten werden nicht unterstützt"
@@ -3275,13 +3266,13 @@
         "Zeitinformationen zu Verfügbar/Beschäftigt"
       ],
       "Invalid event": [
-        "Ungültiges Ereignis"
+        "Ungültiger Termin"
       ],
       "Journal entry": [
         "Journaleintrag"
       ],
       "Malformed all-day event": [
-        "Fehlerhaftes ganztägiges Ereignis"
+        "Fehlerhafter ganztägiger Termin"
       ],
       "Malformed end time": [
         "Fehlerhafte Endzeit"
@@ -3305,7 +3296,7 @@
         "Benachrichtigung außerhalb des Bereichs"
       ],
       "Original recurring event could not be found": [
-        "Ursprüngliches Terminserie konnte nicht gefunden werden"
+        "Ursprüngliche Terminserie konnte nicht gefunden werden"
       ],
       "Recurring event has no occurrences": [
         "Wiederkehrendes Ereignis enthält keine Termine"
@@ -3329,7 +3320,7 @@
         "Unbekannt"
       ],
       "Unsupported event": [
-        "Nicht unterstütztes Ereignis"
+        "Nicht unterstützter Termin"
       ]
     },
     "Error importing users": {
@@ -3420,10 +3411,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Angehängte ICS-Datei konnte nicht entschlüsselt werden"
+        "Angehängte ICS-Datei konnte nicht entschlüsselt werden."
       ],
       "Attached ICS file could not be read": [
-        "Angehängte ICS-Datei konnte nicht eingelesen werden"
+        "Angehängte ICS-Datei konnte nicht gelesen werden."
       ],
       "Invalid invitation": [
         "Ungültige Einladung"
@@ -3432,10 +3423,10 @@
         "Ungültige Antwort"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Der Termin konnte nicht zu deinem Kalender hinzugefügt werden. Es wurde keine Antwort gesendet"
+        "Der Termin konnte nicht zu deinem Kalender hinzugefügt werden. Es wurde keine Antwort gesendet."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet"
+        "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet."
       ],
       "Unexpected error": [
         "Unerwarteter Fehler"
@@ -3470,7 +3461,7 @@
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } Termin exportiert",
-        "${ totalProcessed }/${ totalToProcess } Terminen exportiert"
+        "${ totalProcessed }/${ totalToProcess } Termine exportiert"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Der Kalender wurde erfolgreich exportiert. Die ICS-Datei kann nun gespeichert werden."
@@ -3491,7 +3482,7 @@
         "Erfahre, wie du verschlüsselte Termine mit dem alten Passwort wiederherstellen kannst"
       ],
       "Loading events": [
-        "Ereignisse werden geladen"
+        "Termine werden geladen"
       ],
       "None of the events could be exported.": [
         "Keiner der Termine konnte exportiert werden."
@@ -3902,7 +3893,7 @@
         "${ totalImported }/${ totalToImport } Termine wurden verschlüsselt und deinem Kalender hinzugefügt"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. Es wurde kein Termin importiert.",
+        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Termin wurde erfolgreich importiert.",
         "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
@@ -3936,8 +3927,8 @@
         "Importierte Einladungen werden in ${ CALENDAR_APP_NAME } als einzelne Termine ohne Organisator- und Teilnehmerdetails angezeigt. Um Aktualisierungen der Termine zu erhalten und die Teilnehmer anzuzeigen, bitte den Organisator, dich über deine Proton-E-Mail-Adresse einzuladen."
       ],
       "This file contains an event invitation:": [
-        "Diese Datei enthält eine Einladung zu einem Termin:",
-        "Diese Datei enthält Einladungen zum Termin:"
+        "Diese Datei enthält eine Termineinladung:",
+        "Diese Datei enthält Termineinladungen:"
       ],
       "This file contains an invitation response:": [
         "Diese Datei enthält eine Antwort auf eine Einladung:",
@@ -3995,10 +3986,10 @@
         "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
-        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Wenn ${ bold2StepsDisabled } (Google Mail Standardeinstellungen), stellen Sie bitte sicher, dass:"
@@ -4013,10 +4004,10 @@
         "Wenn ${ bold2StepsEnabled }, stellen Sie bitte sicher, dass Ihre E-Mail-Adresse und Ihr App-Passwort korrekt sind. Verwenden Sie ${ boldNot } Ihr reguläres Passwort!"
       ],
       "IMAP access is enabled in your external account.": [
-        "Der IMAP-Zugang in deinem externen Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Der IMAP-Zugang in deinem Yahoo-Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem Yahoo-Konto aktiviert ist."
       ],
       "Invalid IMAP port": [
         "Ungültiger IMAP-Port"
@@ -4154,13 +4145,13 @@
         "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+        "Um einen Kalender in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Outlook. Gehe dazu folgendermaßen vor:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Geh dazu folgendermaßen vor:"
+        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Gehe dazu folgendermaßen vor:"
       ]
     },
     "Import instructions emphasis": {
@@ -4314,7 +4305,7 @@
         "Keine Kontakte konnten importiert werden. Für Details klicken"
       ],
       "No event can be imported. Expand for details.": [
-        "Es konnte kein Termin importiert werden. Erweitern, um Details zu erfahren."
+        "Es konnte kein Termin importiert werden. Erweitern für Details."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
@@ -4325,7 +4316,7 @@
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Wenn Sie fortfahren, verlieren Sie den Zugriff auf alle derzeit verschlüsselten Daten in Ihrem Konto."
+        "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } wird als Standardkalender festgelegt."
@@ -4355,7 +4346,7 @@
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } unterstützt DKIM-Signierung für benutzerdefinierte Domains. Um die DKIM-Authentifizierung zu verwenden, füge bitte den folgenden CNAME-Eintrag zu deinen DNS-Einstellungen für diese Domain hinzu. Dies kann üblicherweise im Control-Panel deines Domain-Registrars vorgenommen werden."
+        "${ MAIL_APP_NAME } unterstützt DKIM-Signierung für eigene Domains. Um die DKIM-Authentifizierung zu verwenden, füge bitte den folgenden CNAME-Eintrag zu deinen DNS-Einstellungen für diese Domain hinzu. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
       ],
       "${ n } address": [
         "${ n } Adresse",
@@ -4415,9 +4406,6 @@
       "${ storageSize } storage": [
         "${ storageSize } Speicherplatz"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Mit dieser E-Mail-Adresse können Sie sich bei allen Diensten von ${ BRAND_NAME } anmelden."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "${ vpnBasic }, ${ vpnPlus } oder ${ visionary } ist für eine Verbindung auf Länderebene erforderlich."
       ],
@@ -4451,7 +4439,7 @@
         "10 E-Mail-Adressen"
       ],
       "2. They try ${ planName }": [
-        "2. Sie versuchen ${ planName }"
+        "2. Sie probieren ${ planName } aus"
       ],
       "3. You earn credits": [
         "3. Du verdienst Guthaben"
@@ -4463,7 +4451,7 @@
         "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "Mit einer Wiederherstellungsdatei kannst du deine Daten nach einem Zurücksetzen des Kontos wieder entsperren und einsehen"
+        "Mit einer Wiederherstellungsdatei kannst du deine Daten nach einem Zurücksetzen des Kontos wieder entsperren und einsehen."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Mit einer Wiederherstellungsphrase kannst du auf dein Konto zugreifen und deine verschlüsselten Nachrichten wiederherstellen, solltest du dein Passwort vergessen haben."
@@ -4499,7 +4487,7 @@
         "Wiederherstellungsmethode hinzufügen"
       ],
       "Add a recovery phone number": [
-        "Rufnummer für die Wiederherstellung hinzufügen"
+        "Telefonnummer für die Wiederherstellung hinzufügen"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Fügen deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit 2FA verifizieren, wenn du dich anmeldest."
@@ -4580,13 +4568,13 @@
         "Jeder, der über diesen Link verfügt, kann deinen Kalender nicht mehr synchronisieren und erhält keine zukünftigen Aktualisierungen mehr. Wenn du ihnen erneut Zugriff gewähren möchtest, musst du einen neuen Link erstellen."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL liest Ihre persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+        "AOL liest deine persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du eine sichere E-Mail-Adresse einrichten."
       ],
       "Are you sure you want to delete this address?": [
         "Möchten Sie diese Adresse wirklich löschen?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Soll dieser Kalender wirklich gelöscht werden?"
+        "Bist du dir sicher, dass du diesen Kalender löschen möchtest?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
         "Bist du dir sicher, dass du diesen Kalender löschen möchtest? Alle Adressen, für die du diesen Kalender freigegeben hast, verlieren den Zugriff auf ihn."
@@ -4655,7 +4643,7 @@
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Bevor du E-Mails unter deinen eigenen Domain-Adressen in ${ MAIL_APP_NAME } erhalten kannst, musst du zuerst folgenden MX-Eintrag zu deiner DNS-Zone hinzufügen. Dies kann üblicherweise im Control-Panel deines Domain-Registrars vorgenommen werden."
+        "Bevor du E-Mails unter deinen eigenen Domain-Adressen in ${ MAIL_APP_NAME } empfangen kannst, musst du zuerst folgenden MX-Eintrag zu deiner DNS-Zone hinzufügen. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
@@ -4707,10 +4695,10 @@
         "${ calendarsToBeCreated } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Erstellen eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
       ],
       "Create a new account and share the email address and password with the user.": [
         "Erstelle ein neues Konto und teile dem Benutzer die E-Mail-Adresse und das Passwort mit."
@@ -4740,7 +4728,7 @@
         "Benutzerdefiniert täglich"
       ],
       "Custom email domains": [
-        "Benutzerdefinierte E-Mail-Domains"
+        "Eigene E-Mail-Domains"
       ],
       "Custom monthly": [
         "Benutzerdefiniert monatlich"
@@ -4786,7 +4774,7 @@
         "Fertig! Es wurde ein Code an „${ destination }” gesendet."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Das Zurückstufen beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
+        "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Lade unsere CSV-Vorlage herunter, gib die Benutzerdaten ein und lade dann deine fertige CSV-Datei hoch, um Konten für diese Benutzer zu erstellen."
@@ -4819,7 +4807,7 @@
         "E-Mail-Adresse"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-Mail-Hosting für 10 benutzerdefinierte E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
+        "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über Proton möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
@@ -4837,7 +4825,7 @@
         "Diese Adresse aktivieren, um diesem Kalender beizutreten"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "Wenn Sie die Wiederherstellung nach Phrase erneut aktivieren, wird eine neue Wiederherstellungsphrase generiert."
+        "Wenn du die Wiederherstellung mittels Phrase erneut aktivierst, wird eine neue Wiederherstellungsphrase generiert."
       ],
       "Encryption setting updated": [
         "Verschlüsselungseinstellung aktualisiert"
@@ -4855,10 +4843,10 @@
         "Code aus der Authenticator App eingeben"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "Geben Sie den an Ihre Rufnummer „${ phone }” gesendeten Code ein."
+        "Gib den an deine Telefonnummer „${ phone }“ gesendeten Code ein."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Geben Sie den an „${ email }” gesendeten Code ein. Sollten Sie die Nachricht nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
+        "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
@@ -4879,10 +4867,10 @@
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Geben Sie Ihre E-Mail-Adresse für die Wiederherstellung ein und es wird Ihnen Ihr Benutzername oder Ihre E-Mail-Adresse zugeschickt."
+        "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Geben Sie Ihre Wiederherstellungs-Rufnummer ein und es wird Ihnen Ihr Benutzername oder Ihre E-Mail-Adresse zugeschickt."
+        "Gib deine Wiederherstellungs-Telefonnummer ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugesendet."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Termin-Einladungen und Antwortschreiben werden in dieser Sprache versendet."
@@ -4912,13 +4900,16 @@
         "durch Löschen älterer Nachrichten oder anderer Daten Speicherplatz freigeben"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "Wenn Sie eine neue Wiederherstellungsphrase erstellen, wird damit Ihre bisherige Phrase deaktiviert."
+        "Wenn du eine neue Wiederherstellungsphrase erstellst, wird dadurch deine bisherige Phrase deaktiviert."
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Hol dir eine ${ BRAND_NAME }-Adresse um alle ${ BRAND_NAME }-Dienste zu nutzen, einschließlich Mail und Calendar."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Gib deinen öffentlichen Schlüssel an deine Freunde weiter oder veröffentliche ihn online, so dass dir jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google zeichnet Ihre Online-Aktivität auf und liest Ihre persönlichen Daten aus, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz erstellen Sie eine sichere E-Mail-Adresse."
+        "Google zeichnet deine Online-Aktivität auf und liest deine persönlichen Daten aus, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "here": [
         "hier"
@@ -4927,7 +4918,7 @@
         "Verbirgt identifizierende Informationen durch das Laden externer Inhalte über einen Proxy. Option zum Speichern von Inhalten als Anhänge."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
-        "Wenn ein anderer Administrator dieses Passwort geändert hat, müssen Sie ihn um das neue Organisationspasswort bitten."
+        "Wenn ein anderer Administrator dieses Passwort geändert hat, musst du ihn um das neue Organisationspasswort bitten."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Wenn die Zeitzone des Systems nicht mit der aktuellen Zeitzoneneinstellung übereinstimmt, wirst du aufgefordert, diese zu aktualisieren (höchstens einmal täglich)."
@@ -4975,7 +4966,7 @@
         "Wenn du mit dem Zurückstufen fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } , einschließlich zusätzlichem Speicher und Filter."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Wenn du mit dem Zurückstufen fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
+        "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Falls du kürzlich dein Passwort zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen"
@@ -4984,7 +4975,7 @@
         "Wenn du einen bestehenden SPF-Eintrag behalten möchtest, kannst du einfach ${ spf } nach dem ${ spfValue } hinzufügen. Erstelle keinesfalls mehrere SPF-Einträge."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Wenn Sie dieses Konto mit einem anderen kombinieren möchten, dürfen Sie es NICHT löschen."
+        "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
       "Image description": [
         "Bildbeschreibung"
@@ -5136,7 +5127,7 @@
         "den Zugriff auf alle derzeit verschlüsselten Daten verlieren"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+        "Mail.ru liest deine persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du dich wieder in deinem Konto einloggen kannst, wenn du dein Passwort vergessen hast."
@@ -5219,7 +5210,7 @@
       "of": [
         "von"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
+      "One account. All ${ BRAND_NAME } services.": [
         "Ein Konto für alle ${ BRAND_NAME }-Dienste."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -5256,8 +5247,8 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Bezahlt für einen ${ rewardMonths }-Monats-Plan",
-        "Bezahlt für einen ${ rewardMonths }-Monats-Plan"
+        "Bezahlt für ein ${ rewardMonths }-Monats-Abonnement",
+        "Bezahlt für ein ${ rewardMonths }-Monats-Abonnement"
       ],
       "Paid for a monthly plan": [
         "Bezahlt für ein monatliches Abonnement"
@@ -5286,16 +5277,16 @@
         "Bitte füge E-Mail-Adressen für die Benutzer in den folgenden Zeilen hinzu:"
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Bitte überprüfe deine Datei auf Fehler, oder wende dich an den Kundensupport, um weitere Informationen zu erhalten."
+        "Bitte überprüfe deine Datei auf Fehler oder wende dich an den Kundensupport, um weitere Informationen zu erhalten."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
-        "Bitte überprüfe deine Datei auf Fehler, oder versuche es mit unserer ${ csvTemplateButton }."
+        "Bitte überprüfe deine Datei auf Fehler oder versuche es mit unserer ${ csvTemplateButton }."
       ],
       "Please contact the administrator of the organisation to manage the subscription.": [
         "Bitte wende dich an den Administrator der Organisation, um das Abonnement zu verwalten."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Bitte geben Sie die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit Ihrem Konto verknüpft ist."
+        "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
       "Please fill out this field.": [
         "Bitte fülle dieses Feld aus."
@@ -5316,7 +5307,7 @@
         "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Bitte geben Sie eine E‐Mail‐Adresse an, falls wir Sie kontaktieren müssen."
+        "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
       ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
@@ -5343,7 +5334,7 @@
         "Vorschau"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf Ihrem Konto gespeichert sind."
+        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
       "Priority support": [
         "Vorrangiger Support"
@@ -5475,7 +5466,7 @@
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF wird benutzt um anzugeben, wem es erlaubt ist E-Mails von einer Domain zu versenden. Wir empfehlen dringend, ${ MAIL_APP_NAME } deinem SPF-Eintrag hinzuzufügen. Bitte füge den folgenden TXT-Eintrag deiner DNS-Zone hinzu. Dies kann üblicherweise im Control-Panel deines Domain-Registrars vorgenommen werden."
+        "SPF wird benutzt um anzugeben, wem es erlaubt ist E-Mails von einer Domain zu versenden. Wir empfehlen dringend, ${ MAIL_APP_NAME } deinem SPF-Eintrag hinzuzufügen. Bitte füge den folgenden TXT-Eintrag deiner DNS-Zone hinzu. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
       ],
       "Storage allocated to other users in this organisation": [
         "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
@@ -5484,7 +5475,7 @@
         "Diesem Benutzer zugewiesener Speicherplatz"
       ],
       "Storage for users": [
-        "Speicher für Benutzer"
+        "Speicherplatz für Benutzer"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -5496,7 +5487,7 @@
         "Bewahre das Passwort und die Datei an einem sicheren Ort auf. Du benötigst sie erneut, um deinen Schlüssel zu importieren."
       ],
       "Support for 1 custom email domain": [
-        "Unterstützung für 1 individuelle E-Mail-Domain"
+        "Unterstützung für 1 eigene E-Mail-Domain"
       ],
       "support team": [
         "Support-Team"
@@ -5521,6 +5512,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Die E-Mail-Adresse, die du an den Anfang der Liste setzt, ist deine Standard-E-Mail-Adresse. Durch Ziehen und Ablegen kannst du deine Adressen neu anordnen."
+      ],
+      "The following address is available:": [
+        "Die folgende Adresse ist verfügbar:"
       ],
       "The following address is invalid.": [
         "Die folgende Adresse ist ungültig.",
@@ -5549,7 +5543,7 @@
         "Diese Konfigurationen sind für den Einsatz mit WireGuard-Routern und offiziellen Clients vorgesehen."
       ],
       "They'll receive a free month of ${ planName }.": [
-        "Sie erhalten einen kostenlosen Monat von ${ planName }."
+        "Sie erhalten einen kostenlosen Monat ${ planName }."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
@@ -5597,7 +5591,7 @@
         "Dadurch wird ein Verschlüsselungscode für deine Organisation erstellt. 4096-Bit-Schlüssel funktionieren nur auf Hochleistungscomputern. Für die meisten Benutzer empfehlen wir die Verwendung von 2048-Bit-Schlüsseln."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Dadurch wird Ihre aktuelle Wiederherstellungsphrase deaktiviert. Sie sind dann nicht mehr in der Lage, auf Ihr Konto zuzugreifen oder Ihre Daten zu entschlüsseln."
+        "Dadurch wird deine aktuelle Wiederherstellungsphrase deaktiviert. Du bist dann nicht mehr in der Lage, damit auf dein Konto zuzugreifen oder deine Daten zu entschlüsseln."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Dadurch wird eine Datei heruntergeladen, die deinen privaten Schlüssel enthält. Schütze diese Datei, indem du sie mit einem Passwort verschlüsselst."
@@ -5612,10 +5606,10 @@
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Dies ersetzt Ihr vorläufiges Passwort. Sie benötigen es, um zukünftig auf Ihr ${ BRAND_NAME }-Konto zuzugreifen."
+        "Dies ersetzt dein vorläufiges Passwort. Du benötigst es, um zukünftig auf dein ${ BRAND_NAME }-Konto zuzugreifen."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Dadurch werden Sie von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
+        "Dadurch wirst du von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf deinem Proton-Konto. Zwei-Faktor-Authentifizierung wird dein Proton-Konto sicherer machen, daher empfehlen wir dir, diese zu aktivieren."
@@ -5645,7 +5639,7 @@
         "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Um fortzufahren, wählen Sie eine Kontenwiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
+        "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME }-App für dein Gerät herunter, installiere diese und verbinde dich mit einem Server."
@@ -5684,7 +5678,7 @@
         "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legen Sie zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Signatur der Wiederherstellungsdatei konnte nicht bestätigt werden. Bitte kontaktieren Sie den Support."
+        "Signatur der Wiederherstellungsdatei konnte nicht bestätigt werden. Bitte kontaktiere den Support."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
@@ -5693,10 +5687,10 @@
         "Solange du dich nicht von deinem Konto abmeldest oder dein Passwort änderst, bleibt deine Sitzung aktiv. Sitzungen laufen nach 60 Tagen Inaktivität aus."
       ],
       "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filterlisten"
+        "Unbegrenzt viele Ordner, Kategorien und Filterlisten"
       ],
       "Unlimited messages": [
-        "Unbegrenzte Anzahl von Nachrichten"
+        "Unbegrenzt viele Nachrichten"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -5717,7 +5711,7 @@
         "Bild hochladen"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfen Sie die Datei und versuchen Sie es erneut."
+        "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut."
       ],
       "URL link": [
         "URL-Link"
@@ -5756,7 +5750,7 @@
         "Wir empfehlen dir, wenn möglich, die offiziellen ${ VPN_APP_NAME } Anwendungen zu verwenden."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Wir empfehlen, stattdessen Ihre Wiederherstellungsphrase zu verwenden."
+        "Wir empfehlen, stattdessen deine Wiederherstellungsphrase zu verwenden."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Wir speichern die Wiederherstellungsinformationen sicher auf deinem vertrauenswürdigen Gerät, um zu verhindern, dass du deine Daten verlierst."
@@ -5786,10 +5780,10 @@
         "Wochen- und Monatsansichten gelten nur für die Desktop-Version."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Sie erhalten dann einen Rücksetzungscode an die E-Mail-Adresse, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
+        "Du erhältst dann einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Sie erhalten dann einen Rücksetzungscode an die Rufnummer, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
+        "Du erhältst dann einen Rücksetzungscode an die Telefonnummer, die du für die Wiederherstellung deines Kontos angegeben hast."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Wir aktualisieren dein aktuelles Abonnement auf ein verbessertes Abonnement, das mehr für den gleichen Preis bietet. Während unsere Systeme aktualisiert werden, kannst du es nicht ändern. Wir werden dich per E-Mail informieren, sobald die Aktualisierung abgeschlossen ist."
@@ -5798,7 +5792,7 @@
         "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Wenn Benachrichtigungen aktiviert sind, senden wir eine Benachrichtigung an deine Wiederherstellungs-E-Mail-Adresse, wenn du neue Nachrichten in deinem Konto ${ MAIL_APP_NAME } vorhanden sind."
+        "Wenn Benachrichtigungen aktiviert sind, senden wir eine Benachrichtigung an deine Wiederherstellungs-E-Mail-Adresse, wenn du neue Nachrichten in deinem ${ MAIL_APP_NAME } Konto hast."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Wenn sie ein Abonnement abschließen, erhältst du Guthaben, das du für dein Abonnement verwenden kannst."
@@ -5812,6 +5806,9 @@
       "Why?": [
         "Warum?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME }-Dienste nutzen"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
       ],
@@ -5822,10 +5819,10 @@
         "Möchtest du einen neuen Verifizierungscode erhalten?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo liest Ihre persönlichen Daten, um Werbetreibenden, US-Geheimdiensten und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
+        "Yahoo liest deine persönlichen Daten, um Werbetreibenden, US-Geheimdiensten und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex zeichnet Ihre Online-Aktivitäten auf und liest Ihre persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für eine bessere Privatsphäre, erstellen Sie eine sichere E-Mail-Adresse."
+        "Yandex zeichnet deine Online-Aktivitäten auf und liest deine persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz solltest du dir eine sichere E-Mail-Adresse einrichten."
       ],
       "Yearly": [
         "Jährlich"
@@ -5883,7 +5880,7 @@
         "Du kannst keine ${ appName } Benutzer empfehlen"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder der ${ VPN_APP_NAME }-Übersicht anzumelden. ${ learnMore }"
+        "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder dem ${ VPN_APP_NAME }-Dashboard anzumelden. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
@@ -5898,7 +5895,7 @@
         "Du musst den privaten Schlüssel deiner Organisation mit dem Passwort für den gesicherten Organisationsschlüssel aktivieren, das du von deinem Organisationsadministrator erhalten hast."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement zurückstufen kannst."
+        "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
@@ -5931,10 +5928,13 @@
         "Du musst dennoch auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Sie werden ${ loseAllData } Ihrem Konto „${ BRAND_NAME }” verlieren. Um diese wiederherzustellen, müssen Sie Ihr altes Passwort eingeben."
+        "Du wirst ${ loseAllData } in deinem ${ BRAND_NAME }-Konto verlieren. Um diese wiederherzustellen, musst du dein altes Passwort eingeben."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Du wirst NICHT in der Lage sein, mit diesem Schlüssel verschlüsselte Nachrichten, Dateien und andere Daten zu entschlüsseln."
@@ -5976,7 +5976,7 @@
         "Deine Daten von ${ importedEmailAddressStrong } können nun in dein Proton-Konto übertragen werden."
       ],
       "Your data recovery method is set": [
-        "Ihre Datenwiederherstellungsmethode wurde festgelegt"
+        "Deine Datenwiederherstellungsmethode wurde festgelegt"
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -6003,13 +6003,10 @@
         "Ihre Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Dein Proton-Konto ist derzeit gesperrt. Um dein Konto weiterhin nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
-      ],
-      "Your recovery email address:": [
-        "Ihre Wiederherstellungs-E-Mail-Adresse:"
       ],
       "Your recovery phrase": [
         "Deine Wiederherstellungsphrase"
@@ -6071,12 +6068,12 @@
         "Fügen Sie einen neuen Benutzer Ihrer Organisation hinzu und erstellen Sie für ihn eine E-Mail-Adresse."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Aus Sicherheitsgründen müssen wir überprüfen, ob du der Eigentümer von ${ domainName } bist. Bitte füge den folgenden DNS-TXT-Eintrag zu deiner Domain hinzu. Dies kann normalerweise in der Systemsteuerung deines Domainnamen-Registrars erfolgen."
+        "Aus Sicherheitsgründen müssen wir überprüfen, ob du der Eigentümer von ${ domainName } bist. Bitte füge den folgenden DNS-TXT-Eintrag zu deiner Domain hinzu. Dies kann normalerweise im Verwaltungsportal deines Domainnamen-Registrars erfolgen."
       ]
     },
     "Info for members section": {
       "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Hinzufügen, Entfernen und Verwalten von Benutzern innerhalb deiner Organisation. Hier kannst du den dir zugewiesenen Speicherplatz anpassen, Administratorrechte vergeben und mehr. Wählen einen Benutzer aus, um seine E-Mail-Adressen zu verwalten. Die E-Mail-Adresse am Anfang der Liste wird automatisch als Standard-E-Mail-Adresse festgelegt."
+        "Hinzufügen, Entfernen und Verwalten von Benutzern innerhalb deiner Organisation. Hier kannst du den dir zugewiesenen Speicherplatz anpassen, Administratorrechte vergeben und mehr. Wähle einen Benutzer aus, um seine E-Mail-Adressen zu verwalten. Die E-Mail-Adresse am Anfang der Liste wird automatisch als Standard-E-Mail-Adresse festgelegt."
       ]
     },
     "Info for payment methods": {
@@ -6163,7 +6160,7 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Es existiert bereits ein Schlüssel mit demselben Verschlüsselungsalgorithmus. Das Erzeugen eines anderen Schlüssels führt zu einem langsameren Laden des Kontos. Möchten Sie wirklich fortfahren?"
+        "Es existiert bereits ein Schlüssel mit demselben Verschlüsselungsalgorithmus. Das Erzeugen eines anderen Schlüssels führt zu einem langsameren Laden des Kontos. Möchtest du wirklich fortfahren?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Für diese Adresse ist bereits ein Schlüssel mit identischem Verschlüsselungsalgorithmus aktiv. Das Erzeugen eines weiteren Schlüssels führt zu einem langsameren Laden des Kontos und das Löschen dieses Schlüssels kann zu Problemen führen. Wenn du einen neuen Schlüssel erstellst, weil dein alter Schlüssel gefährdet ist, markiere diesen Schlüssel bitte als gefährdet. Möchtest du wirklich fortfahren?"
@@ -6175,13 +6172,13 @@
         "Schlüssel mit Fingerabdruck ${ fp } erfolgreich erstellt."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Die Verschlüsselungsschlüssel werden gerade erzeugt. Dies kann einige Minuten dauern und dazu führen, dass Ihr Browser vorübergehend einfriert."
+        "Die Verschlüsselungsschlüssel werden gerade erzeugt. Dies kann einige Minuten dauern und dazu führen, dass dein Browser vorübergehend einfriert."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Die Verschlüsselungsschlüssel für Ihre Adresse werden gerade erzeugt. Dies kann einige Minuten dauern und dazu führen, dass Ihr Browser vorübergehend einfriert."
+        "Die Verschlüsselungsschlüssel für deine Adresse werden gerade erzeugt. Dies kann einige Minuten dauern und dazu führen, dass dein Browser vorübergehend einfriert."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Sie können einen neuen Verschlüsselungsschlüssel erzeugen, wenn Sie glauben, dass Ihr bisheriger Schlüssel kompromittiert wurde."
+        "Du kannst einen neuen Verschlüsselungsschlüssel erzeugen, wenn du glaubst, dass dein bisheriger Schlüssel kompromittiert wurde."
       ]
     },
     "Key state badge": {
@@ -6449,9 +6446,6 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
       ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } Adresse"
-      ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } Fußzeile"
       ],
@@ -6533,7 +6527,7 @@
         "Öffentlichen Schlüssel anhängen"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Authenticator app": [
         "Authenticator App"
@@ -6665,13 +6659,13 @@
         "Kopieren"
       ],
       "Could you please let us know which provider?": [
-        "Könnten Sie uns bitte mitteilen, welcher Anbieter das ist?"
+        "Kannst du uns bitte mitteilen, welcher Anbieter das ist?"
       ],
       "Could you please specify which streaming service?": [
-        "Könnten Sie bitte angeben, um welchen Streaming-Dienst es sich handelt?"
+        "Kannst du bitte angeben, um welchen Streaming-Dienst es sich handelt?"
       ],
       "Could you please specify?": [
-        "Können Sie das bitte präzisieren?"
+        "Kannst du das bitte präzisieren?"
       ],
       "Country": [
         "Land"
@@ -6740,7 +6734,7 @@
         "Nicht mehr fragen"
       ],
       "Do you have any suggestions for our team?": [
-        "Möchten Sie unserem Team Anregungen geben?"
+        "Möchtest du unserem Team Anregungen geben?"
       ],
       "Domain": [
         "Domain"
@@ -6761,7 +6755,7 @@
         "E‐Mail‐Adresse oder Benutzername"
       ],
       "Emails": [
-        "Nachrichten"
+        "E-Mails"
       ],
       "End date": [
         "Enddatum"
@@ -6785,7 +6779,7 @@
         "Gib das Passwort für den Schlüssel mit dem folgenden Fingerabdruck ein: ${ fingerprintCode }"
       ],
       "Event duration": [
-        "Dauer des Termins"
+        "Termindauer"
       ],
       "Event notifications": [
         "Terminbenachrichtigungen"
@@ -7067,7 +7061,7 @@
         "Wiederherstellungsdatei"
       ],
       "Recovery phone number": [
-        "Rufnummer für die Wiederherstellung"
+        "Telefonnummer für die Wiederherstellung"
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
@@ -7217,7 +7211,7 @@
         "Was ist der Hauptgrund für Ihre Stornierung?"
       ],
       "What is the main reason you are deleting your account?": [
-        "Welches ist der Hauptgrund, weshalb Sie Ihr Konto löschen möchten?"
+        "Welches ist der Hauptgrund, weshalb su dein Konto löschen möchtest?"
       ],
       "With attachment": [
         "Mit Anhängen"
@@ -7252,7 +7246,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Rufnummer für die Wiederherstellung"
+        "Telefonnummer für die Wiederherstellung"
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
@@ -7523,20 +7517,20 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }“"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7567,7 +7561,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit Ihrer Organisation verknüpft sind, unwiderruflich gelöscht."
+        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit deiner Organisation verknüpft sind, unwiderruflich gelöscht."
       ]
     },
     "Message": {
@@ -7588,31 +7582,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        "Wie werden Kalender von einem anderem Dienst importiert"
+        "Wie du Kalender von einem anderen Dienst importierst"
       ],
       "How to import calendars from Outlook": [
-        "Wie werden Kalender von Outlook importiert"
+        "Wie du Kalender von Outlook importierst"
       ],
       "How to import calendars from Yahoo": [
-        "Wie werden Kalender von Yahoo importiert"
+        "Wie du Kalender von Yahoo importierst"
       ],
       "How to import contacts from another service": [
-        "Wie werden Kontakte von einem anderem Dienst importiert"
+        "Wie du Kontakte von einem anderen Dienst importierst"
       ],
       "How to import contacts from Outlook": [
-        "Wie werden Kontakte von Outlook importiert"
+        "Wie du Kontakte von Outlook importierst"
       ],
       "How to import contacts from Yahoo": [
-        "Wie werden Kontakte von Yahoo importiert"
+        "Wie du Kontakte von Yahoo importierst"
       ],
       "How to import emails from another service": [
-        "Wie werden E-Mails von einem anderem Dienst importiert"
+        "Wie du E-Mails von einem anderen Dienst importierst"
       ],
       "How to import emails from Outlook": [
-        "Wie werden E-Mails von Outlook importiert"
+        "Wie du E-Mails von Outlook importierst"
       ],
       "How to import emails from Yahoo": [
-        "Wie werden E-Mails von Yahoo importiert"
+        "Wie du E-Mails von Yahoo importierst"
       ]
     },
     "Modal title and action": {
@@ -7888,8 +7882,8 @@
     },
     "new_plans: feature": {
       "${ n } custom email domain": [
-        "${ n } benutzerdefinierte E-Mail-Domain",
-        "${ n } benutzerdefinierte E-Mail-Domains"
+        "${ n } eigene E-Mail-Domain",
+        "${ n } eigene E-Mail-Domains"
       ],
       "${ n } email address": [
         "${ n } E-Mail-Adresse",
@@ -8106,6 +8100,26 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8175,26 +8189,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto zurückstufst, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Nimm ein Upgrade auf das Geschäftspaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Nimm ein Upgrade auf das ultimative Privatsphärepaket vor und erhalte Zugriff auf alle Premium-Dienste von Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8363,7 +8357,7 @@
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung durch das Kundenbetreuungsteam von Proton besteht für Kunden mit mindestens 6 Benutzern innerhalb europäischer Geschäftszeiten."
+        "Telefonische Unterstützung ist durch das Proton-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindere den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -8423,7 +8417,7 @@
         "Wir helfen unseren Kunden, die HIPAA-/HITECH-Richtlinien unterliegen, mit aller Macht dabei, Gesundheitsdaten zu schützen. Eine signierte Geschäftspartnervereinbarung steht allen Kunden von ${ BRAND_NAME } für Unternehmen zur Verfügung."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Wenn du mit unserem VPN verbunden bist, sendet dein DNS Anfragen durch unseren verschlüsselten VPN-Tunnel, was deine Privatsphäre zusätzlich schützt."
+        "Wenn du mit unserem VPN verbunden bist, werden deine DNS Anfragen durch unseren verschlüsselten VPN-Tunnel geleitet, was deine Privatsphäre zusätzlich schützt."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Beim Versand an andere ${ MAIL_APP_NAME }-Benutzer erfolgt eine automatische Verschlüsselung. Beim Versand an Personen, die ${ MAIL_APP_NAME } nicht verwenden, muss zunächst ein Passwort festgelegt werden."
@@ -8838,8 +8832,8 @@
         "Dein Abonnement beinhaltet maximal ${ availableAddresses } E-Mail-Adressen."
       ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } organisatorischen Benutzer.",
-        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } organisatorische Benutzer."
+        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } Organisationsbenutzer.",
+        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } Organisationsbenutzer."
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
         "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } VPN-Konto.",
@@ -9054,7 +9048,7 @@
         "Pager"
       ],
       "Phone": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Work": [
         "Arbeit"
@@ -9103,7 +9097,7 @@
         "E-Mail-Adresse"
       ],
       "Phone number": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Phrase": [
         "Phrase"
@@ -9114,10 +9108,10 @@
         "Abbrechen"
       ],
       "Phone number has been verified.": [
-        "Rufnummer wurde verifiziert."
+        "Telefonnummer wurde verifiziert."
       ],
       "Phone number not yet verified.": [
-        "Die Rufnummer wurde noch nicht verifiziert."
+        "Die Telefonnummer wurde noch nicht verifiziert."
       ],
       "Verify by SMS": [
         "Per SMS verifizieren"
@@ -9126,10 +9120,10 @@
         "Jetzt verifizieren"
       ],
       "Verify recovery phone?": [
-        "Wiederherstellungs-Rufnummer verifizieren?"
+        "Wiederherstellungs-Telefonnummer verifizieren?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Das verifizieren deiner Rufnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+        "Das verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
     "Remark about a key type option": {
@@ -9142,7 +9136,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Wenn du dich abmeldest, hast du keinen Zugriff mehr auf diesen Kalender. Alle Ereignisse in diesem Kalender werden aus deinem Konto gelöscht, aber sie bleiben im ursprünglichen öffentlichen Link erhalten."
+        "Wenn du dich abmeldest, hast du keinen Zugriff mehr auf diesen Kalender. Alle Termine in diesem Kalender werden aus deinem Konto gelöscht, aber sie bleiben im ursprünglichen öffentlichen Link erhalten."
       ],
       "You will no longer have access to this calendar.": [
         "Du hast dann keinen Zugriff mehr auf diesen Kalender."
@@ -9661,8 +9655,8 @@
         "${ n } Hochgeschwindigkeits-VPN-Verbindungen"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } Hochgeschwindigkeits-VPN-Verbindung/Benutzer",
-        "${ n } Hochgeschwindigkeits-VPN-Verbindungen/Benutzer"
+        "${ n } Hochgeschwindigkeits-VPN-Verbindung pro Benutzer",
+        "${ n } Hochgeschwindigkeits-VPN-Verbindungen pro Benutzer"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
@@ -9732,7 +9726,7 @@
         "${ server.Domain } in die Zwischenablage kopiert"
       ],
       "Account deleted. Logging out...": [
-        "Konto gelöscht. Abmeldung wird ausgeführt …"
+        "Konto gelöscht. Abmeldung wird ausgeführt…"
       ],
       "Address added": [
         "Adresse hinzugefügt"
@@ -9798,10 +9792,10 @@
         "Gutscheincode eingelöst"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben haben, wird Ihnen in Kürze eine E-Mail mit Ihren Benutzernamen zugesendet."
+        "Wenn du eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben hast, wird dir in Kürze eine E-Mail mit deinen Benutzernamen zugesendet."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Wiederherstellungs-Rufnummer eingegeben haben, erhalten Sie in Kürze eine SMS mit Ihren Benutzernamen."
+        "Wenn du eine gültige Wiederherstellungs-Telefonnummer eingegeben hast, erhältst du in Kürze eine SMS mit deinem Benutzernamen."
       ],
       "Import record deleted": [
         "Import-Eintrag gelöscht"
@@ -9837,7 +9831,7 @@
         "Zahlungsmethode aktualisiert"
       ],
       "Phone number updated": [
-        "Rufnummer aktualisiert"
+        "Telefonnummer aktualisiert"
       ],
       "Preference saved": [
         "Einstellung gespeichert"
@@ -10079,7 +10073,7 @@
         "Konto und Passwort"
       ],
       "Account recovery": [
-        "Konto wiederherstellen"
+        "Kontowiederherstellung"
       ],
       "Account suspended": [
         "Konto gesperrt"
@@ -10130,13 +10124,13 @@
         "Zur Spam-Liste hinzufügen"
       ],
       "Add to your block list": [
-        "Zur eigenen Sperrliste hinzufügen"
+        "Zu deiner Blockliste hinzufügen"
       ],
       "Add user": [
         "Benutzer hinzuf."
       ],
       "Address verification": [
-        "Adressbestätigung"
+        "Adressverifizierung"
       ],
       "Allocate storage": [
         "Speicherplatz zuweisen"
@@ -10151,7 +10145,7 @@
         "App"
       ],
       "Appearance": [
-        "Erscheinungsbild"
+        "Aussehen"
       ],
       "Apply filter to existing messages": [
         "Filter auf vorhandene Nachrichten anwenden"
@@ -10163,7 +10157,7 @@
         "Wirklich schließen?"
       ],
       "Auto-reply": [
-        "Automatisch antworten"
+        "Automatische Antworten"
       ],
       "Automatically sign outgoing messages?": [
         "Ausgehende Nachrichten automatisch signieren?"
@@ -10238,7 +10232,7 @@
         "Bestätigen Sie den Verzicht auf Proton-Prämien"
       ],
       "Confirm phone number": [
-        "Rufnummer bestätigen"
+        "Telefonnummer bestätigen"
       ],
       "Congratulations on choosing privacy!": [
         "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz!"
@@ -10255,9 +10249,6 @@
       "Couldn’t create accounts": [
         "Konten konnten nicht erstellt werden"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Erstelle eine ${ MAIL_APP_NAME }-E-Mail-Adresse"
-      ],
       "Create calendar": [
         "Kalender erstellen"
       ],
@@ -10272,6 +10263,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Erstelle dein ${ BRAND_NAME }-Konto"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Erstelle deine ${ BRAND_NAME }-E-Mail-Adresse"
       ],
       "Creating user accounts": [
         "Benutzerkonten werden erstellt"
@@ -10301,13 +10295,13 @@
         "Abonnement anpassen"
       ],
       "Dashboard": [
-        "Übersicht"
+        "Dashboard"
       ],
       "Data locked": [
         "Daten gesperrt"
       ],
       "Data recovery": [
-        "Daten wiederherstellen"
+        "Datenwiederherstellung"
       ],
       "Date": [
         "Datum"
@@ -10337,13 +10331,13 @@
         "Kalender löschen"
       ],
       "Delete key permanently?": [
-        "Schlüssel unwiederbringlich löschen?"
+        "Schlüssel dauerhaft löschen?"
       ],
       "Delete logs": [
         "Protokolle löschen"
       ],
       "Delete organization?": [
-        "Organisation entfernen?"
+        "Organisation löschen?"
       ],
       "Delete user": [
         "Benutzer löschen"
@@ -10364,7 +10358,7 @@
         "Nicht erneut anzeigen?"
       ],
       "Downgrade account": [
-        "Konto herabstufen"
+        "Konto downgraden"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
@@ -10460,7 +10454,7 @@
         "Gutscheincode"
       ],
       "How does it work?": [
-        "Wie funktioniert es?"
+        "Wie funktioniert das?"
       ],
       "How to refer a friend and get credits": [
         "Wie du einen Freund wirbst und Guthaben erhältst"
@@ -10500,7 +10494,7 @@
         "Schlüssel importieren"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Importieren über ${ PRODUCT_NAMES.EASY_SWITCH }"
+        "Importieren mit ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Im-/Export-App"
@@ -10524,7 +10518,7 @@
         "Sprache und Zeit"
       ],
       "Layout": [
-        "Aussehen"
+        "Anordnung"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -10602,7 +10596,7 @@
         "PayPal-Verifizierung fehlgeschlagen"
       ],
       "Phone": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Plan summary": [
         "Abo-Zusammenfassung"
@@ -10614,7 +10608,7 @@
         "Privatsphäre und Datenerfassung"
       ],
       "Processing...": [
-        "Wird verarbeitet ..."
+        "Wird verarbeitet..."
       ],
       "Recommended": [
         "Empfohlen"
@@ -10632,7 +10626,7 @@
         "Wiederherstellungsdatei"
       ],
       "Refer a friend": [
-        "Einem Freund empfehlen"
+        "Wirb einen Freund"
       ],
       "Remove calendar": [
         "Kalender entfernen"
@@ -10725,7 +10719,7 @@
         "Abmelden"
       ],
       "Signed in to member account": [
-        "Im Mitgliedskonto angemeldet"
+        "In Mitgliedskonto angemeldet"
       ],
       "Sort folders alphabetically": [
         "Ordner alphabetisch sortieren"
@@ -10771,13 +10765,13 @@
         "Farbschema"
       ],
       "This address might compromise your privacy.": [
-        "Diese E-Mail-Adresse könnte Ihre Privatsphäre gefährden."
+        "Diese E-Mail-Adresse könnte deine Privatsphäre gefährden."
       ],
       "Time zone": [
         "Zeitzone"
       ],
       "Track your referrals": [
-        "Verfolgen Sie Ihre Empfehlungen"
+        "Verfolge deine Empfehlungen"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Teste das Beste von ${ MAIL_APP_NAME } kostenlos"
@@ -10789,19 +10783,22 @@
         "Typ"
       ],
       "Unlock your mailbox": [
-        "Entsperren Sie Ihr Postfach"
+        "Entsperre dein Postfach"
       ],
       "Unsupported browser": [
         "Nicht unterstützter Browser"
       ],
       "Upgrade plan": [
-        "Abonnement erweitern"
+        "Abonnement upgraden"
       ],
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
       ],
       "Verification": [
         "Verifizierung"
+      ],
+      "Verify email address": [
+        "E-Mail-Adresse verifizieren"
       ],
       "VPN apps": [
         "VPN-Apps"
@@ -10810,7 +10807,7 @@
         "Warnhinweis"
       ],
       "Warning!": [
-        "Warnhinweis!"
+        "Warnung!"
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
@@ -10830,9 +10827,6 @@
       "You already have a Proton account": [
         "Du verfügst bereits über ein Proton-Konto"
       ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Deine ${ MAIL_APP_NAME } E-Mail-Adresse"
-      ],
       "Your calendar link": [
         "Dein Kalender-Link"
       ],
@@ -10846,7 +10840,7 @@
         "Dein Importverlauf"
       ],
       "Your plan": [
-        "Mein Abonnement"
+        "Dein Abonnement"
       ],
       "Your recovery status": [
         "Dein Wiederherstellungsstatus"
@@ -10998,7 +10992,7 @@
         "Setzt die folgende Fußzeile in die von dir gesendeten E-Mails: ${ signature } Der Link verweist auf deinen Empfehlungslink. Die Fußzeile wird unter deiner Signatur erscheinen. Du kannst deine Signatur jederzeit in den Einstellungen personalisieren."
       ],
       "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
-        "Zeigen Sie das Bild der Absender in der Nachrichtenliste an. Wenn kein Foto vorhanden ist, werden die Initialen des Absenders angezeigt."
+        "Zeige das Bild der Absender in der Nachrichtenliste an. Wenn kein Foto vorhanden ist, werden die Initialen des Absenders angezeigt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Mit diesem Schlüssel erzeugte Signaturen werden als ungültig behandelt und können nicht zur Verschlüsselung verwendet werden."
@@ -11105,8 +11099,8 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Mit einem Umstieg auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, den du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst.",
-        "Mit einem Umstieg auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, die du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst."
+        "Mit einem Upgrade auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, den du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst.",
+        "Mit einem Upgrade auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, die du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst."
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
         "Upgrade auf ein kostenpflichtiges Abonnement, um deinen Kalender zu teilen. "
@@ -11141,7 +11135,7 @@
     },
     "Video control": {
       "Click to replay the video": [
-        "Klicken um das Video wiedergeben"
+        "Klicken, um das Video erneut wiederzugeben"
       ],
       "Replay video": [
         "Video erneut wiedergeben"
@@ -11155,7 +11149,7 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } Server",
-        "Mehr als ${ n } Server"
+        "${ n }+ Server"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
@@ -11194,7 +11188,7 @@
         "Möchten Sie die Adresse wirklich löschen?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "Möchten Sie die Rufnummer wirklich löschen?"
+        "Möchtest du die Telefonnummer wirklich löschen?"
       ],
       "Are you sure you want to discard your import?": [
         "Möchtest du deinen Import wirklich verwerfen?"
@@ -11209,7 +11203,7 @@
         "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Wenn Sie diese Rufnummer löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
+        "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Wenn du die Protokollierung deaktivierst, wird auch dein gesamter Protokollverlauf gelöscht. Möchtest du die Protokollierung wirklich deaktivieren?"
@@ -11248,13 +11242,13 @@
         "Dadurch werden alle während des Imports erstellten Nachrichten, Ordner und Kategorien entfernt."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
+        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit Ihrer DNS-Konfiguration festgestellt. Bitte stellen Sie sicher, dass Ihre Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Abmeldung abschalten."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Sie müssen ${ activateLink } Organisationsschlüssel aktivieren, bevor Sie einem nicht-privaten Mitglied eine E-Mail-Adresse zuordnen können."
+        "Du musst Organisationsschlüssel ${ activateLink }, bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse zuordnen kannst."
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."

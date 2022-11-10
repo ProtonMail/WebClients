@@ -36,7 +36,7 @@
         "Neue Gruppe hinzufügen"
       ],
       "Add phone number": [
-        "Rufnummer hinzufügen"
+        "Telefonnummer hinzufügen"
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
@@ -66,13 +66,13 @@
         "Alle Downloads abbrechen"
       ],
       "Cancel all uploads": [
-        "Hochladen abbrechen"
+        "Alle Uploads abbrechen"
       ],
       "Cancel download": [
-        "Herunterladen abbrechen"
+        "Download abbrechen"
       ],
       "Cancel upload": [
-        "Hochladen abbrechen"
+        "Upload abbrechen"
       ],
       "Chat with us": [
         "Chatte mit uns"
@@ -190,9 +190,6 @@
       "Details": [
         "Details"
       ],
-      "Didn't receive the code?": [
-        "Code nicht erhalten?"
-      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -203,13 +200,13 @@
         "Herunterladen"
       ],
       "Download (${ count })": [
-        "Herunterladen (${ count })"
+        "Download (${ count })"
       ],
       "Download all": [
         "Alle herunterladen"
       ],
       "Download anyway": [
-        "Dennoch herunterladen"
+        "Trotzdem herunterladen"
       ],
       "Drive Locked": [
         "Laufwerk gesperrt"
@@ -242,7 +239,7 @@
         "Erweitern"
       ],
       "Expand folder": [
-        "Ordner aufklappen"
+        "Ordner ausklappen"
       ],
       "Export": [
         "Exportieren"
@@ -252,6 +249,9 @@
       ],
       "Export contacts": [
         "Kontakte exportieren"
+      ],
+      "Fit to window": [
+        "An das Fenster anpassen"
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
@@ -365,10 +365,10 @@
         "Alle anhalten"
       ],
       "Pause download": [
-        "Herunterladen anhalten"
+        "Download anhalten"
       ],
       "Pause upload": [
-        "Hochladen anhalten"
+        "Upload anhalten"
       ],
       "Preview": [
         "Vorschau"
@@ -424,11 +424,11 @@
       "Request new code": [
         "Neuen Code anfordern"
       ],
+      "Resend code": [
+        "Code erneut senden"
+      ],
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
-      ],
-      "Reset zoom": [
-        "Vergrößerung zurücksetzen"
       ],
       "Restart all": [
         "Alle neu starten"
@@ -446,10 +446,10 @@
         "Alle fortsetzen"
       ],
       "Resume download": [
-        "Herunterladen fortsetzen"
+        "Download fortsetzen"
       ],
       "Resume upload": [
-        "Hochladen fortsetzen"
+        "Upload fortsetzen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -597,9 +597,6 @@
       ],
       "Verify account": [
         "Konto verifizieren"
-      ],
-      "Verify email": [
-        "E-Mail-Adresse verifizieren"
       ],
       "View": [
         "Anzeigen"
@@ -1806,8 +1803,8 @@
         "Name der Kategorie kann nicht leer sein."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen"
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen.",
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen."
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
@@ -1855,7 +1852,7 @@
         "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
-        "Der Schlüssel der primären Adresse wird nicht entschlüsselt."
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
       "Report failed to be sent": [
         "Bericht konnte nicht gesendet werden"
@@ -1912,7 +1909,7 @@
         "Der Name der Kategorie ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "Die neue Revision der Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal"
+        "Die neue Revision der Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal."
       ],
       "The original file has missing active revision": [
         "Die Originaldatei fehlt eine aktive Revision"
@@ -1924,7 +1921,7 @@
         "In der Originaldatei fehlt ein Sitzungsschlüssel"
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Die Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal"
+        "Die Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal."
       ],
       "The original folder not found": [
         "Der ursprüngliche Ordner wurde nicht gefunden"
@@ -2242,10 +2239,10 @@
         "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
-        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Wenn ${ bold2StepsDisabled } (Google Mail Standardeinstellungen), stellen Sie bitte sicher, dass:"
@@ -2260,10 +2257,10 @@
         "Wenn ${ bold2StepsEnabled }, stellen Sie bitte sicher, dass Ihre E-Mail-Adresse und Ihr App-Passwort korrekt sind. Verwenden Sie ${ boldNot } Ihr reguläres Passwort!"
       ],
       "IMAP access is enabled in your external account.": [
-        "Der IMAP-Zugang in deinem externen Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Der IMAP-Zugang in deinem Yahoo-Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem Yahoo-Konto aktiviert ist."
       ],
       "Invalid IMAP port": [
         "Ungültiger IMAP-Port"
@@ -2396,13 +2393,13 @@
         "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+        "Um einen Kalender in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Outlook. Gehe dazu folgendermaßen vor:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Geh dazu folgendermaßen vor:"
+        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Gehe dazu folgendermaßen vor:"
       ]
     },
     "Import instructions emphasis": {
@@ -2664,7 +2661,7 @@
         "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Möchtest du „${ itemName }“ unwiderruflich aus dem Papierkorb löschen?"
+        "Möchtest du „${ itemName }“ dauerhaft aus dem Papierkorb löschen?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
@@ -2697,7 +2694,7 @@
         "Verschlüsselte Suchdaten löschen"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Beim Löschen der Browserdaten wird der Suchindex auf diesem Gerät gelöscht. Alle Dateien müssen beim Verwenden der Suchfunktion erneut indexiert werden."
+        "Beim Löschen der Browserdaten wird der Suchindex auf diesem Gerät gelöscht. Alle Dateien müssen beim Verwenden der Suchfunktion erneut indiziert werden."
       ],
       "Clears browser data related to the encrypted search.": [
         "Löscht die Browserdaten im Zusammenhang mit der verschlüsselten Suche."
@@ -2722,10 +2719,10 @@
         "${ calendarsToBeCreated } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Erstellen eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
@@ -2765,16 +2762,16 @@
         "deinen Speicherplatz zu verdoppeln."
       ],
       "Download canceled": [
-        "Herunterladen abgebrochen"
+        "Download abgebrochen"
       ],
       "Download failed": [
-        "Herunterladen fehlgeschlagen"
+        "Download fehlgeschlagen"
       ],
       "Download failed due to ${ error }": [
-        "Herunterladen ist aufgrund von ${ error } fehlgeschlagen"
+        "Download ist aufgrund von ${ error } fehlgeschlagen"
       ],
       "Download finished": [
-        "Herunterladen abgeschlossen"
+        "Download abgeschlossen"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Der Download von ${ downloadFileName } wird abgebrochen"
@@ -2804,7 +2801,7 @@
         "Verschlüsselt"
       ],
       "Encrypted search is here": [
-        "Die verschlüsselte Suche ist hier"
+        "Die verschlüsselte Suche ist da"
       ],
       "Enter the code from your authenticator app": [
         "Code aus der Authenticator App eingeben"
@@ -2826,7 +2823,7 @@
         "Geschätzte verbleibende Zeit: Weniger als eine Minute"
       ],
       "Estimating time remaining...": [
-        "Verbleibende Zeit wird ermittelt …"
+        "Verbleibende Zeit wird ermittelt..."
       ],
       "Failed": [
         "Fehlgeschlagen"
@@ -2856,7 +2853,7 @@
         "Der Ordner „${ link.name }“ wurde während dem herunterladen gelöscht"
       ],
       "Folder contents will merge into a single folder": [
-        "Die Inhalte der Ordner werden in einem einzigen Ordner zusammengeführt"
+        "Die Inhalte der Ordner werden in einen einzigen Ordner zusammengeführt"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Bei dem Ordner fehlt die Signatur. Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -2926,7 +2923,7 @@
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress } von ${ totalProgressToShow } Elementen wurden indexiert…"
+        "${ esProgress } von ${ totalProgressToShow } Elementen wurden indiziert"
       ],
       "Indexing search results…": [
         "Suchresultate werden indexiert…"
@@ -3198,10 +3195,10 @@
         "Anmelden"
       ],
       "Signature check will be ignored": [
-        "Signatur-Prüfung wird ignoriert"
+        "Signaturprüfung wird ignoriert"
       ],
       "Signature issue": [
-        "Problem mir der Signatur"
+        "Signaturproblem"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Einige Dateien konnten nicht heruntergeladen werden. Versuche, die Dateien erneut herunterzuladen."
@@ -3219,7 +3216,7 @@
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ],
       "Support for 1 custom email domain": [
-        "Unterstützung für 1 individuelle E-Mail-Domain"
+        "Unterstützung für 1 eigene E-Mail-Domain"
       ],
       "support team": [
         "Support-Team"
@@ -3228,7 +3225,7 @@
         "Schweizer Privatsphäre"
       ],
       "Synced devices": [
-        "Synchronisierten Geräte"
+        "Synchronisierte Geräte"
       ],
       "Tap the + button to upload a file or folder": [
         "Tippe auf +, um eine Datei oder einen Ordner hochzuladen."
@@ -3249,7 +3246,7 @@
         "Es sind noch keine Dateien vorhanden"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Diese Dateien wurden mit einer Ende-zu-Ende-Verschlüsselung freigegeben. Um sie sicher zu halten - und alle Ihre Dokumente, Fotos und Dateien privat - speichern Sie diese in Ihrem eigenen Proton Drive. Es ist einfach zu bedienen und kostenlos."
+        "Diese Dateien wurden mit einer Ende-zu-Ende-Verschlüsselung freigegeben. Um sie sicher zu halten - und alle deine Dokumente, Fotos und Dateien privat - speichere diese in deinem eigenen Proton Drive. Es ist einfach zu bedienen und kostenlos."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
@@ -3322,10 +3319,10 @@
         "Papierkorb"
       ],
       "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filterlisten"
+        "Unbegrenzt viele Ordner, Kategorien und Filterlisten"
       ],
       "Unlimited messages": [
-        "Unbegrenzte Anzahl von Nachrichten"
+        "Unbegrenzt viele Nachrichten"
       ],
       "Unlock drive to recover files": [
         "Laufwerk entsperren, um Dateien wiederherzustellen"
@@ -3349,10 +3346,10 @@
         "Das gleichzeitige Hochladen von Hunderten von Dateien kann sich negativ auf die Leistung auswirken."
       ],
       "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Verwende Drive for Desktop, um Ordner auf deinem Computer mit Proton Drive zu synchronisieren. Sie werden dann hier angezeigt und sind von überall aus zugänglich.  ${ LearnMore }"
+        "Verwende Drive für den Desktop, um Ordner auf deinem Computer mit Proton Drive zu synchronisieren. Sie werden dann hier angezeigt und sind von überall aus zugänglich.  ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Benutze dieses Formular, um uns unangebrachte, illegale, oder andersweitig schädliche geteilte Dateien zu melden. Du bist dabei folgendes zu melden:"
+        "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Gut gemacht, du hast soeben deinen kostenlosen Speicherplatz verdoppelt!"
@@ -3379,7 +3376,7 @@
         "Wir wechseln zu ${ PROTON_ME_DOMAIN }."
       ],
       "What do you want to do?": [
-        "Was willst du tun?"
+        "Was möchtest du tun?"
       ],
       "What would you like to do?": [
         "Was möchtest du tun?"
@@ -3460,10 +3457,10 @@
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your previous password": [
-        "Ihr bisheriges Passwort"
+        "Dein bisheriges Passwort"
       ],
       "Your previous recovery phrase": [
         "Deine bisherige Wiederherstellungsphrase"
@@ -3551,7 +3548,7 @@
         "App-Passwort"
       ],
       "Apply to all duplicated files": [
-        "Auf alle doppelt vorhandenen Dateien anwenden"
+        "Auf alle doppelten Dateien anwenden"
       ],
       "Apply to all duplicated folders": [
         "Auf alle doppelten Ordner anwenden"
@@ -3560,7 +3557,7 @@
         "Auf alle ungeprüften Elemente anwenden"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Audio file": [
         "Audiodatei"
@@ -3663,7 +3660,7 @@
         "E-Mail-Format"
       ],
       "Emails": [
-        "Nachrichten"
+        "E-Mails"
       ],
       "Enable Beta Access": [
         "Beta-Zugang aktivieren"
@@ -3723,7 +3720,7 @@
         "Ich bin mir des Risikos bewusst"
       ],
       "Image": [
-        "Grafik"
+        "Bild"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -3816,7 +3813,7 @@
         "Telefonnummer"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Bitte nenne uns alle Einzelheiten, damit wir geeignete Maßnahmen ergreifen können"
+        "Bitte nenne uns alle Einzelheiten, damit wir geeignete Maßnahmen ergreifen können."
       ],
       "Port": [
         "Port"
@@ -3888,7 +3885,7 @@
         "Text"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Dadurch werden alle Dateien auf dem gesperrten Laufwerk unwiderruflich gelöscht."
+        "Dadurch werden alle Dateien auf dem gesperrten Laufwerk dauerhaft gelöscht."
       ],
       "To: ${ emailAddress }": [
         "An: ${ emailAddress }"
@@ -4031,20 +4028,20 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }“"
       ]
     },
     "Message": {
@@ -4067,31 +4064,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        "Wie werden Kalender von einem anderem Dienst importiert"
+        "Wie du Kalender von einem anderen Dienst importierst"
       ],
       "How to import calendars from Outlook": [
-        "Wie werden Kalender von Outlook importiert"
+        "Wie du Kalender von Outlook importierst"
       ],
       "How to import calendars from Yahoo": [
-        "Wie werden Kalender von Yahoo importiert"
+        "Wie du Kalender von Yahoo importierst"
       ],
       "How to import contacts from another service": [
-        "Wie werden Kontakte von einem anderem Dienst importiert"
+        "Wie du Kontakte von einem anderen Dienst importierst"
       ],
       "How to import contacts from Outlook": [
-        "Wie werden Kontakte von Outlook importiert"
+        "Wie du Kontakte von Outlook importierst"
       ],
       "How to import contacts from Yahoo": [
-        "Wie werden Kontakte von Yahoo importiert"
+        "Wie du Kontakte von Yahoo importierst"
       ],
       "How to import emails from another service": [
-        "Wie werden E-Mails von einem anderem Dienst importiert"
+        "Wie du E-Mails von einem anderen Dienst importierst"
       ],
       "How to import emails from Outlook": [
-        "Wie werden E-Mails von Outlook importiert"
+        "Wie du E-Mails von Outlook importierst"
       ],
       "How to import emails from Yahoo": [
-        "Wie werden E-Mails von Yahoo importiert"
+        "Wie du E-Mails von Yahoo importierst"
       ]
     },
     "New Label form": {
@@ -4122,7 +4119,7 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "„${ name }” wurde erfolgreich erstellt"
+        "„${ name }” erfolgreich erstellt"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "„${ name }” dauerhaft aus dem Papierkorb gelöscht"
@@ -4143,7 +4140,7 @@
         "\"${ name }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" wurde in den Papierkorb verschoben"
+        "\"${ name }\" in den Papierkorb verschoben"
       ],
       "\"${ name }\" restored from trash": [
         "„${ name }” aus dem Papierkorb wiederhergestellt"
@@ -4183,7 +4180,7 @@
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } Element wurde in den Papierkorb verschoben",
-        "${ numberOfItems } Elemente wurde in den Papierkorb verschoben"
+        "${ numberOfItems } Elemente wurden in den Papierkorb verschoben"
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } Element aus dem Papierkorb wiederhergestellt",
@@ -4226,13 +4223,13 @@
         "Verschlüsselte Suche aktiviert"
       ],
       "Failed to download files: ${ err }": [
-        "Herunterladen der Dateien fehlgeschlagen: ${ err }"
+        "Download der Dateien fehlgeschlagen: ${ err }"
       ],
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuche es erneut"
       ],
       "Failed to upload files: ${ err }": [
-        "Hochladen von Dateien fehlgeschlagen: ${ err }"
+        "Upload der Dateien fehlgeschlagen: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen",
@@ -4375,7 +4372,7 @@
         "Willkommen bei ${ appName }"
       ],
       "Your welcome bonus": [
-        "Dein Willkommensgeschenk"
+        "Dein Willkommensbonus"
       ]
     },
     "Option": {
@@ -4407,10 +4404,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } hat diesen Schlüssel als kompromittiert gekennzeichnet. Dieser Schlüssel kann weder für die Verschlüsselung, noch für die Signaturprüfung verwendet werden."
+        "${ emailAddress } hat diesen Schlüssel als kompromittiert markiert. Dieser Schlüssel kann weder für die Verschlüsselung, noch für die Signaturprüfung verwendet werden."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } hat diesen Schlüssel als veraltet gekennzeichnet. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
+        "${ emailAddress } hat diesen Schlüssel als veraltet markiert. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
@@ -4482,11 +4479,11 @@
         "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } von ${ totalBeDeleted } Kontakt(en) erfolgreich gelöscht.",
+        "${ model.deleted.length } von ${ totalBeDeleted } Kontakt erfolgreich gelöscht.",
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } von ${ totalBeMerged } Kontakt(en) erfolgreich zusammengeführt.",
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakt erfolgreich zusammengeführt.",
         "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
       ],
       "No contacts exported.": [
@@ -4525,7 +4522,7 @@
         "Pager"
       ],
       "Phone": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Work": [
         "Arbeit"
@@ -4790,7 +4787,7 @@
         "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
       ],
       "Encrypted search is here": [
-        "Die verschlüsselte Suche ist hier"
+        "Die verschlüsselte Suche ist da"
       ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } in Guthaben."
@@ -4953,7 +4950,7 @@
     },
     "Title": {
       "# of accesses": [
-        "Anzahl der Zugriffe"
+        "# der Zugriffe"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } Mitglied",
@@ -5048,7 +5045,7 @@
         "Datum"
       ],
       "Decrypting": [
-        "Entschlüsseln"
+        "Wird entschlüsselt"
       ],
       "Delete ${ count } contact": [
         "${ count } Kontakt löschen",
@@ -5131,16 +5128,16 @@
         "Feedback"
       ],
       "File details": [
-        "Dateiinformationen"
+        "Dateidetails"
       ],
       "File recovery process": [
         "Dateiwiederherstellungsprozess"
       ],
       "Files details": [
-        "Dateiinformationen"
+        "Dateidetails"
       ],
       "Folder details": [
-        "Ordnerinformationen"
+        "Orderndetails"
       ],
       "Folders details": [
         "Ordnerdetails"
@@ -5204,13 +5201,13 @@
         "Name"
       ],
       "Number of files": [
-        "Anzahl Dateien"
+        "Anzahl der Dateien"
       ],
       "Number of folders": [
-        "Anzahl Ordner"
+        "Anzahl der Ordner"
       ],
       "Number of items": [
-        "Anzahl Elemente"
+        "Anzahl der Elemente"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen” öffnen"
@@ -5396,16 +5393,16 @@
         "Auf einige Dateien kann nicht zugegriffen werden"
       ],
       "You have no files to share": [
-        "Noch keine Dateien zum Teilen vorhanden"
+        "Du hast noch keine Dateien zum Teilen"
       ],
       "You have no folders yet": [
-        "Es wurden noch keine Ordner erstellt"
+        "Du hast noch keine Ordner"
       ],
       "You've got files": [
         "Du hast Dateien erhalten"
       ],
       "Your 500 MB bonus": [
-        "Dein 500 MB Bonus."
+        "Dein 500 MB Bonus"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"
@@ -5480,25 +5477,25 @@
         "„${ str }” ist kein gültiger Name"
       ],
       "Name cannot include invisible characters, / or \\.": [
-        "Der Name darf weder unsichtbaren Zeichen noch / oder \\ enthalten."
+        "Der Name darf weder unsichtbare Zeichen noch / oder \\ enthalten."
       ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein",
         "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein"
       ],
       "Name must not be empty": [
-        "Bitte Name eingeben"
+        "Name darf nicht leer sein"
       ],
       "Name must not begin with a space": [
-        "Name darf nicht mit einem Leerzeichen enden"
+        "Name darf nicht mit einem Leerzeichen beginnen"
       ],
       "Name must not end with a space": [
-        "Name darf nicht mit einem Leerzeichen beginnen"
+        "Name darf nicht mit einem Leerzeichen enden"
       ]
     },
     "Video control": {
       "Click to replay the video": [
-        "Klicken um das Video wiedergeben"
+        "Klicken, um das Video erneut wiederzugeben"
       ],
       "Replay video": [
         "Video erneut wiedergeben"
@@ -5568,7 +5565,7 @@
         "Dieser Import kann die derzeit in Ihrem Proton-Konto verfügbare Speicherkapazität überschreiten. Bitte prüfen Sie, ob Sie den Import anpassen können."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
+        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."

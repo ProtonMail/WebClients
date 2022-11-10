@@ -158,6 +158,9 @@
       "Extend": [
         "تمدید"
       ],
+      "Fit to window": [
+        "متناسب کردن با پنجره"
+      ],
       "Get ${ vpnPlus }": [
         "دریافت ${ vpnPlus }"
       ],
@@ -250,9 +253,6 @@
       ],
       "Reset password": [
         "بازنشانی گذرواژه"
-      ],
-      "Reset zoom": [
-        "بازنشانی بزرگ‌نمایی"
       ],
       "Retry": [
         "تلاش دوباره"
@@ -417,6 +417,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } دامنه سفارشی",
         "+ ${ domains } دامنه سفارشی"
+      ],
+      "+ ${ users } user": [
+        "+ ${ users } کاربر",
+        "+ ${ users } کاربر"
       ]
     },
     "Alter": {
@@ -1816,6 +1820,9 @@
       "Account successfully updated": [
         "حساب کاربری با موفقیت بروز شد"
       ],
+      "add a recovery method": [
+        "یک روش بازیابی اضافه کنید"
+      ],
       "Additional options": [
         "امکانات اضافی"
       ],
@@ -1890,6 +1897,9 @@
       ],
       "Emailing preference saved": [
         "تنظیمات رایانامه‌نگاری بروز شد"
+      ],
+      "Enter code from your authenticator app": [
+        "کد سامانه تایید کننده را وارد نمایید"
       ],
       "Enter key manually instead": [
         "در عوض کلید را به صورت دستی وارد کنید"
@@ -2023,6 +2033,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های دولتی روسیه و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "مطمئن شوید که ${ addARecoveryMethod } تا اگر گذرواژه خود را فراموش کردید بتوانید حساب کاربری خود را برگردانید."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "برای تنظیم حساب خود، این اطلاعات را به‌صورت دستی در دستگاه تایید هویت دو مرحله‌ای خود وارد کنید.${ _switchButton }."
       ],
@@ -2094,6 +2107,9 @@
       ],
       "Priority support": [
         "اولویت پشتیبانی"
+      ],
+      "Proton's encryption technology means that nobody can access your password - not even us.": [
+        "تکنولوژی رمزگذاری پروتون به این شکل است که هیچکس نمیتواند به گذرواژه شما دسترسی داشته باشد - حتی ما."
       ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
@@ -4199,6 +4215,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "جهت دسترسی به همه سرورها ${ vpnPlus } را دریافت کنید"
+      ],
+      "Gift": [
+        "هدیه"
       ],
       "Gift code": [
         "کد هدیه"
