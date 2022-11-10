@@ -8,9 +8,7 @@ import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
 
-import './Logo.scss';
-
-export type LogoVariant = 'with-wordmark' | 'standalone' | 'glyph-only';
+export type LogoVariant = 'with-wordmark' | 'glyph-only';
 
 const { PROTONCALENDAR, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
 
