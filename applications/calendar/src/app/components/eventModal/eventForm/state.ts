@@ -20,7 +20,7 @@ import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { Address as tsAddress } from '@proton/shared/lib/interfaces';
+import { Address, Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
     CalendarMember,
@@ -134,6 +134,26 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
     };
 };
 
+export const getOrganizerModel = ({
+    attendees,
+    addressID,
+    addresses,
+}: {
+    attendees: AttendeeModel[];
+    addressID: string;
+    addresses: Address[];
+}) => {
+    if (!attendees.length) {
+        return {};
+    }
+    const organizerAddress = addresses.find(({ ID }) => ID === addressID);
+    const { Email: email = '', DisplayName: cn = '' } = organizerAddress || {};
+
+    return {
+        organizer: { email, cn },
+    };
+};
+
 interface GetInitialModelArguments {
     initialDate: Date;
     CalendarSettings: tsCalendarSettings;
@@ -169,6 +189,11 @@ export const getInitialModel = ({
     const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
+    const organizerModel = getOrganizerModel({
+        attendees,
+        addressID: memberModel.member.addressID,
+        addresses: Addresses,
+    });
 
     return {
         type: 'event',
@@ -176,11 +201,12 @@ export const getInitialModel = ({
         location: '',
         description: '',
         attendees,
+        ...organizerModel,
         initialDate,
         initialTzid: tzid,
         isAllDay,
         verificationStatus,
-        isOrganizer: !!attendees?.length,
+        isOrganizer: !!attendees.length,
         isAttendee: false,
         isProtonProtonInvite: false,
         status: ICAL_EVENT_STATUS.CONFIRMED,
