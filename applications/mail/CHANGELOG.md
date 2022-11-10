@@ -1,4 +1,4 @@
-## Release 5.0.12.0 - November 16, 2022
+## Release 5.0.12 - November 16, 2022
 
 ### Improvements
 
@@ -8,7 +8,7 @@
 
 -   Fixed an issue in which the message view container was too tall
 
-## Release 5.0.11.0 - October 26, 2022
+## Release 5.0.11 - October 26, 2022
 
 ### Improvements
 
@@ -65,7 +65,7 @@
 -   Fixed an issue on label/folder name causing Safari to show the autofill
 -   Fixed an issue on the composer to avoid triggering shortcuts while a message is being sent
 
-## Release 5.0.6.0 - August 17, 2022
+## Release 5.0.6 - August 17, 2022
 
 ### Improvements
 
@@ -79,25 +79,25 @@
 -   Fixed an issue where contacts could not be merged
 -   Fixed an issue where attachments were not displayed on print view
 
-## Release 5.0.5.0 - July 27, 2022
+## Release 5.0.5 - July 27, 2022
 
 ### Bug fixes
 
 -   Fixed some minor display & alignment issues
 
-## Release 5.0.4.0 - July 20, 2022
+## Release 5.0.4 - July 20, 2022
 
 ### improvements
 
 -   Added the ability to move every message from a folder to trash
 
-## Release 5.0.3.0 - July 6, 2022
+## Release 5.0.3 - July 6, 2022
 
 ### improvements
 
 -   Added the ability to view messages from sender
 
-## Release 5.0.2.0 - June 22, 2022
+## Release 5.0.2 - June 22, 2022
 
 ### Improvements
 
@@ -112,7 +112,7 @@
 -   Fixed an issue where an incorrect font would be displayed in the composer
 -   Fixed an issue with composer keyboard shortcuts
 
-## Release 5.0.1.0 - May 27, 2022
+## Release 5.0.1 - May 27, 2022
 
 -   Added V4 classic theme
 
