@@ -7,11 +7,13 @@ interface Props {
     hideNotification: (id: number) => void;
 }
 const NotificationsContainer = ({ notifications, removeNotification, hideNotification }: Props) => {
-    const list = notifications.map(({ id, key, type, text, isClosing, disableAutoClose }) => {
+    const list = notifications.map(({ id, key, type, text, isClosing, disableAutoClose, showCloseButton, icon }) => {
         return (
             <Notification
                 key={key}
                 isClosing={isClosing}
+                showCloseButton={showCloseButton}
+                icon={icon}
                 type={type}
                 onClick={disableAutoClose ? undefined : () => hideNotification(id)}
                 onExit={() => removeNotification(id)}
