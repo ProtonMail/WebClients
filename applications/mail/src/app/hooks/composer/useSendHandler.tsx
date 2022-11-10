@@ -172,6 +172,7 @@ export const useSendHandler = ({
             text: <SendingMessageNotification scheduledAt={scheduledAt} manager={notifManager} />,
             expiration: -1,
             disableAutoClose: true,
+            showCloseButton: false,
         });
 
         ensureMessageContent();

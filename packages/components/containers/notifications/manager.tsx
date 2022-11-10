@@ -55,10 +55,12 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
     const createNotification = ({
         id = idx++,
         key,
-        expiration = 3500,
+        expiration = 5000,
         type = 'success',
         text,
         disableAutoClose,
+        showCloseButton = true,
+        icon = type === 'warning' || type === 'error' ? 'exclamation-triangle-filled' : undefined,
         deduplicate = type === 'error',
         ...rest
     }: CreateNotificationOptions) => {
@@ -103,6 +105,8 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                 disableAutoClose,
                 ...rest,
                 isClosing: false,
+                showCloseButton,
+                icon,
             };
 
             if (deduplicate) {

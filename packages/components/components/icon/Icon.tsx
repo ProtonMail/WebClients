@@ -143,6 +143,7 @@ export type IconName =
     | 'eraser'
     | 'exclamation-circle'
     | 'exclamation-circle-filled'
+    | 'exclamation-triangle-filled'
     | 'eye'
     | 'eye-slash'
     | 'file'

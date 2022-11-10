@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -113,7 +114,11 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
         );
     }
 
-    return <>{scheduledAt ? c('Info').t`Scheduling message...` : c('Info').t`Sending message...`}</>;
+    return (
+        <>
+            {scheduledAt ? c('Info').t`Scheduling message...` : c('Info').t`Sending message...`} <CircleLoader />
+        </>
+    );
 };
 
 export default SendingMessageNotification;
