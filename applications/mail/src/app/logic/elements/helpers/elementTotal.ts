@@ -2,7 +2,7 @@ import { LabelCount } from '@proton/shared/lib/interfaces';
 
 import { Filter } from '../../../models/tools';
 
-export const getTotal = (counts: LabelCount[], labelID: string, filter: Filter) => {
+export const getTotal = (counts: LabelCount[], labelID: string, filter: Filter, bypassFilterCount: number) => {
     const count = counts.find((count) => count.LabelID === labelID);
 
     if (!count) {
@@ -15,7 +15,7 @@ export const getTotal = (counts: LabelCount[], labelID: string, filter: Filter) 
         return count.Total || 0;
     }
     if (unreadFilter > 0) {
-        return count.Unread || 0;
+        return (count.Unread || 0) + bypassFilterCount;
     }
-    return (count.Total || 0) - (count.Unread || 0);
+    return (count.Total || 0) - (count.Unread || 0) + bypassFilterCount;
 };
