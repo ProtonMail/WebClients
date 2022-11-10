@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } está disponível."
-      ],
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
       ],
@@ -167,17 +164,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Criar antes um endereço seguro do ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Criar conta"
       ],
       "Create accounts": [
         "Criar contas"
-      ],
-      "Create address": [
-        "Criar endereço"
       ],
       "Create calendar": [
         "Criar agenda"
@@ -228,9 +219,6 @@
         "Detalhes"
       ],
       "Didn't receive a code?": [
-        "Não recebeu o código?"
-      ],
-      "Didn't receive the code?": [
         "Não recebeu o código?"
       ],
       "Disable": [
@@ -545,9 +533,6 @@
       "Reset to default": [
         "Repor predefinição"
       ],
-      "Reset zoom": [
-        "Repor ampliação"
-      ],
       "Restore administrator privileges": [
         "Restaurar privilégios de administrador"
       ],
@@ -740,9 +725,6 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
-      "Use your current email address instead": [
-        "Utilizar o seu endereço de e-mail atual"
-      ],
       "Use “${ label }” setting": [
         "Usar a definição \"${ label }\""
       ],
@@ -754,9 +736,6 @@
       ],
       "Verify account": [
         "Verificar conta"
-      ],
-      "Verify email": [
-        "Verificar correio eletrónico"
       ],
       "View": [
         "Ver"
@@ -3321,9 +3300,6 @@
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Requeridos ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } para uma ligação a nível de país."
       ],
@@ -4312,9 +4288,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
       ],
-      "Your recovery email address:": [
-        "O seu email de recuperação:"
-      ],
       "Your recovery phrase": [
         "A sua frase de recuperação"
       ],
@@ -4688,9 +4661,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Endereço ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
         "Rodapé ${ MAIL_APP_NAME }"
@@ -6991,9 +6961,6 @@
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
-      ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Criar um endereço de ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Criar agenda"

@@ -24,9 +24,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } доступен."
-      ],
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
       ],
@@ -195,17 +192,11 @@
       "Create": [
         "Создать"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Вместо этого создайте защищенный адрес ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Создать аккаунт"
       ],
       "Create accounts": [
         "Создать аккаунты"
-      ],
-      "Create address": [
-        "Создать адрес"
       ],
       "Create calendar": [
         "Создать календарь"
@@ -259,9 +250,6 @@
         "Информация"
       ],
       "Didn't receive a code?": [
-        "Не получили код?"
-      ],
-      "Didn't receive the code?": [
         "Не получили код?"
       ],
       "Disable": [
@@ -359,6 +347,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "В настоящее время применяются фильтры. Это может занять несколько минут."
+      ],
+      "Fit to window": [
+        "Вписать в окне"
       ],
       "Font": [
         "Шрифт"
@@ -467,6 +458,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
+      ],
+      "More info: Keyboard shortcuts": [
+        "Подробнее: комбинации клавиш"
       ],
       "move emails to": [
         "переместить письма в"
@@ -588,6 +582,9 @@
       "Requires a verified recovery email address": [
         "Требуется подтвержденный адрес электронной почты для восстановления"
       ],
+      "Resend code": [
+        "Повторно отправить код"
+      ],
       "Reset credentials": [
         "Сбросить учётные данные"
       ],
@@ -602,9 +599,6 @@
       ],
       "Reset to default": [
         "Сбросить к умолчанию"
-      ],
-      "Reset zoom": [
-        "Сбросить масштаб"
       ],
       "Restore administrator privileges": [
         "Восстановить права администратора"
@@ -816,9 +810,6 @@
       "Use recovery code": [
         "Использовать код восстановления"
       ],
-      "Use your current email address instead": [
-        "Использовать ваш текущий адрес электронной почты"
-      ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
       ],
@@ -830,9 +821,6 @@
       ],
       "Verify account": [
         "Подтвердить аккаунт"
-      ],
-      "Verify email": [
-        "Подтвердить эл. почту"
       ],
       "View": [
         "Посмотреть"
@@ -943,6 +931,9 @@
       ],
       "Disabled": [
         "Отключено"
+      ],
+      "External": [
+        "Внешний"
       ],
       "Missing keys": [
         "Отсутствуют ключи"
@@ -4585,9 +4576,6 @@
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Вы будете использовать этот адрес электронной почты для входа во все службы ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Требуются ${ vpnBasic }, ${ vpnPlus } или ${ visionary } для подключения на уровне страны."
       ],
@@ -5407,9 +5395,6 @@
       "of": [
         "из"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Один аккаунт для всех служб ${ BRAND_NAME }."
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
       ],
@@ -5712,6 +5697,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Адрес электронной почты, который вы разместите в верхней части списка, является адресом электронной почты по умолчанию. Перетаскивайте и отпускайте строки списка, чтобы изменять порядок адресов."
+      ],
+      "The following address is available:": [
+        "Доступен следующий адрес:"
       ],
       "The following address is invalid.": [
         "Следующий адрес недействителен.",
@@ -6199,9 +6187,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт в Proton в настоящее время приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите все просроченные счета."
       ],
-      "Your recovery email address:": [
-        "Ваш резервный адрес электронной почты:"
-      ],
       "Your recovery phrase": [
         "Ваша фраза для восстановления"
       ],
@@ -6640,9 +6625,6 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
       ],
-      "${ MAIL_APP_NAME } address": [
-        "Адрес ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } footer": [
         "Нижний колонтитул ${ MAIL_APP_NAME }"
       ],
@@ -6684,6 +6666,9 @@
       ],
       "All-day event notifications": [
         "Уведомления о событии в течение всего дня"
+      ],
+      "Allow notifications by email": [
+        "Разрешить уведомления по эл. почте"
       ],
       "Allow recovery by email": [
         "Разрешить восстановление по электронной почте"
@@ -8344,6 +8329,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8413,26 +8418,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10561,9 +10546,6 @@
       "Couldn’t create accounts": [
         "Не могу создать аккаунты"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Создайте адрес ${ MAIL_APP_NAME }"
-      ],
       "Create calendar": [
         "Создать календарь"
       ],
@@ -11113,6 +11095,9 @@
       "Verification": [
         "Подтверждение"
       ],
+      "Verify email address": [
+        "Подтвердить адрес электронной почты"
+      ],
       "VPN apps": [
         "Приложения VPN"
       ],
@@ -11139,9 +11124,6 @@
       ],
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Ваш адрес ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Ссылка на календарь"

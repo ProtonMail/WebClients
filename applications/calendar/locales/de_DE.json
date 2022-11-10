@@ -6,7 +6,7 @@
   "contexts": {
     "Access level": {
       "Full view (see all event details)": [
-        "Gesamtansicht (siehe alle Ereignisdetails)"
+        "Gesamtansicht (siehe alle Termindetails)"
       ],
       "Limited view (see only free/busy)": [
         "Eingeschränkte Ansicht (nur Verfügbar/Geschäftigt anzeigen)"
@@ -47,7 +47,7 @@
         "Benachrichtigung hinzufügen"
       ],
       "Add phone number": [
-        "Rufnummer hinzufügen"
+        "Telefonnummer hinzufügen"
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
@@ -167,9 +167,6 @@
       ],
       "Deselect all": [
         "Alle abwählen"
-      ],
-      "Didn't receive the code?": [
-        "Code nicht erhalten?"
       ],
       "Discard": [
         "Verwerfen"
@@ -390,6 +387,9 @@
       "Request new code": [
         "Neuen Code anfordern"
       ],
+      "Resend code": [
+        "Code erneut senden"
+      ],
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
       ],
@@ -513,9 +513,6 @@
       "Verify account": [
         "Konto verifizieren"
       ],
-      "Verify email": [
-        "E-Mail-Adresse verifizieren"
-      ],
       "View": [
         "Anzeigen"
       ],
@@ -629,7 +626,7 @@
         "Wenn du jetzt beendest, können einige Kontakte nicht importiert werden."
       ],
       "By leaving now, some events may not be imported": [
-        "Wenn du jetzt beendest, können einige Termine nicht importiert werden."
+        "Wenn du jetzt beendest, werden einige Termine eventuell nicht importiert."
       ],
       "By leaving now, you will lose your event.": [
         "Wenn du jetzt beendest, wird dieser Termin verworfen."
@@ -645,7 +642,7 @@
         "Leere ICS-Datei"
       ],
       "Invalid event": [
-        "Ungültiges Ereignis"
+        "Ungültiger Termin"
       ],
       "Invalid ICS file": [
         "Ungültige ICS-Datei"
@@ -657,7 +654,7 @@
         "Nicht unterstütztes Kalender-Modul"
       ],
       "Unsupported event": [
-        "Nicht unterstütztes Ereignis"
+        "Nicht unterstützter Termin"
       ]
     },
     "Attendee role": {
@@ -826,9 +823,6 @@
       "Unable to share this calendar with more Proton users": [
         "Dieser Kalender kann nicht für weitere Proton-Benutzer freigegeben werden"
       ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
-        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitglied für diesen Kalender erreicht.\nUm den Kalender mit weiteren Proton-Konten zu teilen, entferne bitte einige Teilnehmer."
-      ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Du hast die maximale Anzahl von ${ MAX_LINKS_PER_CALENDAR } Link für diesen Kalender erreicht.\nUm einen neuen Link zu diesem Kalender zu erstellen, lösche bitte einen bestehenden.",
         "Du hast die maximale Anzahl von ${ MAX_LINKS_PER_CALENDAR } Links für diesen Kalender erreicht.\nUm einen neuen Link zu diesem Kalender zu erstellen, lösche bitte einen bestehenden."
@@ -836,10 +830,10 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Bearbeiten (Ereignisdetails anzeigen, erstellen und bearbeiten)"
+        "Bearbeiten (Termindetails anzeigen, erstellen und bearbeiten)"
       ],
       "Full view (see all event details)": [
-        "Gesamtansicht (siehe alle Ereignisdetails)"
+        "Gesamtansicht (siehe alle Termindetails)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -916,7 +910,7 @@
     },
     "Calendar view selector": {
       "Change time range to": [
-        "Zeitspanne ändern in"
+        "Zeitspanne ändern zu"
       ]
     },
     "Collapsible tooltip": {
@@ -1935,7 +1929,7 @@
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht Überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+        "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
@@ -1961,7 +1955,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "Der Termin ist in einem deaktivierten Kalender enthalten."
+        "Der Termin gehört zu einem deaktivierten Kalender."
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -2082,13 +2076,13 @@
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
       "Account does not exist": [
-        "Konto nicht vorhanden"
+        "Konto existiert nicht"
       ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
       "Already a member of this calendar": [
-        "Bereits Mitglied in diesem Kalender"
+        "Bereits Mitglied dieses Kalenders"
       ],
       "Answer failed to be sent": [
         "Antwort konnte nicht gesendet werden"
@@ -2198,8 +2192,8 @@
         "Name der Kategorie kann nicht leer sein."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen"
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen.",
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen."
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
@@ -2249,7 +2243,7 @@
         "Die Passwörter stimmen nicht überein"
       ],
       "Please create an address first.": [
-        "Bitte zuerst eine Adresse erstellen."
+        "Bitte erstelle zuerst eine E-Mail-Adresse."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
@@ -2262,7 +2256,7 @@
         "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
-        "Der Schlüssel der primären Adresse wird nicht entschlüsselt."
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
       "Primary key is not valid for sending": [
         "Primärschlüssel ist für das Senden nicht gültig"
@@ -2463,13 +2457,13 @@
         "Kalenderzeitzone wird nicht unterstützt"
       ],
       "Component with wrong format": [
-        "Komponente in einem ungültigen Format"
+        "Komponente mit ungültigem Format"
       ],
       "Custom timezone": [
         "Benutzerdefinierte Zeitzone"
       ],
       "Edited event not supported": [
-        "Bearbeitetes Ereignis wird nicht unterstützt"
+        "Bearbeitete Termine werden nicht unterstützt"
       ],
       "Element": [
         "Eintrag"
@@ -2484,7 +2478,7 @@
         "Termin"
       ],
       "Event validation failed": [
-        "Überprüfung der Ereignisse fehlgeschlagen"
+        "Überprüfung der Termine fehlgeschlagen"
       ],
       "Floating times not supported": [
         "Gleitzeiten werden nicht unterstützt"
@@ -2493,13 +2487,13 @@
         "Zeitinformationen zu Verfügbar/Beschäftigt"
       ],
       "Invalid event": [
-        "Ungültiges Ereignis"
+        "Ungültiger Termin"
       ],
       "Journal entry": [
         "Journaleintrag"
       ],
       "Malformed all-day event": [
-        "Fehlerhaftes ganztägiges Ereignis"
+        "Fehlerhafter ganztägiger Termin"
       ],
       "Malformed end time": [
         "Fehlerhafte Endzeit"
@@ -2523,7 +2517,7 @@
         "Benachrichtigung außerhalb des Bereichs"
       ],
       "Original recurring event could not be found": [
-        "Ursprüngliches Terminserie konnte nicht gefunden werden"
+        "Ursprüngliche Terminserie konnte nicht gefunden werden"
       ],
       "Recurring event has no occurrences": [
         "Wiederkehrendes Ereignis enthält keine Termine"
@@ -2547,7 +2541,7 @@
         "Unbekannt"
       ],
       "Unsupported event": [
-        "Nicht unterstütztes Ereignis"
+        "Nicht unterstützter Termin"
       ]
     },
     "Error message": {
@@ -2624,10 +2618,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Angehängte ICS-Datei konnte nicht entschlüsselt werden"
+        "Angehängte ICS-Datei konnte nicht entschlüsselt werden."
       ],
       "Attached ICS file could not be read": [
-        "Angehängte ICS-Datei konnte nicht eingelesen werden"
+        "Angehängte ICS-Datei konnte nicht gelesen werden."
       ],
       "Invalid invitation": [
         "Ungültige Einladung"
@@ -2636,10 +2630,10 @@
         "Ungültige Antwort"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Der Termin konnte nicht zu deinem Kalender hinzugefügt werden. Es wurde keine Antwort gesendet"
+        "Der Termin konnte nicht zu deinem Kalender hinzugefügt werden. Es wurde keine Antwort gesendet."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet"
+        "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet."
       ],
       "Unexpected error": [
         "Unerwarteter Fehler"
@@ -2814,7 +2808,7 @@
         "${ totalImported }/${ totalToImport } Termine wurden verschlüsselt und deinem Kalender hinzugefügt"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. Es wurde kein Termin importiert.",
+        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Termin wurde erfolgreich importiert.",
         "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
@@ -2848,8 +2842,8 @@
         "Importierte Einladungen werden in ${ CALENDAR_APP_NAME } als einzelne Termine ohne Organisator- und Teilnehmerdetails angezeigt. Um Aktualisierungen der Termine zu erhalten und die Teilnehmer anzuzeigen, bitte den Organisator, dich über deine Proton-E-Mail-Adresse einzuladen."
       ],
       "This file contains an event invitation:": [
-        "Diese Datei enthält eine Einladung zu einem Termin:",
-        "Diese Datei enthält Einladungen zum Termin:"
+        "Diese Datei enthält eine Termineinladung:",
+        "Diese Datei enthält Termineinladungen:"
       ],
       "This file contains an invitation response:": [
         "Diese Datei enthält eine Antwort auf eine Einladung:",
@@ -2907,10 +2901,10 @@
         "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
-        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Wenn ${ bold2StepsDisabled } (Google Mail Standardeinstellungen), stellen Sie bitte sicher, dass:"
@@ -2925,10 +2919,10 @@
         "Wenn ${ bold2StepsEnabled }, stellen Sie bitte sicher, dass Ihre E-Mail-Adresse und Ihr App-Passwort korrekt sind. Verwenden Sie ${ boldNot } Ihr reguläres Passwort!"
       ],
       "IMAP access is enabled in your external account.": [
-        "Der IMAP-Zugang in deinem externen Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Der IMAP-Zugang in deinem Yahoo-Konto ist aktiviert."
+        "Der IMAP-Zugang in deinem Yahoo-Konto aktiviert ist."
       ],
       "Invalid IMAP port": [
         "Ungültiger IMAP-Port"
@@ -3061,13 +3055,13 @@
         "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+        "Um einen Kalender in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Outlook. Gehe dazu folgendermaßen vor:"
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Geh dazu folgendermaßen vor:"
+        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Gehe dazu folgendermaßen vor:"
       ]
     },
     "Import instructions emphasis": {
@@ -3163,7 +3157,7 @@
         "Keine Kontakte konnten importiert werden. Für Details klicken"
       ],
       "No event can be imported. Expand for details.": [
-        "Es konnte kein Termin importiert werden. Erweitern, um Details zu erfahren."
+        "Es konnte kein Termin importiert werden. Erweitern für Details."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
@@ -3331,10 +3325,10 @@
         "${ calendarsToBeCreated } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Erstellen eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
@@ -3621,7 +3615,7 @@
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ],
       "Support for 1 custom email domain": [
-        "Unterstützung für 1 individuelle E-Mail-Domain"
+        "Unterstützung für 1 eigene E-Mail-Domain"
       ],
       "support team": [
         "Support-Team"
@@ -3696,10 +3690,10 @@
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
       "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filterlisten"
+        "Unbegrenzt viele Ordner, Kategorien und Filterlisten"
       ],
       "Unlimited messages": [
-        "Unbegrenzte Anzahl von Nachrichten"
+        "Unbegrenzt viele Nachrichten"
       ],
       "Update recurring event": [
         "Wiederkehrenden Termin aktualisieren"
@@ -3735,13 +3729,13 @@
         "Möchtest du die Antwort für alle Termine in dieser Serie ändern?"
       ],
       "Would you like to continue anyway?": [
-        "Möchtest du dennoch fortfahren?"
+        "Möchtest du trotzdem fortfahren?"
       ],
       "Would you like to delete all the events in this series?": [
         "Möchtest du alle Termine dieser Serie löschen?"
       ],
       "Would you like to delete the event anyway?": [
-        "Möchtest du diesen Termin dennoch löschen?"
+        "Möchtest du diesen Termin trotzdem löschen?"
       ],
       "Would you like to delete this event?": [
         "Möchtest du diesen Termin löschen?"
@@ -3849,7 +3843,7 @@
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Dein Proton-Konto ist derzeit gesperrt. Um dein Konto weiterhin nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
@@ -3927,7 +3921,7 @@
         "App-Passwort"
       ],
       "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
+        "Screenshot(s) anhängen"
       ],
       "Authenticator app": [
         "Authenticator App"
@@ -4002,7 +3996,7 @@
         "E-Mail-Format"
       ],
       "Emails": [
-        "Nachrichten"
+        "E-Mails"
       ],
       "Enable Beta Access": [
         "Beta-Zugang aktivieren"
@@ -4014,7 +4008,7 @@
         "Endet"
       ],
       "Event duration": [
-        "Dauer des Termins"
+        "Termindauer"
       ],
       "Event notifications": [
         "Terminbenachrichtigungen"
@@ -4308,20 +4302,20 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kennzeichne sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }“"
       ]
     },
     "Message": {
@@ -4358,13 +4352,13 @@
     },
     "Modal for limit of calendars reached": {
       "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an persönlichen Kalendern in Ihrem Abonnement erreicht wurde."
+        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an persönlichen Kalendern in deinem Abonnement erreicht wurde."
       ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an abonnierten Kalendern innerhalb Ihres Abonnements erreicht wurde."
+        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an abonnierten Kalendern in deinem Abonnement erreicht wurde."
       ],
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Sie können keine weiteren Kalender erstellen, da die maximale Anzahl an persönlichen Kalendern innerhalb Ihres Abonnements erreicht wurde."
+        "Es konnten keine weiteren Kalender erstellt werden, da die maximale Anzahl an persönlichen Kalendern in deinem Abonnement erreicht wurde."
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4382,31 +4376,31 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        "Wie werden Kalender von einem anderem Dienst importiert"
+        "Wie du Kalender von einem anderen Dienst importierst"
       ],
       "How to import calendars from Outlook": [
-        "Wie werden Kalender von Outlook importiert"
+        "Wie du Kalender von Outlook importierst"
       ],
       "How to import calendars from Yahoo": [
-        "Wie werden Kalender von Yahoo importiert"
+        "Wie du Kalender von Yahoo importierst"
       ],
       "How to import contacts from another service": [
-        "Wie werden Kontakte von einem anderem Dienst importiert"
+        "Wie du Kontakte von einem anderen Dienst importierst"
       ],
       "How to import contacts from Outlook": [
-        "Wie werden Kontakte von Outlook importiert"
+        "Wie du Kontakte von Outlook importierst"
       ],
       "How to import contacts from Yahoo": [
-        "Wie werden Kontakte von Yahoo importiert"
+        "Wie du Kontakte von Yahoo importierst"
       ],
       "How to import emails from another service": [
-        "Wie werden E-Mails von einem anderem Dienst importiert"
+        "Wie du E-Mails von einem anderen Dienst importierst"
       ],
       "How to import emails from Outlook": [
-        "Wie werden E-Mails von Outlook importiert"
+        "Wie du E-Mails von Outlook importierst"
       ],
       "How to import emails from Yahoo": [
-        "Wie werden E-Mails von Yahoo importiert"
+        "Wie du E-Mails von Yahoo importierst"
       ],
       "Share calendar": [
         "Kalender teilen"
@@ -4810,7 +4804,7 @@
         "Kein übergeordneter Ordner"
       ],
       "This and future events": [
-        "Diese und zukünftige Termine"
+        "Dieser und zukünftige Termine"
       ],
       "This event": [
         "Dieser Termin"
@@ -4854,10 +4848,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } hat diesen Schlüssel als kompromittiert gekennzeichnet. Dieser Schlüssel kann weder für die Verschlüsselung, noch für die Signaturprüfung verwendet werden."
+        "${ emailAddress } hat diesen Schlüssel als kompromittiert markiert. Dieser Schlüssel kann weder für die Verschlüsselung, noch für die Signaturprüfung verwendet werden."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } hat diesen Schlüssel als veraltet gekennzeichnet. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
+        "${ emailAddress } hat diesen Schlüssel als veraltet markiert. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
@@ -4940,11 +4934,11 @@
         "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } von ${ totalBeDeleted } Kontakt(en) erfolgreich gelöscht.",
+        "${ model.deleted.length } von ${ totalBeDeleted } Kontakt erfolgreich gelöscht.",
         "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } von ${ totalBeMerged } Kontakt(en) erfolgreich zusammengeführt.",
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakt erfolgreich zusammengeführt.",
         "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
       ],
       "No contacts exported.": [
@@ -4983,7 +4977,7 @@
         "Pager"
       ],
       "Phone": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Work": [
         "Arbeit"
@@ -5294,7 +5288,7 @@
         "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
       ],
       "Don't miss any events": [
-        "Verpassen Sie keine Termine"
+        "Verpasse keine Termine"
       ],
       "Easily accept invites": [
         "Einladungen ganz einfach annehmen"
@@ -6038,7 +6032,7 @@
     },
     "Video control": {
       "Click to replay the video": [
-        "Klicken um das Video wiedergeben"
+        "Klicken, um das Video erneut wiederzugeben"
       ],
       "Replay video": [
         "Video erneut wiedergeben"
@@ -6113,7 +6107,7 @@
         "Dieser Import kann die derzeit in Ihrem Proton-Konto verfügbare Speicherkapazität überschreiten. Bitte prüfen Sie, ob Sie den Import anpassen können."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
+        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."

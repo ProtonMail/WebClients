@@ -287,9 +287,6 @@
       "Details": [
         "Информация"
       ],
-      "Didn't receive the code?": [
-        "Не получили код?"
-      ],
       "Discard": [
         "Отменить"
       ],
@@ -373,6 +370,9 @@
       ],
       "Filter on...": [
         "Фильтр включен..."
+      ],
+      "Fit to window": [
+        "Вписать в окне"
       ],
       "Font": [
         "Шрифт"
@@ -779,6 +779,9 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Resend code": [
+        "Повторно отправить код"
+      ],
       "Reset": [
         "Сбросить"
       ],
@@ -787,9 +790,6 @@
       ],
       "Reset to default": [
         "Сбросить к умолчанию"
-      ],
-      "Reset zoom": [
-        "Сбросить масштаб"
       ],
       "Resume": [
         "Возобновить"
@@ -1030,9 +1030,6 @@
       ],
       "Verify account": [
         "Подтвердить аккаунт"
-      ],
-      "Verify email": [
-        "Подтвердить эл. почту"
       ],
       "View": [
         "Посмотреть"
@@ -5534,6 +5531,9 @@
       "Using SimpleLogin is easy": [
         "Использовать SimpleLogin просто"
       ],
+      "Verified Proton message": [
+        "Проверенное сообщение Proton"
+      ],
       "Version ${ appVersion }": [
         "Версия ${ appVersion }"
       ],
@@ -8260,9 +8260,6 @@
         "${ emailsCount } участника",
         "${ emailsCount } участников",
         "${ emailsCount } участника"
-      ],
-      "${ unreads } unread message": [
-        "${ unreads } непрочитанное сообщение"
       ],
       "Account suspended": [
         "Аккаунт отключен"
