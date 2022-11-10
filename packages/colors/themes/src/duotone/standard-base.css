@@ -48,11 +48,6 @@
     --optional-scrollbar-thumb-color: #d1cfcd;
     --optional-scrollbar-thumb-hover-color: #c2bfbc;
 
-    /* Reset because prominent part overrides those colors */
-    --optional-link-norm: initial;
-    --optional-link-hover: initial;
-    --optional-link-active: initial;
-
     --optional-main-border-color: transparent;
 
     --optional-email-item-read-background-color: #F8F8F6;
@@ -61,7 +56,10 @@
     --optional-email-item-selected-icon-background-color: var(--interaction-norm-major-3);
 
     /* Reset because prominent part overrides those colors */
+    --optional-link-norm: initial;
+    --optional-link-hover: initial;
+    --optional-link-active: initial;
     --optional-mini-calendar-today-color: initial;
-
-    --optional-logo-icon-text-color: #6d4aff;
+    --optional-logo-text-proton-color: initial;
+    --optional-logo-text-product-color: initial;
 }
