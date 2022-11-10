@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } er tilgængelig."
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
       ],
@@ -173,17 +170,11 @@
       "Create": [
         "Opret"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Opret en sikker ${ MAIL_APP_NAME }-adresse i stedet"
-      ],
       "Create account": [
         "Opret konto"
       ],
       "Create accounts": [
         "Opret konti"
-      ],
-      "Create address": [
-        "Opret adresse"
       ],
       "Create calendar": [
         "Opret kalender"
@@ -237,9 +228,6 @@
         "Detaljer"
       ],
       "Didn't receive a code?": [
-        "Ikke modtaget koden?"
-      ],
-      "Didn't receive the code?": [
         "Ikke modtaget koden?"
       ],
       "Disable": [
@@ -578,9 +566,6 @@
       "Reset to default": [
         "Nulstil til standard"
       ],
-      "Reset zoom": [
-        "Nulstil zoom"
-      ],
       "Restore administrator privileges": [
         "Gendan administratorprivilegier"
       ],
@@ -785,9 +770,6 @@
       "Use recovery code": [
         "Brug gendannelseskode"
       ],
-      "Use your current email address instead": [
-        "Brug din aktuelle e-mailadresse i stedet"
-      ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
       ],
@@ -799,9 +781,6 @@
       ],
       "Verify account": [
         "Verificer konto"
-      ],
-      "Verify email": [
-        "Verificer e-mail"
       ],
       "View": [
         "Vis"
@@ -3775,9 +3754,6 @@
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Du vil bruge denne e-mailadresse til at logge på alle ${ BRAND_NAME } tjenester."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "${ vpnBasic }, ${ vpnPlus } eller ${ visionary } kræves til forbindelse på landeniveau."
       ],
@@ -4534,9 +4510,6 @@
       "of": [
         "af"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Én konto til alle ${ BRAND_NAME }-tjenester."
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
@@ -5245,9 +5218,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Din Proton-konto er suspenderet. For at fortsætte med at bruge din konto skal du betale eventuelle forfaldne fakturaer."
       ],
-      "Your recovery email address:": [
-        "Din e-mailadresse til gendannelse:"
-      ],
       "Your recovery phrase": [
         "Din gendannelsessætning"
       ],
@@ -5650,9 +5620,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } af ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME }-adresse"
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } sidefod"
@@ -6967,17 +6934,17 @@
         "Support"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
+      ]
+    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
-      ]
-    },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -8370,9 +8337,6 @@
       "Couldn’t create accounts": [
         "Kunne ikke oprette konti"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Opret en ${ MAIL_APP_NAME }-adresse"
-      ],
       "Create calendar": [
         "Opret kalender"
       ],
@@ -8926,9 +8890,6 @@
       ],
       "You already have a Proton account": [
         "Du har allerede en Proton-konto"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Din ${ MAIL_APP_NAME }-adresse"
       ],
       "Your calendar link": [
         "Dit kalenderlink"

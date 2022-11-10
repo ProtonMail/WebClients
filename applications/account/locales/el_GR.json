@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } είναι διαθέσιμη."
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
       ],
@@ -170,14 +167,8 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Εναλλακτικά, δημιουργήστε μια διασφαλισμένη διεύθυνση ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Δημιουργία λογαριασμού"
-      ],
-      "Create address": [
-        "Δημιουργία διεύθυνσης"
       ],
       "Create calendar": [
         "Δημιουργία ημερολογίου"
@@ -229,9 +220,6 @@
       ],
       "Didn't receive a code?": [
         "Δεν λάβατε κωδικό;"
-      ],
-      "Didn't receive the code?": [
-        "Δεν λάβατε τον κωδικό;"
       ],
       "Disable": [
         "Απενεργοποίηση"
@@ -554,9 +542,6 @@
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
       ],
-      "Reset zoom": [
-        "Επαναφορά μεγέθυνσης"
-      ],
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
@@ -743,9 +728,6 @@
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
-      "Use your current email address instead": [
-        "Εναλλακτικά, χρησιμοποιήστε την τρέχουσα διεύθυνσή σας"
-      ],
       "Use “${ label }” setting": [
         "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
       ],
@@ -757,9 +739,6 @@
       ],
       "Verify account": [
         "Επαλήθευση λογαριασμού"
-      ],
-      "Verify email": [
-        "Επαλήθευση ηλ. διεύθυνσης"
       ],
       "View": [
         "Προβολή"
@@ -3626,9 +3605,6 @@
       "${ storageSize } storage": [
         "${ storageSize } αποθηκευτικός χώρος"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Θα χρησιμοποιείτε αυτήν τη διεύθυνση για να εισέρχεστε σε όλες τις υπηρεσίες του ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Για σύνδεση επιπέδου Χώρας, απαιτείται ${ vpnBasic }, ${ vpnPlus } ή ${ visionary }."
       ],
@@ -4331,9 +4307,6 @@
       "of": [
         "από"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Ένας λογαριασμός για όλες τις υπηρεσίες ${ BRAND_NAME }."
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
@@ -4971,9 +4944,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ],
-      "Your recovery email address:": [
-        "Η διεύθυνση email ανάκτησης:"
-      ],
       "Your recovery phrase": [
         "Η φράση ανάκτησής σας"
       ],
@@ -5373,9 +5343,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } από ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Διεύθυνση ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
         "Υποσέλιδο ${ MAIL_APP_NAME }"
@@ -6784,6 +6751,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6802,17 +6780,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

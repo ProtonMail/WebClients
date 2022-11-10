@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } je dostupna."
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } predstavljanje"
       ],
@@ -155,9 +152,6 @@
       "Create": [
         "Stvori"
       ],
-      "Create address": [
-        "Stvori adresu"
-      ],
       "Create folder": [
         "Stvori mapu"
       ],
@@ -196,9 +190,6 @@
       ],
       "Didn't receive a code?": [
         "Niste primili kôd?"
-      ],
-      "Didn't receive the code?": [
-        "Niste primili kod?"
       ],
       "Disable": [
         "Onemogući"
@@ -440,9 +431,6 @@
       "Reset to default": [
         "Vrati na zadane postavke"
       ],
-      "Reset zoom": [
-        "Poništi zumiranje"
-      ],
       "Restore administrator privileges": [
         "Vraćanje administratorskih ovlasti"
       ],
@@ -607,9 +595,6 @@
       ],
       "Verify account": [
         "Potvrdi račun"
-      ],
-      "Verify email": [
-        "Potvrdi email"
       ],
       "View": [
         "Pregled"
@@ -2070,9 +2055,6 @@
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Ovu ćete adresu e-pošte koristiti za prijavu u sve ${ BRAND_NAME } usluge."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
@@ -2819,9 +2801,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
-      ],
-      "Your recovery email address:": [
-        "Vaša adresa e-pošte za oporavak:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."

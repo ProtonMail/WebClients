@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } està disponible."
-      ],
       "${ BRAND_NAME } introduction": [
         "Introducció a ${ BRAND_NAME }"
       ],
@@ -130,6 +127,9 @@
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
       ],
+      "Claim it": [
+        "Reclameu-la"
+      ],
       "Clear all formatting": [
         "Esborra tot el format"
       ],
@@ -184,9 +184,6 @@
       "Create account": [
         "Crea un compte"
       ],
-      "Create address": [
-        "Crear una adreça"
-      ],
       "Create calendar": [
         "Crear calendari"
       ],
@@ -198,6 +195,9 @@
       ],
       "Create link": [
         "Crear enllaç"
+      ],
+      "Create your own": [
+        "Crea'n una de pròpia"
       ],
       "Current plan": [
         "Pla actual"
@@ -237,9 +237,6 @@
       ],
       "Didn't receive a code?": [
         "No heu rebut un codi?"
-      ],
-      "Didn't receive the code?": [
-        "No heu rebut el codi?"
       ],
       "Disable": [
         "Desactiva"
@@ -325,6 +322,9 @@
       "Extend": [
         "Amplia"
       ],
+      "Fit to window": [
+        "Ajusta a la finestra"
+      ],
       "Font": [
         "Font"
       ],
@@ -339,6 +339,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Obté una nova adreça de correu xifrada"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
@@ -538,6 +541,9 @@
       "Request new code": [
         "Demana un nou codi"
       ],
+      "Resend code": [
+        "Reenvia codi"
+      ],
       "Reset credentials": [
         "Restaurar credencials"
       ],
@@ -552,9 +558,6 @@
       ],
       "Reset to default": [
         "Restableix els valors per defecte"
-      ],
-      "Reset zoom": [
-        "Restablir zoom"
       ],
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
@@ -751,6 +754,9 @@
       "Use recovery code": [
         "Utilitzar un codi de recuperació"
       ],
+      "Use your current email instead": [
+        "Utilitza l'adreça actual"
+      ],
       "Use “${ label }” setting": [
         "Utilitza la configuració \"${ label }\""
       ],
@@ -762,9 +768,6 @@
       ],
       "Verify account": [
         "Verifiqueu el compte"
-      ],
-      "Verify email": [
-        "Verifiqueu el correu electrònic"
       ],
       "View": [
         "Mostra"
@@ -2592,9 +2595,6 @@
       "Process aborted": [
         "Procés anul·lat"
       ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Destinatari duplicat eliminat: ${ joinedRecipients }"
-      ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
@@ -2746,9 +2746,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
@@ -3250,9 +3247,6 @@
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Esdeveniment importat amb èxit. L’esdeveniment importat ara apareixerà al vostre calendari."
       ]
     },
     "Import calendar warning": {
@@ -3578,9 +3572,6 @@
       ],
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
-      ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Utilitzareu aquesta adreça de correu electrònic per accedir a tots els serveis de ${ BRAND_NAME }."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -3923,6 +3914,12 @@
       ],
       "free up space by deleting older messages or other data": [
         "allibereu espai suprimint missatges antics o altres dades"
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Obteniu una adreça ${ BRAND_NAME } per utilitzar tots els serveis ${ BRAND_NAME } inclosos Mail i Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Obté la meva adreça ${ BRAND_NAME }"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dóna la teva clau pública als teus amics o publica-la en línia perquè tothom et pugui enviar un missatge de correu electrònic xifrat de punta a punta!"
@@ -4536,6 +4533,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quan la vostra subscripció es renovi, utilitzarem els crèdits disponibles abans de fer un càrrec al mètode de pagament anterior."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Amb una adreça de correu xifrada ${ BRAND_NAME } , pots utilitzar tots els serveis ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
       ],
@@ -4655,9 +4655,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
-      ],
-      "Your recovery email address:": [
-        "La vostra adreça de correu electrònic de recuperació:"
       ],
       "Your recovery phrase": [
         "La vostra frase de recuperació"
@@ -5043,9 +5040,6 @@
       ],
       " and ${ l }": [
         " i ${ l }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Adreça de ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
         "Peu de text de ${ MAIL_APP_NAME }"
@@ -7447,11 +7441,11 @@
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Crea una adreça de ${ MAIL_APP_NAME }"
-      ],
       "Create calendar": [
         "Crear calendari"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Creeu la vostra adreça ${ BRAND_NAME }"
       ],
       "Credentials": [
         "Credencials"
@@ -7936,6 +7930,9 @@
       ],
       "Verification": [
         "Verificació"
+      ],
+      "Verify email address": [
+        "Verifiqueu l'adreça electrònica"
       ],
       "VPN apps": [
         "Aplicacions VPN"
