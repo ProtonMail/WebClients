@@ -1,7 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
-import { SimpleMap } from '../interfaces';
-import { EncryptPartResult, SignPartResult } from '../interfaces/calendar';
+import { SimpleMap } from '../../interfaces';
+import { EncryptPartResult, SignPartResult } from '../../interfaces/calendar';
 
 export function signPart(dataToSign: string, signingKey: PrivateKeyReference): Promise<SignPartResult>;
 export function signPart(

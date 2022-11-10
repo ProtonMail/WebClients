@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
+import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';

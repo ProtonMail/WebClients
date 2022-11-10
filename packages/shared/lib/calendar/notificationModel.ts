@@ -1,6 +1,6 @@
 import { NotificationModel, VcalDurationValue } from '../interfaces/calendar';
+import { normalizeRelativeTrigger, transformBeforeAt } from './alarms/trigger';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
-import { normalizeRelativeTrigger, transformBeforeAt } from './trigger';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
 

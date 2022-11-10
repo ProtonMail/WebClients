@@ -31,8 +31,8 @@ import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEven
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { withNormalizedAuthors } from '../author';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
-import { getTimezonedFrequencyString } from '../integration/getFrequencyString';
 import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
+import { getTimezonedFrequencyString } from '../recurrence/getFrequencyString';
 import { fromRruleString } from '../vcal';
 import { getDateProperty } from '../vcalConverter';
 import { withSummary } from '../veventHelper';

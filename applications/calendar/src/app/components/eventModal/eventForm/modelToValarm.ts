@@ -1,5 +1,5 @@
+import { getValarmTrigger } from '@proton/shared/lib/calendar/alarms/getValarmTrigger';
 import { SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
-import { getValarmTrigger } from '@proton/shared/lib/calendar/getValarmTrigger';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 import { VcalValarmComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 

@@ -1,9 +1,9 @@
+import { getValarmTrigger } from '@proton/shared/lib/calendar/alarms/getValarmTrigger';
 import {
     NOTIFICATION_UNITS,
     NOTIFICATION_WHEN,
     SETTINGS_NOTIFICATION_TYPE,
 } from '@proton/shared/lib/calendar/constants';
-import { getValarmTrigger } from '@proton/shared/lib/calendar/getValarmTrigger';
 import { toTriggerString } from '@proton/shared/lib/calendar/vcal';
 
 const { DEVICE } = SETTINGS_NOTIFICATION_TYPE;

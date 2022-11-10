@@ -1,9 +1,9 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 
-import { base64StringToUint8Array } from '../helpers/encoding';
-import { CalendarEventData } from '../interfaces/calendar';
-import { SimpleMap } from '../interfaces/utils';
-import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from './constants';
+import { base64StringToUint8Array } from '../../helpers/encoding';
+import { CalendarEventData } from '../../interfaces/calendar';
+import { SimpleMap } from '../../interfaces/utils';
+import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
 
 export const getEventVerificationStatus = (status: VERIFICATION_STATUS | undefined, hasPublicKeys: boolean) => {
     if (!hasPublicKeys || status === undefined) {

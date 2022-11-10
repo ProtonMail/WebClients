@@ -1,4 +1,4 @@
-import { getIsRruleSubset } from '@proton/shared/lib/calendar/rruleSubset';
+import { getIsRruleSubset } from '@proton/shared/lib/calendar/recurrence/rruleSubset';
 import { getHasModifiedDateTimes } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';

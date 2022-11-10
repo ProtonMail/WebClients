@@ -13,7 +13,7 @@ import {
     generateEmailBody,
     generateVtimezonesComponents,
     getParticipantHasAddressID,
-} from '@proton/shared/lib/calendar/integration/invite';
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';

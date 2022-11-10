@@ -12,9 +12,8 @@ import {
     VcalRrulePropertyValue,
 } from '../../interfaces/calendar/VcalModel';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
-import { getPositiveSetpos } from '../helper';
-import { getIsRruleCustom, getIsRruleSimple } from '../rrule';
 import { getPropertyTzid } from '../vcalHelper';
+import { getIsRruleCustom, getIsRruleSimple, getPositiveSetpos } from './rrule';
 import { getEndType, getMonthType, getUntilDate, getWeeklyDays } from './rruleProperties';
 
 interface RruleEnd {

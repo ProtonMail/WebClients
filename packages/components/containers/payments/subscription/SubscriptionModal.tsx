@@ -4,10 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
-import {
-    getShouldCalendarPreventSubscripitionChange,
-    willHavePaidMail,
-} from '@proton/shared/lib/calendar/subscription';
+import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
