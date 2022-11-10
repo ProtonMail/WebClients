@@ -1,13 +1,17 @@
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
-    'div.gmail_quote', // Gmail
+    // Gmail creates both div.gmail_quote and blockquote.gmail_quote. The div
+    // version marks text but does not cause indentation, but both should be
+    // considered quoted text.
+    '.gmail_quote', // Gmail
     'div.gmail_extra', // Gmail
     'div.yahoo_quoted', // Yahoo Mail
-    '.iosymail', // Yahoo iOS Mail
+    'blockquote.iosymail', // Yahoo iOS Mail
     '.tutanota_quote', // Tutanota Mail
     '.zmail_extra', // Zoho
     '.skiff_quote', // Skiff Mail
-    'div[id="divRplyFwdMsg"]', // Outlook Mail
+    '#divRplyFwdMsg', // Outlook Mail
+    '#3D"divRplyFwdMsg"', // Office365
     'hr[id=replySplit]',
     '.moz-cite-prefix',
     'div[id=isForwardContent]',
