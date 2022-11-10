@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms';
-import { CreateNotificationOptions, InlineLinkButton, useNotifications } from '@proton/components';
+import { CreateNotificationOptions, NotificationButton, useNotifications } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';
@@ -21,12 +21,19 @@ export const Basic = () => {
         createNotification(options);
     };
 
-    const notificationWithButton = (
+    const defaultWithAction = (
         <>
-            <span className="mr1">Text goes here</span>
-            <InlineLinkButton onClick={undefined} disabled={false}>
-                Label
-            </InlineLinkButton>
+            <span>I've done the thing</span>
+            <NotificationButton onClick={undefined}>Undo</NotificationButton>
+        </>
+    );
+
+    const warningWithAction = (
+        <>
+            <span>Oh no, not again</span>
+            <NotificationButton notificationType="warning" onClick={undefined}>
+                Edit
+            </NotificationButton>
         </>
     );
 
@@ -36,33 +43,67 @@ export const Basic = () => {
                 color="success"
                 onClick={handleClick({
                     type: 'success',
-                    text: 'You did it! very very very long text goas here You did it! very very very long text goas here',
+                    text: 'You did it',
                 })}
                 className="mr1 mb1"
             >
-                Success
+                Default notification
+            </Button>
+            <Button color="info" onClick={handleClick({ type: 'info', text: defaultWithAction })} className="mr1 mb1">
+                Default with action
             </Button>
             <Button
                 color="info"
-                onClick={handleClick({ type: 'info', text: notificationWithButton })}
+                onClick={handleClick({ type: 'info', text: 'whoop', showCloseButton: false })}
                 className="mr1 mb1"
             >
-                Info
+                Default without close button
             </Button>
+            <Button
+                color="info"
+                onClick={handleClick({ type: 'info', text: defaultWithAction, showCloseButton: false })}
+                className="mr1 mb1"
+            >
+                Default without close button but with an action
+            </Button>
+
             <Button
                 color="warning"
                 onClick={handleClick({
                     type: 'warning',
-                    text: 'Look, another icon',
-                    showCloseButton: false,
-                    icon: 'alias',
+                    text: 'Uh oh',
                 })}
                 className="mr1 mb1"
             >
-                Warning
+                Default warning
             </Button>
-            <Button color="danger" onClick={handleClick({ type: 'error', text: 'Uh oh!' })} className="mr1 mb1">
-                Error
+            <Button
+                color="warning"
+                onClick={handleClick({ type: 'warning', text: warningWithAction })}
+                className="mr1 mb1"
+            >
+                Warning with action
+            </Button>
+            <Button
+                color="warning"
+                onClick={handleClick({ type: 'warning', text: 'Dammit', showCloseButton: false })}
+                className="mr1 mb1"
+            >
+                Warning without close button
+            </Button>
+            <Button
+                color="warning"
+                onClick={handleClick({ type: 'warning', text: warningWithAction, showCloseButton: false })}
+                className="mr1 mb1"
+            >
+                Warning without close button but with an action
+            </Button>
+            <Button
+                color="warning"
+                onClick={handleClick({ type: 'warning', text: 'Surprise icon', icon: 'credit-card' })}
+                className="mr1 mb1"
+            >
+                Warning with different icon
             </Button>
         </div>
     );
