@@ -3,10 +3,11 @@ export const BLOCKQUOTE_SELECTORS = [
     'div.gmail_quote', // Gmail
     'div.gmail_extra', // Gmail
     'div.yahoo_quoted', // Yahoo Mail
+    '.iosymail', // Yahoo iOS Mail
     '.tutanota_quote', // Tutanota Mail
     '.zmail_extra', // Zoho
     '.skiff_quote', // Skiff Mail
-    'div[id="3D\\"divRplyFwdMsg\\""]', // Outlook Mail
+    'div[id="divRplyFwdMsg"]', // Outlook Mail
     'hr[id=replySplit]',
     '.moz-cite-prefix',
     'div[id=isForwardContent]',
