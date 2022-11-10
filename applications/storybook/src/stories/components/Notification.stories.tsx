@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms';
-import { CreateNotificationOptions, useNotifications } from '@proton/components';
+import { CreateNotificationOptions, InlineLinkButton, useNotifications } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';
@@ -21,17 +21,42 @@ export const Basic = () => {
         createNotification(options);
     };
 
+    const notificationWithButton = (
+        <>
+            <span className="mr1">Text goes here</span>
+            <InlineLinkButton onClick={undefined} disabled={false}>
+                Label
+            </InlineLinkButton>
+        </>
+    );
+
     return (
         <div>
-            <Button color="success" onClick={handleClick({ type: 'success', text: 'You did it!' })} className="mr1 mb1">
+            <Button
+                color="success"
+                onClick={handleClick({
+                    type: 'success',
+                    text: 'You did it! very very very long text goas here You did it! very very very long text goas here',
+                })}
+                className="mr1 mb1"
+            >
                 Success
             </Button>
-            <Button color="info" onClick={handleClick({ type: 'info', text: 'Did you know?' })} className="mr1 mb1">
+            <Button
+                color="info"
+                onClick={handleClick({ type: 'info', text: notificationWithButton })}
+                className="mr1 mb1"
+            >
                 Info
             </Button>
             <Button
                 color="warning"
-                onClick={handleClick({ type: 'warning', text: 'Careful now!' })}
+                onClick={handleClick({
+                    type: 'warning',
+                    text: 'Look, another icon',
+                    showCloseButton: false,
+                    icon: 'alias',
+                })}
                 className="mr1 mb1"
             >
                 Warning

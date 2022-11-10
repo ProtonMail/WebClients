@@ -1,13 +1,16 @@
 import { AnimationEvent, MouseEvent, ReactNode } from 'react';
 
+import { Button } from '@proton/atoms';
+import { Icon, IconName } from '@proton/components/components';
+
 import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
 
 const TYPES_CLASS = {
-    error: 'bg-danger',
-    warning: 'bg-warning',
-    info: 'bg-info',
-    success: 'bg-success',
+    error: 'notification--error',
+    warning: 'notification--warning',
+    info: 'notification--info',
+    success: 'notification--success',
 };
 
 const CLASSES = {
@@ -26,10 +29,12 @@ interface Props {
     type: NotificationType;
     isClosing: boolean;
     onExit: () => void;
-    onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+    onClick?: (e: MouseEvent<HTMLElement>) => void;
+    showCloseButton?: boolean;
+    icon?: IconName;
 }
 
-const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => {
+const Notification = ({ children, type, isClosing, onClick, onExit, showCloseButton, icon }: Props) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
         if (animationName === ANIMATIONS.NOTIFICATION_OUT && isClosing) {
             onExit();
@@ -41,18 +46,31 @@ const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => 
             aria-atomic="true"
             role="alert"
             className={classnames([
-                'p1',
-                'mb0-5',
                 'text-break',
                 CLASSES.NOTIFICATION,
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
                 isClosing && CLASSES.NOTIFICATION_OUT,
             ])}
-            onClick={onClick}
             onAnimationEnd={handleAnimationEnd}
         >
-            {children}
+            {icon && <Icon name={icon} className="notification__icon" />}
+            <span className="notification__text">{children}</span>
+            {showCloseButton && (
+                <span className="notification__action">
+                    {/* Placeholder */}
+                    {/* <Button shape={type == 'info' || type == 'success' ? 'ghost' : 'solid'} color={type == 'info' || type == 'success' ? 'weak' : 'danger'} size="small" onClick={onClick} className="text-bold">Edit</Button> */}
+                    <Button
+                        shape={type == 'info' || type == 'success' ? 'ghost' : 'solid'}
+                        color={type == 'info' || type == 'success' ? 'weak' : 'danger'}
+                        size="small"
+                        icon
+                        onClick={onClick}
+                    >
+                        <Icon name="cross" />
+                    </Button>
+                </span>
+            )}
         </div>
     );
 };

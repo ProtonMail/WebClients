@@ -1,9 +1,10 @@
 .notifications-container {
 	position: fixed;
-	inset-block-start: 1em;
+	inset-block-end: 1em;
 	inset-inline-start: 50%;
 	z-index: $layer-notifications;
 	transform: translateX(-50%);
+	transition: all 1s ease;
 
 	@at-root {
 		[dir='rtl'] & {
@@ -19,58 +20,92 @@
 		[class*='notification-'] {
 			transform: none;
 			inset-inline: 1em;
-			inline-size: calc(100% - 2em);
 		}
 	}
 }
 
-[class*='notification-'] {
-	display: block;
+.notification {
+	display: flex;
+	align-items: center;
+	gap: em(8);
 	overflow: hidden;
 	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow-lifted);
-}
+	background-color: var(--background-invert);
+	color: var(--text-invert);
+	inline-size: auto;
+	max-inline-size: max(400px, calc(100% - 2em));
+	margin-block-end: 0.5em;
+	transition: all 0.3s ease;
+	padding-block: em(8);
+	padding-inline: em(12);
 
-.notification {
+	.button {
+		--button-default-text-color: inherit;
+		--button-hover-text-color: inherit;
+		--button-active-text-color: inherit;
+	}
+
+	&__icon {
+		margin-inline-start: em(-3);
+	}
+
+	&__action {
+		display: flex;
+		gap: em(2);
+		flex-shrink: 0;
+		margin-block: em(-4);
+		margin-inline-end: em(-8);
+	}
+
 	&--in {
-		animation-duration: 1s;
+		animation-duration: 0.3s;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease;
 		animation-name: anime-notification-in;
+		transform-origin: top center;
 	}
 
 	&--out {
-		animation-duration: 1s;
+		animation-duration: 0.3s;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease;
 		animation-name: anime-notification-out;
+		transform-origin: bottom center;
+	}
+
+	&--error,
+	&--warning {
+		background-color: var(--signal-danger);
+		color: var(--signal-danger-contrast);
 	}
 }
 
 @keyframes anime-notification-in {
 	0% {
 		opacity: 0;
-		transform: translateY(-50px);
+		transform: translateY(50%);
+		margin-block-end: 0;
+		block-size: 0;
 	}
 
 	100% {
 		opacity: 1;
 		transform: translateY(0);
+		margin-block-end: 0.5em;
+		block-size: calc(var(--height) * 1px);
 	}
 }
 
 @keyframes anime-notification-out {
 	0% {
 		opacity: 1;
-		transform: scale(1);
+		transform: translateY(0);
 	}
 
 	100% {
 		opacity: 0;
-		transform: scale(0);
-		max-block-size: 0;
-		padding: 0;
-		margin-block-end: 0;
+		transform: translateY(-50%);
 	}
 }
 
