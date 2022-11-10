@@ -41,6 +41,7 @@ export const VERIFY_APP_NAME = 'Proton Verify';
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
     PROTONACCOUNTLITE: 'proton-account-lite',
+    PROTONVPNBROWSEREXTENSION: 'proton-vpn-browser-extension',
     PROTONMAIL: 'proton-mail',
     PROTONCONTACTS: 'proton-contacts',
     PROTONDRIVE: 'proton-drive',
@@ -68,6 +69,15 @@ export const APPS_CONFIGURATION = {
         clientID: 'web-account-lite',
         icon: 'brand-proton',
         settingsSlug: 'account',
+    },
+    [APPS.PROTONVPNBROWSEREXTENSION]: {
+        publicPath: '',
+        subdomain: '',
+        name: 'Proton VPN Browser Extension',
+        bareName: 'Browser VPN Extension',
+        clientID: 'browser-vpn',
+        icon: 'brand-proton-vpn',
+        settingsSlug: '',
     },
     [APPS.PROTONMAIL]: {
         publicPath: '',
@@ -884,11 +894,19 @@ export const OPENPGP =
         : WEBPACK_OPENPGP;
 
 export const FORKABLE_APPS = new Set(
-    [APPS.PROTONMAIL, APPS.PROTONCONTACTS, APPS.PROTONDRIVE, APPS.PROTONCALENDAR, APPS.PROTONEXTENSION].filter(Boolean)
+    [
+        APPS.PROTONMAIL,
+        APPS.PROTONCONTACTS,
+        APPS.PROTONDRIVE,
+        APPS.PROTONCALENDAR,
+        APPS.PROTONEXTENSION,
+        APPS.PROTONVPNBROWSEREXTENSION,
+    ].filter(Boolean)
 );
 
 export const EXTENSIONS = {
     [APPS.PROTONEXTENSION]: { ID: 'damclcigmmkebnbppkmjpnmambblleon' },
+    [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'dcdfibmpfdhihdhfmihgejaedilieoho' },
 } as const;
 
 export const AES256 = 'aes256';
