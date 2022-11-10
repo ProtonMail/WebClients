@@ -1,7 +1,6 @@
 import { AnimationEvent, MouseEvent, ReactNode } from 'react';
 
-import { Button } from '@proton/atoms';
-import { Icon, IconName } from '@proton/components/components';
+import { Icon, IconName, NotificationButton } from '@proton/components/components';
 
 import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
@@ -46,7 +45,6 @@ const Notification = ({ children, type, isClosing, onClick, onExit, showCloseBut
             aria-atomic="true"
             role="alert"
             className={classnames([
-                'text-break',
                 CLASSES.NOTIFICATION,
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
@@ -55,21 +53,16 @@ const Notification = ({ children, type, isClosing, onClick, onExit, showCloseBut
             onAnimationEnd={handleAnimationEnd}
         >
             {icon && <Icon name={icon} className="notification__icon" />}
-            <span className="notification__text">{children}</span>
+            <span className="notification__content">{children}</span>
             {showCloseButton && (
-                <span className="notification__action">
-                    {/* Placeholder */}
-                    {/* <Button shape={type == 'info' || type == 'success' ? 'ghost' : 'solid'} color={type == 'info' || type == 'success' ? 'weak' : 'danger'} size="small" onClick={onClick} className="text-bold">Edit</Button> */}
-                    <Button
-                        shape={type == 'info' || type == 'success' ? 'ghost' : 'solid'}
-                        color={type == 'info' || type == 'success' ? 'weak' : 'danger'}
-                        size="small"
-                        icon
-                        onClick={onClick}
-                    >
-                        <Icon name="cross" />
-                    </Button>
-                </span>
+                <NotificationButton
+                    notificationType={type == 'error' || type == 'warning' ? 'warning' : undefined}
+                    icon
+                    onClick={onClick}
+                    className="notification__close-button"
+                >
+                    <Icon name="cross" />
+                </NotificationButton>
             )}
         </div>
     );

@@ -27,7 +27,6 @@
 .notification {
 	display: flex;
 	align-items: center;
-	gap: em(8);
 	overflow: hidden;
 	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow-lifted);
@@ -44,18 +43,54 @@
 		--button-default-text-color: inherit;
 		--button-hover-text-color: inherit;
 		--button-active-text-color: inherit;
+
+		margin-block: em(-6);
 	}
 
 	&__icon {
-		margin-inline-start: em(-3);
+		margin-inline: em(-3) em(8);
 	}
 
-	&__action {
+	&__content {
 		display: flex;
-		gap: em(2);
+
+		&:last-child:not(:only-child) {
+			margin-inline-end: em(-2);
+		}
+
+		&:last-child:nth-child(2):has(.button) {
+			margin-inline-end: em(0);
+		}
+
+		&:not(:only-child),
+		&:has(:not(.button):last-child) {
+			margin-inline-end: em(6);
+		}
+
+		.button {
+			white-space: nowrap;
+			align-self: center;
+
+			&:last-child {
+				margin-inline-start: em(8);
+				margin-inline-end: em(-8);
+			}
+
+			&:nth-last-child(2) {
+				margin-inline-start: em(8);
+			}
+		}
+
+		// spacing between two buttons
+		.button + .button {
+			margin-inline-start: em(2);
+		}
+	}
+
+	&__close-button {
 		flex-shrink: 0;
-		margin-block: em(-4);
 		margin-inline-end: em(-8);
+		margin-inline-start: em(2);
 	}
 
 	&--in {
