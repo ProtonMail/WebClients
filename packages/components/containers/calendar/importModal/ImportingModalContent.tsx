@@ -13,7 +13,7 @@ import {
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
-import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';
+import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import {
     EncryptedEvent,
     IMPORT_STEPS,

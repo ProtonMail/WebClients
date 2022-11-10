@@ -5,7 +5,7 @@ import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import { Api } from '../../interfaces';
 import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
 import { getPrimaryCalendarKey } from '../../keys/calendarKeys';
-import { getEncryptedSessionKey } from '../encrypt';
+import { getEncryptedSessionKey } from '../crypto/encrypt';
 
 export const reencryptCalendarSharedEvent = async ({
     calendarEvent,

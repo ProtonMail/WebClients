@@ -3,7 +3,10 @@ import {
     ICAL_ATTENDEE_STATUS,
     RECURRING_TYPES,
 } from '@proton/shared/lib/calendar/constants';
-import { getHasNonCancelledSingleEdits, getMustResetPartstat } from '@proton/shared/lib/calendar/integration/invite';
+import {
+    getHasNonCancelledSingleEdits,
+    getMustResetPartstat,
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 

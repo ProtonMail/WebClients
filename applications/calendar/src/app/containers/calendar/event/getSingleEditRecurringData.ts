@@ -1,4 +1,4 @@
-import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
+import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';

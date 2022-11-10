@@ -13,8 +13,8 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getSupportedEvent, withSupportedDtstamp } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/integration/invite';
-import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
+import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,

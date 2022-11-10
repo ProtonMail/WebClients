@@ -22,7 +22,7 @@ import {
     getAggregatedEventVerificationStatus,
     getDecryptedSessionKey,
     verifySignedCard,
-} from './decrypt';
+} from './crypto/decrypt';
 import { unwrap } from './helper';
 import { parse } from './vcal';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';

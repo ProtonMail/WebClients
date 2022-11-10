@@ -1,7 +1,7 @@
-import { omit } from '../helpers/object';
-import { VcalDays, VcalRrulePropertyValue, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
-import { FREQUENCY } from './constants';
-import { numericDayToDay } from './vcalConverter';
+import { omit } from '../../helpers/object';
+import { VcalDays, VcalRrulePropertyValue, VcalVeventComponent } from '../../interfaces/calendar/VcalModel';
+import { FREQUENCY } from '../constants';
+import { numericDayToDay } from '../vcalConverter';
 
 /**
  * WKST is significant when a WEEKLY "RRULE" has an interval greater than 1,

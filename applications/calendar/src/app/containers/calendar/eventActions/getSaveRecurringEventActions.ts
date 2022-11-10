@@ -1,7 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
+import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';

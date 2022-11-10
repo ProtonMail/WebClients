@@ -2,21 +2,22 @@ import { useCallback } from 'react';
 
 import { serverTime } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
+import { getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getBase64SharedSessionKey, getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
 import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
-import { ADD_EVENT_ERROR_TYPE, AddAttendeeError } from '@proton/shared/lib/calendar/integration/AddAttendeeError';
-import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
+import { ADD_EVENT_ERROR_TYPE, AddAttendeeError } from '@proton/shared/lib/calendar/mailIntegration/AddAttendeeError';
 import {
     createInviteIcs,
     generateEmailBody,
     generateEmailSubject,
     generateVtimezonesComponents,
     getIcsMessageWithPreferences,
-} from '@proton/shared/lib/calendar/integration/invite';
-import { createCalendarEvent, getHasSharedEventContent } from '@proton/shared/lib/calendar/serialize';
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
-import { getBase64SharedSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import {

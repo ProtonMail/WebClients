@@ -56,12 +56,13 @@ import {
     RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
-import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/integration/invite';
+import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { getSharedSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';

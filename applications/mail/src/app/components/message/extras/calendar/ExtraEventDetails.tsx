@@ -6,7 +6,7 @@ import { IconRow, useMailSettings } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { getFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
+import { getFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
