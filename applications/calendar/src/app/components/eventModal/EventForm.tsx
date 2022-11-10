@@ -27,9 +27,10 @@ import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
-import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
 import createHandlers from './eventForm/createPropFactory';
+import { getOrganizerModel } from './eventForm/state';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
@@ -244,16 +245,26 @@ const EventForm = ({
         </IconRow>
     );
 
+    const handleChangeAttendees = (value: AttendeeModel[]) => {
+        setModel({
+            ...model,
+            attendees: value,
+            isOrganizer: !!value.length,
+            ...getOrganizerModel({ attendees: value, addressID: model.member.addressID, addresses }),
+        });
+    };
+
     const participantsRow = (
         <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
             <ParticipantsInput
                 placeholder={c('Placeholder').t`Add participants`}
                 id={PARTICIPANTS_INPUT_ID}
-                model={model}
+                value={model.attendees}
+                onChange={handleChangeAttendees}
+                organizer={model.organizer}
                 addresses={addresses}
                 collapsible={!isMinimal}
                 setParticipantError={setParticipantError}
-                {...createHandlers({ model, setModel, field: 'attendees' }).model}
             />
         </IconRow>
     );
