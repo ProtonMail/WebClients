@@ -19,6 +19,7 @@ interface GetStartedChecklistContextValue {
     dismissed: boolean;
     handleDismiss: () => void;
     checklist: ChecklistApiResponse['Items'];
+    userWasRewarded: GetStartedChecklistApiResponse['UserWasRewarded'];
     rewardInGb: GetStartedChecklistApiResponse['RewardInGB'];
     expires: Date;
 }
@@ -42,6 +43,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const context = {
         loading: loadingChecklist,
         checklist: checklist.Items,
+        userWasRewarded: checklist.UserWasRewarded,
         rewardInGb: checklist.RewardInGB,
         expires: addDays(fromUnixTime(checklist.CreatedAt), 30),
         dismissed,
