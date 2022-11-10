@@ -5,13 +5,6 @@ body {
 	block-size: 100%;
 }
 
-@include respond-to($breakpoint-large, 'min') {
-	:root {
-		--width-sidebar: #{rem(250)};
-		--width-context-bar: #{rem(450)};
-	}
-}
-
 /* === page === */
 html,
 .app-root,
@@ -57,7 +50,7 @@ html,
 }
 
 .sidebar {
-	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
+	inline-size: rem($width-sidebar);
 	visibility: visible;
 	transition: visibility 0s ease, transform 1s ease, inline-size 0.6s ease, opacity 1s ease;
 	transition-delay: 0s;
@@ -98,7 +91,7 @@ html,
 .logo-container {
 	padding-block: 0;
 	padding-inline: 1em;
-	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
+	inline-size: rem($width-sidebar);
 
 	& > a {
 		display: flex;

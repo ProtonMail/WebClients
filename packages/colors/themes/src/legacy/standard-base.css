@@ -61,6 +61,6 @@
 
     /* Reset because prominent part overrides those colors */
     --optional-mini-calendar-today-color: initial;
-
-    --optional-logo-icon-text-color: #6d4aff;
+    --optional-logo-text-proton-color: initial;
+    --optional-logo-text-product-color: initial;
 }

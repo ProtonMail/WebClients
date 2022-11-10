@@ -45,7 +45,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     );
 
     const appVersion = getAppVersion(APP_VERSION);
-    const size = 70;
+    const size = 48;
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">

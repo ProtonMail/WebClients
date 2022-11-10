@@ -54,5 +54,7 @@
 
     --optional-main-border-color: transparent;
 
-    --optional-logo-text-product-color: #6d4aff;
+    /* Reset because prominent part overrides those colors */
+    --optional-logo-text-proton-color: initial;
+    --optional-logo-text-product-color: initial;
 }

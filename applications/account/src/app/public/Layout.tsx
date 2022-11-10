@@ -60,7 +60,7 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, onBack, head
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center p1-5 on-mobile-p1 on-mobile-pb0">
-                            <LayoutLogos size={70} />
+                            <LayoutLogos size={48} />
                         </div>
                     )}
                 </div>
