@@ -1,3 +1,5 @@
+import { c, msgid } from 'ttag';
+
 import { Conversation } from '../../models/conversation';
 
 import './NumMessages.scss';
@@ -15,7 +17,20 @@ const NumMessages = ({ conversation, className }: Props) => {
         return null;
     }
 
-    return <span className={className}>[{NumMessages}]</span>;
+    return (
+        <>
+            <span className={className} aria-hidden="true">
+                [{NumMessages}]
+            </span>
+            <span className="sr-only">
+                {c('Info').ngettext(
+                    msgid`${NumMessages} message in conversation`,
+                    `${NumMessages} messages in conversation`,
+                    NumMessages
+                )}
+            </span>
+        </>
+    );
 };
 
 export default NumMessages;
