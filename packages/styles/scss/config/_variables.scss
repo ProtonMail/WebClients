@@ -75,7 +75,7 @@ $media-expressions: (
 	'screen': 'screen',
 	'print': 'print',
 	'mouse': '(hover: hover) and (pointer: fine)',
-	'touch': '(hover: none)',
+	'touch': '(hover: hover) and (pointer: coarse), (hover: none)',
 	'landscape': '(orientation: landscape)',
 	'portrait': '(orientation: portrait)',
 );
