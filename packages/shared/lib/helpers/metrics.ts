@@ -4,7 +4,10 @@ import { METRICS_LOG, SECOND } from '../constants';
 import { Api, SimpleMap } from '../interfaces';
 import { wait } from './promise';
 
-let metricsEnabled = true;
+// Make the metrics false by default to avoid (rare) cases where we could have sendMetricReport or sendTelemetryReport
+// before setting this metricsEnabled value with the user setting.
+// In that scenario we would send something but the user might not want this.
+let metricsEnabled = false;
 
 /**
  * Delay an operation by a random number of seconds between 1 second and the specified
