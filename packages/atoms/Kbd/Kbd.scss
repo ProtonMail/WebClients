@@ -2,11 +2,13 @@
 	padding-block: 0;
 	padding-inline: 0.25em;
 	background-color: var(--background-strong);
+	color: var(--text-norm);
 	border: 1px solid var(--border-norm);
 	border-radius: var(--border-radius-sm);
 
 	.tooltip & {
-		background-color: #464b58;
-		border: none;
+		// background-color: var(--background-norm);
+		// color: var(--text-norm);
+		// border: none;
 	}
 }
