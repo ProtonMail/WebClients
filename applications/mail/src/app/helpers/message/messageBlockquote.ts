@@ -11,7 +11,7 @@ export const BLOCKQUOTE_SELECTORS = [
     '.zmail_extra', // Zoho
     '.skiff_quote', // Skiff Mail
     '#divRplyFwdMsg', // Outlook Mail
-    '#3D"divRplyFwdMsg"', // Office365
+    'div[id="3D\\"divRplyFwdMsg\\""]', // Office365
     'hr[id=replySplit]',
     '.moz-cite-prefix',
     'div[id=isForwardContent]',
