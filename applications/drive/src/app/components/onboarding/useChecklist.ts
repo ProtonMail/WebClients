@@ -13,7 +13,7 @@ export default function useChecklist() {
     const [checklist, setChecklist] = useState<ChecklistApiResponse>();
 
     useEffect(() => {
-        if (!user.isFree) {
+        if (user.isPaid) {
             return;
         }
         withLoading(api<ChecklistApiResponse>(getDriveChecklist('get-started')).then(setChecklist)).catch(
