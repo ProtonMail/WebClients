@@ -24,9 +24,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } 可用。"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 简介"
       ],
@@ -195,17 +192,11 @@
       "Create": [
         "创建"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "或者，创建一个安全的 ${ MAIL_APP_NAME } 地址"
-      ],
       "Create account": [
         "创建账户"
       ],
       "Create accounts": [
         "创建账户"
-      ],
-      "Create address": [
-        "创建地址"
       ],
       "Create calendar": [
         "创建日历"
@@ -259,9 +250,6 @@
         "详细信息"
       ],
       "Didn't receive a code?": [
-        "没收到验证码？"
-      ],
-      "Didn't receive the code?": [
         "没收到验证码？"
       ],
       "Disable": [
@@ -468,6 +456,9 @@
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
+      "More info: Keyboard shortcuts": [
+        "更多信息：键盘快捷方式"
+      ],
       "move emails to": [
         "将邮件移至"
       ],
@@ -482,6 +473,9 @@
       ],
       "No": [
         "否"
+      ],
+      "Not spam": [
+        "非垃圾邮件"
       ],
       "OK": [
         "确定"
@@ -599,9 +593,6 @@
       ],
       "Reset to default": [
         "重置所有选项"
-      ],
-      "Reset zoom": [
-        "重置缩放"
       ],
       "Restore administrator privileges": [
         "恢复管理员权限"
@@ -768,6 +759,9 @@
       "Underline": [
         "下划线"
       ],
+      "Undo import": [
+        "撤消导入"
+      ],
       "Unlock": [
         "解锁"
       ],
@@ -810,9 +804,6 @@
       "Use recovery code": [
         "使用恢复码"
       ],
-      "Use your current email address instead": [
-        "使用您已有的邮箱地址"
-      ],
       "Use “${ label }” setting": [
         "使用 \"${ label }\" 设置"
       ],
@@ -824,9 +815,6 @@
       ],
       "Verify account": [
         "验证账户"
-      ],
-      "Verify email": [
-        "验证邮箱"
       ],
       "View": [
         "查看"
@@ -854,6 +842,9 @@
       ],
       "Yes": [
         "是"
+      ],
+      "Yes, undo": [
+        "是的，撤消"
       ],
       "Zoom in": [
         "放大"
@@ -894,6 +885,9 @@
     "Addon": {
       "+ ${ domains } custom domains": [
         "+ ${ domains } 个自有域名"
+      ],
+      "+ ${ users } users": [
+        "+ ${ users } 位用户"
       ]
     },
     "Address action": {
@@ -1565,6 +1559,9 @@
       ],
       "Remove from the list?": [
         "从列表中移除此项？"
+      ],
+      "Undo this import?": [
+        "撤消此导入？"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -4300,9 +4297,6 @@
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "您可以使用 ${ strongAddressAvailable } 登录所有的 ${ BRAND_NAME } 服务。"
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "开通 ${ vpnBasic }、${ vpnPlus }或${ visionary }方可连接指定国家。"
       ],
@@ -5080,9 +5074,6 @@
       "of": [
         "，共"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "一个账户即可登录所有 ${ BRAND_NAME } 服务。"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
       ],
@@ -5824,9 +5815,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
       ],
-      "Your recovery email address:": [
-        "您的密保邮箱："
-      ],
       "Your recovery phrase": [
         "您的恢复密语"
       ],
@@ -6264,9 +6252,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } 地址"
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 标识"
@@ -7870,6 +7855,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7933,26 +7938,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -9724,9 +9709,6 @@
       "Couldn’t create accounts": [
         "无法创建账户"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "创建 ${ MAIL_APP_NAME } 地址"
-      ],
       "Create calendar": [
         "创建日历"
       ],
@@ -10281,9 +10263,6 @@
       ],
       "You already have a Proton account": [
         "您已经注册过 Proton 账户了"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "您的 ${ MAIL_APP_NAME } 地址"
       ],
       "Your calendar link": [
         "您的日历链接"

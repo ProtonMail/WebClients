@@ -190,9 +190,6 @@
       "Details": [
         "Detalhes"
       ],
-      "Didn't receive the code?": [
-        "Não recebeu o código?"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -227,7 +224,7 @@
         "Editar número de telefone"
       ],
       "Edit sign-in details": [
-        "Editar detalhes de login"
+        "Editar detalhes de Início de sessão"
       ],
       "Email settings": [
         "Configurações do e-mail"
@@ -252,6 +249,9 @@
       ],
       "Export contacts": [
         "Exportar contatos"
+      ],
+      "Fit to window": [
+        "Ajustar na janela"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
@@ -424,11 +424,11 @@
       "Request new code": [
         "Solicitar um novo código"
       ],
+      "Resend code": [
+        "Reenviar código"
+      ],
       "Reset to default": [
         "Restaurar para padrão"
-      ],
-      "Reset zoom": [
-        "Redefinir zoom"
       ],
       "Restart all": [
         "Reiniciar tudo"
@@ -597,9 +597,6 @@
       ],
       "Verify account": [
         "Verificar conta"
-      ],
-      "Verify email": [
-        "Verificar e-mail"
       ],
       "View": [
         "Visualizar"
@@ -2762,7 +2759,7 @@
         "Assinatura digital verificada. Essa pasta foi enviada seguramente por ${ emailAddress }."
       ],
       "double your storage": [
-        "dobre seu armazenamento"
+        "dobrar seu armazenamento"
       ],
       "Download canceled": [
         "Download cancelado"
@@ -3292,7 +3289,7 @@
         "Isso removerá do Proton Drive o dispositivo sincronizado ${ deviceName }. Arquivos \nlocais ativados no dispositivo não será afetado."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Para habilitar uma pesquisa verdadeiramente privada, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
+        "Para ativar uma pesquisa verdadeiramente privada, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -3349,7 +3346,7 @@
         "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
       ],
       "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Use o Drive para Desktop para sincronizar pastas em seu computador com o Proton Drive. Eles aparecerão aqui e estarão acessíveis de qualquer lugar. ${ LearnMore }"
+        "Use Drive para desktoppara sincronizar pastas em seu computador con Proton Drive. Aparecerão aqui e estarão acessíveis de qualquer lugar. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use esse formulário para nos notificar de arquivos compartilhados que são inapropriados, ilegais, ou maliciosos. Você irá denunciar:"
@@ -3442,7 +3439,7 @@
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta Proton."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Seu endereço de e-mail não será alterado. Mas em breve, você precisará fazer login em ${ link }."
+        "Seu endereço de e-mail não será alterado. Mas em breve, você precisará iniciar sessão em ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -5312,7 +5309,7 @@
         "Iniciar sessão e conceder acesso"
       ],
       "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Faça login em ${ PROTON_ME_DOMAIN }"
+        "Iniciar sessão em ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Encerrar sessão"

@@ -24,9 +24,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } tersedia."
-      ],
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
       ],
@@ -195,17 +192,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Buat alamat email aman ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Buat akun"
       ],
       "Create accounts": [
         "Buat akun"
-      ],
-      "Create address": [
-        "Buat alamat"
       ],
       "Create calendar": [
         "Buat kalender"
@@ -260,9 +251,6 @@
       ],
       "Didn't receive a code?": [
         "Belum menerima kode?"
-      ],
-      "Didn't receive the code?": [
-        "Tidak menerima kode yang dimaksud?"
       ],
       "Disable": [
         "Nonaktifkan"
@@ -359,6 +347,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Filter sedang diterapkan. Harap tunggu beberapa saat."
+      ],
+      "Fit to window": [
+        "Sesuaikan dengan jendela"
       ],
       "Font": [
         "Font"
@@ -606,9 +597,6 @@
       "Reset to default": [
         "Atur ulang ke awal"
       ],
-      "Reset zoom": [
-        "Ukuran semula"
-      ],
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
       ],
@@ -819,9 +807,6 @@
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
-      "Use your current email address instead": [
-        "Gunakan alamat email Anda saat ini"
-      ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
       ],
@@ -833,9 +818,6 @@
       ],
       "Verify account": [
         "Verifikasi akun"
-      ],
-      "Verify email": [
-        "Verifikasi email"
       ],
       "View": [
         "Lihat"
@@ -4432,9 +4414,6 @@
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Anda akan menggunakan alamat email ini untuk masuk ke layanan ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Paket ${ vpnBasic }, ${ vpnPlus }, atau ${ visionary } dibutuhkan untuk dapat membuka sambungan tingkat negara."
       ],
@@ -5227,9 +5206,6 @@
       "of": [
         "dari"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Satu akun untuk seluruh layanan ${ BRAND_NAME }."
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
@@ -6010,9 +5986,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
       ],
-      "Your recovery email address:": [
-        "Alamat email pemulihan Anda:"
-      ],
       "Your recovery phrase": [
         "Frasa pemulihan Anda"
       ],
@@ -6450,9 +6423,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Alamat ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
         "Footer ${ MAIL_APP_NAME }"
@@ -8083,6 +8053,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8152,26 +8142,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9955,9 +9925,6 @@
       "Couldn’t create accounts": [
         "Tidak dapat membuat akun"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Buat alamat ${ MAIL_APP_NAME }"
-      ],
       "Create calendar": [
         "Buat kalender"
       ],
@@ -10527,9 +10494,6 @@
       ],
       "You already have a Proton account": [
         "Anda telah memiliki akun Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"

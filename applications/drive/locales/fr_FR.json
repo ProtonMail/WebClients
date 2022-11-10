@@ -190,9 +190,6 @@
       "Details": [
         "Détails"
       ],
-      "Didn't receive the code?": [
-        "Vous n'avez pas reçu le code  ?"
-      ],
       "Discard": [
         "Abandonner"
       ],
@@ -424,11 +421,11 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
+      "Resend code": [
+        "Renvoyer le code"
+      ],
       "Reset to default": [
         "Rétablir les valeurs par défaut"
-      ],
-      "Reset zoom": [
-        "Réinitialiser le zoom"
       ],
       "Restart all": [
         "Tout redémarrer"
@@ -597,9 +594,6 @@
       ],
       "Verify account": [
         "Vérifier le compte"
-      ],
-      "Verify email": [
-        "Vérifier l'e-mail"
       ],
       "View": [
         "Afficher"
@@ -3348,6 +3342,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléchargement de centaines de fichiers en même temps peut réduire les performances."
       ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Utilisez Drive pour ordinateur et synchronisez les dossiers de votre ordinateur avec Proton Drive. Ils apparaîtront ici et seront accessibles où que vous soyez.  ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
       ],
@@ -5304,6 +5301,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Se connecter sur ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Se déconnecter"
