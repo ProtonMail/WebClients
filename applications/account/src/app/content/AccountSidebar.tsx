@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Sidebar, SidebarBackButton, SidebarList, SidebarNav } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
@@ -20,13 +19,18 @@ interface AccountSidebarProps {
 
 const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }: AccountSidebarProps) => {
     const backButtonCopy = {
-        [APPS.PROTONMAIL]: c('Navigation').t`Back to Mail`,
-        [APPS.PROTONCALENDAR]: c('Navigation').t`Back to Calendar`,
-        [APPS.PROTONDRIVE]: c('Navigation').t`Back to Drive`,
+        [APPS.PROTONMAIL]: c('Navigation').t`Inbox`,
+        [APPS.PROTONCALENDAR]: c('Navigation').t`Calendar`,
+        [APPS.PROTONDRIVE]: c('Navigation').t`Drive`,
+    };
+    const backButtonCopyTitle = {
+        [APPS.PROTONMAIL]: c('Navigation').t`Back to inbox`,
+        [APPS.PROTONCALENDAR]: c('Navigation').t`Back to calendar`,
+        [APPS.PROTONDRIVE]: c('Navigation').t`Back to files`,
     };
 
-    const backButtonTitle = backButtonCopy[app as keyof typeof backButtonCopy];
-    const backButtonText = getAppName(app);
+    const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
+    const backButtonTitle = backButtonCopyTitle[app as keyof typeof backButtonCopyTitle];
     const prefix = `/${appSlug}`;
 
     return (
@@ -34,7 +38,13 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             primary={
                 backButtonTitle &&
                 backButtonText && (
-                    <SidebarBackButton to="/" toApp={app} target="_self" title={backButtonTitle}>
+                    <SidebarBackButton
+                        to="/"
+                        toApp={app}
+                        target="_self"
+                        title={backButtonTitle}
+                        aria-label={backButtonTitle}
+                    >
                         {backButtonText}
                     </SidebarBackButton>
                 )
