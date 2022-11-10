@@ -99,6 +99,7 @@ export enum FeatureCode {
     MigrationModalLastShown = 'MigrationModalLastShown',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
+    ProtonMailDomainMigrationEnabled = 'ProtonMailDomainMigrationEnabled',
 }
 
 export interface FeaturesContextValue {
