@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } 是可用的。"
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
       ],
@@ -184,17 +181,11 @@
       "Create": [
         "建立"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "創建新的 ${ MAIL_APP_NAME } 電郵位址"
-      ],
       "Create account": [
         "創建帳號"
       ],
       "Create accounts": [
         "建立帳號"
-      ],
-      "Create address": [
-        "建立電郵位址"
       ],
       "Create calendar": [
         "創建行事曆"
@@ -207,6 +198,9 @@
       ],
       "Create link": [
         "建立連結"
+      ],
+      "Create your own": [
+        "創建您的帳號"
       ],
       "Current plan": [
         "現行方案"
@@ -249,9 +243,6 @@
       ],
       "Didn't receive a code?": [
         "沒收到代碼？"
-      ],
-      "Didn't receive the code?": [
-        "沒有收到驗證碼嗎？"
       ],
       "Disable": [
         "停用"
@@ -349,6 +340,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "篩選器正在逐一套用中。這將會耗時幾分鐘時間。"
       ],
+      "Fit to window": [
+        "貼齊視窗邊沿"
+      ],
       "Font": [
         "字型"
       ],
@@ -363,6 +357,9 @@
       ],
       "Get ${ vpnPlus }": [
         "選購 ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "獲取新的加密電郵位址"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -595,9 +592,6 @@
       "Reset to default": [
         "還原成預設值"
       ],
-      "Reset zoom": [
-        "重設縮放"
-      ],
       "Restore administrator privileges": [
         "恢復管理員權限"
       ],
@@ -808,7 +802,7 @@
       "Use recovery code": [
         "使用復原代碼"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "沿用您目前的電郵位址"
       ],
       "Use “${ label }” setting": [
@@ -822,9 +816,6 @@
       ],
       "Verify account": [
         "驗證帳號"
-      ],
-      "Verify email": [
-        "驗證電郵"
       ],
       "View": [
         "檢視"
@@ -4134,9 +4125,6 @@
       "${ storageSize } storage": [
         "${ storageSize } 儲存量"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable }您將會使用此電郵位址登入所有 ${ BRAND_NAME } 服務。"
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "國家級連線需要 ${ vpnBasic }、${ vpnPlus } 或 ${ visionary }。"
       ],
@@ -4605,6 +4593,12 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "獲取一個 ${ BRAND_NAME } 位址並用於全部 ${ BRAND_NAME } 服務包括 Mail 和 Calendar。"
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "獲取我的 ${ BRAND_NAME } 電郵位址"
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公開金鑰給您的朋友們，或是發佈在網路上，這樣每個人都可以向您寄送端到端加密電郵！"
       ],
@@ -4904,9 +4898,6 @@
       ],
       "of": [
         "/"
-      ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "單一帳號用於所有 ${ BRAND_NAME } 服務。"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "當您使用 PGP 傳送郵件給非 ${ BRAND_NAME } 收件人時，才需變更下列設定。"
@@ -5652,9 +5643,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ],
-      "Your recovery email address:": [
-        "您的復原電郵位址："
-      ],
       "Your recovery phrase": [
         "您的復原短語"
       ],
@@ -6065,9 +6053,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } 個位址"
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 頁尾"
@@ -8987,9 +8972,6 @@
       "Couldn’t create accounts": [
         "無法建立帳號"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "創建新的 ${ MAIL_APP_NAME } 電郵位址"
-      ],
       "Create calendar": [
         "創建行事曆"
       ],
@@ -9004,6 +8986,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "創建您的 ${ BRAND_NAME } 帳號"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "建立 ${ BRAND_NAME } 電郵位址"
       ],
       "Creating user accounts": [
         "建立使用者帳號"
@@ -9533,6 +9518,9 @@
       "Verification": [
         "驗證"
       ],
+      "Verify email address": [
+        "驗證電郵位址"
+      ],
       "VPN apps": [
         "VPN 應用程式"
       ],
@@ -9559,9 +9547,6 @@
       ],
       "You already have a Proton account": [
         "您已經擁有一個 Proton 帳號"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "您新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Your calendar link": [
         "您的行事曆連結"

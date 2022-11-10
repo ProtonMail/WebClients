@@ -24,9 +24,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } je k dispozici."
-      ],
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
       ],
@@ -144,6 +141,9 @@
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
+      "Claim it": [
+        "Získat ji"
+      ],
       "Clear all formatting": [
         "Vymazat veškeré formátování"
       ],
@@ -195,17 +195,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Namísto toho vytvořit bezpečnou ${ MAIL_APP_NAME } adresu"
-      ],
       "Create account": [
         "Vytvořit účet"
       ],
       "Create accounts": [
         "Vytvořit účty"
-      ],
-      "Create address": [
-        "Vytvořit adresu"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -218,6 +212,9 @@
       ],
       "Create link": [
         "Vytvořit odkaz"
+      ],
+      "Create your own": [
+        "Vytvořte si vlastní"
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -259,9 +256,6 @@
         "Detaily"
       ],
       "Didn't receive a code?": [
-        "Nedostali jste kód?"
-      ],
-      "Didn't receive the code?": [
         "Nedostali jste kód?"
       ],
       "Disable": [
@@ -360,6 +354,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Filtry se aplikují. Tohle může trvat pár minut."
       ],
+      "Fit to window": [
+        "Přizpůsobit oknu"
+      ],
       "Font": [
         "Písmo"
       ],
@@ -374,6 +371,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Získat novou šifrovanou e-mailovou adresu"
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
@@ -591,6 +591,9 @@
       "Requires a verified recovery email address": [
         "Vyžaduje ověřenou e-mailovou adresu pro obnovení"
       ],
+      "Resend code": [
+        "Znovu odeslat kód"
+      ],
       "Reset credentials": [
         "Resetovat pověření"
       ],
@@ -605,9 +608,6 @@
       ],
       "Reset to default": [
         "Obnovit výchozí nastavení"
-      ],
-      "Reset zoom": [
-        "Resetovat přiblížení"
       ],
       "Restore administrator privileges": [
         "Obnovit oprávnění správce"
@@ -819,8 +819,8 @@
       "Use recovery code": [
         "Použít kód pro obnovení"
       ],
-      "Use your current email address instead": [
-        "Místo toho použijte vaši aktuální e-mailovou adresu"
+      "Use your current email instead": [
+        "Použít stávající e-mailovou adresu"
       ],
       "Use “${ label }” setting": [
         "Použijte nastavení “${ label }”"
@@ -833,9 +833,6 @@
       ],
       "Verify account": [
         "Ověřit účet"
-      ],
-      "Verify email": [
-        "Ověřit e-mail"
       ],
       "View": [
         "Zobrazit"
@@ -946,6 +943,9 @@
       ],
       "Disabled": [
         "Zakázáno"
+      ],
+      "External": [
+        "Externí"
       ],
       "Missing keys": [
         "Chybějící klíče"
@@ -4588,9 +4588,6 @@
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Tuto e-mailovou adresu použijete k přihlášení do všech služeb ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Pro připojení na úrovni země je vyžadován tarif ${ vpnBasic }, ${ vpnPlus } nebo ${ visionary }."
       ],
@@ -5101,6 +5098,12 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Vygenerováním nové obnovovací fráze bude deaktivovaná stará."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Získejte ${ BRAND_NAME } adresu pro používání všech služeb ${ BRAND_NAME } včetně e-mailu a kalendáře."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Získat ${ BRAND_NAME } adresu"
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dejte svůj veřejný klíč svým přátelům nebo jej zveřejněte online, aby vám každý mohl poslat koncově šifrovaný e-mail!"
       ],
@@ -5410,8 +5413,8 @@
       "of": [
         "z"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Jeden účet pro všechny služby ${ BRAND_NAME }."
+      "One account. All ${ BRAND_NAME } services.": [
+        "Jeden účet. Všechny služby ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -5719,6 +5722,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "E-mailová adresa, kterou umístíte v horní části seznamu, je vaše výchozí e-mailová adresa. Přetažením změňte pořadí Vašich adres."
       ],
+      "The following address is available:": [
+        "Následující adresa je dostupná:"
+      ],
       "The following address is invalid.": [
         "Následující adresa je neplatná.",
         "Následující adresy jsou neplatné.",
@@ -5850,6 +5856,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Chcete-li zabezpečit připojení k internetu, stáhněte a nainstalujte do svého zařízení aplikaci ${ VPN_APP_NAME } a připojte se k serveru."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "pro používání ${ toAppName } a všech služeb ${ BRAND_NAME }"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pro správnou funkci musí každý filtr obsahovat alespoň název a platný skript Sieve. Můžete ${ link }."
@@ -6013,6 +6022,9 @@
       "Why?": [
         "Proč?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
@@ -6139,6 +6151,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Pro ověření platby budete brzy přesměrováni na stránky Vaší banky."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NEBUDETE moci dešifrovat zprávy, soubory a další data zašifrovaná tímto klíčem."
       ],
@@ -6210,9 +6225,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
-      ],
-      "Your recovery email address:": [
-        "E-mailová adresa pro obnovení:"
       ],
       "Your recovery phrase": [
         "Vaše obnovovací fráze"
@@ -6651,9 +6663,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } adresa"
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } zápatí"
@@ -8359,6 +8368,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8428,26 +8457,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10315,9 +10324,6 @@
       "Couldn’t create accounts": [
         "Nepodařilo se vytvořit účty"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Vytvořit ${ MAIL_APP_NAME } adresu"
-      ],
       "Create calendar": [
         "Vytvořit kalendář"
       ],
@@ -10332,6 +10338,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Vytvořit ${ BRAND_NAME } adresu"
       ],
       "Creating user accounts": [
         "Vytváření uživatelských účtů"
@@ -10867,6 +10876,9 @@
       "Verification": [
         "Ověření"
       ],
+      "Verify email address": [
+        "Ověřit e-mailovou adresu"
+      ],
       "VPN apps": [
         "VPN aplikace"
       ],
@@ -10893,9 +10905,6 @@
       ],
       "You already have a Proton account": [
         "Již máte účet Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Vaše ${ MAIL_APP_NAME } adresa"
       ],
       "Your calendar link": [
         "URL adresa kalendáře"
