@@ -157,9 +157,6 @@
       "Deselect all": [
         "Desseleccionar-ho tot"
       ],
-      "Didn't receive the code?": [
-        "No heu rebut el codi?"
-      ],
       "Discard": [
         "Descarta"
       ],
@@ -376,6 +373,9 @@
       "Request new code": [
         "Demana un nou codi"
       ],
+      "Resend code": [
+        "Reenvia codi"
+      ],
       "Reset to default": [
         "Restableix els valors per defecte"
       ],
@@ -495,9 +495,6 @@
       ],
       "Verify account": [
         "Verifiqueu el compte"
-      ],
-      "Verify email": [
-        "Verifiqueu el correu electrònic"
       ],
       "View": [
         "Mostra"
@@ -2101,9 +2098,6 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per enviar"
       ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Destinatari duplicat eliminat: ${ joinedRecipients }"
-      ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
@@ -2207,9 +2201,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
@@ -2585,9 +2576,6 @@
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Esdeveniment importat amb èxit. L’esdeveniment importat ara apareixerà al vostre calendari."
       ]
     },
     "Import calendar warning": {

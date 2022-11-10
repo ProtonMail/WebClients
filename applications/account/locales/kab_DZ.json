@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } tella."
-      ],
       "${ BRAND_NAME } introduction": [
         "Tazwart n ${ BRAND_NAME }"
       ],
@@ -173,9 +170,6 @@
       "Create account": [
         "Snulfu-d amiḍan"
       ],
-      "Create address": [
-        "Snulfu-d tansa"
-      ],
       "Create folder": [
         "Snulfu-d akaram"
       ],
@@ -226,9 +220,6 @@
       ],
       "Didn't receive a code?": [
         "Ur teṭṭifeḍ ara tangalt?"
-      ],
-      "Didn't receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
       ],
       "Disable": [
         "Sens"
@@ -557,9 +548,6 @@
       "Reset to default": [
         "Wennez ɣer umezwer"
       ],
-      "Reset zoom": [
-        "Ales awennez n usemɣer"
-      ],
       "Restore administrator privileges": [
         "Err-d izerfan n unedbal"
       ],
@@ -755,9 +743,6 @@
       "Use recovery code": [
         "Seqdec tangalt n tririt"
       ],
-      "Use your current email address instead": [
-        "Seqdec tansa n yimayl-ik·im amiran deg umḍiq"
-      ],
       "Use “${ label }” setting": [
         "Seqdec iɣewwaṛen n “${ label }”"
       ],
@@ -769,9 +754,6 @@
       ],
       "Verify account": [
         "Selken amiḍan"
-      ],
-      "Verify email": [
-        "Selken imayl"
       ],
       "View": [
         "Sken"
@@ -3406,9 +3388,6 @@
       "${ storageSize } storage": [
         "${ storageSize } n uḥraz"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } ad tesqedceḍ tansa-a n yimayl i wakken ad tkecmeḍ ɣer meṛṛa imeẓla ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "${ vpnBasic }, ${ vpnPlus } neɣ ${ visionary } yettwasra i tuqqna ɣer yiqeddacen n tmura."
       ],
@@ -4032,9 +4011,6 @@
       "of": [
         "si"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Yiwen n umiḍan i meṛṛa Imeẓla ${ BRAND_NAME }."
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
       ],
@@ -4524,9 +4500,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
       ],
-      "Your recovery email address:": [
-        "Tansa-inek·inem n yimayl n tririt:"
-      ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
       ],
@@ -4920,9 +4893,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } n ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } tansa"
       ],
       "${ MAIL_APP_NAME } footer": [
         "Aḍar n usebter ${ MAIL_APP_NAME }"
@@ -7457,9 +7427,6 @@
       "Contact encryption keys": [
         "Tisura n uwgelhen n unermis"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Rnu tansa ${ MAIL_APP_NAME }"
-      ],
       "Create calendar": [
         "Snulfu-d awitay"
       ],
@@ -7966,9 +7933,6 @@
       ],
       "You already have a Proton account": [
         "Tesɛiḍ yakan amiḍan n Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Tansa-inek ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"

@@ -20,9 +20,6 @@
       "Continue": [
         "続行"
       ],
-      "Didn't receive the code?": [
-        "コードを受け取っていませんか?"
-      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -64,9 +61,6 @@
       ],
       "Verify account": [
         "アカウントを認証"
-      ],
-      "Verify email": [
-        "メールを認証"
       ],
       "View invoice": [
         "請求書を参照する"
@@ -1005,6 +999,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "パスワード（管理員のもの）を入力してください"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"

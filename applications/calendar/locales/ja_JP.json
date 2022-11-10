@@ -158,9 +158,6 @@
       "Deselect all": [
         "すべての選択を解除"
       ],
-      "Didn't receive the code?": [
-        "コードを受け取っていませんか?"
-      ],
       "Discard": [
         "破棄"
       ],
@@ -503,9 +500,6 @@
       "Verify account": [
         "アカウントを認証"
       ],
-      "Verify email": [
-        "メールを認証"
-      ],
       "View": [
         "表示"
       ],
@@ -538,64 +532,64 @@
     },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
-        "${ title } は ${ formattedHour } に開始しました"
+        "${ title }は${ formattedHour }からの予定です"
       ],
       "${ title } started on ${ _formattedDate }": [
-        "${ title } は ${ _formattedDate } に開始しました"
+        "${ title }は${ _formattedDate }に開始です"
       ],
       "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } は ${ _formattedDate } の ${ formattedHour } に開始しました"
+        "${ title }は${ _formattedDate }の${ formattedHour }に開始です"
       ],
       "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } は ${ _formattedDateWithTime } に開始しました"
+        "${ title }は${ _formattedDateWithTime }の予定です"
       ],
       "${ title } started on ${ formattedDate }": [
         "${ title } は ${ formattedDate } に開始しました"
       ],
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } は ${ formattedDate } の ${ formattedHour } に開始しました"
+        "${ title }は${ formattedDate }の${ formattedHour }に開始の予定です"
       ],
       "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } は ${ formattedDateWithoutTime } に開始しました"
+        "${ title }は${ formattedDateWithoutTime }の予定です"
       ],
       "${ title } started yesterday": [
-        "${ title } は昨日開始しました"
+        "${ title }は昨日開始の予定です"
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } は昨日の ${ formattedHour } に開始しました"
+        "${ title }は昨日の${ formattedHour }からの予定です"
       ],
       "${ title } starts at ${ formattedHour }": [
-        "${ title } は ${ formattedHour } に開始します"
+        "${ title }は${ formattedHour }からです"
       ],
       "${ title } starts now": [
-        "${ title } は今から始まります"
+        "${ title }はただいま開始の予定です"
       ],
       "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } は ${ _formattedDate2 } に開始します"
+        "${ title }は${ _formattedDate2 }の予定です"
       ],
       "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } は ${ _formattedDate2 } の ${ formattedHour } に開始します"
+        "${ title }は${ _formattedDate2 }の${ formattedHour }からの予定です"
       ],
       "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } は ${ _formattedDate3 } に開始します"
+        "${ title }の開始日は${ _formattedDate3 }の予定です"
       ],
       "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } は ${ _formattedDate3 } の ${ formattedHour } に開始します"
+        "${ title }は${ _formattedDate3 }の${ formattedHour }からの予定です"
       ],
       "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } は ${ _formattedDateWithoutTime } に開始します"
+        "${ title }は${ _formattedDateWithoutTime }の予定です"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } は ${ formattedDateWithTime } に開始します"
+        "${ title }は${ formattedDateWithTime }の予定です"
       ],
       "${ title } starts today": [
-        "${ title } は今日開始します"
+        "${ title }は今日の予定です"
       ],
       "${ title } starts tomorrow": [
-        "${ title } は明日開始します"
+        "${ title }は明日の予定です"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        "${ title } は明日の ${ formattedHour } 開始します"
+        "${ title }は明日の${ formattedHour }からです"
       ]
     },
     "Alert": {
@@ -603,10 +597,10 @@
         "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
       ],
       "By leaving now, some events may not be imported": [
-        "今すぐ退出することで、いくつかの予定がインポートされない可能性があります"
+        "今終了すると、インポートされない予定がある可能性があります"
       ],
       "By leaving now, you will lose your event.": [
-        "今すぐ退出することで、予定を失います。"
+        "今終了すると、予定は削除されます。"
       ]
     },
     "Apps dropdown": {
@@ -735,22 +729,22 @@
     },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
-        "${ name } が招待を承諾しました"
+        "${ name }が招待を承諾しました"
       ],
       "${ name } declined the invitation": [
-        "${ name } が招待を拒否しました"
+        "${ name }が招待を拒否しました"
       ],
       "${ name } hasn't answered the invitation yet": [
-        "${ name } はまだ招待に回答していません"
+        "${ name }はまだ招待に回答していません"
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } が招待を仮承諾しました"
+        "${ name }が招待を仮承諾しました"
       ],
       "This event has been canceled": [
         "この予定は中止されました"
       ],
       "You accepted the invitation": [
-        "あなたが招待を承諾しました"
+        "招待を承諾しました"
       ],
       "You declined the invitation": [
         "招待を拒否しました"
@@ -759,7 +753,7 @@
         "まだ招待に回答していません"
       ],
       "You tentatively accepted the invitation": [
-        "あなたが招待を仮承諾しました"
+        "招待を仮承諾しました"
       ]
     },
     "Calendar permissions label": {
@@ -824,6 +818,17 @@
       ],
       "Unsupported calendar format": [
         "非対応のカレンダー形式"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "カレンダーの公開リンクは、当該カレンダーのアカウントを所持していないと見ることはできません。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "最後の更新から12時間が経過しています。数時間後に自動更新を試みます。"
       ]
     },
     "Calendar view": {
@@ -1776,13 +1781,13 @@
     },
     "Custom frequency option": {
       "After repeating…": [
-        "指定の回数繰り返す…"
+        "指定の回数"
       ],
       "Never": [
         "繰り返し続ける"
       ],
       "On date…": [
-        "指定の日付まで繰り返す…"
+        "指定の日付まで"
       ],
       "times": [
         "回"
@@ -1845,6 +1850,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
+        "対応しているファイルの最大容量は${ MAX_IMPORT_FILE_SIZE_STRING }で、連絡先の上限数は${ MAX_IMPORT_CONTACTS_STRING }です。それ以上になる場合は、ファイルを小分けにしてください。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -1853,6 +1861,14 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "また、CSVのフィールドを自動的にvCardのフィールドに変換しています。手動で変換が正しく行われているか確かめることもできます。"
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
       ]
     },
     "Disabled calendar": {
@@ -1867,7 +1883,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "無効なカレンダーに関連付けられた予定です。"
+        "無効なカレンダーの予定です。"
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -1885,7 +1901,7 @@
         "120分"
       ],
       "30 minutes": [
-        "30 分"
+        "30分"
       ],
       "60 minutes": [
         "60分"
@@ -2026,7 +2042,7 @@
         "メールアドレスが無効です"
       ],
       "Ends on date cannot be empty": [
-        "最終日は空にできません"
+        "最終日を設定してください"
       ],
       "Ends on date must be after start time": [
         "終了日は開始日の後に設定してください。"
@@ -2039,6 +2055,9 @@
       ],
       "Error: ${ errorMessage }": [
         "エラー： ${ errorMessage }"
+      ],
+      "Failed to get original occurrence in series": [
+        "元の行事の取得に失敗しました"
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
@@ -2056,10 +2075,10 @@
         "間隔を空にすることはできません"
       ],
       "Invalid email address": [
-        "無効なメールアドレスです"
+        "メールアドレスが正しくありません"
       ],
       "Invalid link to the event": [
-        "予定への無効なリンク"
+        "予定の共有リンクを開けませんでした"
       ],
       "Invalid name": [
         "無効な名前です"
@@ -2074,10 +2093,10 @@
         "招待の送信に失敗しました"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "予定は ${ minDateString } から ${ maxDateString } まで作成可能です"
+        "予定は${ minDateString }から${ maxDateString }まで作成可能です"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "予定は ${ minDateString } から ${ maxDateString } まで移動可能です"
+        "予定は${ minDateString }から${ maxDateString }まで移動可能です"
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
@@ -2092,7 +2111,7 @@
         "署名がありません"
       ],
       "Name required": [
-        "名前が必要です"
+        "名前を入力してください"
       ],
       "No calendars found to import": [
         "インポートするカレンダーが見つかりません"
@@ -2104,7 +2123,7 @@
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
       "No public key for Proton address": [
-        "Proton アドレスに公開鍵がありません"
+        "Protonアドレスに公開鍵がありません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
@@ -2113,13 +2132,13 @@
         "ユーザーのWKD 鍵が送信に使用できません"
       ],
       "Not a Proton account": [
-        "非 Proton アカウント"
+        "Protonのアカウントではありません"
       ],
       "Not a valid number": [
         "無効な番号です"
       ],
       "Number of occurrences cannot be empty": [
-        "繰り返し回数を設定してください"
+        "行事の数を設定してください"
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
@@ -2138,6 +2157,12 @@
       ],
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
+      ],
+      "Primary key is not valid for sending": [
+        "メインの鍵を使って送信することができません"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "${ BRAND_NAME }ユーザーに割り当てた鍵は送信用ではありません"
       ],
       "Removed duplicate recipients: ${ joinedRecipients }": [
         "重複していた宛先を削除しました（${ joinedRecipients }）"
@@ -2271,10 +2296,10 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+        "ファイル　${ formattedFilename }の読み取り中にエラーが発生しました。ファイルのフォーマットが正しくありません。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
+        "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。ICS ファイル形式のみが許可されています。"
@@ -2289,16 +2314,16 @@
         "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
+        "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
+        "ファイル　${ formattedFilename }にはインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "ファイル${ formattedFilename } は空です。"
+        "ファイル　${ formattedFilename }は空です。"
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "ファイル ${ formattedFilename } はカレンダーではありません。"
+        "ファイル　${ formattedFilename }はカレンダーではありません。"
       ]
     },
     "Error importing contact": {
@@ -2369,6 +2394,9 @@
       "Floating times not supported": [
         "浮動時間はサポートされていません"
       ],
+      "Free-busy time information": [
+        "予定の有無に関する情報"
+      ],
       "Invalid event": [
         "無効な予定です"
       ],
@@ -2402,6 +2430,9 @@
       "Original recurring event could not be found": [
         "元の定期的な予定が見つかりませんでした"
       ],
+      "Recurring event has no occurrences": [
+        "定期予定の中に行事はありません。"
+      ],
       "Recurring rule not supported": [
         "繰り返しルールはサポートされていません"
       ],
@@ -2429,7 +2460,7 @@
         "エラー: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "無効な URL です"
+        "URLが正しくありません"
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
@@ -2447,7 +2478,7 @@
         "${ refresh } するか再度お試しください。"
       ],
       "You need an active personal calendar to import events": [
-        "予定をインポートするためにアクティブなパーソナル カレンダーが必要です"
+        "予定をインポートするためにはアクティブな個人カレンダーが必要です"
       ]
     },
     "Error notification": {
@@ -2511,6 +2542,9 @@
       "The event could not be added to your calendar. No answer was sent": [
         "予定をカレンダーに追加できませんでした。回答は送信されません。"
       ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "予定をカレンダーに追加できませんでした。回答は送信されていません。"
+      ],
       "Unexpected error": [
         "予期しないエラー"
       ],
@@ -2522,6 +2556,9 @@
       ],
       "We could not cancel the event in your calendar": [
         "カレンダーの予定をキャンセルすることができませんでした"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "カレンダーからこのイベントを探し出すことができませんでした"
       ],
       "We could not update the event in your calendar": [
         "カレンダーの予定を更新することができませんでした"
@@ -2535,12 +2572,12 @@
     },
     "Event popover close button": {
       "Close popover": [
-        "ポップオーバーを閉じる"
+        "吹き出しを閉じる"
       ]
     },
     "Event reply": {
       "maybe": [
-        "予定"
+        "考え中"
       ],
       "no": [
         "いいえ"
@@ -2554,7 +2591,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(タイトルなし)"
+        "（タイトルなし）"
       ]
     },
     "Feedback Modal Title": {
@@ -2647,6 +2684,9 @@
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
       ]
     },
     "Human verification method": {
@@ -2680,7 +2720,7 @@
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "カレンダーへの予定の暗号化と追加: ${ totalImported }/${ totalToImport }"
+        "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
       ],
       "Events successfully imported. The imported events will now appear in your calendar.": [
         "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
@@ -2691,7 +2731,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } は現在、特定のタイプや詳細、フォーマットをサポートしていません。"
+        "${ CALENDAR_APP_NAME }は現在、特定の予定の種類や詳細、フォーマットに対応していません。"
       ],
       "vCard versions < 3.0": [
         "vCard バージョン3.0以前"
@@ -2983,6 +3023,9 @@
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Yahoo の ${ calendarViewLink } へ移動してください。"
       ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "インポートするカレンダーの上にカーソルを置き、メニューを開きます。"
+      ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ],
@@ -3078,7 +3121,7 @@
         "削除を行った参加者にはメールが送信されます。"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "取り消しメールが参加者に送信されます。一連の予定を削除してよろしいですか?"
+        "取り消しメールが参加者に送信されます。一連の予定を削除してよろしいですか？"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "取り消しメールが予定の参加者に送信されます。この予定を削除しますか？"
@@ -3087,10 +3130,10 @@
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "すべての予定は追加や削除を行った参加者に通知されます。"
+        "追加や削除を行った参加者にはすべてメールで通知されます。"
       ],
       "Added and removed participants will be notified.": [
-        "追加したり削除した参加者は通知されます。"
+        "追加と削除を行った参加者にはメールが送られます。"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
@@ -3111,7 +3154,7 @@
         "と"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "このリンクを持っている誰でも、タイトル、場所、参加者など、このカレンダーのすべての予定詳細を見ることができます。"
+        "このリンクを持っている人は誰でもタイトル、場所、参加者など、このカレンダーに登録されているすべての予定の詳細を見ることができます。"
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
@@ -3123,7 +3166,7 @@
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "このカレンダーの完全な予定詳細を共有することで、このカレンダーの暗号化された情報への Proton のアクセスを許可することになります。"
+        "このカレンダーの予定の詳細を共有すると、Protonがこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -3197,14 +3240,17 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
+      "Enter your own password (as organization admin).": [
+        "パスワード（管理員のもの）を入力してください"
+      ],
       "Existent and added participants will be notified.": [
-        "既存の参加者と追加した参加者には通知されます。"
+        "既存の参加者と追加した参加者にはメールが送られます。"
       ],
       "Existent and removed participants will be notified.": [
-        "既存の参加者と削除した参加者には通知されます。"
+        "既存の参加者と削除した参加者にはメールが送られます。"
       ],
       "Existent, added and removed participants will be notified.": [
-        "既存の参加者、追加や削除を行った参加者には通知されます。"
+        "既存の参加者、追加や削除を行った参加者にはメールが送られます。"
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -3229,6 +3275,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "パスワードを忘れた時のため、回復フレーズを設定してアカウントとデータにアクセスできるようにしておきましょう。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -3279,7 +3328,7 @@
         "詳細"
       ],
       "Link copied to clipboard": [
-        "リンクをクリップボードにコピーしました"
+        "リンクをコピーしました"
       ],
       "Link created": [
         "リンクが作成されました"
@@ -3324,10 +3373,16 @@
         "該当する項目がありません"
       ],
       "None of the participants can be notified about your changes:": [
-        "参加者には、以下の予定の変更に関する通知はされません。"
+        "参加者には、以下の予定の変更に関する通知がされません。"
+      ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
       ],
       "Not a valid URL": [
         "有効な URL ではありません"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
@@ -3374,11 +3429,14 @@
       "Priority support": [
         "優先的なサポート"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
       "Removed participants will be notified.": [
-        "削除した参加者は通知されます。"
+        "削除した参加者にはメールが送られます。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -3401,8 +3459,11 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
       ],
+      "Sign in": [
+        "ログイン"
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "主催者が一度変更した出来事に対する回答は失われます。"
+        "主催者が一度変更した行事に対する回答は失われます。"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
@@ -3432,13 +3493,13 @@
         "予定が変更されているところがあります。繰り返しの予定に対するカレンダーの変更には現在対応しておりません。"
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "主催者に招待を拒否したことが通知されます。この予定を削除しますか?"
+        "主催者に招待を拒否したことがメールで通知されます。この予定を削除しますか？"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "招待されたアドレスからメールを送信できないため、この予定の主催者に招待を拒否したことは通知されません。この予定を削除しますか？"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "一連の予定の主催者には参加をしないことが通知されます。削除してよろしいですか?"
+        "一連の予定の主催者には、予定に参加しないことがメールで通知されます。削除してよろしいですか？"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "招待されたアドレスからメールを送信できないため、この予定の主催者に招待を拒否したことは通知されません。一連のすべての予定を削除しますか？"
@@ -3450,16 +3511,19 @@
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        "この予定は主催者によって更新されました。この予定を削除しますか?"
+        "主催者がこの予定を更新しました。この予定を削除しますか？"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "予定が更新されました。この予定の主催者に招待を拒否したことが通知されます。この予定を削除しますか?"
+        "予定が更新されました。この予定の主催者には予定に参加しないことがメールで通知されます。この予定を削除しますか？"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "予定が更新されました。招待されたアドレスからメールを送信できないため、この予定の主催者に招待を拒否したことは通知されません。この予定を削除しますか？"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "このリンクは偽装URLである可能性があり、Edgeでは開くことができません。リンクが確実に正しいと思われる場合、別のブラウザーで開いてください。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -3497,6 +3561,9 @@
       "Week": [
         "週"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "${ PROTON_ME_DOMAIN }に移行しました。"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
@@ -3513,7 +3580,7 @@
         "続行しますか?"
       ],
       "Would you like to delete all the events in this series?": [
-        "関連するすべての予定を削除してよろしいですか?"
+        "関連するすべての予定を削除してよろしいですか？"
       ],
       "Would you like to delete the event anyway?": [
         "この予定を削除してよろしいですか?"
@@ -3576,22 +3643,22 @@
         "保存されていない変更はすべて失なわれます。"
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "一連の予定はすべて更新されます。追加や削除を行った参加者には通知されます。"
+        "一連の予定はすべて更新されます。追加や削除を行った参加者にはメールが送られます。"
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         "一連の予定はすべて更新されます。参加者には招待が送信されます。"
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "一連の予定はすべて更新されます。既存の参加者と追加した参加者には通知されます。"
+        "一連の予定はすべて更新されます。既存の参加者と追加した参加者にはメールが送られます。"
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "一連の予定はすべて更新されます。既存の参加者と削除を行った参加者には通知されます。"
+        "一連の予定をすべて更新します。既存の参加者と削除した参加者にはメールが送られます。"
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "一連の予定はすべて更新されます。既存の参加者および追加や削除を行った参加者には通知されます。"
+        "一連の予定はすべて更新されます。既存の参加者および追加や削除を行った参加者にはメールが送られます。"
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "一連の予定はすべて更新されます。削除を行った参加者には通知されます。"
+        "一連の予定はすべて更新されます。削除した参加者にはメールが送られます。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
@@ -3600,7 +3667,7 @@
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "あなたのアドレスは無効になってます。取り消しメールは予定の参加者に送信されません。関連するすべての予定を削除しますか?"
+        "あなたのアドレスは無効になってます。取り消しメールは予定の参加者に送信されません。一連のすべての予定を削除しますか？"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "あなたのアドレスは無効になってます。取り消しメールは予定の参加者に送信されません。この予定を削除しますか？"
@@ -3608,11 +3675,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
       ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "メールアドレスは変わりません。しかし、近いうちに${ link }でログインしなければなりません。"
+      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
       "Your events will be encrypted and then saved.": [
-        "あなたの予定は暗号化して保存されます。"
+        "予定はすべて暗号化された上で保存されます。"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -3627,7 +3697,7 @@
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "あなたのシステムのタイムゾーンが ${ timezone } に変更されたようです。タイムゾーンの設定を更新しますか？"
+        "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
       ]
     },
     "Info on errors": {
@@ -3747,6 +3817,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete recovery-related information.": [
+        "回復に関する情報を削除"
+      ],
       "Description": [
         "詳細"
       ],
@@ -3829,7 +3902,7 @@
         "メールアドレスをインポート"
       ],
       "Import to:": [
-        "インポート先:"
+        "インポート先："
       ],
       "Label messages as": [
         "メッセージにつけるラベル"
@@ -3979,7 +4052,7 @@
         "すばらしい"
       ],
       "Your calendar URL": [
-        "カレンダーの URL"
+        "カレンダーのURL"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
@@ -4067,8 +4140,14 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ totalLabelsCount }件中${ selectedLabelsCount }件のメールを${ periodFragment }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ totalLabelsCount } つの内 ${ selectedLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
+      ],
+      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ periodFragment }からのメール全てを${ totalLabelsCount }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
       ],
       "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
@@ -4146,7 +4225,7 @@
         "タイムゾーンが変更されました。"
       ],
       "Unable to add more calendars": [
-        "さらなるカレンダーを追加できません"
+        "カレンダーを追加できません"
       ]
     },
     "Modal title and action": {
@@ -4325,12 +4404,12 @@
     },
     "Notification in shared calendar modal": {
       "Joined ${ calendarName } (${ senderEmail })": [
-        "${ calendarName } に参加しました (${ senderEmail })"
+        "${ calendarName }に参加しました(${ senderEmail })"
       ]
     },
     "Notification time input": {
       "at": [
-        " at"
+        "の"
       ]
     },
     "Notification type": {
@@ -4355,7 +4434,7 @@
         "分前"
       ],
       "on the same day": [
-        "同日"
+        "当日"
       ],
       "weeks before": [
         "週間前"
@@ -4369,10 +4448,10 @@
         "${ value } 日後の ${ time }"
       ],
       "${ value } days before": [
-        "${ value } 日前"
+        "${ value }日前"
       ],
       "${ value } days before at ${ time }": [
-        "${ value } 日前の ${ time }"
+        "${ value }日前の${ time }"
       ],
       "${ value } hours after": [
         "${ value } 時間後"
@@ -4405,16 +4484,16 @@
         "${ value } 週間後の ${ time }"
       ],
       "${ value } weeks before": [
-        "${ value } 週間前"
+        "${ value }週間前"
       ],
       "${ value } weeks before at ${ time }": [
-        "${ value } 週間前の ${ time }"
+        "${ value }週間前の${ time }"
       ],
       "At time of event": [
         "予定の時間"
       ],
       "On the same day at ${ time }": [
-        "同じ日の ${ time }"
+        "当日の${ time }"
       ],
       "Unknown": [
         "不明"
@@ -4558,6 +4637,11 @@
         "この鍵を「信頼しない」ことをおすすめします。"
       ]
     },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "送信鍵（${ keyUserIds }）に定義されているユーザーIDの中にメールアドレスは見つかりませんでした。"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "連絡手段"
@@ -4569,16 +4653,16 @@
         "カレンダー名を入力..."
       ],
       "Add description": [
-        "詳細を入力"
+        "詳細"
       ],
       "Add location": [
-        "場所を追加"
+        "場所"
       ],
       "Add participants": [
-        "参加者を追加"
+        "参加者"
       ],
       "Add title": [
-        "タイトルを入力"
+        "タイトル"
       ],
       "E.g., ": [
         "例: "
@@ -4621,10 +4705,13 @@
     },
     "Placeholder for contact with no name": {
       "(No name)": [
-        "(名前なし)"
+        "（名前なし）"
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ countContacts }件中${ contactsExported.length }件の連絡先をエクスポートしました。"
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
         "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"
       ],
@@ -4700,7 +4787,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
-        "${ ownerName } で作成"
+        "${ ownerName }が作成"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4746,10 +4833,10 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "カレンダーの URL"
+        "カレンダーのURL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「購読済みカレンダー」に追加されます。\n${ kbLink }"
+        "URLを入力して、外部または公開カレンダーを登録できます。登録すると、そのカレンダーの読み取り専用バージョンが「登録済みカレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -4759,7 +4846,7 @@
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "リンクを使うことで、購読しているカレンダーは公開されます"
+        "このリンクを使うことで、登録しているカレンダーがGoogleで公開されます"
       ],
       "This link might be wrong": [
         "リンクが間違っています"
@@ -4772,7 +4859,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "URL が長すぎます"
+        "URLが長すぎます"
       ]
     },
     "Success": {
@@ -5159,7 +5246,7 @@
         "設定メニューを開く"
       ],
       "Organizer cannot be notified": [
-        "主催者は通知することができません"
+        "主催者にはメールが送信されません"
       ],
       "Other information": [
         "その他の情報"
@@ -5168,7 +5255,7 @@
         "別名"
       ],
       "Participants cannot be notified": [
-        "参加者には通知されません"
+        "参加者にはメールが送信されません"
       ],
       "Phone numbers": [
         "電話番号"
@@ -5180,7 +5267,7 @@
         "連絡先を再署名する"
       ],
       "Reactivate calendar keys": [
-        "カレンダーの鍵を再有効化する"
+        "カレンダーの鍵を復活させる"
       ],
       "Reconnect your account": [
         "アカウントに再接続"
@@ -5271,6 +5358,9 @@
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "${ PROTON_ME_DOMAIN }でサインイン"
       ],
       "Sign out": [
         "サインアウト"
@@ -5364,6 +5454,9 @@
       "Encrypted data with verified digital signature": [
         "検証済みデジタル署名付きの暗号化データ"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
       ],
@@ -5431,6 +5524,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
+      ],
+      "Some of the contacts to be merged display errors. Please review them individually": [
+        "統合時にエラーが発生した連絡先があります。エラー内容をご確認ください。"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "連絡先データが壊れているため表示できません。"

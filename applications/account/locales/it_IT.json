@@ -24,9 +24,6 @@
       ]
     },
     "Action": {
-      "${ address } is available.": [
-        "${ address } è disponibile."
-      ],
       "${ BRAND_NAME } introduction": [
         "Introduzione a ${ BRAND_NAME }"
       ],
@@ -144,6 +141,9 @@
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
       ],
+      "Claim it": [
+        "Riscattalo"
+      ],
       "Clear all formatting": [
         "Cancella tutta la formattazione"
       ],
@@ -195,17 +195,11 @@
       "Create": [
         "Crea"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Crea invece un indirizzo ${ MAIL_APP_NAME } sicuro"
-      ],
       "Create account": [
         "Crea account"
       ],
       "Create accounts": [
         "Crea account"
-      ],
-      "Create address": [
-        "Crea indirizzo"
       ],
       "Create calendar": [
         "Crea calendario"
@@ -218,6 +212,9 @@
       ],
       "Create link": [
         "Crea link"
+      ],
+      "Create your own": [
+        "Crea il tuo"
       ],
       "Current plan": [
         "Piano attuale"
@@ -260,9 +257,6 @@
       ],
       "Didn't receive a code?": [
         "Non hai ricevuto un codice?"
-      ],
-      "Didn't receive the code?": [
-        "Non hai ricevuto il codice?"
       ],
       "Disable": [
         "Disabilita"
@@ -360,6 +354,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "I filtri sono stati applicati. Questo potrebbe aver bisogno di qualche minuto."
       ],
+      "Fit to window": [
+        "Adatta alla finestra"
+      ],
       "Font": [
         "Carattere"
       ],
@@ -374,6 +371,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Ottieni un nuovo indirizzo email crittografato"
       ],
       "Get verification code": [
         "Ottieni il codice di verifica"
@@ -591,6 +591,9 @@
       "Requires a verified recovery email address": [
         "Richiede un indirizzo email verificato"
       ],
+      "Resend code": [
+        "Reinvia codice"
+      ],
       "Reset credentials": [
         "Ripristina credenziali"
       ],
@@ -605,9 +608,6 @@
       ],
       "Reset to default": [
         "Reimposta al valore predefinito"
-      ],
-      "Reset zoom": [
-        "Reimposta zoom"
       ],
       "Restore administrator privileges": [
         "Ripristina i privilegi da amministratore"
@@ -819,8 +819,8 @@
       "Use recovery code": [
         "Utilizza un codice di recupero"
       ],
-      "Use your current email address instead": [
-        "Usa invece il tuo indirizzo email attuale"
+      "Use your current email instead": [
+        "Utilizza invece il tuo indirizzo email attuale"
       ],
       "Use “${ label }” setting": [
         "Usa l’impostazione “${ label }”"
@@ -833,9 +833,6 @@
       ],
       "Verify account": [
         "Verifica account"
-      ],
-      "Verify email": [
-        "Verifica email"
       ],
       "View": [
         "Visualizza"
@@ -942,6 +939,9 @@
       ],
       "Disabled": [
         "Disabilitato"
+      ],
+      "External": [
+        "Esterno"
       ],
       "Missing keys": [
         "Chiavi mancanti"
@@ -4484,9 +4484,6 @@
       "${ storageSize } storage": [
         "${ storageSize } spazio"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Utilizzerai questo indirizzo email per accedere a tutti i servizi ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "${ vpnBasic }, ${ vpnPlus } o ${ visionary } richiesti per la connessione a livello di Paese."
       ],
@@ -4983,6 +4980,12 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generazione di una nuova frase di ripristino disattiverà quella vecchia."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Ottieni un indirizzo ${ BRAND_NAME } per utilizzare tutti i servizi ${ BRAND_NAME } inclusi Mail e Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Ottieni un indirizzo ${ BRAND_NAME }"
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dai la tua chiave pubblica ai tuoi amici, o pubblicala online, in modo che tutti possano inviarti email crittografate end-to-end!"
       ],
@@ -5288,7 +5291,7 @@
       "of": [
         "di"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
+      "One account. All ${ BRAND_NAME } services.": [
         "Un account per tutti i servizi ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -5591,6 +5594,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "L'indirizzo email posto in cima alla lista è il tuo indirizzo email predefinito. Trascina e rilascia per riordinare i tuoi indirizzi."
       ],
+      "The following address is available:": [
+        "Il seguente indirizzo email è disponibile:"
+      ],
       "The following address is invalid.": [
         "L'indirizzo seguente non è valido.",
         "Gli indirizzi seguenti non sono valido."
@@ -5718,6 +5724,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per proteggere la tua connessione a internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "per utilizzare ${ toAppName } e tutti i servizi ${ BRAND_NAME }"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Per funzionare correttamente, ogni filtro deve contenere almeno un nome e uno script Sieve valido. Puoi ${ link }."
@@ -5881,6 +5890,9 @@
       "Why?": [
         "Perché?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
       ],
@@ -6005,6 +6017,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Sarai presto reindirizzato alla tua banca per verificare il pagamento."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NON sarai in grado di decrittografare messaggi, file e altri dati crittografati con questa chiave."
       ],
@@ -6076,9 +6091,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
-      ],
-      "Your recovery email address:": [
-        "Il tuo indirizzo email di recupero:"
       ],
       "Your recovery phrase": [
         "La tua frase di recupero"
@@ -6517,9 +6529,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } di ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } indirizzo"
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } piè di pagina"
@@ -8175,6 +8184,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -8244,26 +8273,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10324,9 +10333,6 @@
       "Couldn’t create accounts": [
         "Creazione account impossibile"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Crea un indirizzo ${ MAIL_APP_NAME }"
-      ],
       "Create calendar": [
         "Crea calendario"
       ],
@@ -10341,6 +10347,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Crea il tuo account ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Crea il tuo indirizzo ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
         "Creazione degli account utente"
@@ -10872,6 +10881,9 @@
       "Verification": [
         "Verifica"
       ],
+      "Verify email address": [
+        "Verifica l'indirizzo email"
+      ],
       "VPN apps": [
         "App VPN"
       ],
@@ -10898,9 +10910,6 @@
       ],
       "You already have a Proton account": [
         "Hai già un account Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Il tuo indirizzo ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Link del tuo calendario"
