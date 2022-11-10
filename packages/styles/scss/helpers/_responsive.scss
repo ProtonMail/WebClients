@@ -329,8 +329,16 @@
 			max-inline-size: 50%;
 		}
 
+		&-max-w50p {
+			max-inline-size: 50px;
+		}
+
 		&-text-left {
 			text-align: start;
+		}
+
+		&-text-sm {
+			font-size: em(12);
 		}
 
 		&-no-box-shadow {

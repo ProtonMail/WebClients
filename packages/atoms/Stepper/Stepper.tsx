@@ -35,7 +35,10 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
 
     const contextValue = useMemo(() => ({ activeStep }), [activeStep]);
 
-    const sharedUlClasses = clsx('unstyled flex flex-gap-0-5 flex-nowrap m0', `flex-justify-${position}`);
+    const sharedUlClasses = clsx(
+        'unstyled flex-no-min-children flex-gap-0-5 flex-nowrap m0',
+        `flex-justify-${position}`
+    );
 
     return (
         <StepperContext.Provider value={contextValue}>

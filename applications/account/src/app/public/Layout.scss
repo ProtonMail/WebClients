@@ -126,15 +126,6 @@
 	&-backbutton {
 		inset-block-start: 12em; // fixed height to avoid shifts
 		inset-inline-start: -4em;
-
-		@include respond-to($breakpoint-small) {
-			inset-block-start: -9em;
-			inset-inline-start: calc(50% - 50vw + 1em);
-		}
-
-		@include respond-to($breakpoint-tiny) {
-			inset-block-start: -10em;
-		}
 	}
 
 	&-header {
@@ -167,6 +158,7 @@
 		@include respond-to($breakpoint-small) {
 			padding-inline: em(20);
 			padding-block-start: 0;
+			padding-block-end: em(20);
 		}
 
 		@include respond-to($breakpoint-tiny, 'max') {
