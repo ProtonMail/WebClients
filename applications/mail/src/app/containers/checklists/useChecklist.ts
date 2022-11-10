@@ -11,6 +11,7 @@ interface ChecklistApiResponse {
     Items: ChecklistKey[];
     CreatedAt: number;
     ExpiresAt: number;
+    UserWasRewarded: boolean;
 }
 
 export interface GetStartedChecklistApiResponse extends ChecklistApiResponse {
@@ -25,6 +26,7 @@ const useChecklist = (id: ChecklistId) => {
         Items: [] as ChecklistKey[],
         CreatedAt: 0,
         ExpiresAt: 0,
+        UserWasRewarded: false,
     });
 
     const [userSettings] = useUserSettings();
