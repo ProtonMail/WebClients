@@ -1,5 +1,5 @@
-import { NotificationModel } from '../interfaces/calendar/Notification';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
+import { NotificationModel } from '../../interfaces/calendar/Notification';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 import { transformBeforeAt } from './trigger';
 
 const getValarmTriggerUnit = (unit: NOTIFICATION_UNITS) => {

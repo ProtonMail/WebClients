@@ -1,9 +1,9 @@
-import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
-import { VcalVeventComponent } from '../interfaces/calendar';
+import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../../date/timezone';
+import { VcalVeventComponent } from '../../interfaces/calendar';
+import { propertyToUTCDate } from '../vcalConverter';
+import { getIsAllDay, getPropertyTzid } from '../vcalHelper';
 import { RecurringResult, getOccurrences, getOccurrencesBetween } from './recurring';
 import { getIsRruleEqual } from './rruleEqual';
-import { propertyToUTCDate } from './vcalConverter';
-import { getIsAllDay, getPropertyTzid } from './vcalHelper';
 
 export const getAreOccurrencesSubset = (
     newOccurrences: (RecurringResult | Pick<RecurringResult, 'localStart'>)[],

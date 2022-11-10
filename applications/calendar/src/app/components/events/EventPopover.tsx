@@ -21,8 +21,8 @@ import CalendarEventDateHeader from '@proton/components/components/calendarEvent
 import { getIsCalendarDisabled, getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
-import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';

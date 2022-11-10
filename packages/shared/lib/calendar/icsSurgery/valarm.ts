@@ -8,8 +8,8 @@ import {
     VcalValarmComponent,
     VcalValarmRelativeComponent,
 } from '../../interfaces/calendar';
+import { getIsAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../alarms/trigger';
 import { MAX_NOTIFICATIONS, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX } from '../constants';
-import { getIsAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../trigger';
 import { getIsDateTimeValue, getIsPropertyAllDay } from '../vcalHelper';
 
 const getSupportedAlarmAction = (action: VcalStringProperty) => {

@@ -12,8 +12,8 @@ import {
 } from '@proton/components';
 import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,

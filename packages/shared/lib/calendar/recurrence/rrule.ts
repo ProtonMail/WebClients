@@ -1,12 +1,13 @@
+import { getDaysInMonth } from '../../date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
     toLocalDate,
     toUTCDate,
-} from '../date/timezone';
-import { omit, pick } from '../helpers/object';
-import { RequireSome } from '../interfaces';
+} from '../../date/timezone';
+import { omit, pick } from '../../helpers/object';
+import { RequireSome } from '../../interfaces';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -15,7 +16,7 @@ import {
     VcalRruleProperty,
     VcalRrulePropertyValue,
     VcalVeventComponent,
-} from '../interfaces/calendar/VcalModel';
+} from '../../interfaces/calendar/VcalModel';
 import {
     FREQUENCY,
     FREQUENCY_COUNT_MAX,
@@ -23,10 +24,10 @@ import {
     FREQUENCY_INTERVALS_MAX,
     MAXIMUM_DATE,
     MAXIMUM_DATE_UTC,
-} from './constants';
+} from '../constants';
+import { propertyToUTCDate } from '../vcalConverter';
+import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from '../vcalHelper';
 import { getOccurrences } from './recurring';
-import { propertyToUTCDate } from './vcalConverter';
-import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
     return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);
@@ -34,6 +35,19 @@ export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
 
 export const getIsStandardBydayArray = (byday: (string | undefined)[]): byday is VcalDaysKeys[] => {
     return !byday.some((day) => !getIsStandardByday(day));
+};
+
+export const getPositiveSetpos = (date: Date) => {
+    const dayOfMonth = date.getUTCDate();
+    const shiftedDayOfMonth = dayOfMonth - 1;
+    return Math.floor(shiftedDayOfMonth / 7) + 1;
+};
+export const getNegativeSetpos = (date: Date) => {
+    const dayOfMonth = date.getUTCDate();
+    const daysInMonth = getDaysInMonth(date);
+
+    // return -1 if it's the last occurrence in the month
+    return Math.ceil((dayOfMonth - daysInMonth) / 7) - 1;
 };
 
 export const getDayAndSetpos = (byday?: string, bysetpos?: number) => {
