@@ -94,7 +94,7 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
             ...rest,
         }));
 
-    const numberOfCompletedItems = checklist.length;
+    const numberOfCompletedItems = checklistItems.filter(({ complete }) => complete).length;
 
     if (loading) {
         return (
