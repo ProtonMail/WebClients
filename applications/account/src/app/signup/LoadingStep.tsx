@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { Icon, ProtonLogo, classnames } from '@proton/components';
+import { Icon, classnames } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import accountSetupImg from '@proton/styles/assets/img/illustrations/account-setup.svg';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -42,7 +43,8 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
         <Main>
             <Content>
                 <div className="text-center on-mobile-pt2">
-                    <ProtonLogo size={60} variant="glyph-only" />
+                    <img className="m1" width="140" height="140" src={accountSetupImg} alt="" />
+
                     <hr className="mb2 mt2" />
                     <div className="inline-block">
                         {steps.map((step, i) => {

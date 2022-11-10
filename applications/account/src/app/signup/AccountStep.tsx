@@ -427,7 +427,7 @@ const AccountStep = ({
 
                     <hr className="my1-25" />
 
-                    <div className="color-weak text-center text-sm px2">
+                    <div className="color-weak text-center text-sm px2 on-tiny-mobile-px0">
                         {
                             // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                             c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}`
