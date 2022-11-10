@@ -175,13 +175,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     },
                     (result) => {
                         if (chrome.runtime.lastError) {
-                            history.replace('/auth-ext', { type: 'error', payload: chrome.runtime.lastError.message });
+                            history.replace('/auth-ext', {
+                                type: 'error',
+                                extension,
+                                payload: chrome.runtime.lastError.message,
+                            });
                             return;
                         }
                         if (result.type === 'success') {
-                            history.replace('/auth-ext', { type: 'success', payload: result.payload });
+                            history.replace('/auth-ext', { type: 'success', extension, payload: result.payload });
                         } else {
-                            history.replace('/auth-ext', { type: 'error', payload: result.payload });
+                            history.replace('/auth-ext', { type: 'error', extension, payload: result.payload });
                         }
                     }
                 );
