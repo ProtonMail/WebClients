@@ -202,6 +202,7 @@ const AccountStep = ({
                     <SelectTwo
                         id="select-domain"
                         anchorRef={anchorRef}
+                        sameAnchorWidth={false}
                         unstyled
                         onOpen={() => setRerender({})}
                         onClose={() => setRerender({})}
