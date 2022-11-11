@@ -14,6 +14,12 @@ export const postVerifyValidate = (data: { JWT: string }) => ({
     data,
 });
 
+export const postVerifyUnvalidate = (data: { JWT: string }) => ({
+    url: 'core/v4/verify/validate',
+    method: 'delete',
+    data,
+});
+
 export const postVerifyPhone = () => ({
     url: 'core/v4/verify/phone',
     method: 'post',
