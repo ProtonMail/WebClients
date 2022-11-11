@@ -61,7 +61,11 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
             <span className="text-bold text-break">{linkToShow}</span>
 
             <Label className="flex">
-                <Checkbox checked={understandRisk} onChange={() => setUnderstandRisk(!understandRisk)} />
+                <Checkbox
+                    className="mr0-5"
+                    checked={understandRisk}
+                    onChange={() => setUnderstandRisk(!understandRisk)}
+                />
                 {c('Label').t`I understand the risk`}
             </Label>
         </>
