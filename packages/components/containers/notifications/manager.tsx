@@ -99,7 +99,7 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
         setNotifications((oldNotifications) => {
             const newNotification: NotificationOptions = {
                 id,
-                key,
+                key: key!,
                 type,
                 text,
                 disableAutoClose,
