@@ -1,3 +1,7 @@
 .calendar-loader-container {
 	@extend .notifications-container;
+
+	.notification {
+		--top-custom: 0;
+	}
 }
