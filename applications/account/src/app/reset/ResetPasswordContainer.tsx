@@ -174,13 +174,17 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
 
     useSearchParamsEffect(
         (params) => {
+            if (trustedDeviceRecoveryFeature.loading) {
+                return;
+            }
+
             const username = params.get('username');
             const token = params.get('token');
 
             /**
              * Automatic token validation reset
              */
-            if (trustedDeviceRecoveryFeature.loading === false && username && token) {
+            if (username && token) {
                 setAutomaticVerification({ username, loading: true });
 
                 handleValidateResetToken({
