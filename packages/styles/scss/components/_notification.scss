@@ -53,6 +53,7 @@
 
 	&__content {
 		display: flex;
+		align-items: center;
 
 		&:last-child:not(:only-child) {
 			margin-inline-end: em(-2);
@@ -84,6 +85,16 @@
 		// spacing between two buttons
 		.button + .button {
 			margin-inline-start: em(2);
+		}
+
+		.circle-loader {
+			// make sure the loader is the last child
+			// 2nd to last because it automatically adds a "loading" text for screen readers
+
+			&:nth-last-child(2) {
+				margin-inline-start: em(8);
+				margin-inline-end: em(-8);
+			}
 		}
 	}
 

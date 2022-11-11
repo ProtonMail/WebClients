@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { CreateNotificationOptions, NotificationButton, useNotifications } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -66,6 +66,21 @@ export const Basic = () => {
             >
                 Default without close button but with an action
             </Button>
+            <Button
+                color="success"
+                onClick={handleClick({
+                    type: 'success',
+                    showCloseButton: false,
+                    text: (
+                        <>
+                            Doing the thing... <CircleLoader />
+                        </>
+                    ),
+                })}
+                className="mr1 mb1"
+            >
+                Default with spinner
+            </Button>
 
             <Button
                 color="warning"
@@ -98,13 +113,6 @@ export const Basic = () => {
             >
                 Warning without close button but with an action
             </Button>
-            <Button
-                color="warning"
-                onClick={handleClick({ type: 'warning', text: 'Surprise icon', icon: 'credit-card' })}
-                className="mr1 mb1"
-            >
-                Warning with different icon
-            </Button>
         </div>
     );
 };
@@ -119,10 +127,10 @@ export const Expiration = () => {
     return (
         <div>
             <Button
-                onClick={handleClick({ type: 'info', text: 'I expire after 5 seconds!', expiration: 5000 })}
+                onClick={handleClick({ type: 'info', text: 'I expire after 5 seconds!', expiration: 3000 })}
                 className="mr1 mb1"
             >
-                Expires after 5 seconds
+                Expires after 3 seconds
             </Button>
             <Button
                 onClick={handleClick({ type: 'info', text: 'I expire after 500 milliseconds!', expiration: 500 })}
