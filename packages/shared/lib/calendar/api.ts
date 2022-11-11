@@ -1,11 +1,14 @@
-import { getEventByUID } from '../../api/calendars';
-import { Api } from '../../interfaces';
-import { CALENDAR_TYPE, CalendarEventWithMetadata } from '../../interfaces/calendar';
-import { GetEventByUIDArguments } from '../../interfaces/calendar/Api';
+import { getEventByUID } from '@proton/shared/lib/api/calendars';
+import { Api } from '@proton/shared/lib/interfaces';
+import {
+    CALENDAR_TYPE,
+    CalendarEventWithMetadata,
+    GetEventByUIDArguments,
+} from '@proton/shared/lib/interfaces/calendar';
 
 const MAX_ITERATIONS = 100;
 
-const getPaginatedEventsByUID = async ({
+export const getPaginatedEventsByUID = async ({
     api,
     uid,
     recurrenceID,
@@ -44,4 +47,9 @@ const getPaginatedEventsByUID = async ({
     return result;
 };
 
-export default getPaginatedEventsByUID;
+export const reformatApiErrorMessage = (message: string) => {
+    if (message.toLowerCase().endsWith('. please try again')) {
+        return message.slice(0, -18);
+    }
+    return message;
+};

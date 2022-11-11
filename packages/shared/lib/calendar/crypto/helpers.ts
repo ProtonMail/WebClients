@@ -1,8 +1,13 @@
 import { c } from 'ttag';
 
+import noop from '@proton/utils/noop';
+
+import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import { DecryptedKey } from '../../interfaces';
 import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
-import { getPrimaryKey } from '../../keys';
+import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
+import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
+import { getPrimaryKey, splitKeys } from '../../keys';
 import { getPrimaryCalendarKey } from '../../keys/calendarKeys';
 import { toSessionKey } from '../../keys/sessionKey';
 import { readSessionKeys } from '../deserialize';
@@ -60,4 +65,45 @@ export const getCreationKeys = async ({
     };
 };
 
-export default getCreationKeys;
+export const getSharedSessionKey = async ({
+    calendarEvent,
+    calendarKeys,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    calendarEvent: CalendarEvent;
+    calendarKeys?: DecryptedCalendarKey[];
+    getAddressKeys?: GetAddressKeys;
+    getCalendarKeys?: GetCalendarKeys;
+}) => {
+    try {
+        // we need to decrypt the sharedKeyPacket in Event to obtain the decrypted session key
+        const privateKeys = calendarKeys
+            ? splitKeys(calendarKeys).privateKeys
+            : await getCalendarEventDecryptionKeys({ calendarEvent, getAddressKeys, getCalendarKeys });
+        if (!privateKeys) {
+            return;
+        }
+        const [sessionKey] = await readSessionKeys({ calendarEvent, privateKeys });
+
+        return sessionKey;
+    } catch (e: any) {
+        noop();
+    }
+};
+
+export const getBase64SharedSessionKey = async ({
+    calendarEvent,
+    calendarKeys,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    calendarEvent: CalendarEvent;
+    calendarKeys?: DecryptedCalendarKey[];
+    getAddressKeys?: GetAddressKeys;
+    getCalendarKeys?: GetCalendarKeys;
+}) => {
+    const sessionKey = await getSharedSessionKey({ calendarEvent, calendarKeys, getAddressKeys, getCalendarKeys });
+
+    return sessionKey ? uint8ArrayToBase64String(sessionKey.data) : undefined;
+};

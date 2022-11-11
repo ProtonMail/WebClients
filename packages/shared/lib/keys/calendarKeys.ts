@@ -10,7 +10,7 @@ import {
 } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getEncryptedSessionKey } from '../calendar/encrypt';
+import { getEncryptedSessionKey } from '../calendar/crypto/encrypt';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { uint8ArrayToBase64String } from '../helpers/encoding';

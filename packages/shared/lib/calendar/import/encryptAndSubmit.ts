@@ -1,3 +1,4 @@
+import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import chunk from '@proton/utils/chunk';
 
 import { syncMultipleEvents } from '../../api/calendars';
@@ -15,10 +16,10 @@ import {
 } from '../../interfaces/calendar';
 import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
+import { getCreationKeys } from '../crypto/helpers';
 import { getIsSuccessSyncApiResponse } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
-import getCreationKeys from '../integration/getCreationKeys';
-import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
+import { createCalendarEvent } from '../serialize';
 import { getComponentIdentifier, splitErrors } from './import';
 
 const BATCH_SIZE = 10;

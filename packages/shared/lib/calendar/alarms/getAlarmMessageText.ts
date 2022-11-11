@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { MINUTE } from '../constants';
-import { format as formatUTC, isNextDay, isSameDay, isSameMonth, isSameYear } from '../date-fns-utc';
+import { MINUTE } from '../../constants';
+import { format as formatUTC, isNextDay, isSameDay, isSameMonth, isSameYear } from '../../date-fns-utc';
 
 interface Arguments {
     isAllDay: boolean;

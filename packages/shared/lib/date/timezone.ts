@@ -6,10 +6,10 @@ import {
     listTimeZones,
 } from '@protontech/timezone-support';
 
-import { getAllowedTimeZones } from '@proton/shared/lib/api/calendars';
-import { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getAllowedTimeZones } from '../api/calendars';
+import { Api } from '../interfaces';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
     FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,
@@ -339,4 +339,8 @@ export const convertUTCDateTimeToZone = (dateTime: DateTime, tzid: string) => {
 
 export const fromUTCDateToLocalFakeUTCDate = (utcDate: Date, isAllDay: boolean, tzid = 'UTC') => {
     return isAllDay ? utcDate : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
+};
+
+export const convertTimestampToTimezone = (timestamp: number, timezone: string) => {
+    return convertUTCDateTimeToZone(fromUTCDate(new Date(timestamp)), timezone);
 };
