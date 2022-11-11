@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
@@ -6,7 +8,15 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { Copy, Icon, Loader } from '../../components';
 import { useNotifications } from '../../hooks';
 
-export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: string; loading?: boolean }) => {
+export const MnemonicPhraseStepContent = ({
+    mnemonic,
+    loading,
+    children,
+}: {
+    mnemonic?: string;
+    loading?: boolean;
+    children?: ReactNode;
+}) => {
     const { createNotification } = useNotifications();
 
     const onCopy = () => {
@@ -15,14 +25,22 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
 
     return (
         <>
-            <p className="mt0">{c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}</p>
+            {children ? (
+                children
+            ) : (
+                <>
+                    <p className="mt0">
+                        {c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}
+                    </p>
 
-            <p className="color-warning">
-                <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" />
+                    <p className="color-warning">
+                        <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" />
 
-                {c('Info')
-                    .t`Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.`}
-            </p>
+                        {c('Info')
+                            .t`Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.`}
+                    </p>
+                </>
+            )}
 
             {!mnemonic || loading ? (
                 <Loader />
