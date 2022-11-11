@@ -1,4 +1,4 @@
-import { AnimationEvent, MouseEvent, ReactNode } from 'react';
+import { AnimationEvent, MouseEvent, ReactNode, Ref, forwardRef } from 'react';
 
 import { Icon, IconName, NotificationButton } from '@proton/components/components';
 
@@ -31,9 +31,13 @@ interface Props {
     onClick?: (e: MouseEvent<HTMLElement>) => void;
     showCloseButton?: boolean;
     icon?: IconName;
+    top: number | undefined;
 }
 
-const Notification = ({ children, type, isClosing, onClick, onExit, showCloseButton, icon }: Props) => {
+const NotificationBase = (
+    { children, type, top, isClosing, onClick, onExit, showCloseButton, icon }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
         if (animationName === ANIMATIONS.NOTIFICATION_OUT && isClosing) {
             onExit();
@@ -42,6 +46,7 @@ const Notification = ({ children, type, isClosing, onClick, onExit, showCloseBut
 
     return (
         <div
+            ref={ref}
             aria-atomic="true"
             role="alert"
             className={classnames([
@@ -51,6 +56,9 @@ const Notification = ({ children, type, isClosing, onClick, onExit, showCloseBut
                 isClosing && CLASSES.NOTIFICATION_OUT,
             ])}
             onAnimationEnd={handleAnimationEnd}
+            style={{
+                '--top-custom': top === undefined ? `${-999}px` : `${top}px`,
+            }}
         >
             {icon && <Icon name={icon} className="notification__icon" />}
             <span className="notification__content">{children}</span>
@@ -67,5 +75,7 @@ const Notification = ({ children, type, isClosing, onClick, onExit, showCloseBut
         </div>
     );
 };
+
+const Notification = forwardRef<HTMLDivElement, Props>(NotificationBase);
 
 export default Notification;
