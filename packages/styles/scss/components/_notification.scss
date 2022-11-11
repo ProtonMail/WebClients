@@ -25,7 +25,8 @@
 }
 
 .notification {
-	display: flex;
+	position: absolute;
+	inset-block-end: var(--top-custom);
 	align-items: center;
 	overflow: hidden;
 	border-radius: var(--border-radius-lg);

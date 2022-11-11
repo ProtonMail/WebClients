@@ -6,7 +6,7 @@ export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 
 export interface NotificationOptions {
     id: number;
-    key: any;
+    key: Key;
     text: ReactNode;
     type: NotificationType;
     isClosing: boolean;
