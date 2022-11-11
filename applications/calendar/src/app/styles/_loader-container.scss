@@ -1,20 +1,3 @@
 .calendar-loader-container {
-	position: fixed;
-	inset-block-start: 1em;
-	inset-inline-start: 50%;
-	z-index: $layer-notifications;
-	max-inline-size: 100%;
-	padding: 1em;
-	transform: translateX(-50%);
-	@at-root {
-		[dir='rtl'] & {
-			transform: translateX(50%);
-		}
-	}
-
-	border-radius: var(--border-radius-md);
-	box-shadow: var(--shadow-lifted);
-	background-color: var(--signal-info);
-	color: var(--signal-info-contrast);
-	text-align: center;
+	@extend .notifications-container;
 }
