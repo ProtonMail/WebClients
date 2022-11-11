@@ -1,6 +1,6 @@
 .notifications-container {
 	position: fixed;
-	inset-block-end: 1em;
+	inset-block-end: em(24);
 	inset-inline-start: 50%;
 	z-index: $layer-notifications;
 	transform: translateX(-50%);
@@ -11,21 +11,11 @@
 			transform: translateX(50%);
 		}
 	}
-
-	@include media('<=small') {
-		text-align: center;
-	}
-
-	@include media('<=xsmall') {
-		[class*='notification-'] {
-			transform: none;
-			inset-inline: 1em;
-		}
-	}
 }
 
 .notification {
-	position: absolute;
+	position: fixed;
+	display: flex;
 	inset-block-end: var(--top-custom);
 	align-items: center;
 	overflow: hidden;
@@ -33,12 +23,18 @@
 	box-shadow: var(--shadow-lifted);
 	background-color: var(--background-invert);
 	color: var(--text-invert);
-	inline-size: auto;
+	inline-size: max-content;
 	max-inline-size: max(400px, calc(100% - 2em));
-	margin-block-end: 0.5em;
-	transition: all 0.3s ease;
 	padding-block: em(8);
 	padding-inline: em(12);
+	transform: translateX(-50%);
+	transition: inset-block-end 0.3s ease;
+
+	@at-root {
+		[dir='rtl'] & {
+			transform: translateX(50%);
+		}
+	}
 
 	.button {
 		--button-default-text-color: inherit;
@@ -46,6 +42,10 @@
 		--button-active-text-color: inherit;
 
 		margin-block: em(-6);
+	}
+
+	.link {
+		color: inherit;
 	}
 
 	&__icon {
@@ -110,7 +110,6 @@
 		animation-fill-mode: forwards;
 		animation-timing-function: ease;
 		animation-name: anime-notification-in;
-		transform-origin: top center;
 	}
 
 	&--out {
@@ -118,7 +117,6 @@
 		animation-fill-mode: forwards;
 		animation-timing-function: ease;
 		animation-name: anime-notification-out;
-		transform-origin: bottom center;
 	}
 
 	&--error,
@@ -132,15 +130,11 @@
 	0% {
 		opacity: 0;
 		transform: translateY(50%);
-		margin-block-end: 0;
-		block-size: 0;
 	}
 
 	100% {
 		opacity: 1;
 		transform: translateY(0);
-		margin-block-end: 0.5em;
-		block-size: calc(var(--height) * 1px);
 	}
 }
 
