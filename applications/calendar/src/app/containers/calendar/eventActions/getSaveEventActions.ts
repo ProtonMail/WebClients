@@ -1,12 +1,12 @@
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
-import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
-import withVeventRruleWkst from '@proton/shared/lib/calendar/rruleWkst';
+import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
+import withVeventRruleWkst from '@proton/shared/lib/calendar/recurrence/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';

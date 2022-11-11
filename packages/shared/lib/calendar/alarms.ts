@@ -10,11 +10,11 @@ import {
     VcalValarmRelativeComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
+import getAlarmMessageText from './alarms/getAlarmMessageText';
+import { getValarmTrigger } from './alarms/getValarmTrigger';
+import { normalizeDurationToUnit } from './alarms/trigger';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
-import getAlarmMessageText from './getAlarmMessageText';
-import { getValarmTrigger } from './getValarmTrigger';
 import { getDisplayTitle } from './helper';
-import { normalizeDurationToUnit } from './trigger';
 import { getMillisecondsFromTriggerString } from './vcal';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsAllDay } from './vcalHelper';

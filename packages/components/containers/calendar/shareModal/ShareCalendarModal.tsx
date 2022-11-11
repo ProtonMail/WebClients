@@ -13,8 +13,8 @@ import {
 } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { addMember } from '@proton/shared/lib/api/calendars';
+import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
-import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';

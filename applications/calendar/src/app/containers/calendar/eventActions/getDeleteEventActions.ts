@@ -1,8 +1,8 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';

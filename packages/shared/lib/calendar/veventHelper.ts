@@ -1,22 +1,16 @@
 import { serverTime } from '@proton/crypto';
-import noop from '@proton/utils/noop';
 
 import { fromUTCDate } from '../date/timezone';
-import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { omit, pick } from '../helpers/object';
 import {
     AttendeeClearPartResult,
     AttendeePart,
     CalendarEvent,
     CalendarEventData,
-    DecryptedCalendarKey,
     VcalValarmComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
-import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import { GetCalendarKeys } from '../interfaces/hooks/GetCalendarKeys';
 import { RequireOnly } from '../interfaces/utils';
-import { splitKeys } from '../keys';
 import { fromInternalAttendee } from './attendees';
 import {
     CALENDAR_CARD_TYPE,
@@ -30,9 +24,7 @@ import {
     USER_ENCRYPTED_FIELDS,
     USER_SIGNED_FIELDS,
 } from './constants';
-import { readSessionKeys } from './deserialize';
 import { generateProtonCalendarUID, hasMoreThan, wrap } from './helper';
-import { getCalendarEventDecryptionKeys } from './keys/getCalendarEventDecryptionKeys';
 import { parse, serialize } from './vcal';
 import { prodId } from './vcalConfig';
 import { dateTimeToProperty } from './vcalConverter';
@@ -213,47 +205,4 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
             [CLEAR_TEXT]: attendeesPart[CLEAR_TEXT],
         },
     };
-};
-
-export const getSharedSessionKey = async ({
-    calendarEvent,
-    calendarKeys,
-    getAddressKeys,
-    getCalendarKeys,
-}: {
-    calendarEvent: CalendarEvent;
-    calendarKeys?: DecryptedCalendarKey[];
-    getAddressKeys?: GetAddressKeys;
-    getCalendarKeys?: GetCalendarKeys;
-}) => {
-    try {
-        // we need to decrypt the sharedKeyPacket in Event to obtain the decrypted session key
-        const privateKeys = calendarKeys
-            ? splitKeys(calendarKeys).privateKeys
-            : await getCalendarEventDecryptionKeys({ calendarEvent, getAddressKeys, getCalendarKeys });
-        if (!privateKeys) {
-            return;
-        }
-        const [sessionKey] = await readSessionKeys({ calendarEvent, privateKeys });
-
-        return sessionKey;
-    } catch (e: any) {
-        noop();
-    }
-};
-
-export const getBase64SharedSessionKey = async ({
-    calendarEvent,
-    calendarKeys,
-    getAddressKeys,
-    getCalendarKeys,
-}: {
-    calendarEvent: CalendarEvent;
-    calendarKeys?: DecryptedCalendarKey[];
-    getAddressKeys?: GetAddressKeys;
-    getCalendarKeys?: GetCalendarKeys;
-}) => {
-    const sessionKey = await getSharedSessionKey({ calendarEvent, calendarKeys, getAddressKeys, getCalendarKeys });
-
-    return sessionKey ? uint8ArrayToBase64String(sessionKey.data) : undefined;
 };

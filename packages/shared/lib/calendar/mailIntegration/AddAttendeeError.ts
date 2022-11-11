@@ -1,4 +1,6 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
+
+import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 
 export enum ADD_EVENT_ERROR_TYPE {
     TOO_MANY_PARTICIPANTS,
@@ -6,8 +8,11 @@ export enum ADD_EVENT_ERROR_TYPE {
 
 const getErrorMessage = (errorType: ADD_EVENT_ERROR_TYPE) => {
     if (errorType === ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS) {
-        return c('Error adding participants to a calendar event')
-            .t`At most 100 participants are allowed per invitation`;
+        return c('Error adding participants to a calendar event').ngettext(
+            msgid`At most ${MAX_ATTENDEES} participant is allowed per invitation`,
+            `At most ${MAX_ATTENDEES} participants are allowed per invitation`,
+            MAX_ATTENDEES
+        );
     }
     return '';
 };

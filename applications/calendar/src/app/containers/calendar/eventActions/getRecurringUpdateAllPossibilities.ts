@@ -1,4 +1,4 @@
-import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
+import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
 import {
     getDateOrDateTimeProperty,
     getDtendProperty,

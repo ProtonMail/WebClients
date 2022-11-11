@@ -37,7 +37,7 @@ import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, SETTINGS_NOTIFICATION_TYPE } from '.
 import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
-import { getIsRruleEqual } from '../rruleEqual';
+import { getIsRruleEqual } from '../recurrence/rruleEqual';
 import { fromTriggerString, serialize } from '../vcal';
 import { getAllDayInfo, getHasModifiedDateTimes, propertyToUTCDate } from '../vcalConverter';
 import {

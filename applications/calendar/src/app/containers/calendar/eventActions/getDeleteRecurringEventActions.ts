@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getResetPartstatActions } from '@proton/shared/lib/calendar/integration/invite';
+import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
