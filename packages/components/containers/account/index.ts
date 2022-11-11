@@ -7,6 +7,7 @@ export { default as SettingsSection } from './SettingsSection';
 export { default as SettingsSectionWide } from './SettingsSectionWide';
 export { default as SettingsSectionTitle } from './SettingsSectionTitle';
 export { default as EmailSubscriptionCheckboxes } from './EmailSubscriptionCheckboxes';
+export { default as EmailSubscriptionCategories } from './EmailSubscriptionCategories';
 export { default as EmailSubscriptionSection } from './EmailSubscriptionSection';
 export { default as EditEmailSubscription } from './EditEmailSubscription';
 export { default as MozillaInfoPanel } from './MozillaInfoPanel';
