@@ -27,10 +27,11 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
             return acc;
         }, {});
         let top = 0;
+        const gap = 4;
         setPositions(
             notifications.reduce<{ [key: Key]: Position }>((acc, notification) => {
                 acc[notification.key] = { top };
-                top += rects[notification.key].height;
+                top += rects[notification.key].height + gap;
                 return acc;
             }, {})
         );
