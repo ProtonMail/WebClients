@@ -7,9 +7,9 @@ import {
     VcalDateTimeProperty,
     VcalDurationValue,
     VcalTriggerProperty,
-} from '../interfaces/calendar';
-import { propertyToUTCDate } from './vcalConverter';
-import { getIsPropertyAllDay } from './vcalHelper';
+} from '../../interfaces/calendar';
+import { propertyToUTCDate } from '../vcalConverter';
+import { getIsPropertyAllDay } from '../vcalHelper';
 
 const MINUTE = 60;
 const HOUR = 60 * MINUTE;

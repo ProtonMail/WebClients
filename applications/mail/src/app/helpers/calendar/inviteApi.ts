@@ -2,6 +2,8 @@ import { getUnixTime } from 'date-fns';
 
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
+import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import {
     getAttendeeEmail,
     modifyAttendeesPartstat,
@@ -16,26 +18,20 @@ import {
     getWritableCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
-import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
+import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 import {
     findAttendee,
     getInvitedEventWithAlarms,
     getResetPartstatActions,
-} from '@proton/shared/lib/calendar/integration/invite';
-import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
-import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
-import {
-    createCalendarEvent,
-    createPersonalEvent,
-    getHasSharedEventContent,
-    getHasSharedKeyPacket,
-} from '@proton/shared/lib/calendar/serialize';
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
+import { createCalendarEvent, createPersonalEvent } from '@proton/shared/lib/calendar/serialize';
 import {
     getHasModifiedAttendees,
     getHasModifiedDateTimes,

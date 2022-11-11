@@ -1,7 +1,7 @@
 import { addDays } from 'date-fns';
 
 import { toExdate } from '@proton/shared/lib/calendar/exdate';
-import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
+import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getPropertyTzid, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';

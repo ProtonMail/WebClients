@@ -8,7 +8,7 @@ import {
     generateEmailSubject,
     generateVtimezonesComponents,
     getHasUpdatedInviteData,
-} from '@proton/shared/lib/calendar/integration/invite';
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';

@@ -1,5 +1,5 @@
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
-import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/helper';
+import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { getUntilProperty, numericDayToDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';

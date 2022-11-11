@@ -8,12 +8,14 @@ import getSyncMultipleEventsPayload, {
 
 jest.mock('@proton/shared/lib/calendar/serialize', () => ({
     createCalendarEvent: jest.fn(() => ({})),
+}));
+
+jest.mock('@proton/shared/lib/calendar/apiModels', () => ({
     getHasSharedKeyPacket: jest.fn(() => true),
 }));
 
-jest.mock('@proton/shared/lib/calendar/integration/getCreationKeys', () => ({
-    __esModule: true,
-    default: jest.fn(() => ({})),
+jest.mock('@proton/shared/lib/calendar/crypto/helpers', () => ({
+    getCreationKeys: jest.fn(() => ({})),
 }));
 
 describe('getSyncMultipleEventsPayload', () => {

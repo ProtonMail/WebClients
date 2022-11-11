@@ -1,16 +1,16 @@
 /* eslint-disable no-param-reassign */
-import { addDays, addMilliseconds, differenceInCalendarDays, max } from '../date-fns-utc';
-import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
+import { addDays, addMilliseconds, differenceInCalendarDays, max } from '../../date-fns-utc';
+import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../../date/timezone';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalRruleProperty,
     VcalVeventComponent,
-} from '../interfaces/calendar/VcalModel';
-import { createExdateMap } from './exdate';
-import { getInternalDateTimeValue, internalValueToIcalValue } from './vcal';
-import { getDtendProperty, propertyToUTCDate } from './vcalConverter';
-import { getIsAllDay, getPropertyTzid } from './vcalHelper';
+} from '../../interfaces/calendar/VcalModel';
+import { createExdateMap } from '../exdate';
+import { getInternalDateTimeValue, internalValueToIcalValue } from '../vcal';
+import { getDtendProperty, propertyToUTCDate } from '../vcalConverter';
+import { getIsAllDay, getPropertyTzid } from '../vcalHelper';
 
 interface CacheInner {
     dtstart: VcalDateOrDateTimeValue;

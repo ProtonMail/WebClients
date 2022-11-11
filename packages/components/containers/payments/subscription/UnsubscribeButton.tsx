@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
-import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/subscription';
+import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';

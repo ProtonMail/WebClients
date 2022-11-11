@@ -1,20 +1,20 @@
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { isSameDay } from '../date-fns-utc';
-import { toUTCDate } from '../date/timezone';
-import isDeepEqual from '../helpers/isDeepEqual';
-import { omit } from '../helpers/object';
+import { isSameDay } from '../../date-fns-utc';
+import { toUTCDate } from '../../date/timezone';
+import isDeepEqual from '../../helpers/isDeepEqual';
+import { omit } from '../../helpers/object';
 import {
     VcalDateOrDateTimeValue,
     VcalDays,
     VcalDaysKeys,
     VcalRruleProperty,
     VcalRrulePropertyValue,
-} from '../interfaces/calendar/VcalModel';
-import { FREQUENCY } from './constants';
+} from '../../interfaces/calendar/VcalModel';
+import { FREQUENCY } from '../constants';
+import { dayToNumericDay } from '../vcalConverter';
 import { getRruleValue } from './rrule';
 import { withRruleWkst } from './rruleWkst';
-import { dayToNumericDay } from './vcalConverter';
 
 const maybeArrayComparisonKeys = [
     'byday',
