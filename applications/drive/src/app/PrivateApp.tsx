@@ -1,4 +1,4 @@
-import { LoaderPage, StandardPrivateApp } from '@proton/components';
+import { LoaderPage, StandardPrivateApp, useProtonMailMigrationRedirect } from '@proton/components';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -21,6 +21,8 @@ interface Props {
 
 const PrivateAppInner = ({ onLogout, locales }: Props) => {
     const { loadUserSettings } = useUserSettings();
+
+    useProtonMailMigrationRedirect();
 
     return (
         <StandardPrivateApp

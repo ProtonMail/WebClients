@@ -1,4 +1,11 @@
-import { LoaderPage, StandardPrivateApp, useApi, useAppTitle, useSideAppParent } from '@proton/components';
+import {
+    LoaderPage,
+    StandardPrivateApp,
+    useApi,
+    useAppTitle,
+    useProtonMailMigrationRedirect,
+    useSideAppParent,
+} from '@proton/components';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
@@ -34,6 +41,8 @@ interface Props {
 }
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
+
+    useProtonMailMigrationRedirect();
 
     useAppTitle('');
 
