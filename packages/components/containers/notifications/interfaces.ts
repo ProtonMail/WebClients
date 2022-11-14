@@ -10,7 +10,6 @@ export interface NotificationOptions {
     text: ReactNode;
     type: NotificationType;
     isClosing: boolean;
-    disableAutoClose?: boolean;
     showCloseButton?: boolean;
     icon?: IconName;
     deduplicate?: boolean;

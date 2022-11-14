@@ -29,13 +29,13 @@ interface Props {
     isClosing: boolean;
     onExit: () => void;
     onClick?: (e: MouseEvent<HTMLElement>) => void;
-    showCloseButton?: boolean;
+    onClose?: () => void;
     icon?: IconName;
     top: number | undefined;
 }
 
 const NotificationBase = (
-    { children, type, top, isClosing, onClick, onExit, showCloseButton, icon }: Props,
+    { children, type, top, isClosing, onClick, onClose, onExit, icon }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
@@ -55,6 +55,7 @@ const NotificationBase = (
                 TYPES_CLASS[type] || TYPES_CLASS.success,
                 isClosing && CLASSES.NOTIFICATION_OUT,
             ])}
+            onClick={onClick}
             onAnimationEnd={handleAnimationEnd}
             style={{
                 '--top-custom': top === undefined ? `${-999}px` : `${top}px`,
@@ -62,11 +63,11 @@ const NotificationBase = (
         >
             {icon && <Icon name={icon} className="notification__icon" />}
             <span className="notification__content">{children}</span>
-            {showCloseButton && (
+            {onClose && (
                 <NotificationButton
                     notificationType={type == 'error' || type == 'warning' ? 'warning' : undefined}
                     icon
-                    onClick={onClick}
+                    onClick={onClose}
                     className="notification__close-button"
                 >
                     <Icon name="cross" />
