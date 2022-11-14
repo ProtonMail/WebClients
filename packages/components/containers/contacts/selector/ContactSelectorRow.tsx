@@ -36,6 +36,7 @@ const ContactSelectorRow = ({
                 ])}
             >
                 <Checkbox
+                    labelProps={{ 'data-testid': `contact-checkbox-${contact.Email}` }}
                     className="flex-nowrap w100 h100"
                     checked={checked}
                     onChange={(e) => onCheck(e, contact.ID)}

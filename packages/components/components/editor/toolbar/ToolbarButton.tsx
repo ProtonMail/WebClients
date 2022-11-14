@@ -9,6 +9,7 @@ const ToolbarButton = ({
     className = '',
     title,
     onClick,
+    ...rest
 }: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>) => (
     <Tooltip title={title}>
         <button
@@ -16,6 +17,7 @@ const ToolbarButton = ({
             disabled={disabled}
             className={classnames(['editor-toolbar-button interactive m0 flex', className])}
             onClick={onClick}
+            {...rest}
         >
             {children}
         </button>
