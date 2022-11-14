@@ -78,7 +78,8 @@
 				margin-inline-end: em(-8);
 			}
 
-			&:nth-last-child(2) {
+			&:nth-last-child(2),
+			&:has(+ .circle-loader) {
 				margin-inline-start: em(8);
 			}
 		}
