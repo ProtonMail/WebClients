@@ -4,7 +4,7 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint . --ext ts --quiet --cache",
-        "test": "jest --coverage"
+        "test": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
         "@testing-library/react-hooks": "^8.0.1",
