@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/components';
-import { ACCOUNT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Content from './Content';
 import Header from './Header';
@@ -31,7 +31,7 @@ const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) 
                 <Text>
                     {
                         // translator: variable here is the name of the service to login to. Continuing will connect your Proton Account to SimpleLogin.
-                        c('Info').t`Continuing will connect your ${ACCOUNT_APP_NAME} to ${name}.`
+                        c('Info').t`Continuing will connect your ${BRAND_NAME} Account to ${name}.`
                     }
                 </Text>
                 {image && <img src={`data:image/svg+xml;base64,${image}`} alt="" className="w100 mb1-5" />}
