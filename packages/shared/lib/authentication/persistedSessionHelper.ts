@@ -11,8 +11,8 @@ import { SECOND, isSSOMode } from '../constants';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { Api, User as tsUser } from '../interfaces';
-import { getIsAuthorizedApp, postMessageFromIframe } from '../sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '../sideApp/models';
+import { getIsAuthorizedApp, getIsSideAppPostMessage, postMessageFromIframe } from '../sideApp/helpers';
+import { SIDE_APP_EVENTS } from '../sideApp/models';
 import { getKey } from './cryptoHelper';
 import { InvalidPersistentSessionError } from './error';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
@@ -45,7 +45,11 @@ const handleSideApp = (localID: number) => {
     const isIframe = window.self !== window.top;
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
 
-    const handler = (event: MessageEvent<SIDE_APP_ACTION>) => {
+    const handler = (event: MessageEvent) => {
+        if (!getIsSideAppPostMessage(event)) {
+            return;
+        }
+
         if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_SESSION) {
             const { UID, keyPassword, User, persistent, trusted, tag } = event.data.payload;
             window.removeEventListener('message', handler);

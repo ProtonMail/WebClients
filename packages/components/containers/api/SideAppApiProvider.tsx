@@ -4,8 +4,8 @@ import { updateServerTime } from '@proton/crypto';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
 import { deserializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
-import { getIsAuthorizedApp, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { getIsAuthorizedApp, getIsSideAppPostMessage, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import noop from '@proton/utils/noop';
 
 import { generateUID } from '../../helpers';
@@ -25,7 +25,11 @@ const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
             reject = rej;
         });
 
-        const handler = (event: MessageEvent<SIDE_APP_ACTION>) => {
+        const handler = (event: MessageEvent) => {
+            if (!getIsSideAppPostMessage(event)) {
+                return;
+            }
+
             if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_API_RESPONSE && event.data.payload.id === id) {
                 const { serverTime, data, success, isApiError } = event.data.payload;
 
