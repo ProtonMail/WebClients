@@ -107,14 +107,15 @@
 
 	&--in {
 		animation-duration: 0.3s;
-		animation-fill-mode: forwards;
+		animation-delay: 0.3s;
+		animation-fill-mode: both;
 		animation-timing-function: ease;
 		animation-name: anime-notification-in;
 	}
 
 	&--out {
 		animation-duration: 0.3s;
-		animation-fill-mode: forwards;
+		animation-fill-mode: both;
 		animation-timing-function: ease;
 		animation-name: anime-notification-out;
 	}
