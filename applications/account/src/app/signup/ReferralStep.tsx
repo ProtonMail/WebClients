@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Loader, ReferralFeaturesList, ReferralHowItWorks, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import { PlanIDs } from '@proton/shared/lib/interfaces';
 
 import Content from '../public/Content';
@@ -38,7 +38,7 @@ const ReferralStep = ({ experiment, onPlan, onBack }: Props) => {
                 <Content>
                     <Text>
                         {c('Subtitle for trial plan')
-                            .t`This offer is for those new to Proton only. No credit card required.`}
+                            .t`This offer is for those new to ${BRAND_NAME} only. No credit card required.`}
                     </Text>
                     <ReferralHowItWorks />
                     <Button

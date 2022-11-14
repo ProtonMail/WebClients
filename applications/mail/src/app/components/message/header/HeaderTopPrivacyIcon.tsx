@@ -12,6 +12,7 @@ import {
     useFeatures,
     useModalState,
 } from '@proton/components';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -81,7 +82,7 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                                         {
                                             // translator : Received message has been delivered to the user via a Simple Login alias
                                             c('Message has been sent to the user via a SimpleLogin alias')
-                                                .t`Delivered via SimpleLogin by Proton`
+                                                .t`Delivered via SimpleLogin by ${BRAND_NAME}`
                                         }
                                     </span>
                                 </div>

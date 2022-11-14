@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Alert, ModalProps, ModalTwo, ModalTwoHeader, useSettingsLink } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
@@ -18,7 +19,7 @@ const ContactUpgradeModal = ({ ...rest }: ModalProps) => {
             <ModalTwoHeader title={c('Title').t`Upgrade required`} />
             <ModalContent>
                 <Alert className="mb1" type="warning">{c('Warning')
-                    .t`This feature requires a paid Proton account`}</Alert>
+                    .t`This feature requires a paid ${BRAND_NAME} account`}</Alert>
             </ModalContent>
             <ModalFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>

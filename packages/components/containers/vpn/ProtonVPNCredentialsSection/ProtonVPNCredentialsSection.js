@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Alert, Field, Href, Label, Row } from '../../../components';
 import { useUser } from '../../../hooks';
@@ -20,7 +20,7 @@ const ProtonVPNCredentialsSection = () => {
             <Alert className="mb1">{c('Info')
                 .jt`Use the following credentials to log into the ${downloadLink}.`}</Alert>
             <Row>
-                <Label>{c('Label').t`Proton username`}</Label>
+                <Label>{c('Label').t`${BRAND_NAME} username`}</Label>
                 <Field className="mt0-5">
                     <strong>{username}</strong>
                 </Field>

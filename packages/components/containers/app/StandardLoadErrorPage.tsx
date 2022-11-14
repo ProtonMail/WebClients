@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+
 import { InlineLinkButton } from '../../components';
 import { useDocumentTitle } from '../../hooks';
 import GenericError from '../error/GenericError';
@@ -38,7 +40,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     return (
         <div className="h100 flex flex-align-items-center pb4 scroll-if-needed">
             <GenericError>
-                <span>{c('Error message').t`There was a problem connecting to Proton.`}</span>
+                <span>{c('Error message').t`There was a problem connecting to ${BRAND_NAME}.`}</span>
                 <span>{c('Error message').jt`Please ${refresh} or check your connection.`}</span>
                 {errorMessage && (
                     <div className="mt1 p0-5 color-weak">{c('Error message').t`Error: ${errorMessage}`}</div>

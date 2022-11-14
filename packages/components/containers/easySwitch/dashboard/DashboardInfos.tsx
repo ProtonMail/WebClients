@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Alert, Href } from '@proton/components/components';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SettingsParagraph } from '../../account';
@@ -20,7 +21,7 @@ const DashboardInfos = () => {
 
     // translator: the variable here is a HTML tag, here is the complete sentence: "Proton will try to resume the import as soon as your email provider resets your account’s bandwidth limit. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over."
     const bandwidthMessage = c('Info')
-        .jt`Proton will try to resume the import as soon as your email provider resets your account’s ${bandwithLimitLink}. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.`;
+        .jt`${BRAND_NAME} will try to resume the import as soon as your email provider resets your account’s ${bandwithLimitLink}. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.`;
 
     return (
         <>
@@ -29,7 +30,7 @@ const DashboardInfos = () => {
             )}
             {importErrors.includes('storageLimit') && (
                 <Alert className="mb1" type="warning">
-                    {c('Info').t`Proton paused an import because your account is running low on space. You can:`}
+                    {c('Info').t`${BRAND_NAME} paused an import because your account is running low on space. You can:`}
                     <ul className="m0">
                         <li>{c('Info').t`free up space by deleting older messages or other data`}</li>
                         <li>{c('Info').t`purchase additional storage`}</li>
@@ -39,7 +40,7 @@ const DashboardInfos = () => {
             {importErrors.includes('authConnection') && (
                 <Alert className="mb1" type="warning">
                     {c('Info')
-                        .t`Proton paused an import because it lost the connection with your other email provider. Please reconnect.`}
+                        .t`${BRAND_NAME} paused an import because it lost the connection with your other email provider. Please reconnect.`}
                 </Alert>
             )}
             {importErrors.includes('delayedImport') && (

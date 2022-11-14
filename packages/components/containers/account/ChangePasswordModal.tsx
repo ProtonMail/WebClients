@@ -7,7 +7,7 @@ import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { MAIL_APP_NAME, isSSOMode } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, isSSOMode } from '@proton/shared/lib/constants';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import {
     confirmPasswordValidator,
@@ -535,7 +535,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                 {description}
                 <div className="mb1">
                     {c('Info')
-                        .t`Proton's encryption technology means that nobody can access your password - not even us.`}
+                        .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
                 </div>
                 <div className="mb1">
                     {
