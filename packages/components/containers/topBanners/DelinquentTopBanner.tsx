@@ -19,11 +19,20 @@ const DelinquentTopBanner = () => {
             .t`Pay invoice`}</SettingsLink>
     );
     if (user.canPay) {
+        if (user.Delinquent === UNPAID_STATE.DELINQUENT) {
+            return (
+                <TopBanner className="bg-danger">
+                    {c('Info')
+                        .jt`Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${payInvoiceLink}`}
+                </TopBanner>
+            );
+        }
+
         if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
             return (
                 <TopBanner className="bg-danger">
                     {c('Info')
-                        .jt`Your account has at least one overdue invoice. Your access has been restricted. ${payInvoiceLink}`}
+                        .jt`Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${payInvoiceLink}`}
                 </TopBanner>
             );
         }
