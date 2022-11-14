@@ -32,9 +32,9 @@ function NewLabelForm({
         const label = labelOrFolder as tsLabel;
         return (
             <Row>
-                <Label htmlFor="accountType">{c('New Label form').t`Color`} </Label>
+                <Label htmlFor="color-button">{c('New Label form').t`Color`} </Label>
                 <Field>
-                    <ColorPicker id="accountType" color={label.Color} onChange={onChangeColor} />
+                    <ColorPicker id="color-button" color={label.Color} onChange={onChangeColor} />
                 </Field>
             </Row>
         );
@@ -58,12 +58,12 @@ function NewLabelForm({
                 </Row>
                 {mailSettings?.EnableFolderColor ? (
                     <Row>
-                        <Label htmlFor="accountType">{c('New Label form').t`Color`} </Label>
+                        <Label htmlFor="color-button">{c('New Label form').t`Color`} </Label>
                         <Field>
                             {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
                                 <div className="mt0-5">{c('Info').t`Inherited from parent folder`}</div>
                             ) : (
-                                <ColorPicker id="accountType" color={folder.Color} onChange={onChangeColor} />
+                                <ColorPicker id="color-button" color={folder.Color} onChange={onChangeColor} />
                             )}
                         </Field>
                     </Row>
