@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { FeatureCode, Href, useFeatures, useNotifications } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -108,8 +109,8 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
         onClose();
     };
 
-    // translator : This string is the bold part of the larger string "Send an encrypted, password protected message to a ${boldText} email address."
-    const boldText = <strong key="strong-text">{c('Info').t`non-Proton Mail`}</strong>;
+    // translator : The variable "MAIL_APP_NAME" is the text "Proton Mail". This string is the bold part of the larger string "Send an encrypted, password protected message to a ${boldText} email address."
+    const boldText = <strong key="strong-text">{c('Info').t`non-${MAIL_APP_NAME}`}</strong>;
 
     // translator : The variable "boldText" is the text "non-Proton Mail" written in bold
     const encryptionText = c('Info').jt`Send an encrypted, password protected message to a ${boldText} email address.`;

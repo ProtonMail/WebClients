@@ -4,6 +4,7 @@ import { isToday, isTomorrow } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Checkbox, FeatureCode, Href, generateUID, useFeatures, useNotifications } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -250,7 +251,10 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         onChange={() => setIsSendOutside(!isSendOutside)}
                     />
                     <span>
-                        {c('Info').t`I'm sending this message to a non-Proton Mail user.`}
+                        {
+                            // translator: full sentence "I'm sending this message to a non-Proton Mail user."
+                            c('Info').t`I'm sending this message to a non-${MAIL_APP_NAME} user.`
+                        }
                         <Href href={getKnowledgeBaseUrl('/expiration/')} className="ml0-25">{c('Link')
                             .t`Learn more`}</Href>
                     </span>
