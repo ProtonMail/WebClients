@@ -12,7 +12,7 @@ import {
     OnboardingStepRenderCallback,
 } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
@@ -67,7 +67,7 @@ const DriveOnboardingModal = (props: Props) => {
                 <OnboardingContent
                     title={c('Onboarding Title').t`Your welcome bonus`}
                     description={c('Onboarding Info')
-                        .t`Get started using Proton Drive and we'll double your free storage to 1GB!`}
+                        .t`Get started using ${DRIVE_APP_NAME} and we'll double your free storage to 1GB!`}
                     img={<img src={drive1gbSvg} alt={appName} />}
                 />
                 <div>
