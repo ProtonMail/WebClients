@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { createSLUser } from '@proton/shared/lib/api/simpleLogin';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
-import { SIMPLE_LOGIN_EXTENSION_LINKS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SIMPLE_LOGIN_EXTENSION_LINKS } from '@proton/shared/lib/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
@@ -33,10 +33,12 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
     const { onClose } = rest;
 
     const installAndGoText = isSafari()
-        ? c('Info')
-              .t`Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.`
-        : c('Info')
-              .t`SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
+        ? // translator: Full sentence "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.""
+          c('Info')
+              .t`Your ${BRAND_NAME} Account includes SimpleLogin. Install the browser extension with one click to get started.`
+        : // translator: Full sentence "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias."
+          c('Info')
+              .t`SimpleLogin is a ${BRAND_NAME} service, and your ${BRAND_NAME} Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
 
     const handlePluginAction = async () => {
         setLoading(true);
