@@ -70,7 +70,7 @@ function SharedPageGetDriveSidebar() {
             <div>
                 <h3 className="text-bold">{c('Title').t`You've got files`}</h3>
                 <p>{c('Info')
-                    .t`These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.`}</p>
+                    .t`These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${DRIVE_APP_NAME}. It's easy-to-use and free.`}</p>
                 <p>
                     <ButtonLike
                         color="norm"
