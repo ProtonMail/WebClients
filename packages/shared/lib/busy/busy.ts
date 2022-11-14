@@ -1,3 +1,5 @@
+import noop from '@proton/utils/noop';
+
 import { traceError } from '../helpers/sentry';
 import { ProtonConfig } from '../interfaces';
 
@@ -99,6 +101,7 @@ export const newVersionUpdater = (config: ProtonConfig) => {
     const { VERSION_PATH, COMMIT } = config;
 
     let reloadTimeoutId: number | null = null;
+    let versionIntervalId: number | null = null;
 
     const getVersion = () => fetch(VERSION_PATH).then((response) => response.json());
 
@@ -114,7 +117,15 @@ export const newVersionUpdater = (config: ProtonConfig) => {
 
     const clearReload = () => {
         if (reloadTimeoutId) {
+            window.clearTimeout(reloadTimeoutId);
             reloadTimeoutId = null;
+        }
+    };
+
+    const clearVersionCheck = () => {
+        if (versionIntervalId) {
+            window.clearInterval(versionIntervalId);
+            versionIntervalId = null;
         }
     };
 
@@ -127,6 +138,10 @@ export const newVersionUpdater = (config: ProtonConfig) => {
     const scheduleReload = () => {
         clearReload();
         reloadTimeoutId = window.setTimeout(() => {
+            // If the user turns out to be busy here for some reason, abort the reload, and await a new visibilitychange event
+            if (domIsBusy() || getIsBusy()) {
+                return;
+            }
             window.location.reload();
         }, THIRTY_MINUTES);
     };
@@ -139,9 +154,11 @@ export const newVersionUpdater = (config: ProtonConfig) => {
             return;
         }
 
-        if (!domIsBusy() && !getIsBusy()) {
-            scheduleReload();
+        if (domIsBusy() || getIsBusy()) {
+            return;
         }
+
+        scheduleReload();
     };
 
     const registerVisibilityChangeListener = () => {
@@ -150,18 +167,12 @@ export const newVersionUpdater = (config: ProtonConfig) => {
 
     const checkForNewVersion = async () => {
         if (await isNewVersionAvailable()) {
+            clearVersionCheck();
             registerVisibilityChangeListener();
         }
     };
 
-    window.setInterval(
-        /*
-         * If passed directly, produces eslint error:
-         * Promise returned in function argument where a void return was expected (@typescript-eslint)
-         */
-        () => {
-            checkForNewVersion();
-        },
-        THIRTY_MINUTES
-    );
+    versionIntervalId = window.setInterval(() => {
+        checkForNewVersion().catch(noop);
+    }, THIRTY_MINUTES);
 };
