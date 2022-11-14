@@ -35,7 +35,6 @@ export const MAIL_APP_NAME = 'Proton Mail';
 export const CALENDAR_APP_NAME = 'Proton Calendar';
 export const DRIVE_APP_NAME = 'Proton Drive';
 export const VPN_APP_NAME = 'Proton VPN';
-export const ACCOUNT_APP_NAME = 'Proton Account';
 export const VERIFY_APP_NAME = 'Proton Verify';
 
 export const APPS = {
@@ -51,11 +50,12 @@ export const APPS = {
     PROTONVERIFICATION: 'proton-verify',
     PROTONEXTENSION: 'proton-extension',
 } as const;
+
 export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNT]: {
         publicPath: '',
         subdomain: 'account',
-        name: ACCOUNT_APP_NAME,
+        name: 'Proton Account',
         bareName: 'Account',
         clientID: 'web-account',
         icon: 'brand-proton',
@@ -64,7 +64,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNTLITE]: {
         publicPath: '',
         subdomain: 'account',
-        name: ACCOUNT_APP_NAME,
+        name: 'Proton Account',
         bareName: 'Account',
         clientID: 'web-account-lite',
         icon: 'brand-proton',
