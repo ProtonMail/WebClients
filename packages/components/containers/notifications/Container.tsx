@@ -37,7 +37,7 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
         );
     }, [notifications]);
 
-    const list = notifications.map(({ id, key, type, text, isClosing, disableAutoClose, showCloseButton, icon }) => {
+    const list = notifications.map(({ id, key, type, text, isClosing, showCloseButton, icon }) => {
         return (
             <Notification
                 key={key}
@@ -50,10 +50,9 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
                     notificationRefs.current[key] = el;
                 }}
                 isClosing={isClosing}
-                showCloseButton={showCloseButton}
                 icon={icon}
                 type={type}
-                onClick={disableAutoClose ? undefined : () => hideNotification(id)}
+                onClose={showCloseButton ? () => hideNotification(id) : undefined}
                 onExit={() => removeNotification(id)}
             >
                 {text}

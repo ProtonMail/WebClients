@@ -171,7 +171,6 @@ export const useSendHandler = ({
         notifManager.ID = createNotification({
             text: <SendingMessageNotification scheduledAt={scheduledAt} manager={notifManager} />,
             expiration: -1,
-            disableAutoClose: true,
             showCloseButton: false,
         });
 
