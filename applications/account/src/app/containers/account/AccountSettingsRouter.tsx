@@ -12,9 +12,10 @@ import {
     CreditsSection,
     DataRecoverySection,
     DeleteSection,
+    EasySwitchDashboard,
+    EasySwitchStoreProvider,
     EmailSubscriptionSection,
     GiftCodeSection,
-    ImportListSection,
     InvoicesSection,
     LanguageAndTimeSection,
     LogsSection,
@@ -27,6 +28,7 @@ import {
     PrivateMainSettingsArea,
     SessionsSection,
     SettingsPageTitle,
+    SettingsSectionWide,
     SubscriptionModalProvider,
     TwoFactorSection,
     UsernameSection,
@@ -130,10 +132,14 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, easySwitch)}>
-                <PrivateMainSettingsArea config={easySwitch}>
-                    <AccountEasySwitchSection />
-                    <ImportListSection />
-                </PrivateMainSettingsArea>
+                <EasySwitchStoreProvider>
+                    <PrivateMainSettingsArea config={easySwitch}>
+                        <AccountEasySwitchSection />
+                        <SettingsSectionWide>
+                            <EasySwitchDashboard />
+                        </SettingsSectionWide>
+                    </PrivateMainSettingsArea>
+                </EasySwitchStoreProvider>
             </Route>
             {redirect}
         </Switch>
