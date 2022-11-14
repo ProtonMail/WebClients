@@ -54,6 +54,8 @@ const NotificationBase = (
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
                 isClosing && CLASSES.NOTIFICATION_OUT,
+                icon && 'notification--has-icon',
+                onClose && 'notification--has-close-button',
             ])}
             onClick={onClick}
             onAnimationEnd={handleAnimationEnd}

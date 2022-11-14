@@ -26,7 +26,7 @@
 	inline-size: max-content;
 	max-inline-size: max(400px, calc(100% - 2em));
 	padding-block: em(8);
-	padding-inline: em(12);
+	padding-inline: em(12) em(4);
 	transform: translateX(-50%);
 	transition: inset-block-end 0.3s ease;
 
@@ -55,38 +55,18 @@
 	&__content {
 		display: flex;
 		align-items: center;
+		padding-inline-end: em(8);
 
-		&:last-child:not(:only-child) {
-			margin-inline-end: em(-2);
-		}
-
-		&:last-child:nth-child(2):has(.button) {
-			margin-inline-end: em(0);
-		}
-
-		&:not(:only-child),
-		&:has(:not(.button):last-child) {
-			margin-inline-end: em(6);
-		}
-
-		.button {
+		.notification__button {
 			white-space: nowrap;
 			align-self: center;
+			margin-inline-start: em(8);
+			margin-inline-end: em(-6);
 
-			&:last-child {
-				margin-inline-start: em(8);
-				margin-inline-end: em(-8);
+			// spacing between two buttons
+			& + & {
+				margin-inline-start: em(2);
 			}
-
-			&:nth-last-child(2),
-			&:has(+ .circle-loader) {
-				margin-inline-start: em(8);
-			}
-		}
-
-		// spacing between two buttons
-		.button + .button {
-			margin-inline-start: em(2);
 		}
 
 		.circle-loader {
@@ -95,15 +75,22 @@
 
 			&:nth-last-child(2) {
 				margin-inline-start: em(8);
-				margin-inline-end: em(-8);
 			}
+		}
+
+		.notification__button + .circle-loader {
+			margin-inline-start: em(16);
+		}
+	}
+
+	&:not(#{&}--has-close-button) &__content {
+		.button {
+			margin-inline-end: em(-8);
 		}
 	}
 
 	&__close-button {
 		flex-shrink: 0;
-		margin-inline-end: em(-8);
-		margin-inline-start: em(2);
 	}
 
 	&--in {

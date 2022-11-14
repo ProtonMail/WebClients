@@ -19,7 +19,7 @@ const NotificationButton = (
             shape={notificationType == 'info' || notificationType == 'success' ? 'ghost' : 'solid'}
             color={notificationType == 'info' || notificationType == 'success' ? 'weak' : 'danger'}
             size="small"
-            className={classnames(['text-bold', className])}
+            className={classnames(['notification__button text-bold', className])}
             ref={ref}
             {...rest}
         />
