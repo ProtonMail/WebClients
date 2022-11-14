@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AlertModal } from '../../components/alertModal';
 
@@ -27,7 +28,7 @@ const FilterWarningModal = ({ open, onClose, onConfirm }: Props) => (
     >
         <p className="mt0">
             {c('Message')
-                .t`All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.`}
+                .t`All filter actions will be applied to all messages in your ${MAIL_APP_NAME} account. No auto-reply emails will be sent.`}
         </p>
     </AlertModal>
 );
