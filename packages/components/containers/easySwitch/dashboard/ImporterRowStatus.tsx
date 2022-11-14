@@ -1,46 +1,46 @@
 import { c } from 'ttag';
 
+import { Badge, Icon, Progress, Tooltip } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { ImportError, ImportStatus } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { Badge, Icon, Progress, Tooltip } from '../../../components';
+import { ApiImporterError, ApiImporterState } from '../logic/types/api.types';
 
 interface Props {
     processed: number;
     total: number;
-    state?: ImportStatus;
-    errorCode?: ImportError;
+    state: ApiImporterState | undefined;
+    errorCode: ApiImporterError | undefined;
 }
 
-const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
+const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
     const percentage = total === 0 ? 0 : (processed * 100) / total;
     const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
 
     switch (state) {
-        case ImportStatus.PAUSED:
+        case ApiImporterState.PAUSED:
             return (
                 <>
                     <Badge type="warning">
                         {total === 0 ? c('Import status').t`Paused` : c('Import status').t`${percentageValue}% paused`}
                     </Badge>
 
-                    {errorCode === ImportError.ERROR_CODE_IMAP_CONNECTION && (
+                    {errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip title={c('Tooltip').t`Account is disconnected`}>
                             <Icon name="exclamation-circle-filled" />
                         </Tooltip>
                     )}
-                    {errorCode === ImportError.ERROR_CODE_QUOTA_LIMIT && (
+                    {errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT && (
                         <Tooltip title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}>
                             <Icon name="exclamation-circle-filled" />
                         </Tooltip>
                     )}
                 </>
             );
-        case ImportStatus.QUEUED:
+        case ApiImporterState.QUEUED:
             return <Badge type="primary">{c('Import status').t`Started`}</Badge>;
-        case ImportStatus.CANCELED:
+        case ApiImporterState.CANCELED:
             return <Badge type="error">{c('Import status').t`Canceling`}</Badge>;
-        case ImportStatus.DELAYED:
+        case ApiImporterState.DELAYED:
             return (
                 <>
                     <Badge type="warning">{c('Import status').t`Delayed`}</Badge>
@@ -72,4 +72,4 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
     }
 };
 
-export default ActiveImportStatus;
+export default ImporterRowStatus;

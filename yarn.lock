@@ -4034,6 +4034,7 @@ __metadata:
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
+    "@reduxjs/toolkit": ^1.9
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
@@ -4070,6 +4071,7 @@ __metadata:
     react: ^17.0.2
     react-codemirror2: ^7.2.1
     react-dom: ^17.0.2
+    react-redux: ^8.0.5
     react-router: ^5.3.4
     react-router-dom: ^5.3.4
     react-sortable-hoc: ^2.0.0
@@ -4492,7 +4494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^1.9.0":
+"@reduxjs/toolkit@npm:^1.9, @reduxjs/toolkit@npm:^1.9.0":
   version: 1.9.0
   resolution: "@reduxjs/toolkit@npm:1.9.0"
   dependencies:
