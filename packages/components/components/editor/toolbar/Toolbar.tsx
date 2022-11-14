@@ -72,6 +72,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     aria-pressed={config.bold.isActive}
                     className={classnames(['flex-item-noshrink', config.bold.isActive && 'is-active'])}
                     title={c('Action').t`Bold`}
+                    data-testid="editor-bold"
                     tabIndex={-1}
                 >
                     <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
@@ -81,6 +82,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     aria-pressed={config.italic.isActive}
                     className={classnames(['flex-item-noshrink', config.italic.isActive && 'is-active'])}
                     title={c('Action').t`Italic`}
+                    data-testid="editor-italic"
                     tabIndex={-1}
                 >
                     <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
@@ -90,6 +92,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     aria-pressed={config.underline.isActive}
                     className={classnames(['flex-item-noshrink', config.underline.isActive && 'is-active'])}
                     title={c('Action').t`Underline`}
+                    data-testid="editor-underline"
                     tabIndex={-1}
                 >
                     <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
@@ -102,6 +105,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         aria-pressed={config.unorderedList.isActive}
                         className={classnames(['flex-item-noshrink', config.unorderedList.isActive && 'is-active'])}
                         title={c('Action').t`Unordered list`}
+                        data-testid="editor-unordered-list"
                         tabIndex={-1}
                     >
                         <Icon name="list-bullets" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
@@ -111,6 +115,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         aria-pressed={config.orderedList.isActive}
                         className={classnames(['flex-item-noshrink', config.orderedList.isActive && 'is-active'])}
                         title={c('Action').t`Ordered list`}
+                        data-testid="editor-ordered-list"
                         tabIndex={-1}
                     >
                         <Icon name="list-numbers" className="mauto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
@@ -132,6 +137,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         aria-pressed={config.blockquote.isActive}
                         className={classnames(['flex-item-noshrink', config.blockquote.isActive && 'is-active'])}
                         title={c('Action').t`Quote`}
+                        data-testid="editor-quote"
                         tabIndex={-1}
                     >
                         <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
@@ -140,6 +146,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         onClick={config.link.showModal}
                         className="flex-item-noshrink"
                         title={c('Action').t`Insert link`}
+                        data-testid="editor-insert-link"
                         tabIndex={-1}
                     >
                         <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
@@ -148,6 +155,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         onClick={config.formatting.clear}
                         className="flex-item-noshrink"
                         title={c('Action').t`Clear all formatting`}
+                        data-testid="editor-clear-formatting"
                         tabIndex={-1}
                     >
                         <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />

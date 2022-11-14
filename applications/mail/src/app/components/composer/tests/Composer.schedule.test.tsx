@@ -67,7 +67,7 @@ describe('Composer scheduled messages', () => {
         const { getByTestId, getByText } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
-        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown:open');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -86,7 +86,7 @@ describe('Composer scheduled messages', () => {
         const { getByTestId } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
-        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown:open');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -104,7 +104,7 @@ describe('Composer scheduled messages', () => {
         const { getByTestId } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
-        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown:open');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -124,7 +124,7 @@ describe('Composer scheduled messages', () => {
         const { getByTestId, getByText } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
-        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown:open');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -172,7 +172,7 @@ describe('Composer scheduled messages', () => {
         const { getByTestId } = await render(<Composer {...props} />, false);
 
         const sendActions = getByTestId('composer:send-actions');
-        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown:open');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();

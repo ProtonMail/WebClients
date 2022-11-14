@@ -42,7 +42,12 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
         addresses,
         message.draftFlags?.originalTo || message.draftFlags?.originalFrom
     ).map((address) => (
-        <Option value={address.Email} title={address.Email} key={address.Email}>
+        <Option
+            value={address.Email}
+            title={address.Email}
+            key={address.Email}
+            data-testid={`addresses:${address.Email}`}
+        >
             <span className="inline-flex flex-nowrap flex-row flex-align-items-center max-w100">
                 <span className="text-ellipsis">{address.Email}</span>
                 <Icon name="chevron-down" className="select--inline-caret-option flex-item-noshrink ml0-5" />

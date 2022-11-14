@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, forwardRef, useEffect, useRef } from 'react';
+import { InputHTMLAttributes, LabelHTMLAttributes, forwardRef, useEffect, useRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -25,6 +25,7 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     color?: string;
     indeterminate?: boolean;
     labelOnClick?: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
+    labelProps?: LabelHTMLAttributes<HTMLLabelElement> & { 'data-testid': string };
 }
 
 const Checkbox = forwardRef<HTMLInputElement, Props>(
@@ -42,6 +43,7 @@ const Checkbox = forwardRef<HTMLInputElement, Props>(
             borderColor,
             children,
             labelOnClick,
+            labelProps,
             ...rest
         },
         ref
@@ -57,6 +59,7 @@ const Checkbox = forwardRef<HTMLInputElement, Props>(
 
         return (
             <label
+                {...labelProps}
                 htmlFor={id}
                 className={classnames([
                     'checkbox-container',
