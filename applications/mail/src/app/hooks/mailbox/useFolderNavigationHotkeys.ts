@@ -1,24 +1,18 @@
 import { useHistory } from 'react-router-dom';
 
 import { HotkeyTuple, useMailSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
-const { DRAFTS, SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
-
-    const setFocusOnSidebar = () => {
-        const sidebarLink = document.querySelector(
-            '[data-shortcut-target~="navigation-link"][aria-current="page"]'
-        ) as HTMLElement;
-        sidebarLink?.focus();
-    };
+    const [{ Shortcuts = 0, ShowMoved = 0 } = {}] = useMailSettings();
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
@@ -34,7 +28,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(INBOX);
-                          setFocusOnSidebar();
                       }
                   },
               ],
@@ -45,8 +38,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(DRAFTS);
-                          setFocusOnSidebar();
+                          navigateTo(hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS);
                       }
                   },
               ],
@@ -57,8 +49,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(SENT);
-                          setFocusOnSidebar();
+                          navigateTo(hasBit(ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT);
                       }
                   },
               ],
@@ -70,7 +61,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(STARRED);
-                          setFocusOnSidebar();
                       }
                   },
               ],
@@ -82,7 +72,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(ARCHIVE);
-                          setFocusOnSidebar();
                       }
                   },
               ],
@@ -94,7 +83,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(SPAM);
-                          setFocusOnSidebar();
                       }
                   },
               ],
@@ -106,7 +94,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(TRASH);
-                          setFocusOnSidebar();
                       }
                   },
               ],
@@ -118,7 +105,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(ALL_MAIL);
-                          setFocusOnSidebar();
                       }
                   },
               ],
