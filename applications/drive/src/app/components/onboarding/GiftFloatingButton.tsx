@@ -27,9 +27,9 @@ import useChecklist from './useChecklist';
 
 export default function GiftFloatingButton() {
     const checklist = useChecklist();
-    const { isMobile } = useActiveBreakpoint();
+    const { isNarrow } = useActiveBreakpoint();
 
-    if (isMobile || checklist.isLoading || checklist.expiresInDays === 0 || !checklist.isVisible) {
+    if (isNarrow || checklist.isLoading || checklist.expiresInDays === 0 || !checklist.isVisible) {
         return null;
     }
 
@@ -46,14 +46,18 @@ export default function GiftFloatingButton() {
     );
 }
 
-function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: () => void }) {
+function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) => void }) {
     const [show, setShow] = useState(false);
 
     // Wait a bit so user can see it opening it up (if opened right away,
     // it might feel as part of the page), and also it allows JS to properly
     // calculate position of the modal when everything is rendered.
     useEffect(() => {
-        setTimeout(() => setShow(true), 1000);
+        setTimeout(() => {
+            setShow(true);
+            // Product wants to mark it seen on backend automatically.
+            onSeen(false);
+        }, 1000);
     }, []);
 
     const spotlightContent = (
