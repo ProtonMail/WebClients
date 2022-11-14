@@ -160,7 +160,7 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
         async (event: MessageEvent<SIDE_APP_ACTION>) => {
             const origin = event.origin;
 
-            if (!isAuthorizedSideAppUrl(origin)) {
+            if (!isAuthorizedSideAppUrl(origin) || !event.data) {
                 return;
             }
 
