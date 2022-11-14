@@ -140,7 +140,9 @@ export const Basic = () => {
                             className="w10e"
                             value={byoExpiration}
                             type="number"
-                            onChange={(e: { target: { value: number } }) => setByoExpiration(Number(e.target.value))}
+                            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                                setByoExpiration(Number(event.target.value))
+                            }
                         />
                     </div>
 
