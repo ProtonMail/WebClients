@@ -76,14 +76,18 @@ export const unescapeCSSEncoding = (str: string) => {
 
 /**
  * Input can be escaped multiple times to escape replacement while still works
- * Best solution I found is to escape recursively until nothing change anymore
+ * Best solution I found is to escape recursively
+ * This is done 5 times maximum. If there are too much escape, we consider the string
+ * "invalid" and we prefer to return an empty string
  * @argument str style to unescape
  * @augments stop extra security to prevent infinite loop
  */
-export const recurringUnescapeCSSEncoding = (str: string, stop = 100): string => {
+export const recurringUnescapeCSSEncoding = (str: string, stop = 5): string => {
     const escaped = unescapeCSSEncoding(str);
-    if (escaped === str || stop === 0) {
+    if (escaped === str) {
         return escaped;
+    } else if (stop === 0) {
+        return '';
     } else {
         return recurringUnescapeCSSEncoding(escaped, stop - 1);
     }

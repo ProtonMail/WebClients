@@ -1,4 +1,4 @@
-import { escapeForbiddenStyle } from '../../lib/sanitize/escape';
+import { escapeForbiddenStyle, recurringUnescapeCSSEncoding } from '../../lib/sanitize/escape';
 
 describe('Escape', () => {
     describe('escapeForbiddenStyles', () => {
@@ -14,6 +14,25 @@ describe('Escape', () => {
 
         it('Should not replace percent line-height by unset', () => {
             expect(escapeForbiddenStyle('line-height: 100%;')).toBe('line-height: 100%;');
+        });
+    });
+
+    describe('recurringUnescapeCSSEncoding', () => {
+        it('should return the expected unescaped CSS string when there is few escapes', () => {
+            const string = `background
+            ur&#x26;#x26;#x26;#x26;#x26;(https://proton.me/image.jpg);`;
+            const expectedString = `background
+            ur&(https://proton.me/image.jpg);`;
+
+            expect(recurringUnescapeCSSEncoding(string)).toEqual(expectedString);
+        });
+
+        it('should return an empty string when trying to unescape CSS a content with too much escapes', () => {
+            const string = `background
+            ur&#x26;#x26;#x26;#x26;#x26;#x26;(https://proton.me/image.jpg);`;
+            const expectedString = ``;
+
+            expect(recurringUnescapeCSSEncoding(string)).toEqual(expectedString);
         });
     });
 });
