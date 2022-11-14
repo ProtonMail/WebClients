@@ -47,13 +47,13 @@ const ChangelogModal = ({ changelog = '', ...rest }: Props) => {
     });
 
     return (
-        <Modal size="large" {...rest}>
+        <Modal size="large" data-testid="changelog-modal" {...rest}>
             <ModalHeader title={c('Title').t`What's new`} />
             <ModalContent>
                 <div className="modal-content-inner-changelog" dangerouslySetInnerHTML={html} dir="ltr" lang="en" />
             </ModalContent>
             <ModalFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button data-testid="changelog-modal:close" onClick={rest.onClose}>{c('Action').t`Close`}</Button>
             </ModalFooter>
         </Modal>
     );
