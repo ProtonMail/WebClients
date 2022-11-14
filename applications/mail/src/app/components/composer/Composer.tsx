@@ -126,6 +126,8 @@ const Composer = (
 
     // Synced with server version of the edited message
     const { message: syncedMessage } = useMessage(messageID);
+    const date = getDate(syncedMessage.data, '');
+    const timestamp = date ? date.getTime() : 0;
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
@@ -588,6 +590,7 @@ const Composer = (
         <div
             className="composer-container flex flex-column flex-item-fluid relative w100"
             onDragEnter={handleDragEnter}
+            data-messagetime={timestamp}
         >
             <ComposerInnerModals
                 innerModal={innerModal}
@@ -642,7 +645,7 @@ const Composer = (
                 <ComposerActions
                     className={hasVerticalScroll ? 'composer-actions--has-scroll' : undefined}
                     message={modelMessage}
-                    date={getDate(syncedMessage.data, '')}
+                    date={date}
                     lock={lock}
                     opening={opening}
                     syncInProgress={pendingSave.isPending}

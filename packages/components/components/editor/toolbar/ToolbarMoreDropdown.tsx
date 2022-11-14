@@ -30,6 +30,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     key={17}
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={() => config.image.showModal()}
+                    data-testid="editor-insert-image"
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
                     <span className="ml0-5 myauto flex-item-fluid">{c('Action').t`Insert image`}</span>
@@ -132,6 +133,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                         key={1}
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={() => config.textDirection.setValue(Direction.LeftToRight)}
+                        data-testid="editor-left-to-right"
                     >
                         <Icon
                             name="checkmark"
@@ -143,6 +145,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                         key={2}
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={() => config.textDirection.setValue(Direction.RightToLeft)}
+                        data-testid="editor-right-to-left"
                     >
                         <Icon
                             name="checkmark"
