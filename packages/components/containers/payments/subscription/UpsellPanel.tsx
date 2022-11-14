@@ -3,8 +3,8 @@ import { ReactNode } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { generateUID } from '@proton/components/helpers';
 import { Button } from '@proton/atoms';
+import { generateUID } from '@proton/components/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
@@ -28,8 +28,8 @@ import {
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getDrivePlan } from '../features/plan';
 import { Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
+import { getDrivePlan } from '../features/plan';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -294,7 +294,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             <UpsellBox
                 title={getUpgradeText(plan.Title)}
                 description={c('new_plans: Info')
-                    .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}
+                    .t`Upgrade to the ultimate privacy pack and access all premium ${BRAND_NAME} services.`}
                 items={items.filter(isTruthy)}
                 actions={
                     <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
@@ -348,7 +348,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             <UpsellBox
                 title={getUpgradeText(plan.Title)}
                 description={c('new_plans: Info')
-                    .t`Upgrade to the business pack with access to all premium Proton services.`}
+                    .t`Upgrade to the business pack with access to all premium ${BRAND_NAME} services.`}
                 items={items}
                 actions={
                     <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>

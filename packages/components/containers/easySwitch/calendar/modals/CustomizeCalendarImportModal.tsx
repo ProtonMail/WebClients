@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     CalendarImportMapping,
     CalendarImporterPayload,
@@ -157,8 +158,8 @@ const CustomizeCalendarImportModal = ({
                 {canMerge && (
                     <li>
                         {c('Error').ngettext(
-                            msgid`Merge at least ${calendarToFixCount} calendar with an existing Proton calendar`,
-                            `Merge at least ${calendarToFixCount} calendars with existing Proton calendars`,
+                            msgid`Merge at least ${calendarToFixCount} calendar with an existing ${BRAND_NAME} calendar`,
+                            `Merge at least ${calendarToFixCount} calendars with existing ${BRAND_NAME} calendars`,
                             calendarToFixCount
                         )}
                     </li>
@@ -183,7 +184,8 @@ const CustomizeCalendarImportModal = ({
             <div className="mb1">
                 {c('Info')
                     .t`Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.`}
-                {canMerge && ` ${c('Info').t`You can also merge imported calendars with existing Proton calendars.`}`}
+                {canMerge &&
+                    ` ${c('Info').t`You can also merge imported calendars with existing ${BRAND_NAME} calendars.`}`}
             </div>
 
             {calendarLimitReached && errorBox}

@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import {
     ADDON_NAMES,
+    BRAND_NAME,
     GIGA,
     MAX_ADDRESS_ADDON,
     MAX_DOMAIN_PRO_ADDON,
@@ -248,7 +249,7 @@ const AdditionalOptionsCustomiser = ({
                     <Info
                         className="ml0-5"
                         title={c('Info')
-                            .t`Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.`}
+                            .t`Email hosting is only available for domains you already own. Domain registration is not currently available through ${BRAND_NAME}. You can host email for domains registered on any domain registrar.`}
                     />
                 </label>
                 {input}

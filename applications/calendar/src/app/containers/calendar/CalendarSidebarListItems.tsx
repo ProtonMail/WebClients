@@ -46,7 +46,7 @@ import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { Address, Nullable } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -346,12 +346,12 @@ To create a new link to this calendar, delete an existing one.`,
         }
 
         return {
-            title: c('Calendar share limit modal').t`Unable to share this calendar with more Proton users`,
+            title: c('Calendar share limit modal').t`Unable to share this calendar with more ${BRAND_NAME} users`,
             body: c('Calendar share limit modal').ngettext(
                 msgid`You have reached the maximum of ${MAX_CALENDAR_MEMBERS} member for this calendar.
-To share this calendar with more Proton accounts, remove some members.`,
+To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                 `You have reached the maximum of ${MAX_CALENDAR_MEMBERS} members for this calendar.
-To share this calendar with more Proton accounts, remove some members.`,
+To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                 MAX_CALENDAR_MEMBERS
             ),
             onClick: () =>

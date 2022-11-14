@@ -180,7 +180,7 @@ const getEncryptedContacts = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Encrypted contact details`,
         tooltip: c('new_plans: tooltip')
-            .t`Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.`,
+            .t`Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${BRAND_NAME} can't access them.`,
         included: true,
     };
 };

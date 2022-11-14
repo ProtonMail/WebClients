@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Badge, Icon, Progress, Tooltip } from '@proton/components';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ApiImporterError, ApiImporterState } from '../logic/types/api.types';
 
@@ -46,7 +46,7 @@ const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
                     <Badge type="warning">{c('Import status').t`Delayed`}</Badge>
                     <Tooltip
                         title={c('Tooltip')
-                            .t`Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.`}
+                            .t`Your external account may have reached its 24-hour bandwidth limit. ${BRAND_NAME} will try to resume the import as soon as possible.`}
                     >
                         <Icon name="exclamation-circle-filled" />
                     </Tooltip>

@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Organization } from '@proton/shared/lib/interfaces';
 
@@ -17,7 +17,7 @@ const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) 
 
     return (
         <AlertModal
-            title={c('Title').t`Confirm loss of Proton bonuses`}
+            title={c('Title').t`Confirm loss of ${BRAND_NAME} bonuses`}
             buttons={[
                 <Button
                     onClick={() => {

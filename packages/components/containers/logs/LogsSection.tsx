@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
 import { AuthLog } from '@proton/shared/lib/authlog';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
@@ -133,7 +134,7 @@ const LogsSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`Logs include authentication attempts for all Proton services that use your Proton credentials.`}
+                    .t`Logs include authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME} credentials.`}
             </SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>

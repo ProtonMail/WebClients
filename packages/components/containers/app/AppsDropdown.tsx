@@ -3,7 +3,7 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { AppLink, Icon, Logo, SettingsLink, SimpleDropdown, VpnLogo } from '../../components';
 import { useApps } from '../../hooks';
@@ -34,7 +34,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
             className="apps-dropdown-button flex-item-noshrink"
             dropdownClassName="apps-dropdown"
             originalPlacement="bottom-start"
-            title={c('Apps dropdown').t`Proton applications`}
+            title={c('Apps dropdown').t`${BRAND_NAME} applications`}
             onClick={onDropdownClick}
             disableDefaultArrowNavigation
             ref={ref}

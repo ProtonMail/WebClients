@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { createToken, getImport, resumeImport, updateImport } from '@proton/shared/lib/api/easySwitch';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     AuthenticationMethod,
     CheckedProductMap,
@@ -171,7 +172,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                 >
                     <Alert className="mb1" type="error">
                         {c('Warning')
-                            .t`If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?`}
+                            .t`If you cancel this import, you won't be able to resume it. ${BRAND_NAME} saved all progress in your account. Cancel anyway?`}
                     </Alert>
                 </AlertModal>
             )}

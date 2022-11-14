@@ -8,6 +8,7 @@ import {
     getVisualCalendars,
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     EASY_SWITCH_SOURCE,
     EasySwitchFeatureFlag,
@@ -135,7 +136,7 @@ const AccountEasySwitchSection = () => {
 
             <SettingsParagraph>
                 {c('Info')
-                    .t`Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.`}
+                    .t`Import your emails, calendars, and contacts from another service to ${BRAND_NAME}. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.`}
             </SettingsParagraph>
 
             <div className="mb1 text-bold">{c('Info').t`Select a service provider to start`}</div>

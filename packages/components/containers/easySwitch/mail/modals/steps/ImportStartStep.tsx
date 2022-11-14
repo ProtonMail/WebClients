@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     IMPORT_ERROR,
@@ -75,7 +76,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                     message = (
                         <>
                             <div className="mb1">{c('Import error')
-                                .t`Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.`}</div>
+                                .t`${BRAND_NAME} can't connect to your account. Please make sure that Gmail IMAP access is enabled.`}</div>
                             <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`Your password is correct.`}</li>
@@ -90,7 +91,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
 
                 if (isIMAPError) {
                     message = c('Import error')
-                        .t`Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.`;
+                        .t`${BRAND_NAME} can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.`;
                 }
 
                 if (isAuthError) {
@@ -109,7 +110,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                     message = (
                         <>
                             <div className="mb1">{c('Import error')
-                                .t`Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
+                                .t`${BRAND_NAME} can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
                             <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`Your email address and password are correct.`}</li>
@@ -133,7 +134,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                         <>
                             <div className="mb1">
                                 {c('Import error')
-                                    .t`Proton can't connect to your Yahoo account. Please make sure that:`}
+                                    .t`${BRAND_NAME} can't connect to your Yahoo account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
@@ -145,7 +146,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
 
                 if (isIMAPError) {
                     message = c('Import error')
-                        .t`Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.`;
+                        .t`${BRAND_NAME} can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.`;
                 }
 
                 if (isAuthError) {
@@ -157,7 +158,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                         <>
                             <div className="mb1">
                                 {c('Import error')
-                                    .t`Proton can't connect to your external account. Please make sure that:`}
+                                    .t`${BRAND_NAME} can't connect to your external account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{credentialsAreCorrectMessage}</li>
@@ -173,7 +174,8 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                     message = (
                         <>
                             <div className="mb1">
-                                {c('Import error').t`Proton can't connect to your account. Please make sure that:`}
+                                {c('Import error')
+                                    .t`${BRAND_NAME} can't connect to your account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
@@ -190,7 +192,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
 
                 if (isIMAPError) {
                     message = c('Import error')
-                        .t`Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.`;
+                        .t`${BRAND_NAME} can't connect to your external account. Please make sure that the mail server address and port number are correct.`;
                 }
 
                 if (isAuthError) {
@@ -198,7 +200,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                         <>
                             <div className="mb1">
                                 {c('Import error')
-                                    .t`Proton can't connect to your external account. Please make sure that:`}
+                                    .t`${BRAND_NAME} can't connect to your external account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>

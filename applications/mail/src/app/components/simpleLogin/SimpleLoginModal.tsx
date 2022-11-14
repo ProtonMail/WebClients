@@ -71,7 +71,7 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
 
     return (
         <ModalTwo {...rest} className="simple-login-modal">
-            <ModalTwoHeader title={c('Title').t`Hide your email with SimpleLogin by Proton`} />
+            <ModalTwoHeader title={c('Title').t`Hide your email with SimpleLogin by ${BRAND_NAME}`} />
             <ModalTwoContent>
                 <div className="text-center">
                     <img src={connectSimpleLoginSvg} alt={c('Alternative text for SimpleLogin image').t`SimpleLogin`} />
