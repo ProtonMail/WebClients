@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 const appName = getAppName(APPS.PROTONDRIVE);
@@ -31,7 +31,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
                     <li>{c('Info').t`Your previous recovery phrase`}</li>
                 </ul>
                 <p>
-                    {c('Info').t`If you have one of these, continue to Proton account setting to
+                    {c('Info').t`If you have one of these, continue to ${BRAND_NAME} Account setting to
                             start the unblock process.`}
                 </p>
             </ModalTwoContent>

@@ -182,7 +182,7 @@ export const getSupport = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Priority email support`,
         tooltip: c('new_plans: tooltip')
-            .t`On business days, receive support from the Proton Customer Support team within 24 hours of requests`,
+            .t`On business days, receive support from the ${BRAND_NAME} Customer Support team within 24 hours of requests`,
         included: true,
     };
 };
@@ -190,7 +190,7 @@ export const getPhoneSupport = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Phone support (6+ users)`,
         tooltip: c('new_plans: tooltip')
-            .t`Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users`,
+            .t`Phone support is available from the ${BRAND_NAME} Customer Success team during European business hours, for customers with 6 or more users`,
         included: true,
     };
 };

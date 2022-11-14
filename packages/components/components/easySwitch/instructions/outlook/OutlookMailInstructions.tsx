@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Href } from '../../../link';
@@ -13,7 +14,7 @@ const OutlookMailInstructions = () => {
     );
     // translator: full sentence: "To import emails to Proton, you need an app password from Outlook. Get it by following these steps:"
     const outlookAppPasswordMessage = c('Import instructions')
-        .jt`To import emails to Proton, you need an ${appPasswordLink} from Outlook. Get it by following these steps:`;
+        .jt`To import emails to ${BRAND_NAME}, you need an ${appPasswordLink} from Outlook. Get it by following these steps:`;
 
     // translator: full sentence: "Go to Outlook security settings"
     const securitySettingsLink = (
@@ -32,7 +33,7 @@ const OutlookMailInstructions = () => {
     );
     // translator: full sentence: "Generate an app password and use it in place of your regular password when prompted by Proton"
     const step3 = c('Import instructions')
-        .jt`Generate an ${boldAppPassword} and use it in place of your regular password when prompted by Proton.`;
+        .jt`Generate an ${boldAppPassword} and use it in place of your regular password when prompted by ${BRAND_NAME}.`;
 
     return (
         <>

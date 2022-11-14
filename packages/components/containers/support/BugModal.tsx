@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
-import { APPS, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -265,7 +265,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                     <InputFieldTwo
                         autoFocus
                         id="Username"
-                        label={c('Label').t`Proton username`}
+                        label={c('Label').t`${BRAND_NAME} username`}
                         value={model.Username}
                         onValue={handleChange('Username')}
                         disabled={loading}

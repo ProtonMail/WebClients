@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Href } from '../../../link';
@@ -13,7 +14,7 @@ const YahooMailInstructions = () => {
     );
     // translator: full sentence: "To import emails to Proton, you need an app password from Yahoo. Get it by following these steps:"
     const yahooAppPasswordMessage = c('Import instructions')
-        .jt`To import emails to Proton, you need an ${appPasswordLink} from Yahoo. Get it by following these steps:`;
+        .jt`To import emails to ${BRAND_NAME}, you need an ${appPasswordLink} from Yahoo. Get it by following these steps:`;
 
     // translator: full sentence: "Go to account info under your profile in Yahoo"
     const boldAccountInfo = <strong key="boldAccountInfo">{c('Import instructions emphasis').t`Account info`}</strong>;
@@ -39,7 +40,7 @@ const YahooMailInstructions = () => {
     );
     // translator: full sentence: "Generate the app password and use it in place of your regular password when prompted by Proton"
     const step3 = c('Import instructions')
-        .jt`Generate the ${boldAppPassword} and use it in place of your regular password when prompted by Proton.`;
+        .jt`Generate the ${boldAppPassword} and use it in place of your regular password when prompted by ${BRAND_NAME}.`;
 
     return (
         <>

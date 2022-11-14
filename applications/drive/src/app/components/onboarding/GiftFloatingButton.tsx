@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
@@ -192,7 +192,7 @@ function WelcomeActions({
 
     return (
         <>
-            <WelcomeAction icon="checkmark" title={c('Label').t`Create Proton account`} />
+            <WelcomeAction icon="checkmark" title={c('Label').t`Create ${BRAND_NAME} account`} />
             <input
                 multiple
                 type="file"

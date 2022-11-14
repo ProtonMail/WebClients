@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
 import { AlertModal, ModalProps } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
@@ -94,7 +94,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
                 <>
                     <div className="mb1">
                         {c('Info')
-                            .t`This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
+                            .t`This will enable PayPal to be used to pay for your ${BRAND_NAME} subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
                     </div>
                     <div>
                         {c('Info')

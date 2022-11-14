@@ -105,7 +105,7 @@ const extractEncryptionPreferencesOwnAddress = (
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY,
                 // Proton users should always have keys, so this case should never happen in practice. Therefore we don't translate the error message
-                'No key was found for the Proton user'
+                `No key was found for the ${BRAND_NAME} user`
             ),
         };
     }
@@ -176,7 +176,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY,
                 // Proton users should always have keys, so this case should never happen in practice. Therefore we don't translate the error message
-                'No key was found for the Proton user'
+                `No key was found for the ${BRAND_NAME} user`
             ),
         };
     }

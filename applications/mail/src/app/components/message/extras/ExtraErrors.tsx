@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, SettingsLink } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
 import { MessageErrors, MessageState } from '../../../logic/messages/messagesTypes';
@@ -15,7 +15,8 @@ const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
             return c('Error').t`Network error: Please check your connection and try again.`;
         case 'decryption':
             return alreadyTried
-                ? c('Error').t`Sorry, Proton can't decrypt your message. Please check that all your keys are active.`
+                ? c('Error')
+                      .t`Sorry, ${BRAND_NAME} can't decrypt your message. Please check that all your keys are active.`
                 : c('Error').t`Decryption error: decryption of this message's encrypted content failed.`;
         case 'processing':
             return c('Error').t`Message processing error.`;

@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMailSettings } from '@proton/components';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
@@ -98,7 +98,7 @@ export const useMessageTrackers = ({ message }: Props) => {
                 ? c('Info').t`No trackers found, but some images could not be loaded with tracking protection`
                 : c('Info').t`No email trackers found`;
             nextModalText = c('Info')
-                .t`Email trackers can violate your privacy. Proton did not find any trackers on this message.`;
+                .t`Email trackers can violate your privacy. ${BRAND_NAME} did not find any trackers on this message.`;
         } else {
             nextTitle = c('Info').ngettext(
                 msgid`${numberOfTrackers} email tracker blocked`,
@@ -106,8 +106,8 @@ export const useMessageTrackers = ({ message }: Props) => {
                 numberOfTrackers
             );
             nextModalText = c('Info').ngettext(
-                msgid`Email trackers can violate your privacy. Proton found and blocked ${numberOfTrackers} tracker.`,
-                `Email trackers can violate your privacy. Proton found and blocked ${numberOfTrackers} trackers.`,
+                msgid`Email trackers can violate your privacy. ${BRAND_NAME} found and blocked ${numberOfTrackers} tracker.`,
+                `Email trackers can violate your privacy. ${BRAND_NAME} found and blocked ${numberOfTrackers} trackers.`,
                 numberOfTrackers
             );
         }
