@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+
 import OfferFooter from '../../components/shared/OfferFooter';
 import OfferHeader from '../../components/shared/OfferHeader';
 import OfferLoader from '../../components/shared/OfferLoader';
@@ -9,6 +11,8 @@ import hasOffer from '../../helpers/hasOffer';
 import { OfferLayoutProps } from '../../interface';
 
 const Layout = (props: OfferLayoutProps) => {
+    const planName = PLAN_NAMES[PLANS.BUNDLE];
+
     return (
         <>
             <ProtonLogos />
@@ -16,7 +20,7 @@ const Layout = (props: OfferLayoutProps) => {
                 <>
                     <OfferHeader {...props}>
                         <h1 className="h2 text-center text-bold">{c('specialoffer: Title')
-                            .t`Save more with 1 year of Proton Unlimited`}</h1>
+                            .t`Save more with 1 year of ${planName}`}</h1>
                     </OfferHeader>
 
                     <Deals {...props} />
