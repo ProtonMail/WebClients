@@ -46,8 +46,8 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
         });
@@ -75,9 +75,9 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
         });
@@ -104,9 +104,9 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
@@ -131,9 +131,9 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
@@ -158,9 +158,9 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
@@ -185,8 +185,8 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
         });
@@ -220,9 +220,9 @@ describe('notification manager', () => {
             });
 
             expect(result.current[0]).toStrictEqual([
-                expect.objectContaining({ text: <div>text</div>, key: 'item1' }),
-                expect.objectContaining({ text: 'bar', key: 'item2' }),
                 expect.objectContaining({ text: <div>text</div> }),
+                expect.objectContaining({ text: 'bar', key: 'item2' }),
+                expect.objectContaining({ text: <div>text</div>, key: 'item1' }),
             ]);
         });
     });
