@@ -126,7 +126,7 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                     });
                 }
             }
-            return [...oldNotifications, newNotification];
+            return [newNotification, ...oldNotifications];
         });
 
         intervalIds.set(id, expiration === -1 ? -1 : setTimeout(() => hideNotification(id), expiration));
