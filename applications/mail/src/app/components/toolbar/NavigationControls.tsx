@@ -83,6 +83,7 @@ const NavigationControls = ({
                 title={conversationMode ? titlePreviousConversation : titlePreviousMessage}
                 onClick={handlePrevious}
                 className="no-tablet no-mobile"
+                data-testid="toolbar:previous-element"
                 icon={
                     <Icon
                         name="chevron-left"
@@ -95,6 +96,7 @@ const NavigationControls = ({
                 title={conversationMode ? titleNextConversation : titleNextMessage}
                 onClick={handleNext}
                 className="no-tablet no-mobile"
+                data-testid="toolbar:next-element"
                 icon={
                     <Icon
                         name="chevron-right"
