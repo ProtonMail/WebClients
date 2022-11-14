@@ -58,7 +58,6 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
         expiration = 5000,
         type = 'success',
         text,
-        disableAutoClose,
         showCloseButton = true,
         icon = type === 'warning' || type === 'error' ? 'exclamation-triangle-filled' : undefined,
         deduplicate = type === 'error',
@@ -91,7 +90,6 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                     }
                 });
                 expiration = Math.max(5000, expiration);
-                disableAutoClose = true;
                 text = <div dangerouslySetInnerHTML={{ __html: sanitizedElement.innerHTML }} />;
             }
         }
@@ -102,7 +100,6 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                 key: key!,
                 type,
                 text,
-                disableAutoClose,
                 ...rest,
                 isClosing: false,
                 showCloseButton,
