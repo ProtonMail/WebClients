@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } está disponível."
-      ],
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
       ],
@@ -77,14 +74,8 @@
       "Create": [
         "Criar"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Criar antes um endereço seguro do ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Criar conta"
-      ],
-      "Create address": [
-        "Criar endereço"
       ],
       "Current plan": [
         "Plano actual"
@@ -108,9 +99,6 @@
         "Detalhes"
       ],
       "Didn't receive a code?": [
-        "Não recebeu o código?"
-      ],
-      "Didn't receive the code?": [
         "Não recebeu o código?"
       ],
       "Disable": [
@@ -341,9 +329,6 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
-      "Use your current email address instead": [
-        "Utilizar o seu endereço de e-mail atual"
-      ],
       "User": [
         "Utilizador"
       ],
@@ -358,9 +343,6 @@
       ],
       "Verify code again": [
         "Verificar código novamente"
-      ],
-      "Verify email": [
-        "Verificar correio eletrónico"
       ],
       "View": [
         "Ver"
@@ -1580,9 +1562,6 @@
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Requeridos ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } para uma ligação a nível de país."
       ],
@@ -2016,9 +1995,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
       ],
-      "Your recovery email address:": [
-        "O seu email de recuperação:"
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Por favor contacte o suporte da Mozilla."
       ]
@@ -2095,9 +2071,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Endereço ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } mês",
@@ -2931,9 +2904,6 @@
       ],
       "Congratulations on choosing privacy!": [
         "Parabéns por escolher a privacidade!"
-      ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Criar um endereço de ${ MAIL_APP_NAME }"
       ],
       "Credits": [
         "Créditos"

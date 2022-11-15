@@ -752,8 +752,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Dirección de correo"
+      "Add people or groups": [
+        "Añadir personas o grupos"
       ]
     },
     "Calendar invite buttons label": {
@@ -836,8 +836,8 @@
       "Edit (view, create and edit event details)": [
         "Editar (ver, crear o editar detalles de eventos)"
       ],
-      "Full view (see all event details)": [
-        "Vista completa (ver todos los detalles de eventos)"
+      "View (see all event details)": [
+        "Ver (todos los detalles del evento)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3300,8 +3300,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Cualquier persona con este enlace puede ver si usted está libre u ocupado en su calendario. No pueden ver detalles de eventos, como título, ubicación o participantes."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Se permiten hasta 100 participantes por invitación"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "A lo sumo ${ MAX_ATTENDEES } participante está permitido por invitación",
+        "A lo sumo ${ MAX_ATTENDEES } participantes están permitidos por invitación"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
@@ -5024,8 +5025,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Añadir personas o grupos"
+      "Enter an email address or group name": [
+        "Ingrese una dirección de correo o nombre de grupo"
       ]
     },
     "Share calendar modal title": {
@@ -5665,9 +5666,6 @@
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
       ],
-      "Create calendar": [
-        "Crear calendario"
-      ],
       "Create contact": [
         "Crear contacto"
       ],
@@ -5711,9 +5709,6 @@
       ],
       "Drop to upload": [
         "Soltar para cargar"
-      ],
-      "Edit calendar": [
-        "Editar calendario"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -5968,9 +5963,14 @@
         "Elija un número"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Editar información"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Crear calendario"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar calendario"
       ]
     },
     "Today icon tooltip in mini calendar": {

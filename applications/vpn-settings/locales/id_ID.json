@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } tersedia."
-      ],
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
       ],
@@ -18,7 +15,7 @@
         "Aktifkan metode pemulihan"
       ],
       "Add credit / debit card": [
-        "Tambahkan kartu kredit / debit"
+        "Tambah kartu kredit / debit"
       ],
       "Add credits": [
         "Tambah saldo"
@@ -50,6 +47,9 @@
       "Chat with us": [
         "Mengobrol dengan kami"
       ],
+      "Claim it": [
+        "Klaim"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -77,14 +77,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Buat alamat email aman ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Buat akun"
       ],
-      "Create address": [
-        "Buat alamat"
+      "Create your own": [
+        "Buat email Anda sendiri"
       ],
       "Current plan": [
         "Paket saat ini"
@@ -109,9 +106,6 @@
       ],
       "Didn't receive a code?": [
         "Belum menerima kode?"
-      ],
-      "Didn't receive the code?": [
-        "Tidak menerima kode yang dimaksud?"
       ],
       "Disable": [
         "Nonaktifkan"
@@ -163,6 +157,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Dapatkan alamat email terenkripsi baru"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -247,6 +244,9 @@
       ],
       "Request new code": [
         "Minta kode baru"
+      ],
+      "Resend code": [
+        "Kirim ulang kode"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -359,7 +359,7 @@
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "Gunakan alamat email Anda saat ini"
       ],
       "User": [
@@ -376,9 +376,6 @@
       ],
       "Verify code again": [
         "Verifikasi kode lagi"
-      ],
-      "Verify email": [
-        "Verifikasi email"
       ],
       "View": [
         "Lihat"
@@ -1854,9 +1851,6 @@
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Anda akan menggunakan alamat email ini untuk masuk ke layanan ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Paket ${ vpnBasic }, ${ vpnPlus }, atau ${ visionary } dibutuhkan untuk dapat membuka sambungan tingkat negara."
       ],
@@ -2025,6 +2019,12 @@
       "Free up some space or contact your administrator.": [
         "Kosongkan beberapa ruang atau hubungi administrator Anda."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Dapatkan alamat ${ BRAND_NAME } untuk digunakan di seluruh layanan ${ BRAND_NAME } termasuk Mail dan Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Dapatkan alamat ${ BRAND_NAME } saya"
+      ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google merekam aktivitas daring dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
@@ -2080,7 +2080,7 @@
         "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet terputus. Mohon periksa koneksi perangkat Anda."
+        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
       ],
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
@@ -2139,8 +2139,8 @@
       "of": [
         "dari"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Satu akun untuk seluruh layanan ${ BRAND_NAME }."
+      "One account. All ${ BRAND_NAME } services.": [
+        "Satu akun. Seluruh layanan ${ BRAND_NAME }."
       ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
@@ -2244,6 +2244,9 @@
       "support team": [
         "tim dukungan"
       ],
+      "The following address is available:": [
+        "Alamat berikut tersedia:"
+      ],
       "The securest way to browse, stream, and be online.": [
         "Cara paling aman untuk menjelajah, menonton, dan beraktivitas di internet."
       ],
@@ -2297,6 +2300,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan diri Anda ke server yang tersedia."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "untuk dapat menggunakan ${ toAppName } dan seluruh layanan ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
@@ -2409,6 +2415,9 @@
       "Why?": [
         "Mengapa?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
@@ -2472,6 +2481,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
@@ -2510,9 +2522,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
-      ],
-      "Your recovery email address:": [
-        "Alamat email pemulihan Anda:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
@@ -2619,9 +2628,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Alamat ${ MAIL_APP_NAME }"
       ],
       "${ n } months": [
         "${ n } bulan"
@@ -4183,7 +4189,7 @@
         "Tindakan"
       ],
       "Add credit/debit card": [
-        "Tambahkan kartu kredit/debit"
+        "Tambah kartu kredit/debit"
       ],
       "Add credits": [
         "Tambah saldo"
@@ -4245,11 +4251,11 @@
       "Congratulations on choosing privacy!": [
         "Selamat karena telah memilih privasi!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Buat alamat ${ MAIL_APP_NAME }"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Buat Akun ${ BRAND_NAME } Anda"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Buat alamat ${ BRAND_NAME } Anda"
       ],
       "Credits": [
         "Saldo"
@@ -4479,6 +4485,9 @@
       "Verification": [
         "Verifikasi"
       ],
+      "Verify email address": [
+        "Verifikasi alamat email"
+      ],
       "Warning": [
         "Peringatan"
       ],
@@ -4493,9 +4502,6 @@
       ],
       "You already have a Proton account": [
         "Anda telah memiliki akun Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Your current plan": [
         "Paket Anda saat ini"

@@ -1022,11 +1022,6 @@
         "Enviar"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Adreça de correu electrònic"
-      ]
-    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Mostra'n ${ remainingItems } més"
@@ -2595,6 +2590,10 @@
       "Process aborted": [
         "Procés anul·lat"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatari duplicat eliminat: ${ joinedRecipients }",
+        "Destinataris duplicats eliminats: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
@@ -2746,6 +2745,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
@@ -3247,6 +3250,10 @@
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat amb èxit. L’esdeveniment importat ara apareixerà al vostre calendari.",
+        "Esdeveniments importats amb èxit. Els esdeveniments importats ara apareixeràn al vostre calendari."
       ]
     },
     "Import calendar warning": {
@@ -4322,6 +4329,9 @@
       ],
       "Show original message": [
         "Mostra el missatge original"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Signed up": [
         "Registat"
@@ -5732,35 +5742,6 @@
         "Connexions VPN"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Anuncis de Proton"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Anuncis de Proton beta"
-      ],
-      "Proton company announcements": [
-        "Anuncis de l'organització Proton"
-      ],
-      "Proton for Business": [
-        "Proton per a empreses"
-      ],
-      "Proton for Business newsletter": [
-        "Butlletí de Proton per a Empreses"
-      ],
-      "Proton major features": [
-        "Característiques principals de Proton"
-      ],
-      "Proton newsletter": [
-        "Butlletí de Proton"
-      ],
-      "Proton product announcements": [
-        "Anuncis de productes Proton"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Adreces"
@@ -6129,14 +6110,23 @@
       "Back": [
         "Torna"
       ],
-      "Back to Calendar": [
-        "Tornar al Calendari"
+      "Back to calendar": [
+        "Torna al Calendari"
       ],
-      "Back to Drive": [
-        "Tornar al Drive"
+      "Back to files": [
+        "Torna a fitxers"
       ],
-      "Back to Mail": [
-        "Tornar al Correu"
+      "Back to inbox": [
+        "Torna a la safata d'entrada"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Safata d'entrada"
       ],
       "Spam": [
         "Correu brossa"
@@ -7441,9 +7431,6 @@
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
-      "Create calendar": [
-        "Crear calendari"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Creeu la vostra adreça ${ BRAND_NAME }"
       ],
@@ -7533,9 +7520,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Editeu el calendari"
       ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
@@ -7864,6 +7848,9 @@
       ],
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Signed in successfully!": [
+        "Heu iniciat la sessió correctament!"
       ],
       "Sort folders alphabetically": [
         "Ordena les carpetes alfabèticament"
@@ -8214,6 +8201,11 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Obre l'extensió ${ VPN_APP_NAME } del navegador per a protegir-te mentre naveguis"
       ]
     },
     "VPNClient": {

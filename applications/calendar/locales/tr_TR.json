@@ -751,11 +751,6 @@
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "E-posta adresi"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Katılıyor musunuz?"
@@ -835,9 +830,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
-      ],
-      "Full view (see all event details)": [
-        "Tam görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3300,8 +3292,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik ayrıntılarını göremez."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Bir davette en fazla 100 katılımcı olabilir"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir",
+        "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -5023,11 +5016,6 @@
         "${ calendarName } takvimini paylaşmak istediğiniz Proton hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Kişiler ya da gruplar ekle"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Proton kullanıcıları ile paylaş"
@@ -5421,9 +5409,6 @@
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
-      "Create calendar": [
-        "Takvim ekle"
-      ],
       "Create contact": [
         "Kişi ekle"
       ],
@@ -5467,9 +5452,6 @@
       ],
       "Drop to upload": [
         "Yüklemek için bırakın"
-      ],
-      "Edit calendar": [
-        "Takvimi düzenle"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
@@ -5722,11 +5704,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Bir sayı seçin"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Bilgileri düzenle"
       ]
     },
     "Today icon tooltip in mini calendar": {

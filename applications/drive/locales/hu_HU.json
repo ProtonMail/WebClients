@@ -250,6 +250,9 @@
       "Export contacts": [
         "Névjegyek exportálása"
       ],
+      "Fit to window": [
+        "Ablakhoz illesztés"
+      ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
       ],
@@ -417,6 +420,9 @@
       ],
       "Request new code": [
         "Új kód kérése"
+      ],
+      "Resend code": [
+        "Kód újraküldése"
       ],
       "Reset to default": [
         "Alapbeállítások visszaállítása"
@@ -1733,6 +1739,9 @@
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy",
         "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy"
       ],
+      "Device name does not match": [
+        "Az eszköznév nem egyezik"
+      ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
@@ -2739,6 +2748,9 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
       ],
+      "double your storage": [
+        "megduplázza tárhelyét"
+      ],
       "Download canceled": [
         "Letöltés megszakítva"
       ],
@@ -3002,6 +3014,9 @@
       "No results found": [
         "Nincs találat"
       ],
+      "No synced devices": [
+        "Nincsenek szinkronizált eszközök"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Egyik feltöltött kulcs sem alkalmas titkosításra. Erre a címre való küldéshez töltsön fel egy érvényes kulcsot, vagy kapcsolja ki az üzenetek titkosítást."
       ],
@@ -3168,6 +3183,9 @@
       "Swiss privacy": [
         "Svájci adatbiztonság"
       ],
+      "Synced devices": [
+        "Szinkronizált eszközök"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
@@ -3219,6 +3237,9 @@
       ],
       "This will overwrite the existing folder": [
         "Felülírja a meglévő mappát"
+      ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Ez eltávolítja a Proton Drive-ot az alábbi szinkronizált eszközről: ${ deviceName }. Az eszközön tárolt helyi fájlok nem lesznek érintve."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -3274,8 +3295,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
       ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Használja a Drive for Desktop-ot, hogy szinkronizálja a számítógépen tárolt mappáit a Proton Drive-val. Fel fognak itt tűnni és elérhetőek lesznek bárhonnan. ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Használja ezt az adatlapot, hogy tájékoztasson minket nem megfelelő, illegális vagy egyéb módon kártékony megosztott fájlokról. A következőt készül megosztani:"
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Csak így tovább, megduplázta ingyenes tárhelyét!"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
@@ -3336,6 +3363,9 @@
       ],
       "You cannot undo this action.": [
         "Ez a művelet nem vonható vissza."
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 500 MB-os üdvözlése bónuszát és "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
@@ -3555,6 +3585,9 @@
       "Deleted": [
         "Törölve"
       ],
+      "Device": [
+        "Eszköz"
+      ],
       "Device name": [
         "Eszköz neve"
       ],
@@ -3581,6 +3614,9 @@
       ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
+      ],
+      "Enter device name": [
+        "Írja be az eszköz nevét"
       ],
       "Expired": [
         "Lejárt"
@@ -4112,6 +4148,18 @@
       "Contact group updated": [
         "Névjegy csoport frissítve"
       ],
+      "Device failed to be removed": [
+        "Az eszközt nem sikerült eltávolítani"
+      ],
+      "Device failed to be renamed": [
+        "Az eszközt nem sikerült átnevezni"
+      ],
+      "Device removed": [
+        "Eszköz eltávolítva"
+      ],
+      "Device renamed": [
+        "Eszköz átnevezve"
+      ],
       "Encrypted search activated": [
         "Titkosított keresés aktiválva"
       ],
@@ -4220,6 +4268,10 @@
       ]
     },
     "Onboarding Info": {
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Teljesítse az alábbit a következő ${ expiresInDays } napon belül:",
+        "Teljesítse az alábbiakat a következő ${ expiresInDays } napon belül:"
+      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "A megbízható széfje a fontos dokumentumai és értékes emlékei számára."
       ]
@@ -4301,6 +4353,9 @@
       ],
       "Enter a new folder name": [
         "Adja meg az új mappa nevét"
+      ],
+      "Enter device name": [
+        "Írja be az eszköz nevét"
       ],
       "Enter your email address": [
         "Adja meg e-mail címét"
@@ -4415,6 +4470,12 @@
       ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Szerezzen akár ${ credits } kreditet."
+      ],
+      "Invite friends to Proton": [
+        "Barátok meghívása a Protonba"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
@@ -4853,6 +4914,9 @@
       ],
       "Recover data": [
         "Adatok helyreállítása"
+      ],
+      "Remove device?": [
+        "Eszköz eltávolítása?"
       ],
       "Rename a file": [
         "Fájl átnevezése"

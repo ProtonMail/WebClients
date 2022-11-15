@@ -4087,6 +4087,11 @@
       ]
     },
     "Progress bar description": {
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno."
+      ],
       "No contacts exported.": [
         "Nema izvezenih kontakata."
       ],

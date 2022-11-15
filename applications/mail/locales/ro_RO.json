@@ -370,7 +370,7 @@
         "Filtrare după..."
       ],
       "Fit to window": [
-        "Potriviți la fereastră"
+        "Potrivire la fereastră"
       ],
       "Font": [
         "Font"
@@ -3363,8 +3363,10 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Sunt permiși cel mult 100 de participanți per invitație"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Este permis ${ MAX_ATTENDEES } cel mult un participant per invitație",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4326,6 +4328,11 @@
         "Un contact",
         "${ numContacts } contacte",
         "${ numContacts } de contacte"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } mesaj în conversație",
+        "${ NumMessages } mesaje în conversație",
+        "${ NumMessages } de mesaje în conversație"
       ],
       "${ numOccurrences } occurrence found": [
         "S-a găsit o apariție.",

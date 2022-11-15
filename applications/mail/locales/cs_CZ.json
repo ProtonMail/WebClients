@@ -3385,8 +3385,11 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Na jednu pozvánku je povoleno maximálně 100 účastníků"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Na jednu pozvánku je povolen nejvýše ${ MAX_ATTENDEES } účastník",
+        "Na jednu pozvánku jsou povoleni nejvýše ${ MAX_ATTENDEES } účastníci",
+        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků",
+        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4375,6 +4378,12 @@
         "${ numContacts } kontakty",
         "${ numContacts } kontaktů",
         "${ numContacts } kontaktů"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } zpráva v konverzaci",
+        "${ NumMessages } zprávy v konverzaci",
+        "${ NumMessages } zpráv v konverzaci",
+        "${ NumMessages } zpráv v konverzaci"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } výskyt zjištěn",

@@ -367,6 +367,9 @@
       "Filter on...": [
         "Szűrő hozzáadása a..."
       ],
+      "Fit to window": [
+        "Ablakhoz illesztés"
+      ],
       "Font": [
         "Betűtípus"
       ],
@@ -769,6 +772,9 @@
       ],
       "Request new code": [
         "Új kód kérése"
+      ],
+      "Resend code": [
+        "Kód újraküldése"
       ],
       "Reset": [
         "Alaphelyzet"
@@ -3335,8 +3341,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Maximum 100 résztvevő lehetséges meghívónként"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként",
+        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4271,6 +4278,10 @@
       "${ numContacts } contact": [
         "${ numContacts } névjegy",
         "${ numContacts } névjegy"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } üzenet a beszélgetésben",
+        "${ NumMessages } üzenet a beszélgetésben"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } találat",
@@ -5356,6 +5367,9 @@
       ],
       "Using SimpleLogin is easy": [
         "A SimpleLogin használata egyszerű"
+      ],
+      "Verified Proton message": [
+        "Igazolt Proton üzenet"
       ],
       "Version ${ appVersion }": [
         "Verzió: ${ appVersion }"
@@ -7308,6 +7322,12 @@
       ],
       "Email tracking protection": [
         "E-mail követési védelem"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Szerezzen akár ${ credits } kreditet."
+      ],
+      "Invite friends to Proton": [
+        "Barátok meghívása a Protonba"
       ],
       "Message Content Search": [
         "Keresés üzenetek tartalmában"

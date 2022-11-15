@@ -385,6 +385,9 @@
       "Request new code": [
         "重新傳送驗證碼"
       ],
+      "Resend code": [
+        "重新傳送驗證碼"
+      ],
       "Reset to default": [
         "還原成預設值"
       ],
@@ -746,11 +749,6 @@
         "繼續使用 ${ MAIL_APP_NAME }。"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "電郵位址"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "會否出席？"
@@ -828,9 +826,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "編輯（檢視、建立與編輯事件詳細資訊）"
-      ],
-      "Full view (see all event details)": [
-        "完整檢視（檢視所有事件的詳細資訊）"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3236,8 +3231,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何擁有此連結的人僅能知道您忙碌與否，他們沒辦法看到事件細節，例如標題、地點或是參與者。"
       ],
-      "At most 100 participants are allowed per invitation": [
-        "每一邀請允許最多 100 個參與者"
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
@@ -4916,11 +4911,6 @@
         "新增您要與之分享 ${ calendarName } 的 Proton 帳號。我們會向他們傳送邀請。"
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "新增夥伴或群組"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "與 Proton 使用者分享"
@@ -5305,9 +5295,6 @@
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
       ],
-      "Create calendar": [
-        "創建行事曆"
-      ],
       "Create contact": [
         "建立聯絡人"
       ],
@@ -5349,9 +5336,6 @@
       ],
       "Drop to upload": [
         "拖放到此處以上載"
-      ],
-      "Edit calendar": [
-        "編輯行事曆"
       ],
       "Edit contact": [
         "編輯聯絡人"
@@ -5603,11 +5587,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "編輯資訊"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -665,7 +665,7 @@
         "ユーザー名を送信"
       ],
       "Set catch-all": [
-        "Catch-All の設定"
+        "Catch-All を設定"
       ],
       "Set recovery phrase": [
         "回復フレーズを設定"
@@ -1109,16 +1109,6 @@
       ],
       "Tweet": [
         "Tweet"
-      ]
-    },
-    "Calendar access select label": {
-      "Email address": [
-        "メールアドレス"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "カレンダー情報を編集"
       ]
     },
     "Calendar export section description": {
@@ -2439,7 +2429,7 @@
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "対応しているファイルの最大容量は${ MAX_IMPORT_FILE_SIZE_STRING }で、連絡先の上限数は${ MAX_IMPORT_CONTACTS_STRING }です。それ以上になる場合は、ファイルを小分けにしてください。"
+        "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
@@ -3385,7 +3375,7 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connections": [
-        "${ MaxVPN } VPN 接続"
+        "${ MaxVPN } 件の VPN 接続"
       ],
       "Access to all countries": [
         "すべての国にアクセス"
@@ -3801,7 +3791,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先のインポートに成功しました。"
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
         "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
@@ -4151,6 +4141,9 @@
       ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } / ${ total }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
@@ -4693,7 +4686,7 @@
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "${ MAIL_APP_NAME } に関連付けられたカスタムドメインをお持ちの場合、Catch-all アドレスを設定することで、無効なアドレスに送られたメールを受信できるようにします。"
+        "${ MAIL_APP_NAME } に関連付けられた独自ドメインをお持ちの場合、Catch-All アドレスを設定することで、(誤字脱字などが原因で) 無効なメールアドレスに送られたメールを受信できるようになります。"
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "ギフトコードをお持ちの場合は、以下に入力して割引を適用できます。"
@@ -5067,6 +5060,9 @@
       "Priority support": [
         "優先的なサポート"
       ],
+      "Proton ${ planName } credits earned": [
+        "Proton ${ planName } のクレジットを入手しました"
+      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
       ],
@@ -5168,6 +5164,9 @@
       ],
       "Show original message": [
         "元のメッセージを表示"
+      ],
+      "Sign in": [
+        "ログイン"
       ],
       "Signed up": [
         "サインアップ済み"
@@ -5649,9 +5648,6 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "既存の ${ BRAND_NAME } アカウントは、すべての ${ BRAND_NAME } サービスで利用できます。${ email } でログインしてください。"
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "${ delayedImport.Account } からのインポートが一時的に遅延しています。"
-      ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
       ],
@@ -5736,6 +5732,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "未払いによるサービスの中断を避けるため、少なくとも 1 つの有効な支払い方法を設定しておく必要があります。"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "アドレス"
+      ],
+      "Label (optional)": [
+        "ラベル (任意)"
       ]
     },
     "Input placeholder": {
@@ -6882,38 +6886,6 @@
         "VPN 接続"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton からのお知らせ"
-      ],
-      "Proton Beta": [
-        "Proton ベータ"
-      ],
-      "Proton beta announcements": [
-        "Proton ベータのお知らせ"
-      ],
-      "Proton company announcements": [
-        "Proton からのお知らせ"
-      ],
-      "Proton for Business": [
-        "Proton for Business"
-      ],
-      "Proton for Business newsletter": [
-        "ビジネス向け Proton のニュースレター"
-      ],
-      "Proton major features": [
-        "Proton の主な機能"
-      ],
-      "Proton newsletter": [
-        "Proton ニュースレター"
-      ],
-      "Proton offers and promotions": [
-        "Proton からのオファーとプロモーション"
-      ],
-      "Proton product announcements": [
-        "Proton プロダクトのお知らせ"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "メールアドレス"
@@ -7150,7 +7122,7 @@
     },
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "${ BRAND_NAME } にカスタムドメインを接続し、カスタムメールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードの指示に従って操作してください。"
+        "${ BRAND_NAME } に独自ドメインを接続し、独自メールアドレス (例: you@yourcompany.com) をセットアップします。ウィザードの指示に従って操作してください。"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
@@ -7343,15 +7315,6 @@
       "Back": [
         "戻る"
       ],
-      "Back to Calendar": [
-        "Calendar に戻る"
-      ],
-      "Back to Drive": [
-        "Drive に戻る"
-      ],
-      "Back to Mail": [
-        "Mail に戻る"
-      ],
       "Blocked": [
         "ブロック中"
       ],
@@ -7485,7 +7448,7 @@
         "${ n } 件の VPN 接続"
       ],
       "${ n } VPN connections per user": [
-        "1 ユーザー あたり ${ n } 件の VPN 接続"
+        "1 ユーザーあたり ${ n } 件の VPN 接続"
       ],
       "${ size } attachment size": [
         "${ size } の添付ファイル"
@@ -7509,7 +7472,7 @@
         "自動返信"
       ],
       "Catch-all": [
-        "キャッチオール"
+        "Catch-All"
       ],
       "Centralized billing": [
         "支払いを一元管理"
@@ -7549,6 +7512,9 @@
       ],
       "Free VPN on a single device": [
         "1 台のデバイスで無料 VPN"
+      ],
+      "GDPR data processing agreement": [
+        "GDPR データ処理契約"
       ],
       "High-speed VPN on ${ n } devices": [
         "${ n } 台のデバイスで高速 VPN"
@@ -7646,20 +7612,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7694,8 +7646,14 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "ビジネスのためプライバシーとセキュリティを提供する、すべてのプレミアム Proton サービスが利用できるプランです。"
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "プロフェッショナルとビジネスのための、安全な電子メールとカレンダーのプランです。"
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "毎日の会話のための、高度な機能を備えた安全な電子メールのプランです。"
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "自動返信を設定し、外出中であることや返信できないことを連絡先に伝えます。"
@@ -7705,6 +7663,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -7795,6 +7767,9 @@
       "End-to-end encrypted file storage": [
         "エンドツーエンド暗号化されたファイルストレージ"
       ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
+      ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
       ],
@@ -7830,6 +7805,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "BitTorrent などのファイル共有プロトコルに対応します"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "独自ドメインのメールアドレス (例: you@yourname.com) を使う"
@@ -8732,19 +8710,19 @@
         "${ n } 件の VPN 接続"
       ],
       "${ n } VPN connections per user": [
-        "1 ユーザー あたり ${ n } 件の VPN 接続"
+        "1 ユーザーあたり ${ n } 件の VPN 接続"
       ],
       "${ UsedAddresses } addresses": [
         "${ UsedAddresses } アドレス"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
-        "${ MaxAddresses } のうち ${ UsedAddresses } のメールアドレス"
+        "${ MaxAddresses } 件のうち ${ UsedAddresses } 件のメールアドレス"
       ],
       "${ UsedCalendars } calendars": [
-        "${ UsedCalendars } カレンダー"
+        "${ UsedCalendars } 件のカレンダー"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domains": [
-        "${ MaxDomains } ドメインのうち ${ UsedDomains } ドメインのカスタムドメイン"
+        "${ MaxDomains } 件のうち ${ UsedDomains } 件の独自ドメイン"
       ],
       "${ UsedMembers } of ${ MaxMembers } users": [
         "${ MaxMembers } ユーザーのうち ${ UsedMembers } ユーザー"
@@ -9228,7 +9206,7 @@
         "Catch-All アドレス"
       ],
       "Catch-all address": [
-        "Catch-all アドレス"
+        "Catch-All アドレス"
       ],
       "Change login password": [
         "ログインパスワードを変更"
@@ -9287,9 +9265,6 @@
       "Couldn’t create accounts": [
         "アカウントの作成に失敗しました"
       ],
-      "Create calendar": [
-        "カレンダーの作成"
-      ],
       "Create multiple user accounts": [
         "アカウントを複数作成する"
       ],
@@ -9301,6 +9276,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレスを作成"
       ],
       "Creating user accounts": [
         "アカウントを作成中"
@@ -9397,9 +9375,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } をダウンロード"
-      ],
-      "Edit calendar": [
-        "カレンダーを編集"
       ],
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
@@ -9959,11 +9934,6 @@
         "権限"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "情報を編集する"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
@@ -10135,7 +10105,7 @@
     },
     "VPN Plan Feature": {
       "${ n } VPN connections": [
-        "${ n } VPN 接続"
+        "${ n } 件の VPN 接続"
       ],
       "${ n }+ servers": [
         "${ n } サーバー"

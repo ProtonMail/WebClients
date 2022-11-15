@@ -142,7 +142,7 @@
         "Alegeți un fișier sau trageți-l aici"
       ],
       "Claim it": [
-        "Revendicați-l"
+        "Revendicați"
       ],
       "Clear all formatting": [
         "Eliminare formatări"
@@ -214,7 +214,7 @@
         "Creare legătură"
       ],
       "Create your own": [
-        "Creează-ți propriul"
+        "Creați-vă propria"
       ],
       "Current plan": [
         "Plan actual"
@@ -355,7 +355,7 @@
         "Se aplică filtrele. Ar putea dura câteva minute."
       ],
       "Fit to window": [
-        "Potriviți la fereastră"
+        "Potrivire la fereastră"
       ],
       "Font": [
         "Font"
@@ -373,7 +373,7 @@
         "Obțineți ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Obțineți o nouă adresă de e-mail criptată"
+        "Obțineți o adresă nouă de e-mail criptată"
       ],
       "Get verification code": [
         "Obținere cod de verificare"
@@ -438,6 +438,9 @@
       "label emails as": [
         "etichetare mesaje ca"
       ],
+      "Leave": [
+        "Lăsați"
+      ],
       "Load more": [
         "Încărcare mai multe"
       ],
@@ -446,6 +449,9 @@
       ],
       "Make default": [
         "Setare ca implicită"
+      ],
+      "Manage communication preferences": [
+        "Gestionați preferințele de comunicare"
       ],
       "Mark as default": [
         "Setare ca implicită"
@@ -1169,13 +1175,13 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Adresă e-mail"
+      "Add people or groups": [
+        "Adăugare persoane sau grupuri"
       ]
     },
     "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Editare informații calendar"
+      "Edit calendar": [
+        "Editare calendar"
       ]
     },
     "Calendar export section description": {
@@ -1281,8 +1287,8 @@
       "Edit (view, create and edit event details)": [
         "Editare (afișare, creare și editare detalii evenimente)"
       ],
-      "Full view (see all event details)": [
-        "Vedere completă (toate detaliile evenimentului)"
+      "View (see all event details)": [
+        "Vizualizare (vezi toate detaliile evenimentului)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3467,6 +3473,9 @@
       "sign in": [
         "autentificare"
       ],
+      "There was a problem removing your email address.": [
+        "A existat o problemă la eliminarea adresei dumneavoastră de e-mail."
+      ],
       "There was a problem verifying your email address.": [
         "A existat o problemă la verificarea adresei de e-mail."
       ]
@@ -4783,6 +4792,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Înainte de a vă reseta parola, descărcați fraza de recuperare."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
       ],
@@ -4919,6 +4931,9 @@
       "Download recovery file": [
         "Descărcare fișier de recuperare"
       ],
+      "Download recovery phrase": [
+        "Descărcați fraza de recuperare"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
@@ -5043,7 +5058,7 @@
         "Obțineți o adresă ${ BRAND_NAME } pentru a utiliza toate serviciile ${ BRAND_NAME }, inclusiv Mail și Calendar."
       ],
       "Get my ${ BRAND_NAME } address": [
-        "Obțineți adresa mea ${ BRAND_NAME }"
+        "Vreau adresa mea ${ BRAND_NAME }"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate în ambele părți!"
@@ -5077,6 +5092,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Dacă nu vă cunoașteți parola, va trebui să faceți un ${ boldPasswordReset } pentru a accesa noul site."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Dacă va trebui să vă resetați parola din nou, va trebui să introduceți această frază pentru a intra din nou în cont și a vă debloca datele."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail „colectoare\", pentru a primi mesajele trimise către domeniul propriu, dar la o adresă de e-mail inexistentă (ex: greșeli de redactare)."
@@ -5274,6 +5295,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Asigurați-vă că vă păstrați fraza de recuperare într-un loc privat."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ _switchButton }."
       ],
@@ -5395,6 +5419,9 @@
       ],
       "Paid for a monthly plan": [
         "Plătit pentru un plan lunar"
+      ],
+      "password reset": [
+        "resetare parolă"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Verificarea plății poate dura câteva minute."
@@ -5547,6 +5574,9 @@
       "Remove one of your calendars to join this one": [
         "Eliminați unul din calendare pentru a vă alătura acestuia"
       ],
+      "Reset password": [
+        "Resetați parola"
+      ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
       ],
@@ -5600,6 +5630,9 @@
       ],
       "Show original message": [
         "Afișare mesaj original"
+      ],
+      "Sign in": [
+        "Autentificare"
       ],
       "Signed up": [
         "Înscris"
@@ -5682,6 +5715,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "Nu au existat modificări la adresa dumneavoastră de e-mail sau la ${ BRAND_NAME } Cont. Doar conectați-vă la ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ${ VPN_APP_NAME } vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
@@ -6135,8 +6171,10 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Contul ${ BRAND_NAME } existent poate fi utilizat pentru accesarea tuturor serviciilor ${ BRAND_NAME }. Conectați-vă cu ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Importarea din ${ delayedImport.Account } este temporar întârziată."
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Importul dumneavoastră din ${ accounts } este temporar întârziat.",
+        "Importurile dumneavoastră din ${ accounts } sunt temporar întârziate.",
+        "De importuri ale dumneavoastră din ${ accounts } sunt temporar întârziate."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -7443,35 +7481,23 @@
       ]
     },
     "Label for news": {
-      "Proton announcements": [
-        "Anunțuri Proton"
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } anunțuri beta"
       ],
-      "Proton Beta": [
-        "Proton Beta"
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } anunțuri ale companiei"
       ],
-      "Proton beta announcements": [
-        "Anunțuri Proton beta"
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } pentru buletinul informativ Business"
       ],
-      "Proton company announcements": [
-        "Anunțurile companiei Proton"
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } buletin informativ"
       ],
-      "Proton for Business": [
-        "Proton pentru afaceri"
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } oferte și promoții"
       ],
-      "Proton for Business newsletter": [
-        "Buletin informativ Proton pentru întreprinderi"
-      ],
-      "Proton major features": [
-        "Caracteristici majore Proton"
-      ],
-      "Proton newsletter": [
-        "Buletin informativ Proton"
-      ],
-      "Proton offers and promotions": [
-        "Oferte şi promoţii Proton"
-      ],
-      "Proton product announcements": [
-        "Anunțuri despre produsele Proton"
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } anunțuri de produse"
       ]
     },
     "Label in domain modal": {
@@ -7927,17 +7953,26 @@
       "Back": [
         "Înapoi"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "Înapoi la calendar"
       ],
-      "Back to Drive": [
-        "Înapoi la Drive"
+      "Back to files": [
+        "Înapoi la fișiere"
       ],
-      "Back to Mail": [
-        "Înapoi la e-mail"
+      "Back to inbox": [
+        "Înapoi la mesaje primite"
       ],
       "Blocked": [
         "Blocat"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Drive": [
+        "Unitate"
+      ],
+      "Inbox": [
+        "Mesaje primite"
       ],
       "Not spam": [
         "Acceptată"
@@ -8276,26 +8311,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8365,6 +8380,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9276,6 +9311,9 @@
       "You can safely close this tab.": [
         "Puteți închide această filă în siguranță."
       ],
+      "Your recovery email has been successfully removed.": [
+        "E-mailul dumneavoastră de recuperare a fost eliminat cu succes."
+      ],
       "Your recovery email has been successfully verified.": [
         "E-mailul de recuperare a fost verificat cu succes."
       ]
@@ -9461,8 +9499,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Adăugare persoane sau grupuri"
+      "Enter an email address or group name": [
+        "Introduceți o adresă de e-mail sau un nume de grup"
       ]
     },
     "Share calendar modal title": {
@@ -10204,9 +10242,6 @@
       "Couldn’t create accounts": [
         "Nu s-au putut crea conturi"
       ],
-      "Create calendar": [
-        "Creare calendar"
-      ],
       "Create multiple user accounts": [
         "Creare conturi multiple de utilizatori"
       ],
@@ -10220,7 +10255,7 @@
         "Creați-vă contul ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
-        "Creați adresa dumneavoastră ${ BRAND_NAME }"
+        "Creați-vă adresa ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
         "Se creează conturile de utilizator"
@@ -10317,9 +10352,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Editare calendar"
       ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"
@@ -10674,6 +10706,9 @@
       "Sign out": [
         "Deconectare"
       ],
+      "Signed in successfully!": [
+        "Autentificare reușită!"
+      ],
       "Signed in to member account": [
         "Conectat în cont de membru"
       ],
@@ -10755,7 +10790,7 @@
         "Verificare"
       ],
       "Verify email address": [
-        "Verifică adresa de e-mail"
+        "Verificare adresă de e-mail"
       ],
       "VPN apps": [
         "Aplicații VPN"
@@ -10768,6 +10803,9 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Ne-am mutat la ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
@@ -10886,9 +10924,14 @@
         "Rol"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Editare informații"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Creare calendar"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editare calendar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11121,6 +11164,11 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Deschideți extensia ${ VPN_APP_NAME } pentru navigatoare pentru a vă proteja traficul."
       ]
     },
     "VPNClient": {

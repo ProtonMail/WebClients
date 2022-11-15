@@ -577,6 +577,9 @@
       "Requires a verified recovery email address": [
         "必須是已驗證的復原電郵位址"
       ],
+      "Resend code": [
+        "重新傳送驗證碼"
+      ],
       "Reset credentials": [
         "重設認證"
       ],
@@ -860,6 +863,9 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "繼續使用免費方案"
+      ],
       "No, thanks": [
         "不用了，謝謝"
       ],
@@ -1110,9 +1116,9 @@
         "Tweet"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "電郵位址"
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "下載選定行事曆中所有行程的 ICS 檔案。"
       ]
     },
     "Calendar invite status label": {
@@ -1148,6 +1154,11 @@
         "您已可存取此行事曆"
       ]
     },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "創建一組導向您行事曆的連結，Proton 外部的人即可存取共享資源。唯獨您有權限可加入或移除行程。"
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "共享行事曆"
@@ -1162,9 +1173,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "編輯（檢視、建立與編輯事件詳細資訊）"
-      ],
-      "Full view (see all event details)": [
-        "完整檢視（檢視所有事件的詳細資訊）"
       ]
     },
     "Calendar status": {
@@ -2343,6 +2351,11 @@
         "尚餘儲值"
       ]
     },
+    "CSV download button": {
+      "CSV template": [
+        "CSV 範本"
+      ]
+    },
     "CSV format error": {
       "Error on row ${ erroredRowsString }.": [
         "原始錯誤訊息 ${ erroredRowsString } 。"
@@ -2410,7 +2423,7 @@
     },
     "Default calendar event settings section title": {
       "Default event settings": [
-        "預設的事件設定"
+        "預設的行程設定"
       ]
     },
     "Default display name vcard": {
@@ -2420,7 +2433,7 @@
     },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
-        "所有在此行事曆上的事件將會刪除。"
+        "所有在此行事曆上的行程將會刪除。"
       ]
     },
     "Delinquent modal title": {
@@ -2875,7 +2888,7 @@
         "請嘗試重新認證並確保權限設定正確。"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "請升級至商務方案，可享有多使用者帳號與服務支援。"
+        "請升級至商務方案，可享有多使用者帳號與服務支援"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至商務方案，可享有多使用者帳號與管理多使用者功能。"
@@ -3336,16 +3349,22 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } events exported": [
-        "${ totalProcessed }/${ totalToProcess } 個事件已匯出"
+        "${ totalProcessed }/${ totalToProcess } 個行程已匯出"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "行事曆已成功匯出。您現在可儲存 ICS 檔案。"
+      ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "由於密碼已重設，您的全部行程皆無法解密和匯出。"
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "由於密碼重設，您的部份行程無法解密和匯出。"
       ],
       "Loading events": [
         "載入活動中"
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "您現在可儲存已成功匯出事件的 ICS 檔案。"
+        "您現在可儲存已成功匯出行程的 ICS 檔案。"
       ]
     },
     "Feature": {
@@ -3371,6 +3390,11 @@
         "Torrenting 支援 (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Delete key": [
+        "刪除金鑰"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
@@ -3378,7 +3402,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "搭用安全金鑰的雙重驗證停用中"
+        "搭用防護金鑰的雙重驗證停用中"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
@@ -3393,6 +3417,14 @@
     "fido2: Label": {
       "Security key": [
         "安全性金鑰"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "要刪除安全防護金鑰？"
+      ],
+      "Disable 2FA via security key?": [
+        "透過安全防護金鑰停用雙重驗證？"
       ]
     },
     "file size format": {
@@ -3546,7 +3578,7 @@
         "動作"
       ],
       "Event": [
-        "事件"
+        "行程"
       ],
       "Folders": [
         "資料夾"
@@ -4168,7 +4200,7 @@
         "一個好記且讓您很快辨識它用在何處，如此一來就可輕鬆將其撤銷或是延展。"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "復原檔可讓您在重設帳號後，解鎖並檢視您的資料。"
+        "復原檔可讓您在重設帳號後，解鎖並檢視您的資料"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
@@ -4288,7 +4320,7 @@
         "您確定要刪除此行事曆嗎？"
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "您確認刪除此行事曆嗎？所有相關事件將會被刪除。"
+        "您確認刪除此行事曆嗎？所有相關行程將會被刪除。"
       ],
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
@@ -4389,6 +4421,9 @@
       "Continue with ${ planName }": [
         "繼續使用 ${ planName }"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "繼續進行連結您的 ${ ACCOUNT_APP_NAME } 至 ${ name }。"
+      ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
       ],
@@ -4472,6 +4507,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
+      ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "下載我們的 CSV 範本，依序填入使用者相關詳細資料，接著上載您完成的 CSV 檔案，即可創建這些使用者的帳號。"
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
@@ -5121,6 +5159,9 @@
       "Show original message": [
         "顯示原始訊息"
       ],
+      "Sign in": [
+        "登入"
+      ],
       "Signed up": [
         "註冊"
       ],
@@ -5554,7 +5595,7 @@
         "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消訂購授權。"
       ],
       "You need to have an active personal calendar to import your events.": [
-        "您需要有使用中的個人行事曆才可匯入您的事件。"
+        "您需要有使用中的個人行事曆才可匯入您的行程。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
@@ -5619,9 +5660,6 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "您現有的 ${ BRAND_NAME } 帳號可用來存取所有的 ${ BRAND_NAME } 服務。請以 ${ email } 登入。"
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "您從匯入 ${ delayedImport.Account } 的操作被暫時推遲。"
-      ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
       ],
@@ -5656,6 +5694,15 @@
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "偵測到其它重複的金鑰。請單獨上載以取得更多資訊。"
+      ],
+      "Create an email address": [
+        "創建一組電子郵件位址"
+      ],
+      "Day 27: Trial reminder": [
+        "第 27 天: 試用到期提醒"
+      ],
+      "Day 30: Trial ends": [
+        "第 30 天: 試用期結束"
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "金鑰 ${ fingerprint } 已上載"
@@ -6267,6 +6314,9 @@
       "Create password": [
         "建立密碼"
       ],
+      "Credits": [
+        "額度"
+      ],
       "Credits used": [
         "已使用儲值"
       ],
@@ -6842,7 +6892,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "全日事件通知"
+        "全日行程通知"
       ],
       "Notifications": [
         "通知"
@@ -6864,35 +6914,6 @@
       ],
       "Private": [
         "私密"
-      ]
-    },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton 公告"
-      ],
-      "Proton Beta": [
-        "Proton 測試版"
-      ],
-      "Proton beta announcements": [
-        "Proton 搶鮮版公布"
-      ],
-      "Proton company announcements": [
-        "Proton 公司公告"
-      ],
-      "Proton for Business newsletter": [
-        "Proton 企業版電子報"
-      ],
-      "Proton major features": [
-        "Proton 主要功能"
-      ],
-      "Proton newsletter": [
-        "Proton 電子報"
-      ],
-      "Proton offers and promotions": [
-        "Proton 提供優惠與促銷"
-      ],
-      "Proton product announcements": [
-        "Proton 產品公告"
       ]
     },
     "Label in domain modal": {
@@ -6981,6 +7002,9 @@
       ],
       "Common sign up issues": [
         "常見註冊問題"
+      ],
+      "Create account": [
+        "創建帳號"
       ],
       "Encryption and keys": [
         "加密與金鑰"
@@ -7321,17 +7345,26 @@
       "Back": [
         "返回"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "返回行事曆"
       ],
-      "Back to Drive": [
-        "返回 Drive"
+      "Back to files": [
+        "返回檔案"
       ],
-      "Back to Mail": [
-        "回到信箱"
+      "Back to inbox": [
+        "返回收件匣"
       ],
       "Blocked": [
         "已封鎖"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Drive": [
+        "雲端硬碟"
+      ],
+      "Inbox": [
+        "收件匣"
       ],
       "Spam": [
         "垃圾郵件"
@@ -7349,6 +7382,12 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        "繼續確認方案"
+      ],
+      "Continue with Free": [
+        "繼續使用免費方案"
+      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -7366,6 +7405,9 @@
       ]
     },
     "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
       "Upgrade now": [
         "立即升級"
       ]
@@ -7430,8 +7472,20 @@
       "Auto-reply": [
         "自動回覆"
       ],
+      "Contact groups": [
+        "聯絡人群組"
+      ],
+      "Contact groups management": [
+        "聯絡人群組管理"
+      ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "DNS leak prevention": [
+        "DNS 外洩預防"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "文件編輯程式 (圖文檔、工作表、簡報)"
       ],
       "Encrypted contact details": [
         "經加密的聯絡人詳細資訊"
@@ -7535,12 +7589,23 @@
         "${ mailPlanName } 試用版"
       ]
     },
+    "new_plans: title": {
+      "Delete account?": [
+        "要刪除帳號？"
+      ],
+      "Downgrade account?": [
+        "確定要換成精簡功能的帳號？"
+      ]
+    },
     "new_plans: tooltip": {
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "管控您共享檔案的存取，可透過加入密碼防護，以及設定連結有效日期"
+      ],
       "Create up to ${ n } custom calendars.": [
         "創建多達 ${ n } 自訂行事曆。"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力。"
+        "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7549,6 +7614,9 @@
       ],
       "10 email addresses/aliases": [
         "10 組電郵位址/別名"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "支援 10 個自訂電郵網域更全面性的服務"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendars": [
         "建立 ${ numberOfPersonalCalendars } 個人行事曆"
@@ -7595,7 +7663,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "事件預設值已更新"
+        "行程預設值已更新"
       ]
     },
     "Notification time input": {
@@ -7931,11 +7999,19 @@
       "Bitcoin": [
         "比特幣"
       ],
+      "Credit/debit card": [
+        "信用卡/簽帳金融卡"
+      ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "創建行事曆以隨時掌握您的日程安排，同時確保您的資料安全無虞。"
       ]
     },
     "PGP key warning": {
@@ -8299,11 +8375,6 @@
         "新增您要與之分享 ${ calendarName } 的 Proton 帳號。我們會向他們傳送邀請。"
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "新增夥伴或群組"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "與 Proton 使用者分享"
@@ -8654,6 +8725,9 @@
       "Certificate ${ name } revoked": [
         "憑證 ${ name } 已撤銷"
       ],
+      "Creating config file for ${ serverName }": [
+        "創建組態檔供用於伺服器 ${ serverName }"
+      ],
       "Filter removed": [
         "篩選器已移除"
       ],
@@ -8667,6 +8741,11 @@
       ],
       "/user per month": [
         "/ 每使用者每月"
+      ]
+    },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "無法匯出行程的詳細資訊"
       ]
     },
     "Tab in domain modal": {
@@ -8972,9 +9051,6 @@
       "Couldn’t create accounts": [
         "無法建立帳號"
       ],
-      "Create calendar": [
-        "創建行事曆"
-      ],
       "Create multiple user accounts": [
         "新增多個使用者帳號"
       ],
@@ -9085,9 +9161,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "下載 ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "編輯行事曆"
       ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
@@ -9440,6 +9513,9 @@
       "Sign out": [
         "登出"
       ],
+      "Signed in successfully!": [
+        "成功登入！"
+      ],
       "Signed in to member account": [
         "登入到成員帳號"
       ],
@@ -9650,11 +9726,6 @@
         "角色"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "編輯資訊"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
@@ -9686,7 +9757,7 @@
         "啟用／停用桌面與行動裝置通知"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "啟用進階日誌記錄安全記錄檔中每項事件的 IP 位址。"
+        "啟用進階日誌記錄安全記錄檔中每項行程的 IP 位址。"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
