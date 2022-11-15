@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { isAuthorizedSideAppUrl, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { getIsSideAppPostMessage, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 import { AppLink, Icon, Tooltip } from '../../../components';
 import Header from '../../../components/header/Header';
@@ -67,10 +67,8 @@ const PrivateSideAppHeader = ({
     };
 
     const handleTriggerToggleFromOutside = useCallback(
-        (event: MessageEvent<SIDE_APP_ACTION>) => {
-            const origin = event.origin;
-
-            if (!isAuthorizedSideAppUrl(origin)) {
+        (event: MessageEvent) => {
+            if (!getIsSideAppPostMessage(event)) {
                 return;
             }
 

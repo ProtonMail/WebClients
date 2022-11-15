@@ -20,10 +20,10 @@ import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiErr
 import {
     addParentAppToUrl,
     getIsAuthorizedApp,
-    isAuthorizedSideAppUrl,
+    getIsSideAppPostMessage,
     postMessageToIframe,
 } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 import { useApi, useAuthentication, useGetUser, useOnline } from './index';
 import useApiStatus from './useApiStatus';
@@ -157,10 +157,8 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const handleReceived = useCallback(
-        async (event: MessageEvent<SIDE_APP_ACTION>) => {
-            const origin = event.origin;
-
-            if (!isAuthorizedSideAppUrl(origin)) {
+        async (event: MessageEvent) => {
+            if (!getIsSideAppPostMessage(event)) {
                 return;
             }
 
