@@ -67,7 +67,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
                 hasCaret={false}
                 externalCloseRef={externalCloseRef}
             >
-                {() => <DropdownMenu>{dropdownMenuButtons.map((button) => button)}</DropdownMenu>}
+                {{ render: () => <DropdownMenu>{dropdownMenuButtons.map((button) => button)}</DropdownMenu> }}
             </ToolbarDropdown>
             {blockSenderModal}
         </>

@@ -6,8 +6,8 @@ import { Kbd, Vr } from '@proton/atoms';
 import { Icon, useMailSettings } from '@proton/components';
 
 import { Breakpoints } from '../../models/utils';
-import LabelDropdown from '../dropdown/LabelDropdown';
-import MoveDropdown from '../dropdown/MoveDropdown';
+import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
@@ -70,17 +70,20 @@ const LabelsAndFolders = ({
                 externalToggleRef={moveDropdownToggleRef}
                 hasCaret={false}
             >
-                {({ onClose, onLock }) => (
-                    <MoveDropdown
-                        labelID={labelID}
-                        selectedIDs={selectedIDs}
-                        conversationMode={conversationMode}
-                        onClose={onClose}
-                        onLock={onLock}
-                        onBack={onBack}
-                        breakpoints={breakpoints}
-                    />
-                )}
+                {{
+                    contentProps: moveDropdownContentProps,
+                    render: ({ onClose, onLock }) => (
+                        <MoveDropdown
+                            labelID={labelID}
+                            selectedIDs={selectedIDs}
+                            conversationMode={conversationMode}
+                            onClose={onClose}
+                            onLock={onLock}
+                            onBack={onBack}
+                            breakpoints={breakpoints}
+                        />
+                    ),
+                }}
             </ToolbarDropdown>
             <ToolbarDropdown
                 autoClose={false}
@@ -94,15 +97,18 @@ const LabelsAndFolders = ({
                 externalToggleRef={labelDropdownToggleRef}
                 hasCaret={false}
             >
-                {({ onClose, onLock }) => (
-                    <LabelDropdown
-                        labelID={labelID}
-                        selectedIDs={selectedIDs}
-                        onClose={onClose}
-                        onLock={onLock}
-                        breakpoints={breakpoints}
-                    />
-                )}
+                {{
+                    contentProps: labelDropdownContentProps,
+                    render: ({ onClose, onLock }) => (
+                        <LabelDropdown
+                            labelID={labelID}
+                            selectedIDs={selectedIDs}
+                            onClose={onClose}
+                            onLock={onLock}
+                            breakpoints={breakpoints}
+                        />
+                    ),
+                }}
             </ToolbarDropdown>
         </>
     );
