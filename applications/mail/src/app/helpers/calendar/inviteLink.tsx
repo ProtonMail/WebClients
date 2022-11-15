@@ -2,17 +2,14 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { AppLink, SettingsLink } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { CALENDAR_SETTINGS_SECTION_ID, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getInteroperabilityOperationsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 
 import OpenInCalendarButton from '../../components/message/extras/calendar/OpenInCalendarButton';
 import { InvitationModel } from './invite';
-
-const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const {
@@ -92,7 +89,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
                 app={APPS.PROTONCALENDAR}
             >
                 {c('Link')
-                    .t`This ICS file contains more than one event. Please download it and import the events in ${calendarAppName}`}
+                    .t`This ICS file contains more than one event. Please download it and import the events in ${CALENDAR_APP_NAME}`}
             </SettingsLink>
         );
     }
@@ -151,8 +148,8 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     const recurrenceID = recurrenceIDProperty ? getUnixTime(propertyToUTCDate(recurrenceIDProperty)) : undefined;
 
     const linkString = isOutdated
-        ? c('Link').t`Open updated event in ${calendarAppName}`
-        : c('Link').t`Open in ${calendarAppName}`;
+        ? c('Link').t`Open updated event in ${CALENDAR_APP_NAME}`
+        : c('Link').t`Open in ${CALENDAR_APP_NAME}`;
 
     return (
         <OpenInCalendarButton

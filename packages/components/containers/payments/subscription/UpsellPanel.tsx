@@ -5,12 +5,12 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { generateUID } from '@proton/components/helpers';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
     APP_NAMES,
     BRAND_NAME,
+    CALENDAR_APP_NAME,
     CYCLE,
     MAIL_APP_NAME,
     PLANS,
@@ -114,7 +114,6 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
     if (isTrial(subscription) && subscription.PeriodEnd && mailPlan) {
         const mailPlanName = mailPlan.Title;
         const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'MMMM d, y');
-        const calendarAppName = getAppName(APPS.PROTONCALENDAR);
         const handleUpgrade = () =>
             openSubscriptionModal({
                 plan: PLANS.MAIL,
@@ -153,7 +152,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             },
             {
                 icon: 'brand-proton-calendar',
-                text: calendarAppName,
+                text: CALENDAR_APP_NAME,
             },
         ];
         return (

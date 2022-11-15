@@ -1,7 +1,13 @@
 import { c, msgid } from 'ttag';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, MAIL_APP_NAME, PLANS, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    CALENDAR_APP_NAME,
+    MAIL_APP_NAME,
+    PLANS,
+    PLAN_SERVICES,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
@@ -16,8 +22,6 @@ interface Props {
     organization?: Partial<Organization>;
     subscription?: Subscription;
 }
-
-const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 const SummarySection = ({ user, userSettings, organization, subscription }: Props) => {
     const { APP_NAME, LOCALES = {} } = useConfig();
@@ -129,7 +133,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="brand-proton-calendar" className="mr0-5 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONCALENDAR}>
-                                {c('Link').t`${calendarAppName} settings`}
+                                {c('Link').t`${CALENDAR_APP_NAME} settings`}
                             </SettingsLink>
                         </li>
                     </ul>

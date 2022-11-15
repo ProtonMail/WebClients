@@ -4,13 +4,10 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { LockedVolumeResolveMethod } from './interfaces';
-
-const appName = getAppName(APPS.PROTONDRIVE);
 
 interface Props {
     defaultResolveMethod: LockedVolumeResolveMethod;
@@ -58,7 +55,7 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
             label: (
                 <OptionLabel
                     title={c('Label').t`Unlock later`}
-                    info={c('Info').t`Continue using ${appName} and unlock drive later`}
+                    info={c('Info').t`Continue using ${DRIVE_APP_NAME} and unlock drive later`}
                 />
             ),
             value: LockedVolumeResolveMethod.UnlockLater,
