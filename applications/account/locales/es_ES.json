@@ -141,6 +141,9 @@
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
       ],
+      "Claim it": [
+        "Solicitar dirección"
+      ],
       "Clear all formatting": [
         "Borrar todo el formato"
       ],
@@ -209,6 +212,9 @@
       ],
       "Create link": [
         "Crear enlace"
+      ],
+      "Create your own": [
+        "Crear tu propia"
       ],
       "Current plan": [
         "Plan actual"
@@ -348,6 +354,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Se están aplicando los filtros. Esto puede tardar unos minutos."
       ],
+      "Fit to window": [
+        "Ajustar a la ventana"
+      ],
       "Font": [
         "Fuente"
       ],
@@ -362,6 +371,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Obtener una nueva dirección de correo cifrada"
       ],
       "Get verification code": [
         "Obtener código de verificación"
@@ -426,6 +438,9 @@
       "label emails as": [
         "etiquetar correos electrónicos como"
       ],
+      "Leave": [
+        "Salir"
+      ],
       "Load more": [
         "Cargar más"
       ],
@@ -434,6 +449,9 @@
       ],
       "Make default": [
         "Establecer como predeterminada"
+      ],
+      "Manage communication preferences": [
+        "Administrar las preferencias de comunicación"
       ],
       "Mark as default": [
         "Marcar como predeterminado"
@@ -578,6 +596,9 @@
       ],
       "Requires a verified recovery email address": [
         "Se requiere una dirección de correo de recuperación verificada"
+      ],
+      "Resend code": [
+        "Reenviar código"
       ],
       "Reset credentials": [
         "Restablecer credenciales"
@@ -804,6 +825,9 @@
       "Use recovery code": [
         "Utilizar un código de recuperación"
       ],
+      "Use your current email instead": [
+        "Usar tu dirección de correo actual en su lugar"
+      ],
       "Use “${ label }” setting": [
         "Utilizar la configuración de \"${ label }\""
       ],
@@ -921,6 +945,9 @@
       ],
       "Disabled": [
         "Deshabilitada"
+      ],
+      "External": [
+        "Externo"
       ],
       "Missing keys": [
         "Claves faltantes"
@@ -1146,13 +1173,13 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Dirección de correo electrónico"
+      "Add people or groups": [
+        "Añadir personas o grupos"
       ]
     },
     "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Editar información del calendario"
+      "Edit calendar": [
+        "Editar calendario"
       ]
     },
     "Calendar export section description": {
@@ -1257,8 +1284,8 @@
       "Edit (view, create and edit event details)": [
         "Editar (ver, crear y editar detalles de evento)"
       ],
-      "Full view (see all event details)": [
-        "Vista completa (ver todos los detalles del evento)"
+      "View (see all event details)": [
+        "Ver (todos los detalles del evento)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3430,6 +3457,9 @@
       "sign in": [
         "iniciar sesión"
       ],
+      "There was a problem removing your email address.": [
+        "Hubo un problema al eliminar tu dirección de correo electrónico."
+      ],
       "There was a problem verifying your email address.": [
         "Hubo un problema al verificar tu dirección de correo electrónico."
       ]
@@ -4705,6 +4735,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que puedas enviar y recibir mensajes desde tus direcciones nuevas, necesitas crear las claves de cifrado para ellas."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Antes de restablecer tu contraseña, descarga tu frase de recuperación."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Las transacciones con Bitcoin pueden tardar un tiempo en ser confirmadas (hasta 24 horas). Una vez confirmada, añadiremos los créditos a tu cuenta. Después de la confirmación de la transacción, podrás pagar tu factura con los créditos."
       ],
@@ -4839,6 +4872,9 @@
       "Download recovery file": [
         "Descargar archivo de recuperación"
       ],
+      "Download recovery phrase": [
+        "Descargar la frase de recuperación"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo dondequiera que vayas."
       ],
@@ -4959,6 +4995,12 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generar una frase de recuperación nueva deshabilitará la anterior."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Conseguir una dirección ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME } incluyendo Mail y Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Obtener mi dirección ${ BRAND_NAME }"
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "¡Dale tu clave pública a tus amigos o publícala en línea para que todos puedan enviarte correos electrónicos cifrados de extremo a extremo!"
       ],
@@ -4991,6 +5033,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Si no recuerdas tu contraseña, necesitarás realizar un ${ boldPasswordReset } para acceder al nuevo sitio."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Si neceistas restablecer tu contraseña de nuevo, necesitarás introducir esta frase para acceder de nuevo a tu cuenta y desbloquear tus datos."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Si tienes un dominio personalizado con ${ MAIL_APP_NAME }, puedes establecer una dirección de correo electrónico \"catch-all\" para recibir mensajes enviados a tu dominio pero a una dirección de correo electrónico no válida (por ejemplo, debido a errores tipográficos)."
@@ -5186,6 +5234,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrese de ${ addARecoveryMethod } , de esta manera puede volver a tener acceso a su cuenta en caso de olvidar la contraseña."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Asegúrate de guardar tu frase de recuperación en un lugar privado."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Introduce manualmente esta información en el dispositivo de autenticación de doble factores para configurar tu cuenta. ${ _switchButton }."
       ],
@@ -5264,6 +5315,9 @@
       "of": [
         "de"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Una cuenta. Todos los servicios ${ BRAND_NAME }."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Cambia esta configuración solo si utilizas PGP con destinatarios que no sean de ${ BRAND_NAME }."
       ],
@@ -5303,6 +5357,9 @@
       ],
       "Paid for a monthly plan": [
         "Pagó un plan mensual"
+      ],
+      "password reset": [
+        "restablecimiento de contraseña"
       ],
       "Payment can take a few minutes to fully verify.": [
         "El pago puede tardar unos minutos en ser verificado por completo."
@@ -5453,6 +5510,9 @@
       "Remove one of your calendars to join this one": [
         "Elimina uno de tus calendarios para unirte a este"
       ],
+      "Reset password": [
+        "Restablecer contraseña"
+      ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
       ],
@@ -5506,6 +5566,9 @@
       ],
       "Show original message": [
         "Mostrar el mensaje original"
+      ],
+      "Sign in": [
+        "Iniciar sesión"
       ],
       "Signed up": [
         "Registrado"
@@ -5564,6 +5627,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico predeterminada. Arrastra y suelta para reordenar tus direcciones."
       ],
+      "The following address is available:": [
+        "La siguiente dirección está disponible:"
+      ],
       "The following address is invalid.": [
         "La siguiente dirección no es válida.",
         "Las siguientes direcciones no son válidas."
@@ -5583,6 +5649,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, transmitir y estar en línea."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "No ha habido cambios en tu dirección de correo electrónico o cuenta ${ BRAND_NAME }. Inicia sesión en ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estos ficheros de configuración te permiten elegir a qué servidor de ${ VPN_APP_NAME } te conectarás cuándo uses una aplicación de VPN de terceros o cuándo configures una conexión VPN en un router."
@@ -5691,6 +5760,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para asegurar tu conexión a internet, descarga e installa la aplicación ${ VPN_APP_NAME } en tu dispositivo y conéctate a un servidor."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "para usar ${ toAppName } y todos los servicios ${ BRAND_NAME }"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script Sieve válido. Puedes ${ link }."
@@ -5854,6 +5926,9 @@
       "Why?": [
         "¿Por qué?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrás crear nuevos usuarios, agregar direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
@@ -5978,6 +6053,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Pronto serás redigirido a tu banco para verificar tu pago."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Necesitarás una dirección ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "NO podrá descifrar los mensajes, archivos y otros datos cifrados con esta clave."
       ],
@@ -6026,8 +6104,9 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Tu cuenta actual de ${ BRAND_NAME } puede utilizarse para acceder a todos los servicios de ${ BRAND_NAME }. Inicia sesión con ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Tu importación desde ${ delayedImport.Account } se ha retrasado temporalmente."
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Tu importación de ${ accounts } se ha postergado temporalmente.",
+        "Tus importaciones de ${ accounts } se han postergado temporalmente."
       ],
       "Your import will not be processed.": [
         "Tu importación no será procesada."
@@ -7332,35 +7411,23 @@
       ]
     },
     "Label for news": {
-      "Proton announcements": [
-        "Anuncios de Proton"
+      "${ BRAND_NAME } beta announcements": [
+        "Comunicados de ${ BRAND_NAME } beta"
       ],
-      "Proton Beta": [
-        "Proton Beta"
+      "${ BRAND_NAME } company announcements": [
+        "Comunicados de la compañía ${ BRAND_NAME }"
       ],
-      "Proton beta announcements": [
-        "Anuncios beta de Proton"
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletín comercial de ${ BRAND_NAME }"
       ],
-      "Proton company announcements": [
-        "Anuncios de la compañía Proton"
+      "${ BRAND_NAME } newsletter": [
+        "Boletín de ${ BRAND_NAME }"
       ],
-      "Proton for Business": [
-        "Proton para Negocios"
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas y promociones de ${ BRAND_NAME }"
       ],
-      "Proton for Business newsletter": [
-        "Boletín de Proton para Negocios"
-      ],
-      "Proton major features": [
-        "Funciones principales de Proton"
-      ],
-      "Proton newsletter": [
-        "Boletín de Proton"
-      ],
-      "Proton offers and promotions": [
-        "Ofertas y promociones de Proton"
-      ],
-      "Proton product announcements": [
-        "Anuncios de productos de Proton"
+      "${ BRAND_NAME } product announcements": [
+        "Comunicados del producto ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -7807,17 +7874,26 @@
       "Back": [
         "Atrás"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "Volver al Calendario"
       ],
-      "Back to Drive": [
-        "Volver a Drive"
+      "Back to files": [
+        "Volver a los archivos"
       ],
-      "Back to Mail": [
-        "Volver al Correo"
+      "Back to inbox": [
+        "Volver a la bandeja de entrada"
       ],
       "Blocked": [
         "Bloqueado"
+      ],
+      "Calendar": [
+        "Calendario"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Bandeja de entrada"
       ],
       "Not spam": [
         "No es spam"
@@ -8142,26 +8218,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8231,6 +8287,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9130,6 +9206,9 @@
       "You can safely close this tab.": [
         "Puedes cerrar esta pestaña."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Tu correo electrónico de recuperación ha sido eliminado con éxito."
+      ],
       "Your recovery email has been successfully verified.": [
         "Tu correo de recuperación ha sido verificado con éxito."
       ]
@@ -9314,8 +9393,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Añadir personas o grupos"
+      "Enter an email address or group name": [
+        "Introduce una dirección de correo electrónico o nombre de grupo"
       ]
     },
     "Share calendar modal title": {
@@ -10291,9 +10370,6 @@
       "Couldn’t create accounts": [
         "No se pudieron crear las cuentas"
       ],
-      "Create calendar": [
-        "Crear calendario"
-      ],
       "Create multiple user accounts": [
         "Crear múltiples cuentas de usuario"
       ],
@@ -10305,6 +10381,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Crea tu cuenta de ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Crear tu dirección ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
         "Creando cuentas de usuario"
@@ -10401,9 +10480,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Editar calendario"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
@@ -10757,6 +10833,9 @@
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Signed in successfully!": [
+        "Iniciada la sesión con éxito"
+      ],
       "Signed in to member account": [
         "Iniciada la sesión en la cuenta de usuario"
       ],
@@ -10836,6 +10915,9 @@
       "Verification": [
         "Verificación"
       ],
+      "Verify email address": [
+        "Verificar dirección de correo"
+      ],
       "VPN apps": [
         "Aplicaciones VPN"
       ],
@@ -10847,6 +10929,9 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
+      ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Nos hemos mudado a ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
@@ -10965,9 +11050,14 @@
         "Rol"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Editar información"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Crear calendario"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar calendario"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11194,6 +11284,11 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Abre la extensión de navegador ${ VPN_APP_NAME } para protegerte mientras navegas"
       ]
     },
     "VPNClient": {

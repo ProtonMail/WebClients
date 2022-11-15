@@ -387,6 +387,9 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
+      "Resend code": [
+        "Verstuur code opnieuw"
+      ],
       "Reset to default": [
         "Terugzetten naar standaard"
       ],
@@ -749,8 +752,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "E-mailadres"
+      "Add people or groups": [
+        "Voeg mensen of groepen toe"
       ]
     },
     "Calendar invite buttons label": {
@@ -833,7 +836,7 @@
       "Edit (view, create and edit event details)": [
         "Bewerk (bekijk, creëer en bewerk afspraakdetails)"
       ],
-      "Full view (see all event details)": [
+      "View (see all event details)": [
         "Volledig beeld (bekijk alle afspraakdetails)"
       ]
     },
@@ -3289,9 +3292,6 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
@@ -4998,8 +4998,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Voeg mensen en groepen toe"
+      "Enter an email address or group name": [
+        "Geef een e-mail adres op of een groepsnaam"
       ]
     },
     "Share calendar modal title": {
@@ -5639,9 +5639,6 @@
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
-      "Create calendar": [
-        "Agenda aanmaken"
-      ],
       "Create contact": [
         "Contact aanmaken"
       ],
@@ -5685,9 +5682,6 @@
       ],
       "Drop to upload": [
         "Sleep hier om te uploaden"
-      ],
-      "Edit calendar": [
-        "Agenda bijwerken"
       ],
       "Edit contact": [
         "Contactpersoon bewerken"
@@ -5942,9 +5936,14 @@
         "Kies een nummer"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Bewerk informatie"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Agenda aanmaken"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Agenda bijwerken"
       ]
     },
     "Today icon tooltip in mini calendar": {

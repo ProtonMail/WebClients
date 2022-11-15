@@ -367,6 +367,9 @@
       "Filter on...": [
         "Filtrer sur..."
       ],
+      "Fit to window": [
+        "Ajuster à la fenêtre"
+      ],
       "Font": [
         "Police"
       ],
@@ -3337,11 +3340,6 @@
         "Trop de résultats correspondants à votre recherche. Limitez votre recherche et essayez à nouveau."
       ]
     },
-    "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Un maximum de 100 participants est autorisé par invitation."
-      ]
-    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Les brouillons ne peuvent pas être déplacés dans le dossier Boîte de réception."
@@ -5390,6 +5388,9 @@
       "Week": [
         "Semaine"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Nous passons à ${ PROTON_ME_DOMAIN }."
+      ],
       "When do you want your message to be sent?": [
         "Quand souhaitez-vous que votre message soit envoyé ?"
       ],
@@ -5510,7 +5511,7 @@
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Votre adresse mail restera la même. Bientôt, vous devrez utiliser le nom de domaine ${ link } pour vous connecter."
+        "Votre adresse e-mail restera la même. Bientôt, vous devrez utiliser le nom de domaine ${ link } pour vous connecter."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."

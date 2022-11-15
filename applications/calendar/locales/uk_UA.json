@@ -540,7 +540,7 @@
     },
     "Action title": {
       "Share with anyone": [
-        "Поділіться з будь-ким"
+        "Поділіться з ким завгодно"
       ],
       "Share with Proton users": [
         "Поділіться з користувачами Proton"
@@ -756,8 +756,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Адреса е-пошти"
+      "Add people or groups": [
+        "Додати людей чи групи"
       ]
     },
     "Calendar invite buttons label": {
@@ -844,8 +844,8 @@
       "Edit (view, create and edit event details)": [
         "Редагування (перегляд, створення й редагування подробиць події)"
       ],
-      "Full view (see all event details)": [
-        "Повний перегляд (усі подробиці події)"
+      "View (see all event details)": [
+        "Перегляд (усі подробиці події)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3422,8 +3422,11 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Будь-хто з цим посиланням може бачити вашу доступність чи зайнятість в календарі. Вони не можуть бачити подробиці подій, наприклад, назву, розташування та учасників."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Для одного запрошення дозволяється не більше 100 учасників"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасника",
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
@@ -4494,13 +4497,13 @@
     },
     "Modal for limit of calendars reached": {
       "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Не можливо додати більше календарів. Ви досягли максимальної кількості особистих календарів для свого плану."
+        "Неможливо додати більше календарів. Ви досягли максимальної кількості особистих календарів для свого тарифного плану."
       ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Не вдалося додати інші календарі. Ви досягли обмеження підписних календарів для свого тарифного плану."
+        "Неможливо додати більше календарів. Ви досягли максимальної кількості підписних календарів для свого тарифного плану."
       ],
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Не вдається створити інші календарі. Ви досягли обмеження особистих календарів для свого тарифного плану."
+        "Неможливо створити більше календарів. Ви досягли максимальної кількості особистих календарів для свого тарифного плану."
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4561,19 +4564,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Кожен ${ interval } місяць ${ onDayString }",
+        "Щомісяця ${ onDayString }",
         "Кожні ${ interval } місяці ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Щомісяця ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Щомісяця ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
@@ -5226,8 +5229,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Додати людей чи групи"
+      "Enter an email address or group name": [
+        "Введіть адресу електронної пошти або назву групи"
       ]
     },
     "Share calendar modal title": {
@@ -5635,9 +5638,6 @@
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
       ],
-      "Create calendar": [
-        "Створити календар"
-      ],
       "Create contact": [
         "Створити контакт"
       ],
@@ -5685,9 +5685,6 @@
       ],
       "Drop to upload": [
         "Перетягніть для вивантаження"
-      ],
-      "Edit calendar": [
-        "Редагувати календар"
       ],
       "Edit contact": [
         "Змінити контакт"
@@ -5944,9 +5941,14 @@
         "Виберіть номер"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Редагувати інформацію"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Створити календар"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Редагувати календар"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6112,163 +6114,163 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }"
+        "Щотижня у ${ multipleDaysString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }",
+        "Кожні ${ interval } тижня ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
+        "Щотижня у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Щотижня у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Кожен ${ interval } тиждень в усі дні",
+        "Щотижня в усі дні",
         "Кожні ${ interval } тижні в усі дні",
-        "Кожні ${ interval } тижнів в усі дні",
-        "Кожні ${ interval } тижнів в усі дні"
+        "Кожні ${ interval } тижнів у всі дні",
+        "Кожні ${ interval } тижнів у всі дні"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Кожен ${ interval } тиждень щодня, ${ timesString }",
+        "Щотижня кожен день, ${ timesString }",
         "Кожні ${ interval } тижні щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Щотижня кожен день, ${ untilString }",
         "Кожні ${ interval } тижні щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Кожен ${ interval } тиждень у п'ятницю",
+        "Щотижня у п'ятницю",
         "Кожні ${ interval } тижні у п'ятницю",
         "Кожні ${ interval } тижнів у п'ятницю",
         "Кожні ${ interval } тижнів у п'ятницю"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Щотижня у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Щотижня у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Кожен ${ interval } тиждень у понеділок",
+        "Щотижня в понеділок",
         "Кожні ${ interval } тижні у понеділок",
         "Кожні ${ interval } тижнів у понеділок",
         "Кожні ${ interval } тижнів у понеділок"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ timesString }",
+        "Щотижня у понеділок, ${ timesString }",
         "Кожні ${ interval } тижні у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
+        "Щотижня у понеділок, ${ untilString }",
         "Кожні ${ interval } тижні у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Кожен ${ interval } тиждень у суботу",
+        "Щотижня у суботу",
         "Кожні ${ interval } тижні у суботу",
         "Кожні ${ interval } тижнів у суботу",
         "Кожні ${ interval } тижнів у суботу"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
+        "Щотижня у суботу, ${ timesString }",
         "Кожні ${ interval } тижні у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Щотижня у суботу, ${ untilString }",
         "Кожні ${ interval } тижні у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Кожен ${ interval } тиждень у неділю",
+        "Щотижня в неділю",
         "Кожні ${ interval } тижні у неділю",
         "Кожні ${ interval } тижнів у неділю",
         "Кожні ${ interval } тижнів у неділю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ timesString }",
+        "Щотижня у неділю, ${ timesString }",
         "Кожні ${ interval } тижні у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
+        "Щотижня у неділю, ${ untilString }",
         "Кожні ${ interval } тижні у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Кожен ${ interval } тиждень у четвер",
+        "Щотижня у четвер",
         "Кожні ${ interval } тижні у четвер",
         "Кожні ${ interval } тижнів у четвер",
         "Кожні ${ interval } тижнів у четвер"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
+        "Щотижня у четвер, ${ timesString }",
         "Кожні ${ interval } тижні у четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
+        "Щотижня у четвер, ${ untilString }",
         "Кожні ${ interval } тижні у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Кожен ${ interval } тиждень у вівторок",
+        "Щотижня у вівторок",
         "Кожні ${ interval } тижні у вівторок",
         "Кожні ${ interval } тижнів у вівторок",
         "Кожні ${ interval } тижнів у вівторок"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ timesString }",
+        "Щотижня у вівторок, ${ timesString }",
         "Кожні ${ interval } тижні у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Щотижня у вівторок, ${ untilString }",
         "Кожні ${ interval } тижні у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Кожен ${ interval } тиждень у середу",
+        "Щотижня у середу",
         "Кожні ${ interval } тижні у середу",
         "Кожні ${ interval } тижнів у середу",
         "Кожні ${ interval } тижнів у середу"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у середу, ${ timesString }",
+        "Щотижня у середу, ${ timesString }",
         "Кожні ${ interval } тижні у середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у середу, ${ untilString }",
+        "Щотижня у середу, ${ untilString }",
         "Кожні ${ interval } тижні у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }"
@@ -6386,7 +6388,7 @@
         "Кожні ${ interval } років"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Кожен ${ interval } рік, ${ timesString }",
+        "Щороку, ${ timesString }",
         "Кожні ${ interval } роки, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }"

@@ -755,11 +755,6 @@
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Адрес эл. почты"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Посещаете?"
@@ -843,9 +838,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Изменить (просмотр, создание и изменение информации о событии)"
-      ],
-      "Full view (see all event details)": [
-        "Полный просмотр (см. всю информацию мероприятия)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3422,8 +3414,11 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Для одного приглашения разрешено не более 100 участников"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участника",
+        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
+        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
+        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
@@ -5225,11 +5220,6 @@
         "Добавьте аккаунты Proton, с которыми вы хотите поделиться ${ calendarName }. Мы отправим им приглашение."
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Добавьте людей или группу"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Поделиться с пользователями Proton"
@@ -5891,9 +5881,6 @@
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
       ],
-      "Create calendar": [
-        "Создать календарь"
-      ],
       "Create contact": [
         "Создать контакт"
       ],
@@ -5941,9 +5928,6 @@
       ],
       "Drop to upload": [
         "Перетащите для выгрузки"
-      ],
-      "Edit calendar": [
-        "Редактировать календарь"
       ],
       "Edit contact": [
         "Изменение контакта"
@@ -6198,11 +6182,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберите количество"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Изменить информацию"
       ]
     },
     "Today icon tooltip in mini calendar": {

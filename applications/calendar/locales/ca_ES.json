@@ -710,11 +710,6 @@
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Adreça de correu electrònic"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Hi assistireu?"
@@ -2098,6 +2093,10 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per enviar"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatari duplicat eliminat: ${ joinedRecipients }",
+        "Destinataris duplicats eliminats: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
@@ -2201,6 +2200,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
@@ -2576,6 +2579,10 @@
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat amb èxit. L’esdeveniment importat ara apareixerà al vostre calendari.",
+        "Esdeveniments importats amb èxit. Els esdeveniments importats ara apareixeràn al vostre calendari."
       ]
     },
     "Import calendar warning": {
@@ -2905,8 +2912,9 @@
       "and": [
         "i"
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Es permet un màxim de 100 participants per invitació"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Es permet un màxim d'${ MAX_ATTENDEES } participant per invitació",
+        "Es permet un màxim de ${ MAX_ATTENDEES } participants per invitació"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
@@ -4798,9 +4806,6 @@
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
-      "Create calendar": [
-        "Crear calendari"
-      ],
       "Create contact": [
         "Crea un contacte"
       ],
@@ -4841,9 +4846,6 @@
       ],
       "Drop to upload": [
         "Arrossegar per carregar"
-      ],
-      "Edit calendar": [
-        "Editeu el calendari"
       ],
       "Edit contact": [
         "Editar contacte"
