@@ -5,6 +5,7 @@ import useDefaultShare from './useDefaultShare';
 const mockRequest = jest.fn();
 const mockCreateVolume = jest.fn();
 const mockGetDefaultShareId = jest.fn();
+const mockGetShare = jest.fn();
 const mockGetShareWithKey = jest.fn();
 
 jest.mock('../_api/useDebouncedRequest', () => {
@@ -35,6 +36,7 @@ jest.mock('./useSharesState', () => {
 jest.mock('../_shares/useShare', () => {
     const useLink = () => {
         return {
+            getShare: mockGetShare,
             getShareWithKey: mockGetShareWithKey,
         };
     };
@@ -56,6 +58,8 @@ describe('useDefaultShare', () => {
     };
 
     const defaultShareId = Symbol('shareId');
+
+    const ac = new AbortController();
 
     beforeEach(() => {
         jest.resetAllMocks();
@@ -116,5 +120,40 @@ describe('useDefaultShare', () => {
 
         expect(mockCreateVolume.mock.calls.length).toBe(1);
         expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), defaultShareId);
+    });
+
+    it('says share is available by default', async () => {
+        mockGetShare.mockImplementation(async () => ({}));
+
+        await act(async () => {
+            const isAvailable = await hook.current.isShareAvailable(ac.signal, 'shareId');
+            expect(isAvailable).toBeTruthy();
+        });
+    });
+
+    it('says share is not available if locked', async () => {
+        mockGetShare.mockImplementation(async () => {
+            return {
+                isLocked: true,
+            };
+        });
+
+        await act(async () => {
+            const isAvailable = await hook.current.isShareAvailable(ac.signal, 'shareId');
+            expect(isAvailable).toBeFalsy();
+        });
+    });
+
+    it('says share is not available if soft deleted', async () => {
+        mockGetShare.mockImplementation(async () => {
+            return {
+                isVolumeSoftDeleted: true,
+            };
+        });
+
+        await act(async () => {
+            const isAvailable = await hook.current.isShareAvailable(ac.signal, 'shareId');
+            expect(isAvailable).toBeFalsy();
+        });
     });
 });
