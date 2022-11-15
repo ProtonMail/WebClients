@@ -35,12 +35,13 @@ import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarDisabled, getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
-    CALENDAR_SETTINGS_SUBSECTION_ID,
+    CALENDAR_SETTINGS_SECTION_ID,
     COLORS,
     MAX_CALENDAR_MEMBERS,
     MAX_LINKS_PER_CALENDAR,
 } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
+import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
@@ -239,7 +240,9 @@ const CalendarSidebarListItems = ({
                                             ) : (
                                                 <DropdownMenuLink
                                                     as={SettingsLink}
-                                                    path={`/calendars/${calendar.ID}#${CALENDAR_SETTINGS_SUBSECTION_ID.SHARE}`}
+                                                    path={getCalendarSubpagePath(calendar.ID, {
+                                                        sectionId: CALENDAR_SETTINGS_SECTION_ID.SHARE,
+                                                    })}
                                                 >
                                                     {c('Action').t`Share`}
                                                 </DropdownMenuLink>
@@ -261,7 +264,7 @@ const CalendarSidebarListItems = ({
                                         <DropdownMenuLink
                                             as={SettingsLink}
                                             app={APPS.PROTONCALENDAR}
-                                            path={`/calendars/${calendar.ID}`}
+                                            path={getCalendarSubpagePath(calendar.ID)}
                                         >
                                             {c('Calendar sidebar dropdown item').t`More options`}
                                         </DropdownMenuLink>
@@ -333,7 +336,9 @@ To create a new link to this calendar, delete an existing one.`,
                 ),
                 onClick: () =>
                     goToSettings(
-                        `/calendars/${calendarID}#${CALENDAR_SETTINGS_SUBSECTION_ID.SHARE_PUBLICLY}`,
+                        getCalendarSubpagePath(calendarID, {
+                            sectionId: CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY,
+                        }),
                         APPS.PROTONCALENDAR
                     ),
                 buttonText: c('Calendar share limit modal').t`Manage links`,
@@ -351,7 +356,9 @@ To share this calendar with more Proton accounts, remove some members.`,
             ),
             onClick: () =>
                 goToSettings(
-                    `/calendars/${calendarID}#${CALENDAR_SETTINGS_SUBSECTION_ID.SHARE_PRIVATELY}`,
+                    getCalendarSubpagePath(calendarID, {
+                        sectionId: CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY,
+                    }),
                     APPS.PROTONCALENDAR
                 ),
             buttonText: c('Calendar share limit modal').t`Manage members`,

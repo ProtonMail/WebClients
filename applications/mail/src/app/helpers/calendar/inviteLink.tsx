@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import { AppLink, SettingsLink } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SETTINGS_SECTION_ID, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getInteroperabilityOperationsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { APPS } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces';
@@ -86,7 +87,10 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
 
     if (isImport && hasMultipleVevents) {
         return (
-            <SettingsLink path="/calendars#import" app={APPS.PROTONCALENDAR}>
+            <SettingsLink
+                path={getInteroperabilityOperationsPath({ sectionId: CALENDAR_SETTINGS_SECTION_ID.IMPORT })}
+                app={APPS.PROTONCALENDAR}
+            >
                 {c('Link')
                     .t`This ICS file contains more than one event. Please download it and import the events in ${calendarAppName}`}
             </SettingsLink>
