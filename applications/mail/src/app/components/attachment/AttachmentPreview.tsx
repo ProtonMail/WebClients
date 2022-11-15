@@ -92,7 +92,7 @@ const AttachmentPreview = (
                 mimeType={previewing.attachment?.MIMEType}
                 fileSize={previewing.attachment?.Size}
                 onClose={handleClose}
-                onSave={handleDownload}
+                onDownload={handleDownload}
                 ref={rootRef}
                 navigationControls={
                     <NavigationControl

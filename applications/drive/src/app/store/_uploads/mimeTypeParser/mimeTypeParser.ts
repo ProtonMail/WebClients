@@ -36,7 +36,7 @@ export function mimeTypeFromBuffer(input: Uint8Array | ArrayBuffer | Buffer) {
 }
 
 export async function mimeTypeFromFile(input: File, extensionFallback = true) {
-    const defaultType = 'application/octet-stream';
+    const defaultType = input.type || 'application/octet-stream';
 
     const extension = input.name.split('.').pop();
 
