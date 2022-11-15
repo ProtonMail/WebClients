@@ -1,16 +1,20 @@
 import { c } from 'ttag';
 
+
+
 import { Vr } from '@proton/atoms/Vr';
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+
 
 import { labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { useMoveAll } from '../../hooks/actions/useMoveAll';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { Breakpoints } from '../../models/utils';
-import LabelDropdown from '../dropdown/LabelDropdown';
-import MoveDropdown from '../dropdown/MoveDropdown';
+import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
 import { DropdownRender } from '../message/header/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
@@ -161,26 +165,32 @@ const MoreDropdown = ({
 
     const additionalDropdowns: DropdownRender[] | undefined = inMore.additionalDropdowns
         ? [
-              ({ onClose, onLock }) => (
-                  <MoveDropdown
-                      labelID={labelID}
-                      selectedIDs={selectedIDs}
-                      conversationMode={conversationMode}
-                      onClose={onClose}
-                      onLock={onLock}
-                      onBack={onBack}
-                      breakpoints={breakpoints}
-                  />
-              ),
-              ({ onClose, onLock }) => (
-                  <LabelDropdown
-                      labelID={labelID}
-                      selectedIDs={selectedIDs}
-                      onClose={onClose}
-                      onLock={onLock}
-                      breakpoints={breakpoints}
-                  />
-              ),
+              {
+                  contentProps: moveDropdownContentProps,
+                  render: ({ onClose, onLock }) => (
+                      <MoveDropdown
+                          labelID={labelID}
+                          selectedIDs={selectedIDs}
+                          conversationMode={conversationMode}
+                          onClose={onClose}
+                          onLock={onLock}
+                          onBack={onBack}
+                          breakpoints={breakpoints}
+                      />
+                  ),
+              },
+              {
+                  contentProps: labelDropdownContentProps,
+                  render: ({ onClose, onLock }) => (
+                      <LabelDropdown
+                          labelID={labelID}
+                          selectedIDs={selectedIDs}
+                          onClose={onClose}
+                          onLock={onLock}
+                          breakpoints={breakpoints}
+                      />
+                  ),
+              },
           ]
         : undefined;
 
@@ -193,61 +203,63 @@ const MoreDropdown = ({
                 hasCaret={false}
                 additionalDropdowns={additionalDropdowns}
             >
-                {({ onOpenAdditionnal }) => (
-                    <DropdownMenu>
-                        {inMore.move ? moveButtons : null}
-                        {inMore.additionalDropdowns ? (
-                            <>
-                                <DropdownMenuButton
-                                    className="text-left border-top"
-                                    onClick={() => onOpenAdditionnal(0)}
-                                    data-testid="toolbar:more-dropdown--moveto"
-                                >
-                                    <Icon name="folder-arrow-in" className="mr0-5" />
-                                    {c('Title').t`Move to`}
-                                </DropdownMenuButton>
+                {{
+                    render: ({ onOpenAdditionnal }) => (
+                        <DropdownMenu>
+                            {inMore.move ? moveButtons : null}
+                            {inMore.additionalDropdowns ? (
+                                <>
+                                    <DropdownMenuButton
+                                        className="text-left border-top"
+                                        onClick={() => onOpenAdditionnal(0)}
+                                        data-testid="toolbar:more-dropdown--moveto"
+                                    >
+                                        <Icon name="folder-arrow-in" className="mr0-5" />
+                                        {c('Title').t`Move to`}
+                                    </DropdownMenuButton>
+                                    <DropdownMenuButton
+                                        className="text-left"
+                                        onClick={() => onOpenAdditionnal(1)}
+                                        data-testid="toolbar:more-dropdown--labelas"
+                                    >
+                                        <Icon name="tag" className="mr0-5" />
+                                        {c('Title').t`Label as`}
+                                    </DropdownMenuButton>
+                                </>
+                            ) : null}
+                            {inMore.moveAll ? (
                                 <DropdownMenuButton
                                     className="text-left"
-                                    onClick={() => onOpenAdditionnal(1)}
-                                    data-testid="toolbar:more-dropdown--labelas"
+                                    onClick={handleMoveAll}
+                                    data-testid="toolbar:moveAll"
                                 >
-                                    <Icon name="tag" className="mr0-5" />
-                                    {c('Title').t`Label as`}
+                                    <Icon name="trash" className="mr0-5" />
+                                    {
+                                        // translator: This action will move all messages from the location to trash
+                                        // Beware when translating this one because we might also have a button below,
+                                        // which is deleting all messages. This is different
+                                        c('Action').t`Move all to trash`
+                                    }
                                 </DropdownMenuButton>
-                            </>
-                        ) : null}
-                        {inMore.moveAll ? (
-                            <DropdownMenuButton
-                                className="text-left"
-                                onClick={handleMoveAll}
-                                data-testid="toolbar:moveAll"
-                            >
-                                <Icon name="trash" className="mr0-5" />
-                                {
-                                    // translator: This action will move all messages from the location to trash
-                                    // Beware when translating this one because we might also have a button below,
-                                    // which is deleting all messages. This is different
-                                    c('Action').t`Move all to trash`
-                                }
-                            </DropdownMenuButton>
-                        ) : null}
-                        {inMore.delete ? (
-                            <DropdownMenuButton
-                                className="text-left color-danger"
-                                onClick={handleEmptyLabel}
-                                data-testid="toolbar:more-empty"
-                            >
-                                <Icon name="cross-circle" className="mr0-5" />
-                                {
-                                    // translator: This action will delete permanently all messages from the location
-                                    // Beware when translating this one because we might also have a button on top,
-                                    // which is moving messages to trash. This is different
-                                    c('Action').t`Delete all`
-                                }
-                            </DropdownMenuButton>
-                        ) : null}
-                    </DropdownMenu>
-                )}
+                            ) : null}
+                            {inMore.delete ? (
+                                <DropdownMenuButton
+                                    className="text-left color-danger"
+                                    onClick={handleEmptyLabel}
+                                    data-testid="toolbar:more-empty"
+                                >
+                                    <Icon name="cross-circle" className="mr0-5" />
+                                    {
+                                        // translator: This action will delete permanently all messages from the location
+                                        // Beware when translating this one because we might also have a button on top,
+                                        // which is moving messages to trash. This is different
+                                        c('Action').t`Delete all`
+                                    }
+                                </DropdownMenuButton>
+                            ) : null}
+                        </DropdownMenu>
+                    ),
+                }}
             </ToolbarDropdown>
             <Vr />
             {deleteAllModal}

@@ -36,6 +36,8 @@ import { Breakpoints } from '../../models/utils';
 
 import './LabelDropdown.scss';
 
+export const labelDropdownContentProps = { className: 'flex flex-column flex-nowrap flex-align-items-stretch' };
+
 enum LabelState {
     On = 'On',
     Off = 'Off',
@@ -265,8 +267,11 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
+        <form
+            className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
+            onSubmit={handleSubmit}
+        >
+            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
                 </span>
@@ -290,7 +295,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {...editLabelProps}
                 />
             </div>
-            <div className="m1 mb0">
+            <div className="flex-item-noshrink m1 mb0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -302,7 +307,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 />
             </div>
             <div
-                className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-container"
+                className="overflow-auto mt1 label-dropdown-container flex-item-fluid-auto"
                 data-testid="label-dropdown-list"
             >
                 <ul className="unstyled mt0 mb0">
@@ -345,14 +350,9 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
-            <hr className="m0" />
+            <hr className="m0 flex-item-noshrink" />
             {displayContextFiltering && (
-                <div
-                    className={classnames([
-                        'label-dropdown-container px1 mt1',
-                        alwaysCheckboxDisabled && 'color-disabled',
-                    ])}
-                >
+                <div className={classnames(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                     <Checkbox
                         id={alwaysCheckID}
                         checked={always}
@@ -365,7 +365,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     </Checkbox>
                 </div>
             )}
-            <div className="label-dropdown-container px1 mt1">
+            <div className="px1 mt1 flex-item-noshrink">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
@@ -376,7 +376,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Label').t`Also archive`}
                 </Checkbox>
             </div>
-            <div className="m1">
+            <div className="m1 flex-item-noshrink">
                 <PrimaryButton
                     className="w100"
                     loading={loading}
