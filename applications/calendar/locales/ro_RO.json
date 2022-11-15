@@ -754,8 +754,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Adresă e-mail"
+      "Add people or groups": [
+        "Adăugare persoane sau grupuri"
       ]
     },
     "Calendar invite buttons label": {
@@ -840,8 +840,8 @@
       "Edit (view, create and edit event details)": [
         "Editare (afișare, creare și editare detalii evenimente)"
       ],
-      "Full view (see all event details)": [
-        "Vedere completă (toate detaliile evenimentului)"
+      "View (see all event details)": [
+        "Vizualizare (vezi toate detaliile evenimentului)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3361,8 +3361,10 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Oricine are această legătură poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Cel mult 100 de participanți sunt autorizați per invitație."
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Este permis cel mult un participant per invitație.",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație.",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
@@ -5125,8 +5127,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Adăugare persoane sau grupuri"
+      "Enter an email address or group name": [
+        "Introduceți o adresă de e-mail sau un nume de grup"
       ]
     },
     "Share calendar modal title": {
@@ -5528,9 +5530,6 @@
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
-      "Create calendar": [
-        "Creare calendar"
-      ],
       "Create contact": [
         "Creare contact"
       ],
@@ -5576,9 +5575,6 @@
       ],
       "Drop to upload": [
         "Plasați aici pentru încărcare"
-      ],
-      "Edit calendar": [
-        "Editare calendar"
       ],
       "Edit contact": [
         "Editare contact"
@@ -5834,9 +5830,14 @@
         "Alegeți un număr"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Editare informații"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Creare calendar"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editare calendar"
       ]
     },
     "Today icon tooltip in mini calendar": {

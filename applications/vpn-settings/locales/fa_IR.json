@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } در دسترس است."
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } مقدمه"
       ],
@@ -50,6 +47,9 @@
       "Chat with us": [
         "با ما گفتگو کنید"
       ],
+      "Claim it": [
+        "دریافتش کنید"
+      ],
       "Close": [
         "بستن"
       ],
@@ -77,14 +77,11 @@
       "Create": [
         "ایجاد"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "درعوض یک آدرس امن ${ MAIL_APP_NAME } ایجاد کنید"
-      ],
       "Create account": [
         "ایجاد حساب کاربری"
       ],
-      "Create address": [
-        "ایجاد نشانی"
+      "Create your own": [
+        "برای خودتان را بسازید"
       ],
       "Current plan": [
         "طرح فعلی"
@@ -108,9 +105,6 @@
         "جزئیات"
       ],
       "Didn't receive a code?": [
-        "کد را دریافت نکردید؟"
-      ],
-      "Didn't receive the code?": [
         "کد را دریافت نکردید؟"
       ],
       "Disable": [
@@ -359,9 +353,6 @@
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
       ],
-      "Use your current email address instead": [
-        "در عوض از آدرس ایمیل فعلی خود استفاده کنید"
-      ],
       "User": [
         "کاربر"
       ],
@@ -376,9 +367,6 @@
       ],
       "Verify code again": [
         "تایید دوباره کد"
-      ],
-      "Verify email": [
-        "تأييد آدرس ایمیل"
       ],
       "View": [
         "مشاهده"
@@ -1780,9 +1768,6 @@
       "${ storageSize } storage": [
         "${ storageSize } فضای ذخیره‌سازی"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } برای ورود به سیستم همه سرویس‌های ${ BRAND_NAME } از این رایانشانی استفاده خواهید کرد."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "طرح های ${ vpnBasic }، ${ vpnPlus } یا ${ visionary } برای اتصال در سطح کشورها نیاز است."
       ],
@@ -2059,9 +2044,6 @@
       ],
       "of": [
         "از"
-      ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "یک حساب کاربری برای تمام خدمات ${ BRAND_NAME }."
       ],
       "Or select a particular server:": [
         "یا سروری خاص را انتخاب کنید:"
@@ -2417,9 +2399,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "حساب پروتون شما تعلیق شده است. برای ادامه استفاده از حساب خود، لطفا صورت‌حساب‌های معوقه را پرداخت کنید."
       ],
-      "Your recovery email address:": [
-        "رایانشانی بازیابی شما:"
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط موزیلا مدیریت می‌شود. لطفا با پشتیبانی موزیلا تماس بگیرید."
       ]
@@ -2522,9 +2501,6 @@
     "Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } از ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } آدرس"
       ],
       "${ n } month": [
         "${ n } ماه",
@@ -4144,9 +4120,6 @@
       "Congratulations on choosing privacy!": [
         "برای انتخاب حریم خصوصی به شما تبریک میگوییم!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "ایجاد یک نشانی ${ MAIL_APP_NAME }"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "حساب کاربری ${ BRAND_NAME } خود را ایجاد کنید"
       ],
@@ -4378,6 +4351,9 @@
       "Verification": [
         "تایید"
       ],
+      "Verify email address": [
+        "تایید آدرس ایمیل"
+      ],
       "Warning": [
         "هشدار"
       ],
@@ -4392,9 +4368,6 @@
       ],
       "You already have a Proton account": [
         "شما در حال حاضر یک حساب Proton دارید"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "آدرس ${ MAIL_APP_NAME } شما"
       ],
       "Your current plan": [
         "طرح کنونی شما"

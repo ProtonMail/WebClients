@@ -756,8 +756,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "E-mailová adresa"
+      "Add people or groups": [
+        "Přidat lidi nebo skupiny"
       ]
     },
     "Calendar invite buttons label": {
@@ -844,8 +844,8 @@
       "Edit (view, create and edit event details)": [
         "Upravit (zobrazit, vytvořit a upravit podrobnosti o události)"
       ],
-      "Full view (see all event details)": [
-        "Plné zobrazení (zobrazit všechny podrobnosti o události)"
+      "View (see all event details)": [
+        "Zobrazení (zobrazit všechny podrobnosti o události)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3422,8 +3422,11 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Kdokoli s tímto odkazem uvidí, zda jste volní nebo zaneprázdněni ve Vašem kalendáři. Nemohou vidět podrobnosti o události, jako je název, umístění nebo účastníci."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Na jednu pozvánku je povoleno maximálně 100 účastníků"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Na jednu pozvánku je povolen nejvýše ${ MAX_ATTENDEES } účastník",
+        "Na jednu pozvánku jsou povoleni nejvýše ${ MAX_ATTENDEES } účastníci",
+        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků",
+        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
@@ -5226,8 +5229,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Přidat lidi nebo skupiny"
+      "Enter an email address or group name": [
+        "Zadejte e-mailovou adresu nebo název skupiny"
       ]
     },
     "Share calendar modal title": {
@@ -5635,9 +5638,6 @@
       "Continue with partial import?": [
         "Pokračovat s částečným importem?"
       ],
-      "Create calendar": [
-        "Vytvořit kalendář"
-      ],
       "Create contact": [
         "Vytvořit kontakt"
       ],
@@ -5685,9 +5685,6 @@
       ],
       "Drop to upload": [
         "Přetáhnout a nahrát"
-      ],
-      "Edit calendar": [
-        "Upravit kalendář"
       ],
       "Edit contact": [
         "Upravit kontakt"
@@ -5944,9 +5941,14 @@
         "Vyberte číslo"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Upravit informace"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Vytvořit kalendář"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Upravit kalendář"
       ]
     },
     "Today icon tooltip in mini calendar": {

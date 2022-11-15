@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "Adres ${ address } jest dostępny."
-      ],
       "${ BRAND_NAME } introduction": [
         "Samouczek ${ BRAND_NAME }"
       ],
@@ -50,6 +47,9 @@
       "Chat with us": [
         "Czatuj z nami"
       ],
+      "Claim it": [
+        "Odbierz"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -77,14 +77,11 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Utwórz bezpieczny adres ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Utwórz konto"
       ],
-      "Create address": [
-        "Utwórz adres"
+      "Create your own": [
+        "Utwórz własny"
       ],
       "Current plan": [
         "Obecny plan"
@@ -108,9 +105,6 @@
         "Szczegóły"
       ],
       "Didn't receive a code?": [
-        "Nie otrzymano kodu?"
-      ],
-      "Didn't receive the code?": [
         "Nie otrzymano kodu?"
       ],
       "Disable": [
@@ -163,6 +157,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Uzyskaj nowy szyfrowany adres e-mail"
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
@@ -247,6 +244,9 @@
       ],
       "Request new code": [
         "Poproś o nowy kod"
+      ],
+      "Resend code": [
+        "Wyślij ponownie kod"
       ],
       "Reset credentials": [
         "Zresetuj dane logowania"
@@ -359,7 +359,7 @@
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "Użyj swojego obecnego adresu e-mail"
       ],
       "User": [
@@ -376,9 +376,6 @@
       ],
       "Verify code again": [
         "Zweryfikuj kod ponownie"
-      ],
-      "Verify email": [
-        "Zweryfikuj adres e-mail"
       ],
       "View": [
         "Podgląd"
@@ -1890,9 +1887,6 @@
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Będziesz używać tego adresu e-mail do logowania się do wszystkich usług ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Plan ${ vpnBasic }, ${ vpnPlus } lub ${ visionary } są wymagane, aby móc korzystać z połączeń przez wybrane kraje."
       ],
@@ -2064,6 +2058,12 @@
       "Free up some space or contact your administrator.": [
         "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Uzyskaj adres ${ BRAND_NAME }, aby używać go do wszystkich usług ${ BRAND_NAME }, w tym poczty i kalendarza."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Uzyskaj adres ${ BRAND_NAME }"
+      ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google rejestruje Twoją aktywność w sieci i odczytuje dane osobowe, aby zapewnić dostęp reklamodawcom i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
       ],
@@ -2178,8 +2178,8 @@
       "of": [
         "z"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Jedno konto do wszystkich usług ${ BRAND_NAME }."
+      "One account. All ${ BRAND_NAME } services.": [
+        "Jedno konto. Wszystkie usługi ${ BRAND_NAME }."
       ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
@@ -2283,6 +2283,9 @@
       "support team": [
         "pomocą techniczną"
       ],
+      "The following address is available:": [
+        "Następujący adres jest dostępny:"
+      ],
       "The securest way to browse, stream, and be online.": [
         "Najbezpieczniejszy sposób przeglądania i przebywania w Internecie."
       ],
@@ -2336,6 +2339,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "i przejdź do aplikacji ${ toAppName } oraz innych usług ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
@@ -2448,6 +2454,9 @@
       "Why?": [
         "Dlaczego?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Dzięki szyfrowanemu adresowi e-mail ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
       ],
@@ -2511,6 +2520,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Wkrótce zostaniesz przekierowany na stronę swojego banku w celu zweryfikowania płatności."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
@@ -2549,9 +2561,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
-      ],
-      "Your recovery email address:": [
-        "Twój adres pomocniczy:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
@@ -2658,9 +2667,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Adres ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } miesiąc",
@@ -4636,11 +4642,11 @@
       "Congratulations on choosing privacy!": [
         "Gratulujemy wyboru prywatności!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Utwórz adres ${ MAIL_APP_NAME }"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Utwórz adres ${ BRAND_NAME }"
       ],
       "Credits": [
         "Środki"
@@ -4870,6 +4876,9 @@
       "Verification": [
         "Weryfikacja"
       ],
+      "Verify email address": [
+        "Zweryfikuj adres e-mail"
+      ],
       "Warning": [
         "Ostrzeżenie"
       ],
@@ -4884,9 +4893,6 @@
       ],
       "You already have a Proton account": [
         "Posiadasz już konto Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Twój adres ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Obecny plan"

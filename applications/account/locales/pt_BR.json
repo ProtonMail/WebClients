@@ -1167,13 +1167,13 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Endereço de e-mail"
+      "Add people or groups": [
+        "Adicionar pessoas ou grupos"
       ]
     },
     "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Editar informações do calendário"
+      "Edit calendar": [
+        "Editar calendário"
       ]
     },
     "Calendar export section description": {
@@ -1278,8 +1278,8 @@
       "Edit (view, create and edit event details)": [
         "Edição (ver, criar e editar os detelhes do evento)"
       ],
-      "Full view (see all event details)": [
-        "Visualização completa (ver todos os detalhes do evento)"
+      "View (see all event details)": [
+        "Visualizar (ver todos os detalhes do evento)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5483,6 +5483,9 @@
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário"
       ],
+      "Reset password": [
+        "Redefinir Senha"
+      ],
       "Revoke certificate ${ name }": [
         "Revogar certificado ${ name }"
       ],
@@ -5536,6 +5539,9 @@
       ],
       "Show original message": [
         "Exibir mensagem original"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Signed up": [
         "Criar conta"
@@ -6067,9 +6073,6 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços da ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
-      ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Sua importação de ${ delayedImport.Account } está temporariamente atrasada."
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
@@ -7373,38 +7376,6 @@
         "Conexões VPN"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Anúncios da Proton"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Anúncios da Proton beta"
-      ],
-      "Proton company announcements": [
-        "Anúncios da Proton"
-      ],
-      "Proton for Business": [
-        "Proton for Business"
-      ],
-      "Proton for Business newsletter": [
-        "Newsletter do Proton para Negócios"
-      ],
-      "Proton major features": [
-        "Principais características do próton"
-      ],
-      "Proton newsletter": [
-        "Boletim Informativo Proton"
-      ],
-      "Proton offers and promotions": [
-        "Ofertas e promoções da Proton"
-      ],
-      "Proton product announcements": [
-        "Anúncios de produtos da Proton"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Endereços"
@@ -7849,17 +7820,26 @@
       "Back": [
         "Voltar"
       ],
-      "Back to Calendar": [
-        "Voltar ao Calendário"
+      "Back to calendar": [
+        "Voltar ao calendário"
       ],
-      "Back to Drive": [
-        "Voltar ao Drive"
+      "Back to files": [
+        "Voltar ao arquivos"
       ],
-      "Back to Mail": [
+      "Back to inbox": [
         "Voltar à caixa de entrada"
       ],
       "Blocked": [
         "Bloqueado"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Caixa de entrada"
       ],
       "Not spam": [
         "Não é spam"
@@ -8184,26 +8164,6 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium da Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -8273,6 +8233,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium da Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9172,6 +9152,9 @@
       "You can safely close this tab.": [
         "Você pode fechar esta aba com segurança."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Seu e-mail de recuperação foi removido com sucesso."
+      ],
       "Your recovery email has been successfully verified.": [
         "Seu e-mail de recuperação foi verificado com sucesso."
       ]
@@ -9356,8 +9339,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Adicionar pessoas ou grupos"
+      "Enter an email address or group name": [
+        "Insira um endereço de e-mail ou nome de grupo"
       ]
     },
     "Share calendar modal title": {
@@ -10333,9 +10316,6 @@
       "Couldn’t create accounts": [
         "Não foi possivel criar contas"
       ],
-      "Create calendar": [
-        "Criar calendário"
-      ],
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
       ],
@@ -10446,9 +10426,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixar ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Editar calendário"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -11013,9 +10990,14 @@
         "Função"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Editar informações"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Criar calendário"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar calendário"
       ]
     },
     "Today icon tooltip in mini calendar": {

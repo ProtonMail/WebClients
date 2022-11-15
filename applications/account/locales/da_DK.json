@@ -4,6 +4,14 @@
     "language": "da_DK"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Fuld visning (se alle detaljer om begivenheden)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Begrænset visning (se kun fri/optaget)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
@@ -119,6 +127,9 @@
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
       ],
+      "Claim it": [
+        "Gør krav på den"
+      ],
       "Clear all formatting": [
         "Ryd al formatering"
       ],
@@ -187,6 +198,9 @@
       ],
       "Create link": [
         "Opret link"
+      ],
+      "Create your own": [
+        "Opret din egen"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -326,6 +340,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Filtre anvendes. Dette kan tage et par minutter."
       ],
+      "Fit to window": [
+        "Tilpas til vinduet"
+      ],
       "Font": [
         "Skrifttype"
       ],
@@ -340,6 +357,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Få en ny krypteret e-mailadresse"
       ],
       "Get verification code": [
         "Få bekræftelseskode"
@@ -551,6 +571,9 @@
       "Requires a verified recovery email address": [
         "Kræver en verificeret e-mailadresse til gendannelse"
       ],
+      "Resend code": [
+        "Send kode igen"
+      ],
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
       ],
@@ -716,6 +739,9 @@
       "Support": [
         "Support"
       ],
+      "Switch account": [
+        "Skift konto"
+      ],
       "Top up": [
         "Genopfyld"
       ],
@@ -727,6 +753,9 @@
       ],
       "Underline": [
         "Understreg"
+      ],
+      "Undo import": [
+        "Annuller import"
       ],
       "Unlock": [
         "Lås op"
@@ -770,6 +799,9 @@
       "Use recovery code": [
         "Brug gendannelseskode"
       ],
+      "Use your current email instead": [
+        "Brug din nuværende e-mail i stedet"
+      ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
       ],
@@ -808,6 +840,9 @@
       ],
       "Yes": [
         "Ja"
+      ],
+      "Yes, undo": [
+        "Ja, annuller"
       ],
       "Zoom in": [
         "Zoom ind"
@@ -923,6 +958,9 @@
     "Badge": {
       "5 users": [
         "5 brugere"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ]
     },
     "Badge for domain": {
@@ -1076,9 +1114,29 @@
         "Tweet"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "E-mail"
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Kun du kan se etiketten"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Du kan til enhver tid ændre eller fjerne tilladelser."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Tilladelser"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Du har allerede adgang til denne kalender"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
       ]
     },
     "Calendar status": {
@@ -1176,17 +1234,44 @@
       "apple": [
         "æble"
       ],
+      "blue-gray": [
+        "blågrå"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "gulerod"
+      ],
+      "cerise": [
+        "kirsebærrød"
+      ],
+      "cinnabar": [
+        "cinnober"
+      ],
       "cobalt": [
         "kobolt"
       ],
       "copper": [
         "kobber"
       ],
+      "cyan-blue azure": [
+        "cyanblå azur"
+      ],
+      "dandelion": [
+        "mælkebøtte"
+      ],
       "dim gray": [
         "svag grå"
       ],
+      "enzian": [
+        "ensian"
+      ],
       "fern": [
         "bregne"
+      ],
+      "forest": [
+        "skov"
       ],
       "gainsboro": [
         "gainsboro"
@@ -1194,8 +1279,17 @@
       "kiwi": [
         "kiwi"
       ],
+      "lemon yellow": [
+        "citrongul"
+      ],
       "light red": [
         "lysrød"
+      ],
+      "maize": [
+        "majs"
+      ],
+      "ocean": [
+        "ocean"
       ],
       "olive": [
         "oliven"
@@ -1206,11 +1300,32 @@
       "pacific": [
         "stillehav"
       ],
+      "palatinate blue": [
+        "palatinatblå"
+      ],
+      "persian red": [
+        "persisk rød"
+      ],
       "philippine gray": [
         "filippinsk grå"
       ],
       "philippine silver": [
         "filippinsk sølv"
+      ],
+      "pickle": [
+        "syltet agurk"
+      ],
+      "pine": [
+        "fyr"
+      ],
+      "pink": [
+        "pink"
+      ],
+      "plum": [
+        "blomme"
+      ],
+      "purple": [
+        "lilla"
       ],
       "raisin black": [
         "rosin sort"
@@ -1218,11 +1333,26 @@
       "reef": [
         "rev"
       ],
+      "ruddy pink": [
+        "rødlig pink"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "satinglans guld"
+      ],
       "slateblue": [
         "skiferblå"
       ],
       "soil": [
         "jord"
+      ],
+      "strawberry": [
+        "jordbær"
+      ],
+      "vivid auburn": [
+        "levende rødbrun"
       ],
       "white": [
         "hvid"
@@ -2221,6 +2351,10 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
+        "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
+      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
       ],
@@ -2633,8 +2767,15 @@
       "Primary key is not valid for sending": [
         "Primær nøgle er ikke gyldig til afsendelse"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primær nøgle hentet for ${ BRAND_NAME }-bruger er ikke gyldig til afsendelse"
+      ],
       "Process aborted": [
         "Proces afbrudt"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Fjernede dublet af modtager: ${ joinedRecipients }",
+        "Fjernede dubletter af modtagere: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -2651,11 +2792,17 @@
       "Signature verification failed": [
         "Bekræftelse af signatur mislykkedes"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -2770,6 +2917,9 @@
       ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
+      ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
@@ -3081,6 +3231,24 @@
         "Understøttelse af torrenting (P2P)"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3186,6 +3354,11 @@
     "Font Size Default": {
       "Default": [
         "Standard"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privatliv som standard."
       ]
     },
     "Frequency of news": {
@@ -3517,17 +3690,62 @@
       ]
     },
     "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik på ${ boldManage } for at udvide menu med valgmuligheder."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når Proton anmoder om det."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Generer ${ boldAppPassword } og bruge det i stedet for din almindelige adgangskode, når Proton beder dig om det."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Gå til ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Gå til Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Hvis 2-trinsbekræftelse er slået fra, skal du slå det til."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Åbn dine ${ yahooMailLink }-kontakter."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Åbn dit Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Vælg ${ boldExportContacts } og vælg, hvilke kontakter der skal eksporteres."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Vælg ${ boldExportCSV }."
+      ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere en kalender til Proton, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
+      ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere kontakter til Proton skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
@@ -3578,6 +3796,9 @@
       "contacts": [
         "kontakter"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV eller en VCF-fil (vCard)"
+      ],
       "full calendar view": [
         "fuld kalendervisning"
       ],
@@ -3592,6 +3813,26 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik på ${ boldICS }-linket og download filen."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Gå til ${ calendarLink } i dine Outlook-indstillinger."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Gå til ${ calendarViewLink } i Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Under ${ boldPublish } skal du vælge den kalender, du vil importere. Indstil tilladelsen til ${ boldCanViewAllDetails }, og udgiv den."
       ]
     },
     "Import key": {
@@ -4124,6 +4365,9 @@
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Edit label": [
         "Redigér etiket"
       ],
@@ -4180,6 +4424,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Indtast e-mailadresse eller brugernavn for din ${ BRAND_NAME }-konto."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Indtast din e-mailadresse til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
@@ -4384,6 +4631,9 @@
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
       ],
+      "Labels:": [
+        "Etiketter:"
+      ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
@@ -4437,6 +4687,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Angiv disse oplysninger manuelt i din to-faktor-godkendelsesenhed for at oprette din konto. ${ _switchButton }."
+      ],
+      "Member": [
+        "Medlem"
       ],
       "Merged": [
         "Flettet"
@@ -4564,6 +4817,10 @@
       ],
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
+      ],
+      "Please add an email address for the user on row": [
+        "Tilføj venligst en e-mailadresse til brugeren på række",
+        "Tilføj venligst e-mailadresser til brugerne på rækker"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
@@ -4718,6 +4975,9 @@
       "Show original message": [
         "Vis oprindelig besked"
       ],
+      "Sign in": [
+        "Log ind"
+      ],
       "Signed up": [
         "Tilmelde sig"
       ],
@@ -4821,6 +5081,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browsere. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
@@ -5194,9 +5457,6 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Din eksisterende ${ BRAND_NAME }-konto kan bruges til at tilgå alle ${ BRAND_NAME }-tjenester. Log venligst ind med ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Din import fra ${ delayedImport.Account } er midlertidigt forsinket."
-      ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
       ],
@@ -5280,6 +5540,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "For at undgå enhver afbrydelse af tjenesten på grund af ubetalte fakturaer bedes du sørge for, at du har mindst 1 gyldig betalingsmetode gemt på ethvert tidspunkt."
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Adgang"
+      ],
+      "Label (optional)": [
+        "Etiket (valgfrit)"
       ]
     },
     "Input placeholder": {
@@ -5761,6 +6029,9 @@
       "Color": [
         "Farve"
       ],
+      "Coming soon": [
+        "Kommer snart"
+      ],
       "Composer": [
         "Skrivevindue"
       ],
@@ -6001,6 +6272,9 @@
       "Key strength": [
         "Nøglestyrke"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturgenvej: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
       ],
@@ -6060,6 +6334,9 @@
       ],
       "Name on card": [
         "Navn på kort"
+      ],
+      "Navigation": [
+        "Navigation"
       ],
       "New login password": [
         "Ny login-adgangskode"
@@ -6401,35 +6678,6 @@
         "VPN-forbindelser"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton-annonceringer"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Proton beta-annonceringer"
-      ],
-      "Proton company announcements": [
-        "Proton-virksomhedsmeddelelser"
-      ],
-      "Proton for Business newsletter": [
-        "Proton til erhverv-nyhedsbrev"
-      ],
-      "Proton major features": [
-        "Proton vigtigste funktioner"
-      ],
-      "Proton newsletter": [
-        "Proton-nyhedsbrev"
-      ],
-      "Proton offers and promotions": [
-        "Proton-tilbud og kampagner"
-      ],
-      "Proton product announcements": [
-        "Proton-produktannonceringer"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Adresser"
@@ -6613,9 +6861,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -6839,15 +7095,6 @@
       "Back": [
         "Tilbage"
       ],
-      "Back to Calendar": [
-        "Tilbage til kalender"
-      ],
-      "Back to Drive": [
-        "Tilbage til drev"
-      ],
-      "Back to Mail": [
-        "Tilbage til Mail"
-      ],
       "Spam": [
         "Spam"
       ]
@@ -6934,17 +7181,17 @@
         "Support"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
-      ]
-    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -7017,6 +7264,14 @@
       "Member added": [
         "Medlem tilføjet",
         "Medlemmer tilføjet"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Kalenderinvitation afvist"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Tilmeldt ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification time input": {
@@ -7669,6 +7924,27 @@
         "Etiketter"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Hvis du vil invitere ikke-Proton-brugere, skal du dele din kalender med et link"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem pr. kalender",
+        "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer pr. kalender"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Tilføj de Proton-konti, som du ønsker at dele ${ calendarName } med. Vi sender dem en invitation."
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Del med Proton-brugere"
+      ]
+    },
     "Shared calendar label input placeholder": {
       "Add label": [
         "Tilføj etiket"
@@ -7693,6 +7969,12 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Få op til ${ credits } i kreditter."
+      ],
+      "Invite friends to Proton": [
+        "Inviter venner til Proton"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
@@ -8211,8 +8493,14 @@
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
+      "Add to Not spam list": [
+        "Føj til ikke-spam-liste"
+      ],
       "Add to spam list": [
         "Føj til spam-liste"
+      ],
+      "Add to your block list": [
+        "Føj til din blokeringsliste"
       ],
       "Add user": [
         "Tilføj bruger"
@@ -8337,9 +8625,6 @@
       "Couldn’t create accounts": [
         "Kunne ikke oprette konti"
       ],
-      "Create calendar": [
-        "Opret kalender"
-      ],
       "Create multiple user accounts": [
         "Opret flere brugerkonti"
       ],
@@ -8448,11 +8733,11 @@
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
       ],
-      "Edit calendar": [
-        "Rediger kalender"
-      ],
       "Edit credit/debit card": [
         "Redigér kredit / betalingskort"
+      ],
+      "Edit display name": [
+        "Redigér vist navn"
       ],
       "Edit domain": [
         "Redigér domæne"
@@ -8529,11 +8814,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
       ],
+      "Gift": [
+        "Gave"
+      ],
       "Gift code": [
         "Gavekode"
       ],
       "How does it work?": [
         "Hvordan fungerer det?"
+      ],
+      "How to refer a friend and get credits": [
+        "Sådan henviser du en ven og får kreditter"
       ],
       "How your free trial works": [
         "Sådan fungerer din gratis prøveperiode"
@@ -8758,6 +9049,9 @@
       "Select when you want this notification to be sent": [
         "Vælg når du ønsker, at denne notifikation skal sendes"
       ],
+      "Sender image": [
+        "Afsenderbillede"
+      ],
       "Session management": [
         "Sessionshåndtering"
       ],
@@ -8790,6 +9084,12 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Signed in successfully!": [
+        "Logget ind med succes!"
+      ],
+      "Signed in to member account": [
+        "Logget ind på medlemskonto"
       ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"
@@ -8840,6 +9140,9 @@
       "Time zone": [
         "Tidszone"
       ],
+      "Track your referrals": [
+        "Spor dine henvisninger"
+      ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Prøv det bedste af ${ MAIL_APP_NAME } gratis"
       ],
@@ -8863,6 +9166,9 @@
       ],
       "Verification": [
         "Verifikation"
+      ],
+      "Verify email address": [
+        "Bekræft e-mailadresse"
       ],
       "VPN apps": [
         "VPN-apps"

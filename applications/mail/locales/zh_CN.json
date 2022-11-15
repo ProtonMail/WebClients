@@ -365,6 +365,9 @@
       "Filter on...": [
         "筛选..."
       ],
+      "Fit to window": [
+        "适应窗口大小"
+      ],
       "Font": [
         "字体"
       ],
@@ -766,6 +769,9 @@
       ],
       "Request new code": [
         "重发验证码"
+      ],
+      "Resend code": [
+        "重新发送验证码"
       ],
       "Reset": [
         "重置"
@@ -3312,11 +3318,6 @@
         "搜索结果过多，请缩小搜索范围后再试。"
       ]
     },
-    "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "每个邀请最多能邀请 100 人"
-      ]
-    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "草稿无法移至收件箱"
@@ -4188,7 +4189,7 @@
         "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
       "${ contactEmailsLength } Members": [
-        "${ contactEmailsLength } 会员"
+        "${ contactEmailsLength } 位成员"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
         "${ contactGroupName }（${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 名成员）"
@@ -4268,6 +4269,9 @@
       "${ unread } unread messages": [
         "${ unread } 封未读邮件"
       ],
+      "${ unreadCount } scheduled messages": [
+        "${ unreadCount } 封定时发送邮件"
+      ],
       "${ unreadCount } unread conversations": [
         "${ unreadCount } 条未读会话"
       ],
@@ -4275,7 +4279,7 @@
         "${ unreadCount } 封未读邮件"
       ],
       "${ updated } contacts updated successfully.": [
-        "${ updated } 联系人更新成功。"
+        "已成功更新 ${ updated } 位联系人。"
       ],
       "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
@@ -5266,6 +5270,9 @@
       ],
       "Using SimpleLogin is easy": [
         "SimpleLogin 便捷易用"
+      ],
+      "Verified Proton message": [
+        "已核实为 Proton 官方邮件"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -7554,6 +7561,9 @@
       ],
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
+      ],
+      "${ unreads } unread messages": [
+        "${ unreads } 封未读邮件"
       ],
       "Account suspended": [
         "账号已被停用"

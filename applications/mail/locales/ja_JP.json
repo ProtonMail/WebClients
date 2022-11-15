@@ -1095,6 +1095,11 @@
         "参加者が追加されました"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "有効期限付きメッセージ"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
@@ -2641,7 +2646,7 @@
         "ラベルがありません"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "対応しているファイルの最大容量は${ MAX_IMPORT_FILE_SIZE_STRING }で、連絡先の上限数は${ MAX_IMPORT_CONTACTS_STRING }です。それ以上になる場合は、ファイルを小分けにしてください。"
+        "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
@@ -3149,11 +3154,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "1 つの招待につき 100 人までが許可されています"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3723,7 +3723,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先のインポートに成功しました。"
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
         "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
@@ -4352,7 +4352,7 @@
         "メールアドレス"
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "メールは受信ボックスに転送され、本来のアドレスは相手には見えません。"
+        "本来のメールアドレスを隠したまま、メールボックスにメールを転送します。"
       ],
       "Email tracker protection is disabled": [
         "メールトラッカー防止は無効です"
@@ -4454,7 +4454,7 @@
         "時間"
       ],
       "How Hide My Email works": [
-        "メールアドレス秘匿（Hide My Email）の詳細"
+        "Hide My Email の仕組み"
       ],
       "I'm sending this message to a non-Proton Mail user.": [
         "このメッセージを非 Proton ユーザーに送信しています。"
@@ -4472,7 +4472,7 @@
         "パスワードを忘れた時のため、回復フレーズを設定してアカウントとデータにアクセスできるようにしておきましょう。"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "エイリアス（使い捨てのアドレス）が業者に売られたり悪用されることがあれば、そのエイリアスを無効化するだけで大丈夫です。"
+        "エイリアス (使い捨てのメールアドレス) の情報が売却、漏洩、悪用された場合は、そのエイリアスを無効にするだけで迷惑メールを遮断できます。"
       ],
       "Image description": [
         "画像の説明"
@@ -4844,10 +4844,10 @@
         "ログイン"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLoginはProtonのサービスなので、Protonアカウントをお持ちの場合メールアドレスを隠す機能（Hide My Email）があらかじめ利用できます。メールアドレスを隠すには、SimpleLoginを使ってエイリアスの作成に進んでください。"
+        "SimpleLogin は Proton サービスであり、あなたの Proton アカウントには Hide My Email エイリアスが含まれています。SimpleLogin でエイリアスを作成し、あなたのメールアドレスを保護しましょう。"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin は、実際のメールアドレスを公開したくない信頼のおけない第三者サイトで、アカウントを作成するためのシンプルな方法を提供しています。"
+        "SimpleLogin は、信頼のおけない第三者サイトで、本来のメールアドレスを公開せずにアカウントを作成するためのシンプルな方法を提供します。"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "このメッセージは存在しないか有効期限切れです。"
@@ -4922,7 +4922,7 @@
         "このメッセージを迷惑メールとして扱います。将来のメールから購読を解除しますか?"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "本来のメールアドレスを知られなければ、迷惑メールを送りつけられることもありません。Hide My Emailでメールを守りましょう。"
+        "本来のメールアドレスを知られなければ、迷惑メールを送りつけられることもありません。Hide My Email で受信トレイを守りましょう。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -5138,7 +5138,7 @@
         "いつメッセージを送信したいですか?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "メールアドレスを相手に見せる場合、自分のメールアドレスではなく専用の使い捨てアドレス（Hide My Emailのエイリアス）を使いましょう。"
+        "メールアドレスを伝える際に、本来のメールアドレスではなく専用の使い捨て Hide My Email エイリアスを使用します。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
@@ -6780,7 +6780,7 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts }件中${ contactsExported.length }件の連絡先をエクスポートしました。"
+        "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
         "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"

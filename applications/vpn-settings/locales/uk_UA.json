@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } доступна."
-      ],
       "${ BRAND_NAME } introduction": [
         "Знайомство з ${ BRAND_NAME }"
       ],
@@ -50,6 +47,9 @@
       "Chat with us": [
         "Чат з нами"
       ],
+      "Claim it": [
+        "Вказати її"
+      ],
       "Close": [
         "Закрити"
       ],
@@ -77,14 +77,11 @@
       "Create": [
         "Створити"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Натомість створити захищену адресу ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Зареєструватися"
       ],
-      "Create address": [
-        "Створити адресу"
+      "Create your own": [
+        "Створити свою власну"
       ],
       "Current plan": [
         "Поточний тарифний план"
@@ -108,9 +105,6 @@
         "Подробиці"
       ],
       "Didn't receive a code?": [
-        "Не отримали код?"
-      ],
-      "Didn't receive the code?": [
         "Не отримали код?"
       ],
       "Disable": [
@@ -163,6 +157,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Отримайте нову зашифровану адресу електронної пошти"
       ],
       "Get verification code": [
         "Отримати код підтвердження"
@@ -247,6 +244,9 @@
       ],
       "Request new code": [
         "Запитати новий код"
+      ],
+      "Resend code": [
+        "Надіслати код повторно"
       ],
       "Reset credentials": [
         "Скинути облікові дані"
@@ -359,7 +359,7 @@
       "Use recovery code": [
         "Використати код відновлення"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "Використати натомість вашу поточну адресу е-пошти"
       ],
       "User": [
@@ -376,9 +376,6 @@
       ],
       "Verify code again": [
         "Перевірити код знову"
-      ],
-      "Verify email": [
-        "Підтвердити електронну пошту"
       ],
       "View": [
         "Переглянути"
@@ -1890,9 +1887,6 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Ви будете використовувати цю адресу для входу в усі служби ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Для вибору з'єднання на рівні країни необхідна передплата ${ vpnBasic }, ${ vpnPlus } або ${ visionary }."
       ],
@@ -2064,6 +2058,12 @@
       "Free up some space or contact your administrator.": [
         "Звільніть місце або зверніться до свого адміністратора."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Отримайте адресу ${ BRAND_NAME }, щоб користуватися всіма службами ${ BRAND_NAME }, включно з поштою та календарем."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Отримати свою адресу ${ BRAND_NAME }"
+      ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google записує вашу онлайн-активність та читає ваші особисті дані, щоб забезпечити доступ для рекламодавців та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
@@ -2178,8 +2178,8 @@
       "of": [
         "з"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Один обліковий запис для всіх служб ${ BRAND_NAME }."
+      "One account. All ${ BRAND_NAME } services.": [
+        "Один обліковий запис. Усі служби ${ BRAND_NAME }."
       ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
@@ -2283,6 +2283,9 @@
       "support team": [
         "командою підтримки"
       ],
+      "The following address is available:": [
+        "Ця адреса доступна:"
+      ],
       "The securest way to browse, stream, and be online.": [
         "Найзахищеніший спосіб переглядати, передавати та бути онлайн."
       ],
@@ -2336,6 +2339,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "щоб користуватися ${ toAppName } і всіма службами ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
@@ -2448,6 +2454,9 @@
       "Why?": [
         "Навіщо?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Маючи зашифровану адресу ${ BRAND_NAME }, ви можете користуватися всіма службами ${ BRAND_NAME }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
       ],
@@ -2511,6 +2520,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Вас невдовзі буде перенаправлено до вашого банку для підтвердження платежу."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
@@ -2549,9 +2561,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
-      ],
-      "Your recovery email address:": [
-        "Ваша електронна пошта для відновлення:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
@@ -2658,9 +2667,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } адреса"
       ],
       "${ n } month": [
         "${ n } місяць",
@@ -3531,7 +3537,7 @@
     },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Створюючи обліковий запис ${ BRAND_NAME }, Ви погоджуєтеся на наші ${ terms }"
+        "Створюючи обліковий запис ${ BRAND_NAME }, ви приймаєте наші ${ terms }"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -4380,11 +4386,11 @@
       "Congratulations on choosing privacy!": [
         "Вітаємо з вибором приватності!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Створити адресу ${ MAIL_APP_NAME }"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Створіть свій обліковий запис ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Створіть свою адресу ${ BRAND_NAME }"
       ],
       "Credits": [
         "Кредити"
@@ -4614,6 +4620,9 @@
       "Verification": [
         "Перевірка"
       ],
+      "Verify email address": [
+        "Підтвердити адресу е-пошти"
+      ],
       "Warning": [
         "Попередження"
       ],
@@ -4628,9 +4637,6 @@
       ],
       "You already have a Proton account": [
         "У вас уже є обліковий запис Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Ваша адреса ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Поточний тарифний план"

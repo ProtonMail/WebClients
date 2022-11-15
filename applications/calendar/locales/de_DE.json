@@ -6,10 +6,10 @@
   "contexts": {
     "Access level": {
       "Full view (see all event details)": [
-        "Gesamtansicht (siehe alle Termindetails)"
+        "Voller Lesezugriff (alle Termindetails anzeigen)"
       ],
       "Limited view (see only free/busy)": [
-        "Eingeschränkte Ansicht (nur Verfügbar/Geschäftigt anzeigen)"
+        "Eingeschränkter Lesezugriff (nur Verfügbar/Beschäftigt anzeigen)"
       ]
     },
     "Action": {
@@ -265,10 +265,10 @@
         "Anmelden"
       ],
       "Make this participant optional": [
-        "Diesen Teilnehmer als „Freiwillig” kennzeichnen"
+        "Diesen Teilnehmer als „Optional“ markieren"
       ],
       "Make this participant required": [
-        "Diesen Teilnehmer als „Erforderlich” kennzeichnen"
+        "Diesen Teilnehmer als „Erforderlich“ markieren"
       ],
       "Manage addresses": [
         "E-Mail-Adressen verwalten"
@@ -496,7 +496,7 @@
         "Bild hochladen"
       ],
       "Use ${ label } theme": [
-        "Farbschema „${ label }” verwenden"
+        "Farbschema „${ label }“ verwenden"
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
@@ -680,7 +680,7 @@
         "Anwendungsproblem"
       ],
       "Bridge problem": [
-        "Problem mit „Bridge”"
+        "Problem mit „Bridge“"
       ],
       "Calendar problem": [
         "Kalenderproblem"
@@ -752,8 +752,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "E-Mail-Adresse"
+      "Add people or groups": [
+        "Personen oder Gruppen hinzufügen"
       ]
     },
     "Calendar invite buttons label": {
@@ -823,6 +823,10 @@
       "Unable to share this calendar with more Proton users": [
         "Dieser Kalender kann nicht für weitere Proton-Benutzer freigegeben werden"
       ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitglied für diesen Kalender erreicht.\nUm den Kalender mit weiteren Proton-Konten zu teilen, entferne bitte einige Mitglieder.",
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern für diesen Kalender erreicht.\nUm den Kalender mit weiteren Proton-Konten zu teilen, entferne bitte einige Mitglieder."
+      ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Du hast die maximale Anzahl von ${ MAX_LINKS_PER_CALENDAR } Link für diesen Kalender erreicht.\nUm einen neuen Link zu diesem Kalender zu erstellen, lösche bitte einen bestehenden.",
         "Du hast die maximale Anzahl von ${ MAX_LINKS_PER_CALENDAR } Links für diesen Kalender erreicht.\nUm einen neuen Link zu diesem Kalender zu erstellen, lösche bitte einen bestehenden."
@@ -830,10 +834,10 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Bearbeiten (Termindetails anzeigen, erstellen und bearbeiten)"
+        "Schreibzugriff (Termindetails anzeigen, erstellen und bearbeiten)"
       ],
-      "Full view (see all event details)": [
-        "Gesamtansicht (siehe alle Termindetails)"
+      "View (see all event details)": [
+        "Lesezugriff (alle Termindetails anzeigen)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2253,7 +2257,7 @@
         "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
       ],
       "Primary address key is not decrypted": [
-        "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
@@ -2311,7 +2315,7 @@
         "Startzeit muss vor der Endzeit liegen"
       ],
       "The address might be misspelled": [
-        "Die E-Mail-Adresse könnte fehlerhaft sein"
+        "Die E-Mail-Adresse könnte falsch geschrieben sein."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
@@ -2379,12 +2383,12 @@
     },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
-        "Eingeladene Adresse nicht vorhanden"
+        "Eingeladene E-Mail-Adresse existiert nicht"
       ]
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Beim Lesen deiner Datei ist ein Fehler aufgetreten ${ formattedFilename }. Format der Datei ungültig."
+        "Beim Lesen deiner Datei \"${ formattedFilename }\" ist ein Fehler aufgetreten. Format der Datei ungültig."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Das Hochladen deiner Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2403,16 +2407,16 @@
         "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termine."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Deine Datei ${ formattedFilename } enthält eine ungültige Methode und konnte nicht importiert werden."
+        "Deine Datei \"${ formattedFilename }\" enthält eine ungültige Methode und konnte nicht importiert werden."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Deine Datei „${ formattedFilename }” enthält keine importierbaren Termine."
+        "Deine Datei „${ formattedFilename }“ enthält keine importierbaren Termine."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "Die Datei „${ formattedFilename }” enthält keine Daten."
+        "Die Datei „${ formattedFilename }“ enthält keine Daten."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        "Die Datei „${ formattedFilename }” ist keine Kalenderdatei."
+        "Die Datei „${ formattedFilename }“ ist keine Kalenderdatei."
       ]
     },
     "Error importing contact": {
@@ -2535,7 +2539,7 @@
         "Zeitzone"
       ],
       "To-do entry": [
-        "Eintrag „Zu erledigen”"
+        "Eintrag „Zu erledigen“"
       ],
       "Unknown": [
         "Unbekannt"
@@ -2582,7 +2586,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Punktzahl erforderlich"
+        "Wertung ist erforderlich"
       ]
     },
     "Event canceled status badge": {
@@ -2898,7 +2902,7 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
+        "Der „Zugriff auf weniger sichere Apps“ ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
         "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
@@ -2961,7 +2965,7 @@
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Sie können auch versuchen, sich von „${ boldGoogleAccounts }” im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
+        "Du kannst auch versuchen, dich von „${ boldGoogleAccounts }“ im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
@@ -3291,13 +3295,14 @@
         "und"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Jeder mit diesem Link kann alle Termindetails dieses Kalenders, wie Titel, Ort und Teilnehmer, einsehen."
+        "Jeder mit diesem Link kann alle Termindetails dieses Kalenders wie Titel, Ort und Teilnehmer einsehen."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Jeder mit diesem Link kann in deinem Kalender den Status „Verfügbar“ oder „Beschäftigt“ erkennen. Es können jedoch keine Details zum Termin, wie z. B. Titel, Ort oder Teilnehmer, eingesehen werden."
+        "Jeder mit diesem Link kann in deinem Kalender sehen, ob du „Verfügbar“ oder „Beschäftigt“ bist. Es können jedoch keine Details zum Termin wie z. B. Titel, Ort oder Teilnehmer eingesehen werden."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Maximal 100 Teilnehmer sind pro Einladung erlaubt"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Pro Einladung ist maximal ${ MAX_ATTENDEES } Teilnehmer erlaubt",
+        "Pro Einladung sind maximal ${ MAX_ATTENDEES } Teilnehmer erlaubt"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
@@ -3524,7 +3529,7 @@
         "Termine, die zuvor vom Organisator aktualisiert wurden, werden beibehalten, aber einige deiner Antworten gehen verloren."
       ],
       "Occurrences previously updated by the organizer will be kept.": [
-        "Terminee, die zuvor vom Organisator aktualisiert wurden, werden beibehalten."
+        "Termine, die zuvor vom Organisator aktualisiert wurden, werden beibehalten."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
@@ -3600,7 +3605,7 @@
         "Zeitüberschreitung der Sitzung"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -3762,7 +3767,7 @@
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
+        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kannst zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
@@ -3819,7 +3824,7 @@
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Drine E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer des Termins gesendet werden. Möchtest du trotzdem alle Termine dieser Serie löschen?"
+        "Deine E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer des Termins gesendet werden. Möchtest du trotzdem alle Termine dieser Serie löschen?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Deine E-Mail-Adresse ist deaktiviert. Eine E-Mail zur Absage des Termins kann daher nicht an die Teilnehmer gesendet werden. Möchtest du diesen Termin dennoch löschen?"
@@ -4297,25 +4302,25 @@
         "Wir sammeln deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
-        "Dein Datenimport wurde gestartet"
+        "Dein Datenimport wird gestartet"
       ]
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordner seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren.",
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordnern seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren."
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren.",
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }“"
+        "Alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }” kategorisieren.",
+        "Alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ]
     },
     "Message": {
@@ -4371,7 +4376,7 @@
         "Kalender beitreten"
       ],
       "Unable to join more calendars": [
-        "Mehreren Kalendern beitreten nicht möglich"
+        "Du kannst keinen weiteren Kalendern beitreten."
       ]
     },
     "Modal title": {
@@ -4977,7 +4982,7 @@
         "Pager"
       ],
       "Phone": [
-        "Telefonnummer"
+        "Telefon"
       ],
       "Work": [
         "Arbeit"
@@ -5020,8 +5025,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Personen oder Gruppen hinzufügen"
+      "Enter an email address or group name": [
+        "E-Mail-Adresse oder Gruppenname eingeben"
       ]
     },
     "Share calendar modal title": {
@@ -5294,7 +5299,7 @@
         "Einladungen ganz einfach annehmen"
       ],
       "Get up to ${ credits } in credits.": [
-        "Erhalte bis zu ${ credits } in Guthaben."
+        "Erhalte bis zu ${ credits } als Guthaben."
       ],
       "Invite friends to Proton": [
         "Lade Freunde zu Proton ein"
@@ -5617,7 +5622,7 @@
         "Zu ${ groupCount } Gruppen hinzufügen"
       ],
       "Add to ${ groupName }": [
-        "Zu „${ groupName }” hinzufügen"
+        "Zu „${ groupName }“ hinzufügen"
       ],
       "Addresses": [
         "Adressen"
@@ -5661,9 +5666,6 @@
       "Continue with partial import?": [
         "Mit Teilimport fortfahren?"
       ],
-      "Create calendar": [
-        "Kalender erstellen"
-      ],
       "Create contact": [
         "Kontakt erstellen"
       ],
@@ -5671,7 +5673,7 @@
         "Neue Gruppe erstellen"
       ],
       "Create public link": [
-        "Erstelle einen öffentlichen Link"
+        "Öffentlichen Link erstellen"
       ],
       "Currency": [
         "Währung"
@@ -5707,9 +5709,6 @@
       ],
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"
-      ],
-      "Edit calendar": [
-        "Kalender bearbeiten"
       ],
       "Edit contact": [
         "Kontakt bearbeiten"
@@ -5788,7 +5787,7 @@
         "Minikalender"
       ],
       "Open actions dropdown": [
-        "Auswahlliste „Aktionen” öffnen"
+        "Auswahlliste „Aktionen“ öffnen"
       ],
       "Open help menu": [
         "Hilfemenü öffnen"
@@ -5964,9 +5963,14 @@
         "Anzahl auswählen"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Informationen bearbeiten"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Kalender erstellen"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Kalender bearbeiten"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5976,7 +5980,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
+        "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"

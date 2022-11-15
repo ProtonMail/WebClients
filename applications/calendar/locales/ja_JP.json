@@ -717,11 +717,6 @@
         "${ MAIL_APP_NAME } を使って続行します。"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "メールアドレス"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "出席しますか?"
@@ -1851,7 +1846,7 @@
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "対応しているファイルの最大容量は${ MAX_IMPORT_FILE_SIZE_STRING }で、連絡先の上限数は${ MAX_IMPORT_CONTACTS_STRING }です。それ以上になる場合は、ファイルを小分けにしてください。"
+        "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
@@ -2770,7 +2765,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先のインポートに成功しました。"
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
         "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
@@ -3158,9 +3153,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "1 つの招待につき 100 人までが許可されています"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
@@ -3708,6 +3700,14 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "重複した連絡先が存在しているようです。${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "アドレス"
+      ],
+      "Label (optional)": [
+        "ラベル (任意)"
       ]
     },
     "Input placeholder": {
@@ -4710,7 +4710,7 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts }件中${ contactsExported.length }件の連絡先をエクスポートしました。"
+        "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
         "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"
@@ -5113,9 +5113,6 @@
       "Continue with partial import?": [
         "部分的なインポートを続行しますか?"
       ],
-      "Create calendar": [
-        "カレンダーの作成"
-      ],
       "Create contact": [
         "連絡先の作成"
       ],
@@ -5157,9 +5154,6 @@
       ],
       "Drop to upload": [
         "ドロップしてアップロード"
-      ],
-      "Edit calendar": [
-        "カレンダーを編集"
       ],
       "Edit contact": [
         "連絡先の編集"
@@ -5411,11 +5405,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "番号を選択"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "情報を編集する"
       ]
     },
     "Today icon tooltip in mini calendar": {
